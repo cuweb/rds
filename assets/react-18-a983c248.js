@@ -1,0 +1,2 @@
+import{n as c,R,r as a}from"./index-addc1fd3.js";var n={},s=c;n.createRoot=s.createRoot,n.hydrateRoot=s.hydrateRoot;var o=new Map,m=({callback:e,children:t})=>{let r=a.useRef();return a.useLayoutEffect(()=>{r.current!==e&&(r.current=e,e())},[e]),t},i=async(e,t)=>{let r=await d(t);return new Promise(u=>{r.render(R.createElement(m,{callback:()=>u(null)},e))})},p=(e,t)=>{let r=o.get(e);r&&(r.unmount(),o.delete(e))},d=async e=>{let t=o.get(e);return t||(t=n.createRoot(e),o.set(e,t)),t};export{i as r,p as u};
+//# sourceMappingURL=react-18-a983c248.js.map
