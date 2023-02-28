@@ -1,0 +1,27 @@
+name: Storybook Deploy
+on:
+  push:
+    branches:
+      - develop # if any push happens on branch `develop`, run this workflow. You could also add `paths` to detect changes in specific folder
+jobs:
+  build-and-deploy:
+    name: Build and deploy Storybook 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build-storybook
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: storybook-static # output folder from `npm run build-storybook`
+        env:
+          NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY: ${{secrets.NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY}}
