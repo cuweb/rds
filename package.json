@@ -1,7 +1,7 @@
 {
   "name": "@carletonuniversity/rds",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "type": "module",
   "main": "./dist/rds-tailwindui.umd.js",
@@ -78,6 +78,7 @@
     "formik": "^2.2.9",
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
     "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
     "rds-tailwind-theme": "^0.3.0",
@@ -100,8 +101,5 @@
     "react-quill": "^2.0.0",
     "tailwindcss": "^3.2.7",
     "yup": "^1.0.2"
-  },
-  "dependencies": {
-    "postcss-import": "^15.1.0"
   }
 }
