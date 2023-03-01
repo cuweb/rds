@@ -5,7 +5,7 @@ on:
       - develop # if any push happens on branch `develop`, run this workflow. You could also add `paths` to detect changes in specific folder
 jobs:
   build-and-deploy:
-    name: Build and deploy Storybook 
+    name: Build and deploy Storybook
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,4 +24,4 @@ jobs:
         with:
           folder: storybook-static # output folder from `npm run build-storybook`
         env:
-          NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY: ${{secrets.NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY}}
+          NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY: ${{secrets.GOOGLE_MAPS_API_KEY}}
