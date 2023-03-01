@@ -1,10 +1,3 @@
-.cu-border {
-  border-width: 2px !important;
-  border-style: solid !important;
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(220 38 38 / var(--tw-border-opacity)) !important;
-}
-
 /*
 ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
@@ -710,10 +703,6 @@ select {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
 .relative {
   position: relative;
 }
@@ -729,28 +718,12 @@ select {
   left: 50%;
 }
 
-.right-3 {
-  right: 0.75rem;
-}
-
-.right-3\.5 {
-  right: 0.875rem;
-}
-
 .top-12 {
   top: 3rem;
 }
 
 .top-16 {
   top: 4rem;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.top-2\.5 {
-  top: 0.625rem;
 }
 
 .top-20 {
@@ -1020,12 +993,6 @@ select {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-.space-y-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1149,10 +1116,6 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
-.bg-none {
-  background-image: none;
-}
-
 .p-1 {
   padding: 0.25rem;
 }
@@ -1237,10 +1200,6 @@ select {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.italic {
-  font-style: italic;
 }
 
 .text-blue-600 {
@@ -1328,10 +1287,6 @@ select {
   color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -1395,6 +1350,77 @@ select {
 
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Remove spacing if container is first item inside prose container */
+
+.prose > .cu-container:first-child {
+  margin-top: -3.5rem;
+}
+
+/* Remove top and bottom space added by prose when columns are used inside prose container */
+
+.prose > .cu-column > *:first-child,
+.prose > .cu-column > * > *:first-child {
+  margin-top: 0px;
+}
+
+.prose > .cu-column > *:last-child,
+.prose > .cu-column > * > *:last-child {
+  margin-bottom: 0px;
+}
+
+/* Remove top and bottom space added by prose inside container */
+
+.prose > .cu-container > *:first-child,
+.prose > .cu-container > * > *:first-child {
+  margin-top: 0px;
+}
+
+.prose > .cu-container > *:last-child,
+.prose > .cu-container > * > *:last-child {
+  margin-bottom: 0px;
+}
+
+/* Add spacing when columns and panels are used in some consecutive order */
+
+.cu-container + .cu-column,
+.cu-column + .cu-container,
+.cu-column + .cu-column,
+.cu-panel + .cu-panel,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+  margin-top: 2.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 33 168 / var(--tw-bg-opacity));
+}
+
+.cu-column + .cu-container-white {
+  padding-top: 0px;
+}
+
+/* Add spacing when white container follows non-layout components */
+
+:not(.cu-container):not(.cu-column) + .cu-container-white {
+  padding-top: 2rem;
+}
+
+/* Add spacing when grey container follows non-layout components */
+
+:not(.cu-container):not(.cu-column) + .cu-container-grey {
+  margin-top: 3.5rem;
+}
+
+/* Remove spacing on non-layout components that follow container or column */
+
+.cu-container-white + :not(.cu-container):not(.cu-column) {
+  margin-top: 0px;
+}
+
+/* Remove spacing if nested container is last item inside another container */
+
+.cu-container > .cu-container:last-child {
+  margin-bottom: -3.5rem;
 }
 
 .hover\:bg-cu-black:hover {
