@@ -1,7 +1,7 @@
 {
-  "name": "rds-tailwindui",
+  "name": "@carletonuniversity/rds",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "type": "module",
   "main": "./dist/rds-tailwindui.umd.js",
@@ -32,7 +32,7 @@
     "format": "prettier -w src",
     "lint": "eslint . --ext .ts,.tsx",
     "dev": "tsc && vite build --watch",
-    "build": "tsc && npm run format && npm run lint && vite build && npm run size",
+    "build": "tsc && npm run format && npm run lint && vite build && build:css && npm run size",
     "build:css": "tailwindcss -m -i ./src/styles/tailwind.css -o ./dist/index.css",
     "cypress": "concurrently 'npm run cypress:css' 'cypress open'",
     "cypress:ci": "concurrently 'npm run cypress:css' 'cypress run --component'",
@@ -41,7 +41,8 @@
     "storybook:css": "tailwindcss -w -i ./src/styles/tailwind.css -o ./.storybook/index.css",
     "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/styles/tailwind.css -o ./.storybook/index.css",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rm -rf node_modules ; rm yarn.lock ; yarn install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
@@ -75,9 +76,12 @@
     "formik": "^2.2.9",
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
     "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
     "rds-tailwind-theme": "^0.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "size-limit": "^8.2.4",
     "storybook": "^7.0.0-beta.48",
