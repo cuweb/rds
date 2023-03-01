@@ -13,7 +13,7 @@
   ],
   "settings": {
     "react": {
-      "version": "latest"
+      "version": "detect"
     },
     // Tells eslint how to resolve imports
     "import/resolver": {
