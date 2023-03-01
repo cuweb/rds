@@ -13,7 +13,7 @@
   ],
   "settings": {
     "react": {
-      "version": "18.2.0"
+      "version": "latest"
     },
     // Tells eslint how to resolve imports
     "import/resolver": {
