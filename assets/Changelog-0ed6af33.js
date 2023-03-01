@@ -1,4 +1,4 @@
-import{j as n,a as i,F as t}from"./jsx-runtime-670450c2.js";import"./chunk-G4YQS2SV-23d5866c.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as c}from"./index-b9c04d25.js";import{u as l}from"./index-4fb8b842.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-3b7dfb60.js";import"../sb-preview/runtime.mjs";import"./react-18-75f22a57.js";import"./index-2d4beb60.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-356e4a49.js";function h(o={}){const{wrapper:r}=Object.assign({},l(),o.components);return r?n(r,Object.assign({},o,{children:n(d,{})})):d();function d(){const e=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3",code:"code"},l(),o.components);return i(t,{children:[n(e.h1,{children:"Changelog"}),`
+import{j as n,a as i,F as t}from"./jsx-runtime-670450c2.js";import"./chunk-G4YQS2SV-ce527bb1.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as c}from"./index-426c9c4f.js";import{u as r}from"./index-4fb8b842.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-7918aca6.js";import"../sb-preview/runtime.mjs";import"./react-18-75f22a57.js";import"./index-2d4beb60.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-356e4a49.js";function h(d={}){const{wrapper:o}=Object.assign({},r(),d.components);return o?n(o,Object.assign({},d,{children:n(l,{})})):l();function l(){const e=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3",code:"code"},r(),d.components);return i(t,{children:[n(e.h1,{children:"Changelog"}),`
 `,n(e.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,i(e.p,{children:["The format is based on ",n(e.a,{href:"https://keepachangelog.com/en/1.0.0/",children:"Keep a Changelog"}),`,
 and this project adheres to `,n(e.a,{href:"https://semver.org/spec/v2.0.0.html",children:"Semantic Versioning"}),"."]}),`
@@ -12,6 +12,11 @@ and this project adheres to `,n(e.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(e.li,{children:[n(e.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,n(e.h2,{children:"[Unreleased]"}),`
+`,n(e.h2,{children:"[0.0.6]"}),`
+`,n(e.h3,{children:"Changed"}),`
+`,i(e.ul,{children:[`
+`,n(e.li,{children:"Renamed README from mdx to md file"}),`
+`]}),`
 `,n(e.h2,{children:"[0.0.5]"}),`
 `,n(e.h3,{children:"Added"}),`
 `,i(e.ul,{children:[`
@@ -41,6 +46,6 @@ and this project adheres to `,n(e.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(e.ul,{children:[`
 `,n(e.li,{children:"Updated secret keys for Google Maps API"}),`
 `,n(e.li,{children:"Renamed README.md to README.mdx"}),`
-`]})]})}}function w(o={}){const{wrapper:r}=Object.assign({},l(),o.components);return r?n(r,Object.assign({},o,{children:n(d,{})})):d();function d(){return i(t,{children:[n(c,{title:"Get Started/Changelog"}),`
-`,n(h,{})]})}}export{w as default};
-//# sourceMappingURL=Changelog-847fb71b.js.map
+`]})]})}}function D(d={}){const{wrapper:o}=Object.assign({},r(),d.components);return o?n(o,Object.assign({},d,{children:n(l,{})})):l();function l(){return i(t,{children:[n(c,{title:"Get Started/Changelog"}),`
+`,n(h,{})]})}}export{D as default};
+//# sourceMappingURL=Changelog-0ed6af33.js.map
