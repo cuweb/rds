@@ -1,4 +1,4 @@
-import{r as h}from"./index-addc1fd3.js";import{M as g}from"./index-cdabb80a.js";import{u as p}from"./index-089302bc.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-0e1cbec4.js";import"../sb-preview/runtime.mjs";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-356e4a49.js";var s={},f={get exports(){return s},set exports(o){s=o}},l={};/**
+import{r as h}from"./index-addc1fd3.js";import{M as g}from"./index-abf81d7f.js";import{u as p}from"./index-089302bc.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-503b9d14.js";import"../sb-preview/runtime.mjs";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-356e4a49.js";var s={},f={get exports(){return s},set exports(o){s=o}},l={};/**
  * @license React
  * react-jsx-runtime.production.min.js
  *
@@ -127,4 +127,4 @@ Best practices from leading teams`]})})]}),r("a",{className:"link-item",href:"ht
 View the source and add issues`]})})]}),r("a",{className:"link-item",href:"https://discord.gg/storybook",target:"_blank",children:[e("img",{src:N,alt:"comments"}),e("span",{children:r(t.p,{children:[e("strong",{children:"Discord chat"}),`
 Chat with maintainers and the community`]})})]})]}),`
 `,e("div",{className:"tip-wrapper",children:r(t.p,{children:[e("span",{className:"tip",children:"Tip"}),"Edit the Markdown in ",e("code",{children:"stories/Introduction.stories.mdx"})]})})]})}}export{T as default};
-//# sourceMappingURL=Introduction-f63dfd48.js.map
+//# sourceMappingURL=Introduction-b965d4a6.js.map
