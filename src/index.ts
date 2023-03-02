@@ -3,6 +3,7 @@
 export { Alert } from './components/Alert/Alert'
 export { Button } from './components/Button/Button'
 export { Card } from './components/Card/Card'
+export { Form } from './components/Forms/Form/Form'
 export { Icon } from './components/Icon/Icon'
 export { Link } from './components/Link/Link'
 export { Toast } from './components/Toast/Toast'
