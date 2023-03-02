@@ -1,11 +1,11 @@
-import { Icon } from '../Icon/Icon'
-import { Link } from '../Link/Link'
-
+import React from 'react'
+// import { HeroIcon, IconName } from '../HeroIcon'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
+import { Link } from '../Link/Link'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title?: string
-  icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
+  //   icon?: IconName
   isType?: 'default' | 'ghost' | 'grey' | 'dark-grey' | 'white' | 'disabled'
   size?: 'sm' | 'base'
   hasShadow?: boolean
@@ -38,7 +38,7 @@ export const Button = ({
   isType = 'default',
   size = 'base',
   title,
-  icon,
+  //   icon,
   hasShadow,
   isFull,
   isCenter,
@@ -49,7 +49,7 @@ export const Button = ({
   const shadowStyles = hasShadow ? styles.shadow : ''
   const fullStyles = isFull ? 'w-full' : ''
   const centerStyles = isCenter ? 'relative left-1/2 -translate-x-1/2 ' : ''
-  const iconSize = size === 'base' ? '6' : '4'
+  //   const iconSize = size === 'base' ? '6' : '4'
 
   return (
     <>
@@ -61,12 +61,14 @@ export const Button = ({
           disabled={isType === 'disabled' ? true : false}
           {...rest}
         >
-          {icon && (
-            <span className={title ? 'mr-0.5' : ''}>
-              <Icon icon={icon} size={iconSize} />
+          {/* {icon && (
+            <span className={icon && title ? 'mr-0.5' : ''}>
+              <HeroIcon icon={icon} size={iconSize} />
             </span>
-          )}
+          )} */}
+
           {title}
+
           {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
         </button>
       )}
@@ -75,11 +77,12 @@ export const Button = ({
           href={url}
           className={`${styles.core}  ${styles[isType]}  ${buttonSizes[size]} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
         >
-          {icon && (
-            <span className={title ? 'mr-0.5' : ''}>
-              <Icon icon={icon} size={iconSize} />
+          {/* {icon && (
+            <span className={icon && title ? 'mr-0.5' : ''}>
+              <HeroIcon icon={icon} size={iconSize} />
             </span>
-          )}
+          )} */}
+
           {title}
           {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
         </Link>
@@ -87,5 +90,3 @@ export const Button = ({
     </>
   )
 }
-
-Button.displayName = 'Button'
