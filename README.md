@@ -73,3 +73,9 @@ This project is available as an [NPM Package](https://www.npmjs.com/package/@car
    /* primarycssfile.css */
    @import '../node_modules/@carletonuniversity/rds/dist/index.css';
    ```
+   OR 
+
+   ```css
+   /* primarycssfile.css */
+   @import '~@carletonuniversity/rds/dist/index.css';
+   ```
