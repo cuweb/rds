@@ -1,0 +1,10 @@
+[
+  {
+    "path": "dist/rds-tailwindui.es.js",
+    "limit": "100 kB"
+  },
+  {
+    "path": "dist/rds-tailwindui.umd.js",
+    "limit": "100 kB"
+  }
+]
