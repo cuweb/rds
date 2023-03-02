@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react'
-import { Animation } from './Animation/Animation.js'
+import { useRef } from 'react'
+// import { useEffect, useRef } from 'react'
+// import { Animation } from './Animation/Animation.js'
 
 export const BannerAnimated = () => {
-  const gradient = new Animation()
+  //   const gradient = new Animation()
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const divStyle = {
@@ -12,14 +13,15 @@ export const BannerAnimated = () => {
     '--gradient-color-4': '#b9beff',
   }
 
-  useEffect(() => {
-    if (canvasRef.current) {
-      gradient.initGradient(canvasRef.current)
-    }
-  }, [canvasRef, gradient])
+  //   useEffect(() => {
+  //     if (canvasRef.current) {
+  //       gradient.initGradient(canvasRef.current)
+  //     }
+  //   }, [canvasRef, gradient])
 
   return (
     <canvas
+      //   ref={canvasRef}
       ref={canvasRef}
       style={{
         width: '100%',
