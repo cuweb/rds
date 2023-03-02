@@ -17,16 +17,6 @@
       "require": "./dist/rds-tailwindui.umd.js"
     }
   },
-  "size-limit": [
-    {
-      "path": "dist/rds-tailwindui.es.js",
-      "limit": "100 kB"
-    },
-    {
-      "path": "dist/rds-tailwindui.umd.js",
-      "limit": "100 kB"
-    }
-  ],
   "scripts": {
     "size": "size-limit",
     "format": "prettier -w src",
@@ -52,6 +42,7 @@
     "@size-limit/esbuild": "^8.2.4",
     "@size-limit/esbuild-why": "^8.2.4",
     "@size-limit/file": "^8.2.4",
+    "@size-limit/preset-big-lib": "^8.2.4",
     "@storybook/addon-a11y": "^7.0.0-beta.59",
     "@storybook/addon-essentials": "^7.0.0-beta.59",
     "@storybook/addon-interactions": "^7.0.0-beta.59",
