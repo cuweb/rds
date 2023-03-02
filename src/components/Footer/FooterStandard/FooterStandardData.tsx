@@ -1,0 +1,43 @@
+export const FooterStandardLinks = {
+  Admissions: [
+    { name: 'Programs', href: 'https://carleton.ca' },
+    { name: 'Undergraduate', href: 'https://carleton.ca' },
+    { name: 'Graduate', href: 'https://carleton.ca' },
+    { name: 'International', href: 'https://carleton.ca' },
+    { name: 'Financial Aid', href: 'https://carleton.ca' },
+    { name: 'Virtual Tours', href: 'https://carleton.ca' },
+    { name: 'Initiatives', href: 'https://carleton.ca' },
+  ],
+  Academics: [
+    { name: 'Support Services', href: 'https://carleton.ca' },
+    { name: 'Schedules & Dates', href: 'https://carleton.ca' },
+    { name: 'Bightspace', href: 'https://carleton.ca' },
+    { name: 'Library', href: 'https://carleton.ca' },
+    { name: 'Support Services', href: 'https://carleton.ca' },
+    { name: 'Schedules & Dates', href: 'https://carleton.ca' },
+    { name: 'Bightspace', href: 'https://carleton.ca' },
+  ],
+  Campus: [
+    { name: 'Campus Map', href: 'https://carleton.ca' },
+    { name: 'Directions', href: 'https://carleton.ca' },
+    { name: 'Events', href: 'https://carleton.ca' },
+    { name: 'Parking', href: 'https://carleton.ca' },
+    { name: 'Campus Map', href: 'https://carleton.ca' },
+    { name: 'Directions', href: 'https://carleton.ca' },
+    { name: 'Events', href: 'https://carleton.ca' },
+  ],
+  Advancement: [
+    { name: 'Giving to Carleton', href: 'https://carleton.ca' },
+    { name: 'Athletics & Recreation', href: 'https://carleton.ca' },
+    { name: 'Go Ravens', href: 'https://carleton.ca' },
+    { name: 'Career Assistance', href: 'https://carleton.ca' },
+    { name: 'Giving to Carleton', href: 'https://carleton.ca' },
+    { name: 'Athletics & Recreation', href: 'https://carleton.ca' },
+    { name: 'Go Ravens', href: 'https://carleton.ca' },
+  ],
+  Ravens: [
+    { name: 'Athletics & Recreation', href: 'https://carleton.ca' },
+    { name: 'GoRavens Varsity', href: 'https://carleton.ca' },
+    { name: 'Athletics & Recreation', href: 'https://carleton.ca' },
+  ],
+}
