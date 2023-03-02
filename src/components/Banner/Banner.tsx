@@ -78,7 +78,7 @@ const BannerBase = ({
     <>
       <header className={`${styles.core} ${typeStyles[isType]} ${bannerSpacing} ${overlapStyles}`} id="banner">
         <div
-          className={`z-10 flex flex-1 ${flexAlign} items-center justify-center gap-8 m-auto ${rdsMaxWidth[maxWidth]} [&>*]:z-10`}
+          className={`z-10 flex flex-1 ${flexAlign} m-auto items-center justify-center gap-8 ${rdsMaxWidth[maxWidth]} [&>*]:z-10`}
         >
           <div className={`flex flex-auto flex-col gap-6 ${contentAlign}`}>
             <h1 className={`${contentStyles.title} ${rdsFontSizes[fontSize]}`}>{title}</h1>
@@ -99,14 +99,14 @@ const BannerBase = ({
 const BannerImg = ({ image, imageAlt }: BannerImgProps) => {
   return (
     <div className="absolute inset-0">
-      <img className="object-cover w-full h-full" src={image} alt={imageAlt} />
+      <img className="h-full w-full object-cover" src={image} alt={imageAlt} />
       <div className="absolute inset-0 bg-cu-black-800 mix-blend-multiply" aria-hidden="true" />
     </div>
   )
 }
 
 const BannerWave = () => {
-  return <div className="absolute inset-0 bg-bottom bg-no-repeat bg-contain bg-cu-waves-white-10 md:bg-cover"></div>
+  return <div className="absolute inset-0 bg-cu-waves-white-10 bg-contain bg-bottom bg-no-repeat md:bg-cover"></div>
 }
 
 const ButtonGroup = ({ children }: BannerProps) => {

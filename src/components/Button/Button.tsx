@@ -69,7 +69,7 @@ export const Button = ({
 
           {title}
 
-          {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
+          {hasDropDown && <ChevronDownIcon className="mt-1 ml-1 -mr-1 h-4 w-4" aria-hidden="true" />}
         </button>
       )}
       {url && (
@@ -84,7 +84,7 @@ export const Button = ({
           )} */}
 
           {title}
-          {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
+          {hasDropDown && <ChevronDownIcon className="mt-1 ml-1 -mr-1 h-4 w-4" aria-hidden="true" />}
         </Link>
       )}
     </>
