@@ -13,25 +13,33 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Cypress](https://www.cypress.io)
 
-## Get Started
+## Getting Started
 
-Install dependencies
+1. In a terminal window open your install location and run the following:
 
-```shell
-npm install
-```
+   ```shell
+   git clone https://github.com/cuweb/rds.git
+   ```
 
-Run Storybook
+2. Once the clone is complete move into the `RDS` directory and run:
 
-```shell
-npm run storybook
-```
+   ```shell
+   npm install
+   ```
 
-Build
+3. Run Storybook
 
-```shell
-npm run build
-```
+   ```shell
+   npm run storybook
+   ```
+
+4. Other useful shell commands
+
+- `npm run clean` - deletes node modules, package lock and run npm install
+- `npm run cypress` - launch cypress app
+- `npm run format` - format files with prettier
+- `npm run lint` - check for errors with eslint
+- `npm run size` - compare compiled size against pre-defined limit
 
 ## Comment Linting
 
@@ -59,7 +67,7 @@ This project is available as an [NPM Package](https://www.npmjs.com/package/@car
    npm install @carletonuniversity/rds
    ```
 
-1. Import the css file into your primary css file using:
+2. Import the css file into your primary css file using:
 
    ```css
    /* primarycssfile.css */
