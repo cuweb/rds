@@ -10,14 +10,14 @@ const meta = {
       sort: 'requiredFirst',
     },
   },
-  argTypes: {
-    title: {
-      control: { type: 'text' },
-    },
-    content: {
-      control: { type: 'text' },
-    },
-  },
+  //   argTypes: {
+  //     title: {
+  //       control: { type: 'text' },
+  //     },
+  //     content: {
+  //       control: { type: 'text' },
+  //     },
+  //   },
 } satisfies Meta<typeof Card>
 
 export default meta
