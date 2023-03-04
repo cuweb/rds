@@ -2109,11 +2109,6 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
-.bg-cyan-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 94 117 / var(--tw-bg-opacity));
-}
-
 .bg-cu-waves-red {
   background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-red.svg');
 }
@@ -2183,12 +2178,20 @@ select {
   padding: 1rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-5 {
   padding: 1.25rem;
 }
 
-.p-8 {
-  padding: 2rem;
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-2 {
@@ -2254,6 +2257,11 @@ select {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-24 {
@@ -2578,8 +2586,6 @@ select {
 .cu-column + .cu-panel,
 .cu-panel + .cu-column {
   margin-top: 2.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 33 168 / var(--tw-bg-opacity));
 }
 
 .cu-column + .cu-container-white {
