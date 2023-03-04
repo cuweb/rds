@@ -66,17 +66,17 @@ export const Calendar = ({ events, callback }: CalendarProps) => {
 
   return (
     <div className="not-prose">
-      <div className="flex items-center py-2 mb-6 bg-white border rounded-lg not-prose border-cu-black-100">
+      <div className="not-prose mb-6 flex items-center rounded-lg border border-cu-black-100 bg-white py-2">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="sr-only">Previous month</span>
-          <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+          <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>
-        <h2 className="flex-auto text-base font-semibold text-center text-cu-black-900">
+        <h2 className="flex-auto text-center text-base font-semibold text-cu-black-900">
           {format(firstDayCurrentMonth, 'MMMM yyyy')}
         </h2>
         <button onClick={nextMonth} type="button" className={`${styles.prevNextArrows}`}>
           <span className="sr-only">Next month</span>
-          <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
         </button>
       </div>
 
@@ -91,12 +91,12 @@ export const Calendar = ({ events, callback }: CalendarProps) => {
       </div>
 
       <div
-        className={`${styles.calendarGrid} text-sm rounded-lg bg-cu-black-100 isolate border border-cu-black-100 overflow-hidden`}
+        className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-100 text-sm`}
       >
         {days.map((day, dayIdx) => (
           <div
             key={day.toString()}
-            className={classNames(dayIdx === 0 && colStartClasses[getDay(day)], 'py-2 bg-white')}
+            className={classNames(dayIdx === 0 && colStartClasses[getDay(day)], 'bg-white py-2')}
           >
             <button
               type="button"
@@ -126,9 +126,9 @@ export const Calendar = ({ events, callback }: CalendarProps) => {
               <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>
             </button>
 
-            <div className="w-1 h-1 mx-auto mt-1">
+            <div className="mx-auto mt-1 h-1 w-1">
               {events?.some((event) => isSameDay(parseISO(event.startDatetime), day)) && (
-                <div className="w-1 h-1 rounded-full bg-sky-500"></div>
+                <div className="h-1 w-1 rounded-full bg-sky-500"></div>
               )}
             </div>
           </div>
