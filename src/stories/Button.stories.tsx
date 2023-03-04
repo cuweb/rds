@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '../components/Button/Button'
+import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -74,5 +75,12 @@ export const FullWidth: Story = {
   args: {
     title: 'Full Width Button',
     isFull: true,
+  },
+}
+
+export const HasIcon: Story = {
+  args: {
+    title: 'Icon Button',
+    icon: ArrowDownCircleIcon,
   },
 }

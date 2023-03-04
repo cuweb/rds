@@ -8,7 +8,10 @@ export { Avatar } from './components/Avatar/Avatar'
 export { Banner } from './components/Banner/Banner'
 export { Button } from './components/Button/Button'
 
+export { Calendar } from './components/Calendar/Calendar'
 export { Card } from './components/Card/Card'
+
+export { DropDown } from './components/DropDown/DropDown'
 
 export { FooterBasic } from './components/Footer/FooterBasic/FooterBasic'
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard'
