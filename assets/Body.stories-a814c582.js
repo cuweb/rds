@@ -1,7 +1,0 @@
-import{a as m,j as p}from"./jsx-runtime-670450c2.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";const r=({children:a,className:l})=>m("body",{className:l,children:[p("noscript",{dangerouslySetInnerHTML:{__html:'<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH632FV" height="0" width="0" style="display: none; visibility: hidden;" />'}}),a]});try{r.displayName="Body",r.__docgenInfo={description:"",displayName:"Body",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}}}}}catch{}const u={title:"Layouts/Body",component:r,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},e={};e.args={children:"Body component"};const s={args:{children:"Body component with tailwind classes",className:"bg-white p-5"}};var o,t,n;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(n=(t=e.parameters)==null?void 0:t.docs)==null?void 0:n.source}}};var i,c,d;s.parameters={...s.parameters,docs:{...(i=s.parameters)==null?void 0:i.docs,source:{originalSource:`{
-  args: {
-    children: 'Body component with tailwind classes',
-    className: 'bg-white p-5'
-  }
-}`,...(d=(c=s.parameters)==null?void 0:c.docs)==null?void 0:d.source}}};const w=["Primary","UseTailwind"];export{e as Primary,s as UseTailwind,w as __namedExportsOrder,u as default};
-//# sourceMappingURL=Body.stories-a814c582.js.map
