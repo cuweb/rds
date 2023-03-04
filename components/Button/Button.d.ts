@@ -1,6 +1,7 @@
 import React from 'react';
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     title?: string;
+    icon?: any;
     isType?: 'default' | 'ghost' | 'grey' | 'dark-grey' | 'white' | 'disabled';
     size?: 'sm' | 'base';
     hasShadow?: boolean;
@@ -10,5 +11,5 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     hasDropDown?: boolean;
     url?: string | undefined;
 }
-export declare const Button: ({ isType, size, title, hasShadow, isFull, isCenter, url, hasDropDown, ...rest }: ButtonProps) => JSX.Element;
+export declare const Button: ({ isType, size, title, icon, hasShadow, isFull, isCenter, url, hasDropDown, ...rest }: ButtonProps) => JSX.Element;
 //# sourceMappingURL=Button.d.ts.map

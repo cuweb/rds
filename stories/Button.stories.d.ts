@@ -10,4 +10,5 @@ export declare const White: Story;
 export declare const Ghost: Story;
 export declare const Center: Story;
 export declare const FullWidth: Story;
+export declare const HasIcon: Story;
 //# sourceMappingURL=Button.stories.d.ts.map
