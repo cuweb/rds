@@ -20,10 +20,3 @@ export const Primary: Story = {}
 Primary.args = {
   children: 'Body component',
 }
-
-export const UseTailwind: Story = {
-  args: {
-    children: 'Body component with tailwind classes',
-    className: 'bg-white p-5',
-  },
-}

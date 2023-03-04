@@ -2109,6 +2109,11 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
+.bg-cyan-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 94 117 / var(--tw-bg-opacity));
+}
+
 .bg-cu-waves-red {
   background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-red.svg');
 }
