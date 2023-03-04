@@ -86,11 +86,11 @@ export const FourCol: Story = {
         Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
         dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
         in egestas sapien ac libero.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
-        vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
-        dolor. Suspendisse vestibulum hendrerit.
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
       </p>
       <p>
         Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
