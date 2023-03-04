@@ -1,5 +1,4 @@
 import React from 'react'
-// import { HeroIcon, IconName } from '../HeroIcon'
 import { Icon } from '../Icon/Icon'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
 import { Link } from '../Link/Link'
@@ -7,7 +6,7 @@ import styles from './Button.styles'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   title?: string
-  icon?: unknown
+  icon?: any
   isType?: 'default' | 'ghost' | 'grey' | 'dark-grey' | 'white' | 'disabled'
   size?: 'sm' | 'base'
   hasShadow?: boolean
@@ -51,11 +50,11 @@ export const Button = ({
           disabled={isType === 'disabled' ? true : false}
           {...rest}
         >
-          {/* {icon && (
+          {icon && (
             <span className={icon && title ? 'mr-0.5' : ''}>
               <Icon icon={icon} size={iconSize} />
             </span>
-          )} */}
+          )}
 
           {title}
 
@@ -67,11 +66,11 @@ export const Button = ({
           href={url}
           className={`${styles.core}  ${styles[isType]}  ${buttonSizes[size]} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
         >
-          {/* {icon && (
+          {icon && (
             <span className={icon && title ? 'mr-0.5' : ''}>
               <Icon icon={icon} size={iconSize} />
             </span>
-          )} */}
+          )}
 
           {title}
           {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
