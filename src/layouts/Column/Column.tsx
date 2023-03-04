@@ -10,7 +10,6 @@ export interface ColumnProps {
   maxWidth?: 'none' | 'full' | '5xl' | '7xl'
   gridGap?: '0' | '5' | '10'
   cols?: '1' | '2' | '3' | '4' | '1/3' | '2/3'
-  isNested?: boolean
 }
 
 export const Column = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1' }: ColumnProps) => {
