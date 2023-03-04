@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Article.styles'
 
 export interface ArticleBaseProps {
   as?: keyof JSX.IntrinsicElements
@@ -7,10 +8,6 @@ export interface ArticleBaseProps {
 export interface ArticleProps {
   children?: React.ReactNode
   content?: string
-}
-
-const styles = {
-  prose: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
 }
 
 export const Article = ({ children, content }: ArticleProps) => {

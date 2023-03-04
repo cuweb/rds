@@ -1,12 +1,3 @@
-//
-// * Duplicate this file and rename to get started
-//     File should share same name as component
-//     Don't forget to add the .stories so your filename is Component.stories.tsx
-
-// * Add all args to the primary version of the component
-//     Controls in storybook become user editable only when they are set as args
-//
-
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 
