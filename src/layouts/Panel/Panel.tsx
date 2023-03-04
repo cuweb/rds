@@ -1,11 +1,5 @@
 import React from 'react'
-
-const styles = {
-  wrapper: `cu-panel not-prose overflow-hidden rounded-lg bg-white`,
-  border: `border border-cu-black-100`,
-  shadow: `shadow-lg`,
-  spacing: `p-6`,
-}
+import styles from './Panel.styles'
 
 export interface PanelProps {
   children: React.ReactNode

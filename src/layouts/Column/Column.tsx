@@ -1,9 +1,6 @@
 import React from 'react'
 import { rdsGridColumns, rdsGridSpacing, rdsMaxWidth } from '../../utils/tailwindClasses'
-
-const styles = {
-  column: `cu-column mx-auto grid`,
-}
+import styles from './Column.styles'
 
 export interface ColumnProps {
   children: React.ReactNode
