@@ -21,7 +21,7 @@ export const parameters = {
         'Headers',
         'Footers',
         'Layouts',
-        ['Main', 'Container', 'Article', 'Column', 'Aside', 'Panel', 'Stacked List'],
+        ['Body', 'Main', 'Container', 'Article', 'Column', 'Aside', 'Panel', 'Stacked List'],
         'Forms',
         'Loading Screens',
         'Project Templates',

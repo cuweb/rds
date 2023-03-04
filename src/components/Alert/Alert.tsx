@@ -15,7 +15,7 @@ export interface AlertBaseProps {
 const Alerter = ({ children }: PropsWithChildren) => {
   return (
     <div aria-live="assertive" className="not-prose top-20">
-      <div className="items-center w-full space-y-4 sm:items-end">{children}</div>
+      <div className="w-full items-center space-y-4 sm:items-end">{children}</div>
     </div>
   )
 }
@@ -74,7 +74,7 @@ const AlertBase = ({ children, type }: PropsWithChildren<AlertBaseProps>) => {
             })}
           </div>
           <div className={`ml-3 ${AlertTypes[type].text}`}>{children}</div>
-          <div className="pl-3 ml-auto">
+          <div className="ml-auto pl-3">
             <div className="-mx-1.5 -my-1.5">
               <button
                 type="button"
@@ -84,7 +84,7 @@ const AlertBase = ({ children, type }: PropsWithChildren<AlertBaseProps>) => {
                 }}
               >
                 <span className="sr-only">Dismiss</span>
-                <XMarkIcon className="w-5 h-5" aria-hidden="true" />
+                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>

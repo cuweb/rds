@@ -16,9 +16,9 @@ const Toaster = ({ children }: PropsWithChildren) => {
   return (
     <div
       aria-live="assertive"
-      className="fixed inset-0 z-40 flex items-end px-4 py-6 pointer-events-none not-prose top-20 sm:items-start sm:p-6"
+      className="not-prose pointer-events-none fixed inset-0 top-20 z-40 flex items-end px-4 py-6 sm:items-start sm:p-6"
     >
-      <div className="flex flex-col items-center w-full space-y-4 sm:items-end">{children}</div>
+      <div className="flex w-full flex-col items-center space-y-4 sm:items-end">{children}</div>
     </div>
   )
 }
@@ -64,7 +64,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg pointer-events-auto ring-1 ring-black ring-opacity-5">
+      <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
         <div className="p-4">
           <div className="flex items-start">
             <div className="flex-shrink-0">
@@ -74,16 +74,16 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
               })}
             </div>
             <div className="ml-3 w-0 flex-1 pt-0.5">{children}</div>
-            <div className="flex flex-shrink-0 ml-4">
+            <div className="ml-4 flex flex-shrink-0">
               <button
                 type="button"
-                className="inline-flex text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 onClick={() => {
                   setShowToast(false)
                 }}
               >
                 <span className="sr-only">Close</span>
-                <XMarkIcon className="w-5 h-5" aria-hidden="true" />
+                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>
