@@ -1,12 +1,12 @@
 import { Popover, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
-// import { HeroIcon, IconName } from '../HeroIcon/HeroIcon'
+import { Icon } from '../Icon/Icon'
 import { Link } from '../Link/Link'
 
 export interface DropDownItemProps {
   title: string | React.ReactNode
-  //   icon?: IconName
+  icon?: any
   href?: string
   onClick?: (event: React.MouseEvent<MouseEvent | HTMLAnchorElement>) => void
 }
@@ -23,7 +23,14 @@ const styles = {
   core: `absolute z-10 w-48 py-1 mt-2 origin-top-left bg-white border rounded-md shadow-lg border-cu-black-100 focus:outline-none`,
 }
 
-export const DropDown = ({ children, buttonText, renderAs = 'div', listItems, menuAlign = 'left' }: DropDownProps) => {
+export const DropDown = ({
+  children,
+  buttonText,
+  renderAs = 'div',
+  listItems,
+  //   icon,
+  menuAlign = 'left',
+}: DropDownProps) => {
   return (
     <Popover as="div" className="relative flex-shrink-0 inline-block not-prose">
       <div>
@@ -63,8 +70,9 @@ export const DropDown = ({ children, buttonText, renderAs = 'div', listItems, me
                       close()
                     }}
                   >
-                    {/* {item.icon && <HeroIcon icon={item.icon} aria-hidden="true" size="4" />}
-                    <span className={item.icon ? 'ml-3' : ''}>{item.title}</span> */}
+                    {item.icon && <Icon icon={item.icon} aria-hidden="true" size="4" />}
+                    <span className={item.icon ? 'ml-3' : ''}>{item.title}</span>
+                    {item.title}
                   </Link>
                 </div>
               ))}

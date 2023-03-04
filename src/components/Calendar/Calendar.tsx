@@ -26,7 +26,7 @@ export interface CalendarProps {
     startDatetime: string
     endDatetime: string
   }[]
-  callback: unknown
+  callback: any
 }
 
 const classNames = (...classes: (string | boolean)[]) => {

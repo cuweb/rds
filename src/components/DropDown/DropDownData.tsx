@@ -4,16 +4,16 @@ export const DropDownItemData: DropDownItemProps[] = [
   {
     href: '/profile',
     title: 'Profile',
-    icon: 'ArrowDownIcon',
+    // icon: 'ArrowDownIcon',
   },
   {
     title: 'Settings',
     onClick: () => alert('Dropdown for settings has been clicked '),
-    icon: 'ShareIcon',
+    // icon: 'ShareIcon',
   },
   {
     href: '/signout',
     title: 'Sign out ',
-    icon: 'ArrowDownIcon',
+    // icon: 'ArrowDownIcon',
   },
 ]
