@@ -22,7 +22,7 @@
 .cu-panel + .cu-panel,
 .cu-column + .cu-panel,
 .cu-panel + .cu-column {
-  @apply mt-10;
+  @apply mt-8;
 }
 
 .cu-column + .cu-container-white {

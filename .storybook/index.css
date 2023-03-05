@@ -1560,10 +1560,6 @@ select {
   margin-right: -0.25rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -2246,6 +2242,11 @@ select {
   padding-bottom: 1rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -2253,6 +2254,10 @@ select {
 
 .pb-24 {
   padding-bottom: 6rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .pl-3 {
@@ -2431,11 +2436,6 @@ select {
   color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
-.text-red-700 {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2572,7 +2572,7 @@ select {
 .cu-panel + .cu-panel,
 .cu-column + .cu-panel,
 .cu-panel + .cu-column {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .cu-column + .cu-container-white {
@@ -2821,6 +2821,10 @@ select {
 
 .last\:mr-0:last-child {
   margin-right: 0px;
+}
+
+.last\:pb-0:last-child {
+  padding-bottom: 0px;
 }
 
 .hover\:bg-cu-black:hover {
