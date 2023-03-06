@@ -6,13 +6,14 @@ import { intervalToDuration } from 'date-fns'
 export interface VideoCardProps {
   source: any
   tags?: Tags
+  callback?: any
 }
 
 interface Tags {
   category: { id: number; name: string; slug: string }[]
 }
 
-export function VideoCard({ source, tags }: VideoCardProps) {
+export function VideoCard({ source, tags, callback }: VideoCardProps) {
   const [videoDuration, setVideoDuration] = useState(0)
   const [videoTitle, setVideoTitle] = useState('')
 
@@ -34,6 +35,9 @@ export function VideoCard({ source, tags }: VideoCardProps) {
   }, [source])
 
   const duration = intervalToDuration({ start: 0, end: videoDuration * 1000 })
+  useEffect(() => {
+    callback(videoDuration)
+  }, [callback, videoDuration])
 
   return (
     <div className="not-prose group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg">
