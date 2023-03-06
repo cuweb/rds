@@ -12,6 +12,7 @@ export { FooterBasic } from './components/Footer/FooterBasic/FooterBasic'
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard'
 export { Icon } from './components/Icon/Icon'
 export { Link } from './components/Link/Link'
+export { Meta } from './components/Meta/Meta'
 export { Toast } from './components/Toast/Toast'
 
 //
