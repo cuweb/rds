@@ -2024,6 +2024,10 @@ select {
   border-bottom-width: 1px;
 }
 
+.border-l-8 {
+  border-left-width: 8px;
+}
+
 .border-cu-black-100 {
   --tw-border-opacity: 1;
   border-color: rgb(230 230 230 / var(--tw-border-opacity));
@@ -2062,6 +2066,11 @@ select {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-l-cyan-300 {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(103 232 249 / var(--tw-border-opacity));
 }
 
 .bg-blue-50 {
@@ -2389,6 +2398,10 @@ select {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .uppercase {
