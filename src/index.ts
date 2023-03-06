@@ -13,6 +13,7 @@ export { FooterStandard } from './components/Footer/FooterStandard/FooterStandar
 export { Icon } from './components/Icon/Icon'
 export { Link } from './components/Link/Link'
 export { Meta } from './components/Meta/Meta'
+export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
 
 //
