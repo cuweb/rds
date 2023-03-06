@@ -50,7 +50,7 @@ const Title = ({ as = 'h3', fontSize = 'base', title }: TitleProps & DetailsItem
   )
 }
 
-const Icon = ({ icon }: DetailsItemProps) => {
+const IconDisplay = ({ icon }: DetailsItemProps) => {
   return <div className="w-auto flex-none">{icon && <Icon icon={icon} />}</div>
 }
 
@@ -66,7 +66,7 @@ DetailsItemBase.defaultProps = {
 DetailsItemBase.displayName = 'DetailsItem'
 Content.displayName = 'DetailsItem.Content'
 Title.displayName = 'DetailsItem.Title'
-Icon.displayName = 'DetailsItem.Icon'
+IconDisplay.displayName = 'DetailsItem.IconDisplay'
 Description.displayName = 'DetailsItem.Description'
 
 export const DetailsItem = Object.assign(DetailsItemBase, {
