@@ -69,20 +69,20 @@ export const EventCard = ({
 
   const multiDayDisplay = () => {
     if (!isEventSameDay) {
-      return <CalendarDaysIcon className="flex-shrink-0 w-6 h-6 mr-2 text-cu-red-300" aria-hidden="true" />
+      return <CalendarDaysIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
     } else {
-      return <ClockIcon className="flex-shrink-0 w-6 h-6 mr-2 text-cu-red-300" aria-hidden="true" />
+      return <ClockIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
     }
   }
 
   return (
     <div className="not-prose group relative overflow-hidden rounded-lg bg-white shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg">
-      <Link href={link} className="relative flex flex-col h-full cursor-pointer">
+      <Link href={link} className="relative flex h-full cursor-pointer flex-col">
         <div className="relative">
           <div className="aspect-w-16 aspect-h-9 @sm:md:aspect-h-6">
-            <img className="object-cover w-full" src={featuredImage ? featuredImage : defaultImage} alt="" />
+            <img className="w-full object-cover" src={featuredImage ? featuredImage : defaultImage} alt="" />
           </div>
-          <div className="absolute z-10 flex flex-col items-center justify-center w-20 h-20 bg-white rounded-md shadow-md left-6 -bottom-10 group-hover:bg-cu-red">
+          <div className="absolute left-6 -bottom-10 z-10 flex h-20 w-20 flex-col items-center justify-center rounded-md bg-white shadow-md group-hover:bg-cu-red">
             <p className="text-xs font-bold uppercase text-cu-red group-hover:text-white">
               {getMonthName(eventStartMonth, true)}
             </p>
@@ -90,11 +90,11 @@ export const EventCard = ({
           </div>
         </div>
 
-        <div className="flex flex-col gap-px pt-16 pb-8 px-7">
+        <div className="flex flex-col gap-px px-7 pt-16 pb-8">
           <HeadLevel className="text-lg font-semibold text-cu-black group-hover:text-cu-red @sm:md:text-xl">
             {title}
           </HeadLevel>
-          <ul className="flex flex-col gap-2 mt-4">
+          <ul className="mt-4 flex flex-col gap-2">
             <li className="flex text-sm text-cu-black-600 @sm:md:text-base">
               {multiDayDisplay()}
               {isEventSameDay
@@ -102,13 +102,13 @@ export const EventCard = ({
                 : getMonthName(eventStartMonth) + ' ' + eventStartDate + ' — ' + eventEndDate}
             </li>
             <li className="flex text-sm text-cu-black-600 @sm:md:text-base">
-              <MapPinIcon className="flex-shrink-0 w-6 h-6 mr-2 text-cu-red-300" aria-hidden="true" />
+              <MapPinIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
               {onCampus ? onCampusBuilding + ', ' + onCampusRoomNumber : eventAddress}
             </li>
           </ul>
         </div>
 
-        <div className="pb-5 mt-auto px-7">
+        <div className="mt-auto px-7 pb-5">
           {tags?.category?.map((tag) => (
             <Badge key={tag.id}>{tag.name}</Badge>
           ))}

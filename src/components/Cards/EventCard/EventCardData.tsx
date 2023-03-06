@@ -76,8 +76,7 @@ export const EventItemData = [
     event_latitude: '82.6912',
     event_longitude: '38.884472',
     registration: 1,
-    registration_url:
-      'http://www.terry.biz/amet-enim-aut-illo-sit-architecto-libero-in',
+    registration_url: 'http://www.terry.biz/amet-enim-aut-illo-sit-architecto-libero-in',
     cost: '100.00',
     contact_name: 'Sherwood Maggio',
     contact_number: '601.753.2847',
@@ -164,4 +163,4 @@ export const EventItemData = [
       ],
     },
   },
-];
+]

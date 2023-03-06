@@ -36,10 +36,10 @@ export const NewsCard = ({
 
   return (
     <div className="not-prose group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg">
-      <Link href={link} className="relative flex flex-col h-full cursor-pointer">
+      <Link href={link} className="relative flex h-full cursor-pointer flex-col">
         {image && (
           <img
-            className="object-cover w-full"
+            className="w-full object-cover"
             src={image ? image : 'https://source.unsplash.com/random/400x266'}
             alt={alt}
           />
@@ -60,7 +60,7 @@ export const NewsCard = ({
           )}
         </div>
 
-        <div className="pb-5 mt-auto px-7">
+        <div className="mt-auto px-7 pb-5">
           {tags?.category?.map((tag) => (
             <Badge key={tag.id}>{tag.name}</Badge>
           ))}
