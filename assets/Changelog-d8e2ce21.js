@@ -1,4 +1,4 @@
-import{j as e,a as i,F as d}from"./jsx-runtime-670450c2.js";import"./chunk-QDOP3WTA-1d8362bd.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as c}from"./index-74fbaec0.js";import{u as t}from"./index-4fb8b842.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-43e9ef92.js";import"../sb-preview/runtime.mjs";import"./react-18-75f22a57.js";import"./index-2d4beb60.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-356e4a49.js";function h(l={}){const{wrapper:r}=Object.assign({},t(),l.components);return r?e(r,Object.assign({},l,{children:e(o,{})})):o();function o(){const n=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3"},t(),l.components);return i(d,{children:[e(n.h1,{children:"Changelog"}),`
+import{j as e,a as i,F as d}from"./jsx-runtime-670450c2.js";import"./chunk-QDOP3WTA-cc6879a4.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as c}from"./index-5b1b96ef.js";import{u as t}from"./index-4fb8b842.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-9b070380.js";import"../sb-preview/runtime.mjs";import"./react-18-75f22a57.js";import"./index-2d4beb60.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-356e4a49.js";function h(l={}){const{wrapper:o}=Object.assign({},t(),l.components);return o?e(o,Object.assign({},l,{children:e(r,{})})):r();function r(){const n=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3"},t(),l.components);return i(d,{children:[e(n.h1,{children:"Changelog"}),`
 `,e(n.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,i(n.p,{children:["The format is based on ",e(n.a,{href:"https://keepachangelog.com/en/1.0.0/",children:"Keep a Changelog"}),`,
 and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",children:"Semantic Versioning"}),"."]}),`
@@ -15,9 +15,19 @@ and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,e(n.h3,{children:"Added"}),`
 `,i(n.ul,{children:[`
 `,e(n.li,{children:"Event Card compoennt"}),`
+`,e(n.li,{children:"Event Listing component"}),`
 `,e(n.li,{children:"News Card compoennt"}),`
+`,e(n.li,{children:"News Listing component"}),`
 `,e(n.li,{children:"Number Card compoennt"}),`
+`,e(n.li,{children:"People Card compoennt"}),`
+`,e(n.li,{children:"People Listing compoennt"}),`
 `,e(n.li,{children:"Video Card compoennt"}),`
+`,e(n.li,{children:"Details Listing component"}),`
+`,e(n.li,{children:"Feed Listing component"}),`
+`,e(n.li,{children:"File Listing component"}),`
+`,e(n.li,{children:"Job Listing component"}),`
+`,e(n.li,{children:"Link Listing component"}),`
+`,e(n.li,{children:"Marketplace Listing component"}),`
 `]}),`
 `,e(n.h3,{children:"Changed"}),`
 `,i(n.ul,{children:[`
@@ -97,6 +107,6 @@ and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(n.ul,{children:[`
 `,e(n.li,{children:"Updated secret keys for Google Maps API"}),`
 `,e(n.li,{children:"Renamed README.md to README.mdx"}),`
-`]})]})}}function v(l={}){const{wrapper:r}=Object.assign({},t(),l.components);return r?e(r,Object.assign({},l,{children:e(o,{})})):o();function o(){return i(d,{children:[e(c,{title:"Get Started/Changelog"}),`
-`,e(h,{})]})}}export{v as default};
-//# sourceMappingURL=Changelog-9e61caab.js.map
+`]})]})}}function j(l={}){const{wrapper:o}=Object.assign({},t(),l.components);return o?e(o,Object.assign({},l,{children:e(r,{})})):r();function r(){return i(d,{children:[e(c,{title:"Get Started/Changelog"}),`
+`,e(h,{})]})}}export{j as default};
+//# sourceMappingURL=Changelog-d8e2ce21.js.map
