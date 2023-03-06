@@ -6,7 +6,7 @@ import { Link } from '../../Link/Link'
 // Set types for as props
 type PeopleItemTypeProps = 'li' | 'div'
 
-export interface PeopleItemsProps {
+export interface PeopleItemProps {
   as?: PeopleItemTypeProps
   children?: React.ReactNode
   firstName: string
@@ -31,7 +31,7 @@ const styles = {
   noImage: `w-full h-full flex items-center justify-center @sm:md:text-4xl font-semibold`,
 }
 
-export const PeopleItems = ({
+export const PeopleItem = ({
   as: Component = 'div',
   firstName,
   lastName,
@@ -42,7 +42,7 @@ export const PeopleItems = ({
   profileImage,
   alt,
   link = '',
-}: PeopleItemsProps) => {
+}: PeopleItemProps) => {
   const initials = `${firstName.split('')[0]}${lastName.split('')[0]}`
 
   return (
