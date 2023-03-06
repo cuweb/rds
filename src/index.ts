@@ -13,6 +13,7 @@ export { Link } from './components/Link/Link'
 // export { LocationPicker } from './components/LocationPicker/LocationPicker'
 export { Meta } from './components/Meta/Meta'
 export { Modal } from './components/Modal/Modal'
+// export { Search } from './components/Search/Search'
 export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
 
