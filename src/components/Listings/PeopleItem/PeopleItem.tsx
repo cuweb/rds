@@ -6,7 +6,7 @@ import { Link } from '../../Link/Link'
 // Set types for as props
 type PeopleItemTypeProps = 'li' | 'div'
 
-export interface PeopleItemProps {
+export interface PeopleItemsProps {
   as?: PeopleItemTypeProps
   children?: React.ReactNode
   firstName: string
@@ -18,6 +18,7 @@ export interface PeopleItemProps {
   profileImage?: string
   link?: string
   alt?: string
+  noImage?: boolean
 }
 
 interface Tags {
@@ -31,7 +32,7 @@ const styles = {
   noImage: `w-full h-full flex items-center justify-center @sm:md:text-4xl font-semibold`,
 }
 
-export const PeopleItem = ({
+export const PeopleItems = ({
   as: Component = 'div',
   firstName,
   lastName,
@@ -42,7 +43,8 @@ export const PeopleItem = ({
   profileImage,
   alt,
   link = '',
-}: PeopleItemProps) => {
+  noImage = false,
+}: PeopleItemsProps) => {
   const initials = `${firstName.split('')[0]}${lastName.split('')[0]}`
 
   return (
@@ -51,21 +53,25 @@ export const PeopleItem = ({
         href={link}
         className="group relative flex cursor-pointer flex-col gap-5 bg-white p-6 hover:bg-slate-50 focus:outline-none sm:grid-cols-1 @sm:md:gap-8 @lg:md:flex-row"
       >
-        {profileImage && (
-          <div>
-            <div className={`${styles.imageGlobals}`}>
-              <img className={`${styles.hasImage}`} src={profileImage} alt={alt} />
-            </div>
-          </div>
-        )}
-        {!profileImage && (
-          <div>
-            <div className={`${styles.imageGlobals}`}>
-              <div className={`${styles.noImage}`}>
-                <p>{initials}</p>
+        {!noImage && (
+          <>
+            {profileImage && (
+              <div>
+                <div className={`${styles.imageGlobals}`}>
+                  <img className={`${styles.hasImage}`} src={profileImage} alt={alt} />
+                </div>
               </div>
-            </div>
-          </div>
+            )}
+            {!profileImage && (
+              <div>
+                <div className={`${styles.imageGlobals}`}>
+                  <div className={`${styles.noImage}`}>
+                    <p>{initials}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         <div className="flex flex-1 flex-col gap-1.5 pr-6 pt-1 md:gap-px @sm:md:pt-0 @lg:md:pt-2">
