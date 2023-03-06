@@ -44,4 +44,4 @@ export const NumberCardData = [
     title: 'Students received OSAP',
     content: '35.8%',
   },
-];
+]
