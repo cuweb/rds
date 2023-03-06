@@ -24,28 +24,40 @@ Primary.args = {
 }
 
 export const HasShadow: Story = {
-  args: {
-    children: `Stacked list component`,
-    hasShadow: true,
-    hasBorder: false,
-  },
+  render: () => (
+    <>
+      <StackedList hasShadow>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+      </StackedList>
+    </>
+  ),
 }
 
 export const HasBorder: Story = {
-  args: {
-    children: `Stacked list component`,
-    hasShadow: false,
-    hasBorder: true,
-  },
+  render: () => (
+    <>
+      <StackedList hasBorder>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+      </StackedList>
+    </>
+  ),
 }
 
 export const ShadowBorder: Story = {
-  name: 'Has Shadow & Border',
-  args: {
-    children: `Stacked list component`,
-    hasShadow: true,
-    hasBorder: true,
-  },
+  name: 'Shadow & Border',
+  render: () => (
+    <>
+      <StackedList hasShadow hasBorder>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+      </StackedList>
+    </>
+  ),
 }
 
 export const WithHeader: Story = {

@@ -19,13 +19,6 @@ export const ArticleData = `
     id.
     </p>
 
-    <img
-    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;w=1310&amp;h=873&amp;q=80&amp;facepad=3"
-    alt=""
-    width="1310"
-    height="873"
-    />
-
     <ul>
     <li>Quis elit egestas venenatis mattis dignissim.</li>
     <li>
