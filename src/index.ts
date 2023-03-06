@@ -9,8 +9,8 @@ export { Calendar } from './components/Calendar/Calendar'
 export { DropDown } from './components/DropDown/DropDown'
 export { Icon } from './components/Icon/Icon'
 export { Link } from './components/Link/Link'
-export { Location } from './components/Location/Location'
-export { LocationPicker } from './components/LocationPicker/LocationPicker'
+// export { Location } from './components/Location/Location'
+// export { LocationPicker } from './components/LocationPicker/LocationPicker'
 export { Meta } from './components/Meta/Meta'
 export { Modal } from './components/Modal/Modal'
 // export { Search } from './components/Search/Search'
@@ -45,6 +45,7 @@ export { VideoCard } from './components/Cards/VideoCard/VideoCard'
 export { Banner } from './components/Banner/Banner'
 export { FooterBasic } from './components/Footer/FooterBasic/FooterBasic'
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard'
+export { TopNav } from './components/TopNav/TopNav'
 
 //
 // Layouts
