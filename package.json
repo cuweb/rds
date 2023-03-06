@@ -73,6 +73,7 @@
     "prettier-plugin-tailwindcss": "^0.2.3",
     "prop-types": "^15.8.1",
     "rds-tailwind-theme": "^0.3.0",
+    "react-player": "^2.11.2",
     "react-quill": "^2.0.0",
     "size-limit": "^8.2.4",
     "storybook": "^7.0.0-beta.59",
