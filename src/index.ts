@@ -18,6 +18,12 @@ export { Toast } from './components/Toast/Toast'
 // Cards & Lists
 // -----------------
 
+export { EventCard } from './components/Cards/EventCard/EventCard'
+export { NewsCard } from './components/Cards/NewsCard/NewsCard'
+export { NumberCard } from './components/Cards/NumberCard/NumberCard'
+export { PeopleCard } from './components/Cards/PeopleCard/PeopleCard'
+export { VideoCard } from './components/Cards/VideoCard/VideoCard'
+
 //
 // Headers & Footers
 // -----------------
