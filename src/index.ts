@@ -14,6 +14,7 @@ export { Link } from './components/Link/Link'
 export { Meta } from './components/Meta/Meta'
 export { Modal } from './components/Modal/Modal'
 // export { Search } from './components/Search/Search'
+export { SearchForm } from './components/SearchForm/SearchForm'
 export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
 
