@@ -8,7 +8,6 @@ export { Button } from './components/Button/Button'
 export { Calendar } from './components/Calendar/Calendar'
 export { DropDown } from './components/DropDown/DropDown'
 export { Filter } from './components/Filter/Filter'
-export { Form } from './components/Forms/Form/Form'
 export { Icon } from './components/Icon/Icon'
 export { Link } from './components/Link/Link'
 export { Location } from './components/Location/Location'
@@ -66,6 +65,7 @@ export { StackedList } from './layouts/StackedList/StackedList'
 //
 // Forms
 // -----------------
+export { Form } from './components/Forms/Form/Form'
 
 //
 // Load Screens
