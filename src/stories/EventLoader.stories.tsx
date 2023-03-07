@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { EventLoader } from '../components/Loaders/EventLoader/EventLoader'
 
 const meta: Meta<typeof EventLoader> = {
-  title: 'Components/EventLoader',
+  title: 'Load Screens/Event Loader',
   component: EventLoader,
   tags: ['autodocs'],
   parameters: {
