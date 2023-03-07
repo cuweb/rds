@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { StackedList } from '../layouts/StackedList/StackedList'
 import { Column } from '../layouts/Column/Column'
 
 const meta: Meta<typeof Column> = {
@@ -77,11 +78,11 @@ export const FourCol: Story = {
         Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
         dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
         in egestas sapien ac libero.
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
-          tristique dolor. Suspendisse vestibulum hendrerit.
-        </p>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
+        vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
+        dolor. Suspendisse vestibulum hendrerit.
       </p>
       <p>
         Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
@@ -89,5 +90,108 @@ export const FourCol: Story = {
         in egestas sapien ac libero.
       </p>
     </Column>
+  ),
+}
+
+export const OneThird: Story = {
+  name: '1/3 Columns',
+  render: () => (
+    <Column maxWidth="7xl" cols="1/3" gridGap="10">
+      <StackedList hasBorder>
+        <li className="px-6 py-5">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla.
+        </li>
+        <li className="px-6 py-5">Quisque auctor ultrices mauris, et semper urna aliquam quis.</li>
+        <li className="px-6 py-5">Suspendisse vestibulum hendrerit.</li>
+      </StackedList>
+      <div>
+        <p className="pb-6 last:pb-0">
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+        <p className="pb-6 last:pb-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p className="pb-6 last:pb-0">
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </div>
+    </Column>
+  ),
+}
+
+export const TwoThirds: Story = {
+  name: '2/3 Columns',
+  render: () => (
+    <Column maxWidth="7xl" cols="2/3" gridGap="10">
+      <div>
+        <p className="pb-6 last:pb-0">
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+        <p className="pb-6 last:pb-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p className="pb-6 last:pb-0">
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </div>
+      <StackedList hasShadow>
+        <li className="px-6 py-5">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla.
+        </li>
+        <li className="px-6 py-5">Quisque auctor ultrices mauris, et semper urna aliquam quis.</li>
+        <li className="px-6 py-5">Suspendisse vestibulum hendrerit.</li>
+      </StackedList>
+    </Column>
+  ),
+}
+
+export const ConsCols: Story = {
+  name: 'Consecutive Columns',
+  render: () => (
+    <>
+      <Column maxWidth="7xl" cols="2" gridGap="10">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </Column>
+      <Column maxWidth="7xl" cols="3" gridGap="10">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+      </Column>
+    </>
   ),
 }
