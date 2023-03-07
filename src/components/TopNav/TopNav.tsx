@@ -155,8 +155,9 @@ export const TopNav = ({
                             : 'border-transparent'
                         }`}
                       >
-                        <Link href={item.link} onClick={() => close()}>
-                          {item.title}
+                        <Link href={item.link}>
+                          {/* TODO: error reported   */}
+                          {/* <span onClick={() => close()}>{item.title}</span> */}
                         </Link>
                       </Disclosure.Button>
                     ))}
