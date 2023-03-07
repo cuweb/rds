@@ -156,7 +156,7 @@ export const TopNav = ({
                         }`}
                       >
                         <Link href={item.link}>
-                          {/* TODO: error reported   */}
+                          {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
                           {/* <span onClick={() => close()}>{item.title}</span> */}
                         </Link>
                       </Disclosure.Button>

@@ -193,7 +193,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                                 'block px-4 py-2 text-sm',
                               )}
                             >
-                              {/* TODO: error reported   */}
+                              {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
                               {/* <span onClick={() => setSortItem(option.name)}>{option.name}</span> */}
                             </Link>
                           )}

@@ -90,7 +90,7 @@ export const Pagination = ({
 
         <nav aria-label="Pagination">
           <ul className="inline-flex overflow-hidden rounded-md border border-cu-black-100">
-            {/* TODO: error reported   */}
+            {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
             {/* <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onPrevious}>
               <span className="sr-only">Previous</span>
               <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
@@ -107,7 +107,7 @@ export const Pagination = ({
                 }
                 return (
                   <li key={index}>Error to be fixed</li>
-                  // TODO: error reported
+                  // TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392
                   //   <li
                   //     key={index}
                   //     className={`${styles.pageListNumbers} ${
@@ -119,7 +119,7 @@ export const Pagination = ({
                   //   </li>
                 )
               })}
-            {/* TODO: error reported   */}
+            {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
             {/* <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
               <span className="sr-only">Next</span>
               <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
