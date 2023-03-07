@@ -1,5 +1,6 @@
 import * as yup from 'yup'
 import { Form as FormWrapper, Formik } from 'formik'
+import type { FormikHelpers, FormikValues } from 'formik'
 
 import { Input } from '../Input/Input'
 import { Radio } from '../Radio/Radio'
@@ -10,12 +11,10 @@ import { Checkbox } from '../Checkbox/Checkbox'
 
 export interface FormProps {
   children?: React.ReactNode
-  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void
-  initialValues?: {
-    [k: string]: string | number | undefined | unknown
-  }
+  onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void
+  initialValues: FormikValues
   schema: {
-    [k: string]: {
+    [field: string]: {
       value?: unknown
       validation: unknown
       label?: string
@@ -37,19 +36,18 @@ const FormBase = ({
   schema,
   initialValues,
 }: FormProps) => {
-  const defaults: any = {}
-  const rules: any = {}
+  const formValues: FormikValues = {}
+  const formRules = {}
 
   Object.keys(schema).map((key) => {
-    defaults[key] = schema[key].value
-    rules[key] = schema[key].validation
-    return [defaults, rules] as const
+    Object.assign(formValues, { key: schema[key].value })
+    Object.assign(formRules, { key: schema[key].validation })
   })
 
   return (
     <Formik
-      initialValues={initialValues || defaults}
-      validationSchema={yup.object().shape(rules)}
+      initialValues={initialValues || formValues}
+      validationSchema={yup.object().shape(formRules)}
       onSubmit={onSubmit}
       enableReinitialize
     >
