@@ -1,11 +1,12 @@
 import React from 'react'
-// import { HeroIcon, IconName } from '../HeroIcon'
+import { Icon } from '../Icon/Icon'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
 import { Link } from '../Link/Link'
+import styles from './Button.styles'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   title?: string
-  //   icon?: IconName
+  icon?: any
   isType?: 'default' | 'ghost' | 'grey' | 'dark-grey' | 'white' | 'disabled'
   size?: 'sm' | 'base'
   hasShadow?: boolean
@@ -22,23 +23,11 @@ const buttonSizes = {
   lg: `px-6 py-4 text-xl`,
 }
 
-const styles = {
-  core: `not-prose inline-flex gap-1 items-center justify-center font-medium rounded-md focus:outline-none`,
-  default: `bg-cu-red text-white hover:bg-cu-black-600`,
-  ghost: `border border-1 border-cu-red text-cu-red bg-white hover:bg-cu-red hover:text-white`,
-  grey: `text-cu-black-800 bg-cu-black-50 hover:bg-cu-black-600 hover:text-white`,
-  'dark-grey': `text-white bg-cu-black-600 hover:bg-cu-red hover:text-white`,
-  white: `text-cu-black bg-white hover:bg-cu-black hover:text-white`,
-  shadow: `shadow-md`,
-  disabled:
-    'disabled:border-slate-300 disabled:border-1 disabled:bg-slate-300 disabled:cursor-default disabled:text-cu-black-600',
-}
-
 export const Button = ({
   isType = 'default',
   size = 'base',
   title,
-  //   icon,
+  icon,
   hasShadow,
   isFull,
   isCenter,
@@ -49,7 +38,7 @@ export const Button = ({
   const shadowStyles = hasShadow ? styles.shadow : ''
   const fullStyles = isFull ? 'w-full' : ''
   const centerStyles = isCenter ? 'relative left-1/2 -translate-x-1/2 ' : ''
-  //   const iconSize = size === 'base' ? '6' : '4'
+  const iconSize = size === 'base' ? '6' : '4'
 
   return (
     <>
@@ -61,11 +50,11 @@ export const Button = ({
           disabled={isType === 'disabled' ? true : false}
           {...rest}
         >
-          {/* {icon && (
+          {icon && (
             <span className={icon && title ? 'mr-0.5' : ''}>
-              <HeroIcon icon={icon} size={iconSize} />
+              <Icon icon={icon} size={iconSize} />
             </span>
-          )} */}
+          )}
 
           {title}
 
@@ -77,11 +66,11 @@ export const Button = ({
           href={url}
           className={`${styles.core}  ${styles[isType]}  ${buttonSizes[size]} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
         >
-          {/* {icon && (
+          {icon && (
             <span className={icon && title ? 'mr-0.5' : ''}>
-              <HeroIcon icon={icon} size={iconSize} />
+              <Icon icon={icon} size={iconSize} />
             </span>
-          )} */}
+          )}
 
           {title}
           {hasDropDown && <ChevronDownIcon className="mt-1 ml-1 -mr-1 h-4 w-4" aria-hidden="true" />}

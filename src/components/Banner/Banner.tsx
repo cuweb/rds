@@ -1,6 +1,6 @@
 import React from 'react'
 import { rdsFontSizes, rdsMaxWidth } from '../../utils/tailwindClasses'
-// import { BannerAnimated } from './Banner.Animated'
+import { BannerAnimated } from './Banner.Animated'
 
 export interface BannerProps {
   children?: React.ReactNode
@@ -90,7 +90,7 @@ const BannerBase = ({
         {isType === 'image' && <BannerImg image={image} imageAlt={imageAlt} />}
         {isType === 'dark-wave' && <BannerWave />}
         {isType === 'red-wave' && <BannerWave />}
-        {/* {isType === 'animated' && <BannerAnimated />} */}
+        {isType === 'animated' && <BannerAnimated />}
       </header>
     </>
   )
