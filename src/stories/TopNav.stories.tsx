@@ -430,7 +430,7 @@ type Story = StoryObj<typeof TopNav>
 
 export const Default: Story = {}
 Default.args = {
-  children: 'TopNav component',
+  children: '',
   title: 'Event',
   logoUrl: 'https://carleton.ca/',
   userMenuItems: userMenuItems,
