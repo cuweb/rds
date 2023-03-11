@@ -66,7 +66,7 @@ export const PeopleCard = ({
           </h3>
           {jobTitle && <p className="text-sm italic text-cu-black-600 @sm:md:text-lg">{jobTitle}</p>}
           <ul className="space-y-1 pt-3">
-            <li className="text-sm text-cyan-700 hover:text-cu-red @lg:md:text-base">
+            <li className="text-sm font-semibold text-cyan-700 hover:text-cu-red @lg:md:text-base">
               {/* <a href={`mailto:${email}`} className="font-semibold text-cyan-700 hover:text-cu-red"> */}
               {email}
               {/* </a> */}
