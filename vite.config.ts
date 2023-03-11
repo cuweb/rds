@@ -16,9 +16,9 @@ export default defineConfig(() => ({
   build: {
     lib: {
       entry: resolve('src', 'index.ts'),
-      name: 'rds-tailwindui',
+      name: 'rds',
       formats: ['es', 'umd'],
-      fileName: (format) => `rds-tailwindui.${format}.js`,
+      fileName: (format) => `rds.${format}.js`,
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],

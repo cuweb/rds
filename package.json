@@ -4,8 +4,8 @@
   "version": "0.0.10",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/rds-tailwindui.umd.js",
-  "module": "./dist/rds-tailwindui.es.js",
+  "main": "./dist/rds.umd.js",
+  "module": "./dist/rds.es.js",
   "types": "./dist/index.d.ts",
   "files": [
     "/dist",
@@ -13,8 +13,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/rds-tailwindui.es.js",
-      "require": "./dist/rds-tailwindui.umd.js"
+      "import": "./dist/rds.es.js",
+      "require": "./dist/rds.umd.js"
     }
   },
   "scripts": {
