@@ -6,4 +6,8 @@ declare const styles: {
     shadow: string;
 };
 export default styles;
+export declare const gridStyles: {
+    oneCol: string;
+    twoCol: string;
+};
 //# sourceMappingURL=StackedList.styles.d.ts.map
