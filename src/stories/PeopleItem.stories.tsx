@@ -6,7 +6,7 @@ import { PeopleItemsData as data } from '../components/Listings/PeopleItem/Peopl
 import { StackedList } from '../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/News Item',
+  title: 'Cards & Lists/Lists/People Item',
   component: PeopleItem,
   argTypes: {},
   tags: ['autodocs'],

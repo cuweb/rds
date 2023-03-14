@@ -51,7 +51,7 @@ export const PeopleItem = ({
     <Component className="not-prose group relative overflow-hidden @container">
       <Link
         href={link}
-        className="group relative flex cursor-pointer flex-col gap-5 bg-white p-6 hover:bg-slate-50 focus:outline-none sm:grid-cols-1 @sm:md:gap-8 @lg:md:flex-row"
+        className="group relative flex h-full cursor-pointer flex-col gap-5 bg-white p-6 hover:bg-slate-50 focus:outline-none sm:grid-cols-1 @sm:md:gap-8 @lg:md:flex-row"
       >
         {!noImage && (
           <>

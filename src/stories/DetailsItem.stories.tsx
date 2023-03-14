@@ -4,6 +4,7 @@ import { Container } from '../layouts/Container'
 import { Column } from '../layouts/Column/Column'
 import { StackedList } from '../layouts/StackedList/StackedList'
 import { DetailsItemData as data } from '../components/Listings/DetailsItem/DetailsItemData'
+import { MapPinIcon } from '@heroicons/react/24/outline'
 
 export default {
   title: 'Cards & Lists/Lists/Details Item',
@@ -35,7 +36,7 @@ export const Default: Story = {
 Default.args = {
   title: '405 Robertson Hall',
   description: '1125 Colonel By Drive, Ottawa, ON, K1A 4A4',
-  icon: 'MapPinIcon',
+  icon: MapPinIcon,
 }
 
 export const SingleItemList: Story = {
@@ -58,7 +59,7 @@ SingleItemList.args = {
   ...Default.args,
 }
 
-export const MultiItemlist: Story = {
+export const MultiItemList: Story = {
   render: () => (
     <Container bgColor="grey">
       <Column maxWidth="5xl">
