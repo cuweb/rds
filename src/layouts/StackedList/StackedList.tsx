@@ -1,10 +1,5 @@
 import React from 'react'
-import styles from './StackedList.styles'
-
-const gridStyles = {
-  oneCol: `md:grid-cols-1`,
-  twoCol: `md:grid-cols-2 md:odd:[&>*]:border-r`,
-}
+import styles, { gridStyles } from './StackedList.styles'
 
 export interface StackedListProps {
   children: React.ReactNode
