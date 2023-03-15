@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
 import { Icon } from '../Icon/Icon'
 import { Link } from '../Link/Link'
+import styles from './DropDown.styles'
 
 export interface DropDownItemProps {
   title: string | React.ReactNode
@@ -17,10 +18,6 @@ export interface DropDownProps {
   renderAs?: 'button' | 'div'
   menuAlign?: 'left' | 'right'
   listItems: DropDownItemProps[]
-}
-
-const styles = {
-  core: `absolute z-10 w-48 py-1 mt-2 origin-top-left bg-white border rounded-md shadow-lg border-cu-black-100 focus:outline-none`,
 }
 
 export const DropDown = ({

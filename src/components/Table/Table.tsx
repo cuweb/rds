@@ -1,6 +1,7 @@
 import TableHeader from './TableHeader'
 import TableRows from './TableRows'
 import { useSortableTable } from '../../hooks/useSortableTable'
+import styles from './Table.styles'
 
 export interface ColumnDefinitionType<T, K extends keyof T> {
   key: K
@@ -15,12 +16,6 @@ export interface TableProps<T, K extends keyof T> {
   hasShadow?: boolean
   hasBorder?: boolean
   range?: number[]
-}
-
-const styles = {
-  core: `min-w-full overflow-hidden border-collapse border-separate rounded-lg not-prose border-spacing-0`,
-  shadow: `shadow-lg`,
-  border: `border border-cu-black-100`,
 }
 
 export const Table = <T, K extends keyof T>({
