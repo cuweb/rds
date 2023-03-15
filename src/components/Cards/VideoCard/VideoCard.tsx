@@ -3,14 +3,13 @@ import ReactPlayer from 'react-player'
 import { Badge } from '../../Badge/Badge'
 import { intervalToDuration } from 'date-fns'
 
+interface Tags {
+  category: { id: number; name: string; slug: string }[]
+}
+
 export interface VideoCardProps {
   source: any
   tags?: Tags
-  callback?: any
-}
-
-interface Tags {
-  category: { id: number; name: string; slug: string }[]
 }
 
 export function VideoCard({ source, tags }: VideoCardProps) {
