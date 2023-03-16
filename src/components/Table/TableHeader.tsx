@@ -30,15 +30,15 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
     sortData(activeColumn, asc)
   }
 
-  const headers = columns.map((column: any, index) => {
-    const sortableStyles = column.sort.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'
+  const headers = columns.map((column: ColumnDefinitionType, index) => {
+    const sortableStyles = column?.sort?.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'
 
     return (
       <th
         scope="col"
         key={`headerCell-${index}`}
         className={`${styles.core} ${sortableStyles}`}
-        onClick={() => (column.sort.sortable ? handleSortChange(column.key) : undefined)}
+        onClick={() => (column?.sort?.sortable ? handleSortChange(column.key) : undefined)}
         aria-sort={
           column.key === active && ascending
             ? 'descending'
@@ -46,7 +46,7 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
             ? 'ascending'
             : undefined
         }
-        aria-label={column.sort?.sortable ? 'Sort by ' + column.key : undefined}
+        aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
       >
         {column.sort?.sortable ? (
           <div className="flex items-center">

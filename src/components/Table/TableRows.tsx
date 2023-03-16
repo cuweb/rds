@@ -1,7 +1,9 @@
 import { ColumnDefinitionType } from './Table'
 
 type TableRowsProps = {
-  data: []
+  data: {
+    [k: string]: string | number
+  }[]
   columns: ColumnDefinitionType[]
   striped: boolean
   range: number[]

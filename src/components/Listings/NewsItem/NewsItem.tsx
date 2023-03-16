@@ -13,7 +13,7 @@ export interface NewsItemProps {
   link?: string
   image?: string
   alt?: string
-  date?: string | any
+  date?: string | Date
   excerpt?: string
   tags?: Tags
 }
@@ -23,17 +23,19 @@ interface Tags {
 }
 
 export const NewsItem = ({ as: Component = 'div', title, link, image, alt, date, excerpt, tags }: NewsItemProps) => {
-  const formatedDate = new Date(date).toLocaleString('en-US', {
-    month: 'long',
-    day: '2-digit',
-    year: 'numeric',
-  })
+  const formatedDate = date
+    ? new Date(date).toLocaleString('en-US', {
+        month: 'long',
+        day: '2-digit',
+        year: 'numeric',
+      })
+    : null
 
   return (
     <Component className="not-prose group relative overflow-hidden @container">
       <Link
         href={link}
-        className="group relative flex cursor-pointer flex-col gap-4 bg-white p-6 hover:bg-slate-50 focus:outline-none @lg:md:flex-row @lg:md:gap-8"
+        className="group relative flex h-full cursor-pointer flex-col gap-4 bg-white p-6 hover:bg-slate-50 focus:outline-none @lg:md:flex-row @lg:md:gap-8"
       >
         {image && (
           <div className="hidden max-w-[30%] flex-none @lg:md:block">

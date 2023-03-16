@@ -37,7 +37,7 @@ const MarketplaceItemBase = ({ as: Component = 'div', children, link }: ItemBase
     <Component>
       <Link
         href={link}
-        className="not-prose group relative flex cursor-pointer items-center gap-2 p-6 hover:bg-gray-50 focus:outline-none"
+        className="not-prose group relative flex h-full cursor-pointer items-center gap-2 p-6 hover:bg-gray-50 focus:outline-none"
       >
         <div className="flex items-center gap-4">{children}</div>
         <ChevronRightIcon className="ml-auto h-5 w-5 flex-none text-cu-black-300" aria-hidden="true" />

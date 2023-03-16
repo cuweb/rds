@@ -1,3 +1,4 @@
+import { ShareIcon } from '@heroicons/react/24/outline'
 import { Button } from '../Button/Button'
 import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
 
@@ -55,7 +56,7 @@ export const SocialShare = ({ title, link }: SocialShareProps) => {
   ]
   return (
     <DropDown listItems={ShareItem}>
-      <Button title="Share Event" hasDropDown isType="grey" size="sm" icon="ShareIcon" />
+      <Button title="Share Event" hasDropDown isType="grey" size="sm" icon={ShareIcon} />
     </DropDown>
   )
 }

@@ -60,16 +60,16 @@ export const PeopleCard = ({
           </>
         )}
 
-        <div className="flex flex-col items-center space-y-0.5 py-6 px-7">
+        <div className="flex flex-col space-y-0.5 py-6 px-7 text-center">
           <h3 className="text-lg font-semibold text-cu-black  group-hover:text-cu-red @xs:md:text-2xl">
             {firstName + ' ' + lastName}
           </h3>
           {jobTitle && <p className="text-sm italic text-cu-black-600 @sm:md:text-lg">{jobTitle}</p>}
-          <ul className="space-y-1 pt-3 text-center">
-            <li className="text-sm text-cyan-700 hover:text-cu-red @lg:md:text-base">
-              <a href={`mailto:${email}`} className="font-semibold text-cyan-700 hover:text-cu-red">
-                {email}
-              </a>
+          <ul className="space-y-1 pt-3">
+            <li className="text-sm font-semibold text-cyan-700 hover:text-cu-red @lg:md:text-base">
+              {/* <a href={`mailto:${email}`} className="font-semibold text-cyan-700 hover:text-cu-red"> */}
+              {email}
+              {/* </a> */}
             </li>
             {phoneNumber && (
               <li className="text-sm text-cu-black-600 hover:text-cu-red @lg:md:text-base">{phoneNumber}</li>

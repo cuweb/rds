@@ -51,6 +51,7 @@ When adding a commit with a commit you may be blocked if you do not prefix your 
 - `fix` - used when fixing an error, warning or something else
 - `perf` - used when making changes relating to performance
 - `refactor` - used when refactoring something such as a component or build tool
+- `release` - used when preparing a new release
 - `revert` - used when revert to a past commit
 - `test` - used when making changes relating to testing
 

@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
 
-export const useSortableTable = (data: []) => {
+interface DataProps {
+  [k: string]: string | number
+}
+
+export const useSortableTable = (data: DataProps[]) => {
   const [tableData, setTableData] = useState(data)
   useEffect(() => {
     setTableData(data)

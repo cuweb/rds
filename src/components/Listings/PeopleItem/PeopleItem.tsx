@@ -51,24 +51,18 @@ export const PeopleItem = ({
     <Component className="not-prose group relative overflow-hidden @container">
       <Link
         href={link}
-        className="group relative flex cursor-pointer flex-col gap-5 bg-white p-6 hover:bg-slate-50 focus:outline-none sm:grid-cols-1 @sm:md:gap-8 @lg:md:flex-row"
+        className="group relative flex h-full cursor-pointer flex-col gap-5 bg-white p-6 hover:bg-slate-50 focus:outline-none sm:grid-cols-1 @sm:md:gap-8 @lg:md:flex-row"
       >
         {!noImage && (
           <>
             {profileImage && (
-              <div>
-                <div className={`${styles.imageGlobals}`}>
-                  <img className={`${styles.hasImage}`} src={profileImage} alt={alt} />
-                </div>
+              <div className={`${styles.imageGlobals}`}>
+                <img className={`${styles.hasImage}`} src={profileImage} alt={alt} />
               </div>
             )}
             {!profileImage && (
-              <div>
-                <div className={`${styles.imageGlobals}`}>
-                  <div className={`${styles.noImage}`}>
-                    <p>{initials}</p>
-                  </div>
-                </div>
+              <div className={`${styles.imageGlobals}`}>
+                <div className={`${styles.noImage}`}>{initials}</div>
               </div>
             )}
           </>
@@ -81,20 +75,10 @@ export const PeopleItem = ({
           {jobTitle && <p className="text-sm italic text-cu-black-600 @md:md:text-base @2xl:md:text-lg">{jobTitle}</p>}
 
           <ul className="space-y-1.5 pt-4">
-            {email && (
-              <li className="text-sm text-cu-black-700 @2xl:lg:text-base">
-                <a href={'mailto:' + email} className="font-semibold text-cyan-700 hover:text-cu-red">
-                  {email}
-                </a>
-              </li>
-            )}
+            {email && <li className="text-text-cyan-700 text-sm font-semibold @2xl:lg:text-base">{email}</li>}
 
             {phoneNumber && (
-              <li className="text-sm text-cu-black-700 hover:text-cu-red @2xl:lg:text-base">
-                <a href={'tel:' + phoneNumber} className="">
-                  {phoneNumber}
-                </a>
-              </li>
+              <li className="text-sm text-cu-black-700 hover:text-cu-red @2xl:lg:text-base">{phoneNumber}</li>
             )}
           </ul>
 

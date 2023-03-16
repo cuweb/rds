@@ -33,7 +33,7 @@ const FileItemBase = ({ as: Component = 'div', children, link }: ItemBaseProps &
     <Component>
       <Link
         href={link}
-        className="not-prose group relative flex cursor-pointer items-center gap-2 p-6 hover:bg-gray-50 focus:outline-none"
+        className="not-prose group relative flex h-full cursor-pointer items-center gap-2 p-6 hover:bg-gray-50 focus:outline-none"
       >
         <div className="flex items-center gap-4">
           <div className="w-auto flex-none">

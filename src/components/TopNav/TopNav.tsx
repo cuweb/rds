@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Avatar, UserInfoType } from '../Avatar/Avatar'
@@ -28,12 +28,17 @@ export interface TopNavProps {
   brand?: string
   login?: React.ReactNode
   hasSearch?: boolean
-  sourceData?: []
+  sourceData?: {
+    [k: string]: string | number
+  }[]
   children?: React.ReactNode
   sticky?: boolean
   navLinks?: LinkProps[]
   mobileLinks?: LinkProps[]
-  userMenuItems?: []
+  userMenuItems?: {
+    title: string
+    [k: string]: string | number | undefined | (() => void)
+  }[]
   userInfo?: UserInfoType
   searchOn?: string
   mobileLogin?: mobileLoginProps
@@ -174,7 +179,7 @@ export const TopNav = ({
                       >
                         <Link
                           href={mobileLogin.link ? mobileLogin.link : ''}
-                          onClick={(e: any) => {
+                          onClick={(e) => {
                             mobileLogin.onClick && e.preventDefault()
                             mobileLogin.onClick && mobileLogin.onClick(e)
                             close()
@@ -202,7 +207,7 @@ export const TopNav = ({
                     </div>
                     <div className="mt-3 space-y-1">
                       {userMenuItems &&
-                        userMenuItems.map((item: DropDownItemProps, index: any) => (
+                        userMenuItems.map((item: DropDownItemProps, index: number) => (
                           <Disclosure.Button
                             key={index}
                             as="div"

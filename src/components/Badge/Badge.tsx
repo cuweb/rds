@@ -1,11 +1,8 @@
 import React from 'react'
+import styles from './Badge.styles'
 
 export interface BadgeProps {
   children?: React.ReactNode
-}
-
-const styles = {
-  badge: `not-prose inline-flex px-2 mr-2 text-xs font-semibold rounded-xl bg-cu-black-50 text-cu-black-900 last:mr-0`,
 }
 
 const BadgeBase = ({ children }: BadgeProps) => {
