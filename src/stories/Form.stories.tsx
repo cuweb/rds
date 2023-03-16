@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable react/jsx-key */
 import type { Meta, StoryObj } from '@storybook/react'
+import type { FormikValues } from 'formik'
 import { Form } from '../components/Forms/Form/Form'
 
 const meta: Meta<typeof Form> = {
@@ -18,7 +17,7 @@ export default meta
 
 type Story = StoryObj<typeof Form>
 
-const formOnSubmit = async (values: any) => {
+const formOnSubmit = async (values: FormikValues) => {
   alert('Submitted')
   console.log(values)
 }
@@ -34,7 +33,7 @@ const InitialValues = {
 
 export const Default: Story = {
   render: () => (
-    <Form onSubmit={() => {}} schema={{}} initialValues={{ name: 'John Doe', email: 'johndoe@example.com' }}>
+    <Form onSubmit={() => undefined} schema={{}} initialValues={{ name: 'John Doe', email: 'johndoe@example.com' }}>
       Add input components inside the form as children
     </Form>
   ),

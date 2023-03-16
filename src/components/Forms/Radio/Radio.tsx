@@ -7,12 +7,10 @@ export interface RadioProps {
   label?: string
   caption?: string
   name: string
-  options?: [
-    {
-      name: string
-      label: string
-    },
-  ]
+  options?: {
+    name: string
+    label: string
+  }[]
 }
 
 export const Radio = ({

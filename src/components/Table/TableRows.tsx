@@ -1,9 +1,10 @@
-import React from 'react'
 import { ColumnDefinitionType } from './Table'
 
-type TableRowsProps<T, K extends keyof T> = {
-  data: Array<T>
-  columns: Array<ColumnDefinitionType<T, K>>
+type TableRowsProps = {
+  data: {
+    [k: string]: string | number
+  }[]
+  columns: ColumnDefinitionType[]
   striped: boolean
   range: number[]
 }
@@ -13,7 +14,7 @@ const styles = {
   tbody: `divide-y divide-gray-200 bg-white`,
 }
 
-const TableRows = <T, K extends keyof T>({ data, columns, striped, range }: TableRowsProps<T, K>) => {
+const TableRows = ({ data, columns, striped, range }: TableRowsProps) => {
   const stripedStyles = striped ? 'odd:bg-white even:bg-gray-50' : 'hover:bg-blue-50'
   const rows = data.slice(range[0] - 1, range[1]).map((row, index) => {
     return (

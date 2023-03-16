@@ -3,20 +3,20 @@ import ReactPlayer from 'react-player'
 import { Badge } from '../../Badge/Badge'
 import { intervalToDuration } from 'date-fns'
 
-interface Tags {
-  category: { id: number; name: string; slug: string }[]
+export interface VideoCardProps {
+  source: string
+  tags?: Tags
 }
 
-export interface VideoCardProps {
-  source: any
-  tags?: Tags
+interface Tags {
+  category: { id: number; name: string; slug: string }[]
 }
 
 export function VideoCard({ source, tags }: VideoCardProps) {
   const [videoDuration, setVideoDuration] = useState(0)
   const [videoTitle, setVideoTitle] = useState('')
 
-  const handleDuration = (duration: any) => {
+  const handleDuration = (duration: number) => {
     setVideoDuration(duration)
   }
 

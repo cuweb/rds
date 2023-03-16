@@ -7,7 +7,7 @@ import styles from './DropDown.styles'
 
 export interface DropDownItemProps {
   title: string | React.ReactNode
-  icon?: any
+  icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
   href?: string
   onClick?: (event: React.MouseEvent<MouseEvent | HTMLAnchorElement>) => void
 }

@@ -39,7 +39,7 @@ export const EventCard = ({
   const defaultImage =
     'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80'
 
-  const getMonthName = (month: any, short = false) => {
+  const getMonthName = (month: number, short = false) => {
     const d = new Date()
     d.setMonth(month)
     const monthName = d.toLocaleString('default', {
@@ -48,13 +48,13 @@ export const EventCard = ({
     return monthName
   }
 
-  const formatTime = (date: any) => {
+  const formatTime = (date: Date) => {
     let hours = date.getHours()
     let minutes = date.getMinutes()
     const ampm = hours >= 12 ? 'PM' : 'AM'
     hours = hours % 12
     hours = hours ? hours : 12
-    minutes = minutes < 10 ? '0' + minutes : minutes
+    minutes = minutes < 10 ? 0 + minutes : minutes
     const strTime = hours + ':' + minutes + ' ' + ampm
     return strTime
   }

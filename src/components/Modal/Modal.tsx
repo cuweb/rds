@@ -8,8 +8,8 @@ export interface ModalProps {
   title?: string
   description?: string
   noButton?: boolean
-  isOpen: any
-  setIsOpen: any
+  isOpen: boolean
+  setIsOpen: (k: boolean) => void
   hasOverlay?: boolean
 }
 
