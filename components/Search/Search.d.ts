@@ -1,4 +1,7 @@
 import { ReactNode } from 'react';
+export interface SourceDataProps {
+    [k: string]: string | number;
+}
 export interface SearchProps {
     sourceData: any;
     searchOn?: string;

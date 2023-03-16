@@ -16,12 +16,17 @@ export interface TopNavProps {
     brand?: string;
     login?: React.ReactNode;
     hasSearch?: boolean;
-    sourceData?: any;
+    sourceData?: {
+        [k: string]: string | number;
+    }[];
     children?: React.ReactNode;
     sticky?: boolean;
     navLinks?: LinkProps[];
     mobileLinks?: LinkProps[];
-    userMenuItems?: any;
+    userMenuItems?: {
+        title: string;
+        [k: string]: string | number | undefined | (() => void);
+    }[];
     userInfo?: UserInfoType;
     searchOn?: string;
     mobileLogin?: mobileLoginProps;

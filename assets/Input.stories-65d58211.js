@@ -1,6 +1,0 @@
-import{j as a}from"./jsx-runtime-9d2cd5de.js";import{F as r}from"./Form-24f4c139.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-1bb2f737.js";import"./Button-473942f1.js";import"./Icon-c2360a74.js";import"./tailwindClasses-b0c92bd9.js";import"./Link-a8ece75e.js";const h={title:"Forms/Input",component:r,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},e={render:()=>a(r,{onSubmit:()=>{},schema:{},initialValues:i,children:a(r.Input,{label:"Name",name:"name",type:"text",placeholder:"Enter your name"})})},i={firstname:"ish",description:" sample description",regularviewer:"2",location:"Carleton University, Colonel By Drive, Ottawa, ON, Canada",favsitcom:"familymatter",favcharacters:["kellykapowski","carltonbanks"]};var t,o,n;e.parameters={...e.parameters,docs:{...(t=e.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  render: () => <Form onSubmit={() => {}} schema={{}} initialValues={InitialValues}>
-      <Form.Input label="Name" name="name" type="text" placeholder="Enter your name" />
-    </Form>
-}`,...(n=(o=e.parameters)==null?void 0:o.docs)==null?void 0:n.source}}};const F=["Default"];export{e as Default,F as __namedExportsOrder,h as default};
-//# sourceMappingURL=Input.stories-65d58211.js.map

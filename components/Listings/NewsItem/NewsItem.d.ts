@@ -7,7 +7,7 @@ export interface NewsItemProps {
     link?: string;
     image?: string;
     alt?: string;
-    date?: string | any;
+    date?: string | Date;
     excerpt?: string;
     tags?: Tags;
 }

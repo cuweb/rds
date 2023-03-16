@@ -18,8 +18,8 @@ export interface EventItemProps {
     fontSize?: 'base' | 'lg' | 'xl';
     title?: string;
     link?: string;
-    startDateTime?: string;
-    endDateTime?: string;
+    startDateTime: string;
+    endDateTime: string;
     featuredImage?: string;
     description?: string;
     on_campus?: boolean;

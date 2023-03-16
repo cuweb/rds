@@ -1,7 +1,7 @@
 import React from 'react';
 export interface DropDownItemProps {
     title: string | React.ReactNode;
-    icon?: any;
+    icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
     href?: string;
     onClick?: (event: React.MouseEvent<MouseEvent | HTMLAnchorElement>) => void;
 }

@@ -5,7 +5,7 @@ export interface PeopleCardProps {
     email: string;
     phoneNumber?: string;
     tags?: Tags;
-    profileImage?: any;
+    profileImage?: string;
     link?: string;
     alt?: string;
     noImage?: boolean;

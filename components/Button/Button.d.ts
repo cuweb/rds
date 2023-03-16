@@ -1,7 +1,7 @@
 import React from 'react';
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     title?: string;
-    icon?: any;
+    icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
     isType?: 'default' | 'ghost' | 'grey' | 'dark-grey' | 'white' | 'disabled';
     size?: 'sm' | 'base';
     hasShadow?: boolean;
