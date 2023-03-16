@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable import/no-unresolved */
 import React, { forwardRef, PropsWithChildren } from 'react'
 
 export interface LinkProps {
@@ -52,16 +50,16 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
       onTouchStart,
     }
 
-    // @ts-ignore
-    const Linky = import('next/link')
-      .then((NextLink) => (
-        <NextLink {...LinkParams} ref={ref}>
+    try {
+      require('next/link')
+      return (
+        <Link {...LinkParams} ref={ref}>
           {children}
-        </NextLink>
-      ))
-      .catch(() => <a {...LinkParams}>{children}</a>)
-
-    return <>{Linky}</>
+        </Link>
+      )
+    } catch (e) {
+      return <a {...LinkParams}>{children}</a>
+    }
   },
 )
 
