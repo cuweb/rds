@@ -4,11 +4,10 @@ import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
 import { ReactNode, useState, useEffect, Fragment } from 'react'
 import { rdsOverlay } from '../../utils/tailwindClasses'
 
-
 export interface SearchProps {
   sourceData: {
-    [k:string]:  string
-  }[],
+    [k: string]: string
+  }[]
   searchOn?: string
   children?: ReactNode
 }
@@ -24,7 +23,7 @@ export const Search = ({ searchOn = 'title', sourceData, children }: SearchProps
   const filteredDatabase =
     query === ''
       ? []
-      : sourceData.filter((data: {[k:string]:  string}) => {
+      : sourceData.filter((data: { [k: string]: string }) => {
           return data[searchOn].toLowerCase().includes(query.toLowerCase())
         })
 

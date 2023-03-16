@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
 import { ColumnDefinitionType } from './Table'
 
-interface  TableHeaderProps {
+interface TableHeaderProps {
   columns: ColumnDefinitionType[]
-  sortData: (a:string, s: boolean) => void
+  sortData: (a: string, s: boolean) => void
 }
 
 const styles = {

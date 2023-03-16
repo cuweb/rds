@@ -7,7 +7,7 @@ export interface NewsCardProps {
   title: string
   heading?: 'h2' | 'h3'
   link: string
-  date: string 
+  date: string
   image?: string
   alt?: string
   excerpt?: string
