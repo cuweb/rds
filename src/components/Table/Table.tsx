@@ -3,29 +3,24 @@ import TableRows from './TableRows'
 import { useSortableTable } from '../../hooks/useSortableTable'
 import styles from './Table.styles'
 
-export interface ColumnDefinitionType<T, K extends keyof T> {
-  key: K
+export interface ColumnDefinitionType {
+  key: string
   header: string
   sort?: { sortable: boolean }
 }
 
-export interface TableProps<T, K extends keyof T> {
-  data: Array<T>
-  columns: Array<ColumnDefinitionType<T, K>>
+export interface TableProps {
+  data: {
+    [k: string]: string | number
+  }[]
+  columns: ColumnDefinitionType[]
   hasStripes?: boolean
   hasShadow?: boolean
   hasBorder?: boolean
   range?: number[]
 }
 
-export const Table = <T, K extends keyof T>({
-  data,
-  columns,
-  hasStripes = false,
-  hasShadow,
-  hasBorder,
-  range = [1, -1],
-}: TableProps<T, K>) => {
+export const Table = ({ data, columns, hasStripes = false, hasShadow, hasBorder, range = [1, -1] }: TableProps) => {
   const [tableData, setTableData] = useSortableTable(data)
   const borderStyle = hasBorder ? styles.border : ''
   const shadowStyle = hasShadow ? styles.shadow : ''

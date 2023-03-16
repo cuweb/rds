@@ -1,11 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
-import { ColumnDefinitionType } from './Table'
 import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
+import { ColumnDefinitionType } from './Table'
 
-type TableHeaderProps<T, K extends keyof T> = {
-  columns: Array<ColumnDefinitionType<T, K>>
-  sortData: any
+interface TableHeaderProps {
+  columns: ColumnDefinitionType[]
+  sortData: (a: string, s: boolean) => void
 }
 
 const styles = {
@@ -14,7 +13,7 @@ const styles = {
   sortable: `hover:cursor `,
 }
 
-const TableHeader = <T, K extends keyof T>({ columns, sortData }: TableHeaderProps<T, K>) => {
+const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
   const [ascending, setAscending] = useState(true)
   const [active, setActive] = useState('')
 
@@ -31,15 +30,15 @@ const TableHeader = <T, K extends keyof T>({ columns, sortData }: TableHeaderPro
     sortData(activeColumn, asc)
   }
 
-  const headers = columns.map((column: any, index) => {
-    const sortableStyles = column.sort.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'
+  const headers = columns.map((column: ColumnDefinitionType, index) => {
+    const sortableStyles = column?.sort?.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'
 
     return (
       <th
         scope="col"
         key={`headerCell-${index}`}
         className={`${styles.core} ${sortableStyles}`}
-        onClick={() => (column.sort.sortable ? handleSortChange(column.key) : undefined)}
+        onClick={() => (column?.sort?.sortable ? handleSortChange(column.key) : undefined)}
         aria-sort={
           column.key === active && ascending
             ? 'descending'
@@ -47,7 +46,7 @@ const TableHeader = <T, K extends keyof T>({ columns, sortData }: TableHeaderPro
             ? 'ascending'
             : undefined
         }
-        aria-label={column.sort?.sortable ? 'Sort by ' + column.key : undefined}
+        aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
       >
         {column.sort?.sortable ? (
           <div className="flex items-center">

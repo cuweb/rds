@@ -21,7 +21,7 @@ export default defineConfig(() => ({
       fileName: (format) => `rds.${format}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(packageJson.peerDependencies)],
+      external: [...Object.keys(packageJson.peerDependencies), 'next/link'],
     },
   },
 }))

@@ -6,7 +6,7 @@ import styles from './Button.styles'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   title?: string
-  icon?: any
+  icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
   isType?: 'default' | 'ghost' | 'grey' | 'dark-grey' | 'white' | 'disabled'
   size?: 'sm' | 'base'
   hasShadow?: boolean
@@ -51,7 +51,7 @@ export const Button = ({
           {...rest}
         >
           {icon && (
-            <span className={icon && title ? 'mr-0.5' : ''}>
+            <span className={title ? 'mr-0.5' : ''}>
               <Icon icon={icon} size={iconSize} />
             </span>
           )}
@@ -67,7 +67,7 @@ export const Button = ({
           className={`${styles.core}  ${styles[isType]}  ${buttonSizes[size]} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
         >
           {icon && (
-            <span className={icon && title ? 'mr-0.5' : ''}>
+            <span className={title ? 'mr-0.5' : ''}>
               <Icon icon={icon} size={iconSize} />
             </span>
           )}

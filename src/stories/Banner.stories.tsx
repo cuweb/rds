@@ -4,6 +4,7 @@ import { Banner } from '../components/Banner/Banner'
 import { Button } from '../components/Button/Button'
 import { Main } from '../layouts/Main/Main'
 import { Column } from '../layouts/Column/Column'
+import { StarIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof Banner> = {
   title: 'Headers/Banner',
@@ -33,7 +34,7 @@ export const WithButtonsTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')
@@ -57,7 +58,7 @@ export const WithImageTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')
@@ -77,7 +78,7 @@ export const WithGreyGradientTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')
@@ -97,7 +98,7 @@ export const WithDarkWaveTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')
@@ -117,7 +118,7 @@ export const WithRedWaveTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')
@@ -137,7 +138,7 @@ export const WithAnimationTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')
@@ -160,7 +161,7 @@ export const WithParagraphTemplate: Story = {
         <Button isType="white" onClick={() => {}} title="Secondary Button" hasShadow />
         <Button
           hasShadow
-          icon="StarIcon"
+          icon={StarIcon}
           isType="dark-grey"
           onClick={() => {
             alert('Add to favs clicked')

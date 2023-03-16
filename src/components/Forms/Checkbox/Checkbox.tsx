@@ -7,12 +7,10 @@ export interface CheckboxProps {
   label?: string
   caption?: string
   name: string
-  options?: [
-    {
-      name: string
-      label: string
-    },
-  ]
+  options?: {
+    name: string
+    label: string
+  }[]
 }
 
 export const Checkbox = ({

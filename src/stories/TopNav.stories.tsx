@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TopNav } from '../components/TopNav/TopNav'
 import { Button } from '../components/Button/Button'
+import { PlusIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof TopNav> = {
   title: 'Headers/TopNav',
@@ -485,7 +486,7 @@ KitchenSink.args = {
   userMenuItems: userMenuItems,
   userInfo: user,
   mobileLinks: MobileLinks,
-  children: <Button title="Event" icon="PlusIcon" size="sm" />,
+  children: <Button title="Event" icon={PlusIcon} size="sm" />,
   login: <Button title="Login" size="sm" url="#" />,
   mobileLogin: mobileLogin,
 }
