@@ -1,4 +1,4 @@
-import{j as e,a as i,F as c}from"./jsx-runtime-9d2cd5de.js";import"./chunk-PCJTTTQV-a5ce94b6.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as t}from"./index-550f7ab2.js";import{u as d}from"./index-017485ee.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-52c69747.js";import"../sb-preview/runtime.mjs";import"./react-18-7953bc82.js";import"./index-1eb27dd0.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-e0696380.js";import"./_baseIsEqual-bfedacfa.js";import"./index-356e4a49.js";function h(l={}){const{wrapper:r}=Object.assign({},d(),l.components);return r?e(r,Object.assign({},l,{children:e(o,{})})):o();function o(){const n=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3"},d(),l.components);return i(c,{children:[e(n.h1,{children:"Changelog"}),`
+import{j as e,a as i,F as c}from"./jsx-runtime-9d2cd5de.js";import"./chunk-PCJTTTQV-5e585c17.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as t}from"./index-9f65e54d.js";import{u as o}from"./index-017485ee.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-98afdbd3.js";import"../sb-preview/runtime.mjs";import"./react-18-7953bc82.js";import"./index-1eb27dd0.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-e0696380.js";import"./_baseIsEqual-bfedacfa.js";import"./index-356e4a49.js";function h(l={}){const{wrapper:r}=Object.assign({},o(),l.components);return r?e(r,Object.assign({},l,{children:e(d,{})})):d();function d(){const n=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3"},o(),l.components);return i(c,{children:[e(n.h1,{children:"Changelog"}),`
 `,e(n.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,i(n.p,{children:["The format is based on ",e(n.a,{href:"https://keepachangelog.com/en/1.0.0/",children:"Keep a Changelog"}),`,
 and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",children:"Semantic Versioning"}),"."]}),`
@@ -12,9 +12,36 @@ and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(n.li,{children:[e(n.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,e(n.h2,{children:"[Unreleased]"}),`
+`,e(n.h2,{children:"[0.0.13]"}),`
+`,e(n.h3,{children:e(n.em,{children:"Fixed"})}),`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Issue relating to not pulling from dev before release 0.0.13"}),`
+`]}),`
+`,e(n.h2,{children:"[0.0.13]"}),`
 `,e(n.h3,{children:"Added"}),`
 `,i(n.ul,{children:[`
-`,e(n.li,{children:"Stories for form components"}),`
+`,i(n.li,{children:["Add stories for the following components",`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Alert"}),`
+`,e(n.li,{children:"Avatar"}),`
+`,e(n.li,{children:"Badge"}),`
+`,e(n.li,{children:"Calendar"}),`
+`,e(n.li,{children:"Dropdown"}),`
+`,e(n.li,{children:"Filter"}),`
+`,e(n.li,{children:"Icon"}),`
+`,e(n.li,{children:"Location"}),`
+`,e(n.li,{children:"Modal"}),`
+`,e(n.li,{children:"Pagination"}),`
+`,e(n.li,{children:"Search Form"}),`
+`,e(n.li,{children:"Social Share"}),`
+`,e(n.li,{children:"Table"}),`
+`,e(n.li,{children:"Toast"}),`
+`]}),`
+`]}),`
+`]}),`
+`,e(n.h3,{children:"Changed"}),`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Updated types across most of the components"}),`
 `]}),`
 `,e(n.h3,{children:"Changed"}),`
 `,i(n.ul,{children:[`
@@ -182,6 +209,6 @@ and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(n.ul,{children:[`
 `,e(n.li,{children:"Updated secret keys for Google Maps API"}),`
 `,e(n.li,{children:"Renamed README.md to README.mdx"}),`
-`]})]})}}function w(l={}){const{wrapper:r}=Object.assign({},d(),l.components);return r?e(r,Object.assign({},l,{children:e(o,{})})):o();function o(){return i(c,{children:[e(t,{title:"Get Started/Changelog"}),`
-`,e(h,{})]})}}export{w as default};
-//# sourceMappingURL=Changelog-0725c648.js.map
+`]})]})}}function x(l={}){const{wrapper:r}=Object.assign({},o(),l.components);return r?e(r,Object.assign({},l,{children:e(d,{})})):d();function d(){return i(c,{children:[e(t,{title:"Get Started/Changelog"}),`
+`,e(h,{})]})}}export{x as default};
+//# sourceMappingURL=Changelog-10fc1276.js.map
