@@ -1,11 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
-import { ColumnDefinitionType } from './Table'
 import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
+import { ColumnDefinitionType } from './Table'
 
-type TableHeaderProps<T, K extends keyof T> = {
-  columns: Array<ColumnDefinitionType<T, K>>
-  sortData: any
+interface  TableHeaderProps {
+  columns: ColumnDefinitionType[]
+  sortData: (a:string, s: boolean) => void
 }
 
 const styles = {
@@ -14,7 +13,7 @@ const styles = {
   sortable: `hover:cursor `,
 }
 
-const TableHeader = <T, K extends keyof T>({ columns, sortData }: TableHeaderProps<T, K>) => {
+const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
   const [ascending, setAscending] = useState(true)
   const [active, setActive] = useState('')
 

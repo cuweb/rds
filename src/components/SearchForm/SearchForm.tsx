@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 export interface SearchFormProps {
-  callback: any
+  callback: (k: string) => void
 }
 
 export const SearchForm = ({ callback }: SearchFormProps) => {

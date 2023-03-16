@@ -4,9 +4,9 @@ import { Badge } from '../../Badge/Badge'
 import { intervalToDuration } from 'date-fns'
 
 export interface VideoCardProps {
-  source: any
+  source: string
   tags?: Tags
-  callback?: any
+  callback: (d: number) => void
 }
 
 interface Tags {
@@ -17,7 +17,7 @@ export function VideoCard({ source, tags, callback }: VideoCardProps) {
   const [videoDuration, setVideoDuration] = useState(0)
   const [videoTitle, setVideoTitle] = useState('')
 
-  const handleDuration = (duration: any) => {
+  const handleDuration = (duration: number) => {
     setVideoDuration(duration)
   }
 

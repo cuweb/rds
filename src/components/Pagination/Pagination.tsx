@@ -8,7 +8,7 @@ export interface PaginationProps {
   totalCount: number
   siblingCount: number
   pageSize: number
-  callback: any
+  callback: (k: [number, number]) => void
 }
 
 export const Pagination = ({
@@ -35,7 +35,7 @@ export const Pagination = ({
     }
   }
 
-  const onCurrent = (pageNumber: any) => {
+  const onCurrent = (pageNumber: number) => {
     setCurrentPage(Number(pageNumber))
   }
 
@@ -90,11 +90,14 @@ export const Pagination = ({
 
         <nav aria-label="Pagination">
           <ul className="inline-flex overflow-hidden rounded-md border border-cu-black-100">
-            {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
-            {/* <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onPrevious}>
+            <li
+              className={`${styles.pageListNumbers} ${styles.pageListArrows}`}
+              role="presentation"
+              onClick={onPrevious}
+            >
               <span className="sr-only">Previous</span>
-              <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
-            </li> */}
+              <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+            </li>
 
             {paginationRange !== undefined &&
               paginationRange.map((pageNumber, index) => {
@@ -106,24 +109,22 @@ export const Pagination = ({
                   )
                 }
                 return (
-                  <li key={index}>Error to be fixed</li>
-                  // TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392
-                  //   <li
-                  //     key={index}
-                  //     className={`${styles.pageListNumbers} ${
-                  //       Number(pageNumber) === currentPage ? 'bg-cu-black-50 font-semibold' : ''
-                  //     }`}
-                  //     onClick={() => onCurrent(Number(pageNumber))}
-                  //   >
-                  //     {pageNumber}
-                  //   </li>
+                  <li
+                    role="presentation"
+                    key={index}
+                    className={`${styles.pageListNumbers} ${
+                      Number(pageNumber) === currentPage ? 'bg-cu-black-50 font-semibold' : ''
+                    }`}
+                    onClick={() => onCurrent(Number(pageNumber))}
+                  >
+                    {pageNumber}
+                  </li>
                 )
               })}
-            {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
-            {/* <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
+            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} role="presentation" onClick={onNext}>
               <span className="sr-only">Next</span>
-              <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-            </li> */}
+              <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+            </li>
           </ul>
         </nav>
       </div>

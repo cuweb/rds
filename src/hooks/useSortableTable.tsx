@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 
-export const useSortableTable = (data: any) => {
+export const useSortableTable = (data: []) => {
   const [tableData, setTableData] = useState(data)
   useEffect(() => {
     setTableData(data)
   }, [data])
-  const sortTableData = (orderBy: string | number, asc: boolean) => {
+
+  const sortTableData = (orderBy: string, asc: boolean) => {
     if (orderBy) {
       const sortedData = [...tableData].sort((a, b) => {
         if (a[orderBy] === null) return 1
@@ -21,5 +22,5 @@ export const useSortableTable = (data: any) => {
     }
   }
 
-  return [tableData, sortTableData]
+  return [tableData, sortTableData] as const
 }

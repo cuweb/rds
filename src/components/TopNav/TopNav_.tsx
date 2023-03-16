@@ -28,12 +28,12 @@ export interface TopNavProps {
   brand?: string
   login?: React.ReactNode
   hasSearch?: boolean
-  sourceData?: []
+  sourceData?: any
   children?: React.ReactNode
   sticky?: boolean
   navLinks?: LinkProps[]
   mobileLinks?: LinkProps[]
-  userMenuItems?: []
+  userMenuItems?: any
   userInfo?: UserInfoType
   searchOn?: string
   mobileLogin?: mobileLoginProps
