@@ -17,8 +17,8 @@ export interface EventItemProps {
   fontSize?: 'base' | 'lg' | 'xl'
   title?: string
   link?: string
-  startDateTime?: string
-  endDateTime?: string
+  startDateTime: string
+  endDateTime: string
   featuredImage?: string
   description?: string
   on_campus?: boolean
@@ -56,7 +56,7 @@ export const EventItem = ({
   const defaultImage =
     'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80'
 
-  const getMonthName = (month: any, short = false) => {
+  const getMonthName = (month: number, short = false) => {
     const d = new Date()
     d.setMonth(month)
     const monthName = d.toLocaleString('default', {
@@ -65,20 +65,20 @@ export const EventItem = ({
     return monthName
   }
 
-  const startDate = startDateTime && parseISO(startDateTime)
-  const endDate = endDateTime && parseISO(endDateTime)
-  const isEventSameDay = startDate && endDate && isSameDay(startDate, endDate)
-  const eventStartMonth = startDate && getMonth(startDate)
-  const eventStartDate = startDate && getDate(startDate)
-  const eventEndDate = endDate && getDate(endDate)
+  const startDate = parseISO(startDateTime)
+  const endDate = parseISO(endDateTime)
+  const isEventSameDay = isSameDay(startDate, endDate)
+  const eventStartMonth = getMonth(startDate)
+  const eventStartDate = getDate(startDate)
+  const eventEndDate = getDate(endDate)
 
-  const formatTime = (date: any) => {
+  const formatTime = (date: Date) => {
     let hours = date.getHours()
     let minutes = date.getMinutes()
     const ampm = hours >= 12 ? 'pm' : 'am'
     hours = hours % 12
     hours = hours ? hours : 12
-    minutes = minutes < 10 ? '0' + minutes : minutes
+    minutes = minutes < 10 ? 0 + minutes : minutes
     const strTime = hours + ':' + minutes + ' ' + ampm
     return strTime
   }

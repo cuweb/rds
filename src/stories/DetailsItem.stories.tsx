@@ -23,7 +23,7 @@ type Story = StoryObj<typeof DetailsItem>
 export const Default: Story = {
   render: (args) => (
     <DetailsItem as="div">
-      <DetailsItem.Icon icon={args.icon} />
+      {args.icon && <DetailsItem.Icon icon={args.icon} />}
 
       <DetailsItem.Content>
         <DetailsItem.Title title={args.title} />
@@ -44,7 +44,7 @@ export const SingleItemList: Story = {
     <Column maxWidth="5xl">
       <StackedList hasBorder>
         <DetailsItem as="div">
-          <DetailsItem.Icon icon={args.icon} />
+          {args.icon && <DetailsItem.Icon icon={args.icon} />}
           <DetailsItem.Content>
             <DetailsItem.Title title={args.title} />
             <DetailsItem.Description description={args.description} />
@@ -66,7 +66,7 @@ export const MultiItemList: Story = {
         <StackedList header="Details listing" hasBorder hasShadow>
           {data.map(({ title, description, icon }) => (
             <DetailsItem key={title}>
-              <DetailsItem.Icon icon={icon} />
+              {icon && <DetailsItem.Icon icon={icon} />}
               <DetailsItem.Content>
                 <DetailsItem.Title title={title} />
                 <DetailsItem.Description description={description} />

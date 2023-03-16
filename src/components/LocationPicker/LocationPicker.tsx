@@ -11,7 +11,7 @@ export const LocationPicker = () => {
     lng: 0,
   })
 
-  const handleSelect = async (value: any) => {
+  const handleSelect = async (value: string) => {
     const results = await geocodeByAddress(value)
     const latLng = await getLatLng(results[0])
     setAddress(value)

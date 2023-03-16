@@ -6,12 +6,10 @@ import { formStyles, formErrorStyles } from '../../../utils/formClasses'
 export interface SelectProps {
   label?: string
   name: string
-  options?: [
-    {
-      label: string
-      value: string
-    },
-  ]
+  options?: {
+    label: string
+    value: string
+  }[]
 }
 
 export const Select = ({

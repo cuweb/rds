@@ -1,11 +1,14 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { MouseEventHandler } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
-import React from 'react'
-import shield from '../../assets/cu-shield.svg'
 import { Avatar, UserInfoType } from '../Avatar/Avatar'
 import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
 import { Link } from '../Link/Link'
 import { Search } from '../Search/Search'
+
+import shield from '../../assets/cu-shield.svg'
 
 export interface LinkProps {
   title: string
@@ -25,12 +28,17 @@ export interface TopNavProps {
   brand?: string
   login?: React.ReactNode
   hasSearch?: boolean
-  sourceData?: any
+  sourceData?: {
+    [k: string]: string | number
+  }[]
   children?: React.ReactNode
   sticky?: boolean
   navLinks?: LinkProps[]
   mobileLinks?: LinkProps[]
-  userMenuItems?: any
+  userMenuItems?: {
+    title: string
+    [k: string]: string | number | undefined | (() => void)
+  }[]
   userInfo?: UserInfoType
   searchOn?: string
   mobileLogin?: mobileLoginProps
@@ -156,8 +164,7 @@ export const TopNav = ({
                         }`}
                       >
                         <Link href={item.link}>
-                          {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
-                          {/* <span onClick={() => close()}>{item.title}</span> */}
+                          <span onClick={() => close()}>{item.title}</span>
                         </Link>
                       </Disclosure.Button>
                     ))}
@@ -172,7 +179,7 @@ export const TopNav = ({
                       >
                         <Link
                           href={mobileLogin.link ? mobileLogin.link : ''}
-                          onClick={(e: any) => {
+                          onClick={(e) => {
                             mobileLogin.onClick && e.preventDefault()
                             mobileLogin.onClick && mobileLogin.onClick(e)
                             close()
@@ -200,7 +207,7 @@ export const TopNav = ({
                     </div>
                     <div className="mt-3 space-y-1">
                       {userMenuItems &&
-                        userMenuItems.map((item: DropDownItemProps, index: any) => (
+                        userMenuItems.map((item: DropDownItemProps, index: number) => (
                           <Disclosure.Button
                             key={index}
                             as="div"

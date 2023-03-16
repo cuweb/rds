@@ -20,7 +20,7 @@ export interface FilterProps {
       checked: boolean
     }[]
   }[]
-  callback: any
+  callback: (k: string[]) => void
 }
 
 function classNames(...classes: string[]) {
