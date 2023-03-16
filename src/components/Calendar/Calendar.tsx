@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import { Button } from '../Button/Button'
+import styles from './Calendar.styles'
 
 import {
   add,
@@ -53,11 +54,6 @@ export const Calendar = ({ events, callback }: CalendarProps) => {
   const nextMonth = () => {
     const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 })
     setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
-  }
-
-  const styles = {
-    prevNextArrows: `flex items-center justify-center flex-none p-2 text-cu-black-300 hover:text-cu-red`,
-    calendarGrid: `grid grid-cols-7 gap-px mt-4 text-center`,
   }
 
   useEffect(() => {
