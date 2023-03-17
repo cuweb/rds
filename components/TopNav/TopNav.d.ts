@@ -1,4 +1,3 @@
-import React from 'react';
 import { UserInfoType } from '../Avatar/Avatar';
 export interface LinkProps {
     title: string;

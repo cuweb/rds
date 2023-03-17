@@ -1,6 +1,6 @@
-import React from 'react';
+import { PropsWithChildren } from 'react';
 export interface NewsCardProps {
-    children?: React.ReactNode;
+    id?: number;
     title: string;
     heading?: 'h2' | 'h3';
     link: string;
@@ -17,6 +17,6 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare const NewsCard: ({ title, heading: HeadLevel, link, date, image, alt, excerpt, tags, }: NewsCardProps) => JSX.Element;
+export declare const NewsCard: ({ title, heading: HeadLevel, link, date, image, alt, excerpt, tags, }: PropsWithChildren<NewsCardProps>) => JSX.Element;
 export {};
 //# sourceMappingURL=NewsCard.d.ts.map
