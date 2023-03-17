@@ -1,9 +1,9 @@
-import React from 'react'
+import { PropsWithChildren } from 'react'
 import { Badge } from '../../Badge/Badge'
 import { Link } from '../../Link/Link'
 
 export interface NewsCardProps {
-  children?: React.ReactNode
+  id?: number
   title: string
   heading?: 'h2' | 'h3'
   link: string
@@ -15,7 +15,11 @@ export interface NewsCardProps {
 }
 
 interface Tags {
-  category: { id: number; name: string; slug: string }[]
+  category: {
+    id: number
+    name: string
+    slug: string
+  }[]
 }
 
 export const NewsCard = ({
@@ -27,7 +31,7 @@ export const NewsCard = ({
   alt,
   excerpt,
   tags,
-}: NewsCardProps) => {
+}: PropsWithChildren<NewsCardProps>) => {
   const formatedDate = date
     ? new Date(date).toLocaleString('en-US', {
         month: 'long',

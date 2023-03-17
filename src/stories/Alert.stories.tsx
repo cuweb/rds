@@ -14,7 +14,13 @@ const meta: Meta<typeof Alert> = {
 
 export default meta
 
-const AlertStory = [
+type AlertStoryType = {
+  type: 'success' | 'error' | 'warning' | 'info'
+  title?: string
+  content?: string
+}
+
+const AlertStory: AlertStoryType[] = [
   {
     type: 'success',
     title: 'Success!',
@@ -71,7 +77,7 @@ Multiline.args = {
 export const Stacked: Story = {
   render: () => (
     <Alert.Alerter>
-      {AlertStory.map((alert: any, index: number) => {
+      {AlertStory.map((alert, index) => {
         return (
           <Alert key={index} type={alert.type}>
             <Alert.Title>{alert.title}</Alert.Title>

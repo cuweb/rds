@@ -20,7 +20,7 @@ type Story = StoryObj<typeof SearchForm>
 export const Default: Story = () => {
   const [, setMessage] = useState('')
   const callbackcal = useCallback(
-    (message: any) => {
+    (message: string) => {
       setMessage(message)
     },
     [setMessage],

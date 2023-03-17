@@ -49,13 +49,13 @@ export const Search = ({ searchOn = 'title', sourceData, children }: SearchProps
 
   // Validations just checking on first , not in all
 
-  //   if (sourceData[0] && !sourceData[0].hasOwnProperty('url')) {
-  //     return <p className="text-cu-red">Url Does not exisit on Passed Database Please pass appropriate data</p>
-  //   }
+  // if (sourceData[0] && !sourceData[0].hasOwnProperty('url')) {
+  //   return <p className="text-cu-red">Url Does not exisit on Passed Database Please pass appropriate data</p>
+  // }
 
-  //   if (sourceData[0] && !sourceData[0].hasOwnProperty(searchOn)) {
-  //     return <p className="text-cu-red">Passed search key does not exisit on passed Database</p>
-  //   }
+  // if (sourceData[0] && !sourceData[0].hasOwnProperty(searchOn)) {
+  //   return <p className="text-cu-red">Passed search key does not exisit on passed Database</p>
+  // }
 
   return (
     <>
