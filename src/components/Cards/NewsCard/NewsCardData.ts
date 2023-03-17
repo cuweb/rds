@@ -1,8 +1,10 @@
-export const NewsCardData = [
+import { NewsCardProps } from './NewsCard'
+
+export const NewsCardData: NewsCardProps[] = [
   {
     id: 1,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
-    url: '#',
+    link: '#',
     image: 'https://source.unsplash.com/random/400x300',
     excerpt:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam nulla eget est viverra, et tristique velit elementum. Aliquam ultrices vitae felis sit amet pharetra. Vivamus vitae dui mi. Quisque vitae nibh at orci lobortis rhoncus eu at mi. Nulla facilisi. In hac habitasse platea dictumst. Curabitur sed lectus risus.',
@@ -25,7 +27,7 @@ export const NewsCardData = [
   {
     id: 2,
     title: ' How to Write for the Web',
-    url: '#',
+    link: '#',
     image: 'https://source.unsplash.com/random/400x300',
     excerpt:
       //   'Proin placerat non nisl sed ullamcorper. Maecenas ultrices diam a lorem feugiat feugiat. Curabitur ultrices egestas tortor vel feugiat. Mauris vitae massa vulputate, dignissim ipsum interdum, maximus nunc. Praesent id malesuada sem. Nulla egestas magna eu nisl bibendum suscipit. Morbi turpis velit, interdum a tincidunt pharetra, egestas ut metus.',
@@ -44,7 +46,7 @@ export const NewsCardData = [
   {
     id: 3,
     title: 'Captivating Captions: Why We Use Captions on Videos',
-    url: '#',
+    link: '#',
     image: 'https://source.unsplash.com/random/400x300',
     excerpt:
       //   'Donec dolor sapien, aliquet eu nibh vel, laoreet aliquam arcu. Suspendisse potenti. Nulla varius, enim nec maximus dignissim, neque lorem ultricies purus, nec posuere quam purus quis metus. Donec ornare, ipsum et consectetur imperdiet, orci ligula molestie neque, eget varius quam mi nec leo.',

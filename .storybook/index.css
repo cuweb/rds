@@ -3278,6 +3278,33 @@ select {
   padding-bottom: 4rem;
 }
 
+/* Add spacing when white container follows non-layout components */
+
+:not(.cu-container) + .cu-container-white {
+  padding-top: 1.5rem;
+}
+
+/* Add spacing when grey container follows non-layout components */
+
+:not(.cu-container) + .cu-container-grey {
+  margin-top: 3.5rem;
+}
+
+/* Add spacing when columns and panels are used in some consecutive order */
+
+.cu-column + .cu-column,
+.cu-panel + .cu-panel,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+  margin-top: 2rem;
+}
+
+/* Add spacing when grey container follows non-layout components */
+
+:not(.cu-container) + .cu-column {
+  margin-top: 2.5rem;
+}
+
 /* 
 * Modify spacing for prose and layout components
 */
@@ -3312,31 +3339,15 @@ select {
   margin-bottom: 0px;
 }
 
-/* Add spacing when columns and panels are used in some consecutive order */
+/* 
+* Add styles to first child of container to banner overlap
+*/
 
-.cu-column + .cu-column,
-.cu-panel + .cu-panel,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column {
-  margin-top: 2rem;
-}
-
-/* Add spacing when white container follows non-layout components */
-
-:not(.cu-container) + .cu-container-white {
-  padding-top: 1.5rem;
-}
-
-/* Add spacing when grey container follows non-layout components */
-
-:not(.cu-container) + .cu-container-grey {
-  margin-top: 3.5rem;
-}
-
-/* Add spacing when grey container follows non-layout components */
-
-:not(.cu-container) + .cu-column {
-  margin-top: 2.5rem;
+@media (min-width: 768px) {
+  .cu-overlap > .cu-container:first-child > *:first-child {
+    z-index: 20;
+    margin-top: -7rem;
+  }
 }
 
 /*!
@@ -5163,10 +5174,6 @@ select {
 }
 
 @media (min-width: 768px) {
-  .md\:-mt-16 {
-    margin-top: -4rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -5651,10 +5658,6 @@ select {
 
   .md\:odd\:\[\&\>\*\]\:border-r>*:nth-child(odd) {
     border-right-width: 1px;
-  }
-
-  .md\:\[\&\>\.cu-container-white\:first-child\]\:pt-0>.cu-container-white:first-child {
-    padding-top: 0px;
   }
 }
 

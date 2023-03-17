@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { VideoCard } from '../components/Cards/VideoCard/VideoCard'
@@ -65,7 +64,7 @@ export const GridCards: Story = {
   render: () => (
     <Column cols="3" gridGap="10" maxWidth="7xl">
       {data.map((item) => (
-        <VideoCard source={item?.source} tags={item?.tags} />
+        <VideoCard key={11} source={item?.source} tags={item?.tags} />
       ))}
     </Column>
   ),

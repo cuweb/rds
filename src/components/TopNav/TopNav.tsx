@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Avatar, UserInfoType } from '../Avatar/Avatar'
@@ -164,8 +161,14 @@ export const TopNav = ({
                             : 'border-transparent'
                         }`}
                       >
-                        <Link href={item.link}>
-                          <span onClick={() => close()}>{item.title}</span>
+                        <Link
+                          href={item.link}
+                          onClick={(e) => {
+                            e.preventDefault()
+                            close()
+                          }}
+                        >
+                          {item.title}
                         </Link>
                       </Disclosure.Button>
                     ))}

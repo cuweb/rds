@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import exampleTableData from '../components/Table/exampleTableData.json'
+import { TableData } from '../components/Table/TableData'
 import { ColumnDefinitionType, Table } from '../components/Table/Table'
 import { Link } from '../components/Link/Link'
 
@@ -18,9 +18,7 @@ export default meta
 
 type Story = StoryObj<typeof Table>
 
-const data = exampleTableData
-
-const tableData = data.map((obj) => {
+const tableData = TableData.map((obj) => {
   const link = 'http://thing/' + obj.id
   return {
     ...obj,
@@ -34,9 +32,7 @@ const tableData = data.map((obj) => {
   }
 })
 
-const finalTableData = tableData
-
-const columns: Array<ColumnDefinitionType<(typeof data)[0], never>> = [
+const columns: ColumnDefinitionType[] = [
   {
     key: 'id' as never,
     header: 'ID',
@@ -62,7 +58,7 @@ const columns: Array<ColumnDefinitionType<(typeof data)[0], never>> = [
 
 export const Default: Story = {}
 Default.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: false,
   hasBorder: false,
@@ -71,7 +67,7 @@ Default.args = {
 
 export const WithStripes: Story = {}
 WithStripes.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: true,
   hasBorder: false,
@@ -80,7 +76,7 @@ WithStripes.args = {
 
 export const WithShadow: Story = {}
 WithShadow.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: false,
   hasBorder: false,
@@ -89,7 +85,7 @@ WithShadow.args = {
 
 export const WithBorder: Story = {}
 WithBorder.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: true,
   hasBorder: true,
@@ -98,7 +94,7 @@ WithBorder.args = {
 
 export const ShadowAndBorder: Story = {}
 ShadowAndBorder.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: true,
   hasBorder: true,
@@ -107,7 +103,7 @@ ShadowAndBorder.args = {
 
 export const WithRangeOne: Story = {}
 WithRangeOne.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: false,
   hasBorder: false,
@@ -117,7 +113,7 @@ WithRangeOne.args = {
 
 export const WithRangeTwo: Story = {}
 WithRangeTwo.args = {
-  data: finalTableData,
+  data: tableData,
   columns: columns,
   hasStripes: false,
   hasBorder: false,

@@ -1,23 +1,23 @@
+import { useEffect, Fragment, PropsWithChildren, useState } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
-import { ReactNode, useState, useEffect, Fragment } from 'react'
 import { rdsOverlay } from '../../utils/tailwindClasses'
+import { Link } from '../../components/Link/Link'
 
 export interface SourceDataProps {
   [k: string]: string | number
 }
 export interface SearchProps {
-  sourceData: any
+  sourceData: SourceDataProps[]
   searchOn?: string
-  children?: ReactNode
 }
 
 function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export const Search = ({ searchOn = 'title', sourceData, children }: SearchProps) => {
+export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithChildren<SearchProps>) => {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
 
@@ -46,16 +46,6 @@ export const Search = ({ searchOn = 'title', sourceData, children }: SearchProps
       window.removeEventListener('keydown', onKeydown)
     }
   }, [open])
-
-  // Validations just checking on first , not in all
-
-  //   if (sourceData[0] && !sourceData[0].hasOwnProperty('url')) {
-  //     return <p className="text-cu-red">Url Does not exisit on Passed Database Please pass appropriate data</p>
-  //   }
-
-  //   if (sourceData[0] && !sourceData[0].hasOwnProperty(searchOn)) {
-  //     return <p className="text-cu-red">Passed search key does not exisit on passed Database</p>
-  //   }
 
   return (
     <>
@@ -88,7 +78,7 @@ export const Search = ({ searchOn = 'title', sourceData, children }: SearchProps
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="mx-auto mt-[20vh] max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
-                <Combobox onChange={(sourceData) => (window.location = sourceData?.url)} value={sourceData.searchOn}>
+                <Combobox>
                   <div className="relative">
                     <MagnifyingGlassIcon
                       className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
@@ -115,15 +105,15 @@ export const Search = ({ searchOn = 'title', sourceData, children }: SearchProps
                       static
                       className="max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray-800"
                     >
-                      {filteredDatabase.map((sourceData: any) => (
+                      {filteredDatabase.map((record) => (
                         <Combobox.Option
-                          key={sourceData.id}
-                          value={sourceData}
+                          key={record.id}
+                          value={record}
                           className={({ active }) =>
                             classNames('cursor-default select-none px-4 py-2', active && 'bg-cu-red text-white')
                           }
                         >
-                          {sourceData[searchOn]}
+                          <Link href={`${record.url}`}>{record[searchOn]}</Link>
                         </Combobox.Option>
                       ))}
                     </Combobox.Options>

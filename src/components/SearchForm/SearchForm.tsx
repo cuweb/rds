@@ -6,6 +6,7 @@ export interface SearchFormProps {
 
 export const SearchForm = ({ callback }: SearchFormProps) => {
   const [message, setMessage] = useState('')
+
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setMessage(event.target.value)
   }
@@ -13,6 +14,7 @@ export const SearchForm = ({ callback }: SearchFormProps) => {
   useEffect(() => {
     callback(message)
   }, [message, callback])
+
   return (
     <div className="not-prose relative flex items-center">
       <MagnifyingGlassIcon className="absolute left-4 h-5 w-5 text-gray-400" aria-hidden="true" />

@@ -2,7 +2,7 @@ import { ColumnDefinitionType } from './Table'
 
 type TableRowsProps = {
   data: {
-    [k: string]: string | number
+    [k: string]: string | number | JSX.Element
   }[]
   columns: ColumnDefinitionType[]
   striped: boolean

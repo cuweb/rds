@@ -70,11 +70,11 @@ export const GreyContainer: Story = {
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
-              {data.map((item: any) => (
+              {data.map((item) => (
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -97,11 +97,11 @@ export const GreyContainer: Story = {
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
-              {data.map((item: any) => (
+              {data.map((item) => (
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -120,11 +120,11 @@ export const GreyContainer: Story = {
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
-              {data.map((item: any) => (
+              {data.map((item) => (
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -138,11 +138,11 @@ export const GreyContainer: Story = {
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3" maxWidth="7xl">
-              {data.map((item: any) => (
+              {data.map((item) => (
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -161,11 +161,11 @@ export const GreyContainer: Story = {
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
-              {data.map((item: any) => (
+              {data.map((item) => (
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -179,11 +179,11 @@ export const GreyContainer: Story = {
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3" maxWidth="7xl">
-              {data.map((item: any) => (
+              {data.map((item) => (
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}

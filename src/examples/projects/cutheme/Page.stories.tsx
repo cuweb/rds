@@ -78,7 +78,7 @@ export const SinglePage: Story = {
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -96,7 +96,7 @@ export const SinglePage: Story = {
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -119,7 +119,7 @@ export const SinglePage: Story = {
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -137,7 +137,7 @@ export const SinglePage: Story = {
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -160,7 +160,7 @@ export const SinglePage: Story = {
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
@@ -178,7 +178,7 @@ export const SinglePage: Story = {
                 <NewsCard
                   key={item.id}
                   title={item?.title}
-                  link={item?.url}
+                  link={item?.link}
                   image={item?.image}
                   date={item?.date}
                   excerpt={item?.excerpt}
