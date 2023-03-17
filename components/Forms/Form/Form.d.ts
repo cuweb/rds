@@ -2,7 +2,7 @@ import type { FormikHelpers, FormikValues } from 'formik';
 export interface FormProps {
     children?: React.ReactNode;
     onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void;
-    initialValues: FormikValues;
+    initialValues?: FormikValues;
     schema: {
         [field: string]: {
             value?: unknown;
