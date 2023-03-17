@@ -22,6 +22,29 @@
   @apply last:-mb-14 last:pb-16;
 }
 
+/* Add spacing when white container follows non-layout components */
+:not(.cu-container) + .cu-container-white {
+  @apply pt-6;
+}
+
+/* Add spacing when grey container follows non-layout components */
+:not(.cu-container) + .cu-container-grey {
+  @apply mt-14;
+}
+
+/* Add spacing when columns and panels are used in some consecutive order */
+.cu-column + .cu-column,
+.cu-panel + .cu-panel,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+  @apply mt-8;
+}
+
+/* Add spacing when grey container follows non-layout components */
+:not(.cu-container) + .cu-column {
+  @apply mt-10;
+}
+
 /* 
 * Modify spacing for prose and layout components
 */
@@ -43,25 +66,10 @@
   @apply first:mt-0 last:mb-0;
 }
 
-/* Add spacing when columns and panels are used in some consecutive order */
-.cu-column + .cu-column,
-.cu-panel + .cu-panel,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column {
-  @apply mt-8;
-}
+/* 
+* Add styles to first child of container to banner overlap
+*/
 
-/* Add spacing when white container follows non-layout components */
-:not(.cu-container) + .cu-container-white {
-  @apply pt-6;
-}
-
-/* Add spacing when grey container follows non-layout components */
-:not(.cu-container) + .cu-container-grey {
-  @apply mt-14;
-}
-
-/* Add spacing when grey container follows non-layout components */
-:not(.cu-container) + .cu-column {
-  @apply mt-10;
+.cu-overlap > .cu-container:first-child > *:first-child {
+  @apply md:z-20 md:-mt-28;
 }
