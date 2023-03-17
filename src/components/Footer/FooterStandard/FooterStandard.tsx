@@ -1,5 +1,4 @@
 import { FooterWave } from '../FooterWave'
-import RavensLogo from '../../../assets/ravens-logo.svg'
 import { FooterStandardLinks as linkData } from './FooterStandardData'
 import { Link } from '../../Link/Link'
 
@@ -149,7 +148,7 @@ export const FooterStandard = () => {
             ))}
           </ul>
           <Link href="https://goravens.carleton.ca" className="h-auto w-12">
-            <img className="mt-8 h-auto w-12" src={RavensLogo} alt="Carleton" />
+            <img className="mt-8 h-auto w-12" src="assets/ravens-logo.svg" alt="Carleton" />
           </Link>
         </div>
       </div>
