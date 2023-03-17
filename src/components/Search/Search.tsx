@@ -3,6 +3,7 @@ import { Combobox, Dialog, Transition } from '@headlessui/react'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
 import { rdsOverlay } from '../../utils/tailwindClasses'
+import { Link } from '../../components/Link/Link'
 
 export interface SourceDataProps {
   [k: string]: string | number
@@ -45,7 +46,6 @@ export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithCh
       window.removeEventListener('keydown', onKeydown)
     }
   }, [open])
-
 
   return (
     <>
@@ -113,7 +113,7 @@ export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithCh
                             classNames('cursor-default select-none px-4 py-2', active && 'bg-cu-red text-white')
                           }
                         >
-                          {record[searchOn]}
+                          <Link href={`${record.url}`}>{record[searchOn]}</Link>
                         </Combobox.Option>
                       ))}
                     </Combobox.Options>
