@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Filter } from '../components/Filter/Filter'
-import { useCallback, useState } from 'react'
-import data from '../components/Filter/FilterData.json'
+import { FilterData } from '../components/Filter/FilterData'
 
 const meta: Meta<typeof Filter> = {
   title: 'Components/Filter',
@@ -18,26 +17,11 @@ export default meta
 type Story = StoryObj<typeof Filter>
 
 export const Default: Story = () => {
-  const [, setFilterItem] = useState([])
-  const callbackfilter = useCallback(
-    (filterSelected: any) => {
-      setFilterItem(filterSelected)
-    },
-    [setFilterItem],
-  )
-
-  return <Filter filters={data.filters} callback={callbackfilter} sortOptions={data.sortOptions} />
+  return <Filter filters={FilterData.filters} callback={()=> undefined} sortOptions={FilterData.sortOptions} />
 }
 
 export const NoSorting: Story = () => {
-  const [, setFilterItem] = useState([])
-  const callbackfilter = useCallback(
-    (filterSelected: any) => {
-      setFilterItem(filterSelected)
-    },
-    [setFilterItem],
-  )
-  return <Filter filters={data.filters} callback={callbackfilter} />
+  return <Filter filters={FilterData.filters} callback={()=> undefined} />
 }
 
 Default.storyName = 'With Sorting'
