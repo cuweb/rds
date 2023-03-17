@@ -1,4 +1,3 @@
-
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { NewsItem } from '../components/Listings/NewsItem/NewsItem'

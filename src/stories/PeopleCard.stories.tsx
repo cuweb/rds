@@ -1,4 +1,3 @@
-
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { PeopleCard } from '../components/Cards/PeopleCard/PeopleCard'
