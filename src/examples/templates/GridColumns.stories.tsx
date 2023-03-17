@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../layouts/Main/Main'
 import { Container } from '../../layouts/Container'
+import { Column } from '../../layouts/Column/Column'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Get Started/Templates/Alternating Sections',
+  title: 'Examples/Templates/Grid Columns',
 }
 
 export default meta
@@ -44,38 +45,49 @@ const DoublePara = () => {
   )
 }
 
-export const AlternatingSections: Story = {
+export const GridColumns: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
       <Banner
-        title="Alternating Sections Containers"
-        paragraph="This template replicates the basic markup template by using simple headings and paragraphs but uses modifyed section containers to alternate between white and grey backgrounds"
+        title="Grid Layouts and Columns"
+        paragraph="This template uses the same layout configuration as the basic markup and grey section template examples and adds examples for a two and three column content layout"
       />
 
       <Main>
         <Container hasProse>
           <SinglePara />
           <h2>This is a header two</h2>
+
+          <Column cols="2">
+            <div>
+              <SinglePara />
+            </div>
+            <div>
+              <SinglePara />
+            </div>
+          </Column>
+
           <DoublePara />
-          <h3>This is a header three</h3>
-          <SinglePara />
         </Container>
 
         <Container bgColor="grey" hasProse>
-          <SinglePara />
           <h2>This is a header two</h2>
           <DoublePara />
-          <h3>This is a header three</h3>
-          <SinglePara />
-        </Container>
-
-        <Container hasProse>
-          <SinglePara />
-          <h2>This is a header two</h2>
-          <DoublePara />
-          <h3>This is a header three</h3>
-          <SinglePara />
+          <Column cols="3">
+            <div>
+              <h3>Header three</h3>
+              <SinglePara />
+            </div>
+            <div>
+              <h3>Header three</h3>
+              <SinglePara />
+            </div>
+            <div>
+              <h3>Header three</h3>
+              <SinglePara />
+            </div>
+          </Column>
         </Container>
       </Main>
 

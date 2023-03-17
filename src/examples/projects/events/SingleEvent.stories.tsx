@@ -1,23 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../layouts/Main/Main'
-import { Container } from '../../layouts/Container'
-import { Column } from '../../layouts/Column/Column'
-import { Panel } from '../../layouts/Panel/Panel'
-import { Aside } from '../../layouts/Aside/Aside'
-import { Article } from '../../layouts/Article/Article'
+import { Main } from '../../../layouts/Main/Main'
+import { Container } from '../../../layouts/Container'
+import { Column } from '../../../layouts/Column/Column'
+import { Panel } from '../../../layouts/Panel/Panel'
+import { Aside } from '../../../layouts/Aside/Aside'
+import { Article } from '../../../layouts/Article/Article'
 
-import { TopNav } from '../../components/TopNav/TopNav'
-import { Banner } from '../../components/Banner/Banner'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { DetailsItem } from '../../components/Listings/DetailsItem/DetailsItem'
-import { Button } from '../../components/Button/Button'
+import { TopNav } from '../../../components/TopNav/TopNav'
+import { Banner } from '../../../components/Banner/Banner'
+import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
+import { DetailsItem } from '../../../components/Listings/DetailsItem/DetailsItem'
+import { Button } from '../../../components/Button/Button'
 
 import { MapPinIcon } from '@heroicons/react/24/outline'
 
-import { DetailsItemData as data } from '../../components/Listings/DetailsItem/DetailsItemData'
+import { DetailsItemData as data } from '../../../components/Listings/DetailsItem/DetailsItemData'
 
 const meta: Meta = {
-  title: 'Get Started/Projects/Event Calendar/Single Event',
+  title: 'Examples/Projects/Event Calendar/Single Event',
 }
 
 export default meta

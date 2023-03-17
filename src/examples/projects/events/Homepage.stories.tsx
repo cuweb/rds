@@ -1,25 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../layouts/Main/Main'
-import { Container } from '../../layouts/Container'
-import { Column } from '../../layouts/Column/Column'
-import { Panel } from '../../layouts/Panel/Panel'
-import { Aside } from '../../layouts/Aside/Aside'
+import { Main } from '../../../layouts/Main/Main'
+import { Container } from '../../../layouts/Container'
+import { Column } from '../../../layouts/Column/Column'
+import { Panel } from '../../../layouts/Panel/Panel'
+import { Aside } from '../../../layouts/Aside/Aside'
 
-import { TopNav } from '../../components/TopNav/TopNav'
-import { Banner } from '../../components/Banner/Banner'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { EventCard } from '../../components/Cards/EventCard/EventCard'
-import { EventItem } from '../../components/Listings/EventItem/EventItem'
-import { Pagination } from '../../components/Pagination/Pagination'
-import { Calendar } from '../../components/Calendar/Calendar'
+import { TopNav } from '../../../components/TopNav/TopNav'
+import { Banner } from '../../../components/Banner/Banner'
+import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
+import { EventCard } from '../../../components/Cards/EventCard/EventCard'
+import { EventItem } from '../../../components/Listings/EventItem/EventItem'
+import { Pagination } from '../../../components/Pagination/Pagination'
+import { Calendar } from '../../../components/Calendar/Calendar'
 // import { Filter } from '../../components/Filter/Filter'
 
-import { EventItemData as dataCard } from '../../components/Cards/EventCard/EventCardData'
-import { EventItemData as dataList } from '../../components/Listings/EventItem/EventItemData'
+import { EventItemData as dataCard } from '../../../components/Cards/EventCard/EventCardData'
+import { EventItemData as dataList } from '../../../components/Listings/EventItem/EventItemData'
 // import data from '../../components/Filter/FilterData.json'
 
 const meta: Meta = {
-  title: 'Get Started/Projects/Event Calendar/Homepage',
+  title: 'Examples/Projects/Event Calendar/Homepage',
 }
 
 export default meta

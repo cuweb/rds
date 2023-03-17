@@ -74,3 +74,10 @@ export { Form } from './components/Forms/Form/Form'
 
 export { CardLoader } from './components/Loaders/CardLoader/CardLoader'
 export { EventLoader } from './components/Loaders/EventLoader/EventLoader'
+
+//
+// Types
+// -----------------
+
+// export { ImageType } from './types/Image'
+// import ImageType from './types/Image'

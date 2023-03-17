@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Container } from '../../layouts/Container'
 import { Main } from '../../layouts/Main/Main'
+import { Container } from '../../layouts/Container'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Get Started/Templates/Basic Markup',
+  title: 'Examples/Templates/Grey Section',
 }
 
 export default meta
@@ -44,13 +44,13 @@ const DoublePara = () => {
   )
 }
 
-export const BasicMarkup: Story = {
+export const GreySection: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
       <Banner
-        title="Basic Markup"
-        paragraph="This template is the most basic form of an RDS template using simple markup for headings and paragraphs contained withing a section container"
+        title="Grey Section Container"
+        paragraph="This template replicates the basic markup template by using simple headings and paragraphs but is modifying the section container to feature a grey background that extends to the full width of the browser"
       />
 
       <Main>
