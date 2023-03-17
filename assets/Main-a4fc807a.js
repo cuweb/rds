@@ -1,0 +1,2 @@
+import{j as l}from"./jsx-runtime-9d2cd5de.js";const a={core:"relative mx-8",overlap:"z-20 cu-overlap"},r=({children:e,hasOverlap:o})=>{const s=o?a.overlap:"";return l("main",{className:`${a.core} ${s}`,children:e})};try{r.displayName="Main",r.__docgenInfo={description:"",displayName:"Main",props:{hasOverlap:{defaultValue:null,description:"",name:"hasOverlap",required:!1,type:{name:"boolean"}}}}}catch{}export{r as M};
+//# sourceMappingURL=Main-a4fc807a.js.map
