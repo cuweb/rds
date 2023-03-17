@@ -6,7 +6,7 @@ export interface SearchFormProps {
 
 export const SearchForm = ({ callback }: SearchFormProps) => {
   const [message, setMessage] = useState('')
-  
+
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setMessage(event.target.value)
   }

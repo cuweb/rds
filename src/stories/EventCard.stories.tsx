@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { EventCard } from '../components/Cards/EventCard/EventCard'
@@ -58,8 +57,9 @@ Default.args = {
 export const GridCards: Story = {
   render: () => (
     <Column cols="3" maxWidth="7xl">
-      {data.map((item) => (
+      {data.map((item, index) => (
         <EventCard
+          key={index}
           title={item?.title}
           link={item?.link}
           startDateTime={item?.start_date}

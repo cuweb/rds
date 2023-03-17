@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { EventItem } from '../components/Listings/EventItem/EventItem'
@@ -92,6 +92,7 @@ export const MultiItemList: Story = {
           {data.map(() => (
             <EventItem
               as="li"
+              key={567}
               link={args.link}
               fontSize={args.fontSize}
               title={args.title}
@@ -122,6 +123,7 @@ export const MultiItemColumns: Story = {
           {data.map(() => (
             <EventItem
               as="li"
+              key={567}
               link={args.link}
               fontSize={args.fontSize}
               title={args.title}
