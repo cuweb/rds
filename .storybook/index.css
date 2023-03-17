@@ -3250,6 +3250,38 @@ select {
   container-type: inline-size;
 }
 
+/* 
+* Modify spacing for layout components
+*/
+
+/* Remove top spacing when containers with same bg are used consecutively */
+
+.cu-container-white + .cu-container-white,
+.cu-container-grey + .cu-container-grey {
+  padding-top: 0px;
+}
+
+/* Remove spacing on non-layout components that follow container or column */
+
+.cu-container-white + :not(.cu-container) {
+  margin-top: 0px;
+}
+
+.cu-container-grey + :not(.cu-container) {
+  margin-top: 2.5rem;
+}
+
+/* Remove spacing if nested container is last item inside another container */
+
+.cu-container > .cu-container:last-child {
+  margin-bottom: -3.5rem;
+  padding-bottom: 4rem;
+}
+
+/* 
+* Modify spacing for prose and layout components
+*/
+
 /* Remove spacing if container is first item inside prose container */
 
 .prose > .cu-container:first-child {
@@ -3282,8 +3314,6 @@ select {
 
 /* Add spacing when columns and panels are used in some consecutive order */
 
-.cu-container + .cu-column,
-.cu-column + .cu-container,
 .cu-column + .cu-column,
 .cu-panel + .cu-panel,
 .cu-column + .cu-panel,
@@ -3291,32 +3321,22 @@ select {
   margin-top: 2rem;
 }
 
-.cu-column + .cu-container-white {
-  padding-top: 0px;
-}
-
 /* Add spacing when white container follows non-layout components */
 
-:not(.cu-container):not(.cu-column) + .cu-container-white {
-  padding-top: 2rem;
+:not(.cu-container) + .cu-container-white {
+  padding-top: 1.5rem;
 }
 
 /* Add spacing when grey container follows non-layout components */
 
-:not(.cu-container):not(.cu-column) + .cu-container-grey {
+:not(.cu-container) + .cu-container-grey {
   margin-top: 3.5rem;
 }
 
-/* Remove spacing on non-layout components that follow container or column */
+/* Add spacing when grey container follows non-layout components */
 
-.cu-container-white + :not(.cu-container):not(.cu-column) {
-  margin-top: 0px;
-}
-
-/* Remove spacing if nested container is last item inside another container */
-
-.cu-container > .cu-container:last-child {
-  margin-bottom: -3.5rem;
+:not(.cu-container) + .cu-column {
+  margin-top: 2.5rem;
 }
 
 /*!
@@ -5571,14 +5591,6 @@ select {
       line-height: 2rem;
     }
   }
-}
-
-.\[\&\+\.cu-container-grey\]\:pt-0+.cu-container-grey {
-  padding-top: 0px;
-}
-
-.\[\&\+\.cu-container-white\]\:pt-0+.cu-container-white {
-  padding-top: 0px;
 }
 
 .\[\&\>\*\:first-child\]\:-mt-0>*:first-child {
