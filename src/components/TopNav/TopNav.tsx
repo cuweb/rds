@@ -1,4 +1,3 @@
-import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Avatar, UserInfoType } from '../Avatar/Avatar'
