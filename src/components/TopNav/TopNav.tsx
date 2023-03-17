@@ -38,6 +38,7 @@ export interface TopNavProps {
     [k: string]: string | number | undefined | (() => void)
   }[]
   userInfo?: UserInfoType
+  session?: unknown
   searchOn?: string
   mobileLogin?: mobileLoginProps
 }
@@ -54,6 +55,7 @@ export const TopNav = ({
   mobileLinks,
   userMenuItems,
   userInfo,
+  session,
   sticky,
   login,
   mobileLogin,
@@ -134,7 +136,8 @@ export const TopNav = ({
               {children}
 
               {/* Login */}
-              {!userInfo && login}
+              {session === null && login}
+              {!userInfo && session !== null && <p>Loading</p>}
               {userInfo && !userMenuItems && <Avatar user={userInfo} size="xs" rounded="full" />}
               {userInfo && userMenuItems && (
                 <DropDown listItems={userMenuItems} menuAlign="right">
