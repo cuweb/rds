@@ -16,7 +16,7 @@ export { LocationPicker } from './components/LocationPicker/LocationPicker'
 export { Meta } from './components/Meta/Meta'
 export { Modal } from './components/Modal/Modal'
 export { Pagination } from './components/Pagination/Pagination'
-// export { Search } from './components/Search/Search'
+export { Search } from './components/Search/Search'
 export { SearchForm } from './components/SearchForm/SearchForm'
 export { SocialShare } from './components/SocialShare/SocialShare'
 export { Table } from './components/Table/Table'
@@ -25,7 +25,6 @@ export { Toast } from './components/Toast/Toast'
 //
 // Cards & Lists
 // -----------------
-
 export { DetailsItem } from './components/Listings/DetailsItem/DetailsItem'
 export { EventCard } from './components/Cards/EventCard/EventCard'
 export { EventItem } from './components/Listings/EventItem/EventItem'
@@ -78,6 +77,5 @@ export { EventLoader } from './components/Loaders/EventLoader/EventLoader'
 //
 // Types
 // -----------------
-
-// export { ImageType } from './types/Image'
-// import ImageType from './types/Image'
+export type { ColumnDefinitionType } from './components/Table/Table'
+export type { DetailsItemProps } from './components/Listings/DetailsItem/DetailsItem'
