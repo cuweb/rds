@@ -12,7 +12,7 @@ import { Checkbox } from '../Checkbox/Checkbox'
 export interface FormProps {
   children?: React.ReactNode
   onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void
-  initialValues: FormikValues
+  initialValues?: FormikValues
   schema: {
     [field: string]: {
       value?: unknown

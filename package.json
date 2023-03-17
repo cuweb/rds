@@ -13,6 +13,7 @@
   ],
   "exports": {
     ".": {
+      "style":"./dist/index.css",
       "import": "./dist/rds.es.js",
       "require": "./dist/rds.umd.js"
     }
@@ -22,6 +23,7 @@
     "format": "prettier -w src",
     "lint": "eslint . --ext .ts,.tsx",
     "dev": "tsc && vite build --watch",
+    "dev:css": "tailwindcss -w -i ./src/styles/index.css -o ./dist/index.css",
     "build": "tsc && npm run format && npm run lint && vite build && npm run build:css && npm run size",
     "build:css": "tailwindcss -m -i ./src/styles/index.css -o ./dist/index.css",
     "cypress": "concurrently 'npm run cypress:css' 'cypress open'",

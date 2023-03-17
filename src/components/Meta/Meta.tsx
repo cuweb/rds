@@ -1,12 +1,11 @@
-import React from 'react'
+import { PropsWithChildren, forwardRef } from 'react'
 
 // Meta Wrapper
 export interface MetaProps {
   description?: string
-  children?: React.ReactNode
 }
 
-const MetaBase = ({ description = 'Carleton University', children }: MetaProps) => {
+const MetaBase = forwardRef(({ description, children }: PropsWithChildren<MetaProps>) => {
   return (
     <>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -27,7 +26,7 @@ const MetaBase = ({ description = 'Carleton University', children }: MetaProps) 
       />
     </>
   )
-}
+})
 
 // Meta Icons
 export interface IconsProps {
@@ -46,20 +45,29 @@ const Icons = ({ path = 'https://cdn.carleton.ca/cutheme/favicons' }: IconsProps
 
 // Meta Social
 export interface SocialProps {
-  type: string
+  social?: string
   card?: string
   title?: string
   image?: string
+  type?: string
+  locale?: string
   description?: string
 }
 
-const Social = ({ type, card, title, image, description }: SocialProps) => {
+const Social = ({ type = 'website', locale = 'en_US', card, title, image, description }: SocialProps) => {
   return (
     <>
-      <meta name={type + ':card'} content={card} />
-      <meta name={type + ':title'} content={title} />
-      <meta name={type + ':description'} content={description} />
-      <meta name={type + ':image'} content={image} />
+      <meta property={'og:image'} content={image} key="og-image" />
+      <meta property={'og:locale'} content={locale} key="og-locale" />
+      <meta property={'og:type'} content={type} key="og-type" />
+      <meta property={'og:title'} content={title} key="og-title" />
+      <meta property={'og:description'} content={description} key="og-description" />
+      <meta name={'twitter:image'} content={image} key="twitter-image" />
+      <meta name={'twitter:locale'} content={locale} key="twitter-locale" />
+      <meta name={'twitter:type'} content={type} key="twitter-type" />
+      <meta name={'twitter:title'} content={title} key="twitter-title" />
+      <meta name={'twitter:card'} content={card} key="twitter-card" />
+      <meta name={'twitter:description'} content={description} key="twitter-description" />
     </>
   )
 }
