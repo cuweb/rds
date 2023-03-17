@@ -16,7 +16,13 @@ export default meta
 
 type Story = StoryObj<typeof Toast>
 
-const ToastStory = [
+type ToastStoryType = {
+  type: 'success' | 'error' | 'warning' | 'info'
+  title?: string
+  content?: string
+}
+
+const ToastStory: ToastStoryType[] = [
   {
     type: 'success',
     title: 'Success!',
@@ -57,7 +63,7 @@ Default.args = {
 export const Multiple: Story = {
   render: () => (
     <Toast.Toaster>
-      {ToastStory.map((toast: any, index: number) => {
+      {ToastStory.map((toast, index) => {
         return (
           <Toast key={index} type={toast.type}>
             <Toast.Title>{toast.title}</Toast.Title>

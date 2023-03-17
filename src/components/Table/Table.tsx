@@ -11,7 +11,7 @@ export interface ColumnDefinitionType {
 
 export interface TableProps {
   data: {
-    [k: string]: string | number
+    [k: string]: string | number | JSX.Element
   }[]
   columns: ColumnDefinitionType[]
   hasStripes?: boolean

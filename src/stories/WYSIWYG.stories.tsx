@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form } from '../components/Forms/Form/Form'
 import ReactQuill from 'react-quill'
@@ -20,7 +19,7 @@ type Story = StoryObj<typeof Form>
 
 export const Default: Story = {
   render: () => (
-    <Form onSubmit={() => {}} schema={{}} initialValues={InitialValues}>
+    <Form onSubmit={() => undefined} schema={{}} initialValues={InitialValues}>
       <Form.WYSIWYG
         editor={ReactQuill}
         label="Description"

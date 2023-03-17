@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { NewsCard } from '../components/Cards/NewsCard/NewsCard'
@@ -48,8 +47,9 @@ export const GridCards: Story = {
     <Column cols="3" maxWidth="7xl">
       {data.map((item) => (
         <NewsCard
+          key={567}
           title={item?.title}
-          link={item?.url}
+          link={item?.link}
           image={item?.image}
           date={item?.date}
           excerpt={item?.excerpt}
@@ -64,7 +64,14 @@ export const NoExcerpt: Story = {
   render: () => (
     <Column cols="3" maxWidth="7xl">
       {data.map((item) => (
-        <NewsCard title={item?.title} link={item?.url} image={item?.image} date={item?.date} tags={item?.tags} />
+        <NewsCard
+          key={567}
+          title={item?.title}
+          link={item?.link}
+          image={item?.image}
+          date={item?.date}
+          tags={item?.tags}
+        />
       ))}
     </Column>
   ),
@@ -74,7 +81,14 @@ export const NoImage: Story = {
   render: () => (
     <Column cols="3" maxWidth="7xl">
       {data.map((item) => (
-        <NewsCard title={item?.title} link={item?.url} date={item?.date} excerpt={item?.excerpt} tags={item?.tags} />
+        <NewsCard
+          key={567}
+          title={item?.title}
+          link={item?.link}
+          date={item?.date}
+          excerpt={item?.excerpt}
+          tags={item?.tags}
+        />
       ))}
     </Column>
   ),
@@ -84,7 +98,7 @@ export const BareMinimum: Story = {
   render: () => (
     <Column cols="3" maxWidth="7xl">
       {data.map((item) => (
-        <NewsCard title={item?.title} link={item?.url} />
+        <NewsCard key={567} title={item?.title} link={item?.link} />
       ))}
     </Column>
   ),

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { NumberCard } from '../components/Cards/NumberCard/NumberCard'
@@ -25,7 +24,7 @@ export const TwoColumns: Story = {
   render: () => (
     <Column cols="2" gridGap="10" maxWidth="5xl">
       {data.map((item) => (
-        <NumberCard title={item?.title} content={item?.content} />
+        <NumberCard key={222} title={item?.title} content={item?.content} />
       ))}
     </Column>
   ),
@@ -35,7 +34,7 @@ export const ThreeColumns: Story = {
   render: () => (
     <Column cols="3" gridGap="10" maxWidth="7xl">
       {data.map((item) => (
-        <NumberCard title={item?.title} content={item?.content} />
+        <NumberCard key={567} title={item?.title} content={item?.content} />
       ))}
     </Column>
   ),
@@ -45,7 +44,7 @@ export const Center: Story = {
   render: () => (
     <Column cols="3" gridGap="10" maxWidth="7xl">
       {data.map((item) => (
-        <NumberCard title={item?.title} content={item?.content} isCenter />
+        <NumberCard key={222} title={item?.title} content={item?.content} isCenter />
       ))}
     </Column>
   ),

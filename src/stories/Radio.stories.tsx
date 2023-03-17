@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form } from '../components/Forms/Form/Form'
 
@@ -19,7 +18,7 @@ type Story = StoryObj<typeof Form>
 
 export const Default: Story = {
   render: () => (
-    <Form onSubmit={() => {}} schema={{}} initialValues={InitialValues}>
+    <Form onSubmit={() => undefined} schema={{}} initialValues={InitialValues}>
       <Form.Radio
         label="How many of these shows did you watch regularly?"
         name="regularviewer"
