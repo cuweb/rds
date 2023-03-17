@@ -16,6 +16,13 @@ export const parameters = {
       order: [
         'Get Started',
         ['Introduction', 'Changelog', ['Basic Markup', 'Grey Section', 'Alternating Sections', 'Grids And Columns']],
+        'Examples',
+        [
+          'Templates',
+          ['Basic Markup', 'Grey Section', 'Alternating Sections', 'Grid Columns'],
+          'Projects',
+          ['cutheme', ['Single Page', 'Grey Container'], 'Event Calendar', ['Homepage', 'Single Event']],
+        ],
         'Components',
         'Cards & Lists',
         'Headers',

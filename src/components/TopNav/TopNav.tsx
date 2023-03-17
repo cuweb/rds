@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { MouseEventHandler } from 'react'
+import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Avatar, UserInfoType } from '../Avatar/Avatar'
 import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
 import { Link } from '../Link/Link'
 import { Search } from '../Search/Search'
-
-import shield from '../../assets/cu-shield.svg'
 
 export interface LinkProps {
   title: string
@@ -67,7 +65,7 @@ export const TopNav = ({
     </div>
   ) : (
     <div className="flex flex-shrink-0 items-center">
-      <img className="h-10 w-auto" src={shield} alt="Carleton Shield" />
+      <img className="h-10 w-auto" src="assets/cu-shield.svg" alt="Carleton Shield" />
       <h1 className="flex flex-shrink-0 items-center pl-3 pr-2 text-2xl font-semibold">{title}</h1>
     </div>
   )
