@@ -28,8 +28,9 @@ export interface TopNavProps {
         [k: string]: string | number | undefined | (() => void);
     }[];
     userInfo?: UserInfoType;
+    session?: unknown;
     searchOn?: string;
     mobileLogin?: mobileLoginProps;
 }
-export declare const TopNav: ({ children, logoUrl, title, brand, hasSearch, sourceData, searchOn, navLinks, mobileLinks, userMenuItems, userInfo, sticky, login, mobileLogin, }: TopNavProps) => JSX.Element;
+export declare const TopNav: ({ children, logoUrl, title, brand, hasSearch, sourceData, searchOn, navLinks, mobileLinks, userMenuItems, userInfo, session, sticky, login, mobileLogin, }: TopNavProps) => JSX.Element;
 //# sourceMappingURL=TopNav.d.ts.map
