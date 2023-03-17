@@ -69,7 +69,6 @@ export const DropDown = ({
                   >
                     {item.icon && <Icon icon={item.icon} aria-hidden="true" size="4" />}
                     <span className={item.icon ? 'ml-3' : ''}>{item.title}</span>
-                    {item.title}
                   </Link>
                 </div>
               ))}
