@@ -1,3 +1,31 @@
+/* 
+* Modify spacing for layout components
+*/
+
+/* Remove top spacing when containers with same bg are used consecutively */
+.cu-container-white + .cu-container-white,
+.cu-container-grey + .cu-container-grey {
+  @apply pt-0;
+}
+
+/* Remove spacing on non-layout components that follow container or column */
+.cu-container-white + :not(.cu-container) {
+  @apply mt-0;
+}
+
+.cu-container-grey + :not(.cu-container) {
+  @apply mt-10;
+}
+
+/* Remove spacing if nested container is last item inside another container */
+.cu-container > .cu-container {
+  @apply last:-mb-14 last:pb-16;
+}
+
+/* 
+* Modify spacing for prose and layout components
+*/
+
 /* Remove spacing if container is first item inside prose container */
 .prose > .cu-container {
   @apply first:-mt-14;
@@ -16,8 +44,6 @@
 }
 
 /* Add spacing when columns and panels are used in some consecutive order */
-.cu-container + .cu-column,
-.cu-column + .cu-container,
 .cu-column + .cu-column,
 .cu-panel + .cu-panel,
 .cu-column + .cu-panel,
@@ -25,26 +51,17 @@
   @apply mt-8;
 }
 
-.cu-column + .cu-container-white {
-  @apply pt-0;
-}
-
 /* Add spacing when white container follows non-layout components */
-:not(.cu-container):not(.cu-column) + .cu-container-white {
-  @apply pt-8;
+:not(.cu-container) + .cu-container-white {
+  @apply pt-6;
 }
 
 /* Add spacing when grey container follows non-layout components */
-:not(.cu-container):not(.cu-column) + .cu-container-grey {
+:not(.cu-container) + .cu-container-grey {
   @apply mt-14;
 }
 
-/* Remove spacing on non-layout components that follow container or column */
-.cu-container-white + :not(.cu-container):not(.cu-column) {
-  @apply mt-0;
-}
-
-/* Remove spacing if nested container is last item inside another container */
-.cu-container > .cu-container {
-  @apply last:-mb-14;
+/* Add spacing when grey container follows non-layout components */
+:not(.cu-container) + .cu-column {
+  @apply mt-10;
 }
