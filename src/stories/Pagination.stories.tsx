@@ -21,12 +21,10 @@ export const Default: Story = () => {
 }
 
 export const Border: Story = () => {
-
   return <Pagination hasBorder hasSpacing totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
 }
 
 export const Spacing: Story = () => {
-
   return <Pagination hasBorder totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
 }
 

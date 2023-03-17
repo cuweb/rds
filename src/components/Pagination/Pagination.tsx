@@ -9,7 +9,7 @@ export interface PaginationProps {
   totalCount: number
   siblingCount: number
   pageSize: number
-  callback: (k: [number?, number?]) => void 
+  callback: (k: [number?, number?]) => void
 }
 
 export const Pagination = ({
