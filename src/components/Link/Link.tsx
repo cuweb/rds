@@ -56,7 +56,7 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
     //     </Link>
     //   )
     // } catch (e) {
-    return <a {...LinkParams}>{children}</a>
+    return <a ref={ref} {...LinkParams}>{children}</a>
     // }
   },
 )

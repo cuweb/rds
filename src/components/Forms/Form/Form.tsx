@@ -8,6 +8,7 @@ import { Select } from '../Select/Select'
 import { Button } from '../../Button/Button'
 import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 import { Checkbox } from '../Checkbox/Checkbox'
+import { DateTimePicker } from '../DateTimePicker/DateTimePicker'
 
 export interface FormProps {
   children?: React.ReactNode
@@ -63,6 +64,7 @@ export const Form = Object.assign(FormBase, {
   Radio,
   Submit,
   WYSIWYG,
+  DateTimePicker,
 })
 
 FormBase.displayName = 'Form'
