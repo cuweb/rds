@@ -363,17 +363,6 @@ const database = [
   },
 ]
 
-const noUrl = [
-  {
-    id: 56,
-    name: 'Zelig',
-  },
-  {
-    id: 92,
-    name: 'Ermina',
-  },
-]
-
 type Story = StoryObj<typeof Search>
 
 export const SearchDefault: Story = {
@@ -386,4 +375,12 @@ export const SearchCustomAvatar: Story = {
       <Button icon={MagnifyingGlassIcon} />
     </Search>
   ),
+}
+
+export const ValidationUrl: Story = {
+  render: () => <Search sourceData={database} searchOn="url" />,
+}
+
+export const ValidationKey: Story = {
+  render: () => <Search sourceData={database} searchOn="id" />,
 }
