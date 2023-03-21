@@ -8,11 +8,13 @@ import { Select } from '../Select/Select'
 import { Button } from '../../Button/Button'
 import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 import { Checkbox } from '../Checkbox/Checkbox'
+import { DateTimePicker } from '../DateTimePicker/DateTimePicker'
+import { PlacesAutoComplete } from '../PlacesAutoComplete/PlacesAutoComplete'
 
 export interface FormProps {
   children?: React.ReactNode
   onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void
-  initialValues: FormikValues
+  initialValues?: FormikValues
   schema: {
     [field: string]: {
       value?: unknown
@@ -63,6 +65,8 @@ export const Form = Object.assign(FormBase, {
   Radio,
   Submit,
   WYSIWYG,
+  DateTimePicker,
+  PlacesAutoComplete,
 })
 
 FormBase.displayName = 'Form'

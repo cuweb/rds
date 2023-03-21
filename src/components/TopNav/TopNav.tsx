@@ -4,6 +4,7 @@ import { Avatar, UserInfoType } from '../Avatar/Avatar'
 import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
 import { Link } from '../Link/Link'
 import { Search } from '../Search/Search'
+import cuShield from '../../public/cu-shield.svg'
 
 export interface LinkProps {
   title: string
@@ -64,7 +65,7 @@ export const TopNav = ({
     </div>
   ) : (
     <div className="flex flex-shrink-0 items-center">
-      <img className="h-10 w-auto" src="assets/cu-shield.svg" alt="Carleton Shield" />
+      <img className="h-10 w-auto" src={cuShield} alt="Carleton Shield" />
       <h1 className="flex flex-shrink-0 items-center pl-3 pr-2 text-2xl font-semibold">{title}</h1>
     </div>
   )

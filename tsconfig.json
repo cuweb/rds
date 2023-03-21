@@ -20,7 +20,6 @@
     "baseUrl": ".",
     "paths": {
       "rds": ["src/index.ts"],
-      "@components/*": ["src/components/*"]
     },
     "typeRoots": ["node_modules/@types", "src/index.d.ts"]
   },

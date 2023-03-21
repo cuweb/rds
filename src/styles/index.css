@@ -1,7 +1,10 @@
+/* Tailwind CSS */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* RDS Layout CSS */
 @import './layout.css';
 
+/* React Quill CSS */
 @import '../../node_modules/react-quill/dist/quill.snow.css';

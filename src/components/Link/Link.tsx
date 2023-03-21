@@ -48,16 +48,20 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
       onTouchStart,
     }
 
-    try {
-      require('next/link')
-      return (
-        <Link {...LinkParams} ref={ref}>
-          {children}
-        </Link>
-      )
-    } catch (e) {
-      return <a {...LinkParams}>{children}</a>
-    }
+    // try {
+    //   require('next/link')
+    //   return (
+    //     <Link {...LinkParams} ref={ref}>
+    //       {children}
+    //     </Link>
+    //   )
+    // } catch (e) {
+    return (
+      <a ref={ref} {...LinkParams}>
+        {children}
+      </a>
+    )
+    // }
   },
 )
 
