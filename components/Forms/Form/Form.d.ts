@@ -39,5 +39,7 @@ export declare const Form: {
         ({ label, editor, placeholder, ...props }: import("../WYSIWYG/WYSIWYG").WYSIWYGProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
         displayName: string;
     };
+    DateTimePicker: ({ label, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
+    PlacesAutoComplete: ({ label, ...props }: import("../PlacesAutoComplete/PlacesAutoComplete").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
 };
 //# sourceMappingURL=Form.d.ts.map
