@@ -13,7 +13,7 @@
   ],
   "exports": {
     ".": {
-      "style":"./dist/index.css",
+      "style": "./dist/index.css",
       "import": "./dist/rds.es.js",
       "require": "./dist/rds.umd.js"
     }
@@ -60,6 +60,7 @@
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "@whitespace/storybook-addon-html": "^5.1.4",
     "autoprefixer": "^10.4.14",
     "concurrently": "^7.6.0",
     "cypress": "^12.7.0",
@@ -80,6 +81,7 @@
     "react-places-autocomplete": "^7.3.0",
     "react-player": "^2.12.0",
     "react-quill": "^2.0.0",
+    "react-syntax-highlighter": "^15.5.0",
     "size-limit": "^8.2.4",
     "storybook": "^7.0.0-rc.3",
     "tailwindcss": "^3.2.7",
