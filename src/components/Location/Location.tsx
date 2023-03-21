@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { GoogleMap, MarkerF, InfoWindowF } from '@react-google-maps/api'
 

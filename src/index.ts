@@ -79,3 +79,4 @@ export { EventLoader } from './components/Loaders/EventLoader/EventLoader'
 // -----------------
 export type { ColumnDefinitionType } from './components/Table/Table'
 export type { DetailsItemProps } from './components/Listings/DetailsItem/DetailsItem'
+export type { UserInfoType } from './components/Avatar/Avatar'
