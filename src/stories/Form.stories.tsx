@@ -50,21 +50,38 @@ export const Example: Story = {
 
       <Form.WYSIWYG label="Event Description" name="description" placeholder="write some description..." />
 
-      <Form.Select label="What is your favorite 90s sitcom?" name="favsitcom" />
+      <Form.Select
+        label="What is your favorite 90s sitcom?"
+        name="favsitcom"
+        options={[
+          { value: 'name1', label: 'name1' },
+          { value: 'name2', label: 'name2' },
+          { value: 'name3', label: 'name3' },
+        ]}
+      />
 
       <Form.Radio
         label="How many of these shows did you watch regularly?"
         name="regularviewer"
-        options={[{ name: '1', label: '1' }]}
+        options={[
+          { name: '1', label: '1' },
+          { name: '2', label: '2' },
+          { name: '3', label: '3' },
+        ]}
       />
 
       <Form.Checkbox
         label="Who are your favourite 90s sitcom characters?"
         name="favcharacters"
-        options={[{ name: 'name', label: 'name' }]}
+        options={[
+          { name: 'name1', label: 'name1' },
+          { name: 'name2', label: 'name2' },
+          { name: 'name3', label: 'name3' },
+        ]}
       />
 
       <Form.Submit title="Submit Your Answers" />
     </Form>
   ),
 }
+
