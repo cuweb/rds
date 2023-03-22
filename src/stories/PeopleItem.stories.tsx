@@ -80,24 +80,44 @@ SingleItemList.args = {
 
 export const MultiItemList: Story = {
   render: () => (
-    <Column maxWidth="5xl">
-      <StackedList cols="2" hasBorder hasShadow>
-        {data.map(({ id, firstName, lastName, email, tags, profileImage, jobTitle, phoneNumber, link, alt }) => (
-          <PeopleItem
-            key={id}
-            as="li"
-            firstName={firstName}
-            lastName={lastName}
-            email={email}
-            tags={tags}
-            profileImage={profileImage}
-            jobTitle={jobTitle}
-            phoneNumber={phoneNumber}
-            link={link}
-            alt={alt}
-          />
-        ))}
-      </StackedList>
-    </Column>
+    <StackedList hasBorder hasShadow>
+      {data.map(({ id, firstName, lastName, email, tags, profileImage, jobTitle, phoneNumber, link, alt }) => (
+        <PeopleItem
+          key={id}
+          as="li"
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          tags={tags}
+          profileImage={profileImage}
+          jobTitle={jobTitle}
+          phoneNumber={phoneNumber}
+          link={link}
+          alt={alt}
+        />
+      ))}
+    </StackedList>
+  ),
+}
+
+export const ColumnedList: Story = {
+  render: () => (
+    <StackedList cols="2" hasBorder hasShadow>
+      {data.map(({ id, firstName, lastName, email, tags, profileImage, jobTitle, phoneNumber, link, alt }) => (
+        <PeopleItem
+          key={id}
+          as="li"
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          tags={tags}
+          profileImage={profileImage}
+          jobTitle={jobTitle}
+          phoneNumber={phoneNumber}
+          link={link}
+          alt={alt}
+        />
+      ))}
+    </StackedList>
   ),
 }

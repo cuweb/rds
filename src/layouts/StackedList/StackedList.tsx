@@ -22,11 +22,12 @@ export const StackedList = ({
   const borderStyle = hasBorder ? styles.border : ''
   const shadowStyle = hasShadow ? styles.shadow : ''
   const gridColumns = cols === '1' ? gridStyles.oneCol : gridStyles.twoCol
+  //   const gridColumns = cols === '1' ? 'md:grid-cols-1' : 'md:grid-cols-2'
 
   return (
     <div className={`${styles.wrapper} ${rdsMaxWidth[maxWidth]} ${borderStyle} ${shadowStyle}`}>
       {header && <h2 className={`${styles.title}`}>{header}</h2>}
-      <ul className={`${styles.grid} ${gridColumns}`}>{children}</ul>
+      <ul className={`cu-stackedlist ${styles.grid} ${gridColumns}`}>{children}</ul>
     </div>
   )
 }

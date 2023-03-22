@@ -3429,6 +3429,20 @@ select {
 * Add styles to first child of container to banner overlap
 */
 
+.cu-stackedlist > li {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(230 230 230 / var(--tw-border-opacity));
+}
+
+.cu-stackedlist > li:last-child {
+  margin-bottom: -1px;
+}
+
+/* 
+* Add styles to first child of container to banner overlap
+*/
+
 @media (min-width: 768px) {
   .cu-overlap > .cu-section:first-child > *:first-child {
     z-index: 20;
@@ -5765,19 +5779,6 @@ select {
 
 .\[\&\>\*\]\:z-10>* {
   z-index: 10;
-}
-
-.\[\&\>\*\]\:border-b>* {
-  border-bottom-width: 1px;
-}
-
-.\[\&\>\*\]\:border-cu-black-100>* {
-  --tw-border-opacity: 1;
-  border-color: rgb(230 230 230 / var(--tw-border-opacity));
-}
-
-.last\:\[\&\>\*\]\:-mb-px>*:last-child {
-  margin-bottom: -1px;
 }
 
 .last\:\[\&\>\*\]\:mb-0>*:last-child {

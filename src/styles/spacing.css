@@ -72,6 +72,14 @@
 * Add styles to first child of container to banner overlap
 */
 
+.cu-stackedlist > li {
+  @apply border-b border-cu-black-100 last:-mb-px;
+}
+
+/* 
+* Add styles to first child of container to banner overlap
+*/
+
 .cu-overlap > .cu-section:first-child > *:first-child {
   @apply md:z-20 md:-mt-28;
 }
