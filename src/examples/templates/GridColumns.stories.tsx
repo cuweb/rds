@@ -6,7 +6,6 @@ import { Column } from '../../layouts/Column/Column'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { Panel } from '../../layouts/Panel/Panel'
 
 const meta: Meta = {
   title: 'Examples/Templates/Grid Columns',

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
-import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 import { Panel } from '../../../layouts/Panel/Panel'
 import { Aside } from '../../../layouts/Aside/Aside'
