@@ -4,7 +4,7 @@ import styles, { gridStyles } from './StackedList.styles'
 
 export interface StackedListProps {
   children: React.ReactNode
-  maxWidth?: 'none' | 'full' | '5xl' | '7xl'
+  maxWidth?: 'full' | '5xl' | '7xl'
   cols?: '1' | '2'
   header?: string
   hasBorder?: boolean

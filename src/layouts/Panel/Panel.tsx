@@ -4,7 +4,7 @@ import styles from './Panel.styles'
 
 export interface PanelProps {
   children: React.ReactNode
-  maxWidth?: 'none' | 'full' | '5xl' | '7xl'
+  maxWidth?: 'full' | '5xl' | '7xl'
   hasBorder?: boolean
   hasShadow?: boolean
   hasSpacing?: boolean

@@ -8,7 +8,7 @@ export interface BannerProps {
   title?: string
   paragraph?: string
   fontSize?: '5xl' | '6xl'
-  maxWidth?: 'none' | 'full' | '5xl' | '7xl'
+  maxWidth?: 'full' | '5xl' | '7xl'
   isType?: 'light-grey' | 'light-fade' | 'dark-wave' | 'red-wave' | 'image' | 'animated'
   align?: 'center' | 'left'
   hasOverlap?: boolean

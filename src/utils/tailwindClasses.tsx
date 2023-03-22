@@ -3,17 +3,9 @@ export const globalStyles = {
 }
 
 export const rdsMaxWidth = {
-  none: 'max-w-none',
   full: 'max-w-full',
   '5xl': 'max-w-5xl',
   '7xl': 'max-w-7xl',
-}
-
-export const rdsMaxWidthChildren = {
-  none: '[&>*]:max-w-none',
-  full: '[&>*]:max-w-full',
-  '5xl': '[&>*]:max-w-5xl',
-  '7xl': '[&>*]:max-w-7xl',
 }
 
 export const rdsOverlay = 'bg-cu-black/30'
@@ -28,9 +20,9 @@ export const rdsGridColumns = {
 }
 
 export const rdsGridSpacing = {
-  '0': 'gap-0', // none
-  '5': 'gap-5', // 20px
-  '10': 'gap-10', // 40px
+  '0': 'gap-0',
+  '5': 'gap-5',
+  '10': 'gap-10',
 }
 
 export const rdsBgColor = {
