@@ -1,5 +1,5 @@
 import React from 'react'
-import { rdsTopSpacing } from '../../utils/tailwindClasses'
+import { rdsTopSpacing } from '../../utils/optionClasses'
 
 export interface AsideProps {
   children: React.ReactNode

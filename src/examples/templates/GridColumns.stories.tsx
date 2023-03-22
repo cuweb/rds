@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../layouts/Main/Main'
-import { Container } from '../../layouts/Container'
+import { Section } from '../../layouts/Section/Section'
+import { Container } from '../../layouts/Container/Container'
 import { Column } from '../../layouts/Column/Column'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { Panel } from '../../layouts/Panel/Panel'
 
 const meta: Meta = {
   title: 'Examples/Templates/Grid Columns',
@@ -55,40 +57,71 @@ export const GridColumns: Story = {
       />
 
       <Main>
-        <Container hasProse>
-          <SinglePara />
-          <h2>This is a header two</h2>
+        <Section>
+          <Container hasProse>
+            <SinglePara />
+            <h2>This is a header two</h2>
 
-          <Column cols="2">
-            <div>
-              <SinglePara />
-            </div>
-            <div>
-              <SinglePara />
-            </div>
-          </Column>
+            <Column cols="2">
+              <div>
+                <SinglePara />
+              </div>
+              <div>
+                <SinglePara />
+              </div>
+            </Column>
 
-          <DoublePara />
-        </Container>
+            <DoublePara />
+          </Container>
 
-        <Container bgColor="grey" hasProse>
-          <h2>This is a header two</h2>
-          <DoublePara />
-          <Column cols="3">
-            <div>
-              <h3>Header three</h3>
-              <SinglePara />
-            </div>
-            <div>
-              <h3>Header three</h3>
-              <SinglePara />
-            </div>
-            <div>
-              <h3>Header three</h3>
-              <SinglePara />
-            </div>
-          </Column>
-        </Container>
+          <Container bgColor="grey" hasProse>
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <Column cols="3">
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+            </Column>
+          </Container>
+
+          <Container hasProse>
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <Column cols="2">
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+            </Column>
+            <Column cols="3">
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+              <div>
+                <h3>Header three</h3>
+                <SinglePara />
+              </div>
+            </Column>
+          </Container>
+        </Section>
       </Main>
 
       <FooterBasic />

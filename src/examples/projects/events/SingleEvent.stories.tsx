@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
-import { Container } from '../../../layouts/Container'
+import { Section } from '../../../layouts/Section/Section'
+import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 import { Panel } from '../../../layouts/Panel/Panel'
 import { Aside } from '../../../layouts/Aside/Aside'
@@ -75,7 +76,7 @@ export const SingleEvent: Story = {
       />
 
       <Main>
-        <Container as="section">
+        <Section>
           <Column cols="2/3" maxWidth="7xl">
             <Article>
               <EventContent />
@@ -110,7 +111,7 @@ export const SingleEvent: Story = {
               </Panel>
             </Aside>
           </Column>
-        </Container>
+        </Section>
       </Main>
 
       <FooterBasic />

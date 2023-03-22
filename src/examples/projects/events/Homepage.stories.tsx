@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
-import { Container } from '../../../layouts/Container'
+import { Section } from '../../../layouts/Section/Section'
+import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 import { Panel } from '../../../layouts/Panel/Panel'
 import { Aside } from '../../../layouts/Aside/Aside'
@@ -32,7 +33,7 @@ export const Homepage: Story = {
       <Banner title="Featured Events" align="left" isType="dark-wave" maxWidth="7xl" hasOverlap />
 
       <Main hasOverlap>
-        <Container maxWidth="7xl">
+        <Section>
           <Column cols="3" maxWidth="7xl">
             {dataCard.map((item) => (
               <EventCard
@@ -50,66 +51,66 @@ export const Homepage: Story = {
               />
             ))}
           </Column>
-        </Container>
 
-        <Container bgColor="grey" maxWidth="7xl" hasProse>
-          <h2>Upcoming Events</h2>
+          <Container bgColor="grey" maxWidth="7xl" hasProse>
+            <h2>Upcoming Events</h2>
 
-          {/* <Column maxWidth="7xl">
+            {/* <Column maxWidth="7xl">
             <Filter filters={data.filters} callback={callbackfilter} sortOptions={data.sortOptions} />
           </Column> */}
 
-          <Column cols="2/3" maxWidth="7xl">
-            <div>
-              <Panel hasShadow>
-                {dataList.map(
-                  ({
-                    id,
-                    title, // link,
-                    start_date,
-                    end_date,
-                    event_address,
-                    on_campus,
-                    on_campus_building,
-                    on_campus_room_number,
-                    tags,
-                  }) => (
-                    <EventItem
-                      key={id}
-                      as="div"
-                      link="#"
-                      title={title}
-                      startDateTime={start_date}
-                      endDateTime={end_date}
-                      event_address={event_address}
-                      on_campus={on_campus}
-                      on_campus_building={on_campus_building}
-                      on_campus_room_number={on_campus_room_number}
-                      tags={tags}
-                    />
-                  ),
-                )}
-              </Panel>
+            <Column cols="2/3" maxWidth="7xl">
+              <div>
+                <Panel hasShadow>
+                  {dataList.map(
+                    ({
+                      id,
+                      title, // link,
+                      start_date,
+                      end_date,
+                      event_address,
+                      on_campus,
+                      on_campus_building,
+                      on_campus_room_number,
+                      tags,
+                    }) => (
+                      <EventItem
+                        key={id}
+                        as="div"
+                        link="#"
+                        title={title}
+                        startDateTime={start_date}
+                        endDateTime={end_date}
+                        event_address={event_address}
+                        on_campus={on_campus}
+                        on_campus_building={on_campus_building}
+                        on_campus_room_number={on_campus_room_number}
+                        tags={tags}
+                      />
+                    ),
+                  )}
+                </Panel>
 
-              <Pagination
-                totalCount={48}
-                siblingCount={1}
-                pageSize={5}
-                callback={() => {
-                  console.log('Pagination')
-                }}
-              />
-            </div>
+                <Pagination
+                  totalCount={48}
+                  siblingCount={1}
+                  pageSize={5}
+                  callback={() => {
+                    console.log('Pagination')
+                  }}
+                />
+              </div>
 
-            <Aside>
-              <Calendar
-                callback={() => {
-                  console.log('Calendar')
-                }}
-              />
-            </Aside>
-          </Column>
-        </Container>
+              <Aside>
+                <Calendar
+                  callback={() => {
+                    console.log('Calendar')
+                  }}
+                />
+              </Aside>
+            </Column>
+          </Container>
+        </Section>
       </Main>
 
       <FooterBasic />

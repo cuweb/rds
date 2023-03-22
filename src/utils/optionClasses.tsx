@@ -1,7 +1,3 @@
-export const globalStyles = {
-  prose: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
-}
-
 export const rdsMaxWidth = {
   full: 'max-w-full',
   '5xl': 'max-w-5xl',

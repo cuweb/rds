@@ -1,5 +1,5 @@
 import React from 'react'
-import { rdsFontSizes } from '../../../utils/tailwindClasses'
+import { rdsFontSizes } from '../../../utils/optionClasses'
 import { Icon } from '../../Icon/Icon'
 
 // Set types for as props

@@ -1,5 +1,5 @@
 import React from 'react'
-import { globalStyles } from '../../utils/tailwindClasses'
+import { globalStyles } from '../../utils/globalClasses'
 
 export interface ArticleBaseProps {
   as?: keyof JSX.IntrinsicElements

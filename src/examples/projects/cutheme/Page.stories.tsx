@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { Main } from '../../../layouts/Main/Main'
-import { Container } from '../../../layouts/Container'
+import { Section } from '../../../layouts/Section/Section'
+import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
@@ -60,7 +61,7 @@ export const SinglePage: Story = {
       <Banner title="cutheme layout testing" isType="dark-wave" align="left" />
 
       <Main>
-        <Container as="section" hasProse>
+        <Section hasProse>
           <h2>This is a header 2</h2>
           <SinglePara />
 
@@ -70,7 +71,7 @@ export const SinglePage: Story = {
           <h4>This is a header 4</h4>
           <DoublePara />
 
-          <Container as="div" bgColor="white" hasProse>
+          <Container bgColor="white" hasProse>
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
@@ -88,7 +89,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container as="div" bgColor="white" hasProse>
+          <Container bgColor="white" hasProse>
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
@@ -111,7 +112,7 @@ export const SinglePage: Story = {
           <h2>This is a header 2</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="grey">
+          <Container bgColor="grey">
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
@@ -129,7 +130,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container as="div" bgColor="grey" maxWidth="5xl">
+          <Container bgColor="grey" maxWidth="5xl">
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3" maxWidth="7xl">
@@ -152,7 +153,7 @@ export const SinglePage: Story = {
           <h2>This is a header 2</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="white">
+          <Container bgColor="white">
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3">
@@ -170,7 +171,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container as="div" bgColor="white" maxWidth="5xl">
+          <Container bgColor="white" maxWidth="5xl">
             <h2>News Card Grid</h2>
             <p>Uses Container, Column and NewsCard components.</p>
             <Column cols="3" maxWidth="7xl">
@@ -187,7 +188,7 @@ export const SinglePage: Story = {
               ))}
             </Column>
           </Container>
-        </Container>
+        </Section>
       </Main>
 
       <FooterBasic />

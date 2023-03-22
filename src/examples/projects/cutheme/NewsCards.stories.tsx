@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { Main } from '../../../layouts/Main/Main'
-import { Container } from '../../../layouts/Container'
+import { Section } from '../../../layouts/Section/Section'
+import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
@@ -60,13 +61,13 @@ export const NewsCardBlocks: Story = {
       <Banner title="cutheme news card testing" isType="dark-wave" align="left" />
 
       <Main>
-        <Container as="section" hasProse>
+        <Section hasProse>
           <DoublePara />
 
           <h2>News Card Block</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="white" maxWidth="7xl" hasProse>
+          <Container bgColor="white" maxWidth="7xl" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -87,7 +88,7 @@ export const NewsCardBlocks: Story = {
           <h2>News Card Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="grey" hasProse>
+          <Container bgColor="grey" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -106,7 +107,7 @@ export const NewsCardBlocks: Story = {
           <h2>Consecutive News Card Block</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="white" hasProse>
+          <Container bgColor="white" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -122,7 +123,7 @@ export const NewsCardBlocks: Story = {
             </Column>
           </Container>
 
-          <Container as="div" bgColor="white" maxWidth="5xl" hasProse>
+          <Container bgColor="white" maxWidth="5xl" hasProse>
             <Column cols="3" maxWidth="7xl">
               {data.map((item) => (
                 <NewsCard
@@ -141,7 +142,7 @@ export const NewsCardBlocks: Story = {
           <h2>Consecutive News Card Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="grey" maxWidth="5xl" hasProse>
+          <Container bgColor="grey" maxWidth="5xl" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -157,7 +158,7 @@ export const NewsCardBlocks: Story = {
             </Column>
           </Container>
 
-          <Container as="div" bgColor="grey" hasProse>
+          <Container bgColor="grey" hasProse>
             <Column cols="3" maxWidth="7xl">
               {data.map((item) => (
                 <NewsCard
@@ -172,7 +173,7 @@ export const NewsCardBlocks: Story = {
               ))}
             </Column>
           </Container>
-        </Container>
+        </Section>
       </Main>
 
       <FooterBasic />

@@ -8,5 +8,5 @@ export interface MainProps {
 export const Main = ({ children, hasOverlap }: MainProps) => {
   const overlapStyles = hasOverlap ? 'z-20 cu-overlap' : ''
 
-  return <main className={`relative mx-8 ${overlapStyles}`}>{children}</main>
+  return <main className={`relative ${overlapStyles}`}>{children}</main>
 }

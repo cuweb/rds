@@ -1609,6 +1609,10 @@ select {
   margin: -0.25rem;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1623,6 +1627,11 @@ select {
   margin-right: -0.375rem;
 }
 
+.-mx-10 {
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+}
+
 .-mx-2 {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
@@ -1631,11 +1640,6 @@ select {
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
-}
-
-.-mx-8 {
-  margin-left: -2rem;
-  margin-right: -2rem;
 }
 
 .-my-1 {
@@ -1653,9 +1657,9 @@ select {
   margin-bottom: -0.75rem;
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .mx-auto {
@@ -2687,6 +2691,10 @@ select {
   padding: 0.375rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -2719,6 +2727,11 @@ select {
 .px-1\.5 {
   padding-left: 0.375rem;
   padding-right: 0.375rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .px-2 {
@@ -3290,64 +3303,97 @@ select {
 
 /* RDS Layout CSS */
 
-/* 
-* Modify spacing for layout components
-*/
+/* First white block inside section */
 
-/* Remove top spacing when containers with same bg are used consecutively */
-
-.cu-container-white + .cu-container-white,
-.cu-container-grey + .cu-container-grey {
+.cu-section > .cu-container.bg-white:first-child {
   padding-top: 0px;
 }
 
-/* Remove spacing on non-layout components that follow container or column */
+/* Last white block inside section */
 
-.cu-container-white + :not(.cu-container) {
-  margin-top: 0px;
+.cu-section > .cu-container.bg-white:last-child {
+  /* @apply -mb-10 md:-mb-14; */
+  padding-bottom: 0px;
 }
 
-.cu-container-grey + :not(.cu-container) {
+/* First grey block inside section */
+
+.cu-section > .cu-container.bg-cu-black-50:first-child {
+  margin-top: -2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-section > .cu-container.bg-cu-black-50:first-child {
+    margin-top: -3.5rem;
+  }
+}
+
+/* Last grey block inside section */
+
+.cu-section > .cu-container.bg-cu-black-50:last-child {
+  margin-bottom: -2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-section > .cu-container.bg-cu-black-50:last-child {
+    margin-bottom: -3.5rem;
+  }
+}
+
+.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
+  padding-top: 0px;
+  /* @apply pt-0 -mt-6; */
+}
+
+.cu-container.bg-cu-black-50 + .cu-container.bg-white {
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-cu-black-50 + .cu-container.bg-white {
+    padding-top: 2.5rem;
+  }
+}
+
+.cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-column + .cu-container {
   margin-top: 2.5rem;
 }
 
-/* Remove spacing if nested container is last item inside another container */
-
-.cu-container > .cu-container:last-child {
-  margin-bottom: -3.5rem;
-  padding-bottom: 4rem;
+@media (min-width: 768px) {
+  .cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-column + .cu-container {
+    margin-top: 2.5rem;
+  }
 }
 
-/* Add spacing when white container follows non-layout components */
-
-:not(.cu-container) + .cu-container-white {
-  padding-top: 1.5rem;
-}
-
-/* Add spacing when grey container follows non-layout components */
-
-:not(.cu-container) + .cu-container-grey {
+:not(.cu-container) + .cu-container.bg-cu-black-50,
+.cu-container.bg-cu-black-50 + :not(.cu-container) {
   margin-top: 3.5rem;
 }
 
-/* Add spacing when columns and panels are used in some consecutive order */
-
+:not(.not-contained) + .cu-column,
+.cu-column + :not(.not-contained),
 .cu-column + .cu-column,
-.cu-panel + .cu-panel,
 .cu-column + .cu-panel,
 .cu-panel + .cu-column {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
-/* Add spacing when grey container follows non-layout components */
-
-:not(.cu-container) + .cu-column {
-  margin-top: 2.5rem;
+@media (min-width: 768px) {
+  :not(.not-contained) + .cu-column,
+.cu-column + :not(.not-contained),
+.cu-column + .cu-column,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+    margin-top: 2rem;
+  }
 }
 
 /* Target children of container and apply max width 5xl */
 
-.cu-container-5xl > :not(.no-width-restriction) {
+.cu-section-5xl > :not(.not-contained),
+.cu-container-5xl > :not(.not-contained) {
   margin-left: auto;
   margin-right: auto;
   max-width: 64rem;
@@ -3355,7 +3401,8 @@ select {
 
 /* Target children of container and apply max width 7xl */
 
-.cu-container-7xl > :not(.no-width-restriction) {
+.cu-section-7xl > :not(.not-contained),
+.cu-container-7xl > :not(.not-contained) {
   margin-left: auto;
   margin-right: auto;
   max-width: 64rem;
@@ -3363,21 +3410,35 @@ select {
 
 /* Target children of container and apply max width full */
 
-.cu-container-full > :not(.no-width-restriction) {
+.cu-section-full > :not(.not-contained),
+.cu-container-full > :not(.not-contained) {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
 }
 
+.cu-column > div > *:first-child {
+  margin-top: 0px;
+}
+
+.cu-column > div > *:last-child {
+  margin-bottom: 0px;
+}
+
+/* 
+* Add styles to first child of container to banner overlap
+*/
+
+@media (min-width: 768px) {
+  .cu-overlap > .cu-section:first-child > *:first-child {
+    z-index: 20;
+    margin-top: -7rem;
+  }
+}
+
 /* 
 * Modify spacing for prose and layout components
 */
-
-/* Remove spacing if container is first item inside prose container */
-
-.prose > .cu-container:first-child {
-  margin-top: -3.5rem;
-}
 
 /* Remove top and bottom space added by prose when columns are used inside prose container */
 
@@ -3401,17 +3462,6 @@ select {
 .prose > .cu-container > *:last-child,
 .prose > .cu-container > * > *:last-child {
   margin-bottom: 0px;
-}
-
-/* 
-* Add styles to first child of container to banner overlap
-*/
-
-@media (min-width: 768px) {
-  .cu-overlap > .cu-container:first-child > *:first-child {
-    z-index: 20;
-    margin-top: -7rem;
-  }
 }
 
 /* React Quill CSS */
@@ -5245,6 +5295,20 @@ select {
 }
 
 @media (min-width: 768px) {
+  .md\:m-14 {
+    margin: 3.5rem;
+  }
+
+  .md\:-mx-14 {
+    margin-left: -3.5rem;
+    margin-right: -3.5rem;
+  }
+
+  .md\:mx-14 {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -5321,8 +5385,17 @@ select {
     background-size: cover;
   }
 
+  .md\:p-14 {
+    padding: 3.5rem;
+  }
+
   .md\:p-20 {
     padding: 5rem;
+  }
+
+  .md\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .md\:px-8 {
@@ -5343,6 +5416,11 @@ select {
   .md\:py-48 {
     padding-top: 12rem;
     padding-bottom: 12rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .md\:pb-32 {
@@ -5689,18 +5767,6 @@ select {
   z-index: 10;
 }
 
-.\[\&\>\*\]\:max-w-5xl>* {
-  max-width: 64rem;
-}
-
-.\[\&\>\*\]\:max-w-7xl>* {
-  max-width: 80rem;
-}
-
-.\[\&\>\*\]\:max-w-full>* {
-  max-width: 100%;
-}
-
 .\[\&\>\*\]\:border-b>* {
   border-bottom-width: 1px;
 }
@@ -5712,6 +5778,10 @@ select {
 
 .last\:\[\&\>\*\]\:-mb-px>*:last-child {
   margin-bottom: -1px;
+}
+
+.last\:\[\&\>\*\]\:mb-0>*:last-child {
+  margin-bottom: 0px;
 }
 
 .last\:\[\&\>\*\]\:justify-center>*:last-child {

@@ -60,6 +60,7 @@ export { Column } from './layouts/Column/Column'
 export { Container } from './layouts/Container/Container'
 export { Main } from './layouts/Main/Main'
 export { Panel } from './layouts/Panel/Panel'
+export { Section } from './layouts/Section/Section'
 export { StackedList } from './layouts/StackedList/StackedList'
 
 //

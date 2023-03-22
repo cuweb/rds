@@ -1,6 +1,6 @@
 import React from 'react'
 import styles, { typeStyles, contentStyles } from './Banner.styles'
-import { rdsFontSizes, rdsMaxWidth } from '../../utils/tailwindClasses'
+import { rdsFontSizes, rdsMaxWidth } from '../../utils/optionClasses'
 import { BannerAnimated } from './Banner.Animated'
 
 export interface BannerProps {

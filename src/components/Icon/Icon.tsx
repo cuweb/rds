@@ -1,4 +1,4 @@
-import { rdsWidth, rdsHeight, rdsTextColor } from '../../utils/tailwindClasses'
+import { rdsWidth, rdsHeight, rdsTextColor } from '../../utils/optionClasses'
 export interface IconProps {
   icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
   color?: 'black' | 'white' | 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow'

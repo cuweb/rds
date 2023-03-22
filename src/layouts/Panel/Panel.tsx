@@ -1,5 +1,5 @@
 import React from 'react'
-import { rdsMaxWidth } from '../../utils/tailwindClasses'
+import { rdsMaxWidth } from '../../utils/optionClasses'
 import styles from './Panel.styles'
 
 export interface PanelProps {
