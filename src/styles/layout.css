@@ -46,16 +46,16 @@
 }
 
 /* Target children of container and apply max width 5xl */
-.cu-container-5xl > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+.cu-container-5xl > :not(.no-width-restriction) {
   @apply mx-auto max-w-5xl;
 }
 
 /* Target children of container and apply max width 7xl */
-.cu-container-7xl > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+.cu-container-7xl > :not(.no-width-restriction) {
   @apply mx-auto max-w-5xl;
 }
 
 /* Target children of container and apply max width full */
-.cu-container-full > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+.cu-container-full > :not(.no-width-restriction) {
   @apply mx-auto max-w-full;
 }

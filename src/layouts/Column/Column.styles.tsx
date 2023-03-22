@@ -1,4 +1,4 @@
 const styles = {
-  column: `cu-column mx-auto grid`,
+  column: `cu-column no-width-restriction mx-auto grid`,
 }
 export default styles
