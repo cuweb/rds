@@ -3345,6 +3345,30 @@ select {
   margin-top: 2.5rem;
 }
 
+/* Target children of container and apply max width 5xl */
+
+.cu-container-5xl > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+}
+
+/* Target children of container and apply max width 7xl */
+
+.cu-container-7xl > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+}
+
+/* Target children of container and apply max width full */
+
+.cu-container-full > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
 /* 
 * Modify spacing for prose and layout components
 */
@@ -5706,19 +5730,6 @@ select {
   .md\:odd\:\[\&\>\*\]\:border-r>*:nth-child(odd) {
     border-right-width: 1px;
   }
-}
-
-.\[\&\>\:not\(\.cu-container\)\:not\(\.cu-column\)\]\:mx-auto>:not(.cu-container):not(.cu-column) {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.\[\&\>\:not\(\.cu-container\)\:not\(\.cu-column\)\]\:max-w-5xl>:not(.cu-container):not(.cu-column) {
-  max-width: 64rem;
-}
-
-.\[\&\>\:not\(\.cu-container\)\:not\(\.cu-column\)\]\:max-w-7xl>:not(.cu-container):not(.cu-column) {
-  max-width: 80rem;
 }
 
 .\[\&\>td\]\:border-b>td {

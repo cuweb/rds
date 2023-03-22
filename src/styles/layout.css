@@ -45,31 +45,17 @@
   @apply mt-10;
 }
 
-/* 
-* Modify spacing for prose and layout components
-*/
-
-/* Remove spacing if container is first item inside prose container */
-.prose > .cu-container {
-  @apply first:-mt-14;
+/* Target children of container and apply max width 5xl */
+.cu-container-5xl > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+  @apply mx-auto max-w-5xl;
 }
 
-/* Remove top and bottom space added by prose when columns are used inside prose container */
-.prose > .cu-column > *,
-.prose > .cu-column > * > * {
-  @apply first:mt-0 last:mb-0;
+/* Target children of container and apply max width 7xl */
+.cu-container-7xl > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+  @apply mx-auto max-w-5xl;
 }
 
-/* Remove top and bottom space added by prose inside container */
-.prose > .cu-container > *,
-.prose > .cu-container > * > * {
-  @apply first:mt-0 last:mb-0;
-}
-
-/* 
-* Add styles to first child of container to banner overlap
-*/
-
-.cu-overlap > .cu-container:first-child > *:first-child {
-  @apply md:z-20 md:-mt-28;
+/* Target children of container and apply max width full */
+.cu-container-full > :not(.cu-container):not(.cu-column):not(.cu-panel) {
+  @apply mx-auto max-w-full;
 }

@@ -66,7 +66,7 @@ export const NewsCardBlocks: Story = {
           <h2>News Card Block</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="white" hasProse>
+          <Container as="div" bgColor="white" maxWidth="7xl" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -122,8 +122,8 @@ export const NewsCardBlocks: Story = {
             </Column>
           </Container>
 
-          <Container as="div" bgColor="white" hasProse>
-            <Column cols="3">
+          <Container as="div" bgColor="white" maxWidth="5xl" hasProse>
+            <Column cols="3" maxWidth="7xl">
               {data.map((item) => (
                 <NewsCard
                   key={item.id}
@@ -141,7 +141,7 @@ export const NewsCardBlocks: Story = {
           <h2>Consecutive News Card Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="grey" hasProse>
+          <Container as="div" bgColor="grey" maxWidth="5xl" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -158,7 +158,7 @@ export const NewsCardBlocks: Story = {
           </Container>
 
           <Container as="div" bgColor="grey" hasProse>
-            <Column cols="3">
+            <Column cols="3" maxWidth="7xl">
               {data.map((item) => (
                 <NewsCard
                   key={item.id}

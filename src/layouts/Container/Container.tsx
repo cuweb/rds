@@ -25,7 +25,7 @@ export const Container = ({
   const addProse = hasProse ? styles.prose : '[&>*:first-child]:-mt-0'
   const bgStyles = bgColor === 'grey' ? `${styles.grey}` : `${styles.white}`
 
-  const childWidth = maxWidth ? `${styles.autoMargin} [&>:not(.cu-container):not(.cu-column)]:max-w-${maxWidth}` : ''
+  const childWidth = maxWidth ? `cu-container-${maxWidth}` : ''
 
   return (
     <>

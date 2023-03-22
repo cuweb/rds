@@ -62,10 +62,10 @@ export const NewsListingBlocks: Story = {
         <Container as="section" hasProse>
           <DoublePara />
 
-          <h2>News Card Block</h2>
+          <h2>News Listing Block</h2>
           <SinglePara />
 
-          <Container as="div" bgColor="white" hasProse>
+          <Container as="div" bgColor="white" maxWidth="7xl" hasProse>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt }) => (
                 <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
@@ -75,7 +75,7 @@ export const NewsListingBlocks: Story = {
 
           <DoublePara />
 
-          <h2>News Card Block with Grey Bg</h2>
+          <h2>News Listing Block with Grey Bg</h2>
           <SinglePara />
 
           <Container as="div" bgColor="grey" hasProse>
@@ -86,7 +86,7 @@ export const NewsListingBlocks: Story = {
             </StackedList>
           </Container>
 
-          <h2>Consecutive News Card Block</h2>
+          <h2>Consecutive News Listing Block</h2>
           <SinglePara />
 
           <Container as="div" bgColor="white" hasProse>
@@ -105,7 +105,7 @@ export const NewsListingBlocks: Story = {
             </StackedList>
           </Container>
 
-          <h2>Consecutive News Card Block with Grey Bg</h2>
+          <h2>Consecutive News Listing Block with Grey Bg</h2>
           <SinglePara />
 
           <Container as="div" bgColor="grey" hasProse>
