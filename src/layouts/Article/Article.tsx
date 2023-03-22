@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Article.styles'
+import { globalStyles } from '../../utils/tailwindClasses'
 
 export interface ArticleBaseProps {
   as?: keyof JSX.IntrinsicElements
@@ -13,8 +13,8 @@ export interface ArticleProps {
 export const Article = ({ children, content }: ArticleProps) => {
   return (
     <>
-      {content && <article className={`${styles.prose}`} dangerouslySetInnerHTML={{ __html: content }} />}
-      {!content && <article className={`${styles.prose}`}>{children}</article>}
+      {content && <article className={`${globalStyles.prose}`} dangerouslySetInnerHTML={{ __html: content }} />}
+      {!content && <article className={`${globalStyles.prose}`}>{children}</article>}
     </>
   )
 }
