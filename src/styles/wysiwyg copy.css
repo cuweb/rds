@@ -1,3 +1,9 @@
+/*!
+ * Quill Editor v1.3.7
+ * https://quilljs.com/
+ * Copyright (c) 2014, Jason Chen
+ * Copyright (c) 2013, salesforce.com
+ */
 .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
@@ -6,15 +12,12 @@
   margin: 0px;
   position: relative;
 }
-
 .ql-container.ql-disabled .ql-tooltip {
   visibility: hidden;
 }
-
 .ql-container.ql-disabled .ql-editor ul[data-checked] > li::before {
   pointer-events: none;
 }
-
 .ql-clipboard {
   left: -100000px;
   height: 1px;
@@ -22,29 +25,11 @@
   position: absolute;
   top: 50%;
 }
-
 .ql-clipboard p {
   margin: 0;
   padding: 0;
 }
-
 .ql-editor {
-  @apply prose prose-lg prose-rds max-w-none md:prose-xl prose-img:w-full prose-img:rounded-lg;
-}
-
-.ql-editor {
-  @apply px-10 py-6;
-}
-
-.ql-editor > * {
-  @apply mt-4 mb-4;
-}
-
-.ql-editor img {
-  @apply rounded-lg;
-}
-
-/* .ql-editor {
   box-sizing: border-box;
   line-height: 1.42;
   height: 100%;
@@ -409,8 +394,7 @@
   pointer-events: none;
   position: absolute;
   right: 15px;
-} */
-
+}
 .ql-snow.ql-toolbar:after,
 .ql-snow .ql-toolbar:after {
   clear: both;
