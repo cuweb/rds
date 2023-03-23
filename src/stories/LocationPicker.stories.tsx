@@ -20,26 +20,36 @@ export default meta
 type Story = StoryObj<typeof LocationPicker>
 
 export const Default: Story = () => {
-  const [position, setPosition] = useState([])
-  const [center, setCenter1] = useState({})
+  interface PositionInterface {
+    name: string
+    id: string
+    position: object
+  }
+  interface CenterInterface {
+    lat: number
+    lng: number
+  }
+  const [position, setPosition] = useState<{ name: string; id: string; position: object }[]>([])
 
-  const callback = useCallback(
-    (position: any) => {
-      setPosition(position)
+  const [center, setCenter] = useState<{ lat: number; lng: number }>({
+    lat: 45.3850225,
+    lng: -75.6946679,
+  })
+
+  const posCallback = useCallback((pos: PositionInterface[]) => setPosition(pos), [setPosition])
+
+  const centerCallback = useCallback(
+    (center: CenterInterface) => {
+      if (center.lat && center.lng) setCenter(center)
     },
-    [setPosition],
+    [setCenter],
   )
-  const callback1 = useCallback(
-    (ce: any) => {
-      setCenter1(ce)
-    },
-    [setCenter1],
-  )
-  console.log('cente', center)
+
   return (
-    <>
-      <LocationPicker callback={callback} callback1={callback1} /> <Location markers={position} center={center} />
-    </>
+    <Column maxWidth="5xl">
+      <LocationPicker posCallback={posCallback} centerCallback={centerCallback} />{' '}
+      <Location markers={position} center={center} />
+    </Column>
   )
 }
 Default.storyName = 'Location Picker'

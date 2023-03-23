@@ -10,16 +10,7 @@ export interface LocationProps {
   markers?: any
   center?: any
 }
-export const Location = (props: LocationProps) => {
-  const {
-    markers,
-    location,
-    lat = '45.3850225',
-    lng = '-75.6946679',
-    center = { lat: 45.3850225, lng: -75.6946679 },
-  } = props
-  // const {cLat = '45.3850225',cLng = ''} = center
-  console.log('center----', center)
+export const Location = ({ markers, location, lat, lng, zoom = 15, center }: LocationProps) => {
   const [showInfo, setShowInfo] = React.useState(false)
   const mapRef = React.useRef()
 
@@ -27,7 +18,7 @@ export const Location = (props: LocationProps) => {
 
   const onMapLoad = React.useCallback((map: any) => {
     const bounds = new google.maps.LatLngBounds()
-    if (markers) {
+    if (markers.length !== 0) {
       markers.forEach(({ position }: any) => bounds.extend(position))
       map.fitBounds(bounds)
     }
@@ -49,13 +40,11 @@ export const Location = (props: LocationProps) => {
     streetViewControl: true,
   }
 
-  console.log('props', props)
-
   return (
-    <div className="not-prose">
+    <div className="not-prose" >
       <GoogleMap
         mapContainerClassName="w-full h-96"
-        zoom={15}
+        zoom={zoom}
         options={options}
         center={
           center
