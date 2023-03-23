@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
 import { PeopleItem } from '../components/Listings/PeopleItem/PeopleItem'
 import { PeopleItemData as data } from '../components/Listings/PeopleItem/PeopleItemData'
 import { StackedList } from '../layouts/StackedList/StackedList'
