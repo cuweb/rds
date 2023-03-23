@@ -5,17 +5,15 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 
 export const LocationPicker = ({ callback }: any) => {
   const [address, setAddress] = useState('')
-  const [pos, setPos] = useState<{name: string,id: string, position: object}[]>(
-    [],
-  );
+  const [pos, setPos] = useState<{ name: string; id: string; position: object }[]>([])
 
   const handleSelect = async (value: string) => {
     const results = await geocodeByAddress(value)
     console.log(results, 'results')
     const latLng = await getLatLng(results[0])
-   const placeID = results[0].place_id
+    const placeID = results[0].place_id
     setAddress(value)
-    setPos([...pos, { name: value,id:placeID, position: latLng }])
+    setPos([...pos, { name: value, id: placeID, position: latLng }])
   }
 
   useEffect(() => {
