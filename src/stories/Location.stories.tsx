@@ -25,4 +25,3 @@ const address = {
 export const Default: Story = {
   render: () => <Location lat={address.lat} lng={address.lng} location={address.location} />,
 }
-Default.storyName = 'Default Location'
