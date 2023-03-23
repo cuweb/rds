@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { useCallback, useState } from 'react'
 import { LocationPicker } from '../components/LocationPicker/LocationPicker'
 import { Column } from '../layouts/Column/Column'
 
@@ -17,11 +18,16 @@ export default meta
 
 type Story = StoryObj<typeof LocationPicker>
 
-export const Default: Story = {
-  render: () => (
-    <Column maxWidth="5xl">
-      <LocationPicker />
-    </Column>
-  ),
-}
+
+export const Default: Story = () => {
+    const [, setPosition] = useState([])
+  
+    const callback = useCallback(
+      (position: any) => {
+        setPosition(position)
+      },
+      [setPosition],
+    )
+    return <LocationPicker callback={callback} />
+  }
 Default.storyName = 'Default LocationPicker'

@@ -1,23 +1,35 @@
 import { Combobox } from '@headlessui/react'
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import { Location } from '../Location/Location'
 
-export const LocationPicker = () => {
+
+export const LocationPicker = ({ callback }: any) => {
   const [address, setAddress] = useState('')
-  const [coordinates, setCoordinates] = useState({
-    lat: 0,
-    lng: 0,
-  })
+  // const [coordinates, setCoordinates] = useState({
+  //   lat: 0,
+  //   lng: 0,
+  // })
+  const [pos,setPos] = useState([{name: '' ,position:{lat:0,lng:0}}]);
+
+  
 
   const handleSelect = async (value: string) => {
     const results = await geocodeByAddress(value)
+    console.log(results,'results')
     const latLng = await getLatLng(results[0])
     setAddress(value)
-    setCoordinates(latLng)
+    // setCoordinates(latLng)
+   setPos([...pos,{name: value, position:latLng}])
   }
 
+
+console.log("pos---",pos)
+useEffect(() => {
+   callback(pos)
+}, [pos, callback])
+  
   return (
     <div className="not-prose">
       <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect}>
@@ -38,7 +50,7 @@ export const LocationPicker = () => {
                   aria-hidden="true"
                   onClick={() => {
                     setAddress('')
-                    setCoordinates({ lat: 0, lng: 0 })
+                    // setCoordinates({ lat: 0, lng: 0 })
                   }}
                 />
               )}
@@ -64,9 +76,9 @@ export const LocationPicker = () => {
           </Combobox>
         )}
       </PlacesAutocomplete>
-      <div className="py-5">
+      {/* <div className="py-5">
         <Location lat={coordinates?.lat.toString()} lng={coordinates?.lng.toString()} location={address} />
-      </div>
+      </div> */}
     </div>
   )
 }
