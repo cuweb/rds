@@ -14,7 +14,7 @@ export interface WYSIWYGProps {
 
 export const WYSIWYG = ({
   label,
-  editor = 'textarea',
+  editor = '<div className="my-editing-area"/>',
   placeholder,
   ...props
 }: WYSIWYGProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>) => {
@@ -41,6 +41,7 @@ export const WYSIWYG = ({
         <div>
           <Editor
             {...field}
+            className="prose prose-lg prose-rds max-w-none md:prose-xl prose-img:w-full prose-img:rounded-lg"
             id={field.name}
             name={field.name}
             value={field.value}
