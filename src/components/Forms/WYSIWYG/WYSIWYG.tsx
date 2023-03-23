@@ -22,8 +22,7 @@ export const WYSIWYG = ({
 
   const modules = {
     toolbar: [
-      [{ header: '1' }, { header: '2' }, { header: '3' }],
-      [{ size: ['normal'] }],
+      [{ header: [2, 3, 4, false] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
       [{ list: 'ordered' }, { list: 'bullet' }],
       ['link', 'image'],
