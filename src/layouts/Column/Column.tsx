@@ -1,12 +1,15 @@
 import React from 'react'
-import { rdsGridColumns, rdsGridSpacing, rdsMaxWidth } from '../../utils/tailwindClasses'
-import styles from './Column.styles'
+import { rdsGridColumns, rdsGridSpacing, rdsMaxWidth } from '../../utils/optionClasses'
 
 export interface ColumnProps {
   children: React.ReactNode
-  maxWidth?: 'none' | 'full' | '5xl' | '7xl'
+  maxWidth?: 'full' | '5xl' | '7xl'
   gridGap?: '0' | '5' | '10'
   cols?: '1' | '2' | '3' | '4' | '1/3' | '2/3'
+}
+
+const styles = {
+  column: `cu-column not-contained mx-auto grid`,
 }
 
 export const Column = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1' }: ColumnProps) => {

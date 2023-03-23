@@ -24,7 +24,7 @@ export const Location = ({ lat, lng, location, zoom = 15 }: LocationProps) => {
   }
 
   return (
-    <div className="not-prose">
+    <div className="not-prose not-contained">
       <GoogleMap
         mapContainerClassName="w-full h-96"
         center={{ lat: Number(lat), lng: Number(lng) }}

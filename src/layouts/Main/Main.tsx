@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Main.styles'
 
 export interface MainProps {
   children: React.ReactNode
@@ -7,7 +6,7 @@ export interface MainProps {
 }
 
 export const Main = ({ children, hasOverlap }: MainProps) => {
-  const overlapStyles = hasOverlap ? styles.overlap : ''
+  const overlapStyles = hasOverlap ? 'z-20 cu-overlap' : ''
 
-  return <main className={`${styles.core} ${overlapStyles}`}>{children}</main>
+  return <main className={`relative ${overlapStyles}`}>{children}</main>
 }

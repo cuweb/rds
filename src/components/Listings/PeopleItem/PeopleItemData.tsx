@@ -1,4 +1,4 @@
-export const PeopleItemsData = [
+export const PeopleItemData = [
   {
     id: 1,
     firstName: 'Carleton',

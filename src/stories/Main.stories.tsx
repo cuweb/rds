@@ -25,7 +25,7 @@ Primary.args = {
 
 export const WithContent: Story = {
   render: () => (
-    <Container as="section">
+    <Container>
       <Article>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus

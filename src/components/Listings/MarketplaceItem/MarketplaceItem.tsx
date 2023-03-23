@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
-import { rdsFontSizes } from '../../../utils/tailwindClasses'
+import { rdsFontSizes } from '../../../utils/optionClasses'
 import { Badge } from '../../Badge/Badge'
 import { Link } from '../../Link/Link'
 
