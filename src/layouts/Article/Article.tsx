@@ -1,9 +1,5 @@
 import React from 'react'
-import styles from './Article.styles'
-
-export interface ArticleBaseProps {
-  as?: keyof JSX.IntrinsicElements
-}
+import { globalStyles } from '../../utils/globalClasses'
 
 export interface ArticleProps {
   children?: React.ReactNode
@@ -13,8 +9,8 @@ export interface ArticleProps {
 export const Article = ({ children, content }: ArticleProps) => {
   return (
     <>
-      {content && <article className={`${styles.prose}`} dangerouslySetInnerHTML={{ __html: content }} />}
-      {!content && <article className={`${styles.prose}`}>{children}</article>}
+      {content && <article className={`${globalStyles.prose}`} dangerouslySetInnerHTML={{ __html: content }} />}
+      {!content && <article className={`${globalStyles.prose}`}>{children}</article>}
     </>
   )
 }

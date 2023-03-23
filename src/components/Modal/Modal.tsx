@@ -1,7 +1,7 @@
 import React, { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Button } from '../Button/Button'
-import { rdsOverlay } from '../../utils/tailwindClasses'
+import { rdsOverlay } from '../../utils/optionClasses'
 
 export interface ModalProps {
   children?: React.ReactNode

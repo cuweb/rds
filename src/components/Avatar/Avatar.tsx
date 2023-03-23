@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Avatar.styles'
-import { rdsRounded, rdsBorderWidth, rdsBorderColor } from '../../utils/tailwindClasses'
+import { rdsRounded, rdsBorderWidth, rdsBorderColor } from '../../utils/optionClasses'
 
 export type ImageType = {
   src: string | undefined

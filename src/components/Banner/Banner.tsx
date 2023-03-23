@@ -1,6 +1,6 @@
 import React from 'react'
 import styles, { typeStyles, contentStyles } from './Banner.styles'
-import { rdsFontSizes, rdsMaxWidth } from '../../utils/tailwindClasses'
+import { rdsFontSizes, rdsMaxWidth } from '../../utils/optionClasses'
 import { BannerAnimated } from './Banner.Animated'
 
 export interface BannerProps {
@@ -8,7 +8,7 @@ export interface BannerProps {
   title?: string
   paragraph?: string
   fontSize?: '5xl' | '6xl'
-  maxWidth?: 'none' | 'full' | '5xl' | '7xl'
+  maxWidth?: 'full' | '5xl' | '7xl'
   isType?: 'light-grey' | 'light-fade' | 'dark-wave' | 'red-wave' | 'image' | 'animated'
   align?: 'center' | 'left'
   hasOverlap?: boolean

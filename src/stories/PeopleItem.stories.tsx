@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
 import { PeopleItem } from '../components/Listings/PeopleItem/PeopleItem'
-import { PeopleItemsData as data } from '../components/Listings/PeopleItem/PeopleItemData'
+import { PeopleItemData as data } from '../components/Listings/PeopleItem/PeopleItemData'
 import { StackedList } from '../layouts/StackedList/StackedList'
 
 export default {
@@ -47,11 +47,9 @@ Default.args = {
 
 export const SingleItemList: Story = {
   render: (args) => (
-    <Column maxWidth="5xl">
-      <StackedList hasBorder>
-        <PeopleItem {...args} />
-      </StackedList>
-    </Column>
+    <StackedList hasBorder>
+      <PeopleItem {...args} />
+    </StackedList>
   ),
 }
 
@@ -80,24 +78,44 @@ SingleItemList.args = {
 
 export const MultiItemList: Story = {
   render: () => (
-    <Column maxWidth="5xl">
-      <StackedList cols="2" hasBorder hasShadow>
-        {data.map(({ id, firstName, lastName, email, tags, profileImage, jobTitle, phoneNumber, link, alt }) => (
-          <PeopleItem
-            key={id}
-            as="li"
-            firstName={firstName}
-            lastName={lastName}
-            email={email}
-            tags={tags}
-            profileImage={profileImage}
-            jobTitle={jobTitle}
-            phoneNumber={phoneNumber}
-            link={link}
-            alt={alt}
-          />
-        ))}
-      </StackedList>
-    </Column>
+    <StackedList hasBorder hasShadow>
+      {data.map(({ id, firstName, lastName, email, tags, profileImage, jobTitle, phoneNumber, link, alt }) => (
+        <PeopleItem
+          key={id}
+          as="li"
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          tags={tags}
+          profileImage={profileImage}
+          jobTitle={jobTitle}
+          phoneNumber={phoneNumber}
+          link={link}
+          alt={alt}
+        />
+      ))}
+    </StackedList>
+  ),
+}
+
+export const ColumnedList: Story = {
+  render: () => (
+    <StackedList cols="2" hasBorder hasShadow>
+      {data.map(({ id, firstName, lastName, email, tags, profileImage, jobTitle, phoneNumber, link, alt }) => (
+        <PeopleItem
+          key={id}
+          as="li"
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          tags={tags}
+          profileImage={profileImage}
+          jobTitle={jobTitle}
+          phoneNumber={phoneNumber}
+          link={link}
+          alt={alt}
+        />
+      ))}
+    </StackedList>
   ),
 }

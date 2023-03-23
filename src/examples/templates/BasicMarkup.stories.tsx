@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Container } from '../../layouts/Container'
+import { Section } from '../../layouts/Section/Section'
+import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../components/Banner/Banner'
@@ -54,13 +55,15 @@ export const BasicMarkup: Story = {
       />
 
       <Main>
-        <Container hasProse>
-          <SinglePara />
-          <h2>This is a header two</h2>
-          <DoublePara />
-          <h3>This is a header three</h3>
-          <SinglePara />
-        </Container>
+        <Section>
+          <Container hasProse>
+            <SinglePara />
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <h3>This is a header three</h3>
+            <SinglePara />
+          </Container>
+        </Section>
       </Main>
 
       <FooterBasic />
