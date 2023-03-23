@@ -7,5 +7,5 @@
 @import './layout.css';
 
 /* React Quill CSS */
-/* @import '../../node_modules/react-quill/dist/quill.snow.css'; */
-@import './wysiwyg2.css';
+@import '../../node_modules/react-quill/dist/quill.snow.css';
+@import './wysiwyg.css';

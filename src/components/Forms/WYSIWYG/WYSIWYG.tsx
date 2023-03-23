@@ -34,14 +34,14 @@ export const WYSIWYG = ({
 
   return (
     <>
-      <div className={formStyles.elementSpace}>
+      <div>
+        {/* <div className={formStyles.elementSpace}> */}
         <label htmlFor={field.name} className={formStyles.label}>
           {label} {props.required && <span className="text-cu-red">*</span>}
         </label>
         <div>
           <Editor
             {...field}
-            className="prose prose-lg prose-rds max-w-none md:prose-xl prose-img:w-full prose-img:rounded-lg"
             id={field.name}
             name={field.name}
             value={field.value}
