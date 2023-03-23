@@ -7,22 +7,30 @@ export interface LocationProps {
   lng?: string
   location?: string
   zoom?: number
+  markers?:any
 }
-export const Location = ({ lat, lng, location, zoom = 15 }: LocationProps) => {
+export const Location = ({ lat, lng, location, zoom  ,markers }: LocationProps) => {
   const [showInfo, setShowInfo] = React.useState(false)
   const mapRef = React.useRef()
-  const [activeMarker, setActiveMarker] = useState(null);
-  const onMapLoad = (map:any) =>{
-    const bounds = new google.maps.LatLngBounds();
-    markers.forEach(({ position }) => bounds.extend(position));
-    map.fitBounds(bounds);
-  }
-  const handleActiveMarker = (marker:any) => {
+
+  const [activeMarker, setActiveMarker] = useState(null)
+
+  const onMapLoad =  React.useCallback((map: any) => {
+    const bounds = new google.maps.LatLngBounds()
+    if(markers){
+      markers.forEach(({ position }:any) => bounds.extend(position))
+      map.fitBounds(bounds)
+    }  
+    mapRef.current = map
+  },[])
+
+  const handleActiveMarker = (marker: any) => {
     if (marker === activeMarker) {
-      return;
+      return
     }
-    setActiveMarker(marker);
-  };
+    setActiveMarker(marker)
+  }
+
 
   const options = {
     disableDefaultUI: true,
@@ -32,52 +40,28 @@ export const Location = ({ lat, lng, location, zoom = 15 }: LocationProps) => {
     streetViewControl: true,
   }
 
-  const markers = [
-    {
-      id: 1,
-      name: "Chicago, Illinois",
-      position: { lat: 41.881832, lng: -87.623177 }
-    },
-    {
-      id: 2,
-      name: "Denver, Colorado",
-      position: { lat: 39.739235, lng: -104.99025 }
-    },
-    {
-      id: 3,
-      name: "Los Angeles, California",
-      position: { lat: 34.052235, lng: -118.243683 }
-    },
-    {
-      id: 4,
-      name: "New York, New York",
-      position: { lat: 40.712776, lng: -74.005974 }
-    }
-  ];
+
 
   return (
     <div className="not-prose">
       <GoogleMap
         mapContainerClassName="w-full h-96"
-        // center={{ lat: 40.712776, lng: -74.005974 }}
-        zoom={zoom}
+        zoom={markers? 2 : 15}
         options={options}
+        center={lat && lng ? { lat: Number(lat), lng: Number(lng) }: {lat:0, lng:0}}
         onLoad={onMapLoad}
       >
-        {/* {markers.map(marker => <MarkerF key={marker.id} title={marker.name} onClick={() => setShowInfo(true)} position={{ lat: marker.position.lat, lng: marker.position.lat }} />)} */}
-        {markers.map(({ id, name, position }) => (
-        <MarkerF
-          key={id}
-          position={position}
-          onClick={() => handleActiveMarker(id)}
-        >
-          {activeMarker === id ? (
-            <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
-              <div>{name}</div>
-            </InfoWindowF>
-          ) : null}
-        </MarkerF>
-      ))}
+        <MarkerF title={location} onClick={() => setShowInfo(true)} position={{ lat: Number(lat), lng: Number(lng) }} />
+        {markers?.map(({id, name, position }:any) => (
+          <MarkerF key ={id} position={position} onClick={() => handleActiveMarker(id)}>
+            
+            {activeMarker === id ? (
+              <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
+                <div>{name}</div>
+              </InfoWindowF>
+            ) : null}
+          </MarkerF>
+        ))}
 
         {showInfo && (
           <InfoWindowF
