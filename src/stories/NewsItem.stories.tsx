@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
 import { NewsItem } from '../components/Listings/NewsItem/NewsItem'
 import { NewsItemData as data } from '../components/Listings/NewsItem/NewsItemData'
 import { StackedList } from '../layouts/StackedList/StackedList'
