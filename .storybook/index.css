@@ -5341,10 +5341,6 @@ select {
   max-width: none !important;
 }
 
-.ql-editor > .cu-container:first-child {
-  margin-top: -3.5rem;
-}
-
 .ql-editor > .cu-column > *:first-child,.ql-editor > .cu-column > * > *:first-child {
   margin-top: 0px;
 }

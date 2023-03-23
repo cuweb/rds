@@ -34,8 +34,7 @@ export const WYSIWYG = ({
 
   return (
     <>
-      <div>
-        {/* <div className={formStyles.elementSpace}> */}
+      <div className={formStyles.elementSpace}>
         <label htmlFor={field.name} className={formStyles.label}>
           {label} {props.required && <span className="text-cu-red">*</span>}
         </label>
