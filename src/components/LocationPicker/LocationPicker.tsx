@@ -3,24 +3,22 @@ import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useEffect, useState } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
-export const LocationPicker = ({ callback,callback1 }: any) => {
+export const LocationPicker = ({ callback, callback1 }: any) => {
   const [address, setAddress] = useState('')
-  const [center,setCenter] = useState<{lat: number; lng: number}>({
-    lat:45.3850225,
-    lng:-75.6946679
-  });
-  const [pos, setPos] = useState<{name: string,id: string, position: object}[]>(
-    [],
-  );
+  const [center, setCenter] = useState<{ lat: number; lng: number }>({
+    lat: 45.3850225,
+    lng: -75.6946679,
+  })
+  const [pos, setPos] = useState<{ name: string; id: string; position: object }[]>([])
 
   const handleSelect = async (value: string) => {
     const results = await geocodeByAddress(value)
     const latLng = await getLatLng(results[0])
-   const placeID = results[0].place_id
-console.log(typeof latLng.lat,'000')
+    const placeID = results[0].place_id
+    console.log(typeof latLng.lat, '000')
     setAddress(value)
-    setCenter({lat:latLng.lat,lng:latLng.lng})
-    setPos([...pos, { name: value,id:placeID, position: latLng }])
+    setCenter({ lat: latLng.lat, lng: latLng.lng })
+    setPos([...pos, { name: value, id: placeID, position: latLng }])
   }
 
   useEffect(() => {
