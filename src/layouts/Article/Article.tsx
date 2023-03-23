@@ -1,10 +1,6 @@
 import React from 'react'
 import { globalStyles } from '../../utils/globalClasses'
 
-export interface ArticleBaseProps {
-  as?: keyof JSX.IntrinsicElements
-}
-
 export interface ArticleProps {
   children?: React.ReactNode
   content?: string
