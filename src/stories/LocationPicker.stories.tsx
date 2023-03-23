@@ -21,6 +21,7 @@ type Story = StoryObj<typeof LocationPicker>
 
 export const Default: Story = () => {
   const [position, setPosition] = useState([])
+  const [center,setCenter1] = useState({})
 
   const callback = useCallback(
     (position: any) => {
@@ -28,9 +29,16 @@ export const Default: Story = () => {
     },
     [setPosition],
   )
+  const callback1 = useCallback(
+    (ce: any) => {
+      setCenter1(ce)
+    },
+    [setCenter1],
+  )
+  console.log("cente",center)
   return (
     <>
-      <LocationPicker callback={callback} /> <Location markers={position} />
+      <LocationPicker callback={callback} callback1={callback1}/> <Location markers={position} center={center} />
     </>
   )
 }

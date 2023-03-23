@@ -8,8 +8,12 @@ export interface LocationProps {
   location?: string
   zoom?: number
   markers?:any
+  center?:any
 }
-export const Location = ({ lat, lng, location, zoom  ,markers }: LocationProps) => {
+export const Location = (props:LocationProps) => {
+  const {markers,location,lat='45.3850225',lng='-75.6946679',center={lat:45.3850225,lng:-75.6946679}} = props;
+  // const {cLat = '45.3850225',cLng = ''} = center
+  console.log("center----",center)
   const [showInfo, setShowInfo] = React.useState(false)
   const mapRef = React.useRef()
 
@@ -40,15 +44,15 @@ export const Location = ({ lat, lng, location, zoom  ,markers }: LocationProps) 
     streetViewControl: true,
   }
 
-
+console.log("props",props)
 
   return (
     <div className="not-prose">
       <GoogleMap
         mapContainerClassName="w-full h-96"
-        zoom={markers? 2 : 15}
+         zoom={ 15}
         options={options}
-        center={lat && lng ? { lat: Number(lat), lng: Number(lng) }: {lat:0, lng:0}}
+         center={center ? { lat:  parseFloat(center?.lat), lng:  parseFloat(center?.lng)} :lat && lng ? { lat: Number(lat), lng: Number(lng) } : { lat: 45.3850225, lng: -75.6946679 } }
         onLoad={onMapLoad}
       >
         <MarkerF title={location} onClick={() => setShowInfo(true)} position={{ lat: Number(lat), lng: Number(lng) }} />
