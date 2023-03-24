@@ -1,0 +1,105 @@
+/* First white block inside section */
+.cu-section > .cu-container.bg-white:first-child {
+  @apply pt-0;
+}
+
+/* Last white block inside section */
+.cu-section > .cu-container.bg-white:last-child {
+  /* @apply -mb-10 md:-mb-14; */
+  @apply pb-0;
+}
+
+/* First grey block inside section */
+.cu-section > .cu-container.bg-cu-black-50:first-child {
+  @apply -mt-10 md:-mt-14;
+}
+
+/* Last grey block inside section */
+.cu-section > .cu-container.bg-cu-black-50:last-child {
+  @apply -mb-10 md:-mb-14;
+}
+
+.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
+  @apply pt-0;
+}
+
+.cu-container.bg-cu-black-50 + .cu-container.bg-white {
+  @apply pt-10 md:pt-10;
+}
+
+.cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-column + .cu-container {
+  @apply mt-10 md:mt-10;
+}
+
+:not(.cu-container) + .cu-container.bg-cu-black-50,
+.cu-container.bg-cu-black-50 + :not(.cu-container) {
+  @apply mt-14;
+}
+
+:not(.not-contained) + .cu-column,
+.cu-column + :not(.not-contained),
+.cu-column + .cu-column,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+  @apply mt-6 md:mt-8;
+}
+
+/* Target children of container and apply max width 5xl */
+.cu-section-5xl > :not(.not-contained),
+.cu-container-5xl > :not(.not-contained) {
+  @apply mx-auto max-w-5xl;
+}
+
+/* Target children of container and apply max width 7xl */
+.cu-section-7xl > :not(.not-contained),
+.cu-container-7xl > :not(.not-contained) {
+  @apply mx-auto max-w-5xl;
+}
+
+/* Target children of container and apply max width full */
+.cu-section-full > :not(.not-contained),
+.cu-container-full > :not(.not-contained) {
+  @apply mx-auto max-w-full;
+}
+
+.cu-section > .cu-heading:first-child,
+.cu-container > .cu-heading:first-child {
+  @apply pt-0;
+}
+
+.cu-column > div > * {
+  @apply first:mt-0 last:mb-0;
+}
+
+/* 
+* Add styles to first child of container to banner overlap
+*/
+
+.cu-stackedlist > li {
+  @apply border-b border-cu-black-100 last:-mb-px;
+}
+
+/* 
+* Add styles to first child of container to banner overlap
+*/
+
+.cu-overlap > .cu-section:first-child > *:first-child {
+  @apply md:z-20 md:-mt-28;
+}
+
+/* 
+* Modify spacing for prose and layout components
+*/
+
+/* Remove top and bottom space added by prose when columns are used inside prose container */
+.prose > .cu-column > *,
+.prose > .cu-column > * > * {
+  @apply first:mt-0 last:mb-0;
+}
+
+/* Remove top and bottom space added by prose inside container */
+.prose > .cu-container > *,
+.prose > .cu-container > * > * {
+  @apply first:mt-0 last:mb-0;
+}

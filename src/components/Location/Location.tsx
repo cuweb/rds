@@ -41,7 +41,7 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
   }
 
   return (
-    <div className="not-prose">
+    <div className="not-prose not-contained">
       <GoogleMap
         mapContainerClassName="w-full h-96"
         zoom={markers?.length !== 0 ? 3 : zoom}

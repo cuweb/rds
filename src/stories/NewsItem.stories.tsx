@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
 import { NewsItem } from '../components/Listings/NewsItem/NewsItem'
 import { NewsItemData as data } from '../components/Listings/NewsItem/NewsItemData'
 import { StackedList } from '../layouts/StackedList/StackedList'
@@ -46,11 +45,9 @@ Default.args = {
 
 export const SingleItemList: Story = {
   render: (args) => (
-    <Column maxWidth="5xl">
-      <StackedList hasBorder>
-        <NewsItem {...args} />
-      </StackedList>
-    </Column>
+    <StackedList hasBorder>
+      <NewsItem as="li" {...args} />
+    </StackedList>
   ),
 }
 SingleItemList.args = {
@@ -59,12 +56,20 @@ SingleItemList.args = {
 
 export const MultiItemList: Story = {
   render: () => (
-    <Column maxWidth="5xl">
-      <StackedList header="News listing" hasBorder hasShadow>
-        {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-          <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
-        ))}
-      </StackedList>
-    </Column>
+    <StackedList header="News listing" hasBorder hasShadow>
+      {data.map(({ id, title, link, image, alt, date, excerpt }) => (
+        <NewsItem as="li" key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+      ))}
+    </StackedList>
+  ),
+}
+
+export const ColumnedList: Story = {
+  render: () => (
+    <StackedList cols="2" header="News listing" hasBorder hasShadow>
+      {data.map(({ id, title, link, image, alt, date, excerpt }) => (
+        <NewsItem as="li" key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+      ))}
+    </StackedList>
   ),
 }

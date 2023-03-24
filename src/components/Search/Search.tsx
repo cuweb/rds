@@ -2,7 +2,7 @@ import { useEffect, Fragment, PropsWithChildren, useState } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
-import { rdsOverlay } from '../../utils/tailwindClasses'
+import { rdsOverlay } from '../../utils/optionClasses'
 import { Link } from '../../components/Link/Link'
 
 export interface SourceDataProps {

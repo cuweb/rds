@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { DetailsItem } from '../components/Listings/DetailsItem/DetailsItem'
-import { Container } from '../layouts/Container'
-import { Column } from '../layouts/Column/Column'
 import { StackedList } from '../layouts/StackedList/StackedList'
 import { DetailsItemData as data } from '../components/Listings/DetailsItem/DetailsItemData'
 import { MapPinIcon } from '@heroicons/react/24/outline'
@@ -41,17 +39,15 @@ Default.args = {
 
 export const SingleItemList: Story = {
   render: (args) => (
-    <Column maxWidth="5xl">
-      <StackedList hasBorder>
-        <DetailsItem as="div">
-          {args.icon && <DetailsItem.Icon icon={args.icon} />}
-          <DetailsItem.Content>
-            <DetailsItem.Title title={args.title} />
-            <DetailsItem.Description description={args.description} />
-          </DetailsItem.Content>
-        </DetailsItem>
-      </StackedList>
-    </Column>
+    <StackedList hasBorder>
+      <DetailsItem as="li">
+        {args.icon && <DetailsItem.Icon icon={args.icon} />}
+        <DetailsItem.Content>
+          <DetailsItem.Title title={args.title} />
+          <DetailsItem.Description description={args.description} />
+        </DetailsItem.Content>
+      </DetailsItem>
+    </StackedList>
   ),
 }
 
@@ -61,20 +57,16 @@ SingleItemList.args = {
 
 export const MultiItemList: Story = {
   render: () => (
-    <Container bgColor="grey">
-      <Column maxWidth="5xl">
-        <StackedList header="Details listing" hasBorder hasShadow>
-          {data.map(({ title, description, icon }) => (
-            <DetailsItem key={title}>
-              {icon && <DetailsItem.Icon icon={icon} />}
-              <DetailsItem.Content>
-                <DetailsItem.Title title={title} />
-                <DetailsItem.Description description={description} />
-              </DetailsItem.Content>
-            </DetailsItem>
-          ))}
-        </StackedList>
-      </Column>
-    </Container>
+    <StackedList header="Details listing" hasBorder hasShadow>
+      {data.map(({ title, description, icon }) => (
+        <DetailsItem as="li" key={title}>
+          {icon && <DetailsItem.Icon icon={icon} />}
+          <DetailsItem.Content>
+            <DetailsItem.Title title={title} />
+            <DetailsItem.Description description={description} />
+          </DetailsItem.Content>
+        </DetailsItem>
+      ))}
+    </StackedList>
   ),
 }

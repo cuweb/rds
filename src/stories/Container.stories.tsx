@@ -36,7 +36,7 @@ export const GreyBackground: Story = {
 
 export const WithColumns: Story = {
   render: () => (
-    <Container as="section">
+    <Container>
       <Column cols="2/3">
         <Article>
           <p>

@@ -13,7 +13,7 @@ import { NewsCard } from '../../../components/Cards/NewsCard/NewsCard'
 import { NewsCardData as data } from '../../../components/Cards/NewsCard/NewsCardData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Single Page',
+  title: 'Examples/Projects/cutheme/News Card Blocks',
 }
 
 export default meta
@@ -54,44 +54,20 @@ const DoublePara = () => {
   )
 }
 
-export const SinglePage: Story = {
+export const NewsCardBlocks: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner title="cutheme layout testing" isType="dark-wave" align="left" />
+      <Banner title="cutheme news card testing" isType="dark-wave" align="left" />
 
       <Main>
         <Section hasProse>
-          <h2>This is a header 2</h2>
-          <SinglePara />
-
-          <h3>This is a header 3</h3>
-          <SinglePara />
-
-          <h4>This is a header 4</h4>
           <DoublePara />
 
-          <Container bgColor="white" hasProse>
-            <h2>News Card Grid</h2>
-            <p>Uses Container, Column and NewsCard components.</p>
-            <Column cols="3">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
-              ))}
-            </Column>
-          </Container>
+          <h2>News Card Block</h2>
+          <SinglePara />
 
-          <Container bgColor="white" hasProse>
-            <h2>News Card Grid</h2>
-            <p>Uses Container, Column and NewsCard components.</p>
+          <Container bgColor="white" maxWidth="7xl" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -109,12 +85,10 @@ export const SinglePage: Story = {
 
           <DoublePara />
 
-          <h2>This is a header 2</h2>
+          <h2>News Card Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="grey">
-            <h2>News Card Grid</h2>
-            <p>Uses Container, Column and NewsCard components.</p>
+          <Container bgColor="grey" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -130,9 +104,26 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="grey" maxWidth="5xl">
-            <h2>News Card Grid</h2>
-            <p>Uses Container, Column and NewsCard components.</p>
+          <h2>Consecutive News Card Block</h2>
+          <SinglePara />
+
+          <Container bgColor="white" hasProse>
+            <Column cols="3">
+              {data.map((item) => (
+                <NewsCard
+                  key={item.id}
+                  title={item?.title}
+                  link={item?.link}
+                  image={item?.image}
+                  date={item?.date}
+                  excerpt={item?.excerpt}
+                  tags={item?.tags}
+                />
+              ))}
+            </Column>
+          </Container>
+
+          <Container bgColor="white" maxWidth="5xl" hasProse>
             <Column cols="3" maxWidth="7xl">
               {data.map((item) => (
                 <NewsCard
@@ -148,14 +139,10 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <DoublePara />
-
-          <h2>This is a header 2</h2>
+          <h2>Consecutive News Card Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="white">
-            <h2>News Card Grid</h2>
-            <p>Uses Container, Column and NewsCard components.</p>
+          <Container bgColor="grey" maxWidth="5xl" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
@@ -171,9 +158,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="white" maxWidth="5xl">
-            <h2>News Card Grid</h2>
-            <p>Uses Container, Column and NewsCard components.</p>
+          <Container bgColor="grey" hasProse>
             <Column cols="3" maxWidth="7xl">
               {data.map((item) => (
                 <NewsCard
