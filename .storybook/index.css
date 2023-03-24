@@ -2614,11 +2614,6 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -2695,10 +2690,6 @@ select {
 
 .fill-cu-black-400 {
   fill: #999999;
-}
-
-.fill-blue-600 {
-  fill: #2563eb;
 }
 
 .fill-red-600 {
