@@ -40,7 +40,6 @@ const avatarSizes = {
 export const Avatar = ({ size = 'xl', rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => {
   const { firstName, lastName, image } = user
 
-  // const initials = firstName && lastName ? `${firstName.split('')[0]}${lastName.split('')[0]}` : ''
   let initials
   if (firstName && lastName) {
     initials = `${firstName.split('')[0]}${lastName.split('')[0]}`
