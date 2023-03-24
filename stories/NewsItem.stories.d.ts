@@ -6,4 +6,5 @@ type Story = StoryObj<typeof NewsItem>;
 export declare const Default: Story;
 export declare const SingleItemList: Story;
 export declare const MultiItemList: Story;
+export declare const ColumnedList: Story;
 //# sourceMappingURL=NewsItem.stories.d.ts.map

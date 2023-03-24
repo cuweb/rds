@@ -1,7 +1,4 @@
 import React from 'react';
-export interface ArticleBaseProps {
-    as?: keyof JSX.IntrinsicElements;
-}
 export interface ArticleProps {
     children?: React.ReactNode;
     content?: string;

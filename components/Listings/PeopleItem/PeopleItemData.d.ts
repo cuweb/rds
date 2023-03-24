@@ -1,4 +1,4 @@
-export declare const PeopleItemsData: {
+export declare const PeopleItemData: {
     id: number;
     firstName: string;
     lastName: string;

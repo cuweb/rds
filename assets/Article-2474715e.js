@@ -1,0 +1,2 @@
+import{a as l,F as o,j as a}from"./jsx-runtime-9d2cd5de.js";import{a as s}from"./globalClasses-11956bde.js";const t=({children:r,content:e})=>l(o,{children:[e&&a("article",{className:`${s.prose}`,dangerouslySetInnerHTML:{__html:e}}),!e&&a("article",{className:`${s.prose}`,children:r})]});try{t.displayName="Article",t.__docgenInfo={description:"",displayName:"Article",props:{content:{defaultValue:null,description:"",name:"content",required:!1,type:{name:"string"}}}}}catch{}export{t as A};
+//# sourceMappingURL=Article-2474715e.js.map
