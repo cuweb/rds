@@ -1,4 +1,4 @@
-import{j as e,a as i,F as c}from"./jsx-runtime-9d2cd5de.js";import"./chunk-PCJTTTQV-49f16a0b.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as t}from"./index-9aafaccd.js";import{u as o}from"./index-017485ee.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-3276213e.js";import"../sb-preview/runtime.mjs";import"./react-18-7953bc82.js";import"./index-1eb27dd0.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-ea27743f.js";import"./_baseIsEqual-bfedacfa.js";import"./index-356e4a49.js";function h(l={}){const{wrapper:d}=Object.assign({},o(),l.components);return d?e(d,Object.assign({},l,{children:e(r,{})})):r();function r(){const n=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3"},o(),l.components);return i(c,{children:[e(n.h1,{children:"Changelog"}),`
+import{j as e,a as i,F as c}from"./jsx-runtime-9d2cd5de.js";import"./chunk-PCJTTTQV-f8fe74ea.js";import"./chunk-R4NKYYJA-96bb58e6.js";import{M as h}from"./index-3d4c2230.js";import{u as o}from"./index-017485ee.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-734fd23a.js";import"../sb-preview/runtime.mjs";import"./react-18-7953bc82.js";import"./index-1eb27dd0.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-ea27743f.js";import"./_baseIsEqual-bfedacfa.js";import"./index-356e4a49.js";function t(l={}){const{wrapper:d}=Object.assign({},o(),l.components);return d?e(d,Object.assign({},l,{children:e(r,{})})):r();function r(){const n=Object.assign({h1:"h1",p:"p",a:"a",ul:"ul",li:"li",em:"em",h2:"h2",h3:"h3"},o(),l.components);return i(c,{children:[e(n.h1,{children:"Changelog"}),`
 `,e(n.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,i(n.p,{children:["The format is based on ",e(n.a,{href:"https://keepachangelog.com/en/1.0.0/",children:"Keep a Changelog"}),`,
 and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",children:"Semantic Versioning"}),"."]}),`
@@ -12,6 +12,24 @@ and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(n.li,{children:[e(n.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,e(n.h2,{children:"[Unreleased]"}),`
+`,e(n.h2,{children:"[0.0.22]"}),`
+`,e(n.h3,{children:"Added"}),`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Heading component"}),`
+`]}),`
+`,e(n.h3,{children:"Changed"}),`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Reworked Location and Location Picker components to accept multiple markers"}),`
+`,e(n.li,{children:"Updated zoom levels on Location component"}),`
+`]}),`
+`,e(n.h3,{children:"Fixed"}),`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Github action for storybook deployment"}),`
+`]}),`
+`,e(n.h3,{children:"Removed"}),`
+`,i(n.ul,{children:[`
+`,e(n.li,{children:"Image upload option from WYSIWYG component"}),`
+`]}),`
 `,e(n.h2,{children:"[0.0.21]"}),`
 `,e(n.h3,{children:"Added"}),`
 `,i(n.ul,{children:[`
@@ -258,6 +276,6 @@ and this project adheres to `,e(n.a,{href:"https://semver.org/spec/v2.0.0.html",
 `,i(n.ul,{children:[`
 `,e(n.li,{children:"Updated secret keys for Google Maps API"}),`
 `,e(n.li,{children:"Renamed README.md to README.mdx"}),`
-`]})]})}}function L(l={}){const{wrapper:d}=Object.assign({},o(),l.components);return d?e(d,Object.assign({},l,{children:e(r,{})})):r();function r(){return i(c,{children:[e(t,{title:"Get Started/Changelog"}),`
-`,e(h,{})]})}}export{L as default};
-//# sourceMappingURL=Changelog-b4d62ddc.js.map
+`]})]})}}function M(l={}){const{wrapper:d}=Object.assign({},o(),l.components);return d?e(d,Object.assign({},l,{children:e(r,{})})):r();function r(){return i(c,{children:[e(h,{title:"Get Started/Changelog"}),`
+`,e(t,{})]})}}export{M as default};
+//# sourceMappingURL=Changelog-d8c7b8b7.js.map
