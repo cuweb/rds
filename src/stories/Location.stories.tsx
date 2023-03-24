@@ -16,13 +16,10 @@ export default meta
 
 type Story = StoryObj<typeof Location>
 
-const address = {
-  lat: '45.3850225',
-  lng: '-75.6946679',
+export const Default: Story = {}
+
+Default.args = {
+  lat: '45.3875812',
+  lng: '-75.6982089',
   location: "Carleton University Raven's Nest",
 }
-
-export const Default: Story = {
-  render: () => <Location lat={address.lat} lng={address.lng} location={address.location} />,
-}
-Default.storyName = 'Default Location'

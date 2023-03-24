@@ -8,6 +8,7 @@ import { Aside } from '../../../layouts/Aside/Aside'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
+import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { EventCard } from '../../../components/Cards/EventCard/EventCard'
 import { EventItem } from '../../../components/Listings/EventItem/EventItem'
@@ -53,7 +54,7 @@ export const Homepage: Story = {
           </Column>
 
           <Container bgColor="grey" maxWidth="7xl" hasProse>
-            <h2>Upcoming Events</h2>
+            <Heading text="Upcoming Events" maxWidth="7xl" />
 
             {/* <Column maxWidth="7xl">
             <Filter filters={data.filters} callback={callbackfilter} sortOptions={data.sortOptions} />
