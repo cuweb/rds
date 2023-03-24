@@ -2,7 +2,7 @@ name: Storybook Deploy
 on:
   push:
     branches:
-      - feature/actionfix # if any push happens on branch `develop`, run this workflow. You could also add `paths` to detect changes in specific folder
+      - develop # if any push happens on branch `develop`, run this workflow. You could also add `paths` to detect changes in specific folder
 jobs:
   build-and-deploy:
     name: Build and deploy Storybook
