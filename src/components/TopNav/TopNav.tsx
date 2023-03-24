@@ -136,8 +136,8 @@ export const TopNav = ({
 
               <>
                 {/* Login */}
-                {!userInfo && !session && login}
-                {!userInfo && session && <Spinner />}
+                {session === null && login}
+                {!userInfo && session !== null && <Spinner />}
               </>
               {/* update the loading to a spinner  */}
               {userInfo && !userMenuItems && <Avatar user={userInfo} size="xs" rounded="full" />}
