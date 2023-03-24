@@ -9,20 +9,25 @@ export interface LocationProps {
   zoom?: number
   markers?: any
   center?: any
+  singleMarker?: boolean
 }
 export const Location = ({ markers, location, lat, lng, zoom = 15, center }: LocationProps) => {
   const [showInfo, setShowInfo] = React.useState(false)
+  
   const mapRef = React.useRef()
 
   const [activeMarker, setActiveMarker] = useState(null)
 
   const onMapLoad = React.useCallback((map: any) => {
     const bounds = new google.maps.LatLngBounds()
-    if (markers?.length !== 0) {
+    if (markers && markers?.length !== 0) {
       markers?.forEach(({ position }: any) => bounds.extend(position))
       map.fitBounds(bounds)
     }
-    mapRef.current = map
+    else{
+      mapRef.current = map
+    }
+   
   }, [])
 
   const handleActiveMarker = (marker: any) => {
@@ -44,7 +49,7 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
     <div className="not-prose not-contained">
       <GoogleMap
         mapContainerClassName="w-full h-96"
-        zoom={markers?.length > 1 ? 3 : zoom}
+        zoom={markers && markers?.length !== 0  ? 10 : zoom}
         options={options}
         center={
           center
@@ -56,7 +61,7 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
         onLoad={onMapLoad}
       >
         <MarkerF title={location} onClick={() => setShowInfo(true)} position={{ lat: Number(lat), lng: Number(lng) }} />
-        {markers?.map(({ id, name, position }: any) => (
+        {markers && markers?.map(({ id, name, position }: any) => (
           <MarkerF key={id} position={position} onClick={() => handleActiveMarker(id)}>
             {activeMarker === id ? (
               <InfoWindowF onCloseClick={() => setActiveMarker(null)}>

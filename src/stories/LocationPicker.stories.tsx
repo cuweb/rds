@@ -18,6 +18,29 @@ const meta: Meta<typeof LocationPicker> = {
 export default meta
 
 type Story = StoryObj<typeof LocationPicker>
+export const SingleMarker: Story = () => {
+  const [coordinates, setCoordinates] = useState<{coordinates:{lat:number,lng:number} ,address:string }>({
+    coordinates:{
+     lat: 45.3850225,
+     lng: -75.6946679,
+    },
+     address:"Carleton University Raven's Nest"
+   })
+   const markerCallback = useCallback(
+    (coord:any) => {
+      setCoordinates(coord)
+    },
+    [setCoordinates],
+  )
+  return <Column maxWidth="5xl">
+  <LocationPicker singleMarker singleMarkerCallback={markerCallback} />{' '}
+  <Location
+      lat={coordinates?.coordinates?.lat?.toString()}
+      lng={coordinates?.coordinates?.lng?.toString()}
+      location={coordinates?.address}
+    />
+</Column>
+}
 
 export const Default: Story = () => {
   interface PositionInterface {
@@ -52,4 +75,5 @@ export const Default: Story = () => {
     </Column>
   )
 }
-Default.storyName = 'Location Picker'
+Default.storyName = 'Multiple Marker Location Picker'
+SingleMarker.storyName = 'Single Marker Location Picker'
