@@ -1991,6 +1991,10 @@ select {
   min-width: 100%;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -2928,6 +2932,18 @@ select {
   padding-top: 56.25%;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-2\.5 {
+  padding-bottom: 0.625rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3342,7 +3358,6 @@ select {
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
   padding-top: 0px;
-  /* @apply pt-0 -mt-6; */
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-white {
@@ -3415,6 +3430,11 @@ select {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
+}
+
+.cu-section > .cu-heading:first-child,
+.cu-container > .cu-heading:first-child {
+  padding-top: 0px;
 }
 
 .cu-column > div > *:first-child {
@@ -3490,7 +3510,7 @@ select {
 .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 23px;
+  font-size: 13px;
   height: 100%;
   margin: 0px;
   position: relative;
@@ -5829,6 +5849,52 @@ select {
   }
 }
 
+.after\:absolute::after {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.after\:bottom-0::after {
+  content: var(--tw-content);
+  bottom: 0px;
+}
+
+.after\:left-px::after {
+  content: var(--tw-content);
+  left: 1px;
+}
+
+.after\:left-1\/2::after {
+  content: var(--tw-content);
+  left: 50%;
+}
+
+.after\:-m-5::after {
+  content: var(--tw-content);
+  margin: -1.25rem;
+}
+
+.after\:-ml-5::after {
+  content: var(--tw-content);
+  margin-left: -1.25rem;
+}
+
+.after\:h-px::after {
+  content: var(--tw-content);
+  height: 1px;
+}
+
+.after\:w-10::after {
+  content: var(--tw-content);
+  width: 2.5rem;
+}
+
+.after\:bg-cu-red::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 28 36 / var(--tw-bg-opacity));
+}
+
 .first\:mt-0:first-child {
   margin-top: 0px;
 }
@@ -6075,6 +6141,36 @@ select {
 
 .group:hover .group-hover\:ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.prose-headings\:mb-0 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  margin-bottom: 0px;
+}
+
+.prose-headings\:mb-8 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  margin-bottom: 2rem;
+}
+
+.prose-headings\:pb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  padding-bottom: 1.5rem;
+}
+
+.prose-headings\:font-semibold :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  font-weight: 600;
+}
+
+.prose-headings\:text-cu-black-800 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
+.prose-p\:leading-9 :is(:where(p):not(:where([class~="not-prose"] *))) {
+  line-height: 2.25rem;
+}
+
+.prose-p\:text-cu-black-800 :is(:where(p):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
 }
 
 .prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"] *))) {
@@ -6389,6 +6485,16 @@ select {
     padding-bottom: 2rem;
   }
 
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
   .md\:pb-32 {
     padding-bottom: 8rem;
   }
@@ -6403,6 +6509,30 @@ select {
 
   .md\:pt-40 {
     padding-top: 10rem;
+  }
+
+  .md\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
+  .md\:pt-8 {
+    padding-top: 2rem;
+  }
+
+  .md\:pb-2 {
+    padding-bottom: 0.5rem;
+  }
+
+  .md\:pb-3 {
+    padding-bottom: 0.75rem;
+  }
+
+  .md\:pb-2\.5 {
+    padding-bottom: 0.625rem;
+  }
+
+  .md\:pt-14 {
+    padding-top: 3.5rem;
   }
 
   .md\:text-left {
@@ -6591,6 +6721,12 @@ select {
       font-size: 1.125rem;
       line-height: 1.75rem;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .prose-p\:md\:text-\[22px\] :is(:where(p):not(:where([class~="not-prose"] *))) {
+    font-size: 22px;
   }
 }
 
