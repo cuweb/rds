@@ -3,6 +3,9 @@ export interface LocationProps {
     lng?: string;
     location?: string;
     zoom?: number;
+    markers?: any;
+    center?: any;
+    singleMarker?: boolean;
 }
-export declare const Location: ({ lat, lng, location, zoom }: LocationProps) => JSX.Element;
+export declare const Location: ({ markers, location, lat, lng, zoom, center }: LocationProps) => JSX.Element;
 //# sourceMappingURL=Location.d.ts.map

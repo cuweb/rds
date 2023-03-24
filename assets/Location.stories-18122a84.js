@@ -1,4 +1,0 @@
-import{j as n}from"./jsx-runtime-9d2cd5de.js";import{L as s}from"./Location-c90b7a05.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-1eb27dd0.js";const p={title:"Components/Location",component:s,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},t={lat:"45.3850225",lng:"-75.6946679",location:"Carleton University Raven's Nest"},o={render:()=>n(s,{lat:t.lat,lng:t.lng,location:t.location})};o.storyName="Default Location";var a,r,e;o.parameters={...o.parameters,docs:{...(a=o.parameters)==null?void 0:a.docs,source:{originalSource:`{
-  render: () => <Location lat={address.lat} lng={address.lng} location={address.location} />
-}`,...(e=(r=o.parameters)==null?void 0:r.docs)==null?void 0:e.source}}};const u=["Default"];export{o as Default,u as __namedExportsOrder,p as default};
-//# sourceMappingURL=Location.stories-18122a84.js.map
