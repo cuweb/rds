@@ -15,22 +15,22 @@ const meta: Meta<typeof Heading> = {
 export default meta
 type Story = StoryObj<typeof Heading>
 
-export const Primary: Story = {}
+export const Default: Story = {}
 
-Primary.args = {
+Default.args = {
   text: 'Heading Component',
 }
 
 export const CenterAligned: Story = {
   args: {
-    ...Primary.args,
+    ...Default.args,
     isCenter: true,
   },
 }
 
 export const WithParagraph: Story = {
   args: {
-    ...Primary.args,
+    ...Default.args,
     intro:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed consectetur tortor, eget mollis odio. Etiam tristique, eros eget tincidunt mollis, ex nulla ornare enim, ac volutpat ex ex id risus.',
   },
@@ -38,7 +38,7 @@ export const WithParagraph: Story = {
 
 export const CetnerWithPara: Story = {
   args: {
-    ...Primary.args,
+    ...Default.args,
     isCenter: true,
     intro:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed consectetur tortor, eget mollis odio. Etiam tristique, eros eget tincidunt mollis, ex nulla ornare enim, ac volutpat ex ex id risus.',
