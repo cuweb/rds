@@ -134,8 +134,10 @@ export const TopNav = ({
               {children}
 
               {/* Login */}
-              {session === null && login}
+              {!userInfo && login}
               {!userInfo && session !== null && <p>Loading</p>}
+
+              {/* update the loading to a spinner  */}
               {userInfo && !userMenuItems && <Avatar user={userInfo} size="xs" rounded="full" />}
               {userInfo && userMenuItems && (
                 <DropDown listItems={userMenuItems} menuAlign="right">

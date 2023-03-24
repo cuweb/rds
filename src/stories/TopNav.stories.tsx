@@ -457,6 +457,7 @@ HasSearch.args = {
   sourceData: database,
   hasSearch: true,
   userInfo: user,
+  login: <Button title="Login" size="sm" url="#" />,
 }
 
 export const LoginButton: Story = {}
