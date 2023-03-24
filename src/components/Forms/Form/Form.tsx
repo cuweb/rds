@@ -1,5 +1,6 @@
+/* eslint-disable react/no-children-prop */
 import * as yup from 'yup'
-import { Form as FormWrapper, Formik } from 'formik'
+import { Formik } from 'formik'
 import type { FormikHelpers, FormikValues } from 'formik'
 
 import { Input } from '../Input/Input'
@@ -10,9 +11,9 @@ import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { DateTimePicker } from '../DateTimePicker/DateTimePicker'
 import { PlacesAutoComplete } from '../PlacesAutoComplete/PlacesAutoComplete'
+import { PropsWithChildren } from 'react'
 
 export interface FormProps {
-  children?: React.ReactNode
   onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void
   initialValues?: FormikValues
   schema: {
@@ -37,7 +38,7 @@ const FormBase = ({
   onSubmit = (values: unknown) => console.log(values),
   schema,
   initialValues,
-}: FormProps) => {
+}: PropsWithChildren<FormProps>) => {
   const formValues: FormikValues = {}
   const formRules = {}
 
@@ -52,9 +53,8 @@ const FormBase = ({
       validationSchema={yup.object().shape(formRules)}
       onSubmit={onSubmit}
       enableReinitialize
-    >
-      <FormWrapper className="space-y-5">{children}</FormWrapper>
-    </Formik>
+      children={children}
+    />
   )
 }
 

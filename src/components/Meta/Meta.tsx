@@ -1,11 +1,11 @@
-import { PropsWithChildren, forwardRef } from 'react'
+import { PropsWithChildren } from 'react'
 
 // Meta Wrapper
 export interface MetaProps {
   description?: string
 }
 
-const MetaBase = forwardRef(({ description, children }: PropsWithChildren<MetaProps>) => {
+const MetaBase = ({ description, children }: PropsWithChildren<MetaProps>) => {
   return (
     <>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -26,7 +26,7 @@ const MetaBase = forwardRef(({ description, children }: PropsWithChildren<MetaPr
       />
     </>
   )
-})
+}
 
 // Meta Icons
 export interface IconsProps {
