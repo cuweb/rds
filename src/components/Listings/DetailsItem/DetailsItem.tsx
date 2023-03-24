@@ -1,5 +1,5 @@
 import React from 'react'
-import { rdsFontSizes } from '../../../utils/tailwindClasses'
+import { rdsFontSizes } from '../../../utils/optionClasses'
 import { Icon } from '../../Icon/Icon'
 
 // Set types for as props
@@ -28,10 +28,8 @@ export interface TitleProps {
 
 const DetailsItemBase = ({ as: Component = 'div', children }: ItemBaseProps & DetailsItemProps) => {
   return (
-    <Component>
-      <div className="not-prose relative flex items-center gap-2 p-6 focus:outline-none ">
-        <div className="flex items-start gap-4">{children}</div>
-      </div>
+    <Component className="not-prose relative flex items-center gap-2 p-6 focus:outline-none ">
+      <div className="flex items-start gap-4">{children}</div>
     </Component>
   )
 }

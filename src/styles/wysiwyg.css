@@ -1,0 +1,13 @@
+/* Add prose to the editor */
+
+.ql-editor {
+  @apply prose prose-lg prose-rds max-w-none md:prose-xl prose-img:w-full prose-img:rounded-lg !important;
+}
+
+.ql-editor {
+  @apply px-10 py-10;
+}
+
+.ql-editor > *:first-child {
+  @apply mt-0 !important;
+}

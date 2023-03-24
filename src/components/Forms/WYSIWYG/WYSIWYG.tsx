@@ -14,48 +14,21 @@ export interface WYSIWYGProps {
 
 export const WYSIWYG = ({
   label,
-  editor = 'textarea',
+  editor = '<div className="my-editing-area"/>',
   placeholder,
   ...props
 }: WYSIWYGProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>) => {
   const [field, meta] = useField(props)
 
-  // const modules = {
-  //   toolbar: [
-  //     [{ header: '1' }, { header: '2' }, { font: [] }],
-  //     [{ size: [] }],
-  //     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-  //     [
-  //       { list: 'ordered' },
-  //       { list: 'bullet' },
-  //       { indent: '-1' },
-  //       { indent: '+1' },
-  //     ],
-  //     ['link', 'image', 'video'],
-  //     ['clean'],
-  //   ],
-  //   clipboard: {
-  //     // toggle to add extra line breaks when pasting HTML:
-  //     matchVisual: false,
-  //   },
-  // };
-
-  // const formats = [
-  //   'header',
-  //   'font',
-  //   'size',
-  //   'bold',
-  //   'italic',
-  //   'underline',
-  //   'strike',
-  //   'blockquote',
-  //   'list',
-  //   'bullet',
-  //   'indent',
-  //   'link',
-  //   'image',
-  //   'video',
-  // ];
+  const modules = {
+    toolbar: [
+      [{ header: [2, 3, 4, false] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link', 'image'],
+      ['clean'],
+    ],
+  }
 
   const Editor = editor
 
@@ -76,8 +49,7 @@ export const WYSIWYG = ({
               return
             }}
             placeholder={placeholder}
-            // modules={modules}
-            // formats={formats}
+            modules={modules}
           />
           {/* Validation Error Icon*/}
           {meta.touched && meta.error && (

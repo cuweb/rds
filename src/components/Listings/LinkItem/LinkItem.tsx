@@ -1,6 +1,6 @@
 import React from 'react'
 import { LinkIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
-import { rdsFontSizes } from '../../../utils/tailwindClasses'
+import { rdsFontSizes } from '../../../utils/optionClasses'
 import { Link } from '../../Link/Link'
 
 // Set types for as props

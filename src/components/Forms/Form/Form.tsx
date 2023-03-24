@@ -53,7 +53,7 @@ const FormBase = ({
       onSubmit={onSubmit}
       enableReinitialize
     >
-      <FormWrapper className="not-prose space-y-5">{children}</FormWrapper>
+      <FormWrapper className="space-y-5">{children}</FormWrapper>
     </Formik>
   )
 }
