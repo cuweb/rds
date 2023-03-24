@@ -21,7 +21,6 @@
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
   @apply pt-0;
-  /* @apply pt-0 -mt-6; */
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-white {
@@ -62,6 +61,11 @@
 .cu-section-full > :not(.not-contained),
 .cu-container-full > :not(.not-contained) {
   @apply mx-auto max-w-full;
+}
+
+.cu-section > .cu-heading:first-child,
+.cu-container > .cu-heading:first-child {
+  @apply pt-0;
 }
 
 .cu-column > div > * {
