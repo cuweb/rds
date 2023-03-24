@@ -19,7 +19,7 @@ export default meta
 
 type Story = StoryObj<typeof LocationPicker>
 
-export const SingleMarker: Story = () => {
+export const Default: Story = () => {
   interface SingleMarkerInterface {
     coordinates: { lat: number; lng: number }
     address: string
@@ -49,7 +49,7 @@ export const SingleMarker: Story = () => {
   )
 }
 
-export const Default: Story = () => {
+export const MultiMarker: Story = () => {
   interface PositionInterface {
     name: string
     id: string
@@ -82,5 +82,6 @@ export const Default: Story = () => {
     </Column>
   )
 }
-Default.storyName = 'Multiple Marker Location Picker'
-SingleMarker.storyName = 'Single Marker Location Picker'
+
+Default.storyName = 'Single Marker'
+MultiMarker.storyName = 'Multiple Marker'
