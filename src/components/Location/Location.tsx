@@ -18,7 +18,7 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
 
   const onMapLoad = React.useCallback((map: any) => {
     const bounds = new google.maps.LatLngBounds()
-    if (markers.length !== 0) {
+    if (markers?.length !== 0) {
       markers.forEach(({ position }: any) => bounds.extend(position))
       map.fitBounds(bounds)
     }
@@ -41,10 +41,10 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
   }
 
   return (
-    <div className="not-prose" >
+    <div className="not-prose">
       <GoogleMap
         mapContainerClassName="w-full h-96"
-        zoom={zoom}
+        zoom={markers?.length !== 0 ? 3 : zoom}
         options={options}
         center={
           center
