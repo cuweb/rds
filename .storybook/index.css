@@ -6138,24 +6138,12 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.prose-headings\:mb-0 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  margin-bottom: 0px;
-}
-
-.prose-headings\:mb-8 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  margin-bottom: 2rem;
-}
-
 .prose-headings\:mb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
   margin-bottom: 1.5rem;
 }
 
 .prose-headings\:pb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
   padding-bottom: 1.5rem;
-}
-
-.prose-headings\:pb-4 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  padding-bottom: 1rem;
 }
 
 .prose-headings\:font-semibold :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
