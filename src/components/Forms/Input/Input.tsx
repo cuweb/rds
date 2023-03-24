@@ -7,41 +7,46 @@ export interface InputProps {
   label?: string
   name: string
   type?: string
+  condition?: () => boolean
 }
 
 export const Input = ({
   label,
+  condition = () => true,
   ...props
 }: InputProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>) => {
   const [field, meta] = useField(props)
-
   return (
-    <div className={formStyles.elementSpace}>
-      <label htmlFor={field.name} className={formStyles.label}>
-        {label} {props.required && <span className="text-cu-red">*</span>}
-      </label>
+    <>
+      {condition() && (
+        <div className={formStyles.elementSpace}>
+          <label htmlFor={field.name} className={formStyles.label}>
+            {label} {props.required && <span className="text-cu-red">*</span>}
+          </label>
 
-      {/* Input Field  */}
-      <input
-        {...field}
-        {...props}
-        id={field.name}
-        type={props.type}
-        className={`${formStyles.input} ${meta.touched && meta.error ? formErrorStyles.inputBorder : ''}`}
-        aria-invalid={meta.touched && meta.error ? true : false}
-        aria-describedby={field.name + (meta.touched && meta.error ? '-error' : '')}
-      />
+          {/* Input Field  */}
+          <input
+            {...field}
+            {...props}
+            id={field.name}
+            type={props.type}
+            className={`${formStyles.input} ${meta.touched && meta.error ? formErrorStyles.inputBorder : ''}`}
+            aria-invalid={meta.touched && meta.error ? true : false}
+            aria-describedby={field.name + (meta.touched && meta.error ? '-error' : '')}
+          />
 
-      {/* Validation Error Icon*/}
-      {meta.touched && meta.error && (
-        <div className={formErrorStyles.messageDiv}>
-          <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
-          <p className={formErrorStyles.errorText} id="email-error">
-            {meta.error}
-          </p>
+          {/* Validation Error Icon*/}
+          {meta.touched && meta.error && (
+            <div className={formErrorStyles.messageDiv}>
+              <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
+              <p className={formErrorStyles.errorText} id="email-error">
+                {meta.error}
+              </p>
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   )
 }
 
