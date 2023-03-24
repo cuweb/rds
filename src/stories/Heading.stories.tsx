@@ -20,3 +20,27 @@ export const Primary: Story = {}
 Primary.args = {
   text: 'Heading Component',
 }
+
+export const CenterAligned: Story = {
+  args: {
+    ...Primary.args,
+    isCenter: true,
+  },
+}
+
+export const WithParagraph: Story = {
+  args: {
+    ...Primary.args,
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed consectetur tortor, eget mollis odio. Etiam tristique, eros eget tincidunt mollis, ex nulla ornare enim, ac volutpat ex ex id risus.',
+  },
+}
+
+export const CetnerWithPara: Story = {
+  args: {
+    ...Primary.args,
+    isCenter: true,
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed consectetur tortor, eget mollis odio. Etiam tristique, eros eget tincidunt mollis, ex nulla ornare enim, ac volutpat ex ex id risus.',
+  },
+}

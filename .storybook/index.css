@@ -2828,6 +2828,14 @@ select {
   padding-bottom: 2rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-2\.5 {
+  padding-bottom: 0.625rem;
+}
+
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -2900,6 +2908,10 @@ select {
   padding-top: 0.25rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .pt-16 {
   padding-top: 4rem;
 }
@@ -2930,18 +2942,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-
-.pb-2\.5 {
-  padding-bottom: 0.625rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .text-left {
@@ -5859,19 +5859,14 @@ select {
   bottom: 0px;
 }
 
-.after\:left-px::after {
-  content: var(--tw-content);
-  left: 1px;
-}
-
 .after\:left-1\/2::after {
   content: var(--tw-content);
   left: 50%;
 }
 
-.after\:-m-5::after {
+.after\:left-px::after {
   content: var(--tw-content);
-  margin: -1.25rem;
+  left: 1px;
 }
 
 .after\:-ml-5::after {
@@ -6151,8 +6146,16 @@ select {
   margin-bottom: 2rem;
 }
 
+.prose-headings\:mb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  margin-bottom: 1.5rem;
+}
+
 .prose-headings\:pb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
   padding-bottom: 1.5rem;
+}
+
+.prose-headings\:pb-4 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  padding-bottom: 1rem;
 }
 
 .prose-headings\:font-semibold :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
@@ -6485,16 +6488,6 @@ select {
     padding-bottom: 2rem;
   }
 
-  .md\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .md\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-  }
-
   .md\:pb-32 {
     padding-bottom: 8rem;
   }
@@ -6503,36 +6496,16 @@ select {
     padding-bottom: 12rem;
   }
 
+  .md\:pt-14 {
+    padding-top: 3.5rem;
+  }
+
   .md\:pt-20 {
     padding-top: 5rem;
   }
 
   .md\:pt-40 {
     padding-top: 10rem;
-  }
-
-  .md\:pb-4 {
-    padding-bottom: 1rem;
-  }
-
-  .md\:pt-8 {
-    padding-top: 2rem;
-  }
-
-  .md\:pb-2 {
-    padding-bottom: 0.5rem;
-  }
-
-  .md\:pb-3 {
-    padding-bottom: 0.75rem;
-  }
-
-  .md\:pb-2\.5 {
-    padding-bottom: 0.625rem;
-  }
-
-  .md\:pt-14 {
-    padding-top: 3.5rem;
   }
 
   .md\:text-left {
