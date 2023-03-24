@@ -13,7 +13,7 @@ export interface LocationProps {
 }
 export const Location = ({ markers, location, lat, lng, zoom = 15, center }: LocationProps) => {
   const [showInfo, setShowInfo] = React.useState(false)
-  
+
   const mapRef = React.useRef()
 
   const [activeMarker, setActiveMarker] = useState(null)
@@ -23,11 +23,9 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
     if (markers && markers?.length !== 0) {
       markers?.forEach(({ position }: any) => bounds.extend(position))
       map.fitBounds(bounds)
-    }
-    else{
+    } else {
       mapRef.current = map
     }
-   
   }, [])
 
   const handleActiveMarker = (marker: any) => {
@@ -49,7 +47,7 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
     <div className="not-prose not-contained">
       <GoogleMap
         mapContainerClassName="w-full h-96"
-        zoom={markers && markers?.length !== 0  ? 10 : zoom}
+        zoom={markers && markers?.length !== 0 ? 10 : zoom}
         options={options}
         center={
           center
@@ -61,15 +59,16 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
         onLoad={onMapLoad}
       >
         <MarkerF title={location} onClick={() => setShowInfo(true)} position={{ lat: Number(lat), lng: Number(lng) }} />
-        {markers && markers?.map(({ id, name, position }: any) => (
-          <MarkerF key={id} position={position} onClick={() => handleActiveMarker(id)}>
-            {activeMarker === id ? (
-              <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
-                <div>{name}</div>
-              </InfoWindowF>
-            ) : null}
-          </MarkerF>
-        ))}
+        {markers &&
+          markers?.map(({ id, name, position }: any) => (
+            <MarkerF key={id} position={position} onClick={() => handleActiveMarker(id)}>
+              {activeMarker === id ? (
+                <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
+                  <div>{name}</div>
+                </InfoWindowF>
+              ) : null}
+            </MarkerF>
+          ))}
 
         {showInfo && (
           <InfoWindowF

@@ -7,10 +7,15 @@ export interface LocationPickerProps {
   posCallback?: any
   centerCallback?: any
   singleMarker?: boolean
-  singleMarkerCallback?:any
+  singleMarkerCallback?: any
 }
 
-export const LocationPicker = ({ posCallback, centerCallback, singleMarker,singleMarkerCallback }:LocationPickerProps) => {
+export const LocationPicker = ({
+  posCallback,
+  centerCallback,
+  singleMarker,
+  singleMarkerCallback,
+}: LocationPickerProps) => {
   const [address, setAddress] = useState('')
   const [center, setCenter] = useState<{ lat: number; lng: number }>({
     lat: 45.3850225,
@@ -20,8 +25,7 @@ export const LocationPicker = ({ posCallback, centerCallback, singleMarker,singl
   const [coordinates, setCoordinates] = useState({
     lat: 45.3850225,
     lng: -75.6946679,
-  });
-  
+  })
 
   const handleSelect = async (value: string) => {
     const results = await geocodeByAddress(value)
@@ -30,11 +34,11 @@ export const LocationPicker = ({ posCallback, centerCallback, singleMarker,singl
     setAddress(value)
     setCenter({ lat: latLng.lat, lng: latLng.lng })
     setPos([...pos, { name: value, id: placeID, position: latLng }])
-      setCoordinates(latLng);
+    setCoordinates(latLng)
   }
-console.log(coordinates)
+
   useEffect(() => {
-    if(posCallback) posCallback(pos)
+    if (posCallback) posCallback(pos)
   }, [pos, posCallback])
 
   useEffect(() => {
@@ -42,8 +46,8 @@ console.log(coordinates)
   }, [center, centerCallback])
 
   useEffect(() => {
-    if(singleMarker && singleMarkerCallback) singleMarkerCallback({coordinates,address:address})
-  }, [coordinates, singleMarkerCallback,singleMarker])
+    if (singleMarker && singleMarkerCallback) singleMarkerCallback({ coordinates, address: address })
+  }, [coordinates, singleMarkerCallback, singleMarker])
 
   return (
     <div className="not-prose">
@@ -75,14 +79,14 @@ console.log(coordinates)
                   <Combobox.Option key={suggestion.index} value={suggestion}>
                     {({ active }) => (
                       <ul>
-                      <li
-                        {...getSuggestionItemProps(suggestion)}
-                        className={`p-4 text-cu-black-600 hover:cursor-pointer ${
-                          active ? 'bg-cu-black-50 text-cu-black-900' : 'bg-white'
-                        }`}
-                      >
-                        {suggestion.description}
-                      </li>
+                        <li
+                          {...getSuggestionItemProps(suggestion)}
+                          className={`p-4 text-cu-black-600 hover:cursor-pointer ${
+                            active ? 'bg-cu-black-50 text-cu-black-900' : 'bg-white'
+                          }`}
+                        >
+                          {suggestion.description}
+                        </li>
                       </ul>
                     )}
                   </Combobox.Option>
