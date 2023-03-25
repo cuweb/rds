@@ -13,7 +13,8 @@ import { NewsCard } from '../../../components/Cards/NewsCard/NewsCard'
 import { NewsCardData as data } from '../../../components/Cards/NewsCard/NewsCardData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/News Card Blocks',
+  title: 'Examples/Projects/cutheme/Card Blocks',
+  tags: ['autodocs'],
 }
 
 export default meta
@@ -67,7 +68,7 @@ export const NewsCardBlocks: Story = {
           <h2>News Card Block</h2>
           <SinglePara />
 
-          <Container bgColor="white" maxWidth="7xl" hasProse>
+          <Container bgColor="white" hasProse>
             <Column cols="3">
               {data.map((item) => (
                 <NewsCard
