@@ -34,7 +34,7 @@
     "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/styles/index.css -o ./.storybook/index.css",
     "prepare": "husky install",
-    "clean": "rm -rf node_modules ; rm package-lock.json ; npm install ; npm run build"
+    "clean": "rm -rf node_modules ; npm ci ; npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
