@@ -1,27 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Combobox } from '@headlessui/react'
 import { useField } from 'formik'
 import type { FieldHookConfig } from 'formik'
-import { useCallback, useEffect, useState } from 'react'
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
+import { useCallback, useState } from 'react'
 import { Location } from '../../Location/Location'
-import { formStyles } from '../../../utils/formClasses'
-import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { LocationPicker } from '../../LocationPicker/LocationPicker'
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export interface PickerProps {
   label?: string
 }
 
-export const PlacesAutoComplete = ({ label, ...props }: PickerProps & FieldHookConfig<string>) => {
-  interface SingleMarkerInterface {
-    coordinates: { lat: number; lng: number }
-    address: string
-  }
+interface SingleMarkerInterface {
+  coordinates: { lat: number; lng: number }
+  address: string
+}
+
+export const PlacesAutoComplete = ({ label, ...props }: PickerProps & FieldHookConfig<object>) => {
+
+  const [field, meta, helper] = useField(props)
+  const defaultLocation = field.value
+console.log("defaultLocation",defaultLocation)
   const [coordinates, setCoordinates] = useState<{ coordinates: { lat: number; lng: number }; address: string }>({
     coordinates: {
       lat: 45.3850225,
@@ -32,17 +29,18 @@ export const PlacesAutoComplete = ({ label, ...props }: PickerProps & FieldHookC
   const markerCallback = useCallback(
     (coord: SingleMarkerInterface) => {
       setCoordinates(coord)
+      helper.setValue(coord)
     },
     [setCoordinates],
   )
   return (
-    <>
+    <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
       <LocationPicker singleMarker singleMarkerCallback={markerCallback} />
       <Location
         lat={coordinates?.coordinates?.lat?.toString()}
         lng={coordinates?.coordinates?.lng?.toString()}
         location={coordinates?.address}
       />
-      </>
+      </div>
   )
 }
