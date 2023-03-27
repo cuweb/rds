@@ -39,7 +39,21 @@ const avatarSizes = {
 
 export const Avatar = ({ size = 'xl', rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => {
   const { firstName, lastName, image } = user
-  const initials = `${firstName.split('')[0]}${lastName.split('')[0]}`
+
+  let initials
+  if (firstName && lastName) {
+    initials = `${firstName.split('')[0]}${lastName.split('')[0]}`
+  } else {
+    if (firstName) {
+      initials = `${firstName.split('')[0]}`
+    } else {
+      if (lastName) {
+        initials = `${lastName.split('')[0]}`
+      } else {
+        initials = 'CU'
+      }
+    }
+  }
   const shadowStyle = hasShadow ? styles.shadow : ''
   const roundedStyle = rounded ? rdsRounded[rounded] : ''
   const borderWidthStyle = borderWidth ? rdsBorderWidth[borderWidth] : ''

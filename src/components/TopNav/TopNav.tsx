@@ -5,6 +5,7 @@ import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
 import { Link } from '../Link/Link'
 import { Search } from '../Search/Search'
 import cuShield from '../../public/cu-shield.svg'
+import { Spinner } from '../Loaders/Spinner/Spinner'
 
 export interface LinkProps {
   title: string
@@ -133,9 +134,12 @@ export const TopNav = ({
               )}
               {children}
 
-              {/* Login */}
-              {session === null && login}
-              {!userInfo && session !== null && <p>Loading</p>}
+              <>
+                {/* Login */}
+                {session === null && login}
+                {!userInfo && session !== null && <Spinner />}
+              </>
+              {/* update the loading to a spinner  */}
               {userInfo && !userMenuItems && <Avatar user={userInfo} size="xs" rounded="full" />}
               {userInfo && userMenuItems && (
                 <DropDown listItems={userMenuItems} menuAlign="right">

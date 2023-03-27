@@ -25,7 +25,7 @@ export const WYSIWYG = ({
       [{ header: [2, 3, 4, false] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
       [{ list: 'ordered' }, { list: 'bullet' }],
-      ['link', 'image'],
+      ['link'],
       ['clean'],
     ],
   }
