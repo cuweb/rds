@@ -80,6 +80,10 @@
   @apply border-b border-cu-black-100 last:-mb-px;
 }
 
+.cu-stackedlist.md\:grid-cols-2 > li {
+  @apply last:mb-0 odd:border-r;
+}
+
 /* 
 * Add styles to first child of container to banner overlap
 */

@@ -12,7 +12,8 @@ import { NewsItemData as data } from '../../../components/Listings/NewsItem/News
 import { NewsItem } from '../../../components/Listings/NewsItem/NewsItem'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/News Listing Blocks',
+  title: 'Examples/Projects/cutheme/Listing Blocks',
+  tags: ['autodocs'],
 }
 
 export default meta

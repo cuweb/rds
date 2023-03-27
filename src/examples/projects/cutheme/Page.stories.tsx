@@ -13,7 +13,8 @@ import { NewsCard } from '../../../components/Cards/NewsCard/NewsCard'
 import { NewsCardData as data } from '../../../components/Cards/NewsCard/NewsCardData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Single Page',
+  title: 'Examples/Projects/cutheme',
+  tags: ['autodocs'],
 }
 
 export default meta
