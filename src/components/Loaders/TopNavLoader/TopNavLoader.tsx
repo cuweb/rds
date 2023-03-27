@@ -1,4 +1,4 @@
-export const Spinner = () => {
+export const TopNavLoader = () => {
   return (
     <>
       <div role="status">

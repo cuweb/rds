@@ -466,6 +466,7 @@ LoginButton.args = {
   navLinks: NavLinks,
   mobileLinks: MobileLinks,
   login: <Button title="Login" size="sm" url="#" />,
+  session: null,
 }
 
 export const MobileMenu: Story = {}
@@ -475,6 +476,7 @@ MobileMenu.args = {
   userMenuItems: userMenuItems,
   mobileLinks: MobileLinks,
   mobileLogin: mobileLogin,
+  session: null,
 }
 
 export const KitchenSink: Story = {}

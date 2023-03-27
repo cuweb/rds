@@ -75,6 +75,8 @@ export { Form } from './components/Forms/Form/Form'
 
 export { CardLoader } from './components/Loaders/CardLoader/CardLoader'
 export { EventLoader } from './components/Loaders/EventLoader/EventLoader'
+export { PageLoader } from './components/Loaders/PageLoader/PageLoader'
+export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
 
 //
 // Types
