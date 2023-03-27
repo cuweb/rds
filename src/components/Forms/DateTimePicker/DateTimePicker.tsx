@@ -38,7 +38,7 @@ export const DateTimePicker = ({ label, ...props }: PickerProps & FieldHookConfi
       timeSplit[0] = `${parseInt(timeSplit[0], 10) + 12}`
     }
 
-    return `${timeSplit[0]}:${timeSplit[1]}`
+    return `${timeSplit[0].padStart(2, '0')}:${timeSplit[1]}:00`
   }
 
   const time = convertTime12to24(`${hours}:${minutes} ${noon}`)
