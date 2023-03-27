@@ -1450,6 +1450,10 @@ select {
   position: absolute;
 }
 
+.\!absolute {
+  position: absolute !important;
+}
+
 .relative {
   position: relative;
 }
@@ -1615,6 +1619,10 @@ select {
 
 .m-auto {
   margin: auto;
+}
+
+.\!-m-px {
+  margin: -1px !important;
 }
 
 .-mx-1 {
@@ -1887,6 +1895,14 @@ select {
   height: 100%;
 }
 
+.\!h-px {
+  height: 1px !important;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
@@ -1985,6 +2001,14 @@ select {
 
 .w-px {
   width: 1px;
+}
+
+.\!w-px {
+  width: 1px !important;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .min-w-full {
@@ -2355,12 +2379,20 @@ select {
   overflow: hidden;
 }
 
+.\!overflow-hidden {
+  overflow: hidden !important;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.\!whitespace-nowrap {
+  white-space: nowrap !important;
 }
 
 .rounded {
@@ -2420,6 +2452,10 @@ select {
   border-width: 8px;
 }
 
+.\!border-0 {
+  border-width: 0px !important;
+}
+
 .border-y-2 {
   border-top-width: 2px;
   border-bottom-width: 2px;
@@ -2455,6 +2491,10 @@ select {
 
 .border-t-2 {
   border-top-width: 2px;
+}
+
+.border-solid {
+  border-style: solid;
 }
 
 .border-cu-black-100 {
@@ -2511,9 +2551,17 @@ select {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-current {
+  border-color: currentColor;
+}
+
 .border-l-cyan-300 {
   --tw-border-opacity: 1;
   border-left-color: rgb(103 232 249 / var(--tw-border-opacity));
+}
+
+.border-r-transparent {
+  border-right-color: transparent;
 }
 
 .bg-black {
@@ -2735,6 +2783,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.\!p-0 {
+  padding: 0px !important;
 }
 
 .px-1 {
@@ -2964,6 +3016,10 @@ select {
 
 .text-center {
   text-align: center;
+}
+
+.align-\[-0\.125em\] {
+  vertical-align: -0.125em;
 }
 
 .text-2xl {
@@ -3329,6 +3385,10 @@ select {
 
 .\@container {
   container-type: inline-size;
+}
+
+.\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
+  clip: rect(0,0,0,0) !important;
 }
 
 /* RDS Layout CSS */
@@ -6192,6 +6252,18 @@ select {
 
 .prose-img\:rounded-lg :is(:where(img):not(:where([class~="not-prose"] *))) {
   border-radius: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .motion-reduce\:animate-\[spin_1\.5s_linear_infinite\] {
+    animation: spin 1.5s linear infinite;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
