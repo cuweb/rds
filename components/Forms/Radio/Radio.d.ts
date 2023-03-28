@@ -7,9 +7,10 @@ export interface RadioProps {
         name: string;
         label: string;
     }[];
+    condition?: () => boolean;
 }
 export declare const Radio: {
-    ({ label, options, ...props }: RadioProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, options, condition, ...props }: RadioProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Radio.d.ts.map

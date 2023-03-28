@@ -6,6 +6,7 @@ export interface SelectProps {
         label: string;
         value: string;
     }[];
+    condition?: () => boolean;
 }
-export declare const Select: ({ label, options, ...props }: SelectProps & SelectHTMLAttributes<HTMLSelectElement> & ClassAttributes<HTMLSelectElement>) => JSX.Element;
+export declare const Select: ({ label, options, condition, ...props }: SelectProps & SelectHTMLAttributes<HTMLSelectElement> & ClassAttributes<HTMLSelectElement>) => JSX.Element;
 //# sourceMappingURL=Select.d.ts.map

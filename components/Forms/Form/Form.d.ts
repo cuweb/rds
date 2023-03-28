@@ -1,6 +1,6 @@
-import type { FormikHelpers, FormikValues } from 'formik';
+import type { FormikHelpers, FormikProps, FormikValues } from 'formik';
 export interface FormProps {
-    children?: React.ReactNode;
+    children?: ((props: FormikProps<FormikValues>) => React.ReactNode) | React.ReactNode;
     onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void;
     initialValues?: FormikValues;
     schema: {
@@ -13,33 +13,38 @@ export interface FormProps {
 }
 export interface SubmitProps {
     title?: string;
+    disabled?: boolean;
 }
 export declare const Form: {
     ({ children, onSubmit, schema, initialValues, }: FormProps): JSX.Element;
     displayName: string;
 } & {
     Input: {
-        ({ label, ...props }: import("../Input/Input").InputProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
+        ({ label, condition, ...props }: import("../Input/Input").InputProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
         displayName: string;
     };
-    Select: ({ label, options, ...props }: import("../Select/Select").SelectProps & import("react").SelectHTMLAttributes<HTMLSelectElement> & import("react").ClassAttributes<HTMLSelectElement>) => JSX.Element;
+    Select: ({ label, options, condition, ...props }: import("../Select/Select").SelectProps & import("react").SelectHTMLAttributes<HTMLSelectElement> & import("react").ClassAttributes<HTMLSelectElement>) => JSX.Element;
     Checkbox: {
-        ({ label, options, ...props }: import("../Checkbox/Checkbox").CheckboxProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
+        ({ label, options, condition, ...props }: import("../Checkbox/Checkbox").CheckboxProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
         displayName: string;
     };
     Radio: {
-        ({ label, options, ...props }: import("../Radio/Radio").RadioProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
+        ({ label, options, condition, ...props }: import("../Radio/Radio").RadioProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
+        displayName: string;
+    };
+    Upload: {
+        ({ label, onReset, onUpload, setPreview, condition, ...props }: any): JSX.Element;
         displayName: string;
     };
     Submit: {
-        ({ title }: SubmitProps): JSX.Element;
+        ({ title, disabled }: SubmitProps): JSX.Element;
         displayName: string;
     };
     WYSIWYG: {
         ({ label, editor, placeholder, ...props }: import("../WYSIWYG/WYSIWYG").WYSIWYGProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
         displayName: string;
     };
-    DateTimePicker: ({ label, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
-    PlacesAutoComplete: ({ label, ...props }: import("../PlacesAutoComplete/PlacesAutoComplete").PickerProps & import("formik").FieldHookConfig<object>) => JSX.Element;
+    DateTimePicker: ({ label, condition, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
+    PlacesAutoComplete: (props: import("formik").FieldHookConfig<object>) => JSX.Element;
 };
 //# sourceMappingURL=Form.d.ts.map

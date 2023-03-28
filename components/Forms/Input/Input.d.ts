@@ -3,9 +3,10 @@ export interface InputProps {
     label?: string;
     name: string;
     type?: string;
+    condition?: () => boolean;
 }
 export declare const Input: {
-    ({ label, ...props }: InputProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, condition, ...props }: InputProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Input.d.ts.map

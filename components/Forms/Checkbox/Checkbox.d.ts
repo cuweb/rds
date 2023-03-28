@@ -7,9 +7,10 @@ export interface CheckboxProps {
         name: string;
         label: string;
     }[];
+    condition?: () => boolean;
 }
 export declare const Checkbox: {
-    ({ label, options, ...props }: CheckboxProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, options, condition, ...props }: CheckboxProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Checkbox.d.ts.map
