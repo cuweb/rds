@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
 export interface LocationPickerProps {
-  posCallback?: any
-  centerCallback?: any
+  posCallback?: (pos: { name: string; id: string; position: object }[]) => void
+  centerCallback?: (center: { lat: number; lng: number }) => void
   singleMarker?: boolean
-  singleMarkerCallback?: any
+  singleMarkerCallback?: (marker: { coordinates: { lat: number; lng: number }; address: string }) => void
 }
 
 export const LocationPicker = ({
