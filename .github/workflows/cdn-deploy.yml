@@ -1,14 +1,11 @@
 name: Deploy to S3
 on: [push]
 jobs:
-  run:
+  deploy:
     runs-on: ubuntu-latest
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      # AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm ci
@@ -21,7 +18,7 @@ jobs:
         with:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-          AWS_BUCKET_NAME: rds-design-framework # ${{ secrets.S3_BUCKET }}
-          # BUCKET_PATH: '/pr/${{github.event.number}}' # ${{ secrets.S3_BUCKET_PATH }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_BUCKET_NAME: ${{ secrets.S3_BUCKET }}
+          BUCKET_PATH: '/rds'
           DIST_LOCATION_CODE: ./dist
