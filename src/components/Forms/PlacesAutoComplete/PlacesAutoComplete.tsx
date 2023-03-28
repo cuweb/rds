@@ -15,10 +15,7 @@ interface SingleMarkerInterface {
 }
 
 export const PlacesAutoComplete = ({ label, ...props }: PickerProps & FieldHookConfig<object>) => {
-
   const [field, meta, helper] = useField(props)
-  const defaultLocation = field.value
-console.log("defaultLocation",defaultLocation)
   const [coordinates, setCoordinates] = useState<{ coordinates: { lat: number; lng: number }; address: string }>({
     coordinates: {
       lat: 45.3850225,
@@ -41,6 +38,6 @@ console.log("defaultLocation",defaultLocation)
         lng={coordinates?.coordinates?.lng?.toString()}
         location={coordinates?.address}
       />
-      </div>
+    </div>
   )
 }
