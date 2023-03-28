@@ -148,7 +148,11 @@ export const FooterStandard = () => {
             ))}
           </ul>
           <Link href="https://goravens.carleton.ca" className="h-auto w-12">
-            <img className="mt-8 h-auto w-12" src="assets/ravens-logo.svg" alt="Carleton" />
+            <img
+              className="mt-8 h-auto w-12"
+              src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logo.svg"
+              alt="Carleton"
+            />
           </Link>
         </div>
       </div>
