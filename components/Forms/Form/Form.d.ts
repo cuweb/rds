@@ -40,6 +40,6 @@ export declare const Form: {
         displayName: string;
     };
     DateTimePicker: ({ label, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
-    PlacesAutoComplete: ({ label, ...props }: import("../PlacesAutoComplete/PlacesAutoComplete").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
+    PlacesAutoComplete: ({ label, ...props }: import("../PlacesAutoComplete/PlacesAutoComplete").PickerProps & import("formik").FieldHookConfig<object>) => JSX.Element;
 };
 //# sourceMappingURL=Form.d.ts.map
