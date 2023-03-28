@@ -12,7 +12,7 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   hasShadow?: boolean
   isFull?: boolean
   isCenter?: boolean
-  isDisabled?: boolean
+  disabled?: boolean
   hasDropDown?: boolean
   url?: string | undefined
 }
