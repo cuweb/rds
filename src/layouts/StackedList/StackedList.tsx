@@ -22,7 +22,6 @@ export const StackedList = ({
   const borderStyle = hasBorder ? styles.border : ''
   const shadowStyle = hasShadow ? styles.shadow : ''
   const gridColumns = cols === '1' ? gridStyles.oneCol : gridStyles.twoCol
-  //   const gridColumns = cols === '1' ? 'md:grid-cols-1' : 'md:grid-cols-2'
 
   return (
     <div className={`${styles.wrapper} ${rdsMaxWidth[maxWidth]} ${borderStyle} ${shadowStyle}`}>

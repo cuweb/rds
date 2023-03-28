@@ -1,11 +1,11 @@
-import { PropsWithChildren, forwardRef } from 'react'
+import { PropsWithChildren } from 'react'
 
 // Meta Wrapper
 export interface MetaProps {
   description?: string
 }
 
-const MetaBase = forwardRef(({ description, children }: PropsWithChildren<MetaProps>) => {
+const MetaBase = ({ description, children }: PropsWithChildren<MetaProps>) => {
   return (
     <>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -15,18 +15,9 @@ const MetaBase = forwardRef(({ description, children }: PropsWithChildren<MetaPr
       <meta name="description" content={description} />
       <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1" />
       {children}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MH632FV');`,
-        }}
-      />
     </>
   )
-})
+}
 
 // Meta Icons
 export interface IconsProps {
