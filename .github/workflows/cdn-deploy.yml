@@ -1,4 +1,4 @@
-name: Example workflow for S3 Deploy
+name: Deploy to S3
 on: [push]
 jobs:
   run:
@@ -16,10 +16,12 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: S3 Deploy
-        uses: lbertenasco/s3-deploy@v1.2.4
+      - name: Deploying application to Amazon S3
+        uses: dvelasquez/deploy-s3-action@main
         with:
-          folder: dist
-          bucket: ${{ secrets.S3_BUCKET }}
-          # dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          invalidation: / *
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_BUCKET_NAME: rds-design-framework # ${{ secrets.S3_BUCKET }}
+          # BUCKET_PATH: '/pr/${{github.event.number}}' # ${{ secrets.S3_BUCKET_PATH }}
+          DIST_LOCATION_CODE: ./dist
