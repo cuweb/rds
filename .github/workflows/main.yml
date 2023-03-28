@@ -1,4 +1,4 @@
-name: Project Check
+name: Build Test and S3 Deployment
 on: [push]
 jobs:
   build:
@@ -9,7 +9,6 @@ jobs:
       matrix:
         node: ['18.x'] # '16.x',
         os: [ubuntu-latest] # macOS-latest windows-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
