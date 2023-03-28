@@ -1,48 +1,48 @@
-import { InputHTMLAttributes, ClassAttributes, useState } from 'react'
-import { useField } from 'formik'
+import { Field, useField } from 'formik'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { formStyles, formErrorStyles } from '../../../utils/formClasses'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+
+// import UploadField from './UploadField'
 
 export interface UploadProps {
   label?: string
   name: string
   type?: string
   setPreview?: any
-  resetUpload?: any
+  onReset?: any
+  onUpload?: any
   condition?: () => boolean
 }
 
-export const Upload = ({
-  label,
-  condition = () => true,
-  setPreview,
-  resetUpload,
-  ...props
-}: UploadProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>) => {
-  const [field, meta, helpers] = useField(props)
+export const Upload = ({ label, onReset, onUpload, setPreview, condition = () => true, ...props }: any) => {
+  const [field, meta, helpers] = useField(props.name)
 
   // image types
   const imageMimeType = /image\/(png|jpg|jpeg)/i
 
   // set image preview
-  const imagePreview = (event: any) => {
+  const imagePreview = async (event: any) => {
     const image = event.target.files[0]
+
+    helpers.setValue(await onUpload(image))
+
     if (!image.type.match(imageMimeType)) {
       return setPreview(null)
     }
+
     const fileReader = new FileReader()
     fileReader.readAsDataURL(image)
-    fileReader.onload = (e) => {
+    fileReader.onloadend = (e) => {
       setPreview(e.target?.result)
     }
   }
 
   // upload reset
   const inputReset = () => {
-    helpers.setValue('')
+    onReset(meta.value)
     setPreview(null)
-    resetUpload()
+    helpers.setValue('')
   }
 
   return (
@@ -55,11 +55,10 @@ export const Upload = ({
 
           <div className="flex">
             {/* Input Field  */}
-            <input
-              {...field}
-              {...props}
+            <Field
+              field={field}
               id={field.name}
-              type="file"
+              component={UploadField}
               onChange={imagePreview}
               className={`${formStyles.input} ${meta.touched && meta.error ? formErrorStyles.inputBorder : ''}`}
               aria-invalid={meta.touched && meta.error ? true : false}
@@ -85,6 +84,14 @@ export const Upload = ({
           )}
         </div>
       )}
+    </>
+  )
+}
+
+const UploadField = ({ label, ...props }: any) => {
+  return (
+    <>
+      <Field variant="outlined" name="uploader" title={label} type={'file'} {...props} />
     </>
   )
 }
