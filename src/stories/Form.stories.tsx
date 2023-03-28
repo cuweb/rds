@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { FormikValues } from 'formik'
 import { Form } from '../components/Forms/Form/Form'
+import * as yup from 'yup'
 
 const meta: Meta<typeof Form> = {
   title: 'Forms/Base Form',
@@ -22,18 +23,16 @@ const formOnSubmit = async (values: FormikValues) => {
   console.log(values)
 }
 
-const InitialValues = {
-  firstname: 'ish',
-  description: ' sample description',
-  regularviewer: '2',
-  location: 'Carleton University, Colonel By Drive, Ottawa, ON, Canada',
-  favsitcom: 'familymatter',
-  favcharacters: ['kellykapowski', 'carltonbanks'],
+export const TestSchema = {
+  firstname: {
+    value: 'TEST',
+    validation: yup.string().min(6, 'Name must be at least 6 characters long').required('Required'),
+  },
 }
 
 export const Default: Story = {
   render: () => (
-    <Form onSubmit={() => undefined} schema={{}} initialValues={{ name: 'John Doe', email: 'johndoe@example.com' }}>
+    <Form onSubmit={() => undefined} schema={{}}>
       {() => <form>Add input components inside the form as children</form>}
     </Form>
   ),
@@ -41,7 +40,7 @@ export const Default: Story = {
 
 export const Example: Story = {
   render: (args) => (
-    <Form {...args} onSubmit={formOnSubmit} schema={{}} initialValues={InitialValues}>
+    <Form {...args} onSubmit={formOnSubmit} schema={TestSchema}>
       {() => (
         <form>
           <Form.Input label="First Name" name="firstname" placeholder="Enter your first name" required />
@@ -64,7 +63,12 @@ export const Example: Story = {
             ]}
           />
 
-          <Form.WYSIWYG label="Event Description" name="description" placeholder="write some description..." />
+          <Form.WYSIWYG
+            label="Event Description"
+            name="description"
+            placeholder="write some description..."
+            editor="textarea"
+          />
 
           <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." />
 

@@ -45,8 +45,8 @@ const FormBase = ({
   const formRules = {}
 
   Object.keys(schema).map((key) => {
-    Object.assign(formValues, { key: schema[key].value })
-    Object.assign(formRules, { key: schema[key].validation })
+    Object.assign(formValues, { [key]: schema[key].value })
+    Object.assign(formRules, { [key]: schema[key].validation })
   })
 
   return (
