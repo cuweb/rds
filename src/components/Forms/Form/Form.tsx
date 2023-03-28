@@ -6,6 +6,7 @@ import type { FormikHelpers, FormikProps, FormikValues } from 'formik'
 import { Input } from '../Input/Input'
 import { Radio } from '../Radio/Radio'
 import { Select } from '../Select/Select'
+import { Upload } from '../Upload/Upload'
 import { Button } from '../../Button/Button'
 import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 import { Checkbox } from '../Checkbox/Checkbox'
@@ -27,7 +28,7 @@ export interface FormProps {
 
 export interface SubmitProps {
   title?: string
-  disabled: boolean
+  disabled?: boolean
 }
 
 const Submit = ({ title = 'Submit', disabled = false }: SubmitProps) => {
@@ -64,6 +65,7 @@ export const Form = Object.assign(FormBase, {
   Select,
   Checkbox,
   Radio,
+  Upload,
   Submit,
   WYSIWYG,
   DateTimePicker,
