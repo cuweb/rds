@@ -25,6 +25,12 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
   const imagePreview = async (event: any) => {
     const image = event.target.files[0]
 
+    if (!image) {
+      helpers.setValue(undefined)
+      setPreview(null)
+      return
+    }
+
     helpers.setValue(await onUpload(image))
 
     if (!image.type.match(imageMimeType)) {
@@ -42,7 +48,7 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
   const inputReset = () => {
     onReset(meta.value)
     setPreview(null)
-    helpers.setValue('')
+    helpers.setValue(undefined)
   }
 
   return (

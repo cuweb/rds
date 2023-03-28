@@ -30,7 +30,6 @@ Primary.args = {
   isFull: false,
   isCenter: false,
   hasDropDown: false,
-  isDisabled: false,
   onClick: () => {
     alert('You clicked the button')
   },

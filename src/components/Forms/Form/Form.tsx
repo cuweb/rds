@@ -32,7 +32,7 @@ export interface SubmitProps {
 }
 
 const Submit = ({ title = 'Submit', disabled = false }: SubmitProps) => {
-  return <Button type="submit" title={title} isDisabled={disabled} />
+  return <Button type="submit" title={title} isType={disabled ? 'disabled' : 'default'} />
 }
 
 const FormBase = ({
