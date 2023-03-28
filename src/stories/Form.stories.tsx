@@ -64,6 +64,10 @@ export const Example: Story = {
             ]}
           />
 
+          <Form.WYSIWYG label="Event Description" name="description" placeholder="write some description..." />
+
+          <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." />
+
           <Form.Radio
             label="How many of these shows did you watch regularly?"
             name="regularviewer"
