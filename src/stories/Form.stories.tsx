@@ -49,6 +49,7 @@ export const Example: Story = {
       <Form.Input label="Address" name="address" placeholder="Enter your street name and house number, if applicable" />
 
       <Form.WYSIWYG label="Event Description" name="description" placeholder="write some description..." />
+      <Form.PlacesAutoComplete label="Event Location" name="location" placeholder="Please select a location..." />
 
       <Form.Select
         label="What is your favorite 90s sitcom?"
