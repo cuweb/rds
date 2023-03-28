@@ -1,8 +1,21 @@
 export interface LocationPickerProps {
-    posCallback?: any;
-    centerCallback?: any;
+    posCallback?: (pos: {
+        name: string;
+        id: string;
+        position: object;
+    }[]) => void;
+    centerCallback?: (center: {
+        lat: number;
+        lng: number;
+    }) => void;
     singleMarker?: boolean;
-    singleMarkerCallback?: any;
+    singleMarkerCallback?: (marker: {
+        coordinates: {
+            lat: number;
+            lng: number;
+        };
+        address: string;
+    }) => void;
 }
 export declare const LocationPicker: ({ posCallback, centerCallback, singleMarker, singleMarkerCallback, }: LocationPickerProps) => JSX.Element;
 //# sourceMappingURL=LocationPicker.d.ts.map
