@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Form } from '../components/Forms/Form/Form'
 
 const meta: Meta<typeof Form> = {
-  title: 'Forms/Places Autocomplete',
+  title: 'Forms/Date Time Picker',
   component: Form,
   tags: ['autodocs'],
   parameters: {
@@ -20,7 +20,7 @@ export const Default: Story = {
   render: () => (
     <>
       <Form onSubmit={() => undefined} schema={{}} initialValues={InitialValues}>
-        <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." />
+        <Form.DateTimePicker name="datetime" placeholder="Please select date and time..." />
       </Form>
     </>
   ),

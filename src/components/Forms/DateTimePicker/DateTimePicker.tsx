@@ -7,7 +7,7 @@ import { formStyles } from '../../../utils/formClasses'
 import { Calendar } from '../../Calendar/Calendar'
 
 const styles = {
-  select: `text-xs bg-none rounded-md outline-none appearance-none border-cu-black-100 text-cu-black-900 focus:border-red-500 focus:ring-0`,
+  select: `text-xs rounded-md outline-none appearance-none border-cu-black-100 text-cu-black-900 focus:border-red-500 focus:ring-0`,
 }
 
 export interface PickerProps {
@@ -71,7 +71,7 @@ export const DateTimePicker = ({ label, condition = () => true, ...props }: Pick
           <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
             <Calendar callback={callbackcal} />
             <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
-              <div className="relative">
+              <div>
                 <label htmlFor="field-hours" className="sr-only">
                   {label} {props.required && <span className="text-cu-red">*</span>}
                 </label>
@@ -93,7 +93,7 @@ export const DateTimePicker = ({ label, condition = () => true, ...props }: Pick
                 </div>
               </div>
 
-              <div className="relative">
+              <div>
                 <label htmlFor="field-minutes" className="sr-only">
                   Minutes
                 </label>
@@ -122,7 +122,7 @@ export const DateTimePicker = ({ label, condition = () => true, ...props }: Pick
                 </div>
               </div>
 
-              <div className="relative">
+              <div>
                 <label htmlFor="field-ampm" className="sr-only">
                   AM/PM
                 </label>

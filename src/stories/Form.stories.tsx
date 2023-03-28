@@ -72,6 +72,8 @@ export const Example: Story = {
 
           <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." />
 
+          <Form.DateTimePicker name="datetime" placeholder="Please select date and time..." />
+
           <Form.Radio
             label="How many of these shows did you watch regularly?"
             name="regularviewer"
