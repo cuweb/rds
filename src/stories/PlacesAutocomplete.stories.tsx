@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form } from '../components/Forms/Form/Form'
-import ReactQuill from 'react-quill'
 
 const meta: Meta<typeof Form> = {
-  title: 'Forms/PlacesAutocomplete',
+  title: 'Forms/Places Autocomplete',
   component: Form,
   tags: ['autodocs'],
   parameters: {
