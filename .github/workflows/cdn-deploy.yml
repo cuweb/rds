@@ -16,8 +16,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        uses: lbertenasco/s3-deploy@v1
+      - name: S3 Deploy
+        uses: lbertenasco/s3-deploy@v1.2.4
         with:
           folder: dist
           bucket: ${{ secrets.S3_BUCKET }}
