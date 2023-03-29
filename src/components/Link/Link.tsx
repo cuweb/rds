@@ -1,4 +1,4 @@
-import React, { forwardRef, PropsWithChildren } from 'react'
+import React, { forwardRef, PropsWithChildren, useEffect, useState } from 'react'
 
 export interface LinkProps {
   href?: string | undefined
@@ -34,6 +34,7 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
     }: PropsWithChildren<LinkProps>,
     ref,
   ) => {
+    const [myModule, setMyModule] = useState<any>()
     const LinkParams = {
       href,
       as,
@@ -48,20 +49,30 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
       onTouchStart,
     }
 
-    // try {
-    //   require('next/link')
-    //   return (
-    //     <Link {...LinkParams} ref={ref}>
-    //       {children}
-    //     </Link>
-    //   )
-    // } catch (e) {
-    return (
-      <a ref={ref} {...LinkParams}>
-        {children}
-      </a>
-    )
-    // }
+    useEffect(() => {
+      async function loadModule() {
+        try {
+          const NextLink = await import(`next/${'link'}`)
+          setMyModule(
+            <NextLink ref={ref} {...LinkParams}>
+              {children}
+            </NextLink>,
+          )
+        } catch (error) {
+          setMyModule(
+            <a ref={ref} {...LinkParams}>
+              {children}
+            </a>,
+          )
+        }
+      }
+
+      loadModule()
+    }, [])
+
+    console.log(myModule)
+
+    return <> {myModule}</>
   },
 )
 
