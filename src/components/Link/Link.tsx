@@ -34,7 +34,7 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
     }: PropsWithChildren<LinkProps>,
     ref,
   ) => {
-    const [myModule, setMyModule] = useState<any>()
+    const [rdsLink, setRdsLink] = useState<any>()
     const LinkParams = {
       href,
       as,
@@ -50,16 +50,16 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
     }
 
     useEffect(() => {
-      async function loadModule() {
+      async function loadLink() {
         try {
           const NextLink = await import(`next/${'link'}`)
-          setMyModule(
+          setRdsLink(
             <NextLink ref={ref} {...LinkParams}>
               {children}
             </NextLink>,
           )
         } catch (error) {
-          setMyModule(
+          setRdsLink(
             <a ref={ref} {...LinkParams}>
               {children}
             </a>,
@@ -67,12 +67,10 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
         }
       }
 
-      loadModule()
+      loadLink()
     }, [])
 
-    console.log(myModule)
-
-    return <> {myModule}</>
+    return <>{rdsLink}</>
   },
 )
 
