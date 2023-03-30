@@ -3,8 +3,6 @@ import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { formStyles, formErrorStyles } from '../../../utils/formClasses'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-// import UploadField from './UploadField'
-
 export interface UploadProps {
   label?: string
   name: string
@@ -48,7 +46,7 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
   const inputReset = () => {
     onReset(meta.value)
     setPreview(null)
-    helpers.setValue(undefined)
+    helpers.setValue('')
   }
 
   return (
