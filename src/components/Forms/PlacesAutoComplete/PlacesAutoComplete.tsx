@@ -9,7 +9,14 @@ interface SingleMarkerInterface {
   address: string
 }
 
-export const PlacesAutoComplete = (props: FieldHookConfig<object>) => {
+export interface PlacesAutoCompleteProps {
+  condition?: () => boolean
+}
+
+export const PlacesAutoComplete = ({
+  condition = () => true,
+  ...props
+}: PlacesAutoCompleteProps & FieldHookConfig<object>) => {
   const [field, meta, helper] = useField(props)
   const [coordinates, setCoordinates] = useState<{ coordinates: { lat: number; lng: number }; address: string }>({
     coordinates: {
@@ -26,13 +33,17 @@ export const PlacesAutoComplete = (props: FieldHookConfig<object>) => {
     [setCoordinates],
   )
   return (
-    <div {...field} id={field.name} className="grid gap-5" aria-invalid={meta.touched && meta.error ? true : false}>
-      <LocationPicker singleMarker singleMarkerCallback={markerCallback} />
-      <Location
-        lat={coordinates?.coordinates?.lat?.toString()}
-        lng={coordinates?.coordinates?.lng?.toString()}
-        location={coordinates?.address}
-      />
-    </div>
+    <>
+      {condition() && (
+        <div {...field} id={field.name} className="grid gap-5" aria-invalid={meta.touched && meta.error ? true : false}>
+          <LocationPicker singleMarker singleMarkerCallback={markerCallback} />
+          <Location
+            lat={coordinates?.coordinates?.lat?.toString()}
+            lng={coordinates?.coordinates?.lng?.toString()}
+            location={coordinates?.address}
+          />
+        </div>
+      )}
+    </>
   )
 }
