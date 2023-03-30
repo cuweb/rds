@@ -34,7 +34,7 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
     }: PropsWithChildren<LinkProps>,
     ref,
   ) => {
-    const [rdsLink, setRdsLink] = useState<any>()
+    // const [rdsLink, setRdsLink] = useState<any>()
     const LinkParams = {
       href,
       as,
@@ -49,28 +49,32 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
       onTouchStart,
     }
 
-    useEffect(() => {
-      async function loadLink() {
-        try {
-          const NextLink = await import(`next/${'link'}`)
-          setRdsLink(
-            <NextLink ref={ref} {...LinkParams}>
-              {children}
-            </NextLink>,
-          )
-        } catch (error) {
-          setRdsLink(
-            <a ref={ref} {...LinkParams}>
-              {children}
-            </a>,
-          )
-        }
-      }
+    // useEffect(() => {
+    //   async function loadLink() {
+    //     try {
+    //       const NextLink = await import(`next/${'link'}`)
+    //       setRdsLink(
+    //         <NextLink ref={ref} {...LinkParams}>
+    //           {children}
+    //         </NextLink>,
+    //       )
+    //     } catch (error) {
+    //       setRdsLink(
+    //         <a ref={ref} {...LinkParams}>
+    //           {children}
+    //         </a>,
+    //       )
+    //     }
+    //   }
 
-      loadLink()
-    }, [])
+    //   loadLink()
+    // }, [])
 
-    return <>{rdsLink}</>
+    return (
+      <a ref={ref} {...LinkParams}>
+        {children}
+      </a>
+    )
   },
 )
 
