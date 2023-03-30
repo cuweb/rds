@@ -1,10 +1,12 @@
+/* eslint-disable react/no-children-prop */
 import * as yup from 'yup'
-import { Form as FormWrapper, Formik } from 'formik'
-import type { FormikHelpers, FormikValues } from 'formik'
+import { Formik } from 'formik'
+import type { FormikHelpers, FormikProps, FormikValues } from 'formik'
 
 import { Input } from '../Input/Input'
 import { Radio } from '../Radio/Radio'
 import { Select } from '../Select/Select'
+import { Upload } from '../Upload/Upload'
 import { Button } from '../../Button/Button'
 import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 import { Checkbox } from '../Checkbox/Checkbox'
@@ -12,7 +14,7 @@ import { DateTimePicker } from '../DateTimePicker/DateTimePicker'
 import { PlacesAutoComplete } from '../PlacesAutoComplete/PlacesAutoComplete'
 
 export interface FormProps {
-  children?: React.ReactNode
+  children?: ((props: FormikProps<FormikValues>) => React.ReactNode) | React.ReactNode
   onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void
   initialValues?: FormikValues
   schema: {
@@ -26,10 +28,11 @@ export interface FormProps {
 
 export interface SubmitProps {
   title?: string
+  disabled?: boolean
 }
 
-const Submit = ({ title = 'Submit' }: SubmitProps) => {
-  return <Button type="submit" title={title} />
+const Submit = ({ title = 'Submit', disabled = false }: SubmitProps) => {
+  return <Button type="submit" title={title} isType={disabled ? 'disabled' : 'default'} />
 }
 
 const FormBase = ({
@@ -42,8 +45,8 @@ const FormBase = ({
   const formRules = {}
 
   Object.keys(schema).map((key) => {
-    Object.assign(formValues, { key: schema[key].value })
-    Object.assign(formRules, { key: schema[key].validation })
+    Object.assign(formValues, { [key]: schema[key].value })
+    Object.assign(formRules, { [key]: schema[key].validation })
   })
 
   return (
@@ -52,9 +55,8 @@ const FormBase = ({
       validationSchema={yup.object().shape(formRules)}
       onSubmit={onSubmit}
       enableReinitialize
-    >
-      <FormWrapper className="space-y-5">{children}</FormWrapper>
-    </Formik>
+      children={children}
+    />
   )
 }
 
@@ -63,6 +65,7 @@ export const Form = Object.assign(FormBase, {
   Select,
   Checkbox,
   Radio,
+  Upload,
   Submit,
   WYSIWYG,
   DateTimePicker,

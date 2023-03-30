@@ -11,48 +11,54 @@ export interface CheckboxProps {
     name: string
     label: string
   }[]
+  condition?: () => boolean
 }
 
 export const Checkbox = ({
   label,
   options,
+  condition = () => true,
   ...props
 }: CheckboxProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>) => {
   const [field, meta] = useField(props)
 
   return (
-    <fieldset className={formStyles.elementSpace}>
-      <legend className={formStyles.label}>
-        {label} {props.required && <span className="text-cu-red">*</span>}
-      </legend>
+    <>
+      {condition() && (
+        <fieldset className={formStyles.elementSpace}>
+          <legend className={formStyles.label}>
+            {label} {props.required && <span className="text-cu-red">*</span>}
+          </legend>
 
-      {options?.map((option) => (
-        <div className={`${formStyles.checkboxList}`} key={option.name}>
-          <Field
-            {...field}
-            id={option.name}
-            type="checkbox"
-            className={`${formStyles.checkboxInput} ${
-              meta.touched && meta.error ? formErrorStyles.inputBorder : formStyles.inputBorder
-            }`}
-            value={option.name}
-          />
-          <label htmlFor={option.name} className={formStyles.checkboxLabel}>
-            {option.label}
-          </label>
-        </div>
-      ))}
+          {options?.map((option) => (
+            <div className={`${formStyles.checkboxList}`} key={option.name}>
+              <Field
+                {...field}
+                id={option.name}
+                type="checkbox"
+                className={`${formStyles.checkboxInput} ${
+                  meta.touched && meta.error ? formErrorStyles.inputBorder : formStyles.inputBorder
+                }`}
+                value={option.name}
+              />
+              <label htmlFor={option.name} className={formStyles.checkboxLabel}>
+                {option.label}
+              </label>
+            </div>
+          ))}
 
-      {/* Validation Error Icon*/}
-      {meta.touched && meta.error && (
-        <div className={formErrorStyles.messageDiv}>
-          <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
-          <p className={formErrorStyles.errorText} id="email-error">
-            {meta.error}
-          </p>
-        </div>
+          {/* Validation Error Icon*/}
+          {meta.touched && meta.error && (
+            <div className={formErrorStyles.messageDiv}>
+              <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
+              <p className={formErrorStyles.errorText} id="email-error">
+                {meta.error}
+              </p>
+            </div>
+          )}
+        </fieldset>
       )}
-    </fieldset>
+    </>
   )
 }
 

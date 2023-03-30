@@ -7,14 +7,15 @@ import { formStyles } from '../../../utils/formClasses'
 import { Calendar } from '../../Calendar/Calendar'
 
 const styles = {
-  select: `text-xs bg-none rounded-md outline-none appearance-none border-cu-black-100 text-cu-black-900 focus:border-red-500 focus:ring-0`,
+  select: `text-xs rounded-md outline-none appearance-none border-cu-black-100 text-cu-black-900 focus:border-red-500 focus:ring-0`,
 }
 
 export interface PickerProps {
   label?: string
+  condition?: () => boolean
 }
 
-export const DateTimePicker = ({ label, ...props }: PickerProps & FieldHookConfig<string>) => {
+export const DateTimePicker = ({ label, condition = () => true, ...props }: PickerProps & FieldHookConfig<string>) => {
   const [field, meta, helper] = useField(props)
   const [selectedDate, setSelectedDate] = useState(format(new Date(0), 'yyyy-MM-dd'))
   const [minutes, setMinutes] = useState('00')
@@ -38,7 +39,7 @@ export const DateTimePicker = ({ label, ...props }: PickerProps & FieldHookConfi
       timeSplit[0] = `${parseInt(timeSplit[0], 10) + 12}`
     }
 
-    return `${timeSplit[0]}:${timeSplit[1]}`
+    return `${timeSplit[0].padStart(2, '0')}:${timeSplit[1]}:00`
   }
 
   const time = convertTime12to24(`${hours}:${minutes} ${noon}`)
@@ -61,76 +62,86 @@ export const DateTimePicker = ({ label, ...props }: PickerProps & FieldHookConfi
   }, [time, selectedDate])
 
   return (
-    <div className={formStyles.elementSpace}>
-      <label htmlFor={field.name} className="sr-only">
-        {field.name}
-      </label>
-      <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
-        <Calendar callback={callbackcal} />
-        <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
-          <div className="relative">
-            <label htmlFor="field-hours" className="sr-only">
-              {label} {props.required && <span className="text-cu-red">*</span>}
-            </label>
-            <select id="field-hours" value={hours} onChange={handleHoursChange} name="hours" className={styles.select}>
-              {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
-                <option key={num} value={num}>
-                  {num < 10 ? '0' + num : num}
-                </option>
-              ))}
-            </select>
-            <div className="absolute top-3 right-2">
-              <ChevronDownIcon width="12" height="12" />
-            </div>
-          </div>
+    <>
+      {condition() && (
+        <div className={formStyles.elementSpace}>
+          <label htmlFor={field.name} className="sr-only">
+            {field.name}
+          </label>
+          <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
+            <Calendar callback={callbackcal} />
+            <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
+              <div>
+                <label htmlFor="field-hours" className="sr-only">
+                  {label} {props.required && <span className="text-cu-red">*</span>}
+                </label>
+                <select
+                  id="field-hours"
+                  value={hours}
+                  onChange={handleHoursChange}
+                  name="hours"
+                  className={styles.select}
+                >
+                  {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
+                    <option key={num} value={num}>
+                      {num < 10 ? '0' + num : num}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute top-3 right-2">
+                  <ChevronDownIcon width="12" height="12" />
+                </div>
+              </div>
 
-          <div className="relative">
-            <label htmlFor="field-minutes" className="sr-only">
-              Minutes
-            </label>
-            <select
-              id="field-minutes"
-              value={minutes}
-              onChange={handleMinutesChange}
-              name="minutes"
-              className={styles.select}
-            >
-              <option key="00" value="00">
-                00
-              </option>
-              <option key="15" value="15">
-                15
-              </option>
-              <option key="30" value="30">
-                30
-              </option>
-              <option key="45" value="45">
-                45
-              </option>
-            </select>
-            <div className="absolute top-3 right-2">
-              <ChevronDownIcon width="12" height="12" />
-            </div>
-          </div>
+              <div>
+                <label htmlFor="field-minutes" className="sr-only">
+                  Minutes
+                </label>
+                <select
+                  id="field-minutes"
+                  value={minutes}
+                  onChange={handleMinutesChange}
+                  name="minutes"
+                  className={styles.select}
+                >
+                  <option key="00" value="00">
+                    00
+                  </option>
+                  <option key="15" value="15">
+                    15
+                  </option>
+                  <option key="30" value="30">
+                    30
+                  </option>
+                  <option key="45" value="45">
+                    45
+                  </option>
+                </select>
+                <div className="absolute top-3 right-2">
+                  <ChevronDownIcon width="12" height="12" />
+                </div>
+              </div>
 
-          <div className="relative">
-            <label htmlFor="field-ampm" className="sr-only">
-              AM/PM
-            </label>
-            <select id="field-ampm" value={noon} onChange={handleNoonChange} name="ampm" className={styles.select}>
-              <option key="AM" value="AM">
-                AM
-              </option>
-              <option key="PM" value="PM">
-                PM
-              </option>
-            </select>
-            <div className="absolute top-3 right-2">
-              <ChevronDownIcon width="12" height="12" />
+              <div>
+                <label htmlFor="field-ampm" className="sr-only">
+                  AM/PM
+                </label>
+                <select id="field-ampm" value={noon} onChange={handleNoonChange} name="ampm" className={styles.select}>
+                  <option key="AM" value="AM">
+                    AM
+                  </option>
+                  <option key="PM" value="PM">
+                    PM
+                  </option>
+                </select>
+                <div className="absolute top-3 right-2">
+                  <ChevronDownIcon width="12" height="12" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   )
 }
