@@ -64,7 +64,9 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
               id={field.name}
               component={UploadField}
               onChange={imagePreview}
-              className={`${formStyles.input} ${meta.touched && meta.error ? formErrorStyles.inputBorder : ''}`}
+              className={`${formStyles.input} ${
+                meta.touched && meta.error ? formErrorStyles.inputBorder : ''
+              } text-transparent`}
               aria-invalid={meta.touched && meta.error ? true : false}
               aria-describedby={field.name + (meta.touched && meta.error ? '-error' : '')}
             />
