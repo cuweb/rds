@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../layouts/Column/Column'
-import { NumberCard } from '../components/Cards/NumberCard/NumberCard'
-import { NumberCardData as data } from '../components/Cards/NumberCard/NumberCardData'
+import { NumberCard } from '../components/Cards_Deprecated/NumberCard/NumberCard'
+import { NumberCardData as data } from '../components/Cards_Deprecated/NumberCard/NumberCardData'
 const meta: Meta<typeof NumberCard> = {
-  title: 'Cards & Lists/Cards/Number Card',
+  title: 'Cards & Lists/Cards (Old)/Number Card',
   component: NumberCard,
   tags: ['autodocs'],
   parameters: {

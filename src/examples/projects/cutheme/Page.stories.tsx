@@ -8,9 +8,9 @@ import { Column } from '../../../layouts/Column/Column'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { NewsCard } from '../../../components/Cards/NewsCard/NewsCard'
+import { NewsCard } from '../../../components/Cards_Deprecated/NewsCard/NewsCard'
 
-import { NewsCardData as data } from '../../../components/Cards/NewsCard/NewsCardData'
+import { NewsCardData as data } from '../../../components/Cards_Deprecated/NewsCard/NewsCardData'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme',
