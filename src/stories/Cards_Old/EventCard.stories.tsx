@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
-import { EventCard } from '../components/Cards/EventCard/EventCard'
-import { EventItemData as data } from '../components/Cards/EventCard/EventCardData'
+import { Column } from '../../layouts/Column/Column'
+import { EventCard } from '../../components/Cards_Deprecated/EventCard/EventCard'
+import { EventItemData as data } from '../../components/Cards_Deprecated/EventCard/EventCardData'
 const meta: Meta<typeof EventCard> = {
-  title: 'Cards & Lists/Cards/Event Card',
+  title: 'Cards & Lists/Cards (Deprecated)/Event Card',
   component: EventCard,
   tags: ['autodocs'],
   parameters: {

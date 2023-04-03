@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
-import { PeopleCard } from '../components/Cards/PeopleCard/PeopleCard'
+import { Column } from '../../layouts/Column/Column'
+import { PeopleCard } from '../../components/Cards_Deprecated/PeopleCard/PeopleCard'
 
 const meta: Meta<typeof PeopleCard> = {
-  title: 'Cards & Lists/Cards/People Card',
+  title: 'Cards & Lists/Cards (Deprecated)/People Card',
   component: PeopleCard,
   tags: ['autodocs'],
   parameters: {

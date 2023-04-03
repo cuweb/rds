@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
-import { NewsCard } from '../components/Cards/NewsCard/NewsCard'
-import { NewsCardData as data } from '../components/Cards/NewsCard/NewsCardData'
+import { Column } from '../../layouts/Column/Column'
+import { NewsCard } from '../../components/Cards_Deprecated/NewsCard/NewsCard'
+import { NewsCardData as data } from '../../components/Cards_Deprecated/NewsCard/NewsCardData'
 const meta: Meta<typeof NewsCard> = {
-  title: 'Cards & Lists/Cards/News Card',
+  title: 'Cards & Lists/Cards (Deprecated)/News Card',
   component: NewsCard,
   tags: ['autodocs'],
   parameters: {

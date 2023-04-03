@@ -1,7 +1,6 @@
 //
 // Components
 // -----------------
-
 export { Alert } from './components/Alert/Alert'
 export { Avatar } from './components/Avatar/Avatar'
 export { Badge } from './components/Badge/Badge'
@@ -26,20 +25,21 @@ export { Toast } from './components/Toast/Toast'
 //
 // Cards & Lists
 // -----------------
+export { Card } from './components/Card/Card'
 export { DetailsItem } from './components/Listings/DetailsItem/DetailsItem'
-export { EventCard } from './components/Cards/EventCard/EventCard'
+export { EventCard } from './components/Cards_Deprecated/EventCard/EventCard'
 export { EventItem } from './components/Listings/EventItem/EventItem'
 export { FeedItem } from './components/Listings/FeedItem/FeedItem'
 export { FileItem } from './components/Listings/FileItem/FileItem'
 export { JobItem } from './components/Listings/JobItem/JobItem'
 export { LinkItem } from './components/Listings/LinkItem/LinkItem'
 export { MarketplaceItem } from './components/Listings/MarketplaceItem/MarketplaceItem'
-export { NewsCard } from './components/Cards/NewsCard/NewsCard'
+export { NewsCard } from './components/Cards_Deprecated/NewsCard/NewsCard'
 export { NewsItem } from './components/Listings/NewsItem/NewsItem'
-export { NumberCard } from './components/Cards/NumberCard/NumberCard'
-export { PeopleCard } from './components/Cards/PeopleCard/PeopleCard'
+export { NumberCard } from './components/Cards_Deprecated/NumberCard/NumberCard'
+export { PeopleCard } from './components/Cards_Deprecated/PeopleCard/PeopleCard'
 export { PeopleItem } from './components/Listings/PeopleItem/PeopleItem'
-export { VideoCard } from './components/Cards/VideoCard/VideoCard'
+export { VideoCard } from './components/Cards_Deprecated/VideoCard/VideoCard'
 
 //
 // Headers & Footers

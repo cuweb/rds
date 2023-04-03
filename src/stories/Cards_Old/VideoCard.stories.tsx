@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
-import { VideoCard } from '../components/Cards/VideoCard/VideoCard'
-import { VideoCardData as data } from '../components/Cards/VideoCard/VideoCardData'
+import { Column } from '../../layouts/Column/Column'
+import { VideoCard } from '../../components/Cards_Deprecated/VideoCard/VideoCard'
+import { VideoCardData as data } from '../../components/Cards_Deprecated/VideoCard/VideoCardData'
 const meta: Meta<typeof VideoCard> = {
-  title: 'Cards & Lists/Cards/Video Card',
+  title: 'Cards & Lists/Cards (Deprecated)/Video Card',
   component: VideoCard,
   tags: ['autodocs'],
   parameters: {
