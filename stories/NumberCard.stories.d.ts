@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NumberCard } from '../components/Cards/NumberCard/NumberCard';
+import { NumberCard } from '../components/Cards_Deprecated/NumberCard/NumberCard';
 declare const meta: Meta<typeof NumberCard>;
 export default meta;
 type Story = StoryObj<typeof NumberCard>;

@@ -1,0 +1,1 @@
+{"version":3,"file":"CardFigure.d.ts","sourceRoot":"","sources":["../../../../src/components/Card/CardFigure.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAA;AAGzB,MAAM,WAAW,eAAe;IAC9B,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;IACzB,OAAO,CAAC,EAAE,OAAO,CAAA;CAClB;AAED,eAAO,MAAM,UAAU,0BAA2B,eAAe,gBAIhE,CAAA"}
