@@ -10,6 +10,7 @@ export interface CheckboxProps {
   options?: {
     name: string
     label: string
+    id: number
   }[]
   condition?: () => boolean
 }
@@ -31,7 +32,7 @@ export const Checkbox = ({
           </legend>
 
           {options?.map((option) => (
-            <div className={`${formStyles.checkboxList}`} key={option.name}>
+            <div className={`${formStyles.checkboxList}`} key={option.id}>
               <Field
                 {...field}
                 id={option.name}

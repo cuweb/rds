@@ -22,7 +22,7 @@ export const Default: Story = {
       <Form.Checkbox
         name="favcharacters"
         label="Who are your favourite 90s sitcom characters?"
-        options={[{ name: 'name', label: 'name' }]}
+        options={[{ name: 'name', label: 'name', id: 2 }]}
       />
     </Form>
   ),
