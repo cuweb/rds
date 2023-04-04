@@ -8,9 +8,9 @@ import { Column } from '../../../layouts/Column/Column'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { NewsCard } from '../../../components/Cards/NewsCard/NewsCard'
+import { Card } from '../../../components/Card/Card'
 
-import { NewsCardData as data } from '../../../components/Cards/NewsCard/NewsCardData'
+import { NewsCardData as data } from '../../../components/Cards_Deprecated/NewsCard/NewsCardData'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Card Blocks',
@@ -70,16 +70,18 @@ export const NewsCardBlocks: Story = {
 
           <Container bgColor="white" hasProse>
             <Column cols="3">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
+              {data.slice(0, 3).map((item) => (
+                <Card key={item?.id}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </Card>
               ))}
             </Column>
           </Container>
@@ -91,16 +93,18 @@ export const NewsCardBlocks: Story = {
 
           <Container bgColor="grey" hasProse>
             <Column cols="3">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
+              {data.slice(0, 3).map((item) => (
+                <Card key={item?.id}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </Card>
               ))}
             </Column>
           </Container>
@@ -110,32 +114,36 @@ export const NewsCardBlocks: Story = {
 
           <Container bgColor="white" hasProse>
             <Column cols="3">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
+              {data.slice(0, 3).map((item) => (
+                <Card key={item?.id}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </Card>
               ))}
             </Column>
           </Container>
 
           <Container bgColor="white" maxWidth="5xl" hasProse>
             <Column cols="3" maxWidth="7xl">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
+              {data.slice(0, 3).map((item) => (
+                <Card key={item?.id}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </Card>
               ))}
             </Column>
           </Container>
@@ -145,32 +153,36 @@ export const NewsCardBlocks: Story = {
 
           <Container bgColor="grey" maxWidth="5xl" hasProse>
             <Column cols="3">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
+              {data.slice(0, 3).map((item) => (
+                <Card key={item?.id}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </Card>
               ))}
             </Column>
           </Container>
 
           <Container bgColor="grey" hasProse>
             <Column cols="3" maxWidth="7xl">
-              {data.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  title={item?.title}
-                  link={item?.link}
-                  image={item?.image}
-                  date={item?.date}
-                  excerpt={item?.excerpt}
-                  tags={item?.tags}
-                />
+              {data.slice(0, 3).map((item) => (
+                <Card key={item?.id}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </Card>
               ))}
             </Column>
           </Container>

@@ -31,6 +31,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -47,6 +48,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -1683,6 +1686,10 @@ select {
   margin-right: -0.25rem;
 }
 
+.-mt-16 {
+  margin-top: -4rem;
+}
+
 .-mt-3 {
   margin-top: -0.75rem;
 }
@@ -1693,6 +1700,10 @@ select {
 
 .mb-2\.5 {
   margin-bottom: 0.625rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mb-4 {
@@ -3168,6 +3179,11 @@ select {
   color: rgb(233 28 36 / var(--tw-text-opacity));
 }
 
+.text-cyan-600 {
+  --tw-text-opacity: 1;
+  color: rgb(8 145 178 / var(--tw-text-opacity));
+}
+
 .text-cyan-700 {
   --tw-text-opacity: 1;
   color: rgb(14 116 144 / var(--tw-text-opacity));
@@ -3216,6 +3232,10 @@ select {
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
 }
 
 .text-white {
@@ -3463,7 +3483,8 @@ select {
 .cu-column + :not(.not-contained),
 .cu-column + .cu-column,
 .cu-column + .cu-panel,
-.cu-panel + .cu-column {
+.cu-panel + .cu-column,
+.cu-panel + .cu-panel {
   margin-top: 1.5rem;
 }
 
@@ -3472,7 +3493,8 @@ select {
 .cu-column + :not(.not-contained),
 .cu-column + .cu-column,
 .cu-column + .cu-panel,
-.cu-panel + .cu-column {
+.cu-panel + .cu-column,
+.cu-panel + .cu-panel {
     margin-top: 2rem;
   }
 }
@@ -3576,6 +3598,48 @@ select {
 .prose > .cu-container > *:last-child,
 .prose > .cu-container > * > *:last-child {
   margin-bottom: 0px;
+}
+
+/* Card Components */
+
+.cu-card a {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.cu-card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Card Figure Images */
+
+.cu-card .cu-figure--round img {
+  margin-left: auto;
+  margin-right: auto;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 9999px;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  -o-object-fit: cover;
+     object-fit: cover;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@container (min-width: 24rem) {
+  @media (min-width: 768px) {
+    .cu-card .cu-figure--round img {
+      height: 12rem;
+      width: 12rem;
+    }
+  }
 }
 
 /* React Quill CSS */
@@ -6194,6 +6258,11 @@ select {
   color: rgb(233 28 36 / var(--tw-text-opacity));
 }
 
+.group:hover .group-hover\:text-cyan-600 {
+  --tw-text-opacity: 1;
+  color: rgb(8 145 178 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:text-cyan-700 {
   --tw-text-opacity: 1;
   color: rgb(14 116 144 / var(--tw-text-opacity));
@@ -6643,6 +6712,10 @@ select {
       height: 7rem;
     }
 
+    .\@sm\:md\:h-6 {
+      height: 1.5rem;
+    }
+
     .\@sm\:md\:h-60 {
       height: 15rem;
     }
@@ -6651,12 +6724,22 @@ select {
       width: 7rem;
     }
 
+    .\@sm\:md\:w-6 {
+      width: 1.5rem;
+    }
+
     .\@sm\:md\:w-60 {
       width: 15rem;
     }
 
     .\@sm\:md\:gap-8 {
       gap: 2rem;
+    }
+
+    .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
     }
 
     .\@sm\:md\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -6687,6 +6770,10 @@ select {
     .\@sm\:md\:text-xl {
       font-size: 1.25rem;
       line-height: 1.75rem;
+    }
+
+    .\@sm\:md\:leading-8 {
+      line-height: 2rem;
     }
   }
 }

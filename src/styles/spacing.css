@@ -41,7 +41,8 @@
 .cu-column + :not(.not-contained),
 .cu-column + .cu-column,
 .cu-column + .cu-panel,
-.cu-panel + .cu-column {
+.cu-panel + .cu-column,
+.cu-panel + .cu-panel {
   @apply mt-6 md:mt-8;
 }
 
