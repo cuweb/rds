@@ -1,17 +1,35 @@
 name: S3 Deployment
 on: [push]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - uses: jeanlescure/react-deploy-to-s3-action@main
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Build App
+        run: npm run build
+      - name: S3/CloudFront Deploy
+        uses: staevs/s3-deploy-action@1.0.0
+        if: success()
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: ${{ secrets.S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_S3_BUCKET: ${{ secrets.S3_BUCKET }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-          SOURCE_DIR: dist # optional: defaults to public
-          DEST_DIR: rds
+          S3_SOURCE_DIR: 'dist'
+          S3_DESTINATION_DIR: 'rds'
+
+      # - name: Deploying application to Amazon S3
+      # uses: dvelasquez/deploy-s3-action@main
+      # with:
+      #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      #   AWS_BUCKET_NAME: ${{ secrets.S3_BUCKET }}
+      #   BUCKET_PATH: '/rds'
+      #   DIST_LOCATION_CODE: ./dist
