@@ -10,15 +10,14 @@ import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { EventCard } from '../../../components/Cards_Deprecated/EventCard/EventCard'
+import { Card } from '../../../components/Card/Card'
 import { EventItem } from '../../../components/Listings/EventItem/EventItem'
 import { Pagination } from '../../../components/Pagination/Pagination'
 import { Calendar } from '../../../components/Calendar/Calendar'
 // import { Filter } from '../../components/Filter/Filter'
 
-import { EventItemData as dataCard } from '../../../components/Cards_Deprecated/EventCard/EventCardData'
+import { EventData as dataCard } from '../../../data/EventData'
 import { EventItemData as dataList } from '../../../components/Listings/EventItem/EventItemData'
-// import data from '../../components/Filter/FilterData.json'
 
 const meta: Meta = {
   title: 'Examples/Projects/Event Calendar/Homepage',
@@ -36,20 +35,27 @@ export const Homepage: Story = {
       <Main hasOverlap>
         <Section>
           <Column cols="3" maxWidth="7xl">
-            {dataCard.map((item) => (
-              <EventCard
-                key={item.id}
-                title={item?.title}
-                link={item?.link}
-                startDateTime={item?.start_date}
-                endDateTime={item?.end_date}
-                featuredImage={item?.featured_image}
-                eventAddress={item?.event_address}
-                onCampus={item?.on_campus}
-                onCampusBuilding={item?.on_campus_building}
-                onCampusRoomNumber={item?.on_campus_room_number}
-                tags={item?.tags}
-              />
+            {dataCard.slice(0, 3).map((item) => (
+              <Card key={item?.id}>
+                <a href={item?.link}>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.DateBox startDate={item?.startDate} />
+                    <Card.Header text={item?.title} />
+                    <Card.EventMeta
+                      startDateTime={item?.startDate}
+                      endDateTime={item?.endDate}
+                      onCampus={item?.on_campus}
+                      onCampusBuilding={item?.on_campus_building}
+                      onCampusRoomNumber={item?.on_campus_room_number}
+                      eventAddress={item?.event_address}
+                    />
+                  </Card.Content>
+                  <Card.Badges tags={item?.tags} />
+                </a>
+              </Card>
             ))}
           </Column>
 
