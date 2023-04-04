@@ -12,7 +12,7 @@ jobs:
       - name: Build App
         run: npm run build
       - name: S3/CloudFront Deploy
-        uses: staevs/s3-deploy-action@1.0.0
+        uses: staevs/s3-deploy-action@1.2.2
         if: success()
         with:
           args: --acl public-read --follow-symlinks --delete
