@@ -1,4 +1,4 @@
-import { getDate, getMonth, parseISO } from 'date-fns'
+import { getDate, parse, format } from 'date-fns'
 import { eventStyles } from './Card.Styles'
 
 export interface CardDateBoxProps {
@@ -6,23 +6,14 @@ export interface CardDateBoxProps {
 }
 
 export const CardDateBox = ({ startDate }: CardDateBoxProps) => {
-  const getMonthName = (month: number, short = false) => {
-    const d = new Date()
-    d.setMonth(month)
-    const monthName = d.toLocaleString('default', {
-      month: short ? 'short' : 'long',
-    })
-    return monthName
-  }
-
-  const getStartDate = parseISO(startDate)
-  const eventStartDate = getDate(getStartDate)
-  const eventStartMonth = getMonth(getStartDate)
+  const eventStartDate = parse(startDate, 'yyyy-MM-dd HH:mm:ss', new Date())
+  const eventStartMonth = format(eventStartDate, 'MMM')
+  const eventStartDay = getDate(eventStartDate)
 
   return (
     <div className={eventStyles.dateBox}>
-      <p className={eventStyles.dateBoxMonth}>{getMonthName(eventStartMonth, true)}</p>
-      <p className={eventStyles.dateBoxDay}>{eventStartDate}</p>
+      <p className={eventStyles.dateBoxMonth}>{eventStartMonth}</p>
+      <p className={eventStyles.dateBoxDay}>{eventStartDay}</p>
     </div>
   )
 }
