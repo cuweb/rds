@@ -88,9 +88,9 @@ export const Example: Story = {
             label="Who are your favourite 90s sitcom characters?"
             name="favcharacters"
             options={[
-              { name: 'name1', label: 'name1' },
-              { name: 'name2', label: 'name2' },
-              { name: 'name3', label: 'name3' },
+              { name: 'name1', label: 'name1', id: 1 },
+              { name: 'name2', label: 'name2', id: 2 },
+              { name: 'name3', label: 'name3', id: 3 },
             ]}
           />
 
