@@ -1,8 +1,0 @@
-import{a as i,j as o}from"./jsx-runtime-9d2cd5de.js";import{r as s}from"./index-580b8df0.js";import{g as d}from"./index-a336f0bb.js";import"./_commonjsHelpers-042e6b4d.js";const t=({callback:e})=>{const[a,c]=s.useState(""),u=p=>{c(p.target.value)};return s.useEffect(()=>{e(a)},[a,e]),i("div",{className:"not-prose relative flex items-center",children:[o(d,{className:"absolute left-4 h-5 w-5 text-gray-400","aria-hidden":"true"}),o("input",{className:"h-12 w-full rounded-lg border border-cu-black-100 bg-transparent pr-4 pl-11 text-sm text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0",id:"searchform__input",name:"search",type:"search",autoComplete:"off",placeholder:"Search",onChange:u,value:a})]})};try{t.displayName="SearchForm",t.__docgenInfo={description:"",displayName:"SearchForm",props:{callback:{defaultValue:null,description:"",name:"callback",required:!0,type:{name:"(k: string) => void"}}}}}catch{}const k={title:"Components/Search Form",component:t,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},r=()=>{const[,e]=s.useState(""),a=s.useCallback(c=>{e(c)},[e]);return o(t,{callback:a})};r.storyName="Default Search Form";var n,l,m;r.parameters={...r.parameters,docs:{...(n=r.parameters)==null?void 0:n.docs,source:{originalSource:`() => {
-  const [, setMessage] = useState('');
-  const callback = useCallback((message: string) => {
-    setMessage(message);
-  }, [setMessage]);
-  return <SearchForm callback={callback} />;
-}`,...(m=(l=r.parameters)==null?void 0:l.docs)==null?void 0:m.source}}};const _=["Default"];export{r as Default,_ as __namedExportsOrder,k as default};
-//# sourceMappingURL=SearchForm.stories-2ca6da98.js.map
