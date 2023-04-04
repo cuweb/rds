@@ -6,6 +6,7 @@ export interface CheckboxProps {
     options?: {
         name: string;
         label: string;
+        id: number;
     }[];
     condition?: () => boolean;
 }
