@@ -1,3 +1,23 @@
+export const VideoDataSingle = {
+  id: 1,
+  title: '5 Great Reasons to Choose Carleton',
+  source: 'https://www.youtube.com/watch?v=7h5m7Clm9uo',
+  tags: {
+    category: [
+      {
+        id: 3,
+        name: 'Category One',
+        slug: 'category-one',
+      },
+      {
+        id: 4,
+        name: 'Category Two',
+        slug: 'category-two',
+      },
+    ],
+  },
+}
+
 export const VideoData = [
   {
     id: 1,
