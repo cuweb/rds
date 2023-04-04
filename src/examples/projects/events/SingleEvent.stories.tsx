@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
 import { Column } from '../../../layouts/Column/Column'
-import { Panel } from '../../../layouts/Panel/Panel'
+import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 import { Article } from '../../../layouts/Article/Article'
 
@@ -97,7 +97,7 @@ export const SingleEvent: Story = {
                   title="Add to my events"
                 />
               </Column>
-              <Panel hasShadow>
+              <StackedList hasShadow>
                 {data.map(({ title, description }) => (
                   <DetailsItem key={title}>
                     <DetailsItem.Icon icon={MapPinIcon} />
@@ -107,7 +107,7 @@ export const SingleEvent: Story = {
                     </DetailsItem.Content>
                   </DetailsItem>
                 ))}
-              </Panel>
+              </StackedList>
             </Aside>
           </Column>
         </Section>

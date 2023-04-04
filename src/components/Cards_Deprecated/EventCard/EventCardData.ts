@@ -1,8 +1,8 @@
 export const EventItemData = [
   {
     id: 1,
-    created_at: '2022-11-17T16:36:24.000000Z',
-    updated_at: '2022-11-17T16:36:24.000000Z',
+    created_at: '2022-11-17T16:00:00',
+    updated_at: '2022-11-17T16:00:00',
     user_id: 100292661,
     title: 'Et ut deserunt ipsum minus.',
     link: '#',
@@ -12,8 +12,8 @@ export const EventItemData = [
     host_org: 'eveniet quos amet incidunt',
     description:
       'Aut atque quod est doloribus consequatur accusamus. Soluta incidunt excepturi ea sed debitis quaerat quasi cumque. Quis quia saepe enim vel soluta laudantium. Dolores asperiores quos dolores illo necessitatibus amet. Voluptatem repellendus aut id dolore inventore praesentium. Corporis sed deleniti vero alias eos laborum sit.',
-    start_date: '2022-12-03 10:27:31',
-    end_date: '2022-12-07 03:24:08',
+    start_date: '2022-12-16 01:00:00',
+    end_date: '2022-12-16 02:40:00',
     on_campus: false,
     on_campus_building: null,
     on_campus_room_number: null,
