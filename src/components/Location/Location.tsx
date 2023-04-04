@@ -78,15 +78,18 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
             }}
             onCloseClick={() => setShowInfo(false)}
           >
-            <div>
-              <p className="font-regular text-center text-base">{location}</p>
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${location}&z=15`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <p className="text-center font-medium text-blue-600">View on Google Maps</p>
-              </a>
+            <div className="text-center text-base">
+              <p>{location}</p>
+              <p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${location}&z=15`}
+                  className="font-semibold text-cu-red"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on Google Maps
+                </a>
+              </p>
             </div>
           </InfoWindowF>
         )}
