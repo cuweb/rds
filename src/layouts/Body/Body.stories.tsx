@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Body } from '../layouts/Body/Body'
+import { Body } from './Body'
 
 const meta: Meta<typeof Body> = {
   title: 'Layouts/Body',

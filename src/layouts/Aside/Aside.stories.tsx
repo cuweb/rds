@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
-import { Aside } from '../layouts/Aside/Aside'
-import { StackedList } from '../layouts/StackedList/StackedList'
+import { Column } from '../Column/Column'
+import { Aside } from './Aside'
+import { StackedList } from '../StackedList/StackedList'
 
 const meta: Meta<typeof Aside> = {
   title: 'Layouts/Aside',

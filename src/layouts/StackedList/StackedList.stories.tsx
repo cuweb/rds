@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StackedList } from '../layouts/StackedList/StackedList'
+import { StackedList } from './StackedList'
 
 const meta: Meta<typeof StackedList> = {
   title: 'Layouts/StackedList',

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Article } from '../layouts/Article/Article'
-import { ArticleData as data } from '../layouts/Article/ArticleData'
+import { Article } from './Article'
+import { ArticleData as data } from './ArticleData'
 
 const meta: Meta<typeof Article> = {
   title: 'Layouts/Article',

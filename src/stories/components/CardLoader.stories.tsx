@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../layouts/Column/Column'
-import { CardLoader } from '../components/Loaders/CardLoader/CardLoader'
+import { Column } from '../../layouts/Column/Column'
+import { CardLoader } from '../../components/Loaders/CardLoader/CardLoader'
 
 const meta: Meta<typeof CardLoader> = {
   title: 'Load Screens/Card Loader',

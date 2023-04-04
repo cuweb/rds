@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../../layouts/Column/Column'
-import { Card } from '../../components/Card/Card'
-import { EventData as data } from '../../data/EventData'
+import { Column } from '../../../layouts/Column/Column'
+import { Card } from '../../../components/Card/Card'
+import { EventData as data } from '../../../data/EventData'
 
 const meta: Meta<typeof Card> = {
   title: 'Cards & Lists/Card/Events',

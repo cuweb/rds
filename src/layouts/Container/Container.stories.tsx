@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Article } from '../layouts/Article/Article'
-import { Aside } from '../layouts/Aside/Aside'
-import { Column } from '../layouts/Column/Column'
-import { Container } from '../layouts/Container/Container'
-import { StackedList } from '../layouts/StackedList/StackedList'
+import { Article } from '../Article/Article'
+import { Aside } from '../Aside/Aside'
+import { Column } from '../Column/Column'
+import { Container } from './Container'
+import { StackedList } from '../StackedList/StackedList'
 
 const meta: Meta<typeof Container> = {
   title: 'Layouts/Container',

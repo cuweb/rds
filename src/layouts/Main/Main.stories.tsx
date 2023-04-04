@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Article } from '../layouts/Article/Article'
-import { Container } from '../layouts/Container/Container'
-import { Main } from '../layouts/Main/Main'
+import { Article } from '../Article/Article'
+import { Container } from '../Container/Container'
+import { Main } from './Main'
 
 const meta: Meta<typeof Main> = {
   title: 'Layouts/Main',

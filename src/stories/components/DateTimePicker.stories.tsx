@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Form } from '../components/Forms/Form/Form'
+import { Form } from '../../components/Forms/Form/Form'
 
 const meta: Meta<typeof Form> = {
   title: 'Forms/Date Time Picker',

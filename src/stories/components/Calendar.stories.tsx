@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Calendar } from '../components/Calendar/Calendar'
+import { Calendar } from '../../components/Calendar/Calendar'
 import { useCallback, useState } from 'react'
 
 const meta: Meta<typeof Calendar> = {

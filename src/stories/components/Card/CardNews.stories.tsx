@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Column } from '../../layouts/Column/Column'
-import { Card } from '../../components/Card/Card'
-import { NewsData as data } from '../../data/NewsData'
+import { Column } from '../../../layouts/Column/Column'
+import { Card } from '../../../components/Card/Card'
+import { NewsData as data } from '../../../data/NewsData'
 
 const meta: Meta<typeof Card> = {
   title: 'Cards & Lists/Card/News',
