@@ -3,7 +3,7 @@ import { Column } from '../../../layouts/Column/Column'
 import { NumberCard } from './NumberCard'
 import { NumberCardData as data } from './NumberCardData'
 const meta: Meta<typeof NumberCard> = {
-  title: 'Cards & Lists/Cards (Old)/Number Card',
+  title: 'Cards & Lists/Cards (Deprecated)/Number Card',
   component: NumberCard,
   tags: ['autodocs'],
   parameters: {

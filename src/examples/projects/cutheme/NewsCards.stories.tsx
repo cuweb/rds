@@ -9,7 +9,6 @@ import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
-import { NewsCard } from '../../../components/Cards_Deprecated/NewsCard/NewsCard'
 
 import { NewsCardData as data } from '../../../components/Cards_Deprecated/NewsCard/NewsCardData'
 
