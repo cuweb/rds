@@ -1,4 +1,4 @@
-name: Build Test and S3 Deployment
+name: Build and Deploy to S3
 on: [push]
 jobs:
   build:
@@ -9,6 +9,9 @@ jobs:
       matrix:
         node: ['18.x'] # '16.x',
         os: [ubuntu-latest] # macOS-latest windows-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,12 +27,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploying application to Amazon S3
-        uses: dvelasquez/deploy-s3-action@main
+      - name: S3 Deploy
+        uses: Reggionick/s3-deploy@v3.2.0
         with:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-          AWS_BUCKET_NAME: ${{ secrets.S3_BUCKET }}
-          BUCKET_PATH: '/rds'
-          DIST_LOCATION_CODE: ./dist
+          folder: dist
+          bucket: ${{ secrets.AWS_BUCKET_PATH }} # uses bucket + /path
+          bucket-region: ${{ secrets.AWS_DEFAULT_REGION }}
+          delete-removed: false
+          cache: true
+          no-cache: false
+          private: false
