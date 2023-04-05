@@ -8,6 +8,9 @@ export interface LocationPickerProps {
   centerCallback?: (center: { lat: number; lng: number }) => void
   singleMarker?: boolean
   singleMarkerCallback?: (marker: { coordinates: { lat: number; lng: number }; address: string }) => void
+  eventLatitude?: number
+  eventLongitude?: number
+  eventAddress?: string
 }
 
 export const LocationPicker = ({
@@ -15,16 +18,19 @@ export const LocationPicker = ({
   centerCallback,
   singleMarker,
   singleMarkerCallback,
+  eventAddress,
+  eventLatitude,
+  eventLongitude,
 }: LocationPickerProps) => {
-  const [address, setAddress] = useState('')
+  const [address, setAddress] = useState(eventAddress ? eventAddress : '')
   const [center, setCenter] = useState<{ lat: number; lng: number }>({
     lat: 45.3850225,
     lng: -75.6946679,
   })
   const [pos, setPos] = useState<{ name: string; id: string; position: object }[]>([])
   const [coordinates, setCoordinates] = useState({
-    lat: 45.3850225,
-    lng: -75.6946679,
+    lat: eventLatitude ? eventLatitude : 45.3850225,
+    lng: eventLongitude ? eventLongitude : -75.6946679,
   })
 
   const handleSelect = async (value: string) => {
