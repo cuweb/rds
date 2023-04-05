@@ -13,12 +13,10 @@ import { styles } from './Listing.Styles'
 
 export interface ListingProps {
   children: React.ReactNode
-  isCenter?: boolean
 }
 
-export const ListingWrapper = ({ children, isCenter }: ListingProps) => {
-  const centerText = isCenter ? 'text-center' : ''
-  return <div className={`${styles.card} ${centerText}`}>{children}</div>
+export const ListingWrapper = ({ children }: ListingProps) => {
+  return <div className={styles.card}>{children}</div>
 }
 
 export const Listing = Object.assign(ListingWrapper, {
