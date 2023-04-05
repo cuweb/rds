@@ -4,7 +4,7 @@ import { MarketplaceItemData as data } from './MarketplaceItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/Marketplace Item',
+  title: 'Cards & Lists/Lists (Deprecated)/Marketplace Item',
   component: MarketplaceItem,
   argTypes: {},
   tags: ['autodocs'],

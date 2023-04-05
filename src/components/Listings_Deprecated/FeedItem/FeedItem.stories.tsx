@@ -4,7 +4,7 @@ import { FeedItemData as data } from './FeedItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/Feed Item',
+  title: 'Cards & Lists/Lists (Deprecated)/Feed Item',
   component: FeedItem,
   argTypes: {},
   tags: ['autodocs'],

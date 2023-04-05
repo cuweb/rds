@@ -4,7 +4,7 @@ import { LinkItemData as data } from './LinkItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/Link Item',
+  title: 'Cards & Lists/Lists (Deprecated)/Link Item',
   component: LinkItem,
   argTypes: {},
   tags: ['autodocs'],

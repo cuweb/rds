@@ -3,7 +3,7 @@ import { FileItem } from './FileItem'
 import { FileItemData as data } from './FileItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 export default {
-  title: 'Cards & Lists/Lists/File Item',
+  title: 'Cards & Lists/Lists (Deprecated)/File Item',
   component: FileItem,
   argTypes: {},
   tags: ['autodocs'],

@@ -4,7 +4,7 @@ import { PeopleItemData as data } from './PeopleItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/People Item',
+  title: 'Cards & Lists/Lists (Deprecated)/People Item',
   component: PeopleItem,
   argTypes: {},
   tags: ['autodocs'],
