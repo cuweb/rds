@@ -20,7 +20,7 @@ export const Default: Story = {
   render: () => (
     <>
       <Form onSubmit={() => undefined} schema={{}} initialValues={InitialValues}>
-        <Form.DateTimePicker name="datetime" placeholder="Please select date and time..." />
+        <Form.DateTimePicker endDate="2023-06-29 20:43:51" name="datetime" placeholder="Please select date and time..." />
       </Form>
     </>
   ),

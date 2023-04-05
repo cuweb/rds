@@ -20,23 +20,27 @@ import {
 } from 'date-fns'
 
 export interface CalendarProps {
+ 
   events?: {
     id: number
     name: string
     imageUrl: string
     startDatetime: string
     endDatetime: string
+  
   }[]
-  callback: (d: Date) => void
+  callback: (d: Date) => void,
+  startDate?:string
 }
 
 const classNames = (...classes: (string | boolean)[]) => {
   return classes.filter(Boolean).join(' ')
 }
 
-export const Calendar = ({ events, callback }: CalendarProps) => {
+export const Calendar = ({ events, callback, startDate }: CalendarProps) => {
   const today = startOfToday()
-  const [selectedDay, setSelectedDay] = useState(new Date(0))
+
+  const [selectedDay, setSelectedDay] = useState(startDate ? new Date(startDate) : new Date(0))
   const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
   const [showClear, setShowClear] = useState(false)
   const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
