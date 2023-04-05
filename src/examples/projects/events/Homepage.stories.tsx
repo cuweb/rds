@@ -11,13 +11,13 @@ import { Banner } from '../../../components/Banner/Banner'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
-import { EventItem } from '../../../components/Listings/EventItem/EventItem'
+import { EventItem } from '../../../components/Listings_Deprecated/EventItem/EventItem'
 import { Pagination } from '../../../components/Pagination/Pagination'
 import { Calendar } from '../../../components/Calendar/Calendar'
 // import { Filter } from '../../components/Filter/Filter'
 
 import { EventData as dataCard } from '../../../data/EventData'
-import { EventItemData as dataList } from '../../../components/Listings/EventItem/EventItemData'
+import { EventItemData as dataList } from '../../../components/Listings_Deprecated/EventItem/EventItemData'
 
 const meta: Meta = {
   title: 'Examples/Projects/Event Calendar/Homepage',
