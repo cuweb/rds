@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from '../../Link/Link'
 import { CalendarDaysIcon, MapPinIcon, ChevronRightIcon, ClockIcon } from '@heroicons/react/24/outline'
-import { isSameDay, parseISO, getMonth, getDate } from 'date-fns'
+import { isSameDay, getDate, parse, format } from 'date-fns'
 import { Badge } from '../../Badge/Badge'
 
 // Set types for as props
@@ -56,38 +56,49 @@ export const EventItem = ({
   const defaultImage =
     'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80'
 
-  const getMonthName = (month: number, short = false) => {
-    const d = new Date()
-    d.setMonth(month)
-    const monthName = d.toLocaleString('default', {
-      month: short ? 'short' : 'long',
-    })
-    return monthName
-  }
+  // Get start date and time
+  const startDate = parse(startDateTime, 'yyyy-MM-dd HH:mm:ss', new Date())
+  const startMonth = format(startDate, 'MMMM')
+  const startDay = getDate(startDate)
+  const startHours = startDate.getHours() % 12 || 12
+  const startMinutes = format(startDate, 'mm')
+  const startAmPm = format(startDate, 'a')
 
-  const startDate = parseISO(startDateTime)
-  const endDate = parseISO(endDateTime)
+  // Get end date and time
+  const endDate = parse(endDateTime, 'yyyy-MM-dd HH:mm:ss', new Date())
+  const endMonth = format(endDate, 'MMMM')
+  const endDay = getDate(endDate)
+  const endHours = endDate.getHours() % 12 || 12
+  const endMinutes = format(endDate, 'mm')
+  const endAmPm = format(endDate, 'a')
+
+  // Set final meta
+  const startTime = `${startHours}:${startMinutes} ${startAmPm}`
+  const endTime = `${endHours}:${endMinutes} ${endAmPm}`
+
+  // Check if start and end date is the same
   const isEventSameDay = isSameDay(startDate, endDate)
-  const eventStartMonth = getMonth(startDate)
-  const eventStartDate = getDate(startDate)
-  const eventEndDate = getDate(endDate)
 
-  const formatTime = (date: Date) => {
-    let hours = date.getHours()
-    let minutes = date.getMinutes()
-    const ampm = hours >= 12 ? 'pm' : 'am'
-    hours = hours % 12
-    hours = hours ? hours : 12
-    minutes = minutes < 10 ? 0 + minutes : minutes
-    const strTime = hours + ':' + minutes + ' ' + ampm
-    return strTime
-  }
+  // Datebox values
+  const eventStartMonth = format(startDate, 'MMM')
+  const eventStartDay = getDate(startDate)
 
+  // Check if multiday
   const multiDayDisplay = () => {
     if (!isEventSameDay) {
-      return <CalendarDaysIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
+      return (
+        <>
+          <CalendarDaysIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
+          {`${startMonth} ${startDay} — ${endMonth} ${endDay}`}
+        </>
+      )
     } else {
-      return <ClockIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
+      return (
+        <>
+          <ClockIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" aria-hidden="true" />
+          {`${startTime} — ${endTime}`}
+        </>
+      )
     }
   }
 
@@ -104,10 +115,8 @@ export const EventItem = ({
             alt=""
           />
           <div className="hidden h-20 w-20 flex-col items-center justify-center rounded-md bg-white shadow-md group-hover:bg-cu-red md:flex @4xl:lg:hidden">
-            <p className="text-xs font-bold uppercase text-cu-red group-hover:text-white">
-              {getMonthName(eventStartMonth, true)}
-            </p>
-            <p className="text-2xl font-bold uppercase text-cu-black-800 group-hover:text-white">{eventStartDate}</p>
+            <p className="text-xs font-bold uppercase text-cu-red group-hover:text-white">{eventStartMonth}</p>
+            <p className="text-2xl font-bold uppercase text-cu-black-800 group-hover:text-white">{eventStartDay}</p>
           </div>
         </div>
 
@@ -117,12 +126,7 @@ export const EventItem = ({
           </h3>
 
           <ul className="flex flex-col flex-wrap gap-2">
-            <li className="flex items-center text-sm text-cu-black-700 @2xl:lg:text-base">
-              {multiDayDisplay()}
-              {isEventSameDay
-                ? formatTime(startDate) + '-' + formatTime(endDate)
-                : getMonthName(eventStartMonth) + ' ' + eventStartDate + ' - ' + eventEndDate}
-            </li>
+            <li className="flex items-center text-sm text-cu-black-700 @2xl:lg:text-base">{multiDayDisplay()}</li>
             <li className="flex items-start text-sm text-cu-black-700 @2xl:lg:text-base">
               <MapPinIcon className="mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300" />
               {on_campus ? on_campus_room_number + ', ' + on_campus_building : event_address}

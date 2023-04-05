@@ -4,7 +4,7 @@ import { EventItemData as data } from './EventItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 const meta: Meta<typeof EventItem> = {
-  title: 'Cards & Lists/Lists/Event Item',
+  title: 'Cards & Lists/Lists (Deprecated)/Event Item',
   component: EventItem,
   tags: ['autodocs'],
   parameters: {
@@ -24,8 +24,8 @@ Default.args = {
   title: 'Event item title',
   link: 'https://carleton.ca',
   event_address: 'Robertson Hall',
-  startDateTime: '2022-12-16 01:48:41',
-  endDateTime: '2022-12-18 05:22:15',
+  startDateTime: '2022-12-16 04:00:00',
+  endDateTime: '2022-12-16 17:00:00',
   on_campus: true,
   on_campus_building: 'Robertson Hall',
   on_campus_room_number: '407',

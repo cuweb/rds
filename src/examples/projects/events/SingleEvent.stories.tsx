@@ -9,12 +9,12 @@ import { Article } from '../../../layouts/Article/Article'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { DetailsItem } from '../../../components/Listings/DetailsItem/DetailsItem'
+import { DetailsItem } from '../../../components/Listings_Deprecated/DetailsItem/DetailsItem'
 import { Button } from '../../../components/Button/Button'
 
 import { MapPinIcon } from '@heroicons/react/24/outline'
 
-import { DetailsItemData as data } from '../../../components/Listings/DetailsItem/DetailsItemData'
+import { DetailsItemData as data } from '../../../components/Listings_Deprecated/DetailsItem/DetailsItemData'
 
 const meta: Meta = {
   title: 'Examples/Projects/Event Calendar/Single Event',
