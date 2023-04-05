@@ -3,7 +3,7 @@ export const EventDataSingle = {
   title: 'Ottawa Trivia Session #2',
   link: '#',
   startDate: '2023-03-31 20:00:00',
-  endDate: '2023-03-31 11:00:00',
+  endDate: '2023-03-31 00:30:00',
   event_address: '71953 Schmidt Row Apt. 896\nLaurianefurt, TN 88829-0223',
   on_campus: true,
   on_campus_building: 'Robertson Hall',

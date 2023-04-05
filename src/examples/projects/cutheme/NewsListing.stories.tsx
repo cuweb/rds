@@ -8,8 +8,8 @@ import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { NewsItemData as data } from '../../../components/Listings/NewsItem/NewsItemData'
-import { NewsItem } from '../../../components/Listings/NewsItem/NewsItem'
+import { NewsItemData as data } from '../../../components/Listings_Deprecated/NewsItem/NewsItemData'
+import { NewsItem } from '../../../components/Listings_Deprecated/NewsItem/NewsItem'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Listing Blocks',

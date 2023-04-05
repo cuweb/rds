@@ -4,7 +4,7 @@ import { NewsItemData as data } from './NewsItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/NewsItem',
+  title: 'Cards & Lists/Lists (Deprecated)/NewsItem',
   component: NewsItem,
   argTypes: {},
   tags: ['autodocs'],

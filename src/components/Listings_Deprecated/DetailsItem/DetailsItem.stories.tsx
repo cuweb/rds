@@ -5,7 +5,7 @@ import { DetailsItemData as data } from './DetailsItemData'
 import { MapPinIcon } from '@heroicons/react/24/outline'
 
 export default {
-  title: 'Cards & Lists/Lists/Details Item',
+  title: 'Cards & Lists/Lists (Deprecated)/Details Item',
   component: DetailsItem,
   argTypes: {},
   tags: ['autodocs'],

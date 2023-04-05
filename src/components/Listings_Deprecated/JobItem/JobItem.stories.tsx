@@ -4,7 +4,7 @@ import { JobItemData as data } from './JobItemData'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 export default {
-  title: 'Cards & Lists/Lists/Job Item',
+  title: 'Cards & Lists/Lists (Deprecated)/Job Item',
   component: JobItem,
   argTypes: {},
   tags: ['autodocs'],

@@ -22,8 +22,8 @@ Default.args = {
   heading: 'h3',
   title: 'Lived Experience Luncheon Series with Dr. Alex Auerbach',
   link: '#',
-  startDateTime: '2022-12-16 01:48:41',
-  endDateTime: '2022-12-16 02:45:41',
+  startDateTime: '2022-12-16 01:00:00',
+  endDateTime: '2022-12-16 02:40:00',
   eventAddress: '405 Robertson Hall',
   onCampus: false,
   tags: {
