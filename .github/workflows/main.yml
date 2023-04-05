@@ -33,6 +33,6 @@ jobs:
           folder: dist
           bucket: ${{ secrets.AWS_BUCKET_PATH }} # uses bucket + /path
           bucket-region: ${{ secrets.AWS_DEFAULT_REGION }}
-          delete-removed: false
-          no-cache: true
+          delete-removed: true
+          no-cache: false
           private: false
