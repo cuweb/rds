@@ -25,7 +25,7 @@ jobs:
           bucket-region: ${{ secrets.AWS_DEFAULT_REGION }}
           delete-removed: false
           no-cache: true
-          private: true
+          private: false
           # files-to-include: '.*/*,*/*,**'
 # jobs:
 #   deploy:
