@@ -1,4 +1,4 @@
-name: Build Test and S3 Deployment
+name: Build Test
 on: [push]
 jobs:
   build:
