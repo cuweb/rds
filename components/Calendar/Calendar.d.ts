@@ -7,6 +7,7 @@ export interface CalendarProps {
         endDatetime: string;
     }[];
     callback: (d: Date) => void;
+    startDate?: string;
 }
-export declare const Calendar: ({ events, callback }: CalendarProps) => JSX.Element;
+export declare const Calendar: ({ events, callback, startDate }: CalendarProps) => JSX.Element;
 //# sourceMappingURL=Calendar.d.ts.map

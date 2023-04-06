@@ -44,7 +44,7 @@ export declare const Form: {
         ({ label, editor, placeholder, ...props }: import("../WYSIWYG/WYSIWYG").WYSIWYGProps & import("react").InputHTMLAttributes<HTMLInputElement> & import("react").ClassAttributes<HTMLInputElement>): JSX.Element;
         displayName: string;
     };
-    DateTimePicker: ({ label, condition, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
+    DateTimePicker: ({ startDate, endDate, label, condition, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => JSX.Element;
     PlacesAutoComplete: ({ condition, eventAddress, eventLatitude, eventLongitude, ...props }: import("../PlacesAutoComplete/PlacesAutoComplete").PlacesAutoCompleteProps & import("formik").FieldHookConfig<object>) => JSX.Element;
 };
 //# sourceMappingURL=Form.d.ts.map
