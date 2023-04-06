@@ -20,17 +20,15 @@ import {
 } from 'date-fns'
 
 export interface CalendarProps {
- 
   events?: {
     id: number
     name: string
     imageUrl: string
     startDatetime: string
     endDatetime: string
-  
   }[]
-  callback: (d: Date) => void,
-  startDate?:string
+  callback: (d: Date) => void
+  startDate?: string
 }
 
 const classNames = (...classes: (string | boolean)[]) => {
@@ -107,6 +105,7 @@ export const Calendar = ({ events, callback, startDate }: CalendarProps) => {
               }}
               className={classNames(
                 isEqual(day, selectedDay) && 'text-white',
+                isSameDay(day, selectedDay) && 'text-white',
                 !isEqual(day, selectedDay) && isToday(day) && 'text-cu-red',
                 !isEqual(day, selectedDay) &&
                   !isToday(day) &&
@@ -118,6 +117,8 @@ export const Calendar = ({ events, callback, startDate }: CalendarProps) => {
                   'text-cu-black-400',
                 isEqual(day, selectedDay) && isToday(day) && 'bg-cu-red',
                 isEqual(day, selectedDay) && !isToday(day) && 'bg-cu-red',
+                isSameDay(day, selectedDay) && isToday(day) && 'bg-cu-red',
+                isSameDay(day, selectedDay) && !isToday(day) && 'bg-cu-red',
                 !isEqual(day, selectedDay) && 'hover:bg-cu-red hover:text-white',
                 (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',
                 'mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:bg-cu-black-50',
