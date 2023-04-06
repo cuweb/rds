@@ -26,27 +26,14 @@ export const DateTimePicker = ({
 }: PickerProps & FieldHookConfig<string>) => {
   const [field, meta, helper] = useField(props)
 
-  const Hour12FormatStartDate = new Date(startDate ? startDate : '').toLocaleTimeString('en-US', {
-    timeZone: 'UTC',
-    hour12: true,
-    hour: 'numeric',
-    minute: 'numeric',
-  })
+  const Hour12FormatDate = format(new Date(startDate ? startDate : endDate ? endDate : ''), 'h:mm a')
 
-  const Hour12FormatEndDate = new Date(endDate ? endDate : '').toLocaleTimeString('en-US', {
-    timeZone: 'UTC',
-    hour12: true,
-    hour: 'numeric',
-    minute: 'numeric',
-  })
-
-  const startDateSplit = Hour12FormatStartDate.split(' ').join(':').split(':')
-  const endDateSplit = Hour12FormatEndDate.split(' ').join(':').split(':')
+  const DateSplit = Hour12FormatDate.split(' ').join(':').split(':')
 
   const [selectedDate, setSelectedDate] = useState(format(new Date(0), 'yyyy-MM-dd'))
-  const [minutes, setMinutes] = useState(startDate ? startDateSplit[1] : endDate ? endDateSplit[1] : '00')
-  const [hours, setHours] = useState(startDate ? startDateSplit[0] : endDate ? endDateSplit[0] : '01')
-  const [noon, setNoon] = useState(startDate ? startDateSplit[2] : endDate ? endDateSplit[2] : 'AM')
+  const [minutes, setMinutes] = useState(startDate ? DateSplit[1] : endDate ? DateSplit[1] : '00')
+  const [hours, setHours] = useState(startDate ? DateSplit[0] : endDate ? DateSplit[0] : '01')
+  const [noon, setNoon] = useState(startDate ? DateSplit[2] : endDate ? DateSplit[2] : 'AM')
 
   const callbackcal = useCallback(
     (itemSelected: Date) => setSelectedDate(format(new Date(itemSelected), 'yyyy-MM-dd')),
@@ -95,7 +82,7 @@ export const DateTimePicker = ({
             {field.name}
           </label>
           <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
-            <Calendar callback={callbackcal} startDate="2023-06-29 20:43:51" />
+            <Calendar callback={callbackcal} defaultDate={startDate ? startDate : endDate} />
             <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
               <div>
                 <label htmlFor="field-hours" className="sr-only">
