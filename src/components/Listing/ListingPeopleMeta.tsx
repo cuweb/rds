@@ -7,18 +7,10 @@ export interface ListingPeopleMetaProps {
   phone?: string
 }
 
-export const ListingPeopleMeta = ({
-  jobTitle,
-  email,
-  phone,
-}: ListingPeopleMetaProps) => {
+export const ListingPeopleMeta = ({ jobTitle, email, phone }: ListingPeopleMetaProps) => {
   return (
     <ul className={metaStyles.wrapper}>
-      {jobTitle && (
-        <li className={`${metaStyles.itemLarge} ${metaStyles.italic}`}>
-          {jobTitle}
-        </li>
-      )}
+      {jobTitle && <li className={`${metaStyles.itemLarge} ${metaStyles.italic}`}>{jobTitle}</li>}
       {email && (
         <li className={metaStyles.item}>
           <strong className={metaStyles.bold}>{email}</strong>

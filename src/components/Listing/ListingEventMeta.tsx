@@ -1,9 +1,5 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
-import {
-  CalendarDaysIcon,
-  ClockIcon,
-  MapPinIcon,
-} from '@heroicons/react/24/outline'
+import { CalendarDaysIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { metaStyles } from './Listing.Styles'
 
 export interface ListingEventMetaProps {
@@ -67,9 +63,7 @@ export const ListingEventMeta = ({
 
   return (
     <ul className={metaStyles.wrapper}>
-      <li className={`${metaStyles.item} ${metaStyles.alignIcon}`}>
-        {multiDayDisplay()}
-      </li>
+      <li className={`${metaStyles.item} ${metaStyles.alignIcon}`}>{multiDayDisplay()}</li>
       <li className={`${metaStyles.item} ${metaStyles.alignIcon}`}>
         <MapPinIcon className={metaStyles.redIcon} aria-hidden="true" />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}

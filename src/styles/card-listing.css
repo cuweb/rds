@@ -1,7 +1,7 @@
 /* Card Components */
 
 .cu-card a {
-  @apply relative flex flex-col h-full;
+  @apply relative flex h-full flex-col;
 }
 
 /* Listing Components */
@@ -14,7 +14,7 @@
 
 .cu-card img,
 .cu-listing img {
-  @apply object-cover w-full;
+  @apply w-full object-cover;
 }
 
 /* Card Figure Images */

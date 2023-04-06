@@ -14,9 +14,5 @@ export const ListingPostMeta = ({ date }: ListingPostMetaProps) => {
       })
     : null
 
-  return (
-    <time className={`${metaStyles.item} ${metaStyles.italic}`}>
-      {formatedDate}
-    </time>
-  )
+  return <time className={`${metaStyles.item} ${metaStyles.italic}`}>{formatedDate}</time>
 }
