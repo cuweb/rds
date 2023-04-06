@@ -11,10 +11,16 @@ interface SingleMarkerInterface {
 
 export interface PlacesAutoCompleteProps {
   condition?: () => boolean
+  eventAddress?: string
+  eventLatitude?: string
+  eventLongitude?: string
 }
 
 export const PlacesAutoComplete = ({
   condition = () => true,
+  eventAddress,
+  eventLatitude,
+  eventLongitude,
   ...props
 }: PlacesAutoCompleteProps & FieldHookConfig<object>) => {
   const [field, meta, helper] = useField(props)
@@ -36,7 +42,13 @@ export const PlacesAutoComplete = ({
     <>
       {condition() && (
         <div {...field} id={field.name} className="grid gap-5" aria-invalid={meta.touched && meta.error ? true : false}>
-          <LocationPicker singleMarker singleMarkerCallback={markerCallback} />
+          <LocationPicker
+            singleMarker
+            singleMarkerCallback={markerCallback}
+            eventAddress={eventAddress}
+            eventLatitude={Number(eventLatitude)}
+            eventLongitude={Number(eventLongitude)}
+          />
           <Location
             lat={coordinates?.coordinates?.lat?.toString()}
             lng={coordinates?.coordinates?.lng?.toString()}

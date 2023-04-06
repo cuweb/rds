@@ -13,14 +13,27 @@ const styles = {
 export interface PickerProps {
   label?: string
   condition?: () => boolean
+  startDate?: string
+  endDate?: string
 }
 
-export const DateTimePicker = ({ label, condition = () => true, ...props }: PickerProps & FieldHookConfig<string>) => {
+export const DateTimePicker = ({
+  startDate,
+  endDate,
+  label,
+  condition = () => true,
+  ...props
+}: PickerProps & FieldHookConfig<string>) => {
   const [field, meta, helper] = useField(props)
+
+  const Hour12FormatDate = format(new Date(startDate ? startDate : endDate ? endDate : ''), 'h:mm a')
+
+  const DateSplit = Hour12FormatDate.split(' ').join(':').split(':')
+
   const [selectedDate, setSelectedDate] = useState(format(new Date(0), 'yyyy-MM-dd'))
-  const [minutes, setMinutes] = useState('00')
-  const [hours, setHours] = useState('01')
-  const [noon, setNoon] = useState('AM')
+  const [minutes, setMinutes] = useState(startDate ? DateSplit[1] : endDate ? DateSplit[1] : '00')
+  const [hours, setHours] = useState(startDate ? DateSplit[0] : endDate ? DateSplit[0] : '01')
+  const [noon, setNoon] = useState(startDate ? DateSplit[2] : endDate ? DateSplit[2] : 'AM')
 
   const callbackcal = useCallback(
     (itemSelected: Date) => setSelectedDate(format(new Date(itemSelected), 'yyyy-MM-dd')),
@@ -69,7 +82,7 @@ export const DateTimePicker = ({ label, condition = () => true, ...props }: Pick
             {field.name}
           </label>
           <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
-            <Calendar callback={callbackcal} />
+            <Calendar callback={callbackcal} defaultDate={startDate ? startDate : endDate} />
             <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
               <div>
                 <label htmlFor="field-hours" className="sr-only">
