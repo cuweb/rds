@@ -8,6 +8,9 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare const CardBadges: ({ tags }: CardBadgesProps) => JSX.Element;
+export declare const CardBadges: {
+    ({ tags }: CardBadgesProps): JSX.Element;
+    displayName: string;
+};
 export {};
 //# sourceMappingURL=CardBadges.d.ts.map
