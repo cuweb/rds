@@ -1,8 +1,8 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
 import { CalendarDaysIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import { metaStyles } from './Card.Styles'
+import { metaStyles } from './Listing.Styles'
 
-export interface CardEventMetaProps {
+export interface ListingEventMetaProps {
   startDateTime: string
   endDateTime: string
   onCampus: boolean
@@ -11,14 +11,14 @@ export interface CardEventMetaProps {
   eventAddress?: string
 }
 
-export const CardEventMeta = ({
+export const ListingEventMeta = ({
   startDateTime,
   endDateTime,
   onCampus,
   onCampusBuilding,
   onCampusRoomNumber,
   eventAddress,
-}: CardEventMetaProps) => {
+}: ListingEventMetaProps) => {
   // Get start date and time
   const startDate = parse(startDateTime, 'yyyy-MM-dd HH:mm:ss', new Date())
   const startMonth = format(startDate, 'MMMM')
@@ -72,4 +72,4 @@ export const CardEventMeta = ({
   )
 }
 
-CardEventMeta.displayName = 'Card.EventMeta'
+ListingEventMeta.displayName = 'Listing.EventMeta'

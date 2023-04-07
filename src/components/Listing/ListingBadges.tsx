@@ -1,7 +1,7 @@
 import { Badge } from '../Badge/Badge'
-import { styles } from './Card.Styles'
+import { styles } from './Listing.Styles'
 
-export interface CardBadgesProps {
+export interface ListingBadgesProps {
   tags?: Tags
 }
 
@@ -13,7 +13,7 @@ interface Tags {
   }[]
 }
 
-export const CardBadges = ({ tags }: CardBadgesProps) => {
+export const ListingBadges = ({ tags }: ListingBadgesProps) => {
   return (
     <div className={styles.badges}>
       {tags?.category?.map((tag) => (
@@ -23,4 +23,4 @@ export const CardBadges = ({ tags }: CardBadgesProps) => {
   )
 }
 
-CardBadges.displayName = 'Card.Badges'
+ListingBadges.displayName = 'Listing.Badges'

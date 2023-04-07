@@ -1,10 +1,10 @@
-import { metaStyles } from './Card.Styles'
+import { metaStyles } from './Listing.Styles'
 
-export interface CardPostMetaProps {
+export interface ListingPostMetaProps {
   date?: string | Date
 }
 
-export const CardPostMeta = ({ date }: CardPostMetaProps) => {
+export const ListingPostMeta = ({ date }: ListingPostMetaProps) => {
   const formatedDate = date
     ? new Date(date).toLocaleString('en-US', {
         month: 'long',
@@ -16,4 +16,4 @@ export const CardPostMeta = ({ date }: CardPostMetaProps) => {
   return <time className={`${metaStyles.item} ${metaStyles.italic}`}>{formatedDate}</time>
 }
 
-CardPostMeta.displayName = 'Card.PostMeta'
+ListingPostMeta.displayName = 'Listing.PostMeta'

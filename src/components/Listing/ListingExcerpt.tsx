@@ -1,10 +1,10 @@
-import { styles } from './Card.Styles'
+import { styles } from './Listing.Styles'
 
-export interface CardExcerptProps {
+export interface ListingExcerptProps {
   text: string
 }
 
-export const CardExcerpt = ({ text }: CardExcerptProps) => {
+export const ListingExcerpt = ({ text }: ListingExcerptProps) => {
   return (
     <p className={styles.excerpt}>
       {text.length > 170 ? `${text.substring(0, 170)}...` : text}
@@ -13,4 +13,4 @@ export const CardExcerpt = ({ text }: CardExcerptProps) => {
   )
 }
 
-CardExcerpt.displayName = 'Card.Excerpt'
+ListingExcerpt.displayName = 'Listing.Excerpt'
