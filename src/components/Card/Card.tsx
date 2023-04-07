@@ -18,7 +18,7 @@ export interface CardProps {
 
 export const CardWrapper = ({ children, isCenter }: CardProps) => {
   const centerText = isCenter ? 'text-center' : ''
-  return <div className={`${styles.card} ${centerText}`}>{children}</div>
+  return <div className={`cu-card ${styles.card} ${centerText}`}>{children}</div>
 }
 
 export const Card = Object.assign(CardWrapper, {
