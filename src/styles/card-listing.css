@@ -1,24 +1,25 @@
 /* Card Components */
 
 .cu-card a {
-  @apply relative flex h-full flex-col;
+  @apply relative flex flex-col h-full;
+}
+
+/* Card Components */
+
+.cu-card img {
+  @apply object-cover w-full;
+}
+
+.cu-card .cu-figure--round img {
+  @apply mx-auto h-32 w-32 rounded-full border-4 border-white object-cover shadow-md @sm:md:h-48 @sm:md:w-48;
 }
 
 /* Listing Components */
 
 .cu-listing a {
-  @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @xl:md:flex-row @2xl:lg:gap-8;
+  @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8;
 }
 
-/* Card & Listing Shared */
-
-.cu-card img,
 .cu-listing img {
-  @apply w-full object-cover;
-}
-
-/* Card Figure Images */
-
-.cu-card .cu-figure--round img {
-  @apply mx-auto h-32 w-32 rounded-full border-4 border-white object-cover shadow-md @sm:md:h-48 @sm:md:w-48;
+  @apply object-cover w-full rounded-md;
 }

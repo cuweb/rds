@@ -30,7 +30,7 @@ export const NewsItem: Story = {
     children: (
       <a href={singleNews?.link}>
         <Listing.Figure>
-          <img src={singleNews?.image} alt={singleNews?.alt} width="280" height="186" />
+          <img src={singleNews?.image} alt={singleNews?.alt} width="400" height="266" />
         </Listing.Figure>
         <Listing.Content>
           <Listing.PostMeta date={singleNews?.date} />

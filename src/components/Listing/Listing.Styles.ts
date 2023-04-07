@@ -1,7 +1,6 @@
 export const styles = {
   base: `not-prose group relative overflow-hidden @container bg-white hover:bg-slate-50`,
   content: `flex flex-1 flex-col gap-1.5 pr-6 md:gap-3.5`,
-  //   content: `flex flex-1 flex-col gap-1.5 pr-6 md:gap-3.5 @lg:md:pt-1.5`,
   header: `text-lg font-semibold text-cu-black group-hover:text-cu-red @lg:md:text-xl @4xl:lg:text-2xl`,
   excerpt: `text-sm text-cu-black-900 md:text-base @lg:md:text-lg`,
   more: `font-semibold text-cu-red group-hover:text-cyan-700`,
@@ -11,11 +10,10 @@ export const styles = {
 }
 
 export const figureStyles = {
-  figure: `relative rounded-md overflow-hidden shadow-md`,
-  small: ``,
-  default: ``,
-  //   small: `max-w-[25%] @lg:md:max-w-[30%]`,
-  //   default: `max-w-[30%] @lg:md:max-w-[40%]`,
+  //   figure: `relative rounded-md overflow-hidden shadow-md`,
+  figure: `flex-none bg-cyan-800 rounded-md`,
+  default: `max-w-[50%] @lg:md:max-w-[35%]`,
+  small: `max-w-[50%] @lg:md:max-w-[25%]`,
 }
 
 export const metaStyles = {

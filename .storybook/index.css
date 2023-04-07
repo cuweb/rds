@@ -2039,6 +2039,10 @@ select {
   max-width: 80rem;
 }
 
+.max-w-\[25\%\] {
+  max-width: 25%;
+}
+
 .max-w-\[30\%\] {
   max-width: 30%;
 }
@@ -2079,16 +2083,16 @@ select {
   max-width: 20%;
 }
 
-.max-w-\[45\%\] {
-  max-width: 45%;
-}
-
 .max-w-\[35\%\] {
   max-width: 35%;
 }
 
-.max-w-\[25\%\] {
-  max-width: 25%;
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-\[50\%\] {
+  max-width: 50%;
 }
 
 .flex-1 {
@@ -2648,6 +2652,11 @@ select {
 .bg-cu-red-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 233 233 / var(--tw-bg-opacity));
+}
+
+.bg-cyan-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 94 117 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -3622,49 +3631,13 @@ select {
   flex-direction: column;
 }
 
-/* Listing Components */
+/* Card Components */
 
-.cu-listing a {
-  position: relative;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.cu-listing a:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-@container (min-width: 36rem) {
-  @media (min-width: 768px) {
-    .cu-listing a {
-      flex-direction: row;
-    }
-  }
-}
-
-@container (min-width: 42rem) {
-  @media (min-width: 1024px) {
-    .cu-listing a {
-      gap: 2rem;
-    }
-  }
-}
-
-/* Card & Listing Shared */
-
-.cu-card img,
-.cu-listing img {
+.cu-card img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-/* Card Figure Images */
 
 .cu-card .cu-figure--round img {
   margin-left: auto;
@@ -3689,6 +3662,39 @@ select {
       width: 12rem;
     }
   }
+}
+
+/* Listing Components */
+
+.cu-listing a {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.cu-listing a:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@container (min-width: 32rem) {
+  @media (min-width: 768px) {
+    .cu-listing a {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+}
+
+.cu-listing img {
+  width: 100%;
+  border-radius: 0.375rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* React Quill CSS */
@@ -6860,6 +6866,18 @@ select {
 
     .\@lg\:md\:max-w-\[40\%\] {
       max-width: 40%;
+    }
+
+    .\@lg\:md\:max-w-lg {
+      max-width: 32rem;
+    }
+
+    .\@lg\:md\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+
+    .\@lg\:md\:max-w-\[35\%\] {
+      max-width: 35%;
     }
 
     .\@lg\:md\:flex-row {
