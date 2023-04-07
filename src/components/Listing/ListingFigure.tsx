@@ -9,3 +9,5 @@ export interface ListingFigureProps {
 export const ListingFigure = ({ children, size = 'default' }: ListingFigureProps) => {
   return <figure className={`cu-figure ${figureStyles.figure} ${figureStyles[size]}`}>{children}</figure>
 }
+
+ListingFigure.displayName = 'Listing.Figure'

@@ -12,3 +12,5 @@ export const CardExcerpt = ({ text }: CardExcerptProps) => {
     </p>
   )
 }
+
+CardExcerpt.displayName = 'Card.Excerpt'

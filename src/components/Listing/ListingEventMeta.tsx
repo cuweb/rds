@@ -71,3 +71,5 @@ export const ListingEventMeta = ({
     </ul>
   )
 }
+
+ListingEventMeta.displayName = 'Listing.EventMeta'

@@ -12,3 +12,5 @@ export const ListingExcerpt = ({ text }: ListingExcerptProps) => {
     </p>
   )
 }
+
+ListingExcerpt.displayName = 'Listing.Excerpt'

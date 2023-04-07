@@ -15,3 +15,5 @@ export const CardPostMeta = ({ date }: CardPostMetaProps) => {
 
   return <time className={`${metaStyles.item} ${metaStyles.italic}`}>{formatedDate}</time>
 }
+
+CardPostMeta.displayName = 'Card.PostMeta'

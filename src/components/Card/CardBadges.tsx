@@ -22,3 +22,5 @@ export const CardBadges = ({ tags }: CardBadgesProps) => {
     </div>
   )
 }
+
+CardBadges.displayName = 'Card.Badges'

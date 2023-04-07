@@ -17,3 +17,5 @@ export const ListingDateBox = ({ startDate }: ListingDateBoxProps) => {
     </div>
   )
 }
+
+ListingDateBox.displayName = 'Listing.DateBox'

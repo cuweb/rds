@@ -29,3 +29,5 @@ export const CardVideo = ({ source }: CardVideoProps) => {
     )
   }
 }
+
+CardVideo.displayName = 'Card.Video'

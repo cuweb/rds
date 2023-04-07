@@ -7,3 +7,5 @@ export interface ListingHeaderProps {
 export const ListingHeader = ({ text }: ListingHeaderProps) => {
   return <h3 className={styles.header}>{text}</h3>
 }
+
+ListingHeader.displayName = 'Listing.Header'

@@ -71,3 +71,5 @@ export const CardEventMeta = ({
     </ul>
   )
 }
+
+CardEventMeta.displayName = 'Card.EventMeta'

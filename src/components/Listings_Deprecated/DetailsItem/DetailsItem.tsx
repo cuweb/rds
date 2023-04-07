@@ -28,14 +28,14 @@ export interface TitleProps {
 
 const DetailsItemBase = ({ as: Component = 'div', children }: ItemBaseProps & DetailsItemProps) => {
   return (
-    <Component className="not-prose relative flex items-center gap-2 p-6 focus:outline-none ">
+    <Component className="relative flex items-center gap-2 p-6 not-prose focus:outline-none ">
       <div className="flex items-start gap-4">{children}</div>
     </Component>
   )
 }
 
 const Content = ({ children }: DetailsItemProps) => {
-  return <div className="flex flex-auto flex-col gap-2">{children}</div>
+  return <div className="flex flex-col flex-auto gap-2">{children}</div>
 }
 
 const Title = ({ as = 'h3', fontSize = 'base', title }: TitleProps & DetailsItemProps) => {
@@ -49,7 +49,7 @@ const Title = ({ as = 'h3', fontSize = 'base', title }: TitleProps & DetailsItem
 }
 
 const IconDisplay = ({ icon }: DetailsItemProps) => {
-  return <div className="w-auto flex-none">{icon && <Icon icon={icon} />}</div>
+  return <div className="flex-none w-auto">{icon && <Icon icon={icon} />}</div>
 }
 
 const Description = ({ description }: DetailsItemProps) => {

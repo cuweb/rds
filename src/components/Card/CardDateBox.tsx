@@ -17,3 +17,5 @@ export const CardDateBox = ({ startDate }: CardDateBoxProps) => {
     </div>
   )
 }
+
+CardDateBox.displayName = 'Card.DateBox'

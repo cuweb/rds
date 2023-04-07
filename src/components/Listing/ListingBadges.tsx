@@ -22,3 +22,5 @@ export const ListingBadges = ({ tags }: ListingBadgesProps) => {
     </div>
   )
 }
+
+ListingBadges.displayName = 'Listing.Badges'

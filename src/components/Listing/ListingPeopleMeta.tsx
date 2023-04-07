@@ -19,3 +19,5 @@ export const ListingPeopleMeta = ({ jobTitle, email, phone }: ListingPeopleMetaP
     </ul>
   )
 }
+
+ListingPeopleMeta.displayName = 'Listing.PeopleMeta'

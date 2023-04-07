@@ -19,3 +19,5 @@ export const CardPeopleMeta = ({ jobTitle, email, phone }: CardPeopleMetaProps) 
     </ul>
   )
 }
+
+CardPeopleMeta.displayName = 'Card.PeopleMeta'

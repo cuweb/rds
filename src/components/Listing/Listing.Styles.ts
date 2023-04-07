@@ -11,7 +11,7 @@ export const styles = {
 
 export const figureStyles = {
   //   figure: `relative rounded-md overflow-hidden shadow-md`,
-  figure: `flex-none bg-cyan-800 rounded-md`,
+  figure: `flex-none rounded-md`,
   default: `max-w-[50%] @lg:md:max-w-[35%]`,
   small: `max-w-[50%] @lg:md:max-w-[25%]`,
 }
