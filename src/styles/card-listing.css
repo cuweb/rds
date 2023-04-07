@@ -1,13 +1,13 @@
 /* Card Components */
 
 .cu-card a {
-  @apply relative flex flex-col h-full;
+  @apply relative flex h-full flex-col;
 }
 
 /* Card Components */
 
 .cu-card img {
-  @apply object-cover w-full;
+  @apply w-full object-cover;
 }
 
 .cu-card .cu-figure--round img {
@@ -21,5 +21,5 @@
 }
 
 .cu-listing img {
-  @apply object-cover w-full rounded-md;
+  @apply w-full rounded-md object-cover;
 }

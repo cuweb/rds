@@ -1,4 +1,3 @@
-import React from 'react'
 import { Badge } from '../Badge/Badge'
 import { styles } from './Listing.Styles'
 

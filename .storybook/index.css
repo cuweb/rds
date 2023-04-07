@@ -2039,16 +2039,16 @@ select {
   max-width: 80rem;
 }
 
-.max-w-\[25\%\] {
-  max-width: 25%;
-}
-
 .max-w-\[30\%\] {
   max-width: 30%;
 }
 
 .max-w-\[40\%\] {
   max-width: 40%;
+}
+
+.max-w-\[50\%\] {
+  max-width: 50%;
 }
 
 .max-w-\[540px\] {
@@ -2077,22 +2077,6 @@ select {
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-\[20\%\] {
-  max-width: 20%;
-}
-
-.max-w-\[35\%\] {
-  max-width: 35%;
-}
-
-.max-w-lg {
-  max-width: 32rem;
-}
-
-.max-w-\[50\%\] {
-  max-width: 50%;
 }
 
 .flex-1 {
@@ -6858,18 +6842,6 @@ select {
 
     .\@lg\:md\:w-60 {
       width: 15rem;
-    }
-
-    .\@lg\:md\:max-w-\[30\%\] {
-      max-width: 30%;
-    }
-
-    .\@lg\:md\:max-w-\[40\%\] {
-      max-width: 40%;
-    }
-
-    .\@lg\:md\:max-w-lg {
-      max-width: 32rem;
     }
 
     .\@lg\:md\:max-w-\[25\%\] {

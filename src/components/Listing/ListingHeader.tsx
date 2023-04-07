@@ -1,4 +1,3 @@
-import React from 'react'
 import { styles } from './Listing.Styles'
 
 export interface ListingHeaderProps {

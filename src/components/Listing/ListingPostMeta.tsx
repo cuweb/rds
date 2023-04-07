@@ -1,4 +1,3 @@
-import React from 'react'
 import { metaStyles } from './Listing.Styles'
 
 export interface ListingPostMetaProps {
