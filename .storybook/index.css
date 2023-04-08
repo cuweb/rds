@@ -7025,8 +7025,28 @@ select {
   }
 }
 
+@container (min-width: 36rem) {
+  @media (min-width: 1024px) {
+    .\@xl\:lg\:h-32 {
+      height: 8rem;
+    }
+
+    .\@xl\:lg\:w-32 {
+      width: 8rem;
+    }
+  }
+}
+
 @container (min-width: 42rem) {
   @media (min-width: 1024px) {
+    .\@2xl\:lg\:h-32 {
+      height: 8rem;
+    }
+
+    .\@2xl\:lg\:w-32 {
+      width: 8rem;
+    }
+
     .\@2xl\:lg\:gap-8 {
       gap: 2rem;
     }
@@ -7043,6 +7063,18 @@ select {
   }
 }
 
+@container (min-width: 48rem) {
+  @media (min-width: 1024px) {
+    .\@3xl\:lg\:h-32 {
+      height: 8rem;
+    }
+
+    .\@3xl\:lg\:w-32 {
+      width: 8rem;
+    }
+  }
+}
+
 @container (min-width: 56rem) {
   @media (min-width: 1024px) {
     .\@4xl\:lg\:block {
@@ -7053,9 +7085,39 @@ select {
       display: none;
     }
 
+    .\@4xl\:lg\:h-32 {
+      height: 8rem;
+    }
+
+    .\@4xl\:lg\:w-32 {
+      width: 8rem;
+    }
+
     .\@4xl\:lg\:text-2xl {
       font-size: 1.5rem;
       line-height: 2rem;
+    }
+
+    .\@4xl\:lg\:text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .\@4xl\:lg\:text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+@container (min-width: 64rem) {
+  @media (min-width: 1024px) {
+    .\@5xl\:lg\:h-32 {
+      height: 8rem;
+    }
+
+    .\@5xl\:lg\:w-32 {
+      width: 8rem;
     }
   }
 }
