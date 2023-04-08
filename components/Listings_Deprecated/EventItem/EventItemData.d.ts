@@ -4,6 +4,7 @@ export declare const EventItemData: ({
     updated_at: string;
     user_id: number;
     title: string;
+    link: string;
     slug: string;
     featured_image: string;
     host_org: string;
@@ -43,6 +44,7 @@ export declare const EventItemData: ({
     updated_at: string;
     user_id: number;
     title: string;
+    link: string;
     slug: string;
     featured_image: string;
     host_org: string;
@@ -82,6 +84,7 @@ export declare const EventItemData: ({
     updated_at: string;
     user_id: number;
     title: string;
+    link: string;
     slug: string;
     featured_image: string;
     host_org: string;
