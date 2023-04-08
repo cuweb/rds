@@ -3645,6 +3645,12 @@ select {
 
 /* Listing Components */
 
+.group:hover .cu-listing--nolink h2,.group:hover 
+.cu-listing--nolink h3 {
+  --tw-text-opacity: 1;
+  color: rgb(233 28 36 / var(--tw-text-opacity));
+}
+
 .cu-listing a {
   position: relative;
   display: flex;
@@ -7003,28 +7009,6 @@ select {
   }
 }
 
-@container (min-width: 32rem) {
-  @media (min-width: 1024px) {
-    .\@lg\:lg\:h-32 {
-      height: 8rem;
-    }
-
-    .\@lg\:lg\:w-32 {
-      width: 8rem;
-    }
-
-    .\@lg\:lg\:text-4xl {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-
-    .\@lg\:lg\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-  }
-}
-
 @container (min-width: 42rem) {
   @media (min-width: 1024px) {
     .\@2xl\:lg\:gap-8 {
@@ -7053,9 +7037,27 @@ select {
       display: none;
     }
 
+    .\@4xl\:lg\:h-32 {
+      height: 8rem;
+    }
+
+    .\@4xl\:lg\:w-32 {
+      width: 8rem;
+    }
+
     .\@4xl\:lg\:text-2xl {
       font-size: 1.5rem;
       line-height: 2rem;
+    }
+
+    .\@4xl\:lg\:text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .\@4xl\:lg\:text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 
-import { styles } from './Listing.Styles'
+import { styles, linkStyles } from './Listing.Styles'
 import { ListingFigure } from './ListingFigure'
 import { ListingContent } from './ListingContent'
 import { ListingDateBox } from './ListingDateBox'
@@ -18,13 +18,16 @@ export interface ListingProps {
 }
 
 export const ListingWrapper = ({ children, noLink }: ListingProps) => {
-  const addPadding = noLink ? 'p-8' : ''
+  const noLinkStyles = noLink ? 'cu-listing--nolink p-8' : linkStyles.baseLink
   return (
-    <li className={`cu-listing ${styles.base} ${addPadding}`}>
+    <li className={`cu-listing ${styles.base} ${noLinkStyles}`}>
       {children}
-      <div className={styles.arrowArea}>
-        <ChevronRightIcon className={styles.arrowIcon} aria-hidden="true" />
-      </div>
+
+      {!noLink && (
+        <div className={styles.arrowArea}>
+          <ChevronRightIcon className={styles.arrowIcon} aria-hidden="true" />
+        </div>
+      )}
     </li>
   )
 }

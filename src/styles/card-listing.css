@@ -16,6 +16,11 @@
 
 /* Listing Components */
 
+.cu-listing--nolink h2,
+.cu-listing--nolink h3 {
+  @apply group-hover:text-cu-red;
+}
+
 .cu-listing a {
   @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8;
 }
