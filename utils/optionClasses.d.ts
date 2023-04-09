@@ -85,10 +85,7 @@ export declare const rdsBorderColor: {
     'dark-grey': string;
 };
 export declare const rdsTopSpacing: {
-    '8': string;
-    '12': string;
-    '16': string;
-    '20': string;
-    '24': string;
+    '5': string;
+    '10': string;
 };
 //# sourceMappingURL=optionClasses.d.ts.map
