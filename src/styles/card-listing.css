@@ -27,5 +27,6 @@
 }
 
 .cu-listing img {
-  @apply w-full rounded-md object-cover;
+  @apply rounded-md object-cover;
+  /* @apply w-full rounded-md object-cover; */
 }
