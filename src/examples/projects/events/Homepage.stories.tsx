@@ -113,7 +113,7 @@ export const Homepage: Story = {
                 />
               </div>
 
-              <Aside isSticky topSpace="8">
+              <Aside isSticky topSpace="10">
                 <Calendar
                   callback={() => {
                     console.log('Calendar')

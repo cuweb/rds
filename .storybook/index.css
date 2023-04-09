@@ -1529,12 +1529,8 @@ select {
   top: 50%;
 }
 
-.top-12 {
-  top: 3rem;
-}
-
-.top-16 {
-  top: 4rem;
+.top-10 {
+  top: 2.5rem;
 }
 
 .top-2 {
@@ -1549,10 +1545,6 @@ select {
   top: 5rem;
 }
 
-.top-24 {
-  top: 6rem;
-}
-
 .top-3 {
   top: 0.75rem;
 }
@@ -1561,8 +1553,8 @@ select {
   top: 0.875rem;
 }
 
-.top-8 {
-  top: 2rem;
+.top-5 {
+  top: 1.25rem;
 }
 
 .isolate {
@@ -7054,16 +7046,8 @@ select {
       height: 8rem;
     }
 
-    .\@4xl\:lg\:h-28 {
-      height: 7rem;
-    }
-
     .\@4xl\:lg\:w-32 {
       width: 8rem;
-    }
-
-    .\@4xl\:lg\:w-28 {
-      width: 7rem;
     }
 
     .\@4xl\:lg\:text-2xl {
@@ -7079,6 +7063,15 @@ select {
     .\@4xl\:lg\:text-lg {
       font-size: 1.125rem;
       line-height: 1.75rem;
+    }
+  }
+}
+
+@container (min-width: 64rem) {
+  @media (min-width: 1024px) {
+    .\@5xl\:lg\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
 }
