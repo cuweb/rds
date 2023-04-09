@@ -5,6 +5,7 @@ export const EventItemData = [
     updated_at: '2022-11-17T16:36:24.000000Z',
     user_id: 100292661,
     title: 'Et ut deserunt ipsum minus.',
+    link: 'https://carleton.ca/webservices',
     slug: 'et-ut-deserunt-ipsum-minus',
     featured_image:
       'https://images.unsplash.com/photo-1664618221700-c741183ff4aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
@@ -59,6 +60,7 @@ export const EventItemData = [
     updated_at: '2022-11-17T16:36:24.000000Z',
     user_id: 101096520,
     title: 'Optio qui occaecati odit.',
+    link: 'https://carleton.ca/webservices',
     slug: 'optio-qui-occaecati-odit',
     featured_image:
       'https://images.unsplash.com/photo-1654161974932-e26cd97402a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
@@ -113,6 +115,7 @@ export const EventItemData = [
     updated_at: '2022-11-24T02:59:54.000000Z',
     user_id: 100292661,
     title: 'Title Of Champions 2',
+    link: 'https://carleton.ca/webservices',
     slug: 'title-of-champions-2',
     featured_image: 'http://website/img.jpg',
     host_org: 'My Organization',
@@ -166,6 +169,7 @@ export const EventItemData = [
     updated_at: '2022-11-17T16:36:24.000000Z',
     user_id: 101096520,
     title: 'Optio qui occaecati odit.',
+    link: 'https://carleton.ca/webservices',
     slug: 'optio-qui-occaecati-odit',
     featured_image:
       'https://images.unsplash.com/photo-1654161974932-e26cd97402a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
