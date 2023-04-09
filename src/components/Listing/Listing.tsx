@@ -18,7 +18,7 @@ export interface ListingProps {
 }
 
 export const ListingWrapper = ({ children, noLink }: ListingProps) => {
-  const noLinkStyles = noLink ? 'cu-listing--nolink p-8' : linkStyles.baseLink
+  const noLinkStyles = noLink ? 'cu-listing--nolink  p-8' : linkStyles.baseLink
   return (
     <li className={`cu-listing ${styles.base} ${noLinkStyles}`}>
       {children}

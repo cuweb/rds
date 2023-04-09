@@ -3675,6 +3675,10 @@ select {
   }
 }
 
+.cu-listing a {
+  /* @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8; */
+}
+
 .cu-listing img {
   width: 100%;
   border-radius: 0.375rem;
@@ -7027,6 +7031,15 @@ select {
   }
 }
 
+@container (min-width: 48rem) {
+  @media (min-width: 1024px) {
+    .\@3xl\:lg\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
 @container (min-width: 56rem) {
   @media (min-width: 1024px) {
     .\@4xl\:lg\:block {
@@ -7041,8 +7054,16 @@ select {
       height: 8rem;
     }
 
+    .\@4xl\:lg\:h-28 {
+      height: 7rem;
+    }
+
     .\@4xl\:lg\:w-32 {
       width: 8rem;
+    }
+
+    .\@4xl\:lg\:w-28 {
+      width: 7rem;
     }
 
     .\@4xl\:lg\:text-2xl {
