@@ -1,7 +1,7 @@
 export const styles = {
-  base: `not-prose group relative overflow-hidden @container bg-white hover:bg-slate-50`,
+  base: `not-prose relative overflow-hidden @container bg-white`,
   content: `flex flex-1 flex-col gap-1.5 pr-6 md:gap-3.5`,
-  header: `text-lg font-semibold text-cu-black group-hover:text-cu-red @lg:md:text-xl @4xl:lg:text-2xl`,
+  header: `text-lg font-semibold text-cu-black @lg:md:text-xl @3xl:lg:text-2xl`,
   excerpt: `text-sm text-cu-black-900 md:text-base @lg:md:text-lg`,
   more: `font-semibold text-cu-red group-hover:text-cyan-700`,
   badges: `mt-auto`,
@@ -9,8 +9,12 @@ export const styles = {
   arrowIcon: `flex-none w-6 h-6 ml-auto text-cu-black-300 group-hover:text-cu-red`,
 }
 
+export const linkStyles = {
+  baseLink: `group hover:bg-slate-50`,
+  headerLink: ` `,
+}
+
 export const figureStyles = {
-  //   figure: `relative rounded-md overflow-hidden shadow-md`,
   figure: `flex-none rounded-md`,
   default: `max-w-[50%] @lg:md:max-w-[35%]`,
   small: `max-w-[50%] @lg:md:max-w-[25%]`,

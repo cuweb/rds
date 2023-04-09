@@ -67,6 +67,18 @@ export const WithoutLink: Story = {
   },
 }
 
+export const SmallHeader: Story = {
+  args: {
+    noLink: true,
+    children: (
+      <Listing.Content>
+        <Listing.PostMeta date={content.date} />
+        <Listing.Header text={content.title} isSmall />
+      </Listing.Content>
+    ),
+  },
+}
+
 export const WithBadges: Story = {
   args: {
     children: (

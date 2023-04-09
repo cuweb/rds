@@ -3645,6 +3645,12 @@ select {
 
 /* Listing Components */
 
+.group:hover .cu-listing--nolink h2,.group:hover 
+.cu-listing--nolink h3 {
+  --tw-text-opacity: 1;
+  color: rgb(233 28 36 / var(--tw-text-opacity));
+}
+
 .cu-listing a {
   position: relative;
   display: flex;
@@ -3667,6 +3673,10 @@ select {
       gap: 2rem;
     }
   }
+}
+
+.cu-listing a {
+  /* @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8; */
 }
 
 .cu-listing img {
@@ -7003,50 +7013,8 @@ select {
   }
 }
 
-@container (min-width: 32rem) {
-  @media (min-width: 1024px) {
-    .\@lg\:lg\:h-32 {
-      height: 8rem;
-    }
-
-    .\@lg\:lg\:w-32 {
-      width: 8rem;
-    }
-
-    .\@lg\:lg\:text-4xl {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-
-    .\@lg\:lg\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-  }
-}
-
-@container (min-width: 36rem) {
-  @media (min-width: 1024px) {
-    .\@xl\:lg\:h-32 {
-      height: 8rem;
-    }
-
-    .\@xl\:lg\:w-32 {
-      width: 8rem;
-    }
-  }
-}
-
 @container (min-width: 42rem) {
   @media (min-width: 1024px) {
-    .\@2xl\:lg\:h-32 {
-      height: 8rem;
-    }
-
-    .\@2xl\:lg\:w-32 {
-      width: 8rem;
-    }
-
     .\@2xl\:lg\:gap-8 {
       gap: 2rem;
     }
@@ -7065,12 +7033,9 @@ select {
 
 @container (min-width: 48rem) {
   @media (min-width: 1024px) {
-    .\@3xl\:lg\:h-32 {
-      height: 8rem;
-    }
-
-    .\@3xl\:lg\:w-32 {
-      width: 8rem;
+    .\@3xl\:lg\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
 }
@@ -7089,8 +7054,16 @@ select {
       height: 8rem;
     }
 
+    .\@4xl\:lg\:h-28 {
+      height: 7rem;
+    }
+
     .\@4xl\:lg\:w-32 {
       width: 8rem;
+    }
+
+    .\@4xl\:lg\:w-28 {
+      width: 7rem;
     }
 
     .\@4xl\:lg\:text-2xl {
@@ -7106,18 +7079,6 @@ select {
     .\@4xl\:lg\:text-lg {
       font-size: 1.125rem;
       line-height: 1.75rem;
-    }
-  }
-}
-
-@container (min-width: 64rem) {
-  @media (min-width: 1024px) {
-    .\@5xl\:lg\:h-32 {
-      height: 8rem;
-    }
-
-    .\@5xl\:lg\:w-32 {
-      width: 8rem;
     }
   }
 }
