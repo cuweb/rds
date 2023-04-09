@@ -18,7 +18,7 @@ export declare const Listing: (({ children, noLink }: ListingProps) => JSX.Eleme
         displayName: string;
     };
     Header: {
-        ({ text }: import("./ListingHeader").ListingHeaderProps): JSX.Element;
+        ({ text, isSmall }: import("./ListingHeader").ListingHeaderProps): JSX.Element;
         displayName: string;
     };
     Excerpt: {

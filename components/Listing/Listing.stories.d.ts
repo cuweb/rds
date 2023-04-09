@@ -5,6 +5,7 @@ export default meta;
 type Story = StoryObj<typeof Listing>;
 export declare const Primary: Story;
 export declare const WithoutLink: Story;
+export declare const SmallHeader: Story;
 export declare const WithBadges: Story;
 export declare const WithExcerpt: Story;
 export declare const WithImage: Story;

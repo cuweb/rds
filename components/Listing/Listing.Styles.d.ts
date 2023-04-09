@@ -8,6 +8,10 @@ export declare const styles: {
     arrowArea: string;
     arrowIcon: string;
 };
+export declare const linkStyles: {
+    baseLink: string;
+    headerLink: string;
+};
 export declare const figureStyles: {
     figure: string;
     default: string;
