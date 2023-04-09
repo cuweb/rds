@@ -1565,6 +1565,14 @@ select {
   top: 2rem;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -7054,16 +7062,8 @@ select {
       height: 8rem;
     }
 
-    .\@4xl\:lg\:h-28 {
-      height: 7rem;
-    }
-
     .\@4xl\:lg\:w-32 {
       width: 8rem;
-    }
-
-    .\@4xl\:lg\:w-28 {
-      width: 7rem;
     }
 
     .\@4xl\:lg\:text-2xl {
