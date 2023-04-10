@@ -3667,15 +3667,44 @@ select {
   }
 }
 
-.cu-listing a {
-  /* @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8; */
-}
-
 .cu-listing img {
-  width: 100%;
   border-radius: 0.375rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .cu-listing--small {
+    gap: 0.375rem !important;
+  }
+}
+
+.cu-listing--small h2,
+.cu-listing--small h3 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@container (min-width: 42rem) {
+  @media (min-width: 768px) {
+    .cu-listing--small h2,
+.cu-listing--small h3 {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .cu-listing--small time {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .cu-listing--small p:not(.cu-badges) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 /* React Quill CSS */
@@ -7063,15 +7092,6 @@ select {
     .\@4xl\:lg\:text-lg {
       font-size: 1.125rem;
       line-height: 1.75rem;
-    }
-  }
-}
-
-@container (min-width: 64rem) {
-  @media (min-width: 1024px) {
-    .\@5xl\:lg\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
     }
   }
 }
