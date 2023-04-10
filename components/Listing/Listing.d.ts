@@ -10,7 +10,7 @@ export declare const Listing: (({ children, noLink }: ListingProps) => JSX.Eleme
         displayName: string;
     };
     Content: {
-        ({ children }: import("./ListingContent").ListingContentProps): JSX.Element;
+        ({ children, isSmall }: import("./ListingContent").ListingContentProps): JSX.Element;
         displayName: string;
     };
     DateBox: {
@@ -18,7 +18,7 @@ export declare const Listing: (({ children, noLink }: ListingProps) => JSX.Eleme
         displayName: string;
     };
     Header: {
-        ({ text, isSmall }: import("./ListingHeader").ListingHeaderProps): JSX.Element;
+        ({ text }: import("./ListingHeader").ListingHeaderProps): JSX.Element;
         displayName: string;
     };
     Excerpt: {
