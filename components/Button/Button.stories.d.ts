@@ -17,6 +17,4 @@ export declare const FullWidth: Story;
 export declare const HasIcon: Story;
 export declare const SmallButton: Story;
 export declare const SmallButtonWithIcon: Story;
-export declare const LinkAsSolidButton: Story;
-export declare const LinkAsOutlineButton: Story;
 //# sourceMappingURL=Button.stories.d.ts.map
