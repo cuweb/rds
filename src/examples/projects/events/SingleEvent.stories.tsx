@@ -84,13 +84,15 @@ export const SingleEvent: Story = {
             <Aside isSticky topSpace="10">
               <Column cols="1" gridGap="5">
                 <Button
+                  isType="solid"
                   onClick={() => {
                     console.log('click')
                   }}
                   title="Remove from my events"
                 />
                 <Button
-                  isType="grey"
+                  isType="solid"
+                  color="grey"
                   onClick={() => {
                     console.log('click')
                   }}

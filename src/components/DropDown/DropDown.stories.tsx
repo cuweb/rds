@@ -37,5 +37,5 @@ WithButton.args = {
 
 export const WithButtonArrow: Story = {}
 WithButtonArrow.args = {
-  children: <Button size="sm" title="Button Dropdown" hasDropDown />,
+  children: <Button isSmall title="Button Dropdown" hasDropDown />,
 }
