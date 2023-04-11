@@ -128,19 +128,3 @@ export const SmallButtonWithIcon: Story = {
     icon: ArrowDownCircleIcon,
   },
 }
-
-export const LinkAsSolidButton: Story = {
-  render: () => (
-    <a href="https://carleton.ca/webservices" className={`${buttonStyles.core} ${solidStyles.red}`}>
-      Link as Solid Red Button
-    </a>
-  ),
-}
-
-export const LinkAsOutlineButton: Story = {
-  render: () => (
-    <a href="https://carleton.ca/webservices" className={`${buttonStyles.core} ${outlineStyles.red}`}>
-      Link as Outlined Red Button
-    </a>
-  ),
-}
