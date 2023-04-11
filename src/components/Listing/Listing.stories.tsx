@@ -48,11 +48,22 @@ Primary.args = {
   children: (
     <a href={content.link}>
       <Listing.Content>
-        <Listing.PostMeta date={content.date} />
         <Listing.Header text={content.title} />
       </Listing.Content>
     </a>
   ),
+}
+
+export const SmallHeader: Story = {
+  args: {
+    children: (
+      <a href={content.link}>
+        <Listing.Content isSmall>
+          <Listing.Header text={content.title} />
+        </Listing.Content>
+      </a>
+    ),
+  },
 }
 
 export const WithoutLink: Story = {
@@ -60,21 +71,22 @@ export const WithoutLink: Story = {
     noLink: true,
     children: (
       <Listing.Content>
-        <Listing.PostMeta date={content.date} />
         <Listing.Header text={content.title} />
       </Listing.Content>
     ),
   },
 }
 
-export const SmallHeader: Story = {
+export const WithDate: Story = {
   args: {
-    noLink: true,
     children: (
-      <Listing.Content>
-        <Listing.PostMeta date={content.date} />
-        <Listing.Header text={content.title} isSmall />
-      </Listing.Content>
+      <a href={content.link}>
+        <Listing.Content>
+          <Listing.PostMeta date={content.date} />
+          <Listing.Header text={content.title} />
+          <Listing.Badges tags={content.tags} />
+        </Listing.Content>
+      </a>
     ),
   },
 }

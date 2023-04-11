@@ -26,14 +26,20 @@ export const DateTimePicker = ({
 }: PickerProps & FieldHookConfig<string>) => {
   const [field, meta, helper] = useField(props)
 
-  const Hour12FormatDate = format(new Date(startDate ? startDate : endDate ? endDate : ''), 'h:mm a')
+  const Hour12FormatDate = startDate
+    ? format(new Date(startDate), 'h:mm a')
+    : endDate
+    ? format(new Date(endDate), 'h:mm a')
+    : null
 
-  const DateSplit = Hour12FormatDate.split(' ').join(':').split(':')
+  const DateSplit = Hour12FormatDate?.split(' ').join(':').split(':')
 
   const [selectedDate, setSelectedDate] = useState(format(new Date(0), 'yyyy-MM-dd'))
-  const [minutes, setMinutes] = useState(startDate ? DateSplit[1] : endDate ? DateSplit[1] : '00')
-  const [hours, setHours] = useState(startDate ? DateSplit[0] : endDate ? DateSplit[0] : '01')
-  const [noon, setNoon] = useState(startDate ? DateSplit[2] : endDate ? DateSplit[2] : 'AM')
+  const [minutes, setMinutes] = useState(
+    startDate && DateSplit ? DateSplit[1] : endDate && DateSplit ? DateSplit[1] : '00',
+  )
+  const [hours, setHours] = useState(startDate && DateSplit ? DateSplit[0] : endDate && DateSplit ? DateSplit[0] : '01')
+  const [noon, setNoon] = useState(startDate && DateSplit ? DateSplit[2] : endDate && DateSplit ? DateSplit[2] : 'AM')
 
   const callbackcal = useCallback(
     (itemSelected: Date) => setSelectedDate(format(new Date(itemSelected), 'yyyy-MM-dd')),

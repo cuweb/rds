@@ -85,3 +85,17 @@ export const PeopleListing: Story = {
     ),
   },
 }
+
+export const BulletinItem: Story = {
+  args: {
+    noLink: true,
+    children: (
+      <Listing.Content isSmall>
+        <Listing.PostMeta date={singleNews?.date} />
+        <Listing.Header text={singleNews?.title} />
+        <Listing.Excerpt text={singleNews?.excerpt} />
+        <Listing.Badges tags={singleNews?.tags} />
+      </Listing.Content>
+    ),
+  },
+}
