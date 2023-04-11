@@ -4,7 +4,7 @@ import { rdsTopSpacing } from '../../utils/optionClasses'
 export interface AsideProps {
   children: React.ReactNode
   isSticky?: boolean
-  topSpace?: '8' | '12' | '16' | '20' | '24'
+  topSpace?: '5' | '10'
 }
 
 export const Aside = ({ children, isSticky, topSpace }: AsideProps) => {

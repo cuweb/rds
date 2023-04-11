@@ -1,33 +1,45 @@
 import React from 'react'
-import { styles } from './Listing.Styles'
-// import { CardFigure } from './CardFigure'
-// import { CardVideo } from './CardVideo'
-// import { CardContent } from './CardContent'
-// import { CardDateBox } from './CardDateBox'
-// import { CardHeader } from './CardHeader'
-// import { CardExcerpt } from './CardExcerpt'
-// import { CardBadges } from './CardBadges'
-// import { CardPostMeta } from './CardPostMeta'
-// import { CardEventMeta } from './CardEventMeta'
-// import { CardPeopleMeta } from './CardPeopleMeta'
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
+
+import { styles, linkStyles } from './Listing.Styles'
+import { ListingFigure } from './ListingFigure'
+import { ListingContent } from './ListingContent'
+import { ListingDateBox } from './ListingDateBox'
+import { ListingHeader } from './ListingHeader'
+import { ListingExcerpt } from './ListingExcerpt'
+import { ListingBadges } from './ListingBadges'
+import { ListingPostMeta } from './ListingPostMeta'
+import { ListingEventMeta } from './ListingEventMeta'
+import { ListingPeopleMeta } from './ListingPeopleMeta'
 
 export interface ListingProps {
   children: React.ReactNode
+  noLink?: boolean
 }
 
-export const ListingWrapper = ({ children }: ListingProps) => {
-  return <div className={styles.card}>{children}</div>
+export const ListingWrapper = ({ children, noLink }: ListingProps) => {
+  const noLinkStyles = noLink ? 'cu-listing--nolink  p-8' : linkStyles.baseLink
+  return (
+    <li className={`cu-listing ${styles.base} ${noLinkStyles}`}>
+      {children}
+
+      {!noLink && (
+        <div className={styles.arrowArea}>
+          <ChevronRightIcon className={styles.arrowIcon} aria-hidden="true" />
+        </div>
+      )}
+    </li>
+  )
 }
 
 export const Listing = Object.assign(ListingWrapper, {
-  //   Figure: CardFigure,
-  //   Video: CardVideo,
-  //   Content: CardContent,
-  //   DateBox: CardDateBox,
-  //   Header: CardHeader,
-  //   Excerpt: CardExcerpt,
-  //   Badges: CardBadges,
-  //   PostMeta: CardPostMeta,
-  //   EventMeta: CardEventMeta,
-  //   PeopleMeta: CardPeopleMeta,
+  Figure: ListingFigure,
+  Content: ListingContent,
+  DateBox: ListingDateBox,
+  Header: ListingHeader,
+  Excerpt: ListingExcerpt,
+  Badges: ListingBadges,
+  PostMeta: ListingPostMeta,
+  EventMeta: ListingEventMeta,
+  PeopleMeta: ListingPeopleMeta,
 })

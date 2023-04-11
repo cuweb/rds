@@ -72,13 +72,7 @@ export const Default: Story = () => {
     },
     [setSelectedDate],
   )
-  return (
-    <Calendar
-      events={data.events}
-      callback={callbackcal}
-      startDate="Wed Apr 30 2023 19:00:00 GMT-0500 (Eastern Standard Time) "
-    />
-  )
+  return <Calendar events={data.events} callback={callbackcal} />
 }
 
 Default.storyName = 'Default Calendar'

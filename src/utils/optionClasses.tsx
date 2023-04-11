@@ -97,9 +97,6 @@ export const rdsBorderColor = {
 }
 
 export const rdsTopSpacing = {
-  '8': 'top-8',
-  '12': 'top-12',
-  '16': 'top-16',
-  '20': 'top-20',
-  '24': 'top-24',
+  '5': 'top-5',
+  '10': 'top-10',
 }

@@ -1,11 +1,11 @@
 import { getDate, parse, format } from 'date-fns'
-import { eventStyles } from './Card.Styles'
+import { eventStyles } from './Listing.Styles'
 
-export interface CardDateBoxProps {
+export interface ListingDateBoxProps {
   startDate: string
 }
 
-export const CardDateBox = ({ startDate }: CardDateBoxProps) => {
+export const ListingDateBox = ({ startDate }: ListingDateBoxProps) => {
   const eventStartDate = parse(startDate, 'yyyy-MM-dd HH:mm:ss', new Date())
   const eventStartMonth = format(eventStartDate, 'MMM')
   const eventStartDay = getDate(eventStartDate)
@@ -18,4 +18,4 @@ export const CardDateBox = ({ startDate }: CardDateBoxProps) => {
   )
 }
 
-CardDateBox.displayName = 'Card.DateBox'
+ListingDateBox.displayName = 'Listing.DateBox'

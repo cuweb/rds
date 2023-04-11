@@ -1,15 +1,15 @@
-import { metaStyles } from './Card.Styles'
+import { metaStyles } from './Listing.Styles'
 
-export interface CardPeopleMetaProps {
+export interface ListingPeopleMetaProps {
   jobTitle?: string
   email?: string
   phone?: string
 }
 
-export const CardPeopleMeta = ({ jobTitle, email, phone }: CardPeopleMetaProps) => {
+export const ListingPeopleMeta = ({ jobTitle, email, phone }: ListingPeopleMetaProps) => {
   return (
     <ul className={metaStyles.wrapper}>
-      {jobTitle && <li className={`${metaStyles.item} ${metaStyles.itemLarge} ${metaStyles.italic}`}>{jobTitle}</li>}
+      {jobTitle && <li className={`${metaStyles.itemLarge} ${metaStyles.italic}`}>{jobTitle}</li>}
       {email && (
         <li className={metaStyles.item}>
           <strong className={metaStyles.bold}>{email}</strong>
@@ -20,4 +20,4 @@ export const CardPeopleMeta = ({ jobTitle, email, phone }: CardPeopleMetaProps) 
   )
 }
 
-CardPeopleMeta.displayName = 'Card.PeopleMeta'
+ListingPeopleMeta.displayName = 'Listing.PeopleMeta'

@@ -3,7 +3,7 @@ import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
 import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
-import { Panel } from '../../../layouts/Panel/Panel'
+import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
@@ -11,7 +11,7 @@ import { Banner } from '../../../components/Banner/Banner'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
-import { EventItem } from '../../../components/Listings_Deprecated/EventItem/EventItem'
+import { Listing } from '../../../components/Listing/Listing'
 import { Pagination } from '../../../components/Pagination/Pagination'
 import { Calendar } from '../../../components/Calendar/Calendar'
 // import { Filter } from '../../components/Filter/Filter'
@@ -68,11 +68,12 @@ export const Homepage: Story = {
 
             <Column cols="2/3" maxWidth="7xl">
               <div>
-                <Panel hasShadow>
+                <StackedList hasShadow>
                   {dataList.map(
                     ({
                       id,
-                      title, // link,
+                      title,
+                      link,
                       start_date,
                       end_date,
                       event_address,
@@ -81,22 +82,26 @@ export const Homepage: Story = {
                       on_campus_room_number,
                       tags,
                     }) => (
-                      <EventItem
-                        key={id}
-                        as="div"
-                        link="#"
-                        title={title}
-                        startDateTime={start_date}
-                        endDateTime={end_date}
-                        event_address={event_address}
-                        on_campus={on_campus}
-                        on_campus_building={on_campus_building}
-                        on_campus_room_number={on_campus_room_number}
-                        tags={tags}
-                      />
+                      <Listing key={id}>
+                        <a href={link}>
+                          <Listing.DateBox startDate={start_date} />
+                          <Listing.Content>
+                            <Listing.Header text={title} />
+                            <Listing.EventMeta
+                              startDateTime={start_date}
+                              endDateTime={end_date}
+                              onCampus={on_campus}
+                              onCampusBuilding={on_campus_building}
+                              onCampusRoomNumber={on_campus_room_number}
+                              eventAddress={event_address}
+                            />
+                            <Listing.Badges tags={tags} />
+                          </Listing.Content>
+                        </a>
+                      </Listing>
                     ),
                   )}
-                </Panel>
+                </StackedList>
 
                 <Pagination
                   totalCount={48}
@@ -108,7 +113,7 @@ export const Homepage: Story = {
                 />
               </div>
 
-              <Aside>
+              <Aside isSticky topSpace="10">
                 <Calendar
                   callback={() => {
                     console.log('Calendar')

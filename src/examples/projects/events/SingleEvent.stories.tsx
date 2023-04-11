@@ -81,7 +81,7 @@ export const SingleEvent: Story = {
               <EventContent />
             </Article>
 
-            <Aside isSticky topSpace="8">
+            <Aside isSticky topSpace="10">
               <Column cols="1" gridGap="5">
                 <Button
                   onClick={() => {

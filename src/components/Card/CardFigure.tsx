@@ -11,3 +11,5 @@ export const CardFigure = ({ children, isRound }: CardFigureProps) => {
 
   return <figure className={`${roundedImage} ${figureStyles.figure}`}>{children}</figure>
 }
+
+CardFigure.displayName = 'Card.Figure'
