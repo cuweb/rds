@@ -76,8 +76,9 @@ export const Modal = ({
                         setIsOpen(false)
                       }}
                       title="Cancel"
-                      size="sm"
-                      isType="white"
+                      isSmall
+                      isType="solid"
+                      color="white"
                       hasShadow
                     />
                   </div>
