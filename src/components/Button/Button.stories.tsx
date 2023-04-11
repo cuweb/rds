@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
+import { buttonStyles, outlineStyles, solidStyles } from '../../../src/utils/buttonClasses'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -23,9 +24,6 @@ export const Primary: Story = {}
 
 Primary.args = {
   title: 'Primary Red',
-  isType: 'default',
-  size: 'base',
-  url: '',
   hasShadow: false,
   isFull: false,
   isCenter: false,
@@ -35,31 +33,63 @@ Primary.args = {
   },
 }
 
+export const PrimaryGhost: Story = {
+  args: {
+    title: 'Primary Ghost Button',
+    isType: 'outline',
+  },
+}
+
 export const DarkGrey: Story = {
   args: {
     title: 'Dark Grey Button',
-    isType: 'dark-grey',
+    color: 'dark-grey',
+  },
+}
+
+export const DarkGreyGhost: Story = {
+  args: {
+    title: 'Dark Grey Ghost Button',
+    isType: 'outline',
+    color: 'dark-grey',
   },
 }
 
 export const LightGrey: Story = {
   args: {
     title: 'Light Grey Button',
-    isType: 'grey',
+    color: 'grey',
+  },
+}
+
+export const GreyGhost: Story = {
+  args: {
+    title: 'Grey Ghost Button',
+    isType: 'outline',
+    color: 'grey',
   },
 }
 
 export const White: Story = {
   args: {
     title: 'White Button',
-    isType: 'white',
+    color: 'white',
   },
 }
 
-export const Ghost: Story = {
+export const WhiteGhost: Story = {
   args: {
-    title: 'Ghost Button',
-    isType: 'ghost',
+    title: 'White Ghost Button',
+    isType: 'outline',
+    color: 'white',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    isType: 'disabled',
+    disabled: true,
+    title: 'Disabled Button',
   },
 }
 
@@ -82,4 +112,35 @@ export const HasIcon: Story = {
     title: 'Icon Button',
     icon: ArrowDownCircleIcon,
   },
+}
+
+export const SmallButton: Story = {
+  args: {
+    title: 'Small Button',
+    isSmall: true,
+  },
+}
+
+export const SmallButtonWithIcon: Story = {
+  args: {
+    title: 'Small Button w/Icon',
+    isSmall: true,
+    icon: ArrowDownCircleIcon,
+  },
+}
+
+export const LinkAsSolidButton: Story = {
+  render: () => (
+    <a href="https://carleton.ca/webservices" className={`${buttonStyles.core} ${solidStyles.red}`}>
+      Link as Solid Red Button
+    </a>
+  ),
+}
+
+export const LinkAsOutlineButton: Story = {
+  render: () => (
+    <a href="https://carleton.ca/webservices" className={`${buttonStyles.core} ${outlineStyles.red}`}>
+      Link as Outlined Red Button
+    </a>
+  ),
 }

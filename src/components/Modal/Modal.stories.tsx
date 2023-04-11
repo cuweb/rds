@@ -23,7 +23,7 @@ export const Default: Story = () => {
 
   return (
     <>
-      <Button title=" Click to Open Modal" onClick={() => setModalOpen(true)} />
+      <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
 
       <Modal
         title="Modal Title"
@@ -37,7 +37,7 @@ export const Default: Story = () => {
             setModalOpen(false)
           }}
           title="Delete"
-          size="sm"
+          isSmall
           hasShadow
         />
       </Modal>
@@ -66,7 +66,7 @@ export const NoButton: Story = () => {
             setModalOpen(false)
           }}
           title="Delete"
-          size="sm"
+          isSmall
           hasShadow
         />
       </Modal>
