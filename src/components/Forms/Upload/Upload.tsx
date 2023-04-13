@@ -32,7 +32,7 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
 
     helpers.setError('MOO')
 
-   // helpers.setValue(await onUpload(image))
+    // helpers.setValue(await onUpload(image))
 
     if (!image.type.match(imageMimeType)) {
       return setPreview(null)
