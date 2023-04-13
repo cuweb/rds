@@ -1919,6 +1919,18 @@ select {
   max-height: 20rem;
 }
 
+.max-h-10 {
+  max-height: 2.5rem;
+}
+
+.max-h-20 {
+  max-height: 5rem;
+}
+
+.max-h-40 {
+  max-height: 10rem;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -2405,6 +2417,10 @@ select {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .\!whitespace-nowrap {
@@ -6647,6 +6663,10 @@ select {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:max-h-full {
+    max-height: 100%;
   }
 
   .md\:min-h-\[240px\] {
