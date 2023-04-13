@@ -10,10 +10,11 @@ export interface UploadProps {
   setPreview?: any
   onReset?: any
   onUpload?: any
+  onValidate?: any
   condition?: () => boolean
 }
 
-export const Upload = ({ label, onReset, onUpload, setPreview, condition = () => true, ...props }: any) => {
+export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condition = () => true, ...props }: any) => {
   const [field, meta, helpers] = useField(props.name)
 
   // image types
@@ -29,7 +30,9 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
       return
     }
 
-    helpers.setValue(await onUpload(image))
+    helpers.setError('MOO')
+
+   // helpers.setValue(await onUpload(image))
 
     if (!image.type.match(imageMimeType)) {
       return setPreview(null)
@@ -80,7 +83,7 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
           </div>
 
           {/* Validation Error Icon*/}
-          {meta.touched && meta.error && (
+          {meta.error && (
             <div className={formErrorStyles.messageDiv}>
               <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
               <p className={formErrorStyles.errorText} id="email-error">
@@ -88,6 +91,7 @@ export const Upload = ({ label, onReset, onUpload, setPreview, condition = () =>
               </p>
             </div>
           )}
+          {meta.error}
         </div>
       )}
     </>
