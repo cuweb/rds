@@ -1,20 +1,20 @@
 import { Disclosure } from '@headlessui/react'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
-export type AccordianData = {
+export type AccordionData = {
   title: string
   content: string
 }
 
-export interface AccordianProps {
-  data: AccordianData[]
+export interface AccordionProps {
+  data: AccordionData[]
 }
 
-export const Accordian = ({ data }: AccordianProps) => {
+export const Accordion = ({ data }: AccordionProps) => {
   return (
     <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
       {data &&
-        data?.map((item: AccordianData) => (
+        data?.map((item: AccordionData) => (
           <Disclosure as="div" key={item.title} className="pt-6">
             {({ open }) => (
               <>

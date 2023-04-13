@@ -1755,6 +1755,10 @@ select {
   margin-top: 0.25rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1781,10 +1785,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .block {
@@ -1911,24 +1911,16 @@ select {
   height: 100%;
 }
 
+.max-h-40 {
+  max-height: 10rem;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
 
 .max-h-80 {
   max-height: 20rem;
-}
-
-.max-h-10 {
-  max-height: 2.5rem;
-}
-
-.max-h-20 {
-  max-height: 5rem;
-}
-
-.max-h-40 {
-  max-height: 10rem;
 }
 
 .min-h-full {
@@ -2900,6 +2892,11 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -2928,11 +2925,6 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 
 .pb-2 {
@@ -2981,6 +2973,10 @@ select {
 
 .pl-6 {
   padding-left: 1.5rem;
+}
+
+.pr-12 {
+  padding-right: 3rem;
 }
 
 .pr-2 {
@@ -3049,10 +3045,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pr-12 {
-  padding-right: 3rem;
 }
 
 .text-left {
@@ -3136,12 +3128,12 @@ select {
   font-style: italic;
 }
 
-.leading-6 {
-  line-height: 1.5rem;
-}
-
 .leading-10 {
   line-height: 2.5rem;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
 }
 
 .leading-7 {
