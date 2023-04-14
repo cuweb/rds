@@ -38,6 +38,15 @@ export const Default: Story = {
   ),
 }
 
+const validateUpload = (file: any) => {
+  if (file.width === 1600 && file.height === 700) {
+    return
+  }
+  return {
+    error: "Image needs to be 1600x700"
+  }
+}
+
 export const Example: Story = {
   render: (args) => (
     <Form {...args} onSubmit={formOnSubmit} schema={TestSchema}>
@@ -94,7 +103,7 @@ export const Example: Story = {
             ]}
           />
 
-          <Form.Upload label="Image" name="image" />
+          <Form.Upload label="Image" name="image" onValidate={validateUpload} />
 
           <Form.Submit title="Submit Your Answers" />
         </form>
