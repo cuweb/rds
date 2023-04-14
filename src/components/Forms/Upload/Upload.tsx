@@ -2,6 +2,7 @@ import { Field, useField } from 'formik'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { formStyles, formErrorStyles } from '../../../utils/formClasses'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
 
 export interface UploadProps {
   label?: string
@@ -16,6 +17,7 @@ export interface UploadProps {
 
 export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condition = () => true, ...props }: any) => {
   const [field, meta, helpers] = useField(props.name)
+  const [imageCheck, setImageCheck] = useState<string>()
 
   // image types
   const imageMimeType = /image\/(png|jpg|jpeg)/i
@@ -30,25 +32,37 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
       return
     }
 
-    helpers.setError('MOO')
-
-    // helpers.setValue(await onUpload(image))
-
     if (!image.type.match(imageMimeType)) {
       return setPreview(null)
     }
 
+    // read file
     const fileReader = new FileReader()
+    const validateImage = new Image()
+
     fileReader.readAsDataURL(image)
     fileReader.onloadend = (e) => {
-      setPreview(e.target?.result)
+      validateImage.src = `${e.target?.result}`
+      validateImage.onload = () => {
+        // validate file
+        const failed = onValidate(validateImage)
+        setImageCheck('')
+        if (failed) {
+          setImageCheck(failed.error)
+          return
+        }
+        setPreview(e.target?.result)
+      }
     }
+    // upload file
+    helpers.setValue(await onUpload(image))
   }
 
   // upload reset
   const inputReset = () => {
     onReset(meta.value)
     setPreview(null)
+    setImageCheck('')
     helpers.setValue('')
   }
 
@@ -83,15 +97,22 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
           </div>
 
           {/* Validation Error Icon*/}
-          {meta.error && (
+          {meta.error && meta.touched && (
             <div className={formErrorStyles.messageDiv}>
               <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
-              <p className={formErrorStyles.errorText} id="email-error">
+              <p className={formErrorStyles.errorText} id={field.name + '-error'}>
                 {meta.error}
               </p>
             </div>
           )}
-          {meta.error}
+          {imageCheck && (
+            <div className={formErrorStyles.messageDiv}>
+              <ExclamationCircleIcon className={formErrorStyles.errorIcon} aria-hidden="true" />
+              <p className={formErrorStyles.errorText} id={field.name + '-error'}>
+                {imageCheck}
+              </p>
+            </div>
+          )}
         </div>
       )}
     </>

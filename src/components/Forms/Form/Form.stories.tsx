@@ -43,7 +43,7 @@ const validateUpload = (file: any) => {
     return
   }
   return {
-    error: "Image needs to be 1600x700"
+    error: 'Image needs to be 1600x700',
   }
 }
 
