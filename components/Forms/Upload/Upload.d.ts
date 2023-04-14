@@ -5,10 +5,11 @@ export interface UploadProps {
     setPreview?: any;
     onReset?: any;
     onUpload?: any;
+    onValidate?: any;
     condition?: () => boolean;
 }
 export declare const Upload: {
-    ({ label, onReset, onUpload, setPreview, condition, ...props }: any): JSX.Element;
+    ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: any): JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Upload.d.ts.map

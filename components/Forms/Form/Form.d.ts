@@ -33,7 +33,7 @@ export declare const Form: {
         displayName: string;
     };
     Upload: {
-        ({ label, onReset, onUpload, setPreview, condition, ...props }: any): JSX.Element;
+        ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: any): JSX.Element;
         displayName: string;
     };
     Submit: {
