@@ -457,7 +457,7 @@ HasSearch.args = {
   sourceData: database,
   hasSearch: true,
   userInfo: user,
-  login: <Button title="Login" size="sm" url="#" />,
+  login: <Button title="Login" isSmall />,
 }
 
 export const LoginButton: Story = {}
@@ -465,7 +465,7 @@ LoginButton.args = {
   title: 'Event',
   navLinks: NavLinks,
   mobileLinks: MobileLinks,
-  login: <Button title="Login" size="sm" url="#" />,
+  login: <Button title="Login" isSmall />,
   session: null,
 }
 
@@ -489,7 +489,7 @@ KitchenSink.args = {
   userMenuItems: userMenuItems,
   userInfo: user,
   mobileLinks: MobileLinks,
-  children: <Button title="Event" icon={PlusIcon} size="sm" />,
-  login: <Button title="Login" size="sm" url="#" />,
+  children: <Button title="Event" icon={PlusIcon} isSmall />,
+  login: <Button title="Login" isSmall />,
   mobileLogin: mobileLogin,
 }

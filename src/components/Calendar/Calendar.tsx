@@ -140,7 +140,7 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
           <Button
             title="Clear Calendar"
             isCenter
-            size="sm"
+            isSmall
             onClick={() => {
               setSelectedDay(new Date(0))
               setShowClear(false)
