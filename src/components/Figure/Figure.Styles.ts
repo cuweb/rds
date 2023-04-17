@@ -1,7 +1,7 @@
 export const styles = {
   figure: ``,
   container: `rounded-lg overflow-hidden bg-white`,
-  caption: 'p-5',
+  caption: 'px-6 py-4 text-base italic text-cu-black-700',
 }
 
 export const imageStyles = {
