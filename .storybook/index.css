@@ -2674,6 +2674,11 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
+.bg-cyan-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -2799,6 +2804,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-1 {
@@ -3072,11 +3081,6 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -3595,6 +3599,12 @@ select {
 .prose > .cu-container > *:last-child,
 .prose > .cu-container > * > *:last-child {
   margin-bottom: 0px;
+}
+
+/* Figure Components */
+
+.cu-figure img {
+  width: 100%;
 }
 
 /* Card Components */
