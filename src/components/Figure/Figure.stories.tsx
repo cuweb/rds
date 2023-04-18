@@ -14,6 +14,7 @@ const meta: Meta<typeof Figure> = {
 
 const content = {
   image: './sample-imgs/news-img.jpg',
+  imageWide: './sample-imgs/event-img.jpg',
   imageSquare: './sample-imgs/people-img.jpg',
   alt: 'Required alt text',
   video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
@@ -24,14 +25,14 @@ type Story = StoryObj<typeof Figure>
 
 export const ImageFull: Story = {
   args: {
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+    children: <img src={content.imageWide} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageLarge: Story = {
   args: {
     size: 'large',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+    children: <img src={content.imageWide} alt={content.alt} width="400" height="266" />,
   },
 }
 
