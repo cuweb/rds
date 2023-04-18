@@ -41,16 +41,19 @@ automatically close the issue.
 
 - Jira Ticket #
 
-## Breaking Change
+## Is this a breaking change?
 
 - [ ] Yes
 - [ ] No
 
 _If yes please note what project will be impacted and describe what is expected to break._
 
-## Required Changes
+## Have you made an entry in the Changelog
 
-- [ ] Added note to changelog under "Unreleased"
+- [ ] Yes
+- [ ] No
+
+_If no please add as many items as necessary under the "Unreleased" section of the changelog._
 
 ## QA Instructions, Screenshots, Recordings
 
