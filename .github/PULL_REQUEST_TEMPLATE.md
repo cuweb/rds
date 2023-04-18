@@ -1,0 +1,69 @@
+<!--
+     For Work In Progress Pull Requests, please use the Draft PR feature,
+     see https://github.blog/2019-02-14-introducing-draft-pull-requests/ for further details.
+
+     For a timely review/response, please avoid force-pushing additional
+     commits if your PR already received reviews or comments.
+
+     Before submitting a Pull Request, please ensure you've done the following:
+     - 📖 Read the RDS Contributing Guide: (Coming soon)
+     - 📖 Read the RDS Code of Conduct: (Coming soon)
+     - 👷‍♀️ Create small PRs. In most cases this will be possible.
+     - ✅ Provide tests for your changes.
+     - 📝 Use descriptive commit messages.
+     - 📗 Update any related documentation and include any relevant screenshots.
+
+     NOTE: Pull Requests from forked repositories will need to be reviewed by
+     a Forem Team member before any CI builds will run. Once your PR is approved
+     with a `/ci` reply to the PR, it will be allowed to run subsequent builds without
+     manual approval.
+-->
+
+## What type of PR is this? (check all applicable)
+
+- [ ] New component
+- [ ] New feature
+- [ ] Refactor
+- [ ] Bug fix
+- [ ] Optimization / Build Tools
+- [ ] Documentation Update
+
+## Related Tickets & Documents
+
+<!--
+For pull requests that relate or close an issue, please include them
+below.  We like to follow [Github's guidance on linking issues to pull requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
+
+For example having the text: "closes #1234" would connect the current pull
+request to issue 1234.  And when we merge the pull request, Github will
+automatically close the issue.
+-->
+
+- Jira Ticket #
+
+## Breaking Change
+
+- [ ] Yes
+- [ ] No
+
+_If yes please note what project will be impacted and describe what is expected to break._
+
+## Required Changes
+
+- [ ] Added note to changelog under "Unreleased"
+
+## QA Instructions, Screenshots, Recordings
+
+_Please replace this line with instructions on how to test your changes, and if applicable add a note
+about any UI changes or if a test should be done on a specific browser. Add any other detail relevant to this PR._
+
+## UI accessibility concerns?
+
+_If your PR includes UI changes, please replace this line with details on how
+accessibility is impacted and tested. If there are no accessibility concerns delete this section._
+
+## [optional] Are there any post deployment tasks we need to perform?
+
+## [optional] What gif best describes this PR or how it makes you feel?
+
+![alt_text](gif_link)
