@@ -2,6 +2,7 @@ export const styles = {
   container: `overflow-hidden bg-white`,
   rounded: `rounded-lg`,
   circle: `rounded-full`,
+  shadow: `shadow-lg`,
   caption: 'px-6 py-4 text-base italic text-cu-black-700',
 }
 

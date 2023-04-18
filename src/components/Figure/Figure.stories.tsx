@@ -77,6 +77,7 @@ export const ImageWithLink: Story = {
     ),
   },
 }
+
 export const ImageWithCaption: Story = {
   args: {
     size: 'medium',
@@ -86,9 +87,20 @@ export const ImageWithCaption: Story = {
   },
 }
 
+export const ImageWithShadow: Story = {
+  args: {
+    hasShadow: true,
+    isRound: true,
+    caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
+    size: 'medium',
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
 export const ImageFloatLeft: Story = {
   args: {
     align: 'left',
+    hasShadow: true,
     size: 'medium',
     isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
@@ -99,6 +111,7 @@ export const ImageFloatLeft: Story = {
 export const ImageFloatRight: Story = {
   args: {
     align: 'right',
+    hasShadow: true,
     size: 'medium',
     isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
@@ -109,6 +122,7 @@ export const ImageFloatRight: Story = {
 export const ImageCenterAlign: Story = {
   args: {
     align: 'center',
+    hasShadow: true,
     size: 'medium',
     isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
@@ -125,6 +139,7 @@ export const Video: Story = {
 export const VideoWithCaption: Story = {
   args: {
     size: 'medium',
+    hasShadow: true,
     isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <Figure.Video source={content.video} />,
