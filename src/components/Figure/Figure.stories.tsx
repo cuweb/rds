@@ -15,6 +15,7 @@ const meta: Meta<typeof Figure> = {
 const content = {
   video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
   image: './sample-imgs/news-img.jpg',
+  imageSquare: './sample-imgs/people-img.jpg',
   alt: 'Required alt text',
 }
 
@@ -37,7 +38,7 @@ export const ImageRounded: Story = {
 export const ImageCircular: Story = {
   args: {
     isCircle: true,
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+    children: <img src={content.imageSquare} alt={content.alt} width="400" height="266" />,
   },
 }
 
