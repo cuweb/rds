@@ -51,6 +51,16 @@ _If yes please note what project will be impacted and describe what is expected 
 
 _If no please add as many items as necessary under the "Unreleased" section of the changelog._
 
+## Have you made changes to dependencies?
+
+- [ ] Added
+- [ ] Updated
+- [ ] Removed
+- [ ] Combo of any of the above
+- [ ] No
+
+_If you've made changes to dependencies please note them here, adding if they've been added, removed or updated, including packages version where applicable._
+
 ## QA Instructions, Screenshots, Recordings
 
 _Please replace this line with instructions on how to test your changes, and if applicable add a note
