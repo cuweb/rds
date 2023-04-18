@@ -13,10 +13,10 @@ const meta: Meta<typeof Figure> = {
 }
 
 const content = {
-  video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
   image: './sample-imgs/news-img.jpg',
   imageSquare: './sample-imgs/people-img.jpg',
   alt: 'Required alt text',
+  video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
 }
 
 export default meta
@@ -65,6 +65,17 @@ export const ImageCircular: Story = {
   },
 }
 
+export const ImageWithLink: Story = {
+  args: {
+    isRound: true,
+    size: 'medium',
+    children: (
+      <a href="https://carleton.ca/webservices">
+        <img src={content.image} alt={content.alt} width="400" height="266" />
+      </a>
+    ),
+  },
+}
 export const ImageWithCaption: Story = {
   args: {
     size: 'medium',
@@ -74,9 +85,38 @@ export const ImageWithCaption: Story = {
   },
 }
 
+export const ImageFloatLeft: Story = {
+  args: {
+    align: 'left',
+    size: 'medium',
+    isRound: true,
+    caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
+export const ImageFloatRight: Story = {
+  args: {
+    align: 'right',
+    size: 'medium',
+    isRound: true,
+    caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
+export const ImageCenterAlign: Story = {
+  args: {
+    align: 'center',
+    size: 'medium',
+    isRound: true,
+    caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
 export const Video: Story = {
   args: {
-    size: 'large',
     children: <Figure.Video source={content.video} />,
   },
 }
