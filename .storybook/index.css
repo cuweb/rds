@@ -1601,6 +1601,14 @@ select {
   grid-column-start: 7;
 }
 
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
 .\!-m-px {
   margin: -1px !important;
 }
@@ -1707,6 +1715,10 @@ select {
   margin-left: 0.25rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -1737,6 +1749,10 @@ select {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
 }
 
 .mr-2 {
@@ -2019,6 +2035,10 @@ select {
   min-width: 100%;
 }
 
+.max-w-3xl {
+  max-width: 48rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -2035,12 +2055,20 @@ select {
   max-width: 30%;
 }
 
+.max-w-\[320px\] {
+  max-width: 320px;
+}
+
 .max-w-\[40\%\] {
   max-width: 40%;
 }
 
 .max-w-\[50\%\] {
   max-width: 50%;
+}
+
+.max-w-\[500px\] {
+  max-width: 500px;
 }
 
 .max-w-\[540px\] {
@@ -3074,11 +3102,6 @@ select {
   line-height: 1.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -3595,6 +3618,12 @@ select {
 .prose > .cu-container > *:last-child,
 .prose > .cu-container > * > *:last-child {
   margin-bottom: 0px;
+}
+
+/* Figure Components */
+
+.cu-figure img {
+  width: 100%;
 }
 
 /* Card Components */
