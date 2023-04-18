@@ -1,10 +1,12 @@
 export const styles = {
   figure: ``,
-  container: `rounded-lg overflow-hidden bg-white`,
+  container: `overflow-hidden bg-white`,
+  rounded: `rounded-lg`,
+  circle: `rounded-full`,
   caption: 'px-6 py-4 text-base italic text-cu-black-700',
 }
 
-export const imageStyles = {
+export const figureSize = {
   small: ``,
   medium: ``,
   large: ``,

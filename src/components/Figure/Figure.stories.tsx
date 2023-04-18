@@ -27,6 +27,20 @@ export const Image: Story = {
   },
 }
 
+export const ImageRounded: Story = {
+  args: {
+    isRound: true,
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
+export const ImageCircular: Story = {
+  args: {
+    isCircle: true,
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
 export const ImageWithCaption: Story = {
   args: {
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
