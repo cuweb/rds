@@ -40,3 +40,12 @@ export const Accordion = ({ data }: AccordionProps) => {
     </dl>
   )
 }
+
+//defination.accordian;
+// title  and content
+// title as a prop and content as a children
+
+// FAQ
+// defination.metadata -> title  and content: children  and flex coloum
+
+// defination compoennet -> wrapper for anything
