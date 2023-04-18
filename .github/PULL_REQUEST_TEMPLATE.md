@@ -66,7 +66,3 @@ _If your PR includes UI changes, please replace this line with details on how
 accessibility is impacted and tested. If there are no accessibility concerns delete this section._
 
 ## [optional] Are there any post deployment tasks we need to perform?
-
-## [optional] What gif best describes this PR or how it makes you feel?
-
-![alt_text](gif_link)
