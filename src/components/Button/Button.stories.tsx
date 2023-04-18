@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
-import { buttonStyles, outlineStyles, solidStyles } from '../../../src/utils/buttonClasses'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
