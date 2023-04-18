@@ -7,10 +7,10 @@ export const styles = {
 }
 
 export const figureSize = {
-  small: ``,
-  medium: ``,
-  large: ``,
-  full: ``,
+  small: `max-w-[320px]`,
+  medium: `max-w-[500px]`,
+  large: `max-w-3xl`,
+  full: `max-w-full`,
 }
 
 export const videoStyles = {

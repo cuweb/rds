@@ -10,13 +10,13 @@ export interface FigureProps {
   isCircle?: boolean
 }
 
-export const FigureWrapper = ({ children, caption, isRound, isCircle, size = 'medium' }: FigureProps) => {
+export const FigureWrapper = ({ children, caption, isRound, isCircle, size = 'full' }: FigureProps) => {
   const roundedCorners = isRound ? styles.rounded : ''
   const fullCircle = isCircle ? styles.circle : ''
 
   return (
-    <figure className={`cu-figure ${styles.figure} ${figureSize[size]}`}>
-      <div className={`${styles.container} ${roundedCorners} ${fullCircle}`}>
+    <figure className="cu-figure">
+      <div className={`${styles.container} ${figureSize[size]} ${roundedCorners} ${fullCircle}`}>
         {children}
         {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
       </div>

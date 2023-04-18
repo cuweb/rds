@@ -22,8 +22,29 @@ const content = {
 export default meta
 type Story = StoryObj<typeof Figure>
 
-export const Image: Story = {
+export const ImageFull: Story = {
   args: {
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
+export const ImageLarge: Story = {
+  args: {
+    size: 'large',
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
+export const ImageMedium: Story = {
+  args: {
+    size: 'medium',
+    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
+  },
+}
+
+export const ImageSmall: Story = {
+  args: {
+    size: 'small',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
@@ -31,6 +52,7 @@ export const Image: Story = {
 export const ImageRounded: Story = {
   args: {
     isRound: true,
+    size: 'medium',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
@@ -38,12 +60,15 @@ export const ImageRounded: Story = {
 export const ImageCircular: Story = {
   args: {
     isCircle: true,
+    size: 'small',
     children: <img src={content.imageSquare} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageWithCaption: Story = {
   args: {
+    size: 'medium',
+    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -51,12 +76,15 @@ export const ImageWithCaption: Story = {
 
 export const Video: Story = {
   args: {
+    size: 'large',
     children: <Figure.Video source={content.video} />,
   },
 }
 
 export const VideoWithCaption: Story = {
   args: {
+    size: 'medium',
+    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <Figure.Video source={content.video} />,
   },
