@@ -11,11 +11,19 @@ interface Tags {
     name: string
     slug: string
   }[]
+  audience?: {
+    id: number
+    name: string
+    slug: string
+  }[]
 }
 
 export const ListingBadges = ({ tags }: ListingBadgesProps) => {
   return (
     <div className={styles.badges}>
+      {tags?.audience?.map((tag) => (
+        <Badge key={tag.id}>{tag.name}</Badge>
+      ))}
       {tags?.category?.map((tag) => (
         <Badge key={tag.id}>{tag.name}</Badge>
       ))}
