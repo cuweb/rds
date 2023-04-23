@@ -19,7 +19,7 @@ Starting from the `develop` branch do the following:
 - Open `package.json` and update the version number near the top
 - Open `CHANGELOG.mdx` and add a release number heading
 
-## Complete release
+## Completing the release
 
 - `git add --all`
 - `git commit -m "release: 0.0.40"`
@@ -30,3 +30,12 @@ You will be prompted to add notes 3 times.
 - First time type `:q!` and hit enter
 - Second time type `i`, add the version number and hit `esc`, then type `:wq!` and hit enter
 - Third time type `:q!` and hit enter
+
+## Pushing new release
+
+**Note:** you should be on the `develop` branch after finishing the release in Git flow.
+
+- `git push`
+- `git checkout main`
+- `git push`
+- `git push --tags`
