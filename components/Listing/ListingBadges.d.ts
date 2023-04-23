@@ -7,6 +7,11 @@ interface Tags {
         name: string;
         slug: string;
     }[];
+    audience?: {
+        id: number;
+        name: string;
+        slug: string;
+    }[];
 }
 export declare const ListingBadges: {
     ({ tags }: ListingBadgesProps): JSX.Element;
