@@ -14,10 +14,10 @@ Starting from the `develop` branch do the following:
 
 ## Update package and changelog
 
+**Note:** this step assumes that all PRs included changelog notes.
+
 - Open `package.json` and update the version number near the top
 - Open `CHANGELOG.mdx` and add a release number heading
-
-**Note:** this step assumes that all PRs included changelog notes.
 
 ## Complete release
 
