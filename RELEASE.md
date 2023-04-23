@@ -5,6 +5,18 @@ There are several ways to create a release, this doc is based on a Git Flow mode
 - GitFlow AVH Git Repo - https://github.com/petervanderdoes/gitflow-avh
 - GitFlow Cheatsheet - http://danielkummer.github.io/git-flow-cheatsheet/
 
+## Initial Setup
+
+Install gitflow-avh globally with homebrew:
+
+- `brew install git-flow-avh`
+
+## Setup repo for Git flow
+
+If you're repo isn't already setup for Git flow run the following using the defaults for branch prefix options:
+
+- `git flow init`
+
 ## Create an RDS release branch
 
 Starting from the `develop` branch do the following:
