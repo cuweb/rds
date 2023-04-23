@@ -21,4 +21,12 @@ Starting from the `develop` branch do the following:
 
 ## Complete release
 
+- `git add --all`
+- `git commit -m "release: 0.0.40"`
 - `git flow release finish 0.0.40`
+
+You will be prompted to add notes 3 times.
+
+- First time type `:q!` and hit enter
+- Second time type `i`, add the version number and hit `esc`, then type `:wq!` and hit enter
+- Third time type `:q!` and hit enter
