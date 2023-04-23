@@ -65,7 +65,7 @@ const data = {
 type Story = StoryObj<typeof Calendar>
 
 export const Default: Story = () => {
-  const [, setSelectedDate] = useState(new Date(0))
+  const [, setSelectedDate] = useState(new Date())
   const callbackcal = useCallback(
     (itemSelected: Date) => {
       setSelectedDate(itemSelected)
