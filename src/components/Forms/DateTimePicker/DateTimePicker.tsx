@@ -34,7 +34,7 @@ export const DateTimePicker = ({
 
   const DateSplit = Hour12FormatDate?.split(' ').join(':').split(':')
 
-  const [selectedDate, setSelectedDate] = useState(format(new Date(0), 'yyyy-MM-dd'))
+  const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'))
   const [minutes, setMinutes] = useState(
     startDate && DateSplit ? DateSplit[1] : endDate && DateSplit ? DateSplit[1] : '00',
   )
