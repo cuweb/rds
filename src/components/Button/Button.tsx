@@ -52,7 +52,7 @@ export const Button = ({
         </span>
       )}
       {title}
-      {hasDropDown && <ChevronDownIcon className="mt-1 ml-1 -mr-1 h-4 w-4" aria-hidden="true" />}
+      {hasDropDown && <ChevronDownIcon className="-mr-1 ml-1 mt-1 h-4 w-4" aria-hidden="true" />}
     </button>
   )
 }

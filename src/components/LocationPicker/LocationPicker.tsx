@@ -62,7 +62,7 @@ export const LocationPicker = ({
           <Combobox value={address} onChange={handleSelect}>
             <div className="relative">
               <MagnifyingGlassIcon
-                className="pointer-events-none absolute top-3.5 left-3.5 h-5 w-5 text-cu-black-400"
+                className="pointer-events-none absolute left-3.5 top-3.5 h-5 w-5 text-cu-black-400"
                 aria-hidden="true"
               />
               <Combobox.Input
@@ -71,7 +71,7 @@ export const LocationPicker = ({
               />
               {address && (
                 <XMarkIcon
-                  className="absolute top-3.5 right-3.5 h-5 w-5 text-cu-black-400"
+                  className="absolute right-3.5 top-3.5 h-5 w-5 text-cu-black-400"
                   aria-hidden="true"
                   onClick={() => {
                     setAddress('')

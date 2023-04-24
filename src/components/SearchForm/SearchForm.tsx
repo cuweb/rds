@@ -19,7 +19,7 @@ export const SearchForm = ({ callback }: SearchFormProps) => {
     <div className="not-prose relative flex items-center">
       <MagnifyingGlassIcon className="absolute left-4 h-5 w-5 text-gray-400" aria-hidden="true" />
       <input
-        className="h-12 w-full rounded-lg border border-cu-black-100 bg-transparent pr-4 pl-11 text-sm text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
+        className="h-12 w-full rounded-lg border border-cu-black-100 bg-transparent pl-11 pr-4 text-sm text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
         id="searchform__input"
         name="search"
         type="search"

@@ -107,7 +107,7 @@ export const DateTimePicker = ({
                     </option>
                   ))}
                 </select>
-                <div className="absolute top-3 right-2">
+                <div className="absolute right-2 top-3">
                   <ChevronDownIcon width="12" height="12" />
                 </div>
               </div>
@@ -136,7 +136,7 @@ export const DateTimePicker = ({
                     45
                   </option>
                 </select>
-                <div className="absolute top-3 right-2">
+                <div className="absolute right-2 top-3">
                   <ChevronDownIcon width="12" height="12" />
                 </div>
               </div>
@@ -153,7 +153,7 @@ export const DateTimePicker = ({
                     PM
                   </option>
                 </select>
-                <div className="absolute top-3 right-2">
+                <div className="absolute right-2 top-3">
                   <ChevronDownIcon width="12" height="12" />
                 </div>
               </div>
