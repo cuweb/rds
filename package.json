@@ -37,8 +37,8 @@
     "clean": "rm -rf node_modules ; npm ci ; npm run build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.5.0",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "@headlessui/react": "1.7.12",
     "@heroicons/react": "^2.0.16",
     "@react-google-maps/api": "^2.18.1",
