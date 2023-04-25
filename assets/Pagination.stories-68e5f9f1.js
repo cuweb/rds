@@ -1,0 +1,8 @@
+import{j as o}from"./jsx-runtime-3aeb2321.js";import{P as t}from"./Pagination-0eb2e5cd.js";import"./index-580b8df0.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-f976a069.js";const h={title:"Components/Pagination",component:t,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},a=()=>o.jsx(t,{totalCount:48,siblingCount:1,pageSize:5,callback:()=>{}}),e=()=>o.jsx(t,{hasBorder:!0,hasSpacing:!0,totalCount:48,siblingCount:1,pageSize:5,callback:()=>{}}),r=()=>o.jsx(t,{hasBorder:!0,totalCount:48,siblingCount:1,pageSize:5,callback:()=>{}});a.storyName="Default item";e.storyName="With Top Border";r.storyName="With Spacing";var n,s,i;a.parameters={...a.parameters,docs:{...(n=a.parameters)==null?void 0:n.docs,source:{originalSource:`() => {
+  return <Pagination totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />;
+}`,...(i=(s=a.parameters)==null?void 0:s.docs)==null?void 0:i.source}}};var c,u,p;e.parameters={...e.parameters,docs:{...(c=e.parameters)==null?void 0:c.docs,source:{originalSource:`() => {
+  return <Pagination hasBorder hasSpacing totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />;
+}`,...(p=(u=e.parameters)==null?void 0:u.docs)==null?void 0:p.source}}};var l,d,m;r.parameters={...r.parameters,docs:{...(l=r.parameters)==null?void 0:l.docs,source:{originalSource:`() => {
+  return <Pagination hasBorder totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />;
+}`,...(m=(d=r.parameters)==null?void 0:d.docs)==null?void 0:m.source}}};const x=["Default","Border","Spacing"];export{e as Border,a as Default,r as Spacing,x as __namedExportsOrder,h as default};
+//# sourceMappingURL=Pagination.stories-68e5f9f1.js.map
