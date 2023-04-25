@@ -11,7 +11,7 @@ export interface DetailsItemProps {
   fontSize?: 'base' | 'lg' | 'xl'
   title?: string
   description?: string
-  icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
+  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
 }
 
 export interface ItemBaseProps {
