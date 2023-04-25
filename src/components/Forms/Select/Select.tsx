@@ -45,7 +45,7 @@ export const Select = ({
                 </option>
               ))}
             </select>
-            <div className="absolute top-2.5 right-3.5">
+            <div className="absolute right-3.5 top-2.5">
               <ChevronDownIcon width="16" height="16" />
             </div>
           </div>

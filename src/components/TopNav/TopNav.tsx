@@ -157,7 +157,7 @@ export const TopNav = ({
           <Disclosure.Panel className="-mx-2 sm:-mx-4 lg:-mx-8 lg:hidden">
             {({ close }) => (
               <>
-                <div className="space-y-1 pt-2 pb-3">
+                <div className="space-y-1 pb-3 pt-2">
                   {mobileLinks &&
                     mobileLinks.map((item, index) => (
                       <Disclosure.Button
@@ -206,7 +206,7 @@ export const TopNav = ({
 
                 {/* userInfo */}
                 {userInfo && (
-                  <div className="border-t border-gray-200 pt-4 pb-3">
+                  <div className="border-t border-gray-200 pb-3 pt-4">
                     <div className="flex items-center px-4">
                       <div className="flex-shrink-0">
                         <Avatar user={userInfo} size="xs" rounded="full" />

@@ -81,17 +81,17 @@ export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithCh
                 <Combobox>
                   <div className="relative">
                     <MagnifyingGlassIcon
-                      className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
+                      className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400"
                       aria-hidden="true"
                     />
                     <Combobox.Input
-                      className="h-12 w-full rounded-lg border border-cu-black-100 bg-transparent pr-4 pl-11 text-sm text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
+                      className="h-12 w-full rounded-lg border border-cu-black-100 bg-transparent pl-11 pr-4 text-sm text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
                       placeholder="Search..."
                       onChange={(event) => setQuery(event.target.value)}
                     />
                     {query && (
                       <XMarkIcon
-                        className="absolute top-3.5 right-4 h-4 w-4 text-gray-400"
+                        className="absolute right-4 top-3.5 h-4 w-4 text-gray-400"
                         aria-hidden="true"
                         onClick={() => {
                           setQuery('')

@@ -140,7 +140,7 @@ export const EventItem = ({
           </div>
         </div>
 
-        <div className="absolute top-1/2 right-4 -mt-3">
+        <div className="absolute right-4 top-1/2 -mt-3">
           <ChevronRightIcon
             className="ml-auto h-6 w-6 flex-none text-cu-black-300 group-hover:text-cu-red"
             aria-hidden="true"

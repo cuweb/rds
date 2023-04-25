@@ -38,7 +38,7 @@ export const DropDown = ({
           ) : (
             <p className="flex">
               {buttonText}
-              <ChevronDownIcon className="mt-1 ml-1 h-4 w-4" aria-hidden="true" />
+              <ChevronDownIcon className="ml-1 mt-1 h-4 w-4" aria-hidden="true" />
             </p>
           )}
         </Popover.Button>

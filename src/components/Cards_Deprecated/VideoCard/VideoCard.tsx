@@ -41,14 +41,14 @@ export function VideoCard({ source, tags }: VideoCardProps) {
       <div className="relative pt-[56.25%]">
         <ReactPlayer
           url={source}
-          className="absolute top-0 left-0"
+          className="absolute left-0 top-0"
           width="100%"
           height="100%"
           controls
           onDuration={handleDuration}
         />
       </div>
-      <div className="flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3">
+      <div className="flex flex-col space-y-2 px-7 py-6 @sm:md:space-y-3">
         {videoDuration && (
           <p className="text-sm italic text-cu-black-600 @sm:md:text-base">
             Duration: {`${duration.minutes}m : ${duration.seconds}s`}
