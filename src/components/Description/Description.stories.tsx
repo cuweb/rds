@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Description } from './Description'
+import { DescriptionMeta } from './DescriptionMeta'
 
 const meta: Meta<typeof Description> = {
   title: 'Components/Description',
@@ -45,13 +46,31 @@ Single.args = {
 export const Multiple: Story = {
   render: () => (
     <>
-      <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
-        {AccordianData.map((item) => (
-          <Description key={item?.title} className="pt-6">
-            <Description.Accordian title={item.title}>{item.content}</Description.Accordian>
-          </Description>
-        ))}
-      </dl>
+      {AccordianData.map((item) => (
+        <Description key={item?.title} divider>
+          <Description.Accordian title={item.title}>{item.content}</Description.Accordian>
+        </Description>
+      ))}
     </>
+  ),
+}
+
+export const SingleMeta: Story = {}
+SingleMeta.args = {
+  children: (
+    <Description>
+      <DescriptionMeta title="First Name">Ish</DescriptionMeta>
+    </Description>
+  ),
+}
+
+export const SingleMetaSidebySide: Story = {}
+SingleMetaSidebySide.args = {
+  children: (
+    <Description>
+      <DescriptionMeta title="First Name" displaySide>
+        Ish
+      </DescriptionMeta>
+    </Description>
   ),
 }
