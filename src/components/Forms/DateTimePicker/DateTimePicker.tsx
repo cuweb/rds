@@ -84,16 +84,13 @@ export const DateTimePicker = ({
     <>
       {condition() && (
         <div className={formStyles.elementSpace}>
-          <label htmlFor={field.name} className="sr-only">
-            {field.name}
+          <label htmlFor={field.name} className={formStyles.label}>
+            {label} {props.required && <span className="text-cu-red">*</span>}
           </label>
           <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
             <Calendar callback={callbackcal} defaultDate={startDate ? startDate : endDate} />
             <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
               <div>
-                <label htmlFor="field-hours" className="sr-only">
-                  {label} {props.required && <span className="text-cu-red">*</span>}
-                </label>
                 <select
                   id="field-hours"
                   value={hours}
@@ -113,9 +110,6 @@ export const DateTimePicker = ({
               </div>
 
               <div>
-                <label htmlFor="field-minutes" className="sr-only">
-                  Minutes
-                </label>
                 <select
                   id="field-minutes"
                   value={minutes}
@@ -142,9 +136,6 @@ export const DateTimePicker = ({
               </div>
 
               <div>
-                <label htmlFor="field-ampm" className="sr-only">
-                  AM/PM
-                </label>
                 <select id="field-ampm" value={noon} onChange={handleNoonChange} name="ampm" className={styles.select}>
                   <option key="AM" value="AM">
                     AM
