@@ -1,7 +1,7 @@
 export const styles = {
   base: `not-prose relative overflow-hidden @container bg-white`,
   content: `flex flex-1 flex-col gap-1.5 pr-6 md:gap-3.5`,
-  header: `text-lg font-semibold text-cu-black group-hover:text-cu-red @lg:md:text-xl @3xl:lg:text-2xl`,
+  header: `text-lg font-semibold text-cu-black line-clamp-3 group-hover:text-cu-red @lg:md:text-xl @3xl:lg:text-2xl`,
   excerpt: `text-sm text-cu-black-900 md:text-base @lg:md:text-lg`,
   more: `font-semibold text-cu-red group-hover:text-cyan-700`,
   badges: `mt-auto`,
