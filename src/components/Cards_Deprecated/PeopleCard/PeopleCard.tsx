@@ -38,7 +38,7 @@ export const PeopleCard = ({
   const initials = `${firstName.split('')[0]}${lastName.split('')[0]}`
 
   return (
-    <div className="not-prose group relative flex flex-col overflow-hidden rounded-lg bg-white py-8 px-7 shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg">
+    <div className="not-prose group relative flex flex-col overflow-hidden rounded-lg bg-white px-7 py-8 shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg">
       <Link href={link} className="relative flex h-full cursor-pointer flex-col">
         {!noImage && (
           <>
@@ -60,7 +60,7 @@ export const PeopleCard = ({
           </>
         )}
 
-        <div className="flex flex-col space-y-0.5 py-6 px-7 text-center">
+        <div className="flex flex-col space-y-0.5 px-7 py-6 text-center">
           <h3 className="text-lg font-semibold text-cu-black  group-hover:text-cu-red @xs:md:text-2xl">
             {firstName + ' ' + lastName}
           </h3>

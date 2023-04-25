@@ -178,7 +178,7 @@ export const WithOverlapTemplate: Story = {
       <Banner title="Banner with Content Overlap" isType="dark-wave" hasOverlap />
       <Main hasOverlap>
         <Column maxWidth="5xl">
-          <div className="rounded-lg bg-white px-8 pt-6 pb-24">
+          <div className="rounded-lg bg-white px-8 pb-24 pt-6">
             This is an example of the main wrapped overlapping the banner
           </div>
         </Column>
@@ -198,7 +198,7 @@ export const WithOverlapImageTemplate: Story = {
       />
       <Main hasOverlap>
         <Column maxWidth="5xl">
-          <div className="rounded-lg bg-white px-8 pt-6 pb-24">
+          <div className="rounded-lg bg-white px-8 pb-24 pt-6">
             This is an example of the main wrapped overlapping the banner
           </div>
         </Column>
