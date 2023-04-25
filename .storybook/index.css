@@ -1,6 +1,6 @@
 /* Tailwind CSS */
 
-/* ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -31,6 +31,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -47,6 +48,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -1463,10 +1466,7 @@ select {
 }
 
 .inset-0 {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  inset: 0px;
 }
 
 .-bottom-10 {
@@ -1797,6 +1797,13 @@ select {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .block {
@@ -2419,6 +2426,20 @@ select {
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 
+.divide-cu-black-200 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-divide-opacity));
+}
+
+.divide-cu-black-300 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(179 179 179 / var(--tw-divide-opacity));
+}
+
+.divide-cu-black-300\/50 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(179 179 179 / 0.5);
+}
+
 .\!overflow-hidden {
   overflow: hidden !important;
 }
@@ -2604,6 +2625,10 @@ select {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-cu-black-300\/50 {
+  border-color: rgb(179 179 179 / 0.5);
+}
+
 .border-l-cyan-300 {
   --tw-border-opacity: 1;
   border-left-color: rgb(103 232 249 / var(--tw-border-opacity));
@@ -2735,33 +2760,42 @@ select {
 }
 
 .from-cu-red {
-  --tw-gradient-from: #E91C24;
-  --tw-gradient-to: rgb(233 28 36 / 0);
+  --tw-gradient-from: #E91C24 var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(233 28 36 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .from-cu-red-50 {
-  --tw-gradient-from: #FDE9E9;
-  --tw-gradient-to: rgb(253 233 233 / 0);
+  --tw-gradient-from: #FDE9E9 var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(253 233 233 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .from-white {
-  --tw-gradient-from: #fff;
-  --tw-gradient-to: rgb(255 255 255 / 0);
+  --tw-gradient-from: #fff var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-cu-black-50 {
-  --tw-gradient-to: #F2F2F2;
+  --tw-gradient-to: #F2F2F2 var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
 }
 
 .to-cu-red-900 {
-  --tw-gradient-to: #55080B;
+  --tw-gradient-to: #55080B var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
 }
 
 .to-white {
-  --tw-gradient-to: #fff;
+  --tw-gradient-to: #fff var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
 }
 
 .bg-\[length\:100\%\] {
@@ -2936,6 +2970,11 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
 }
 
 .pb-2 {
@@ -6162,6 +6201,27 @@ select {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.even\:bg-cu-black-50:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+
+.even\:bg-cu-black-50\/50:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.5);
+}
+
+.even\:bg-cu-black-50\/70:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.7);
+}
+
+.even\:bg-cu-black-50\/80:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.8);
+}
+
+.even\:bg-cu-black-50\/75:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.75);
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -7182,6 +7242,11 @@ select {
 
 .\[\&\>td\]\:border-b>td {
   border-bottom-width: 1px;
+}
+
+.\[\&\>td\]\:border-cyan-600>td {
+  --tw-border-opacity: 1;
+  border-color: rgb(8 145 178 / var(--tw-border-opacity));
 }
 
 .\[\&\>td\]\:last\:border-0:last-child>td {
