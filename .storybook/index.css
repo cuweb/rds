@@ -3445,13 +3445,6 @@ select {
   container-type: inline-size;
 }
 
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
 .\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
   clip: rect(0,0,0,0) !important;
 }
