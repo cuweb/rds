@@ -1,7 +1,7 @@
 import TableHeader from './TableHeader'
 import TableRows from './TableRows'
 import { useSortableTable } from '../../hooks/useSortableTable'
-import styles from './Table.styles'
+import { styles } from './Table.Styles'
 
 export interface ColumnDefinitionType {
   key: string
@@ -26,7 +26,7 @@ export const Table = ({ data, columns, hasStripes = false, hasShadow, hasBorder,
   const shadowStyle = hasShadow ? styles.shadow : ''
 
   return (
-    <table className={`${styles.core} ${borderStyle} ${shadowStyle}`}>
+    <table className={`${styles.table} ${borderStyle} ${shadowStyle}`}>
       <TableHeader columns={columns} sortData={setTableData} />
       <TableRows data={tableData} columns={columns} striped={hasStripes} range={range} />
     </table>

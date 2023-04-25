@@ -2426,6 +2426,20 @@ select {
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 
+.divide-cu-black-200 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-divide-opacity));
+}
+
+.divide-cu-black-300 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(179 179 179 / var(--tw-divide-opacity));
+}
+
+.divide-cu-black-300\/50 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(179 179 179 / 0.5);
+}
+
 .\!overflow-hidden {
   overflow: hidden !important;
 }
@@ -2609,6 +2623,10 @@ select {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-cu-black-300\/50 {
+  border-color: rgb(179 179 179 / 0.5);
 }
 
 .border-l-cyan-300 {
@@ -2952,6 +2970,11 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
 }
 
 .pb-2 {
@@ -6178,6 +6201,27 @@ select {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.even\:bg-cu-black-50:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+
+.even\:bg-cu-black-50\/50:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.5);
+}
+
+.even\:bg-cu-black-50\/70:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.7);
+}
+
+.even\:bg-cu-black-50\/80:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.8);
+}
+
+.even\:bg-cu-black-50\/75:nth-child(even) {
+  background-color: rgb(242 242 242 / 0.75);
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -7198,6 +7242,11 @@ select {
 
 .\[\&\>td\]\:border-b>td {
   border-bottom-width: 1px;
+}
+
+.\[\&\>td\]\:border-cyan-600>td {
+  --tw-border-opacity: 1;
+  border-color: rgb(8 145 178 / var(--tw-border-opacity));
 }
 
 .\[\&\>td\]\:last\:border-0:last-child>td {

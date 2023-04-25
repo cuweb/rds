@@ -29,7 +29,6 @@ export const NewsData = [
     id: 1,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    // image: 'https://source.unsplash.com/random/400x266',
     image: './sample-imgs/news-img.jpg',
     alt: 'Image alt text',
     excerpt:
@@ -52,9 +51,8 @@ export const NewsData = [
   },
   {
     id: 2,
-    title: ' How to Write for the Web',
+    title: 'How to Write for the Web',
     link: '#',
-    // image: 'https://source.unsplash.com/random/400x266',
     image: './sample-imgs/news-img.jpg',
     alt: 'Image alt text',
     excerpt:
@@ -74,7 +72,6 @@ export const NewsData = [
     id: 3,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    // image: 'https://source.unsplash.com/random/400x266',
     image: './sample-imgs/news-img.jpg',
     alt: 'Image alt text',
     excerpt:
@@ -94,7 +91,6 @@ export const NewsData = [
     id: 4,
     title: ' How to Write for the Web',
     link: '#',
-    // image: 'https://source.unsplash.com/random/400x266',
     image: './sample-imgs/news-img.jpg',
     alt: 'Image alt text',
     excerpt:
@@ -114,7 +110,6 @@ export const NewsData = [
     id: 5,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    // image: 'https://source.unsplash.com/random/400x266',
     image: './sample-imgs/news-img.jpg',
     alt: 'Image alt text',
     excerpt:
@@ -134,7 +129,6 @@ export const NewsData = [
     id: 6,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    // image: 'https://source.unsplash.com/random/400x266',
     image: './sample-imgs/news-img.jpg',
     alt: 'Image alt text',
     excerpt:
