@@ -51,7 +51,7 @@ export const NewsCard = ({
           />
         )}
 
-        <div className="flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3">
+        <div className="flex flex-col space-y-2 px-7 py-6 @sm:md:space-y-3">
           {date && <time className="flex items-start text-sm italic text-cu-black-600">{formatedDate}</time>}
 
           <HeadLevel className="text-lg font-semibold text-cu-black group-hover:text-cu-red @sm:md:text-xl">

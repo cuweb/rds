@@ -24,6 +24,7 @@ export const Default: Story = {
           endDate="2023-06-29 20:43:51"
           name="datetime"
           placeholder="Please select date and time..."
+          label="Pick A Date"
         />
       </Form>
     </>

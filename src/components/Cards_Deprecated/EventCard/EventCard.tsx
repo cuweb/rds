@@ -79,10 +79,10 @@ export const EventCard = ({
     <div className="not-prose group relative overflow-hidden rounded-lg bg-white shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg">
       <Link href={link} className="relative flex h-full cursor-pointer flex-col">
         <div className="relative">
-          <div className="aspect-w-16 aspect-h-9 @sm:md:aspect-h-6">
+          <div className="aspect-h-9 aspect-w-16 @sm:md:aspect-h-6">
             <img className="w-full object-cover" src={featuredImage ? featuredImage : defaultImage} alt="" />
           </div>
-          <div className="absolute left-6 -bottom-10 z-10 flex h-20 w-20 flex-col items-center justify-center rounded-md bg-white shadow-md group-hover:bg-cu-red">
+          <div className="absolute -bottom-10 left-6 z-10 flex h-20 w-20 flex-col items-center justify-center rounded-md bg-white shadow-md group-hover:bg-cu-red">
             <p className="text-xs font-bold uppercase text-cu-red group-hover:text-white">
               {getMonthName(eventStartMonth, true)}
             </p>
@@ -90,7 +90,7 @@ export const EventCard = ({
           </div>
         </div>
 
-        <div className="flex flex-col gap-px px-7 pt-16 pb-8">
+        <div className="flex flex-col gap-px px-7 pb-8 pt-16">
           <HeadLevel className="text-lg font-semibold text-cu-black group-hover:text-cu-red @sm:md:text-xl">
             {title}
           </HeadLevel>

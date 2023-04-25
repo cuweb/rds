@@ -270,7 +270,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
 
             <div aria-hidden="true" className="hidden h-5 w-px bg-gray-300 sm:ml-4 sm:block" />
 
-            <div className="mt-4 sm:mt-0 sm:ml-4">
+            <div className="mt-4 sm:ml-4 sm:mt-0">
               <div className="-m-1 flex flex-wrap items-center gap-3">
                 {activeFilters.map((activeFilter, index) => (
                   <span

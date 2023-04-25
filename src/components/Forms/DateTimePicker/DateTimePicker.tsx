@@ -34,7 +34,7 @@ export const DateTimePicker = ({
 
   const DateSplit = Hour12FormatDate?.split(' ').join(':').split(':')
 
-  const [selectedDate, setSelectedDate] = useState(format(new Date(0), 'yyyy-MM-dd'))
+  const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'))
   const [minutes, setMinutes] = useState(
     startDate && DateSplit ? DateSplit[1] : endDate && DateSplit ? DateSplit[1] : '00',
   )
@@ -84,16 +84,13 @@ export const DateTimePicker = ({
     <>
       {condition() && (
         <div className={formStyles.elementSpace}>
-          <label htmlFor={field.name} className="sr-only">
-            {field.name}
+          <label htmlFor={field.name} className={formStyles.label}>
+            {label} {props.required && <span className="text-cu-red">*</span>}
           </label>
           <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
             <Calendar callback={callbackcal} defaultDate={startDate ? startDate : endDate} />
             <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
               <div>
-                <label htmlFor="field-hours" className="sr-only">
-                  {label} {props.required && <span className="text-cu-red">*</span>}
-                </label>
                 <select
                   id="field-hours"
                   value={hours}
@@ -107,15 +104,12 @@ export const DateTimePicker = ({
                     </option>
                   ))}
                 </select>
-                <div className="absolute top-3 right-2">
+                <div className="absolute right-2 top-3">
                   <ChevronDownIcon width="12" height="12" />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="field-minutes" className="sr-only">
-                  Minutes
-                </label>
                 <select
                   id="field-minutes"
                   value={minutes}
@@ -136,15 +130,12 @@ export const DateTimePicker = ({
                     45
                   </option>
                 </select>
-                <div className="absolute top-3 right-2">
+                <div className="absolute right-2 top-3">
                   <ChevronDownIcon width="12" height="12" />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="field-ampm" className="sr-only">
-                  AM/PM
-                </label>
                 <select id="field-ampm" value={noon} onChange={handleNoonChange} name="ampm" className={styles.select}>
                   <option key="AM" value="AM">
                     AM
@@ -153,7 +144,7 @@ export const DateTimePicker = ({
                     PM
                   </option>
                 </select>
-                <div className="absolute top-3 right-2">
+                <div className="absolute right-2 top-3">
                   <ChevronDownIcon width="12" height="12" />
                 </div>
               </div>

@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
 import { ColumnDefinitionType } from './Table'
+import { styles } from './Table.Styles'
 
 interface TableHeaderProps {
   columns: ColumnDefinitionType[]
   sortData: (a: string, s: boolean) => void
-}
-
-const styles = {
-  core: `py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-cu-black-900 `,
-  thead: `bg-gray-100 `,
-  sortable: `hover:cursor `,
 }
 
 const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
@@ -37,7 +32,7 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
       <th
         scope="col"
         key={`headerCell-${index}`}
-        className={`${styles.core} ${sortableStyles}`}
+        className={`${styles.thead} ${styles.td} ${sortableStyles}`}
         onClick={() => (column?.sort?.sortable ? handleSortChange(column.key) : undefined)}
         aria-sort={
           column.key === active && ascending
