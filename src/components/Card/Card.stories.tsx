@@ -17,7 +17,7 @@ const content = {
   title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
   link: 'https://carleton.ca/webservices',
   video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
-  image: 'https://source.unsplash.com/random/400x266',
+  image: './sample-imgs/news-img.jpg',
   alt: 'Required alt text',
   date: '2022-12-16',
   excerpt:
@@ -137,6 +137,25 @@ export const WithVideo: Story = {
         <Card.Video source={content.video} />
         <Card.Content>
           <Card.Header text={content.title} />
+        </Card.Content>
+        <Card.Badges tags={content.tags} />
+      </a>
+    ),
+  },
+}
+
+export const WithBorder: Story = {
+  args: {
+    border: 'yellow',
+    children: (
+      <a href={content.link}>
+        <Card.Figure>
+          <img src="./sample-imgs/event-img.jpg" alt={content.alt} width="400" height="266" />
+        </Card.Figure>
+        <Card.Content>
+          <Card.PostMeta date={content.date} />
+          <Card.Header text={content.title} />
+          <Card.Excerpt text={content.excerpt} />
         </Card.Content>
         <Card.Badges tags={content.tags} />
       </a>

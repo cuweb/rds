@@ -1,5 +1,6 @@
 import React from 'react'
 import { styles } from './Card.Styles'
+import { rdsBorderColor } from '../../utils/optionClasses'
 import { CardFigure } from './CardFigure'
 import { CardVideo } from './CardVideo'
 import { CardContent } from './CardContent'
@@ -14,11 +15,14 @@ import { CardPeopleMeta } from './CardPeopleMeta'
 export interface CardProps {
   children: React.ReactNode
   isCenter?: boolean
+  border?: 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow'
 }
 
-export const CardWrapper = ({ children, isCenter }: CardProps) => {
+export const CardWrapper = ({ children, isCenter, border }: CardProps) => {
   const centerText = isCenter ? 'text-center' : ''
-  return <div className={`cu-card ${styles.card} ${centerText}`}>{children}</div>
+  const addBorder = border ? `${rdsBorderColor[border]} ${styles.border}` : ''
+
+  return <div className={`cu-card ${styles.card} ${addBorder} ${centerText}`}>{children}</div>
 }
 
 export const Card = Object.assign(CardWrapper, {

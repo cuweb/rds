@@ -43,6 +43,16 @@ export const rdsTextColor = {
   yellow: 'text-yellow-400',
 }
 
+export const rdsBorderColor = {
+  black: 'border-cu-black-800',
+  white: 'border-white',
+  red: 'border-cu-red',
+  grey: 'border-cu-black-50',
+  'dark-grey': 'border-cu-black-600',
+  green: 'border-green-400',
+  yellow: 'border-yellow-400',
+}
+
 export const rdsFontSizes = {
   base: 'md:text-base',
   lg: 'md:text-lg',
@@ -89,14 +99,6 @@ export const rdsBorderWidth = {
   2: 'border-2',
   4: 'border-4',
   8: 'border-8',
-}
-
-export const rdsBorderColor = {
-  black: 'border-cu-black-800',
-  white: 'border-white',
-  red: 'border-cu-red',
-  grey: 'border-cu-black-50',
-  'dark-grey': 'border-cu-black-600',
 }
 
 export const rdsTopSpacing = {
