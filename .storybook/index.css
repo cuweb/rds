@@ -6903,6 +6903,11 @@ select {
       line-height: 1.75rem;
     }
 
+    .\@sm\:md\:text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
     .\@sm\:md\:leading-8 {
       line-height: 2rem;
     }

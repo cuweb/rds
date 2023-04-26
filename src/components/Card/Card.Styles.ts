@@ -1,5 +1,6 @@
 export const styles = {
-  card: `not-prose group relative flex flex-col cu-card cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg duration-300 ease-in @container hover:scale-105 md:max-w-lg`,
+  card: `not-prose relative flex flex-col cu-card overflow-hidden rounded-lg bg-white shadow-lg @container md:max-w-lg`,
+  link: `group duration-300 ease-in hover:scale-105 cursor-pointer`,
   border: `border-l-8`,
   content: `flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3 relative`,
   header: `text-lg font-semibold text-cu-black group-hover:text-cu-red @sm:md:text-xl leading-6 @sm:md:leading-8`,
@@ -32,4 +33,9 @@ export const eventStyles = {
 export const videoStyle = {
   container: `relative pt-[56.25%] bg-cu-black-900`,
   player: `absolute top-0 left-0`,
+}
+
+export const statStyle = {
+  header: `text-3xl font-semibold text-cu-black-800 group-hover:text-cu-red @sm:md:text-5xl leading-6 @sm:md:leading-8`,
+  desc: `text-base text-cu-black-600 @sm:md:text-lg`,
 }
