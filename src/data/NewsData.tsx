@@ -2,7 +2,6 @@ export const NewsDataSingle = {
   id: 1,
   title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
   link: '#',
-  //   image: 'https://source.unsplash.com/random/400x266',
   image: './sample-imgs/news-img.jpg',
   alt: 'Image alt text',
   excerpt:
