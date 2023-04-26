@@ -6888,6 +6888,11 @@ select {
       line-height: 2.5rem;
     }
 
+    .\@sm\:md\:text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
     .\@sm\:md\:text-base {
       font-size: 1rem;
       line-height: 1.5rem;
@@ -6901,11 +6906,6 @@ select {
     .\@sm\:md\:text-xl {
       font-size: 1.25rem;
       line-height: 1.75rem;
-    }
-
-    .\@sm\:md\:text-5xl {
-      font-size: 3rem;
-      line-height: 1;
     }
 
     .\@sm\:md\:leading-8 {

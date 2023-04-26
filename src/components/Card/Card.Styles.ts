@@ -36,6 +36,6 @@ export const videoStyle = {
 }
 
 export const statStyle = {
-  header: `text-3xl font-semibold text-cu-black-800 group-hover:text-cu-red @sm:md:text-5xl leading-6 @sm:md:leading-8`,
+  header: `text-3xl font-semibold text-cu-black-800 group-hover:text-cu-red @sm:md:text-5xl`,
   desc: `text-base text-cu-black-600 @sm:md:text-lg`,
 }
