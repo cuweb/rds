@@ -2,9 +2,11 @@ import React from 'react';
 export interface CardProps {
     children: React.ReactNode;
     isCenter?: boolean;
+    noLink?: boolean;
+    border?: 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow';
 }
-export declare const CardWrapper: ({ children, isCenter }: CardProps) => JSX.Element;
-export declare const Card: (({ children, isCenter }: CardProps) => JSX.Element) & {
+export declare const CardWrapper: ({ children, isCenter, border, noLink }: CardProps) => JSX.Element;
+export declare const Card: (({ children, isCenter, border, noLink }: CardProps) => JSX.Element) & {
     Figure: {
         ({ children, isRound }: import("./CardFigure").CardFigureProps): JSX.Element;
         displayName: string;
@@ -43,6 +45,10 @@ export declare const Card: (({ children, isCenter }: CardProps) => JSX.Element) 
     };
     PeopleMeta: {
         ({ jobTitle, email, phone }: import("./CardPeopleMeta").CardPeopleMetaProps): JSX.Element;
+        displayName: string;
+    };
+    Stats: {
+        ({ stat, desc }: import("./CardStats").CardStatsProps): JSX.Element;
         displayName: string;
     };
 };

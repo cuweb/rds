@@ -37,6 +37,15 @@ export declare const rdsTextColor: {
     green: string;
     yellow: string;
 };
+export declare const rdsBorderColor: {
+    black: string;
+    white: string;
+    red: string;
+    grey: string;
+    'dark-grey': string;
+    green: string;
+    yellow: string;
+};
 export declare const rdsFontSizes: {
     base: string;
     lg: string;
@@ -79,13 +88,6 @@ export declare const rdsBorderWidth: {
     2: string;
     4: string;
     8: string;
-};
-export declare const rdsBorderColor: {
-    black: string;
-    white: string;
-    red: string;
-    grey: string;
-    'dark-grey': string;
 };
 export declare const rdsTopSpacing: {
     '5': string;

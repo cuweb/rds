@@ -1,5 +1,7 @@
 export declare const styles: {
     card: string;
+    link: string;
+    border: string;
     content: string;
     header: string;
     excerpt: string;
@@ -27,5 +29,9 @@ export declare const eventStyles: {
 export declare const videoStyle: {
     container: string;
     player: string;
+};
+export declare const statStyle: {
+    header: string;
+    desc: string;
 };
 //# sourceMappingURL=Card.Styles.d.ts.map
