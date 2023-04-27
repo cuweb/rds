@@ -7,11 +7,11 @@ export declare const FooterStandardLinks: {
         name: string;
         href: string;
     }[];
-    Campus: {
+    Students: {
         name: string;
         href: string;
     }[];
-    Advancement: {
+    Campus: {
         name: string;
         href: string;
     }[];
