@@ -66,14 +66,14 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
     <div className="not-prose">
       <div className="not-prose mb-6 flex items-center rounded-lg border border-cu-black-100 bg-white py-2">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
-          <span className="sr-only">Previous month</span>
+          <span className="sr-only text-base">Previous month</span>
           <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>
         <h2 className="flex-auto text-center text-base font-semibold text-cu-black-900">
           {format(firstDayCurrentMonth, 'MMMM yyyy')}
         </h2>
         <button onClick={nextMonth} type="button" className={`${styles.prevNextArrows}`}>
-          <span className="sr-only">Next month</span>
+          <span className="sr-only text-base">Next month</span>
           <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
         </button>
       </div>
@@ -121,7 +121,7 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
                 isSameDay(day, selectedDay) && !isToday(day) && 'bg-cu-red',
                 !isEqual(day, selectedDay) && 'hover:bg-cu-red hover:text-white',
                 (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',
-                'mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:bg-cu-black-50',
+                'mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:bg-cu-black-50 disabled:text-cu-black-900',
               )}
             >
               <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>

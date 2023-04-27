@@ -1799,6 +1799,10 @@ select {
   margin-top: auto;
 }
 
+.mt-2\.5 {
+  margin-top: 0.625rem;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -3293,8 +3297,34 @@ select {
   color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
+.text-cu-black-500 {
+  --tw-text-opacity: 1;
+  color: rgb(128 128 128 / var(--tw-text-opacity));
+}
+
+.text-cu-black-200 {
+  --tw-text-opacity: 1;
+  color: rgb(204 204 204 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
+}
+
+.underline-offset-1 {
+  text-underline-offset: 1px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+
+.underline-offset-auto {
+  text-underline-offset: auto;
 }
 
 .placeholder-cu-black-300::-moz-placeholder {
@@ -6372,6 +6402,21 @@ select {
 .disabled\:text-cu-black-600:disabled {
   --tw-text-opacity: 1;
   color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.disabled\:text-cu-black-800:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
+.disabled\:text-cu-black-900:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.disabled\:hover\:text-cyan-600:hover:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(8 145 178 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:bg-cu-red {

@@ -5,7 +5,7 @@ import { Link } from '../../Link/Link'
 const Social = [
   {
     name: 'Facebook',
-    href: 'https://carleton.ca',
+    href: 'https://www.facebook.com/carletonuniversity',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const Social = [
   },
   {
     name: 'Instagram',
-    href: 'https://carleton.ca',
+    href: 'https://www.instagram.com/carleton_u',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const Social = [
   },
   {
     name: 'Twitter',
-    href: 'https://carleton.ca',
+    href: 'https://twitter.com/@Carleton_U',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Social = [
   },
   {
     name: 'YouTube',
-    href: 'https://carleton.ca',
+    href: 'https://www.youtube.com/user/carletonuvideos',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Social = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://carleton.ca',
+    href: 'https://www.linkedin.com/school/carleton-university',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -88,11 +88,11 @@ export const FooterStandard = () => {
       </h2>
 
       <div className="mx-auto hidden max-w-7xl gap-4 border-b border-cu-black-700 px-4 py-12 text-white sm:px-6 lg:grid lg:grid-cols-5 lg:px-8">
-        <div className="uppercase">
-          <h3 className="text-sm font-bold">Admissions</h3>
+        <div>
+          <h3 className="text-base font-bold">Admissions</h3>
           <ul>
             {linkData.Admissions.map((item, index) => (
-              <li key={index} className="mt-3 text-xs">
+              <li key={index} className="mt-2.5 text-sm">
                 <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
@@ -100,48 +100,48 @@ export const FooterStandard = () => {
             ))}
           </ul>
         </div>
-        <div className="uppercase">
-          <h3 className="text-sm font-bold">Academics</h3>
+        <div>
+          <h3 className="text-base font-bold">Academics</h3>
           <ul>
             {linkData.Academics.map((item, index) => (
-              <li key={index} className="mt-3 text-xs">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+              <li key={index} className="mt-2.5 text-sm">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="uppercase">
-          <h3 className="text-sm font-bold">Campus</h3>
+        <div>
+          <h3 className="text-base font-bold">Students</h3>
+          <ul>
+            {linkData.Students.map((item, index) => (
+              <li key={index} className="mt-2.5 text-sm">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-base font-bold">Campus</h3>
           <ul>
             {linkData.Campus.map((item, index) => (
-              <li key={index} className="mt-3 text-xs">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+              <li key={index} className="mt-2.5 text-sm">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="uppercase">
-          <h3 className="text-sm font-bold">Advancement</h3>
-          <ul>
-            {linkData.Advancement.map((item, index) => (
-              <li key={index} className="mt-3 text-xs">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="uppercase">
-          <h3 className="text-sm font-bold">Ravens</h3>
+        <div>
+          <h3 className="text-base font-bold">Ravens</h3>
           <ul>
             {linkData.Ravens.map((item, index) => (
-              <li key={index} className="mt-3 text-xs">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+              <li key={index} className="mt-2.5 text-sm">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
@@ -160,11 +160,14 @@ export const FooterStandard = () => {
       <div className="mx-auto flex max-w-7xl flex-col-reverse gap-1 p-8 text-sm text-cu-black-300 sm:gap-4 sm:pb-8 sm:text-lg lg:grid-cols-3 lg:flex-row lg:justify-between lg:text-left lg:text-sm">
         <p className="text-center">
           Contact us by{' '}
-          <Link href="tel:+1-613-520-2600" className="text-white hover:text-cu-red">
+          <Link href="tel:+1-613-520-2600" className="text-white underline underline-offset-auto hover:text-cu-red">
             phone
           </Link>{' '}
           or{' '}
-          <Link href="https://carleton.ca/about/contact/" className="text-white hover:text-cu-red">
+          <Link
+            href="https://carleton.ca/about/contact/"
+            className="text-white underline underline-offset-auto hover:text-cu-red"
+          >
             email
           </Link>{' '}
           now!
