@@ -105,7 +105,7 @@ export const FooterStandard = () => {
           <ul>
             {linkData.Academics.map((item, index) => (
               <li key={index} className="mt-2.5 text-sm">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
@@ -117,7 +117,7 @@ export const FooterStandard = () => {
           <ul>
             {linkData.Students.map((item, index) => (
               <li key={index} className="mt-2.5 text-sm">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
@@ -129,7 +129,7 @@ export const FooterStandard = () => {
           <ul>
             {linkData.Campus.map((item, index) => (
               <li key={index} className="mt-2.5 text-sm">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
@@ -141,7 +141,7 @@ export const FooterStandard = () => {
           <ul>
             {linkData.Ravens.map((item, index) => (
               <li key={index} className="mt-2.5 text-sm">
-                <Link href={item.href} className="text-gray-400 hover:text-white">
+                <Link href={item.href} className="text-cu-black-300 hover:text-white">
                   {item.name}
                 </Link>
               </li>
