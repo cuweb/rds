@@ -6404,6 +6404,21 @@ select {
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
 
+.disabled\:text-cu-black-800:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
+.disabled\:text-cu-black-900:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.disabled\:hover\:text-cyan-600:hover:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(8 145 178 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:bg-cu-red {
   --tw-bg-opacity: 1;
   background-color: rgb(233 28 36 / var(--tw-bg-opacity));
