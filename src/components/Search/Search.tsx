@@ -34,6 +34,14 @@ export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithCh
     <MagnifyingGlassIcon className="left-4 h-5 w-5 cursor-pointer text-gray-400" aria-hidden="true" />
   )
 
+  const handleComboboxChange = (selectedOption: SourceDataProps) => {
+    if (selectedOption) {
+      const url = String(selectedOption.url)
+      window.location.href = url
+      setOpen(false)
+    }
+  }
+
   useEffect(() => {
     function onKeydown(event: KeyboardEvent) {
       if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
@@ -78,7 +86,7 @@ export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithCh
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="mx-auto mt-[20vh] max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
-                <Combobox>
+                <Combobox onChange={handleComboboxChange}>
                   <div className="relative">
                     <MagnifyingGlassIcon
                       className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400"
@@ -113,7 +121,9 @@ export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithCh
                             classNames('cursor-default select-none px-4 py-2', active && 'bg-cu-red text-white')
                           }
                         >
-                          <Link href={`${record.url}`}>{record[searchOn]}</Link>
+                          <Link href={`${record.url}`} onClick={() => setOpen(false)}>
+                            {record[searchOn]}
+                          </Link>
                         </Combobox.Option>
                       ))}
                     </Combobox.Options>
