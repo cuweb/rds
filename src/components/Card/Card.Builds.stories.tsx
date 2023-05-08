@@ -100,3 +100,15 @@ export const VideoCard: Story = {
     ),
   },
 }
+
+export const NumberCard: Story = {
+  args: {
+    border: 'red',
+    noLink: true,
+    children: (
+      <Card.Content>
+        <Card.Stats stat="3,000+" desc="Number of Employees" />
+      </Card.Content>
+    ),
+  },
+}
