@@ -33,5 +33,7 @@ export declare const videoStyle: {
 export declare const statStyle: {
     header: string;
     desc: string;
+    flexCol: string;
+    flexColReverse: string;
 };
 //# sourceMappingURL=Card.Styles.d.ts.map

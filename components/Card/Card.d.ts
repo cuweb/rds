@@ -48,7 +48,7 @@ export declare const Card: (({ children, isCenter, border, noLink }: CardProps) 
         displayName: string;
     };
     Stats: {
-        ({ stat, desc }: import("./CardStats").CardStatsProps): JSX.Element;
+        ({ stat, desc, reverse }: import("./CardStats").CardStatsProps): JSX.Element;
         displayName: string;
     };
 };
