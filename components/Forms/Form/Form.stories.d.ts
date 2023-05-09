@@ -9,6 +9,10 @@ export declare const TestSchema: {
         value: string;
         validation: yup.StringSchema<string, yup.AnyObject, undefined, "">;
     };
+    lastname: {
+        value: string;
+        validation: yup.StringSchema<string, yup.AnyObject, undefined, "">;
+    };
 };
 export declare const Default: Story;
 export declare const Example: Story;
