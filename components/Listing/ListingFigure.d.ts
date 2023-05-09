@@ -4,7 +4,7 @@ export interface ListingFigureProps {
     size?: 'small' | 'default';
 }
 export declare const ListingFigure: {
-    ({ children, size }: ListingFigureProps): JSX.Element;
+    ({ children, size }: ListingFigureProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=ListingFigure.d.ts.map

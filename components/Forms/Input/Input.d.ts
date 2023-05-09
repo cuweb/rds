@@ -6,7 +6,7 @@ export interface InputProps {
     condition?: () => boolean;
 }
 export declare const Input: {
-    ({ label, condition, ...props }: InputProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, condition, ...props }: InputProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Input.d.ts.map

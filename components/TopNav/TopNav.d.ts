@@ -31,5 +31,5 @@ export interface TopNavProps {
     searchOn?: string;
     mobileLogin?: mobileLoginProps;
 }
-export declare const TopNav: ({ children, logoUrl, title, brand, hasSearch, sourceData, searchOn, navLinks, mobileLinks, userMenuItems, userInfo, session, sticky, login, mobileLogin, }: TopNavProps) => JSX.Element;
+export declare const TopNav: ({ children, logoUrl, title, brand, hasSearch, sourceData, searchOn, navLinks, mobileLinks, userMenuItems, userInfo, session, sticky, login, mobileLogin, }: TopNavProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=TopNav.d.ts.map

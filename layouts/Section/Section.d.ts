@@ -4,5 +4,5 @@ export interface SectionProps {
     maxWidth?: 'full' | '5xl' | '7xl';
     hasProse?: boolean;
 }
-export declare const Section: ({ children, maxWidth, hasProse }: SectionProps) => JSX.Element;
+export declare const Section: ({ children, maxWidth, hasProse }: SectionProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Section.d.ts.map

@@ -6,5 +6,5 @@ export interface PanelProps {
     hasShadow?: boolean;
     hasSpacing?: boolean;
 }
-export declare const Panel: ({ children, maxWidth, hasBorder, hasShadow, hasSpacing }: PanelProps) => JSX.Element;
+export declare const Panel: ({ children, maxWidth, hasBorder, hasShadow, hasSpacing }: PanelProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Panel.d.ts.map

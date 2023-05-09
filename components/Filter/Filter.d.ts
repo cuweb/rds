@@ -15,5 +15,5 @@ export interface FilterProps {
     }[];
     callback: (k: string[]) => void;
 }
-export declare const Filter: ({ sortOptions, filters, callback }: FilterProps) => JSX.Element;
+export declare const Filter: ({ sortOptions, filters, callback }: FilterProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Filter.d.ts.map

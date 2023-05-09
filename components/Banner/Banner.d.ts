@@ -16,11 +16,11 @@ export interface BannerImgProps {
     imageAlt?: string;
 }
 export declare const Banner: {
-    ({ children, title, paragraph, maxWidth, isType, fontSize, align, hasOverlap, image, imageAlt, }: BannerProps & BannerImgProps): JSX.Element;
+    ({ children, title, paragraph, maxWidth, isType, fontSize, align, hasOverlap, image, imageAlt, }: BannerProps & BannerImgProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     ButtonGroup: {
-        ({ children }: BannerProps): JSX.Element;
+        ({ children }: BannerProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

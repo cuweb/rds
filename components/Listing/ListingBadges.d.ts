@@ -14,7 +14,7 @@ interface Tags {
     }[];
 }
 export declare const ListingBadges: {
-    ({ tags }: ListingBadgesProps): JSX.Element;
+    ({ tags }: ListingBadgesProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export {};

@@ -11,7 +11,7 @@ export interface CheckboxProps {
     condition?: () => boolean;
 }
 export declare const Checkbox: {
-    ({ label, options, condition, ...props }: CheckboxProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, options, condition, ...props }: CheckboxProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Checkbox.d.ts.map

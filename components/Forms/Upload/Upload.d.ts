@@ -9,7 +9,7 @@ export interface UploadProps {
     condition?: () => boolean;
 }
 export declare const Upload: {
-    ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: any): JSX.Element;
+    ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: any): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Upload.d.ts.map

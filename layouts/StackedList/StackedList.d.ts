@@ -6,5 +6,5 @@ export interface StackedListProps {
     hasBorder?: boolean;
     hasShadow?: boolean;
 }
-export declare const StackedList: ({ children, cols, header, hasBorder, hasShadow }: StackedListProps) => JSX.Element;
+export declare const StackedList: ({ children, cols, header, hasBorder, hasShadow }: StackedListProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=StackedList.d.ts.map

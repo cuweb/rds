@@ -7,7 +7,7 @@ export interface WYSIWYGProps {
     placeholder?: string;
 }
 export declare const WYSIWYG: {
-    ({ label, editor, placeholder, ...props }: WYSIWYGProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, editor, placeholder, ...props }: WYSIWYGProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=WYSIWYG.d.ts.map

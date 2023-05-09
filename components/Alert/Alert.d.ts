@@ -3,16 +3,16 @@ export interface AlertBaseProps {
     type: 'success' | 'error' | 'warning' | 'info';
 }
 export declare const Alert: {
-    ({ children, type }: PropsWithChildren<AlertBaseProps>): JSX.Element;
+    ({ children, type }: PropsWithChildren<AlertBaseProps>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
-    Alerter: ({ children }: PropsWithChildren) => JSX.Element;
+    Alerter: ({ children }: PropsWithChildren) => import("react/jsx-runtime").JSX.Element;
     Title: {
-        ({ children }: PropsWithChildren): JSX.Element;
+        ({ children }: PropsWithChildren): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Content: {
-        ({ children }: PropsWithChildren): JSX.Element;
+        ({ children }: PropsWithChildren): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

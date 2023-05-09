@@ -22,14 +22,14 @@ export interface TitleProps {
     as?: TitleTypeProps;
 }
 export declare const MarketplaceItem: {
-    ({ as: Component, children, link }: ItemBaseProps & MarketplaceItemProps): JSX.Element;
+    ({ as: Component, children, link }: ItemBaseProps & MarketplaceItemProps): import("react/jsx-runtime").JSX.Element;
     defaultProps: {
         as: string;
     };
     displayName: string;
 } & {
     Content: {
-        ({ children }: MarketplaceItemProps): JSX.Element;
+        ({ children }: MarketplaceItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Title: {
@@ -39,15 +39,15 @@ export declare const MarketplaceItem: {
         displayName: string;
     };
     Image: {
-        ({ image, alt }: MarketplaceItemProps): JSX.Element;
+        ({ image, alt }: MarketplaceItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Details: {
-        ({ cost, condition }: MarketplaceItemProps): JSX.Element;
+        ({ cost, condition }: MarketplaceItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Category: {
-        ({ category }: MarketplaceItemProps): JSX.Element;
+        ({ category }: MarketplaceItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

@@ -3,5 +3,5 @@ export interface MainProps {
     children: React.ReactNode;
     hasOverlap?: boolean;
 }
-export declare const Main: ({ children, hasOverlap }: MainProps) => JSX.Element;
+export declare const Main: ({ children, hasOverlap }: MainProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Main.d.ts.map

@@ -8,5 +8,5 @@ export interface ModalProps {
     setIsOpen: (k: boolean) => void;
     hasOverlay?: boolean;
 }
-export declare const Modal: ({ children, title, description, noButton, isOpen, setIsOpen, hasOverlay, }: ModalProps) => JSX.Element;
+export declare const Modal: ({ children, title, description, noButton, isOpen, setIsOpen, hasOverlay, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Modal.d.ts.map

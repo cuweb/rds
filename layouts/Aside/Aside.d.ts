@@ -4,5 +4,5 @@ export interface AsideProps {
     isSticky?: boolean;
     topSpace?: '5' | '10';
 }
-export declare const Aside: ({ children, isSticky, topSpace }: AsideProps) => JSX.Element;
+export declare const Aside: ({ children, isSticky, topSpace }: AsideProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Aside.d.ts.map

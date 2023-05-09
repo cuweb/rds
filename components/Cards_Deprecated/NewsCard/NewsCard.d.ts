@@ -17,6 +17,6 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare const NewsCard: ({ title, heading: HeadLevel, link, date, image, alt, excerpt, tags, }: PropsWithChildren<NewsCardProps>) => JSX.Element;
+export declare const NewsCard: ({ title, heading: HeadLevel, link, date, image, alt, excerpt, tags, }: PropsWithChildren<NewsCardProps>) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=NewsCard.d.ts.map

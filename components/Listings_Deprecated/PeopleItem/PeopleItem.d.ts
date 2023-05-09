@@ -21,6 +21,6 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare const PeopleItem: ({ as: Component, firstName, lastName, email, phoneNumber, tags, jobTitle, profileImage, alt, link, noImage, }: PeopleItemProps) => JSX.Element;
+export declare const PeopleItem: ({ as: Component, firstName, lastName, email, phoneNumber, tags, jobTitle, profileImage, alt, link, noImage, }: PeopleItemProps) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=PeopleItem.d.ts.map

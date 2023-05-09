@@ -18,6 +18,6 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare const NewsItem: ({ as: Component, title, link, image, alt, date, excerpt, tags }: NewsItemProps) => JSX.Element;
+export declare const NewsItem: ({ as: Component, title, link, image, alt, date, excerpt, tags }: NewsItemProps) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=NewsItem.d.ts.map

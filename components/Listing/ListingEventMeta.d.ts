@@ -7,7 +7,7 @@ export interface ListingEventMetaProps {
     eventAddress?: string;
 }
 export declare const ListingEventMeta: {
-    ({ startDateTime, endDateTime, onCampus, onCampusBuilding, onCampusRoomNumber, eventAddress, }: ListingEventMetaProps): JSX.Element;
+    ({ startDateTime, endDateTime, onCampus, onCampusBuilding, onCampusRoomNumber, eventAddress, }: ListingEventMetaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=ListingEventMeta.d.ts.map

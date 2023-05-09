@@ -7,5 +7,5 @@ export interface LocationProps {
     center?: any;
     singleMarker?: boolean;
 }
-export declare const Location: ({ markers, location, lat, lng, zoom, center }: LocationProps) => JSX.Element;
+export declare const Location: ({ markers, location, lat, lng, zoom, center }: LocationProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Location.d.ts.map

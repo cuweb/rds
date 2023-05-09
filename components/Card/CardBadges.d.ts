@@ -9,7 +9,7 @@ interface Tags {
     }[];
 }
 export declare const CardBadges: {
-    ({ tags }: CardBadgesProps): JSX.Element;
+    ({ tags }: CardBadgesProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export {};

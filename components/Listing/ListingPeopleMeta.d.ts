@@ -4,7 +4,7 @@ export interface ListingPeopleMetaProps {
     phone?: string;
 }
 export declare const ListingPeopleMeta: {
-    ({ jobTitle, email, phone }: ListingPeopleMetaProps): JSX.Element;
+    ({ jobTitle, email, phone }: ListingPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=ListingPeopleMeta.d.ts.map

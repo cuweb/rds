@@ -21,5 +21,5 @@ export interface AvatarProps {
     user: UserInfoType;
     onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
-export declare const Avatar: ({ size, rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => JSX.Element;
+export declare const Avatar: ({ size, rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Avatar.d.ts.map

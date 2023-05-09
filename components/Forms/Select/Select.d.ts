@@ -8,5 +8,5 @@ export interface SelectProps {
     }[];
     condition?: () => boolean;
 }
-export declare const Select: ({ label, options, condition, ...props }: SelectProps & SelectHTMLAttributes<HTMLSelectElement> & ClassAttributes<HTMLSelectElement>) => JSX.Element;
+export declare const Select: ({ label, options, condition, ...props }: SelectProps & SelectHTMLAttributes<HTMLSelectElement> & ClassAttributes<HTMLSelectElement>) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Select.d.ts.map

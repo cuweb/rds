@@ -5,5 +5,5 @@ export interface ContainerProps {
     bgColor?: 'white' | 'grey';
     maxWidth?: 'none' | 'full' | '5xl' | '7xl';
 }
-export declare const Container: ({ children, hasProse, bgColor, maxWidth }: ContainerProps) => JSX.Element;
+export declare const Container: ({ children, hasProse, bgColor, maxWidth }: ContainerProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Container.d.ts.map

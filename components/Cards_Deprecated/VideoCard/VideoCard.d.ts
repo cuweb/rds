@@ -9,6 +9,6 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare function VideoCard({ source, tags }: VideoCardProps): JSX.Element;
+export declare function VideoCard({ source, tags }: VideoCardProps): import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=VideoCard.d.ts.map

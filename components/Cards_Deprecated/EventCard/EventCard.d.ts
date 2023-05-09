@@ -24,6 +24,6 @@ export interface EventCardProps {
     eventAddress?: string;
     tags?: Tags;
 }
-export declare const EventCard: ({ title, heading: HeadLevel, link, startDateTime, endDateTime, featuredImage, onCampus, onCampusBuilding, onCampusRoomNumber, eventAddress, tags, }: EventCardProps) => JSX.Element;
+export declare const EventCard: ({ title, heading: HeadLevel, link, startDateTime, endDateTime, featuredImage, onCampus, onCampusBuilding, onCampusRoomNumber, eventAddress, tags, }: EventCardProps) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=EventCard.d.ts.map

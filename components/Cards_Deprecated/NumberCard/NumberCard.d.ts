@@ -9,6 +9,6 @@ export interface NumberCardProps {
 export interface TitleProps {
     as?: TitleTypeProps;
 }
-export declare const NumberCard: ({ title, content, isCenter }: NumberCardProps) => JSX.Element;
+export declare const NumberCard: ({ title, content, isCenter }: NumberCardProps) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=NumberCard.d.ts.map

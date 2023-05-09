@@ -17,6 +17,6 @@ interface Tags {
         slug: string;
     }[];
 }
-export declare const PeopleCard: ({ firstName, lastName, email, phoneNumber, tags, jobTitle, profileImage, link, alt, noImage, }: PeopleCardProps) => JSX.Element;
+export declare const PeopleCard: ({ firstName, lastName, email, phoneNumber, tags, jobTitle, profileImage, link, alt, noImage, }: PeopleCardProps) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=PeopleCard.d.ts.map

@@ -18,14 +18,14 @@ export interface TitleProps {
     as?: TitleTypeProps;
 }
 export declare const DetailsItem: {
-    ({ as: Component, children }: ItemBaseProps & DetailsItemProps): JSX.Element;
+    ({ as: Component, children }: ItemBaseProps & DetailsItemProps): import("react/jsx-runtime").JSX.Element;
     defaultProps: {
         as: string;
     };
     displayName: string;
 } & {
     Content: {
-        ({ children }: DetailsItemProps): JSX.Element;
+        ({ children }: DetailsItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Title: {
@@ -35,11 +35,11 @@ export declare const DetailsItem: {
         displayName: string;
     };
     Icon: {
-        ({ icon, color, size }: import("../../Icon/Icon").IconProps): JSX.Element;
+        ({ icon, color, size }: import("../../Icon/Icon").IconProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Description: {
-        ({ description }: DetailsItemProps): JSX.Element;
+        ({ description }: DetailsItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

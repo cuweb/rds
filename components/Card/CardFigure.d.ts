@@ -4,7 +4,7 @@ export interface CardFigureProps {
     isRound?: boolean;
 }
 export declare const CardFigure: {
-    ({ children, isRound }: CardFigureProps): JSX.Element;
+    ({ children, isRound }: CardFigureProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=CardFigure.d.ts.map

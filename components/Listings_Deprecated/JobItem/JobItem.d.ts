@@ -20,14 +20,14 @@ export interface TitleProps {
     as?: TitleTypeProps;
 }
 export declare const JobItem: {
-    ({ as: Component, children, link }: ItemBaseProps & JobItemProps): JSX.Element;
+    ({ as: Component, children, link }: ItemBaseProps & JobItemProps): import("react/jsx-runtime").JSX.Element;
     defaultProps: {
         as: string;
     };
     displayName: string;
 } & {
     Content: {
-        ({ children }: JobItemProps): JSX.Element;
+        ({ children }: JobItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Title: {
@@ -37,7 +37,7 @@ export declare const JobItem: {
         displayName: string;
     };
     Details: {
-        ({ dateData, date }: JobItemProps): JSX.Element;
+        ({ dateData, date }: JobItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

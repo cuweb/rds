@@ -20,5 +20,5 @@ export interface LocationPickerProps {
     eventLongitude?: number;
     eventAddress?: string;
 }
-export declare const LocationPicker: ({ posCallback, centerCallback, singleMarker, singleMarkerCallback, eventAddress, eventLatitude, eventLongitude, }: LocationPickerProps) => JSX.Element;
+export declare const LocationPicker: ({ posCallback, centerCallback, singleMarker, singleMarkerCallback, eventAddress, eventLatitude, eventLongitude, }: LocationPickerProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LocationPicker.d.ts.map

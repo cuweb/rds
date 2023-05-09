@@ -19,14 +19,14 @@ export interface TitleProps {
     as?: TitleTypeProps;
 }
 export declare const FileItem: {
-    ({ as: Component, children, link }: ItemBaseProps & FileItemProps): JSX.Element;
+    ({ as: Component, children, link }: ItemBaseProps & FileItemProps): import("react/jsx-runtime").JSX.Element;
     defaultProps: {
         as: string;
     };
     displayName: string;
 } & {
     Content: {
-        ({ children }: FileItemProps): JSX.Element;
+        ({ children }: FileItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Title: {
@@ -36,7 +36,7 @@ export declare const FileItem: {
         displayName: string;
     };
     Details: {
-        ({ filesize, date }: FileItemProps): JSX.Element;
+        ({ filesize, date }: FileItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

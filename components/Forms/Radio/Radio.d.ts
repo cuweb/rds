@@ -10,7 +10,7 @@ export interface RadioProps {
     condition?: () => boolean;
 }
 export declare const Radio: {
-    ({ label, options, condition, ...props }: RadioProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): JSX.Element;
+    ({ label, options, condition, ...props }: RadioProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=Radio.d.ts.map

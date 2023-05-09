@@ -37,6 +37,6 @@ export interface BaseItemProps {
 export interface TitleProps {
     as?: TitleTypeProps;
 }
-export declare const EventItem: ({ as: Component, link, title, startDateTime, endDateTime, featuredImage, on_campus, on_campus_building, on_campus_room_number, event_address, tags, }: ItemBaseProps & EventItemProps) => JSX.Element;
+export declare const EventItem: ({ as: Component, link, title, startDateTime, endDateTime, featuredImage, on_campus, on_campus_building, on_campus_room_number, event_address, tags, }: ItemBaseProps & EventItemProps) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=EventItem.d.ts.map

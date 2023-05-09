@@ -1,2 +1,0 @@
-import{j as s}from"./jsx-runtime-3aeb2321.js";const a={badge:"cu-badges not-prose inline-flex px-2 mr-2 text-xs font-semibold rounded-xl bg-cu-black-50 text-cu-black-900 last:mr-0"},t=({children:e})=>s.jsx("p",{className:`${a.badge}`,children:e});t.displayName="LinkItem";const o=Object.assign(t,{});try{LinkItem.displayName="LinkItem",LinkItem.__docgenInfo={description:"",displayName:"LinkItem",props:{}}}catch{}export{o as B};
-//# sourceMappingURL=Badge-313e0162.js.map

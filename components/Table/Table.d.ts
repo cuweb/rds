@@ -15,5 +15,5 @@ export interface TableProps {
     hasBorder?: boolean;
     range?: number[];
 }
-export declare const Table: ({ data, columns, hasStripes, hasShadow, hasBorder, range }: TableProps) => JSX.Element;
+export declare const Table: ({ data, columns, hasStripes, hasShadow, hasBorder, range }: TableProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Table.d.ts.map

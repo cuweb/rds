@@ -17,14 +17,14 @@ export interface TitleProps {
     as?: TitleTypeProps;
 }
 export declare const LinkItem: {
-    ({ as: Component, children, link }: BaseItemProps & LinkItemProps): JSX.Element;
+    ({ as: Component, children, link }: BaseItemProps & LinkItemProps): import("react/jsx-runtime").JSX.Element;
     defaultProps: {
         as: string;
     };
     displayName: string;
 } & {
     Content: {
-        ({ children }: LinkItemProps): JSX.Element;
+        ({ children }: LinkItemProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Title: {

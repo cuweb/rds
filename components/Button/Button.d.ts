@@ -10,5 +10,5 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     isCenter?: boolean;
     hasDropDown?: boolean;
 }
-export declare const Button: ({ isType, color, title, icon, isSmall, hasShadow, isFull, isCenter, hasDropDown, ...rest }: ButtonProps) => JSX.Element;
+export declare const Button: ({ isType, color, title, icon, isSmall, hasShadow, isFull, isCenter, hasDropDown, ...rest }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Button.d.ts.map

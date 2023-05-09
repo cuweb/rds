@@ -6,5 +6,5 @@ export interface PaginationProps {
     pageSize: number;
     callback: (k: [number?, number?]) => void;
 }
-export declare const Pagination: ({ hasBorder, hasSpacing, totalCount, siblingCount, pageSize, callback, }: PaginationProps) => JSX.Element | null;
+export declare const Pagination: ({ hasBorder, hasSpacing, totalCount, siblingCount, pageSize, callback, }: PaginationProps) => import("react/jsx-runtime").JSX.Element | null;
 //# sourceMappingURL=Pagination.d.ts.map
