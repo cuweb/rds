@@ -36,6 +36,8 @@ export const videoStyle = {
 }
 
 export const statStyle = {
-  header: `text-3xl font-semibold text-cu-black-800 group-hover:text-cu-red @sm:md:text-5xl`,
+  header: `text-2xl font-semibold text-cu-black-800 group-hover:text-cu-red @sm:md:text-4xl`,
   desc: `text-base text-cu-black-600 @sm:md:text-lg`,
+  flexCol: `flex flex-col gap-2`,
+  flexColReverse: `flex flex-col-reverse gap-2`,
 }

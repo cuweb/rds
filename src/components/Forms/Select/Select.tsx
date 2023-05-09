@@ -32,7 +32,7 @@ export const Select = ({
           <div className="relative">
             <select
               {...field}
-              {...props}
+              {...{ ...props, required: false }}
               id={field.name}
               name={field.name}
               className={`${formStyles.input} ${meta.touched && meta.error ? formErrorStyles.inputBorder : ''} bg-none`}

@@ -27,7 +27,7 @@ export const Input = ({
           {/* Input Field  */}
           <input
             {...field}
-            {...props}
+            {...{ ...props, required: false }}
             id={field.name}
             type={props.type}
             className={`${formStyles.input} ${meta.touched && meta.error ? formErrorStyles.inputBorder : ''}`}
