@@ -28,6 +28,10 @@ export const TestSchema = {
     value: 'TEST',
     validation: yup.string().min(6, 'Name must be at least 6 characters long').required('Required'),
   },
+  lastname: {
+    value: '',
+    validation: yup.string().min(6, 'Name must be at least 6 characters long').required('Required'),
+  },
 }
 
 export const Default: Story = {
@@ -50,8 +54,8 @@ const validateUpload = (file: any) => {
 export const Example: Story = {
   render: (args) => (
     <Form {...args} onSubmit={formOnSubmit} schema={TestSchema}>
-      {() => (
-        <form>
+      {({ handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
           <Form.Input label="First Name" name="firstname" placeholder="Enter your first name" required />
 
           <Form.Input label="Last Name" name="lastname" placeholder="Enter your last name" required />
