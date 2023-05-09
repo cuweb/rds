@@ -1,22 +1,18 @@
+import { styles } from './Description.Styles'
+
 export interface DescriptionMetaProps {
-  title: string
+  term?: string
   children: React.ReactNode
-  displaySide?: boolean
+  useColumns?: boolean
 }
 
-export const DescriptionMeta = ({ title, children, displaySide }: DescriptionMetaProps) => {
+export const DescriptionMeta = ({ term, children, useColumns }: DescriptionMetaProps) => {
+  const columns = useColumns ? styles.flexRow : styles.flexCol
+
   return (
-    <div className={` ${displaySide ? 'flex' : ''}`}>
-      <h2 className="font-semibold">
-        {title} {displaySide ? ':' : ''}
-      </h2>
-      {!displaySide ? (
-        <div>{children}</div>
-      ) : (
-        <div className="flex">
-          <div className="mx-4 flex-col"> {children}</div>
-        </div>
-      )}
+    <div className={`${styles.base} ${columns}`}>
+      <dt className={styles.term}>{term}</dt>
+      <dd>{children}</dd>
     </div>
   )
 }

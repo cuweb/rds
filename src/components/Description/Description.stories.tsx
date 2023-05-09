@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Description } from './Description'
-import { DescriptionMeta } from './DescriptionMeta'
+import { DescriptionData as descMeta } from '../../data/DescriptionData'
 
 const meta: Meta<typeof Description> = {
   title: 'Components/Description',
@@ -16,61 +16,63 @@ const meta: Meta<typeof Description> = {
 export default meta
 type Story = StoryObj<typeof Description>
 
-const AccordianData = [
-  {
-    title: 'Item 1',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    title: 'Item 2',
-    content:
-      'Vestibulum facilisis, risus nec tincidunt dignissim, quam odio consectetur felis, at consectetur mauris mauris eget libero. Vestibulum facilisis, risus nec tincidunt dignissim, quam odio consectetur felis, at consectetur mauris mauris eget libero.Vestibulum facilisis, risus nec tincidunt dignissim, quam odio consectetur felis, at consectetur mauris mauris eget libero.Vestibulum facilisis, risus nec tincidunt dignissim, quam odio consectetur felis, at consectetur mauris mauris eget libero.',
-  },
-  {
-    title: 'Item 3',
-    content:
-      'Sed fermentum, lacus vel hendrerit congue, nibh mauris malesuada nibh, sit amet porttitor arcu nunc non risus.Sed fermentum, lacus vel hendrerit congue, nibh mauris malesuada nibh, sit amet porttitor arcu nunc non risus.Sed fermentum, lacus vel hendrerit congue, nibh mauris malesuada nibh, sit amet porttitor arcu nunc non risus.Sed fermentum, lacus vel hendrerit congue, nibh mauris malesuada nibh, sit amet porttitor arcu nunc non risus.',
-  },
-]
+export const Stacked: Story = {}
+Stacked.args = {
+  children: <Description.Meta term={descMeta[0].term}>{descMeta[0].details}</Description.Meta>,
+}
 
-export const Single: Story = {}
-
-Single.args = {
+export const Columns: Story = {}
+Columns.args = {
   children: (
-    <Description>
-      <Description.Accordian title={'Accordian Title '}>The paragraph of accordian</Description.Accordian>
-    </Description>
+    <Description.Meta term={descMeta[0].term} useColumns>
+      {descMeta[0].details}
+    </Description.Meta>
   ),
 }
 
-export const Multiple: Story = {
+export const Accordion: Story = {}
+Accordion.args = {
+  children: <Description.Accordion term={descMeta[0].term}>{descMeta[0].details}</Description.Accordion>,
+}
+
+export const MultipleStacked: Story = {
   render: () => (
     <>
-      {AccordianData.map((item) => (
-        <Description key={item?.title} divider>
-          <Description.Accordian title={item.title}>{item.content}</Description.Accordian>
-        </Description>
-      ))}
+      <Description>
+        {descMeta.map((item) => (
+          <Description.Meta key={item?.id} term={item?.term}>
+            {item?.details}
+          </Description.Meta>
+        ))}
+      </Description>
     </>
   ),
 }
 
-export const SingleMeta: Story = {}
-SingleMeta.args = {
-  children: (
-    <Description>
-      <DescriptionMeta title="First Name">Ish</DescriptionMeta>
-    </Description>
+export const MultipleColumns: Story = {
+  render: () => (
+    <>
+      <Description>
+        {descMeta.map((item) => (
+          <Description.Meta key={item?.id} term={item?.term} useColumns>
+            {item?.details}
+          </Description.Meta>
+        ))}
+      </Description>
+    </>
   ),
 }
 
-export const SingleMetaSidebySide: Story = {}
-SingleMetaSidebySide.args = {
-  children: (
-    <Description>
-      <DescriptionMeta title="First Name" displaySide>
-        Ish
-      </DescriptionMeta>
-    </Description>
+export const MultipleAccordions: Story = {
+  render: () => (
+    <>
+      <Description>
+        {descMeta.map((item) => (
+          <Description.Accordion key={item?.id} term={item?.term}>
+            {item?.details}
+          </Description.Accordion>
+        ))}
+      </Description>
+    </>
   ),
 }
