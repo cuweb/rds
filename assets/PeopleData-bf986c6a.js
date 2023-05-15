@@ -1,0 +1,2 @@
+const e={id:1,firstName:"Carlton",lastName:"Banks",link:"#",image:"./sample-imgs/people-img.jpg",alt:"Image needs alt text",jobTitle:"Manager, Peacock Stop",email:"carlton.banks@freshprince.tv",phone:"613-520-2600",phoneExt:"3825",tags:{category:[{id:3,name:"Category One",slug:"category-one"},{id:4,name:"Category Two",slug:"category-two"}]}};export{e as P};
+//# sourceMappingURL=PeopleData-bf986c6a.js.map
