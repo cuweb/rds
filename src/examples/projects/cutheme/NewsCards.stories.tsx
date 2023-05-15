@@ -10,7 +10,8 @@ import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
 
-import { NewsCardData as data } from '../../../components/Cards_Deprecated/NewsCard/NewsCardData'
+import { NewsData as data } from '../../../data/NewsData'
+import { Heading } from '../../../components/Heading/Heading'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Card Blocks',
@@ -65,10 +66,8 @@ export const NewsCardBlocks: Story = {
         <Section hasProse>
           <DoublePara />
 
-          <h2>News Card Block</h2>
-          <SinglePara />
-
           <Container bgColor="white" hasProse>
+            <Heading text="Basic News Card Block" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
@@ -88,10 +87,8 @@ export const NewsCardBlocks: Story = {
 
           <DoublePara />
 
-          <h2>News Card Block with Grey Bg</h2>
-          <SinglePara />
-
           <Container bgColor="grey" hasProse>
+            <Heading text="News Card Block with Grey Bg" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
                 <Card key={item?.id}>

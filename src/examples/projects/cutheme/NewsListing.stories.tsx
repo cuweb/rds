@@ -8,8 +8,13 @@ import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { NewsItemData as data } from '../../../components/Listings_Deprecated/NewsItem/NewsItemData'
+import { Listing } from '../../../components/Listing/Listing'
+
+// import { NewsItemData as data } from '../../../components/Listings_Deprecated/NewsItem/NewsItemData'
 import { NewsItem } from '../../../components/Listings_Deprecated/NewsItem/NewsItem'
+
+import { NewsData as data } from '../../../data/NewsData'
+import { Heading } from '../../../components/Heading/Heading'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Listing Blocks',
@@ -68,9 +73,22 @@ export const NewsListingBlocks: Story = {
           <SinglePara />
 
           <Container bgColor="white" maxWidth="7xl" hasProse>
+            <Heading text="Basic News Listing Block" />
             <StackedList hasBorder hasShadow>
-              {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-                <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+              {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Listing.Figure>
+                    <Listing.Content>
+                      <Listing.PostMeta date={date} />
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={excerpt} />
+                      <Listing.Badges tags={tags} />
+                    </Listing.Content>
+                  </a>
+                </Listing>
               ))}
             </StackedList>
           </Container>
@@ -81,9 +99,22 @@ export const NewsListingBlocks: Story = {
           <SinglePara />
 
           <Container bgColor="grey" hasProse>
+            <Heading text="News Listing Block with Grey Bg" />
             <StackedList hasBorder hasShadow>
-              {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-                <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+              {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Listing.Figure>
+                    <Listing.Content>
+                      <Listing.PostMeta date={date} />
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={excerpt} />
+                      <Listing.Badges tags={tags} />
+                    </Listing.Content>
+                  </a>
+                </Listing>
               ))}
             </StackedList>
           </Container>
@@ -93,16 +124,40 @@ export const NewsListingBlocks: Story = {
 
           <Container bgColor="white" hasProse>
             <StackedList hasBorder hasShadow>
-              {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-                <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+              {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Listing.Figure>
+                    <Listing.Content>
+                      <Listing.PostMeta date={date} />
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={excerpt} />
+                      <Listing.Badges tags={tags} />
+                    </Listing.Content>
+                  </a>
+                </Listing>
               ))}
             </StackedList>
           </Container>
 
           <Container bgColor="white" hasProse>
             <StackedList hasBorder hasShadow>
-              {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-                <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+              {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Listing.Figure>
+                    <Listing.Content>
+                      <Listing.PostMeta date={date} />
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={excerpt} />
+                      <Listing.Badges tags={tags} />
+                    </Listing.Content>
+                  </a>
+                </Listing>
               ))}
             </StackedList>
           </Container>
@@ -112,16 +167,40 @@ export const NewsListingBlocks: Story = {
 
           <Container bgColor="grey" hasProse>
             <StackedList hasBorder hasShadow>
-              {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-                <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+              {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Listing.Figure>
+                    <Listing.Content>
+                      <Listing.PostMeta date={date} />
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={excerpt} />
+                      <Listing.Badges tags={tags} />
+                    </Listing.Content>
+                  </a>
+                </Listing>
               ))}
             </StackedList>
           </Container>
 
           <Container bgColor="grey" hasProse>
             <StackedList hasBorder hasShadow>
-              {data.map(({ id, title, link, image, alt, date, excerpt }) => (
-                <NewsItem key={id} image={image} alt={alt} title={title} link={link} date={date} excerpt={excerpt} />
+              {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Listing.Figure>
+                    <Listing.Content>
+                      <Listing.PostMeta date={date} />
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={excerpt} />
+                      <Listing.Badges tags={tags} />
+                    </Listing.Content>
+                  </a>
+                </Listing>
               ))}
             </StackedList>
           </Container>
