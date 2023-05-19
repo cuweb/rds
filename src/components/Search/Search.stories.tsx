@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '../Button/Button'
 import { Search } from './Search'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { useCallback, useState } from 'react'
 
 const meta: Meta<typeof Search> = {
   title: 'Components/Search',
@@ -366,59 +365,22 @@ const database = [
 
 type Story = StoryObj<typeof Search>
 
-export const SearchDefault: Story = () => {
-  const [, setOpen] = useState(false)
-
-  const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
-    },
-    [setOpen],
-  )
-  return <Search sourceData={database} callback={callback} />
+export const SearchDefault: Story = {
+  render: () => <Search sourceData={database} />,
 }
 
-export const SearchCustomAvatar: Story = () => {
-  const [, setOpen] = useState(false)
-
-  const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
-    },
-    [setOpen],
-  )
-  return (
-    <Search sourceData={database} callback={callback}>
+export const SearchCustomAvatar: Story = {
+  render: () => (
+    <Search sourceData={database}>
       <Button icon={MagnifyingGlassIcon} />
     </Search>
-  )
+  ),
 }
 
-export const ValidationUrl: Story = () => {
-  const [, setOpen] = useState(false)
-
-  const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
-    },
-    [setOpen],
-  )
-  return <Search sourceData={database} searchOn="url" callback={callback} />
+export const ValidationUrl: Story = {
+  render: () => <Search sourceData={database} searchOn="url" />,
 }
 
-export const ValidationKey: Story = () => {
-  const [, setOpen] = useState(false)
-
-  const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
-    },
-    [setOpen],
-  )
-  return <Search sourceData={database} searchOn="id" callback={callback} />
+export const ValidationKey: Story = {
+  render: () => <Search sourceData={database} searchOn="id" />,
 }
-
-SearchDefault.storyName = 'Default Search'
-SearchCustomAvatar.storyName = 'Custom Avatar Search'
-ValidationUrl.storyName = 'Validation Url Search'
-ValidationKey.storyName = 'Validation Key Search'

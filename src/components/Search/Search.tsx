@@ -11,14 +11,13 @@ export interface SourceDataProps {
 export interface SearchProps {
   sourceData: SourceDataProps[]
   searchOn?: string
-  callback: (k: boolean) => void
 }
 
 function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export const Search = ({ searchOn = 'title', sourceData, children, callback }: PropsWithChildren<SearchProps>) => {
+export const Search = ({ searchOn = 'title', sourceData, children }: PropsWithChildren<SearchProps>) => {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
 
@@ -55,10 +54,6 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
       window.removeEventListener('keydown', onKeydown)
     }
   }, [open])
-
-  useEffect(() => {
-    callback(open)
-  }, [open, callback])
 
   return (
     <>
