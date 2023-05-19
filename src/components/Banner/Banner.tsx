@@ -1,6 +1,7 @@
 import React from 'react'
 import styles, { typeStyles, contentStyles } from './Banner.styles'
 import { rdsFontSizes, rdsMaxWidth } from '../../utils/optionClasses'
+import { globalSpace } from '../../utils/globalClasses'
 import { BannerAnimated } from './Banner.Animated'
 
 export interface BannerProps {
@@ -52,7 +53,10 @@ const BannerBase = ({
 
   return (
     <>
-      <header className={`${styles.core} ${typeStyles[isType]} ${bannerSpacing} ${overlapStyles}`} id="banner">
+      <header
+        className={`${styles.core} ${globalSpace.paddingX} ${typeStyles[isType]} ${bannerSpacing} ${overlapStyles}`}
+        id="banner"
+      >
         <div
           className={`z-10 flex flex-1 ${flexAlign} m-auto items-center justify-center gap-8 ${rdsMaxWidth[maxWidth]} [&>*]:z-10`}
         >

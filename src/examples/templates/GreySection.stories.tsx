@@ -56,7 +56,7 @@ export const GreySection: Story = {
 
       <Main>
         <Section>
-          <Container hasProse>
+          <Container bgColor="grey" hasProse>
             <SinglePara />
             <h2>This is a header two</h2>
             <DoublePara />
