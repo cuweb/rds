@@ -20,7 +20,7 @@
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
-  @apply pt-0;
+  @apply pt-2;
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-white {

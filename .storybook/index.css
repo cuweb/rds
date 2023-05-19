@@ -3537,7 +3537,7 @@ select {
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
-  padding-top: 0px;
+  padding-top: 0.5rem;
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-white {
@@ -6819,11 +6819,6 @@ select {
   .md\:px-14 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
-  }
-
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   .md\:py-10 {

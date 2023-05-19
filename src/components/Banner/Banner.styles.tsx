@@ -1,5 +1,5 @@
 const styles = {
-  core: `not-prose relative py-16 md:py-32 md:flex md:items-center md:px-8 md:min-h-[240px]`,
+  core: `not-prose relative py-16 md:py-32 md:flex md:items-center md:min-h-[240px]`,
   buttonWrapper: `flex gap-6 flex-wrap md:flex-1`,
   overlap: `md:pb-32 md:pt-20`,
 }
