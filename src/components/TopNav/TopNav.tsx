@@ -5,7 +5,6 @@ import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
 import { Link } from '../Link/Link'
 import { Search } from '../Search/Search'
 import { TopNavLoader } from '../Loaders/TopNavLoader/TopNavLoader'
-import { useCallback, useState } from 'react'
 
 export interface LinkProps {
   title: string
@@ -75,15 +74,6 @@ export const TopNav = ({
     </div>
   )
 
-  const [open, setOpen] = useState(false)
-
-  const callback = useCallback(
-    (itemOpen: any) => {
-      setOpen(itemOpen)
-    },
-    [setOpen],
-  )
-
   return (
     <Disclosure
       as="nav"
@@ -105,7 +95,7 @@ export const TopNav = ({
               <div className="absolute right-4 ml-4">
                 {hasSearch && sourceData && (
                   <div className="inline-flex items-center p-2 ">
-                    <Search sourceData={sourceData} searchOn={searchOn} callback={callback} />
+                    <Search sourceData={sourceData} searchOn={searchOn} />
                   </div>
                 )}
 
@@ -142,7 +132,7 @@ export const TopNav = ({
               {/* this will just search on title in database , we need to extend it to add other props search on to top nav  */}
               {hasSearch && sourceData && (
                 <div className="inline-flex items-center ">
-                  <Search sourceData={sourceData} searchOn={searchOn} callback={callback} />
+                  <Search sourceData={sourceData} searchOn={searchOn} />
                 </div>
               )}
               {children}
