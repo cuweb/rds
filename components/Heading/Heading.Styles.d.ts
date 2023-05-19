@@ -1,8 +1,8 @@
 export declare const styles: {
-    prose: string;
-    spacing: string;
-    heading: string;
+    core: string;
+    header: string;
     underline: string;
+    spacing: string;
     paragraph: string;
 };
 //# sourceMappingURL=Heading.Styles.d.ts.map
