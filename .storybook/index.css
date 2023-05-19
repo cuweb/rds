@@ -1627,6 +1627,10 @@ select {
   margin: 2.5rem;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1656,6 +1660,11 @@ select {
   margin-right: -1rem;
 }
 
+.-mx-6 {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
 .-my-1 {
   margin-top: -0.25rem;
   margin-bottom: -0.25rem;
@@ -1676,19 +1685,19 @@ select {
   margin-right: 2.5rem;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.-mx-8 {
-  margin-left: -2rem;
-  margin-right: -2rem;
-}
-
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .-ml-px {
@@ -1721,6 +1730,10 @@ select {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .mb-6 {
@@ -1817,10 +1830,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .line-clamp-3 {
@@ -3528,7 +3537,7 @@ select {
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
-  padding-top: 0px;
+  padding-top: 0.5rem;
 }
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-white {
@@ -3607,6 +3616,7 @@ select {
 
 .cu-section > .cu-heading:first-child,
 .cu-container > .cu-heading:first-child {
+  margin-top: 1rem;
   padding-top: 0px;
 }
 
@@ -3669,15 +3679,10 @@ select {
 
 /* Remove top and bottom space added by prose inside container */
 
-.prose > .cu-container > *:first-child,
-.prose > .cu-container > * > *:first-child {
-  margin-top: 0px;
-}
-
-.prose > .cu-container > *:last-child,
-.prose > .cu-container > * > *:last-child {
-  margin-bottom: 0px;
-}
+/* .prose > .cu-container > *,
+.prose > .cu-container > * > * {
+  @apply first:mt-0 last:mb-0;
+} */
 
 /* Figure Components */
 
@@ -5678,22 +5683,6 @@ select {
   margin-bottom: 0px;
 }
 
-.ql-editor > .cu-container > *:first-child,.ql-editor > .cu-container > * > *:first-child {
-  margin-top: 0px;
-}
-
-.ql-editor > .cu-container > *:last-child,.ql-editor > .cu-container > * > *:last-child {
-  margin-bottom: 0px;
-}
-
-.ql-editor > .cu-container > *:first-child,.ql-editor > .cu-container > * > *:first-child {
-  margin-top: 0px;
-}
-
-.ql-editor > .cu-container > *:last-child,.ql-editor > .cu-container > * > *:last-child {
-  margin-bottom: 0px;
-}
-
 @media (min-width: 768px) {
   .ql-editor {
     font-size: 1.25rem !important;
@@ -6693,22 +6682,12 @@ select {
 }
 
 @media (min-width: 768px) {
-  .md\:m-14 {
-    margin: 3.5rem;
-  }
-
   .md\:m-10 {
     margin: 2.5rem;
   }
 
-  .md\:-mx-14 {
-    margin-left: -3.5rem;
-    margin-right: -3.5rem;
-  }
-
-  .md\:mx-14 {
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
+  .md\:m-14 {
+    margin: 3.5rem;
   }
 
   .md\:-mx-10 {
@@ -6716,14 +6695,32 @@ select {
     margin-right: -2.5rem;
   }
 
+  .md\:-mx-14 {
+    margin-left: -3.5rem;
+    margin-right: -3.5rem;
+  }
+
   .md\:mx-10 {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
   }
 
-  .md\:my-14 {
+  .md\:mx-14 {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+  }
+
+  .md\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .md\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .md\:mt-14 {
     margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
   }
 
   .md\:block {
@@ -6814,8 +6811,9 @@ select {
     padding: 5rem;
   }
 
-  .md\:p-10 {
-    padding: 2.5rem;
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .md\:px-14 {
@@ -6823,9 +6821,9 @@ select {
     padding-right: 3.5rem;
   }
 
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .md\:py-14 {
@@ -6843,24 +6841,14 @@ select {
     padding-bottom: 12rem;
   }
 
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .md\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .md\:py-7 {
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
   }
 
   .md\:pb-32 {
@@ -6885,6 +6873,11 @@ select {
 
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-4xl {
@@ -7114,16 +7107,8 @@ select {
     margin-bottom: 0px;
   }
 
-  .lg\:mb-12 {
-    margin-bottom: 3rem;
-  }
-
   .lg\:mb-8 {
     margin-bottom: 2rem;
-  }
-
-  .lg\:mb-6 {
-    margin-bottom: 1.5rem;
   }
 
   .lg\:flex {
@@ -7189,6 +7174,11 @@ select {
 
   .lg\:text-left {
     text-align: left;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .lg\:text-sm {

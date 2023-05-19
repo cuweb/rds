@@ -8,10 +8,10 @@ import { Column } from '../../../layouts/Column/Column'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../components/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
+import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
-import { Heading } from '../../../components/Heading/Heading'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Card Blocks',
