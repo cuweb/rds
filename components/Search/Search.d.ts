@@ -5,6 +5,7 @@ export interface SourceDataProps {
 export interface SearchProps {
     sourceData: SourceDataProps[];
     searchOn?: string;
+    callback: (k: boolean) => void;
 }
-export declare const Search: ({ searchOn, sourceData, children }: PropsWithChildren<SearchProps>) => import("react/jsx-runtime").JSX.Element;
+export declare const Search: ({ searchOn, sourceData, children, callback }: PropsWithChildren<SearchProps>) => import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=Search.d.ts.map
