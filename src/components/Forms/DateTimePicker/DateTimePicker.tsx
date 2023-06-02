@@ -83,7 +83,7 @@ export const DateTimePicker = ({
   return (
     <>
       {condition() && (
-        <div className={formStyles.elementSpace}>
+        <div className={`cu-formdatetimepicker ${formStyles.elementSpace}`}>
           <label htmlFor={field.name} className={formStyles.label}>
             {label} {props.required && <span className="text-cu-red">*</span>}
           </label>

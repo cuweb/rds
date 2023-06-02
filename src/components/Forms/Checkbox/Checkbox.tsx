@@ -26,7 +26,7 @@ export const Checkbox = ({
   return (
     <>
       {condition() && (
-        <fieldset className={formStyles.elementSpace}>
+        <fieldset className={`cu-formcheckbox ${formStyles.elementSpace}`}>
           <legend className={formStyles.label}>
             {label} {props.required && <span className="text-cu-red">*</span>}
           </legend>

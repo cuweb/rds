@@ -54,7 +54,7 @@ const BannerBase = ({
   return (
     <>
       <header
-        className={`${styles.core} ${globalSpace.paddingX} ${typeStyles[isType]} ${bannerSpacing} ${overlapStyles}`}
+        className={`cu-banner ${styles.core} ${globalSpace.paddingX} ${typeStyles[isType]} ${bannerSpacing} ${overlapStyles}`}
         id="banner"
       >
         <div

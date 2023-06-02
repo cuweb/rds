@@ -1,4 +1,4 @@
-import { FooterWave } from '../FooterWave'
+import { FooterWave } from '../FooterWave/FooterWave'
 import { FooterStandardLinks as linkData } from './FooterStandardData'
 import { Link } from '../../Link/Link'
 
@@ -82,7 +82,7 @@ const Social = [
 
 export const FooterStandard = () => {
   return (
-    <footer className="not-prose bg-cu-black-900" aria-labelledby="footer-heading">
+    <footer className="cu-footerstandard not-prose bg-cu-black-900" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

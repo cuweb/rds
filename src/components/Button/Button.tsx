@@ -1,7 +1,7 @@
 import React from 'react'
 import { Icon } from '../Icon/Icon'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
-import { buttonStyles, solidStyles, outlineStyles } from '../../utils/buttonClasses'
+import { buttonStyles, solidStyles, outlineStyles } from './Button.Styles'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   title?: string
@@ -42,7 +42,7 @@ export const Button = ({
     <button
       type="button"
       aria-label={title ? title : 'Icon button'}
-      className={`${buttonStyles.core} ${buttonType}  ${buttonSmall} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
+      className={`cu-button ${buttonStyles.core} ${buttonType}  ${buttonSmall} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
       disabled={isType === 'disabled' ? true : false}
       {...rest}
     >
