@@ -1,0 +1,2 @@
+import{j as s}from"./jsx-runtime-daf202a7.js";const a={badge:"cu-badges not-prose inline-flex px-2 mr-2 text-xs font-semibold rounded-xl bg-cu-black-50 text-cu-black-900 last:mr-0"},t=({children:e})=>s.jsx("p",{className:`cu-badge ${a.badge}`,children:e});t.displayName="LinkItem";const o=Object.assign(t,{});try{LinkItem.displayName="LinkItem",LinkItem.__docgenInfo={description:"",displayName:"LinkItem",props:{}}}catch{}export{o as B};
+//# sourceMappingURL=Badge-fe05d228.js.map

@@ -1,5 +1,10 @@
-export declare const globalStyles: {
-    prose: string;
+export declare const proseStyles: {
+    base: string;
+};
+export declare const layoutSpacing: {
+    section: string;
+    containerWhite: string;
+    containerGrey: string;
 };
 export declare const globalSpace: {
     margin: string;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Listing } from './Listing';
+import { Listing } from '../../components/Listing/Listing';
 declare const meta: Meta<typeof Listing>;
 export default meta;
 type Story = StoryObj<typeof Listing>;
