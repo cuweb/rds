@@ -12,7 +12,7 @@ export const DescriptionMeta = ({ term, children, useColumns }: DescriptionMetaP
   return (
     <div className={`${styles.base} ${columns}`}>
       <dt className={styles.term}>{term}</dt>
-      <dd>{children}</dd>
+      <dd className={styles.def}>{children}</dd>
     </div>
   )
 }
