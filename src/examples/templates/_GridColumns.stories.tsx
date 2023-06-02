@@ -8,7 +8,7 @@ import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Examples/Templates/Grid Columns',
+  title: 'Examples/Templates/Page Layouts',
 }
 
 export default meta
@@ -57,7 +57,7 @@ export const GridColumns: Story = {
 
       <Main>
         <Section>
-          <Container hasProse>
+          <Container>
             <SinglePara />
             <h2>This is a header two</h2>
 
@@ -73,7 +73,7 @@ export const GridColumns: Story = {
             <DoublePara />
           </Container>
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <h2>This is a header two</h2>
             <DoublePara />
             <Column cols="3">
@@ -92,7 +92,7 @@ export const GridColumns: Story = {
             </Column>
           </Container>
 
-          <Container hasProse>
+          <Container>
             <h2>This is a header two</h2>
             <DoublePara />
             <Column cols="2">

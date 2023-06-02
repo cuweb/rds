@@ -7,7 +7,7 @@ import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Examples/Templates/Alternating Sections',
+  title: 'Examples/Templates/Page Layouts',
 }
 
 export default meta
@@ -45,50 +45,18 @@ const DoublePara = () => {
   )
 }
 
-export const AlternatingSections: Story = {
+export const GreySection: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
       <Banner
-        title="Alternating Sections Containers"
-        paragraph="This template replicates the basic markup template by using simple headings and paragraphs but uses modifyed section containers to alternate between white and grey backgrounds"
+        title="Grey Section Container"
+        paragraph="This template replicates the basic markup template by using simple headings and paragraphs but is modifying the section container to feature a grey background that extends to the full width of the browser"
       />
 
       <Main>
         <Section>
-          <Container hasProse>
-            <SinglePara />
-            <h2>This is a header two</h2>
-            <DoublePara />
-            <h3>This is a header three</h3>
-            <SinglePara />
-          </Container>
-
-          <Container bgColor="grey" hasProse>
-            <SinglePara />
-            <h2>This is a header two</h2>
-            <DoublePara />
-            <h3>This is a header three</h3>
-            <SinglePara />
-          </Container>
-          <Container bgColor="grey" hasProse>
-            <h2>2nd consecutive grey container</h2>
-            <SinglePara />
-            <h2>This is a header two</h2>
-            <DoublePara />
-            <h3>This is a header three</h3>
-            <SinglePara />
-          </Container>
-
-          <Container hasProse>
-            <SinglePara />
-            <h2>This is a header two</h2>
-            <DoublePara />
-            <h3>This is a header three</h3>
-            <SinglePara />
-          </Container>
-          <Container hasProse>
-            <h2>2nd consecutive white container</h2>
+          <Container isGrey>
             <SinglePara />
             <h2>This is a header two</h2>
             <DoublePara />

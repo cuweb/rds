@@ -7,34 +7,34 @@ import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Examples/Templates/Basic Markup',
+  title: 'Examples/Templates/Page Layouts',
 }
 
 export default meta
 type Story = StoryObj
 
-const SinglePara = () => {
-  return (
-    <>
-      <p>
-        <strong>Single Paragraph:</strong> Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium
-        architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non.
-        Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-      </p>
-    </>
-  )
-}
+// const SinglePara = () => {
+//   return (
+//     <>
+//       <p>
+//         Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+//         reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
+//         Praesent quis ligula quis nulla malesuada tempor.
+//       </p>
+//     </>
+//   )
+// }
 
 const DoublePara = () => {
   return (
     <>
       <p>
-        <strong>Double Paragraph:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet
-        tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed
-        tempus diam dignissim. Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.
-        Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra
-        est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus
-        turpis, quis pulvinar metus sapien in urna.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
+        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
+        condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
+        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
+        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
+        sapien in urna.
       </p>
       <p>
         Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
@@ -55,13 +55,38 @@ export const BasicMarkup: Story = {
       />
 
       <Main>
-        <Section>
-          <Container hasProse>
-            <SinglePara />
-            <h2>This is a header two</h2>
+        <Section hasProse>
+          <h2>Not in a container</h2>
+          <DoublePara />
+          <Container>
+            <h2>This is a container</h2>
             <DoublePara />
-            <h3>This is a header three</h3>
-            <SinglePara />
+          </Container>
+          <Container>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+          <h2>Not in a container</h2>
+          <DoublePara />
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+          <Container>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+          <Container>
+            <h2>This is a container</h2>
+            <DoublePara />
           </Container>
         </Section>
       </Main>

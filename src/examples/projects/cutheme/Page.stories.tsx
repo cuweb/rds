@@ -73,7 +73,7 @@ export const SinglePage: Story = {
           <h4>This is a header 4</h4>
           <DoublePara />
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <Heading text="News Card Block" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
@@ -105,7 +105,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <Heading text="News Card Block" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
@@ -129,7 +129,7 @@ export const SinglePage: Story = {
           <h2>This is a header 2</h2>
           <SinglePara />
 
-          <Container bgColor="grey">
+          <Container isGrey>
             <Heading text="News Card Block" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
@@ -148,7 +148,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="grey" maxWidth="5xl">
+          <Container isGrey maxWidth="5xl">
             <Heading text="News Card Block" />
             <Column cols="4" maxWidth="7xl">
               {data.slice(0, 4).map((item) => (
@@ -172,7 +172,7 @@ export const SinglePage: Story = {
           <h2>This is a header 2</h2>
           <SinglePara />
 
-          <Container bgColor="white">
+          <Container>
             <Heading text="News Card Block" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
@@ -191,7 +191,7 @@ export const SinglePage: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="white" maxWidth="5xl">
+          <Container maxWidth="5xl">
             <Heading text="News Card Block" />
             <Column cols="4" maxWidth="7xl">
               {data.slice(0, 4).map((item) => (

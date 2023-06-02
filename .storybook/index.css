@@ -2941,6 +2941,16 @@ select {
   padding-bottom: 1.5rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -3424,93 +3434,9 @@ select {
 
 /* RDS Layout CSS */
 
-/* First white block inside section */
-
-.cu-section > .cu-container.bg-white:first-child {
-  padding-top: 0px;
-}
-
-/* Last white block inside section */
-
-.cu-section > .cu-container.bg-white:last-child {
-  /* @apply -mb-10 md:-mb-14; */
-  padding-bottom: 0px;
-}
-
-/* First grey block inside section */
-
-.cu-section > .cu-container.bg-cu-black-50:first-child {
-  margin-top: -2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-section > .cu-container.bg-cu-black-50:first-child {
-    margin-top: -3.5rem;
-  }
-}
-
-/* Last grey block inside section */
-
-.cu-section > .cu-container.bg-cu-black-50:last-child {
-  margin-bottom: -2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-section > .cu-container.bg-cu-black-50:last-child {
-    margin-bottom: -3.5rem;
-  }
-}
-
-.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
-  padding-top: 0.5rem;
-}
-
-.cu-container.bg-cu-black-50 + .cu-container.bg-white {
-  padding-top: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-container.bg-cu-black-50 + .cu-container.bg-white {
-    padding-top: 2.5rem;
-  }
-}
-
-.cu-container.bg-white + .cu-container.bg-cu-black-50,
-.cu-column + .cu-container {
-  margin-top: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.bg-cu-black-50,
-.cu-column + .cu-container {
-    margin-top: 2.5rem;
-  }
-}
-
-:not(.cu-container) + .cu-container.bg-cu-black-50,
-.cu-container.bg-cu-black-50 + :not(.cu-container) {
-  margin-top: 3.5rem;
-}
-
-:not(.not-contained) + .cu-column,
-.cu-column + :not(.not-contained),
-.cu-column + .cu-column,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column,
-.cu-panel + .cu-panel {
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  :not(.not-contained) + .cu-column,
-.cu-column + :not(.not-contained),
-.cu-column + .cu-column,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column,
-.cu-panel + .cu-panel {
-    margin-top: 2rem;
-  }
-}
+/* 
+* Max Width for container size props
+*/
 
 /* Target children of container and apply max width 5xl */
 
@@ -3527,7 +3453,7 @@ select {
 .cu-container-7xl > :not(.not-contained) {
   margin-left: auto;
   margin-right: auto;
-  max-width: 64rem;
+  max-width: 80rem;
 }
 
 /* Target children of container and apply max width full */
@@ -3539,75 +3465,66 @@ select {
   max-width: 100%;
 }
 
-.cu-section > .cu-heading:first-child,
-.cu-container > .cu-heading:first-child {
-  margin-top: 1rem;
+/* 
+* Target containers based on bg color and position inside section
+*/
+
+/* If first element inside section component is a container with white bg */
+
+.cu-section > .cu-container.bg-white:first-child {
   padding-top: 0px;
 }
 
-.cu-column > div > *:first-child {
-  margin-top: 0px;
+/* If last element inside section component is a container with white bg */
+
+.cu-section > .cu-container.bg-white:last-child {
+  padding-bottom: 0px;
 }
 
-.cu-column > div > *:last-child {
-  margin-bottom: 0px;
+/* If there are consecutive grey containers */
+
+.cu-container.bg-cu-black-100 + .cu-container.bg-cu-black-100 {
+  margin-top: -0.5rem;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding-top: 0.5rem;
 }
 
-/* 
-* Add styles to first child of container to banner overlap
-*/
+/* If a white container immediately follows a grey container */
 
-.cu-stackedlist > li {
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(230 230 230 / var(--tw-border-opacity));
+.cu-container.bg-cu-black-100 + .cu-container.bg-white {
+  margin-top: 1.5rem;
 }
-
-.cu-stackedlist > li:last-child {
-  margin-bottom: -1px;
-}
-
-.cu-stackedlist.md\:grid-cols-2 > li:last-child {
-  margin-bottom: 0px;
-}
-
-.cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
-  border-right-width: 1px;
-}
-
-/* 
-* Add styles to first child of container to banner overlap
-*/
 
 @media (min-width: 768px) {
-  .cu-overlap > .cu-section:first-child > *:first-child {
-    z-index: 20;
-    margin-top: -7rem;
+  .cu-container.bg-cu-black-100 + .cu-container.bg-white {
+    margin-top: 1.5rem;
   }
 }
 
-/* 
-* Modify spacing for prose and layout components
-*/
+/* If a grey container immediately follows a white container */
 
-/* Remove top and bottom space added by prose when columns are used inside prose container */
-
-.prose > .cu-column > *:first-child,
-.prose > .cu-column > * > *:first-child {
-  margin-top: 0px;
+.cu-container.bg-white + .cu-container.bg-cu-black-100 {
+  margin-top: 1.5rem;
 }
 
-.prose > .cu-column > *:last-child,
-.prose > .cu-column > * > *:last-child {
-  margin-bottom: 0px;
+@media (min-width: 768px) {
+  .cu-container.bg-white + .cu-container.bg-cu-black-100 {
+    margin-top: 2rem;
+  }
 }
 
-/* Remove top and bottom space added by prose inside container */
+/* If a grey container follows content not inside a container components */
 
-/* .prose > .cu-container > *,
-.prose > .cu-container > * > * {
-  @apply first:mt-0 last:mb-0;
-} */
+:not(.cu-container) + .cu-container.bg-cu-black-100 {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  :not(.cu-container) + .cu-container.bg-cu-black-100 {
+    margin-top: 3rem;
+  }
+}
 
 /* Figure Components */
 
@@ -5592,22 +5509,6 @@ select {
   max-width: none !important;
 }
 
-.ql-editor > .cu-column > *:first-child,.ql-editor > .cu-column > * > *:first-child {
-  margin-top: 0px;
-}
-
-.ql-editor > .cu-column > *:last-child,.ql-editor > .cu-column > * > *:last-child {
-  margin-bottom: 0px;
-}
-
-.ql-editor > .cu-column > *:first-child,.ql-editor > .cu-column > * > *:first-child {
-  margin-top: 0px;
-}
-
-.ql-editor > .cu-column > *:last-child,.ql-editor > .cu-column > * > *:last-child {
-  margin-bottom: 0px;
-}
-
 @media (min-width: 768px) {
   .ql-editor {
     font-size: 1.25rem !important;
@@ -6706,6 +6607,10 @@ select {
     background-size: cover;
   }
 
+  .md\:p-10 {
+    padding: 2.5rem;
+  }
+
   .md\:p-14 {
     padding: 3.5rem;
   }
@@ -6729,6 +6634,11 @@ select {
     padding-bottom: 2.5rem;
   }
 
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .md\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -6747,6 +6657,11 @@ select {
   .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .md\:py-8 {
@@ -7135,10 +7050,6 @@ select {
   }
 }
 
-.\[\&\>\*\:first-child\]\:-mt-0>*:first-child {
-  margin-top: -0px;
-}
-
 @media (min-width: 1024px) {
   .lg\:\[\&\>\*\:first-child\]\:col-span-2>*:first-child {
     grid-column: span 2 / span 2;
@@ -7151,10 +7062,6 @@ select {
 
 .\[\&\>\*\]\:z-10>* {
   z-index: 10;
-}
-
-.last\:\[\&\>\*\]\:mb-0>*:last-child {
-  margin-bottom: 0px;
 }
 
 .last\:\[\&\>\*\]\:justify-center>*:last-child {

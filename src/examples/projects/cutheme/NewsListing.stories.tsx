@@ -72,7 +72,7 @@ export const NewsListingBlocks: Story = {
           <h2>News Listing Block</h2>
           <SinglePara />
 
-          <Container bgColor="white" maxWidth="7xl" hasProse>
+          <Container maxWidth="7xl">
             <Heading text="Basic News Listing Block" />
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
@@ -98,7 +98,7 @@ export const NewsListingBlocks: Story = {
           <h2>News Listing Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <Heading text="News Listing Block with Grey Bg" />
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
@@ -122,7 +122,7 @@ export const NewsListingBlocks: Story = {
           <h2>Consecutive News Listing Block</h2>
           <SinglePara />
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>
@@ -142,7 +142,7 @@ export const NewsListingBlocks: Story = {
             </StackedList>
           </Container>
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>
@@ -165,7 +165,7 @@ export const NewsListingBlocks: Story = {
           <h2>Consecutive News Listing Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>
@@ -185,7 +185,7 @@ export const NewsListingBlocks: Story = {
             </StackedList>
           </Container>
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>

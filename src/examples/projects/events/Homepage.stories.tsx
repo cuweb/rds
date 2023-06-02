@@ -59,7 +59,7 @@ export const Homepage: Story = {
             ))}
           </Column>
 
-          <Container bgColor="grey" maxWidth="7xl" hasProse>
+          <Container maxWidth="7xl" isGrey>
             <Heading text="Upcoming Events" maxWidth="7xl" />
 
             {/* <Column maxWidth="7xl">

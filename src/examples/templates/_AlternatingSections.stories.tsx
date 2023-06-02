@@ -7,7 +7,7 @@ import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Examples/Templates/Grey Section',
+  title: 'Examples/Templates/Page Layouts',
 }
 
 export default meta
@@ -45,18 +45,50 @@ const DoublePara = () => {
   )
 }
 
-export const GreySection: Story = {
+export const AlternatingSections: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
       <Banner
-        title="Grey Section Container"
-        paragraph="This template replicates the basic markup template by using simple headings and paragraphs but is modifying the section container to feature a grey background that extends to the full width of the browser"
+        title="Alternating Sections Containers"
+        paragraph="This template replicates the basic markup template by using simple headings and paragraphs but uses modifyed section containers to alternate between white and grey backgrounds"
       />
 
       <Main>
         <Section>
-          <Container bgColor="grey" hasProse>
+          <Container>
+            <SinglePara />
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <h3>This is a header three</h3>
+            <SinglePara />
+          </Container>
+
+          <Container isGrey>
+            <SinglePara />
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <h3>This is a header three</h3>
+            <SinglePara />
+          </Container>
+          <Container isGrey>
+            <h2>2nd consecutive grey container</h2>
+            <SinglePara />
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <h3>This is a header three</h3>
+            <SinglePara />
+          </Container>
+
+          <Container>
+            <SinglePara />
+            <h2>This is a header two</h2>
+            <DoublePara />
+            <h3>This is a header three</h3>
+            <SinglePara />
+          </Container>
+          <Container>
+            <h2>2nd consecutive white container</h2>
             <SinglePara />
             <h2>This is a header two</h2>
             <DoublePara />

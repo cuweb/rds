@@ -66,7 +66,7 @@ export const NewsCardBlocks: Story = {
         <Section hasProse>
           <DoublePara />
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <Heading text="Basic News Card Block" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
@@ -87,7 +87,7 @@ export const NewsCardBlocks: Story = {
 
           <DoublePara />
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <Heading text="News Card Block with Grey Bg" />
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
@@ -109,7 +109,7 @@ export const NewsCardBlocks: Story = {
           <h2>Consecutive News Card Block</h2>
           <SinglePara />
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
@@ -127,7 +127,7 @@ export const NewsCardBlocks: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="white" maxWidth="5xl" hasProse>
+          <Container maxWidth="5xl">
             <Column cols="3" maxWidth="7xl">
               {data.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
@@ -148,7 +148,7 @@ export const NewsCardBlocks: Story = {
           <h2>Consecutive News Card Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="grey" maxWidth="5xl" hasProse>
+          <Container isGrey maxWidth="5xl">
             <Column cols="3">
               {data.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
@@ -166,7 +166,7 @@ export const NewsCardBlocks: Story = {
             </Column>
           </Container>
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <Column cols="3" maxWidth="7xl">
               {data.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
