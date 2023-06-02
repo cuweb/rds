@@ -2759,9 +2759,9 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
-.bg-green-800 {
+.bg-red-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(22 101 52 / var(--tw-bg-opacity));
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25 {
@@ -3163,11 +3163,6 @@ select {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
