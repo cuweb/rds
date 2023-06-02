@@ -5,6 +5,7 @@ export declare const styles: {
     button: string;
     chevron: string;
     term: string;
+    def: string;
     accordion: string;
 };
 //# sourceMappingURL=Description.Styles.d.ts.map
