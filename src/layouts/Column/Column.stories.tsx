@@ -16,28 +16,34 @@ const meta: Meta<typeof Column> = {
 export default meta
 type Story = StoryObj<typeof Column>
 
-export const Primary: Story = {}
-
-Primary.args = {
-  children: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
-  vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
-  dolor. Suspendisse vestibulum hendrerit.`,
-}
-
 export const TwoCol: Story = {
   name: 'Two Columns',
   render: () => (
     <Column maxWidth="5xl" cols="2" gridGap="10">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
-        vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
-        dolor. Suspendisse vestibulum hendrerit.
-      </p>
-      <p>
-        Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
-        dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
-        in egestas sapien ac libero.
-      </p>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </Column.Content>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </Column.Content>
     </Column>
   ),
 }
@@ -46,49 +52,78 @@ export const ThreeCol: Story = {
   name: 'Three Columns',
   render: () => (
     <Column maxWidth="5xl" cols="3" gridGap="10">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
-        vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
-        dolor. Suspendisse vestibulum hendrerit.
-      </p>
-      <p>
-        Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
-        dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
-        in egestas sapien ac libero.
-      </p>
-      <p>
-        Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
-        dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
-        in egestas sapien ac libero.
-      </p>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </Column.Content>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </Column.Content>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+        <p>
+          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
+          Phasellus in egestas sapien ac libero.
+        </p>
+      </Column.Content>
     </Column>
   ),
 }
 
 export const FourCol: Story = {
-  name: 'Three Columns',
+  name: 'Four Columns',
   render: () => (
     <Column maxWidth="7xl" cols="4" gridGap="10">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
-        vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
-        dolor. Suspendisse vestibulum hendrerit.
-      </p>
-      <p>
-        Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
-        dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
-        in egestas sapien ac libero.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in, egestas
-        vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et tristique
-        dolor. Suspendisse vestibulum hendrerit.
-      </p>
-      <p>
-        Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet, lectus
-        dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus. Phasellus
-        in egestas sapien ac libero.
-      </p>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+      </Column.Content>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+      </Column.Content>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+      </Column.Content>
+      <Column.Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
+          tristique dolor. Suspendisse vestibulum hendrerit.
+        </p>
+      </Column.Content>
     </Column>
   ),
 }
@@ -105,7 +140,7 @@ export const OneThird: Story = {
         <li className="px-6 py-5">Quisque auctor ultrices mauris, et semper urna aliquam quis.</li>
         <li className="px-6 py-5">Suspendisse vestibulum hendrerit.</li>
       </StackedList>
-      <div>
+      <Column.Content>
         <p className="pb-6 last:pb-0">
           Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
           lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
@@ -121,7 +156,7 @@ export const OneThird: Story = {
           lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
           Phasellus in egestas sapien ac libero.
         </p>
-      </div>
+      </Column.Content>
     </Column>
   ),
 }
@@ -130,7 +165,7 @@ export const TwoThirds: Story = {
   name: '2/3 Columns',
   render: () => (
     <Column maxWidth="7xl" cols="2/3" gridGap="10">
-      <div>
+      <Column.Content>
         <p className="pb-6 last:pb-0">
           Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
           lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
@@ -146,7 +181,7 @@ export const TwoThirds: Story = {
           lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
           Phasellus in egestas sapien ac libero.
         </p>
-      </div>
+      </Column.Content>
       <StackedList hasShadow>
         <li className="px-6 py-5">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
@@ -164,33 +199,43 @@ export const ConsCols: Story = {
   render: () => (
     <>
       <Column maxWidth="7xl" cols="2" gridGap="10">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
-          tristique dolor. Suspendisse vestibulum hendrerit.
-        </p>
-        <p>
-          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
-          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
-          Phasellus in egestas sapien ac libero.
-        </p>
+        <Column.Content>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+            egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus,
+            et tristique dolor. Suspendisse vestibulum hendrerit.
+          </p>
+        </Column.Content>
+        <Column.Content>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+            egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus,
+            et tristique dolor. Suspendisse vestibulum hendrerit.
+          </p>
+        </Column.Content>
       </Column>
       <Column maxWidth="7xl" cols="3" gridGap="10">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
-          tristique dolor. Suspendisse vestibulum hendrerit.
-        </p>
-        <p>
-          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
-          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
-          Phasellus in egestas sapien ac libero.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
-          tristique dolor. Suspendisse vestibulum hendrerit.
-        </p>
+        <Column.Content>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+            egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus,
+            et tristique dolor. Suspendisse vestibulum hendrerit.
+          </p>
+        </Column.Content>
+        <Column.Content>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+            egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus,
+            et tristique dolor. Suspendisse vestibulum hendrerit.
+          </p>
+        </Column.Content>
+        <Column.Content>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
+            egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus,
+            et tristique dolor. Suspendisse vestibulum hendrerit.
+          </p>
+        </Column.Content>
       </Column>
     </>
   ),

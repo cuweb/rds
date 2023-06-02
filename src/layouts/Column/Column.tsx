@@ -1,4 +1,5 @@
 import React from 'react'
+import { ColumnContent } from './ColumnContent'
 import { rdsGridColumns, rdsGridSpacing, rdsMaxWidth } from '../../utils/optionClasses'
 
 export interface ColumnProps {
@@ -12,7 +13,7 @@ const styles = {
   column: `cu-column not-contained mx-auto grid`,
 }
 
-export const Column = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1' }: ColumnProps) => {
+export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1' }: ColumnProps) => {
   return (
     <div
       className={`
@@ -25,3 +26,7 @@ export const Column = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1' 
     </div>
   )
 }
+
+export const Column = Object.assign(ColumnWrapper, {
+  Content: ColumnContent,
+})
