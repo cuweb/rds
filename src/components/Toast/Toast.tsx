@@ -64,7 +64,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+      <div className="cu-toast pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
         <div className="p-4">
           <div className="flex items-start">
             <div className="flex-shrink-0">

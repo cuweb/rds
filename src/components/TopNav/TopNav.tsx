@@ -87,7 +87,7 @@ export const TopNav = ({
   return (
     <Disclosure
       as="nav"
-      className={` ${
+      className={`cu-topnav ${
         sticky ? 'sticky' : ''
       } not-prose  relative top-0 z-50 border-t-2 border-cu-red bg-white px-6 shadow-md lg:px-8`}
       id="topNav"

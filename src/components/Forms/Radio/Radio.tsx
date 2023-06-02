@@ -25,7 +25,7 @@ export const Radio = ({
   return (
     <>
       {condition() && (
-        <fieldset className={formStyles.elementSpace}>
+        <fieldset className={`cu-formradio ${formStyles.elementSpace}`}>
           <legend className={formStyles.label}>
             {label} {props.required && <span className="text-cu-red">*</span>}
           </legend>

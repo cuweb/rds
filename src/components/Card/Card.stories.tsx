@@ -3,7 +3,7 @@ import { Card } from './Card'
 import { CardContent } from './CardContent'
 
 const meta: Meta<typeof Card> = {
-  title: 'Cards & Lists/Card',
+  title: 'Components/Card',
   component: Card,
   tags: ['autodocs'],
   parameters: {

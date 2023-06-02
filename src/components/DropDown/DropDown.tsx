@@ -29,7 +29,7 @@ export const DropDown = ({
   menuAlign = 'left',
 }: DropDownProps) => {
   return (
-    <Popover as="div" className="not-prose relative inline-block flex-shrink-0">
+    <Popover as="div" className="cu-dropdown not-prose relative inline-block flex-shrink-0">
       <div>
         <Popover.Button as={renderAs} className="cursor-pointer">
           <span className="sr-only">Open menu</span>

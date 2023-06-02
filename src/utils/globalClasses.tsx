@@ -1,6 +1,14 @@
-export const globalStyles = {
-  prose: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
+export const proseStyles = {
+  base: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
 }
+
+export const layoutSpacing = {
+  section: 'px-8 py-8 md:px-10 md:py-12',
+  containerWhite: 'py-5 md:py-6 bg-white',
+  containerGrey: 'bg-cu-black-50 rounded-xl py-6 md:py-12 px-8 md:p-10',
+}
+
+// ORIGINAL
 
 export const globalSpace = {
   margin: 'm-6 md:m-10',
@@ -12,8 +20,6 @@ export const globalSpace = {
   paddingYHalf: 'py-3 md:py-5',
   paddingX: 'px-6 md:px-10',
 }
-
-// ORIGINAL
 
 // export const globalSpace = {
 //   margin: 'm-10 md:m-14',

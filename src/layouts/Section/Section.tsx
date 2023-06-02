@@ -1,5 +1,5 @@
 import React from 'react'
-import { globalSpace, globalStyles } from '../../utils/globalClasses'
+import { layoutSpacing, proseStyles } from '../../utils/globalClasses'
 
 export interface SectionProps {
   children?: React.ReactNode
@@ -8,10 +8,10 @@ export interface SectionProps {
 }
 
 export const Section = ({ children, maxWidth = '5xl', hasProse }: SectionProps) => {
-  const addProse = hasProse ? globalStyles.prose : ''
+  const addProse = hasProse ? proseStyles.base : ''
   const childWidth = maxWidth ? `cu-section-${maxWidth}` : ''
 
   return (
-    <section className={`cu-section bg-white ${globalSpace.padding} ${childWidth} ${addProse}`}>{children}</section>
+    <section className={`cu-section bg-white ${layoutSpacing.section} ${childWidth} ${addProse}`}>{children}</section>
   )
 }

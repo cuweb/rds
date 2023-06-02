@@ -19,7 +19,7 @@ export const Input = ({
   return (
     <>
       {condition() && (
-        <div className={formStyles.elementSpace}>
+        <div className={`cu-forminput ${formStyles.elementSpace}`}>
           <label htmlFor={field.name} className={formStyles.label}>
             {label} {props.required && <span className="text-cu-red">*</span>}
           </label>

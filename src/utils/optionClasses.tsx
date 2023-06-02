@@ -20,8 +20,8 @@ export const rdsGridColumns = {
 
 export const rdsGridSpacing = {
   '0': 'gap-0',
-  '5': 'gap-5',
-  '10': 'gap-10',
+  '5': 'gap-2 md:gap-5',
+  '10': 'gap-4 md:gap-10',
 }
 
 export const rdsBgColor = {

@@ -41,7 +41,12 @@ export const PlacesAutoComplete = ({
   return (
     <>
       {condition() && (
-        <div {...field} id={field.name} className="grid gap-5" aria-invalid={meta.touched && meta.error ? true : false}>
+        <div
+          {...field}
+          id={field.name}
+          className="cu-placesautocomplete grid gap-5"
+          aria-invalid={meta.touched && meta.error ? true : false}
+        >
           <LocationPicker
             singleMarker
             singleMarkerCallback={markerCallback}

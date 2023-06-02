@@ -3,7 +3,7 @@ import { Column } from '../../../layouts/Column/Column'
 import { CardLoader } from './CardLoader'
 
 const meta: Meta<typeof CardLoader> = {
-  title: 'Load Screens/Card Loader',
+  title: 'Components/Load Screens/Card Loader',
   component: CardLoader,
   tags: ['autodocs'],
   parameters: {

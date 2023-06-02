@@ -6,7 +6,7 @@ import { Column } from '../../layouts/Column/Column'
 import { StarIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof Banner> = {
-  title: 'Headers/Banner',
+  title: 'Components/Banner',
   component: Banner,
   tags: ['autodocs'],
   parameters: {

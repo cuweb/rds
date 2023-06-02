@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Form } from '../Form/Form'
 
 const meta: Meta<typeof Form> = {
-  title: 'Forms/Select',
+  title: 'Components/Forms/Select',
   component: Form,
   tags: ['autodocs'],
   parameters: {

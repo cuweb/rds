@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { FooterStandard } from './FooterStandard'
 
 const meta: Meta<typeof FooterStandard> = {
-  title: 'Footers/Standard',
+  title: 'Components/Footers/Standard',
   component: FooterStandard,
   tags: ['autodocs'],
   parameters: {

@@ -56,7 +56,7 @@ export const LocationPicker = ({
   }, [coordinates, singleMarkerCallback, singleMarker])
 
   return (
-    <div className="not-prose">
+    <div className="cu-locationpicker not-prose">
       <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect}>
         {({ getInputProps, suggestions, getSuggestionItemProps }) => (
           <Combobox value={address} onChange={handleSelect}>

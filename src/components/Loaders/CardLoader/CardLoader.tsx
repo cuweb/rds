@@ -1,6 +1,6 @@
 export const CardLoader = () => {
   return (
-    <div className="not-prose max-w-xl overflow-hidden rounded-lg bg-white shadow-lg">
+    <div className="cu-cardloader not-prose max-w-xl overflow-hidden rounded-lg bg-white shadow-lg">
       <div className="animate-pulse bg-white">
         <span className="block h-44 w-full bg-cu-black-100"></span>
         <div className="space-y-3 p-6">
