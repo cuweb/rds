@@ -14,13 +14,14 @@ import { Card } from '../../../components/Card/Card'
 import { Listing } from '../../../components/Listing/Listing'
 import { Pagination } from '../../../components/Pagination/Pagination'
 import { Calendar } from '../../../components/Calendar/Calendar'
-// import { Filter } from '../../components/Filter/Filter'
+import { Filter } from '../../../components/Filter/Filter'
 
 import { EventData as dataCard } from '../../../data/EventData'
 import { EventItemData as dataList } from '../../../_deprecated/EventItem/EventItemData'
+import { FilterData as dataFilter } from '../../../data/FilterData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/Event Calendar/Homepage',
+  title: 'Examples/Projects/Event Calendar',
 }
 
 export default meta
@@ -62,9 +63,9 @@ export const Homepage: Story = {
           <Container maxWidth="7xl" isGrey>
             <Heading text="Upcoming Events" maxWidth="7xl" />
 
-            {/* <Column maxWidth="7xl">
-            <Filter filters={data.filters} callback={callbackfilter} sortOptions={data.sortOptions} />
-          </Column> */}
+            <Column maxWidth="7xl">
+              <Filter filters={dataFilter.filters} callback={() => undefined} sortOptions={dataFilter.sortOptions} />
+            </Column>
 
             <Column cols="2/3" maxWidth="7xl">
               <div>

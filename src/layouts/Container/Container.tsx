@@ -11,13 +11,5 @@ export const Container = ({ children, isGrey, maxWidth = '5xl' }: ContainerProps
   const childWidth = maxWidth ? `cu-container-${maxWidth}` : ''
   const bgStyles = isGrey ? layoutSpacing.containerGrey : layoutSpacing.containerWhite
 
-  return (
-    <>
-      <div
-        className={`cu-container not-contained ${proseStyles.base} ${layoutSpacing.container} ${childWidth} ${bgStyles}`}
-      >
-        {children}
-      </div>
-    </>
-  )
+  return <div className={`cu-container not-contained ${proseStyles.base} ${childWidth} ${bgStyles}`}>{children}</div>
 }

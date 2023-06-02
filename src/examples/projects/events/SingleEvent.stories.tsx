@@ -17,7 +17,7 @@ import { MapPinIcon } from '@heroicons/react/24/outline'
 import { DetailsItemData as data } from '../../../_deprecated/DetailsItem/DetailsItemData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/Event Calendar/Single Event',
+  title: 'Examples/Projects/Event Calendar',
 }
 
 export default meta

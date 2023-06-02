@@ -2297,10 +2297,6 @@ select {
   gap: 0.375rem;
 }
 
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2946,11 +2942,6 @@ select {
   padding-bottom: 2rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -3483,7 +3474,7 @@ select {
 
 /* If there are consecutive grey containers */
 
-.cu-container.bg-cu-black-100 + .cu-container.bg-cu-black-100 {
+.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
   margin-top: -0.5rem;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -3492,38 +3483,127 @@ select {
 
 /* If a white container immediately follows a grey container */
 
-.cu-container.bg-cu-black-100 + .cu-container.bg-white {
+.cu-container.bg-cu-black-50 + .cu-container.bg-white {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-cu-black-100 + .cu-container.bg-white {
+  .cu-container.bg-cu-black-50 + .cu-container.bg-white {
     margin-top: 1.5rem;
   }
 }
 
 /* If a grey container immediately follows a white container */
 
-.cu-container.bg-white + .cu-container.bg-cu-black-100 {
+.cu-container.bg-white + .cu-container.bg-cu-black-50 {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.bg-cu-black-100 {
+  .cu-container.bg-white + .cu-container.bg-cu-black-50 {
     margin-top: 2rem;
   }
 }
 
 /* If a grey container follows content not inside a container components */
 
-:not(.cu-container) + .cu-container.bg-cu-black-100 {
+:not(.cu-container) + .cu-container.bg-cu-black-50 {
   margin-top: 2.5rem;
 }
 
 @media (min-width: 768px) {
-  :not(.cu-container) + .cu-container.bg-cu-black-100 {
+  :not(.cu-container) + .cu-container.bg-cu-black-50 {
     margin-top: 3rem;
   }
+}
+
+/* If there are two consecutive panels not inside a column component */
+
+:not(.cu-column) > .cu-panel + .cu-panel {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  :not(.cu-column) > .cu-panel + .cu-panel {
+    margin-top: 2rem;
+  }
+}
+
+/* If columns and panels are used consecutively */
+
+.cu-column + .cu-column,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cu-column + .cu-column,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+    margin-top: 1.5rem;
+  }
+}
+
+/* If a container immediately follows a column component */
+
+.cu-column + .cu-container {
+  margin-top: 2rem;
+}
+
+/* If a column and grey container are used consecutively */
+
+.cu-container.bg-cu-black-50 + .cu-column,
+.cu-column + .cu-container.bg-cu-black-50 {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-cu-black-50 + .cu-column,
+.cu-column + .cu-container.bg-cu-black-50 {
+    margin-top: 3rem;
+  }
+}
+
+/* 
+* Add styles to first child of container to banner overlap
+*/
+
+@media (min-width: 768px) {
+  .cu-overlap > .cu-section:first-child > *:first-child {
+    z-index: 20;
+    margin-top: -7rem;
+  }
+}
+
+/* 
+* Individual Component Spacing
+*/
+
+/* Heading Component */
+
+.cu-section > .cu-heading:first-child,
+.cu-container > .cu-heading:first-child {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.cu-stackedlist > li {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(230 230 230 / var(--tw-border-opacity));
+}
+
+.cu-stackedlist > li:last-child {
+  margin-bottom: -1px;
+}
+
+.cu-stackedlist.md\:grid-cols-2 > li:last-child {
+  margin-bottom: 0px;
+}
+
+.cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
+  border-right-width: 1px;
 }
 
 /* Figure Components */
@@ -6583,6 +6663,10 @@ select {
     align-items: center;
   }
 
+  .md\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .md\:gap-2 {
     gap: 0.5rem;
   }
@@ -6597,6 +6681,10 @@ select {
 
   .md\:gap-3\.5 {
     gap: 0.875rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:gap-px {

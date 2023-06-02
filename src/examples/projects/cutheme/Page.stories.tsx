@@ -14,8 +14,7 @@ import { Card } from '../../../components/Card/Card'
 import { NewsData as data } from '../../../data/NewsData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme',
-  tags: ['autodocs'],
+  title: 'Examples/Projects/cutheme/Page Layouts',
 }
 
 export default meta
@@ -60,7 +59,7 @@ export const SinglePage: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner title="cutheme layout testing" isType="dark-wave" align="left" />
+      <Banner title="cutheme layout testing" isType="light-grey" align="left" />
 
       <Main>
         <Section hasProse>

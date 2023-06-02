@@ -89,7 +89,7 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
       </div>
 
       <div
-        className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-100 text-sm`}
+        className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
       >
         {days.map((day, dayIdx) => (
           <div

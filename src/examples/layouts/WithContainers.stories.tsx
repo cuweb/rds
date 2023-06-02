@@ -7,23 +7,23 @@ import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {
-  title: 'Examples/Templates/Page Layouts',
+  title: 'Examples/Templates/Layouts',
 }
 
 export default meta
 type Story = StoryObj
 
-// const SinglePara = () => {
-//   return (
-//     <>
-//       <p>
-//         Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-//         reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
-//         Praesent quis ligula quis nulla malesuada tempor.
-//       </p>
-//     </>
-//   )
-// }
+const SinglePara = () => {
+  return (
+    <>
+      <p>
+        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+        reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
+        Praesent quis ligula quis nulla malesuada tempor.
+      </p>
+    </>
+  )
+}
 
 const DoublePara = () => {
   return (
@@ -45,47 +45,44 @@ const DoublePara = () => {
   )
 }
 
-export const BasicMarkup: Story = {
+export const WithContainers: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner
-        title="Basic Markup"
-        paragraph="This template is the most basic form of an RDS template using simple markup for headings and paragraphs contained withing a section container"
-      />
+      <Banner title="With Containers" align="left" />
 
       <Main>
         <Section hasProse>
-          <h2>Not in a container</h2>
+          <h2>Heading Two</h2>
           <DoublePara />
-          <Container>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
-          <Container>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
+          <h3>Heading Three</h3>
+          <SinglePara />
+
           <Container isGrey>
-            <h2>This is a container</h2>
+            <h2>Heading Two</h2>
             <DoublePara />
           </Container>
+
           <Container isGrey>
-            <h2>This is a container</h2>
+            <h2>Heading Two</h2>
             <DoublePara />
           </Container>
-          <h2>Not in a container</h2>
+
+          <h2>Heading Two</h2>
           <DoublePara />
+
           <Container isGrey>
-            <h2>This is a container</h2>
+            <h3>Heading Three</h3>
             <DoublePara />
           </Container>
+
           <Container>
-            <h2>This is a container</h2>
+            <h3>Heading Three</h3>
             <DoublePara />
           </Container>
+
           <Container>
-            <h2>This is a container</h2>
+            <h3>Heading Three</h3>
             <DoublePara />
           </Container>
         </Section>

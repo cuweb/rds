@@ -3,10 +3,9 @@ export const proseStyles = {
 }
 
 export const layoutSpacing = {
-  section: 'px-8 py-8 md:px-10 md:py-14',
-  container: '',
+  section: 'px-8 py-8 md:px-10 md:py-12',
   containerWhite: 'py-5 md:py-6 bg-white',
-  containerGrey: 'bg-cu-black-100 rounded-xl py-6 md:py-12 px-8 md:p-10',
+  containerGrey: 'bg-cu-black-50 rounded-xl py-6 md:py-12 px-8 md:p-10',
 }
 
 // ORIGINAL

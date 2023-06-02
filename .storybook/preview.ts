@@ -15,11 +15,11 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Get Started',
-        ['Introduction', 'Changelog', ['Basic Markup', 'Grey Section', 'Alternating Sections', 'Grids And Columns']],
+        ['Introduction', 'Changelog'],
         'Examples',
         [
           'Templates',
-          ['Basic Markup', 'Grey Section', 'Alternating Sections', 'Grid Columns'],
+          ['Layouts', ['Basic Markup', 'With Containers', 'With Columns', 'Layout Spacing']],
           'Projects',
           ['cutheme', ['Single Page', 'Grey Container'], 'Event Calendar', ['Homepage', 'Single Event']],
         ],

@@ -14,8 +14,7 @@ import { Card } from '../../../components/Card/Card'
 import { NewsData as data } from '../../../data/NewsData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Card Blocks',
-  tags: ['autodocs'],
+  title: 'Examples/Projects/cutheme/Blocks',
 }
 
 export default meta
@@ -56,7 +55,7 @@ const DoublePara = () => {
   )
 }
 
-export const NewsCardBlocks: Story = {
+export const NewsCards: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
