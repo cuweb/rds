@@ -19,9 +19,9 @@ export const parameters = {
         'Examples',
         [
           'Templates',
-          ['Layouts', ['Basic Markup', 'With Containers', 'With Columns', 'Layout Spacing']],
+          ['Layouts'],
           'Projects',
-          ['cutheme', ['Single Page', 'Grey Container'], 'Event Calendar', ['Homepage', 'Single Event']],
+          ['cutheme', ['Page Layouts', 'Blocks'], 'Event Calendar', ['Homepage', 'Single Event']],
         ],
         'Components',
         'Layouts',
