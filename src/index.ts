@@ -30,26 +30,17 @@ export { Card } from './components/Card/Card'
 export { Listing } from './components/Listing/Listing'
 
 //
-// DEPRECATED Cards
-// -----------------
-export { EventCard } from './components/Cards_Deprecated/EventCard/EventCard'
-export { NewsCard } from './components/Cards_Deprecated/NewsCard/NewsCard'
-export { NumberCard } from './components/Cards_Deprecated/NumberCard/NumberCard'
-export { PeopleCard } from './components/Cards_Deprecated/PeopleCard/PeopleCard'
-export { VideoCard } from './components/Cards_Deprecated/VideoCard/VideoCard'
-
-//
 // DEPRECATED Lists
 // -----------------
-export { DetailsItem } from './components/Listings_Deprecated/DetailsItem/DetailsItem'
-export { EventItem } from './components/Listings_Deprecated/EventItem/EventItem'
-export { FeedItem } from './components/Listings_Deprecated/FeedItem/FeedItem'
-export { FileItem } from './components/Listings_Deprecated/FileItem/FileItem'
-export { JobItem } from './components/Listings_Deprecated/JobItem/JobItem'
-export { LinkItem } from './components/Listings_Deprecated/LinkItem/LinkItem'
-export { MarketplaceItem } from './components/Listings_Deprecated/MarketplaceItem/MarketplaceItem'
-export { NewsItem } from './components/Listings_Deprecated/NewsItem/NewsItem'
-export { PeopleItem } from './components/Listings_Deprecated/PeopleItem/PeopleItem'
+export { DetailsItem } from './_deprecated/DetailsItem/DetailsItem'
+export { EventItem } from './_deprecated/EventItem/EventItem'
+export { FeedItem } from './_deprecated/FeedItem/FeedItem'
+export { FileItem } from './_deprecated/FileItem/FileItem'
+export { JobItem } from './_deprecated/JobItem/JobItem'
+export { LinkItem } from './_deprecated/LinkItem/LinkItem'
+export { MarketplaceItem } from './_deprecated/MarketplaceItem/MarketplaceItem'
+export { NewsItem } from './_deprecated/NewsItem/NewsItem'
+export { PeopleItem } from './_deprecated/PeopleItem/PeopleItem'
 
 //
 // Headers & Footers
@@ -89,5 +80,5 @@ export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
 // Types
 // -----------------
 export type { ColumnDefinitionType } from './components/Table/Table'
-export type { DetailsItemProps } from './components/Listings_Deprecated/DetailsItem/DetailsItem'
+export type { DetailsItemProps } from './_deprecated/DetailsItem/DetailsItem'
 export type { UserInfoType } from './components/Avatar/Avatar'

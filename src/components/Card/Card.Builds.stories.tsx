@@ -6,7 +6,7 @@ import { PeopleDataSingle as singlePeople } from '../../data/PeopleData'
 import { VideoDataSingle as singleVideo } from '../../data/VideoData'
 
 const meta: Meta<typeof Card> = {
-  title: 'Cards & Lists/Card Builds',
+  title: 'Examples/Templates/Card Builds',
   component: Card,
   tags: ['autodocs'],
   argTypes: {

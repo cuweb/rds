@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TopNavLoader } from './TopNavLoader'
 
 const meta: Meta<typeof TopNavLoader> = {
-  title: 'Load Screens/TopNav Loader',
+  title: 'Components/Load Screens/TopNav Loader',
   component: TopNavLoader,
   tags: ['autodocs'],
   parameters: {

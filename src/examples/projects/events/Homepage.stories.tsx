@@ -17,7 +17,7 @@ import { Calendar } from '../../../components/Calendar/Calendar'
 // import { Filter } from '../../components/Filter/Filter'
 
 import { EventData as dataCard } from '../../../data/EventData'
-import { EventItemData as dataList } from '../../../components/Listings_Deprecated/EventItem/EventItemData'
+import { EventItemData as dataList } from '../../../_deprecated/EventItem/EventItemData'
 
 const meta: Meta = {
   title: 'Examples/Projects/Event Calendar/Homepage',

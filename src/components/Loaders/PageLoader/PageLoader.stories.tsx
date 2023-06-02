@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { PageLoader } from './PageLoader'
 
 const meta: Meta<typeof PageLoader> = {
-  title: 'Load Screens/Page Loader',
+  title: 'Components/Load Screens/Page Loader',
   component: PageLoader,
   tags: ['autodocs'],
   parameters: {

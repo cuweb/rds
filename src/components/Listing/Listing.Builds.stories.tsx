@@ -5,7 +5,7 @@ import { EventDataSingle as singleEvent } from '../../data/EventData'
 import { PeopleDataSingle as singlePeople } from '../../data/PeopleData'
 
 const meta: Meta<typeof Listing> = {
-  title: 'Cards & Lists/Listing Builds',
+  title: 'Examples/Templates/Listing Builds',
   component: Listing,
   tags: ['autodocs'],
   argTypes: {

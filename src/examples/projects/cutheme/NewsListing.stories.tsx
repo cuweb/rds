@@ -11,7 +11,7 @@ import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Listing } from '../../../components/Listing/Listing'
 
 // import { NewsItemData as data } from '../../../components/Listings_Deprecated/NewsItem/NewsItemData'
-import { NewsItem } from '../../../components/Listings_Deprecated/NewsItem/NewsItem'
+import { NewsItem } from '../../../_deprecated/NewsItem/NewsItem'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
