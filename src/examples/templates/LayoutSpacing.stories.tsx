@@ -65,19 +65,19 @@ export const LayoutSpacing: Story = {
           <Container isGrey>
             <SinglePara />
             <Column cols="2">
-              <div className={proseStyles.base}>One</div>
-              <div className={proseStyles.base}>One</div>
+              <Column.Content>One</Column.Content>
+              <Column.Content>One</Column.Content>
             </Column>
             <Column cols="2">
-              <div className={proseStyles.base}>One</div>
-              <div className={proseStyles.base}>One</div>
+              <Column.Content>One</Column.Content>
+              <Column.Content>One</Column.Content>
             </Column>
             <Panel hasBorder hasShadow>
               <p>foo</p>
             </Panel>
             <Column cols="2">
-              <div className={proseStyles.base}>One</div>
-              <div className={proseStyles.base}>One</div>
+              <Column.Content>One</Column.Content>
+              <Column.Content>One</Column.Content>
             </Column>
           </Container>
 
@@ -85,12 +85,12 @@ export const LayoutSpacing: Story = {
             <h2>This is a container</h2>
             <SinglePara />
             <Column cols="2">
-              <div className={proseStyles.base}>
+              <Column.Content>
                 <SinglePara />
-              </div>
-              <div className={proseStyles.base}>
+              </Column.Content>
+              <Column.Content>
                 <SinglePara />
-              </div>
+              </Column.Content>
             </Column>
             <SinglePara />
           </Container>
@@ -99,12 +99,12 @@ export const LayoutSpacing: Story = {
             <h2>This is a container</h2>
             <SinglePara />
             <Column cols="2">
-              <div className={proseStyles.base}>
+              <Column.Content>
                 <SinglePara />
-              </div>
-              <div className={proseStyles.base}>
+              </Column.Content>
+              <Column.Content>
                 <SinglePara />
-              </div>
+              </Column.Content>
             </Column>
             <SinglePara />
           </Container>

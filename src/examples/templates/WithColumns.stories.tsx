@@ -7,8 +7,6 @@ import { Banner } from '../../components/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 
-import { proseStyles } from '../../utils/globalClasses'
-
 const meta: Meta = {
   title: 'Examples/Templates/Layouts',
 }
@@ -62,66 +60,66 @@ export const WithColumns: Story = {
           <SinglePara />
 
           <Column cols="2">
-            <div className={proseStyles.base}>
+            <Column.Content>
               <SinglePara />
-            </div>
-            <div className={proseStyles.base}>
+            </Column.Content>
+            <Column.Content>
               <SinglePara />
-            </div>
+            </Column.Content>
           </Column>
 
           <Container>
             <h2>This is a container</h2>
             <SinglePara />
             <Column cols="2">
-              <div className={proseStyles.base}>
+              <Column.Content>
                 <SinglePara />
-              </div>
-              <div className={proseStyles.base}>
+              </Column.Content>
+              <Column.Content>
                 <SinglePara />
-              </div>
+              </Column.Content>
             </Column>
             <SinglePara />
           </Container>
 
           <Column cols="2">
-            <div className={proseStyles.base}>
+            <Column.Content>
               <SinglePara />
-            </div>
-            <div className={proseStyles.base}>
+            </Column.Content>
+            <Column.Content>
               <SinglePara />
-            </div>
+            </Column.Content>
           </Column>
 
           <Container isGrey>
             <h2>This is a container</h2>
             <SinglePara />
             <Column cols="2">
-              <div className={proseStyles.base}>
+              <Column.Content>
                 <SinglePara />
-              </div>
-              <div className={proseStyles.base}>
+              </Column.Content>
+              <Column.Content>
                 <SinglePara />
-              </div>
+              </Column.Content>
             </Column>
             <SinglePara />
           </Container>
 
           <Column cols="2">
-            <div className={proseStyles.base}>
+            <Column.Content>
               <SinglePara />
-            </div>
-            <div className={proseStyles.base}>
+            </Column.Content>
+            <Column.Content>
               <SinglePara />
-            </div>
+            </Column.Content>
           </Column>
           <Column cols="2">
-            <div className={proseStyles.base}>
+            <Column.Content>
               <SinglePara />
-            </div>
-            <div className={proseStyles.base}>
+            </Column.Content>
+            <Column.Content>
               <SinglePara />
-            </div>
+            </Column.Content>
           </Column>
         </Section>
       </Main>
