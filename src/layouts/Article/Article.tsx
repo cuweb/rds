@@ -9,8 +9,10 @@ export interface ArticleProps {
 export const Article = ({ children, content }: ArticleProps) => {
   return (
     <>
-      {content && <article className={`${globalStyles.prose}`} dangerouslySetInnerHTML={{ __html: content }} />}
-      {!content && <article className={`${globalStyles.prose}`}>{children}</article>}
+      {content && (
+        <article className={`cu-article ${globalStyles.prose}`} dangerouslySetInnerHTML={{ __html: content }} />
+      )}
+      {!content && <article className={`cu-article ${globalStyles.prose}`}>{children}</article>}
     </>
   )
 }
