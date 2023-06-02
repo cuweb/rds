@@ -8,8 +8,6 @@ import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { Panel } from '../../layouts/Panel/Panel'
 
-import { proseStyles } from '../../utils/globalClasses'
-
 const meta: Meta = {
   title: 'Examples/Templates/Layouts',
 }
