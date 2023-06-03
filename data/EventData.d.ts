@@ -75,4 +75,8 @@ export declare const EventData: ({
     };
     multiday: boolean;
 })[];
+export declare const EventDetailsData: {
+    title: string;
+    description: string;
+}[];
 //# sourceMappingURL=EventData.d.ts.map
