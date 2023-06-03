@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
+import { Card } from '../../components/Card/Card'
 import { NewsDataSingle as singleNews } from '../../data/NewsData'
 import { EventDataSingle as singleEvent } from '../../data/EventData'
 import { PeopleDataSingle as singlePeople } from '../../data/PeopleData'
 import { VideoDataSingle as singleVideo } from '../../data/VideoData'
 
 const meta: Meta<typeof Card> = {
-  title: 'Cards & Lists/Card Builds',
+  title: 'Components/Card/Examples',
   component: Card,
   tags: ['autodocs'],
   argTypes: {

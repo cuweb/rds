@@ -14,7 +14,7 @@ export interface AlertBaseProps {
 
 const Alerter = ({ children }: PropsWithChildren) => {
   return (
-    <div aria-live="assertive" className="not-prose top-20">
+    <div aria-live="assertive" className="cu-alert not-prose top-20">
       <div className="w-full items-center space-y-4 sm:items-end">{children}</div>
     </div>
   )

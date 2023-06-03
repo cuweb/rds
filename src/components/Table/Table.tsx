@@ -26,7 +26,7 @@ export const Table = ({ data, columns, hasStripes = false, hasShadow, hasBorder,
   const shadowStyle = hasShadow ? styles.shadow : ''
 
   return (
-    <table className={`${styles.table} ${borderStyle} ${shadowStyle}`}>
+    <table className={`cu-table ${styles.table} ${borderStyle} ${shadowStyle}`}>
       <TableHeader columns={columns} sortData={setTableData} />
       <TableRows data={tableData} columns={columns} striped={hasStripes} range={range} />
     </table>

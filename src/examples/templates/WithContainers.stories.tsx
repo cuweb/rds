@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
+import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../_deprecated/Banner/Banner'
@@ -44,18 +45,46 @@ const DoublePara = () => {
   )
 }
 
-export const BasicMarkup: Story = {
+export const WithContainers: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner title="Basic Markup" align="left" />
+      <Banner title="With Containers" align="left" />
 
       <Main>
         <Section hasProse>
           <h2>Heading Two</h2>
-          <SinglePara />
-          <h3>Heading Three</h3>
           <DoublePara />
+          <h3>Heading Three</h3>
+          <SinglePara />
+
+          <Container isGrey>
+            <h2>Heading Two</h2>
+            <DoublePara />
+          </Container>
+
+          <Container isGrey>
+            <h2>Heading Two</h2>
+            <DoublePara />
+          </Container>
+
+          <h2>Heading Two</h2>
+          <DoublePara />
+
+          <Container isGrey>
+            <h3>Heading Three</h3>
+            <DoublePara />
+          </Container>
+
+          <Container>
+            <h3>Heading Three</h3>
+            <DoublePara />
+          </Container>
+
+          <Container>
+            <h3>Heading Three</h3>
+            <DoublePara />
+          </Container>
         </Section>
       </Main>
 

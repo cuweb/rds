@@ -7,20 +7,20 @@ import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../components/Banner/Banner'
+import { Banner } from '../../../_deprecated/Banner/Banner'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
 import { Listing } from '../../../components/Listing/Listing'
 import { Pagination } from '../../../components/Pagination/Pagination'
 import { Calendar } from '../../../components/Calendar/Calendar'
-// import { Filter } from '../../components/Filter/Filter'
+import { Filter } from '../../../components/Filter/Filter'
 
-import { EventData as dataCard } from '../../../data/EventData'
-import { EventItemData as dataList } from '../../../components/Listings_Deprecated/EventItem/EventItemData'
+import { EventData as dataCard, EventData as dataList } from '../../../data/EventData'
+import { FilterData as dataFilter } from '../../../data/FilterData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/Event Calendar/Homepage',
+  title: 'Examples/Projects/Event Calendar',
 }
 
 export default meta
@@ -59,12 +59,12 @@ export const Homepage: Story = {
             ))}
           </Column>
 
-          <Container bgColor="grey" maxWidth="7xl" hasProse>
+          <Container maxWidth="7xl" isGrey>
             <Heading text="Upcoming Events" maxWidth="7xl" />
 
-            {/* <Column maxWidth="7xl">
-            <Filter filters={data.filters} callback={callbackfilter} sortOptions={data.sortOptions} />
-          </Column> */}
+            <Column maxWidth="7xl">
+              <Filter filters={dataFilter.filters} callback={() => undefined} sortOptions={dataFilter.sortOptions} />
+            </Column>
 
             <Column cols="2/3" maxWidth="7xl">
               <div>
@@ -74,8 +74,8 @@ export const Homepage: Story = {
                       id,
                       title,
                       link,
-                      start_date,
-                      end_date,
+                      startDate,
+                      endDate,
                       event_address,
                       on_campus,
                       on_campus_building,
@@ -84,12 +84,12 @@ export const Homepage: Story = {
                     }) => (
                       <Listing key={id}>
                         <a href={link}>
-                          <Listing.DateBox startDate={start_date} />
+                          <Listing.DateBox startDate={startDate} />
                           <Listing.Content>
                             <Listing.Header text={title} />
                             <Listing.EventMeta
-                              startDateTime={start_date}
-                              endDateTime={end_date}
+                              startDateTime={startDate}
+                              endDateTime={endDate}
                               onCampus={on_campus}
                               onCampusBuilding={on_campus_building}
                               onCampusRoomNumber={on_campus_room_number}

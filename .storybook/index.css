@@ -722,26 +722,6 @@ select {
   }
 }
 
-.aspect-h-9 {
-  --tw-aspect-h: 9;
-}
-
-.aspect-w-16 {
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 16;
-}
-
-.aspect-w-16 > * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .prose {
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -1475,10 +1455,6 @@ select {
   inset: 0px;
 }
 
-.-bottom-10 {
-  bottom: -2.5rem;
-}
-
 .-left-4 {
   left: -1rem;
 }
@@ -1501,10 +1477,6 @@ select {
 
 .left-4 {
   left: 1rem;
-}
-
-.left-6 {
-  left: 1.5rem;
 }
 
 .right-0 {
@@ -1776,10 +1748,6 @@ select {
   margin-right: 0.125rem;
 }
 
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .mr-10 {
   margin-right: 2.5rem;
 }
@@ -1790,10 +1758,6 @@ select {
 
 .mr-3 {
   margin-right: 0.75rem;
-}
-
-.mr-4 {
-  margin-right: 1rem;
 }
 
 .mt-1 {
@@ -2095,16 +2059,8 @@ select {
   max-width: 80rem;
 }
 
-.max-w-\[30\%\] {
-  max-width: 30%;
-}
-
 .max-w-\[320px\] {
   max-width: 320px;
-}
-
-.max-w-\[40\%\] {
-  max-width: 40%;
 }
 
 .max-w-\[50\%\] {
@@ -2325,10 +2281,6 @@ select {
   gap: 0.375rem;
 }
 
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2377,18 +2329,6 @@ select {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
-}
-
-.space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.125rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.125rem * var(--tw-space-y-reverse));
 }
 
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -2655,11 +2595,6 @@ select {
 .border-yellow-400 {
   --tw-border-opacity: 1;
   border-color: rgb(250 204 21 / var(--tw-border-opacity));
-}
-
-.border-l-cyan-300 {
-  --tw-border-opacity: 1;
-  border-left-color: rgb(103 232 249 / var(--tw-border-opacity));
 }
 
 .border-r-transparent {
@@ -3011,16 +2946,8 @@ select {
   padding-bottom: 1rem;
 }
 
-.pb-5 {
-  padding-bottom: 1.25rem;
-}
-
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-
-.pb-8 {
-  padding-bottom: 2rem;
 }
 
 .pl-10 {
@@ -3071,16 +2998,8 @@ select {
   padding-top: 2.5rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
 .pt-2 {
   padding-top: 0.5rem;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
 }
 
 .pt-4 {
@@ -3162,10 +3081,6 @@ select {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-light {
-  font-weight: 300;
 }
 
 .font-medium {
@@ -3256,11 +3171,6 @@ select {
 .text-cyan-600 {
   --tw-text-opacity: 1;
   color: rgb(8 145 178 / var(--tw-text-opacity));
-}
-
-.text-cyan-700 {
-  --tw-text-opacity: 1;
-  color: rgb(14 116 144 / var(--tw-text-opacity));
 }
 
 .text-gray-200 {
@@ -3499,93 +3409,9 @@ select {
 
 /* RDS Layout CSS */
 
-/* First white block inside section */
-
-.cu-section > .cu-container.bg-white:first-child {
-  padding-top: 0px;
-}
-
-/* Last white block inside section */
-
-.cu-section > .cu-container.bg-white:last-child {
-  /* @apply -mb-10 md:-mb-14; */
-  padding-bottom: 0px;
-}
-
-/* First grey block inside section */
-
-.cu-section > .cu-container.bg-cu-black-50:first-child {
-  margin-top: -2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-section > .cu-container.bg-cu-black-50:first-child {
-    margin-top: -3.5rem;
-  }
-}
-
-/* Last grey block inside section */
-
-.cu-section > .cu-container.bg-cu-black-50:last-child {
-  margin-bottom: -2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-section > .cu-container.bg-cu-black-50:last-child {
-    margin-bottom: -3.5rem;
-  }
-}
-
-.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
-  padding-top: 0.5rem;
-}
-
-.cu-container.bg-cu-black-50 + .cu-container.bg-white {
-  padding-top: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-container.bg-cu-black-50 + .cu-container.bg-white {
-    padding-top: 2.5rem;
-  }
-}
-
-.cu-container.bg-white + .cu-container.bg-cu-black-50,
-.cu-column + .cu-container {
-  margin-top: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.bg-cu-black-50,
-.cu-column + .cu-container {
-    margin-top: 2.5rem;
-  }
-}
-
-:not(.cu-container) + .cu-container.bg-cu-black-50,
-.cu-container.bg-cu-black-50 + :not(.cu-container) {
-  margin-top: 3.5rem;
-}
-
-:not(.not-contained) + .cu-column,
-.cu-column + :not(.not-contained),
-.cu-column + .cu-column,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column,
-.cu-panel + .cu-panel {
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  :not(.not-contained) + .cu-column,
-.cu-column + :not(.not-contained),
-.cu-column + .cu-column,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column,
-.cu-panel + .cu-panel {
-    margin-top: 2rem;
-  }
-}
+/* 
+* Max Width for container size props
+*/
 
 /* Target children of container and apply max width 5xl */
 
@@ -3602,7 +3428,7 @@ select {
 .cu-container-7xl > :not(.not-contained) {
   margin-left: auto;
   margin-right: auto;
-  max-width: 64rem;
+  max-width: 80rem;
 }
 
 /* Target children of container and apply max width full */
@@ -3614,23 +3440,137 @@ select {
   max-width: 100%;
 }
 
-.cu-section > .cu-heading:first-child,
-.cu-container > .cu-heading:first-child {
-  margin-top: 1rem;
+/* 
+* Target containers based on bg color and position inside section
+*/
+
+/* If first element inside section component is a container with white bg */
+
+.cu-section > .cu-container.bg-white:first-child {
   padding-top: 0px;
 }
 
-.cu-column > div > *:first-child {
-  margin-top: 0px;
+/* If last element inside section component is a container with white bg */
+
+.cu-section > .cu-container.bg-white:last-child {
+  padding-bottom: 0px;
 }
 
-.cu-column > div > *:last-child {
-  margin-bottom: 0px;
+/* If there are consecutive grey containers */
+
+.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
+  margin-top: -0.5rem;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding-top: 0.5rem;
+}
+
+/* If a white container immediately follows a grey container */
+
+.cu-container.bg-cu-black-50 + .cu-container.bg-white {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-cu-black-50 + .cu-container.bg-white {
+    margin-top: 1.5rem;
+  }
+}
+
+/* If a grey container immediately follows a white container */
+
+.cu-container.bg-white + .cu-container.bg-cu-black-50 {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-white + .cu-container.bg-cu-black-50 {
+    margin-top: 2rem;
+  }
+}
+
+/* If a grey container follows content not inside a container components */
+
+:not(.cu-container) + .cu-container.bg-cu-black-50 {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  :not(.cu-container) + .cu-container.bg-cu-black-50 {
+    margin-top: 3rem;
+  }
+}
+
+/* If there are two consecutive panels not inside a column component */
+
+:not(.cu-column) > .cu-panel + .cu-panel {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  :not(.cu-column) > .cu-panel + .cu-panel {
+    margin-top: 2rem;
+  }
+}
+
+/* If columns and panels are used consecutively */
+
+.cu-column + .cu-column,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cu-column + .cu-column,
+.cu-column + .cu-panel,
+.cu-panel + .cu-column {
+    margin-top: 1.5rem;
+  }
+}
+
+/* If a container immediately follows a column component */
+
+.cu-column + .cu-container {
+  margin-top: 2rem;
+}
+
+/* If a column and grey container are used consecutively */
+
+.cu-container.bg-cu-black-50 + .cu-column,
+.cu-column + .cu-container.bg-cu-black-50 {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-cu-black-50 + .cu-column,
+.cu-column + .cu-container.bg-cu-black-50 {
+    margin-top: 3rem;
+  }
 }
 
 /* 
 * Add styles to first child of container to banner overlap
 */
+
+@media (min-width: 768px) {
+  .cu-overlap > .cu-section:first-child > *:first-child {
+    z-index: 20;
+    margin-top: -7rem;
+  }
+}
+
+/* 
+* Individual Component Spacing
+*/
+
+/* Heading Component */
+
+.cu-section > .cu-heading:first-child,
+.cu-container > .cu-heading:first-child {
+  margin-top: 0px;
+  padding-top: 0px;
+}
 
 .cu-stackedlist > li {
   border-bottom-width: 1px;
@@ -3649,40 +3589,6 @@ select {
 .cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
   border-right-width: 1px;
 }
-
-/* 
-* Add styles to first child of container to banner overlap
-*/
-
-@media (min-width: 768px) {
-  .cu-overlap > .cu-section:first-child > *:first-child {
-    z-index: 20;
-    margin-top: -7rem;
-  }
-}
-
-/* 
-* Modify spacing for prose and layout components
-*/
-
-/* Remove top and bottom space added by prose when columns are used inside prose container */
-
-.prose > .cu-column > *:first-child,
-.prose > .cu-column > * > *:first-child {
-  margin-top: 0px;
-}
-
-.prose > .cu-column > *:last-child,
-.prose > .cu-column > * > *:last-child {
-  margin-bottom: 0px;
-}
-
-/* Remove top and bottom space added by prose inside container */
-
-/* .prose > .cu-container > *,
-.prose > .cu-container > * > * {
-  @apply first:mt-0 last:mb-0;
-} */
 
 /* Figure Components */
 
@@ -5667,22 +5573,6 @@ select {
   max-width: none !important;
 }
 
-.ql-editor > .cu-column > *:first-child,.ql-editor > .cu-column > * > *:first-child {
-  margin-top: 0px;
-}
-
-.ql-editor > .cu-column > *:last-child,.ql-editor > .cu-column > * > *:last-child {
-  margin-bottom: 0px;
-}
-
-.ql-editor > .cu-column > *:first-child,.ql-editor > .cu-column > * > *:first-child {
-  margin-top: 0px;
-}
-
-.ql-editor > .cu-column > *:last-child,.ql-editor > .cu-column > * > *:last-child {
-  margin-bottom: 0px;
-}
-
 @media (min-width: 768px) {
   .ql-editor {
     font-size: 1.25rem !important;
@@ -6131,14 +6021,6 @@ select {
   }
 }
 
-@container (min-width: 24rem) {
-  @media (min-width: 768px) {
-    .\@sm\:md\:aspect-h-6 {
-      --tw-aspect-h: 6;
-    }
-  }
-}
-
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -6441,20 +6323,6 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.group:hover .group-hover\:shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.group:hover .group-hover\:duration-300 {
-  transition-duration: 300ms;
-}
-
-.group:hover .group-hover\:ease-in {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
 .prose-headings\:mb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
   margin-bottom: 1.5rem;
 }
@@ -6599,10 +6467,6 @@ select {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .sm\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .sm\:flex-row-reverse {
     flex-direction: row-reverse;
   }
@@ -6621,10 +6485,6 @@ select {
 
   .sm\:justify-between {
     justify-content: space-between;
-  }
-
-  .sm\:gap-2 {
-    gap: 0.5rem;
   }
 
   .sm\:gap-4 {
@@ -6723,20 +6583,12 @@ select {
     margin-top: 3.5rem;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
   }
 
   .md\:min-h-\[240px\] {
     min-height: 240px;
-  }
-
-  .md\:w-24 {
-    width: 6rem;
   }
 
   .md\:w-8\/12 {
@@ -6779,12 +6631,8 @@ select {
     align-items: center;
   }
 
-  .md\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .md\:gap-2\.5 {
-    gap: 0.625rem;
+  .md\:gap-10 {
+    gap: 2.5rem;
   }
 
   .md\:gap-3 {
@@ -6795,12 +6643,16 @@ select {
     gap: 0.875rem;
   }
 
-  .md\:gap-px {
-    gap: 1px;
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:bg-cover {
     background-size: cover;
+  }
+
+  .md\:p-10 {
+    padding: 2.5rem;
   }
 
   .md\:p-14 {
@@ -6826,6 +6678,11 @@ select {
     padding-bottom: 2.5rem;
   }
 
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .md\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -6844,6 +6701,11 @@ select {
   .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .md\:py-8 {
@@ -6911,43 +6773,14 @@ select {
   }
 }
 
-@container (min-width: 20rem) {
-  @media (min-width: 768px) {
-    .\@xs\:md\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  }
-}
-
 @container (min-width: 24rem) {
   @media (min-width: 768px) {
-    .\@sm\:md\:h-28 {
-      height: 7rem;
-    }
-
     .\@sm\:md\:h-6 {
       height: 1.5rem;
     }
 
-    .\@sm\:md\:h-60 {
-      height: 15rem;
-    }
-
-    .\@sm\:md\:w-28 {
-      width: 7rem;
-    }
-
     .\@sm\:md\:w-6 {
       width: 1.5rem;
-    }
-
-    .\@sm\:md\:w-60 {
-      width: 15rem;
-    }
-
-    .\@sm\:md\:gap-8 {
-      gap: 2rem;
     }
 
     .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -6960,10 +6793,6 @@ select {
       --tw-space-y-reverse: 0;
       margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
       margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-    }
-
-    .\@sm\:md\:pt-0 {
-      padding-top: 0px;
     }
 
     .\@sm\:md\:text-4xl {
@@ -6992,69 +6821,14 @@ select {
   }
 }
 
-@container (min-width: 28rem) {
-  @media (min-width: 768px) {
-    .\@md\:md\:text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
-}
-
 @container (min-width: 32rem) {
   @media (min-width: 768px) {
-    .\@lg\:md\:mt-auto {
-      margin-top: auto;
-    }
-
-    .\@lg\:md\:block {
-      display: block;
-    }
-
-    .\@lg\:md\:h-60 {
-      height: 15rem;
-    }
-
-    .\@lg\:md\:w-60 {
-      width: 15rem;
-    }
-
     .\@lg\:md\:max-w-\[25\%\] {
       max-width: 25%;
     }
 
     .\@lg\:md\:max-w-\[35\%\] {
       max-width: 35%;
-    }
-
-    .\@lg\:md\:flex-row {
-      flex-direction: row;
-    }
-
-    .\@lg\:md\:gap-8 {
-      gap: 2rem;
-    }
-
-    .\@lg\:md\:pt-1 {
-      padding-top: 0.25rem;
-    }
-
-    .\@lg\:md\:pt-1\.5 {
-      padding-top: 0.375rem;
-    }
-
-    .\@lg\:md\:pt-2 {
-      padding-top: 0.5rem;
-    }
-
-    .\@lg\:md\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-
-    .\@lg\:md\:text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
     }
 
     .\@lg\:md\:text-lg {
@@ -7069,24 +6843,11 @@ select {
   }
 }
 
-@container (min-width: 36rem) {
-  @media (min-width: 768px) {
-    .\@xl\:md\:flex-row {
-      flex-direction: row;
-    }
-  }
-}
-
 @container (min-width: 42rem) {
   @media (min-width: 768px) {
     .\@2xl\:md\:text-base {
       font-size: 1rem;
       line-height: 1.5rem;
-    }
-
-    .\@2xl\:md\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
     }
   }
 }
@@ -7121,10 +6882,6 @@ select {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:w-24 {
-    width: 6rem;
   }
 
   .lg\:flex-1 {
@@ -7192,24 +6949,6 @@ select {
   }
 }
 
-@container (min-width: 42rem) {
-  @media (min-width: 1024px) {
-    .\@2xl\:lg\:gap-8 {
-      gap: 2rem;
-    }
-
-    .\@2xl\:lg\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-
-    .\@2xl\:lg\:text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
-}
-
 @container (min-width: 48rem) {
   @media (min-width: 1024px) {
     .\@3xl\:lg\:text-2xl {
@@ -7221,25 +6960,12 @@ select {
 
 @container (min-width: 56rem) {
   @media (min-width: 1024px) {
-    .\@4xl\:lg\:block {
-      display: block;
-    }
-
-    .\@4xl\:lg\:hidden {
-      display: none;
-    }
-
     .\@4xl\:lg\:h-32 {
       height: 8rem;
     }
 
     .\@4xl\:lg\:w-32 {
       width: 8rem;
-    }
-
-    .\@4xl\:lg\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
     }
 
     .\@4xl\:lg\:text-4xl {
@@ -7254,10 +6980,6 @@ select {
   }
 }
 
-.\[\&\>\*\:first-child\]\:-mt-0>*:first-child {
-  margin-top: -0px;
-}
-
 @media (min-width: 1024px) {
   .lg\:\[\&\>\*\:first-child\]\:col-span-2>*:first-child {
     grid-column: span 2 / span 2;
@@ -7270,10 +6992,6 @@ select {
 
 .\[\&\>\*\]\:z-10>* {
   z-index: 10;
-}
-
-.last\:\[\&\>\*\]\:mb-0>*:last-child {
-  margin-bottom: 0px;
 }
 
 .last\:\[\&\>\*\]\:justify-center>*:last-child {

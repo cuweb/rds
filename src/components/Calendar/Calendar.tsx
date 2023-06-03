@@ -63,7 +63,7 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
   }, [selectedDay, callback])
 
   return (
-    <div className="not-prose">
+    <div className="cu-calendar not-prose">
       <div className="not-prose mb-6 flex items-center rounded-lg border border-cu-black-100 bg-white py-2">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="sr-only text-base">Previous month</span>
@@ -89,7 +89,7 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
       </div>
 
       <div
-        className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-100 text-sm`}
+        className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
       >
         {days.map((day, dayIdx) => (
           <div

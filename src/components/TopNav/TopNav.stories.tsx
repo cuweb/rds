@@ -4,7 +4,7 @@ import { Button } from '../Button/Button'
 import { PlusIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof TopNav> = {
-  title: 'Headers/TopNav',
+  title: 'Components/TopNav',
   component: TopNav,
   tags: ['autodocs'],
   parameters: {

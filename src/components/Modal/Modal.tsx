@@ -28,7 +28,7 @@ export const Modal = ({
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="not-prose relative z-10"
+        className="cu-modal not-prose relative z-10"
         initialFocus={cancelButtonRef}
         onClose={() => setIsOpen(false)}
       >

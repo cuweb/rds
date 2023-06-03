@@ -5,6 +5,7 @@
 
 /* RDS Layout CSS */
 @import './spacing.css';
+@import './direct-descendant.css';
 @import './figure.css';
 @import './card-listing.css';
 

@@ -23,14 +23,12 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: 'Section HTML5 tag as container component',
-  bgColor: 'white',
-  hasProse: false,
 }
 
 export const GreyBackground: Story = {
   args: {
     children: 'Container component with grey background',
-    bgColor: 'grey',
+    isGrey: true,
   },
 }
 

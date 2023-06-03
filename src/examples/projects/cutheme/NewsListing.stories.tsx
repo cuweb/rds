@@ -6,19 +6,15 @@ import { Container } from '../../../layouts/Container/Container'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../components/Banner/Banner'
+import { Banner } from '../../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Listing } from '../../../components/Listing/Listing'
-
-// import { NewsItemData as data } from '../../../components/Listings_Deprecated/NewsItem/NewsItemData'
-import { NewsItem } from '../../../components/Listings_Deprecated/NewsItem/NewsItem'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Listing Blocks',
-  tags: ['autodocs'],
+  title: 'Examples/Projects/cutheme/Blocks',
 }
 
 export default meta
@@ -59,7 +55,7 @@ const DoublePara = () => {
   )
 }
 
-export const NewsListingBlocks: Story = {
+export const NewsListings: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
@@ -72,7 +68,7 @@ export const NewsListingBlocks: Story = {
           <h2>News Listing Block</h2>
           <SinglePara />
 
-          <Container bgColor="white" maxWidth="7xl" hasProse>
+          <Container maxWidth="7xl">
             <Heading text="Basic News Listing Block" />
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
@@ -98,7 +94,7 @@ export const NewsListingBlocks: Story = {
           <h2>News Listing Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <Heading text="News Listing Block with Grey Bg" />
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
@@ -122,7 +118,7 @@ export const NewsListingBlocks: Story = {
           <h2>Consecutive News Listing Block</h2>
           <SinglePara />
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>
@@ -142,7 +138,7 @@ export const NewsListingBlocks: Story = {
             </StackedList>
           </Container>
 
-          <Container bgColor="white" hasProse>
+          <Container>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>
@@ -165,7 +161,7 @@ export const NewsListingBlocks: Story = {
           <h2>Consecutive News Listing Block with Grey Bg</h2>
           <SinglePara />
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>
@@ -185,7 +181,7 @@ export const NewsListingBlocks: Story = {
             </StackedList>
           </Container>
 
-          <Container bgColor="grey" hasProse>
+          <Container isGrey>
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (
                 <Listing key={id}>

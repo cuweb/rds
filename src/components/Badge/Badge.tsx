@@ -6,7 +6,7 @@ export interface BadgeProps {
 }
 
 const BadgeBase = ({ children }: BadgeProps) => {
-  return <p className={`${styles.badge}`}>{children}</p>
+  return <p className={`cu-badge ${styles.badge}`}>{children}</p>
 }
 
 BadgeBase.displayName = 'LinkItem'

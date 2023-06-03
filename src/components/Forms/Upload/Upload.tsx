@@ -69,7 +69,7 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
   return (
     <>
       {condition() && (
-        <div className={formStyles.elementSpace}>
+        <div className={`cu-formupload ${formStyles.elementSpace}`}>
           <label htmlFor={field.name} className={formStyles.label}>
             {label} {props.required && <span className="text-cu-red">*</span>}
           </label>

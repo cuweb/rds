@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
+import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Banner } from '../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { Column } from '../../layouts/Column/Column'
 
 const meta: Meta = {
   title: 'Examples/Templates/Layouts',
@@ -44,18 +46,81 @@ const DoublePara = () => {
   )
 }
 
-export const BasicMarkup: Story = {
+export const WithColumns: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner title="Basic Markup" align="left" />
+      <Banner title="With Columns" align="left" />
 
       <Main>
         <Section hasProse>
-          <h2>Heading Two</h2>
-          <SinglePara />
-          <h3>Heading Three</h3>
+          <h2>Not in a container</h2>
           <DoublePara />
+          <h2>Not in a container</h2>
+          <SinglePara />
+
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+
+          <Container>
+            <h2>This is a container</h2>
+            <SinglePara />
+            <Column cols="2">
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+            </Column>
+            <SinglePara />
+          </Container>
+
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <SinglePara />
+            <Column cols="2">
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+            </Column>
+            <SinglePara />
+          </Container>
+
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
         </Section>
       </Main>
 
