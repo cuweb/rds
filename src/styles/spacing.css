@@ -72,6 +72,7 @@
 }
 
 /* If a column and grey container are used consecutively */
+.cu-container.bg-cu-black-50 + :not(.cu-container),
 .cu-container.bg-cu-black-50 + .cu-column,
 .cu-column + .cu-container.bg-cu-black-50 {
   @apply mt-6 md:mt-12;
