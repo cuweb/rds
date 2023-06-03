@@ -4,7 +4,6 @@
 export { Alert } from './components/Alert/Alert'
 export { Avatar } from './components/Avatar/Avatar'
 export { Badge } from './components/Badge/Badge'
-export { Banner } from './components/Banner/Banner'
 export { Button } from './components/Button/Button'
 export { Calendar } from './components/Calendar/Calendar'
 export { Card } from './components/Card/Card'
@@ -52,18 +51,9 @@ export { StackedList } from './layouts/StackedList/StackedList'
 // Types
 // -----------------
 export type { ColumnDefinitionType } from './components/Table/Table'
-export type { DetailsItemProps } from './_deprecated/DetailsItem/DetailsItem'
 export type { UserInfoType } from './components/Avatar/Avatar'
 
 //
 // DEPRECATED
 // -----------------
-export { DetailsItem } from './_deprecated/DetailsItem/DetailsItem'
-export { EventItem } from './_deprecated/EventItem/EventItem'
-export { FeedItem } from './_deprecated/FeedItem/FeedItem'
-export { FileItem } from './_deprecated/FileItem/FileItem'
-export { JobItem } from './_deprecated/JobItem/JobItem'
-export { LinkItem } from './_deprecated/LinkItem/LinkItem'
-export { MarketplaceItem } from './_deprecated/MarketplaceItem/MarketplaceItem'
-export { NewsItem } from './_deprecated/NewsItem/NewsItem'
-export { PeopleItem } from './_deprecated/PeopleItem/PeopleItem'
+export { Banner } from './_deprecated/Banner/Banner'

@@ -3,7 +3,7 @@ import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { TopNav } from '../../components/TopNav/TopNav'
-import { Banner } from '../../components/Banner/Banner'
+import { Banner } from '../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 
 const meta: Meta = {

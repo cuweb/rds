@@ -1748,10 +1748,6 @@ select {
   margin-right: 0.125rem;
 }
 
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .mr-10 {
   margin-right: 2.5rem;
 }
@@ -1762,10 +1758,6 @@ select {
 
 .mr-3 {
   margin-right: 0.75rem;
-}
-
-.mr-4 {
-  margin-right: 1rem;
 }
 
 .mt-1 {
@@ -2067,16 +2059,8 @@ select {
   max-width: 80rem;
 }
 
-.max-w-\[30\%\] {
-  max-width: 30%;
-}
-
 .max-w-\[320px\] {
   max-width: 320px;
-}
-
-.max-w-\[40\%\] {
-  max-width: 40%;
 }
 
 .max-w-\[50\%\] {
@@ -6483,10 +6467,6 @@ select {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .sm\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .sm\:flex-row-reverse {
     flex-direction: row-reverse;
   }
@@ -6505,10 +6485,6 @@ select {
 
   .sm\:justify-between {
     justify-content: space-between;
-  }
-
-  .sm\:gap-2 {
-    gap: 0.5rem;
   }
 
   .sm\:gap-4 {
@@ -6607,20 +6583,12 @@ select {
     margin-top: 3.5rem;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
   }
 
   .md\:min-h-\[240px\] {
     min-height: 240px;
-  }
-
-  .md\:w-24 {
-    width: 6rem;
   }
 
   .md\:w-8\/12 {
@@ -6667,14 +6635,6 @@ select {
     gap: 2.5rem;
   }
 
-  .md\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .md\:gap-2\.5 {
-    gap: 0.625rem;
-  }
-
   .md\:gap-3 {
     gap: 0.75rem;
   }
@@ -6685,10 +6645,6 @@ select {
 
   .md\:gap-5 {
     gap: 1.25rem;
-  }
-
-  .md\:gap-px {
-    gap: 1px;
   }
 
   .md\:bg-cover {
@@ -6819,24 +6775,12 @@ select {
 
 @container (min-width: 24rem) {
   @media (min-width: 768px) {
-    .\@sm\:md\:h-28 {
-      height: 7rem;
-    }
-
     .\@sm\:md\:h-6 {
       height: 1.5rem;
     }
 
-    .\@sm\:md\:w-28 {
-      width: 7rem;
-    }
-
     .\@sm\:md\:w-6 {
       width: 1.5rem;
-    }
-
-    .\@sm\:md\:gap-8 {
-      gap: 2rem;
     }
 
     .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -6849,10 +6793,6 @@ select {
       --tw-space-y-reverse: 0;
       margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
       margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-    }
-
-    .\@sm\:md\:pt-0 {
-      padding-top: 0px;
     }
 
     .\@sm\:md\:text-4xl {
@@ -6881,64 +6821,14 @@ select {
   }
 }
 
-@container (min-width: 28rem) {
-  @media (min-width: 768px) {
-    .\@md\:md\:text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
-}
-
 @container (min-width: 32rem) {
   @media (min-width: 768px) {
-    .\@lg\:md\:mt-auto {
-      margin-top: auto;
-    }
-
-    .\@lg\:md\:block {
-      display: block;
-    }
-
-    .\@lg\:md\:h-60 {
-      height: 15rem;
-    }
-
-    .\@lg\:md\:w-60 {
-      width: 15rem;
-    }
-
     .\@lg\:md\:max-w-\[25\%\] {
       max-width: 25%;
     }
 
     .\@lg\:md\:max-w-\[35\%\] {
       max-width: 35%;
-    }
-
-    .\@lg\:md\:flex-row {
-      flex-direction: row;
-    }
-
-    .\@lg\:md\:gap-8 {
-      gap: 2rem;
-    }
-
-    .\@lg\:md\:pt-1 {
-      padding-top: 0.25rem;
-    }
-
-    .\@lg\:md\:pt-1\.5 {
-      padding-top: 0.375rem;
-    }
-
-    .\@lg\:md\:pt-2 {
-      padding-top: 0.5rem;
-    }
-
-    .\@lg\:md\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
     }
 
     .\@lg\:md\:text-lg {
@@ -6953,24 +6843,11 @@ select {
   }
 }
 
-@container (min-width: 36rem) {
-  @media (min-width: 768px) {
-    .\@xl\:md\:flex-row {
-      flex-direction: row;
-    }
-  }
-}
-
 @container (min-width: 42rem) {
   @media (min-width: 768px) {
     .\@2xl\:md\:text-base {
       font-size: 1rem;
       line-height: 1.5rem;
-    }
-
-    .\@2xl\:md\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
     }
   }
 }
@@ -7005,10 +6882,6 @@ select {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:w-24 {
-    width: 6rem;
   }
 
   .lg\:flex-1 {
@@ -7076,24 +6949,6 @@ select {
   }
 }
 
-@container (min-width: 42rem) {
-  @media (min-width: 1024px) {
-    .\@2xl\:lg\:gap-8 {
-      gap: 2rem;
-    }
-
-    .\@2xl\:lg\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-
-    .\@2xl\:lg\:text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
-}
-
 @container (min-width: 48rem) {
   @media (min-width: 1024px) {
     .\@3xl\:lg\:text-2xl {
@@ -7105,25 +6960,12 @@ select {
 
 @container (min-width: 56rem) {
   @media (min-width: 1024px) {
-    .\@4xl\:lg\:block {
-      display: block;
-    }
-
-    .\@4xl\:lg\:hidden {
-      display: none;
-    }
-
     .\@4xl\:lg\:h-32 {
       height: 8rem;
     }
 
     .\@4xl\:lg\:w-32 {
       width: 8rem;
-    }
-
-    .\@4xl\:lg\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
     }
 
     .\@4xl\:lg\:text-4xl {

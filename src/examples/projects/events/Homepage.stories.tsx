@@ -7,7 +7,7 @@ import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../components/Banner/Banner'
+import { Banner } from '../../../_deprecated/Banner/Banner'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
@@ -16,8 +16,7 @@ import { Pagination } from '../../../components/Pagination/Pagination'
 import { Calendar } from '../../../components/Calendar/Calendar'
 import { Filter } from '../../../components/Filter/Filter'
 
-import { EventData as dataCard } from '../../../data/EventData'
-import { EventItemData as dataList } from '../../../_deprecated/EventItem/EventItemData'
+import { EventData as dataCard, EventData as dataList } from '../../../data/EventData'
 import { FilterData as dataFilter } from '../../../data/FilterData'
 
 const meta: Meta = {
@@ -75,8 +74,8 @@ export const Homepage: Story = {
                       id,
                       title,
                       link,
-                      start_date,
-                      end_date,
+                      startDate,
+                      endDate,
                       event_address,
                       on_campus,
                       on_campus_building,
@@ -85,12 +84,12 @@ export const Homepage: Story = {
                     }) => (
                       <Listing key={id}>
                         <a href={link}>
-                          <Listing.DateBox startDate={start_date} />
+                          <Listing.DateBox startDate={startDate} />
                           <Listing.Content>
                             <Listing.Header text={title} />
                             <Listing.EventMeta
-                              startDateTime={start_date}
-                              endDateTime={end_date}
+                              startDateTime={startDate}
+                              endDateTime={endDate}
                               onCampus={on_campus}
                               onCampusBuilding={on_campus_building}
                               onCampusRoomNumber={on_campus_room_number}

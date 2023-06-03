@@ -7,14 +7,12 @@ import { Aside } from '../../../layouts/Aside/Aside'
 import { Article } from '../../../layouts/Article/Article'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../components/Banner/Banner'
+import { Banner } from '../../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { DetailsItem } from '../../../_deprecated/DetailsItem/DetailsItem'
 import { Button } from '../../../components/Button/Button'
+import { Listing } from '../../../components/Listing/Listing'
 
-import { MapPinIcon } from '@heroicons/react/24/outline'
-
-import { DetailsItemData as data } from '../../../_deprecated/DetailsItem/DetailsItemData'
+import { EventDetailsData as data } from '../../../data/EventData'
 
 const meta: Meta = {
   title: 'Examples/Projects/Event Calendar',
@@ -101,13 +99,12 @@ export const SingleEvent: Story = {
               </Column>
               <StackedList hasShadow>
                 {data.map(({ title, description }) => (
-                  <DetailsItem key={title}>
-                    <DetailsItem.Icon icon={MapPinIcon} />
-                    <DetailsItem.Content>
-                      <DetailsItem.Title title={title} />
-                      <DetailsItem.Description description={description} />
-                    </DetailsItem.Content>
-                  </DetailsItem>
+                  <Listing key={title} noLink>
+                    <Listing.Content isSmall>
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={description} />
+                    </Listing.Content>
+                  </Listing>
                 ))}
               </StackedList>
             </Aside>

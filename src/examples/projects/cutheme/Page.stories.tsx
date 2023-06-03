@@ -6,7 +6,7 @@ import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../components/Banner/Banner'
+import { Banner } from '../../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'

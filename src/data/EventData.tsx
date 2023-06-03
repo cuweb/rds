@@ -201,3 +201,22 @@ export const EventData = [
     multiday: true,
   },
 ]
+
+export const EventDetailsData = [
+  {
+    title: '405 Robertson Hall',
+    description: '1125 Colonel By Drive, Ottawa, ON, K1A 4A4',
+  },
+  {
+    title: 'October 2nd-10th, 2022',
+    description: '2:00PM - 10:00PM',
+  },
+  {
+    title: 'Person McPersonface',
+    description: '613-266-2628 / mcorkum@gmail.com',
+  },
+  {
+    title: 'Cost',
+    description: '$100,0000',
+  },
+]
