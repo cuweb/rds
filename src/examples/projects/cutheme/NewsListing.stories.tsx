@@ -6,7 +6,7 @@ import { Container } from '../../../layouts/Container/Container'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../components/Banner/Banner'
+import { Banner } from '../../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Listing } from '../../../components/Listing/Listing'
 

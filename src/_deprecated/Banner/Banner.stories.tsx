@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Banner } from './Banner'
-import { Button } from '../Button/Button'
+import { Button } from '../../components/Button/Button'
 import { Main } from '../../layouts/Main/Main'
 import { Column } from '../../layouts/Column/Column'
 import { StarIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof Banner> = {
-  title: 'Components/Banner',
+  title: 'Deprecated/Banner',
   component: Banner,
   tags: ['autodocs'],
   parameters: {
