@@ -34,6 +34,11 @@
   @apply pb-0;
 }
 
+/* If there are consecutive white containers */
+.cu-container.bg-white + .cu-container.bg-white {
+  @apply mt-4;
+}
+
 /* If there are consecutive grey containers */
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
   @apply -mt-2 rounded-t-none pt-2;
@@ -46,7 +51,7 @@
 
 /* If a grey container immediately follows a white container */
 .cu-container.bg-white + .cu-container.bg-cu-black-50 {
-  @apply mt-6 md:mt-8;
+  @apply mt-6 md:mt-10;
 }
 
 /* If a grey container follows content not inside a container components */
