@@ -6,12 +6,13 @@ import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
+import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Blocks',
@@ -59,10 +60,16 @@ export const NewsCards: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner title="cutheme news card testing" isType="dark-wave" align="left" />
 
       <Main>
         <Section hasProse>
+          <HeroTextImage title="News Card Grid Examples" image="https://picsum.photos/400/266" imageAngle>
+            <div className="buttons flex flex-wrap gap-6 md:flex-1">
+              <Button title="Primary" />
+              <Button title="Secondary" color="grey" />
+            </div>
+          </HeroTextImage>
+
           <DoublePara />
 
           <Container>

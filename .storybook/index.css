@@ -1555,6 +1555,14 @@ select {
   z-index: 50;
 }
 
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -1927,12 +1935,24 @@ select {
   height: 100%;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
 
 .max-h-80 {
   max-height: 20rem;
+}
+
+.min-h-\[220px\] {
+  min-height: 220px;
+}
+
+.min-h-\[420px\] {
+  min-height: 420px;
 }
 
 .min-h-full {
@@ -2085,6 +2105,10 @@ select {
 
 .max-w-none {
   max-width: none;
+}
+
+.max-w-screen-2xl {
+  max-width: 1536px;
 }
 
 .max-w-sm {
@@ -2760,8 +2784,16 @@ select {
   background-size: contain;
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
 .bg-bottom {
   background-position: bottom;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
@@ -3097,6 +3129,10 @@ select {
 
 .italic {
   font-style: italic;
+}
+
+.not-italic {
+  font-style: normal;
 }
 
 .leading-6 {
@@ -3456,6 +3492,24 @@ select {
   padding-bottom: 0px;
 }
 
+/* If there are consecutive white containers */
+
+.cu-container.bg-white + .cu-container.bg-white {
+  margin-top: 1rem;
+}
+
+/* If a grey container immediately follows a white container */
+
+.cu-container.bg-white + .cu-container.bg-cu-black-50 {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-white + .cu-container.bg-cu-black-50 {
+    margin-top: 2.5rem;
+  }
+}
+
 /* If there are consecutive grey containers */
 
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
@@ -3474,18 +3528,6 @@ select {
 @media (min-width: 768px) {
   .cu-container.bg-cu-black-50 + .cu-container.bg-white {
     margin-top: 1.5rem;
-  }
-}
-
-/* If a grey container immediately follows a white container */
-
-.cu-container.bg-white + .cu-container.bg-cu-black-50 {
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.bg-cu-black-50 {
-    margin-top: 2rem;
   }
 }
 
@@ -3537,16 +3579,24 @@ select {
 
 /* If a column and grey container are used consecutively */
 
+.cu-container.bg-cu-black-50 + :not(.cu-container),
 .cu-container.bg-cu-black-50 + .cu-column,
 .cu-column + .cu-container.bg-cu-black-50 {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-cu-black-50 + .cu-column,
+  .cu-container.bg-cu-black-50 + :not(.cu-container),
+.cu-container.bg-cu-black-50 + .cu-column,
 .cu-column + .cu-container.bg-cu-black-50 {
     margin-top: 3rem;
   }
+}
+
+/* If there are consecutive sections */
+
+.cu-section + .cu-section {
+  padding-top: 0px;
 }
 
 /* 
@@ -3570,6 +3620,23 @@ select {
 .cu-container > .cu-heading:first-child {
   margin-top: 0px;
   padding-top: 0px;
+}
+
+/* Hero Text Image */
+
+.cu-herotxtimg p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .cu-herotxtimg p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
 }
 
 .cu-stackedlist > li {
@@ -6530,6 +6597,11 @@ select {
     text-align: left;
   }
 
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -6542,6 +6614,14 @@ select {
 }
 
 @media (min-width: 768px) {
+  .md\:order-1 {
+    order: 1;
+  }
+
+  .md\:order-2 {
+    order: 2;
+  }
+
   .md\:m-10 {
     margin: 2.5rem;
   }
@@ -6591,6 +6671,14 @@ select {
     min-height: 240px;
   }
 
+  .md\:min-h-\[360px\] {
+    min-height: 360px;
+  }
+
+  .md\:min-h-\[260px\] {
+    min-height: 260px;
+  }
+
   .md\:w-8\/12 {
     width: 66.666667%;
   }
@@ -6617,6 +6705,14 @@ select {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-hero-txtimg-20 {
+    grid-template-columns: auto 20%;
+  }
+
+  .md\:grid-cols-hero-txtimg-40 {
+    grid-template-columns: auto 40%;
   }
 
   .md\:grid-cols-left260 {
@@ -6678,11 +6774,6 @@ select {
     padding-bottom: 2.5rem;
   }
 
-  .md\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
   .md\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -6721,6 +6812,10 @@ select {
     padding-bottom: 12rem;
   }
 
+  .md\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
   .md\:pt-14 {
     padding-top: 3.5rem;
   }
@@ -6731,6 +6826,10 @@ select {
 
   .md\:pt-40 {
     padding-top: 10rem;
+  }
+
+  .md\:pt-6 {
+    padding-top: 1.5rem;
   }
 
   .md\:text-left {
@@ -6770,6 +6869,10 @@ select {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:leading-10 {
+    line-height: 2.5rem;
   }
 }
 
@@ -6870,6 +6973,10 @@ select {
 
   .lg\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .lg\:block {
+    display: block;
   }
 
   .lg\:flex {
@@ -6977,6 +7084,17 @@ select {
       font-size: 1.125rem;
       line-height: 1.75rem;
     }
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .xl\:leading-\[3\.5rem\] {
+    line-height: 3.5rem;
   }
 }
 
