@@ -7,4 +7,5 @@ export const styles = {
   content: 'grid gap-5 italic order-2 md:order-1',
   header: 'font-semibold md:leading-10 text-2xl sm:text-3xl not-italic',
   image: 'bg-center bg-cover rounded-lg order-1 md:order-2 md:min-h-[360px] h-full',
+  svg: 'hidden lg:block absolute left-0 top-0 z-10 h-full',
 }

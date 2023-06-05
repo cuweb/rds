@@ -1935,6 +1935,10 @@ select {
   height: 100%;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }

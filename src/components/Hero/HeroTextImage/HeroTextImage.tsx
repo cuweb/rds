@@ -41,12 +41,13 @@ export const HeroTextImage = ({ children, title, image, headerSmall, imageAngle,
       </div>
 
       {imageUrl && (
-        <div className={` ${hasTallImage} ${styles.image}`} style={inlineStyle}>
+        <div className={`relative ${hasTallImage} ${styles.image}`}>
           {imageAngle && (
-            <svg xmlns="http://www.w3.org/2000/svg" width="136" height="450" fill="none" className="hidden lg:block">
-              <path fill="#fff" d="M0 0h135.796L14.046 450H0V0Z" />
+            <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} fill="none" viewBox="0 0 138 500">
+              <path fill="#fff" d="M0 0h137.384L2.106 500H0V0Z" />
             </svg>
           )}
+          <div className={`relative ${hasTallImage} ${styles.image}`} style={inlineStyle}></div>
         </div>
       )}
     </div>
