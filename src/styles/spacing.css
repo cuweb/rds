@@ -34,6 +34,16 @@
   @apply pb-0;
 }
 
+/* If there are consecutive white containers */
+.cu-container.bg-white + .cu-container.bg-white {
+  @apply mt-4;
+}
+
+/* If a grey container immediately follows a white container */
+.cu-container.bg-white + .cu-container.bg-cu-black-50 {
+  @apply mt-6 md:mt-10;
+}
+
 /* If there are consecutive grey containers */
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
   @apply -mt-2 rounded-t-none pt-2;
@@ -42,11 +52,6 @@
 /* If a white container immediately follows a grey container */
 .cu-container.bg-cu-black-50 + .cu-container.bg-white {
   @apply mt-6 md:mt-6;
-}
-
-/* If a grey container immediately follows a white container */
-.cu-container.bg-white + .cu-container.bg-cu-black-50 {
-  @apply mt-6 md:mt-8;
 }
 
 /* If a grey container follows content not inside a container components */
@@ -72,9 +77,15 @@
 }
 
 /* If a column and grey container are used consecutively */
+.cu-container.bg-cu-black-50 + :not(.cu-container),
 .cu-container.bg-cu-black-50 + .cu-column,
 .cu-column + .cu-container.bg-cu-black-50 {
   @apply mt-6 md:mt-12;
+}
+
+/* If there are consecutive sections */
+.cu-section + .cu-section {
+  @apply pt-0;
 }
 
 /* 
@@ -93,4 +104,9 @@
 .cu-section > .cu-heading:first-child,
 .cu-container > .cu-heading:first-child {
   @apply mt-0 pt-0;
+}
+
+/* Hero Text Image */
+.cu-herotxtimg p {
+  @apply text-lg font-light text-cu-black-600 md:text-2xl md:leading-9;
 }

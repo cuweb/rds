@@ -6,12 +6,13 @@ import { Container } from '../../../layouts/Container/Container'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { Banner } from '../../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Listing } from '../../../components/Listing/Listing'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
+import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Blocks',
@@ -27,9 +28,7 @@ const SinglePara = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
         vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
         condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
-        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
-        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
-        sapien in urna.
+        volutpat, tortor risus vehicula nisl.
       </p>
     </>
   )
@@ -59,10 +58,17 @@ export const NewsListings: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
-      <Banner title="cutheme news card testing" isType="dark-wave" align="left" />
 
       <Main>
         <Section hasProse>
+          <HeroTextImage title="News Stacked List Examples">
+            <SinglePara />
+            <div className="buttons flex flex-wrap gap-6 md:flex-1">
+              <Button title="Primary" />
+              <Button title="Secondary" color="grey" />
+            </div>
+          </HeroTextImage>
+
           <DoublePara />
 
           <h2>News Listing Block</h2>
