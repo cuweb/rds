@@ -6675,6 +6675,10 @@ select {
     min-height: 360px;
   }
 
+  .md\:min-h-\[260px\] {
+    min-height: 260px;
+  }
+
   .md\:w-8\/12 {
     width: 66.666667%;
   }
