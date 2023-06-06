@@ -1696,6 +1696,10 @@ select {
   margin-top: -0.75rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1933,10 +1937,6 @@ select {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[200px\] {
-  height: 200px;
 }
 
 .max-h-72 {
@@ -3325,6 +3325,12 @@ select {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-hero-text-image {
+  --tw-shadow: 0 8px 8px -12px rgba(0, 0, 0, 0.3);
+  --tw-shadow-colored: 0 8px 8px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -3591,12 +3597,6 @@ select {
 .cu-column + .cu-container.bg-cu-black-50 {
     margin-top: 3rem;
   }
-}
-
-/* If there are consecutive sections */
-
-.cu-section + .cu-section {
-  padding-top: 0px;
 }
 
 /* 
@@ -6671,10 +6671,6 @@ select {
     min-height: 240px;
   }
 
-  .md\:min-h-\[360px\] {
-    min-height: 360px;
-  }
-
   .md\:min-h-\[260px\] {
     min-height: 260px;
   }
@@ -6707,11 +6703,11 @@ select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-hero-txtimg-20 {
+  .md\:grid-cols-hero-text-image-20 {
     grid-template-columns: auto 20%;
   }
 
-  .md\:grid-cols-hero-txtimg-40 {
+  .md\:grid-cols-hero-text-image-40 {
     grid-template-columns: auto 40%;
   }
 
@@ -6804,16 +6800,16 @@ select {
     padding-bottom: 2rem;
   }
 
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
+  }
+
   .md\:pb-32 {
     padding-bottom: 8rem;
   }
 
   .md\:pb-48 {
     padding-bottom: 12rem;
-  }
-
-  .md\:pb-6 {
-    padding-bottom: 1.5rem;
   }
 
   .md\:pt-14 {
@@ -7045,6 +7041,11 @@ select {
     line-height: 2.5rem;
   }
 
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -7053,6 +7054,10 @@ select {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:leading-\[3\.5rem\] {
+    line-height: 3.5rem;
   }
 }
 
@@ -7084,17 +7089,6 @@ select {
       font-size: 1.125rem;
       line-height: 1.75rem;
     }
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .xl\:leading-\[3\.5rem\] {
-    line-height: 3.5rem;
   }
 }
 
