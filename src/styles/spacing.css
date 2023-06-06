@@ -83,11 +83,6 @@
   @apply mt-6 md:mt-12;
 }
 
-/* If there are consecutive sections */
-.cu-section + .cu-section {
-  @apply pt-0;
-}
-
 /* 
 * Add styles to first child of container to banner overlap
 */

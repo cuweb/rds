@@ -17,7 +17,7 @@ export const rdsMaxWidth = {
 }
 
 export const HeroTextImage = ({ children, title, image, headerSmall, imageAngle, imageTall }: HeroTextImageProps) => {
-  const headerSize = headerSmall ? '' : 'xl:text-5xl xl:leading-[3.5rem]'
+  const headerSize = headerSmall ? '' : 'lg:text-5xl lg:leading-[3.5rem]'
 
   // Set background image
   const imageUrl = image
@@ -29,12 +29,13 @@ export const HeroTextImage = ({ children, title, image, headerSmall, imageAngle,
   const gridClasses = imageUrl ? styles.gridWithImage : styles.gridNoImage
   const maxWidth = imageUrl ? rdsMaxWidth['7xl'] : rdsMaxWidth['5xl']
   const contentPadding = imageUrl ? 'md:py-8' : 'md:pt-6'
+  const bottomSpace = imageUrl ? '' : styles.bottomSpace
 
   // Image height for mobile
   const hasTallImage = imageTall ? 'min-h-[420px]' : 'min-h-[220px]'
 
   return (
-    <div className={`${styles.base} ${styles.grid} ${gridClasses} ${styles.bottom} ${maxWidth}`}>
+    <div className={`${styles.base} ${styles.grid} ${gridClasses} ${styles.bottom} ${bottomSpace} ${maxWidth}`}>
       <div className={`${styles.content} ${contentPadding}`}>
         <h1 className={`${styles.header} ${headerSize}`}>{title}</h1>
         {children}
