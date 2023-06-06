@@ -1,6 +1,7 @@
 export declare const styles: {
     base: string;
     bottom: string;
+    bottomSpace: string;
     grid: string;
     gridWithImage: string;
     gridNoImage: string;
