@@ -1,0 +1,11 @@
+/* Hero Text Image */
+
+.cu-herotextimage p {
+  @apply text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9;
+}
+
+/* Figure Components */
+
+.cu-figure img {
+  @apply w-full;
+}

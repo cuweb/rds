@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { HeroTextImage } from './HeroTextImage'
 import { Button } from '../../../components/Button/Button'
+import { HeroTextImageContent } from './HeroTextImageContent'
 
 const meta: Meta<typeof HeroTextImage> = {
   title: 'Components/Hero/Hero Text Image',
@@ -36,11 +37,13 @@ DefaultTemplate.args = {
 export const NoImage: Story = {
   render: () => (
     <HeroTextImage title="Website and Application Development">
-      <SinglePara />
-      <div className="buttons flex flex-wrap gap-6 md:flex-1">
-        <Button title="Primary" />
-        <Button title="Secondary" color="grey" />
-      </div>
+      <HeroTextImageContent>
+        <SinglePara />
+        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImageContent>
     </HeroTextImage>
   ),
 }
@@ -48,11 +51,13 @@ export const NoImage: Story = {
 export const WithImage: Story = {
   render: () => (
     <HeroTextImage title="Website and Application Development" image="https://picsum.photos/400/266">
-      <SinglePara />
-      <div className="buttons flex flex-wrap gap-6 md:flex-1">
-        <Button title="Primary" />
-        <Button title="Secondary" color="grey" />
-      </div>
+      <HeroTextImageContent>
+        <SinglePara />
+        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImageContent>
     </HeroTextImage>
   ),
 }
@@ -60,11 +65,13 @@ export const WithImage: Story = {
 export const WithImageAngle: Story = {
   render: () => (
     <HeroTextImage title="Website and Application Development" image="https://picsum.photos/400/266" imageAngle>
-      <SinglePara />
-      <div className="buttons flex flex-wrap gap-6 md:flex-1">
-        <Button title="Primary" />
-        <Button title="Secondary" color="grey" />
-      </div>
+      <HeroTextImageContent>
+        <SinglePara />
+        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImageContent>
     </HeroTextImage>
   ),
 }
@@ -77,11 +84,13 @@ export const WithSmallerHeader: Story = {
       imageAngle
       headerSmall
     >
-      <SinglePara />
-      <div className="buttons flex flex-wrap gap-6 md:flex-1">
-        <Button title="Primary" />
-        <Button title="Secondary" color="grey" />
-      </div>
+      <HeroTextImageContent>
+        <SinglePara />
+        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImageContent>
     </HeroTextImage>
   ),
 }
