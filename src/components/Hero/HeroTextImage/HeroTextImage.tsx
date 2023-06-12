@@ -1,10 +1,12 @@
 import React from 'react'
+import { HeroTextImageContent } from './HeroTextImageContent'
 import { styles } from './HeroTextImage.Styles'
 
 export interface HeroTextImageProps {
   children?: React.ReactNode
   title: string
   image?: string
+  hasBorder?: boolean
   headerSmall?: boolean
   imageAngle?: boolean
   imageTall?: boolean
@@ -16,8 +18,19 @@ export const rdsMaxWidth = {
   max: 'max-w-screen-2xl',
 }
 
-export const HeroTextImage = ({ children, title, image, headerSmall, imageAngle, imageTall }: HeroTextImageProps) => {
+export const HeroTextImageWrapper = ({
+  children,
+  title,
+  image,
+  hasBorder,
+  headerSmall,
+  imageAngle,
+  imageTall,
+}: HeroTextImageProps) => {
   const headerSize = headerSmall ? '' : 'lg:text-5xl lg:leading-[3.5rem]'
+
+  // Add bottom border
+  const borderStyle = hasBorder ? styles.border : ''
 
   // Set background image
   const imageUrl = image
@@ -26,17 +39,17 @@ export const HeroTextImage = ({ children, title, image, headerSmall, imageAngle,
   }
 
   // Set classes base on image var being set
-  const gridClasses = imageUrl ? styles.gridWithImage : styles.gridNoImage
-  const maxWidth = imageUrl ? rdsMaxWidth['7xl'] : rdsMaxWidth['5xl']
-  const contentPadding = imageUrl ? 'md:py-8' : 'md:pt-6'
-  const bottomSpace = imageUrl ? '' : styles.bottomSpace
+  const padding = imageUrl ? 'md:py-8' : 'md:pt-6'
+  const withImage = imageUrl
+    ? `${styles.gridWithImage} ${rdsMaxWidth['7xl']}`
+    : `${styles.gridNoImage} ${rdsMaxWidth['5xl']}`
 
   // Image height for mobile
   const hasTallImage = imageTall ? 'min-h-[420px]' : 'min-h-[220px]'
 
   return (
-    <div className={`${styles.base} ${styles.grid} ${gridClasses} ${styles.bottom} ${bottomSpace} ${maxWidth}`}>
-      <div className={`${styles.content} ${contentPadding}`}>
+    <div className={`${styles.base} ${styles.grid} ${withImage} ${borderStyle}`}>
+      <div className={`${styles.contentSpacing} ${styles.contentAlignment} ${padding}`}>
         <h1 className={`${styles.header} ${headerSize}`}>{title}</h1>
         {children}
       </div>
@@ -54,3 +67,7 @@ export const HeroTextImage = ({ children, title, image, headerSmall, imageAngle,
     </div>
   )
 }
+
+export const HeroTextImage = Object.assign(HeroTextImageWrapper, {
+  Content: HeroTextImageContent,
+})

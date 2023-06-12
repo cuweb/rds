@@ -5,9 +5,9 @@
 
 /* RDS Layout CSS */
 @import './spacing.css';
-@import './direct-descendant.css';
-@import './figure.css';
+@import './layouts.css';
 @import './card-listing.css';
+@import './components.css';
 
 /* React Quill CSS */
 @import '../../node_modules/react-quill/dist/quill.snow.css';
