@@ -1,11 +1,11 @@
 export declare const styles: {
     base: string;
-    bottom: string;
-    bottomSpace: string;
+    border: string;
     grid: string;
     gridWithImage: string;
     gridNoImage: string;
-    content: string;
+    contentAlignment: string;
+    contentSpacing: string;
     header: string;
     image: string;
     svg: string;
