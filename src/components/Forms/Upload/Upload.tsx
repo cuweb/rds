@@ -22,40 +22,57 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
   // image types
   const imageMimeType = /image\/(png|jpg|jpeg)/i
 
-  // set image preview
   const imagePreview = async (event: any) => {
-    const image = event.target.files[0]
+    const file = event.target.files[0]
+    let fileExists = false
+    let isImage = false
 
-    if (!image) {
+    if (!file) {
       helpers.setValue(undefined)
       setPreview(null)
       return
     }
 
-    if (!image.type.match(imageMimeType)) {
-      return setPreview(null)
+    // check if file exists
+    if (file) {
+      fileExists = true
+    }
+
+    // check if file is an image
+    if (file.type.startsWith('image/')) {
+      isImage = true
     }
 
     // read file
     const fileReader = new FileReader()
     const validateImage = new Image()
 
-    fileReader.readAsDataURL(image)
+    fileReader.readAsDataURL(file)
     fileReader.onloadend = (e) => {
-      validateImage.src = `${e.target?.result}`
-      validateImage.onload = () => {
-        // validate file
-        const failed = onValidate(validateImage)
+      if (file.type.match(imageMimeType)) {
+        validateImage.src = `${e.target?.result}`
+        validateImage.onload = async () => {
+          // validate file
+          const failed = onValidate(validateImage, fileExists, isImage)
+          setImageCheck('')
+          if (failed) {
+            setImageCheck(failed.error)
+            return
+          }
+          helpers.setValue(await onUpload(file))
+          setPreview(e.target?.result)
+        }
+      } else {
+        // validate non-image file
+        const failed = onValidate(file, fileExists, isImage)
         setImageCheck('')
         if (failed) {
           setImageCheck(failed.error)
           return
         }
-        setPreview(e.target?.result)
+        helpers.setValue(onUpload(file))
       }
     }
-    // upload file
-    helpers.setValue(await onUpload(image))
   }
 
   // upload reset
