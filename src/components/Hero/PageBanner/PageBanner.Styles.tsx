@@ -6,6 +6,8 @@ export const styles = {
   contentWrapper: 'order-2 grid gap-4 md:order-1 md:gap-8',
   header: 'font-semibold md:leading-10 text-2xl sm:text-3xl md:text-4xl not-italic',
   paragraph: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9',
-  image: 'order-1 h-full rounded bg-cover bg-center md:order-2 md:min-h-[260px]',
+  imageWrapper: 'order-1 md:order-2',
+  image: ' rounded bg-cover bg-center md:min-h-[260px]',
   svg: 'hidden lg:block absolute left-0 top-0 z-10 h-full',
+  fullHeight: 'h-full',
 }

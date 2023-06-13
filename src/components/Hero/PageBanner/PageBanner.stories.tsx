@@ -20,8 +20,12 @@ const SinglePara =
 
 export const DefaultTemplate: Story = {
   render: () => (
-    <PageBanner image="https://picsum.photos/400/266">
-      <PageBanner.Content title="Website and Application Development" paragraph={SinglePara}>
+    <PageBanner>
+      <PageBanner.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        image="https://picsum.photos/400/266"
+      >
         <div className="buttons flex flex-wrap gap-6 md:flex-1">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
@@ -34,7 +38,7 @@ export const DefaultTemplate: Story = {
 export const NoImage: Story = {
   render: () => (
     <PageBanner>
-      <PageBanner.Content title="Website and Application Development">
+      <PageBanner.Content title="Website and Application Development" image="https://picsum.photos/400/266">
         <div className="buttons flex flex-wrap gap-6 md:flex-1">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
@@ -46,8 +50,13 @@ export const NoImage: Story = {
 
 export const WithImageAngle: Story = {
   render: () => (
-    <PageBanner image="https://picsum.photos/400/266" imageAngle>
-      <PageBanner.Content title="Website and Application Development" paragraph={SinglePara}>
+    <PageBanner>
+      <PageBanner.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        image="https://picsum.photos/400/266"
+        imageAngle
+      >
         <div className="buttons flex flex-wrap gap-6 md:flex-1">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
@@ -59,8 +68,14 @@ export const WithImageAngle: Story = {
 
 export const WithSmallerHeader: Story = {
   render: () => (
-    <PageBanner image="https://picsum.photos/400/266" imageAngle>
-      <PageBanner.Content title="Website and Application Development" paragraph={SinglePara} headerSmall>
+    <PageBanner>
+      <PageBanner.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        image="https://picsum.photos/400/266"
+        imageAngle
+        headerSmall
+      >
         <div className="buttons flex flex-wrap gap-6 md:flex-1">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
