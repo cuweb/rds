@@ -6,8 +6,8 @@ import { Section } from '../../../layouts/Section/Section'
 import { TopNav } from '../../../components/TopNav/TopNav'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
 import { Button } from '../../../components/Button/Button'
+import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Blocks',
@@ -48,58 +48,58 @@ const DoublePara = () => {
   )
 }
 
-export const HeroTextAndImage: Story = {
+export const Banners: Story = {
   render: () => (
     <>
       <TopNav title="Carleton University" />
 
       <Main>
         <Section hasProse>
-          <HeroTextImage title="News Card Grid Examples" image="https://picsum.photos/400/266" imageAngle hasBorder>
-            <HeroTextImage.Content>
+          <HeroBanner hasBorder>
+            <HeroBanner.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+            </HeroBanner.Content>
+          </HeroBanner>
 
           <DoublePara />
 
-          <HeroTextImage title="News Card Grid Examples" hasBorder>
-            <HeroTextImage.Content>
+          <HeroBanner maxWidth="5xl" hasBorder>
+            <HeroBanner.Content title="Hero Banner: Content">
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+            </HeroBanner.Content>
+          </HeroBanner>
 
           <DoublePara />
 
-          <HeroTextImage title="News Card Grid Examples">
-            <HeroTextImage.Content>
+          <HeroBanner maxWidth="5xl">
+            <HeroBanner.Content title="Hero Banner: Content">
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+            </HeroBanner.Content>
+          </HeroBanner>
 
           <DoublePara />
 
-          <HeroTextImage title="News Card Grid Examples" image="https://picsum.photos/400/266" imageAngle>
-            <HeroTextImage.Content>
+          <HeroBanner>
+            <HeroBanner.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+            </HeroBanner.Content>
+          </HeroBanner>
 
           <DoublePara />
         </Section>

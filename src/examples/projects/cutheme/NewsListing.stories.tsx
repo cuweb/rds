@@ -11,7 +11,7 @@ import { Listing } from '../../../components/Listing/Listing'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
 import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
@@ -61,13 +61,9 @@ export const NewsListings: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage title="News Stacked List Examples">
-            <SinglePara />
-            <div className="buttons flex flex-wrap gap-6 md:flex-1">
-              <Button title="Primary" />
-              <Button title="Secondary" color="grey" />
-            </div>
-          </HeroTextImage>
+          <HeroBanner maxWidth="5xl" hasBorder>
+            <HeroBanner.Content title="News Listing Examples" />
+          </HeroBanner>
 
           <DoublePara />
 
