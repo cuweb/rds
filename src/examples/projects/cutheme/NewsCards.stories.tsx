@@ -11,7 +11,7 @@ import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
 import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
@@ -63,12 +63,9 @@ export const NewsCards: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage title="News Card Grid Examples" image="https://picsum.photos/400/266" imageAngle>
-            <div className="buttons flex flex-wrap gap-6 md:flex-1">
-              <Button title="Primary" />
-              <Button title="Secondary" color="grey" />
-            </div>
-          </HeroTextImage>
+          <HeroBanner maxWidth="5xl" hasBorder>
+            <HeroBanner.Content title="News Card Examples" />
+          </HeroBanner>
 
           <DoublePara />
 

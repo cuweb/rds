@@ -1459,6 +1459,10 @@ select {
   left: -1rem;
 }
 
+.-left-px {
+  left: -1px;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -2105,10 +2109,6 @@ select {
 
 .max-w-none {
   max-width: none;
-}
-
-.max-w-screen-2xl {
-  max-width: 1536px;
 }
 
 .max-w-sm {
@@ -3115,6 +3115,10 @@ select {
   font-weight: 700;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -3622,23 +3626,6 @@ select {
   padding-top: 0px;
 }
 
-/* Hero Text Image */
-
-.cu-herotxtimg p {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 300;
-  --tw-text-opacity: 1;
-  color: rgb(102 102 102 / var(--tw-text-opacity));
-}
-
-@media (min-width: 768px) {
-  .cu-herotxtimg p {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-  }
-}
-
 .cu-stackedlist > li {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
@@ -3655,12 +3642,6 @@ select {
 
 .cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
   border-right-width: 1px;
-}
-
-/* Figure Components */
-
-.cu-figure img {
-  width: 100%;
 }
 
 /* Card Components */
@@ -3775,6 +3756,12 @@ select {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+}
+
+/* Figure Components */
+
+.cu-figure img {
+  width: 100%;
 }
 
 /* React Quill CSS */
@@ -6739,6 +6726,10 @@ select {
     gap: 1.25rem;
   }
 
+  .md\:gap-8 {
+    gap: 2rem;
+  }
+
   .md\:bg-cover {
     background-size: cover;
   }
@@ -6832,6 +6823,11 @@ select {
     text-align: left;
   }
 
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -6869,6 +6865,10 @@ select {
 
   .md\:leading-10 {
     line-height: 2.5rem;
+  }
+
+  .md\:leading-9 {
+    line-height: 2.25rem;
   }
 }
 

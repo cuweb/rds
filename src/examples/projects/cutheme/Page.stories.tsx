@@ -6,7 +6,7 @@ import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
@@ -61,13 +61,19 @@ export const SinglePage: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage title="Website and Application Development" image="https://picsum.photos/400/266" imageAngle>
-            <SinglePara />
-            <div className="buttons flex flex-wrap gap-6 md:flex-1">
-              <Button title="Primary" />
-              <Button title="Secondary" color="grey" />
-            </div>
-          </HeroTextImage>
+          <HeroBanner hasBorder>
+            <HeroBanner.Content
+              title="Website and Application Development"
+              image="https://picsum.photos/400/266"
+              imageAngle
+            >
+              <SinglePara />
+              <div className="buttons flex flex-wrap gap-6 md:flex-1">
+                <Button title="Primary" />
+                <Button title="Secondary" color="grey" />
+              </div>
+            </HeroBanner.Content>
+          </HeroBanner>
 
           <h2>This is a header 2</h2>
           <SinglePara />

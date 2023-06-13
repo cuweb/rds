@@ -100,8 +100,3 @@
 .cu-container > .cu-heading:first-child {
   @apply mt-0 pt-0;
 }
-
-/* Hero Text Image */
-.cu-herotxtimg p {
-  @apply text-lg font-light text-cu-black-600 md:text-2xl md:leading-9;
-}
