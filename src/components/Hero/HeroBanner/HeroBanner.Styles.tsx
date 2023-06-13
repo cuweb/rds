@@ -8,6 +8,6 @@ export const styles = {
   paragraph: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9',
   imageWrapper: 'order-1 md:order-2',
   image: ' rounded bg-cover bg-center md:min-h-[260px]',
-  svg: 'hidden lg:block absolute left-0 top-0 z-10 h-full',
+  svg: 'hidden lg:block absolute -left-px top-0 z-10 h-full',
   fullHeight: 'h-full',
 }

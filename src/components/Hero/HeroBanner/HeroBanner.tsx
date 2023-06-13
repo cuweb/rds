@@ -1,24 +1,21 @@
 import React from 'react'
 import { rdsMaxWidth } from '../../../utils/optionClasses'
-import { PageBannerContent } from './PageBannerContent'
-import { styles } from './PageBanner.Styles'
+import { HeroBannerContent } from './HeroBannerContent'
+import { styles } from './HeroBanner.Styles'
 
-export interface PageBannerProps {
+export interface HeroBannerProps {
   children?: React.ReactNode
   maxWidth?: 'full' | '5xl' | '7xl'
   hasBorder?: boolean
 }
 
-export const PageBannerWrapper = ({ children, hasBorder, maxWidth = '7xl' }: PageBannerProps) => {
-  // Add bottom border
+export const HeroBannerWrapper = ({ children, hasBorder, maxWidth = '7xl' }: HeroBannerProps) => {
   const borderStyle = hasBorder ? styles.border : ''
-
-  // Set classes base on image var being set
   const isWide = maxWidth === '7xl' ? styles.gridWithImage : styles.gridNoImage
 
   return <div className={`${styles.base} ${rdsMaxWidth[maxWidth]} ${isWide} ${borderStyle}`}>{children}</div>
 }
 
-export const PageBanner = Object.assign(PageBannerWrapper, {
-  Content: PageBannerContent,
+export const HeroBanner = Object.assign(HeroBannerWrapper, {
+  Content: HeroBannerContent,
 })

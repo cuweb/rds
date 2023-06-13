@@ -1,7 +1,7 @@
 import React from 'react'
-import { styles } from './PageBanner.Styles'
+import { styles } from './HeroBanner.Styles'
 
-export interface PageBannerContentProps {
+export interface HeroBannerContentProps {
   children?: React.ReactNode
   title: string
   paragraph?: string
@@ -16,14 +16,14 @@ const mobileImageTypes = {
   square: 'min-h-[220px] aspect-square',
 }
 
-export const PageBannerContent = ({
+export const HeroBannerContent = ({
   children,
   title,
   paragraph,
   image,
   imageAngle,
   headerSmall,
-}: PageBannerContentProps) => {
+}: HeroBannerContentProps) => {
   const headerSize = headerSmall ? '' : 'lg:text-5xl lg:leading-[3.5rem]'
 
   // Set background image
@@ -47,8 +47,11 @@ export const PageBannerContent = ({
             style={inlineStyle}
           >
             {imageAngle && (
-              <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} fill="none" viewBox="0 0 138 500">
-                <path fill="#fff" d="M0 0h137.384L2.106 500H0V0Z" />
+              <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} fill="none" viewBox="0 0 123 440">
+                <path
+                  fill="#fff"
+                  d="M0 440h6c-4.4 0-4.5-3-3.5-6C49.344 293.466 118.06 4.849 119 2.5c1-2.5 3-2.5 4-2.5H0v440Z"
+                />
               </svg>
             )}
           </div>
@@ -58,4 +61,4 @@ export const PageBannerContent = ({
   )
 }
 
-PageBannerContent.displayName = 'PageBanner.Content'
+HeroBannerContent.displayName = 'HeroBanner.Content'

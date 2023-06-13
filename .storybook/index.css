@@ -1459,6 +1459,10 @@ select {
   left: -1rem;
 }
 
+.-left-px {
+  left: -1px;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -2105,10 +2109,6 @@ select {
 
 .max-w-none {
   max-width: none;
-}
-
-.max-w-screen-2xl {
-  max-width: 1536px;
 }
 
 .max-w-sm {
