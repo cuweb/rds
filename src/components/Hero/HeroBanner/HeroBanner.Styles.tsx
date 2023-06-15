@@ -7,7 +7,7 @@ export const styles = {
   header: 'font-semibold md:leading-10 text-2xl sm:text-3xl md:text-4xl not-italic',
   paragraph: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9',
   imageWrapper: 'order-1 md:order-2',
-  image: ' rounded bg-cover bg-center md:min-h-[260px]',
+  image: 'rounded bg-cover bg-no-repeat md:min-h-[260px]',
   svg: 'hidden lg:block absolute -left-px top-0 z-10 h-full',
   fullHeight: 'h-full',
 }
