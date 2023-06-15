@@ -2792,10 +2792,6 @@ select {
   background-position: bottom;
 }
 
-.bg-center {
-  background-position: center;
-}
-
 .bg-no-repeat {
   background-repeat: no-repeat;
 }

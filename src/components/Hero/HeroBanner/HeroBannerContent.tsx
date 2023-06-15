@@ -8,6 +8,8 @@ export interface HeroBannerContentProps {
   headerSmall?: boolean
   image?: string
   imageAngle?: boolean
+  focalPointX?: string
+  focalPointY?: string
 }
 
 const mobileImageTypes = {
@@ -20,17 +22,21 @@ export const HeroBannerContent = ({
   children,
   title,
   paragraph,
+  headerSmall,
   image,
   imageAngle,
-  headerSmall,
+  focalPointX = '50',
+  focalPointY = '50',
 }: HeroBannerContentProps) => {
   const headerSize = headerSmall ? '' : 'lg:text-5xl lg:leading-[3.5rem]'
 
   // Set background image
   const imageUrl = image
   const imagePadding = imageUrl ? 'md:py-8' : 'md:pt-6'
+
   const inlineStyle = {
     backgroundImage: `url(${imageUrl})`,
+    backgroundPosition: `${focalPointX}% ${focalPointY}%`,
   }
 
   return (

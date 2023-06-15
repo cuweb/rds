@@ -24,7 +24,7 @@ export const DefaultTemplate: Story = {
       <HeroBanner.Content
         title="Website and Application Development"
         paragraph={SinglePara}
-        image="https://picsum.photos/400/266"
+        image="https://picsum.photos/800/266"
       >
         <div className="buttons flex flex-wrap gap-6 md:flex-1">
           <Button title="Primary" />
