@@ -7,7 +7,7 @@ export interface HeroBannerProps {
 export declare const HeroBannerWrapper: ({ children, hasBorder, maxWidth }: HeroBannerProps) => import("react/jsx-runtime").JSX.Element;
 export declare const HeroBanner: (({ children, hasBorder, maxWidth }: HeroBannerProps) => import("react/jsx-runtime").JSX.Element) & {
     Content: {
-        ({ children, title, paragraph, image, imageAngle, headerSmall, }: import("./HeroBannerContent").HeroBannerContentProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, title, paragraph, headerSmall, image, imageAngle, focalPointX, focalPointY, }: import("./HeroBannerContent").HeroBannerContentProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

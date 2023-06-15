@@ -6,9 +6,11 @@ export interface HeroBannerContentProps {
     headerSmall?: boolean;
     image?: string;
     imageAngle?: boolean;
+    focalPointX?: string;
+    focalPointY?: string;
 }
 export declare const HeroBannerContent: {
-    ({ children, title, paragraph, image, imageAngle, headerSmall, }: HeroBannerContentProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, paragraph, headerSmall, image, imageAngle, focalPointX, focalPointY, }: HeroBannerContentProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=HeroBannerContent.d.ts.map
