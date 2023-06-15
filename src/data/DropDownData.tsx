@@ -1,4 +1,4 @@
-import { DropDownItemProps } from './DropDown'
+import { DropDownItemProps } from '../components/DropDown/DropDown'
 
 export const DropDownItemData: DropDownItemProps[] = [
   {
