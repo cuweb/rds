@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from './Card'
 import { CardContent } from './CardContent'
+import { content } from '../../data/CardData'
 
 const meta: Meta<typeof Card> = {
   title: 'Components/Card',
@@ -13,30 +14,30 @@ const meta: Meta<typeof Card> = {
   },
 }
 
-const content = {
-  title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
-  link: 'https://carleton.ca/webservices',
-  video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
-  image: './sample-imgs/news-img.jpg',
-  alt: 'Required alt text',
-  date: '2022-12-16',
-  excerpt:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a est vel mi finibus tempor. Etiam sagittis eros ac venenatis pretium. Donec bibendum eget ante quis maximus. Nullam ultrices erat sagittis luctus volutpat. Etiam nec arcu sodales, convallis justo quis, aliquam lorem. Curabitur feugiat accumsan felis, placerat eleifend ipsum auctor.',
-  tags: {
-    category: [
-      {
-        id: 1,
-        name: 'Breaking News',
-        slug: 'breaking-news',
-      },
-      {
-        id: 2,
-        name: 'Headline',
-        slug: 'headline',
-      },
-    ],
-  },
-}
+// const content = {
+//   title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
+//   link: 'https://carleton.ca/webservices',
+//   video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
+//   image: './sample-imgs/news-img.jpg',
+//   alt: 'Required alt text',
+//   date: '2022-12-16',
+//   excerpt:
+//     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a est vel mi finibus tempor. Etiam sagittis eros ac venenatis pretium. Donec bibendum eget ante quis maximus. Nullam ultrices erat sagittis luctus volutpat. Etiam nec arcu sodales, convallis justo quis, aliquam lorem. Curabitur feugiat accumsan felis, placerat eleifend ipsum auctor.',
+//   tags: {
+//     category: [
+//       {
+//         id: 1,
+//         name: 'Breaking News',
+//         slug: 'breaking-news',
+//       },
+//       {
+//         id: 2,
+//         name: 'Headline',
+//         slug: 'headline',
+//       },
+//     ],
+//   },
+// }
 
 export default meta
 type Story = StoryObj<typeof Card>

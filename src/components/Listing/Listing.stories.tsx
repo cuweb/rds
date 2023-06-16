@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Listing } from './Listing'
+import { content } from '../../data/ListingData'
 
 const meta: Meta<typeof Listing> = {
   title: 'Components/Listing',
@@ -9,33 +10,6 @@ const meta: Meta<typeof Listing> = {
     controls: {
       sort: 'requiredFirst',
     },
-  },
-}
-
-const content = {
-  title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
-  link: 'https://carleton.ca/webservices',
-  video: 'https://www.youtube.com/watch?v=gtEJtKwUGiU',
-  //   image: 'https://source.unsplash.com/random/400x266',
-  image: './sample-imgs/news-img.jpg',
-  alt: 'Required alt text',
-  date: '2022-12-16',
-  startDate: '2023-03-31 20:00:00',
-  excerpt:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a est vel mi finibus tempor. Etiam sagittis eros ac venenatis pretium. Donec bibendum eget ante quis maximus. Nullam ultrices erat sagittis luctus volutpat. Etiam nec arcu sodales, convallis justo quis, aliquam lorem. Curabitur feugiat accumsan felis, placerat eleifend ipsum auctor.',
-  tags: {
-    category: [
-      {
-        id: 1,
-        name: 'Breaking News',
-        slug: 'breaking-news',
-      },
-      {
-        id: 2,
-        name: 'Headline',
-        slug: 'headline',
-      },
-    ],
   },
 }
 
