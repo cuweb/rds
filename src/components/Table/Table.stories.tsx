@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { TableData } from './TableData'
+import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
 import { Link } from '../Link/Link'
 
