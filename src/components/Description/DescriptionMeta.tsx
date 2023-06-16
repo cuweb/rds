@@ -1,4 +1,5 @@
 import { styles } from './Description.Styles'
+import { proseStyles } from '../../utils/globalClasses'
 
 export interface DescriptionMetaProps {
   term?: string
@@ -12,7 +13,7 @@ export const DescriptionMeta = ({ term, children, useColumns }: DescriptionMetaP
   return (
     <div className={`${styles.base} ${columns}`}>
       <dt className={styles.term}>{term}</dt>
-      <dd className={styles.def}>{children}</dd>
+      <dd className={`${styles.def} ${proseStyles.base}`}>{children}</dd>
     </div>
   )
 }

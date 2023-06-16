@@ -1,5 +1,5 @@
 import { FooterWave } from '../FooterWave/FooterWave'
-import { FooterStandardLinks as linkData } from './FooterStandardData'
+import { FooterStandardLinks as linkData } from '../../../data/FooterStandardData'
 import { Link } from '../../Link/Link'
 
 const Social = [
