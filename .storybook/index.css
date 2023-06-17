@@ -3054,6 +3054,18 @@ select {
   padding-top: 56.25%;
 }
 
+.pb-px {
+  padding-bottom: 1px;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -6120,6 +6132,10 @@ select {
   margin-top: 0px;
 }
 
+.first\:border-t:first-child {
+  border-top-width: 1px;
+}
+
 .first\:pt-0:first-child {
   padding-top: 0px;
 }
@@ -6130,6 +6146,10 @@ select {
 
 .last\:border-0:last-child {
   border-width: 0px;
+}
+
+.last\:border-none:last-child {
+  border-style: none;
 }
 
 .last\:pb-0:last-child {
@@ -6726,6 +6746,10 @@ select {
     gap: 2rem;
   }
 
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .md\:bg-cover {
     background-size: cover;
   }
@@ -6821,6 +6845,18 @@ select {
 
   .md\:pt-8 {
     padding-top: 2rem;
+  }
+
+  .md\:pb-5 {
+    padding-bottom: 1.25rem;
+  }
+
+  .md\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
+  .md\:pb-4 {
+    padding-bottom: 1rem;
   }
 
   .md\:text-left {
