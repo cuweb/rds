@@ -91,7 +91,18 @@ export const MultipleAccordions: Story = {
       <Description>
         {descMeta.map((item) => (
           <Description.Accordion key={item?.id} term={item?.term}>
-            {item?.details}
+            <p>
+              Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+              voluptatem non.
+            </p>
+            <p>
+              Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec
+              elit ultricies, sed tempus diam dignissim.
+            </p>
+            <p>
+              Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel
+              orci vulputate, eget vulputate neque porttitor.
+            </p>
           </Description.Accordion>
         ))}
       </Description>
