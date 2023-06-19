@@ -1,8 +1,8 @@
 import { Link } from '../../Link/Link'
 
-export const FooterWave = () => {
+export const FooterLogoLinks = () => {
   return (
-    <div className="cu-footerwave not-prose grid justify-center bg-cu-waves-red bg-[length:100%] bg-bottom bg-no-repeat pb-24 sm:pb-36 lg:pb-44">
+    <div className="not-prose grid justify-center pb-24 sm:pb-36 lg:pb-44">
       <img
         className="mx-auto mb-6 h-32 w-auto sm:h-44"
         src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logo-stacked-white-outline.svg"

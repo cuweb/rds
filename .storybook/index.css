@@ -2776,16 +2776,24 @@ select {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
-.bg-\[length\:100\%\] {
-  background-size: 100%;
-}
-
 .bg-contain {
   background-size: contain;
 }
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-\[length\:100\%\] {
+  background-size: 100%;
+}
+
+.bg-\[length\:101\%\] {
+  background-size: 101%;
+}
+
+.bg-\[length\:100\.5\%\] {
+  background-size: 100.5%;
 }
 
 .bg-bottom {
@@ -3052,18 +3060,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pb-px {
-  padding-bottom: 1px;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
-}
-
-.pb-5 {
-  padding-bottom: 1.25rem;
 }
 
 .text-left {
@@ -6148,10 +6144,6 @@ select {
   border-width: 0px;
 }
 
-.last\:border-none:last-child {
-  border-style: none;
-}
-
 .last\:pb-0:last-child {
   padding-bottom: 0px;
 }
@@ -6742,12 +6734,12 @@ select {
     gap: 1.25rem;
   }
 
-  .md\:gap-8 {
-    gap: 2rem;
-  }
-
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 
   .md\:bg-cover {
@@ -6823,6 +6815,10 @@ select {
     padding-bottom: 12rem;
   }
 
+  .md\:pb-5 {
+    padding-bottom: 1.25rem;
+  }
+
   .md\:pb-8 {
     padding-bottom: 2rem;
   }
@@ -6845,18 +6841,6 @@ select {
 
   .md\:pt-8 {
     padding-top: 2rem;
-  }
-
-  .md\:pb-5 {
-    padding-bottom: 1.25rem;
-  }
-
-  .md\:pb-6 {
-    padding-bottom: 1.5rem;
-  }
-
-  .md\:pb-4 {
-    padding-bottom: 1rem;
   }
 
   .md\:text-left {
