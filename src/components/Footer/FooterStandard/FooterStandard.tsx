@@ -1,4 +1,5 @@
-import { FooterWave } from '../FooterWave/FooterWave'
+import { FooterLogoLinks } from '../FooterLogoLinks/FooterLogoLinks'
+import { footerStyles } from '../../../utils/globalClasses'
 import { FooterStandardLinks as linkData } from '../../../data/FooterStandardData'
 import { Link } from '../../Link/Link'
 
@@ -82,7 +83,10 @@ const Social = [
 
 export const FooterStandard = () => {
   return (
-    <footer className="cu-footerstandard not-prose bg-cu-black-900" aria-labelledby="footer-heading">
+    <footer
+      className={`cu-footerstandard not-prose bg-cu-black-900 ${footerStyles.wave}`}
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -187,7 +191,7 @@ export const FooterStandard = () => {
         </ul>
       </div>
 
-      <FooterWave />
+      <FooterLogoLinks />
     </footer>
   )
 }
