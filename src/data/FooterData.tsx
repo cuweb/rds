@@ -1,37 +1,72 @@
-export const FooterKeyLinks = [
+export const SmallLinks = [
   {
-    name: 'Privacy',
-    href: 'https://carleton.ca/privacy/privacy-notices/general-notice-of-collection-use-and-disclosure/',
+    title: 'Privacy',
+    url: 'https://carleton.ca/privacy/privacy-notices/general-notice-of-collection-use-and-disclosure/',
   },
   {
-    name: 'Accessibility',
-    href: 'https://carleton.ca/accessibility/',
+    title: 'Accessibility',
+    url: 'https://carleton.ca/accessibility/',
   },
   {
-    name: `© Copyright ${new Date().getFullYear()}`,
-    href: 'https://library.carleton.ca/copyright-carleton',
-  },
-]
-
-export const FooterLinks = [
-  {
-    name: 'Contact support',
-    href: '#',
-  },
-  {
-    name: 'Recent alerts',
-    href: '#',
-  },
-  {
-    name: 'Report concern',
-    href: '#',
+    title: `© Copyright ${new Date().getFullYear()}`,
+    url: 'https://library.carleton.ca/copyright-carleton',
   },
 ]
 
-export const FooterSocial = [
+export const PrimaryLinks = [
   {
-    name: 'Facebook',
-    href: 'https://www.facebook.com/carletonuniversity',
+    id: 1,
+    title: 'Contact support',
+    url: '#',
+  },
+  {
+    id: 2,
+    title: 'Recent alerts',
+    url: '#',
+  },
+  {
+    id: 3,
+    title: 'Report concern',
+    url: '#',
+  },
+]
+
+export const SecondaryLinks = [
+  {
+    id: 1,
+    title: 'Contact support',
+    url: '#',
+  },
+  {
+    id: 2,
+    title: 'Recent alerts',
+    url: '#',
+  },
+  {
+    id: 3,
+    title: 'Report concern',
+    url: '#',
+  },
+]
+
+export const FooterButtons = [
+  {
+    id: 1,
+    title: 'Contact support',
+    url: '#',
+  },
+  {
+    id: 2,
+    title: 'Recent alerts',
+    url: '#',
+  },
+]
+
+export const SocialLinks = [
+  {
+    id: 1,
+    title: 'Facebook',
+    url: 'https://www.facebook.com/carletonuniversity',
     hover: 'hover:text-[#3b5998]',
     icon: () => (
       <svg
@@ -46,8 +81,9 @@ export const FooterSocial = [
     ),
   },
   {
-    name: 'Twitter',
-    href: 'https://twitter.com/@Carleton_U',
+    id: 2,
+    title: 'Twitter',
+    url: 'https://twitter.com/@Carleton_U',
     hover: 'hover:text-[#00acee]',
     icon: () => (
       <svg
@@ -62,8 +98,9 @@ export const FooterSocial = [
     ),
   },
   {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/carleton_u',
+    id: 3,
+    title: 'Instagram',
+    url: 'https://www.instagram.com/carleton_u',
     hover: 'hover:text-[#8a3ab9]',
     icon: () => (
       <svg
@@ -78,8 +115,9 @@ export const FooterSocial = [
     ),
   },
   {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/school/carleton-university',
+    id: 4,
+    title: 'LinkedIn',
+    url: 'https://www.linkedin.com/school/carleton-university',
     hover: 'hover:text-[#0072b1]',
     icon: () => (
       <svg
@@ -94,8 +132,9 @@ export const FooterSocial = [
     ),
   },
   {
-    name: 'YouTube',
-    href: 'https://www.youtube.com/user/carletonuvideos',
+    id: 5,
+    title: 'YouTube',
+    url: 'https://www.youtube.com/user/carletonuvideos',
     hover: 'hover:text-[#c4302b]',
     icon: () => (
       <svg

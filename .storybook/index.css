@@ -6910,6 +6910,14 @@ select {
     padding-top: 2rem;
   }
 
+  .md\:pb-40 {
+    padding-bottom: 10rem;
+  }
+
+  .md\:pb-44 {
+    padding-bottom: 11rem;
+  }
+
   .md\:text-left {
     text-align: left;
   }

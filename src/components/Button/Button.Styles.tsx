@@ -1,5 +1,5 @@
 export const buttonStyles = {
-  core: `not-prose inline-flex items-center justify-center gap-1 rounded-md px-4 py-3 text-base font-medium hover:text-white focus:outline-none`,
+  core: `not-prose inline-flex items-center justify-center gap-1 rounded-md px-6 py-3 text-base font-medium hover:text-white focus:outline-none`,
   solid: `bg-cu-red text-white hover:bg-cu-black-600`,
   outline: `border border-1 border-cu-red bg-white hover:bg-cu-red hover:text-white`,
   shadow: `shadow-md`,
