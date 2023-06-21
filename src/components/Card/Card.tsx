@@ -11,6 +11,7 @@ import { CardBadges } from './CardBadges'
 import { CardPostMeta } from './CardPostMeta'
 import { CardEventMeta } from './CardEventMeta'
 import { CardPeopleMeta } from './CardPeopleMeta'
+import { CardInitials } from './CardInitials'
 import { CardStats } from './CardStats'
 
 export interface CardProps {
@@ -39,5 +40,6 @@ export const Card = Object.assign(CardWrapper, {
   PostMeta: CardPostMeta,
   EventMeta: CardEventMeta,
   PeopleMeta: CardPeopleMeta,
+  Initials: CardInitials,
   Stats: CardStats,
 })

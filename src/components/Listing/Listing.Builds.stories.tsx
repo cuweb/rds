@@ -86,6 +86,25 @@ export const PeopleListing: Story = {
   },
 }
 
+export const PeopleListingInitials: Story = {
+  args: {
+    children: (
+      <a href={singlePeople?.link}>
+        <Listing.Initials initials="CU" />
+        <Listing.Content>
+          <Listing.Header text={`${singlePeople?.firstName} ${singlePeople?.lastName}`} />
+          <Listing.PeopleMeta
+            jobTitle={singlePeople?.jobTitle}
+            email={singlePeople?.email}
+            phone={singlePeople?.phone}
+          />
+          <Listing.Badges tags={singlePeople?.tags} />
+        </Listing.Content>
+      </a>
+    ),
+  },
+}
+
 export const BulletinItem: Story = {
   args: {
     noLink: true,
