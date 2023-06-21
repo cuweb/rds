@@ -2,6 +2,10 @@ export const proseStyles = {
   base: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
 }
 
+export const footerStyles = {
+  wave: `bg-cu-waves-red bg-[length:100.5%] bg-bottom bg-no-repeat`,
+}
+
 export const layoutSpacing = {
   section: 'px-8 py-6 md:py-10 md:px-10',
   containerWhite: 'py-5 md:py-6 bg-white',
