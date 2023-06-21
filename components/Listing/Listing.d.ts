@@ -41,5 +41,9 @@ export declare const Listing: (({ children, noLink }: ListingProps) => import("r
         ({ jobTitle, email, phone }: import("./ListingPeopleMeta").ListingPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    Initials: {
+        ({ initials }: import("./ListingInitials").ListingInitialsProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
 };
 //# sourceMappingURL=Listing.d.ts.map

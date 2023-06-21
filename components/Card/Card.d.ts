@@ -47,6 +47,10 @@ export declare const Card: (({ children, isCenter, border, noLink }: CardProps) 
         ({ jobTitle, email, phone }: import("./CardPeopleMeta").CardPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    Initials: {
+        ({ initials }: import("./CardInitials").CardInitialsProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
     Stats: {
         ({ stat, desc, reverse }: import("./CardStats").CardStatsProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
