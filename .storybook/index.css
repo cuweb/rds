@@ -1455,26 +1455,6 @@ select {
   inset: 0px;
 }
 
-.inset-x-2\/4 {
-  left: 50%;
-  right: 50%;
-}
-
-.inset-y-2\/4 {
-  top: 50%;
-  bottom: 50%;
-}
-
-.inset-x-auto {
-  left: auto;
-  right: auto;
-}
-
-.inset-y-auto {
-  top: auto;
-  bottom: auto;
-}
-
 .-left-4 {
   left: -1rem;
 }
@@ -1557,14 +1537,6 @@ select {
 
 .top-5 {
   top: 1.25rem;
-}
-
-.left-2\/4 {
-  left: 50%;
-}
-
-.top-2\/4 {
-  top: 50%;
 }
 
 .isolate {
@@ -2188,6 +2160,11 @@ select {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2210,11 +2187,6 @@ select {
 
 .translate-y-4 {
   --tw-translate-y: 1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2761,10 +2733,6 @@ select {
 .bg-yellow-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
-}
-
-.bg-cu-red\/50 {
-  background-color: rgb(233 28 36 / 0.5);
 }
 
 .bg-opacity-25 {
@@ -3719,6 +3687,11 @@ select {
      object-fit: cover;
 }
 
+.cu-figure img,
+.cu-figure svg {
+  width: 100%;
+}
+
 .cu-card .cu-figure--round img,
 .cu-card .cu-figure--round svg {
   margin-left: auto;
@@ -3819,10 +3792,6 @@ select {
 }
 
 /* Figure Components */
-
-.cu-figure img {
-  width: 100%;
-}
 
 /* React Quill CSS */
 
@@ -7184,11 +7153,6 @@ select {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
   }
 
   .lg\:leading-\[3\.5rem\] {

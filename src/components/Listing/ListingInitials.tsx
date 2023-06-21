@@ -1,12 +1,12 @@
-import { figureStyles } from './Card.Styles'
+import { figureStyles } from './Listing.Styles'
 
-export interface CardInitialsProps {
+export interface ListingInitialsProps {
   initials: string
 }
 
-export const CardInitials = ({ initials }: CardInitialsProps) => {
+export const ListingInitials = ({ initials }: ListingInitialsProps) => {
   return (
-    <figure className={`cu-figure cu-figure--round ${figureStyles.round} ${figureStyles.figure}`}>
+    <figure className={`cu-figure ${figureStyles.figure} ${figureStyles['small']}`}>
       <div className="relative">
         <img
           src="https://cu-production.s3.amazonaws.com/rds/assets/grey-bg.jpg"
@@ -22,4 +22,4 @@ export const CardInitials = ({ initials }: CardInitialsProps) => {
   )
 }
 
-CardInitials.displayName = 'Card.Initials'
+ListingInitials.displayName = 'Listing.Initials'
