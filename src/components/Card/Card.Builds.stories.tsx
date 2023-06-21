@@ -87,6 +87,22 @@ export const PeopleCard: Story = {
   },
 }
 
+export const PeopleCardInitials: Story = {
+  args: {
+    isCenter: true,
+    children: (
+      <a href={singlePeople?.link}>
+        <Card.Initials initials="CU" />
+        <Card.Content>
+          <Card.Header text={`${singlePeople?.firstName} ${singlePeople?.lastName}`} />
+          <Card.PeopleMeta jobTitle={singlePeople?.jobTitle} email={singlePeople?.email} phone={singlePeople?.phone} />
+        </Card.Content>
+        <Card.Badges tags={singlePeople?.tags} />
+      </a>
+    ),
+  },
+}
+
 export const VideoCard: Story = {
   args: {
     children: (
