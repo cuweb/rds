@@ -57,7 +57,7 @@ export const TitleAsH1: Story = {
 export const NoImage: Story = {
   render: () => (
     <HeroTextImage>
-      <HeroTextImage.Content title="Website and Application Development" image="https://picsum.photos/400/266">
+      <HeroTextImage.Content title="Website and Application Development">
         <div className="buttons flex flex-wrap gap-6 md:flex-1">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />

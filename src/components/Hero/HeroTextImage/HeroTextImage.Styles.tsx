@@ -2,7 +2,6 @@ export const styles = {
   base: 'cu-hero-textimage not-contained not-prose mx-auto mb-12 grid gap-6 md:gap-10 lg:items-center',
   border: 'border-b border-cu-black-50 pb-6 shadow-hero-text-image md:pb-10',
   gridImageRight: 'md:grid-cols-split-60-40',
-  gridImageLeft: 'md:grid-cols-split-40-60',
   gridNoImage: 'md:grid-cols-split-80-20',
   contentWrapper: 'order-2 grid gap-4 md:order-1 md:gap-8',
   header: 'font-semibold md:leading-10 text-2xl sm:text-3xl md:text-4xl not-italic',
