@@ -6,7 +6,7 @@ import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopNav } from '../../../components/TopNav/TopNav'
-import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
+import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
@@ -61,8 +61,8 @@ export const SinglePage: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroBanner hasBorder>
-            <HeroBanner.Content
+          <HeroTextImage hasBorder>
+            <HeroTextImage.Content
               title="Website and Application Development"
               image="https://picsum.photos/400/266"
               imageAngle
@@ -72,8 +72,8 @@ export const SinglePage: Story = {
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroBanner.Content>
-          </HeroBanner>
+            </HeroTextImage.Content>
+          </HeroTextImage>
 
           <h2>This is a header 2</h2>
           <SinglePara />

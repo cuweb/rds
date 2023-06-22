@@ -11,7 +11,7 @@ import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
-import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
+import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
 import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
@@ -63,9 +63,9 @@ export const NewsCards: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroBanner maxWidth="5xl" hasBorder>
-            <HeroBanner.Content title="News Card Examples" />
-          </HeroBanner>
+          <HeroTextImage maxWidth="5xl" hasBorder>
+            <HeroTextImage.Content title="News Card Examples" />
+          </HeroTextImage>
 
           <DoublePara />
 

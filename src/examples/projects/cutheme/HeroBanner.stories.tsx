@@ -7,7 +7,7 @@ import { TopNav } from '../../../components/TopNav/TopNav'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 
 import { Button } from '../../../components/Button/Button'
-import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
+import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Blocks',
@@ -55,51 +55,51 @@ export const Banners: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroBanner hasBorder>
-            <HeroBanner.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
+          <HeroTextImage hasBorder>
+            <HeroTextImage.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroBanner.Content>
-          </HeroBanner>
+            </HeroTextImage.Content>
+          </HeroTextImage>
 
           <DoublePara />
 
-          <HeroBanner maxWidth="5xl" hasBorder>
-            <HeroBanner.Content title="Hero Banner: Content">
+          <HeroTextImage maxWidth="5xl" hasBorder>
+            <HeroTextImage.Content title="Hero Banner: Content">
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroBanner.Content>
-          </HeroBanner>
+            </HeroTextImage.Content>
+          </HeroTextImage>
 
           <DoublePara />
 
-          <HeroBanner maxWidth="5xl">
-            <HeroBanner.Content title="Hero Banner: Content">
+          <HeroTextImage maxWidth="5xl">
+            <HeroTextImage.Content title="Hero Banner: Content">
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroBanner.Content>
-          </HeroBanner>
+            </HeroTextImage.Content>
+          </HeroTextImage>
 
           <DoublePara />
 
-          <HeroBanner>
-            <HeroBanner.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
+          <HeroTextImage>
+            <HeroTextImage.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
               <SinglePara />
               <div className="buttons flex flex-wrap gap-6 md:flex-1">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
-            </HeroBanner.Content>
-          </HeroBanner>
+            </HeroTextImage.Content>
+          </HeroTextImage>
 
           <DoublePara />
         </Section>
