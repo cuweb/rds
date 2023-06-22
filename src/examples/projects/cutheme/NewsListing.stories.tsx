@@ -11,7 +11,7 @@ import { Listing } from '../../../components/Listing/Listing'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
-import { HeroBanner } from '../../../components/Hero/HeroBanner/HeroBanner'
+import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
 import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
@@ -61,9 +61,9 @@ export const NewsListings: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroBanner maxWidth="5xl" hasBorder>
-            <HeroBanner.Content title="News Listing Examples" />
-          </HeroBanner>
+          <HeroTextImage maxWidth="5xl" hasBorder>
+            <HeroTextImage.Content title="News Listing Examples" />
+          </HeroTextImage>
 
           <DoublePara />
 
