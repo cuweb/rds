@@ -1,11 +1,12 @@
 import React from 'react'
-import { styles } from './HeroBanner.Styles'
+import { styles } from './HeroTextImage.Styles'
 
-export interface HeroBannerContentProps {
+export interface HeroTextImageContentProps {
   children?: React.ReactNode
   title: string
   paragraph?: string
   headerSmall?: boolean
+  headerType?: 'h1' | 'h2'
   image?: string
   imageAngle?: boolean
   focalPointX?: string
@@ -18,18 +19,16 @@ const mobileImageTypes = {
   square: 'min-h-[220px] aspect-square',
 }
 
-export const HeroBannerContent = ({
+export const HeroTextImageContent = ({
   children,
   title,
   paragraph,
-  headerSmall,
+  headerType = 'h2',
   image,
   imageAngle,
   focalPointX = '50',
   focalPointY = '50',
-}: HeroBannerContentProps) => {
-  const headerSize = headerSmall ? '' : 'lg:text-5xl lg:leading-[3.5rem]'
-
+}: HeroTextImageContentProps) => {
   // Set background image
   const imageUrl = image
   const imagePadding = imageUrl ? 'md:py-8' : 'md:pt-6'
@@ -42,7 +41,8 @@ export const HeroBannerContent = ({
   return (
     <>
       <div className={`${styles.contentWrapper} ${imagePadding}`}>
-        <h1 className={`${styles.header} ${headerSize}`}>{title}</h1>
+        {headerType === 'h1' && <h1 className={`${styles.header} ${styles.headerH1}`}>{title}</h1>}
+        {headerType === 'h2' && <h2 className={`${styles.header}`}>{title}</h2>}
         {paragraph && <p className={styles.paragraph}>{paragraph}</p>}
         {children}
       </div>
@@ -67,4 +67,4 @@ export const HeroBannerContent = ({
   )
 }
 
-HeroBannerContent.displayName = 'HeroBanner.Content'
+HeroTextImageContent.displayName = 'HeroTextImage.Content'

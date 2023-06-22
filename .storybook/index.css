@@ -2270,8 +2270,16 @@ select {
           appearance: none;
 }
 
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -6757,16 +6765,20 @@ select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-hero-text-image-20 {
-    grid-template-columns: auto 20%;
+  .md\:grid-cols-left-260 {
+    grid-template-columns: 260px auto;
   }
 
-  .md\:grid-cols-hero-text-image-40 {
+  .md\:grid-cols-split-40-60 {
+    grid-template-columns: 40% auto;
+  }
+
+  .md\:grid-cols-split-60-40 {
     grid-template-columns: auto 40%;
   }
 
-  .md\:grid-cols-left260 {
-    grid-template-columns: 260px auto;
+  .md\:grid-cols-split-80-20 {
+    grid-template-columns: auto 20%;
   }
 
   .md\:flex-row {
