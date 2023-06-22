@@ -1,2 +1,0 @@
-import{r as o}from"./index-ec8b93d8.js";import{b as c}from"./open-closed-50e7a81e.js";function l(e,t){let r=o.useRef([]),n=c(e);o.useEffect(()=>{let i=[...r.current];for(let[a,u]of t.entries())if(r.current[a]!==u){let f=n(t,i);return r.current=t,f}},[n,...t])}function s(){return/iPhone/gi.test(window.navigator.platform)||/Mac/gi.test(window.navigator.platform)&&window.navigator.maxTouchPoints>0}function g(){return/Android/gi.test(window.navigator.userAgent)}function d(){return s()||g()}export{l as m,d as n,s as t};
-//# sourceMappingURL=platform-18d24fa4.js.map
