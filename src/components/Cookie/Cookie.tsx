@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react'
+import { Button } from '../Button/Button'
 
 export const Cookie = () => {
   const [isVisible, setIsVisible] = useState(true)
@@ -9,23 +10,17 @@ export const Cookie = () => {
   }
 
   return (
-    <div className={`pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6 ${isVisible ? '' : 'hidden'}`}>
-      <div className="pointer-events-auto mx-auto w-2/3 rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
-        <div className="mb-4 flex items-center justify-between">
-          <p className="text-base leading-6 text-gray-900">
-            This site uses cookies to offer you a better browsing experience. Find out more on{' '}
-            <a href="#" className="font-semibold text-cu-red-600">
-              how we use cookies and how you can change your settings.
-            </a>
-          </p>
-          <button
-            type="button"
-            className="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-            onClick={handleButtonClick}
-          >
-            Ok, Got it.
-          </button>
-        </div>
+    <div
+      className={`fixed bottom-0 left-0 w-full border-t border-cu-black-100 text-center ${isVisible ? '' : 'hidden'}`}
+    >
+      <div className="mx-auto p-5 text-center">
+        <p className="mb-4 text-base leading-6 text-gray-900">
+          This site uses cookies to offer you a better browsing experience. Find out more on{' '}
+          <a href="#" className="font-semibold text-cu-red">
+            how we use cookies and how you can change your settings.
+          </a>
+        </p>
+        <Button isSmall onClick={handleButtonClick} title="Ok, got it!" />
       </div>
     </div>
   )

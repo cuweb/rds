@@ -2753,6 +2753,11 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
+.bg-cu-black-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -2882,6 +2887,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-1 {
@@ -6806,18 +6815,6 @@ select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-hero-text-image-20 {
-    grid-template-columns: auto 20%;
-  }
-
-  .md\:grid-cols-hero-text-image-40 {
-    grid-template-columns: auto 40%;
-  }
-
-  .md\:grid-cols-left260 {
-    grid-template-columns: 260px auto;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -6872,6 +6869,10 @@ select {
 
   .md\:p-20 {
     padding: 5rem;
+  }
+
+  .md\:p-6 {
+    padding: 1.5rem;
   }
 
   .md\:px-10 {
