@@ -1,15 +1,24 @@
 export declare const styles: {
     base: string;
     border: string;
-    gridImageRight: string;
-    gridNoImage: string;
+};
+export declare const contentStyles: {
     contentWrapper: string;
+    contentTopSpace: string;
     header: string;
-    headerH1: string;
-    paragraph: string;
-    imageWrapper: string;
-    image: string;
-    svg: string;
-    fullHeight: string;
+    headerOne: string;
+    pronoun: string;
+    largeText: string;
+};
+export declare const mediaStyles: {
+    mediaWrapper: string;
+    mediaBgImage: string;
+    svgLeft: string;
+    svgRight: string;
+};
+export declare const socialStyles: {
+    flex: string;
+    link: string;
+    icon: string;
 };
 //# sourceMappingURL=HeroTextImage.Styles.d.ts.map
