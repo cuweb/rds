@@ -21,6 +21,10 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
+const heroPara = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
+vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
+condimentum magna vel orci vulputate, eget vulputate neque porttitor.`
+
 const SinglePara = () => {
   return (
     <>
@@ -64,15 +68,16 @@ export const SinglePage: Story = {
           <HeroTextImage hasBorder>
             <HeroTextImage.Content
               title="Website and Application Development"
-              image="https://picsum.photos/400/266"
-              imageAngle
+              paragraph={heroPara}
+              headerType="h1"
+              hasMediaCol
             >
-              <SinglePara />
-              <div className="buttons flex flex-wrap gap-6 md:flex-1">
+              <div className="buttons flex flex-wrap gap-4 md:gap-6">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
             </HeroTextImage.Content>
+            <HeroTextImage.Media image="https://picsum.photos/400/266" />
           </HeroTextImage>
 
           <h2>This is a header 2</h2>
