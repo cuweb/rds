@@ -24,12 +24,8 @@ export const HeroTextImageEvent = ({
   cost,
 }: HeroTextImageEventProps) => {
   return (
-    <div
-      className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}
-    >
-      <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>
-        {title}
-      </h1>
+    <div className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}>
+      <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>{title}</h1>
 
       {startDate && <p className={contentStyles.largeText}>{startDate}</p>}
       {endDate && <p className={contentStyles.largeText}>{endDate}</p>}

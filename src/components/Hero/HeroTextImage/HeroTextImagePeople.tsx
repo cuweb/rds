@@ -33,13 +33,10 @@ export const HeroTextImagePeople = ({
   phoneExt,
 }: HeroTextImagePeopleProps) => {
   return (
-    <div
-      className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}
-    >
+    <div className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}>
       <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>
         {designation && `${designation} `}
-        {title}{' '}
-        {pronoun && <span className={contentStyles.pronoun}>({pronoun})</span>}
+        {title} {pronoun && <span className={contentStyles.pronoun}>({pronoun})</span>}
       </h1>
       {jobTitle && <p className={contentStyles.largeText}>{jobTitle}</p>}
 
@@ -53,10 +50,7 @@ export const HeroTextImagePeople = ({
         )}
         {email && (
           <li>
-            <a
-              className="font-semibold text-cu-red hover:text-cyan-600"
-              href={`mailto:${email}`}
-            >
+            <a className="font-semibold text-cu-red hover:text-cyan-600" href={`mailto:${email}`}>
               {email}
             </a>
           </li>

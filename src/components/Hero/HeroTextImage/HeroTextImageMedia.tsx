@@ -26,8 +26,7 @@ export const HeroTextImageMedia = ({
   focalPointY = '50',
 }: HeroTextImageMediaProps) => {
   const hasImage = image ? mediaStyles.mediaBgImage : ''
-  const hasAngle =
-    angle === 'right' ? mediaStyles.svgRight : mediaStyles.svgLeft
+  const hasAngle = angle === 'right' ? mediaStyles.svgRight : mediaStyles.svgLeft
   const inlineStyle = hasImage
     ? {
         backgroundImage: `url(${image})`,
@@ -36,17 +35,9 @@ export const HeroTextImageMedia = ({
     : {}
 
   return (
-    <div
-      className={`${mediaStyles.mediaWrapper} ${rdsImageWidth[imageWidth]} ${hasImage}`}
-      style={inlineStyle}
-    >
+    <div className={`${mediaStyles.mediaWrapper} ${rdsImageWidth[imageWidth]} ${hasImage}`} style={inlineStyle}>
       {angle === 'full' && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={mediaStyles.svgRight}
-          fill="none"
-          viewBox="0 0 123 440"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" className={mediaStyles.svgRight} fill="none" viewBox="0 0 123 440">
           <path
             fill="#fff"
             d="M0 440h6c-4.4 0-4.5-3-3.5-6C49.344 293.466 118.06 4.849 119 2.5c1-2.5 3-2.5 4-2.5H0v440Z"
@@ -54,12 +45,7 @@ export const HeroTextImageMedia = ({
         </svg>
       )}
       {angle && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={hasAngle}
-          fill="none"
-          viewBox="0 0 123 440"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" className={hasAngle} fill="none" viewBox="0 0 123 440">
           <path
             fill="#fff"
             d="M0 440h6c-4.4 0-4.5-3-3.5-6C49.344 293.466 118.06 4.849 119 2.5c1-2.5 3-2.5 4-2.5H0v440Z"
