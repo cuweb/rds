@@ -1,14 +1,26 @@
 export const styles = {
-  base: 'cu-hero-textimage not-contained not-prose mx-auto mb-12 grid gap-6 md:gap-10 lg:items-center',
+  base: 'flex flex-wrap gap-6 mx-auto mb-12 md:flex-nowrap md:gap-12 not-contained not-prose',
   border: 'border-b border-cu-black-50 pb-6 shadow-hero-text-image md:pb-10',
-  gridImageRight: 'md:grid-cols-split-60-40',
-  gridNoImage: 'md:grid-cols-split-80-20',
-  contentWrapper: 'order-2 grid gap-4 md:order-1 md:gap-8',
-  header: 'font-semibold md:leading-10 text-2xl sm:text-3xl md:text-4xl not-italic',
-  headerH1: 'lg:text-5xl lg:leading-[3.5rem]',
-  paragraph: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9',
-  imageWrapper: 'order-1 md:order-2',
-  image: 'rounded bg-cover bg-no-repeat md:min-h-[260px]',
-  svg: 'hidden lg:block absolute -left-px top-0 z-10 h-full',
-  fullHeight: 'h-full',
+}
+
+export const contentStyles = {
+  contentWrapper: 'flex flex-col gap-4 md:gap-6 flex-[0_0_100%] md:max-w-4xl md:flex-1',
+  contentTopSpace: 'md:pt-4',
+  header: 'text-2xl not-italic font-semibold md:leading-10 sm:text-3xl md:text-4xl',
+  headerOne: 'text-3xl lg:text-5xl lg:leading-[3.5rem]',
+  pronoun: 'text-xl lg:text-3xl font-light lowercase text-cu-black-500',
+  largeText: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
+}
+
+export const mediaStyles = {
+  mediaWrapper: 'flex-[0_0_100%] md:flex-none',
+  mediaBgImage: 'relative rounded bg-cover bg-no-repeat min-h-[220px]',
+  svgLeft: 'hidden md:block absolute -left-px top-0 z-10 h-full',
+  svgRight: 'hidden md:block absolute -right-px top-0 z-10 h-full transform scale-[-1]',
+}
+
+export const socialStyles = {
+  flex: 'flex items-center gap-4',
+  link: 'text-cu-black-400',
+  icon: 'w-6 h-6 md:w-8 md:h-8',
 }

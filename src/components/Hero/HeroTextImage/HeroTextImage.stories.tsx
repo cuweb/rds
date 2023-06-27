@@ -20,45 +20,123 @@ const SinglePara =
 
 export const DefaultTemplate: Story = {
   render: () => (
-    <HeroTextImage>
+    <HeroTextImage hasBorder>
       <HeroTextImage.Content
         title="Website and Application Development"
         paragraph={SinglePara}
-        image="https://picsum.photos/800/266"
+        headerType="h1"
+        hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
       </HeroTextImage.Content>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" />
     </HeroTextImage>
   ),
 }
 
-export const TitleAsH1: Story = {
-  name: 'Title as an H1',
+export const ImageLeft: Story = {
   render: () => (
-    <HeroTextImage>
+    <HeroTextImage reverse hasBorder>
       <HeroTextImage.Content
         title="Website and Application Development"
         paragraph={SinglePara}
-        image="https://picsum.photos/800/266"
         headerType="h1"
+        hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
       </HeroTextImage.Content>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" />
+    </HeroTextImage>
+  ),
+}
+
+export const ImageAngle: Story = {
+  render: () => (
+    <HeroTextImage hasBorder>
+      <HeroTextImage.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        headerType="h1"
+        hasMediaCol
+      >
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImage.Content>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="left" />
+    </HeroTextImage>
+  ),
+}
+
+export const ImageLeftAngle: Story = {
+  render: () => (
+    <HeroTextImage reverse hasBorder>
+      <HeroTextImage.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        headerType="h1"
+        hasMediaCol
+      >
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImage.Content>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="left" />
+    </HeroTextImage>
+  ),
+}
+
+export const ImageDualAngle: Story = {
+  render: () => (
+    <HeroTextImage hasBorder>
+      <HeroTextImage.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        headerType="h1"
+        hasMediaCol
+      >
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImage.Content>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
+    </HeroTextImage>
+  ),
+}
+
+export const ImageLeftDualAngle: Story = {
+  render: () => (
+    <HeroTextImage reverse hasBorder>
+      <HeroTextImage.Content
+        title="Website and Application Development"
+        paragraph={SinglePara}
+        headerType="h1"
+        hasMediaCol
+      >
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </HeroTextImage.Content>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
     </HeroTextImage>
   ),
 }
 
 export const NoImage: Story = {
   render: () => (
-    <HeroTextImage>
-      <HeroTextImage.Content title="Website and Application Development">
-        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+    <HeroTextImage maxWidth="5xl" hasBorder>
+      <HeroTextImage.Content title="Website and Application Development" paragraph={SinglePara} headerType="h1">
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -67,16 +145,11 @@ export const NoImage: Story = {
   ),
 }
 
-export const WithImageAngle: Story = {
+export const NoParagraph: Story = {
   render: () => (
-    <HeroTextImage>
-      <HeroTextImage.Content
-        title="Website and Application Development"
-        paragraph={SinglePara}
-        image="https://picsum.photos/400/266"
-        imageAngle
-      >
-        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+    <HeroTextImage maxWidth="5xl" hasBorder>
+      <HeroTextImage.Content title="Website and Application Development" headerType="h1">
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -85,15 +158,11 @@ export const WithImageAngle: Story = {
   ),
 }
 
-export const WithoutContent: Story = {
+export const UsingHeaderTwo: Story = {
   render: () => (
-    <HeroTextImage>
-      <HeroTextImage.Content
-        title="Website and Application Development"
-        image="https://picsum.photos/400/266"
-        imageAngle
-      >
-        <div className="buttons flex flex-wrap gap-6 md:flex-1">
+    <HeroTextImage maxWidth="5xl" hasBorder>
+      <HeroTextImage.Content title="Website and Application Development" headerType="h2">
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -102,21 +171,45 @@ export const WithoutContent: Story = {
   ),
 }
 
-export const WithSmallerHeader: Story = {
+export const PeopleProfile: Story = {
   render: () => (
-    <HeroTextImage>
-      <HeroTextImage.Content
-        title="Website and Application Development"
-        paragraph={SinglePara}
-        image="https://picsum.photos/400/266"
-        imageAngle
-        headerSmall
+    <HeroTextImage maxWidth="5xl" hasBorder>
+      <HeroTextImage.People
+        designation="Dr."
+        title="Employee Profile"
+        jobTitle="Financial Analyst, Business Office"
+        degrees="Master of Business Administration"
+        pronoun="They/Them"
+        building="Dunton Tower"
+        room="148-A"
+        email="employee.email@carleton.ca"
+        phone="613-520-2600"
+        phoneExt="2497"
       >
-        <div className="buttons flex flex-wrap gap-6 md:flex-1">
-          <Button title="Primary" />
-          <Button title="Secondary" color="grey" />
+        <HeroTextImage.Social resume="#" linkedin="#" twitter="#" facebook="#" />
+      </HeroTextImage.People>
+      <HeroTextImage.Media imageWidth="40">
+        <img src="https://picsum.photos/400/400" alt="Demo" />
+      </HeroTextImage.Media>
+    </HeroTextImage>
+  ),
+}
+
+export const EventDetails: Story = {
+  render: () => (
+    <HeroTextImage maxWidth="5xl" hasBorder>
+      <HeroTextImage.Event
+        title="Capital Hoops Classic"
+        startDate="March 21st, 2023 at 6:00pm"
+        location="Raven’s Nest, 1125 Colonel By Drive"
+        cost="$20 per adult, $15 for youth/senior"
+      >
+        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+          <Button title="Get Tickets" />
+          <Button title="Request Info" color="grey" />
         </div>
-      </HeroTextImage.Content>
+      </HeroTextImage.Event>
+      <HeroTextImage.Media image="https://picsum.photos/400/266" imageWidth="40"></HeroTextImage.Media>
     </HeroTextImage>
   ),
 }

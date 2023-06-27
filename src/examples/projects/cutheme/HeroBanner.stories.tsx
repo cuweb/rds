@@ -16,6 +16,10 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
+const heroPara = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
+vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
+condimentum magna vel orci vulputate, eget vulputate neque porttitor.`
+
 const SinglePara = () => {
   return (
     <>
@@ -56,13 +60,18 @@ export const Banners: Story = {
       <Main>
         <Section hasProse>
           <HeroTextImage hasBorder>
-            <HeroTextImage.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
-              <SinglePara />
-              <div className="buttons flex flex-wrap gap-6 md:flex-1">
+            <HeroTextImage.Content
+              title="Website and Application Development"
+              paragraph={heroPara}
+              headerType="h1"
+              hasMediaCol
+            >
+              <div className="buttons flex flex-wrap gap-4 md:gap-6">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
             </HeroTextImage.Content>
+            <HeroTextImage.Media image="https://picsum.photos/400/266" />
           </HeroTextImage>
 
           <DoublePara />
@@ -91,14 +100,19 @@ export const Banners: Story = {
 
           <DoublePara />
 
-          <HeroTextImage>
-            <HeroTextImage.Content title="Hero Banner: Content" image="https://picsum.photos/400/266" imageAngle>
-              <SinglePara />
-              <div className="buttons flex flex-wrap gap-6 md:flex-1">
+          <HeroTextImage hasBorder>
+            <HeroTextImage.Content
+              title="Website and Application Development"
+              paragraph={heroPara}
+              headerType="h2"
+              hasMediaCol
+            >
+              <div className="buttons flex flex-wrap gap-4 md:gap-6">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
             </HeroTextImage.Content>
+            <HeroTextImage.Media image="https://picsum.photos/400/266" />
           </HeroTextImage>
 
           <DoublePara />
