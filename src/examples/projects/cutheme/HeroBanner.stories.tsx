@@ -8,6 +8,7 @@ import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 
 import { Button } from '../../../components/Button/Button'
 import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { Container } from '../../../layouts/Container/Container'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Blocks',
@@ -19,18 +20,6 @@ type Story = StoryObj
 const heroPara = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
 vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
 condimentum magna vel orci vulputate, eget vulputate neque porttitor.`
-
-const SinglePara = () => {
-  return (
-    <>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-        condimentum magna vel orci vulputate, eget vulputate neque porttitor.
-      </p>
-    </>
-  )
-}
 
 const DoublePara = () => {
   return (
@@ -59,61 +48,91 @@ export const Banners: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage hasBorder>
-            <HeroTextImage.Content
-              title="Website and Application Development"
-              paragraph={heroPara}
-              headerType="h1"
-              hasMediaCol
-            >
-              <div className="buttons flex flex-wrap gap-4 md:gap-6">
-                <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
-              </div>
-            </HeroTextImage.Content>
-            <HeroTextImage.Media image="https://picsum.photos/400/266" />
-          </HeroTextImage>
+          <Container>
+            <HeroTextImage hasBorder>
+              <HeroTextImage.Content
+                title="Website and Application Development"
+                paragraph={heroPara}
+                headerType="h1"
+                hasMediaCol
+              >
+                <div className="buttons flex flex-wrap gap-4 md:gap-6">
+                  <Button title="Primary" />
+                  <Button title="Secondary" color="grey" />
+                </div>
+              </HeroTextImage.Content>
+              <HeroTextImage.Media image="https://picsum.photos/400/266" />
+            </HeroTextImage>
+          </Container>
 
           <DoublePara />
 
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="Hero Banner: Content">
-              <SinglePara />
-              <div className="buttons flex flex-wrap gap-6 md:flex-1">
-                <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
-              </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+          <Container>
+            <HeroTextImage maxWidth="5xl">
+              <HeroTextImage.Content title="Hero banner without an image" paragraph={heroPara}>
+                <div className="buttons flex flex-wrap gap-6 md:flex-1">
+                  <Button title="Primary" />
+                  <Button title="Secondary" color="grey" />
+                </div>
+              </HeroTextImage.Content>
+            </HeroTextImage>
+          </Container>
 
           <DoublePara />
 
-          <HeroTextImage maxWidth="5xl">
-            <HeroTextImage.Content title="Hero Banner: Content">
-              <SinglePara />
-              <div className="buttons flex flex-wrap gap-6 md:flex-1">
-                <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
-              </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+          <Container>
+            <HeroTextImage>
+              <HeroTextImage.Content title="With image right and left angle" paragraph={heroPara} hasMediaCol>
+                <div className="buttons flex flex-wrap gap-4 md:gap-6">
+                  <Button title="Primary" />
+                  <Button title="Secondary" color="grey" />
+                </div>
+              </HeroTextImage.Content>
+              <HeroTextImage.Media image="https://picsum.photos/400/266" angle="left" />
+            </HeroTextImage>
+          </Container>
 
           <DoublePara />
 
-          <HeroTextImage hasBorder>
-            <HeroTextImage.Content
-              title="Website and Application Development"
-              paragraph={heroPara}
-              headerType="h2"
-              hasMediaCol
-            >
-              <div className="buttons flex flex-wrap gap-4 md:gap-6">
-                <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
-              </div>
-            </HeroTextImage.Content>
-            <HeroTextImage.Media image="https://picsum.photos/400/266" />
-          </HeroTextImage>
+          <Container>
+            <HeroTextImage reverse>
+              <HeroTextImage.Content title="Website and Application Development" paragraph={heroPara} hasMediaCol>
+                <div className="buttons flex flex-wrap gap-4 md:gap-6">
+                  <Button title="Primary" />
+                  <Button title="Secondary" color="grey" />
+                </div>
+              </HeroTextImage.Content>
+              <HeroTextImage.Media image="https://picsum.photos/400/266" angle="left" />
+            </HeroTextImage>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <HeroTextImage>
+              <HeroTextImage.Content title="Website and Application Development" paragraph={heroPara} hasMediaCol>
+                <div className="buttons flex flex-wrap gap-4 md:gap-6">
+                  <Button title="Primary" />
+                  <Button title="Secondary" color="grey" />
+                </div>
+              </HeroTextImage.Content>
+              <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
+            </HeroTextImage>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <HeroTextImage>
+              <HeroTextImage.Content title="Website and Application Development" paragraph={heroPara} hasMediaCol>
+                <div className="buttons flex flex-wrap gap-4 md:gap-6">
+                  <Button title="Primary" />
+                  <Button title="Secondary" color="grey" />
+                </div>
+              </HeroTextImage.Content>
+              <HeroTextImage.Media image="https://picsum.photos/400/266" angle="none" />
+            </HeroTextImage>
+          </Container>
 
           <DoublePara />
         </Section>

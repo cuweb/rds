@@ -15,8 +15,8 @@ export const contentStyles = {
 export const mediaStyles = {
   mediaWrapper: 'flex-[0_0_100%] md:flex-none',
   mediaBgImage: 'relative rounded bg-cover bg-no-repeat min-h-[220px]',
-  svgLeft: 'hidden md:block absolute -left-px top-0 z-10 h-full',
-  svgRight: 'hidden md:block absolute -right-px top-0 z-10 h-full transform scale-[-1]',
+  svgLeft: 'hidden lg:block absolute -left-px top-0 z-10 h-full',
+  svgRight: 'hidden lg:block absolute -right-px top-0 z-10 h-full transform scale-[-1]',
 }
 
 export const socialStyles = {
