@@ -12,11 +12,9 @@ export interface HeroTextImagePeopleProps {
     phone?: string;
     phoneExt?: string;
 }
-export declare const proseStyles: {
-    base: string;
-};
+export declare const contactInfo: string[];
 export declare const HeroTextImagePeople: {
-    ({ children, designation, title, jobTitle, pronoun, degrees, building, room, email, phone, phoneExt, }: HeroTextImagePeopleProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, designation, title, jobTitle, pronoun, ...contactInfo }: HeroTextImagePeopleProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=HeroTextImagePeople.d.ts.map

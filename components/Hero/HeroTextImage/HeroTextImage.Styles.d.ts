@@ -8,6 +8,7 @@ export declare const contentStyles: {
     header: string;
     headerOne: string;
     pronoun: string;
+    listLink: string;
     largeText: string;
 };
 export declare const mediaStyles: {

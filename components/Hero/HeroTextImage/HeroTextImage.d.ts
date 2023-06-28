@@ -12,11 +12,11 @@ export declare const HeroTextImage: (({ children, maxWidth, hasBorder, reverse }
         displayName: string;
     };
     Event: {
-        ({ children, title, startDate, endDate, location, cost, }: import("./HeroTextImageEvent").HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, title, startDate, endDate, location, cost, ...eventContact }: import("./HeroTextImageEvent").HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     People: {
-        ({ children, designation, title, jobTitle, pronoun, degrees, building, room, email, phone, phoneExt, }: import("./HeroTextImagePeople").HeroTextImagePeopleProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, designation, title, jobTitle, pronoun, ...contactInfo }: import("./HeroTextImagePeople").HeroTextImagePeopleProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Social: {
@@ -24,7 +24,7 @@ export declare const HeroTextImage: (({ children, maxWidth, hasBorder, reverse }
         displayName: string;
     };
     Media: {
-        ({ children, image, imageWidth, angle, focalPointX, focalPointY, }: import("./HeroTextImageMedia").HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, image, angle, focalPointX, focalPointY, }: import("./HeroTextImageMedia").HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
