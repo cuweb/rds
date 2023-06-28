@@ -108,7 +108,7 @@ export const ImageDualAngle: Story = {
           <Button title="Secondary" color="grey" />
         </div>
       </HeroTextImage.Content>
-      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="dual" />
     </HeroTextImage>
   ),
 }
@@ -127,7 +127,7 @@ export const ImageLeftDualAngle: Story = {
           <Button title="Secondary" color="grey" />
         </div>
       </HeroTextImage.Content>
-      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="dual" />
     </HeroTextImage>
   ),
 }
@@ -188,7 +188,7 @@ export const PeopleProfile: Story = {
       >
         <HeroTextImage.Social resume="#" linkedin="#" twitter="#" facebook="#" />
       </HeroTextImage.People>
-      <HeroTextImage.Media imageWidth="40">
+      <HeroTextImage.Media>
         <img src="https://picsum.photos/400/400" alt="Demo" />
       </HeroTextImage.Media>
     </HeroTextImage>
@@ -209,7 +209,7 @@ export const EventDetails: Story = {
           <Button title="Request Info" color="grey" />
         </div>
       </HeroTextImage.Event>
-      <HeroTextImage.Media image="https://picsum.photos/400/266" imageWidth="40"></HeroTextImage.Media>
+      <HeroTextImage.Media image="https://picsum.photos/400/266"></HeroTextImage.Media>
     </HeroTextImage>
   ),
 }

@@ -15,9 +15,7 @@ export interface HeroTextImagePeopleProps {
   phoneExt?: string
 }
 
-export const proseStyles = {
-  base: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
-}
+export const contactInfo = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
 
 export const HeroTextImagePeople = ({
   children,
@@ -25,13 +23,10 @@ export const HeroTextImagePeople = ({
   title,
   jobTitle,
   pronoun,
-  degrees,
-  building,
-  room,
-  email,
-  phone,
-  phoneExt,
+  ...contactInfo
 }: HeroTextImagePeopleProps) => {
+  const { degrees, building, room, email, phone, phoneExt } = contactInfo
+
   return (
     <div className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}>
       <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>
@@ -40,28 +35,30 @@ export const HeroTextImagePeople = ({
       </h1>
       {jobTitle && <p className={contentStyles.largeText}>{jobTitle}</p>}
 
-      <ul>
-        {degrees && <li>{degrees}</li>}
-        {building && (
-          <li>
-            {room && '123-B '}
-            {building}
-          </li>
-        )}
-        {email && (
-          <li>
-            <a className="font-semibold text-cu-red hover:text-cyan-600" href={`mailto:${email}`}>
-              {email}
-            </a>
-          </li>
-        )}
-        {phone && (
-          <li>
-            {phone}
-            {phoneExt && ` ${phoneExt}`}
-          </li>
-        )}
-      </ul>
+      {Object.values(contactInfo).some((info) => info) && (
+        <ul>
+          {degrees && <li>{degrees}</li>}
+          {building && (
+            <li>
+              {room && '123-B '}
+              {building}
+            </li>
+          )}
+          {email && (
+            <li>
+              <a className={contentStyles.listLink} href={`mailto:${email}`}>
+                {email}
+              </a>
+            </li>
+          )}
+          {phone && (
+            <li>
+              {phone}
+              {phoneExt && ` ${phoneExt}`}
+            </li>
+          )}
+        </ul>
+      )}
 
       {children}
     </div>
