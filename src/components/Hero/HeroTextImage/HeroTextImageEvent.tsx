@@ -9,11 +9,12 @@ export interface HeroTextImageEventProps {
   endDate?: string
   location?: string
   cost?: string
+  contactName?: string
+  contactPhone?: string
+  contactEmail?: string
 }
 
-export const proseStyles = {
-  base: `prose prose-rds prose-lg md:prose-xl max-w-none prose-img:w-full prose-img:rounded-lg`,
-}
+export const eventContact = ['location', 'cost', 'contactName', 'contactPhone', 'contactEmail']
 
 export const HeroTextImageEvent = ({
   children,
@@ -22,7 +23,10 @@ export const HeroTextImageEvent = ({
   endDate,
   location,
   cost,
+  ...eventContact
 }: HeroTextImageEventProps) => {
+  const { contactName, contactPhone, contactEmail } = eventContact
+
   return (
     <div className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}>
       <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>{title}</h1>
@@ -34,6 +38,27 @@ export const HeroTextImageEvent = ({
         {location && <li>{location}</li>}
         {cost && <li>{cost}</li>}
       </ul>
+
+      {Object.values(eventContact).some((info) => info) && (
+        <>
+          <ul>
+            <li>
+              <strong className="font-semibold">Event Contact</strong>
+            </li>
+            {contactName && (
+              <li>
+                {contactName && contactEmail && (
+                  <a className={contentStyles.listLink} href={contactEmail}>
+                    {contactName}
+                  </a>
+                )}
+                {contactName && !contactEmail && contactName}
+                {contactPhone && <>, {contactPhone}</>}
+              </li>
+            )}
+          </ul>
+        </>
+      )}
 
       {children}
     </div>

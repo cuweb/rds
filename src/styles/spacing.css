@@ -5,7 +5,7 @@
 /* Target children of container and apply max width 5xl */
 .cu-section-5xl > :not(.not-contained),
 .cu-container-5xl > :not(.not-contained) {
-  @apply mx-auto max-w-5xl;
+  @apply max-w-5xl mx-auto;
 }
 
 /* Target children of container and apply max width 7xl */
@@ -17,7 +17,7 @@
 /* Target children of container and apply max width full */
 .cu-section-full > :not(.not-contained),
 .cu-container-full > :not(.not-contained) {
-  @apply mx-auto max-w-full;
+  @apply max-w-full mx-auto;
 }
 
 /* 
@@ -46,7 +46,7 @@
 
 /* If there are consecutive grey containers */
 .cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
-  @apply -mt-2 rounded-t-none pt-2;
+  @apply pt-2 -mt-2 rounded-t-none;
 }
 
 /* If a white container immediately follows a grey container */
@@ -98,5 +98,18 @@
 /* Heading Component */
 .cu-section > .cu-heading:first-child,
 .cu-container > .cu-heading:first-child {
-  @apply mt-0 pt-0;
+  @apply pt-0 mt-0;
+}
+
+/* Hero Banner */
+.cu-hero-textimage > :not(.not-contained) {
+  @apply mt-2 md:mt-6;
+}
+
+:not(.not-contained) > .cu-hero-textimage {
+  @apply mb-8 md:mb-12;
+}
+
+.cu-hero-textimage img {
+  @apply w-full h-auto rounded-md;
 }

@@ -27,7 +27,7 @@ export const DefaultTemplate: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -46,7 +46,7 @@ export const ImageLeft: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -65,7 +65,7 @@ export const ImageAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -84,7 +84,7 @@ export const ImageLeftAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -103,12 +103,12 @@ export const ImageDualAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
       </HeroTextImage.Content>
-      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="dual" />
     </HeroTextImage>
   ),
 }
@@ -122,12 +122,12 @@ export const ImageLeftDualAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
       </HeroTextImage.Content>
-      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="full" />
+      <HeroTextImage.Media image="https://picsum.photos/400/266" angle="dual" />
     </HeroTextImage>
   ),
 }
@@ -136,7 +136,7 @@ export const NoImage: Story = {
   render: () => (
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Content title="Website and Application Development" paragraph={SinglePara} headerType="h1">
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -149,7 +149,7 @@ export const NoParagraph: Story = {
   render: () => (
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Content title="Website and Application Development" headerType="h1">
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -162,7 +162,7 @@ export const UsingHeaderTwo: Story = {
   render: () => (
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Content title="Website and Application Development" headerType="h2">
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -188,7 +188,7 @@ export const PeopleProfile: Story = {
       >
         <HeroTextImage.Social resume="#" linkedin="#" twitter="#" facebook="#" />
       </HeroTextImage.People>
-      <HeroTextImage.Media imageWidth="40">
+      <HeroTextImage.Media>
         <img src="https://picsum.photos/400/400" alt="Demo" />
       </HeroTextImage.Media>
     </HeroTextImage>
@@ -204,12 +204,12 @@ export const EventDetails: Story = {
         location="Raven’s Nest, 1125 Colonel By Drive"
         cost="$20 per adult, $15 for youth/senior"
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Get Tickets" />
           <Button title="Request Info" color="grey" />
         </div>
       </HeroTextImage.Event>
-      <HeroTextImage.Media image="https://picsum.photos/400/266" imageWidth="40"></HeroTextImage.Media>
+      <HeroTextImage.Media image="https://picsum.photos/400/266"></HeroTextImage.Media>
     </HeroTextImage>
   ),
 }

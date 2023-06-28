@@ -1708,10 +1708,6 @@ select {
   margin-bottom: 0.375rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -3673,6 +3669,34 @@ select {
 .cu-container > .cu-heading:first-child {
   margin-top: 0px;
   padding-top: 0px;
+}
+
+/* Hero Banner */
+
+.cu-hero-textimage > :not(.not-contained) {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-hero-textimage > :not(.not-contained) {
+    margin-top: 1.5rem;
+  }
+}
+
+:not(.not-contained) > .cu-hero-textimage {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  :not(.not-contained) > .cu-hero-textimage {
+    margin-bottom: 3rem;
+  }
+}
+
+.cu-hero-textimage img {
+  height: auto;
+  width: 100%;
+  border-radius: 0.375rem;
 }
 
 .cu-stackedlist > li {
@@ -6729,12 +6753,12 @@ select {
     margin-bottom: 2.5rem;
   }
 
-  .md\:mt-14 {
-    margin-top: 3.5rem;
+  .md\:mb-12 {
+    margin-bottom: 3rem;
   }
 
-  .md\:block {
-    display: block;
+  .md\:mt-14 {
+    margin-top: 3.5rem;
   }
 
   .md\:flex {
@@ -6749,24 +6773,8 @@ select {
     min-height: 240px;
   }
 
-  .md\:w-3\/12 {
-    width: 25%;
-  }
-
-  .md\:w-4\/12 {
-    width: 33.333333%;
-  }
-
-  .md\:w-5\/12 {
-    width: 41.666667%;
-  }
-
   .md\:w-52 {
     width: 13rem;
-  }
-
-  .md\:w-6\/12 {
-    width: 50%;
   }
 
   .md\:w-8 {
@@ -6775,6 +6783,10 @@ select {
 
   .md\:w-8\/12 {
     width: 66.666667%;
+  }
+
+  .md\:w-\[40\%\] {
+    width: 40%;
   }
 
   .md\:max-w-3xl {
