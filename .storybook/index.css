@@ -1567,14 +1567,6 @@ select {
   z-index: 50;
 }
 
-.order-1 {
-  order: 1;
-}
-
-.order-2 {
-  order: 2;
-}
-
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -1714,10 +1706,6 @@ select {
 
 .mb-1\.5 {
   margin-bottom: 0.375rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
 }
 
 .mb-2 {
@@ -1973,10 +1961,6 @@ select {
 
 .min-h-full {
   min-height: 100%;
-}
-
-.min-h-\[420px\] {
-  min-height: 420px;
 }
 
 .\!w-px {
@@ -3685,6 +3669,34 @@ select {
 .cu-container > .cu-heading:first-child {
   margin-top: 0px;
   padding-top: 0px;
+}
+
+/* Hero Banner */
+
+.cu-hero-textimage > :not(.not-contained) {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-hero-textimage > :not(.not-contained) {
+    margin-top: 1.5rem;
+  }
+}
+
+:not(.not-contained) > .cu-hero-textimage {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  :not(.not-contained) > .cu-hero-textimage {
+    margin-bottom: 3rem;
+  }
+}
+
+.cu-hero-textimage img {
+  height: auto;
+  width: 100%;
+  border-radius: 0.375rem;
 }
 
 .cu-stackedlist > li {
@@ -6699,14 +6711,6 @@ select {
 }
 
 @media (min-width: 768px) {
-  .md\:order-1 {
-    order: 1;
-  }
-
-  .md\:order-2 {
-    order: 2;
-  }
-
   .md\:m-10 {
     margin: 2.5rem;
   }
@@ -6749,12 +6753,12 @@ select {
     margin-bottom: 2.5rem;
   }
 
-  .md\:mt-14 {
-    margin-top: 3.5rem;
+  .md\:mb-12 {
+    margin-bottom: 3rem;
   }
 
-  .md\:block {
-    display: block;
+  .md\:mt-14 {
+    margin-top: 3.5rem;
   }
 
   .md\:flex {
@@ -6769,28 +6773,8 @@ select {
     min-height: 240px;
   }
 
-  .md\:min-h-\[260px\] {
-    min-height: 260px;
-  }
-
-  .md\:w-3\/12 {
-    width: 25%;
-  }
-
-  .md\:w-4\/12 {
-    width: 33.333333%;
-  }
-
-  .md\:w-5\/12 {
-    width: 41.666667%;
-  }
-
   .md\:w-52 {
     width: 13rem;
-  }
-
-  .md\:w-6\/12 {
-    width: 50%;
   }
 
   .md\:w-8 {
@@ -6799,6 +6783,10 @@ select {
 
   .md\:w-8\/12 {
     width: 66.666667%;
+  }
+
+  .md\:w-\[40\%\] {
+    width: 40%;
   }
 
   .md\:max-w-3xl {
@@ -6835,14 +6823,6 @@ select {
 
   .md\:grid-cols-left-260 {
     grid-template-columns: 260px auto;
-  }
-
-  .md\:grid-cols-split-60-40 {
-    grid-template-columns: auto 40%;
-  }
-
-  .md\:grid-cols-split-80-20 {
-    grid-template-columns: auto 20%;
   }
 
   .md\:flex-row {
@@ -6887,10 +6867,6 @@ select {
 
   .md\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .md\:gap-8 {
-    gap: 2rem;
   }
 
   .md\:bg-cover {

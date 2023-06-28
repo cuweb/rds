@@ -100,3 +100,16 @@
 .cu-container > .cu-heading:first-child {
   @apply mt-0 pt-0;
 }
+
+/* Hero Banner */
+.cu-hero-textimage > :not(.not-contained) {
+  @apply mt-2 md:mt-6;
+}
+
+:not(.not-contained) > .cu-hero-textimage {
+  @apply mb-8 md:mb-12;
+}
+
+.cu-hero-textimage img {
+  @apply h-auto w-full rounded-md;
+}
