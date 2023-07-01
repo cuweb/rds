@@ -14,8 +14,6 @@ export interface HeroTextImageEventProps {
   contactEmail?: string
 }
 
-export const eventContact = ['location', 'cost', 'contactName', 'contactPhone', 'contactEmail']
-
 export const HeroTextImageEvent = ({
   children,
   title,
@@ -23,10 +21,10 @@ export const HeroTextImageEvent = ({
   endDate,
   location,
   cost,
-  ...eventContact
+  contactName,
+  contactPhone,
+  contactEmail,
 }: HeroTextImageEventProps) => {
-  const { contactName, contactPhone, contactEmail } = eventContact
-
   return (
     <div className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}>
       <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>{title}</h1>
@@ -34,12 +32,14 @@ export const HeroTextImageEvent = ({
       {startDate && <p className={contentStyles.largeText}>{startDate}</p>}
       {endDate && <p className={contentStyles.largeText}>{endDate}</p>}
 
-      <ul>
-        {location && <li>{location}</li>}
-        {cost && <li>{cost}</li>}
-      </ul>
+      {(location || cost) && (
+        <ul>
+          {location && <li>{location}</li>}
+          {cost && <li>{cost}</li>}
+        </ul>
+      )}
 
-      {Object.values(eventContact).some((info) => info) && (
+      {(contactName || contactPhone || contactEmail) && (
         <>
           <ul>
             <li>
