@@ -11,9 +11,8 @@ export interface HeroTextImageEventProps {
     contactPhone?: string;
     contactEmail?: string;
 }
-export declare const eventContact: string[];
 export declare const HeroTextImageEvent: {
-    ({ children, title, startDate, endDate, location, cost, ...eventContact }: HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, startDate, endDate, location, cost, contactName, contactPhone, contactEmail, }: HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=HeroTextImageEvent.d.ts.map

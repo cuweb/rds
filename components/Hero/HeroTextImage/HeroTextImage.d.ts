@@ -12,7 +12,7 @@ export declare const HeroTextImage: (({ children, maxWidth, hasBorder, reverse }
         displayName: string;
     };
     Event: {
-        ({ children, title, startDate, endDate, location, cost, ...eventContact }: import("./HeroTextImageEvent").HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, title, startDate, endDate, location, cost, contactName, contactPhone, contactEmail, }: import("./HeroTextImageEvent").HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     People: {
