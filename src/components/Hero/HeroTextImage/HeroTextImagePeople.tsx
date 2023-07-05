@@ -54,7 +54,7 @@ export const HeroTextImagePeople = ({
           {phone && (
             <li>
               {phone}
-              {phoneExt && ` ${phoneExt}`}
+              {phoneExt && ` x${phoneExt}`}
             </li>
           )}
         </ul>
