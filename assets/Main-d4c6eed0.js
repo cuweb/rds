@@ -1,0 +1,2 @@
+import{j as n}from"./jsx-runtime-daf202a7.js";const e=({children:a,hasOverlap:r})=>{const s=r?"z-20 cu-overlap":"";return n.jsx("main",{className:`cu-main ${s}`,children:a})};try{e.displayName="Main",e.__docgenInfo={description:"",displayName:"Main",props:{hasOverlap:{defaultValue:null,description:"",name:"hasOverlap",required:!1,type:{name:"boolean"}}}}}catch{}export{e as M};
+//# sourceMappingURL=Main-d4c6eed0.js.map
