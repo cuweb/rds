@@ -4,10 +4,11 @@ export interface HeroTextImageContentProps {
     title: string;
     paragraph?: string;
     headerType?: 'h1' | 'h2';
+    isCenter?: boolean;
     hasMediaCol?: boolean;
 }
 export declare const HeroTextImageContent: {
-    ({ children, title, paragraph, headerType, hasMediaCol, }: HeroTextImageContentProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, paragraph, headerType, isCenter, hasMediaCol, }: HeroTextImageContentProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=HeroTextImageContent.d.ts.map

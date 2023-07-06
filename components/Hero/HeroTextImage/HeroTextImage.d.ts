@@ -8,11 +8,11 @@ export interface HeroTextImageProps {
 export declare const HeroTextImageWrapper: ({ children, maxWidth, hasBorder, reverse }: HeroTextImageProps) => import("react/jsx-runtime").JSX.Element;
 export declare const HeroTextImage: (({ children, maxWidth, hasBorder, reverse }: HeroTextImageProps) => import("react/jsx-runtime").JSX.Element) & {
     Content: {
-        ({ children, title, paragraph, headerType, hasMediaCol, }: import("./HeroTextImageContent").HeroTextImageContentProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, title, paragraph, headerType, isCenter, hasMediaCol, }: import("./HeroTextImageContent").HeroTextImageContentProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Event: {
-        ({ children, title, startDate, endDate, location, cost, contactName, contactPhone, contactEmail, }: import("./HeroTextImageEvent").HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
+        ({ title, startDate, endDate, location, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, cost, contactName, contactPhone, contactEmail, }: import("./HeroTextImageEvent").HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     People: {
