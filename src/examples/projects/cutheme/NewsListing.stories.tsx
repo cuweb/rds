@@ -12,7 +12,6 @@ import { Listing } from '../../../components/Listing/Listing'
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
 import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
-import { Button } from '../../../components/Button/Button'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Blocks',
@@ -62,7 +61,7 @@ export const NewsListings: Story = {
       <Main>
         <Section hasProse>
           <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="News Listing Examples" />
+            <HeroTextImage.Content title="News Listing Examples" headerType="h1" />
           </HeroTextImage>
 
           <DoublePara />
@@ -70,7 +69,7 @@ export const NewsListings: Story = {
           <h2>News Listing Block</h2>
           <SinglePara />
 
-          <Container maxWidth="7xl">
+          <Container maxWidth="5xl">
             <Heading text="Basic News Listing Block" />
             <StackedList hasBorder hasShadow>
               {data.map(({ id, title, link, image, alt, date, excerpt, tags }) => (

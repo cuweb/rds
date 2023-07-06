@@ -21,7 +21,7 @@ export const mediaStyles = {
 }
 
 export const socialStyles = {
-  flex: 'flex items-center gap-4',
+  flex: 'flex items-center gap-6',
   link: 'text-cu-black-400',
   icon: 'w-6 h-6 md:w-8 md:h-8',
 }
