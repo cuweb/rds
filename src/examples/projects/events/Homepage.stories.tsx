@@ -42,7 +42,7 @@ export const Homepage: Story = {
                     <img src={item?.image} alt={item?.alt} width={400} height={175} />
                   </Card.Figure>
                   <Card.Content>
-                    <Card.DateBox startDate={item?.startDate} />
+                    <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
                     <Card.Header text={item?.title} />
                     <Card.EventMeta
                       startDateTime={item?.startDate}
@@ -84,7 +84,7 @@ export const Homepage: Story = {
                     }) => (
                       <Listing key={id}>
                         <a href={link}>
-                          <Listing.DateBox startDate={startDate} />
+                          <Listing.DateBox startDate={startDate} endDate={endDate} />
                           <Listing.Content>
                             <Listing.Header text={title} />
                             <Listing.EventMeta

@@ -47,7 +47,7 @@ export const EventListing: Story = {
   args: {
     children: (
       <a href={singleEvent?.link}>
-        <Listing.DateBox startDate={singleEvent?.startDate} />
+        <Listing.DateBox startDate={singleEvent?.startDate} endDate={singleEvent?.endDate} />
         <Listing.Content>
           <Listing.Header text={singleEvent?.title} />
           <Listing.EventMeta
