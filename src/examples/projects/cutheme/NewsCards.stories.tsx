@@ -72,7 +72,7 @@ export const NewsCards: Story = {
               headerType="h1"
               hasMediaCol
             >
-              <div className="flex flex-wrap gap-4 buttons md:gap-6">
+              <div className="buttons flex flex-wrap gap-4 md:gap-6">
                 <Button title="Primary" />
                 <Button title="Secondary" color="grey" />
               </div>
