@@ -63,8 +63,21 @@ export const NewsCards: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="News Card Examples" />
+          <HeroTextImage hasBorder>
+            <HeroTextImage.Content
+              title="News Card Examples"
+              paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
+              vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
+              condimentum magna vel orci vulputate, eget vulputate neque porttitor."
+              headerType="h1"
+              hasMediaCol
+            >
+              <div className="flex flex-wrap gap-4 buttons md:gap-6">
+                <Button title="Primary" />
+                <Button title="Secondary" color="grey" />
+              </div>
+            </HeroTextImage.Content>
+            <HeroTextImage.Media image="https://picsum.photos/400/266" />
           </HeroTextImage>
 
           <DoublePara />

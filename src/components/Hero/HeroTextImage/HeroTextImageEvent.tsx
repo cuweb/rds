@@ -1,13 +1,17 @@
-import React from 'react'
 import { contentStyles } from './HeroTextImage.Styles'
+import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
+import { Button } from '../../../components/Button/Button'
 
 export interface HeroTextImageEventProps {
-  children?: React.ReactNode
   designation?: string
   title: string
   startDate?: string
   endDate?: string
   location?: string
+  primaryButtonUrl?: string
+  primaryButtonText?: string
+  secondaryButtonUrl?: string
+  secondaryButtonText?: string
   cost?: string
   contactName?: string
   contactPhone?: string
@@ -15,11 +19,14 @@ export interface HeroTextImageEventProps {
 }
 
 export const HeroTextImageEvent = ({
-  children,
   title,
   startDate,
   endDate,
   location,
+  primaryButtonUrl,
+  primaryButtonText,
+  secondaryButtonUrl,
+  secondaryButtonText,
   cost,
   contactName,
   contactPhone,
@@ -60,7 +67,33 @@ export const HeroTextImageEvent = ({
         </>
       )}
 
-      {children}
+      {primaryButtonUrl && secondaryButtonUrl && (
+        <ButtonGroup>
+          {primaryButtonUrl && (
+            <Button
+              isSmall
+              onClick={() => {
+                if (typeof primaryButtonUrl === 'string') {
+                  window.location.href = primaryButtonUrl
+                }
+              }}
+              title={primaryButtonText ? primaryButtonText : 'Register Now'}
+            />
+          )}
+          {secondaryButtonUrl && secondaryButtonText && (
+            <Button
+              isSmall
+              color="grey"
+              onClick={() => {
+                if (typeof secondaryButtonUrl === 'string') {
+                  window.location.href = secondaryButtonUrl
+                }
+              }}
+              title={secondaryButtonText}
+            />
+          )}
+        </ButtonGroup>
+      )}
     </div>
   )
 }

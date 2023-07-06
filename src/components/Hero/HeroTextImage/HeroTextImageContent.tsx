@@ -6,6 +6,7 @@ export interface HeroTextImageContentProps {
   title: string
   paragraph?: string
   headerType?: 'h1' | 'h2'
+  isCenter?: boolean
   hasMediaCol?: boolean
 }
 
@@ -14,12 +15,14 @@ export const HeroTextImageContent = ({
   title,
   paragraph,
   headerType = 'h2',
+  isCenter,
   hasMediaCol,
 }: HeroTextImageContentProps) => {
   const contentPadding = hasMediaCol ? 'md:py-4' : ''
+  const verticallyCenter = isCenter ? 'justify-center' : ''
 
   return (
-    <div className={`${contentStyles.contentWrapper} ${contentPadding}`}>
+    <div className={`${contentStyles.contentWrapper} ${contentPadding} ${verticallyCenter}`}>
       {headerType === 'h1' && <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>{title}</h1>}
       {headerType === 'h2' && <h2 className={`${contentStyles.header}`}>{title}</h2>}
 
