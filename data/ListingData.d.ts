@@ -6,6 +6,7 @@ export declare const content: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -23,6 +24,7 @@ export declare const content2: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -40,6 +42,7 @@ export declare const content3: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -57,6 +60,7 @@ export declare const content4: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -73,6 +77,7 @@ export declare const content5: {
     image: string;
     alt: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -107,6 +112,7 @@ export declare const content7: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -124,6 +130,7 @@ export declare const content8: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -141,6 +148,7 @@ export declare const content9: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -158,6 +166,7 @@ export declare const content10: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -175,6 +184,7 @@ export declare const content11: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -192,6 +202,7 @@ export declare const content12: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -209,6 +220,7 @@ export declare const content13: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -226,6 +238,7 @@ export declare const content14: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {
@@ -243,6 +256,7 @@ export declare const content15: {
     alt: string;
     date: string;
     startDate: string;
+    endDate: string;
     excerpt: string;
     tags: {
         category: {

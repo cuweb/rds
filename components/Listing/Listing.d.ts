@@ -14,7 +14,7 @@ export declare const Listing: (({ children, noLink }: ListingProps) => import("r
         displayName: string;
     };
     DateBox: {
-        ({ startDate }: import("./ListingDateBox").ListingDateBoxProps): import("react/jsx-runtime").JSX.Element;
+        ({ startDate, endDate }: import("./ListingDateBox").ListingDateBoxProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Header: {

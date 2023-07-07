@@ -20,7 +20,7 @@ export declare const Card: (({ children, isCenter, border, noLink }: CardProps) 
         displayName: string;
     };
     DateBox: {
-        ({ startDate }: import("./CardDateBox").CardDateBoxProps): import("react/jsx-runtime").JSX.Element;
+        ({ startDate, endDate }: import("./CardDateBox").CardDateBoxProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Header: {
