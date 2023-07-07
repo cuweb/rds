@@ -52,7 +52,7 @@ export const EventCard: Story = {
           <img src={singleEvent?.image} alt={singleEvent?.alt} width={400} height={175} />
         </Card.Figure>
         <Card.Content>
-          <Card.DateBox startDate={singleEvent?.startDate} />
+          <Card.DateBox startDate={singleEvent?.startDate} endDate={singleEvent?.endDate} />
           <Card.Header text={singleEvent?.title} />
           <Card.EventMeta
             startDateTime={singleEvent?.startDate}

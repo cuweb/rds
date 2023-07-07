@@ -116,7 +116,7 @@ export const WithDatebox: Story = {
   args: {
     children: (
       <a href={content.link}>
-        <Listing.DateBox startDate={content.startDate} />
+        <Listing.DateBox startDate={content.startDate} endDate={content.endDate} />
         <Listing.Content>
           <Listing.Header text={content.title} />
           <Listing.Badges tags={content.tags} />
