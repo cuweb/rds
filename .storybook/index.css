@@ -1816,6 +1816,10 @@ select {
   margin-top: auto;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -1945,6 +1949,10 @@ select {
 
 .h-full {
   height: 100%;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .max-h-72 {
@@ -2572,6 +2580,10 @@ select {
   border-style: solid;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-cu-black-100 {
   --tw-border-opacity: 1;
   border-color: rgb(230 230 230 / var(--tw-border-opacity));
@@ -3083,6 +3095,10 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
+}
+
+.pb-\[56\.25\%\] {
+  padding-bottom: 56.25%;
 }
 
 .text-left {
