@@ -38,7 +38,6 @@ export const NewsCard: Story = {
           <Card.Header text={singleNews?.title} />
           <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         </Card.Content>
-        <Card.Badges tags={singleNews?.tags} />
       </a>
     ),
   },
@@ -63,7 +62,6 @@ export const EventCard: Story = {
             eventAddress={singleEvent?.event_address}
           />
         </Card.Content>
-        <Card.Badges tags={singleEvent?.tags} />
       </a>
     ),
   },
@@ -81,7 +79,6 @@ export const PeopleCard: Story = {
           <Card.Header text={`${singlePeople?.firstName} ${singlePeople?.lastName}`} />
           <Card.PeopleMeta jobTitle={singlePeople?.jobTitle} email={singlePeople?.email} phone={singlePeople?.phone} />
         </Card.Content>
-        <Card.Badges tags={singlePeople?.tags} />
       </a>
     ),
   },
@@ -97,7 +94,6 @@ export const PeopleCardInitials: Story = {
           <Card.Header text={`${singlePeople?.firstName} ${singlePeople?.lastName}`} />
           <Card.PeopleMeta jobTitle={singlePeople?.jobTitle} email={singlePeople?.email} phone={singlePeople?.phone} />
         </Card.Content>
-        <Card.Badges tags={singlePeople?.tags} />
       </a>
     ),
   },
@@ -111,7 +107,6 @@ export const VideoCard: Story = {
         <Card.Content>
           <Card.Header text={singleVideo?.title} />
         </Card.Content>
-        <Card.Badges tags={singleVideo?.tags} />
       </div>
     ),
   },

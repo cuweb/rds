@@ -73,7 +73,6 @@ export const WithBadges: Story = {
           <Card.PostMeta date={content.date} />
           <Card.Header text={content.title} />
         </Card.Content>
-        <Card.Badges tags={content.tags} />
       </a>
     ),
   },
@@ -88,7 +87,6 @@ export const WithExcerpt: Story = {
           <Card.Header text={content.title} />
           <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         </Card.Content>
-        <Card.Badges tags={content.tags} />
       </a>
     ),
   },
@@ -106,7 +104,6 @@ export const WithImage: Story = {
           <Card.Header text={content.title} />
           <Card.Excerpt text={content.excerpt} />
         </Card.Content>
-        <Card.Badges tags={content.tags} />
       </a>
     ),
   },
@@ -125,7 +122,6 @@ export const WithRoundImage: Story = {
           <Card.Header text={content.title} />
           <Card.Excerpt text={content.excerpt} />
         </Card.Content>
-        <Card.Badges tags={content.tags} />
       </a>
     ),
   },
@@ -139,7 +135,6 @@ export const WithVideo: Story = {
         <Card.Content>
           <Card.Header text={content.title} />
         </Card.Content>
-        <Card.Badges tags={content.tags} />
       </a>
     ),
   },
@@ -158,7 +153,6 @@ export const WithBorder: Story = {
           <Card.Header text={content.title} />
           <Card.Excerpt text={content.excerpt} />
         </Card.Content>
-        <Card.Badges tags={content.tags} />
       </a>
     ),
   },
