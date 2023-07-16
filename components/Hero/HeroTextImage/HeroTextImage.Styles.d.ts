@@ -8,6 +8,7 @@ export declare const contentStyles: {
     header: string;
     headerOne: string;
     pronoun: string;
+    listItems: string;
     listLink: string;
     largeText: string;
 };
