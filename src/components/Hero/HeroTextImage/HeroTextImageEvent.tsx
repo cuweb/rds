@@ -1,4 +1,4 @@
-import { contentStyles, styles } from './HeroTextImage.Styles'
+import { contentStyles } from './HeroTextImage.Styles'
 import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../../components/Button/Button'
 
