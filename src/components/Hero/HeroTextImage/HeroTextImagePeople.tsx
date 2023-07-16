@@ -36,7 +36,7 @@ export const HeroTextImagePeople = ({
       {jobTitle && <p className={contentStyles.largeText}>{jobTitle}</p>}
 
       {Object.values(contactInfo).some((info) => info) && (
-        <ul className={contentStyles.listItems}>
+        <ul>
           {degrees && <li>{degrees}</li>}
           {building && (
             <li>
