@@ -3,7 +3,10 @@ export interface HeroTextImageEventProps {
     title: string;
     startDate?: string;
     endDate?: string;
+    eventType: 'In-Person' | 'Virtual' | 'Hybrid';
     location?: string;
+    virtualType?: 'Teams' | 'Zoom';
+    virtualUrl?: string;
     primaryButtonUrl?: string;
     primaryButtonText?: string;
     secondaryButtonUrl?: string;
@@ -14,7 +17,7 @@ export interface HeroTextImageEventProps {
     contactEmail?: string;
 }
 export declare const HeroTextImageEvent: {
-    ({ title, startDate, endDate, location, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, cost, contactName, contactPhone, contactEmail, }: HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
+    ({ title, startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=HeroTextImageEvent.d.ts.map
