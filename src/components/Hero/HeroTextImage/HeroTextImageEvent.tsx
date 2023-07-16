@@ -1,4 +1,4 @@
-import { contentStyles } from './HeroTextImage.Styles'
+import { contentStyles, styles } from './HeroTextImage.Styles'
 import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../../components/Button/Button'
 
@@ -7,7 +7,10 @@ export interface HeroTextImageEventProps {
   title: string
   startDate?: string
   endDate?: string
+  eventType: 'In-Person' | 'Virtual' | 'Hybrid'
   location?: string
+  virtualType?: 'Teams' | 'Zoom'
+  virtualUrl?: string
   primaryButtonUrl?: string
   primaryButtonText?: string
   secondaryButtonUrl?: string
@@ -22,15 +25,18 @@ export const HeroTextImageEvent = ({
   title,
   startDate,
   endDate,
+  eventType,
   location,
-  primaryButtonUrl,
-  primaryButtonText,
-  secondaryButtonUrl,
-  secondaryButtonText,
+  virtualType,
+  virtualUrl,
   cost,
   contactName,
   contactPhone,
   contactEmail,
+  primaryButtonUrl,
+  primaryButtonText,
+  secondaryButtonUrl,
+  secondaryButtonText,
 }: HeroTextImageEventProps) => {
   return (
     <div className={`${contentStyles.contentWrapper} ${contentStyles.contentTopSpace}`}>
@@ -39,21 +45,35 @@ export const HeroTextImageEvent = ({
       {startDate && <p className={contentStyles.largeText}>{startDate}</p>}
       {endDate && <p className={contentStyles.largeText}>{endDate}</p>}
 
-      {(location || cost) && (
-        <ul>
-          {location && <li>{location}</li>}
-          {cost && <li>{cost}</li>}
-        </ul>
-      )}
+      <ul className={contentStyles.listItems}>
+        <li>
+          <strong className="font-semibold">{eventType} Event</strong>
+        </li>
+        {(eventType === 'In-Person' || eventType === 'Hybrid') && location && <li>{location}</li>}
+        {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && virtualUrl && (
+          <li>
+            <a className={contentStyles.listLink} href={virtualUrl}>
+              {virtualType} meeting link
+            </a>
+          </li>
+        )}
+        {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && !virtualUrl && (
+          <li>Meeting link is not yet available</li>
+        )}
+      </ul>
 
-      {(contactName || contactPhone || contactEmail) && (
+      {(cost || contactName || contactPhone || contactEmail) && (
         <>
-          <ul>
-            <li>
-              <strong className="font-semibold">Event Contact</strong>
-            </li>
+          <ul className={contentStyles.listItems}>
+            {cost && (
+              <li>
+                <strong className="font-semibold">Cost: </strong>
+                {cost}
+              </li>
+            )}
             {contactName && (
               <li>
+                <strong className="font-semibold">Contact: </strong>
                 {contactName && contactEmail && (
                   <a className={contentStyles.listLink} href={contactEmail}>
                     {contactName}
