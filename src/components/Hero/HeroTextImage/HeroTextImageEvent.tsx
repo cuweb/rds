@@ -82,7 +82,7 @@ export const HeroTextImageEvent = ({
           </ul>
         </>
       )}
-      {primaryButtonUrl && secondaryButtonUrl && (
+      {primaryButtonUrl && (
         <ButtonGroup>
           {primaryButtonUrl && (
             <Button
