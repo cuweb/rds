@@ -13,6 +13,7 @@ import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Button } from '../../../components/Button/Button'
+import { Embed } from '../../../components/Embed/Embed'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Page Layouts',
@@ -83,8 +84,22 @@ export const SinglePage: Story = {
           <h2>This is a header 2</h2>
           <SinglePara />
 
+          <Embed>
+            <Embed.PowerBi
+              title="test"
+              url="https://app.powerbi.com/view?r=eyJrIjoiYTU2ZTBkZjgtZDZmZS00YjliLWIwMzktN2RjMTY3YjEzM2FkIiwidCI6IjZhZDkxODk1LWRlMDYtNDg1ZS1iYzUxLWZjZTEyNmNjODUzMCIsImMiOjN9&pageName=ReportSectionc2accda99bdcb7ce79a1"
+            />
+          </Embed>
+
           <h3>This is a header 3</h3>
           <SinglePara />
+
+          <Embed>
+            <Embed.Kaltura
+              title="test"
+              url="https://mediaspace.carleton.ca/embed/secure/iframe/entryId/1_8q7610g9/uiConfId/36153741/st/0"
+            />
+          </Embed>
 
           <h4>This is a header 4</h4>
           <DoublePara />
