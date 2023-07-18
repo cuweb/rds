@@ -1,5 +1,6 @@
 import React from 'react'
 import { EmbedPowerBi } from './Embed.PowerBi'
+import { EmbedKaltura } from './Embed.Kaltura'
 import { rdsMaxWidth } from '../../utils/optionClasses'
 import { styles } from './Embed.Styles'
 
@@ -10,7 +11,7 @@ export interface EmbedProps {
 
 export const EmbedWrapper = ({ children, maxWidth = '5xl' }: EmbedProps) => {
   return (
-    <figure className={rdsMaxWidth[maxWidth]}>
+    <figure className={`not-contained mx-auto ${rdsMaxWidth[maxWidth]}`}>
       <div className={`${styles.base}`}>{children}</div>
     </figure>
   )
@@ -18,4 +19,5 @@ export const EmbedWrapper = ({ children, maxWidth = '5xl' }: EmbedProps) => {
 
 export const Embed = Object.assign(EmbedWrapper, {
   PowerBi: EmbedPowerBi,
+  Kaltura: EmbedKaltura,
 })
