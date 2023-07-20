@@ -9,7 +9,7 @@ export const CardInitials = ({ initials }: CardInitialsProps) => {
     <figure className={`cu-figure cu-figure--round ${figureStyles.round} ${figureStyles.figure}`}>
       <div className="relative">
         <img
-          src="https://cu-production.s3.amazonaws.com/rds/assets/grey-bg.jpg"
+          src="https://cu-production.s3.amazonaws.com/rds/assets/graphics/grey-bg.jpg"
           alt="Background grey"
           width="200"
           height="200"

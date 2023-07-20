@@ -68,7 +68,7 @@ export const TopNav = ({
     <div className="flex flex-shrink-0 items-center">
       <img
         className="h-10 w-auto"
-        src="https://cu-production.s3.amazonaws.com/rds/assets/cu-shield.svg"
+        src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
         alt="Carleton Shield"
       />
       <h1 className="flex flex-shrink-0 items-center pl-3 pr-2 text-2xl font-semibold">{title}</h1>
