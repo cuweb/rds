@@ -7,7 +7,7 @@ export interface HeroTextImageMediaProps {
   angle?: 'left' | 'dual' | 'none'
   focalPointX?: string
   focalPointY?: string
-  noImageMobile?: boolean
+  hasMobileImage?: boolean
 }
 
 export const HeroTextImageMedia = ({
@@ -16,7 +16,7 @@ export const HeroTextImageMedia = ({
   angle,
   focalPointX = '50',
   focalPointY = '50',
-  noImageMobile,
+  hasMobileImage,
 }: HeroTextImageMediaProps) => {
   let leftSvg = null
   let rightSvg = null
@@ -55,7 +55,7 @@ export const HeroTextImageMedia = ({
   }
 
   const hasImage = image ? mediaStyles.mediaBgImage : ''
-  const NoimageonMobile = noImageMobile ? 'hidden md:block' : ''
+  const noImageOnMobile = hasMobileImage ? '' : 'hidden md:block'
   const inlineStyle = hasImage
     ? {
         backgroundImage: `url(${image})`,
@@ -64,7 +64,7 @@ export const HeroTextImageMedia = ({
     : {}
 
   return (
-    <div className={`${mediaStyles.mediaWrapper} ${hasImage} ${NoimageonMobile}`} style={inlineStyle}>
+    <div className={`${mediaStyles.mediaWrapper} ${hasImage} ${noImageOnMobile}`} style={inlineStyle}>
       {leftSvg}
       {rightSvg}
       {children}
