@@ -9,7 +9,7 @@ export const ListingInitials = ({ initials }: ListingInitialsProps) => {
     <figure className={`cu-figure ${figureStyles.figure} ${figureStyles['small']}`}>
       <div className="relative">
         <img
-          src="https://cu-production.s3.amazonaws.com/rds/assets/grey-bg.jpg"
+          src="https://cu-production.s3.amazonaws.com/rds/assets/graphics/grey-bg.jpg"
           alt="Background grey"
           width="200"
           height="200"
