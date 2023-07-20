@@ -24,7 +24,7 @@ export declare const HeroTextImage: (({ children, maxWidth, hasBorder, reverse }
         displayName: string;
     };
     Media: {
-        ({ children, image, angle, focalPointX, focalPointY, }: import("./HeroTextImageMedia").HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, image, angle, focalPointX, focalPointY, hasMobileImage, }: import("./HeroTextImageMedia").HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

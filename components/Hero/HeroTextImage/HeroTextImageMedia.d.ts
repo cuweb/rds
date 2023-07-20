@@ -5,9 +5,10 @@ export interface HeroTextImageMediaProps {
     angle?: 'left' | 'dual' | 'none';
     focalPointX?: string;
     focalPointY?: string;
+    hasMobileImage?: boolean;
 }
 export declare const HeroTextImageMedia: {
-    ({ children, image, angle, focalPointX, focalPointY, }: HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, image, angle, focalPointX, focalPointY, hasMobileImage, }: HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=HeroTextImageMedia.d.ts.map
