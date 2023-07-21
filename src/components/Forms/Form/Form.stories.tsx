@@ -18,6 +18,11 @@ export default meta
 
 type Story = StoryObj<typeof Form>
 
+type FileInfo = {
+  width: number
+  height: number
+}
+
 const formOnSubmit = async (values: FormikValues) => {
   alert('Submitted')
   console.log(values)
@@ -42,7 +47,7 @@ export const Default: Story = {
   ),
 }
 
-const validateUpload = (file: any) => {
+const validateUpload = (file: FileInfo) => {
   if (file.width === 1600 && file.height === 700) {
     return
   }

@@ -2,7 +2,7 @@ import { Field, useField } from 'formik'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { formStyles, formErrorStyles } from '../../../utils/formClasses'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 export interface UploadProps {
   label?: string
@@ -12,18 +12,27 @@ export interface UploadProps {
   onReset?: any
   onUpload?: any
   onValidate?: any
+  required?: boolean | undefined
   condition?: () => boolean
 }
 
-export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condition = () => true, ...props }: any) => {
+export const Upload = ({
+  label,
+  onReset,
+  onUpload,
+  onValidate,
+  setPreview,
+  condition = () => true,
+  ...props
+}: PropsWithChildren<UploadProps>) => {
   const [field, meta, helpers] = useField(props.name)
   const [imageCheck, setImageCheck] = useState<string>()
 
   // image types
   const imageMimeType = /image\/(png|jpg|jpeg)/i
 
-  const imagePreview = async (event: any) => {
-    const file = event.target.files[0]
+  const imagePreview = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event?.target?.files?.[0] || null
     let fileExists = false
     let isImage = false
 
@@ -136,7 +145,11 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
   )
 }
 
-const UploadField = ({ label, ...props }: any) => {
+export interface UploadFieldProps {
+  label?: string
+}
+
+const UploadField = ({ label, ...props }: PropsWithChildren<UploadFieldProps>) => {
   return (
     <>
       <Field variant="outlined" name="uploader" title={label} type={'file'} {...props} />
