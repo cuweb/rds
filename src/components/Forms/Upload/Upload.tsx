@@ -8,10 +8,10 @@ export interface UploadProps {
   label?: string
   name: string
   type?: string
-  setPreview?: any
-  onReset?: any
-  onUpload?: any
-  onValidate?: any
+  onUpload: (x: File) => Promise<string>
+  onValidate: (x: HTMLImageElement) => boolean
+  onReset: (x: string) => string
+  setPreview: (x: string | ArrayBuffer | null | undefined) => void
   required?: boolean | undefined
   condition?: () => boolean
 }
@@ -33,23 +33,11 @@ export const Upload = ({
 
   const imagePreview = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event?.target?.files?.[0] || null
-    let fileExists = false
-    let isImage = false
 
     if (!file) {
       helpers.setValue(undefined)
       setPreview(null)
       return
-    }
-
-    // check if file exists
-    if (file) {
-      fileExists = true
-    }
-
-    // check if file is an image
-    if (file.type.startsWith('image/')) {
-      isImage = true
     }
 
     // read file
@@ -62,24 +50,15 @@ export const Upload = ({
         validateImage.src = `${e.target?.result}`
         validateImage.onload = async () => {
           // validate file
-          const failed = onValidate(validateImage, fileExists, isImage)
+          const failed = onValidate(validateImage)
           setImageCheck('')
           if (failed) {
-            setImageCheck(failed.error)
+            setImageCheck('Image needs to be 1600x700')
             return
           }
           helpers.setValue(await onUpload(file))
           setPreview(e.target?.result)
         }
-      } else {
-        // validate non-image file
-        const failed = onValidate(file, fileExists, isImage)
-        setImageCheck('')
-        if (failed) {
-          setImageCheck(failed.error)
-          return
-        }
-        helpers.setValue(onUpload(file))
       }
     }
   }
