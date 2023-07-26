@@ -114,7 +114,14 @@ export const Example: Story = {
             ]}
           />
 
-          <Form.Upload label="Image" name="image" onValidate={onValidate} onUpload={onUpload} onReset={onReset} setPreview={setPreview}/>
+          <Form.Upload
+            label="Image"
+            name="image"
+            onValidate={onValidate}
+            onUpload={onUpload}
+            onReset={onReset}
+            setPreview={setPreview}
+          />
 
           <Form.Submit title="Submit Your Answers" />
         </form>
