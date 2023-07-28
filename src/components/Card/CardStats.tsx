@@ -10,7 +10,7 @@ export const CardStats = ({ stat, desc, reverse }: CardStatsProps) => {
   const contentDirection = reverse ? statStyle.flexColReverse : statStyle.flexCol
 
   return (
-    <div className={contentDirection}>
+    <div className={`${contentDirection} overflow-hidden`}>
       <p className={`${statStyle.desc}`}>{desc}</p>
       <h2 className={statStyle.header}>{stat}</h2>
     </div>
