@@ -67,7 +67,7 @@ export const FooterSimple = ({
         </div>
 
         <div className="flex justify-between gap-10 text-white">
-          <div className="mx-auto text-center text-base md:mx-0 md:pl-12 md:text-left md:text-lg">
+          <div className="mx-auto text-center text-base md:mx-0 md:text-left md:text-lg">
             {deptName && (
               <p className="mb-1.5">
                 {deptUrl && <a href={deptUrl}>{deptName}</a>}
