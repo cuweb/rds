@@ -1816,6 +1816,14 @@ select {
   margin-top: auto;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -3087,6 +3095,10 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -7045,6 +7057,14 @@ select {
 
   .md\:leading-9 {
     line-height: 2.25rem;
+  }
+
+  .md\:leading-7 {
+    line-height: 1.75rem;
+  }
+
+  .md\:leading-8 {
+    line-height: 2rem;
   }
 }
 
