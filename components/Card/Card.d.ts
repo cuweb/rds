@@ -3,10 +3,10 @@ export interface CardProps {
     children: React.ReactNode;
     isCenter?: boolean;
     noLink?: boolean;
-    border?: 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow';
+    hasBorder?: boolean;
 }
-export declare const CardWrapper: ({ children, isCenter, border, noLink }: CardProps) => import("react/jsx-runtime").JSX.Element;
-export declare const Card: (({ children, isCenter, border, noLink }: CardProps) => import("react/jsx-runtime").JSX.Element) & {
+export declare const CardWrapper: ({ children, isCenter, hasBorder, noLink }: CardProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Card: (({ children, isCenter, hasBorder, noLink }: CardProps) => import("react/jsx-runtime").JSX.Element) & {
     Figure: {
         ({ children, isRound }: import("./CardFigure").CardFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
