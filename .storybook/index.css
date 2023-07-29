@@ -2580,6 +2580,10 @@ select {
   border-style: solid;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-cu-black-100 {
   --tw-border-opacity: 1;
   border-color: rgb(230 230 230 / var(--tw-border-opacity));
