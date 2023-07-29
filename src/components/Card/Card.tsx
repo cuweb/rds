@@ -1,6 +1,5 @@
 import React from 'react'
 import { styles } from './Card.Styles'
-import { rdsBorderColor } from '../../utils/optionClasses'
 import { CardFigure } from './CardFigure'
 import { CardVideo } from './CardVideo'
 import { CardContent } from './CardContent'
@@ -18,13 +17,13 @@ export interface CardProps {
   children: React.ReactNode
   isCenter?: boolean
   noLink?: boolean
-  border?: 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow'
+  hasBorder?: boolean
 }
 
-export const CardWrapper = ({ children, isCenter, border, noLink }: CardProps) => {
+export const CardWrapper = ({ children, isCenter, hasBorder, noLink }: CardProps) => {
   const noLinkStyles = noLink ? 'cu-card--nolink' : styles.link
   const centerText = isCenter ? 'text-center' : ''
-  const addBorder = border ? `${rdsBorderColor[border]} ${styles.border}` : ''
+  const addBorder = hasBorder ? `border-cu-red ${styles.border}` : ''
 
   return <div className={`cu-card ${styles.card} ${addBorder} ${centerText} ${noLinkStyles}`}>{children}</div>
 }
