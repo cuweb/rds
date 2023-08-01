@@ -12,7 +12,7 @@ export const CardPeopleMeta = ({ jobTitle, email, phone }: CardPeopleMetaProps) 
       {jobTitle && <li className={`${metaStyles.item} ${metaStyles.itemLarge} ${metaStyles.italic}`}>{jobTitle}</li>}
       {email && (
         <li className={metaStyles.item}>
-          <strong className={metaStyles.bold}>{email}</strong>
+          <strong className={`${metaStyles.bold} ${metaStyles.wrap}`}>{email}</strong>
         </li>
       )}
       {phone && <li className={metaStyles.item}>{phone}</li>}
