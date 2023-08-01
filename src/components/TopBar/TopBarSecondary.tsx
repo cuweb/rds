@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { navBaseStyles } from './TopBar.Styles'
 
-
 export const TopBarSecondary = ({ children }: PropsWithChildren) => {
   return (
     <nav className={navBaseStyles.secondaryWrapper}>

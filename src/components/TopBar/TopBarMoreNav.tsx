@@ -6,14 +6,9 @@ import { navItemStyles, navDropDownStyles } from './TopBar.Styles'
 export const TopBarMoreNav = ({ sideMenu }: any) => {
   return (
     <Menu as="ul" className={navDropDownStyles.moreMenuWrapper}>
-      <Menu.Button
-        className={`${navItemStyles.navItemChildren} ${navItemStyles.navItemMoreNav}`}
-      >
+      <Menu.Button className={`${navItemStyles.navItemChildren} ${navItemStyles.navItemMoreNav}`}>
         Browse
-        <ChevronDownIcon
-          className={navItemStyles.navArrow}
-          aria-hidden="true"
-        />
+        <ChevronDownIcon className={navItemStyles.navArrow} aria-hidden="true" />
       </Menu.Button>
 
       <Transition
@@ -45,27 +40,19 @@ export const TopBarMoreNav = ({ sideMenu }: any) => {
                     <>
                       <ul className={navDropDownStyles.moreMenuDropDown}>
                         <Disclosure.Button
-                          className={`${open ? 'text-cu-red' : ''} ${
-                            navDropDownStyles.moreMenuParentItem
-                          }`}
+                          className={`${open ? 'text-cu-red' : ''} ${navDropDownStyles.moreMenuParentItem}`}
                         >
                           {sideMenuItem.props.label}
                           <ChevronRightIcon
-                            className={`${open ? 'rotate-90' : ''} ${
-                              navDropDownStyles.moreMenuParentArrow
-                            }`}
+                            className={`${open ? 'rotate-90' : ''} ${navDropDownStyles.moreMenuParentArrow}`}
                           />
                         </Disclosure.Button>
                         <Disclosure.Panel as="ul" className="pb-2">
-                          {sideMenuItem.props.children.map(
-                            (navSubMenuItem: React.ReactElement, index: number) => (
-                              <li key={'sub-' + index}>
-                                <Disclosure.Button as={Fragment}>
-                                  {navSubMenuItem}
-                                </Disclosure.Button>
-                              </li>
-                            ),
-                          )}
+                          {sideMenuItem.props.children.map((navSubMenuItem: React.ReactElement, index: number) => (
+                            <li key={'sub-' + index}>
+                              <Disclosure.Button as={Fragment}>{navSubMenuItem}</Disclosure.Button>
+                            </li>
+                          ))}
                         </Disclosure.Panel>
                       </ul>
                     </>
