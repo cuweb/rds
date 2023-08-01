@@ -105,12 +105,26 @@ export const WithRoundImage: Story = {
 export const WithVideo: Story = {
   args: {
     children: (
-      <a href={content.link}>
+      <>
         <Card.Video source={content.video} />
         <Card.Content>
           <Card.Header text={content.title} />
         </Card.Content>
-      </a>
+      </>
+    ),
+  },
+}
+
+export const WithVideoNoHover = {
+  args: {
+    noLink: true,
+    children: (
+      <>
+        <Card.Video source={content.video} />
+        <Card.Content>
+          <Card.Header text={content.title} hasTitleHover={false} />
+        </Card.Content>
+      </>
     ),
   },
 }
