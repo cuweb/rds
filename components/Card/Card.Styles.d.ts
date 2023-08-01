@@ -20,6 +20,7 @@ export declare const metaStyles: {
     bold: string;
     alignIcon: string;
     redIcon: string;
+    wrap: string;
 };
 export declare const eventStyles: {
     dateBox: string;
