@@ -36,7 +36,6 @@ export const NewsItem: Story = {
           <Listing.PostMeta date={singleNews?.date} />
           <Listing.Header text={singleNews?.title} />
           <Listing.Excerpt text={singleNews?.excerpt} />
-          <Listing.Badges tags={singleNews?.tags} />
         </Listing.Content>
       </a>
     ),
@@ -47,7 +46,7 @@ export const EventListing: Story = {
   args: {
     children: (
       <a href={singleEvent?.link}>
-        <Listing.DateBox startDate={singleEvent?.startDate} />
+        <Listing.DateBox startDate={singleEvent?.startDate} endDate={singleEvent?.endDate} />
         <Listing.Content>
           <Listing.Header text={singleEvent?.title} />
           <Listing.EventMeta
@@ -58,7 +57,6 @@ export const EventListing: Story = {
             onCampusRoomNumber={singleEvent?.on_campus_room_number}
             eventAddress={singleEvent?.event_address}
           />
-          <Listing.Badges tags={singleEvent?.tags} />
         </Listing.Content>
       </a>
     ),
@@ -79,7 +77,6 @@ export const PeopleListing: Story = {
             email={singlePeople?.email}
             phone={singlePeople?.phone}
           />
-          <Listing.Badges tags={singlePeople?.tags} />
         </Listing.Content>
       </a>
     ),
@@ -98,7 +95,6 @@ export const PeopleListingInitials: Story = {
             email={singlePeople?.email}
             phone={singlePeople?.phone}
           />
-          <Listing.Badges tags={singlePeople?.tags} />
         </Listing.Content>
       </a>
     ),
@@ -113,7 +109,6 @@ export const BulletinItem: Story = {
         <Listing.PostMeta date={singleNews?.date} />
         <Listing.Header text={singleNews?.title} />
         <Listing.Excerpt text={singleNews?.excerpt} />
-        <Listing.Badges tags={singleNews?.tags} />
       </Listing.Content>
     ),
   },

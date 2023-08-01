@@ -9,6 +9,7 @@ export const contentStyles = {
   header: 'text-2xl not-italic font-semibold md:leading-10 sm:text-3xl md:text-4xl',
   headerOne: 'text-3xl lg:text-5xl lg:leading-[3.5rem]',
   pronoun: 'text-xl lg:text-3xl font-light lowercase text-cu-black-500',
+  listItems: `text-lg`,
   listLink: 'font-semibold text-cu-red hover:text-cyan-600',
   largeText: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
 }
@@ -21,7 +22,7 @@ export const mediaStyles = {
 }
 
 export const socialStyles = {
-  flex: 'flex items-center gap-4',
+  flex: 'flex items-center gap-6',
   link: 'text-cu-black-400',
   icon: 'w-6 h-6 md:w-8 md:h-8',
 }

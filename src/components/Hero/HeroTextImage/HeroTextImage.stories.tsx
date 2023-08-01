@@ -200,15 +200,19 @@ export const EventDetails: Story = {
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Event
         title="Capital Hoops Classic"
+        eventType="Hybrid"
+        virtualType="Teams"
+        virtualUrl="https://events.carleton.ca"
         startDate="March 21st, 2023 at 6:00pm"
         location="Raven’s Nest, 1125 Colonel By Drive"
         cost="$20 per adult, $15 for youth/senior"
-      >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
-          <Button title="Get Tickets" />
-          <Button title="Request Info" color="grey" />
-        </div>
-      </HeroTextImage.Event>
+        contactName="John Doe"
+        contactEmail="johndoe@test"
+        contactPhone="613-520-2600 x1234"
+        primaryButtonUrl="https://carleton.ca"
+        secondaryButtonUrl="https://carleton.ca/webservices"
+        secondaryButtonText="More Information"
+      />
       <HeroTextImage.Media image="https://picsum.photos/400/266"></HeroTextImage.Media>
     </HeroTextImage>
   ),

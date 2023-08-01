@@ -60,14 +60,14 @@ export const FooterSimple = ({
           <a className="mb-6 flex justify-center md:justify-start" href="https://carleton.ca">
             <img
               className="h-auto w-40 md:w-52"
-              src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logo-right-white-outline.svg"
+              src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horizontal-outlined.svg"
               alt="Carleton University logo"
             />
           </a>
         </div>
 
         <div className="flex justify-between gap-10 text-white">
-          <div className="mx-auto text-center text-base md:mx-0 md:pl-12 md:text-left md:text-lg">
+          <div className="mx-auto text-center text-base md:mx-0 md:text-left md:text-lg">
             {deptName && (
               <p className="mb-1.5">
                 {deptUrl && <a href={deptUrl}>{deptName}</a>}

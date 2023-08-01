@@ -2572,6 +2572,10 @@ select {
   border-style: solid;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-cu-black-100 {
   --tw-border-opacity: 1;
   border-color: rgb(230 230 230 / var(--tw-border-opacity));
@@ -3007,6 +3011,10 @@ select {
 
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pb-\[56\.25\%\] {
+  padding-bottom: 56.25%;
 }
 
 .pl-10 {
@@ -3673,22 +3681,22 @@ select {
 
 /* Hero Banner */
 
-.cu-hero-textimage > :not(.not-contained) {
+.cu-hero-textimage + :not(.not-contained) {
   margin-top: 0.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-hero-textimage > :not(.not-contained) {
+  .cu-hero-textimage + :not(.not-contained) {
     margin-top: 1.5rem;
   }
 }
 
-:not(.not-contained) > .cu-hero-textimage {
+:not(.not-contained) + .cu-hero-textimage {
   margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
-  :not(.not-contained) > .cu-hero-textimage {
+  :not(.not-contained) + .cu-hero-textimage {
     margin-bottom: 3rem;
   }
 }
@@ -6761,6 +6769,10 @@ select {
     margin-top: 3.5rem;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -7037,6 +7049,10 @@ select {
 
   .md\:leading-9 {
     line-height: 2.25rem;
+  }
+
+  .md\:leading-8 {
+    line-height: 2rem;
   }
 }
 

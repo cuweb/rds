@@ -58,7 +58,6 @@ export const WithDate: Story = {
         <Listing.Content>
           <Listing.PostMeta date={content.date} />
           <Listing.Header text={content.title} />
-          <Listing.Badges tags={content.tags} />
         </Listing.Content>
       </a>
     ),
@@ -72,7 +71,6 @@ export const WithBadges: Story = {
         <Listing.Content>
           <Listing.PostMeta date={content.date} />
           <Listing.Header text={content.title} />
-          <Listing.Badges tags={content.tags} />
         </Listing.Content>
       </a>
     ),
@@ -87,7 +85,6 @@ export const WithExcerpt: Story = {
           <Listing.PostMeta date={content.date} />
           <Listing.Header text={content.title} />
           <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-          <Listing.Badges tags={content.tags} />
         </Listing.Content>
       </a>
     ),
@@ -105,7 +102,6 @@ export const WithImage: Story = {
           <Listing.PostMeta date={content.date} />
           <Listing.Header text={content.title} />
           <Listing.Excerpt text={content.excerpt} />
-          <Listing.Badges tags={content.tags} />
         </Listing.Content>
       </a>
     ),
@@ -116,10 +112,9 @@ export const WithDatebox: Story = {
   args: {
     children: (
       <a href={content.link}>
-        <Listing.DateBox startDate={content.startDate} />
+        <Listing.DateBox startDate={content.startDate} endDate={content.endDate} />
         <Listing.Content>
           <Listing.Header text={content.title} />
-          <Listing.Badges tags={content.tags} />
         </Listing.Content>
       </a>
     ),

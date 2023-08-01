@@ -7,6 +7,7 @@ export const content = {
   alt: 'Required alt text',
   date: '2022-12-16',
   startDate: '2023-03-31 20:00:00',
+  endDate: '2023-03-31 21:00:00',
   excerpt:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a est vel mi finibus tempor. Etiam sagittis eros ac venenatis pretium. Donec bibendum eget ante quis maximus. Nullam ultrices erat sagittis luctus volutpat. Etiam nec arcu sodales, convallis justo quis, aliquam lorem. Curabitur feugiat accumsan felis, placerat eleifend ipsum auctor.',
   tags: {
@@ -33,6 +34,7 @@ export const content2 = {
   alt: 'Required alt text',
   date: '2023-06-25',
   startDate: '2023-04-01 20:00:00',
+  endDate: '2023-04-01 21:00:00',
   excerpt:
     'If you have been keeping up with our YouTube channel or following us on Instagram, you’ve probably seen some of the animated videos we’ve created on various web-related topics! Animation is a captivating and powerful medium that has become a significant part of our education landscape. However, to truly harness the potential of animation, it is crucial to ensure that it is accessible to individuals of all abilities.',
   tags: {
@@ -59,6 +61,7 @@ export const content3 = {
   alt: 'Required alt text',
   date: '2023-06-24',
   startDate: '2023-04-02 20:00:00',
+  endDate: '2023-04-04 20:00:00',
   excerpt: 'Here are some key considerations for ensuring visual accessibility in animation:',
   tags: {
     category: [
@@ -84,6 +87,7 @@ export const content4 = {
   alt: 'Required alt text',
   date: '2023-06-23',
   startDate: '2023-04-03 20:00:00',
+  endDate: '2023-04-04 20:00:00',
   excerpt:
     'Audio plays a vital role in conveying emotions, dialogue, and sound effects in animations. However, individuals with hearing impairments or those who are deaf may struggle to fully comprehend the auditory elements. To address this, it is essential to include accurate closed captions or subtitles that effectively represent the dialogue and sound effects. These captions should be synchronized with the animation and presented in a clear and easily readable format, ensuring accessibility for all viewers. To learn more about the differencen between captions and subtitles and why we use them, check out our blogpost titled Captivating Captions: Why We Use Captions on Video. Additionally, we have a great tutorial on Generating Transcripts and Closed Captioning from YouTube Videos.',
   tags: {
@@ -109,6 +113,7 @@ export const content5 = {
   image: './sample-imgs/news-img.jpg',
   alt: 'Required alt text',
   startDate: '2023-05-01 20:00:00',
+  endDate: '2023-05-01 22:00:00',
   excerpt: 'Here are some key considerations for ensuring cognitive accessibility in animation:',
   tags: {
     category: [
@@ -160,6 +165,7 @@ export const content7 = {
   alt: 'Required alt text',
   date: '2023-06-20',
   startDate: '2023-05-03 20:00:00',
+  endDate: '2023-05-04 20:00:00',
   excerpt:
     'Did you know that WordPress has a built-in image editor? Equipped with an intuitive interface, this tool empowers you to effortlessly enhance your website’s visual content without the need for external software. In this article, we will explore all the editing options offered by WordPress’ built-in image editor, providing you with a step-by-step guide on how to make the most of this incredible feature!',
   tags: {
@@ -186,6 +192,7 @@ export const content8 = {
   alt: 'Required alt text',
   date: '2023-06-19',
   startDate: '2023-05-04 20:00:00',
+  endDate: '2023-05-05 20:00:00',
   excerpt:
     'WordPress built-in image editor offers various editing options. In the toolbar, you can choose to crop, rotate, or flip your images. As well, you have the option to undo or redo your edits. Let’s go over these in more detail:',
   tags: {
@@ -212,6 +219,7 @@ export const content9 = {
   alt: 'Required alt text',
   date: '2023-06-18',
   startDate: '2023-05-05 20:00:00',
+  endDate: '2023-05-05 23:00:00',
   excerpt: 'After editing your image, click the Save button to apply the changes.',
   tags: {
     category: [
@@ -237,6 +245,7 @@ export const content10 = {
   alt: 'Required alt text',
   date: '2023-06-17',
   startDate: '2023-05-06 20:00:00',
+  endDate: '2023-05-08 20:00:00',
   excerpt: 'WordPress itself gives you the option to restore your original image even after saving the edited image.',
   tags: {
     category: [
@@ -261,7 +270,8 @@ export const content11 = {
   image: './sample-imgs/news-img.jpg',
   alt: 'Required alt text',
   date: '2023-06-16',
-  startDate: '2023-05-07 20:00:00',
+  startDate: '2023-05-07 13:00:00',
+  endDate: '2023-05-07 15:00:00',
   excerpt:
     'If you were unable to attend our most recent Web Wednesday event, no worries. We’ve written a recap of the highlights and shared the video and slides below. Enjoy!',
   tags: {
@@ -288,6 +298,7 @@ export const content12 = {
   alt: 'Required alt text',
   date: '2023-06-12',
   startDate: '2023-05-08 20:00:00',
+  endDate: '2023-05-10 20:00:00',
   excerpt:
     'Accessibility! Accessibility! Accessibility! Here at Web Services, you may notice we chat often on this topic, though that is only because it plays such a key role in the web world. Across the Carleton domain, we want to ensure everyone has the same user experience. Below are five common accessibility issues found on websites. Have a look at this list and see if your site is free of these issues.',
   tags: {
@@ -314,6 +325,7 @@ export const content13 = {
   alt: 'Required alt text',
   date: '2023-06-13',
   startDate: '2023-06-02 20:00:00',
+  endDate: '2023-06-03 20:00:00',
   excerpt:
     'We use Google Analytics to track how our Carleton websites are performing. If you have logged in to analytics recently, you may have noticed a pop-up warning. It talks about the switch to Google Analytics 4 (GA4) occurring on July 1.',
   tags: {
@@ -340,6 +352,7 @@ export const content14 = {
   alt: 'Required alt text',
   date: '2023-06-14',
   startDate: '2023-06-22 20:00:00',
+  endDate: '2023-06-23 20:00:00',
   excerpt:
     'Alternative text, also known as alt text, is a short description of an image that is read by screen readers. With social media becoming an increasingly integral part of our daily lives, it’s important to consider the accessibility of our content.',
   tags: {
@@ -366,6 +379,7 @@ export const content15 = {
   alt: 'Required alt text',
   date: '2023-06-15',
   startDate: '2023-06-23 20:00:00',
+  endDate: '2023-06-24 20:00:00',
   excerpt:
     'Welcome to the next post of our cuTheme teaser series! Today we give you a sneak peek into the video listing block. The video block lets you display your videos in a card format that creates a nice gallery on your page.',
   tags: {

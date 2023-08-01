@@ -3,7 +3,7 @@ export const styles = {
   link: `group duration-300 ease-in hover:scale-105 cursor-pointer`,
   border: `border-l-8`,
   content: `flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3 relative`,
-  header: `text-lg font-semibold text-cu-black group-hover:text-cu-red @sm:md:text-xl leading-6 @sm:md:leading-8`,
+  header: `text-lg font-semibold text-cu-black  @sm:md:text-xl leading-6 @sm:md:leading-8`,
   excerpt: `text-base text-cu-black-600`,
   more: `font-semibold text-cu-red group-hover:text-cyan-600`,
   badges: `pb-6 mt-auto px-7`,
@@ -22,6 +22,7 @@ export const metaStyles = {
   bold: `font-semibold text-cyan-600`,
   alignIcon: `flex`,
   redIcon: `flex-shrink-0 w-5 h-5 @sm:md:w-6 @sm:md:h-6 mr-2 text-cu-red-300`,
+  wrap: `break-all`,
 }
 
 export const eventStyles = {

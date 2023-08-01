@@ -40,7 +40,7 @@ export const HeroTextImagePeople = ({
           {degrees && <li>{degrees}</li>}
           {building && (
             <li>
-              {room && '123-B '}
+              {room && `${room} `}
               {building}
             </li>
           )}
@@ -54,7 +54,7 @@ export const HeroTextImagePeople = ({
           {phone && (
             <li>
               {phone}
-              {phoneExt && ` ${phoneExt}`}
+              {phoneExt && ` x${phoneExt}`}
             </li>
           )}
         </ul>
