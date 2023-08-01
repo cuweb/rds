@@ -10,5 +10,11 @@ export declare const WithExcerpt: Story;
 export declare const WithImage: Story;
 export declare const WithRoundImage: Story;
 export declare const WithVideo: Story;
+export declare const WithVideoNoHover: {
+    args: {
+        noLink: boolean;
+        children: import("react/jsx-runtime").JSX.Element;
+    };
+};
 export declare const WithBorder: Story;
 //# sourceMappingURL=Card.stories.d.ts.map

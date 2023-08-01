@@ -24,7 +24,7 @@ export declare const Card: (({ children, isCenter, hasBorder, noLink }: CardProp
         displayName: string;
     };
     Header: {
-        ({ text }: import("./CardHeader").CardHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ text, hasTitleHover }: import("./CardHeader").CardHeaderProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Excerpt: {
