@@ -33,7 +33,7 @@ export declare const Form: {
         displayName: string;
     };
     Upload: {
-        ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: any): import("react/jsx-runtime").JSX.Element;
+        ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: import("react").PropsWithChildren<import("../Upload/Upload").UploadProps>): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Submit: {

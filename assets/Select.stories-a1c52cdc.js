@@ -1,0 +1,9 @@
+import{j as r}from"./jsx-runtime-daf202a7.js";import{F as o}from"./Form-4f63acaa.js";import"./index-ec8b93d8.js";import"./_commonjsHelpers-042e6b4d.js";import"./XMarkIcon-81eef1c8.js";import"./Button-9a118519.js";import"./Icon-a2a3354a.js";import"./optionClasses-fb4783dc.js";import"./ChevronDownIcon-bf1ca2d9.js";import"./Calendar-801a09ec.js";import"./index-14d09e4e.js";import"./index-ee226d2b.js";import"./isNativeReflectConstruct-81b4d0cb.js";import"./Location-1518fbe7.js";import"./index-73f8b247.js";import"./LocationPicker-592f419b.js";import"./index-58d3fd43.js";import"./combobox-393d016a.js";import"./open-closed-aa2934ca.js";import"./keyboard-0f6663c0.js";import"./use-resolve-button-type-b6561d60.js";import"./use-tracked-pointer-7104e2e3.js";import"./platform-42294b71.js";import"./MagnifyingGlassIcon-6a66de15.js";const I={title:"Components/Forms/Select",component:o,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},t={render:()=>r.jsx(o,{onSubmit:()=>{},schema:{},initialValues:m,children:r.jsx(o.Select,{label:"What is your favorite 90s sitcom?",name:"favsitcom",options:[{value:"name",label:"name"}]})})},m={firstname:"ish",description:" sample description",regularviewer:"2",location:"Carleton University, Colonel By Drive, Ottawa, ON, Canada",favsitcom:"familymatter",favcharacters:["kellykapowski","carltonbanks"]};var e,i,a;t.parameters={...t.parameters,docs:{...(e=t.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  render: () => <Form onSubmit={() => undefined} schema={{}} initialValues={InitialValues}>
+      <Form.Select label="What is your favorite 90s sitcom?" name="favsitcom" options={[{
+      value: 'name',
+      label: 'name'
+    }]} />
+    </Form>
+}`,...(a=(i=t.parameters)==null?void 0:i.docs)==null?void 0:a.source}}};const W=["Default"];export{t as Default,W as __namedExportsOrder,I as default};
+//# sourceMappingURL=Select.stories-a1c52cdc.js.map
