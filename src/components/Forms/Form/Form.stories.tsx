@@ -42,13 +42,20 @@ export const Default: Story = {
   ),
 }
 
-const validateUpload = (file: any) => {
-  if (file.width === 1600 && file.height === 700) {
-    return
-  }
-  return {
-    error: 'Image needs to be 1600x700',
-  }
+const onValidate = (image: HTMLImageElement) => {
+  return image.width === 1600 && image.height === 700
+}
+
+const onUpload = async (file: File) => {
+  return file.name
+}
+
+const onReset = (reset: string) => {
+  return reset
+}
+
+const setPreview = () => {
+  return
 }
 
 export const Example: Story = {
@@ -107,7 +114,14 @@ export const Example: Story = {
             ]}
           />
 
-          <Form.Upload label="Image" name="image" onValidate={validateUpload} />
+          <Form.Upload
+            label="Image"
+            name="image"
+            onValidate={onValidate}
+            onUpload={onUpload}
+            onReset={onReset}
+            setPreview={setPreview}
+          />
 
           <Form.Submit title="Submit Your Answers" />
         </form>
