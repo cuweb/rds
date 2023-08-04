@@ -2,45 +2,42 @@ import { Field, useField } from 'formik'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { formStyles, formErrorStyles } from '../../../utils/formClasses'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 export interface UploadProps {
   label?: string
   name: string
   type?: string
-  setPreview?: any
-  onReset?: any
-  onUpload?: any
-  onValidate?: any
+  onUpload: (x: File) => Promise<string>
+  onValidate: (x: HTMLImageElement) => boolean
+  onReset: (x: string) => string
+  setPreview: (x: string | ArrayBuffer | null | undefined) => void
+  required?: boolean | undefined
   condition?: () => boolean
 }
 
-export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condition = () => true, ...props }: any) => {
+export const Upload = ({
+  label,
+  onReset,
+  onUpload,
+  onValidate,
+  setPreview,
+  condition = () => true,
+  ...props
+}: PropsWithChildren<UploadProps>) => {
   const [field, meta, helpers] = useField(props.name)
   const [imageCheck, setImageCheck] = useState<string>()
 
   // image types
   const imageMimeType = /image\/(png|jpg|jpeg)/i
 
-  const imagePreview = async (event: any) => {
-    const file = event.target.files[0]
-    let fileExists = false
-    let isImage = false
+  const imagePreview = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event?.target?.files?.[0] || null
 
     if (!file) {
       helpers.setValue(undefined)
       setPreview(null)
       return
-    }
-
-    // check if file exists
-    if (file) {
-      fileExists = true
-    }
-
-    // check if file is an image
-    if (file.type.startsWith('image/')) {
-      isImage = true
     }
 
     // read file
@@ -53,24 +50,15 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
         validateImage.src = `${e.target?.result}`
         validateImage.onload = async () => {
           // validate file
-          const failed = onValidate(validateImage, fileExists, isImage)
+          const failed = onValidate(validateImage)
           setImageCheck('')
           if (failed) {
-            setImageCheck(failed.error)
+            setImageCheck('Image needs to be 1600x700')
             return
           }
           helpers.setValue(await onUpload(file))
           setPreview(e.target?.result)
         }
-      } else {
-        // validate non-image file
-        const failed = onValidate(file, fileExists, isImage)
-        setImageCheck('')
-        if (failed) {
-          setImageCheck(failed.error)
-          return
-        }
-        helpers.setValue(onUpload(file))
       }
     }
   }
@@ -136,7 +124,11 @@ export const Upload = ({ label, onReset, onUpload, onValidate, setPreview, condi
   )
 }
 
-const UploadField = ({ label, ...props }: any) => {
+export interface UploadFieldProps {
+  label?: string
+}
+
+const UploadField = ({ label, ...props }: PropsWithChildren<UploadFieldProps>) => {
   return (
     <>
       <Field variant="outlined" name="uploader" title={label} type={'file'} {...props} />
