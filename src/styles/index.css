@@ -7,7 +7,7 @@
 @import './spacing.css';
 @import './layouts.css';
 @import './card-listing.css';
-@import './components.css';
+@import './topbar.css';
 
 /* React Quill CSS */
 @import '../../node_modules/react-quill/dist/quill.snow.css';
