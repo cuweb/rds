@@ -33,9 +33,9 @@ export const TopBarAside = ({ showGive, showLogin }: TopBarAsideProps) => {
         </li>
       </ul>
 
-      <button type="button" aria-label="global-cu-navigation" className={navAsideStyles.megaMenuButton}>
+      {/* <button type="button" aria-label="global-cu-navigation" className={navAsideStyles.megaMenuButton}>
         Mega Man
-      </button>
+      </button> */}
     </div>
   )
 }
