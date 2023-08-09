@@ -21,16 +21,16 @@ export const Default: Story = {
     <TopBar>
       <TopBar.Primary>
         <TopBar.Logo title="Web Services" link="https://carleton.ca/webservices">
-          <a href="https://carleton.ca" className={navLogoTitle.cuLogoLink}>
+          <a href="https://carleton.ca" className="cu-topbar--logo">
             <img
-              className={navLogoTitle.cuLogo}
+              className="culogo"
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
               width="130"
               height="35"
               alt="Logo"
             />
             <img
-              className={navLogoTitle.cuShield}
+              className="cushield"
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
               width="28"
               height="35"
@@ -39,23 +39,23 @@ export const Default: Story = {
           </a>
         </TopBar.Logo>
         <TopBar.Menu>
-          <a href="/poop" className={navItemStyles.navItem}>
+          <a href="/poop" className="cu-topbar--more-nav">
             LINK 1
           </a>
-          <a href="/poop" className={navItemStyles.navItem}>
+          <a href="/poop" className="cu-topbar--more-nav">
             LINK 2
           </a>
-          <a href="/poop" className={navItemStyles.navItem}>
+          <a href="/poop" className="cu-topbar--more-nav">
             LINK 3
           </a>
           <TopBar.SubMenu label="LINK 4">
-            <a href="/" className={navDropDownStyles.dropDownItems}>
+            <a href="/" className="cu-topbar--more-nav">
               LINK 4.1
             </a>
-            <a href="/" className={navDropDownStyles.dropDownItems}>
+            <a href="/" className="cu-topbar--more-nav">
               LINK 4.2
             </a>
-            <a href="/" className={navDropDownStyles.dropDownItems}>
+            <a href="/" className="cu-topbar--more-nav">
               LINK 4.3
             </a>
           </TopBar.SubMenu>
@@ -71,16 +71,16 @@ export const Double: Story = {
     <TopBar>
       <TopBar.Primary>
         <TopBar.Logo title="Web Services" link="https://carleton.ca/webservices">
-          <a href="https://carleton.ca" className={navLogoTitle.cuLogoLink}>
+          <a href="https://carleton.ca" className="cu-topbar--logo">
             <img
-              className={navLogoTitle.cuLogo}
+              className="culogo"
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
               width="130"
               height="35"
               alt="Logo"
             />
             <img
-              className={navLogoTitle.cuShield}
+              className="cushield"
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
               width="28"
               height="35"
@@ -92,22 +92,22 @@ export const Double: Story = {
       </TopBar.Primary>
       <TopBar.Secondary>
         <TopBar.Menu>
-          <a href="/" className="whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red">
+          <a href="/" className="cu-topbar--parent-link">
             LINK1
           </a>
-          <a href="/" className="whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red">
+          <a href="/" className="cu-topbar--parent-link">
             LINK2
           </a>
-          <a href="/" className="whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red">
+          <a href="/" className="cu-topbar--parent-link">
             LINK3
           </a>
-          <a href="/" className="whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red">
+          <a href="/" className="cu-topbar--parent-link">
             LINK4
           </a>
-          <a href="/" className="whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red">
+          <a href="/" className="cu-topbar--parent-link">
             LINK5
           </a>
-          <a href="/" className="whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red">
+          <a href="/" className="cu-topbar--parent-link">
             LINK6
           </a>
         </TopBar.Menu>

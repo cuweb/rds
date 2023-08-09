@@ -3,7 +3,7 @@ import { navBaseStyles } from './TopBar.Styles'
 
 export const TopBarSecondary = ({ children }: PropsWithChildren) => {
   return (
-    <nav className={navBaseStyles.secondaryWrapper}>
+    <nav className="cu-topbar--secondary border-t border-t-cu-black-100 bg-cu-black-25">
       <div className={navBaseStyles.navInnerWrapper}>{children}</div>
     </nav>
   )

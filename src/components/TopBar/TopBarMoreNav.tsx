@@ -24,17 +24,11 @@ export const TopBarMoreNav = ({ sideMenu }: TopBarMoreNavProps) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items
-          as="nav"
-          className={`${navDropDownStyles.dropDownContainer} ${navDropDownStyles.moreMenuContainer}`}
-        >
+        <Menu.Items as="nav" className={`cu-topbar--dropdown ${navDropDownStyles.moreMenuContainer}`}>
           {sideMenu.map((sideMenuItem, index: number) => (
             <>
               {!Array.isArray(sideMenuItem.props.children) && (
-                <li
-                  className={`${navDropDownStyles.dropDownItems} cu-topbar--more-nav`} // we can likely remove the dropDownItems class reference when this moves to RDS
-                  key={'main-' + index}
-                >
+                <li className="cu-topbar--more-nav" key={'main-' + index}>
                   {sideMenuItem}
                 </li>
               )}
