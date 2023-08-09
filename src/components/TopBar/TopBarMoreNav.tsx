@@ -3,7 +3,11 @@ import { Menu, Disclosure, Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { navItemStyles, navDropDownStyles } from './TopBar.Styles'
 
-export const TopBarMoreNav = ({ sideMenu }: any) => {
+export interface TopBarMoreNavProps {
+  sideMenu: React.ReactElement[]
+}
+
+export const TopBarMoreNav = ({ sideMenu }: TopBarMoreNavProps) => {
   return (
     <Menu as="ul" className={navDropDownStyles.moreMenuWrapper}>
       <Menu.Button className={`${navItemStyles.navItemChildren} ${navItemStyles.navItemMoreNav}`}>
@@ -24,7 +28,7 @@ export const TopBarMoreNav = ({ sideMenu }: any) => {
           as="nav"
           className={`${navDropDownStyles.dropDownContainer} ${navDropDownStyles.moreMenuContainer}`}
         >
-          {sideMenu.map((sideMenuItem: React.ReactElement, index: number) => (
+          {sideMenu.map((sideMenuItem, index: number) => (
             <>
               {!Array.isArray(sideMenuItem.props.children) && (
                 <li

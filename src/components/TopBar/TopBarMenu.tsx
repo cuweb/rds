@@ -5,11 +5,11 @@ import { navItemStyles } from './TopBar.Styles'
 
 export const TopBarMenu = (props: PropsWithChildren) => {
   // create sub menu for invisible items
-  const [sideMenu, setSideMenu] = useState<React.ReactNode[]>([])
-  const navLinks = React.Children.toArray(props.children)
+  const [sideMenu, setSideMenu] = useState<React.ReactElement[]>([])
+  const navLinks = props.children
 
   // add or remove menu item to sub menu based on visisbility
-  const updateMenu = (inView: boolean, entry: any, menuItem: React.ReactNode) => {
+  const updateMenu = (inView: boolean, entry: IntersectionObserverEntry, menuItem: React.ReactElement) => {
     entry.target.classList.toggle('invisible', !inView)
     if (inView) {
       sideMenu.shift()
@@ -24,11 +24,11 @@ export const TopBarMenu = (props: PropsWithChildren) => {
       {navLinks && (
         <>
           <ul className={`${navItemStyles.navWrapper}`}>
-            {navLinks.map((navMenuItem, index: number) => (
+            {React.Children.map(navLinks, (navMenuItem, index: number) => (
               <InView
                 key={'nav-' + index}
                 threshold={0.99}
-                onChange={(inView, entry) => updateMenu(inView, entry, navMenuItem)}
+                onChange={(inView, entry) => updateMenu(inView, entry, navMenuItem as React.ReactElement)}
               >
                 {({ ref }) => (
                   <li ref={ref} className="cu-topbar--parent-link invisible">

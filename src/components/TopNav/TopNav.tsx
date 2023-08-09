@@ -75,10 +75,10 @@ export const TopNav = ({
     </div>
   )
 
-  const [open, setOpen] = useState(false)
+  const [, setOpen] = useState(false)
 
   const callback = useCallback(
-    (itemOpen: any) => {
+    (itemOpen: boolean) => {
       setOpen(itemOpen)
     },
     [setOpen],
