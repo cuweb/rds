@@ -1,9 +1,11 @@
 import { PropsWithChildren } from 'react';
 export interface AlertBaseProps {
     type: 'success' | 'error' | 'warning' | 'info';
+    textSize?: 'small' | 'large';
+    isPersistent?: boolean;
 }
 export declare const Alert: {
-    ({ children, type }: PropsWithChildren<AlertBaseProps>): import("react/jsx-runtime").JSX.Element;
+    ({ children, type, textSize, isPersistent }: PropsWithChildren<AlertBaseProps>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Alerter: ({ children }: PropsWithChildren) => import("react/jsx-runtime").JSX.Element;
