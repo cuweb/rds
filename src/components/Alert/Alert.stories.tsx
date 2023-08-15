@@ -102,13 +102,12 @@ export const Persistant: Story = {
 
 Persistant.args = {
   type: 'success',
-  textSize: 'sm',
 }
 
 export const DifferentTextSize: Story = {
   render: (args) => (
     <Alert.Alerter>
-      <Alert key={111} type={args.type} isPersistent textSize={args.textSize}>
+      <Alert key={111} type={args.type} isPersistent>
         <Alert.Title>Success</Alert.Title>
         <Alert.Content>Successfully created</Alert.Content>
       </Alert>
@@ -118,5 +117,5 @@ export const DifferentTextSize: Story = {
 
 DifferentTextSize.args = {
   type: 'success',
-  textSize: 'xl',
+  textSize: 'large',
 }

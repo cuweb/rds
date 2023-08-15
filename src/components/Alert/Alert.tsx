@@ -10,7 +10,7 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export interface AlertBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
-  textSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '4xl'
+  textSize?: 'small' | 'large'
   isPersistent?: boolean
 }
 
@@ -23,15 +23,18 @@ const Alerter = ({ children }: PropsWithChildren) => {
 }
 
 const Title = ({ children }: PropsWithChildren) => {
-  return <h3 className=" font-medium">{children}</h3>
+  return <h3 className="font-medium ">{children}</h3>
 }
 
 const Content = ({ children }: PropsWithChildren) => {
   return <div className="mt-2 ">{children}</div>
 }
 
-const AlertBase = ({ children, type, textSize = 'sm', isPersistent = false }: PropsWithChildren<AlertBaseProps>) => {
+const AlertBase = ({ children, type, textSize = 'small', isPersistent = false }: PropsWithChildren<AlertBaseProps>) => {
   const [showAlert, setShowAlert] = useState(true)
+
+  const alertTextSize = textSize === 'small' ? 'text-sm' : 'text-lg'
+  const alertIconSize = textSize === 'small' ? 'h-5 w-5' : 'h-8 w-8'
 
   const AlertTypes = {
     success: {
@@ -71,11 +74,11 @@ const AlertBase = ({ children, type, textSize = 'sm', isPersistent = false }: Pr
         <div className="flex">
           <div className="flex-shrink-0">
             {React.createElement(AlertTypes[type].icon, {
-              className: `h-5 w-5 ${AlertTypes[type].text}`,
+              className: `${alertIconSize} ${AlertTypes[type].text}`,
               'aria-hidden': 'true',
             })}
           </div>
-          <div className={`ml-3 ${AlertTypes[type].text} text-${textSize}`}>{children}</div>
+          <div className={`ml-3 ${AlertTypes[type].text} ${alertTextSize}`}>{children}</div>
           <div className="ml-auto pl-3">
             <div className="-mx-1.5 -my-1.5">
               {!isPersistent && (
