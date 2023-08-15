@@ -10,6 +10,8 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export interface AlertBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
+  textSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '4xl'
+  isPersistent?: boolean
 }
 
 const Alerter = ({ children }: PropsWithChildren) => {
@@ -21,14 +23,14 @@ const Alerter = ({ children }: PropsWithChildren) => {
 }
 
 const Title = ({ children }: PropsWithChildren) => {
-  return <h3 className="text-sm font-medium">{children}</h3>
+  return <h3 className=" font-medium">{children}</h3>
 }
 
 const Content = ({ children }: PropsWithChildren) => {
-  return <div className="mt-2 text-sm">{children}</div>
+  return <div className="mt-2 ">{children}</div>
 }
 
-const AlertBase = ({ children, type }: PropsWithChildren<AlertBaseProps>) => {
+const AlertBase = ({ children, type, textSize = 'sm', isPersistent = false }: PropsWithChildren<AlertBaseProps>) => {
   const [showAlert, setShowAlert] = useState(true)
 
   const AlertTypes = {
@@ -73,19 +75,21 @@ const AlertBase = ({ children, type }: PropsWithChildren<AlertBaseProps>) => {
               'aria-hidden': 'true',
             })}
           </div>
-          <div className={`ml-3 ${AlertTypes[type].text}`}>{children}</div>
+          <div className={`ml-3 ${AlertTypes[type].text} text-${textSize}`}>{children}</div>
           <div className="ml-auto pl-3">
             <div className="-mx-1.5 -my-1.5">
-              <button
-                type="button"
-                className={`inline-flex rounded-md ${AlertTypes[type].bg} p-1.5 ${AlertTypes[type].text} hover:${AlertTypes[type].bg} focus:outline-none focus:ring-2 focus:ring-offset-2`}
-                onClick={() => {
-                  setShowAlert(false)
-                }}
-              >
-                <span className="sr-only">Dismiss</span>
-                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
+              {!isPersistent && (
+                <button
+                  type="button"
+                  className={`inline-flex rounded-md ${AlertTypes[type].bg} p-1.5 ${AlertTypes[type].text} hover:${AlertTypes[type].bg} focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                  onClick={() => {
+                    setShowAlert(false)
+                  }}
+                >
+                  <span className="sr-only">Dismiss</span>
+                  <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                </button>
+              )}
             </div>
           </div>
         </div>
