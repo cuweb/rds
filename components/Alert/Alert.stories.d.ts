@@ -7,5 +7,5 @@ export declare const Default: Story;
 export declare const Multiline: Story;
 export declare const Stacked: Story;
 export declare const Persistant: Story;
-export declare const DifferentTextSize: Story;
+export declare const LargeText: Story;
 //# sourceMappingURL=Alert.stories.d.ts.map
