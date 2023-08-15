@@ -33,7 +33,7 @@ export const TopBarMoreNav = ({ sideMenu }: TopBarMoreNavProps) => {
                 </li>
               )}
               {Array.isArray(sideMenuItem.props.children) && (
-                <Disclosure>
+                <Disclosure  key={'disclose-' + index}>
                   {({ open }) => (
                     <>
                       <ul className={navDropDownStyles.moreMenuDropDown}>

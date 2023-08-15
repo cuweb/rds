@@ -1,7 +1,7 @@
 import React, { Fragment, PropsWithChildren } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { navItemStyles, navDropDownStyles } from './TopBar.Styles'
+import { navItemStyles } from './TopBar.Styles'
 
 export interface TopBarSubMenuProps {
   label: string

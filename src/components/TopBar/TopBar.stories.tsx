@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TopBar } from './TopBar'
-import { navDropDownStyles, navItemStyles, navLogoTitle } from './TopBar.Styles'
+import { TopBarDataDouble, TopBarDataSingle } from '../../data/TopBarData'
 
 const meta: Meta<typeof TopBar> = {
   title: 'Components/TopBar',
@@ -39,26 +39,24 @@ export const Default: Story = {
           </a>
         </TopBar.Logo>
         <TopBar.Menu>
-          <a href="/poop" className="cu-topbar--more-nav">
-            LINK 1
-          </a>
-          <a href="/poop" className="cu-topbar--more-nav">
-            LINK 2
-          </a>
-          <a href="/poop" className="cu-topbar--more-nav">
-            LINK 3
-          </a>
-          <TopBar.SubMenu label="LINK 4">
-            <a href="/" className="cu-topbar--more-nav">
-              LINK 4.1
-            </a>
-            <a href="/" className="cu-topbar--more-nav">
-              LINK 4.2
-            </a>
-            <a href="/" className="cu-topbar--more-nav">
-              LINK 4.3
-            </a>
-          </TopBar.SubMenu>
+          {TopBarDataSingle.map((topBarLink, i) => (
+            <>
+              {!topBarLink.submenu && (
+                <a key={i} href={topBarLink.href} className="cu-topbar--parent-link">
+                  {topBarLink.title}
+                </a>
+              )}
+              {topBarLink.submenu && (
+                <TopBar.SubMenu label={topBarLink.title}>
+                  {topBarLink.submenu.map((topBarSubLink, s) => (
+                    <a key={s} href={topBarSubLink.href} className="cu-topbar--more-nav">
+                      {topBarSubLink.title}
+                    </a>
+                  ))}
+                </TopBar.SubMenu>
+              )}
+            </>
+          ))}
         </TopBar.Menu>
         <TopBar.Aside />
       </TopBar.Primary>
@@ -92,24 +90,11 @@ export const Double: Story = {
       </TopBar.Primary>
       <TopBar.Secondary>
         <TopBar.Menu>
-          <a href="/" className="cu-topbar--parent-link">
-            LINK1
-          </a>
-          <a href="/" className="cu-topbar--parent-link">
-            LINK2
-          </a>
-          <a href="/" className="cu-topbar--parent-link">
-            LINK3
-          </a>
-          <a href="/" className="cu-topbar--parent-link">
-            LINK4
-          </a>
-          <a href="/" className="cu-topbar--parent-link">
-            LINK5
-          </a>
-          <a href="/" className="cu-topbar--parent-link">
-            LINK6
-          </a>
+          {TopBarDataDouble.map((topBarLink, index) => (
+            <a key={index} href={topBarLink.href} className="cu-topbar--parent-link">
+              {topBarLink.title}
+            </a>
+          ))}
         </TopBar.Menu>
       </TopBar.Secondary>
     </TopBar>
