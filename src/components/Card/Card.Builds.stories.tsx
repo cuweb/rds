@@ -112,9 +112,9 @@ export const VideoCard: Story = {
   },
 }
 
-export const NumberCard: Story = {
+export const StatCard: Story = {
   args: {
-    border: 'red',
+    hasBorder: true,
     noLink: true,
     children: (
       <Card.Content>

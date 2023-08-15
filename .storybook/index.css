@@ -422,7 +422,7 @@ video {
   display: none;
 }
 
-[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
+[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -439,7 +439,7 @@ video {
   --tw-shadow: 0 0 #0000;
 }
 
-[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
@@ -485,7 +485,7 @@ select {
           print-color-adjust: exact;
 }
 
-[multiple],[size]:where(select:not([size="1"])) {
+[multiple] {
   background-image: initial;
   background-position: initial;
   background-repeat: unset;
@@ -1724,10 +1724,6 @@ select {
   margin-bottom: 1rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -2465,6 +2461,10 @@ select {
   white-space: nowrap;
 }
 
+.break-all {
+  word-break: break-all;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -2570,6 +2570,10 @@ select {
 
 .border-solid {
   border-style: solid;
+}
+
+.border-none {
+  border-style: none;
 }
 
 .border-cu-black-100 {
@@ -2985,10 +2989,6 @@ select {
   padding-bottom: 0.5rem;
 }
 
-.pb-2\.5 {
-  padding-bottom: 0.625rem;
-}
-
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -3055,10 +3055,6 @@ select {
 
 .pt-1 {
   padding-top: 0.25rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .pt-2 {
@@ -6491,32 +6487,6 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.prose-headings\:mb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  margin-bottom: 1.5rem;
-}
-
-.prose-headings\:pb-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  padding-bottom: 1.5rem;
-}
-
-.prose-headings\:font-semibold :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  font-weight: 600;
-}
-
-.prose-headings\:text-cu-black-800 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  --tw-text-opacity: 1;
-  color: rgb(51 51 51 / var(--tw-text-opacity));
-}
-
-.prose-p\:leading-9 :is(:where(p):not(:where([class~="not-prose"] *))) {
-  line-height: 2.25rem;
-}
-
-.prose-p\:text-cu-black-800 :is(:where(p):not(:where([class~="not-prose"] *))) {
-  --tw-text-opacity: 1;
-  color: rgb(51 51 51 / var(--tw-text-opacity));
-}
-
 .prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"] *))) {
   width: 100%;
 }
@@ -6967,10 +6937,6 @@ select {
     padding-bottom: 2rem;
   }
 
-  .md\:pl-12 {
-    padding-left: 3rem;
-  }
-
   .md\:pt-14 {
     padding-top: 3.5rem;
   }
@@ -7041,6 +7007,10 @@ select {
 
   .md\:leading-10 {
     line-height: 2.5rem;
+  }
+
+  .md\:leading-8 {
+    line-height: 2rem;
   }
 
   .md\:leading-9 {
@@ -7127,12 +7097,6 @@ select {
   }
 }
 
-@media (min-width: 768px) {
-  .prose-p\:md\:text-\[22px\] :is(:where(p):not(:where([class~="not-prose"] *))) {
-    font-size: 22px;
-  }
-}
-
 @media (min-width: 1024px) {
   .lg\:-mx-8 {
     margin-left: -2rem;
@@ -7141,10 +7105,6 @@ select {
 
   .lg\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .lg\:mb-8 {
-    margin-bottom: 2rem;
   }
 
   .lg\:block {

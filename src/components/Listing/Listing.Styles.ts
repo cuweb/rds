@@ -28,6 +28,7 @@ export const metaStyles = {
   bold: `font-semibold text-cyan-600`,
   alignIcon: `flex`,
   redIcon: `mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300`,
+  wrap: `break-all`,
 }
 
 export const eventStyles = {

@@ -34,7 +34,7 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
     }: PropsWithChildren<LinkProps>,
     ref,
   ) => {
-    const [rdsLink, setRdsLink] = useState<any>()
+    const [rdsLink, setRdsLink] = useState<React.ReactNode>()
     const LinkParams = {
       href,
       as,
