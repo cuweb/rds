@@ -10,6 +10,8 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export interface AlertBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
+  textSize?: 'small' | 'large'
+  isPersistent?: boolean
 }
 
 const Alerter = ({ children }: PropsWithChildren) => {
@@ -21,15 +23,18 @@ const Alerter = ({ children }: PropsWithChildren) => {
 }
 
 const Title = ({ children }: PropsWithChildren) => {
-  return <h3 className="text-sm font-medium">{children}</h3>
+  return <h3 className="font-medium ">{children}</h3>
 }
 
 const Content = ({ children }: PropsWithChildren) => {
-  return <div className="mt-2 text-sm">{children}</div>
+  return <div className="mt-2 ">{children}</div>
 }
 
-const AlertBase = ({ children, type }: PropsWithChildren<AlertBaseProps>) => {
+const AlertBase = ({ children, type, textSize = 'small', isPersistent = false }: PropsWithChildren<AlertBaseProps>) => {
   const [showAlert, setShowAlert] = useState(true)
+
+  const alertTextSize = textSize === 'small' ? 'text-sm' : 'text-lg'
+  const alertIconSize = textSize === 'small' ? 'h-5 w-5' : 'h-8 w-8'
 
   const AlertTypes = {
     success: {
@@ -69,23 +74,25 @@ const AlertBase = ({ children, type }: PropsWithChildren<AlertBaseProps>) => {
         <div className="flex">
           <div className="flex-shrink-0">
             {React.createElement(AlertTypes[type].icon, {
-              className: `h-5 w-5 ${AlertTypes[type].text}`,
+              className: `${alertIconSize} ${AlertTypes[type].text}`,
               'aria-hidden': 'true',
             })}
           </div>
-          <div className={`ml-3 ${AlertTypes[type].text}`}>{children}</div>
+          <div className={`ml-3 ${AlertTypes[type].text} ${alertTextSize}`}>{children}</div>
           <div className="ml-auto pl-3">
             <div className="-mx-1.5 -my-1.5">
-              <button
-                type="button"
-                className={`inline-flex rounded-md ${AlertTypes[type].bg} p-1.5 ${AlertTypes[type].text} hover:${AlertTypes[type].bg} focus:outline-none focus:ring-2 focus:ring-offset-2`}
-                onClick={() => {
-                  setShowAlert(false)
-                }}
-              >
-                <span className="sr-only">Dismiss</span>
-                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
+              {!isPersistent && (
+                <button
+                  type="button"
+                  className={`inline-flex rounded-md ${AlertTypes[type].bg} p-1.5 ${AlertTypes[type].text} hover:${AlertTypes[type].bg} focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                  onClick={() => {
+                    setShowAlert(false)
+                  }}
+                >
+                  <span className="sr-only">Dismiss</span>
+                  <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                </button>
+              )}
             </div>
           </div>
         </div>
