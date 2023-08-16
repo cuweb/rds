@@ -27,13 +27,13 @@ export const TopBarMoreNav = ({ sideMenu }: TopBarMoreNavProps) => {
         <Menu.Items as="nav" className={`cu-topbar--dropdown ${navDropDownStyles.moreMenuContainer}`}>
           {sideMenu.map((sideMenuItem, index: number) => (
             <>
-              {!sideMenuItem.props.children[1] && (
+              {!sideMenuItem.props.children[1]?.props.label && (
                 <li className="cu-topbar--more-nav" key={'main-' + index}>
                   {sideMenuItem}
                 </li>
               )}
 
-              {sideMenuItem.props.children[1] && (
+              {sideMenuItem.props.children[1]?.props.label && (
                 <Disclosure key={'disclose-' + index}>
                   {({ open }) => (
                     <>
