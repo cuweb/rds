@@ -27,30 +27,33 @@ export const TopBarMoreNav = ({ sideMenu }: TopBarMoreNavProps) => {
         <Menu.Items as="nav" className={`cu-topbar--dropdown ${navDropDownStyles.moreMenuContainer}`}>
           {sideMenu.map((sideMenuItem, index: number) => (
             <>
-              {!Array.isArray(sideMenuItem.props.children) && (
+              {!sideMenuItem.props.children[1] && (
                 <li className="cu-topbar--more-nav" key={'main-' + index}>
                   {sideMenuItem}
                 </li>
               )}
-              {Array.isArray(sideMenuItem.props.children) && (
-                <Disclosure  key={'disclose-' + index}>
+
+              {sideMenuItem.props.children[1] && (
+                <Disclosure key={'disclose-' + index}>
                   {({ open }) => (
                     <>
                       <ul className={navDropDownStyles.moreMenuDropDown}>
                         <Disclosure.Button
                           className={`${open ? 'text-cu-red' : ''} ${navDropDownStyles.moreMenuParentItem}`}
                         >
-                          {sideMenuItem.props.label}
+                          {sideMenuItem.props.children[1]?.props.label}
                           <ChevronRightIcon
                             className={`${open ? 'rotate-90' : ''} ${navDropDownStyles.moreMenuParentArrow}`}
                           />
                         </Disclosure.Button>
                         <Disclosure.Panel as="ul" className="pb-2">
-                          {sideMenuItem.props.children.map((navSubMenuItem: React.ReactElement, index: number) => (
-                            <li key={'sub-' + index}>
-                              <Disclosure.Button as={Fragment}>{navSubMenuItem}</Disclosure.Button>
-                            </li>
-                          ))}
+                          {sideMenuItem.props.children[1]?.props.children.map(
+                            (navSubMenuItem: React.ReactElement, index: number) => (
+                              <li key={'sub-' + index}>
+                                <Disclosure.Button as={Fragment}>{navSubMenuItem}</Disclosure.Button>
+                              </li>
+                            ),
+                          )}
                         </Disclosure.Panel>
                       </ul>
                     </>

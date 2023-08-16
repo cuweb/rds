@@ -21,11 +21,11 @@
 }
 
 /* navDropDownStyles.dropDownContainer */
-.cu-topbar--dropdown a {
+.cu-topbar--dropdown {
   @apply absolute -ml-3 mt-2.5 w-64 max-w-xs overflow-hidden rounded border border-cu-black-100 bg-white shadow-lg;
 }
 
 /* navDropDownStyles.dropDownItems */
-.cu-topbar--more-nav a {
+.cu-topbar--more-nav {
   @apply block border-b border-b-cu-black-50 px-5 py-4 text-sm font-medium text-cu-black-600 last:border-b-0 hover:bg-cu-black-50/50 hover:text-cu-black-900;
 }

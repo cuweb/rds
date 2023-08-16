@@ -3,10 +3,9 @@ import { InView } from 'react-intersection-observer'
 import { TopBarMoreNav } from './TopBarMoreNav'
 import { navItemStyles } from './TopBar.Styles'
 
-export const TopBarMenu = (props: PropsWithChildren) => {
+export const TopBarMenu = ({ children }: PropsWithChildren) => {
   // create sub menu for invisible items
   const [sideMenu, setSideMenu] = useState<React.ReactElement[]>([])
-  const navLinks = props.children
 
   // add or remove menu item to sub menu based on visisbility
   const updateMenu = (inView: boolean, entry: IntersectionObserverEntry, menuItem: React.ReactElement) => {
@@ -21,10 +20,10 @@ export const TopBarMenu = (props: PropsWithChildren) => {
 
   return (
     <>
-      {navLinks && (
+      {children && (
         <>
           <ul className={`${navItemStyles.navWrapper}`}>
-            {React.Children.map(navLinks, (navMenuItem, index: number) => (
+            {React.Children.map(children, (navMenuItem, index: number) => (
               <InView
                 key={'nav-' + index}
                 threshold={0.99}
