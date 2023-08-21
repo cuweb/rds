@@ -88,3 +88,34 @@ export const Stacked: Story = {
     </Alert.Alerter>
   ),
 }
+
+export const Persistant: Story = {
+  render: (args) => (
+    <Alert.Alerter>
+      <Alert key={111} type={args.type} isPersistent textSize={args.textSize}>
+        <Alert.Title>Success</Alert.Title>
+        <Alert.Content>Successfully created</Alert.Content>
+      </Alert>
+    </Alert.Alerter>
+  ),
+}
+
+Persistant.args = {
+  type: 'success',
+}
+
+export const LargeText: Story = {
+  render: (args) => (
+    <Alert.Alerter>
+      <Alert key={111} type={args.type} textSize={args.textSize} isPersistent>
+        <Alert.Title>Success</Alert.Title>
+        <Alert.Content>Successfully created</Alert.Content>
+      </Alert>
+    </Alert.Alerter>
+  ),
+}
+
+LargeText.args = {
+  type: 'success',
+  textSize: 'large',
+}
