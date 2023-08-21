@@ -9,8 +9,8 @@ export interface UploadProps {
   name: string
   type?: string
   onUpload: (x: File) => Promise<string>
-  onValidate: (x: HTMLImageElement) => boolean
-  onReset: (x: string) => string
+  onValidate: (x: HTMLImageElement, f: boolean, i: boolean) => boolean
+  onReset: (x: string) => Promise<string>
   setPreview: (x: string | ArrayBuffer | null | undefined) => void
   required?: boolean | undefined
   condition?: () => boolean
@@ -50,7 +50,7 @@ export const Upload = ({
         validateImage.src = `${e.target?.result}`
         validateImage.onload = async () => {
           // validate file
-          const failed = onValidate(validateImage)
+          const failed = onValidate(validateImage, !!validateImage, file.type.startsWith('image/'))
           setImageCheck('')
           if (failed) {
             setImageCheck('Image needs to be 1600x700')

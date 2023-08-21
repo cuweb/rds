@@ -42,15 +42,15 @@ export const Default: Story = {
   ),
 }
 
-const onValidate = (image: HTMLImageElement) => {
-  return image.width === 1600 && image.height === 700
+const onValidate = (file: HTMLImageElement, fileExists: boolean, isImage: boolean) => {
+  return file && fileExists && isImage
 }
 
 const onUpload = async (file: File) => {
   return file.name
 }
 
-const onReset = (reset: string) => {
+const onReset = async (reset: string) => {
   return reset
 }
 
