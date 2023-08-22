@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface DescriptionProps {
     children: React.ReactNode;
 }

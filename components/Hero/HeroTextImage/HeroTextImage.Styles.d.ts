@@ -7,6 +7,7 @@ export declare const contentStyles: {
     contentTopSpace: string;
     header: string;
     headerOne: string;
+    headerTwo: string;
     pronoun: string;
     listItems: string;
     listLink: string;

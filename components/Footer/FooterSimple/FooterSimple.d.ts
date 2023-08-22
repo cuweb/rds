@@ -1,3 +1,4 @@
+/// <reference types="react" />
 interface PrimaryLinks {
     id: number;
     title: string;

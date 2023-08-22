@@ -1,2 +1,0 @@
-import{r as e}from"./index-ec8b93d8.js";function a({title:r,titleId:o,...t},n){return e.createElement("svg",Object.assign({xmlns:"http://www.w3.org/2000/svg",fill:"none",viewBox:"0 0 24 24",strokeWidth:1.5,stroke:"currentColor","aria-hidden":"true",ref:n,"aria-labelledby":o},t),r?e.createElement("title",{id:o},r):null,e.createElement("path",{strokeLinecap:"round",strokeLinejoin:"round",d:"M8.25 4.5l7.5 7.5-7.5 7.5"}))}const i=e.forwardRef(a),c=i;export{c as C};
-//# sourceMappingURL=ChevronRightIcon-f8484a56.js.map

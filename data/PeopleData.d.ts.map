@@ -1,1 +1,1 @@
-{"version":3,"file":"PeopleData.d.ts","sourceRoot":"","sources":["../../../src/data/PeopleData.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,gBAAgB;;;;;;;;;;;;;;;;;;CA0B5B,CAAA;AAED,eAAO,MAAM,UAAU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAmKtB,CAAA"}
+{"version":3,"file":"PeopleData.d.ts","sourceRoot":"","sources":["../../src/data/PeopleData.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,gBAAgB;;;;;;;;;;;;;;;;;;CA0B5B,CAAA;AAED,eAAO,MAAM,UAAU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAmKtB,CAAA"}

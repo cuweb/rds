@@ -1,1 +1,1 @@
-{"version":3,"file":"CardPostMeta.d.ts","sourceRoot":"","sources":["../../../../src/components/Card/CardPostMeta.tsx"],"names":[],"mappings":"AAEA,MAAM,WAAW,iBAAiB;IAChC,IAAI,CAAC,EAAE,MAAM,GAAG,IAAI,CAAA;CACrB;AAED,eAAO,MAAM,YAAY;eAAc,iBAAiB;;CAUvD,CAAA"}
+{"version":3,"file":"CardPostMeta.d.ts","sourceRoot":"","sources":["../../../src/components/Card/CardPostMeta.tsx"],"names":[],"mappings":"AAEA,MAAM,WAAW,iBAAiB;IAChC,IAAI,CAAC,EAAE,MAAM,GAAG,IAAI,CAAA;CACrB;AAED,eAAO,MAAM,YAAY;eAAc,iBAAiB;;CAUvD,CAAA"}

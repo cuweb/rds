@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import type { FormikHelpers, FormikProps, FormikValues } from 'formik';
 export interface FormProps {
     children?: ((props: FormikProps<FormikValues>) => React.ReactNode) | React.ReactNode;

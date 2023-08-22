@@ -1,0 +1,2 @@
+import{r as o}from"./index-37ba2b57.js";import{o as c}from"./open-closed-452e92a4.js";function l(e,t){let r=o.useRef([]),n=c(e);o.useEffect(()=>{let i=[...r.current];for(let[a,u]of t.entries())if(r.current[a]!==u){let f=n(t,i);return r.current=t,f}},[n,...t])}function s(){return/iPhone/gi.test(window.navigator.platform)||/Mac/gi.test(window.navigator.platform)&&window.navigator.maxTouchPoints>0}function g(){return/Android/gi.test(window.navigator.userAgent)}function d(){return s()||g()}export{l as m,d as n,s as t};
+//# sourceMappingURL=platform-c0b4c731.js.map

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface IconProps {
     icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
     color?: 'black' | 'white' | 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow';
