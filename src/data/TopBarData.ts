@@ -52,30 +52,3 @@ export const TopBarDataSingle = [
     title: 'Link6',
   },
 ]
-
-export const TopBarDataDouble = [
-  {
-    href: '/link-1',
-    title: 'Link1',
-  },
-  {
-    href: '/link-2',
-    title: 'Link2',
-  },
-  {
-    href: '/link-3',
-    title: 'Link3',
-  },
-  {
-    href: '/link-4',
-    title: 'Link4',
-  },
-  {
-    href: '/link-5',
-    title: 'Link5',
-  },
-  {
-    href: '/link-6',
-    title: 'Link6',
-  },
-]

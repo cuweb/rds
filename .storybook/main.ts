@@ -11,7 +11,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-mdx-gfm',
-    '@whitespace/storybook-addon-html',
+    // '@whitespace/storybook-addon-html',
     {
       name: '@storybook/addon-essentials',
       options: {

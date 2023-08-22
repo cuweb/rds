@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TopBar } from './TopBar'
-import { TopBarDataDouble, TopBarDataSingle } from '../../data/TopBarData'
+import { TopBarDataSingle } from '../../data/TopBarData'
 
 const meta: Meta<typeof TopBar> = {
   title: 'Components/TopBar',
@@ -90,10 +90,23 @@ export const Double: Story = {
       </TopBar.Primary>
       <TopBar.Secondary>
         <TopBar.Menu>
-          {TopBarDataDouble.map((topBarLink, index) => (
-            <a key={index} href={topBarLink.href} className="cu-topbar--parent-link">
-              {topBarLink.title}
-            </a>
+          {TopBarDataSingle.map((topBarLink, i) => (
+            <>
+              {!topBarLink.submenu && (
+                <a key={i} href={topBarLink.href} className="cu-topbar--parent-link">
+                  {topBarLink.title}
+                </a>
+              )}
+              {topBarLink.submenu && (
+                <TopBar.SubMenu label={topBarLink.title}>
+                  {topBarLink.submenu.map((topBarSubLink, s) => (
+                    <a key={s} href={topBarSubLink.href} className="cu-topbar--more-nav">
+                      {topBarSubLink.title}
+                    </a>
+                  ))}
+                </TopBar.SubMenu>
+              )}
+            </>
           ))}
         </TopBar.Menu>
       </TopBar.Secondary>
