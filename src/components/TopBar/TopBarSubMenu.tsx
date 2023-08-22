@@ -1,4 +1,4 @@
-import React, { Fragment, PropsWithChildren } from 'react'
+import { Fragment, PropsWithChildren } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { navItemStyles } from './TopBar.Styles'
