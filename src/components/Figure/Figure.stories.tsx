@@ -66,18 +66,6 @@ export const ImageCircular: Story = {
   },
 }
 
-export const ImageWithLink: Story = {
-  args: {
-    isRound: true,
-    size: 'medium',
-    children: (
-      <a href="https://carleton.ca/webservices">
-        <img src={content.image} alt={content.alt} width="400" height="266" />
-      </a>
-    ),
-  },
-}
-
 export const ImageWithCaption: Story = {
   args: {
     size: 'medium',

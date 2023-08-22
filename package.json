@@ -34,7 +34,7 @@
     "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/styles/index.css -o ./.storybook/index.css",
     "prepare": "husky install",
-    "clean": "rm -rf node_modules ; npm ci ; npm run build"
+    "clean": "rm -rf node_modules ; yarn install --frozen-lockfile"
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
@@ -47,6 +47,7 @@
     "@size-limit/file": "8.2.6",
     "@storybook/addon-a11y": "7.3.2",
     "@storybook/addon-essentials": "7.3.2",
+    "@whitespace/storybook-addon-html": "5.1.6",
     "@storybook/addon-interactions": "7.3.2",
     "@storybook/addon-links": "7.3.2",
     "@storybook/blocks": "7.3.2",
@@ -60,7 +61,7 @@
     "@typescript-eslint/parser": "6.4.1",
     "@vitejs/plugin-react": "4.0.4",
     "autoprefixer": "10.4.15",
-    "concurrently": "8.2.0",
+    "concurrently": "8.2.1",
     "cypress": "12.17.4",
     "eslint": "8.47.0",
     "eslint-config-prettier": "9.0.0",
@@ -91,6 +92,9 @@
     "vite-tsconfig-paths": "4.2.0",
     "yup": "1.2.0"
   },
+  "dependencies": {
+    "react-intersection-observer": "^9.5.2"
+  },
   "peerDependencies": {
     "@headlessui/react": "1.7.17",
     "@heroicons/react": "2.0.18",
@@ -103,7 +107,7 @@
     "tailwindcss": "3.3.3",
     "yup": "1.2.0"
   },
-  "dependencies": {
-    "react-intersection-observer": "^9.5.2"
+  "resolutions": {
+    "prettier": "^2.8.1"
   }
 }
