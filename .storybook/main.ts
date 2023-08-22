@@ -10,7 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
-    // '@whitespace/storybook-addon-html',
+    '@whitespace/storybook-addon-html',
     {
       name: '@storybook/addon-essentials',
       options: {
