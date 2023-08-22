@@ -14,13 +14,7 @@ interface Tags {
 }
 
 export const CardBadges = ({ tags }: CardBadgesProps) => {
-  return (
-    <div className={styles.badges}>
-      {tags?.category?.map((tag) => (
-        <Badge key={tag.id}>{tag.name}</Badge>
-      ))}
-    </div>
-  )
+  return <div className={styles.badges}>{tags?.category?.map((tag) => <Badge key={tag.id}>{tag.name}</Badge>)}</div>
 }
 
 CardBadges.displayName = 'Card.Badges'
