@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
 
-import { TopNav } from '../../../components/TopNav/TopNav'
+import { TopNav } from '../../../_deprecated/TopNav/TopNav'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Button } from '../../../components/Button/Button'
 import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'

@@ -5,7 +5,7 @@ import { Section } from '../../../layouts/Section/Section'
 import { Container } from '../../../layouts/Container/Container'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 
-import { TopNav } from '../../../components/TopNav/TopNav'
+import { TopNav } from '../../../_deprecated/TopNav/TopNav'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Listing } from '../../../components/Listing/Listing'
 

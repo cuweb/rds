@@ -5,7 +5,7 @@ import { Section } from '../../../layouts/Section/Section'
 import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
-import { TopNav } from '../../../components/TopNav/TopNav'
+import { TopNav } from '../../../_deprecated/TopNav/TopNav'
 import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Heading } from '../../../components/Heading/Heading'

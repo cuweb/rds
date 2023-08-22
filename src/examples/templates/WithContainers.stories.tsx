@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
-import { TopNav } from '../../components/TopNav/TopNav'
+import { TopNav } from '../../_deprecated/TopNav/TopNav'
 import { Banner } from '../../_deprecated/Banner/Banner'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 

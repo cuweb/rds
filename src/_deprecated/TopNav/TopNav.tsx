@@ -1,10 +1,10 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
-import { Avatar, UserInfoType } from '../Avatar/Avatar'
-import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
-import { Link } from '../Link/Link'
-import { Search } from '../Search/Search'
-import { TopNavLoader } from '../Loaders/TopNavLoader/TopNavLoader'
+import { Avatar, UserInfoType } from '../../components/Avatar/Avatar'
+import { DropDown, DropDownItemProps } from '../../components/DropDown/DropDown'
+import { Link } from '../../components/Link/Link'
+import { Search } from '../../components/Search/Search'
+import { TopNavLoader } from '../../components/Loaders/TopNavLoader/TopNavLoader'
 import { useCallback, useState } from 'react'
 
 export interface LinkProps {

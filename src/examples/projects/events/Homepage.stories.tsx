@@ -6,7 +6,7 @@ import { Column } from '../../../layouts/Column/Column'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 
-import { TopNav } from '../../../components/TopNav/TopNav'
+import { TopNav } from '../../../_deprecated/TopNav/TopNav'
 import { Banner } from '../../../_deprecated/Banner/Banner'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
