@@ -37,7 +37,6 @@ export { SearchForm } from './components/SearchForm/SearchForm'
 export { SocialShare } from './components/SocialShare/SocialShare'
 export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
-export { TopNav } from './_deprecated/TopNav/TopNav'
 export { TopBar } from './components/TopBar/TopBar'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
 
@@ -64,3 +63,4 @@ export type { UserInfoType } from './components/Avatar/Avatar'
 // DEPRECATED
 // -----------------
 export { Banner } from './_deprecated/Banner/Banner'
+export { TopNav } from './_deprecated/TopNav/TopNav'

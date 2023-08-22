@@ -6,8 +6,9 @@ import { Column } from '../../../layouts/Column/Column'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 
-import { TopNav } from '../../../_deprecated/TopNav/TopNav'
 import { Banner } from '../../../_deprecated/Banner/Banner'
+
+import { TopBar } from '../../../components/TopBar/TopBar'
 import { Heading } from '../../../components/Heading/Heading'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../../components/Card/Card'
@@ -29,7 +30,30 @@ type Story = StoryObj
 export const Homepage: Story = {
   render: () => (
     <>
-      <TopNav title="Events Calendar" />
+      <TopBar>
+        <TopBar.Primary>
+          <TopBar.Logo title="Events Calendar" link="https://carleton.ca/webservices">
+            <a href="https://carleton.ca" className="cu-topbar--logo">
+              <img
+                className="culogo"
+                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
+                width="130"
+                height="35"
+                alt="Logo"
+              />
+              <img
+                className="cushield"
+                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
+                width="28"
+                height="35"
+                alt="Logo"
+              />
+            </a>
+          </TopBar.Logo>
+          <TopBar.Aside />
+        </TopBar.Primary>
+      </TopBar>
+
       <Banner title="Featured Events" align="left" isType="dark-wave" maxWidth="7xl" hasOverlap />
 
       <Main hasOverlap>
