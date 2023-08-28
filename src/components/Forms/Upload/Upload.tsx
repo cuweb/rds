@@ -9,8 +9,8 @@ export interface UploadProps {
   name: string
   type?: string
   onUpload: (x: File) => Promise<string>
-  onValidate: (x: HTMLImageElement, f: boolean, i: boolean) => boolean
-  onReset: (x: string) => Promise<string>
+  onValidate: (x: HTMLImageElement, f: boolean, i: boolean) => boolean | void | { error: string }
+  onReset: (x: string) => Promise<boolean | void | string>
   setPreview: (x: string | ArrayBuffer | null | undefined) => void
   required?: boolean | undefined
   condition?: () => boolean
