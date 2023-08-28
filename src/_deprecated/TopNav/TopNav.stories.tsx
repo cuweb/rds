@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TopNav } from './TopNav'
-import { Button } from '../Button/Button'
+import { Button } from '../../components/Button/Button'
 import { PlusIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof TopNav> = {
-  title: 'Components/TopNav',
+  title: 'Deprecated/TopNav',
   component: TopNav,
   tags: ['autodocs'],
   parameters: {

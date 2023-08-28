@@ -21,12 +21,8 @@ interface Tags {
 export const ListingBadges = ({ tags }: ListingBadgesProps) => {
   return (
     <div className={styles.badges}>
-      {tags?.audience?.map((tag) => (
-        <Badge key={tag.id}>{tag.name}</Badge>
-      ))}
-      {tags?.category?.map((tag) => (
-        <Badge key={tag.id}>{tag.name}</Badge>
-      ))}
+      {tags?.audience?.map((tag) => <Badge key={tag.id}>{tag.name}</Badge>)}
+      {tags?.category?.map((tag) => <Badge key={tag.id}>{tag.name}</Badge>)}
     </div>
   )
 }

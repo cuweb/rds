@@ -24,7 +24,7 @@ export const HeroTextImageContent = ({
   return (
     <div className={`${contentStyles.contentWrapper} ${contentPadding} ${verticallyCenter}`}>
       {headerType === 'h1' && <h1 className={`${contentStyles.header} ${contentStyles.headerOne}`}>{title}</h1>}
-      {headerType === 'h2' && <h2 className={`${contentStyles.header}`}>{title}</h2>}
+      {headerType === 'h2' && <h2 className={`${contentStyles.header} ${contentStyles.headerTwo}`}>{title}</h2>}
 
       {paragraph && <p className={contentStyles.largeText}>{paragraph}</p>}
 
