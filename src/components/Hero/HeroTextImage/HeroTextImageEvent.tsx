@@ -71,7 +71,7 @@ export const HeroTextImageEvent = ({
               <li>
                 <strong className="font-semibold">Contact: </strong>
                 {contactName && contactEmail && (
-                  <a className={contentStyles.listLink} href={contactEmail}>
+                  <a className={contentStyles.listLink} href={`mailto:${contactEmail}`}>
                     {contactName}
                   </a>
                 )}
