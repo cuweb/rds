@@ -30,7 +30,7 @@ Kaltura.args = {
   children: (
     <Embed.Kaltura
       title="test"
-      url="https://mediaspace.carleton.ca/embed/secure/iframe/entryId/1_8q7610g9/uiConfId/36153741/st/0"
+      url="https://mediaspace.carleton.ca/media/WorkshopA+5+Quick+Ways+to+Make+Your+Course+More+Accessible/1_oq0u8l23"
     />
   ),
 }
