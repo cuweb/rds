@@ -8,18 +8,11 @@ export interface QuoteProps {
   align?: 'default' | 'middle'
 }
 
-export const Quote = ({
-  children,
-  cite,
-  symbol = 'default',
-  align = 'default',
-}: QuoteProps) => {
+export const Quote = ({ children, cite, symbol = 'default', align = 'default' }: QuoteProps) => {
   return (
     <>
       <div className="not-prose">
-        <blockquote
-          className={`${styles.container} ${styles.symbol[symbol]} ${styles.align[align]}`}
-        >
+        <blockquote className={`${styles.container} ${styles.symbol[symbol]} ${styles.align[align]}`}>
           {children}
           {cite && <cite className={`${styles.cite[symbol]}`}>{cite}</cite>}
         </blockquote>
