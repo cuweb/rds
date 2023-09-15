@@ -76,7 +76,7 @@
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4",
     "prop-types": "15.8.1",
-    "rds-tailwind-theme": "0.5.6",
+    "rds-tailwind-theme": "0.5.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-places-autocomplete": "7.3.0",

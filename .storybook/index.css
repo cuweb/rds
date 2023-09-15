@@ -2873,11 +2873,11 @@ select {
 }
 
 .bg-cu-waves-red {
-  background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-red.svg');
+  background-image: url('https://cdn.carleton.ca/rds/assets/graphics/cu-waves-red.svg');
 }
 
 .bg-cu-waves-white-10 {
-  background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-white-10.svg');
+  background-image: url('https://cdn.carleton.ca/rds/assets/graphics/cu-waves-white-10.svg');
 }
 
 .bg-gradient-to-b {
@@ -2890,6 +2890,10 @@ select {
 
 .bg-none {
   background-image: none;
+}
+
+.bg-quote-icon {
+  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quotation.svg");
 }
 
 .from-cu-red {
