@@ -50,3 +50,5 @@ export const ThirdOption: Story = {
 }
 
 Default.storyName = 'Default item'
+SecondOption.storyName = 'With Quotation Mark'
+ThirdOption.storyName = 'With Quotation Mark Centered'
