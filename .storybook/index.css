@@ -2659,6 +2659,10 @@ select {
   margin-right: 0.75rem;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -3417,6 +3421,11 @@ select {
   border-bottom-right-radius: 0.375rem;
 }
 
+.rounded-s {
+  border-start-start-radius: 0.25rem;
+  border-end-start-radius: 0.25rem;
+}
+
 .rounded-t-lg {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -3563,6 +3572,11 @@ select {
 .border-green-400 {
   --tw-border-opacity: 1;
   border-color: rgb(74 222 128 / var(--tw-border-opacity));
+}
+
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 
 .border-transparent {
@@ -3729,6 +3743,10 @@ select {
   background-image: none;
 }
 
+.bg-quote-icon {
+  background-image: url("https://rds-tailwind.s3.amazonaws.com/assets/quotation.svg");
+}
+
 .from-cu-red {
   --tw-gradient-from: #E91C24 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(233 28 36 / 0) var(--tw-gradient-to-position);
@@ -3759,6 +3777,10 @@ select {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
+.bg-\[length\:1\.5em\] {
+  background-size: 1.5em;
+}
+
 .bg-\[length\:100\.5\%\] {
   background-size: 100.5%;
 }
@@ -3769,6 +3791,10 @@ select {
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-\[left_top\] {
+  background-position: left top;
 }
 
 .bg-bottom {
@@ -3986,12 +4012,20 @@ select {
   padding-left: 0.75rem;
 }
 
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
 
 .pl-6 {
   padding-left: 1.5rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .pr-2 {

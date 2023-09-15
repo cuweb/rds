@@ -13,42 +13,66 @@ const meta: Meta<typeof Quote> = {
 }
 
 export default meta
-
 type Story = StoryObj<typeof Quote>
 
 export const Default: Story = {
-  render: () => (
-    <Quote cite="John Doe">
+  args: {
+    cite: 'John Doe',
+    children: (
       <p>
         Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
         reprehenderit ducimus.
       </p>
-    </Quote>
-  ),
+    ),
+  },
 }
 
-export const SecondOption: Story = {
-  render: () => (
-    <Quote cite="John Doe" symbol="quote">
+export const QuoteMark: Story = {
+  args: {
+    cite: 'John Doe',
+    symbol: 'quote',
+    children: (
       <p>
         Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
         reprehenderit ducimus.
       </p>
-    </Quote>
-  ),
+    ),
+  },
 }
 
-export const ThirdOption: Story = {
-  render: () => (
-    <Quote cite="John Doe" symbol="quote" align="middle">
-      <p>
-        Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-    </Quote>
-  ),
-}
+// export const OldDefault: Story = {
+//   render: () => (
+//     <Quote cite="John Doe">
+//       <p>
+//         Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+//         reprehenderit ducimus.
+//       </p>
+//     </Quote>
+//   ),
+// }
 
-Default.storyName = 'Default item'
-SecondOption.storyName = 'With Quotation Mark'
-ThirdOption.storyName = 'With Quotation Mark Centered'
+// export const SecondOption: Story = {
+//   render: () => (
+//     <Quote cite="John Doe" symbol="quote">
+//       <p>
+//         Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+//         reprehenderit ducimus.
+//       </p>
+//     </Quote>
+//   ),
+// }
+
+// export const ThirdOption: Story = {
+//   render: () => (
+//     <Quote cite="John Doe" symbol="quote" align="middle">
+//       <p>
+//         Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+//         reprehenderit ducimus.
+//       </p>
+//     </Quote>
+//   ),
+// }
+
+// Default.storyName = 'Default item'
+// SecondOption.storyName = 'With Quotation Mark'
+// ThirdOption.storyName = 'With Quotation Mark Centered'
