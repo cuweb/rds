@@ -26,16 +26,15 @@ module.exports = {
         },
       }),
       backgroundImage: {
-        'cu-waves-red':
-          "url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-red.svg')",
-        'cu-waves-white-10':
-          "url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-white-10.svg')",
+        'cu-waves-red': "url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-red.svg')",
+        'cu-waves-white-10': "url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-white-10.svg')",
+        'quote-icon': 'url("https://rds-tailwind.s3.amazonaws.com/assets/quotation.svg")',
       },
       gridTemplateColumns: {
         'left-260': '260px auto',
         'split-40-60': '40% auto',
         'split-60-40': 'auto 40%',
-        'split-80-20': 'auto 20%'
+        'split-80-20': 'auto 20%',
       },
       boxShadow: {
         'hero-text-image': '0 8px 8px -12px rgba(0, 0, 0, 0.3)',
@@ -72,10 +71,10 @@ module.exports = {
   },
   variants: {},
   plugins: [
-      require('@tailwindcss/aspect-ratio'),
-      require('@tailwindcss/container-queries'),
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/typography')
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
   // theme: {
   //   extend: {},

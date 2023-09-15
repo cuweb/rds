@@ -39,6 +39,7 @@ export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
 export { TopBar } from './components/TopBar/TopBar'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
+export { Quote } from './components/Quote/Quote'
 
 //
 // Layouts
