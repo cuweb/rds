@@ -9,7 +9,6 @@ export declare const ImageMedium: Story;
 export declare const ImageSmall: Story;
 export declare const ImageRounded: Story;
 export declare const ImageCircular: Story;
-export declare const ImageWithLink: Story;
 export declare const ImageWithCaption: Story;
 export declare const ImageWithShadow: Story;
 export declare const ImageFloatLeft: Story;
