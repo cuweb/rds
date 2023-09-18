@@ -22,6 +22,7 @@ export { HeroTextImage } from './components/Hero/HeroTextImage/HeroTextImage';
 export { Icon } from './components/Icon/Icon';
 export { Link } from './components/Link/Link';
 export { Listing } from './components/Listing/Listing';
+export { ListingLoader } from './components/Loaders/ListingLoader/ListingLoader';
 export { Location } from './components/Location/Location';
 export { LocationPicker } from './components/LocationPicker/LocationPicker';
 export { Meta } from './components/Meta/Meta';
