@@ -4,17 +4,17 @@ import { styles } from './Quote.styles'
 export interface QuoteProps {
   children?: React.ReactNode
   cite?: string
-  symbol?: 'default' | 'quote'
+  graphic?: 'border' | 'quote'
   align?: 'default' | 'middle'
 }
 
-export const Quote = ({ children, cite, symbol = 'default', align = 'default' }: QuoteProps) => {
+export const Quote = ({ children, cite, graphic = 'border', align = 'default' }: QuoteProps) => {
   return (
     <>
       <div className="not-prose">
-        <blockquote className={`${styles.container} ${styles.symbol[symbol]} ${styles.align[align]}`}>
+        <blockquote className={`${styles.container} ${styles.graphic[graphic]} ${styles.align[align]}`}>
           {children}
-          {cite && <cite className={`${styles.cite[symbol]}`}>{cite}</cite>}
+          {cite && <cite className={`${styles.cite}`}>{cite}</cite>}
         </blockquote>
       </div>
     </>
