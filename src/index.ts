@@ -32,6 +32,7 @@ export { Modal } from './components/Modal/Modal'
 export { MultiDayCalendar } from './components/MultiDayCalendar/MultiDayCalendar'
 export { PageLoader } from './components/Loaders/PageLoader/PageLoader'
 export { Pagination } from './components/Pagination/Pagination'
+export { Quote } from './components/Quote/Quote'
 export { Search } from './components/Search/Search'
 export { SearchForm } from './components/SearchForm/SearchForm'
 export { SocialShare } from './components/SocialShare/SocialShare'
@@ -39,7 +40,6 @@ export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
 export { TopBar } from './components/TopBar/TopBar'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
-export { Quote } from './components/Quote/Quote'
 
 //
 // Layouts
