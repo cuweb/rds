@@ -1,0 +1,31 @@
+/* TopBar Components */
+
+/* from navLogoTitle.cuLogoLink */
+.cu-topbar--logo a {
+  @apply shrink-0;
+}
+
+/* from navLogoTitle.cuLogo */
+.cu-topbar--logo .culogo {
+  @apply hidden h-[35px] w-[130px] shrink-0 md:block;
+}
+
+/* from navLogoTitle.cuShield */
+.cu-topbar--logo .cushield {
+  @apply block h-[35px] w-[28px] shrink-0 md:hidden;
+}
+
+/* from navItemStyles.navItem */
+.cu-topbar--parent-link > a {
+  @apply whitespace-nowrap text-sm font-medium text-cu-black-600 hover:text-cu-red;
+}
+
+/* navDropDownStyles.dropDownContainer */
+.cu-topbar--dropdown {
+  @apply absolute -ml-3 mt-2.5 w-64 max-w-xs overflow-hidden rounded border border-cu-black-100 bg-white shadow-lg;
+}
+
+/* navDropDownStyles.dropDownItems */
+.cu-topbar--more-nav {
+  @apply block border-b border-b-cu-black-50 px-5 py-4 text-sm font-medium text-cu-black-600 last:border-b-0 hover:bg-cu-black-50/50 hover:text-cu-black-900;
+}

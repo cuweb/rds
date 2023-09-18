@@ -6,8 +6,9 @@ import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 import { Article } from '../../../layouts/Article/Article'
 
-import { TopNav } from '../../../components/TopNav/TopNav'
 import { Banner } from '../../../_deprecated/Banner/Banner'
+
+import { TopBar } from '../../../components/TopBar/TopBar'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Button } from '../../../components/Button/Button'
 import { Listing } from '../../../components/Listing/Listing'
@@ -63,7 +64,30 @@ const EventContent = () => {
 export const SingleEvent: Story = {
   render: () => (
     <>
-      <TopNav title="Events Calendar" />
+      <TopBar>
+        <TopBar.Primary>
+          <TopBar.Logo title="Events Calendar" link="https://carleton.ca/webservices">
+            <a href="https://carleton.ca" className="cu-topbar--logo">
+              <img
+                className="culogo"
+                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
+                width="130"
+                height="35"
+                alt="Logo"
+              />
+              <img
+                className="cushield"
+                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
+                width="28"
+                height="35"
+                alt="Logo"
+              />
+            </a>
+          </TopBar.Logo>
+          <TopBar.Aside />
+        </TopBar.Primary>
+      </TopBar>
+
       <Banner
         title="Single Event Post Template"
         align="left"
