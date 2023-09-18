@@ -30,6 +30,7 @@ export { Modal } from './components/Modal/Modal';
 export { MultiDayCalendar } from './components/MultiDayCalendar/MultiDayCalendar';
 export { PageLoader } from './components/Loaders/PageLoader/PageLoader';
 export { Pagination } from './components/Pagination/Pagination';
+export { Quote } from './components/Quote/Quote';
 export { Search } from './components/Search/Search';
 export { SearchForm } from './components/SearchForm/SearchForm';
 export { SocialShare } from './components/SocialShare/SocialShare';
