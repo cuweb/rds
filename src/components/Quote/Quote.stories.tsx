@@ -30,7 +30,7 @@ export const Default: Story = {
 export const QuoteMark: Story = {
   args: {
     cite: 'John Doe',
-    symbol: 'quote',
+    graphic: 'quote',
     children: (
       <p>
         Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
