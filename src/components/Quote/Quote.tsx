@@ -5,14 +5,16 @@ export interface QuoteProps {
   children?: React.ReactNode
   cite?: string
   graphic?: 'border' | 'quote'
-  align?: 'default' | 'middle'
+  isCenter?: boolean
 }
 
-export const Quote = ({ children, cite, graphic = 'border', align = 'default' }: QuoteProps) => {
+export const Quote = ({ children, cite, graphic = 'border', isCenter }: QuoteProps) => {
+  const centerQuote = isCenter ? 'max-w-3xl mx-auto' : 'max-w-3xl mr-auto'
+
   return (
     <>
       <div className="not-prose">
-        <blockquote className={`${styles.container} ${styles.graphic[graphic]} ${styles.align[align]}`}>
+        <blockquote className={`${styles.container} ${styles.graphic[graphic]} ${centerQuote}`}>
           {children}
           {cite && <cite className={`${styles.cite}`}>{cite}</cite>}
         </blockquote>
