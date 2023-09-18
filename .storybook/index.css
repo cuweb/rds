@@ -2841,6 +2841,34 @@ select {
   height: 100%;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
+.h-\[60rem\] {
+  height: 60rem;
+}
+
+.h-60 {
+  height: 15rem;
+}
+
+.h-\[266px\] {
+  height: 266px;
+}
+
+.h-\[180px\] {
+  height: 180px;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
@@ -2965,8 +2993,68 @@ select {
   width: 1px;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[340px\] {
+  width: 340px;
+}
+
+.w-\[330px\] {
+  width: 330px;
+}
+
+.w-\[320px\] {
+  width: 320px;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[55\%\] {
+  width: 55%;
+}
+
+.w-\[65\%\] {
+  width: 65%;
+}
+
+.w-\[85\%\] {
+  width: 85%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .min-w-full {
   min-width: 100%;
+}
+
+.min-w-\[35\%\] {
+  min-width: 35%;
+}
+
+.min-w-\[55\%\] {
+  min-width: 55%;
+}
+
+.min-w-\[65\%\] {
+  min-width: 65%;
+}
+
+.min-w-\[85\%\] {
+  min-width: 85%;
+}
+
+.min-w-\[95\%\] {
+  min-width: 95%;
 }
 
 .max-w-3xl {
@@ -3197,6 +3285,10 @@ select {
 
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-row-reverse {
@@ -3701,6 +3793,11 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
+.bg-cu-black-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -3946,6 +4043,11 @@ select {
   padding-bottom: 2rem;
 }
 
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -4048,6 +4150,14 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
+}
+
+.pr-8 {
+  padding-right: 2rem;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .text-left {
@@ -9333,12 +9443,20 @@ select {
 
 @container (min-width: 32rem) {
   @media (min-width: 768px) {
+    .\@lg\:md\:h-\[180px\] {
+      height: 180px;
+    }
+
     .\@lg\:md\:max-w-\[25\%\] {
       max-width: 25%;
     }
 
     .\@lg\:md\:max-w-\[35\%\] {
       max-width: 35%;
+    }
+
+    .\@lg\:md\:flex-row {
+      flex-direction: row;
     }
 
     .\@lg\:md\:text-lg {
