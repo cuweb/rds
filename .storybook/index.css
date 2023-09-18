@@ -1946,10 +1946,6 @@ select {
   height: 10rem;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .h-48 {
   height: 12rem;
 }
@@ -1966,6 +1962,10 @@ select {
   height: 1.5rem;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
@@ -1976,6 +1976,10 @@ select {
 
 .h-96 {
   height: 24rem;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[35px\] {
@@ -2116,6 +2120,10 @@ select {
 
 .w-px {
   width: 1px;
+}
+
+.min-w-\[35\%\] {
+  min-width: 35%;
 }
 
 .min-w-full {
@@ -3091,6 +3099,11 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -3173,8 +3186,8 @@ select {
   padding-left: 1.5rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .pr-2 {
@@ -7406,12 +7419,24 @@ select {
 
 @container (min-width: 32rem) {
   @media (min-width: 768px) {
+    .\@lg\:md\:h-\[180px\] {
+      height: 180px;
+    }
+
     .\@lg\:md\:max-w-\[25\%\] {
       max-width: 25%;
     }
 
     .\@lg\:md\:max-w-\[35\%\] {
       max-width: 35%;
+    }
+
+    .\@lg\:md\:flex-row {
+      flex-direction: row;
+    }
+
+    .\@lg\:md\:gap-8 {
+      gap: 2rem;
     }
 
     .\@lg\:md\:text-lg {
