@@ -8424,10 +8424,10 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-rds-tailwind-theme@0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/rds-tailwind-theme/-/rds-tailwind-theme-0.5.6.tgz#7021854a939cb8310f298f5ad860008cbb63b8ca"
-  integrity sha512-Xk2bhesQFC1kwDy+dsGX720ruQcx9SMNMJNvg9jy724YfgnvjT+BbgRg2DQi+jd3bC3/Shtw+4p/ploPsQ4HJg==
+rds-tailwind-theme@0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/rds-tailwind-theme/-/rds-tailwind-theme-0.5.7.tgz#8a97d979bbb73f36f807dbc2ec4d99627556004a"
+  integrity sha512-Ed3LWtW+RzSyNrbNhT93YvUjvZQxBiItaHif051QS37hbOLjFX3oZ4h56viuKDWdfvvRW/R6SkYgnXH0yk6HcQ==
   dependencies:
     "@tailwindcss/aspect-ratio" "^0.4.2"
     "@tailwindcss/container-queries" "^0.1.1"
