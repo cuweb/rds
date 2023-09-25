@@ -1,0 +1,2 @@
+import{j as o}from"./jsx-runtime-7ce7b810.js";import{F as e}from"./FooterLogoLinks-3248a61a.js";const t=()=>o.jsxs("footer",{className:"cu-footerbasic not-prose bg-cu-black-900 bg-cu-waves-red bg-cover bg-bottom pt-8 sm:pt-12","aria-labelledby":"footer-heading",children:[o.jsx("h2",{id:"footer-heading",className:"sr-only",children:"Footer"}),o.jsx(e,{})]});export{t as F};
+//# sourceMappingURL=FooterBasic-88d029f3.js.map

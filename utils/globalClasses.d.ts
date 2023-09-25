@@ -1,5 +1,7 @@
 export declare const proseStyles: {
     base: string;
+    proseText: string;
+    proseImage: string;
 };
 export declare const footerStyles: {
     wave: string;
