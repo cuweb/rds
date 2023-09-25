@@ -4311,10 +4311,15 @@ camelcase@^5.3.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001517, caniuse-lite@^1.0.30001520:
+caniuse-lite@^1.0.30001517:
   version "1.0.30001522"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001522.tgz#44b87a406c901269adcdb834713e23582dd71856"
   integrity sha512-TKiyTVZxJGhsTszLuzb+6vUZSjVOAhClszBr2Ta2k9IwtNBT/4dzmL6aywt0HCgEZlmwJzXJd8yNiob6HgwTRg==
+
+caniuse-lite@^1.0.30001520:
+  version "1.0.30001539"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001539.tgz#325a387ab1ed236df2c12dc6cd43a4fff9903a44"
+  integrity sha512-hfS5tE8bnNiNvEOEkm8HElUHroYwlqMMENEzELymy77+tJ6m+gA2krtHl5hxJaj71OlpC2cHZbdSMX1/YEqEkA==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -5923,9 +5928,9 @@ forwarded@0.2.0:
   integrity sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==
 
 fraction.js@^4.2.0:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.1.tgz#14b4cc886575a5684f8d5fd5759c5db376bb7bb8"
-  integrity sha512-/KxoyCnPM0GwYI4NN0Iag38Tqt+od3/mLuguepLgCAKPn0ZhC544nssAW0tG2/00zXEYl9W+7hwAIpLHo6Oc7Q==
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.6.tgz#e9e3acec6c9a28cf7bc36cbe35eea4ceb2c5c92d"
+  integrity sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==
 
 fresh@0.5.2:
   version "0.5.2"
@@ -8424,10 +8429,10 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-rds-tailwind-theme@0.5.7:
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/rds-tailwind-theme/-/rds-tailwind-theme-0.5.7.tgz#8a97d979bbb73f36f807dbc2ec4d99627556004a"
-  integrity sha512-Ed3LWtW+RzSyNrbNhT93YvUjvZQxBiItaHif051QS37hbOLjFX3oZ4h56viuKDWdfvvRW/R6SkYgnXH0yk6HcQ==
+rds-tailwind-theme@0.5.8:
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/rds-tailwind-theme/-/rds-tailwind-theme-0.5.8.tgz#e7a92a6b236d335e87027601dee35f0e83d5a62a"
+  integrity sha512-lgnoAhPgMXUb0rPmz+NWu/upGGWaTzU2esm2vwhJJh4zJEPKcDahJzWMwQZoq33AweML3PRCWCojZGRwXzGYCA==
   dependencies:
     "@tailwindcss/aspect-ratio" "^0.4.2"
     "@tailwindcss/container-queries" "^0.1.1"
