@@ -7,6 +7,8 @@ export const proseStyles = {
   base: `prose prose-rds max-w-none ${proseText} ${proseImage} ${proseQuote} ${proseHeaderFour}`,
   proseText,
   proseImage,
+  proseQuote,
+  proseHeaderFour,
 }
 
 export const footerStyles = {
