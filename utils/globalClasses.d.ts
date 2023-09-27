@@ -2,6 +2,8 @@ export declare const proseStyles: {
     base: string;
     proseText: string;
     proseImage: string;
+    proseQuote: string;
+    proseHeaderFour: string;
 };
 export declare const footerStyles: {
     wave: string;

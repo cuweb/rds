@@ -1,0 +1,2 @@
+import{j as e}from"./jsx-runtime-7ce7b810.js";import{p as a}from"./globalClasses-6a63fecc.js";const s=({children:t,content:r})=>e.jsxs(e.Fragment,{children:[r&&e.jsx("article",{className:`cu-article ${a.base}`,dangerouslySetInnerHTML:{__html:r}}),!r&&e.jsx("article",{className:`cu-article ${a.base}`,children:t})]});try{s.displayName="Article",s.__docgenInfo={description:"",displayName:"Article",props:{content:{defaultValue:null,description:"",name:"content",required:!1,type:{name:"string"}}}}}catch{}export{s as A};
+//# sourceMappingURL=Article-61f5ef19.js.map
