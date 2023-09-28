@@ -15,6 +15,28 @@ const meta: Meta<typeof Embed> = {
 export default meta
 type Story = StoryObj<typeof Embed>
 
+export const YouTube: Story = {
+  name: 'YouTube',
+}
+YouTube.args = {
+  children: <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />,
+}
+
+export const Vimeo: Story = {}
+Vimeo.args = {
+  children: <Embed.Vimeo title="test" url="https://vimeo.com/106595658" />,
+}
+
+export const Kaltura: Story = {}
+Kaltura.args = {
+  children: (
+    <Embed.Kaltura
+      title="test"
+      url="https://mediaspace.carleton.ca/media/WorkshopA+5+Quick+Ways+to+Make+Your+Course+More+Accessible/1_oq0u8l23"
+    />
+  ),
+}
+
 export const PowerBi: Story = {}
 PowerBi.args = {
   children: (
@@ -25,12 +47,12 @@ PowerBi.args = {
   ),
 }
 
-export const Kaltura: Story = {}
-Kaltura.args = {
+export const TED: Story = {}
+TED.args = {
   children: (
-    <Embed.Kaltura
+    <Embed.TED
       title="test"
-      url="https://mediaspace.carleton.ca/media/WorkshopA+5+Quick+Ways+to+Make+Your+Course+More+Accessible/1_oq0u8l23"
+      url="https://www.ted.com/talks/jennifer_doudna_crispr_s_next_advance_is_bigger_than_you_think"
     />
   ),
 }
