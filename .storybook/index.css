@@ -3785,6 +3785,14 @@ select {
   }
 }
 
+.cu-column-content > *:first-child {
+  margin-top: 0px;
+}
+
+.cu-column-content > *:last-child {
+  margin-bottom: 0px;
+}
+
 /* If a container immediately follows a column component */
 
 .cu-column + .cu-container {
@@ -6809,16 +6817,8 @@ select {
   border-radius: 0.375rem;
 }
 
-.prose-blockquote\:border-4 :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
-  border-width: 4px;
-}
-
 .prose-blockquote\:border-l-4 :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
   border-left-width: 4px;
-}
-
-.prose-blockquote\:border-l-8 :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
-  border-left-width: 8px;
 }
 
 .prose-blockquote\:font-normal :is(:where(blockquote):not(:where([class~="not-prose"] *))) {

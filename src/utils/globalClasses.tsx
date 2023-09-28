@@ -1,12 +1,13 @@
-const proseHeaderFour = 'prose-h4:text-xl md:prose-h4:text-2xl'
-const proseText = 'prose-lg md:prose-xl'
-const proseImage = 'prose-img:w-full prose-img:rounded-lg'
-const proseQuote = 'prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4'
+export const proseGroups = {
+  base: `prose prose-rds max-w-none`,
+  text: `prose-lg md:prose-xl`,
+  image: `prose-img:w-full prose-img:rounded-lg`,
+  quote: `prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4`,
+  header: `prose-h4:text-xl md:prose-h4:text-2xl`,
+}
 
 export const proseStyles = {
-  base: `prose prose-rds max-w-none ${proseText} ${proseImage} ${proseQuote} ${proseHeaderFour}`,
-  proseText,
-  proseImage,
+  base: `${proseGroups.base} ${proseGroups.text} ${proseGroups.image} ${proseGroups.quote} ${proseGroups.header}`,
 }
 
 export const footerStyles = {
