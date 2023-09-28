@@ -34,3 +34,23 @@ Kaltura.args = {
     />
   ),
 }
+
+export const YouTube: Story = {}
+YouTube.args = {
+  children: <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=C9gmzyKc8MQ" />,
+}
+
+export const Vimeo: Story = {}
+Vimeo.args = {
+  children: <Embed.Vimeo title="test" url="https://vimeo.com/486149492" />,
+}
+
+export const TED: Story = {}
+TED.args = {
+  children: (
+    <Embed.TED
+      title="test"
+      url="https://www.ted.com/talks/jennifer_doudna_crispr_s_next_advance_is_bigger_than_you_think"
+    />
+  ),
+}
