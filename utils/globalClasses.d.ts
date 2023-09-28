@@ -1,9 +1,12 @@
+export declare const proseGroups: {
+    base: string;
+    text: string;
+    image: string;
+    quote: string;
+    header: string;
+};
 export declare const proseStyles: {
     base: string;
-    proseText: string;
-    proseImage: string;
-    proseQuote: string;
-    proseHeaderFour: string;
 };
 export declare const footerStyles: {
     wave: string;

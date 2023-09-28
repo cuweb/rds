@@ -1,1 +1,1 @@
-{"version":3,"file":"ColumnContent.d.ts","sourceRoot":"","sources":["../../../src/layouts/Column/ColumnContent.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAA;AAGzB,MAAM,WAAW,kBAAkB;IACjC,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;CAC1B;AAED,eAAO,MAAM,aAAa;mBAAkB,kBAAkB;;CAE7D,CAAA"}
+{"version":3,"file":"ColumnContent.d.ts","sourceRoot":"","sources":["../../../src/layouts/Column/ColumnContent.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAA;AAEzB,MAAM,WAAW,kBAAkB;IACjC,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;CAC1B;AAED,eAAO,MAAM,aAAa;mBAAkB,kBAAkB;;CAE7D,CAAA"}
