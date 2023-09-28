@@ -3785,6 +3785,14 @@ select {
   }
 }
 
+.cu-column-content > *:first-child {
+  margin-top: 0px;
+}
+
+.cu-column-content > *:last-child {
+  margin-bottom: 0px;
+}
+
 /* If a container immediately follows a column component */
 
 .cu-column + .cu-container {

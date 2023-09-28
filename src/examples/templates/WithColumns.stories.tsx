@@ -85,10 +85,12 @@ export const WithColumns: Story = {
 
           <Column cols="2">
             <Column.Content>
+              <DoublePara />
               <SinglePara />
             </Column.Content>
             <Column.Content>
               <SinglePara />
+              <DoublePara />
             </Column.Content>
           </Column>
 
