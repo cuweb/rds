@@ -16,10 +16,9 @@ export const EmbedTED = ({ title, url }: EmbedTEDProps) => {
 
   return (
     <iframe
-      id={`kmsembed-${lastPiece}`}
       title={title}
       src={embedURL}
-      className={`kmsembed ${styles.video}`}
+      className={`${styles.video}`}
       allowFullScreen
       allow="autoplay *; fullscreen *; encrypted-media *"
       referrerPolicy="no-referrer-when-downgrade"

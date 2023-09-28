@@ -6,20 +6,19 @@ export interface EmbedYouTubeProps {
 
 export const EmbedYouTube = ({ title, url }: EmbedYouTubeProps) => {
   let embedURL = ''
-  let lastPiece = ''
+  let videoID
 
   if (url) {
-    const urlParts = url.split('/')
-    lastPiece = urlParts[urlParts.length - 1]
-    embedURL = `https://www.youtube.com/embed/${lastPiece}`
+    const match = url.match(/(?:\/|v=)([a-zA-Z0-9_-]{11})/)
+    videoID = match ? match[1] : null
+    embedURL = `https://www.youtube.com/embed/${videoID}`
   }
 
   return (
     <iframe
-      id={`kmsembed-${lastPiece}`}
       title={title}
       src={embedURL}
-      className={`kmsembed ${styles.video}`}
+      className={`${styles.video}`}
       allowFullScreen
       allow="autoplay *; fullscreen *; encrypted-media *"
       referrerPolicy="no-referrer-when-downgrade"
