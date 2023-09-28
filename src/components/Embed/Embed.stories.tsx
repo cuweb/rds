@@ -15,14 +15,16 @@ const meta: Meta<typeof Embed> = {
 export default meta
 type Story = StoryObj<typeof Embed>
 
-export const PowerBi: Story = {}
-PowerBi.args = {
-  children: (
-    <Embed.PowerBi
-      title="test"
-      url="https://app.powerbi.com/view?r=eyJrIjoiYTU2ZTBkZjgtZDZmZS00YjliLWIwMzktN2RjMTY3YjEzM2FkIiwidCI6IjZhZDkxODk1LWRlMDYtNDg1ZS1iYzUxLWZjZTEyNmNjODUzMCIsImMiOjN9&pageName=ReportSectionc2accda99bdcb7ce79a1"
-    />
-  ),
+export const YouTube: Story = {
+  name: 'YouTube',
+}
+YouTube.args = {
+  children: <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />,
+}
+
+export const Vimeo: Story = {}
+Vimeo.args = {
+  children: <Embed.Vimeo title="test" url="https://vimeo.com/106595658" />,
 }
 
 export const Kaltura: Story = {}
@@ -35,14 +37,14 @@ Kaltura.args = {
   ),
 }
 
-export const YouTube: Story = {}
-YouTube.args = {
-  children: <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=C9gmzyKc8MQ" />,
-}
-
-export const Vimeo: Story = {}
-Vimeo.args = {
-  children: <Embed.Vimeo title="test" url="https://vimeo.com/486149492" />,
+export const PowerBi: Story = {}
+PowerBi.args = {
+  children: (
+    <Embed.PowerBi
+      title="test"
+      url="https://app.powerbi.com/view?r=eyJrIjoiYTU2ZTBkZjgtZDZmZS00YjliLWIwMzktN2RjMTY3YjEzM2FkIiwidCI6IjZhZDkxODk1LWRlMDYtNDg1ZS1iYzUxLWZjZTEyNmNjODUzMCIsImMiOjN9&pageName=ReportSectionc2accda99bdcb7ce79a1"
+    />
+  ),
 }
 
 export const TED: Story = {}
