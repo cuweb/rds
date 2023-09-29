@@ -1,7 +1,5 @@
 export declare const styles: {
     base: string;
-    powerBi: string;
-    kaltura: string;
-    video: string;
+    iframe: string;
 };
 //# sourceMappingURL=Embed.Styles.d.ts.map
