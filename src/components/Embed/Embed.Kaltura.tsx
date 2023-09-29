@@ -19,7 +19,7 @@ export const EmbedKaltura = ({ title, url }: EmbedKalturaProps) => {
       id={`kmsembed-${lastPiece}`}
       title={title}
       src={kalturaUrl}
-      className={`kmsembed ${styles.kaltura}`}
+      className={styles.iframe}
       allowFullScreen
       allow="autoplay *; fullscreen *; encrypted-media *"
       referrerPolicy="no-referrer-when-downgrade"
