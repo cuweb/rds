@@ -7302,6 +7302,11 @@ select {
     padding-bottom: 0.75rem;
   }
 
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .md\:pb-10 {
     padding-bottom: 2.5rem;
   }

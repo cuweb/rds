@@ -26,7 +26,7 @@ export const FooterDepartmental = ({
   footerButtons,
 }: FooterDepartmentalProps) => {
   return (
-    <aside className="px-8 py-6 bg-cu-black-50 md:px-10">
+    <aside className="px-8 py-6 bg-cu-black-50 md:px-10 md:py-8">
       <div className="mx-auto md:items-center md:flex max-w-7xl">
         <div className="flex flex-col gap-2">
           {deptName && (
