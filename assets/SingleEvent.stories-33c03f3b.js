@@ -1,0 +1,52 @@
+import{j as t}from"./jsx-runtime-7ce7b810.js";import{M as u}from"./Main-6cf1ae56.js";import{S as p}from"./Section-4e633831.js";import{C as r}from"./Column-9bf4cf3a.js";import{S as d}from"./StackedList-fb3cb31c.js";import{A as g}from"./Aside-d3d5e2c5.js";import{A as h}from"./Article-b3f81960.js";import{B as v}from"./Banner-3f531bcd.js";import{T as e}from"./TopBar-488a5b7c.js";import{F as x}from"./FooterBasic-167a36c9.js";import{B as a}from"./Button-cd65e780.js";import{L as i}from"./Listing-cd494030.js";import{a as j}from"./EventData-b03b4866.js";import"./index-37ba2b57.js";import"./_commonjsHelpers-de833af9.js";import"./globalClasses-fe633af6.js";import"./optionClasses-c898b830.js";import"./Panel-60389fd2.js";import"./menu-cdec7704.js";import"./open-closed-452e92a4.js";import"./use-owner-127f86a6.js";import"./use-tracked-pointer-a7a12abc.js";import"./use-resolve-button-type-39f07965.js";import"./ChevronDownIcon-2780c6ad.js";import"./transition-85fd6845.js";import"./disclosure-bb587eb4.js";import"./ChevronRightIcon-8ad439f2.js";import"./MagnifyingGlassIcon-97d62ca3.js";import"./popover-8c0ae301.js";import"./use-root-containers-6a924b7d.js";import"./index-4da2af8c.js";import"./FooterLogoLinks-cbb6f415.js";import"./Link-c4f832fd.js";import"./iframe-2f09a417.js";import"../sb-preview/runtime.js";import"./Icon-163d2856.js";import"./index-ee226d2b.js";import"./isNativeReflectConstruct-81b4d0cb.js";import"./index-4d59305e.js";import"./Badge-e7299724.js";import"./ChevronRightIcon-0ed75403.js";const lt={title:"Examples/Projects/Event Calendar"},f=()=>t.jsxs(t.Fragment,{children:[t.jsx("p",{children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna."}),t.jsx("p",{children:"Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor."}),t.jsx("img",{src:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3",alt:"",width:"1310",height:"873"}),t.jsx("p",{children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna."}),t.jsx("p",{children:"Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor."})]}),s={render:()=>t.jsxs(t.Fragment,{children:[t.jsx(e,{children:t.jsxs(e.Primary,{children:[t.jsx(e.Logo,{title:"Events Calendar",link:"https://carleton.ca/webservices",children:t.jsxs("a",{href:"https://carleton.ca",className:"cu-topbar--logo",children:[t.jsx("img",{className:"culogo",src:"https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg",width:"130",height:"35",alt:"Logo"}),t.jsx("img",{className:"cushield",src:"https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg",width:"28",height:"35",alt:"Logo"})]})}),t.jsx(e.Aside,{})]})}),t.jsx(v,{title:"Single Event Post Template",align:"left",maxWidth:"7xl",isType:"image",image:"https://carleton.ca/about/wp-content/uploads/about-header-1600w-3.jpg"}),t.jsx(u,{children:t.jsx(p,{children:t.jsxs(r,{cols:"2/3",maxWidth:"7xl",children:[t.jsx(h,{children:t.jsx(f,{})}),t.jsxs(g,{isSticky:!0,topSpace:"10",children:[t.jsxs(r,{cols:"1",gridGap:"5",children:[t.jsx(a,{isType:"solid",onClick:()=>{console.log("click")},title:"Remove from my events"}),t.jsx(a,{isType:"solid",color:"grey",onClick:()=>{console.log("click")},title:"Add to my events"})]}),t.jsx(d,{hasShadow:!0,children:j.map(({title:o,description:m})=>t.jsx(i,{noLink:!0,children:t.jsxs(i.Content,{isSmall:!0,children:[t.jsx(i.Header,{text:o}),t.jsx(i.Excerpt,{text:m})]})},o))})]})]})})}),t.jsx(x,{})]})};var l,n,c;s.parameters={...s.parameters,docs:{...(l=s.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: () => <>
+      <TopBar>
+        <TopBar.Primary>
+          <TopBar.Logo title="Events Calendar" link="https://carleton.ca/webservices">
+            <a href="https://carleton.ca" className="cu-topbar--logo">
+              <img className="culogo" src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg" width="130" height="35" alt="Logo" />
+              <img className="cushield" src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg" width="28" height="35" alt="Logo" />
+            </a>
+          </TopBar.Logo>
+          <TopBar.Aside />
+        </TopBar.Primary>
+      </TopBar>
+
+      <Banner title="Single Event Post Template" align="left" maxWidth="7xl" isType="image" image="https://carleton.ca/about/wp-content/uploads/about-header-1600w-3.jpg" />
+
+      <Main>
+        <Section>
+          <Column cols="2/3" maxWidth="7xl">
+            <Article>
+              <EventContent />
+            </Article>
+
+            <Aside isSticky topSpace="10">
+              <Column cols="1" gridGap="5">
+                <Button isType="solid" onClick={() => {
+                console.log('click');
+              }} title="Remove from my events" />
+                <Button isType="solid" color="grey" onClick={() => {
+                console.log('click');
+              }} title="Add to my events" />
+              </Column>
+              <StackedList hasShadow>
+                {data.map(({
+                title,
+                description
+              }) => <Listing key={title} noLink>
+                    <Listing.Content isSmall>
+                      <Listing.Header text={title} />
+                      <Listing.Excerpt text={description} />
+                    </Listing.Content>
+                  </Listing>)}
+              </StackedList>
+            </Aside>
+          </Column>
+        </Section>
+      </Main>
+
+      <FooterBasic />
+    </>
+}`,...(c=(n=s.parameters)==null?void 0:n.docs)==null?void 0:c.source}}};const nt=["SingleEvent"];export{s as SingleEvent,nt as __namedExportsOrder,lt as default};
+//# sourceMappingURL=SingleEvent.stories-33c03f3b.js.map
