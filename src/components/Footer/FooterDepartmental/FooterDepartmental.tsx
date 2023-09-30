@@ -9,6 +9,8 @@ interface FooterButtons {
 interface FooterDepartmentalProps {
   deptName?: string
   buildingName?: string
+  phone?: string
+  email?: string
   officeNumber?: string
   footerButtons?: FooterButtons[]
 }
@@ -23,6 +25,8 @@ export const FooterDepartmental = ({
   deptName,
   buildingName,
   officeNumber,
+  phone,
+  email,
   footerButtons,
 }: FooterDepartmentalProps) => {
   return (
@@ -33,29 +37,33 @@ export const FooterDepartmental = ({
             <p className="font-semibold text-center lg:text-lg text-cu-black-900 md:text-left">{deptName}</p>
           )}
           <ul className="gap-5 text-center divide-x lg:flex lg:divide-cu-black-300 md:text-left">
-            <li className={styles.deptListItem}>
-              {officeNumber && `${officeNumber} `}
-              {buildingName}
-            </li>
-            <li className={styles.deptListItem}>1-613-520-2600</li>
-            <li className={styles.deptListItem}>
-              <a className="font-semibold text-cu-red-700" href="mailto:support@carleton.ca">
-                support@carleton.ca
-              </a>
-            </li>
+            {buildingName && (
+              <li className={styles.deptListItem}>
+                {officeNumber && `${officeNumber} `}
+                {buildingName}
+              </li>
+            )}
+            {phone && <li className={styles.deptListItem}>1-613-520-2600</li>}
+            {email && (
+              <li className={styles.deptListItem}>
+                <a className="font-semibold text-cu-red-700" href="mailto:support@carleton.ca">
+                  support@carleton.ca
+                </a>
+              </li>
+            )}
           </ul>
         </div>
 
-        <div className="mt-5 ml-auto md:mt-0">
-          {footerButtons && (
+        {footerButtons && (
+          <div className="mt-5 ml-auto md:mt-0">
             <div className="flex flex-wrap justify-center gap-5 md:justify-end cu-buttongroup md:flex-1">
               {footerButtons &&
                 footerButtons.map((link, index) => (
                   <Button key={index} title={link.title} color={index === 0 ? 'red' : 'white'} />
                 ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </aside>
   )
