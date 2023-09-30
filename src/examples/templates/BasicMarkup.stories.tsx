@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
-import { FooterDepartmental } from '../../components/Footer/FooterDepartmental/FooterDepartmental'
+import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { HeroTextImage } from '../../components/Hero/HeroTextImage/HeroTextImage'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
@@ -84,7 +84,7 @@ export const BasicMarkup: Story = {
         </Section>
       </Main>
 
-      <FooterDepartmental
+      <FooterDept
         buildingName="Pigiarvik (ᐱᒋᐊᕐᕕᒃ)"
         deptName="Information Technology Services"
         footerButtons={[

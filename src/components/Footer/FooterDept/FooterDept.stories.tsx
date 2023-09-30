@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { FooterDepartmental } from './FooterDepartmental'
+import { FooterDept } from './FooterDept'
 import { FooterButtons as footerButtons } from '../../../data/FooterData'
 
-const meta: Meta<typeof FooterDepartmental> = {
+const meta: Meta<typeof FooterDept> = {
   title: 'Components/Footers/Departmental',
-  component: FooterDepartmental,
+  component: FooterDept,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof FooterDepartmental> = {
   },
 }
 export default meta
-type Story = StoryObj<typeof FooterDepartmental>
+type Story = StoryObj<typeof FooterDept>
 
 export const DefaultTemplate: Story = {}
 

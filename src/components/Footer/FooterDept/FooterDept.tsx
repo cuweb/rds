@@ -6,7 +6,7 @@ interface FooterButtons {
   url: string
 }
 
-interface FooterDepartmentalProps {
+interface FooterDeptProps {
   deptName?: string
   buildingName?: string
   phone?: string
@@ -21,14 +21,7 @@ const styles = {
   deptListItem: `lg:pl-5 first:lg:pl-0`,
 }
 
-export const FooterDepartmental = ({
-  deptName,
-  buildingName,
-  officeNumber,
-  phone,
-  email,
-  footerButtons,
-}: FooterDepartmentalProps) => {
+export const FooterDept = ({ deptName, buildingName, officeNumber, phone, email, footerButtons }: FooterDeptProps) => {
   return (
     <aside className="px-8 py-6 bg-cu-black-50 md:px-10 md:py-8">
       <div className="mx-auto md:items-center md:flex max-w-7xl">
