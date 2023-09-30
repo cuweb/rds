@@ -1731,6 +1731,10 @@ select {
   margin-bottom: 0.375rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1827,6 +1831,10 @@ select {
   margin-top: 1rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1841,22 +1849,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .line-clamp-2 {
@@ -2371,10 +2363,6 @@ select {
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-row-reverse {
   flex-direction: row-reverse;
 }
@@ -2435,6 +2423,10 @@ select {
   gap: 0.5rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
 .gap-3 {
   gap: 0.75rem;
 }
@@ -2457,14 +2449,6 @@ select {
 
 .gap-px {
   gap: 1px;
-}
-
-.gap-16 {
-  gap: 4rem;
-}
-
-.gap-20 {
-  gap: 5rem;
 }
 
 .gap-x-1 {
@@ -2549,12 +2533,6 @@ select {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
-.divide-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-x-reverse: 0;
-  border-right-width: calc(2px * var(--tw-divide-x-reverse));
-  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
-}
-
 .divide-cu-black-100 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(230 230 230 / var(--tw-divide-opacity));
@@ -2572,21 +2550,6 @@ select {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-}
-
-.divide-cu-red > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1;
-  border-color: rgb(233 28 36 / var(--tw-divide-opacity));
-}
-
-.divide-cu-black-200 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1;
-  border-color: rgb(204 204 204 / var(--tw-divide-opacity));
-}
-
-.divide-cu-black-300 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1;
-  border-color: rgb(179 179 179 / var(--tw-divide-opacity));
 }
 
 .\!overflow-hidden {
@@ -3294,10 +3257,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pb-12 {
-  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -6581,10 +6540,6 @@ select {
   padding-top: 0px;
 }
 
-.first\:pl-0:first-child {
-  padding-left: 0px;
-}
-
 .last\:mr-0:last-child {
   margin-right: 0px;
 }
@@ -6599,10 +6554,6 @@ select {
 
 .last\:pb-0:last-child {
   padding-bottom: 0px;
-}
-
-.last\:pl-0:last-child {
-  padding-left: 0px;
 }
 
 .odd\:bg-white:nth-child(odd) {
@@ -7136,6 +7087,10 @@ select {
     margin-top: 3.5rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -7337,9 +7292,14 @@ select {
     padding-bottom: 1.5rem;
   }
 
-  .md\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .md\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .md\:pb-10 {
@@ -7584,10 +7544,6 @@ select {
     display: none;
   }
 
-  .lg\:w-full {
-    width: 100%;
-  }
-
   .lg\:max-w-7xl {
     max-width: 80rem;
   }
@@ -7612,10 +7568,6 @@ select {
     flex-direction: row;
   }
 
-  .lg\:flex-col {
-    flex-direction: column;
-  }
-
   .lg\:items-start {
     align-items: flex-start;
   }
@@ -7632,12 +7584,12 @@ select {
     justify-content: space-between;
   }
 
-  .lg\:gap-6 {
-    gap: 1.5rem;
-  }
-
   .lg\:gap-4 {
     gap: 1rem;
+  }
+
+  .lg\:gap-6 {
+    gap: 1.5rem;
   }
 
   .lg\:divide-cu-black-300 > :not([hidden]) ~ :not([hidden]) {
@@ -7675,10 +7627,6 @@ select {
     text-align: left;
   }
 
-  .lg\:text-center {
-    text-align: center;
-  }
-
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -7694,6 +7642,11 @@ select {
     line-height: 1;
   }
 
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -7701,16 +7654,6 @@ select {
 
   .lg\:text-xl {
     font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .lg\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 

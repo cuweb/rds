@@ -26,7 +26,7 @@ export const FooterDepartmental = ({
   footerButtons,
 }: FooterDepartmentalProps) => {
   return (
-    <aside className="px-8 py-8 bg-cu-black-50 md:px-10 md:py-10">
+    <aside className="px-8 py-6 bg-cu-black-50 md:px-10">
       <div className="mx-auto md:items-center md:flex max-w-7xl">
         <div className="flex flex-col gap-2">
           {deptName && (
@@ -46,7 +46,7 @@ export const FooterDepartmental = ({
           </ul>
         </div>
 
-        <div className="ml-auto mt-5 md:mt=0">
+        <div className="mt-5 ml-auto md:mt-0">
           {footerButtons && (
             <div className="flex flex-wrap justify-center gap-5 md:justify-end cu-buttongroup md:flex-1">
               {footerButtons &&
