@@ -5,5 +5,5 @@ export interface ButtonGroupProps {
 }
 
 export const ButtonGroup = ({ children }: ButtonGroupProps) => {
-  return <div className="cu-buttongroup flex flex-wrap gap-6 md:flex-1">{children}</div>
+  return <div className="flex flex-wrap justify-end gap-5 cu-buttongroup md:flex-1">{children}</div>
 }
