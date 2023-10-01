@@ -18,7 +18,7 @@ interface FooterDeptProps {
 const styles = {
   container: `flex gap-5`,
   deptList: `text-cu-black-600 text-base`,
-  deptListItem: `lg:pl-5 first:lg:pl-0`,
+  deptListItem: `text-base lg:pl-5 first:lg:pl-0`,
 }
 
 export const FooterDept = ({ deptName, buildingName, officeNumber, phone, email, footerButtons }: FooterDeptProps) => {
