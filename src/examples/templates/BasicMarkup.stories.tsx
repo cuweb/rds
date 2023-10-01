@@ -5,6 +5,7 @@ import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { HeroTextImage } from '../../components/Hero/HeroTextImage/HeroTextImage'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
+import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 
 const meta: Meta = {
   title: 'Examples/Templates',
@@ -102,6 +103,7 @@ export const BasicMarkup: Story = {
         officeNumber="400"
       />
       <FooterStandard />
+      <FooterCookie />
     </>
   ),
 }
