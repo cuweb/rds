@@ -21,5 +21,7 @@ DefaultTemplate.args = {
   deptName: 'Information Technology Services',
   officeNumber: '400',
   buildingName: 'Pigiarvik (ᐱᒋᐊᕐᕕᒃ)',
+  phone: '613-520-2600',
+  email: 'noreply@carleton.ca',
   footerButtons: footerButtons,
 }
