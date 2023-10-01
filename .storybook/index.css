@@ -1501,8 +1501,8 @@ select {
   top: -66px;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.bottom-6 {
+  bottom: 1.5rem;
 }
 
 .left-0 {
@@ -1525,6 +1525,10 @@ select {
   left: 1rem;
 }
 
+.left-8 {
+  left: 2rem;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -1543,6 +1547,10 @@ select {
 
 .right-4 {
   right: 1rem;
+}
+
+.right-8 {
+  right: 2rem;
 }
 
 .top-0 {
@@ -1579,6 +1587,14 @@ select {
 
 .top-5 {
   top: 1.25rem;
+}
+
+.left-7 {
+  left: 1.75rem;
+}
+
+.right-7 {
+  right: 1.75rem;
 }
 
 .isolate {
@@ -1649,14 +1665,6 @@ select {
   margin: auto;
 }
 
-.m-16 {
-  margin: 4rem;
-}
-
-.m-8 {
-  margin: 2rem;
-}
-
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -1710,26 +1718,6 @@ select {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .-mb-px {
@@ -2918,10 +2906,6 @@ select {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
-}
-
-.bg-opacity-95 {
-  --tw-bg-opacity: 0.95;
 }
 
 .bg-cu-quote-icon {
