@@ -1525,8 +1525,8 @@ select {
   left: 1rem;
 }
 
-.left-8 {
-  left: 2rem;
+.left-7 {
+  left: 1.75rem;
 }
 
 .right-0 {
@@ -1549,8 +1549,8 @@ select {
   right: 1rem;
 }
 
-.right-8 {
-  right: 2rem;
+.right-7 {
+  right: 1.75rem;
 }
 
 .top-0 {
@@ -1589,12 +1589,20 @@ select {
   top: 1.25rem;
 }
 
-.left-7 {
-  left: 1.75rem;
+.left-5 {
+  left: 1.25rem;
 }
 
-.right-7 {
-  right: 1.75rem;
+.right-5 {
+  right: 1.25rem;
+}
+
+.left-6 {
+  left: 1.5rem;
+}
+
+.right-6 {
+  right: 1.5rem;
 }
 
 .isolate {
