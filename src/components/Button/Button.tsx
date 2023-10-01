@@ -9,6 +9,7 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   isType?: 'solid' | 'outline' | 'disabled'
   color?: 'red' | 'grey' | 'dark-grey' | 'white'
   isSmall?: boolean
+  noBreak?: boolean
   hasShadow?: boolean
   isFull?: boolean
   isCenter?: boolean
@@ -21,6 +22,7 @@ export const Button = ({
   title,
   icon,
   isSmall,
+  noBreak,
   hasShadow,
   isFull,
   isCenter,
@@ -36,13 +38,14 @@ export const Button = ({
   const fullStyles = isFull ? 'w-full' : ''
   const centerStyles = isCenter ? 'relative left-1/2 -translate-x-1/2 ' : ''
   const buttonSmall = isSmall ? buttonStyles.small : ''
+  const wordBreak = noBreak ? 'whitespace-nowrap' : ''
   const iconSize = isSmall ? '4' : '6'
 
   return (
     <button
       type="button"
       aria-label={title ? title : 'Icon button'}
-      className={`cu-button ${buttonStyles.core} ${buttonType}  ${buttonSmall} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
+      className={`cu-button ${buttonStyles.core} ${buttonType} ${wordBreak} ${buttonSmall} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
       disabled={isType === 'disabled' ? true : false}
       {...rest}
     >
@@ -52,7 +55,7 @@ export const Button = ({
         </span>
       )}
       {title}
-      {hasDropDown && <ChevronDownIcon className="-mr-1 ml-1 mt-1 h-4 w-4" aria-hidden="true" />}
+      {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
     </button>
   )
 }
