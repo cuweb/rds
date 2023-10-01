@@ -91,6 +91,7 @@ export const BasicMarkup: Story = {
       <FooterDept
         buildingName="Pigiarvik (ᐱᒋᐊᕐᕕᒃ)"
         deptName="Information Technology Services"
+        email="noreply@carleton.ca"
         footerButtons={[
           {
             id: 1,
@@ -104,7 +105,9 @@ export const BasicMarkup: Story = {
           },
         ]}
         officeNumber="400"
+        phone="613-520-2600"
       />
+
       <FooterStandard />
       <FooterCookie />
     </>

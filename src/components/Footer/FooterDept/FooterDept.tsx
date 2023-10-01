@@ -36,11 +36,11 @@ export const FooterDept = ({ deptName, buildingName, officeNumber, phone, email,
                 {buildingName}
               </li>
             )}
-            {phone && <li className={styles.deptListItem}>1-613-520-2600</li>}
+            {phone && <li className={styles.deptListItem}>{phone}</li>}
             {email && (
               <li className={styles.deptListItem}>
-                <a className="font-semibold text-cu-red-700" href="mailto:support@carleton.ca">
-                  support@carleton.ca
+                <a className="font-semibold text-cu-red-700" href={`mailto:${email}`}>
+                  {email}
                 </a>
               </li>
             )}
