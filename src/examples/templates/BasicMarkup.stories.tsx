@@ -82,6 +82,9 @@ export const BasicMarkup: Story = {
           <SinglePara />
           <h3>Heading Three</h3>
           <DoublePara />
+          <DoublePara />
+          <DoublePara />
+          <DoublePara />
         </Section>
       </Main>
 
