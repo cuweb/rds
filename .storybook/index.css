@@ -1480,6 +1480,11 @@ select {
   inset: 0px;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .-left-4 {
   left: -1rem;
 }
@@ -1576,34 +1581,6 @@ select {
   top: 1.25rem;
 }
 
-.bottom-20 {
-  bottom: 5rem;
-}
-
-.bottom-2 {
-  bottom: 0.5rem;
-}
-
-.bottom-4 {
-  bottom: 1rem;
-}
-
-.bottom-8 {
-  bottom: 2rem;
-}
-
-.bottom-6 {
-  bottom: 1.5rem;
-}
-
-.bottom-5 {
-  bottom: 1.25rem;
-}
-
-.bottom-1 {
-  bottom: 0.25rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1672,6 +1649,14 @@ select {
   margin: auto;
 }
 
+.m-16 {
+  margin: 4rem;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -1725,6 +1710,26 @@ select {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .-mb-px {
@@ -2475,10 +2480,6 @@ select {
   gap: 1px;
 }
 
-.gap-12 {
-  gap: 3rem;
-}
-
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
@@ -2919,18 +2920,6 @@ select {
   --tw-bg-opacity: 0.6;
 }
 
-.bg-opacity-40 {
-  --tw-bg-opacity: 0.4;
-}
-
-.bg-opacity-80 {
-  --tw-bg-opacity: 0.8;
-}
-
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9;
-}
-
 .bg-opacity-95 {
   --tw-bg-opacity: 0.95;
 }
@@ -3056,10 +3045,6 @@ select {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .p-6 {

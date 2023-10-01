@@ -10,8 +10,12 @@ export const FooterCookie = () => {
   }
 
   return (
-    <div className={`fixed px-8 py-5 bg-white bg-opacity-95 bottom-0 w-full md:px-10 ${isVisible ? '' : 'hidden'}`}>
-      <div className="gap-5 mx-auto text-center max-w-7xl md:text-left md:flex">
+    <div
+      className={`${
+        isVisible ? '' : 'hidden'
+      } fixed inset-x-0 bottom-0 mx-auto max-w-7xl px-6 py-5 my-5 bg-white border rounded-md shadow-md border-cu-black-100 bg-opacity-95`}
+    >
+      <div className="gap-5 text-center md:text-left md:flex">
         <p className="max-w-3xl text-sm text-cu-black-600 md:text-base">
           This site uses cookies to offer you a better browsing experience. Find out more on{' '}
           <a
