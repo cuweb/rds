@@ -1480,6 +1480,11 @@ select {
   inset: 0px;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .-left-4 {
   left: -1rem;
 }
@@ -1496,8 +1501,8 @@ select {
   top: -66px;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.bottom-6 {
+  bottom: 1.5rem;
 }
 
 .left-0 {
@@ -1520,6 +1525,10 @@ select {
   left: 1rem;
 }
 
+.left-7 {
+  left: 1.75rem;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -1538,6 +1547,10 @@ select {
 
 .right-4 {
   right: 1rem;
+}
+
+.right-7 {
+  right: 1.75rem;
 }
 
 .top-0 {
@@ -1574,6 +1587,22 @@ select {
 
 .top-5 {
   top: 1.25rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.left-6 {
+  left: 1.5rem;
+}
+
+.right-6 {
+  right: 1.5rem;
 }
 
 .isolate {
@@ -1731,6 +1760,10 @@ select {
   margin-bottom: 0.375rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1825,6 +1858,10 @@ select {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-6 {
@@ -2381,6 +2418,10 @@ select {
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -2996,10 +3037,6 @@ select {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .p-6 {
@@ -3783,6 +3820,14 @@ select {
 .cu-panel + .cu-column {
     margin-top: 1.5rem;
   }
+}
+
+.cu-column-content > *:first-child {
+  margin-top: 0px;
+}
+
+.cu-column-content > *:last-child {
+  margin-bottom: 0px;
 }
 
 /* If a container immediately follows a column component */
@@ -6809,16 +6854,8 @@ select {
   border-radius: 0.375rem;
 }
 
-.prose-blockquote\:border-4 :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
-  border-width: 4px;
-}
-
 .prose-blockquote\:border-l-4 :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
   border-left-width: 4px;
-}
-
-.prose-blockquote\:border-l-8 :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
-  border-left-width: 8px;
 }
 
 .prose-blockquote\:font-normal :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
@@ -7055,6 +7092,10 @@ select {
     margin-bottom: 3rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:mt-14 {
     margin-top: 3.5rem;
   }
@@ -7151,6 +7192,10 @@ select {
     justify-content: flex-start;
   }
 
+  .md\:justify-end {
+    justify-content: flex-end;
+  }
+
   .md\:gap-10 {
     gap: 2.5rem;
   }
@@ -7206,9 +7251,19 @@ select {
     padding-right: 0.875rem;
   }
 
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .md\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .md\:py-14 {
@@ -7224,6 +7279,11 @@ select {
   .md\:py-2\.5 {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
+  }
+
+  .md\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .md\:py-32 {
@@ -7249,6 +7309,11 @@ select {
   .md\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .md\:pb-10 {
@@ -7464,8 +7529,17 @@ select {
     margin-right: -2rem;
   }
 
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:mb-8 {
+    margin-bottom: 2rem;
   }
 
   .lg\:block {
@@ -7482,6 +7556,10 @@ select {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:max-w-7xl {
+    max-width: 80rem;
   }
 
   .lg\:flex-1 {
@@ -7504,6 +7582,10 @@ select {
     flex-direction: row;
   }
 
+  .lg\:items-start {
+    align-items: flex-start;
+  }
+
   .lg\:items-center {
     align-items: center;
   }
@@ -7516,8 +7598,26 @@ select {
     justify-content: space-between;
   }
 
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:divide-cu-black-300 > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgb(179 179 179 / var(--tw-divide-opacity));
+  }
+
+  .lg\:border-b {
+    border-bottom-width: 1px;
+  }
+
+  .lg\:border-cu-black-700 {
+    --tw-border-opacity: 1;
+    border-color: rgb(77 77 77 / var(--tw-border-opacity));
   }
 
   .lg\:px-8 {
@@ -7527,6 +7627,14 @@ select {
 
   .lg\:pb-44 {
     padding-bottom: 11rem;
+  }
+
+  .lg\:pb-8 {
+    padding-bottom: 2rem;
+  }
+
+  .lg\:pl-5 {
+    padding-left: 1.25rem;
   }
 
   .lg\:text-left {
@@ -7548,6 +7656,11 @@ select {
     line-height: 1;
   }
 
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -7560,6 +7673,10 @@ select {
 
   .lg\:leading-\[3\.5rem\] {
     line-height: 3.5rem;
+  }
+
+  .first\:lg\:pl-0:first-child {
+    padding-left: 0px;
   }
 }
 

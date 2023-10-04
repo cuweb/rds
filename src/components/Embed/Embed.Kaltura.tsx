@@ -5,16 +5,21 @@ export interface EmbedKalturaProps {
 }
 
 export const EmbedKaltura = ({ title, url }: EmbedKalturaProps) => {
-  const urlParts = url.split('/')
-  const lastPiece = urlParts[urlParts.length - 1]
-  const kalturaUrl = `https://mediaspace.carleton.ca/embed/secure/iframe/entryId/${lastPiece}/uiConfId/36153741/st/0`
+  let kalturaUrl = ''
+  let lastPiece = ''
+
+  if (url) {
+    const urlParts = url.split('/')
+    lastPiece = urlParts[urlParts.length - 1]
+    kalturaUrl = `https://mediaspace.carleton.ca/embed/secure/iframe/entryId/${lastPiece}/uiConfId/36153741/st/0`
+  }
 
   return (
     <iframe
       id={`kmsembed-${lastPiece}`}
       title={title}
       src={kalturaUrl}
-      className={`kmsembed ${styles.kaltura}`}
+      className={styles.iframe}
       allowFullScreen
       allow="autoplay *; fullscreen *; encrypted-media *"
       referrerPolicy="no-referrer-when-downgrade"

@@ -5,7 +5,7 @@ export interface EmbedPowerBiProps {
 }
 
 export const EmbedPowerBi = ({ title, url }: EmbedPowerBiProps) => {
-  return <iframe title={title} src={url} className={styles.powerBi}></iframe>
+  return <iframe title={title} src={url} className={styles.iframe}></iframe>
 }
 
 EmbedPowerBi.displayName = 'Embed.PowerBi'
