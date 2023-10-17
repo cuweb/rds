@@ -13,7 +13,7 @@ export const FooterCookie = () => {
     <div
       className={`${
         isVisible ? '' : 'hidden'
-      } fixed inset-x-0 px-6 py-5 border rounded-md shadow-lg bg-cu-black-50 bottom-6 right-7 left-7 border-cu-black-100`}
+      } fixed mx-auto max-w-screen-2xl px-6 py-5 border rounded-md shadow-lg bg-cu-black-50 bottom-6 right-6 left-6 border-cu-black-100`}
     >
       <div className="gap-5 text-center md:text-left md:flex">
         <p className="max-w-3xl text-sm text-cu-black-600 md:text-base">
