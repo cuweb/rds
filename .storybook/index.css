@@ -1480,11 +1480,6 @@ select {
   inset: 0px;
 }
 
-.inset-x-0 {
-  left: 0px;
-  right: 0px;
-}
-
 .-left-4 {
   left: -1rem;
 }
@@ -1525,8 +1520,8 @@ select {
   left: 1rem;
 }
 
-.left-7 {
-  left: 1.75rem;
+.left-6 {
+  left: 1.5rem;
 }
 
 .right-0 {
@@ -1549,8 +1544,8 @@ select {
   right: 1rem;
 }
 
-.right-7 {
-  right: 1.75rem;
+.right-6 {
+  right: 1.5rem;
 }
 
 .top-0 {
@@ -1587,22 +1582,6 @@ select {
 
 .top-5 {
   top: 1.25rem;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.right-5 {
-  right: 1.25rem;
-}
-
-.left-6 {
-  left: 1.5rem;
-}
-
-.right-6 {
-  right: 1.5rem;
 }
 
 .isolate {

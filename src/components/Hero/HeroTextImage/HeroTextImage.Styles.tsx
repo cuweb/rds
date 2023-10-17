@@ -12,7 +12,7 @@ export const contentStyles = {
   pronoun: 'text-xl lg:text-3xl font-light lowercase text-cu-black-500',
   listItems: `text-lg`,
   listLink: 'font-semibold text-cu-red hover:text-cyan-600',
-  largeText: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
+  largeText: 'text-lg font-light text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
 }
 
 export const mediaStyles = {
