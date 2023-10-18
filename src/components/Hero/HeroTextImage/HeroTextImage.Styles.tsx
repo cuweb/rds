@@ -1,5 +1,5 @@
 export const styles = {
-  base: 'flex flex-wrap gap-6 mx-auto md:flex-nowrap md:gap-12 not-contained not-prose mb-8 md:mb-12',
+  base: 'flex flex-wrap gap-6 mx-auto md:flex-nowrap md:gap-12 not-contained not-prose mb-6 md:mb-12',
   border: 'border-b border-cu-black-50 pb-6 shadow-hero-text-image md:pb-10',
 }
 
@@ -12,7 +12,7 @@ export const contentStyles = {
   pronoun: 'text-xl lg:text-3xl font-light lowercase text-cu-black-500',
   listItems: `text-lg`,
   listLink: 'font-semibold text-cu-red hover:text-cyan-600',
-  largeText: 'text-lg font-light italic text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
+  largeText: 'text-lg font-light text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
 }
 
 export const mediaStyles = {
