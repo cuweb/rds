@@ -1,5 +1,5 @@
 export const styles = {
-  base: 'flex flex-wrap gap-6 mx-auto md:flex-nowrap md:gap-12 not-contained not-prose mb-8 md:mb-12',
+  base: 'flex flex-wrap gap-6 mx-auto md:flex-nowrap md:gap-12 not-contained not-prose mb-6 md:mb-12',
   border: 'border-b border-cu-black-50 pb-6 shadow-hero-text-image md:pb-10',
 }
 
