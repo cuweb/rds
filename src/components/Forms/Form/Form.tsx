@@ -11,7 +11,7 @@ import { Button } from '../../Button/Button'
 import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { DateTimePicker } from '../DateTimePicker/DateTimePicker'
-import { PlacesAutoComplete } from '../PlacesAutoComplete/PlacesAutoComplete'
+// import { PlacesAutoComplete } from '../PlacesAutoComplete/PlacesAutoComplete'
 
 export interface FormProps {
   children?: ((props: FormikProps<FormikValues>) => React.ReactNode) | React.ReactNode
@@ -69,7 +69,7 @@ export const Form = Object.assign(FormBase, {
   Submit,
   WYSIWYG,
   DateTimePicker,
-  PlacesAutoComplete,
+  // PlacesAutoComplete,
 })
 
 FormBase.displayName = 'Form'
