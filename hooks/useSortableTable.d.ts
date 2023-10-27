@@ -1,3 +1,4 @@
+/// <reference types="react" />
 interface DataProps {
     [k: string]: string | number | JSX.Element;
 }

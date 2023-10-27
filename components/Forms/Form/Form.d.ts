@@ -46,6 +46,5 @@ export declare const Form: {
         displayName: string;
     };
     DateTimePicker: ({ startDate, endDate, label, condition, ...props }: import("../DateTimePicker/DateTimePicker").PickerProps & import("formik").FieldHookConfig<string>) => import("react/jsx-runtime").JSX.Element;
-    PlacesAutoComplete: ({ condition, eventAddress, eventLatitude, eventLongitude, ...props }: import("../PlacesAutoComplete/PlacesAutoComplete").PlacesAutoCompleteProps & import("formik").FieldHookConfig<object>) => import("react/jsx-runtime").JSX.Element;
 };
 //# sourceMappingURL=Form.d.ts.map

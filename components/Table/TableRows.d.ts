@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ColumnDefinitionType } from './Table';
 type TableRowsProps = {
     data: {

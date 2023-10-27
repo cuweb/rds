@@ -1,9 +1,0 @@
-import{j as t}from"./jsx-runtime-7ce7b810.js";import{F as o}from"./Form-abe30f5c.js";import"./index-37ba2b57.js";import"./_commonjsHelpers-de833af9.js";import"./XMarkIcon-d71bb9d6.js";import"./Button-bad4dfeb.js";import"./Icon-163d2856.js";import"./optionClasses-c898b830.js";import"./ChevronDownIcon-2780c6ad.js";import"./Calendar-158f4261.js";import"./index-fb25e841.js";import"./index-ee226d2b.js";import"./isNativeReflectConstruct-81b4d0cb.js";import"./Location-9ac98c4e.js";import"./index-4da2af8c.js";import"./LocationPicker-6a5a2b34.js";import"./index-9d475cdf.js";import"./MagnifyingGlassIcon-97d62ca3.js";import"./combobox-b10c8063.js";import"./open-closed-452e92a4.js";import"./use-owner-127f86a6.js";import"./use-resolve-button-type-39f07965.js";import"./use-tracked-pointer-a7a12abc.js";import"./platform-c0b4c731.js";const E={title:"Components/Forms/Radio",component:o,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},r={render:()=>t.jsx(o,{onSubmit:()=>{},schema:{},initialValues:m,children:t.jsx(o.Radio,{label:"How many of these shows did you watch regularly?",name:"regularviewer",options:[{name:"1",label:"1"}]})})},m={firstname:"ish",description:" sample description",regularviewer:"2",location:"Carleton University, Colonel By Drive, Ottawa, ON, Canada",favsitcom:"familymatter",favcharacters:["kellykapowski","carltonbanks"]};var e,a,i;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:`{
-  render: () => <Form onSubmit={() => undefined} schema={{}} initialValues={InitialValues}>
-      <Form.Radio label="How many of these shows did you watch regularly?" name="regularviewer" options={[{
-      name: '1',
-      label: '1'
-    }]} />
-    </Form>
-}`,...(i=(a=r.parameters)==null?void 0:a.docs)==null?void 0:i.source}}};const H=["Default"];export{r as Default,H as __namedExportsOrder,E as default};
-//# sourceMappingURL=Radio.stories-ac0e68e4.js.map
