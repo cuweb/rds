@@ -90,7 +90,7 @@ export const Example: Story = {
             editor="textarea"
           />
 
-          <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." />
+          {/* <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." /> */}
 
           <Form.DateTimePicker name="datetime" placeholder="Please select date and time..." />
 
