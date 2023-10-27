@@ -1,7 +1,7 @@
 {
   "name": "@carletonuniversity/rds",
   "private": false,
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "MIT",
   "type": "module",
   "main": "./dist/rds.umd.js",
@@ -15,7 +15,8 @@
     ".": {
       "style": "./dist/index.css",
       "import": "./dist/rds.es.js",
-      "require": "./dist/rds.umd.js"
+      "require": "./dist/rds.umd.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
