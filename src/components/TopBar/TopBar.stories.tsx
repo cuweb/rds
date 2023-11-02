@@ -27,14 +27,14 @@ export const Default: Story = {
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
               width="130"
               height="35"
-              alt="Logo of Carleton University"
+              alt="Carleton University logo"
             />
             <img
               className="cushield"
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
               width="28"
               height="35"
-              alt="Logo of Carleton University"
+              alt="Carleton University logo"
             />
           </a>
         </TopBar.Logo>

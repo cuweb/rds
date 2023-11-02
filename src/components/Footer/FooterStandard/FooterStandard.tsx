@@ -91,7 +91,7 @@ export const FooterStandard = () => {
       className={`cu-footerstandard not-prose px-8 py-8 bg-cu-black-900 md:px-10 md:py-12 ${footerStyles.wave}`}
       aria-labelledby="footer-heading"
     >
-      <h2 id="footer-heading" className="sr-only">
+      <h2 id="footer-heading" className="bg-white sr-only text-cu-black-900">
         Footer
       </h2>
 

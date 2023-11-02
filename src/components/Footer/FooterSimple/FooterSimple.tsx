@@ -54,12 +54,19 @@ export const FooterSimple = ({
   footerButtons,
 }: FooterSimpleProps) => {
   return (
-    <footer className={`bg-cu-black-900 px-8 pb-24 pt-8 md:px-10 md:pb-44 md:pt-14 ${footerStyles.wave}`}>
+    <footer
+      className={`bg-cu-black-900 px-8 pb-24 pt-8 md:px-10 md:pb-44 md:pt-14 ${footerStyles.wave}`}
+      aria-labelledby="footer-heading"
+    >
+      <h2 id="footer-heading" className="bg-white sr-only text-cu-black-900">
+        Footer
+      </h2>
+
       <div className="mx-auto max-w-7xl">
         <div>
-          <a className="mb-6 flex justify-center md:justify-start" href="https://carleton.ca">
+          <a className="flex justify-center mb-6 md:justify-start" href="https://carleton.ca">
             <img
-              className="h-auto w-40 md:w-52"
+              className="w-40 h-auto md:w-52"
               src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horizontal-outlined.svg"
               alt="Carleton University logo"
             />
@@ -67,7 +74,7 @@ export const FooterSimple = ({
         </div>
 
         <div className="flex justify-between gap-10 text-white">
-          <div className="mx-auto text-center text-base md:mx-0 md:text-left md:text-lg">
+          <div className="mx-auto text-base text-center md:mx-0 md:text-left md:text-lg">
             {deptName && (
               <p className="mb-1.5">
                 {deptUrl && <a href={deptUrl}>{deptName}</a>}
@@ -109,7 +116,7 @@ export const FooterSimple = ({
               ))}
             </ul> */}
 
-            <ul className="mt-8 flex justify-center gap-6 border-t border-cu-black-800 pt-7 text-sm md:justify-start md:text-base">
+            <ul className="flex justify-center gap-6 mt-8 text-sm border-t border-cu-black-800 pt-7 md:justify-start md:text-base">
               {SmallLinks.map((item, index) => (
                 <li key={index}>
                   <a href={item.url} className="text-cu-black-400 hover:text-white hover:underline">

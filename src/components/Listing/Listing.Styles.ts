@@ -33,6 +33,6 @@ export const metaStyles = {
 
 export const eventStyles = {
   dateBox: `h-20 w-20 @4xl:lg:h-32 @4xl:lg:w-32 flex-col items-center justify-center rounded-md bg-white shadow-md group-hover:bg-cu-red flex`,
-  dateBoxMonth: `text-xs @4xl:lg:text-lg font-bold uppercase text-cu-red group-hover:text-white`,
-  dateBoxDay: `text-2xl @4xl:lg:text-4xl font-bold uppercase text-cu-black-800 group-hover:text-white`,
+  dateBoxMonth: `block text-xs @4xl:lg:text-lg font-bold uppercase text-cu-red group-hover:text-white`,
+  dateBoxDay: `block text-2xl @4xl:lg:text-4xl font-bold uppercase text-cu-black-800 group-hover:text-white`,
 }
