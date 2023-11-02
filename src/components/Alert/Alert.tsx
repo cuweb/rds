@@ -1,4 +1,4 @@
-import React, { Fragment, PropsWithChildren, useState } from 'react'
+import React, { PropsWithChildren, useState } from 'react'
 import { Transition } from '@headlessui/react'
 import {
   CheckCircleIcon,
@@ -62,7 +62,6 @@ const AlertBase = ({ children, type, textSize = 'small', isPersistent = false }:
   return (
     <Transition
       show={showAlert}
-      as={Fragment}
       enter="transform ease-out duration-300 transition"
       enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
       enterTo="translate-y-0 opacity-100 sm:translate-x-0"

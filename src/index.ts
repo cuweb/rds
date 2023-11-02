@@ -19,7 +19,6 @@ export { FooterCookie } from './components/Footer/FooterCookie/FooterCookie'
 export { FooterLogoLinks } from './components/Footer/FooterLogoLinks/FooterLogoLinks'
 export { FooterSimple } from './components/Footer/FooterSimple/FooterSimple'
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard'
-export { Form } from './components/Forms/Form/Form'
 export { Heading } from './components/Heading/Heading'
 export { HeroTextImage } from './components/Hero/HeroTextImage/HeroTextImage'
 export { Icon } from './components/Icon/Icon'
@@ -64,5 +63,6 @@ export type { UserInfoType } from './components/Avatar/Avatar'
 //
 // DEPRECATED
 // -----------------
-export { Banner } from './_deprecated/Banner/Banner'
-export { TopNav } from './_deprecated/TopNav/TopNav'
+// export { Banner } from './_deprecated/Banner/Banner'
+// export { Form } from './_deprecated/Forms/Form/Form'
+// export { TopNav } from './_deprecated/TopNav/TopNav'

@@ -16,19 +16,19 @@ export const ListingDateBox = ({ startDate, endDate }: ListingDateBoxProps) => {
   const isMultiDay = !isSameDay(eventStartDate, eventEndDate)
 
   return (
-    <div className={eventStyles.dateBox}>
+    <h3 className={eventStyles.dateBox}>
       {isMultiDay ? (
         <>
-          <p className={eventStyles.dateBoxMonth}>Multi</p>
-          <p className={eventStyles.dateBoxDay}>Day</p>
+          <span className={eventStyles.dateBoxMonth}>Multi</span>
+          <span className={eventStyles.dateBoxDay}>Day</span>
         </>
       ) : (
         <>
-          <p className={eventStyles.dateBoxMonth}>{eventStartMonth}</p>
-          <p className={eventStyles.dateBoxDay}>{eventStartDay}</p>
+          <span className={eventStyles.dateBoxMonth}>{eventStartMonth}</span>
+          <span className={eventStyles.dateBoxDay}>{eventStartDay}</span>
         </>
       )}
-    </div>
+    </h3>
   )
 }
 

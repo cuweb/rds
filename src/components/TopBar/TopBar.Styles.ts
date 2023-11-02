@@ -19,7 +19,7 @@ export const navItemStyles = {
   navWrapper: `flex gap-6 text-sm md:text-[15px] items-center overflow-hidden cu-topbar--menu`,
   navItem: `text-sm font-medium text-cu-black-600 whitespace-nowrap hover:text-cu-red whitespace-nowrap`, // added to rds/src/styles/topbar.css
   navItemChildren: `flex items-center -mb-px`,
-  navItemMoreNav: `text-sm font-medium text-cu-red-700 whitespace-nowrap hover:text-cu-red hover:text-cyan-600`,
+  navItemMoreNav: `text-sm font-medium whitespace-nowrap hover:text-cu-red`,
   navArrow: `flex-none w-5 h-5 pt-1 text-cu-black-400`,
 }
 
@@ -39,6 +39,6 @@ export const navAsideStyles = {
   searchIcon: `w-5 h-5 text-cu-black-400`,
   unorderedList: `items-center hidden gap-5 pl-5 border-l md:flex border-cu-black-100`,
   listHidden: `hidden lg:block`,
-  listItemLink: `text-[15px] font-medium text-cu-black-600 hover:text-cyan-600`,
+  listItemLink: `text-[15px] font-medium text-cu-black-600 hover:text-cu-red`,
   megaMenuButton: `px-3 py-2 text-sm font-medium rounded md:text-[15px] text-cu-black-700 md:px-3.5 md:py-2.5 whitespace-nowrap cu-topnav--mega hover:text-white focus:outline-none bg-cu-black-50 hover:bg-cu-red`,
 }
