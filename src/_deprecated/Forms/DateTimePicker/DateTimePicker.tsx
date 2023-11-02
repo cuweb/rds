@@ -4,7 +4,7 @@ import { useField } from 'formik'
 import type { FieldHookConfig } from 'formik'
 import { useCallback, useEffect, useState } from 'react'
 import { formStyles } from '../../../utils/formClasses'
-import { Calendar } from '../../Calendar/Calendar'
+import { Calendar } from '../../../components/Calendar/Calendar'
 
 const styles = {
   select: `text-xs rounded-md outline-none appearance-none border-cu-black-100 text-cu-black-900 focus:border-red-500 focus:ring-0`,
@@ -89,7 +89,7 @@ export const DateTimePicker = ({
           </label>
           <div {...field} id={field.name} aria-invalid={meta.touched && meta.error ? true : false}>
             <Calendar callback={callbackcal} defaultDate={startDate ? startDate : endDate} />
-            <div className="mt-6 inline-flex gap-3 rounded-lg border border-cu-black-100 bg-white p-3">
+            <div className="inline-flex gap-3 p-3 mt-6 bg-white border rounded-lg border-cu-black-100">
               <div>
                 <select
                   id="field-hours"

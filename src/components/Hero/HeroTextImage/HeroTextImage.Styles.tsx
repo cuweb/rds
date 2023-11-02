@@ -11,8 +11,9 @@ export const contentStyles = {
   headerTwo: 'text-xl sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem]',
   pronoun: 'text-xl lg:text-3xl font-light lowercase text-cu-black-500',
   listItems: `text-lg`,
-  listLink: 'font-semibold text-cu-red hover:text-cyan-600',
-  largeText: 'text-lg font-light text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl',
+  listLink: 'font-semibold text-cu-red hover:underline',
+  largeText:
+    'text-lg font-light text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl [&>a]:text-cu-red [&>a]:hover:underline',
 }
 
 export const mediaStyles = {
