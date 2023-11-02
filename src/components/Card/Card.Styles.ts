@@ -5,7 +5,7 @@ export const styles = {
   content: `flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3 relative`,
   header: `text-lg font-semibold text-cu-black  @sm:md:text-xl leading-6 @sm:md:leading-8`,
   excerpt: `text-base text-cu-black-600`,
-  more: `font-semibold text-cu-red group-hover:text-cyan-600`,
+  more: `font-semibold text-cu-red`,
   badges: `pb-6 mt-auto px-7`,
 }
 
@@ -19,7 +19,7 @@ export const metaStyles = {
   item: `text-sm text-cu-black-600 @sm:md:text-base`,
   itemLarge: `text-base text-cu-black-600 @sm:md:text-lg`,
   italic: `italic`,
-  bold: `font-semibold text-cyan-600`,
+  bold: `font-semibold`,
   alignIcon: `flex`,
   redIcon: `flex-shrink-0 w-5 h-5 @sm:md:w-6 @sm:md:h-6 mr-2 text-cu-red-300`,
   wrap: `break-all`,
