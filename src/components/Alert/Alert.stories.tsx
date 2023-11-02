@@ -16,6 +16,8 @@ export default meta
 
 type AlertStoryType = {
   type: 'success' | 'error' | 'warning' | 'info'
+  textSize: 'small' | 'large'
+  isPersistent: false
   title?: string
   content?: string
 }
@@ -25,21 +27,29 @@ const AlertStory: AlertStoryType[] = [
     type: 'success',
     title: 'Success!',
     content: 'Records have been updated.',
+    textSize: 'small',
+    isPersistent: false,
   },
   {
     type: 'error',
     title: 'Error!',
     content: 'Unable to save record.',
+    textSize: 'small',
+    isPersistent: false,
   },
   {
     type: 'warning',
     title: 'Warning',
     content: 'You have lost internet connectivity',
+    textSize: 'small',
+    isPersistent: false,
   },
   {
     type: 'info',
     title: 'Information',
     content: 'You look like you need some coffee.',
+    textSize: 'small',
+    isPersistent: false,
   },
 ]
 
@@ -48,8 +58,9 @@ type Story = StoryObj<typeof Alert>
 export const Default: Story = {
   render: (args) => (
     <Alert.Alerter>
-      <Alert key={111} type={args.type}>
-        <Alert.Title>Success</Alert.Title>
+      <Alert key={111} type={args.type} isPersistent={args.isPersistent} textSize={args.textSize}>
+        <Alert.Title>Title</Alert.Title>
+        <Alert.Content>Content goes here</Alert.Content>
       </Alert>
     </Alert.Alerter>
   ),
