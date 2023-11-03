@@ -3,5 +3,7 @@ export declare const styles: {
     noImage: string;
     imageBg: string;
     imageOverlay: string;
+    content: string;
+    header: string;
 };
 //# sourceMappingURL=HeroTextImage.Styles.d.ts.map

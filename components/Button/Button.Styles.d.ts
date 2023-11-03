@@ -1,7 +1,5 @@
 export declare const buttonStyles: {
     core: string;
-    solid: string;
-    outline: string;
     shadow: string;
     small: string;
     disabled: string;
