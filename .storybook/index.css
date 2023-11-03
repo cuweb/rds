@@ -2857,6 +2857,10 @@ select {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-black\/60 {
+  background-color: rgb(0 0 0 / 0.6);
+}
+
 .bg-blue-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 246 255 / var(--tw-bg-opacity));
@@ -2952,6 +2956,10 @@ select {
 
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
+}
+
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
 }
 
 .bg-opacity-60 {
@@ -3157,6 +3165,16 @@ select {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .py-3 {
@@ -7398,6 +7416,11 @@ select {
     padding-right: 0.875rem;
   }
 
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -7426,6 +7449,11 @@ select {
   .md\:py-2\.5 {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
+  }
+
+  .md\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 
   .md\:py-3 {
@@ -7760,6 +7788,11 @@ select {
     padding-right: 2rem;
   }
 
+  .lg\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
   .lg\:pb-44 {
     padding-bottom: 11rem;
   }
@@ -7845,6 +7878,16 @@ select {
 @media (min-width: 1280px) {
   .xl\:block {
     display: block;
+  }
+
+  .xl\:py-48 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  .xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 
