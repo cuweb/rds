@@ -31,8 +31,8 @@ export const HeroImageBanner = ({
     <div style={inlineStyle} className={`${styles.baseBg} ${hasImageStyles}`}>
       {image && <div className={`${styles.imageOverlay} ${rdsBgOpacity[opacity]}`}></div>}
 
-      <div className="relative z-10 flex flex-col items-center gap-5 px-2 md:gap-10 md:px-4">
-        <h2 className={`text-4xl font-semibold md:text-5xl xl:text-6xl ${imageTextStyles}`}>{title}</h2>
+      <div className={styles.content}>
+        <h1 className={`${styles.header} ${imageTextStyles}`}>{title}</h1>
         {children}
       </div>
     </div>
