@@ -1,24 +1,21 @@
 import React from 'react'
+import { rdsBgOpacity } from '../../../utils/optionClasses'
+import { styles } from './HeroTextImage.Styles'
 
 export interface HeroImageBannerProps {
   children?: React.ReactNode
   title?: string
   image?: string
+  opacity?: 40 | 50 | 60 | 70 | 80
   focalPointX?: string
   focalPointY?: string
-}
-
-const styles = {
-  baseBg: `flex items-center justify-center mx-auto mb-6 overflow-hidden md:mb-12 rounded-xl not-contained not-prose max-w-screen-2xl`,
-  noImage: `py-20 bg-cu-black-50`,
-  imageBg: `relative py-24 bg-opacity-50 bg-cover bg-cu-black-50 md:py-28 lg:py-36 xl:py-48`,
-  imageOverlay: `absolute w-full h-full bg-black/60`,
 }
 
 export const HeroImageBanner = ({
   children,
   title,
   image,
+  opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
 }: HeroImageBannerProps) => {
@@ -32,7 +29,7 @@ export const HeroImageBanner = ({
 
   return (
     <div style={inlineStyle} className={`${styles.baseBg} ${hasImageStyles}`}>
-      {image && <div className={styles.imageOverlay}></div>}
+      {image && <div className={`${styles.imageOverlay} ${rdsBgOpacity[opacity]}`}></div>}
 
       <div className="relative z-10 flex flex-col items-center gap-5 px-2 md:gap-10 md:px-4">
         <h2 className={`text-4xl font-semibold md:text-5xl xl:text-6xl ${imageTextStyles}`}>{title}</h2>
