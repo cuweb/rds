@@ -1,0 +1,4 @@
+import{j as a}from"./jsx-runtime-7ce7b810.js";import{F as s}from"./FooterCookie-bed1f3d9.js";import"./index-37ba2b57.js";import"./_commonjsHelpers-de833af9.js";import"./Button-2a7e8fca.js";import"./Icon-37895cfb.js";import"./optionClasses-833ca482.js";import"./ChevronDownIcon-2780c6ad.js";const f={title:"Components/Footers/Cookie",component:s,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},o=()=>a.jsx(s,{});o.storyName="Default FooterCookie Banner";var r,t,e;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`() => {
+  return <FooterCookie />;
+}`,...(e=(t=o.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const F=["Default"];export{o as Default,F as __namedExportsOrder,f as default};
+//# sourceMappingURL=FooterCookie.stories-e949b197.js.map

@@ -28,6 +28,17 @@ export declare const rdsBgColor: {
     grey: string;
     'dark-grey': string;
 };
+export declare const rdsBgOpacity: {
+    10: string;
+    20: string;
+    30: string;
+    40: string;
+    50: string;
+    60: string;
+    70: string;
+    80: string;
+    90: string;
+};
 export declare const rdsTextColor: {
     black: string;
     white: string;
