@@ -1,6 +1,6 @@
 import { contentStyles } from './HeroTextImage.Styles'
-import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
-import { Button } from '../../../components/Button/Button'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
+import { Button } from '../Button/Button'
 export interface HeroTextImageEventProps {
   designation?: string
   title: string

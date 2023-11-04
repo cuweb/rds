@@ -20,8 +20,7 @@ export { FooterLogoLinks } from './components/Footer/FooterLogoLinks/FooterLogoL
 export { FooterSimple } from './components/Footer/FooterSimple/FooterSimple'
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard'
 export { Heading } from './components/Heading/Heading'
-export { HeroImageBanner } from './components/Hero/HeroImageBanner/HeroImageBanner'
-export { HeroTextImage } from './components/Hero/HeroTextImage/HeroTextImage'
+export { HeroTextImage } from './components/HeroTextImage/HeroTextImage'
 export { Icon } from './components/Icon/Icon'
 export { Link } from './components/Link/Link'
 export { Listing } from './components/Listing/Listing'
@@ -41,6 +40,7 @@ export { Table } from './components/Table/Table'
 export { Toast } from './components/Toast/Toast'
 export { TopBar } from './components/TopBar/TopBar'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
+export { WideImage } from './components/WideImage/WideImage'
 
 //
 // Layouts

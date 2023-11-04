@@ -7513,6 +7513,11 @@ select {
     padding-bottom: 2rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .md\:pb-10 {
     padding-bottom: 2.5rem;
   }
@@ -7859,6 +7864,10 @@ select {
 
   .lg\:leading-\[3\.5rem\] {
     line-height: 3.5rem;
+  }
+
+  .lg\:leading-\[3rem\] {
+    line-height: 3rem;
   }
 
   .first\:lg\:pl-0:first-child {

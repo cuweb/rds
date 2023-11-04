@@ -3,7 +3,7 @@ import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { HeroTextImage } from '../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../components/HeroTextImage/HeroTextImage'
 import { TopBar } from '../../components/TopBar/TopBar'
 
 const meta: Meta = {

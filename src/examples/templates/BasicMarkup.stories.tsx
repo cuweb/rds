@@ -3,7 +3,7 @@ import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../components/HeroTextImage/HeroTextImage'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 

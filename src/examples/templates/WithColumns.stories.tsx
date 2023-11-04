@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../components/HeroTextImage/HeroTextImage'
 
 const meta: Meta = {
   title: 'Examples/Templates',

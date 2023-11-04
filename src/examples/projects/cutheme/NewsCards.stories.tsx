@@ -11,7 +11,7 @@ import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../../components/HeroTextImage/HeroTextImage'
 import { Button } from '../../../components/Button/Button'
 import { TopBarDataSingle } from '../../../data/TopBarData'
 
