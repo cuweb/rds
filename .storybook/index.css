@@ -7617,22 +7617,6 @@ select {
     line-height: 2rem;
   }
 
-  .md\:leading-\[3\.5rem\] {
-    line-height: 3.5rem;
-  }
-
-  .md\:leading-\[3rem\] {
-    line-height: 3rem;
-  }
-
-  .md\:leading-9 {
-    line-height: 2.25rem;
-  }
-
-  .md\:leading-\[2\.5rem\] {
-    line-height: 2.5rem;
-  }
-
   .md\:leading-\[2\.25rem\] {
     line-height: 2.25rem;
   }
