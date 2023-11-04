@@ -4,5 +4,5 @@ export const styles = {
   imageBg: `relative py-24 bg-opacity-50 bg-cover bg-cu-black-50 md:py-28 lg:py-36 xl:py-48`,
   imageOverlay: `absolute w-full h-full bg-black`,
   content: `relative z-10 flex flex-col items-center w-full gap-5 px-2 max-w-7xl md:gap-10 md:px-4`,
-  header: 'text-3xl font-semibold md:text-4xl lg:text-5xl lg:leading-[3.5rem]',
+  header: 'text-3xl font-semibold md:text-4xl lg:text-5xl lg:leading-[3.5rem] text-center',
 }
