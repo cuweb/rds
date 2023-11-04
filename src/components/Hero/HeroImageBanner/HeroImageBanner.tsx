@@ -25,7 +25,7 @@ export const HeroImageBanner = ({
   }
 
   const hasImageStyles = image ? styles.imageBg : styles.noImage
-  const imageTextStyles = image ? 'text-white' : 'text-cu-black-700'
+  const imageTextStyles = image ? 'text-white' : 'text-cu-black-800'
 
   return (
     <div style={inlineStyle} className={`${styles.baseBg} ${hasImageStyles}`}>
