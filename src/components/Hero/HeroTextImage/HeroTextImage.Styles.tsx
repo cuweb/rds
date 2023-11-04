@@ -6,14 +6,14 @@ export const styles = {
 export const contentStyles = {
   contentWrapper: 'flex flex-col gap-4 md:gap-6 flex-[0_0_100%] md:max-w-4xl md:flex-1',
   contentTopSpace: 'md:pt-4',
-  header: 'not-italic font-semibold md:leading-10',
+  header: 'text-cu-black-700 not-italic font-semibold md:leading-10',
   headerOne: 'text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem]',
   headerTwo: 'text-xl sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem]',
   pronoun: 'text-xl lg:text-3xl font-light lowercase text-cu-black-500',
   listItems: `text-lg`,
   listLink: 'font-semibold text-cu-red hover:underline',
   largeText:
-    'text-lg font-light text-cu-black-600 md:text-2xl md:leading-9 mb-2 md:max-w-3xl [&>a]:text-cu-red [&>a]:hover:underline',
+    'text-lg font-light text-cu-black-700 md:text-2xl md:leading-[2.25rem] mb-2 md:max-w-3xl [&>a]:text-cu-red [&>a]:hover:underline',
 }
 
 export const mediaStyles = {
