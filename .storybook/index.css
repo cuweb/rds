@@ -2828,11 +2828,6 @@ select {
   border-color: rgb(250 204 21 / var(--tw-border-opacity));
 }
 
-.border-cu-black-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(128 128 128 / var(--tw-border-opacity));
-}
-
 .border-b-cu-black-100 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(230 230 230 / var(--tw-border-opacity));
@@ -6828,9 +6823,9 @@ select {
   border-color: rgb(233 28 36 / var(--tw-border-opacity));
 }
 
-.hover\:bg-cu-black-200:hover {
+.hover\:bg-cu-black-100:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+  background-color: rgb(230 230 230 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-cu-black-50:hover {
@@ -6872,16 +6867,6 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-cu-black-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 230 230 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-cu-black-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(128 128 128 / var(--tw-bg-opacity));
-}
-
 .hover\:text-\[\#0072b1\]:hover {
   --tw-text-opacity: 1;
   color: rgb(0 114 177 / var(--tw-text-opacity));
@@ -6905,16 +6890,6 @@ select {
 .hover\:text-\[\#c4302b\]:hover {
   --tw-text-opacity: 1;
   color: rgb(196 48 43 / var(--tw-text-opacity));
-}
-
-.hover\:text-cu-black-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(102 102 102 / var(--tw-text-opacity));
-}
-
-.hover\:text-cu-black-800:hover {
-  --tw-text-opacity: 1;
-  color: rgb(51 51 51 / var(--tw-text-opacity));
 }
 
 .hover\:text-cu-black-900:hover {
@@ -7642,7 +7617,23 @@ select {
     line-height: 2rem;
   }
 
+  .md\:leading-\[3\.5rem\] {
+    line-height: 3.5rem;
+  }
+
+  .md\:leading-\[3rem\] {
+    line-height: 3rem;
+  }
+
   .md\:leading-9 {
+    line-height: 2.25rem;
+  }
+
+  .md\:leading-\[2\.5rem\] {
+    line-height: 2.5rem;
+  }
+
+  .md\:leading-\[2\.25rem\] {
     line-height: 2.25rem;
   }
 }
@@ -7930,11 +7921,6 @@ select {
   .xl\:py-48 {
     padding-top: 12rem;
     padding-bottom: 12rem;
-  }
-
-  .xl\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
   }
 }
 
