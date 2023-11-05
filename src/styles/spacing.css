@@ -105,15 +105,23 @@
   @apply pt-0 mt-0;
 }
 
-/* Hero Banner */
-.cu-hero-textimage + :not(.not-contained) {
+/* Text & Image Component */
+.cu-textimage + :not(.not-contained) {
   @apply mt-2 md:mt-6;
 }
 
-:not(.not-contained) + .cu-hero-textimage {
-  @apply mb-8 md:mb-12;
+:not(.not-contained) + .cu-textimage {
+  @apply mt-6 mb-6 md:mb-10 md:mt-10;
 }
 
-.cu-hero-textimage img {
+.cu-textimage img {
   @apply w-full h-auto rounded-md;
+}
+
+.cu-textimage-content {
+  @apply mb-0;
+}
+
+.cu-textimage-content > *:last-child {
+  @apply mb-0;
 }

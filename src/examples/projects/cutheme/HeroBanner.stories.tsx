@@ -6,7 +6,7 @@ import { Section } from '../../../layouts/Section/Section'
 import { TopBar } from '../../../components/TopBar/TopBar'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Button } from '../../../components/Button/Button'
-import { HeroTextImage } from '../../../components/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../../_deprecated/HeroTextImage/HeroTextImage'
 import { TopBarDataSingle } from '../../../data/TopBarData'
 
 const meta: Meta = {

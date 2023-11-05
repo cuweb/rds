@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { HeroTextImage } from './HeroTextImage'
-import { Button } from '../Button/Button'
+import { Button } from '../../components/Button/Button'
 
 const meta: Meta<typeof HeroTextImage> = {
-  title: 'Components/Hero Text Image',
+  title: 'Deprecated/Hero Text Image',
   component: HeroTextImage,
   tags: ['autodocs'],
   parameters: {
