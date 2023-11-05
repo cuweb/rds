@@ -20,25 +20,21 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
   const AlertTypes = {
     success: {
       icon: CheckCircleIcon,
-      color: 'green',
       text: 'text-green-700',
       background: 'bg-green-50',
     },
     warning: {
       icon: ShieldExclamationIcon,
-      color: 'yellow',
       text: 'text-yellow-700',
       background: 'bg-yellow-50',
     },
     error: {
       icon: ExclamationCircleIcon,
-      color: 'red',
       text: 'text-cu-red-700',
       background: 'bg-cu-red-50',
     },
     info: {
       icon: InformationCircleIcon,
-      color: 'blue',
       text: 'text-blue-700',
       background: 'bg-blue-50',
     },
