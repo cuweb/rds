@@ -17,7 +17,7 @@ import { TopBarDataSingle } from '../../../data/TopBarData'
 import { TextImage } from '../../../components/TextImage/TextImage'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Page Layouts',
+  title: 'Examples/Projects/cutheme',
 }
 
 export default meta
@@ -56,7 +56,7 @@ const DoublePara = () => {
   )
 }
 
-export const SinglePage: Story = {
+export const TextImageBanner: Story = {
   render: () => (
     <>
       <TopBar>

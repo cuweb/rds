@@ -16,7 +16,7 @@ import { Button } from '../../../components/Button/Button'
 import { TopBarDataSingle } from '../../../data/TopBarData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Blocks',
+  title: 'Examples/Projects/cutheme',
 }
 
 export default meta
