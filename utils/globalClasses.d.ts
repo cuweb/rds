@@ -1,6 +1,7 @@
 export declare const proseGroups: {
     base: string;
     text: string;
+    largeLight: string;
     image: string;
     quote: string;
     header: string;
