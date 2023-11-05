@@ -6,7 +6,6 @@ import { Container } from '../../../layouts/Container/Container'
 import { Column } from '../../../layouts/Column/Column'
 
 import { TopBar } from '../../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../../_deprecated/HeroTextImage/HeroTextImage'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
@@ -15,6 +14,7 @@ import { NewsData as data } from '../../../data/NewsData'
 import { Button } from '../../../components/Button/Button'
 import { Embed } from '../../../components/Embed/Embed'
 import { TopBarDataSingle } from '../../../data/TopBarData'
+import { TextImage } from '../../../components/TextImage/TextImage'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme/Page Layouts',
@@ -22,10 +22,6 @@ const meta: Meta = {
 
 export default meta
 type Story = StoryObj
-
-const heroPara = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-condimentum magna vel orci vulputate, eget vulputate neque porttitor.`
 
 const SinglePara = () => {
   return (
@@ -111,20 +107,62 @@ export const SinglePage: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage>
-            <HeroTextImage.Content
+          <TextImage maxWidth="7xl">
+            <TextImage.Content
               title="Website and Application Development"
-              paragraph={heroPara}
+              imageUrl="https://picsum.photos/400/266"
               headerType="h1"
-              hasMediaCol
+              contentWidth={60}
+              hasMobileImage
             >
-              <div className="flex flex-wrap gap-4 buttons md:gap-6">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
                 <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
+                <Button color="grey" title="Secondary" />
               </div>
-            </HeroTextImage.Content>
-            <HeroTextImage.Media image="https://picsum.photos/400/266" />
-          </HeroTextImage>
+            </TextImage.Content>
+          </TextImage>
+
+          <DoublePara />
+
+          <TextImage>
+            <TextImage.Content title="Website and Application Development">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+              <ul>
+                <li>Praesent quis ligula quis nulla malesuada tempor.</li>
+                <li>Nobis voluptatem dolorum et eum doloremque.</li>
+                <li>Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus.</li>
+              </ul>
+              <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+                <Button title="Primary" />
+                <Button color="grey" title="Secondary" />
+              </div>
+            </TextImage.Content>
+          </TextImage>
+
+          <DoublePara />
+
+          <TextImage>
+            <TextImage.Content title="Website and Application Development" imageUrl="https://picsum.photos/400/266">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+                <Button title="Primary" />
+                <Button color="grey" title="Secondary" />
+              </div>
+            </TextImage.Content>
+          </TextImage>
 
           <h2>This is a header 2</h2>
           <SinglePara />

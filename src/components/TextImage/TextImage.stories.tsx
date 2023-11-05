@@ -33,9 +33,31 @@ export const DefaultTemplate: Story = {
   ),
 }
 
+export const HeaderOne: Story = {
+  render: () => (
+    <TextImage hasBorder maxWidth="7xl">
+      <TextImage.Content
+        title="Website and Application Development"
+        headerType="h1"
+        imageUrl="https://picsum.photos/400/266"
+      >
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+          in. Praesent quis ligula quis nulla malesuada tempor.
+        </p>
+        <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </TextImage.Content>
+    </TextImage>
+  ),
+}
+
 export const ImageLeft: Story = {
   render: () => (
-    <TextImage maxWidth="7xl" hasBorder reverse>
+    <TextImage hasBorder reverse>
       <TextImage.Content
         title="Website and Application Development"
         headerType="h1"
