@@ -57,12 +57,7 @@ type Story = StoryObj<typeof Alert>
 
 export const Default: Story = {
   render: (args) => (
-    <Alert.Alerter>
-      <Alert key={111} type={args.type} isPersistent={args.isPersistent} textSize={args.textSize}>
-        <Alert.Title>Title</Alert.Title>
-        <Alert.Content>Content goes here</Alert.Content>
-      </Alert>
-    </Alert.Alerter>
+    <Alert key={111} type={args.type} textSize={args.textSize} title="Title" content="Content goes here" />
   ),
 }
 
@@ -70,59 +65,19 @@ Default.args = {
   type: 'success',
 }
 
-export const Multiline: Story = {
-  render: (args) => (
-    <Alert.Alerter>
-      <Alert key={111} type={args.type}>
-        <Alert.Title>Success</Alert.Title>
-        <Alert.Content>Successfully created</Alert.Content>
-      </Alert>
-    </Alert.Alerter>
-  ),
-}
-
-Multiline.args = {
-  type: 'success',
-}
-
 export const Stacked: Story = {
   render: () => (
-    <Alert.Alerter>
+    <>
       {AlertStory.map((alert, index) => {
-        return (
-          <Alert key={index} type={alert.type}>
-            <Alert.Title>{alert.title}</Alert.Title>
-            <Alert.Content>{alert.content}</Alert.Content>
-          </Alert>
-        )
+        return <Alert key={index} type={alert.type} title={alert.title || 'Title'} content={alert.content} />
       })}
-    </Alert.Alerter>
+    </>
   ),
-}
-
-export const Persistant: Story = {
-  render: (args) => (
-    <Alert.Alerter>
-      <Alert key={111} type={args.type} isPersistent textSize={args.textSize}>
-        <Alert.Title>Success</Alert.Title>
-        <Alert.Content>Successfully created</Alert.Content>
-      </Alert>
-    </Alert.Alerter>
-  ),
-}
-
-Persistant.args = {
-  type: 'success',
 }
 
 export const LargeText: Story = {
   render: (args) => (
-    <Alert.Alerter>
-      <Alert key={111} type={args.type} textSize={args.textSize} isPersistent>
-        <Alert.Title>Success</Alert.Title>
-        <Alert.Content>Successfully created</Alert.Content>
-      </Alert>
-    </Alert.Alerter>
+    <Alert key={111} type={args.type} textSize={args.textSize} title="Success" content="Succesfully created" />
   ),
 }
 
