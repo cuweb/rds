@@ -4519,17 +4519,6 @@ select {
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
-/* Blocks */
-
-.cu-textimage-as-h1 h1 {
-  /* @apply prose-lg md:prose-xl; */
-}
-
-.cu-textimage-as-h1 > * {
-  /* @apply prose-lg md:prose-xl; */
-  /* @apply text-[26px] sm:leading-10 font-light text-cu-black-700; */
-}
-
 /* React Quill CSS */
 
 /*!
@@ -7890,6 +7879,10 @@ select {
     flex-direction: row;
   }
 
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -8296,6 +8289,10 @@ select {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:flex-row-reverse {
+    flex-direction: row-reverse;
   }
 
   .lg\:items-start {
