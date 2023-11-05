@@ -1,24 +1,28 @@
 import React from 'react'
-import { rdsBgOpacity } from '../../../utils/optionClasses'
-import { styles } from './HeroTextImage.Styles'
+import { rdsMaxWidth, rdsBgOpacity } from '../../utils/optionClasses'
+import { styles } from './WideImage.Styles'
 
-export interface HeroImageBannerProps {
+export interface WideImageProps {
   children?: React.ReactNode
   title?: string
   image?: string
+  headerType?: 'h1' | 'h2'
+  maxWidth?: 'full' | '5xl' | '7xl' | 'max'
   opacity?: 40 | 50 | 60 | 70 | 80
   focalPointX?: string
   focalPointY?: string
 }
 
-export const HeroImageBanner = ({
+export const WideImage = ({
   children,
   title,
   image,
+  headerType = 'h2',
+  maxWidth = 'max',
   opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
-}: HeroImageBannerProps) => {
+}: WideImageProps) => {
   const inlineStyle = {
     backgroundImage: `url(${image})`,
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
@@ -28,11 +32,12 @@ export const HeroImageBanner = ({
   const imageTextStyles = image ? 'text-white' : 'text-cu-black-700'
 
   return (
-    <div style={inlineStyle} className={`${styles.baseBg} ${hasImageStyles}`}>
+    <div style={inlineStyle} className={`${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}>
       {image && <div className={`${styles.imageOverlay} ${rdsBgOpacity[opacity]}`}></div>}
 
       <div className={styles.content}>
-        <h1 className={`${styles.header} ${imageTextStyles}`}>{title}</h1>
+        {headerType === 'h1' && <h1 className={`${styles.header} ${styles.headerOne} ${imageTextStyles}`}>{title}</h1>}
+        {headerType === 'h2' && <h2 className={`${styles.header} ${styles.headerTwo} ${imageTextStyles}`}>{title}</h2>}
         {children}
       </div>
     </div>

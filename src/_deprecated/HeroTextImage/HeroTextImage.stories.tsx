@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { HeroTextImage } from './HeroTextImage'
-import { Button } from '../../Button/Button'
+import { Button } from '../../components/Button/Button'
 
 const meta: Meta<typeof HeroTextImage> = {
-  title: 'Components/Hero/Hero Text Image',
+  title: 'Deprecated/Hero Text Image',
   component: HeroTextImage,
   tags: ['autodocs'],
   parameters: {
@@ -27,7 +27,7 @@ export const DefaultTemplate: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -46,7 +46,7 @@ export const ImageLeft: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -65,7 +65,7 @@ export const ImageAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -84,7 +84,7 @@ export const ImageLeftAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -103,7 +103,7 @@ export const ImageDualAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -122,7 +122,7 @@ export const ImageLeftDualAngle: Story = {
         headerType="h1"
         hasMediaCol
       >
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -136,7 +136,7 @@ export const NoImage: Story = {
   render: () => (
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Content title="Website and Application Development" paragraph={SinglePara} headerType="h1">
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -149,7 +149,7 @@ export const NoParagraph: Story = {
   render: () => (
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Content title="Website and Application Development" headerType="h1">
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
@@ -162,7 +162,7 @@ export const UsingHeaderTwo: Story = {
   render: () => (
     <HeroTextImage maxWidth="5xl" hasBorder>
       <HeroTextImage.Content title="Website and Application Development" headerType="h2">
-        <div className="buttons flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap gap-4 buttons md:gap-6">
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
         </div>
