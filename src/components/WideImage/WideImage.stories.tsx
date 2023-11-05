@@ -41,6 +41,19 @@ export const WithButtons: Story = {
   },
 }
 
+export const BgImage: Story = {
+  args: {
+    ...Default.args,
+    image: 'https://picsum.photos/1600/700',
+    children: (
+      <ButtonGroup>
+        <Button title="Apply Now" />
+        <Button title="Request Information" isType="outline" color="white" />
+      </ButtonGroup>
+    ),
+  },
+}
+
 export const HeaderOneButtons: Story = {
   args: {
     ...Default.args,
@@ -54,9 +67,10 @@ export const HeaderOneButtons: Story = {
   },
 }
 
-export const BgImage: Story = {
+export const BgImageHeaderOne: Story = {
   args: {
     ...Default.args,
+    headerType: 'h1',
     image: 'https://picsum.photos/1600/700',
     children: (
       <ButtonGroup>
