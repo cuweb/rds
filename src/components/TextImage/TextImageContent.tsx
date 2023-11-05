@@ -44,7 +44,7 @@ export const TextImageContent = ({
 
   if (imageUrl) {
     hasImage = mediaStyles.mediaBgImage || ''
-    noImageOnMobile = hasMobileImage ? '' : 'hidden md:block'
+    noImageOnMobile = hasMobileImage ? '' : 'hidden lg:block'
 
     if (hasImage) {
       inlineContentStyles = {
@@ -99,8 +99,10 @@ export const TextImageContent = ({
   return (
     <>
       <div
-        className={`${styles.contentWrapper} ${contentPadding} ${verticallyCenter} ${proseGroups.text} ${
-          headerType === 'h1' ? 'text-[26px] sm:leading-10 font-light text-cu-black-700' : ''
+        className={`${styles.contentWrapper} ${contentPadding} ${verticallyCenter} ${
+          headerType === 'h1'
+            ? `cu-textimage-as-h1 ${proseGroups.largeLight}`
+            : `cu-textimage-as-h2 ${proseGroups.text}`
         }`}
         style={inlineContentStyles}
       >
@@ -110,12 +112,8 @@ export const TextImageContent = ({
       </div>
 
       {imageUrl && (
-        <div className={`relative flex-1 overflow-hidden rounded ${noImageOnMobile}`}>
-          <div
-            // className={`${mediaStyles.mediaWrapper} ${hasImage} ${noImageOnMobile}`}
-            className="flex-1 w-full h-full bg-no-repeat bg-cover rounded"
-            style={inlineImageStyles}
-          >
+        <div className={`${mediaStyles.mediaWrapper} ${noImageOnMobile}`}>
+          <div className={`${mediaStyles.mediaBgImage}`} style={inlineImageStyles}>
             {leftSvg}
             {rightSvg}
           </div>
