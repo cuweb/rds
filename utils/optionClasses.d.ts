@@ -42,6 +42,7 @@ export declare const rdsOpacity: {
 };
 export declare const rdsTextColor: {
     black: string;
+    blue: string;
     white: string;
     red: string;
     grey: string;
