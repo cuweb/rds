@@ -11,7 +11,7 @@ export interface TextImageProps {
 }
 
 export const TextImageWrapper = ({ children, maxWidth = '5xl', hasBorder, reverse }: TextImageProps) => {
-  const reverseLayout = reverse ? 'flex-row-reverse' : ''
+  const reverseLayout = reverse ? 'lg:flex-row-reverse' : ''
   const borderStyle = hasBorder ? styles.border : ''
 
   return <div className={`${styles.base} ${rdsMaxWidth[maxWidth]} ${reverseLayout} ${borderStyle}`}>{children}</div>
