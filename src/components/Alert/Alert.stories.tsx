@@ -17,7 +17,6 @@ export default meta
 type AlertStoryType = {
   type: 'success' | 'error' | 'warning' | 'info'
   textSize: 'small' | 'large'
-  isPersistent: false
   title?: string
   content?: string
 }
@@ -25,31 +24,27 @@ type AlertStoryType = {
 const AlertStory: AlertStoryType[] = [
   {
     type: 'success',
-    title: 'Success!',
+    title: 'Success',
     content: 'Records have been updated.',
     textSize: 'small',
-    isPersistent: false,
   },
   {
     type: 'error',
-    title: 'Error!',
+    title: 'Error',
     content: 'Unable to save record.',
     textSize: 'small',
-    isPersistent: false,
   },
   {
     type: 'warning',
     title: 'Warning',
     content: 'You have lost internet connectivity',
     textSize: 'small',
-    isPersistent: false,
   },
   {
     type: 'info',
     title: 'Information',
     content: 'You look like you need some coffee.',
     textSize: 'small',
-    isPersistent: false,
   },
 ]
 
