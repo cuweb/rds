@@ -7879,10 +7879,6 @@ select {
     flex-direction: row;
   }
 
-  .md\:flex-row-reverse {
-    flex-direction: row-reverse;
-  }
-
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }

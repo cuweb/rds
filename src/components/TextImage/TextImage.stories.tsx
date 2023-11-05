@@ -83,6 +83,7 @@ export const ImageAngle: Story = {
       <TextImage.Content
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
+        imageZoom={50}
         angle="left"
         hasMobileImage
       >
@@ -146,7 +147,7 @@ export const ImageDualAngle: Story = {
 
 export const NoImage: Story = {
   render: () => (
-    <TextImage hasBorder>
+    <TextImage>
       <TextImage.Content title="Website and Application Development">
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
