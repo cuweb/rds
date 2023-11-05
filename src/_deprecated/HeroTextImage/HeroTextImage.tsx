@@ -4,7 +4,7 @@ import { HeroTextImageEvent } from './HeroTextImageEvent'
 import { HeroTextImagePeople } from './HeroTextImagePeople'
 import { HeroTextImageSocial } from './HeroTextImageSocial'
 import { HeroTextImageMedia } from './HeroTextImageMedia'
-import { rdsMaxWidth } from '../../../utils/optionClasses'
+import { rdsMaxWidth } from '../../utils/optionClasses'
 import { styles } from './HeroTextImage.Styles'
 
 export interface HeroTextImageProps {

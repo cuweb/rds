@@ -4,6 +4,7 @@ export const rdsMaxWidth = {
   '5xl': 'max-w-5xl',
   '6xl': 'max-w-6xl',
   '7xl': 'max-w-7xl',
+  max: 'max-w-screen-2xl',
   full: 'max-w-full',
 }
 
