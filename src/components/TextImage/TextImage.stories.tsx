@@ -58,7 +58,11 @@ export const HeaderOne: Story = {
 export const ImageLeft: Story = {
   render: () => (
     <TextImage hasBorder reverse>
-      <TextImage.Content title="Website and Application Development" imageUrl="https://picsum.photos/400/266">
+      <TextImage.Content
+        title="Website and Application Development"
+        imageUrl="https://picsum.photos/400/266"
+        hasMobileImage
+      >
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
           reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
@@ -80,6 +84,7 @@ export const ImageAngle: Story = {
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
         angle="left"
+        hasMobileImage
       >
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
