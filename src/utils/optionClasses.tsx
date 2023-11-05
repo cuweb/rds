@@ -34,7 +34,7 @@ export const rdsBgColor = {
   'dark-grey': 'bg-cu-black-600',
 }
 
-export const rdsBgOpacity = {
+export const rdsOpacity = {
   10: 'opacity-10',
   20: 'opacity-20',
   30: 'opacity-30',
@@ -48,6 +48,7 @@ export const rdsBgOpacity = {
 
 export const rdsTextColor = {
   black: 'text-cu-black-800',
+  blue: 'text-blue-600',
   white: 'text-white',
   red: 'text-cu-red',
   grey: 'text-cu-black-50',

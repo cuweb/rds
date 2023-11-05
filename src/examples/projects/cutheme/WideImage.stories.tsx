@@ -8,9 +8,11 @@ import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Button } from '../../../components/Button/Button'
 import { HeroTextImage } from '../../../_deprecated/HeroTextImage/HeroTextImage'
 import { TopBarDataSingle } from '../../../data/TopBarData'
+import { WideImage } from '../../../components/WideImage/WideImage'
+import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Blocks',
+  title: 'Examples/Projects/cutheme',
 }
 
 export default meta
@@ -40,7 +42,7 @@ const DoublePara = () => {
   )
 }
 
-export const Banners: Story = {
+export const WideImageBanner: Story = {
   render: () => (
     <>
       <TopBar>
@@ -91,31 +93,16 @@ export const Banners: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage hasBorder>
-            <HeroTextImage.Content
-              title="Website and Application Development"
-              paragraph={heroPara}
-              headerType="h1"
-              hasMediaCol
-            >
-              <div className="flex flex-wrap gap-4 buttons md:gap-6">
-                <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
-              </div>
-            </HeroTextImage.Content>
-            <HeroTextImage.Media image="https://picsum.photos/400/266" />
-          </HeroTextImage>
-
-          <DoublePara />
-
-          <HeroTextImage maxWidth="5xl">
-            <HeroTextImage.Content title="Hero banner without an image" paragraph={heroPara}>
-              <div className="flex flex-wrap gap-6 buttons md:flex-1">
-                <Button title="Primary" />
-                <Button title="Secondary" color="grey" />
-              </div>
-            </HeroTextImage.Content>
-          </HeroTextImage>
+          <WideImage
+            headerType="h1"
+            image="https://picsum.photos/1600/700"
+            title="Wide image block with buttons and background image"
+          >
+            <ButtonGroup>
+              <Button title="Apply Now" />
+              <Button color="white" isType="outline" title="Request Information" />
+            </ButtonGroup>
+          </WideImage>
 
           <DoublePara />
 

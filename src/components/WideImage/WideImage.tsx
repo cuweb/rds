@@ -1,5 +1,5 @@
 import React from 'react'
-import { rdsMaxWidth, rdsBgOpacity } from '../../utils/optionClasses'
+import { rdsMaxWidth, rdsOpacity } from '../../utils/optionClasses'
 import { styles } from './WideImage.Styles'
 
 export interface WideImageProps {
@@ -33,7 +33,7 @@ export const WideImage = ({
 
   return (
     <div style={inlineStyle} className={`${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}>
-      {image && <div className={`${styles.imageOverlay} ${rdsBgOpacity[opacity]}`}></div>}
+      {image && <div className={`${styles.imageOverlay} ${rdsOpacity[opacity]}`}></div>}
 
       <div className={styles.content}>
         {headerType === 'h1' && <h1 className={`${styles.header} ${styles.headerOne} ${imageTextStyles}`}>{title}</h1>}
