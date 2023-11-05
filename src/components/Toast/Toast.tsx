@@ -49,7 +49,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
     },
     info: {
       icon: InformationCircleIcon,
-      color: 'text-gray-600',
+      color: 'text-blue-600',
     },
   }
 
