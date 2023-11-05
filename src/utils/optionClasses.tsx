@@ -28,6 +28,8 @@ export const rdsGridSpacing = {
 export const rdsBgColor = {
   none: 'bg-transparent',
   black: 'bg-cu-black-800',
+  blue: 'bg-blue-600',
+  green: 'bg-green-400',
   white: 'bg-white',
   red: 'bg-cu-red',
   grey: 'bg-cu-black-50',
@@ -44,10 +46,12 @@ export const rdsBgOpacity = {
   70: 'opacity-70',
   80: 'opacity-80',
   90: 'opacity-90',
+  100: 'opacity-100',
 }
 
 export const rdsTextColor = {
   black: 'text-cu-black-800',
+  blue: 'text-blue-600',
   white: 'text-white',
   red: 'text-cu-red',
   grey: 'text-cu-black-50',
