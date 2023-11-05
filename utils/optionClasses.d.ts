@@ -29,7 +29,7 @@ export declare const rdsBgColor: {
     grey: string;
     'dark-grey': string;
 };
-export declare const rdsBgOpacity: {
+export declare const rdsOpacity: {
     10: string;
     20: string;
     30: string;
