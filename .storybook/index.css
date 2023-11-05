@@ -2346,20 +2346,12 @@ select {
   min-height: 220px;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
-.min-h-\[820px\] {
-  min-height: 820px;
-}
-
-.min-h-\[1020px\] {
-  min-height: 1020px;
-}
-
 .min-h-\[360px\] {
   min-height: 360px;
+}
+
+.min-h-full {
+  min-height: 100%;
 }
 
 .\!w-px {
@@ -2706,10 +2698,6 @@ select {
 
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-row-reverse {
@@ -3621,10 +3609,6 @@ select {
 
 .text-\[15px\] {
   font-size: 15px;
-}
-
-.text-\[26px\] {
-  font-size: 26px;
 }
 
 .text-base {
@@ -7779,10 +7763,6 @@ select {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-
-  .sm\:leading-10 {
-    line-height: 2.5rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -7850,10 +7830,6 @@ select {
     min-height: 240px;
   }
 
-  .md\:min-h-\[220px\] {
-    min-height: 220px;
-  }
-
   .md\:w-52 {
     width: 13rem;
   }
@@ -7912,10 +7888,6 @@ select {
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
   }
 
   .md\:flex-nowrap {
@@ -8326,10 +8298,6 @@ select {
     flex-direction: row;
   }
 
-  .lg\:flex-nowrap {
-    flex-wrap: nowrap;
-  }
-
   .lg\:items-start {
     align-items: flex-start;
   }
@@ -8342,16 +8310,16 @@ select {
     justify-content: flex-end;
   }
 
+  .lg\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .lg\:gap-4 {
     gap: 1rem;
   }
 
   .lg\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .lg\:gap-10 {
-    gap: 2.5rem;
   }
 
   .lg\:divide-cu-black-300 > :not([hidden]) ~ :not([hidden]) {
