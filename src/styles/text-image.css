@@ -1,8 +1,0 @@
-.cu-textimage-as-h1 h1 {
-  /* @apply prose-lg md:prose-xl; */
-}
-
-.cu-textimage-as-h1 > * {
-  /* @apply prose-lg md:prose-xl; */
-  /* @apply text-[26px] sm:leading-10 font-light text-cu-black-700; */
-}
