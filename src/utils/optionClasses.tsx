@@ -48,6 +48,7 @@ export const rdsOpacity = {
 
 export const rdsTextColor = {
   black: 'text-cu-black-800',
+  blue: 'text-blue-600',
   white: 'text-white',
   red: 'text-cu-red',
   grey: 'text-cu-black-50',
