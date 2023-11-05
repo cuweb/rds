@@ -13,7 +13,7 @@ export interface AlertProps {
   textSize?: 'small' | 'large'
 }
 
-const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChildren<AlertProps>) => {
+export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChildren<AlertProps>) => {
   const alertTextSize = textSize === 'small' ? 'text-sm' : 'text-lg'
   const alertIconSize = textSize === 'small' ? 'w-5 h-5' : 'w-8 h-8'
 
@@ -57,5 +57,3 @@ const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChildren<A
     </div>
   )
 }
-
-export { Alert as Alert }
