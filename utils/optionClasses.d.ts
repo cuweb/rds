@@ -4,6 +4,7 @@ export declare const rdsMaxWidth: {
     '5xl': string;
     '6xl': string;
     '7xl': string;
+    max: string;
     full: string;
 };
 export declare const rdsOverlay = "bg-cu-black/30";

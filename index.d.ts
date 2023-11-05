@@ -17,8 +17,6 @@ export { FooterLogoLinks } from './components/Footer/FooterLogoLinks/FooterLogoL
 export { FooterSimple } from './components/Footer/FooterSimple/FooterSimple';
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard';
 export { Heading } from './components/Heading/Heading';
-export { HeroImageBanner } from './components/Hero/HeroImageBanner/HeroImageBanner';
-export { HeroTextImage } from './components/Hero/HeroTextImage/HeroTextImage';
 export { Icon } from './components/Icon/Icon';
 export { Link } from './components/Link/Link';
 export { Listing } from './components/Listing/Listing';
@@ -34,9 +32,11 @@ export { Search } from './components/Search/Search';
 export { SearchForm } from './components/SearchForm/SearchForm';
 export { SocialShare } from './components/SocialShare/SocialShare';
 export { Table } from './components/Table/Table';
+export { TextImage } from './components/TextImage/TextImage';
 export { Toast } from './components/Toast/Toast';
 export { TopBar } from './components/TopBar/TopBar';
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader';
+export { WideImage } from './components/WideImage/WideImage';
 export { Article } from './layouts/Article/Article';
 export { Aside } from './layouts/Aside/Aside';
 export { Body } from './layouts/Body/Body';
@@ -48,4 +48,5 @@ export { Section } from './layouts/Section/Section';
 export { StackedList } from './layouts/StackedList/StackedList';
 export type { ColumnDefinitionType } from './components/Table/Table';
 export type { UserInfoType } from './components/Avatar/Avatar';
+export { HeroTextImage } from './_deprecated/HeroTextImage/HeroTextImage';
 //# sourceMappingURL=index.d.ts.map
