@@ -113,10 +113,9 @@ export const TextImageContent = ({
 
       {imageUrl && (
         <div className={`${mediaStyles.mediaWrapper} ${noImageOnMobile}`}>
-          <div className={`${mediaStyles.mediaBgImage}`} style={inlineImageStyles}>
-            {leftSvg}
-            {rightSvg}
-          </div>
+          <div className={`${mediaStyles.mediaBgImage}`} style={inlineImageStyles}></div>
+          {leftSvg}
+          {rightSvg}
         </div>
       )}
     </>
