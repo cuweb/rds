@@ -48,7 +48,7 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
       })}
       <div className={`${textSize == 'large' ? 'mt-0.5' : null} ml-3 space-y-2 w-full`}>
         <p className={`${alertTextSize} ${AlertTypes[type].text} my-0 font-semibold`}>{title}</p>
-        <p className={`${alertTextSize} ${AlertTypes[type].text} mt-2`}>{content}</p>
+        <p className={`${alertTextSize} ${AlertTypes[type].text}`}>{content}</p>
       </div>
     </div>
   )
