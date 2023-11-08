@@ -8,6 +8,12 @@ export const rdsMaxWidth = {
   full: 'max-w-full',
 }
 
+export const rdsFlexRow = {
+  sm: 'sm:flex-row',
+  md: 'md:flex-row',
+  lg: 'lg:flex-row',
+}
+
 export const rdsOverlay = 'bg-cu-black/30'
 
 export const rdsGridColumns = {
