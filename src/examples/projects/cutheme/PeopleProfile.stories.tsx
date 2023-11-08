@@ -88,11 +88,10 @@ export const PeopleProfile: Story = {
         <Section hasProse>
           <TextImage flexRow="md" flipYsm>
             <TextImage.People
-              designation="General"
-              // pronoun="he/him"
-              name="Greely McWrinkle"
+              designation="Mr. "
+              pronoun="he/him"
+              name="Greely Wrinkle"
               jobTitle="Jedi Master & Jedi Council Member"
-              imageUrl="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
               degrees="Certificate, Padawan Academy of Jedi Arts"
               building="Onraed"
               room="Sector A29"
@@ -103,7 +102,14 @@ export const PeopleProfile: Story = {
               linkedin="#"
               twitter="#"
               facebook="#"
-            />
+            >
+              <img
+                src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
+                alt="People profile graphic"
+                width="350"
+                height="350"
+              />
+            </TextImage.People>
           </TextImage>
 
           <DoublePara />
