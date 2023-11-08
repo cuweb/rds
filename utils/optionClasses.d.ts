@@ -7,6 +7,11 @@ export declare const rdsMaxWidth: {
     max: string;
     full: string;
 };
+export declare const rdsFlexRow: {
+    sm: string;
+    md: string;
+    lg: string;
+};
 export declare const rdsOverlay = "bg-cu-black/30";
 export declare const rdsGridColumns: {
     '1': string;
