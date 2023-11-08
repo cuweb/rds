@@ -4221,18 +4221,17 @@ select {
   }
 }
 
-.cu-textimage img {
-  height: auto;
-  width: 100%;
-  border-radius: 0.375rem;
-}
-
 .cu-textimage-content {
   margin-bottom: 0px;
 }
 
 .cu-textimage-content > *:last-child {
   margin-bottom: 0px;
+}
+
+.cu-textimage img {
+  height: auto;
+  width: 100%;
 }
 
 .cu-stackedlist > li {

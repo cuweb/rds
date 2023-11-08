@@ -1,6 +1,7 @@
 import React from 'react'
 import { TextImageContent } from './TextImageContent'
 import { TextImagePeople } from './TextImagePeople'
+import { TextImageEvent } from './TextImageEvent'
 import { rdsMaxWidth, rdsFlexRow } from '../../utils/optionClasses'
 import { styles } from './TextImage.Styles'
 
@@ -37,4 +38,5 @@ export const TextImageWrapper = ({
 export const TextImage = Object.assign(TextImageWrapper, {
   Content: TextImageContent,
   People: TextImagePeople,
+  Event: TextImageEvent,
 })

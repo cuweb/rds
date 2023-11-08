@@ -3,12 +3,11 @@ import { proseGroups } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
 
 export interface TextImagePeopleProps {
+  children?: React.ReactNode
   designation?: string
   name: string
   jobTitle?: string
   pronoun?: string
-  imageUrl?: string
-  imageAlt?: string
   degrees?: string
   building?: string
   room?: string
@@ -25,8 +24,7 @@ export interface TextImageSocialProps {
 }
 
 export const TextImagePeople = ({
-  imageUrl,
-  imageAlt,
+  children,
   designation,
   name,
   jobTitle,
@@ -36,7 +34,7 @@ export const TextImagePeople = ({
   const { degrees, building, room, email, phone, phoneExt, resume, linkedin, twitter, facebook } = restProps
   const profileDetails = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
   const socialDetails = ['resume', 'linkedin', 'twitter', 'facebook']
-  const contentPadding = imageUrl ? 'md:py-4' : ''
+  const contentPadding = children ? 'md:py-4' : ''
 
   return (
     <>
@@ -143,13 +141,13 @@ export const TextImagePeople = ({
         )}
       </div>
 
-      {imageUrl && (
-        <div className="flex-none w-28 h-28 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-96 lg:h-96">
-          <img className="" src={imageUrl} alt={imageAlt} width="350" height="350" />
+      {children && (
+        <div className="flex-none cu-textimage-people w-28 h-28 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-96 lg:h-96">
+          <div className="overflow-hidden rounded-lg">{children}</div>
         </div>
       )}
     </>
   )
 }
 
-TextImagePeople.displayName = 'TextImage.Content'
+TextImagePeople.displayName = 'TextImage.People'
