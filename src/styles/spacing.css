@@ -114,14 +114,14 @@
   @apply mt-6 mb-6 md:mb-10 md:mt-10;
 }
 
-.cu-textimage img {
-  @apply w-full h-auto rounded-md;
-}
-
 .cu-textimage-content {
   @apply mb-0;
 }
 
 .cu-textimage-content > *:last-child {
   @apply mb-0;
+}
+
+.cu-textimage img {
+  @apply w-full h-auto;
 }

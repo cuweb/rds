@@ -57,7 +57,7 @@ export const HeaderOne: Story = {
 
 export const ImageLeft: Story = {
   render: () => (
-    <TextImage hasBorder reverse>
+    <TextImage hasBorder flipX>
       <TextImage.Content
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
@@ -103,7 +103,7 @@ export const ImageAngle: Story = {
 
 export const ImageAngleReverse: Story = {
   render: () => (
-    <TextImage maxWidth="7xl" hasBorder reverse>
+    <TextImage maxWidth="7xl" hasBorder flipX>
       <TextImage.Content
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
