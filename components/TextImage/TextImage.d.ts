@@ -14,7 +14,11 @@ export declare const TextImage: (({ children, maxWidth, flexRow, hasBorder, flip
         displayName: string;
     };
     People: {
-        ({ imageUrl, imageAlt, designation, name, jobTitle, pronoun, ...restProps }: import("./TextImagePeople").TextImagePeopleProps & import("./TextImagePeople").TextImageSocialProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, designation, name, jobTitle, pronoun, ...restProps }: import("./TextImagePeople").TextImagePeopleProps & import("./TextImagePeople").TextImageSocialProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+    Event: {
+        ({ children, title, startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: import("./TextImageEvent").TextImageEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
