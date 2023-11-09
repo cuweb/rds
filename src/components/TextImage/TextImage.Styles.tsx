@@ -1,5 +1,5 @@
 export const styles = {
-  base: `flex flex-col lg:flex-row gap-6 mx-auto mb-6 cu-textimage lg:gap-10 not-prose not-contained md:mb-12`,
+  base: `flex flex-col lg:flex-row gap-6 mx-auto mb-6 cu-textimage lg:gap-10 not-contained md:mb-12`,
   baseContent: ``,
   border: `border-b border-cu-black-50 pb-6 shadow-hero-text-image md:pb-8`,
   headerOne: `font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] text-cu-black-700 not-prose`,
