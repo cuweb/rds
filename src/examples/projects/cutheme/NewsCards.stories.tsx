@@ -11,12 +11,12 @@ import { Heading } from '../../../components/Heading/Heading'
 import { Card } from '../../../components/Card/Card'
 
 import { NewsData as data } from '../../../data/NewsData'
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../../_deprecated/HeroTextImage/HeroTextImage'
 import { Button } from '../../../components/Button/Button'
 import { TopBarDataSingle } from '../../../data/TopBarData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Blocks',
+  title: 'Examples/Projects/cutheme',
 }
 
 export default meta

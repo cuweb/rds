@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { Panel } from '../../layouts/Panel/Panel'
-import { HeroTextImage } from '../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { TopBar } from '../../components/TopBar/TopBar'
 
 const meta: Meta = {

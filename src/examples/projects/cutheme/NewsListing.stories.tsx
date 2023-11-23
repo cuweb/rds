@@ -11,11 +11,11 @@ import { Listing } from '../../../components/Listing/Listing'
 
 import { NewsData as data } from '../../../data/NewsData'
 import { Heading } from '../../../components/Heading/Heading'
-import { HeroTextImage } from '../../../components/Hero/HeroTextImage/HeroTextImage'
+import { HeroTextImage } from '../../../_deprecated/HeroTextImage/HeroTextImage'
 import { TopBarDataSingle } from '../../../data/TopBarData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/cutheme/Blocks',
+  title: 'Examples/Projects/cutheme',
 }
 
 export default meta

@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import tsConfigPaths from 'vite-tsconfig-paths'
+import terser from '@rollup/plugin-terser';
 import * as packageJson from './package.json'
 
 export default defineConfig(() => ({
@@ -21,7 +22,10 @@ export default defineConfig(() => ({
       fileName: (format) => `rds.${format}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(packageJson.peerDependencies), 'next/link'],
+      external: [...Object.keys(packageJson.dependencies), ...Object.keys(packageJson.peerDependencies)],
+      output: {
+        plugins: [terser()]
+      }
     },
   },
 }))

@@ -4,7 +4,14 @@ export const rdsMaxWidth = {
   '5xl': 'max-w-5xl',
   '6xl': 'max-w-6xl',
   '7xl': 'max-w-7xl',
+  max: 'max-w-screen-2xl',
   full: 'max-w-full',
+}
+
+export const rdsFlexRow = {
+  sm: 'sm:flex-row',
+  md: 'md:flex-row',
+  lg: 'lg:flex-row',
 }
 
 export const rdsOverlay = 'bg-cu-black/30'
@@ -33,8 +40,21 @@ export const rdsBgColor = {
   'dark-grey': 'bg-cu-black-600',
 }
 
+export const rdsOpacity = {
+  10: 'opacity-10',
+  20: 'opacity-20',
+  30: 'opacity-30',
+  40: 'opacity-40',
+  50: 'opacity-50',
+  60: 'opacity-60',
+  70: 'opacity-70',
+  80: 'opacity-80',
+  90: 'opacity-90',
+}
+
 export const rdsTextColor = {
   black: 'text-cu-black-800',
+  blue: 'text-blue-600',
   white: 'text-white',
   red: 'text-cu-red',
   grey: 'text-cu-black-50',

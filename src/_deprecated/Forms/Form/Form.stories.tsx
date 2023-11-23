@@ -4,7 +4,7 @@ import { Form } from './Form'
 import * as yup from 'yup'
 
 const meta: Meta<typeof Form> = {
-  title: 'Components/Forms/Base Form',
+  title: 'Deprecated/Forms/Base Form',
   component: Form,
   tags: ['autodocs'],
   parameters: {
@@ -90,7 +90,7 @@ export const Example: Story = {
             editor="textarea"
           />
 
-          <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." />
+          {/* <Form.PlacesAutoComplete name="location" placeholder="Please select a location..." /> */}
 
           <Form.DateTimePicker name="datetime" placeholder="Please select date and time..." />
 
