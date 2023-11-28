@@ -7943,6 +7943,14 @@ select {
     padding: 5rem;
   }
 
+  .md\:p-14 {
+    padding: 3.5rem;
+  }
+
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
