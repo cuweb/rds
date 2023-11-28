@@ -3564,6 +3564,10 @@ select {
   padding-top: 56.25%;
 }
 
+.pl-0 {
+  padding-left: 0px;
+}
+
 .text-left {
   text-align: left;
 }
@@ -7935,20 +7939,12 @@ select {
     background-size: cover;
   }
 
-  .md\:p-10 {
-    padding: 2.5rem;
+  .md\:p-12 {
+    padding: 3rem;
   }
 
   .md\:p-20 {
     padding: 5rem;
-  }
-
-  .md\:p-14 {
-    padding: 3.5rem;
-  }
-
-  .md\:p-12 {
-    padding: 3rem;
   }
 
   .md\:px-10 {
@@ -8087,6 +8083,10 @@ select {
 
   .md\:pt-8 {
     padding-top: 2rem;
+  }
+
+  .md\:pl-0 {
+    padding-left: 0px;
   }
 
   .md\:text-left {
@@ -8460,11 +8460,49 @@ select {
   }
 }
 
+.\[\&\>\*\:first-child\]\:mt-0>*:first-child {
+  margin-top: 0px;
+}
+
+.\[\&\>\*\:first-child\]\:mt-2>*:first-child {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .md\:\[\&\>\*\:first-child\]\:mt-0>*:first-child {
+    margin-top: 0px;
+  }
+
+  .md\:\[\&\>\*\:first-child\]\:mt-2>*:first-child {
+    margin-top: 0.5rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:\[\&\>\*\:first-child\]\:col-span-2>*:first-child {
     grid-column: span 2 / span 2;
   }
+}
 
+.\[\&\>\*\:last-child\]\:mt-2>*:last-child {
+  margin-top: 0.5rem;
+}
+
+.\[\&\>\*\:last-child\]\:mb-2>*:last-child {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .md\:\[\&\>\*\:last-child\]\:mt-2>*:last-child {
+    margin-top: 0.5rem;
+  }
+
+  .md\:\[\&\>\*\:last-child\]\:mb-2>*:last-child {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .lg\:\[\&\>\*\:last-child\]\:col-span-2>*:last-child {
     grid-column: span 2 / span 2;
   }
@@ -8474,11 +8512,27 @@ select {
   z-index: 10;
 }
 
+.\[\&\>\*\]\:first\:mt-0:first-child>* {
+  margin-top: 0px;
+}
+
+.\[\&\>\*\]\:first\:pt-0:first-child>* {
+  padding-top: 0px;
+}
+
 .last\:\[\&\>\*\]\:justify-center>*:last-child {
   justify-content: center;
 }
 
 @media (min-width: 768px) {
+  .md\:\[\&\>\*\]\:first\:mt-0:first-child>* {
+    margin-top: 0px;
+  }
+
+  .md\:\[\&\>\*\]\:first\:pt-0:first-child>* {
+    padding-top: 0px;
+  }
+
   .last\:md\:\[\&\>\*\]\:justify-end>*:last-child {
     justify-content: flex-end;
   }
