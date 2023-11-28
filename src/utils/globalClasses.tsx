@@ -18,7 +18,7 @@ export const footerStyles = {
 export const layoutSpacing = {
   section: 'px-8 py-6 md:py-10 md:px-10',
   containerWhite: 'py-5 md:py-6 bg-white',
-  containerGrey: 'bg-cu-black-50 rounded-xl px-8 py-8 md:py-10 md:p-10',
+  containerGrey: 'max-w-screen-2xl mx-auto bg-cu-black-50 rounded-xl px-8 py-8 md:py-12 md:p-12',
 }
 
 export const globalSpace = {
