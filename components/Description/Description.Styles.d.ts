@@ -8,5 +8,6 @@ export declare const styles: {
     button: string;
     chevron: string;
     term: string;
+    desc: string;
 };
 //# sourceMappingURL=Description.Styles.d.ts.map
