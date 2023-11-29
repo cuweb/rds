@@ -14,6 +14,8 @@ export declare const mediaStyles: {
     mediaBgImage: string;
     svgLeft: string;
     svgRight: string;
+    svgFlipLeft: string;
+    svgFlipRight: string;
 };
 export declare const socialStyles: {
     flex: string;

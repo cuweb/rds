@@ -10,7 +10,7 @@ export interface TextImageProps {
 export declare const TextImageWrapper: ({ children, maxWidth, flexRow, hasBorder, flipX, flipYsm, }: TextImageProps) => import("react/jsx-runtime").JSX.Element;
 export declare const TextImage: (({ children, maxWidth, flexRow, hasBorder, flipX, flipYsm, }: TextImageProps) => import("react/jsx-runtime").JSX.Element) & {
     Content: {
-        ({ children, title, headerType, isCenter, imageUrl, contentWidth, imageZoom, angle, focalPointX, focalPointY, hasMobileImage, }: import("./TextImageContent").TextImageContentProps & import("./TextImageContent").TextImageMediaProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, title, headerType, isCenter, imageUrl, contentWidth, imageZoom, angle, flipX, focalPointX, focalPointY, hasMobileImage, }: import("./TextImageContent").TextImageContentProps & import("./TextImageContent").TextImageMediaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     People: {
