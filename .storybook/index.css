@@ -3476,6 +3476,10 @@ select {
   padding-bottom: 56.25%;
 }
 
+.pl-0 {
+  padding-left: 0px;
+}
+
 .pl-10 {
   padding-left: 2.5rem;
 }
@@ -3562,10 +3566,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pl-0 {
-  padding-left: 0px;
 }
 
 .text-left {
@@ -4509,6 +4509,18 @@ select {
   background-color: rgb(242 242 242 / 0.5);
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+/* Unordered Lists */
+
+ul li,
+ul li li,
+ul li li li {
+  list-style-type: disc !important;
+}
+
+ol li li li {
+  list-style-type: circle !important;
 }
 
 /* React Quill CSS */
@@ -8061,6 +8073,10 @@ select {
     padding-bottom: 2rem;
   }
 
+  .md\:pl-0 {
+    padding-left: 0px;
+  }
+
   .md\:pt-14 {
     padding-top: 3.5rem;
   }
@@ -8083,10 +8099,6 @@ select {
 
   .md\:pt-8 {
     padding-top: 2rem;
-  }
-
-  .md\:pl-0 {
-    padding-left: 0px;
   }
 
   .md\:text-left {
@@ -8464,17 +8476,9 @@ select {
   margin-top: 0px;
 }
 
-.\[\&\>\*\:first-child\]\:mt-2>*:first-child {
-  margin-top: 0.5rem;
-}
-
 @media (min-width: 768px) {
   .md\:\[\&\>\*\:first-child\]\:mt-0>*:first-child {
     margin-top: 0px;
-  }
-
-  .md\:\[\&\>\*\:first-child\]\:mt-2>*:first-child {
-    margin-top: 0.5rem;
   }
 }
 
@@ -8484,19 +8488,11 @@ select {
   }
 }
 
-.\[\&\>\*\:last-child\]\:mt-2>*:last-child {
-  margin-top: 0.5rem;
-}
-
 .\[\&\>\*\:last-child\]\:mb-2>*:last-child {
   margin-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
-  .md\:\[\&\>\*\:last-child\]\:mt-2>*:last-child {
-    margin-top: 0.5rem;
-  }
-
   .md\:\[\&\>\*\:last-child\]\:mb-2>*:last-child {
     margin-bottom: 0.5rem;
   }
@@ -8512,27 +8508,11 @@ select {
   z-index: 10;
 }
 
-.\[\&\>\*\]\:first\:mt-0:first-child>* {
-  margin-top: 0px;
-}
-
-.\[\&\>\*\]\:first\:pt-0:first-child>* {
-  padding-top: 0px;
-}
-
 .last\:\[\&\>\*\]\:justify-center>*:last-child {
   justify-content: center;
 }
 
 @media (min-width: 768px) {
-  .md\:\[\&\>\*\]\:first\:mt-0:first-child>* {
-    margin-top: 0px;
-  }
-
-  .md\:\[\&\>\*\]\:first\:pt-0:first-child>* {
-    padding-top: 0px;
-  }
-
   .last\:md\:\[\&\>\*\]\:justify-end>*:last-child {
     justify-content: flex-end;
   }
