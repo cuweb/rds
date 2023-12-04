@@ -1,39 +1,34 @@
-import { useState } from 'react'
 import { styles } from './Description.Styles'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { proseStyles } from '../../utils/globalClasses'
-
+import {Helmet} from "react-helmet";
 export interface DescriptionAccordionProps {
   term: string
   children: React.ReactNode
 }
 
 export const DescriptionAccordion = ({ term, children }: DescriptionAccordionProps) => {
-  const [ariaExpanded, setAriaExpanded] = useState(false)
-  const [collapsed, setCollapsed] = useState(true)
-  const [hidden, setHidden] = useState(true)
 
-  const onContentToggle = () => {
-    setAriaExpanded((current) => !current)
-    setCollapsed((current) => !current)
-    setHidden((current) => !current)
-  }
-
-  const termLabel = term.toLowerCase().replace(/ +/g, '-')
+  const termLabel = term && typeof term === 'string' ? 'accordion-' + term.toLowerCase().replace(/ +/g, '-') : '';
 
   return (
-    <div className={`${styles.base} ${styles.accordion}`}>
-      <dt className={`${styles.term} ${proseStyles.base}`}>
-        <button className={styles.button} id={termLabel} aria-expanded={ariaExpanded} onClick={onContentToggle}>
-          {term}
-          <ChevronRightIcon className={`${styles.chevron} ${collapsed ? 'rotate-0' : 'rotate-90'}`} />
-        </button>
-      </dt>
+    <>
+      <Helmet>
+        <script src="./src/components/Description/script.js" type="text/javascript" />
+      </Helmet>
+      <div className={`accordion ${styles.base} ${styles.accordion}`}>
+        <dt className={`${styles.term} ${proseStyles.base}`}>
+          <button className={`accordion__button ${styles.button}`} aria-expanded='false' aria-controls={termLabel}>
+            {term}
+            <ChevronRightIcon className={`accordion__icon ${styles.chevron} rotate-0}`} />
+          </button>
+        </dt>
 
-      <dd className={`${proseStyles.base} ${styles.accordionDef}`} hidden={hidden}>
-        {children}
-      </dd>
-    </div>
+        <dd className={`accordion__content ${styles.accordionDef}`} hidden={true} id={termLabel}>
+          {children}
+        </dd>
+      </div>
+    </>
   )
 }
 
