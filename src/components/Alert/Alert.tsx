@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react'
+import './styles.css'
 import {
   CheckCircleIcon,
   ExclamationCircleIcon,
@@ -20,22 +21,26 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
   const AlertTypes = {
     success: {
       icon: CheckCircleIcon,
-      text: 'text-green-700',
+      alertHeading: 'text-green-700',
+      alertSubhead: 'text-gray-600',
       background: 'bg-green-50',
     },
     warning: {
       icon: ShieldExclamationIcon,
-      text: 'text-yellow-700',
+      alertHeading: 'text-yellow-700',
+      alertSubhead: 'text-gray-600',
       background: 'bg-yellow-50',
     },
     error: {
       icon: ExclamationCircleIcon,
-      text: 'text-cu-red-700',
+      alertHeading: 'text-cu-red-700',
+      alertSubhead: 'text-gray-600',
       background: 'bg-cu-red-50',
     },
     info: {
       icon: InformationCircleIcon,
-      text: 'text-blue-700',
+      alertHeading: 'text-blue-700',
+      alertSubhead: 'text-gray-600',
       background: 'bg-blue-50',
     },
   }
@@ -43,12 +48,12 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
   return (
     <div className={`flex rounded-md p-4 my-2 not-prose ${AlertTypes[type].background}`}>
       {React.createElement(AlertTypes[type].icon, {
-        className: `${alertIconSize} ${AlertTypes[type].text}`,
+        className: `${alertIconSize} ${AlertTypes[type].alertHeading}`,
         'aria-hidden': 'true',
       })}
-      <div className={`${textSize == 'large' ? 'mt-0.5' : null} ml-3 space-y-2 w-full`}>
-        <p className={`${alertTextSize} ${AlertTypes[type].text} my-0 font-semibold`}>{title}</p>
-        <p className={`${alertTextSize} ${AlertTypes[type].text}`}>{content}</p>
+      <div className={`alert-${type} ${textSize == 'large' ? 'mt-0.5' : null} ml-3 space-y-2 w-full`}>
+        <p className={`${alertTextSize} ${AlertTypes[type].alertHeading} my-0 font-semibold`}>{title}</p>
+        <p className={`${alertTextSize} ${AlertTypes[type].alertSubhead}`}>{content}</p>
       </div>
     </div>
   )
