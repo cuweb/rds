@@ -18,7 +18,7 @@ type AlertStoryType = {
   type: 'success' | 'error' | 'warning' | 'info'
   textSize: 'small' | 'large'
   title?: string
-  content?: string
+  content?: React.ReactNode | string
 }
 
 const AlertStory: AlertStoryType[] = [
@@ -68,6 +68,20 @@ export const Stacked: Story = {
       })}
     </>
   ),
+}
+
+const content = (
+  <>
+    Click <a href="https://example.com">here</a> to learn more.
+  </>
+)
+
+export const WithLink: Story = {
+  render: (args) => <Alert key={111} type={args.type} title="Information" content={content} />,
+}
+
+WithLink.args = {
+  type: 'info',
 }
 
 export const LargeText: Story = {
