@@ -22,25 +22,25 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
     success: {
       icon: CheckCircleIcon,
       alertHeading: 'text-green-700',
-      alertSubhead: 'text-gray-600',
+      alertSubhead: 'cu-black-600',
       background: 'bg-green-50',
     },
     warning: {
       icon: ShieldExclamationIcon,
       alertHeading: 'text-yellow-700',
-      alertSubhead: 'text-gray-600',
+      alertSubhead: 'cu-black-600',
       background: 'bg-yellow-50',
     },
     error: {
       icon: ExclamationCircleIcon,
       alertHeading: 'text-cu-red-700',
-      alertSubhead: 'text-gray-600',
+      alertSubhead: 'cu-black-600',
       background: 'bg-cu-red-50',
     },
     info: {
       icon: InformationCircleIcon,
       alertHeading: 'text-blue-700',
-      alertSubhead: 'text-gray-600',
+      alertSubhead: 'cu-black-600',
       background: 'bg-blue-50',
     },
   }
