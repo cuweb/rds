@@ -13,7 +13,7 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
   return (
     <>
       <Helmet>
-        <script src="./src/components/Description/script.js" type="text/javascript" />
+        <script src="./src/components/Description/DescriptionAccordionScript.js" type="text/javascript" />
       </Helmet>
       <div className={`accordion ${styles.base} ${styles.accordion}`}>
         <dt className={`${styles.term} ${proseStyles.base}`}>

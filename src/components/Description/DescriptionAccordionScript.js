@@ -1,3 +1,4 @@
+/* eslint-env browser */
 var buttons = document.querySelectorAll('.accordion__button')
 
 if (buttons) {
