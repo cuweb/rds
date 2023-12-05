@@ -2182,6 +2182,10 @@ select {
   margin-top: auto;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
