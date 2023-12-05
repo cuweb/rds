@@ -70,18 +70,49 @@ export const Stacked: Story = {
   ),
 }
 
-const content = (
-  <>
-    Click <a href="https://example.com">here</a> to learn more.
-  </>
-)
-
-export const WithLink: Story = {
-  render: (args) => <Alert key={111} type={args.type} title="Information" content={content} />,
+export const ContentBold: Story = {
+  render: () => (
+    <Alert
+      key={111}
+      type="info"
+      title="Information"
+      content={
+        <>
+          <strong>This text in bold.</strong>
+        </>
+      }
+    />
+  ),
 }
 
-WithLink.args = {
-  type: 'info',
+export const ContentItalics: Story = {
+  render: () => (
+    <Alert
+      key={111}
+      type="info"
+      title="Information"
+      content={
+        <>
+          <em>This text is italicized.</em>
+        </>
+      }
+    />
+  ),
+}
+
+export const ContentLink: Story = {
+  render: () => (
+    <Alert
+      key={111}
+      type="info"
+      title="Information"
+      content={
+        <>
+          Click <a href="https://example.com">here</a> to learn more.
+        </>
+      }
+    />
+  ),
 }
 
 export const LargeText: Story = {
