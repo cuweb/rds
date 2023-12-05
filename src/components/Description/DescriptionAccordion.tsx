@@ -23,7 +23,7 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
           </button>
         </dt>
 
-        <dd className={`accordion__content ${styles.accordionDef}`} hidden={true} id={termLabel}>
+        <dd className={`accordion__content ${styles.desc}`} hidden={true} id={termLabel}>
           {children}
         </dd>
       </div>
