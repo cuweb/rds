@@ -2050,6 +2050,10 @@ select {
   margin-top: -0.75rem;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -2180,10 +2184,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-0 {
-  margin-bottom: 0px;
 }
 
 .line-clamp-2 {
@@ -4527,6 +4527,18 @@ select {
   background-color: rgb(242 242 242 / 0.5);
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+/* Unordered Lists */
+
+ul li,
+ul li li,
+ul li li li {
+  list-style-type: disc !important;
+}
+
+ol li li li {
+  list-style-type: circle !important;
 }
 
 /* React Quill CSS */
