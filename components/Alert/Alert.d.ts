@@ -1,7 +1,7 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 export interface AlertProps {
     title: string;
-    content?: string;
+    content?: React.ReactNode | string;
     type: 'success' | 'error' | 'warning' | 'info';
     textSize?: 'small' | 'large';
 }
