@@ -108,7 +108,7 @@ export const TextImageEvent = ({
                 title={primaryButtonText ? primaryButtonText : 'Register Now'}
               />
             )}
-            {secondaryButtonUrl && secondaryButtonText && (
+            {secondaryButtonUrl && (
               <Button
                 isSmall
                 color="grey"
