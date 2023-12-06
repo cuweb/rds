@@ -78,7 +78,7 @@ export const ContentBold: Story = {
       title="Information"
       content={
         <>
-          <strong>This text in bold.</strong>
+          Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Suspendisse in enim ipsum.
         </>
       }
     />
@@ -93,7 +93,7 @@ export const ContentItalics: Story = {
       title="Information"
       content={
         <>
-          <em>This text is italicized.</em>
+          Lorem ipsum dolor sit amet, <em>consectetur adipiscing</em> elit. Suspendisse in enim ipsum.
         </>
       }
     />
@@ -108,7 +108,8 @@ export const ContentLink: Story = {
       title="Information"
       content={
         <>
-          Click <a href="https://example.com">here</a> to learn more.
+          Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in enim
+          ipsum.
         </>
       }
     />
