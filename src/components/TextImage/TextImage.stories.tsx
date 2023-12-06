@@ -108,6 +108,7 @@ export const ImageAngleReverse: Story = {
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
         angle="left"
+        flipX
       >
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
@@ -130,6 +131,29 @@ export const ImageDualAngle: Story = {
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
         angle="dual"
+      >
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+          in. Praesent quis ligula quis nulla malesuada tempor.
+        </p>
+        <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+          <Button title="Primary" />
+          <Button title="Secondary" color="grey" />
+        </div>
+      </TextImage.Content>
+    </TextImage>
+  ),
+}
+
+export const ImageDualAngleReverse: Story = {
+  render: () => (
+    <TextImage maxWidth="7xl" hasBorder flipX>
+      <TextImage.Content
+        title="Website and Application Development"
+        imageUrl="https://picsum.photos/400/266"
+        angle="dual"
+        flipX
       >
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
