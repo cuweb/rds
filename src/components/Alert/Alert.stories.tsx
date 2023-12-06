@@ -18,7 +18,7 @@ type AlertStoryType = {
   type: 'success' | 'error' | 'warning' | 'info'
   textSize: 'small' | 'large'
   title?: string
-  content?: string
+  content?: React.ReactNode | string
 }
 
 const AlertStory: AlertStoryType[] = [
@@ -67,6 +67,52 @@ export const Stacked: Story = {
         return <Alert key={index} type={alert.type} title={alert.title || 'Title'} content={alert.content} />
       })}
     </>
+  ),
+}
+
+export const ContentBold: Story = {
+  render: () => (
+    <Alert
+      key={111}
+      type="info"
+      title="Information"
+      content={
+        <>
+          Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Suspendisse in enim ipsum.
+        </>
+      }
+    />
+  ),
+}
+
+export const ContentItalics: Story = {
+  render: () => (
+    <Alert
+      key={111}
+      type="info"
+      title="Information"
+      content={
+        <>
+          Lorem ipsum dolor sit amet, <em>consectetur adipiscing</em> elit. Suspendisse in enim ipsum.
+        </>
+      }
+    />
+  ),
+}
+
+export const ContentLink: Story = {
+  render: () => (
+    <Alert
+      key={111}
+      type="info"
+      title="Information"
+      content={
+        <>
+          Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in enim
+          ipsum.
+        </>
+      }
+    />
   ),
 }
 
