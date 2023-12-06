@@ -117,7 +117,7 @@ export const TextImageEvent = ({
                     window.location.href = secondaryButtonUrl
                   }
                 }}
-                title={secondaryButtonText}
+                title={secondaryButtonText ? secondaryButtonText : 'More Information'}
               />
             )}
           </ButtonGroup>
