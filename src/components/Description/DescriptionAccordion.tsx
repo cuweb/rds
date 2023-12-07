@@ -1,7 +1,7 @@
 import { styles } from './Description.Styles'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { proseStyles } from '../../utils/globalClasses'
-import { toggleAccordion } from './DescriptionAccordionScript';
+import { toggleAccordion } from './DescriptionAccordionScript'
 
 export interface DescriptionAccordionProps {
   term: string
@@ -15,7 +15,12 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
     <>
       <div className={`accordion ${styles.base} ${styles.accordion}`}>
         <dt className={`${styles.term} ${proseStyles.base}`}>
-          <button className={`accordion__button ${styles.button}`} aria-expanded="false" aria-controls={termLabel} onClick={toggleAccordion}>
+          <button
+            className={`accordion__button ${styles.button}`}
+            aria-expanded="false"
+            aria-controls={termLabel}
+            onClick={toggleAccordion}
+          >
             {term}
             <ChevronRightIcon className={`accordion__icon ${styles.chevron} rotate-0}`} />
           </button>

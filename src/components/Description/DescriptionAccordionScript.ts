@@ -1,4 +1,4 @@
-export function toggleAccordion(event : React.MouseEvent<HTMLElement>) {
+export function toggleAccordion(event: React.MouseEvent<HTMLElement>) {
   const target = event.currentTarget,
     icon = target.querySelector('.accordion__icon'),
     accordion = target.closest('.accordion'),
@@ -7,19 +7,19 @@ export function toggleAccordion(event : React.MouseEvent<HTMLElement>) {
 
   if (hidden) {
     target.setAttribute('aria-expanded', 'true')
-    if(icon) {
+    if (icon) {
       icon.classList.remove('rotate-0')
       icon.classList.add('rotate-90')
     }
   } else {
     target.setAttribute('aria-expanded', 'false')
-    if(icon) {
+    if (icon) {
       icon.classList.add('rotate-0')
       icon.classList.remove('rotate-90')
     }
   }
-  
-  if(content) {
+
+  if (content) {
     content.hidden = !hidden
   }
 }
