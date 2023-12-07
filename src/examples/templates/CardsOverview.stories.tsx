@@ -249,6 +249,219 @@ export const CardsOverview: Story = {
                 </Card>
               ))}
             </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasShadowHover>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasBorder>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasShadow>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasShadow hasBorder>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <Heading text="Event Cards w/Grey BG" />
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasShadowHover>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasBorder>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasShadow>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {EventData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasShadow hasBorder>
+                  <a href={item?.link}>
+                    <Card.Figure>
+                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                      <Card.Header text={item?.title} />
+                      <Card.EventMeta
+                        startDateTime={item?.startDate}
+                        endDateTime={item?.endDate}
+                        onCampus={item?.on_campus}
+                        onCampusBuilding={item?.on_campus_building}
+                        onCampusRoomNumber={item?.on_campus_room_number}
+                        eventAddress={item?.event_address}
+                      />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
           </Container>
 
           <DoublePara />
@@ -270,6 +483,147 @@ export const CardsOverview: Story = {
                 </Card>
               ))}
             </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isCenter hasShadowHover>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isCenter hasBorder>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isCenter hasShadow>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isCenter hasBorder hasShadow>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <Heading text="People Cards w/Grey BG" />
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey isCenter>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey isCenter hasShadowHover>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey isCenter hasBorder>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey isCenter hasShadow>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {PeopleData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey isCenter hasBorder hasShadow>
+                  <a href={item?.link}>
+                    <Card.Figure isRound>
+                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
+                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                    </Card.Content>
+                  </a>
+                </Card>
+              ))}
+            </Column>
           </Container>
 
           <DoublePara />
@@ -278,7 +632,83 @@ export const CardsOverview: Story = {
             <Heading text="Video Cards" />
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id}>
+                <Card key={item?.id} noLink>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} noLink hasBorder>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} noLink hasShadow>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} noLink hasBorder hasShadow>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <Heading text="Video Cards w/Grey BG" />
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey noLink>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey noLink hasBorder>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey noLink hasShadow>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey noLink hasBorder hasShadow>
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -294,7 +724,76 @@ export const CardsOverview: Story = {
             <Heading text="Stat Cards" />
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasBorder hasRedBorder>
+                <Card key={item?.id} hasRedBorder noLink>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasRedBorder noLink hasBorder>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasRedBorder noLink hasShadow>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasRedBorder noLink hasBorder hasShadow>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <Heading text="Stat Cards w/Grey BG" />
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasRedBorder noLink>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasRedBorder noLink hasBorder>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasRedBorder noLink hasShadow>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasRedBorder noLink hasBorder hasShadow>
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
