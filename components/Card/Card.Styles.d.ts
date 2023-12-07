@@ -1,7 +1,12 @@
 export declare const styles: {
     card: string;
+    whiteBg: string;
+    greyBg: string;
+    shadow: string;
+    shadowHover: string;
     link: string;
     border: string;
+    redBorder: string;
     content: string;
     header: string;
     excerpt: string;
