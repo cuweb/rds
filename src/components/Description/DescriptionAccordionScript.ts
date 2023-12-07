@@ -1,4 +1,4 @@
-export function toggleAccordion(event: React.MouseEvent<HTMLElement>) {
+export const toggleAccordion = (event: React.MouseEvent<HTMLElement>) => {
   const target = event.currentTarget,
     icon = target.querySelector('.accordion__icon'),
     accordion = target.closest('.accordion'),
