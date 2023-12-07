@@ -85,7 +85,138 @@ export const CardsOverview: Story = {
                     <Card.Header text={item?.title} />
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                   </Card.Content>
-                  <Card.Badges tags={item?.tags} />
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasShadowHover>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasBorder>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasShadow>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasShadow hasBorder>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <DoublePara />
+
+          <Container>
+            <Heading text="News Cards w/Grey BG" />
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasShadowHover>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasBorder>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasShadow>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {NewsData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasShadow hasBorder>
+                  <Card.Figure>
+                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
+                  </Card.Figure>
+                  <Card.Content>
+                    <Card.PostMeta date={item?.date} />
+                    <Card.Header text={item?.title} />
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Content>
                 </Card>
               ))}
             </Column>
@@ -114,7 +245,6 @@ export const CardsOverview: Story = {
                         eventAddress={item?.event_address}
                       />
                     </Card.Content>
-                    <Card.Badges tags={item?.tags} />
                   </a>
                 </Card>
               ))}
@@ -127,7 +257,7 @@ export const CardsOverview: Story = {
             <Heading text="People Cards" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id}>
+                <Card key={item?.id} isCenter>
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -164,7 +294,7 @@ export const CardsOverview: Story = {
             <Heading text="Stat Cards" />
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasBorder>
+                <Card key={item?.id} hasBorder hasRedBorder>
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
