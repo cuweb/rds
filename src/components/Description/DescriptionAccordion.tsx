@@ -1,7 +1,8 @@
 import { styles } from './Description.Styles'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { proseStyles } from '../../utils/globalClasses'
-import { Helmet } from 'react-helmet'
+import { toggleAccordion } from './DescriptionAccordionScript'
+
 export interface DescriptionAccordionProps {
   term: string
   children: React.ReactNode
@@ -12,12 +13,14 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
 
   return (
     <>
-      <Helmet>
-        <script src="./src/components/Description/DescriptionAccordionScript.js" type="text/javascript" />
-      </Helmet>
       <div className={`accordion ${styles.base} ${styles.accordion}`}>
         <dt className={`${styles.term} ${proseStyles.base}`}>
-          <button className={`accordion__button ${styles.button}`} aria-expanded="false" aria-controls={termLabel}>
+          <button
+            className={`accordion__button ${styles.button}`}
+            aria-expanded="false"
+            aria-controls={termLabel}
+            onClick={toggleAccordion}
+          >
             {term}
             <ChevronRightIcon className={`accordion__icon ${styles.chevron} rotate-0}`} />
           </button>
