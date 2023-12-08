@@ -74,6 +74,15 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="News Cards" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with white background</li>
+              <li>Row 2: White background and a drop shadow on hover</li>
+              <li>Row 3: White background with a grey border</li>
+              <li>Row 4: White background with a drop shadow</li>
+              <li>Row 5: White background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
@@ -150,6 +159,15 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="News Cards w/Grey BG" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with grey background</li>
+              <li>Row 2: Grey background and a drop shadow on hover</li>
+              <li>Row 3: Grey background with a grey border</li>
+              <li>Row 4: Grey background with a drop shadow</li>
+              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey>
@@ -226,6 +244,15 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="Event Cards" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with white background</li>
+              <li>Row 2: White background and a drop shadow on hover</li>
+              <li>Row 3: White background with a grey border</li>
+              <li>Row 4: White background with a drop shadow</li>
+              <li>Row 5: White background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
                 <Card key={item?.id}>
@@ -347,6 +374,15 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="Event Cards w/Grey BG" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with grey background</li>
+              <li>Row 2: Grey background and a drop shadow on hover</li>
+              <li>Row 3: Grey background with a grey border</li>
+              <li>Row 4: Grey background with a drop shadow</li>
+              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey>
@@ -468,6 +504,15 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="People Cards" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with white background</li>
+              <li>Row 2: White background and a drop shadow on hover</li>
+              <li>Row 3: White background with a grey border</li>
+              <li>Row 4: White background with a drop shadow</li>
+              <li>Row 5: White background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isCenter>
@@ -549,6 +594,15 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="People Cards w/Grey BG" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with grey background</li>
+              <li>Row 2: Grey background and a drop shadow on hover</li>
+              <li>Row 3: Grey background with a grey border</li>
+              <li>Row 4: Grey background with a drop shadow</li>
+              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey isCenter>
@@ -630,9 +684,28 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="Video Cards" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with white background</li>
+              <li>Row 2: White background and a drop shadow on hover</li>
+              <li>Row 3: White background with a grey border</li>
+              <li>Row 4: White background with a drop shadow</li>
+              <li>Row 5: White background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
                 <Card key={item?.id} noLink>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} noLink hasShadowHover>
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -676,9 +749,28 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="Video Cards w/Grey BG" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with grey background</li>
+              <li>Row 2: Grey background and a drop shadow on hover</li>
+              <li>Row 3: Grey background with a grey border</li>
+              <li>Row 4: Grey background with a drop shadow</li>
+              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey noLink>
+                  <Card.Video source={item?.source} />
+                  <Card.Content>
+                    <Card.Header text={item?.title} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {VideoData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey noLink hasShadowHover>
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -722,9 +814,27 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="Stat Cards" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with white background</li>
+              <li>Row 2: White background and a drop shadow on hover</li>
+              <li>Row 3: White background with a grey border</li>
+              <li>Row 4: White background with a drop shadow</li>
+              <li>Row 5: White background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
                 <Card key={item?.id} hasRedBorder noLink>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} hasRedBorder noLink hasShadowHover>
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
@@ -764,9 +874,27 @@ export const CardsOverview: Story = {
 
           <Container>
             <Heading text="Stat Cards w/Grey BG" />
+            <p>The card examples below feature a variety of configuration option. They are as follows:</p>
+            <ul>
+              <li>Row 1: Defaults with grey background</li>
+              <li>Row 2: Grey background and a drop shadow on hover</li>
+              <li>Row 3: Grey background with a grey border</li>
+              <li>Row 4: Grey background with a drop shadow</li>
+              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+            </ul>
+            <br />
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey hasRedBorder noLink>
+                  <Card.Content>
+                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                  </Card.Content>
+                </Card>
+              ))}
+            </Column>
+            <Column cols="3">
+              {StatData.slice(0, 3).map((item) => (
+                <Card key={item?.id} isGrey hasRedBorder noLink hasShadowHover>
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
