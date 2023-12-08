@@ -18,14 +18,37 @@ export interface CardProps {
   isCenter?: boolean
   noLink?: boolean
   hasBorder?: boolean
+  hasShadow?: boolean
+  hasShadowHover?: boolean
+  isGrey?: boolean
+  hasRedBorder?: boolean
 }
 
-export const CardWrapper = ({ children, isCenter, hasBorder, noLink }: CardProps) => {
+export const CardWrapper = ({
+  children,
+  isCenter,
+  noLink,
+  hasBorder,
+  hasShadow,
+  hasShadowHover,
+  hasRedBorder,
+  isGrey,
+}: CardProps) => {
   const noLinkStyles = noLink ? 'cu-card--nolink' : styles.link
   const centerText = isCenter ? 'text-center' : ''
-  const addBorder = hasBorder ? `border-cu-red ${styles.border}` : ''
+  const addBorder = hasBorder ? styles.border : ''
+  const addRedBorder = hasRedBorder ? styles.redBorder : ''
+  const addShadow = hasShadow ? `${styles.shadow} ${styles.shadowHover}` : ''
+  const addShadowHover = hasShadowHover ? styles.shadowHover : ''
+  const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
 
-  return <div className={`cu-card ${styles.card} ${addBorder} ${centerText} ${noLinkStyles}`}>{children}</div>
+  return (
+    <div
+      className={`cu-card ${styles.card} ${addBorder} ${addRedBorder} ${addShadow} ${addShadowHover} ${centerText} ${noLinkStyles} ${bgStyles}`}
+    >
+      {children}
+    </div>
+  )
 }
 
 export const Card = Object.assign(CardWrapper, {

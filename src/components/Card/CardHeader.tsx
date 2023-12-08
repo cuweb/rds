@@ -6,7 +6,7 @@ export interface CardHeaderProps {
 }
 
 export const CardHeader = ({ text, hasTitleHover = true }: CardHeaderProps) => {
-  const titleHover = hasTitleHover ? 'group-hover:text-cu-red' : ''
+  const titleHover = hasTitleHover ? 'group-hover:text-cu-red-700' : ''
   return <h2 className={styles.header + ' ' + titleHover}>{text}</h2>
 }
 
