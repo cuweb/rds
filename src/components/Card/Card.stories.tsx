@@ -131,7 +131,7 @@ export const WithVideoNoHover = {
 
 export const WithBorder: Story = {
   args: {
-    hasBorder: true,
+    hasRedBorder: true,
     children: (
       <Card.Content>
         <Card.Stats stat="3,000+" desc="Number of Employees" />
