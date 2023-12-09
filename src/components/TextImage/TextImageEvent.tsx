@@ -44,7 +44,7 @@ export const TextImageEvent = ({
 
   return (
     <>
-      <div className="flex-1 space-y-4 md:py-4 not-prose">
+      <div className="flex-1 space-y-6 md:py-4 not-prose">
         <h1 className={`${styles.headerOne} ${styles.underline}`}>{title}</h1>
 
         {startDate && <p className={proseGroups.largeLight}>{startDate}</p>}
@@ -125,7 +125,7 @@ export const TextImageEvent = ({
       </div>
 
       {startDate && (
-        <div className="flex-none w-28 h-28 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-96 lg:h-96">
+        <div className="flex-none not-prose w-28 sm:w-48 md:w-72 lg:w-96">
           <div className="overflow-hidden rounded-lg">{children}</div>
         </div>
       )}

@@ -2216,8 +2216,16 @@ select {
   margin-top: auto;
 }
 
-.ml-0 {
-  margin-left: 0px;
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .line-clamp-2 {
@@ -2738,10 +2746,6 @@ select {
 .scroll-py-2 {
   scroll-padding-top: 0.5rem;
   scroll-padding-bottom: 0.5rem;
-}
-
-.list-none {
-  list-style-type: none;
 }
 
 .appearance-none {
@@ -7883,6 +7887,18 @@ select {
 
   .md\:mt-14 {
     margin-top: 3.5rem;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
+  }
+
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
   }
 
   .md\:block {

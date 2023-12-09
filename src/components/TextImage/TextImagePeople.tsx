@@ -38,7 +38,7 @@ export const TextImagePeople = ({
 
   return (
     <>
-      <div className={`flex-1 ${contentPadding} space-y-4 not-prose`}>
+      <div className={`flex-1 ${contentPadding} space-y-6 not-prose`}>
         <h1 className={`${styles.headerOne} ${styles.underline}`}>
           {designation && `${designation} `}
           {name} {pronoun && <span className={styles.pronoun}>({pronoun})</span>}
@@ -142,7 +142,7 @@ export const TextImagePeople = ({
       </div>
 
       {children && (
-        <div className="flex-none cu-textimage-people w-28 h-28 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-96 lg:h-96">
+        <div className="flex-none not-prose cu-textimage-people w-28 sm:w-48 md:w-72 lg:w-96">
           <div className="overflow-hidden rounded-lg">{children}</div>
         </div>
       )}
