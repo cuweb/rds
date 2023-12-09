@@ -3,7 +3,7 @@ export const styles = {
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
   shadow: `shadow-md shadow-cu-black-100`,
-  shadowHover: `hover:shadow-xl hover:shadow-cu-black-300/50`,
+  shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
   link: `group duration-300 ease-in hover:scale-[1.04] cursor-pointer`,
   border: `border border-cu-black-100`,
   redBorder: `border-l-8 border-l-cu-red`,
