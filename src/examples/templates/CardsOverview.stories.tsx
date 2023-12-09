@@ -78,9 +78,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with white background</li>
               <li>Row 2: White background and a drop shadow on hover</li>
-              <li>Row 3: White background with a grey border</li>
-              <li>Row 4: White background with a drop shadow</li>
-              <li>Row 5: White background with a grey border and a drop shadow</li>
+              <li>Row 3: White background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -113,35 +111,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasBorder>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
                 <Card key={item?.id} hasShadow>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow hasBorder>
                   <Card.Figure>
                     <img src={item?.image} alt={item?.alt} width="400" height="266" />
                   </Card.Figure>
@@ -163,9 +133,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with grey background</li>
               <li>Row 2: Grey background and a drop shadow on hover</li>
-              <li>Row 3: Grey background with a grey border</li>
-              <li>Row 4: Grey background with a drop shadow</li>
-              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+              <li>Row 3: Grey background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -198,35 +166,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasBorder>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey hasShadow>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow hasBorder>
                   <Card.Figure>
                     <img src={item?.image} alt={item?.alt} width="400" height="266" />
                   </Card.Figure>
@@ -248,9 +188,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with white background</li>
               <li>Row 2: White background and a drop shadow on hover</li>
-              <li>Row 3: White background with a grey border</li>
-              <li>Row 4: White background with a drop shadow</li>
-              <li>Row 5: White background with a grey border and a drop shadow</li>
+              <li>Row 3: White background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -301,53 +239,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasBorder>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
                 <Card key={item?.id} hasShadow>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow hasBorder>
                   <a href={item?.link}>
                     <Card.Figure>
                       <img src={item?.image} alt={item?.alt} width={400} height={175} />
@@ -378,9 +270,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with grey background</li>
               <li>Row 2: Grey background and a drop shadow on hover</li>
-              <li>Row 3: Grey background with a grey border</li>
-              <li>Row 4: Grey background with a drop shadow</li>
-              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+              <li>Row 3: Grey background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -431,53 +321,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasBorder>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey hasShadow>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow hasBorder>
                   <a href={item?.link}>
                     <Card.Figure>
                       <img src={item?.image} alt={item?.alt} width={400} height={175} />
@@ -508,9 +352,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with white background</li>
               <li>Row 2: White background and a drop shadow on hover</li>
-              <li>Row 3: White background with a grey border</li>
-              <li>Row 4: White background with a drop shadow</li>
-              <li>Row 5: White background with a grey border and a drop shadow</li>
+              <li>Row 3: White background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -545,37 +387,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasBorder>
-                  <a href={item?.link}>
-                    <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isCenter hasShadow>
-                  <a href={item?.link}>
-                    <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasBorder hasShadow>
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -598,9 +410,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with grey background</li>
               <li>Row 2: Grey background and a drop shadow on hover</li>
-              <li>Row 3: Grey background with a grey border</li>
-              <li>Row 4: Grey background with a drop shadow</li>
-              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+              <li>Row 3: Grey background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -635,37 +445,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasBorder>
-                  <a href={item?.link}>
-                    <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey isCenter hasShadow>
-                  <a href={item?.link}>
-                    <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasBorder hasShadow>
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -688,9 +468,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with white background</li>
               <li>Row 2: White background and a drop shadow on hover</li>
-              <li>Row 3: White background with a grey border</li>
-              <li>Row 4: White background with a drop shadow</li>
-              <li>Row 5: White background with a grey border and a drop shadow</li>
+              <li>Row 3: White background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -715,27 +493,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink hasBorder>
-                  <Card.Video source={item?.source} />
-                  <Card.Content>
-                    <Card.Header text={item?.title} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
                 <Card key={item?.id} noLink hasShadow>
-                  <Card.Video source={item?.source} />
-                  <Card.Content>
-                    <Card.Header text={item?.title} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink hasBorder hasShadow>
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -753,9 +511,7 @@ export const CardsOverview: Story = {
             <ul>
               <li>Row 1: Defaults with grey background</li>
               <li>Row 2: Grey background and a drop shadow on hover</li>
-              <li>Row 3: Grey background with a grey border</li>
-              <li>Row 4: Grey background with a drop shadow</li>
-              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+              <li>Row 3: Grey background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -780,27 +536,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink hasBorder>
-                  <Card.Video source={item?.source} />
-                  <Card.Content>
-                    <Card.Header text={item?.title} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey noLink hasShadow>
-                  <Card.Video source={item?.source} />
-                  <Card.Content>
-                    <Card.Header text={item?.title} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink hasBorder hasShadow>
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -817,33 +553,12 @@ export const CardsOverview: Story = {
             <p>The card examples below feature a variety of configuration option. They are as follows:</p>
             <ul>
               <li>Row 1: Defaults with white background</li>
-              <li>Row 2: White background and a drop shadow on hover</li>
-              <li>Row 3: White background with a grey border</li>
-              <li>Row 4: White background with a drop shadow</li>
-              <li>Row 5: White background with a grey border and a drop shadow</li>
+              <li>Row 2: White background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
                 <Card key={item?.id} hasRedBorder noLink>
-                  <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink hasShadowHover>
-                  <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink hasBorder>
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
@@ -859,15 +574,6 @@ export const CardsOverview: Story = {
                 </Card>
               ))}
             </Column>
-            <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink hasBorder hasShadow>
-                  <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
           </Container>
 
           <DoublePara />
@@ -877,10 +583,7 @@ export const CardsOverview: Story = {
             <p>The card examples below feature a variety of configuration option. They are as follows:</p>
             <ul>
               <li>Row 1: Defaults with grey background</li>
-              <li>Row 2: Grey background and a drop shadow on hover</li>
-              <li>Row 3: Grey background with a grey border</li>
-              <li>Row 4: Grey background with a drop shadow</li>
-              <li>Row 5: Grey background with a grey border and a drop shadow</li>
+              <li>Row 2: Grey background with a drop shadow</li>
             </ul>
             <br />
             <Column cols="3">
@@ -894,34 +597,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink hasShadowHover>
-                  <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink hasBorder>
-                  <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
                 <Card key={item?.id} isGrey hasRedBorder noLink hasShadow>
-                  <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-            <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink hasBorder hasShadow>
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
