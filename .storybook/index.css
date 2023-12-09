@@ -2216,6 +2216,10 @@ select {
   margin-top: auto;
 }
 
+.ml-0 {
+  margin-left: 0px;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -2734,6 +2738,10 @@ select {
 .scroll-py-2 {
   scroll-padding-top: 0.5rem;
   scroll-padding-bottom: 0.5rem;
+}
+
+.list-none {
+  list-style-type: none;
 }
 
 .appearance-none {
