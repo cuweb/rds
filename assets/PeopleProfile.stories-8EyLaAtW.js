@@ -1,0 +1,45 @@
+import{j as e}from"./jsx-runtime-vNq4Oc-g.js";import{M as u}from"./Main-6yTdoHTQ.js";import{S as d}from"./Section-273f7e_u.js";import{T as t}from"./TopBar-GlvJDD4t.js";import{F as h}from"./FooterBasic-fid1Tsrf.js";import{T as g}from"./TopBarData-Bofc7drK.js";import{T as a}from"./TextImage-oJ0lWL51.js";import"./index-4g5l5LRQ.js";import"./_commonjsHelpers-4gQjN7DL.js";import"./globalClasses-EYtDdY2O.js";import"./ChevronDownIcon-qyckNURu.js";import"./ChevronRightIcon-U-mlqZiw.js";import"./menu-oFeCtKpM.js";import"./transition-8qPHkook.js";import"./use-root-containers-7zw4BiR7.js";import"./index-jmm5gWkb.js";import"./use-tracked-pointer-EZY5uaCR.js";import"./use-resolve-button-type-kFzmZbAv.js";import"./disclosure-LLQX-sEi.js";import"./MagnifyingGlassIcon-5GODM8Pf.js";import"./popover-tP4paLqk.js";import"./FooterLogoLinks-aCqFPIb3.js";import"./Link-GZshpY1H.js";import"./iframe-TIs2QqMu.js";import"../sb-preview/runtime.js";import"./Button-hdG8B1q3.js";import"./Icon-XxUdtgof.js";import"./optionClasses-BVitpQvL.js";import"./ButtonGroup-34C6VEr-.js";const V={title:"Examples/Projects/cutheme"},i=()=>e.jsxs(e.Fragment,{children:[e.jsx("p",{children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna."}),e.jsx("p",{children:"Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor."})]}),o={render:()=>e.jsxs(e.Fragment,{children:[e.jsxs(t,{children:[e.jsxs(t.Primary,{children:[e.jsx(t.Logo,{title:"Raven Design System",link:"https://carleton.ca/webservices",children:e.jsxs("a",{href:"https://carleton.ca",className:"cu-topbar--logo",children:[e.jsx("img",{className:"culogo",src:"https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg",width:"130",height:"35",alt:"Logo"}),e.jsx("img",{className:"cushield",src:"https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg",width:"28",height:"35",alt:"Logo"})]})}),e.jsx(t.Aside,{})]}),e.jsx(t.Secondary,{children:e.jsx(t.Menu,{children:g.map((r,c)=>e.jsxs(e.Fragment,{children:[!r.submenu&&e.jsx("a",{href:r.href,className:"cu-topbar--parent-link",children:r.title},c),r.submenu&&e.jsx(t.SubMenu,{label:r.title,children:r.submenu.map((s,p)=>e.jsx("a",{href:s.href,className:"cu-topbar--more-nav",children:s.title},p))})]}))})})]}),e.jsx(u,{children:e.jsxs(d,{hasProse:!0,children:[e.jsx(a,{flexRow:"md",flipYsm:!0,children:e.jsx(a.People,{designation:"Mr. ",pronoun:"he/him",name:"Greely Wrinkle",jobTitle:"Jedi Master & Jedi Council Member",degrees:"Certificate, Padawan Academy of Jedi Arts",building:"Onraed",room:"Sector A29",email:"greely@thejediyouseek.com",phone:"613-520-2600",phoneExt:"1234",resume:"#",linkedin:"#",twitter:"#",facebook:"#",children:e.jsx("img",{src:"https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k",alt:"People profile graphic",width:"350",height:"350"})})}),e.jsx(i,{}),e.jsx(i,{}),e.jsx(i,{})]})}),e.jsx(h,{})]})};var n,l,m;o.parameters={...o.parameters,docs:{...(n=o.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: () => <>
+      <TopBar>
+        <TopBar.Primary>
+          <TopBar.Logo title="Raven Design System" link="https://carleton.ca/webservices">
+            <a href="https://carleton.ca" className="cu-topbar--logo">
+              <img className="culogo" src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg" width="130" height="35" alt="Logo" />
+              <img className="cushield" src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg" width="28" height="35" alt="Logo" />
+            </a>
+          </TopBar.Logo>
+          <TopBar.Aside />
+        </TopBar.Primary>
+        <TopBar.Secondary>
+          <TopBar.Menu>
+            {TopBarDataSingle.map((topBarLink, i) => <>
+                {!topBarLink.submenu && <a key={i} href={topBarLink.href} className="cu-topbar--parent-link">
+                    {topBarLink.title}
+                  </a>}
+                {topBarLink.submenu && <TopBar.SubMenu label={topBarLink.title}>
+                    {topBarLink.submenu.map((topBarSubLink, s) => <a key={s} href={topBarSubLink.href} className="cu-topbar--more-nav">
+                        {topBarSubLink.title}
+                      </a>)}
+                  </TopBar.SubMenu>}
+              </>)}
+          </TopBar.Menu>
+        </TopBar.Secondary>
+      </TopBar>
+
+      <Main>
+        <Section hasProse>
+          <TextImage flexRow="md" flipYsm>
+            <TextImage.People designation="Mr. " pronoun="he/him" name="Greely Wrinkle" jobTitle="Jedi Master & Jedi Council Member" degrees="Certificate, Padawan Academy of Jedi Arts" building="Onraed" room="Sector A29" email="greely@thejediyouseek.com" phone="613-520-2600" phoneExt="1234" resume="#" linkedin="#" twitter="#" facebook="#">
+              <img src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k" alt="People profile graphic" width="350" height="350" />
+            </TextImage.People>
+          </TextImage>
+
+          <DoublePara />
+          <DoublePara />
+          <DoublePara />
+        </Section>
+      </Main>
+
+      <FooterBasic />
+    </>
+}`,...(m=(l=o.parameters)==null?void 0:l.docs)==null?void 0:m.source}}};const U=["PeopleProfile"];export{o as PeopleProfile,U as __namedExportsOrder,V as default};
