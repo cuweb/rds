@@ -108,7 +108,7 @@ export const TextImageEvent = ({
                 title={primaryButtonText ? primaryButtonText : 'Register Now'}
               />
             )}
-            {secondaryButtonUrl && secondaryButtonText && (
+            {secondaryButtonUrl && (
               <Button
                 isSmall
                 color="grey"
@@ -117,7 +117,7 @@ export const TextImageEvent = ({
                     window.location.href = secondaryButtonUrl
                   }
                 }}
-                title={secondaryButtonText}
+                title={secondaryButtonText ? secondaryButtonText : 'More Information'}
               />
             )}
           </ButtonGroup>
