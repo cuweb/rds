@@ -97,7 +97,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadowHover>
+                <Card key={item?.id} hasShadow="onHover">
                   <Card.Figure>
                     <img src={item?.image} alt={item?.alt} width="400" height="266" />
                   </Card.Figure>
@@ -111,7 +111,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow>
+                <Card key={item?.id} hasShadow="onCard">
                   <Card.Figure>
                     <img src={item?.image} alt={item?.alt} width="400" height="266" />
                   </Card.Figure>
@@ -152,7 +152,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadowHover>
+                <Card key={item?.id} isGrey hasShadow="onHover">
                   <Card.Figure>
                     <img src={item?.image} alt={item?.alt} width="400" height="266" />
                   </Card.Figure>
@@ -166,7 +166,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow>
+                <Card key={item?.id} isGrey hasShadow="onCard">
                   <Card.Figure>
                     <img src={item?.image} alt={item?.alt} width="400" height="266" />
                   </Card.Figure>
@@ -216,7 +216,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadowHover>
+                <Card key={item?.id} hasShadow="onHover">
                   <a href={item?.link}>
                     <Card.Figure>
                       <img src={item?.image} alt={item?.alt} width={400} height={175} />
@@ -239,7 +239,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow>
+                <Card key={item?.id} hasShadow="onCard">
                   <a href={item?.link}>
                     <Card.Figure>
                       <img src={item?.image} alt={item?.alt} width={400} height={175} />
@@ -298,7 +298,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadowHover>
+                <Card key={item?.id} isGrey hasShadow="onHover">
                   <a href={item?.link}>
                     <Card.Figure>
                       <img src={item?.image} alt={item?.alt} width={400} height={175} />
@@ -321,7 +321,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow>
+                <Card key={item?.id} isGrey hasShadow="onCard">
                   <a href={item?.link}>
                     <Card.Figure>
                       <img src={item?.image} alt={item?.alt} width={400} height={175} />
@@ -372,7 +372,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasShadowHover>
+                <Card key={item?.id} isCenter hasShadow="onHover">
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -387,7 +387,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasShadow>
+                <Card key={item?.id} isCenter hasShadow="onCard">
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -430,7 +430,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasShadowHover>
+                <Card key={item?.id} isGrey isCenter hasShadow="onHover">
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -445,7 +445,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasShadow>
+                <Card key={item?.id} isGrey isCenter hasShadow="onCard">
                   <a href={item?.link}>
                     <Card.Figure isRound>
                       <img src={item?.image} alt={item?.alt} width={280} height={280} />
@@ -483,7 +483,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink hasShadowHover>
+                <Card key={item?.id} noLink hasShadow="onHover">
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -493,7 +493,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink hasShadow>
+                <Card key={item?.id} noLink hasShadow="onCard">
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -526,7 +526,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink hasShadowHover>
+                <Card key={item?.id} isGrey noLink hasShadow="onHover">
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -536,7 +536,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink hasShadow>
+                <Card key={item?.id} isGrey noLink hasShadow="onCard">
                   <Card.Video source={item?.source} />
                   <Card.Content>
                     <Card.Header text={item?.title} />
@@ -567,7 +567,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink hasShadow>
+                <Card key={item?.id} hasRedBorder noLink hasShadow="onCard">
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
@@ -597,7 +597,7 @@ export const CardsOverview: Story = {
             </Column>
             <Column cols="3">
               {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink hasShadow>
+                <Card key={item?.id} isGrey hasRedBorder noLink hasShadow="onCard">
                   <Card.Content>
                     <Card.Stats stat={item?.stat} desc={item?.desc} />
                   </Card.Content>
