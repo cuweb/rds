@@ -17,31 +17,26 @@ export interface CardProps {
   children: React.ReactNode
   isCenter?: boolean
   noLink?: boolean
-  hasShadow?: boolean
-  hasShadowHover?: boolean
+  hasShadow?: 'onCard' | 'onHover'
   isGrey?: boolean
   hasRedBorder?: boolean
 }
 
-export const CardWrapper = ({
-  children,
-  isCenter,
-  noLink,
-  hasShadow,
-  hasShadowHover,
-  hasRedBorder,
-  isGrey,
-}: CardProps) => {
+export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
   const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
-  const centerText = isCenter ? 'text-center' : ''
-  const addShadow = hasShadow && !noLink ? `${styles.shadow} ${styles.shadowHover}` : ''
-  const addShadowHover = hasShadowHover && !noLink ? styles.shadowHover : ''
+  const addShadowClass =
+    hasShadow === 'onCard'
+      ? `${styles.shadow} ${!noLink ? styles.shadowHover : ''}`
+      : hasShadow === 'onHover' && !noLink
+        ? styles.shadowHover
+        : ''
   const addRedBorder = hasRedBorder ? styles.redBorder : ''
+  const centerText = isCenter ? 'text-center' : ''
   const noLinkStyles = noLink ? '' : styles.link
 
   return (
     <div
-      className={`cu-card ${styles.card} ${addRedBorder} ${addShadow} ${addShadowHover} ${centerText} ${noLinkStyles} ${bgStyles}`}
+      className={`cu-card ${styles.card} ${addRedBorder} ${addShadowClass} ${centerText} ${noLinkStyles} ${bgStyles}`}
     >
       {children}
     </div>
