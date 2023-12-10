@@ -3,13 +3,12 @@ export interface CardProps {
     children: React.ReactNode;
     isCenter?: boolean;
     noLink?: boolean;
-    hasShadow?: boolean;
-    hasShadowHover?: boolean;
+    hasShadow?: 'onCard' | 'onHover';
     isGrey?: boolean;
     hasRedBorder?: boolean;
 }
-export declare const CardWrapper: ({ children, isCenter, noLink, hasShadow, hasShadowHover, hasRedBorder, isGrey, }: CardProps) => import("react/jsx-runtime").JSX.Element;
-export declare const Card: (({ children, isCenter, noLink, hasShadow, hasShadowHover, hasRedBorder, isGrey, }: CardProps) => import("react/jsx-runtime").JSX.Element) & {
+export declare const CardWrapper: ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Card: (({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => import("react/jsx-runtime").JSX.Element) & {
     Figure: {
         ({ children, isRound }: import("./CardFigure").CardFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
