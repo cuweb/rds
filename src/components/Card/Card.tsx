@@ -24,7 +24,7 @@ export interface CardProps {
 
 export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
   const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
-  const addShadowClass =
+  const addShadow =
     hasShadow === 'onCard'
       ? `${styles.shadow} ${!noLink ? styles.shadowHover : ''}`
       : hasShadow === 'onHover' && !noLink
@@ -35,9 +35,7 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
   const noLinkStyles = noLink ? '' : styles.link
 
   return (
-    <div
-      className={`cu-card ${styles.card} ${addRedBorder} ${addShadowClass} ${centerText} ${noLinkStyles} ${bgStyles}`}
-    >
+    <div className={`cu-card ${styles.card} ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}>
       {children}
     </div>
   )
