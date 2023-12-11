@@ -1,25 +1,3 @@
-/* Card Components */
-
-.cu-card a {
-  @apply relative flex h-full flex-col;
-}
-
-/* Card Components */
-
-.cu-card img {
-  @apply w-full object-cover;
-}
-
-.cu-figure img,
-.cu-figure svg {
-  @apply w-full;
-}
-
-.cu-card .cu-figure--round img,
-.cu-card .cu-figure--round svg {
-  @apply mx-auto h-32 w-32 rounded-full border-4 border-white object-cover shadow-md @sm:md:h-48 @sm:md:w-48;
-}
-
 /* Listing Components */
 
 .cu-listing--nolink h2,
@@ -32,7 +10,7 @@
 }
 
 .cu-listing img {
-  @apply rounded-md object-cover;
+  @apply object-cover rounded-md;
 }
 
 .cu-listing--small {

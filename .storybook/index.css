@@ -4569,6 +4569,40 @@ select {
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
+/* Components */
+
+.cu-alert a {
+  font-weight: 600;
+}
+
+.cu-alert a:hover {
+  text-decoration-line: underline;
+}
+
+.cu-alert strong {
+  font-weight: 600;
+}
+
+.cu-alert-success a {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
+.cu-alert-error a {
+  --tw-text-opacity: 1;
+  color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.cu-alert-warning a {
+  --tw-text-opacity: 1;
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.cu-alert-info a {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+
 /* React Quill CSS */
 
 /*!

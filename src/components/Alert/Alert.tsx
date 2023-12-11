@@ -5,7 +5,6 @@ import {
   InformationCircleIcon,
   ShieldExclamationIcon,
 } from '@heroicons/react/24/outline'
-import './Alert.css'
 
 export interface AlertProps {
   title: string
