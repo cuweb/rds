@@ -4307,6 +4307,7 @@ select {
   display: flex;
   height: 100%;
   flex-direction: column;
+  outline-offset: -2px;
 }
 
 /* Card Components */
@@ -4364,10 +4365,8 @@ select {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
   padding: 2rem;
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 @container (min-width: 32rem) {
