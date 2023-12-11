@@ -28,8 +28,8 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
     hasShadow === 'onCard'
       ? `${styles.shadow} ${!noLink ? styles.shadowHover : ''}`
       : hasShadow === 'onHover' && !noLink
-        ? styles.shadowHover
-        : ''
+      ? styles.shadowHover
+      : ''
   const addRedBorder = hasRedBorder ? styles.redBorder : ''
   const centerText = isCenter ? 'text-center' : ''
   const noLinkStyles = noLink ? '' : styles.link

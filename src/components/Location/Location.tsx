@@ -53,8 +53,8 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
           center
             ? { lat: parseFloat(center?.lat), lng: parseFloat(center?.lng) }
             : lat && lng
-              ? { lat: Number(lat), lng: Number(lng) }
-              : { lat: 45.3850225, lng: -75.6946679 }
+            ? { lat: Number(lat), lng: Number(lng) }
+            : { lat: 45.3850225, lng: -75.6946679 }
         }
         onLoad={onMapLoad}
       >
