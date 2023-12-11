@@ -1,11 +1,11 @@
 import React, { PropsWithChildren } from 'react'
-import './styles.css'
 import {
   CheckCircleIcon,
   ExclamationCircleIcon,
   InformationCircleIcon,
   ShieldExclamationIcon,
 } from '@heroicons/react/24/outline'
+import './Alert.css'
 
 export interface AlertProps {
   title: string
@@ -46,12 +46,12 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
   }
 
   return (
-    <div className={`flex rounded-md p-4 my-2 not-prose ${AlertTypes[type].background}`}>
+    <div className={`flex cu-alert cu-alert-${type} rounded-md p-4 my-2 not-prose ${AlertTypes[type].background}`}>
       {React.createElement(AlertTypes[type].icon, {
         className: `${alertIconSize} ${AlertTypes[type].alertHeading}`,
         'aria-hidden': 'true',
       })}
-      <div className={`alert-${type} ${textSize == 'large' ? 'mt-0.5' : null} ml-3 space-y-2 w-full`}>
+      <div className={`${textSize == 'large' ? 'mt-0.5' : ''} ml-3 space-y-2 w-full`}>
         <p className={`${alertTextSize} ${AlertTypes[type].alertHeading} my-0 font-semibold`}>{title}</p>
         <p className={`${alertTextSize} ${AlertTypes[type].alertSubhead}`}>{content}</p>
       </div>
