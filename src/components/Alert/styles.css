@@ -1,35 +1,23 @@
-.alert-success a {
+.cu-alert a {
+  @apply font-semibold hover:underline;
+}
+
+.cu-alert strong {
+  @apply font-semibold;
+}
+
+.cu-alert-success a {
   @apply text-green-700;
-  font-weight: bold;
 }
 
-.alert-success a:hover {
-  text-decoration: underline;
-}
-
-.alert-error a {
+.cu-alert-error a {
   @apply text-cu-red-700;
-  font-weight: bold;
 }
 
-.alert-error a:hover {
-  text-decoration: underline;
-}
-
-.alert-warning a {
+.cu-alert-warning a {
   @apply text-yellow-700;
-  font-weight: bold;
 }
 
-.alert-warning a:hover {
-  text-decoration: underline;
-}
-
-.alert-info a {
+.cu-alert-info a {
   @apply text-blue-700;
-  font-weight: bold;
-}
-
-.alert-info a:hover {
-  text-decoration: underline;
 }
