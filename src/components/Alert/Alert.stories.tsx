@@ -102,17 +102,52 @@ export const ContentItalics: Story = {
 
 export const ContentLink: Story = {
   render: () => (
-    <Alert
-      key={111}
-      type="info"
-      title="Information"
-      content={
-        <>
-          Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in enim
-          ipsum.
-        </>
-      }
-    />
+    <>
+      <Alert
+        key={111}
+        type="success"
+        title="Success"
+        content={
+          <>
+            Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in
+            enim ipsum.
+          </>
+        }
+      />
+      <Alert
+        key={111}
+        type="error"
+        title="Error"
+        content={
+          <>
+            Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in
+            enim ipsum.
+          </>
+        }
+      />
+      <Alert
+        key={111}
+        type="warning"
+        title="Warning"
+        content={
+          <>
+            Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in
+            enim ipsum.
+          </>
+        }
+      />
+      <Alert
+        key={111}
+        type="info"
+        title="Information"
+        content={
+          <>
+            Lorem ipsum dolor sit amet, <a href="https://carleton.ca">consectetur adipiscing</a> elit. Suspendisse in
+            enim ipsum.
+          </>
+        }
+      />
+    </>
   ),
 }
 

@@ -3252,21 +3252,6 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
-.bg-cyan-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 145 178 / var(--tw-bg-opacity));
-}
-
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
-}
-
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -4582,6 +4567,40 @@ select {
   background-color: rgb(242 242 242 / 0.5);
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+/* Components */
+
+.cu-alert a {
+  font-weight: 600;
+}
+
+.cu-alert a:hover {
+  text-decoration-line: underline;
+}
+
+.cu-alert strong {
+  font-weight: 600;
+}
+
+.cu-alert-success a {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
+.cu-alert-error a {
+  --tw-text-opacity: 1;
+  color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.cu-alert-warning a {
+  --tw-text-opacity: 1;
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.cu-alert-info a {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 /* React Quill CSS */
