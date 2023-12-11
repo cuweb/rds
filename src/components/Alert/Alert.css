@@ -2,6 +2,10 @@
   @apply font-semibold hover:underline;
 }
 
+.cu-alert strong {
+  @apply font-semibold;
+}
+
 .cu-alert-success a {
   @apply text-green-700;
 }
