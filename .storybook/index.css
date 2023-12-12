@@ -4366,7 +4366,11 @@ select {
   align-items: flex-start;
   gap: 1.5rem;
   padding: 2rem;
-  outline-offset: -2px;
+}
+
+.cu-listing a:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 @container (min-width: 32rem) {
