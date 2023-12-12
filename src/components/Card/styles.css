@@ -1,7 +1,7 @@
 /* Card Components */
 
 .cu-card a {
-  @apply relative flex flex-col h-full -outline-offset-[2px];
+  @apply relative flex flex-col h-full;
 }
 
 /* Card Components */
