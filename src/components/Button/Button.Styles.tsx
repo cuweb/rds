@@ -1,5 +1,5 @@
 export const buttonStyles = {
-  core: `not-prose inline-flex items-center justify-center gap-1 rounded-md px-3 py-2 md:px-6 md:py-3 text-sm md:text-base font-medium`,
+  core: `not-prose inline-flex items-center justify-center gap-1 rounded-md px-3 py-2 md:px-6 md:py-3 text-sm md:text-base font-medium focus:outline-none`,
   shadow: `shadow-md`,
   small: `px-3 py-2 text-sm`,
   disabled:
