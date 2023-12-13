@@ -1277,11 +1277,11 @@ select {
   margin-bottom: 0;
 }
 
-.prose :where(li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.prose :where(ol li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   list-style-type: lower-alpha;
 }
 
-.prose :where(li li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.prose :where(ol li li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   list-style-type: lower-roman;
 }
 
@@ -4296,22 +4296,38 @@ select {
   width: 100%;
 }
 
-.cu-stackedlist > li {
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(230 230 230 / var(--tw-border-opacity));
+/* Components */
+
+.cu-alert a {
+  font-weight: 600;
 }
 
-.cu-stackedlist > li:last-child {
-  margin-bottom: -1px;
+.cu-alert a:hover {
+  text-decoration-line: underline;
 }
 
-.cu-stackedlist.md\:grid-cols-2 > li:last-child {
-  margin-bottom: 0px;
+.cu-alert strong {
+  font-weight: 600;
 }
 
-.cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
-  border-right-width: 1px;
+.cu-alert-success a {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
+.cu-alert-error a {
+  --tw-text-opacity: 1;
+  color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.cu-alert-warning a {
+  --tw-text-opacity: 1;
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.cu-alert-info a {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 /* Card Components */
@@ -4569,38 +4585,24 @@ select {
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
-/* Components */
+/* Layouts */
 
-.cu-alert a {
-  font-weight: 600;
+.cu-stackedlist > li {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(230 230 230 / var(--tw-border-opacity));
 }
 
-.cu-alert a:hover {
-  text-decoration-line: underline;
+.cu-stackedlist > li:last-child {
+  margin-bottom: -1px;
 }
 
-.cu-alert strong {
-  font-weight: 600;
+.cu-stackedlist.md\:grid-cols-2 > li:last-child {
+  margin-bottom: 0px;
 }
 
-.cu-alert-success a {
-  --tw-text-opacity: 1;
-  color: rgb(21 128 61 / var(--tw-text-opacity));
-}
-
-.cu-alert-error a {
-  --tw-text-opacity: 1;
-  color: rgb(187 18 25 / var(--tw-text-opacity));
-}
-
-.cu-alert-warning a {
-  --tw-text-opacity: 1;
-  color: rgb(161 98 7 / var(--tw-text-opacity));
-}
-
-.cu-alert-info a {
-  --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
+.cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
+  border-right-width: 1px;
 }
 
 /* React Quill CSS */
@@ -6288,11 +6290,11 @@ select {
   margin-bottom: 0 !important;
 }
 
-.ql-editor :where(li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.ql-editor :where(ol li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   list-style-type: lower-alpha !important;
 }
 
-.ql-editor :where(li li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.ql-editor :where(ol li li li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   list-style-type: lower-roman !important;
 }
 
