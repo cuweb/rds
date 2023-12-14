@@ -38,8 +38,8 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
           column.key === active && ascending
             ? 'descending'
             : column.key === active && !ascending
-              ? 'ascending'
-              : undefined
+            ? 'ascending'
+            : undefined
         }
         aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
       >
