@@ -4309,7 +4309,15 @@ select {
   flex-direction: column;
 }
 
-/* Card Components */
+.cu-card a:focus {
+  border-radius: 0.375rem;
+}
+
+.cu-card figure {
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
 
 .cu-card img {
   width: 100%;
