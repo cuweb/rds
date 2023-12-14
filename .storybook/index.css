@@ -4310,7 +4310,7 @@ select {
 }
 
 .cu-card a:focus {
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
 }
 
 .cu-card figure {
