@@ -31,7 +31,7 @@ export const StackedList = ({
   const gridColumns = cols === '1' ? styles.oneCol : styles.twoCol
   const borderStyle = hasBorder ? styles.border : ''
   const shadowStyle = hasShadow ? styles.shadow : ''
-  const sizeStyles = size ? styles[size] : 'sm'
+  const sizeStyles = size ? styles[size] : styles.sm
   const offsetStyle = offset ? `${styles[offset]} ${styles.offset} ${sizeStyles}` : rdsMaxWidth[maxWidth]
 
   return (

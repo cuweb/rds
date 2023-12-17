@@ -14,8 +14,12 @@ StackedList for posts
 StackedList for ToC
 */
 
+.cu-stackedlist-toc ul:not(:first-child) {
+  @apply pt-3;
+}
+
 .cu-stackedlist-toc li {
-  @apply ml-8 text-lg;
+  @apply py-1.5 ml-8 text-lg first:pt-0;
   list-style-type: decimal;
 }
 
@@ -27,4 +31,8 @@ StackedList for ToC
 .cu-stackedlist-toc li li li {
   @apply ml-4;
   list-style-type: lower-roman;
+}
+
+.cu-stackedlist-toc a {
+  @apply text-cu-black-700 hover:text-cu-red-700;
 }

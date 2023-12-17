@@ -4066,10 +4066,23 @@ StackedList for posts
 StackedList for ToC
 */
 
+.cu-stackedlist-toc ul:not(:first-child) {
+  padding-top: 0.75rem;
+}
+
 .cu-stackedlist-toc li {
   margin-left: 2rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.cu-stackedlist-toc li:first-child {
+  padding-top: 0px;
+}
+
+.cu-stackedlist-toc li {
   list-style-type: decimal;
 }
 
@@ -4081,6 +4094,16 @@ StackedList for ToC
 .cu-stackedlist-toc li li li {
   margin-left: 1rem;
   list-style-type: lower-roman;
+}
+
+.cu-stackedlist-toc a {
+  --tw-text-opacity: 1;
+  color: rgb(77 77 77 / var(--tw-text-opacity));
+}
+
+.cu-stackedlist-toc a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(187 18 25 / var(--tw-text-opacity));
 }
 
 /* RDS Layout CSS */
@@ -7852,16 +7875,12 @@ StackedList for ToC
     margin-left: 2.5rem;
   }
 
-  .md\:ml-4 {
-    margin-left: 1rem;
+  .md\:mr-0 {
+    margin-right: 0px;
   }
 
   .md\:mr-10 {
     margin-right: 2.5rem;
-  }
-
-  .md\:mr-4 {
-    margin-right: 1rem;
   }
 
   .md\:mt-0 {
@@ -7878,14 +7897,6 @@ StackedList for ToC
 
   .md\:mt-4 {
     margin-top: 1rem;
-  }
-
-  .md\:mr-2 {
-    margin-right: 0.5rem;
-  }
-
-  .md\:mr-12 {
-    margin-right: 3rem;
   }
 
   .md\:block {
@@ -7944,8 +7955,8 @@ StackedList for ToC
     max-width: 32rem;
   }
 
-  .md\:max-w-md {
-    max-width: 28rem;
+  .md\:max-w-sm {
+    max-width: 24rem;
   }
 
   .md\:flex-1 {
@@ -8356,10 +8367,6 @@ StackedList for ToC
     margin-bottom: 2rem;
   }
 
-  .lg\:ml-4 {
-    margin-left: 1rem;
-  }
-
   .lg\:ml-2 {
     margin-left: 0.5rem;
   }
@@ -8390,14 +8397,6 @@ StackedList for ToC
 
   .lg\:max-w-7xl {
     max-width: 80rem;
-  }
-
-  .lg\:max-w-lg {
-    max-width: 32rem;
-  }
-
-  .lg\:max-w-md {
-    max-width: 28rem;
   }
 
   .lg\:flex-1 {
