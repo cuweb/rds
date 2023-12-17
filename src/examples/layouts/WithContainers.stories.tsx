@@ -9,7 +9,7 @@ import { DescriptionData as descMeta } from '../../data/DescriptionData'
 import { Description } from '../../components/Description/Description'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta

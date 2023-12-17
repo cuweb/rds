@@ -6,9 +6,12 @@ import { TopBar } from '../../components/TopBar/TopBar'
 import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
+import { StackedList } from '../../layouts/StackedList/StackedList'
+import { Listing } from '../../components/Listing/Listing'
+import { NewsData as data } from '../../data/NewsData'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta
@@ -18,9 +21,12 @@ const SinglePara = () => {
   return (
     <>
       <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
-        Praesent quis ligula quis nulla malesuada tempor.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
+        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
+        condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
+        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
+        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
+        sapien in urna.
       </p>
     </>
   )
@@ -30,12 +36,11 @@ const DoublePara = () => {
   return (
     <>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-        condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
-        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
-        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
-        sapien in urna.
+        Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna. Nobis
+        voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit
+        ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis
+        ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget
+        suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
       </p>
       <p>
         Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
@@ -80,9 +85,56 @@ export const BasicMarkup: Story = {
           </HeroTextImage>
           <h2>Heading Two</h2>
           <SinglePara />
+
+          <StackedList
+            header="StackedList: Table of Contents, Right Aligned"
+            as="div"
+            cols="1"
+            listType="toc"
+            offset="right"
+            hasShadow
+          >
+            <p>This is a div container</p>
+          </StackedList>
+
+          <h3>Heading Three</h3>
+          <SinglePara />
+          <DoublePara />
+
+          <StackedList
+            header="StackedList: Table of Contents, Left Aligned"
+            as="div"
+            cols="1"
+            listType="toc"
+            offset="left"
+            hasShadow
+          >
+            <p>This is a div container</p>
+          </StackedList>
+
+          <h3>Heading Three</h3>
+          <SinglePara />
+          <DoublePara />
+
+          <StackedList header="Post List" as="ul" cols="2" listType="posts" hasShadow>
+            {data.map(({ id, title, link, date, excerpt, tags }) => (
+              <Listing key={id}>
+                <a href={link}>
+                  <Listing.Content>
+                    <Listing.PostMeta date={date} />
+                    <Listing.Header text={title} />
+                    <Listing.Excerpt text={excerpt} />
+                    <Listing.Badges tags={tags} />
+                  </Listing.Content>
+                </a>
+              </Listing>
+            ))}
+          </StackedList>
+
           <h3>Heading Three</h3>
           <DoublePara />
           <DoublePara />
+
           <DoublePara />
           <DoublePara />
         </Section>
