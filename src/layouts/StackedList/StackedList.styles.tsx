@@ -7,9 +7,7 @@ export const styles = {
   offset: `md:mt-4 md:mb-6 duration-300 ease-in`,
   sm: `md:max-w-sm`,
   lg: `md:max-w-lg`,
-  left: `md:float-left lg:ml-2 xl:ml-24 2xl:ml-[15%] md:mr-10`,
-  right: `md:float-right md:mr-0 xl:mr-24 2xl:mr-[15%] md:ml-10`,
+  left: `md:float-left lg:ml-2 xl:ml-24 2xl:ml-[12%] md:mr-10`,
+  right: `md:float-right md:mr-0 xl:mr-24 2xl:mr-[12%] md:ml-10`,
   title: `px-6 py-4 text-base md:text-xl font-semibold border-b rounded-t-lg bg-gray-50 text-cu-black-800`,
-  div: `p-6`,
-  ul: ``,
 }

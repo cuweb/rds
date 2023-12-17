@@ -37,7 +37,7 @@ export const StackedList = ({
   return (
     <div className={`${styles.wrapper} ${borderStyle} ${shadowStyle} ${offsetStyle}`}>
       {header && <h2 className={`${styles.title}`}>{header}</h2>}
-      <ListComponent className={`cu-stackedlist-${listType} ${styles[as]} ${gridColumns}`}>{children}</ListComponent>
+      <ListComponent className={`cu-stackedlist-${listType} ${gridColumns}`}>{children}</ListComponent>
     </div>
   )
 }

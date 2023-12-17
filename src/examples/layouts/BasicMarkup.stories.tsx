@@ -164,6 +164,9 @@ export const BasicMarkup: Story = {
             {data.slice(0, 3).map(({ id, title, link, date }) => (
               <Listing key={id}>
                 <a href={link}>
+                  {/* <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure> */}
                   <Listing.Content>
                     <Listing.PostMeta date={date} />
                     <Listing.Header text={title} />
@@ -181,6 +184,9 @@ export const BasicMarkup: Story = {
             {data.slice(0, 3).map(({ id, title, link, date }) => (
               <Listing key={id}>
                 <a href={link}>
+                  {/* <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure> */}
                   <Listing.Content>
                     <Listing.PostMeta date={date} />
                     <Listing.Header text={title} />
@@ -198,6 +204,9 @@ export const BasicMarkup: Story = {
             {data.slice(0, 3).map(({ id, title, link, date }) => (
               <Listing key={id}>
                 <a href={link}>
+                  {/* <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure> */}
                   <Listing.Content>
                     <Listing.PostMeta date={date} />
                     <Listing.Header text={title} />
@@ -215,6 +224,9 @@ export const BasicMarkup: Story = {
             {data.slice(0, 3).map(({ id, title, link, date }) => (
               <Listing key={id}>
                 <a href={link}>
+                  {/* <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure> */}
                   <Listing.Content>
                     <Listing.PostMeta date={date} />
                     <Listing.Header text={title} />
@@ -233,6 +245,9 @@ export const BasicMarkup: Story = {
             {data.map(({ id, title, link, date }) => (
               <Listing key={id}>
                 <a href={link}>
+                  {/* <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure> */}
                   <Listing.Content>
                     <Listing.PostMeta date={date} />
                     <Listing.Header text={title} />

@@ -15,7 +15,7 @@ StackedList for ToC
 */
 
 .cu-stackedlist-toc {
-  @apply text-cu-black-900;
+  @apply px-5 py-6 text-cu-black-900;
 }
 
 .cu-stackedlist-toc a {

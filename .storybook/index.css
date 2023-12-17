@@ -4067,6 +4067,10 @@ StackedList for ToC
 */
 
 .cu-stackedlist-toc {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
@@ -8582,12 +8586,12 @@ StackedList for ToC
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:ml-\[15\%\] {
-    margin-left: 15%;
+  .\32xl\:ml-\[12\%\] {
+    margin-left: 12%;
   }
 
-  .\32xl\:mr-\[15\%\] {
-    margin-right: 15%;
+  .\32xl\:mr-\[12\%\] {
+    margin-right: 12%;
   }
 }
 
