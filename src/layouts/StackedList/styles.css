@@ -1,0 +1,30 @@
+/*
+StackedList for posts
+*/
+
+.cu-stackedlist-posts > li {
+  @apply border-b border-cu-black-100 last:-mb-px;
+}
+
+.cu-stackedlist-posts.md\:grid-cols-2 > li {
+  @apply last:mb-0 odd:border-r;
+}
+
+/*
+StackedList for ToC
+*/
+
+.cu-stackedlist-toc li {
+  @apply ml-8 text-lg;
+  list-style-type: decimal;
+}
+
+.cu-stackedlist-toc li li {
+  @apply ml-6;
+  list-style-type: lower-alpha;
+}
+
+.cu-stackedlist-toc li li li {
+  @apply ml-4;
+  list-style-type: lower-roman;
+}

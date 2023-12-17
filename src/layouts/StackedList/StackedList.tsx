@@ -9,6 +9,7 @@ export interface StackedListProps {
   listType?: 'posts' | 'toc'
   maxWidth?: '5xl' | '7xl'
   offset?: 'left' | 'right'
+  size?: 'sm' | 'lg'
   header?: string
   hasBorder?: boolean
   hasShadow?: boolean
@@ -21,6 +22,7 @@ export const StackedList = ({
   listType = 'posts',
   maxWidth = '5xl',
   offset,
+  size,
   hasBorder,
   hasShadow,
   header,
@@ -29,7 +31,8 @@ export const StackedList = ({
   const gridColumns = cols === '1' ? styles.oneCol : styles.twoCol
   const borderStyle = hasBorder ? styles.border : ''
   const shadowStyle = hasShadow ? styles.shadow : ''
-  const offsetStyle = offset ? styles[offset] : rdsMaxWidth[maxWidth]
+  const sizeStyles = size ? styles[size] : 'sm'
+  const offsetStyle = offset ? `${styles[offset]} ${styles.offset} ${sizeStyles}` : rdsMaxWidth[maxWidth]
 
   return (
     <div className={`${styles.wrapper} ${borderStyle} ${shadowStyle} ${offsetStyle}`}>

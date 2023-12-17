@@ -4,8 +4,10 @@
 @import 'tailwindcss/utilities';
 
 /* RDS Layout CSS */
+@import '../layouts/StackedList/styles.css';
+
+/* RDS Layout CSS */
 @import './spacing.css';
-@import './layouts.css';
 @import './card-listing.css';
 @import './topbar.css';
 

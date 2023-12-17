@@ -9,6 +9,7 @@ import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Listing } from '../../components/Listing/Listing'
 import { NewsData as data } from '../../data/NewsData'
+import { Heading } from '../../components/Heading/Heading'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -51,6 +52,63 @@ const DoublePara = () => {
   )
 }
 
+const ToC = () => {
+  return (
+    <>
+      <ul>
+        <li>
+          <a href="http://carleton.ca">Lorem ipsum dolor</a>
+        </li>
+        <li>
+          <a href="http://carleton.ca">Nunc viverra lorem arcu</a>
+        </li>
+        <li>
+          <a href="http://carleton.ca">Consectetur elit</a>
+          <ul>
+            <li>
+              <a href="http://carleton.ca">Suspendisse risus.</a>
+            </li>
+            <li>
+              <a href="http://carleton.ca">Nullam ut nunc</a>
+            </li>
+            <li>
+              <a href="http://carleton.ca">Integer mattis</a>
+              <ul>
+                <li>
+                  <a href="http://carleton.ca">Phasellus porttitor</a>
+                </li>
+                <li>
+                  <a href="http://carleton.ca">Praesent ante massa</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="http://carleton.ca">Etiam non convallis</a>
+            </li>
+            <li>
+              <a href="http://carleton.ca">Vestibulum</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://carleton.ca">Turpis placerat</a>
+        </li>
+        <li>
+          <a href="http://carleton.ca">Consectetur elit</a>
+          <ul>
+            <li>
+              <a href="http://carleton.ca">Mauris feugiat interdum</a>
+            </li>
+            <li>
+              <a href="http://carleton.ca">Etiam non convallis</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </>
+  )
+}
+
 export const BasicMarkup: Story = {
   render: () => (
     <>
@@ -86,45 +144,98 @@ export const BasicMarkup: Story = {
           <h2>Heading Two</h2>
           <SinglePara />
 
-          <StackedList
-            header="StackedList: Table of Contents, Right Aligned"
-            as="div"
-            cols="1"
-            listType="toc"
-            offset="right"
-            hasShadow
-          >
-            <p>This is a div container</p>
+          <StackedList header="Table of Contents" as="div" cols="1" listType="toc" offset="right" hasShadow>
+            <ToC />
           </StackedList>
 
           <h3>Heading Three</h3>
           <SinglePara />
           <DoublePara />
 
-          <StackedList
-            header="StackedList: Table of Contents, Left Aligned"
-            as="div"
-            cols="1"
-            listType="toc"
-            offset="left"
-            hasShadow
-          >
-            <p>This is a div container</p>
+          <StackedList header="Table of Contents" as="div" cols="1" listType="toc" offset="left" hasShadow>
+            <ToC />
           </StackedList>
 
           <h3>Heading Three</h3>
           <SinglePara />
           <DoublePara />
 
-          <StackedList header="Post List" as="ul" cols="2" listType="posts" hasShadow>
-            {data.map(({ id, title, link, date, excerpt, tags }) => (
+          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="right" hasShadow>
+            {data.slice(0, 3).map(({ id, title, link, date }) => (
               <Listing key={id}>
                 <a href={link}>
                   <Listing.Content>
                     <Listing.PostMeta date={date} />
                     <Listing.Header text={title} />
-                    <Listing.Excerpt text={excerpt} />
-                    <Listing.Badges tags={tags} />
+                  </Listing.Content>
+                </a>
+              </Listing>
+            ))}
+          </StackedList>
+
+          <h3>Heading Three</h3>
+          <SinglePara />
+          <DoublePara />
+
+          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="left" hasShadow>
+            {data.slice(0, 3).map(({ id, title, link, date }) => (
+              <Listing key={id}>
+                <a href={link}>
+                  <Listing.Content>
+                    <Listing.PostMeta date={date} />
+                    <Listing.Header text={title} />
+                  </Listing.Content>
+                </a>
+              </Listing>
+            ))}
+          </StackedList>
+
+          <h3>Heading Three</h3>
+          <SinglePara />
+          <DoublePara />
+
+          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="right" size="lg" hasShadow>
+            {data.slice(0, 3).map(({ id, title, link, date }) => (
+              <Listing key={id}>
+                <a href={link}>
+                  <Listing.Content>
+                    <Listing.PostMeta date={date} />
+                    <Listing.Header text={title} />
+                  </Listing.Content>
+                </a>
+              </Listing>
+            ))}
+          </StackedList>
+
+          <h3>Heading Three</h3>
+          <SinglePara />
+          <DoublePara />
+
+          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="left" size="lg" hasShadow>
+            {data.slice(0, 3).map(({ id, title, link, date }) => (
+              <Listing key={id}>
+                <a href={link}>
+                  <Listing.Content>
+                    <Listing.PostMeta date={date} />
+                    <Listing.Header text={title} />
+                  </Listing.Content>
+                </a>
+              </Listing>
+            ))}
+          </StackedList>
+
+          <h3>Heading Three</h3>
+          <SinglePara />
+          <DoublePara />
+
+          <Heading text="Recent News" />
+          <StackedList as="ul" cols="2" listType="posts" hasShadow>
+            {data.map(({ id, title, link, date }) => (
+              <Listing key={id}>
+                <a href={link}>
+                  <Listing.Content>
+                    <Listing.PostMeta date={date} />
+                    <Listing.Header text={title} />
                   </Listing.Content>
                 </a>
               </Listing>
