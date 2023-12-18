@@ -1,11 +1,16 @@
 export const styles = {
-  card: `not-prose relative flex flex-col cu-card overflow-hidden rounded-lg bg-white shadow-lg @container md:max-w-lg`,
-  link: `group duration-300 ease-in hover:scale-105 cursor-pointer`,
-  border: `border-l-8`,
+  card: `not-prose relative flex flex-col cu-card overflow-hidden rounded-lg @container md:max-w-lg`,
+  whiteBg: `bg-white`,
+  greyBg: `bg-cu-black-25`,
+  shadow: `shadow-md shadow-cu-black-100`,
+  shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
+  link: `group duration-300 ease-in hover:scale-[1.04] cursor-pointer`,
+  border: `border border-cu-black-100`,
+  redBorder: `border-l-8 border-l-cu-red`,
   content: `flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3 relative`,
   header: `text-lg font-semibold text-cu-black  @sm:md:text-xl leading-6 @sm:md:leading-8`,
   excerpt: `text-base text-cu-black-600`,
-  more: `font-semibold text-cu-red`,
+  more: `font-semibold text-cu-red-700`,
   badges: `pb-6 mt-auto px-7`,
 }
 

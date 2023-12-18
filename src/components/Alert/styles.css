@@ -1,0 +1,23 @@
+.cu-alert a {
+  @apply font-semibold hover:underline;
+}
+
+.cu-alert strong {
+  @apply font-semibold;
+}
+
+.cu-alert-success a {
+  @apply text-green-700;
+}
+
+.cu-alert-error a {
+  @apply text-cu-red-700;
+}
+
+.cu-alert-warning a {
+  @apply text-yellow-700;
+}
+
+.cu-alert-info a {
+  @apply text-blue-700;
+}

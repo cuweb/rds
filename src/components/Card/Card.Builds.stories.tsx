@@ -114,7 +114,7 @@ export const VideoCard: Story = {
 
 export const StatCard: Story = {
   args: {
-    hasBorder: true,
+    hasRedBorder: true,
     noLink: true,
     children: (
       <Card.Content>
