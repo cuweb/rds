@@ -6,7 +6,7 @@ import { TopBar } from '../../components/TopBar/TopBar'
 import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta

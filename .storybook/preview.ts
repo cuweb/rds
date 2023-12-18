@@ -18,8 +18,7 @@ export const parameters = {
         ['Introduction', 'Changelog'],
         'Examples',
         [
-          'Templates',
-          ['Layouts'],
+          'Layouts',
           'Projects',
           ['cutheme', ['Page Layouts', 'Blocks'], 'Event Calendar', ['Homepage', 'Single Event']],
         ],

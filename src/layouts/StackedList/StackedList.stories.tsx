@@ -83,3 +83,18 @@ export const WithListItems: Story = {
     </>
   ),
 }
+
+export const Testing: Story = {
+  render: () => (
+    <>
+      <StackedList header="Post Listing" hasShadow>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+        <li className="p-6">This is a list item</li>
+      </StackedList>
+      <StackedList header="Container" as="div" cols="1" listType="toc" hasShadow>
+        <p>This is a div container</p>
+      </StackedList>
+    </>
+  ),
+}
