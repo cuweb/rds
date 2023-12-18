@@ -4,11 +4,12 @@ import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
-import { TopBar } from '../../components/TopBar/TopBar'
+import { Panel } from '../../_deprecated/Panel/Panel'
 import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
+import { TopBar } from '../../components/TopBar/TopBar'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta
@@ -46,7 +47,7 @@ const DoublePara = () => {
   )
 }
 
-export const WithColumns: Story = {
+export const LayoutSpacing: Story = {
   render: () => (
     <>
       <TopBar>
@@ -76,23 +77,31 @@ export const WithColumns: Story = {
       <Main>
         <Section hasProse>
           <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="With Columns" headerType="h1" />
+            <HeroTextImage.Content title="Spacing Tests" headerType="h1" />
           </HeroTextImage>
           <h2>Not in a container</h2>
           <DoublePara />
           <h2>Not in a container</h2>
           <SinglePara />
 
-          <Column cols="2">
-            <Column.Content>
-              <DoublePara />
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-              <DoublePara />
-            </Column.Content>
-          </Column>
+          <Container isGrey>
+            <SinglePara />
+            <Column cols="2">
+              <Column.Content>One</Column.Content>
+              <Column.Content>One</Column.Content>
+            </Column>
+            <Column cols="2">
+              <Column.Content>One</Column.Content>
+              <Column.Content>One</Column.Content>
+            </Column>
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
+            <Column cols="2">
+              <Column.Content>One</Column.Content>
+              <Column.Content>One</Column.Content>
+            </Column>
+          </Container>
 
           <Container>
             <h2>This is a container</h2>
@@ -108,15 +117,6 @@ export const WithColumns: Story = {
             <SinglePara />
           </Container>
 
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-
           <Container isGrey>
             <h2>This is a container</h2>
             <SinglePara />
@@ -131,22 +131,111 @@ export const WithColumns: Story = {
             <SinglePara />
           </Container>
 
+          <h2>Not in a container</h2>
+          <DoublePara />
+          <h2>Not in a container</h2>
+          <SinglePara />
+          <Panel hasBorder hasShadow>
+            <p>foo</p>
+          </Panel>
+          <Panel hasBorder hasShadow>
+            <p>foo</p>
+          </Panel>
+          <SinglePara />
+
+          <Container>
+            <h2>This is a container</h2>
+            <SinglePara />
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
+            <SinglePara />
+          </Container>
+
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <SinglePara />
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
+            <SinglePara />
+          </Container>
+
+          <h2>Not in a container</h2>
+          <DoublePara />
+          <h2>Not in a container</h2>
+          <SinglePara />
           <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
+            <Panel hasBorder hasShadow>
+              <p>foo</p>
+            </Panel>
           </Column>
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
+          <SinglePara />
+
+          <Container>
+            <h2>This is a container</h2>
+            <SinglePara />
+            <Column cols="2">
+              <Panel hasBorder hasShadow>
+                <p>foo</p>
+              </Panel>
+              <Panel hasBorder hasShadow>
+                <p>foo</p>
+              </Panel>
+            </Column>
+            <SinglePara />
+          </Container>
+
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <SinglePara />
+            <Column cols="2">
+              <Panel hasBorder hasShadow>
+                <p>foo</p>
+              </Panel>
+              <Panel hasBorder hasShadow>
+                <p>foo</p>
+              </Panel>
+            </Column>
+            <SinglePara />
+          </Container>
+
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+
+          <h2>Not in a container</h2>
+          <DoublePara />
+
+          <Container isGrey>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+
+          <Container>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
+
+          <Container>
+            <h2>This is a container</h2>
+            <DoublePara />
+          </Container>
         </Section>
       </Main>
 

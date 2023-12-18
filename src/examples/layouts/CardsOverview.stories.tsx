@@ -15,7 +15,7 @@ import { VideoData } from '../../data/VideoData'
 import { StatData } from '../../data/StatData'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta

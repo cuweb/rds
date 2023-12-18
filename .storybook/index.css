@@ -3471,6 +3471,16 @@ select {
   padding-bottom: 2rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -4050,6 +4060,87 @@ select {
 
 /* RDS Layout CSS */
 
+/*
+StackedList for posts
+*/
+
+.cu-stackedlist-posts > li {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(230 230 230 / var(--tw-border-opacity));
+}
+
+.cu-stackedlist-posts > li:last-child {
+  margin-bottom: -1px;
+}
+
+.cu-stackedlist-posts.md\:grid-cols-2 > li:last-child {
+  margin-bottom: 0px;
+}
+
+.cu-stackedlist-posts.md\:grid-cols-2 > li:nth-child(odd) {
+  border-right-width: 1px;
+}
+
+/*
+StackedList for ToC
+*/
+
+.cu-stackedlist-toc {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.cu-stackedlist-toc a {
+  --tw-text-opacity: 1;
+  color: rgb(14 116 144 / var(--tw-text-opacity));
+}
+
+.cu-stackedlist-toc a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.cu-stackedlist-toc ul:not(:first-child) {
+  padding-top: 0.75rem;
+}
+
+.cu-stackedlist-toc li {
+  margin-left: 2rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.cu-stackedlist-toc li:first-child {
+  padding-top: 0px;
+}
+
+.cu-stackedlist-toc li:last-child {
+  padding-bottom: 0px;
+}
+
+.cu-stackedlist-toc li {
+  list-style-type: decimal;
+}
+
+.cu-stackedlist-toc li li {
+  margin-left: 1.5rem;
+  list-style-type: lower-alpha;
+}
+
+.cu-stackedlist-toc li li li {
+  margin-left: 1rem;
+  list-style-type: lower-roman;
+}
+
+/* RDS Layout CSS */
+
 /* 
 * Max Width for container size props
 */
@@ -4564,24 +4655,6 @@ select {
 }
 
 /* Layouts */
-
-.cu-stackedlist > li {
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(230 230 230 / var(--tw-border-opacity));
-}
-
-.cu-stackedlist > li:last-child {
-  margin-bottom: -1px;
-}
-
-.cu-stackedlist.md\:grid-cols-2 > li:last-child {
-  margin-bottom: 0px;
-}
-
-.cu-stackedlist.md\:grid-cols-2 > li:nth-child(odd) {
-  border-right-width: 1px;
-}
 
 /* React Quill CSS */
 
@@ -7843,6 +7916,14 @@ select {
 }
 
 @media (min-width: 768px) {
+  .md\:float-right {
+    float: right;
+  }
+
+  .md\:float-left {
+    float: left;
+  }
+
   .md\:m-10 {
     margin: 2.5rem;
   }
@@ -7873,6 +7954,22 @@ select {
 
   .md\:mb-12 {
     margin-bottom: 3rem;
+  }
+
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .md\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .md\:mr-0 {
+    margin-right: 0px;
+  }
+
+  .md\:mr-10 {
+    margin-right: 2.5rem;
   }
 
   .md\:mt-0 {
@@ -7937,6 +8034,10 @@ select {
 
   .md\:max-w-lg {
     max-width: 32rem;
+  }
+
+  .md\:max-w-sm {
+    max-width: 24rem;
   }
 
   .md\:flex-1 {
@@ -8347,6 +8448,10 @@ select {
     margin-bottom: 2rem;
   }
 
+  .lg\:ml-2 {
+    margin-left: 0.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -8526,6 +8631,14 @@ select {
 }
 
 @media (min-width: 1280px) {
+  .xl\:ml-24 {
+    margin-left: 6rem;
+  }
+
+  .xl\:mr-24 {
+    margin-right: 6rem;
+  }
+
   .xl\:block {
     display: block;
   }
@@ -8533,6 +8646,16 @@ select {
   .xl\:py-48 {
     padding-top: 12rem;
     padding-bottom: 12rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:ml-\[12\%\] {
+    margin-left: 12%;
+  }
+
+  .\32xl\:mr-\[12\%\] {
+    margin-right: 12%;
   }
 }
 
