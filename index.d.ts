@@ -43,10 +43,8 @@ export { Body } from './layouts/Body/Body';
 export { Column } from './layouts/Column/Column';
 export { Container } from './layouts/Container/Container';
 export { Main } from './layouts/Main/Main';
-export { Panel } from './layouts/Panel/Panel';
 export { Section } from './layouts/Section/Section';
 export { StackedList } from './layouts/StackedList/StackedList';
 export type { ColumnDefinitionType } from './components/Table/Table';
 export type { UserInfoType } from './components/Avatar/Avatar';
-export { HeroTextImage } from './_deprecated/HeroTextImage/HeroTextImage';
 //# sourceMappingURL=index.d.ts.map

@@ -9,4 +9,5 @@ export declare const HasBorder: Story;
 export declare const ShadowBorder: Story;
 export declare const WithHeader: Story;
 export declare const WithListItems: Story;
+export declare const Testing: Story;
 //# sourceMappingURL=StackedList.stories.d.ts.map
