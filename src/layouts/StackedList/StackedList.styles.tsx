@@ -4,7 +4,7 @@ export const styles = {
   shadow: `shadow-lg`,
   oneCol: `grid md:grid-cols-1`,
   twoCol: `grid md:grid-cols-2`,
-  offset: `md:mt-4 md:mb-6 duration-300 ease-in`,
+  offset: `md:mb-6 duration-300 ease-in`,
   sm: `md:max-w-sm`,
   lg: `md:max-w-lg`,
   left: `md:float-left lg:ml-2 xl:ml-24 2xl:ml-[12%] md:mr-10`,
