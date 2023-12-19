@@ -53,324 +53,492 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Default" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id}>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id}>
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container>
             <Heading text="Event Cards: Shadow on Hover" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onHover">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} hasShadow="onHover">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container>
             <Heading text="Event Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onCard">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} hasShadow="onCard">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container>
             <Heading text="Event Cards: Default with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} isGrey>
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container>
             <Heading text="Event Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow="onHover">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} isGrey hasShadow="onHover">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container>
             <Heading text="Event Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow="onCard">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} isGrey hasShadow="onCard">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container isGrey>
             <Heading text="Event Cards: Default" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id}>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id}>
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Hover" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onHover">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} hasShadow="onHover">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onCard">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} hasShadow="onCard">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container isGrey>
             <Heading text="Event Cards: Default with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey>
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} isGrey>
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow="onHover">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} isGrey hasShadow="onHover">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
 
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasShadow="onCard">
-                  <a href={item?.link}>
-                    <Card.Figure>
-                      <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                      <Card.Header text={item?.title} />
-                      <Card.EventMeta
-                        startDateTime={item?.startDate}
-                        endDateTime={item?.endDate}
-                        onCampus={item?.on_campus}
-                        onCampusBuilding={item?.on_campus_building}
-                        onCampusRoomNumber={item?.on_campus_room_number}
-                        eventAddress={item?.event_address}
-                      />
-                    </Card.Content>
-                  </a>
-                </Card>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  image,
+                  alt,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Card key={id} isGrey hasShadow="onCard">
+                    <a href={link}>
+                      <Card.Figure>
+                        <img src={image} alt={alt} width={400} height={175} />
+                      </Card.Figure>
+                      <Card.Content>
+                        <Card.DateBox startDate={startDate} endDate={endDate} />
+                        <Card.Header text={title} />
+                        <Card.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Card.Content>
+                    </a>
+                  </Card>
+                ),
+              )}
             </Column>
           </Container>
         </Section>

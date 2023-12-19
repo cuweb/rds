@@ -53,10 +53,10 @@ export const StatCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Default" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink>
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} hasRedBorder noLink>
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -66,10 +66,10 @@ export const StatCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink hasShadow="onCard">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} hasRedBorder noLink hasShadow="onCard">
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -79,10 +79,10 @@ export const StatCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Default with Grey Bg" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink>
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} isGrey hasRedBorder noLink>
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -92,10 +92,10 @@ export const StatCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink hasShadow="onCard">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} isGrey hasRedBorder noLink hasShadow="onCard">
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -105,10 +105,10 @@ export const StatCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Default" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink>
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} hasRedBorder noLink>
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -118,10 +118,10 @@ export const StatCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasRedBorder noLink hasShadow="onCard">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} hasRedBorder noLink hasShadow="onCard">
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -131,10 +131,10 @@ export const StatCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Default with Grey Bg" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink>
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} isGrey hasRedBorder noLink>
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}
@@ -144,10 +144,10 @@ export const StatCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {StatData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey hasRedBorder noLink hasShadow="onCard">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} isGrey hasRedBorder noLink hasShadow="onCard">
                   <Card.Content>
-                    <Card.Stats stat={item?.stat} desc={item?.desc} />
+                    <Card.Stats stat={stat} desc={desc} />
                   </Card.Content>
                 </Card>
               ))}

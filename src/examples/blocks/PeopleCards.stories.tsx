@@ -53,15 +53,15 @@ export const PeopleCardOptions: Story = {
           <Container>
             <Heading text="People Cards: Default" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter>
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -72,15 +72,15 @@ export const PeopleCardOptions: Story = {
           <Container>
             <Heading text="People Cards: Shadow on Hover" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasShadow="onHover">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -91,15 +91,15 @@ export const PeopleCardOptions: Story = {
           <Container>
             <Heading text="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasShadow="onCard">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -110,15 +110,15 @@ export const PeopleCardOptions: Story = {
           <Container>
             <Heading text="People Cards: Default with Grey Bg" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter>
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -129,15 +129,15 @@ export const PeopleCardOptions: Story = {
           <Container>
             <Heading text="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasShadow="onHover">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -148,15 +148,15 @@ export const PeopleCardOptions: Story = {
           <Container>
             <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasShadow="onCard">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -167,15 +167,15 @@ export const PeopleCardOptions: Story = {
           <Container isGrey>
             <Heading text="People Cards: Default" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter>
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -186,15 +186,15 @@ export const PeopleCardOptions: Story = {
           <Container isGrey>
             <Heading text="People Cards: Shadow on Hover" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasShadow="onHover">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -205,15 +205,15 @@ export const PeopleCardOptions: Story = {
           <Container isGrey>
             <Heading text="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isCenter hasShadow="onCard">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -224,15 +224,15 @@ export const PeopleCardOptions: Story = {
           <Container isGrey>
             <Heading text="People Cards: Default with Grey Bg" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter>
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -243,15 +243,15 @@ export const PeopleCardOptions: Story = {
           <Container isGrey>
             <Heading text="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasShadow="onHover">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>
@@ -262,15 +262,15 @@ export const PeopleCardOptions: Story = {
           <Container isGrey>
             <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {PeopleData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey isCenter hasShadow="onCard">
-                  <a href={item?.link}>
+              {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Card key={id} isCenter>
+                  <a href={link}>
                     <Card.Figure isRound>
-                      <img src={item?.image} alt={item?.alt} width={280} height={280} />
+                      <img src={image} alt={alt} width={280} height={280} />
                     </Card.Figure>
                     <Card.Content>
-                      <Card.Header text={`${item?.firstName} ${item?.lastName}`} />
-                      <Card.PeopleMeta jobTitle={item?.jobTitle} email={item?.email} phone={item?.phone} />
+                      <Card.Header text={`${firstName} ${lastName}`} />
+                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
                     </Card.Content>
                   </a>
                 </Card>

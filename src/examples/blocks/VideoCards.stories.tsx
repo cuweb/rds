@@ -53,11 +53,11 @@ export const VideoCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Default" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink>
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} noLink>
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -67,11 +67,11 @@ export const VideoCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink hasShadow="onCard">
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} noLink hasShadow="onCard">
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -81,11 +81,11 @@ export const VideoCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Default with Grey Bg" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink>
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} isGrey noLink>
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -95,11 +95,11 @@ export const VideoCardOptions: Story = {
           <Container>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink hasShadow="onCard">
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} isGrey noLink hasShadow="onCard">
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -109,11 +109,11 @@ export const VideoCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Default" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink>
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} noLink>
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -123,11 +123,11 @@ export const VideoCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} noLink hasShadow="onCard">
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} noLink hasShadow="onCard">
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -137,11 +137,11 @@ export const VideoCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Default with Grey Bg" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink>
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} isGrey noLink>
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}
@@ -151,11 +151,11 @@ export const VideoCardOptions: Story = {
           <Container isGrey>
             <Heading text="Video Cards: Shadow on Static with Grey Bg" />
             <Column cols="3">
-              {VideoData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey noLink hasShadow="onCard">
-                  <Card.Video source={item?.source} />
+              {VideoData.slice(0, 3).map(({ id, source, title }) => (
+                <Card key={id} isGrey noLink hasShadow="onCard">
+                  <Card.Video source={source} />
                   <Card.Content>
-                    <Card.Header text={item?.title} />
+                    <Card.Header text={title} />
                   </Card.Content>
                 </Card>
               ))}

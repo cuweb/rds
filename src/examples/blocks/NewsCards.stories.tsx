@@ -53,16 +53,18 @@ export const NewsCardOptions: Story = {
           <Container>
             <Heading text="News Cards: Default" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id}>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -71,16 +73,18 @@ export const NewsCardOptions: Story = {
           <Container>
             <Heading text="News Cards: Shadow on Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onHover">
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -89,16 +93,18 @@ export const NewsCardOptions: Story = {
           <Container>
             <Heading text="News Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onCard">
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -107,16 +113,18 @@ export const NewsCardOptions: Story = {
           <Container>
             <Heading text="News Cards: Default with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -125,16 +133,18 @@ export const NewsCardOptions: Story = {
           <Container>
             <Heading text="News Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onHover" isGrey>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -143,16 +153,18 @@ export const NewsCardOptions: Story = {
           <Container>
             <Heading text="News Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onCard" isGrey>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -161,16 +173,18 @@ export const NewsCardOptions: Story = {
           <Container isGrey>
             <Heading text="News Cards: Default" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id}>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -179,16 +193,18 @@ export const NewsCardOptions: Story = {
           <Container isGrey>
             <Heading text="News Cards: Shadow on Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onHover">
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -197,16 +213,18 @@ export const NewsCardOptions: Story = {
           <Container isGrey>
             <Heading text="News Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onCard">
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -215,16 +233,18 @@ export const NewsCardOptions: Story = {
           <Container isGrey>
             <Heading text="News Cards: Default with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} isGrey>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -233,16 +253,18 @@ export const NewsCardOptions: Story = {
           <Container isGrey>
             <Heading text="News Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onHover" isGrey>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
@@ -251,16 +273,18 @@ export const NewsCardOptions: Story = {
           <Container isGrey>
             <Heading text="News Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map((item) => (
-                <Card key={item?.id} hasShadow="onCard" isGrey>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.PostMeta date={item?.date} />
-                    <Card.Header text={item?.title} />
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Content>
+              {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
+                <Card key={id}>
+                  <a href={link}>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width="400" height="266" />
+                    </Card.Figure>
+                    <Card.Content>
+                      <Card.PostMeta date={date} />
+                      <Card.Header text={title} />
+                      <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    </Card.Content>
+                  </a>
                 </Card>
               ))}
             </Column>
