@@ -2548,6 +2548,10 @@ select {
   max-width: 20rem;
 }
 
+.max-w-\[30\%\] {
+  max-width: 30%;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -7913,6 +7917,14 @@ StackedList for ToC
   }
 }
 
+@container (min-width: 24rem) {
+  @media (min-width: 640px) {
+    .\@sm\:sm\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .md\:float-right {
     float: right;
@@ -8339,6 +8351,10 @@ StackedList for ToC
       width: 1.5rem;
     }
 
+    .\@sm\:md\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+
     .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
       --tw-space-y-reverse: 0;
       margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -8405,6 +8421,14 @@ StackedList for ToC
 
     .\@xl\:md\:max-w-\[35\%\] {
       max-width: 35%;
+    }
+
+    .\@xl\:md\:max-w-\[40\%\] {
+      max-width: 40%;
+    }
+
+    .\@xl\:md\:max-w-\[30\%\] {
+      max-width: 30%;
     }
 
     .\@xl\:md\:text-lg {

@@ -15,7 +15,7 @@ export const linkStyles = {
 }
 
 export const figureStyles = {
-  figure: `flex-none rounded-md max-w-[35%] @xl:md:max-w-[35%]`,
+  figure: `flex-none rounded-md max-w-[40%] @xl:md:max-w-[25%]`,
 }
 
 export const metaStyles = {
