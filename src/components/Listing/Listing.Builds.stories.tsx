@@ -67,7 +67,7 @@ export const PeopleListing: Story = {
   args: {
     children: (
       <a href={singlePeople?.link}>
-        <Listing.Figure size="small">
+        <Listing.Figure>
           <img src={singlePeople?.image} alt={singlePeople?.alt} width="200" height="200" />
         </Listing.Figure>
         <Listing.Content>

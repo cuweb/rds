@@ -7,9 +7,6 @@ import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
-import { Listing } from '../../components/Listing/Listing'
-import { NewsData as data } from '../../data/NewsData'
-import { Heading } from '../../components/Heading/Heading'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -152,116 +149,8 @@ export const BasicMarkup: Story = {
           <SinglePara />
           <DoublePara />
 
-          <StackedList header="Table of Contents" as="div" cols="1" listType="toc" offset="left" hasShadow>
-            <ToC />
-          </StackedList>
-
-          <h3>Heading Three</h3>
+          <h3>Heading Four</h3>
           <SinglePara />
-          <DoublePara />
-
-          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="right" hasShadow>
-            {data.slice(0, 3).map(({ id, title, link, date }) => (
-              <Listing key={id}>
-                <a href={link}>
-                  {/* <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure> */}
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                  </Listing.Content>
-                </a>
-              </Listing>
-            ))}
-          </StackedList>
-
-          <h3>Heading Three</h3>
-          <SinglePara />
-          <DoublePara />
-
-          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="left" hasShadow>
-            {data.slice(0, 3).map(({ id, title, link, date }) => (
-              <Listing key={id}>
-                <a href={link}>
-                  {/* <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure> */}
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                  </Listing.Content>
-                </a>
-              </Listing>
-            ))}
-          </StackedList>
-
-          <h3>Heading Three</h3>
-          <SinglePara />
-          <DoublePara />
-
-          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="right" size="lg" hasShadow>
-            {data.slice(0, 3).map(({ id, title, link, date }) => (
-              <Listing key={id}>
-                <a href={link}>
-                  {/* <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure> */}
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                  </Listing.Content>
-                </a>
-              </Listing>
-            ))}
-          </StackedList>
-
-          <h3>Heading Three</h3>
-          <SinglePara />
-          <DoublePara />
-
-          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="left" size="lg" hasShadow>
-            {data.slice(0, 3).map(({ id, title, link, date }) => (
-              <Listing key={id}>
-                <a href={link}>
-                  {/* <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure> */}
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                  </Listing.Content>
-                </a>
-              </Listing>
-            ))}
-          </StackedList>
-
-          <h3>Heading Three</h3>
-          <SinglePara />
-          <DoublePara />
-
-          <Heading text="Recent News" />
-          <StackedList as="ul" cols="2" listType="posts" hasShadow>
-            {data.map(({ id, title, link, date }) => (
-              <Listing key={id}>
-                <a href={link}>
-                  {/* <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure> */}
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                  </Listing.Content>
-                </a>
-              </Listing>
-            ))}
-          </StackedList>
-
-          <h3>Heading Three</h3>
-          <DoublePara />
-          <DoublePara />
-
-          <DoublePara />
           <DoublePara />
         </Section>
       </Main>
