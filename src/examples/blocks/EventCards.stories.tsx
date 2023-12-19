@@ -53,7 +53,7 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Default" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -94,7 +94,7 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Shadow on Hover" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -135,7 +135,7 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -176,7 +176,7 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Default with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -217,7 +217,7 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -258,7 +258,7 @@ export const EventCardOptions: Story = {
           <Container>
             <Heading text="Event Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -299,7 +299,7 @@ export const EventCardOptions: Story = {
           <Container isGrey>
             <Heading text="Event Cards: Default" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -340,7 +340,7 @@ export const EventCardOptions: Story = {
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Hover" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -381,7 +381,7 @@ export const EventCardOptions: Story = {
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -422,7 +422,7 @@ export const EventCardOptions: Story = {
           <Container isGrey>
             <Heading text="Event Cards: Default with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -463,7 +463,7 @@ export const EventCardOptions: Story = {
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
@@ -504,7 +504,7 @@ export const EventCardOptions: Story = {
           <Container isGrey>
             <Heading text="Event Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {EventData.slice(0, 4).map(
+              {EventData.slice(0, 3).map(
                 ({
                   id,
                   title,
