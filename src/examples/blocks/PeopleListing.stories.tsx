@@ -56,7 +56,7 @@ export const PeopleListingOptions: Story = {
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
                   <a href={link}>
-                    <Listing.Figure size="small">
+                    <Listing.Figure>
                       <img src={image} alt={alt} width="200" height="200" />
                     </Listing.Figure>
                     <Listing.Content>
@@ -75,7 +75,7 @@ export const PeopleListingOptions: Story = {
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
                   <a href={link}>
-                    <Listing.Figure size="small">
+                    <Listing.Figure>
                       <img src={image} alt={alt} width="200" height="200" />
                     </Listing.Figure>
                     <Listing.Content>
@@ -100,7 +100,7 @@ export const PeopleListingOptions: Story = {
             {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
                 <a href={link}>
-                  <Listing.Figure size="small">
+                  <Listing.Figure>
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Content>
@@ -166,7 +166,7 @@ export const PeopleListingOptions: Story = {
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
                   <a href={link}>
-                    <Listing.Figure size="small">
+                    <Listing.Figure>
                       <img src={image} alt={alt} width="200" height="200" />
                     </Listing.Figure>
                     <Listing.Content>
@@ -185,7 +185,7 @@ export const PeopleListingOptions: Story = {
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
                   <a href={link}>
-                    <Listing.Figure size="small">
+                    <Listing.Figure>
                       <img src={image} alt={alt} width="200" height="200" />
                     </Listing.Figure>
                     <Listing.Content>

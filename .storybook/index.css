@@ -2500,6 +2500,14 @@ select {
   max-width: 320px;
 }
 
+.max-w-\[35\%\] {
+  max-width: 35%;
+}
+
+.max-w-\[40\%\] {
+  max-width: 40%;
+}
+
 .max-w-\[50\%\] {
   max-width: 50%;
 }
@@ -4461,7 +4469,7 @@ StackedList for ToC
   border-radius: 0.375rem;
 }
 
-@container (min-width: 32rem) {
+@container (min-width: 36rem) {
   @media (min-width: 768px) {
     .cu-listing a {
       flex-direction: row;
@@ -8375,10 +8383,6 @@ StackedList for ToC
       height: 180px;
     }
 
-    .\@lg\:md\:max-w-\[25\%\] {
-      max-width: 25%;
-    }
-
     .\@lg\:md\:max-w-\[35\%\] {
       max-width: 35%;
     }
@@ -8390,13 +8394,25 @@ StackedList for ToC
     .\@lg\:md\:gap-8 {
       gap: 2rem;
     }
+  }
+}
 
-    .\@lg\:md\:text-lg {
+@container (min-width: 36rem) {
+  @media (min-width: 768px) {
+    .\@xl\:md\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+
+    .\@xl\:md\:max-w-\[35\%\] {
+      max-width: 35%;
+    }
+
+    .\@xl\:md\:text-lg {
       font-size: 1.125rem;
       line-height: 1.75rem;
     }
 
-    .\@lg\:md\:text-xl {
+    .\@xl\:md\:text-xl {
       font-size: 1.25rem;
       line-height: 1.75rem;
     }
