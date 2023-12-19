@@ -2500,6 +2500,14 @@ select {
   max-width: 320px;
 }
 
+.max-w-\[35\%\] {
+  max-width: 35%;
+}
+
+.max-w-\[40\%\] {
+  max-width: 40%;
+}
+
 .max-w-\[50\%\] {
   max-width: 50%;
 }
@@ -2538,6 +2546,10 @@ select {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-\[30\%\] {
+  max-width: 30%;
 }
 
 .flex-1 {
@@ -3469,16 +3481,6 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .pb-2 {
@@ -4471,7 +4473,7 @@ StackedList for ToC
   border-radius: 0.375rem;
 }
 
-@container (min-width: 32rem) {
+@container (min-width: 36rem) {
   @media (min-width: 768px) {
     .cu-listing a {
       flex-direction: row;
@@ -7915,6 +7917,14 @@ StackedList for ToC
   }
 }
 
+@container (min-width: 24rem) {
+  @media (min-width: 640px) {
+    .\@sm\:sm\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .md\:float-right {
     float: right;
@@ -8341,6 +8351,10 @@ StackedList for ToC
       width: 1.5rem;
     }
 
+    .\@sm\:md\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+
     .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
       --tw-space-y-reverse: 0;
       margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -8385,10 +8399,6 @@ StackedList for ToC
       height: 180px;
     }
 
-    .\@lg\:md\:max-w-\[25\%\] {
-      max-width: 25%;
-    }
-
     .\@lg\:md\:max-w-\[35\%\] {
       max-width: 35%;
     }
@@ -8400,13 +8410,33 @@ StackedList for ToC
     .\@lg\:md\:gap-8 {
       gap: 2rem;
     }
+  }
+}
 
-    .\@lg\:md\:text-lg {
+@container (min-width: 36rem) {
+  @media (min-width: 768px) {
+    .\@xl\:md\:max-w-\[25\%\] {
+      max-width: 25%;
+    }
+
+    .\@xl\:md\:max-w-\[35\%\] {
+      max-width: 35%;
+    }
+
+    .\@xl\:md\:max-w-\[40\%\] {
+      max-width: 40%;
+    }
+
+    .\@xl\:md\:max-w-\[30\%\] {
+      max-width: 30%;
+    }
+
+    .\@xl\:md\:text-lg {
       font-size: 1.125rem;
       line-height: 1.75rem;
     }
 
-    .\@lg\:md\:text-xl {
+    .\@xl\:md\:text-xl {
       font-size: 1.25rem;
       line-height: 1.75rem;
     }
