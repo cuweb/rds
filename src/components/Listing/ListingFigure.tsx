@@ -3,7 +3,6 @@ import { figureStyles } from './Listing.Styles'
 
 export interface ListingFigureProps {
   children: React.ReactNode
-  // size?: 'small' | 'default'
 }
 
 export const ListingFigure = ({ children }: ListingFigureProps) => {
