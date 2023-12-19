@@ -96,7 +96,7 @@ export const PeopleListingOptions: Story = {
             luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
           </p>
           <Heading text="People Listings: Offset" />
-          <StackedList header="Upcoming People" as="ul" cols="1" listType="posts" offset="right" hasShadow>
+          <StackedList header="Meet the Team" as="ul" cols="1" listType="posts" offset="right" hasShadow>
             {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
                 <a href={link}>
