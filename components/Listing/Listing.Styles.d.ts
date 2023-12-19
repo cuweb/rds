@@ -14,8 +14,6 @@ export declare const linkStyles: {
 };
 export declare const figureStyles: {
     figure: string;
-    default: string;
-    small: string;
 };
 export declare const metaStyles: {
     wrapper: string;
