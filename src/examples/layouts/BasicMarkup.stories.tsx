@@ -3,10 +3,10 @@ import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -135,9 +135,16 @@ export const BasicMarkup: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl">
-            <HeroTextImage.Content title="Basic Markup" headerType="h1" />
-          </HeroTextImage>
+          <TextImage>
+            <TextImage.Content headerType="h1" title="Basic Markup">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+
           <h2>Heading Two</h2>
           <SinglePara />
 
@@ -147,10 +154,94 @@ export const BasicMarkup: Story = {
 
           <h3>Heading Three</h3>
           <SinglePara />
+
+          <h4>Heading Four</h4>
           <DoublePara />
 
-          <h3>Heading Four</h3>
-          <SinglePara />
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere
+              tellus vitae, sagittis justo.
+            </li>
+            <li>
+              Suspendisse <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> vel orci vulputate,
+              eget vulputate neque porttitor.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <ul>
+                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                <li>
+                  Aenean sit amet tortor <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> vitae,
+                  sagittis justo.
+                  <ul>
+                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                  </ul>
+                </li>
+                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+              </ul>
+            </li>
+            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+            <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
+            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+          </ul>
+
+          <DoublePara />
+
+          <ol>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere
+              tellus vitae, sagittis justo.
+            </li>
+            <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <ol>
+                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                <li>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.
+                  <ol>
+                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                  </ol>
+                </li>
+                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
+              </ol>
+            </li>
+            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+            <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
+            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
+          </ol>
+
+          <DoublePara />
+
+          <blockquote>
+            <p>
+              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus.
+            </p>
+            <cite>John Doe</cite>
+          </blockquote>
+
+          <DoublePara />
+
+          <blockquote>
+            <p>
+              Obis voluptatem dolorum et <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> velit.
+              Praesentium architecto a distinctio aut reprehenderit ducimus.
+            </p>
+            <cite>John Doe</cite>
+          </blockquote>
+
           <DoublePara />
         </Section>
       </Main>
