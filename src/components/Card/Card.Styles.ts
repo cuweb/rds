@@ -1,5 +1,5 @@
 export const styles = {
-  card: `not-prose relative flex flex-col cu-card overflow-hidden rounded-lg @container md:max-w-lg`,
+  card: `not-prose relative flex flex-col cu-card rounded-lg @container md:max-w-lg`,
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
   shadow: `shadow-md shadow-cu-black-100`,
