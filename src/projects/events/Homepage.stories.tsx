@@ -1,27 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../../layouts/Main/Main'
-import { Section } from '../../../layouts/Section/Section'
-import { Container } from '../../../layouts/Container/Container'
-import { Column } from '../../../layouts/Column/Column'
-import { StackedList } from '../../../layouts/StackedList/StackedList'
-import { Aside } from '../../../layouts/Aside/Aside'
+import { Main } from '../../layouts/Main/Main'
+import { Section } from '../../layouts/Section/Section'
+import { Container } from '../../layouts/Container/Container'
+import { Column } from '../../layouts/Column/Column'
+import { StackedList } from '../../layouts/StackedList/StackedList'
+import { Aside } from '../../layouts/Aside/Aside'
 
-import { Banner } from '../../../_deprecated/Banner/Banner'
+import { Banner } from '../../_deprecated/Banner/Banner'
 
-import { TopBar } from '../../../components/TopBar/TopBar'
-import { Heading } from '../../../components/Heading/Heading'
-import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { Card } from '../../../components/Card/Card'
-import { Listing } from '../../../components/Listing/Listing'
-import { Pagination } from '../../../components/Pagination/Pagination'
-import { Calendar } from '../../../components/Calendar/Calendar'
-import { Filter } from '../../../components/Filter/Filter'
+import { TopBar } from '../../components/TopBar/TopBar'
+import { Heading } from '../../components/Heading/Heading'
+import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { Card } from '../../components/Card/Card'
+import { Listing } from '../../components/Listing/Listing'
+import { Pagination } from '../../components/Pagination/Pagination'
+import { Calendar } from '../../components/Calendar/Calendar'
+import { Filter } from '../../components/Filter/Filter'
 
-import { EventData as dataCard, EventData as dataList } from '../../../data/EventData'
-import { FilterData as dataFilter } from '../../../data/FilterData'
+import { EventData as dataCard, EventData as dataList } from '../../data/EventData'
+import { FilterData as dataFilter } from '../../data/FilterData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/Event Calendar',
+  title: 'Projects/Event Calendar',
 }
 
 export default meta
