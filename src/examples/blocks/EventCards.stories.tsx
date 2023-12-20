@@ -47,7 +47,7 @@ export const EventCardOptions: Story = {
       <Main>
         <Section hasProse>
           <TextImage hasBorder>
-            <TextImage.Content headerType="h1" title="Event Card Options">
+            <TextImage.Content headerType="h1" title="Event Cards">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
