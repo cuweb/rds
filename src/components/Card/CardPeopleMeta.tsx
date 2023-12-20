@@ -8,14 +8,14 @@ export interface CardPeopleMetaProps {
 
 export const CardPeopleMeta = ({ jobTitle, email, phone }: CardPeopleMetaProps) => {
   return (
-    <ul className={metaStyles.wrapper}>
-      {jobTitle && <li className={`${metaStyles.item} ${metaStyles.itemLarge} ${metaStyles.italic}`}>{jobTitle}</li>}
+    <ul className={metaStyles.list}>
+      {jobTitle && <li className={`${metaStyles.font} ${metaStyles.fontLarge} ${metaStyles.italic}`}>{jobTitle}</li>}
       {email && (
-        <li className={metaStyles.item}>
+        <li className={metaStyles.font}>
           <strong className={`${metaStyles.bold} ${metaStyles.wrap}`}>{email}</strong>
         </li>
       )}
-      {phone && <li className={metaStyles.item}>{phone}</li>}
+      {phone && <li className={metaStyles.font}>{phone}</li>}
     </ul>
   )
 }

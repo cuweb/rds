@@ -11,7 +11,7 @@ export const CardStats = ({ stat, desc, reverse }: CardStatsProps) => {
 
   return (
     <div className={`${contentDirection} overflow-hidden`}>
-      <p className={`${statStyle.desc}`}>{desc}</p>
+      <p className={statStyle.desc}>{desc}</p>
       <h2 className={statStyle.header}>{stat}</h2>
     </div>
   )

@@ -79,7 +79,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onHover" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -98,7 +98,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onCard" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -136,7 +136,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onHover" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -155,7 +155,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onCard" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -193,7 +193,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onHover" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -212,7 +212,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onCard" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -250,7 +250,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onHover" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />
@@ -269,7 +269,7 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
+                <Card key={id} hasShadow="onCard" isCenter>
                   <a href={link}>
                     <Card.Figure isRound>
                       <img src={image} alt={alt} width={280} height={280} />

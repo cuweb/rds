@@ -1,5 +1,5 @@
 export const styles = {
-  card: `not-prose relative flex flex-col cu-card overflow-hidden rounded-lg @container md:max-w-lg`,
+  card: `not-prose relative flex flex-col cu-card rounded-lg @container md:max-w-lg`,
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
   shadow: `shadow-md shadow-cu-black-100`,
@@ -7,11 +7,16 @@ export const styles = {
   link: `group duration-300 ease-in hover:scale-[1.04] cursor-pointer`,
   border: `border border-cu-black-100`,
   redBorder: `border-l-8 border-l-cu-red`,
-  content: `flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3 relative`,
+  content: `flex flex-col py-6 px-7 relative`,
   header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
-  excerpt: `text-base text-cu-black-600`,
+  excerpt: `text-base text-cu-black-600 mt-3`,
   more: `font-semibold text-cu-red-700`,
   badges: `pb-6 mt-auto px-7`,
+}
+
+export const button = {
+  button: `px-3 py-2 text-sm rounded-md self-start mt-6`,
+  border: `text-cu-black-600 bg-white border border-cu-black-300 group-hover:text-white group-hover:bg-cu-red group-hover:border-cu-red`,
 }
 
 export const figureStyles = {
@@ -20,9 +25,10 @@ export const figureStyles = {
 }
 
 export const metaStyles = {
-  wrapper: `space-y-1.5 @sm:md:space-y-2`,
-  item: `text-sm text-cu-black-600 @sm:md:text-base`,
-  itemLarge: `text-base text-cu-black-600 @sm:md:text-lg`,
+  font: `text-sm text-cu-black-600 @sm:md:text-base`,
+  fontLarge: `text-base text-cu-black-600 @sm:md:text-lg`,
+  list: `space-y-1.5 md:space-y-2.5 mt-4`,
+  date: `mb-3 italic`,
   italic: `italic`,
   bold: `font-semibold`,
   alignIcon: `flex`,
@@ -42,7 +48,7 @@ export const videoStyle = {
 }
 
 export const statStyle = {
-  header: `text-2xl font-semibold text-cu-black-800 group-hover:text-cu-red @sm:md:text-4xl`,
+  header: `text-2xl font-semibold text-cu-black-800 group-hover:text-cu-red md:text-3xl @xs:lg:text-4xl`,
   desc: `text-base text-cu-black-600 @sm:md:text-lg`,
   flexCol: `flex flex-col gap-2`,
   flexColReverse: `flex flex-col-reverse gap-2`,

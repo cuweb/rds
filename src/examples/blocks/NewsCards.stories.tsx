@@ -80,7 +80,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onHover">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -100,7 +100,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onCard">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -140,7 +140,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onHover">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -160,7 +160,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onCard">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -200,7 +200,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onHover">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -220,7 +220,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onCard">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -260,7 +260,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onHover">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
@@ -280,7 +280,7 @@ export const NewsCardOptions: Story = {
             <Heading text="News Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
-                <Card key={id}>
+                <Card key={id} hasShadow="onCard">
                   <a href={link}>
                     <Card.Figure>
                       <img src={image} alt={alt} width="400" height="266" />
