@@ -2186,10 +2186,6 @@ select {
   margin-top: auto;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -2752,20 +2748,12 @@ select {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-items-end {
-  justify-items: end;
 }
 
 .gap-0 {
@@ -2897,10 +2885,6 @@ select {
 
 .self-start {
   align-self: flex-start;
-}
-
-.justify-self-end {
-  justify-self: end;
 }
 
 .\!overflow-hidden {
@@ -3117,11 +3101,6 @@ select {
 .border-yellow-400 {
   --tw-border-opacity: 1;
   border-color: rgb(250 204 21 / var(--tw-border-opacity));
-}
-
-.border-cu-black-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(153 153 153 / var(--tw-border-opacity));
 }
 
 .border-b-cu-black-100 {
@@ -3626,10 +3605,6 @@ select {
 
 .text-center {
   text-align: center;
-}
-
-.align-bottom {
-  vertical-align: bottom;
 }
 
 .align-\[-0\.125em\] {
@@ -4416,14 +4391,13 @@ StackedList for ToC
 
 /* Card Components */
 
-.cu-card a {
+.cu-card > a {
+  /* @apply relative flex flex-col h-full focus:rounded-lg; */
   position: relative;
-  display: flex;
   height: 100%;
-  flex-direction: column;
 }
 
-.cu-card a:focus {
+.cu-card > a:focus {
   border-radius: 0.5rem;
 }
 
@@ -7442,6 +7416,10 @@ StackedList for ToC
   padding-top: 0px;
 }
 
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
+}
+
 .last\:mr-0:last-child {
   margin-right: 0px;
 }
@@ -7704,11 +7682,6 @@ StackedList for ToC
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
-.group:hover .group-hover\:border-cu-red {
-  --tw-border-opacity: 1;
-  border-color: rgb(233 28 36 / var(--tw-border-opacity));
-}
-
 .group:hover .group-hover\:bg-cu-red {
   --tw-bg-opacity: 1;
   background-color: rgb(233 28 36 / var(--tw-bg-opacity));
@@ -7943,15 +7916,6 @@ StackedList for ToC
   }
 }
 
-@container (min-width: 24rem) {
-  @media (min-width: 640px) {
-    .\@sm\:sm\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-  }
-}
-
 @media (min-width: 768px) {
   .md\:float-right {
     float: right;
@@ -8151,12 +8115,6 @@ StackedList for ToC
 
   .md\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .md\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
   }
 
   .md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -8386,20 +8344,6 @@ StackedList for ToC
   }
 }
 
-@container (min-width: 20rem) {
-  @media (min-width: 768px) {
-    .\@xs\:md\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-
-    .\@xs\:md\:text-4xl {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-  }
-}
-
 @container (min-width: 24rem) {
   @media (min-width: 768px) {
     .\@sm\:md\:h-6 {
@@ -8408,35 +8352,6 @@ StackedList for ToC
 
     .\@sm\:md\:w-6 {
       width: 1.5rem;
-    }
-
-    .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-    }
-
-    .\@sm\:md\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-    }
-
-    .\@sm\:md\:space-y-2\.5 > :not([hidden]) ~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(0.625rem * var(--tw-space-y-reverse));
-    }
-
-    .\@sm\:md\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-    }
-
-    .\@sm\:md\:text-4xl {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
     }
 
     .\@sm\:md\:text-base {
@@ -8689,15 +8604,6 @@ StackedList for ToC
     .\@xs\:lg\:text-4xl {
       font-size: 2.25rem;
       line-height: 2.5rem;
-    }
-  }
-}
-
-@container (min-width: 24rem) {
-  @media (min-width: 1024px) {
-    .\@sm\:lg\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
     }
   }
 }

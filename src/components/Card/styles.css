@@ -1,11 +1,12 @@
 /* Card Components */
 
-.cu-card a {
-  @apply relative flex flex-col h-full focus:rounded-lg;
+.cu-card > a {
+  /* @apply relative flex flex-col h-full focus:rounded-lg; */
+  @apply relative h-full focus:rounded-lg;
 }
 
 .cu-card figure {
-  @apply rounded-t-lg overflow-hidden;
+  @apply overflow-hidden rounded-t-lg;
 }
 
 .cu-card img {

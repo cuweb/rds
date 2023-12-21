@@ -1,5 +1,6 @@
 export const styles = {
-  card: `not-prose relative flex flex-col cu-card rounded-lg @container md:max-w-lg`,
+  // card: `not-prose relative flex flex-col cu-card rounded-lg @container md:max-w-lg`,
+  card: `not-prose relative cu-card rounded-lg @container md:max-w-lg`,
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
   shadow: `shadow-md shadow-cu-black-100`,
@@ -7,16 +8,16 @@ export const styles = {
   link: `group duration-300 ease-in hover:scale-[1.04] cursor-pointer`,
   border: `border border-cu-black-100`,
   redBorder: `border-l-8 border-l-cu-red`,
-  content: `flex flex-col py-6 px-7 relative`,
+  content: `flex flex-col py-6 px-7 relative h-full`,
   header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
-  excerpt: `text-base text-cu-black-600 mt-3`,
+  excerpt: `text-base text-cu-black-600 mt-3 mb-6 last:mb-0`,
   more: `font-semibold text-cu-red-700`,
   badges: `pb-6 mt-auto px-7`,
 }
 
 export const button = {
-  button: `px-3 py-2 text-sm rounded-md self-start mt-6`,
-  border: `text-cu-black-600 bg-white border border-cu-black-300 group-hover:text-white group-hover:bg-cu-red group-hover:border-cu-red`,
+  button: `px-3 py-2 text-sm rounded-md self-start mt-auto`,
+  border: `text-cu-black-600 bg-white border border-cu-black-300 hover:text-white hover:bg-cu-red hover:border-cu-red`,
 }
 
 export const figureStyles = {
@@ -43,7 +44,7 @@ export const eventStyles = {
 }
 
 export const videoStyle = {
-  container: `relative pt-[56.25%] bg-cu-black-900`,
+  container: `relative pt-[56.25%] bg-cu-black-900 rounded-t-lg overflow-hidden`,
   player: `absolute top-0 left-0`,
 }
 
