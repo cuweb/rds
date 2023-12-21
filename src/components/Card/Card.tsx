@@ -1,5 +1,5 @@
 import React from 'react'
-// import { styles } from './Card.Styles'
+// import { cardStyles } from './Card.Styles'
 import { CardFigure } from './CardFigure'
 import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
@@ -14,7 +14,7 @@ export interface CardProps {
   hasRedBorder?: boolean
 }
 
-const styles = {
+const cardStyles = {
   card: `not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col bg-cu-black-200`,
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
@@ -26,19 +26,19 @@ const styles = {
 }
 
 export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
-  const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
+  const bgStyles = isGrey ? cardStyles.greyBg : cardStyles.whiteBg
   const addShadow =
     hasShadow === 'onCard'
-      ? `${styles.shadow} ${!noLink ? styles.shadowHover : ''}`
+      ? `${cardStyles.shadow} ${!noLink ? cardStyles.shadowHover : ''}`
       : hasShadow === 'onHover' && !noLink
-      ? styles.shadowHover
+      ? cardStyles.shadowHover
       : ''
-  const addRedBorder = hasRedBorder ? styles.redBorder : ''
-  const centerText = isCenter ? styles.center : ''
-  const noLinkStyles = noLink ? '' : styles.zoom
+  const addRedBorder = hasRedBorder ? cardStyles.redBorder : ''
+  const centerText = isCenter ? cardStyles.center : ''
+  const noLinkStyles = noLink ? '' : cardStyles.zoom
 
   return (
-    <div className={`${styles.card} ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}>
+    <div className={`${cardStyles.card} ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}>
       {children}
     </div>
   )

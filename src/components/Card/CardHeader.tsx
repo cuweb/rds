@@ -3,7 +3,7 @@ export interface CardHeaderProps {
   as?: 'h2' | 'h3'
 }
 
-export const styles = {
+export const headerStyles = {
   header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
 }
 
@@ -12,7 +12,7 @@ export const CardHeader = ({ children, as = 'h2' }: CardHeaderProps) => {
 
   return (
     <header>
-      <HeaderComponent className={styles.header}>{children}</HeaderComponent>
+      <HeaderComponent className={headerStyles.header}>{children}</HeaderComponent>
     </header>
   )
 }
