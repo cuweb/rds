@@ -1,13 +1,20 @@
-import { styles } from './Card.Styles'
-
 export interface CardHeaderProps {
-  text: string
-  hasTitleHover?: boolean
+  children: React.ReactNode
+  as?: 'h2' | 'h3'
 }
 
-export const CardHeader = ({ text, hasTitleHover = true }: CardHeaderProps) => {
-  const titleHover = hasTitleHover ? 'group-hover:text-cu-red-700' : ''
-  return <h2 className={styles.header + ' ' + titleHover}>{text}</h2>
+export const styles = {
+  header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
+}
+
+export const CardHeader = ({ children, as = 'h2' }: CardHeaderProps) => {
+  const HeaderComponent = as
+
+  return (
+    <header>
+      <HeaderComponent className={styles.header}>{children}</HeaderComponent>
+    </header>
+  )
 }
 
 CardHeader.displayName = 'Card.Header'

@@ -8,7 +8,7 @@ import { Heading } from '../../components/Heading/Heading'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Column } from '../../layouts/Column/Column'
 import { NewsData } from '../../data/NewsData'
-import { Card } from '../../components/Card/Card'
+import { Card } from '../../components/Card_Old/Card'
 
 const meta: Meta = {
   title: 'Examples/Blocks',
@@ -59,11 +59,11 @@ export const IconCardOptions: Story = {
           <Container>
             <Heading text="Heading" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map(({ id, link, title }) => (
+              {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
                 <Card key={id} hasShadow="onCard" noLink>
-                  {/* <Card.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Card.Figure> */}
+                  <Card.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Card.Figure>
                   <Card.Content>
                     <Card.Header text={title} />
                     <Card.Description
@@ -72,126 +72,17 @@ export const IconCardOptions: Story = {
                       buttonLink={link}
                     />
                   </Card.Content>
+                  <div className="mt-auto">
+                    <a
+                      className="px-3 py-2 mt-auto text-sm bg-white border rounded-md text-cu-black-600 border-cu-black-300 hover:text-white hover:bg-cu-red hover:border-cu-red"
+                      href="https://carleton.ca"
+                    >
+                      Testing
+                    </a>
+                  </div>
                 </Card>
               ))}
             </Column>
-          </Container>
-
-          <Container>
-            <Heading text="Heading" />
-            <Column cols="2">
-              {NewsData.slice(0, 2).map(({ id, link, title }) => (
-                <Card key={id} hasShadow="onCard" noLink>
-                  {/* <Card.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Card.Figure> */}
-                  <Card.Content>
-                    <Card.Header text={title} />
-                    <Card.Description
-                      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-                      buttonText="Read More"
-                      buttonLink={link}
-                    />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <Heading text="Heading" maxWidth="7xl" />
-            <Column cols="4" maxWidth="7xl">
-              {NewsData.slice(0, 4).map(({ id, link, title }) => (
-                <Card key={id} hasShadow="onCard" noLink>
-                  {/* <Card.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Card.Figure> */}
-                  <Card.Content>
-                    <Card.Header text={title} />
-                    <Card.Description
-                      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-                      buttonText="Read More"
-                      buttonLink={link}
-                    />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <Heading text="Heading" />
-            <Column cols="3">
-              {NewsData.slice(0, 3).map(({ id, link, title }) => (
-                <Card key={id} noLink isGrey>
-                  {/* <Card.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Card.Figure> */}
-                  <Card.Content>
-                    <Card.Header text={title} />
-                    <Card.Description
-                      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-                      buttonText="Read More"
-                      buttonLink={link}
-                    />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <Heading text="Heading" />
-            <Column cols="2">
-              {NewsData.slice(0, 2).map(({ id, link, title }) => (
-                <Card key={id} noLink isGrey>
-                  {/* <Card.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Card.Figure> */}
-                  <Card.Content>
-                    <Card.Header text={title} />
-                    <Card.Description
-                      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-                      buttonText="Read More"
-                      buttonLink={link}
-                    />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <Heading text="Heading" maxWidth="7xl" />
-            <Column cols="4" maxWidth="7xl">
-              {NewsData.slice(0, 4).map(({ id, link, title }) => (
-                <Card key={id} noLink isGrey>
-                  {/* <Card.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Card.Figure> */}
-                  <Card.Content>
-                    <Card.Header text={title} />
-                    <Card.Description
-                      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-                      buttonText="Read More"
-                      buttonLink={link}
-                    />
-                  </Card.Content>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <Heading text="Heading" />
-          </Container>
-
-          <Container isGrey>
-            <Heading text="Heading" />
-          </Container>
-
-          <Container isGrey>
-            <Heading text="Heading" />
           </Container>
         </Section>
       </Main>

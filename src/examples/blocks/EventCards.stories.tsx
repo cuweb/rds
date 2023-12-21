@@ -6,7 +6,7 @@ import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
-import { Card } from '../../components/Card/Card'
+import { Card } from '../../components/Card_Old/Card'
 import { EventData } from '../../data/EventData'
 import { TextImage } from '../../components/TextImage/TextImage'
 

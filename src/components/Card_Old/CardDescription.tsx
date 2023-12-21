@@ -9,7 +9,7 @@ export interface CardDescriptionProps {
 export const CardDescription = ({ text, buttonText, buttonLink }: CardDescriptionProps) => {
   return (
     <>
-      <p className={styles.excerpt}>{text.length > 110 ? `${text.substring(0, 110)}...` : text}</p>
+      <p className={styles.excerpt}>aSsfas {text.length > 110 ? `${text.substring(0, 110)}...` : text}</p>
       {buttonText && (
         <a className={`${button.button} ${button.border}`} href={buttonLink}>
           {buttonText}

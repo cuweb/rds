@@ -2748,6 +2748,10 @@ select {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -3228,6 +3232,16 @@ select {
 .bg-yellow-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
+}
+
+.bg-cu-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 177 180 / var(--tw-bg-opacity));
+}
+
+.bg-cu-black-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25 {
