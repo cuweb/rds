@@ -22,7 +22,6 @@ export const WideImageCampaignMonitor = ({
 
       const response = await fetch(apiEndpoint, {
         method: 'POST',
-        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
           Authorization: token,
