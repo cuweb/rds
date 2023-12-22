@@ -1,10 +1,13 @@
 import React from 'react'
 // import { cardStyles } from './Card.Styles'
 import { CardFigure } from './CardFigure'
+import { CardVideo } from './CardVideo'
 import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
 import { CardFooter } from './CardFooter'
 import { CardExcerpt } from './CardExcerpt'
+import { CardEventMeta } from './CardEventMeta'
+import { CardPeopleMeta } from './CardPeopleMeta'
 
 export interface CardProps {
   children: React.ReactNode
@@ -49,8 +52,11 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
 
 export const Card = Object.assign(CardWrapper, {
   Figure: CardFigure,
+  Video: CardVideo,
   Header: CardHeader,
   Body: CardBody,
   Footer: CardFooter,
   Excerpt: CardExcerpt,
+  EventMeta: CardEventMeta,
+  PeopleMeta: CardPeopleMeta,
 })

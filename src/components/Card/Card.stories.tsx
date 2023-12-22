@@ -56,15 +56,54 @@ export const CardRefactor: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="People Cards" />
+            <Heading text="Other Cards" />
             <Column cols="3">
+              <Card hasShadow="onCard">
+                <Card.Figure>
+                  <img src="./sample-imgs/event-img.jpg" alt="News post example" />
+                </Card.Figure>
+                <Card.Header>Coffee Break with Web Services</Card.Header>
+                <Card.Body>
+                  <Card.EventMeta
+                    startDateTime="2023-03-31 10:00:00"
+                    endDateTime="2023-03-31 13:30:00"
+                    onCampus
+                    onCampusBuilding="Pigiarvik (ᐱᒋᐊᕐᕕᒃ)"
+                    onCampusRoomNumber="401"
+                    eventAddress="71953 Schmidt Row Apt. 896\nLaurianefurt, TN 88829-0223"
+                  />
+                </Card.Body>
+                <Card.Footer>
+                  <a href="https://carleton.ca">More Info</a>
+                </Card.Footer>
+              </Card>
+
               <Card hasShadow="onCard" isCenter>
                 <Card.Figure isRound>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" width="400" height="266" />
+                  <img src="./sample-imgs/people-img.jpg" alt="News post example" />
                 </Card.Figure>
-                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
+                <Card.Header>Natasha Culingham</Card.Header>
                 <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  <Card.PeopleMeta
+                    jobTitle="Web Develop"
+                    email="web.developer@carleton.ca"
+                    phone="613-520-2600 x4910"
+                  />
+                </Card.Body>
+                <Card.Footer>
+                  <a href="https://carleton.ca">More Info</a>
+                </Card.Footer>
+              </Card>
+
+              <Card hasShadow="onCard" noLink>
+                <Card.Video source="https://www.youtube.com/watch?v=7h5m7Clm9uo" />
+                <Card.Header>Five Great Reasons to Choose Carleton</Card.Header>
+                <Card.Body>
+                  <Card.PeopleMeta
+                    jobTitle="Web Develop"
+                    email="web.developer@carleton.ca"
+                    phone="613-520-2600 x4910"
+                  />
                 </Card.Body>
                 <Card.Footer>
                   <a href="https://carleton.ca">More Info</a>
@@ -78,7 +117,7 @@ export const CardRefactor: Story = {
             <Column cols="3">
               <Card hasShadow="onCard">
                 <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" width="400" height="266" />
+                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
                 </Card.Figure>
                 <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
                 <Card.Body>
@@ -91,7 +130,7 @@ export const CardRefactor: Story = {
 
               <Card hasShadow="onHover" isGrey>
                 <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" width="400" height="266" />
+                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
                 </Card.Figure>
                 <Card.Header>
                   <a href="https://carleton.ca">Captivating Captions: Why We Use Captions on Videos</a>
@@ -104,7 +143,7 @@ export const CardRefactor: Story = {
               <Card hasShadow="onCard">
                 <a href="https://carleton.ca">
                   <Card.Figure>
-                    <img src="./sample-imgs/news-img.jpg" alt="News post example" width="400" height="266" />
+                    <img src="./sample-imgs/news-img.jpg" alt="News post example" />
                   </Card.Figure>
                   <Card.Header date="2022-12-16">
                     End-of-Year Reflections and Resolutions for Our Web Services Team
