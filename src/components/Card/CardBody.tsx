@@ -4,10 +4,6 @@ export interface CardBodyProps {
   children: React.ReactNode
 }
 
-export const bodyStyles = {
-  content: ``,
-}
-
 export const CardBody = ({ children }: CardBodyProps) => {
   return <div className="flex flex-col px-6">{children}</div>
 }

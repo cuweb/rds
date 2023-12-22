@@ -5,10 +5,6 @@ export interface CardFigureProps {
   isRound?: boolean
 }
 
-export const figureStyles = {
-  figure: ``,
-}
-
 export const CardFigure = ({ children, isRound }: CardFigureProps) => {
   const roundedImage = isRound ? `cu-figure--round pt-8 pb-2 px-6` : ''
 

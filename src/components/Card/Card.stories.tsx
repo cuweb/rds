@@ -56,12 +56,13 @@ export const CardRefactor: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Other Cards" />
+            <Heading text="Cards Examples" />
             <Column cols="3">
               <Card hasShadow="onCard">
                 <Card.Figure>
                   <img src="./sample-imgs/event-img.jpg" alt="News post example" />
                 </Card.Figure>
+                <Card.DateBox startDate="2023-03-31 10:00:00" endDate="2023-03-31 13:30:00" />
                 <Card.Header>Coffee Break with Web Services</Card.Header>
                 <Card.Body>
                   <Card.EventMeta
@@ -98,23 +99,8 @@ export const CardRefactor: Story = {
               <Card hasShadow="onCard" noLink>
                 <Card.Video source="https://www.youtube.com/watch?v=7h5m7Clm9uo" />
                 <Card.Header>Five Great Reasons to Choose Carleton</Card.Header>
-                <Card.Body>
-                  <Card.PeopleMeta
-                    jobTitle="Web Develop"
-                    email="web.developer@carleton.ca"
-                    phone="613-520-2600 x4910"
-                  />
-                </Card.Body>
-                <Card.Footer>
-                  <a href="https://carleton.ca">More Info</a>
-                </Card.Footer>
               </Card>
-            </Column>
-          </Container>
 
-          <Container>
-            <Heading text="News Cards" />
-            <Column cols="3">
               <Card hasShadow="onCard">
                 <Card.Figure>
                   <img src="./sample-imgs/news-img.jpg" alt="News post example" />
@@ -128,7 +114,7 @@ export const CardRefactor: Story = {
                 </Card.Footer>
               </Card>
 
-              <Card hasShadow="onHover" isGrey>
+              <Card hasShadow="onHover">
                 <Card.Figure>
                   <img src="./sample-imgs/news-img.jpg" alt="News post example" />
                 </Card.Figure>
@@ -164,7 +150,7 @@ export const CardRefactor: Story = {
                 </Card.Footer>
               </Card>
 
-              <Card hasShadow="onCard">
+              <Card hasShadow="onCard" isGrey>
                 <Card.Header>
                   <a href="https://carleton.ca">Captivating Captions: Why We Use Captions on Videos</a>
                 </Card.Header>

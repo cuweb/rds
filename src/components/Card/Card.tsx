@@ -1,6 +1,7 @@
 import React from 'react'
 // import { cardStyles } from './Card.Styles'
 import { CardFigure } from './CardFigure'
+import { CardDateBox } from './CardDateBox'
 import { CardVideo } from './CardVideo'
 import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
@@ -52,6 +53,7 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
 
 export const Card = Object.assign(CardWrapper, {
   Figure: CardFigure,
+  DateBox: CardDateBox,
   Video: CardVideo,
   Header: CardHeader,
   Body: CardBody,
