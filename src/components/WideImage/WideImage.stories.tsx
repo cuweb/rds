@@ -44,6 +44,7 @@ export const WithButtons: Story = {
 export const BgImage: Story = {
   args: {
     ...Default.args,
+    isType: 'image',
     image: 'https://picsum.photos/1600/700',
     children: (
       <ButtonGroup>
@@ -57,6 +58,7 @@ export const BgImage: Story = {
 export const HeaderOneButtons: Story = {
   args: {
     ...Default.args,
+    isType: 'light',
     headerType: 'h1',
     children: (
       <ButtonGroup>
@@ -71,6 +73,7 @@ export const BgImageHeaderOne: Story = {
   args: {
     ...Default.args,
     headerType: 'h1',
+    isType: 'image',
     image: 'https://picsum.photos/1600/700',
     children: (
       <ButtonGroup>
@@ -84,6 +87,7 @@ export const BgImageHeaderOne: Story = {
 export const Width5xl: Story = {
   args: {
     ...Default.args,
+    isType: 'image',
     image: 'https://picsum.photos/1600/700',
     maxWidth: '5xl',
     children: (
