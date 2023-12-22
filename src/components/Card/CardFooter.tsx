@@ -12,7 +12,7 @@ export const CardFooter = ({ children, isType, buttonType = 'solid', buttonStyle
   const buttonStyleClass = isType === 'button' && buttonStyle ? `cu-card-button-${buttonStyle}` : 'cu-card-button-red'
 
   return (
-    <footer className={`px-6 pt-3 mt-auto text-white md:pt-6 ${buttonClass} ${buttonStyleClass} ${buttonTypeClass}`}>
+    <footer className={`px-6 pt-3 mt-auto text-white md:pt-5 ${buttonClass} ${buttonStyleClass} ${buttonTypeClass}`}>
       {children}
     </footer>
   )
