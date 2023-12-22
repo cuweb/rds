@@ -1,5 +1,9 @@
+.cu-card > *:not(a):last-child {
+  @apply pb-7;
+}
+
 .cu-card > a {
-  @apply flex flex-col gap-3;
+  @apply flex flex-col h-full gap-3 pb-7;
 }
 
 .cu-card > a:hover h2 {
@@ -11,33 +15,47 @@
   @apply block hover:text-cu-red-700;
 }
 
-.cu-card > footer a {
-  @apply gap-1 p-3 text-sm font-medium rounded-md md:px-6 bg-cu-red hover:bg-cu-black-600;
-}
-
 .cu-card .cu-figure--round img,
 .cu-card .cu-figure--round svg {
   @apply mx-auto h-32 w-32 rounded-full border-4 border-white object-cover shadow-md @sm:md:h-48 @sm:md:w-48;
 }
 
-/* .cu-card > a {
-  @apply relative flex flex-col h-full focus:rounded-lg;
+.cu-card-button a {
+  @apply gap-1 p-3 text-sm font-medium rounded-md md:px-6;
 }
 
-.cu-card figure {
-  @apply overflow-hidden rounded-t-lg;
+/* Solid Button Styles */
+
+.cu-card-button-red.cu-card-button-solid a {
+  @apply text-white bg-cu-red hover:bg-cu-black-600;
 }
 
-.cu-card img {
-  @apply object-cover w-full;
+.cu-card-button-grey.cu-card-button-solid a {
+  @apply text-cu-black-700 bg-cu-black-50 hover:text-white hover:bg-cu-black-600;
 }
 
-.cu-figure img,
-.cu-figure svg {
-  @apply w-full;
+.cu-card-button-dark-grey.cu-card-button-solid a {
+  @apply text-white bg-cu-black-600 hover:bg-cu-red;
 }
 
-.cu-card .cu-figure--round img,
-.cu-card .cu-figure--round svg {
-  @apply mx-auto h-32 w-32 rounded-full border-4 border-white object-cover shadow-md @sm:md:h-48 @sm:md:w-48;
-} */
+.cu-card-button-white.cu-card-button-solid a {
+  @apply bg-white text-cu-black hover:text-white hover:bg-cu-red;
+}
+
+/* Outline Button Styles */
+
+.cu-card-button-red.cu-card-button-outline a {
+  @apply bg-transparent border text-cu-red border-cu-red hover:text-white hover:bg-cu-red;
+}
+
+.cu-card-button-grey.cu-card-button-outline a {
+  @apply bg-transparent border border-cu-black-100 text-cu-black-700 hover:bg-cu-black-100 hover:text-cu-black-900;
+}
+
+.cu-card-button-dark-grey.cu-card-button-outline a {
+  @apply bg-transparent border border-cu-black-600 hover:text-white hover:bg-cu-black-600;
+}
+
+.cu-card-button-white.cu-card-button-outline a {
+  @apply text-white border border-white hover:bg-white hover:text-cu-red;
+}

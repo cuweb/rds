@@ -60,6 +60,45 @@ export const CardRefactor: Story = {
             <Column cols="3">
               <Card hasShadow="onCard">
                 <Card.Figure>
+                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
+                </Card.Figure>
+                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+                <Card.Footer isType="button">
+                  <a href="https://carleton.ca">Read More</a>
+                </Card.Footer>
+              </Card>
+
+              <Card hasShadow="onCard">
+                <Card.Figure>
+                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
+                </Card.Figure>
+                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+                <Card.Footer isType="button" buttonType="outline">
+                  <a href="https://carleton.ca">Read More</a>
+                </Card.Footer>
+              </Card>
+
+              <Card hasShadow="onCard">
+                <Card.Figure>
+                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
+                </Card.Figure>
+                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+                <Card.Footer isType="button" buttonStyle="grey">
+                  <a href="https://carleton.ca">Read More</a>
+                </Card.Footer>
+              </Card>
+
+              <Card hasShadow="onCard">
+                <Card.Figure>
                   <img src="./sample-imgs/event-img.jpg" alt="News post example" />
                 </Card.Figure>
                 <Card.DateBox startDate="2023-03-31 10:00:00" endDate="2023-03-31 13:30:00" />
@@ -74,7 +113,7 @@ export const CardRefactor: Story = {
                     eventAddress="71953 Schmidt Row Apt. 896\nLaurianefurt, TN 88829-0223"
                   />
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer isType="button" buttonType="outline">
                   <a href="https://carleton.ca">More Info</a>
                 </Card.Footer>
               </Card>
@@ -91,14 +130,30 @@ export const CardRefactor: Story = {
                     phone="613-520-2600 x4910"
                   />
                 </Card.Body>
-                <Card.Footer>
-                  <a href="https://carleton.ca">More Info</a>
+                <Card.Footer isType="button" buttonStyle="dark-grey">
+                  <a href="https://carleton.ca">View Profile</a>
                 </Card.Footer>
               </Card>
 
               <Card hasShadow="onCard" noLink>
                 <Card.Video source="https://www.youtube.com/watch?v=7h5m7Clm9uo" />
                 <Card.Header>Five Great Reasons to Choose Carleton</Card.Header>
+              </Card>
+            </Column>
+          </Container>
+
+          <Container>
+            <Heading text="News Cards Examples" />
+            <Column cols="3">
+              <Card hasShadow="onCard">
+                <a href="https://carleton.ca">
+                  <Card.Figure>
+                    <img src="./sample-imgs/news-img.jpg" alt="News post example" />
+                  </Card.Figure>
+                  <Card.Header date="2022-12-16">
+                    End-of-Year Reflections and Resolutions for Our Web Services Team
+                  </Card.Header>
+                </a>
               </Card>
 
               <Card hasShadow="onCard">
@@ -124,20 +179,6 @@ export const CardRefactor: Story = {
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                 </Card.Body>
-              </Card>
-
-              <Card hasShadow="onCard">
-                <a href="https://carleton.ca">
-                  <Card.Figure>
-                    <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                  </Card.Figure>
-                  <Card.Header date="2022-12-16">
-                    End-of-Year Reflections and Resolutions for Our Web Services Team
-                  </Card.Header>
-                </a>
-                <Card.Footer>
-                  <a href="https://carleton.ca">More Info</a>
-                </Card.Footer>
               </Card>
 
               <Card hasShadow="onHover" isGrey>

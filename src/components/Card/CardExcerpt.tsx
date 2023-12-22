@@ -3,11 +3,6 @@ export interface CardExcerptProps {
   hasMore?: boolean
 }
 
-// const excerptStyles = {
-//   excerpt: ``,
-//   more: ``,
-// }
-
 export const CardExcerpt = ({ text, hasMore }: CardExcerptProps) => {
   return (
     <p className="text-base text-cu-black-600">
