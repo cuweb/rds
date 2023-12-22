@@ -16,7 +16,11 @@ export const CardPeopleMeta = ({ jobTitle, email, phone }: CardPeopleMetaProps) 
       {jobTitle && <li className="text-base @sm:md:text-lg italic">{jobTitle}</li>}
       {email && (
         <li>
-          <strong className="font-semibold break-all">{email}</strong>
+          <strong className="font-semibold break-all">
+            <a className="text-cyan-700 hover:text-cu-red-700" href={email}>
+              {email}
+            </a>
+          </strong>
         </li>
       )}
       {phone && <li>{phone}</li>}
