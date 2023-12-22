@@ -11,7 +11,7 @@ export interface WideImageCampaignMonitorProps {
 export const WideImageCampaignMonitor = ({
   buttonText = 'Submit Email',
   api = '',
-  list = '2BE4EF332AA2E32596E38B640E90561935C92EF54C23F39EFB2814E69C490EEC0AFB85D6532A8F22CE1BC07E6A5E3B21F540672C293F80057843A30BB9A21B0F',
+  list = '',
 }: WideImageCampaignMonitorProps) => {
   const handleSubscribe = async () => {
     try {

@@ -11,9 +11,9 @@ export interface WideImageMailChimpProps {
 
 export const WideImageMailChimp = ({
   buttonText = 'Submit Email',
-  api = 'e7c079463cc61f80c2cbf74814681e85-us21',
-  list = 'c683434b75',
-  server = 'us21',
+  api = '',
+  list = '',
+  server = '',
 }: WideImageMailChimpProps) => {
   const handleSubscribe = async () => {
     try {
