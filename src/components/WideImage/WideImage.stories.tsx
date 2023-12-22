@@ -94,3 +94,21 @@ export const Width5xl: Story = {
     ),
   },
 }
+
+export const BgDark: Story = {
+  args: {
+    ...Default.args,
+    title: 'Subscribe to Our Newsletter',
+    isType: 'dark',
+    maxWidth: '5xl',
+    children: (
+      <>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus.
+        </p>
+        <WideImage.MailChimp buttonText="Subscribe" />
+      </>
+    ),
+  },
+}
