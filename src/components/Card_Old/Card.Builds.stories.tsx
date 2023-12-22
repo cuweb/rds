@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
+import { CardOld as Card } from './Card'
 import { NewsDataSingle as singleNews } from '../../data/NewsData'
 import { EventDataSingle as singleEvent } from '../../data/EventData'
 import { PeopleDataSingle as singlePeople } from '../../data/PeopleData'

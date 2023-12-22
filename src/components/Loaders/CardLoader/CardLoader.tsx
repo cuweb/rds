@@ -1,4 +1,4 @@
-import { Card } from '../../Card_Old/Card'
+import { CardOld as Card } from '../../Card_Old/Card'
 
 export const CardLoader = () => {
   return (

@@ -14,7 +14,7 @@ import { CardPeopleMeta } from './CardPeopleMeta'
 import { CardInitials } from './CardInitials'
 import { CardStats } from './CardStats'
 
-export interface CardProps {
+export interface CardOldProps {
   children: React.ReactNode
   isCenter?: boolean
   noLink?: boolean
@@ -23,7 +23,7 @@ export interface CardProps {
   hasRedBorder?: boolean
 }
 
-export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
+export const CardOldWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardOldProps) => {
   const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
   const addShadow =
     hasShadow === 'onCard'
@@ -42,7 +42,7 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
   )
 }
 
-export const Card = Object.assign(CardWrapper, {
+export const CardOld = Object.assign(CardOldWrapper, {
   Figure: CardFigure,
   Video: CardVideo,
   Content: CardContent,

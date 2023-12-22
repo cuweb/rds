@@ -39,7 +39,7 @@
 }
 
 .cu-card-button-white.cu-card-button-solid a {
-  @apply bg-white text-cu-black hover:text-white hover:bg-cu-red;
+  @apply bg-white text-cu-black-800 hover:text-white hover:bg-cu-red;
 }
 
 /* Outline Button Styles */
@@ -53,9 +53,9 @@
 }
 
 .cu-card-button-dark-grey.cu-card-button-outline a {
-  @apply bg-transparent border border-cu-black-600 hover:text-white hover:bg-cu-black-600;
+  @apply bg-transparent border text-cu-black-700 border-cu-black-600 hover:text-white hover:bg-cu-black-600;
 }
 
 .cu-card-button-white.cu-card-button-outline a {
-  @apply text-white border border-white hover:bg-white hover:text-cu-red;
+  @apply border border-white text-cu-black-800 hover:bg-white hover:text-cu-red;
 }

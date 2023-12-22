@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
+import { CardOld as Card } from './Card'
 import { CardContent } from './CardContent'
 import { content } from '../../data/CardData'
 
