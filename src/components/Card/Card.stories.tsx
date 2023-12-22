@@ -56,6 +56,24 @@ export const CardRefactor: Story = {
           </TextImage>
 
           <Container>
+            <Heading text="People Cards" />
+            <Column cols="3">
+              <Card hasShadow="onCard" isCenter>
+                <Card.Figure isRound>
+                  <img src="./sample-imgs/news-img.jpg" alt="News post example" width="400" height="266" />
+                </Card.Figure>
+                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href="https://carleton.ca">More Info</a>
+                </Card.Footer>
+              </Card>
+            </Column>
+          </Container>
+
+          <Container>
             <Heading text="News Cards" />
             <Column cols="3">
               <Card hasShadow="onCard">
@@ -71,7 +89,7 @@ export const CardRefactor: Story = {
                 </Card.Footer>
               </Card>
 
-              <Card hasShadow="onCard">
+              <Card hasShadow="onHover" isGrey>
                 <Card.Figure>
                   <img src="./sample-imgs/news-img.jpg" alt="News post example" width="400" height="266" />
                 </Card.Figure>
@@ -97,7 +115,7 @@ export const CardRefactor: Story = {
                 </Card.Footer>
               </Card>
 
-              <Card hasShadow="onCard">
+              <Card hasShadow="onHover" isGrey>
                 <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
@@ -116,7 +134,7 @@ export const CardRefactor: Story = {
                 </Card.Body>
               </Card>
 
-              <Card hasShadow="onCard">
+              <Card hasShadow="onHover" isGrey>
                 <a href="https://carleton.ca">
                   <Card.Header date="2022-12-16">
                     End-of-Year Reflections and Resolutions for Our Web Services Team

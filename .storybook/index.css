@@ -4444,6 +4444,33 @@ StackedList for ToC
   }
 }
 
+.cu-card .cu-figure--round img,
+.cu-card .cu-figure--round svg {
+  margin-left: auto;
+  margin-right: auto;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 9999px;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  -o-object-fit: cover;
+     object-fit: cover;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@container (min-width: 24rem) {
+  @media (min-width: 768px) {
+    .cu-card .cu-figure--round img,
+.cu-card .cu-figure--round svg {
+      height: 12rem;
+      width: 12rem;
+    }
+  }
+}
+
 /* .cu-card > a {
   @apply relative flex flex-col h-full focus:rounded-lg;
 }
