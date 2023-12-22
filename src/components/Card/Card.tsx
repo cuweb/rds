@@ -4,6 +4,7 @@ import { CardFigure } from './CardFigure'
 import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
 import { CardFooter } from './CardFooter'
+import { CardExcerpt } from './CardExcerpt'
 
 export interface CardProps {
   children: React.ReactNode
@@ -15,14 +16,14 @@ export interface CardProps {
 }
 
 const cardStyles = {
-  card: `not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col bg-cu-black-200`,
+  card: ``,
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
   shadow: `shadow-md shadow-cu-black-100`,
   shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
   center: `text-center`,
   redBorder: `border-l-8 border-l-cu-red`,
-  zoom: `duration-300 ease-in hover:scale-[1.04] cursor-pointer`,
+  zoom: `group duration-300 ease-in hover:scale-[1.04]`,
 }
 
 export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
@@ -38,7 +39,9 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
   const noLinkStyles = noLink ? '' : cardStyles.zoom
 
   return (
-    <div className={`${cardStyles.card} ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}>
+    <div
+      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 bg-cu-black-200 pb-6 ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}
+    >
       {children}
     </div>
   )
@@ -49,4 +52,5 @@ export const Card = Object.assign(CardWrapper, {
   Header: CardHeader,
   Body: CardBody,
   Footer: CardFooter,
+  Excerpt: CardExcerpt,
 })

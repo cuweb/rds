@@ -7,10 +7,10 @@ export const styles = {
   // link: `group duration-300 ease-in hover:scale-[1.04] cursor-pointer`,
   border: `border border-cu-black-100`,
   // redBorder: `border-l-8 border-l-cu-red`,
-  content: `flex flex-col py-6 px-7 relative bg-cu-red-200`,
-  header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
-  excerpt: `text-base text-cu-black-600 mt-3 mb-6 last:mb-0`,
-  more: `font-semibold text-cu-red-700`,
+  // content: `flex flex-col py-6 px-7 relative bg-cu-red-200`,
+  // header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
+  // excerpt: `text-base text-cu-black-600 mt-3 mb-6 last:mb-0`,
+  // more: `font-semibold text-cu-red-700`,
   badges: `pb-6 mt-auto px-7`,
 }
 

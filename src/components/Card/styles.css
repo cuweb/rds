@@ -1,3 +1,20 @@
+.cu-card > a {
+  @apply flex flex-col gap-3;
+}
+
+.cu-card > a:hover h2 {
+  @apply text-cu-red-700;
+}
+
+.cu-card header h2 a,
+.cu-card header h3 a {
+  @apply block hover:text-cu-red-700;
+}
+
+.cu-card > footer a {
+  @apply gap-1 p-3 text-sm font-medium rounded-md md:px-6 bg-cu-red hover:bg-cu-black-600;
+}
+
 /* .cu-card > a {
   @apply relative flex flex-col h-full focus:rounded-lg;
 }

@@ -3,11 +3,11 @@ export interface CardFooterProps {
 }
 
 export const footerStyles = {
-  footer: `mt-auto pt-4 md:pt-8`,
+  footer: ``,
 }
 
 export const CardFooter = ({ children }: CardFooterProps) => {
-  return <footer className={footerStyles.footer}>{children}</footer>
+  return <footer className="px-6 pt-3 mt-auto text-white md:pt-5">{children}</footer>
 }
 
 CardFooter.displayName = 'Card.Footer'
