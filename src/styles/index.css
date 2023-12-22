@@ -11,6 +11,7 @@
 @import '../components/Card/styles.css';
 @import '../components/Listing/styles.css';
 @import '../components/TopBar/styles.css';
+@import '../components/WideImage/styles.css';
 
 /* Layouts */
 @import '../layouts/StackedList/styles.css';

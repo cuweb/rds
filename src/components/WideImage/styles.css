@@ -1,0 +1,11 @@
+.cu-wideimage-input-light input {
+  @apply ring-cu-black-600 focus:ring-cu-black-600;
+}
+
+.cu-wideimage-input-dark input {
+  @apply ring-white focus:ring-white;
+}
+
+.cu-wideimage-input-image input {
+  @apply ring-white focus:ring-white;
+}
