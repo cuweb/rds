@@ -106,6 +106,26 @@ export const WideImageBanner: Story = {
 
           <DoublePara />
 
+          <WideImage title="Subscribe to Mail Chimp" headerType="h1" isType="dark">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec tortor eu quam ultricies
+              pellentesque et quis odio. Etiam sit amet ex commodo, scelerisque turpis ullamcorper, sollicitudin lacus.
+            </p>
+            <WideImage.MailChimp buttonText="Subscribe" />
+          </WideImage>
+
+          <DoublePara />
+
+          <WideImage title="Subscribe to Campaign Monitor" headerType="h1" isType="light">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec tortor eu quam ultricies
+              pellentesque et quis odio. Etiam sit amet ex commodo, scelerisque turpis ullamcorper, sollicitudin lacus.
+            </p>
+            <WideImage.CampaignMonitor buttonText="Subscribe" />
+          </WideImage>
+
+          <DoublePara />
+
           <HeroTextImage>
             <HeroTextImage.Content title="With image right and left angle" paragraph={heroPara} hasMediaCol>
               <div className="flex flex-wrap gap-4 buttons md:gap-6">
