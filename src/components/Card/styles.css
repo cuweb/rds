@@ -1,4 +1,4 @@
-.cu-card > *:not(a):last-child {
+.cu-card > *:not(a):last-child:not(.cu-card-stats) {
   @apply pb-7;
 }
 

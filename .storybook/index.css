@@ -3581,6 +3581,10 @@ select {
   padding-top: 0.5rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
 }
@@ -3603,10 +3607,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
 }
 
 .text-left {
@@ -4404,7 +4404,7 @@ StackedList for ToC
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
-.cu-card > *:not(a):last-child {
+.cu-card > *:not(a):last-child:not(.cu-card-stats) {
   padding-bottom: 1.75rem;
 }
 

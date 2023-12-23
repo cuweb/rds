@@ -9,6 +9,7 @@ import { CardFooter } from './CardFooter'
 import { CardExcerpt } from './CardExcerpt'
 import { CardEventMeta } from './CardEventMeta'
 import { CardPeopleMeta } from './CardPeopleMeta'
+import { CardStats } from './CardStats'
 
 export interface CardProps {
   children: React.ReactNode
@@ -61,4 +62,5 @@ export const Card = Object.assign(CardWrapper, {
   Excerpt: CardExcerpt,
   EventMeta: CardEventMeta,
   PeopleMeta: CardPeopleMeta,
+  Stats: CardStats,
 })
