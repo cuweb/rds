@@ -11,7 +11,7 @@ import { Banner } from '../../_deprecated/Banner/Banner'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { CardOld as Card } from '../../components/Card_Old/Card'
+import { Card } from '../../components/Card/Card'
 import { Listing } from '../../components/Listing/Listing'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { Calendar } from '../../components/Calendar/Calendar'
@@ -54,31 +54,31 @@ export const Homepage: Story = {
         </TopBar.Primary>
       </TopBar>
 
-      <Banner title="Featured Events" align="left" isType="dark-wave" maxWidth="7xl" hasOverlap />
+      <Banner title="Featured Events" align="left" isType="light-grey" maxWidth="7xl" hasOverlap />
 
       <Main hasOverlap>
         <Section>
-          <Column cols="3" maxWidth="7xl">
-            {dataCard.slice(0, 3).map((item) => (
-              <Card key={item?.id}>
-                <a href={item?.link}>
-                  <Card.Figure>
-                    <img src={item?.image} alt={item?.alt} width={400} height={175} />
-                  </Card.Figure>
-                  <Card.Content>
-                    <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
-                    <Card.Header text={item?.title} />
-                    <Card.EventMeta
-                      startDateTime={item?.startDate}
-                      endDateTime={item?.endDate}
-                      onCampus={item?.on_campus}
-                      onCampusBuilding={item?.on_campus_building}
-                      onCampusRoomNumber={item?.on_campus_room_number}
-                      eventAddress={item?.event_address}
-                    />
-                  </Card.Content>
-                  <Card.Badges tags={item?.tags} />
-                </a>
+          <Column cols="4" maxWidth="7xl">
+            {dataCard.slice(0, 4).map((item) => (
+              <Card key={item?.id} hasShadow="onCard">
+                <Card.Figure>
+                  <img src={item?.image} alt={item?.alt} width={400} height={175} />
+                </Card.Figure>
+                <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                <Card.Header>{item?.title}</Card.Header>
+                <Card.Body>
+                  <Card.EventMeta
+                    startDateTime={item?.startDate}
+                    endDateTime={item?.endDate}
+                    onCampus={item?.on_campus}
+                    onCampusBuilding={item?.on_campus_building}
+                    onCampusRoomNumber={item?.on_campus_room_number}
+                    eventAddress={item?.event_address}
+                  />
+                </Card.Body>
+                <Card.Footer isType="button">
+                  <a href={item?.link}>More info</a>
+                </Card.Footer>
               </Card>
             ))}
           </Column>
@@ -103,8 +103,8 @@ export const Homepage: Story = {
                       event_address,
                       on_campus,
                       on_campus_building,
+                      // tags,
                       on_campus_room_number,
-                      tags,
                     }) => (
                       <Listing key={id}>
                         <a href={link}>
@@ -119,7 +119,7 @@ export const Homepage: Story = {
                               onCampusRoomNumber={on_campus_room_number}
                               eventAddress={event_address}
                             />
-                            <Listing.Badges tags={tags} />
+                            {/* <Listing.Badges tags={tags} /> */}
                           </Listing.Content>
                         </a>
                       </Listing>
