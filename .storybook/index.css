@@ -2498,10 +2498,6 @@ select {
   width: 1px;
 }
 
-.min-w-\[35\%\] {
-  min-width: 35%;
-}
-
 .min-w-full {
   min-width: 100%;
 }
@@ -2532,10 +2528,6 @@ select {
 
 .max-w-\[40\%\] {
   max-width: 40%;
-}
-
-.max-w-\[50\%\] {
-  max-width: 50%;
 }
 
 .max-w-\[500px\] {
@@ -2850,6 +2842,12 @@ select {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -3167,11 +3165,6 @@ select {
   background-color: rgb(230 230 230 / var(--tw-bg-opacity));
 }
 
-.bg-cu-black-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
-}
-
 .bg-cu-black-25 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 249 249 / var(--tw-bg-opacity));
@@ -3432,6 +3425,11 @@ select {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .px-8 {
@@ -8631,6 +8629,23 @@ StackedList for ToC
       width: 1.5rem;
     }
 
+    .\@sm\:md\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+
+    .\@sm\:md\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+    }
+
+    .\@sm\:md\:text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
     .\@sm\:md\:text-base {
       font-size: 1rem;
       line-height: 1.5rem;
@@ -8652,30 +8667,22 @@ StackedList for ToC
   }
 }
 
-@container (min-width: 32rem) {
+@container (min-width: 36rem) {
   @media (min-width: 768px) {
-    .\@lg\:md\:h-\[180px\] {
+    .\@xl\:md\:h-\[180px\] {
       height: 180px;
     }
 
-    .\@lg\:md\:max-w-\[35\%\] {
-      max-width: 35%;
+    .\@xl\:md\:max-w-\[25\%\] {
+      max-width: 25%;
     }
 
-    .\@lg\:md\:flex-row {
+    .\@xl\:md\:flex-row {
       flex-direction: row;
     }
 
-    .\@lg\:md\:gap-8 {
+    .\@xl\:md\:gap-8 {
       gap: 2rem;
-    }
-  }
-}
-
-@container (min-width: 36rem) {
-  @media (min-width: 768px) {
-    .\@xl\:md\:max-w-\[25\%\] {
-      max-width: 25%;
     }
 
     .\@xl\:md\:text-lg {
