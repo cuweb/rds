@@ -10,7 +10,7 @@ import { TextImage } from '../../components/TextImage/TextImage'
 import { Card } from './Card'
 
 const meta: Meta = {
-  title: 'Examples/Blocks',
+  title: 'Components/Card',
 }
 
 export default meta
