@@ -23,6 +23,7 @@ export const parameters = {
           'Projects',
           ['cutheme', ['Page Layouts', 'Blocks'], 'Event Calendar', ['Homepage', 'Single Event']],
         ],
+        'Projects',
         'Components',
         'Layouts',
         ['Body', 'Main', 'Container', 'Article', 'Column', 'Aside', 'Panel', 'Stacked List'],

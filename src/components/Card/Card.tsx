@@ -1,16 +1,14 @@
 import React from 'react'
-import { styles } from './Card.Styles'
 import { CardFigure } from './CardFigure'
-import { CardVideo } from './CardVideo'
-import { CardContent } from './CardContent'
 import { CardDateBox } from './CardDateBox'
+import { CardIconBox } from './CardIconBox'
+import { CardVideo } from './CardVideo'
 import { CardHeader } from './CardHeader'
+import { CardBody } from './CardBody'
+import { CardFooter } from './CardFooter'
 import { CardExcerpt } from './CardExcerpt'
-import { CardBadges } from './CardBadges'
-import { CardPostMeta } from './CardPostMeta'
 import { CardEventMeta } from './CardEventMeta'
 import { CardPeopleMeta } from './CardPeopleMeta'
-import { CardInitials } from './CardInitials'
 import { CardStats } from './CardStats'
 
 export interface CardProps {
@@ -22,20 +20,33 @@ export interface CardProps {
   hasRedBorder?: boolean
 }
 
+const cardStyles = {
+  card: ``,
+  whiteBg: `bg-white`,
+  greyBg: `bg-cu-black-25`,
+  shadow: `shadow-md shadow-cu-black-100`,
+  shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
+  center: `text-center`,
+  redBorder: `border-l-8 border-l-cu-red`,
+  zoom: `group duration-300 ease-in hover:scale-[1.04]`,
+}
+
 export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
-  const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
+  const bgStyles = isGrey ? cardStyles.greyBg : cardStyles.whiteBg
   const addShadow =
     hasShadow === 'onCard'
-      ? `${styles.shadow} ${!noLink ? styles.shadowHover : ''}`
+      ? `${cardStyles.shadow} ${!noLink ? cardStyles.shadowHover : ''}`
       : hasShadow === 'onHover' && !noLink
-      ? styles.shadowHover
-      : ''
-  const addRedBorder = hasRedBorder ? styles.redBorder : ''
-  const centerText = isCenter ? 'text-center' : ''
-  const noLinkStyles = noLink ? '' : styles.link
+        ? cardStyles.shadowHover
+        : ''
+  const addRedBorder = hasRedBorder ? cardStyles.redBorder : ''
+  const centerText = isCenter ? cardStyles.center : ''
+  const noLinkStyles = noLink ? '' : cardStyles.zoom
 
   return (
-    <div className={`cu-card ${styles.card} ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}>
+    <div
+      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}
+    >
       {children}
     </div>
   )
@@ -43,15 +54,14 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
 
 export const Card = Object.assign(CardWrapper, {
   Figure: CardFigure,
-  Video: CardVideo,
-  Content: CardContent,
   DateBox: CardDateBox,
+  IconBox: CardIconBox,
+  Video: CardVideo,
   Header: CardHeader,
+  Body: CardBody,
+  Footer: CardFooter,
   Excerpt: CardExcerpt,
-  Badges: CardBadges,
-  PostMeta: CardPostMeta,
   EventMeta: CardEventMeta,
   PeopleMeta: CardPeopleMeta,
-  Initials: CardInitials,
   Stats: CardStats,
 })

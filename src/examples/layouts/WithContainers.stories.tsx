@@ -3,10 +3,8 @@ import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { DescriptionData as descMeta } from '../../data/DescriptionData'
-import { Description } from '../../components/Description/Description'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -76,11 +74,19 @@ export const WithContainers: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="With Containers" headerType="h1" />
-          </HeroTextImage>
+          <TextImage>
+            <TextImage.Content headerType="h1" title="Grey and White Containers">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+
           <h2>Heading Two</h2>
           <DoublePara />
+
           <h3>Heading Three</h3>
           <SinglePara />
 
@@ -96,96 +102,6 @@ export const WithContainers: Story = {
 
           <h2>Heading Two</h2>
           <DoublePara />
-
-          <Container>
-            <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term}>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
-
-          <DoublePara />
-
-          <Container isGrey>
-            <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term}>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
-
-          <DoublePara />
-
-          <Container>
-            <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term} useColumns>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
-
-          <DoublePara />
-
-          <Container isGrey>
-            <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term} useColumns>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
 
           <Container isGrey>
             <h3>Heading Three</h3>
