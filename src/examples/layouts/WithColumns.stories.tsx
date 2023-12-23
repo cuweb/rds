@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -75,12 +75,20 @@ export const WithColumns: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="With Columns" headerType="h1" />
-          </HeroTextImage>
-          <h2>Not in a container</h2>
+          <TextImage>
+            <TextImage.Content headerType="h1" title="Columned Content">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+
+          <h2>Header Two</h2>
           <DoublePara />
-          <h2>Not in a container</h2>
+
+          <h3>Header Three</h3>
           <SinglePara />
 
           <Column cols="2">
@@ -94,8 +102,7 @@ export const WithColumns: Story = {
             </Column.Content>
           </Column>
 
-          <Container>
-            <h2>This is a container</h2>
+          <Container isGrey>
             <SinglePara />
             <Column cols="2">
               <Column.Content>
@@ -108,6 +115,7 @@ export const WithColumns: Story = {
             <SinglePara />
           </Container>
 
+          <SinglePara />
           <Column cols="2">
             <Column.Content>
               <SinglePara />
@@ -116,9 +124,9 @@ export const WithColumns: Story = {
               <SinglePara />
             </Column.Content>
           </Column>
+          <SinglePara />
 
           <Container isGrey>
-            <h2>This is a container</h2>
             <SinglePara />
             <Column cols="2">
               <Column.Content>
@@ -139,6 +147,7 @@ export const WithColumns: Story = {
               <SinglePara />
             </Column.Content>
           </Column>
+
           <Column cols="2">
             <Column.Content>
               <SinglePara />

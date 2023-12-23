@@ -5,10 +5,10 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { Heading } from '../../components/Heading/Heading'
 import { Card } from '../../components/Card/Card'
 import { PeopleData } from '../../data/PeopleData'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
   title: 'Examples/Blocks',
@@ -46,24 +46,33 @@ export const PeopleCardOptions: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="All the Cards" headerType="h1" />
-          </HeroTextImage>
+          <TextImage hasBorder>
+            <TextImage.Content headerType="h1" title="People Cards">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
 
           <Container>
             <Heading text="People Cards: Default" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -73,16 +82,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onHover" isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -92,16 +104,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onCard" isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="dark-grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -111,16 +126,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Default with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} isGrey isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="white">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -130,16 +148,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onHover" isGrey isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonType="outline">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -149,16 +170,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onCard" isGrey isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -169,15 +193,18 @@ export const PeopleCardOptions: Story = {
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -187,16 +214,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onHover" isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -206,16 +236,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onCard" isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="dark-grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -225,16 +258,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Default with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} isGrey isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="white">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -244,16 +280,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onHover" isGrey isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonType="outline">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>
@@ -263,16 +302,19 @@ export const PeopleCardOptions: Story = {
             <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <a href={link}>
-                    <Card.Figure isRound>
-                      <img src={image} alt={alt} width={280} height={280} />
-                    </Card.Figure>
-                    <Card.Content>
-                      <Card.Header text={`${firstName} ${lastName}`} />
-                      <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
-                    </Card.Content>
-                  </a>
+                <Card key={id} hasShadow="onCard" isGrey isCenter>
+                  <Card.Figure isRound>
+                    <img src={image} alt={alt} width={280} height={280} />
+                  </Card.Figure>
+                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Body>
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
                 </Card>
               ))}
             </Column>

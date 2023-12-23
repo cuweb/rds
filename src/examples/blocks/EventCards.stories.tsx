@@ -5,10 +5,10 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { Heading } from '../../components/Heading/Heading'
 import { Card } from '../../components/Card/Card'
 import { EventData } from '../../data/EventData'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
   title: 'Examples/Blocks',
@@ -46,9 +46,15 @@ export const EventCardOptions: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="Event Card Options" headerType="h1" />
-          </HeroTextImage>
+          <TextImage hasBorder>
+            <TextImage.Content headerType="h1" title="Event Cards">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
 
           <Container>
             <Heading text="Event Cards: Default" />
@@ -68,23 +74,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id}>
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -109,23 +116,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} hasShadow="onHover">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonStyle="grey">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -150,23 +158,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} hasShadow="onCard">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonStyle="dark-grey">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -191,23 +200,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} isGrey>
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonStyle="white">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -232,23 +242,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} isGrey hasShadow="onHover">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonType="outline">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -273,23 +284,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} isGrey hasShadow="onCard">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -314,23 +326,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id}>
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -355,23 +368,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} hasShadow="onHover">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonStyle="grey">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -396,23 +410,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} hasShadow="onCard">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonStyle="dark-grey">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -437,23 +452,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} isGrey>
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonStyle="white">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -478,23 +494,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} isGrey hasShadow="onHover">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonType="outline">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}
@@ -519,23 +536,24 @@ export const EventCardOptions: Story = {
                   event_address,
                 }) => (
                   <Card key={id} isGrey hasShadow="onCard">
-                    <a href={link}>
-                      <Card.Figure>
-                        <img src={image} alt={alt} width={400} height={175} />
-                      </Card.Figure>
-                      <Card.Content>
-                        <Card.DateBox startDate={startDate} endDate={endDate} />
-                        <Card.Header text={title} />
-                        <Card.EventMeta
-                          startDateTime={startDate}
-                          endDateTime={endDate}
-                          onCampus={on_campus}
-                          onCampusBuilding={on_campus_building}
-                          onCampusRoomNumber={on_campus_room_number}
-                          eventAddress={event_address}
-                        />
-                      </Card.Content>
-                    </a>
+                    <Card.Figure>
+                      <img src={image} alt={alt} width={400} height={175} />
+                    </Card.Figure>
+                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Body>
+                      <Card.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Card.Body>
+                    <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
+                      <a href={link}>More info</a>
+                    </Card.Footer>
                   </Card>
                 ),
               )}

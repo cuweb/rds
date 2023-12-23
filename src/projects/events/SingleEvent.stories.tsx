@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../../layouts/Main/Main'
-import { Section } from '../../../layouts/Section/Section'
-import { Column } from '../../../layouts/Column/Column'
-import { StackedList } from '../../../layouts/StackedList/StackedList'
-import { Aside } from '../../../layouts/Aside/Aside'
-import { Article } from '../../../layouts/Article/Article'
+import { Main } from '../../layouts/Main/Main'
+import { Section } from '../../layouts/Section/Section'
+import { Column } from '../../layouts/Column/Column'
+import { StackedList } from '../../layouts/StackedList/StackedList'
+import { Aside } from '../../layouts/Aside/Aside'
+import { Article } from '../../layouts/Article/Article'
 
-import { Banner } from '../../../_deprecated/Banner/Banner'
+import { Banner } from '../../_deprecated/Banner/Banner'
 
-import { TopBar } from '../../../components/TopBar/TopBar'
-import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
-import { Button } from '../../../components/Button/Button'
-import { Listing } from '../../../components/Listing/Listing'
+import { TopBar } from '../../components/TopBar/TopBar'
+import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { Button } from '../../components/Button/Button'
+import { Listing } from '../../components/Listing/Listing'
 
-import { EventDetailsData as data } from '../../../data/EventData'
+import { EventDetailsData as data } from '../../data/EventData'
 
 const meta: Meta = {
-  title: 'Examples/Projects/Event Calendar',
+  title: 'Projects/Event Calendar',
 }
 
 export default meta
