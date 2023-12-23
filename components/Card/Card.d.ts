@@ -13,32 +13,32 @@ export declare const Card: (({ children, isCenter, noLink, hasShadow, hasRedBord
         ({ children, isRound }: import("./CardFigure").CardFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Video: {
-        ({ source }: import("./CardVideo").CardVideoProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-    Content: {
-        ({ children }: import("./CardContent").CardContentProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
     DateBox: {
         ({ startDate, endDate }: import("./CardDateBox").CardDateBoxProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    IconBox: {
+        ({ icon }: import("./CardIconBox").CardIconBoxProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+    Video: {
+        ({ source }: import("./CardVideo").CardVideoProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
     Header: {
-        ({ text, hasTitleHover }: import("./CardHeader").CardHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, as, date }: import("./CardHeader").CardHeaderProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+    Body: {
+        ({ children }: import("./CardBody").CardBodyProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+    Footer: {
+        ({ children, isType, buttonType, buttonStyle }: import("./CardFooter").CardFooterProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Excerpt: {
-        ({ text }: import("./CardExcerpt").CardExcerptProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-    Badges: {
-        ({ tags }: import("./CardBadges").CardBadgesProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-    PostMeta: {
-        ({ date }: import("./CardPostMeta").CardPostMetaProps): import("react/jsx-runtime").JSX.Element;
+        ({ text, hasMore }: import("./CardExcerpt").CardExcerptProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     EventMeta: {
@@ -46,11 +46,7 @@ export declare const Card: (({ children, isCenter, noLink, hasShadow, hasRedBord
         displayName: string;
     };
     PeopleMeta: {
-        ({ jobTitle, email, phone }: import("./CardPeopleMeta").CardPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-    Initials: {
-        ({ initials }: import("./CardInitials").CardInitialsProps): import("react/jsx-runtime").JSX.Element;
+        ({ jobTitle, children, phone }: import("./CardPeopleMeta").CardPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Stats: {

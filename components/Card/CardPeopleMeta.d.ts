@@ -1,10 +1,16 @@
+/// <reference types="react" />
 export interface CardPeopleMetaProps {
+    children: React.ReactNode;
     jobTitle?: string;
-    email?: string;
     phone?: string;
 }
+export declare const styles: {
+    list: string;
+    font: string;
+    bold: string;
+};
 export declare const CardPeopleMeta: {
-    ({ jobTitle, email, phone }: CardPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
+    ({ jobTitle, children, phone }: CardPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=CardPeopleMeta.d.ts.map

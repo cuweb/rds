@@ -6,6 +6,11 @@ export interface CardEventMetaProps {
     onCampusRoomNumber?: string | null;
     eventAddress?: string;
 }
+export declare const eventStyles: {
+    dateBox: string;
+    dateBoxMonth: string;
+    dateBoxDay: string;
+};
 export declare const CardEventMeta: {
     ({ startDateTime, endDateTime, onCampus, onCampusBuilding, onCampusRoomNumber, eventAddress, }: CardEventMetaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;

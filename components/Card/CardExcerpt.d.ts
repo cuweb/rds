@@ -1,8 +1,9 @@
 export interface CardExcerptProps {
     text: string;
+    hasMore?: boolean;
 }
 export declare const CardExcerpt: {
-    ({ text }: CardExcerptProps): import("react/jsx-runtime").JSX.Element;
+    ({ text, hasMore }: CardExcerptProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=CardExcerpt.d.ts.map
