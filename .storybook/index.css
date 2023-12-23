@@ -4419,7 +4419,7 @@ StackedList for ToC
 }
 
 .cu-card > *:not(a):last-child:not(.cu-card-stats) {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.75rem;
 }
 
 .cu-card > a {
@@ -4444,6 +4444,17 @@ StackedList for ToC
 .cu-card header h3 a:hover {
   --tw-text-opacity: 1;
   color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.cu-card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cu-figure img,
+.cu-figure svg {
+  width: 100%;
 }
 
 .cu-card .cu-figure--round img,

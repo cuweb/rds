@@ -66,7 +66,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button">
                     <a href={link}>More info</a>
@@ -86,7 +88,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonStyle="grey">
                     <a href={link}>More info</a>
@@ -106,7 +110,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonStyle="dark-grey">
                     <a href={link}>More info</a>
@@ -126,7 +132,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonStyle="white">
                     <a href={link}>More info</a>
@@ -146,7 +154,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonType="outline">
                     <a href={link}>More info</a>
@@ -166,7 +176,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
                     <a href={link}>More info</a>
@@ -186,7 +198,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button">
                     <a href={link}>More info</a>
@@ -206,7 +220,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonStyle="grey">
                     <a href={link}>More info</a>
@@ -226,7 +242,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonStyle="dark-grey">
                     <a href={link}>More info</a>
@@ -246,7 +264,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonStyle="white">
                     <a href={link}>More info</a>
@@ -266,7 +286,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonType="outline">
                     <a href={link}>More info</a>
@@ -286,7 +308,9 @@ export const PeopleCardOptions: Story = {
                   </Card.Figure>
                   <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
                   <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} email={email} phone={phone} />
+                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Card.PeopleMeta>
                   </Card.Body>
                   <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
                     <a href={link}>More info</a>

@@ -124,11 +124,9 @@ export const CardRefactor: Story = {
                 </Card.Figure>
                 <Card.Header>Natasha Culingham</Card.Header>
                 <Card.Body>
-                  <Card.PeopleMeta
-                    jobTitle="Web Develop"
-                    email="web.developer@carleton.ca"
-                    phone="613-520-2600 x4910"
-                  />
+                  <Card.PeopleMeta jobTitle="Web Develop" phone="613-520-2600 x4910">
+                    <a href="mailto:web.developer@carleton.ca">web.developer@carleton.ca</a>
+                  </Card.PeopleMeta>
                 </Card.Body>
                 <Card.Footer isType="button" buttonStyle="dark-grey">
                   <a href="https://carleton.ca">View Profile</a>

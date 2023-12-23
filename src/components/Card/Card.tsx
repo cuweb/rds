@@ -45,7 +45,7 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
 
   return (
     <div
-      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 bg-cu-black-200 ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}
+      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}
     >
       {children}
     </div>
