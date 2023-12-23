@@ -57,7 +57,7 @@ export const StatCardOptions: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Video Cards: Default" />
+            <Heading text="Stat Cards: Default" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} hasRedBorder noLink>
@@ -68,7 +68,7 @@ export const StatCardOptions: Story = {
           </Container>
 
           <Container>
-            <Heading text="Video Cards: Shadow on Static" />
+            <Heading text="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} hasRedBorder noLink hasShadow="onCard">
@@ -79,7 +79,7 @@ export const StatCardOptions: Story = {
           </Container>
 
           <Container>
-            <Heading text="Video Cards: Default with Grey Bg" />
+            <Heading text="Stat Cards: Default with Grey Bg" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} isGrey hasRedBorder noLink>
@@ -90,7 +90,51 @@ export const StatCardOptions: Story = {
           </Container>
 
           <Container>
-            <Heading text="Video Cards: Shadow on Static" />
+            <Heading text="Stat Cards: Shadow on Static" />
+            <Column cols="3">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} isGrey hasRedBorder noLink hasShadow="onCard">
+                  <Card.Stats stat={stat} desc={desc} />
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <Container isGrey>
+            <Heading text="Stat Cards: Default" />
+            <Column cols="3">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} hasRedBorder noLink>
+                  <Card.Stats stat={stat} desc={desc} />
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <Container isGrey>
+            <Heading text="Stat Cards: Shadow on Static" />
+            <Column cols="3">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} hasRedBorder noLink hasShadow="onCard">
+                  <Card.Stats stat={stat} desc={desc} />
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <Container isGrey>
+            <Heading text="Stat Cards: Default with Grey Bg" />
+            <Column cols="3">
+              {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+                <Card key={id} isGrey hasRedBorder noLink>
+                  <Card.Stats stat={stat} desc={desc} />
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <Container isGrey>
+            <Heading text="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} isGrey hasRedBorder noLink hasShadow="onCard">
