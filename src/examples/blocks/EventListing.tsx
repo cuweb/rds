@@ -7,7 +7,7 @@ import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
 import { Listing } from '../../components/Listing/Listing'
-import { NewsData } from '../../data/NewsData'
+import { EventData } from '../../data/EventData'
 import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
@@ -17,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const NewsListingOptions: Story = {
+export const EventListingOptions: Story = {
   render: () => (
     <>
       <TopBar>
@@ -47,7 +47,7 @@ export const NewsListingOptions: Story = {
       <Main>
         <Section hasProse>
           <TextImage hasBorder>
-            <TextImage.Content headerType="h1" title="News Listing Options">
+            <TextImage.Content headerType="h1" title="Event Listing">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -57,42 +57,74 @@ export const NewsListingOptions: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="News Listings: Default" />
+            <Heading text="Event Listings: Default" />
             <StackedList hasShadow>
-              {NewsData.slice(0, 4).map(({ id, title, link, date, image, alt }) => (
-                <Listing key={id}>
-                  <a href={link}>
-                    <Listing.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={date} />
-                      <Listing.Header text={title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
-                </Listing>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <a href={link}>
+                      <Listing.DateBox startDate={startDate} endDate={endDate} />
+                      <Listing.Content>
+                        <Listing.Header text={title} />
+                        <Listing.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Listing.Content>
+                    </a>
+                  </Listing>
+                ),
+              )}
             </StackedList>
           </Container>
 
           <Container>
-            <Heading text="News Listings: Single Column" />
+            <Heading text="Event Listings: Single Column" />
             <StackedList cols="1" hasShadow>
-              {NewsData.slice(0, 3).map(({ id, title, link, date, image, alt }) => (
-                <Listing key={id}>
-                  <a href={link}>
-                    <Listing.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={date} />
-                      <Listing.Header text={title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
-                </Listing>
-              ))}
+              {EventData.slice(0, 3).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <a href={link}>
+                      <Listing.DateBox startDate={startDate} endDate={endDate} />
+                      <Listing.Content>
+                        <Listing.Header text={title} />
+                        <Listing.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Listing.Content>
+                    </a>
+                  </Listing>
+                ),
+              )}
             </StackedList>
           </Container>
 
@@ -103,22 +135,38 @@ export const NewsListingOptions: Story = {
             in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
             luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
           </p>
-          <Heading text="News Listings: Offset" />
-          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="right" hasShadow>
-            {NewsData.slice(0, 3).map(({ id, title, link, date, image, alt }) => (
-              <Listing key={id}>
-                <a href={link}>
-                  <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure>
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                    <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Listing.Content>
-                </a>
-              </Listing>
-            ))}
+          <Heading text="Event Listings: Offset" />
+          <StackedList header="Upcoming Event" as="ul" cols="1" listType="posts" offset="right" hasShadow>
+            {EventData.slice(0, 3).map(
+              ({
+                id,
+                title,
+                link,
+                startDate,
+                endDate,
+                on_campus,
+                on_campus_building,
+                on_campus_room_number,
+                event_address,
+              }) => (
+                <Listing key={id}>
+                  <a href={link}>
+                    <Listing.DateBox startDate={startDate} endDate={endDate} />
+                    <Listing.Content>
+                      <Listing.Header text={title} />
+                      <Listing.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                    </Listing.Content>
+                  </a>
+                </Listing>
+              ),
+            )}
           </StackedList>
           <p>
             Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
@@ -170,42 +218,74 @@ export const NewsListingOptions: Story = {
           </p>
 
           <Container isGrey>
-            <Heading text="News Listings: Default" />
+            <Heading text="Event Listings: Default" />
             <StackedList hasShadow>
-              {NewsData.slice(0, 4).map((item) => (
-                <Listing key={item?.id}>
-                  <a href={item.link}>
-                    <Listing.Figure>
-                      <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={item?.date} />
-                      <Listing.Header text={item?.title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
-                </Listing>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <a href={link}>
+                      <Listing.DateBox startDate={startDate} endDate={endDate} />
+                      <Listing.Content>
+                        <Listing.Header text={title} />
+                        <Listing.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Listing.Content>
+                    </a>
+                  </Listing>
+                ),
+              )}
             </StackedList>
           </Container>
 
           <Container isGrey>
-            <Heading text="News Listings: Single Column" />
+            <Heading text="Event Listings: Single Column" />
             <StackedList cols="1" hasShadow>
-              {NewsData.slice(0, 3).map((item) => (
-                <Listing key={item?.id}>
-                  <a href={item.link}>
-                    <Listing.Figure>
-                      <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={item?.date} />
-                      <Listing.Header text={item?.title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
-                </Listing>
-              ))}
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <a href={link}>
+                      <Listing.DateBox startDate={startDate} endDate={endDate} />
+                      <Listing.Content>
+                        <Listing.Header text={title} />
+                        <Listing.EventMeta
+                          startDateTime={startDate}
+                          endDateTime={endDate}
+                          onCampus={on_campus}
+                          onCampusBuilding={on_campus_building}
+                          onCampusRoomNumber={on_campus_room_number}
+                          eventAddress={event_address}
+                        />
+                      </Listing.Content>
+                    </a>
+                  </Listing>
+                ),
+              )}
             </StackedList>
           </Container>
         </Section>

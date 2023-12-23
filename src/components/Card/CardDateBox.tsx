@@ -1,5 +1,4 @@
 import { getDate, parse, format, isSameDay } from 'date-fns'
-import { eventStyles } from './Card.Styles'
 
 export interface CardDateBoxProps {
   startDate: string
@@ -16,19 +15,19 @@ export const CardDateBox = ({ startDate, endDate }: CardDateBoxProps) => {
   const isMultiDay = !isSameDay(eventStartDate, eventEndDate)
 
   return (
-    <h3 className={eventStyles.dateBox}>
+    <div className="z-10 flex flex-col items-center justify-center w-20 h-20 mx-6 mb-2 -mt-16 bg-white rounded-md shadow-md">
       {isMultiDay ? (
         <>
-          <span className={eventStyles.dateBoxMonth}>Multi</span>
-          <span className={eventStyles.dateBoxDay}>Day</span>
+          <span className="block text-xs font-bold uppercase text-cu-red">Multi</span>
+          <span className="block text-2xl font-bold uppercase text-cu-black-800">Day</span>
         </>
       ) : (
         <>
-          <span className={eventStyles.dateBoxMonth}>{eventStartMonth}</span>
-          <span className={eventStyles.dateBoxDay}>{eventStartDay}</span>
+          <span className="block text-xs font-bold uppercase text-cu-red">{eventStartMonth}</span>
+          <span className="block text-2xl font-bold uppercase text-cu-black-800">{eventStartDay}</span>
         </>
       )}
-    </h3>
+    </div>
   )
 }
 

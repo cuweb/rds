@@ -47,7 +47,7 @@ export const VideoCardOptions: Story = {
       <Main>
         <Section hasProse>
           <TextImage hasBorder>
-            <TextImage.Content headerType="h1" title="Video Card Options">
+            <TextImage.Content headerType="h1" title="Video Cards">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -62,9 +62,7 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noLink>
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
@@ -76,9 +74,7 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noLink hasShadow="onCard">
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
@@ -90,9 +86,7 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noLink>
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
@@ -104,9 +98,7 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noLink hasShadow="onCard">
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
@@ -118,9 +110,7 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noLink>
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
@@ -132,9 +122,7 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noLink hasShadow="onCard">
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
@@ -146,23 +134,19 @@ export const VideoCardOptions: Story = {
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noLink>
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
           </Container>
 
           <Container isGrey>
-            <Heading text="Video Cards: Shadow on Static with Grey Bg" />
+            <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noLink hasShadow="onCard">
                   <Card.Video source={source} />
-                  <Card.Content>
-                    <Card.Header text={title} />
-                  </Card.Content>
+                  <Card.Header>{title}</Card.Header>
                 </Card>
               ))}
             </Column>
