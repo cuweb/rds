@@ -4405,7 +4405,7 @@ StackedList for ToC
 }
 
 .cu-card > *:not(a):last-child:not(.cu-card-stats) {
-  padding-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
 }
 
 .cu-card > a {
