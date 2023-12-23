@@ -7,12 +7,13 @@ type TableRowsProps = {
   }[]
   columns: ColumnDefinitionType[]
   striped: boolean
-  range: number[]
+  range: number[] // may be used for pagination , need to investigate more
 }
 
-const TableRows = ({ data, columns, striped, range }: TableRowsProps) => {
+const TableRows = ({ data, columns, striped }: TableRowsProps) => {
   const stripedStyles = striped ? styles.striped : ''
-  const rows = data.slice(range[0] - 1, range[1]).map((row, index) => {
+
+  const rows = data.map((row, index) => {
     return (
       <tr className={`${stripedStyles}`} key={`row-${index}`}>
         {columns.map((column, index2) => {
