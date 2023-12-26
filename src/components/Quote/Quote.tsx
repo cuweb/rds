@@ -9,7 +9,7 @@ export interface QuoteProps {
 }
 
 export const Quote = ({ children, cite, graphic = 'border', isCenter }: QuoteProps) => {
-  const centerQuote = isCenter ? 'max-w-3xl mx-auto' : 'max-w-3xl mr-auto'
+  const centerQuote = isCenter ? 'max-w-4xl mx-auto' : 'max-w-4xl mr-auto'
 
   return (
     <>

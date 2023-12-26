@@ -7,6 +7,7 @@ import { FooterStandard } from '../../components/Footer/FooterStandard/FooterSta
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
+import { Quote } from '../../components/Quote/Quote'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -151,6 +152,17 @@ export const BasicMarkup: Story = {
           <StackedList header="Table of Contents" as="div" cols="1" listType="toc" offset="right" hasShadow>
             <ToC />
           </StackedList>
+
+          <SinglePara />
+
+          <Quote cite="John Doe">
+            <p>
+              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus.
+            </p>
+          </Quote>
+
+          <SinglePara />
 
           <h3>Heading Three</h3>
           <SinglePara />
