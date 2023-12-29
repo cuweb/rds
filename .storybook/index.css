@@ -1,6 +1,6 @@
 /* Tailwind CSS */
 
-/* ! tailwindcss v3.3.6 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -32,9 +32,11 @@
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -44,12 +46,14 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
 /*
@@ -1943,6 +1947,10 @@ select {
   top: 1.25rem;
 }
 
+.-top-4 {
+  top: -1rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -2945,6 +2953,10 @@ select {
   border-radius: 0.375rem;
 }
 
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -2952,11 +2964,6 @@ select {
 .rounded-r-md {
   border-top-right-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
-}
-
-.rounded-s {
-  border-start-start-radius: 0.25rem;
-  border-end-start-radius: 0.25rem;
 }
 
 .rounded-t-lg {
@@ -3248,6 +3255,11 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
+.bg-cu-black-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -3258,10 +3270,6 @@ select {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
-}
-
-.bg-cu-quote-icon {
-  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quotation.svg");
 }
 
 .bg-cu-waves-red {
@@ -3282,6 +3290,14 @@ select {
 
 .bg-none {
   background-image: none;
+}
+
+.bg-cu-quote-red-10 {
+  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quote-red-10.svg");
+}
+
+.bg-cu-quote-white {
+  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quote-white.svg");
 }
 
 .from-cu-red {
@@ -3314,12 +3330,12 @@ select {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
-.bg-\[length\:1\.5em\] {
-  background-size: 1.5em;
-}
-
 .bg-\[length\:100\.5\%\] {
   background-size: 100.5%;
+}
+
+.bg-\[length\:2\.5em\] {
+  background-size: 2.5em;
 }
 
 .bg-contain {
@@ -3330,12 +3346,20 @@ select {
   background-size: cover;
 }
 
-.bg-\[left_top\] {
-  background-position: left top;
+.bg-\[length\:3\.5em\] {
+  background-size: 3.5em;
+}
+
+.bg-\[length\:5em\] {
+  background-size: 5em;
 }
 
 .bg-bottom {
   background-position: bottom;
+}
+
+.bg-left-top {
+  background-position: left top;
 }
 
 .bg-no-repeat {
@@ -3541,10 +3565,6 @@ select {
   padding-left: 0.75rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
-}
-
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -3619,6 +3639,26 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.pt-3\.5 {
+  padding-top: 0.875rem;
+}
+
+.pl-9 {
+  padding-left: 2.25rem;
+}
+
+.pt-2\.5 {
+  padding-top: 0.625rem;
 }
 
 .text-left {
@@ -8027,18 +8067,6 @@ StackedList for ToC
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .dark\:bg-gray-700 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-  }
-
-  .dark\:text-gray-600 {
-    --tw-text-opacity: 1;
-    color: rgb(75 85 99 / var(--tw-text-opacity));
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:-mx-4 {
     margin-left: -1rem;
@@ -8949,6 +8977,18 @@ StackedList for ToC
 
   .\32xl\:mr-\[12\%\] {
     margin-right: 12%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+
+  .dark\:text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
   }
 }
 

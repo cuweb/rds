@@ -1,12 +1,8 @@
 export const styles = {
-  container: `relative cu-quote`, // done
+  container: `relative max-w-3xl space-y-2`, // done
   graphic: {
-    border: 'border-l-4 pl-4 rounded-s fill-red-600 border-red-600',
-    quote: 'bg-cu-quote-icon bg-no-repeat bg-[length:1.5em]	bg-[left_top] border-none pt-8 pl-8',
+    border: `border-l-4 border-solid rounded-sm fill-red-600 border-red-600 px-7 py-2.5`,
+    quote: `bg-cu-quote-red-10 bg-no-repeat bg-[length:2.5em] bg-left-top border-none pt-3 pl-6`,
   },
-  align: {
-    default: 'max-w-3xl mr-auto',
-    middle: 'max-w-3xl mx-auto',
-  },
-  cite: 'block mt-2',
+  cite: 'block',
 }
