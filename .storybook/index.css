@@ -1947,10 +1947,6 @@ select {
   top: 1.25rem;
 }
 
-.-top-4 {
-  top: -1rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -2170,10 +2166,6 @@ select {
 
 .mr-3 {
   margin-right: 0.75rem;
-}
-
-.mr-auto {
-  margin-right: auto;
 }
 
 .mt-0 {
@@ -3255,11 +3247,6 @@ select {
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
 }
 
-.bg-cu-black-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -3270,6 +3257,10 @@ select {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
+}
+
+.bg-cu-quote-red-10 {
+  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quote-red-10.svg");
 }
 
 .bg-cu-waves-red {
@@ -3290,14 +3281,6 @@ select {
 
 .bg-none {
   background-image: none;
-}
-
-.bg-cu-quote-red-10 {
-  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quote-red-10.svg");
-}
-
-.bg-cu-quote-white {
-  background-image: url("https://cdn.carleton.ca/rds/assets/graphics/quote-white.svg");
 }
 
 .from-cu-red {
@@ -3344,14 +3327,6 @@ select {
 
 .bg-cover {
   background-size: cover;
-}
-
-.bg-\[length\:3\.5em\] {
-  background-size: 3.5em;
-}
-
-.bg-\[length\:5em\] {
-  background-size: 5em;
 }
 
 .bg-bottom {
@@ -3573,10 +3548,6 @@ select {
   padding-left: 1.5rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
 .pr-10 {
   padding-right: 2.5rem;
 }
@@ -3639,26 +3610,6 @@ select {
 
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pt-3\.5 {
-  padding-top: 0.875rem;
-}
-
-.pl-9 {
-  padding-left: 2.25rem;
-}
-
-.pt-2\.5 {
-  padding-top: 0.625rem;
 }
 
 .text-left {
