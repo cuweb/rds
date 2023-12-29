@@ -10,6 +10,7 @@ export declare const ImageAngle: Story;
 export declare const ImageAngleReverse: Story;
 export declare const ImageDualAngle: Story;
 export declare const ImageDualAngleReverse: Story;
+export declare const NoContent: Story;
 export declare const NoImage: Story;
 export declare const PeopleProfile: Story;
 export declare const EventDetails: Story;
