@@ -2370,6 +2370,14 @@ select {
   height: 100%;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
@@ -2496,6 +2504,18 @@ select {
 
 .w-px {
   width: 1px;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-9 {
+  width: 2.25rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .min-w-full {
@@ -3347,6 +3367,18 @@ select {
 
 .fill-red-600 {
   fill: #dc2626;
+}
+
+.fill-white {
+  fill: #fff;
+}
+
+.fill-green-300 {
+  fill: #86efac;
+}
+
+.fill-cu-red {
+  fill: #E91C24;
 }
 
 .object-cover {

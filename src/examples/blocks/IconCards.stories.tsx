@@ -61,7 +61,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, title }) => (
                 <Card key={id} hasShadow="onCard" noLink>
-                  <Card.IconBox />
+                  <Card.IconBox icon="cloud-music" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -79,7 +79,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, title }) => (
                 <Card key={id} isGrey hasShadow="onCard" noLink>
-                  <Card.IconBox />
+                  <Card.IconBox icon="volume" noBg />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -97,7 +97,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, title }) => (
                 <Card key={id} hasShadow="onCard" noLink>
-                  <Card.IconBox />
+                  <Card.IconBox icon="speakers" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -115,7 +115,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, title }) => (
                 <Card key={id} isGrey hasShadow="onCard" noLink>
-                  <Card.IconBox />
+                  <Card.IconBox icon="turntable" noBg />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
