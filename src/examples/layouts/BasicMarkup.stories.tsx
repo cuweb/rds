@@ -155,13 +155,6 @@ export const BasicMarkup: Story = {
 
           <SinglePara />
 
-          <Quote cite="John Doe">
-            <p>
-              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus.
-            </p>
-          </Quote>
-
           <SinglePara />
 
           <h3>Heading Three</h3>
@@ -236,23 +229,39 @@ export const BasicMarkup: Story = {
 
           <DoublePara />
 
-          <blockquote>
+          <Quote cite="John Doe">
             <p>
               Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
               reprehenderit ducimus.
             </p>
-            <cite>John Doe</cite>
-          </blockquote>
+          </Quote>
 
           <DoublePara />
 
-          <blockquote>
+          <Quote cite="John Doe" graphic="quote">
             <p>
-              Obis voluptatem dolorum et <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> velit.
-              Praesentium architecto a distinctio aut reprehenderit ducimus.
+              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus.
             </p>
-            <cite>John Doe</cite>
-          </blockquote>
+          </Quote>
+
+          <DoublePara />
+
+          <Quote cite="John Doe" isCenter>
+            <p>
+              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus.
+            </p>
+          </Quote>
+
+          <DoublePara />
+
+          <Quote cite="John Doe" graphic="quote" isCenter>
+            <p>
+              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus.
+            </p>
+          </Quote>
 
           <DoublePara />
         </Section>
