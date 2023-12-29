@@ -6,7 +6,7 @@
 }
 
 .cu-listing a {
-  @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8;
+  @apply relative flex h-full flex-col items-start gap-6 p-8 -outline-offset-2 @xl:md:flex-row @xl:md:gap-8 focus:rounded-md;
 }
 
 .cu-listing img {

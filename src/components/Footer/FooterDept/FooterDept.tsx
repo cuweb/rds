@@ -27,7 +27,7 @@ export const FooterDept = ({ deptName, buildingName, officeNumber, phone, email,
       <div className="mx-auto md:items-center md:flex max-w-7xl">
         <div className="flex flex-col gap-2">
           {deptName && (
-            <p className="font-semibold text-center lg:text-lg text-cu-black-900 md:text-left">{deptName}</p>
+            <h2 className="font-semibold text-center lg:text-lg text-cu-black-900 md:text-left">{deptName}</h2>
           )}
           <ul className="gap-5 text-center divide-x lg:flex lg:divide-cu-black-300 md:text-left">
             {buildingName && (
@@ -39,7 +39,7 @@ export const FooterDept = ({ deptName, buildingName, officeNumber, phone, email,
             {phone && <li className={styles.deptListItem}>{phone}</li>}
             {email && (
               <li className={styles.deptListItem}>
-                <a className="font-semibold text-cu-red-700" href={`mailto:${email}`}>
+                <a className="font-semibold text-cu-red-700 hover:underline" href={`mailto:${email}`}>
                   {email}
                 </a>
               </li>

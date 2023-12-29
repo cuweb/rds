@@ -1,14 +1,13 @@
-import { styles } from './Card.Styles'
-
 export interface CardExcerptProps {
   text: string
+  hasMore?: boolean
 }
 
-export const CardExcerpt = ({ text }: CardExcerptProps) => {
+export const CardExcerpt = ({ text, hasMore }: CardExcerptProps) => {
   return (
-    <p className={styles.excerpt}>
+    <p className="text-base text-cu-black-600">
       {text.length > 170 ? `${text.substring(0, 170)}...` : text}
-      <span className={styles.more}> Read more</span>
+      {hasMore && <span className="font-semibold"> More</span>}
     </p>
   )
 }

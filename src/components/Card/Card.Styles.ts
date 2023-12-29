@@ -1,5 +1,5 @@
 export const styles = {
-  card: `not-prose relative flex flex-col cu-card overflow-hidden rounded-lg @container md:max-w-lg`,
+  card: `not-prose relative flex flex-col cu-card rounded-lg @container md:max-w-lg`,
   whiteBg: `bg-white`,
   greyBg: `bg-cu-black-25`,
   shadow: `shadow-md shadow-cu-black-100`,
@@ -8,7 +8,7 @@ export const styles = {
   border: `border border-cu-black-100`,
   redBorder: `border-l-8 border-l-cu-red`,
   content: `flex flex-col space-y-2 py-6 px-7 @sm:md:space-y-3 relative`,
-  header: `text-lg font-semibold text-cu-black  @sm:md:text-xl leading-6 @sm:md:leading-8`,
+  header: `text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8`,
   excerpt: `text-base text-cu-black-600`,
   more: `font-semibold text-cu-red-700`,
   badges: `pb-6 mt-auto px-7`,

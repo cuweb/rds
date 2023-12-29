@@ -4,12 +4,12 @@ import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Column } from '../../layouts/Column/Column'
-import { Panel } from '../../layouts/Panel/Panel'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
+import { Panel } from '../../_deprecated/Panel/Panel'
 import { TopBar } from '../../components/TopBar/TopBar'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta
@@ -76,9 +76,16 @@ export const LayoutSpacing: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="Spacing Tests" headerType="h1" />
-          </HeroTextImage>
+          <TextImage>
+            <TextImage.Content headerType="h1" title="Layout Spacing">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+
           <h2>Not in a container</h2>
           <DoublePara />
           <h2>Not in a container</h2>

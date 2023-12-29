@@ -3,12 +3,11 @@ import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
+import { TextImage } from '../../components/TextImage/TextImage'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Layouts',
 }
 
 export default meta
@@ -46,7 +45,7 @@ const DoublePara = () => {
   )
 }
 
-export const WithColumns: Story = {
+export const WithContainers: Story = {
   render: () => (
     <>
       <TopBar>
@@ -75,78 +74,49 @@ export const WithColumns: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="With Columns" headerType="h1" />
-          </HeroTextImage>
-          <h2>Not in a container</h2>
+          <TextImage>
+            <TextImage.Content headerType="h1" title="Grey and White Containers">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+
+          <h2>Heading Two</h2>
           <DoublePara />
-          <h2>Not in a container</h2>
+
+          <h3>Heading Three</h3>
           <SinglePara />
 
-          <Column cols="2">
-            <Column.Content>
-              <DoublePara />
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-              <DoublePara />
-            </Column.Content>
-          </Column>
-
-          <Container>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-            <SinglePara />
+          <Container isGrey>
+            <h2>Heading Two</h2>
+            <DoublePara />
           </Container>
-
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
 
           <Container isGrey>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-            <SinglePara />
+            <h2>Heading Two</h2>
+            <DoublePara />
           </Container>
 
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
+          <h2>Heading Two</h2>
+          <DoublePara />
+
+          <Container isGrey>
+            <h3>Heading Three</h3>
+            <DoublePara />
+          </Container>
+
+          <Container>
+            <h3>Heading Three</h3>
+            <DoublePara />
+          </Container>
+
+          <Container>
+            <h3>Heading Three</h3>
+            <DoublePara />
+          </Container>
         </Section>
       </Main>
 

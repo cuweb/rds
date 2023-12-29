@@ -3,51 +3,20 @@ import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { HeroTextImage } from '../../_deprecated/HeroTextImage/HeroTextImage'
 import { TopBar } from '../../components/TopBar/TopBar'
-import { DescriptionData as descMeta } from '../../data/DescriptionData'
+import { Heading } from '../../components/Heading/Heading'
+import { TextImage } from '../../components/TextImage/TextImage'
 import { Description } from '../../components/Description/Description'
+import { DescriptionData } from '../../data/DescriptionData'
 
 const meta: Meta = {
-  title: 'Examples/Templates',
+  title: 'Examples/Blocks',
 }
 
 export default meta
 type Story = StoryObj
 
-const SinglePara = () => {
-  return (
-    <>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
-        Praesent quis ligula quis nulla malesuada tempor.
-      </p>
-    </>
-  )
-}
-
-const DoublePara = () => {
-  return (
-    <>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-        condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
-        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
-        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
-        sapien in urna.
-      </p>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
-        Praesent quis ligula quis nulla malesuada tempor.
-      </p>
-    </>
-  )
-}
-
-export const WithContainers: Story = {
+export const DescriptionListOptions: Story = {
   render: () => (
     <>
       <TopBar>
@@ -76,31 +45,21 @@ export const WithContainers: Story = {
 
       <Main>
         <Section hasProse>
-          <HeroTextImage maxWidth="5xl" hasBorder>
-            <HeroTextImage.Content title="With Containers" headerType="h1" />
-          </HeroTextImage>
-          <h2>Heading Two</h2>
-          <DoublePara />
-          <h3>Heading Three</h3>
-          <SinglePara />
-
-          <Container isGrey>
-            <h2>Heading Two</h2>
-            <DoublePara />
-          </Container>
-
-          <Container isGrey>
-            <h2>Heading Two</h2>
-            <DoublePara />
-          </Container>
-
-          <h2>Heading Two</h2>
-          <DoublePara />
+          <TextImage hasBorder>
+            <TextImage.Content headerType="h1" title="Description List">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
 
           <Container>
+            <Heading text="Descripton List: Stacked" />
             <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term}>
+              {DescriptionData.map(({ id, term }) => (
+                <Description.Meta key={id} term={term}>
                   <p>
                     Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
                     voluptatem non.
@@ -118,12 +77,11 @@ export const WithContainers: Story = {
             </Description>
           </Container>
 
-          <DoublePara />
-
-          <Container isGrey>
+          <Container>
+            <Heading text="Description List: Columns" />
             <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term}>
+              {DescriptionData.map(({ id, term }) => (
+                <Description.Meta key={id} term={term} useColumns>
                   <p>
                     Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
                     voluptatem non.
@@ -140,13 +98,12 @@ export const WithContainers: Story = {
               ))}
             </Description>
           </Container>
-
-          <DoublePara />
 
           <Container>
+            <Heading text="Description List: Accordion" />
             <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term} useColumns>
+              {DescriptionData.map(({ id, term }) => (
+                <Description.Accordion key={id} term={term}>
                   <p>
                     Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
                     voluptatem non.
@@ -159,17 +116,16 @@ export const WithContainers: Story = {
                     Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
                     magna vel orci vulputate, eget vulputate neque porttitor.
                   </p>
-                </Description.Meta>
+                </Description.Accordion>
               ))}
             </Description>
           </Container>
 
-          <DoublePara />
-
           <Container isGrey>
+            <Heading text="Descripton List: Stacked" />
             <Description>
-              {descMeta.map((item) => (
-                <Description.Meta key={item?.id} term={item?.term} useColumns>
+              {DescriptionData.map(({ id, term }) => (
+                <Description.Meta key={id} term={term}>
                   <p>
                     Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
                     voluptatem non.
@@ -188,18 +144,47 @@ export const WithContainers: Story = {
           </Container>
 
           <Container isGrey>
-            <h3>Heading Three</h3>
-            <DoublePara />
+            <Heading text="Description List: Columns" />
+            <Description>
+              {DescriptionData.map(({ id, term }) => (
+                <Description.Meta key={id} term={term} useColumns>
+                  <p>
+                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                    voluptatem non.
+                  </p>
+                  <p>
+                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                    nec elit ultricies, sed tempus diam dignissim.
+                  </p>
+                  <p>
+                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
+                    magna vel orci vulputate, eget vulputate neque porttitor.
+                  </p>
+                </Description.Meta>
+              ))}
+            </Description>
           </Container>
 
-          <Container>
-            <h3>Heading Three</h3>
-            <DoublePara />
-          </Container>
-
-          <Container>
-            <h3>Heading Three</h3>
-            <DoublePara />
+          <Container isGrey>
+            <Heading text="Description List: Accordion" />
+            <Description>
+              {DescriptionData.map(({ id, term }) => (
+                <Description.Accordion key={id} term={term}>
+                  <p>
+                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                    voluptatem non.
+                  </p>
+                  <p>
+                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                    nec elit ultricies, sed tempus diam dignissim.
+                  </p>
+                  <p>
+                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
+                    magna vel orci vulputate, eget vulputate neque porttitor.
+                  </p>
+                </Description.Accordion>
+              ))}
+            </Description>
           </Container>
         </Section>
       </Main>

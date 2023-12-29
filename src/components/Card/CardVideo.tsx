@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
-import { videoStyle } from './Card.Styles'
 
 export interface CardVideoProps {
   source: string
@@ -17,14 +16,14 @@ export const CardVideo = ({ source }: CardVideoProps) => {
   // Prevent the component from rendering and avoid hydration error
   if (!initialRender) {
     return (
-      <div className={videoStyle.container}>
+      <div className="relative pt-[56.25%] bg-cu-black-800 mb-2 rounded-t-lg overflow-hidden">
         <p className="hidden">Loading video</p>
       </div>
     )
   } else {
     return (
-      <div className={videoStyle.container}>
-        <ReactPlayer url={source} className={videoStyle.player} width="100%" height="100%" controls />
+      <div className="relative pt-[56.25%] bg-cu-black-800 mb-2 rounded-t-lg overflow-hidden">
+        <ReactPlayer url={source} className="absolute top-0 left-0" width="100%" height="100%" controls />
       </div>
     )
   }
