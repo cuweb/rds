@@ -4,10 +4,6 @@ export declare const styles: {
         border: string;
         quote: string;
     };
-    align: {
-        default: string;
-        middle: string;
-    };
     cite: string;
 };
 //# sourceMappingURL=Quote.styles.d.ts.map
