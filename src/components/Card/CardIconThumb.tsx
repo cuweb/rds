@@ -10,7 +10,8 @@ export const CardIconThumb = ({ icon, noBg }: CardIconThumbProps) => {
   return (
     <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden rounded-md ${iconDiv}`}>
       <svg className={iconSvg}>
-        <use xlinkHref={`./assets/fontawesome/light.svg#${icon}`}></use>
+        {/* <use xlinkHref={`https://cdn.carleton.ca/rds/assets/fontawesome-light.svg#${icon}`}></use> */}
+        <use xlinkHref={`./assets/graphics/fontawesome-light.svg#${icon}`}></use>
       </svg>
     </figure>
   )
