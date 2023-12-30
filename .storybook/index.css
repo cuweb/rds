@@ -2282,6 +2282,10 @@ select {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -2374,10 +2378,6 @@ select {
   height: 2.25rem;
 }
 
-.h-14 {
-  height: 3.5rem;
-}
-
 .max-h-72 {
   max-height: 18rem;
 }
@@ -2410,12 +2410,20 @@ select {
   width: 0.25rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-11\/12 {
   width: 91.666667%;
 }
 
 .w-12 {
   width: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-16 {
@@ -2506,16 +2514,8 @@ select {
   width: 1px;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-9 {
   width: 2.25rem;
-}
-
-.w-14 {
-  width: 3.5rem;
 }
 
 .min-w-full {
@@ -3365,6 +3365,10 @@ select {
   fill: #999999;
 }
 
+.fill-cu-red {
+  fill: #E91C24;
+}
+
 .fill-red-600 {
   fill: #dc2626;
 }
@@ -3373,12 +3377,8 @@ select {
   fill: #fff;
 }
 
-.fill-green-300 {
-  fill: #86efac;
-}
-
-.fill-cu-red {
-  fill: #E91C24;
+.fill-cu-red-700 {
+  fill: #BB1219;
 }
 
 .object-cover {

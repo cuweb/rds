@@ -64,7 +64,7 @@ export const Homepage: Story = {
                 <Card.Figure>
                   <img src={item?.image} alt={item?.alt} width={400} height={175} />
                 </Card.Figure>
-                <Card.DateBox startDate={item?.startDate} endDate={item?.endDate} />
+                <Card.DateThumb startDate={item?.startDate} endDate={item?.endDate} />
                 <Card.Header>{item?.title}</Card.Header>
                 <Card.Body>
                   <Card.EventMeta

@@ -59,9 +59,27 @@ export const IconCardOptions: Story = {
           <Container>
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map(({ id, link, title }) => (
+              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noLink>
-                  <Card.IconBox icon="cloud-music" />
+                  <Card.IconThumb icon={icon} />
+                  <Card.Header>{title}</Card.Header>
+                  <Card.Body>
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                  </Card.Body>
+                  <Card.Footer isType="button" buttonStyle="grey">
+                    <a href={link}>More info</a>
+                  </Card.Footer>
+                </Card>
+              ))}
+            </Column>
+          </Container>
+
+          <Container>
+            <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
+            <Column cols="3">
+              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
+                <Card key={id} isGrey noLink>
+                  <Card.IconThumb icon={icon} noBg />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -74,30 +92,12 @@ export const IconCardOptions: Story = {
             </Column>
           </Container>
 
-          <Container>
-            <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
-            <Column cols="3">
-              {NewsData.slice(0, 3).map(({ id, link, title }) => (
-                <Card key={id} isGrey hasShadow="onCard" noLink>
-                  <Card.IconBox icon="volume" noBg />
-                  <Card.Header>{title}</Card.Header>
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer isType="button" buttonStyle="white">
-                    <a href={link}>More info</a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
           <Container isGrey>
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map(({ id, link, title }) => (
-                <Card key={id} hasShadow="onCard" noLink>
-                  <Card.IconBox icon="speakers" />
+              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
+                <Card key={id} noLink>
+                  <Card.IconThumb icon={icon} noBg />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -113,9 +113,9 @@ export const IconCardOptions: Story = {
           <Container isGrey>
             <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 3).map(({ id, link, title }) => (
+              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey hasShadow="onCard" noLink>
-                  <Card.IconBox icon="turntable" noBg />
+                  <Card.IconThumb icon={icon} />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
