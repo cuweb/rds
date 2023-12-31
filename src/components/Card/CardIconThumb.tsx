@@ -19,11 +19,11 @@ export const CardIconThumb = ({ icon, bgType = 'solid', svgPath }: CardIconThumb
       iconSvg = 'w-10 h-10 fill-cu-red'
       break
     case 'solid':
-      iconDiv = 'w-16 h-16 bg-cu-red'
+      iconDiv = 'w-16 h-16 bg-cu-red rounded-md'
       iconSvg = 'w-9 h-9 fill-white'
       break
     case 'shadow':
-      iconDiv = 'w-16 h-16 bg-white shadow-md'
+      iconDiv = 'w-16 h-16 bg-white shadow-md rounded-md'
       iconSvg = 'w-9 h-9 fill-cu-red'
       break
     default:
@@ -33,7 +33,7 @@ export const CardIconThumb = ({ icon, bgType = 'solid', svgPath }: CardIconThumb
   }
 
   return (
-    <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden rounded-md ${iconDiv}`}>
+    <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden ${iconDiv}`}>
       <svg className={iconSvg}>
         <use xlinkHref={`${fontAwesome}fontawesome-light.svg#${icon}`}></use>
       </svg>
