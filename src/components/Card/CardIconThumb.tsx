@@ -1,13 +1,16 @@
 export interface CardIconThumbProps {
   icon?: string
-  bgType?: 'none' | 'solid' | 'shadow'
+  bgType?: 'none' | 'red' | 'white'
+  hasShadow?: boolean
   svgPath?: string
 }
 
-export const CardIconThumb = ({ icon, bgType = 'solid', svgPath }: CardIconThumbProps) => {
+export const CardIconThumb = ({ icon, bgType = 'red', hasShadow, svgPath }: CardIconThumbProps) => {
   // Check if incoming svgPath uses carleton.ca
   const fontAwesome =
     !svgPath || svgPath.includes('carleton.ca') ? 'https://cdn.carleton.ca/rds/assets/graphics/' : svgPath
+
+  const iconShadow = hasShadow ? 'shadow-md' : ''
 
   // Set classes on icon and wrapping div
   let iconDiv
@@ -18,12 +21,12 @@ export const CardIconThumb = ({ icon, bgType = 'solid', svgPath }: CardIconThumb
       iconDiv = 'w-10 h-10'
       iconSvg = 'w-10 h-10 fill-cu-red'
       break
-    case 'solid':
+    case 'red':
       iconDiv = 'w-16 h-16 bg-cu-red rounded-md'
       iconSvg = 'w-9 h-9 fill-white'
       break
-    case 'shadow':
-      iconDiv = 'w-16 h-16 bg-white shadow-md rounded-md'
+    case 'white':
+      iconDiv = 'w-16 h-16 bg-white rounded-md'
       iconSvg = 'w-9 h-9 fill-cu-red'
       break
     default:
@@ -33,7 +36,7 @@ export const CardIconThumb = ({ icon, bgType = 'solid', svgPath }: CardIconThumb
   }
 
   return (
-    <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden ${iconDiv}`}>
+    <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden ${iconDiv} ${iconShadow}`}>
       <svg className={iconSvg}>
         <use xlinkHref={`${fontAwesome}fontawesome-light.svg#${icon}`}></use>
       </svg>
