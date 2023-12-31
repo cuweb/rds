@@ -61,7 +61,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noLink>
-                  <Card.IconThumb icon={icon} />
+                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -79,7 +79,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey noLink>
-                  <Card.IconThumb icon={icon} noBg />
+                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" noBg />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -97,7 +97,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} noLink>
-                  <Card.IconThumb icon={icon} noBg />
+                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" noBg />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -115,7 +115,7 @@ export const IconCardOptions: Story = {
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey hasShadow="onCard" noLink>
-                  <Card.IconThumb icon={icon} />
+                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
