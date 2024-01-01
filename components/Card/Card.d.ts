@@ -13,12 +13,12 @@ export declare const Card: (({ children, isCenter, noLink, hasShadow, hasRedBord
         ({ children, isRound }: import("./CardFigure").CardFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    DateBox: {
-        ({ startDate, endDate }: import("./CardDateBox").CardDateBoxProps): import("react/jsx-runtime").JSX.Element;
+    DateThumb: {
+        ({ startDate, endDate }: import("./CardDateThumb").CardDateThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    IconBox: {
-        ({ icon }: import("./CardIconBox").CardIconBoxProps): import("react/jsx-runtime").JSX.Element;
+    IconThumb: {
+        ({ icon, bgType, hasShadow, svgPath }: import("./CardIconThumb").CardIconThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Video: {

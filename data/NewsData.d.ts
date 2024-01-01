@@ -3,6 +3,7 @@ export declare const NewsDataSingle: {
     title: string;
     link: string;
     image: string;
+    icon: string;
     alt: string;
     excerpt: string;
     date: string;
@@ -19,6 +20,7 @@ export declare const NewsData: {
     title: string;
     link: string;
     image: string;
+    icon: string;
     alt: string;
     excerpt: string;
     date: string;
