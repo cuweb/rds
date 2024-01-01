@@ -3,6 +3,7 @@ export const NewsDataSingle = {
   title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
   link: '#',
   image: './sample-imgs/news-img.jpg',
+  icon: 'cloud-music',
   alt: 'Image alt text',
   excerpt:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam nulla eget est viverra, et tristique velit elementum. Aliquam ultrices vitae felis sit amet pharetra. Vivamus vitae dui mi. Quisque vitae nibh at orci lobortis rhoncus eu at mi. Nulla facilisi. In hac habitasse platea dictumst. Curabitur sed lectus risus.',
@@ -29,6 +30,7 @@ export const NewsData = [
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
     image: './sample-imgs/news-img.jpg',
+    icon: 'list-music',
     alt: 'Image alt text',
     excerpt:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam nulla eget est viverra, et tristique velit elementum. Aliquam ultrices vitae felis sit amet pharetra. Vivamus vitae dui mi. Quisque vitae nibh at orci lobortis rhoncus eu at mi. Nulla facilisi. In hac habitasse platea dictumst. Curabitur sed lectus risus.',
@@ -53,6 +55,7 @@ export const NewsData = [
     title: 'How to Write for the Web',
     link: '#',
     image: './sample-imgs/news-img.jpg',
+    icon: 'headphones',
     alt: 'Image alt text',
     excerpt:
       'Proin placerat non nisl sed ullamcorper. Maecenas ultrices diam a lorem feugiat feugiat. Curabitur ultrices egestas tortor vel feugiat. Mauris vitae massa vulputate, dignissim ipsum interdum, maximus nunc.',
@@ -72,6 +75,7 @@ export const NewsData = [
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
     image: './sample-imgs/news-img.jpg',
+    icon: 'cloud-music',
     alt: 'Image alt text',
     excerpt:
       'Donec dolor sapien, aliquet eu nibh vel, laoreet aliquam arcu. Suspendisse potenti. Nulla varius, enim nec maximus.',
@@ -91,6 +95,7 @@ export const NewsData = [
     title: ' How to Write for the Web',
     link: '#',
     image: './sample-imgs/news-img.jpg',
+    icon: 'album-collection',
     alt: 'Image alt text',
     excerpt:
       'Proin placerat non nisl sed ullamcorper. Maecenas ultrices diam a lorem feugiat feugiat. Curabitur ultrices egestas tortor vel feugiat. Mauris vitae massa vulputate, dignissim ipsum interdum, maximus nunc.',
@@ -110,6 +115,7 @@ export const NewsData = [
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
     image: './sample-imgs/news-img.jpg',
+    icon: 'turntable',
     alt: 'Image alt text',
     excerpt:
       'Donec dolor sapien, aliquet eu nibh vel, laoreet aliquam arcu. Suspendisse potenti. Nulla varius, enim nec maximus.',
@@ -129,6 +135,7 @@ export const NewsData = [
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
     image: './sample-imgs/news-img.jpg',
+    icon: 'trumpet',
     alt: 'Image alt text',
     excerpt:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam nulla eget est viverra, et tristique velit elementum. Aliquam ultrices vitae felis sit amet pharetra. Vivamus vitae dui mi. Quisque vitae nibh at orci lobortis rhoncus eu at mi. Nulla facilisi. In hac habitasse platea dictumst. Curabitur sed lectus risus.',

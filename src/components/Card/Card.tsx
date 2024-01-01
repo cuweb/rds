@@ -1,15 +1,16 @@
 import React from 'react'
-import { CardFigure } from './CardFigure'
-import { CardDateBox } from './CardDateBox'
-import { CardIconBox } from './CardIconBox'
-import { CardVideo } from './CardVideo'
-import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
-import { CardFooter } from './CardFooter'
+import { CardDateThumb } from './CardDateThumb'
 import { CardExcerpt } from './CardExcerpt'
 import { CardEventMeta } from './CardEventMeta'
+import { CardFigure } from './CardFigure'
+import { CardFooter } from './CardFooter'
+import { CardHeader } from './CardHeader'
+import { CardIconThumb } from './CardIconThumb'
+import { CardImageThumb } from './CardImageThumb'
 import { CardPeopleMeta } from './CardPeopleMeta'
 import { CardStats } from './CardStats'
+import { CardVideo } from './CardVideo'
 
 export interface CardProps {
   children: React.ReactNode
@@ -54,8 +55,9 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
 
 export const Card = Object.assign(CardWrapper, {
   Figure: CardFigure,
-  DateBox: CardDateBox,
-  IconBox: CardIconBox,
+  DateThumb: CardDateThumb,
+  IconThumb: CardIconThumb,
+  ImageThumb: CardImageThumb,
   Video: CardVideo,
   Header: CardHeader,
   Body: CardBody,

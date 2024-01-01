@@ -34,9 +34,12 @@ export const parameters = {
     },
   },
 }
+
 const script = document.createElement('script')
-script.type = 'text/javascript'
-script.src = `https://maps.googleapis.com/maps/api/js?key=${
-  import.meta.env.VITE_GOOGLE_MAPS_API_KEY
-}&libraries=places&callback=Function.prototype`
+
+// script.type = 'text/javascript'
+// script.src = `https://maps.googleapis.com/maps/api/js?key=${
+//   import.meta.env.GOOGLE_MAPS_API_KEY
+// }&libraries=places&callback=Function.prototype`
+
 document.body.appendChild(script)

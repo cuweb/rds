@@ -1,219 +1,148 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
-import { Container } from '../../layouts/Container/Container'
-import { Main } from '../../layouts/Main/Main'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
-import { TopBar } from '../../components/TopBar/TopBar'
-import { Column } from '../../layouts/Column/Column'
-import { Heading } from '../../components/Heading/Heading'
-import { TextImage } from '../../components/TextImage/TextImage'
 import { Card } from './Card'
+import { EventDataSingle as eventData } from '../../data/EventData'
+import { IconDataSingle as iconData } from '../../data/IconData'
+import { NewsDataSingle as newsData } from '../../data/NewsData'
+import { PeopleDataSingle as peopleData } from '../../data/PeopleData'
+import { StatDataSingle as statData } from '../../data/StatData'
+import { VideoDataSingle as videoData } from '../../data/VideoData'
 
-const meta: Meta = {
+const meta: Meta<typeof Card> = {
   title: 'Components/Card',
+  component: Card,
+  tags: ['autodocs'],
+  parameters: {
+    controls: {
+      sort: 'requiredFirst',
+    },
+  },
 }
 
 export default meta
-type Story = StoryObj
+type Story = StoryObj<typeof Card>
 
-export const CardRefactor: Story = {
+export const Default: Story = {
+  args: {
+    children: (
+      <>
+        <Card.Header>How to Write for the Web</Card.Header>
+        <Card.Body>
+          <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+        </Card.Body>
+        <Card.Footer isType="button">
+          <a href="https://carleton.ca/webservices">More info</a>
+        </Card.Footer>
+      </>
+    ),
+  },
+}
+
+export const EventCard: Story = {
   render: () => (
-    <>
-      <TopBar>
-        <TopBar.Primary>
-          <TopBar.Logo link="https://carleton.ca/webservices">
-            <a href="https://carleton.ca" className="cu-topbar--logo">
-              <img
-                className="culogo"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
-                width="130"
-                height="35"
-                alt="Logo"
-              />
-              <img
-                className="cushield"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
-                width="28"
-                height="35"
-                alt="Logo"
-              />
-            </a>
-          </TopBar.Logo>
-          <TopBar.Aside />
-        </TopBar.Primary>
-      </TopBar>
+    <Card hasShadow="onCard">
+      <Card.Figure>
+        <img src={eventData.image} alt={eventData.alt} width="400" height="175" />
+      </Card.Figure>
+      <Card.DateThumb startDate={eventData.startDate} endDate={eventData.endDate} />
+      <Card.Header>{eventData.title}</Card.Header>
+      <Card.Body>
+        <Card.EventMeta
+          startDateTime={eventData.startDate}
+          endDateTime={eventData.endDate}
+          onCampus={eventData.on_campus}
+          onCampusBuilding={eventData.on_campus_building}
+          onCampusRoomNumber={eventData.on_campus_room_number}
+          eventAddress={eventData.event_address}
+        />
+      </Card.Body>
+      <Card.Footer isType="button">
+        <a href={eventData.link}>Event details</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
 
-      <Main>
-        <Section hasProse>
-          <TextImage>
-            <TextImage.Content headerType="h1" title="Card Refactor">
-              <p>
-                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-              </p>
-            </TextImage.Content>
-          </TextImage>
+export const NewsCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard">
+      <Card.Figure>
+        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
+      </Card.Figure>
+      <Card.Header date={newsData.date}>{newsData.title}</Card.Header>
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+      </Card.Body>
+      <Card.Footer isType="button">
+        <a href={newsData.link}>Read more</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
 
-          <Container>
-            <Heading text="Cards Examples" />
-            <Column cols="3">
-              <Card hasShadow="onCard">
-                <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-                <Card.Footer isType="button">
-                  <a href="https://carleton.ca">Read More</a>
-                </Card.Footer>
-              </Card>
+export const IconCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard" noLink>
+      <Card.IconThumb icon={iconData.icon} svgPath="./assets/graphics/" />
+      <Card.Header>{iconData.title}</Card.Header>
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+      </Card.Body>
+      <Card.Footer isType="button" buttonStyle="grey">
+        <a href={iconData.link}>Get informed</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
 
-              <Card hasShadow="onCard">
-                <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-                <Card.Footer isType="button" buttonType="outline">
-                  <a href="https://carleton.ca">Read More</a>
-                </Card.Footer>
-              </Card>
+export const PeopleCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard" isCenter>
+      <Card.Figure isRound>
+        <img src={peopleData.image} alt={peopleData.alt} width="280" height="280" />
+      </Card.Figure>
+      <Card.Header>{`${peopleData.firstName} ${peopleData.lastName}`}</Card.Header>
+      <Card.Body>
+        <Card.PeopleMeta jobTitle={peopleData.jobTitle} phone={peopleData.phone}>
+          <a href={`mailto:${peopleData.email}`}>{peopleData.email}</a>
+        </Card.PeopleMeta>
+      </Card.Body>
+      <Card.Footer isType="button">
+        <a href={peopleData.link}>View profile</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
 
-              <Card hasShadow="onCard">
-                <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-                <Card.Footer isType="button" buttonStyle="grey">
-                  <a href="https://carleton.ca">Read More</a>
-                </Card.Footer>
-              </Card>
+export const SpotlightCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard" noLink>
+      <Card.ImageThumb>
+        <img src={newsData.image} alt={newsData.alt} width="200" height="133" />
+      </Card.ImageThumb>
+      <Card.Header>{newsData.title}</Card.Header>
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+      </Card.Body>
+      <Card.Footer isType="button" buttonStyle="grey">
+        <a href={newsData.link}>Get informed</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
 
-              <Card hasShadow="onCard">
-                <Card.Figure>
-                  <img src="./sample-imgs/event-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.DateBox startDate="2023-03-31 10:00:00" endDate="2023-03-31 13:30:00" />
-                <Card.Header>Coffee Break with Web Services</Card.Header>
-                <Card.Body>
-                  <Card.EventMeta
-                    startDateTime="2023-03-31 10:00:00"
-                    endDateTime="2023-03-31 13:30:00"
-                    onCampus
-                    onCampusBuilding="Pigiarvik (ᐱᒋᐊᕐᕕᒃ)"
-                    onCampusRoomNumber="401"
-                    eventAddress="71953 Schmidt Row Apt. 896\nLaurianefurt, TN 88829-0223"
-                  />
-                </Card.Body>
-                <Card.Footer isType="button" buttonType="outline">
-                  <a href="https://carleton.ca">More Info</a>
-                </Card.Footer>
-              </Card>
+export const StatCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard" hasRedBorder noLink>
+      <Card.Stats stat={statData.stat} desc={statData.desc} />
+    </Card>
+  ),
+}
 
-              <Card hasShadow="onCard" isCenter>
-                <Card.Figure isRound>
-                  <img src="./sample-imgs/people-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.Header>Natasha Culingham</Card.Header>
-                <Card.Body>
-                  <Card.PeopleMeta jobTitle="Web Develop" phone="613-520-2600 x4910">
-                    <a href="mailto:web.developer@carleton.ca">web.developer@carleton.ca</a>
-                  </Card.PeopleMeta>
-                </Card.Body>
-                <Card.Footer isType="button" buttonStyle="dark-grey">
-                  <a href="https://carleton.ca">View Profile</a>
-                </Card.Footer>
-              </Card>
-
-              <Card hasShadow="onCard" noLink>
-                <Card.Video source="https://www.youtube.com/watch?v=7h5m7Clm9uo" />
-                <Card.Header>Five Great Reasons to Choose Carleton</Card.Header>
-              </Card>
-            </Column>
-          </Container>
-
-          <Container>
-            <Heading text="News Cards Examples" />
-            <Column cols="3">
-              <Card hasShadow="onCard">
-                <a href="https://carleton.ca">
-                  <Card.Figure>
-                    <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                  </Card.Figure>
-                  <Card.Header date="2022-12-16">
-                    End-of-Year Reflections and Resolutions for Our Web Services Team
-                  </Card.Header>
-                </a>
-              </Card>
-
-              <Card hasShadow="onCard">
-                <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-                <Card.Footer>
-                  <a href="https://carleton.ca">More Info</a>
-                </Card.Footer>
-              </Card>
-
-              <Card hasShadow="onHover">
-                <Card.Figure>
-                  <img src="./sample-imgs/news-img.jpg" alt="News post example" />
-                </Card.Figure>
-                <Card.Header>
-                  <a href="https://carleton.ca">Captivating Captions: Why We Use Captions on Videos</a>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-              </Card>
-
-              <Card hasShadow="onHover" isGrey>
-                <Card.Header date="2022-12-16">How to Write for the Web</Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-                <Card.Footer>
-                  <a href="https://carleton.ca">More Info</a>
-                </Card.Footer>
-              </Card>
-
-              <Card hasShadow="onCard" isGrey>
-                <Card.Header>
-                  <a href="https://carleton.ca">Captivating Captions: Why We Use Captions on Videos</a>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-              </Card>
-
-              <Card hasShadow="onHover" isGrey>
-                <a href="https://carleton.ca">
-                  <Card.Header date="2022-12-16">
-                    End-of-Year Reflections and Resolutions for Our Web Services Team
-                  </Card.Header>
-                </a>
-                <Card.Footer>
-                  <a href="https://carleton.ca">More Info</a>
-                </Card.Footer>
-              </Card>
-            </Column>
-          </Container>
-        </Section>
-      </Main>
-
-      <FooterBasic />
-    </>
+export const VideoCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard">
+      <Card.Video source={videoData.source} />
+      <Card.Header>{videoData.title}</Card.Header>
+    </Card>
   ),
 }
