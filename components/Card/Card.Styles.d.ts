@@ -16,6 +16,7 @@ export declare const styles: {
 export declare const figureStyles: {
     figure: string;
     round: string;
+    imgThumb: string;
 };
 export declare const metaStyles: {
     wrapper: string;

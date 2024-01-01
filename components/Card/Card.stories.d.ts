@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-declare const meta: Meta;
+import { Card } from './Card';
+declare const meta: Meta<typeof Card>;
 export default meta;
-type Story = StoryObj;
-export declare const CardRefactor: Story;
+type Story = StoryObj<typeof Card>;
+export declare const Default: Story;
+export declare const EventCard: Story;
+export declare const NewsCard: Story;
+export declare const IconCard: Story;
+export declare const PeopleCard: Story;
+export declare const SpotlightCard: Story;
+export declare const StatCard: Story;
+export declare const VideoCard: Story;
 //# sourceMappingURL=Card.stories.d.ts.map

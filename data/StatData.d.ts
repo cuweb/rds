@@ -1,4 +1,4 @@
-export declare const VideoDataSingle: {
+export declare const StatDataSingle: {
     stat: string;
     desc: string;
 };
