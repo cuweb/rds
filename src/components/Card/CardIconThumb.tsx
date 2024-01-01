@@ -7,8 +7,9 @@ export interface CardIconThumbProps {
 
 export const CardIconThumb = ({ icon, bgType = 'red', hasShadow, svgPath }: CardIconThumbProps) => {
   // Check if incoming svgPath uses carleton.ca
-  const fontAwesome =
-    !svgPath || svgPath.includes('carleton.ca') ? 'https://cdn.carleton.ca/rds/assets/graphics/' : svgPath
+  const fontAwesome = svgPath
+  // const fontAwesome =
+  //   !svgPath || svgPath.includes('carleton.ca') ? 'https://cdn.carleton.ca/rds/assets/graphics/' : svgPath
 
   const iconShadow = hasShadow ? 'shadow-md' : ''
 
