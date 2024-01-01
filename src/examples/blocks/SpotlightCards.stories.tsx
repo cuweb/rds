@@ -7,7 +7,7 @@ import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Column } from '../../layouts/Column/Column'
-import { IconData } from '../../data/IconData'
+import { NewsData } from '../../data/NewsData'
 import { Card } from '../../components/Card/Card'
 
 const meta: Meta = {
@@ -17,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const IconCardOptions: Story = {
+export const SpotlightCardOptions: Story = {
   render: () => (
     <>
       <TopBar>
@@ -47,7 +47,7 @@ export const IconCardOptions: Story = {
       <Main>
         <Section hasProse>
           <TextImage>
-            <TextImage.Content headerType="h1" title="Icon Cards">
+            <TextImage.Content headerType="h1" title="Spotlight Cards">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -57,16 +57,18 @@ export const IconCardOptions: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Icon Cards: Shadow on Static & Hover" />
+            <Heading text="Spotlight Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} hasShadow="onCard" noLink>
-                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
+                  <Card.ImageThumb>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Card.ImageThumb>
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
-                  <Card.Footer isType="button" buttonStyle="grey">
+                  <Card.Footer isType="button" buttonStyle="red">
                     <a href={link}>More info</a>
                   </Card.Footer>
                 </Card>
@@ -75,16 +77,18 @@ export const IconCardOptions: Story = {
           </Container>
 
           <Container>
-            <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
+            <Heading text="Spotlight Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} isGrey noLink>
-                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" bgType="white" hasShadow />
+                  <Card.ImageThumb>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Card.ImageThumb>
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
-                  <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
+                  <Card.Footer isType="button" buttonStyle="red">
                     <a href={link}>More info</a>
                   </Card.Footer>
                 </Card>
@@ -93,16 +97,18 @@ export const IconCardOptions: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Icon Cards: Shadow on Static & Hover" />
+            <Heading text="Spotlight Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} noLink>
-                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" bgType="none" />
+                  <Card.ImageThumb>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Card.ImageThumb>
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
-                  <Card.Footer isType="button" buttonStyle="grey">
+                  <Card.Footer isType="button" buttonStyle="red">
                     <a href={link}>More info</a>
                   </Card.Footer>
                 </Card>
@@ -111,16 +117,18 @@ export const IconCardOptions: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
+            <Heading text="Spotlight Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} isGrey hasShadow="onCard" noLink>
-                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
+                  <Card.ImageThumb>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Card.ImageThumb>
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
-                  <Card.Footer isType="button" buttonType="outline" buttonStyle="dark-grey">
+                  <Card.Footer isType="button" buttonStyle="red">
                     <a href={link}>More info</a>
                   </Card.Footer>
                 </Card>

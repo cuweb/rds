@@ -2542,6 +2542,10 @@ select {
   max-width: 40%;
 }
 
+.max-w-\[45\%\] {
+  max-width: 45%;
+}
+
 .max-w-\[500px\] {
   max-width: 500px;
 }
