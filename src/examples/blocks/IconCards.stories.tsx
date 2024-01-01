@@ -7,7 +7,7 @@ import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Column } from '../../layouts/Column/Column'
-import { NewsData } from '../../data/NewsData'
+import { IconData } from '../../data/IconData'
 import { Card } from '../../components/Card/Card'
 
 const meta: Meta = {
@@ -59,7 +59,7 @@ export const IconCardOptions: Story = {
           <Container>
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noLink>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
@@ -77,7 +77,7 @@ export const IconCardOptions: Story = {
           <Container>
             <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey noLink>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" bgType="white" hasShadow />
                   <Card.Header>{title}</Card.Header>
@@ -95,7 +95,7 @@ export const IconCardOptions: Story = {
           <Container isGrey>
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} noLink>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" bgType="none" />
                   <Card.Header>{title}</Card.Header>
@@ -113,7 +113,7 @@ export const IconCardOptions: Story = {
           <Container isGrey>
             <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, title, icon }) => (
+              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey hasShadow="onCard" noLink>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
