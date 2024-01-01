@@ -7,6 +7,7 @@ import { CardFigure } from './CardFigure'
 import { CardFooter } from './CardFooter'
 import { CardHeader } from './CardHeader'
 import { CardIconThumb } from './CardIconThumb'
+import { CardImageThumb } from './CardImageThumb'
 import { CardPeopleMeta } from './CardPeopleMeta'
 import { CardStats } from './CardStats'
 import { CardVideo } from './CardVideo'
@@ -56,6 +57,7 @@ export const Card = Object.assign(CardWrapper, {
   Figure: CardFigure,
   DateThumb: CardDateThumb,
   IconThumb: CardIconThumb,
+  ImageThumb: CardImageThumb,
   Video: CardVideo,
   Header: CardHeader,
   Body: CardBody,

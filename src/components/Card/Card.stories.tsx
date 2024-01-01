@@ -113,6 +113,23 @@ export const PeopleCard: Story = {
   ),
 }
 
+export const SpotlightCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard" noLink>
+      <Card.ImageThumb>
+        <img src={newsData.image} alt={newsData.alt} width="200" height="133" />
+      </Card.ImageThumb>
+      <Card.Header>{newsData.title}</Card.Header>
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+      </Card.Body>
+      <Card.Footer isType="button" buttonStyle="grey">
+        <a href={newsData.link}>Get informed</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
+
 export const StatCard: Story = {
   render: () => (
     <Card hasShadow="onCard" hasRedBorder noLink>
