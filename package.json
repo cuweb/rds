@@ -38,6 +38,8 @@
     "prettier": "2.8.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "6.5.1",
+    "@fortawesome/free-solid-svg-icons": "6.5.1",
     "@headlessui/react": "1.7.17",
     "@heroicons/react": "2.1.1",
     "rds-tailwind-theme": "0.6.1",

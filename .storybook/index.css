@@ -2346,6 +2346,10 @@ select {
   height: 2rem;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
 .h-96 {
   height: 24rem;
 }
@@ -2400,6 +2404,10 @@ select {
 
 .w-1 {
   width: 0.25rem;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-11\/12 {
@@ -2476,6 +2484,10 @@ select {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-\[130px\] {
@@ -3345,8 +3357,16 @@ select {
   fill: #999999;
 }
 
+.fill-cu-red {
+  fill: #E91C24;
+}
+
 .fill-red-600 {
   fill: #dc2626;
+}
+
+.fill-white {
+  fill: #fff;
 }
 
 .object-cover {

@@ -77,7 +77,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -119,7 +119,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -161,7 +161,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -203,7 +203,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -245,7 +245,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -287,7 +287,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -329,7 +329,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -371,7 +371,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -413,7 +413,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -455,7 +455,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -497,7 +497,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta
@@ -539,7 +539,7 @@ export const EventCardOptions: Story = {
                     <Card.Figure>
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
-                    <Card.DateBox startDate={startDate} endDate={endDate} />
+                    <Card.DateThumb startDate={startDate} endDate={endDate} />
                     <Card.Header>{title}</Card.Header>
                     <Card.Body>
                       <Card.EventMeta

@@ -101,7 +101,7 @@ export const CardRefactor: Story = {
                 <Card.Figure>
                   <img src="./sample-imgs/event-img.jpg" alt="News post example" />
                 </Card.Figure>
-                <Card.DateBox startDate="2023-03-31 10:00:00" endDate="2023-03-31 13:30:00" />
+                <Card.DateThumb startDate="2023-03-31 10:00:00" endDate="2023-03-31 13:30:00" />
                 <Card.Header>Coffee Break with Web Services</Card.Header>
                 <Card.Body>
                   <Card.EventMeta

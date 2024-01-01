@@ -1,11 +1,11 @@
 import { getDate, parse, format, isSameDay } from 'date-fns'
 
-export interface CardDateBoxProps {
+export interface CardDateThumbProps {
   startDate: string
   endDate: string
 }
 
-export const CardDateBox = ({ startDate, endDate }: CardDateBoxProps) => {
+export const CardDateThumb = ({ startDate, endDate }: CardDateThumbProps) => {
   const eventStartDate = parse(startDate, 'yyyy-MM-dd HH:mm:ss', new Date())
   const eventEndDate = parse(endDate, 'yyyy-MM-dd HH:mm:ss', new Date())
 
@@ -31,4 +31,4 @@ export const CardDateBox = ({ startDate, endDate }: CardDateBoxProps) => {
   )
 }
 
-CardDateBox.displayName = 'Card.DateBox'
+CardDateThumb.displayName = 'Card.DateThumb'
