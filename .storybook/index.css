@@ -4236,12 +4236,18 @@ StackedList for ToC
 
 /* If a grey container immediately follows a white container */
 
-.cu-container.bg-white + .cu-container.bg-cu-black-50 {
+.cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-container.bg-white + .cu-container.cu-wideimage,
+.cu-container.bg-cu-black-50 + .cu-container.cu-wideimage,
+.cu-column + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.bg-cu-black-50 {
+  .cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-container.bg-white + .cu-container.cu-wideimage,
+.cu-container.bg-cu-black-50 + .cu-container.cu-wideimage,
+.cu-column + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
@@ -4534,12 +4540,26 @@ StackedList for ToC
   color: rgb(77 77 77 / var(--tw-text-opacity));
 }
 
-.cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a {
+.cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a {
+  .cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
+    margin-top: 2.5rem;
+  }
+}
+
+.cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
@@ -4651,12 +4671,26 @@ StackedList for ToC
   margin-top: 1rem;
 }
 
-.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50 {
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50 {
+  .cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
+    margin-top: 2.5rem;
+  }
+}
+
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
@@ -4901,12 +4935,26 @@ StackedList for ToC
   margin-top: 1rem;
 }
 
-.cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50 {
+.cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50 {
+  .cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
+    margin-top: 2.5rem;
+  }
+}
+
+.cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
