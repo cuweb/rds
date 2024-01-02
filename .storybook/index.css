@@ -4254,7 +4254,7 @@ StackedList for ToC
 
 /* If there are consecutive grey containers */
 
-.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
+.cu-container.bg-cu-black-50:not(.cu-wideimage) + .cu-container.bg-cu-black-50:not(.cu-wideimage) {
   margin-top: -0.5rem;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -4564,7 +4564,7 @@ StackedList for ToC
   }
 }
 
-.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.bg-cu-black-50 {
+.cu-container.cu-card-button-grey.cu-card-button-solid a:not(.cu-wideimage) + .cu-container.bg-cu-black-50:not(.cu-wideimage) {
   margin-top: -0.5rem;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;

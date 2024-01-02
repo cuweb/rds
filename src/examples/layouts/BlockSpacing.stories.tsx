@@ -94,7 +94,7 @@ export const BlockSpacing: Story = {
             </Column>
           </Container>
 
-          <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
+          <WideImage title="Wide image block with buttons and background image">
             <ButtonGroup>
               <Button title="Apply Now" />
               <Button color="white" isType="outline" title="Request Information" />
