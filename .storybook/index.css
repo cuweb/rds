@@ -2229,13 +2229,6 @@ select {
   -webkit-line-clamp: 2;
 }
 
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
 .block {
   display: block;
 }
@@ -2754,6 +2747,10 @@ select {
   scroll-padding-bottom: 0.5rem;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2806,10 +2803,6 @@ select {
 
 .gap-1 {
   gap: 0.25rem;
-}
-
-.gap-1\.5 {
-  gap: 0.375rem;
 }
 
 .gap-10 {
@@ -3388,6 +3381,10 @@ select {
   padding: 0px !important;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -3414,10 +3411,6 @@ select {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-1 {
@@ -3558,10 +3551,6 @@ select {
   padding-bottom: 56.25%;
 }
 
-.pl-0 {
-  padding-left: 0px;
-}
-
 .pl-10 {
   padding-left: 2.5rem;
 }
@@ -3584,6 +3573,10 @@ select {
 
 .pr-10 {
   padding-right: 2.5rem;
+}
+
+.pr-14 {
+  padding-right: 3.5rem;
 }
 
 .pr-2 {
@@ -4459,7 +4452,8 @@ StackedList for ToC
   padding-bottom: 1.75rem;
 }
 
-.cu-card > a:hover h2 {
+.cu-card > a:hover h2,
+.cu-card > a:hover h3 {
   --tw-text-opacity: 1;
   color: rgb(187 18 25 / var(--tw-text-opacity));
 }
@@ -4787,76 +4781,14 @@ StackedList for ToC
   color: rgb(233 28 36 / var(--tw-text-opacity));
 }
 
-/* Listing Components */
-
-.group:hover .cu-listing--nolink h2,.group:hover 
-.cu-listing--nolink h3 {
-  --tw-text-opacity: 1;
-  color: rgb(233 28 36 / var(--tw-text-opacity));
-}
+/* Listing Images */
 
 .cu-listing a {
-  position: relative;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 2rem;
-  outline-offset: -2px;
-}
-
-.cu-listing a:focus {
-  border-radius: 0.375rem;
-}
-
-@container (min-width: 36rem) {
-  @media (min-width: 768px) {
-    .cu-listing a {
-      flex-direction: row;
-      gap: 2rem;
-    }
-  }
+  display: inline-flex;
 }
 
 .cu-listing img {
   border-radius: 0.375rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media (min-width: 768px) {
-  .cu-listing--small {
-    gap: 0.375rem !important;
-  }
-}
-
-.cu-listing--small h2,
-.cu-listing--small h3 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-@container (min-width: 42rem) {
-  @media (min-width: 768px) {
-    .cu-listing--small h2,
-.cu-listing--small h3 {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .cu-listing--small time {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .cu-listing--small p:not(.cu-badges) {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
 }
 
 /* TopBar Components */
@@ -7871,11 +7803,6 @@ StackedList for ToC
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-slate-50:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -8457,14 +8384,6 @@ StackedList for ToC
     gap: 4rem;
   }
 
-  .md\:gap-3 {
-    gap: 0.75rem;
-  }
-
-  .md\:gap-3\.5 {
-    gap: 0.875rem;
-  }
-
   .md\:gap-5 {
     gap: 1.25rem;
   }
@@ -8477,16 +8396,16 @@ StackedList for ToC
     background-size: cover;
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:p-12 {
     padding: 3rem;
   }
 
   .md\:p-20 {
     padding: 5rem;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
   }
 
   .md\:px-10 {
@@ -8601,10 +8520,6 @@ StackedList for ToC
 
   .md\:pb-8 {
     padding-bottom: 2rem;
-  }
-
-  .md\:pl-0 {
-    padding-left: 0px;
   }
 
   .md\:pt-14 {
@@ -8744,6 +8659,18 @@ StackedList for ToC
   }
 }
 
+@container (min-width: 32rem) {
+  @media (min-width: 768px) {
+    .\@lg\:md\:flex-row {
+      flex-direction: row;
+    }
+
+    .\@lg\:md\:gap-7 {
+      gap: 1.75rem;
+    }
+  }
+}
+
 @container (min-width: 36rem) {
   @media (min-width: 768px) {
     .\@xl\:md\:h-\[180px\] {
@@ -8760,25 +8687,6 @@ StackedList for ToC
 
     .\@xl\:md\:gap-8 {
       gap: 2rem;
-    }
-
-    .\@xl\:md\:text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-
-    .\@xl\:md\:text-xl {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-    }
-  }
-}
-
-@container (min-width: 42rem) {
-  @media (min-width: 768px) {
-    .\@2xl\:md\:text-base {
-      font-size: 1rem;
-      line-height: 1.5rem;
     }
   }
 }
@@ -8965,15 +8873,6 @@ StackedList for ToC
     .\@xs\:lg\:text-4xl {
       font-size: 2.25rem;
       line-height: 2.5rem;
-    }
-  }
-}
-
-@container (min-width: 48rem) {
-  @media (min-width: 1024px) {
-    .\@3xl\:lg\:text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem;
     }
   }
 }

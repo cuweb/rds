@@ -7,8 +7,8 @@ import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
 import { Listing } from '../../components/Listing/Listing'
-import { NewsData } from '../../data/NewsData'
 import { TextImage } from '../../components/TextImage/TextImage'
+import { PeopleData } from '../../data/PeopleData'
 
 const meta: Meta = {
   title: 'Examples/Blocks',
@@ -17,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const NewsListingOptions: Story = {
+export const PeopleListing: Story = {
   render: () => (
     <>
       <TopBar>
@@ -47,7 +47,7 @@ export const NewsListingOptions: Story = {
       <Main>
         <Section hasProse>
           <TextImage hasBorder>
-            <TextImage.Content headerType="h1" title="News Listing">
+            <TextImage.Content headerType="h1" title="People Listing">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -57,44 +57,94 @@ export const NewsListingOptions: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="News Listings: Default" />
+            <Heading text="People Listings: Default" />
             <StackedList hasShadow>
-              {NewsData.slice(0, 4).map(({ id, title, link, date, image, alt }) => (
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
-                  <a href={link}>
-                    <Listing.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={date} />
-                      <Listing.Header text={title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer isType="button">
+                      <a href={link}>View profile</a>
+                    </Listing.Footer>
+                  </Listing.Body>
                 </Listing>
               ))}
             </StackedList>
           </Container>
 
           <Container>
-            <Heading text="News Listings: Single Column" />
+            <Heading text="People Listings: One Column" />
             <StackedList cols="1" hasShadow>
-              {NewsData.slice(0, 3).map(({ id, title, link, date, image, alt }) => (
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
-                  <a href={link}>
-                    <Listing.Figure>
-                      <img src={image} alt={alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={date} />
-                      <Listing.Header text={title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer isType="button">
+                      <a href={link}>View profile</a>
+                    </Listing.Footer>
+                  </Listing.Body>
                 </Listing>
               ))}
             </StackedList>
           </Container>
+
+          <Container isGrey>
+            <Heading text="People Listings: Default with Grey Bg" />
+            <StackedList hasShadow>
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Listing key={id}>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer isType="button">
+                      <a href={link}>View profile</a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <Heading text="People Listings: One Column with Grey Bg" />
+            <StackedList cols="1" hasShadow>
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Listing key={id}>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer isType="button">
+                      <a href={link}>View profile</a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Heading text="People Listings: Offset" />
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
@@ -103,111 +153,75 @@ export const NewsListingOptions: Story = {
             in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
             luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
           </p>
-          <Heading text="News Listings: Offset" />
-          <StackedList header="Recent News" as="ul" cols="1" listType="posts" offset="right" hasShadow>
-            {NewsData.slice(0, 3).map(({ id, title, link, date, image, alt }) => (
+
+          <StackedList header="Our People" as="ul" cols="1" listType="posts" offset="right" hasShadow>
+            {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
-                <a href={link}>
-                  <Listing.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Listing.Figure>
-                  <Listing.Content>
-                    <Listing.PostMeta date={date} />
-                    <Listing.Header text={title} />
-                    <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Listing.Content>
-                </a>
+                <Listing.Figure>
+                  <img src={image} alt={alt} width="200" height="200" />
+                </Listing.Figure>
+                <Listing.Body>
+                  <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                  <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                    <a href={`mailto:${email}`}>{email}</a>
+                  </Listing.PeopleMeta>
+                  <Listing.Footer isType="button">
+                    <a href={link}>View profile</a>
+                  </Listing.Footer>
+                </Listing.Body>
               </Listing>
             ))}
           </StackedList>
-          <p>
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor.
-          </p>
-          <p>
-            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
-            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-          </p>
-          <p>
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor.
-          </p>
-          <p>
-            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
-            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-          </p>
-          <p>
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor.
-          </p>
-          <p>
-            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
-            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-          </p>
-          <p>
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor.
-          </p>
-          <p>
-            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
-            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-          </p>
 
-          <Container isGrey>
-            <Heading text="News Listings: Default" />
-            <StackedList hasShadow>
-              {NewsData.slice(0, 4).map((item) => (
-                <Listing key={item?.id}>
-                  <a href={item.link}>
-                    <Listing.Figure>
-                      <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={item?.date} />
-                      <Listing.Header text={item?.title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
-                </Listing>
-              ))}
-            </StackedList>
-          </Container>
-
-          <Container isGrey>
-            <Heading text="News Listings: Single Column" />
-            <StackedList cols="1" hasShadow>
-              {NewsData.slice(0, 3).map((item) => (
-                <Listing key={item?.id}>
-                  <a href={item.link}>
-                    <Listing.Figure>
-                      <img src={item?.image} alt={item?.alt} width="400" height="266" />
-                    </Listing.Figure>
-                    <Listing.Content>
-                      <Listing.PostMeta date={item?.date} />
-                      <Listing.Header text={item?.title} />
-                      <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                    </Listing.Content>
-                  </a>
-                </Listing>
-              ))}
-            </StackedList>
-          </Container>
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor.
+          </p>
+          <p>
+            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
+            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+          </p>
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor.
+          </p>
+          <p>
+            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
+            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+          </p>
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor.
+          </p>
+          <p>
+            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
+            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+          </p>
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor. Nobis voluptatem dolorum et eum doloremque cupiditate
+            velit. Praesentium architecto a distinctio aut reprehenderit ducimus.
+          </p>
+          <p>
+            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
+            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+          </p>
         </Section>
       </Main>
 

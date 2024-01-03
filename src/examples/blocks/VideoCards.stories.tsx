@@ -17,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const VideoCardOptions: Story = {
+export const VideoCards: Story = {
   render: () => (
     <>
       <TopBar>

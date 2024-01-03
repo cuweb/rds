@@ -22,8 +22,8 @@ export const CardHeader = ({ children, as = 'h2', date }: CardHeaderProps) => {
 
   return (
     <header className="px-6 first:mt-6">
+      {date && <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">{formatedDate}</time>}
       <HeaderComponent className="text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
-        {date && <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">{formatedDate}</time>}
         {children}
       </HeaderComponent>
     </header>

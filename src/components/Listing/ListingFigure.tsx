@@ -1,12 +1,11 @@
 import React from 'react'
-import { figureStyles } from './Listing.Styles'
 
 export interface ListingFigureProps {
   children: React.ReactNode
 }
 
 export const ListingFigure = ({ children }: ListingFigureProps) => {
-  return <figure className={`cu-figure ${figureStyles.figure}`}>{children}</figure>
+  return <figure className="flex-none max-w-[40%] @xl:md:max-w-[25%]">{children}</figure>
 }
 
 ListingFigure.displayName = 'Listing.Figure'

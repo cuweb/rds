@@ -108,9 +108,9 @@ export const Homepage: Story = {
                     }) => (
                       <Listing key={id}>
                         <a href={link}>
-                          <Listing.DateBox startDate={startDate} endDate={endDate} />
-                          <Listing.Content>
-                            <Listing.Header text={title} />
+                          <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                          <Listing.Body>
+                            <Listing.Header>{title}</Listing.Header>
                             <Listing.EventMeta
                               startDateTime={startDate}
                               endDateTime={endDate}
@@ -119,8 +119,7 @@ export const Homepage: Story = {
                               onCampusRoomNumber={on_campus_room_number}
                               eventAddress={event_address}
                             />
-                            {/* <Listing.Badges tags={tags} /> */}
-                          </Listing.Content>
+                          </Listing.Body>
                         </a>
                       </Listing>
                     ),
