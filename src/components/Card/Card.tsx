@@ -15,7 +15,7 @@ import { CardVideo } from './CardVideo'
 export interface CardProps {
   children: React.ReactNode
   isCenter?: boolean
-  noLink?: boolean
+  noHover?: boolean
   hasShadow?: 'onCard' | 'onHover'
   isGrey?: boolean
   hasRedBorder?: boolean
@@ -32,21 +32,21 @@ const cardStyles = {
   zoom: `group duration-300 ease-in hover:scale-[1.04]`,
 }
 
-export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
+export const CardWrapper = ({ children, isCenter, noHover, hasShadow, hasRedBorder, isGrey }: CardProps) => {
   const bgStyles = isGrey ? cardStyles.greyBg : cardStyles.whiteBg
   const addShadow =
     hasShadow === 'onCard'
-      ? `${cardStyles.shadow} ${!noLink ? cardStyles.shadowHover : ''}`
-      : hasShadow === 'onHover' && !noLink
+      ? `${cardStyles.shadow} ${!noHover ? cardStyles.shadowHover : ''}`
+      : hasShadow === 'onHover' && !noHover
         ? cardStyles.shadowHover
         : ''
   const addRedBorder = hasRedBorder ? cardStyles.redBorder : ''
   const centerText = isCenter ? cardStyles.center : ''
-  const noLinkStyles = noLink ? '' : cardStyles.zoom
+  const noHoverStyles = noHover ? '' : cardStyles.zoom
 
   return (
     <div
-      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}
+      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 ${addRedBorder} ${addShadow} ${centerText} ${noHoverStyles} ${bgStyles}`}
     >
       {children}
     </div>

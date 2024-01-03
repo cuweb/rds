@@ -60,7 +60,7 @@ export const SpotlightCardOptions: Story = {
             <Heading text="Spotlight Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
-                <Card key={id} hasShadow="onCard" noLink>
+                <Card key={id} hasShadow="onCard" noHover>
                   <Card.ImageThumb>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.ImageThumb>
@@ -80,7 +80,7 @@ export const SpotlightCardOptions: Story = {
             <Heading text="Spotlight Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
-                <Card key={id} isGrey noLink>
+                <Card key={id} isGrey noHover>
                   <Card.ImageThumb>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.ImageThumb>
@@ -100,7 +100,7 @@ export const SpotlightCardOptions: Story = {
             <Heading text="Spotlight Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
-                <Card key={id} noLink>
+                <Card key={id} noHover>
                   <Card.ImageThumb>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.ImageThumb>
@@ -120,7 +120,7 @@ export const SpotlightCardOptions: Story = {
             <Heading text="Spotlight Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
-                <Card key={id} isGrey hasShadow="onCard" noLink>
+                <Card key={id} isGrey hasShadow="onCard" noHover>
                   <Card.ImageThumb>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.ImageThumb>

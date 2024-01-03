@@ -32,7 +32,10 @@ export const WideImage = ({
   const imageTextStyles = image ? 'text-white' : 'text-cu-black-700'
 
   return (
-    <div style={inlineStyle} className={`${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}>
+    <div
+      style={inlineStyle}
+      className={`cu-wideimage cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
+    >
       {image && <div className={`${styles.imageOverlay} ${rdsOpacity[opacity]}`}></div>}
 
       <div className={styles.content}>
