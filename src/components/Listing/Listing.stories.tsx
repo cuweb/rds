@@ -42,7 +42,7 @@ export const SmallHeader: Story = {
 
 export const WithoutLink: Story = {
   args: {
-    noLink: true,
+    noHover: true,
     children: (
       <Listing.Content>
         <Listing.Header text={content.title} />

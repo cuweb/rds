@@ -1567,23 +1567,24 @@ select {
 }
 
 .prose-xl :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  font-size: 1.8em;
   margin-top: 1.5555556em;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
+  font-size: 1.7em;
 }
 
 .prose-xl :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  font-size: 1.5em;
   margin-top: 1.6em;
   margin-bottom: 0.6666667em;
   line-height: 1.3333333;
+  font-size: 1.5em;
 }
 
 .prose-xl :where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   margin-top: 1.8em;
   margin-bottom: 0.6em;
   line-height: 1.6;
+  font-size: 1.35em;
 }
 
 .prose-xl :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -1781,6 +1782,11 @@ select {
 
 .prose-xl :where(.prose-xl > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   margin-bottom: 0;
+}
+
+.prose-xl :where(h2, h3, h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-weight: 600;
+  margin-bottom: 0.5em;
 }
 
 .prose-rds {
@@ -3410,6 +3416,10 @@ select {
   padding: 2rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -4236,19 +4246,25 @@ StackedList for ToC
 
 /* If a grey container immediately follows a white container */
 
-.cu-container.bg-white + .cu-container.bg-cu-black-50 {
+.cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-container.bg-white + .cu-container.cu-wideimage,
+.cu-container.bg-cu-black-50 + .cu-container.cu-wideimage,
+.cu-column + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.bg-cu-black-50 {
+  .cu-container.bg-white + .cu-container.bg-cu-black-50,
+.cu-container.bg-white + .cu-container.cu-wideimage,
+.cu-container.bg-cu-black-50 + .cu-container.cu-wideimage,
+.cu-column + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
 
 /* If there are consecutive grey containers */
 
-.cu-container.bg-cu-black-50 + .cu-container.bg-cu-black-50 {
+.cu-container.bg-cu-black-50:not(.cu-wideimage) + .cu-container.bg-cu-black-50:not(.cu-wideimage) {
   margin-top: -0.5rem;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -4534,17 +4550,31 @@ StackedList for ToC
   color: rgb(77 77 77 / var(--tw-text-opacity));
 }
 
-.cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a {
+.cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a {
+  .cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
 
-.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.bg-cu-black-50 {
+.cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.bg-white + .cu-container.cu-card-button-grey.cu-card-button-solid a,
+.cu-container.cu-card-button-grey.cu-card-button-solid a + .cu-container.cu-wideimage {
+    margin-top: 2.5rem;
+  }
+}
+
+.cu-container.cu-card-button-grey.cu-card-button-solid a:not(.cu-wideimage) + .cu-container.bg-cu-black-50:not(.cu-wideimage) {
   margin-top: -0.5rem;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -4651,12 +4681,26 @@ StackedList for ToC
   margin-top: 1rem;
 }
 
-.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50 {
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50 {
+  .cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
+    margin-top: 2.5rem;
+  }
+}
+
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.bg-cu-black-50,
+.cu-container.cu-card-button-white.cu-card-button-solid a + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
@@ -4901,12 +4945,26 @@ StackedList for ToC
   margin-top: 1rem;
 }
 
-.cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50 {
+.cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50 {
+  .cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
+    margin-top: 2.5rem;
+  }
+}
+
+.cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cu-container.cu-topbar--dropdown + .cu-container.bg-cu-black-50,
+.cu-container.cu-topbar--dropdown + .cu-container.cu-wideimage {
     margin-top: 2.5rem;
   }
 }
@@ -6932,23 +6990,24 @@ StackedList for ToC
   }
 
   .ql-editor :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    font-size: 1.8em !important;
     margin-top: 1.5555556em !important;
     margin-bottom: 0.8888889em !important;
     line-height: 1.1111111 !important;
+    font-size: 1.7em !important;
   }
 
   .ql-editor :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    font-size: 1.5em !important;
     margin-top: 1.6em !important;
     margin-bottom: 0.6666667em !important;
     line-height: 1.3333333 !important;
+    font-size: 1.5em !important;
   }
 
   .ql-editor :where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     margin-top: 1.8em !important;
     margin-bottom: 0.6em !important;
     line-height: 1.6 !important;
+    font-size: 1.35em !important;
   }
 
   .ql-editor :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -7147,6 +7206,11 @@ StackedList for ToC
   .ql-editor :where(.md\:prose-xl > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     margin-bottom: 0 !important;
   }
+
+  .ql-editor :where(h2, h3, h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-weight: 600 !important;
+    margin-bottom: 0.5em !important;
+  }
 }
 
 .ql-editor :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -7197,23 +7261,24 @@ StackedList for ToC
   }
 
   .md\:prose-xl :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    font-size: 1.8em;
     margin-top: 1.5555556em;
     margin-bottom: 0.8888889em;
     line-height: 1.1111111;
+    font-size: 1.7em;
   }
 
   .md\:prose-xl :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    font-size: 1.5em;
     margin-top: 1.6em;
     margin-bottom: 0.6666667em;
     line-height: 1.3333333;
+    font-size: 1.5em;
   }
 
   .md\:prose-xl :where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     margin-top: 1.8em;
     margin-bottom: 0.6em;
     line-height: 1.6;
+    font-size: 1.35em;
   }
 
   .md\:prose-xl :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -7411,6 +7476,11 @@ StackedList for ToC
 
   .md\:prose-xl :where(.md\:prose-xl > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     margin-bottom: 0;
+  }
+
+  .md\:prose-xl :where(h2, h3, h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-weight: 600;
+    margin-bottom: 0.5em;
   }
 
   .md\:prose-2xl {
@@ -8413,6 +8483,10 @@ StackedList for ToC
 
   .md\:p-20 {
     padding: 5rem;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 
   .md\:px-10 {

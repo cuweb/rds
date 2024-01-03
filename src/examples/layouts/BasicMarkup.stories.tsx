@@ -8,6 +8,7 @@ import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
+import { Column } from '../../layouts/Column/Column'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -161,6 +162,29 @@ export const BasicMarkup: Story = {
           <SinglePara />
 
           <h4>Heading Four</h4>
+          <DoublePara />
+
+          <Column maxWidth="5xl" cols="2" gridGap="10">
+            <Column.Content>
+              <SinglePara />
+              <h2>Header Two</h2>
+              <SinglePara />
+              <h3>Header Three</h3>
+              <SinglePara />
+              <h4>Header Four</h4>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+              <h2>Header Two</h2>
+              <SinglePara />
+              <h3>Header Three</h3>
+              <SinglePara />
+              <h4>Header Four</h4>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+
           <DoublePara />
 
           <ul>
