@@ -60,7 +60,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Default" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} hasRedBorder noLink>
+                <Card key={id} hasRedBorder noHover>
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -71,7 +71,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} hasRedBorder noLink hasShadow="onCard">
+                <Card key={id} hasRedBorder noHover hasShadow="onCard">
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -82,7 +82,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Default with Grey Bg" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} isGrey hasRedBorder noLink>
+                <Card key={id} isGrey hasRedBorder noHover>
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -93,7 +93,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} isGrey hasRedBorder noLink hasShadow="onCard">
+                <Card key={id} isGrey hasRedBorder noHover hasShadow="onCard">
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -104,7 +104,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Default" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} hasRedBorder noLink>
+                <Card key={id} hasRedBorder noHover>
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -115,7 +115,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} hasRedBorder noLink hasShadow="onCard">
+                <Card key={id} hasRedBorder noHover hasShadow="onCard">
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -126,7 +126,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Default with Grey Bg" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} isGrey hasRedBorder noLink>
+                <Card key={id} isGrey hasRedBorder noHover>
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -137,7 +137,7 @@ export const StatCardOptions: Story = {
             <Heading text="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
-                <Card key={id} isGrey hasRedBorder noLink hasShadow="onCard">
+                <Card key={id} isGrey hasRedBorder noHover hasShadow="onCard">
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}

@@ -60,7 +60,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Default" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} noLink>
+                <Card key={id} noHover>
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -72,7 +72,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} noLink hasShadow="onCard">
+                <Card key={id} noHover hasShadow="onCard">
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -84,7 +84,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Default with Grey Bg" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} isGrey noLink>
+                <Card key={id} isGrey noHover>
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -96,7 +96,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} isGrey noLink hasShadow="onCard">
+                <Card key={id} isGrey noHover hasShadow="onCard">
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -108,7 +108,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Default" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} noLink>
+                <Card key={id} noHover>
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -120,7 +120,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} noLink hasShadow="onCard">
+                <Card key={id} noHover hasShadow="onCard">
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -132,7 +132,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Default with Grey Bg" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} isGrey noLink>
+                <Card key={id} isGrey noHover>
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>
@@ -144,7 +144,7 @@ export const VideoCardOptions: Story = {
             <Heading text="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
-                <Card key={id} isGrey noLink hasShadow="onCard">
+                <Card key={id} isGrey noHover hasShadow="onCard">
                   <Card.Video source={source} />
                   <Card.Header>{title}</Card.Header>
                 </Card>

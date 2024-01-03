@@ -103,7 +103,7 @@ export const PeopleListingInitials: Story = {
 
 export const BulletinItem: Story = {
   args: {
-    noLink: true,
+    noHover: true,
     children: (
       <Listing.Content isSmall>
         <Listing.PostMeta date={singleNews?.date} />

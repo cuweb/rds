@@ -80,7 +80,7 @@ export const BlockSpacing: Story = {
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} hasShadow="onCard" noLink>
+                <Card key={id} hasShadow="onCard" noHover>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
@@ -108,7 +108,7 @@ export const BlockSpacing: Story = {
             />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} hasShadow="onCard" noLink>
+                <Card key={id} hasShadow="onCard" noHover>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>

@@ -15,16 +15,16 @@ import { ListingPeopleMeta } from './ListingPeopleMeta'
 
 export interface ListingProps {
   children: React.ReactNode
-  noLink?: boolean
+  noHover?: boolean
 }
 
-export const ListingWrapper = ({ children, noLink }: ListingProps) => {
-  const noLinkStyles = noLink ? 'cu-listing--nolink  p-8' : linkStyles.baseLink
+export const ListingWrapper = ({ children, noHover }: ListingProps) => {
+  const noHoverStyles = noHover ? 'cu-listing--nolink  p-8' : linkStyles.baseLink
   return (
-    <li className={`cu-listing ${styles.base} ${noLinkStyles}`}>
+    <li className={`cu-listing ${styles.base} ${noHoverStyles}`}>
       {children}
 
-      {!noLink && (
+      {!noHover && (
         <div className={styles.arrowArea}>
           <ChevronRightIcon className={styles.arrowIcon} aria-hidden="true" />
         </div>

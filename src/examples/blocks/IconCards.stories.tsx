@@ -60,7 +60,7 @@ export const IconCardOptions: Story = {
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} hasShadow="onCard" noLink>
+                <Card key={id} hasShadow="onCard" noHover>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
@@ -78,7 +78,7 @@ export const IconCardOptions: Story = {
             <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} isGrey noLink>
+                <Card key={id} isGrey noHover>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" bgType="white" hasShadow />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
@@ -96,7 +96,7 @@ export const IconCardOptions: Story = {
             <Heading text="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} noLink>
+                <Card key={id} noHover>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" bgType="none" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
@@ -114,7 +114,7 @@ export const IconCardOptions: Story = {
             <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} isGrey hasShadow="onCard" noLink>
+                <Card key={id} isGrey hasShadow="onCard" noHover>
                   <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>

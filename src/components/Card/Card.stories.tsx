@@ -81,7 +81,7 @@ export const NewsCard: Story = {
 
 export const IconCard: Story = {
   render: () => (
-    <Card hasShadow="onCard" noLink>
+    <Card hasShadow="onCard" noHover>
       <Card.IconThumb icon={iconData.icon} svgPath="./assets/graphics/" />
       <Card.Header>{iconData.title}</Card.Header>
       <Card.Body>
@@ -115,7 +115,7 @@ export const PeopleCard: Story = {
 
 export const SpotlightCard: Story = {
   render: () => (
-    <Card hasShadow="onCard" noLink>
+    <Card hasShadow="onCard" noHover>
       <Card.ImageThumb>
         <img src={newsData.image} alt={newsData.alt} width="200" height="133" />
       </Card.ImageThumb>
@@ -132,7 +132,7 @@ export const SpotlightCard: Story = {
 
 export const StatCard: Story = {
   render: () => (
-    <Card hasShadow="onCard" hasRedBorder noLink>
+    <Card hasShadow="onCard" hasRedBorder noHover>
       <Card.Stats stat={statData.stat} desc={statData.desc} />
     </Card>
   ),
