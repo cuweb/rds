@@ -1,8 +1,9 @@
 export interface ListingExcerptProps {
     text: string;
+    hasMore?: boolean;
 }
 export declare const ListingExcerpt: {
-    ({ text }: ListingExcerptProps): import("react/jsx-runtime").JSX.Element;
+    ({ text, hasMore }: ListingExcerptProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=ListingExcerpt.d.ts.map

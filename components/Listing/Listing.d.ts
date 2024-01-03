@@ -1,36 +1,32 @@
 import React from 'react';
 export interface ListingProps {
     children: React.ReactNode;
-    noHover?: boolean;
+    useArrow?: boolean;
 }
-export declare const ListingWrapper: ({ children, noHover }: ListingProps) => import("react/jsx-runtime").JSX.Element;
-export declare const Listing: (({ children, noHover }: ListingProps) => import("react/jsx-runtime").JSX.Element) & {
+export declare const ListingWrapper: ({ children, useArrow }: ListingProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Listing: (({ children, useArrow }: ListingProps) => import("react/jsx-runtime").JSX.Element) & {
     Figure: {
         ({ children }: import("./ListingFigure").ListingFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Content: {
-        ({ children, isSmall }: import("./ListingContent").ListingContentProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-    DateBox: {
-        ({ startDate, endDate }: import("./ListingDateBox").ListingDateBoxProps): import("react/jsx-runtime").JSX.Element;
+    Body: {
+        ({ children }: import("./ListingBody").ListingBodyProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Header: {
-        ({ text }: import("./ListingHeader").ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, as, date }: import("./ListingHeader").ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Excerpt: {
-        ({ text }: import("./ListingExcerpt").ListingExcerptProps): import("react/jsx-runtime").JSX.Element;
+        ({ text, hasMore }: import("./ListingExcerpt").ListingExcerptProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Badges: {
-        ({ tags }: import("./ListingBadges").ListingBadgesProps): import("react/jsx-runtime").JSX.Element;
+    DateThumb: {
+        ({ startDate, endDate }: import("./ListingDateThumb").ListingDateThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    PostMeta: {
-        ({ date }: import("./ListingPostMeta").ListingPostMetaProps): import("react/jsx-runtime").JSX.Element;
+    Initials: {
+        ({ initials }: import("./ListingInitials").ListingInitialsProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     EventMeta: {
@@ -38,11 +34,11 @@ export declare const Listing: (({ children, noHover }: ListingProps) => import("
         displayName: string;
     };
     PeopleMeta: {
-        ({ jobTitle, email, phone }: import("./ListingPeopleMeta").ListingPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
+        ({ jobTitle, children, phone }: import("./ListingPeopleMeta").ListingPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Initials: {
-        ({ initials }: import("./ListingInitials").ListingInitialsProps): import("react/jsx-runtime").JSX.Element;
+    Footer: {
+        ({ children, isType, buttonType, buttonStyle }: import("./ListingFooter").ListingFooterProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
