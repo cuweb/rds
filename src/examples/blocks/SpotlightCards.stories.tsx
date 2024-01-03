@@ -17,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const SpotlightCardOptions: Story = {
+export const SpotlightCards: Story = {
   render: () => (
     <>
       <TopBar>

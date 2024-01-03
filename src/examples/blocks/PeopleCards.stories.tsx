@@ -17,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const PeopleCardOptions: Story = {
+export const PeopleCards: Story = {
   render: () => (
     <>
       <TopBar>
