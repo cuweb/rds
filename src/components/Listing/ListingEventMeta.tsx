@@ -65,7 +65,7 @@ export const ListingEventMeta = ({
   }
 
   return (
-    <ul className="space-y-3 text-sm text-cu-black-600 @sm:md:text-base">
+    <ul className="space-y-3 text-sm text-cu-black-600 @sm:md:text-base list-none">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
         <MapPinIcon className={styles.redIcon} aria-hidden="true" />

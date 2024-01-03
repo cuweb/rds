@@ -2747,6 +2747,10 @@ select {
   scroll-padding-bottom: 0.5rem;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;

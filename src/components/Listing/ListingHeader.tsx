@@ -21,14 +21,12 @@ export const ListingHeader = ({ children, as = 'h2', date }: ListingHeaderProps)
     : null
 
   return (
-    <>
-      <header>
-        <HeaderComponent className="text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
-          {date && <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">{formatedDate}</time>}
-          {children}
-        </HeaderComponent>
-      </header>
-    </>
+    <header>
+      {date && <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">{formatedDate}</time>}
+      <HeaderComponent className="text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
+        {children}
+      </HeaderComponent>
+    </header>
   )
 }
 
