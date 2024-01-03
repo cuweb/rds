@@ -1,12 +1,10 @@
-import { figureStyles } from './Listing.Styles'
-
 export interface ListingInitialsProps {
   initials: string
 }
 
 export const ListingInitials = ({ initials }: ListingInitialsProps) => {
   return (
-    <figure className={`cu-figure ${figureStyles.figure}`}>
+    <figure className="cu-figure flex-none rounded-md max-w-[40%] @xl:md:max-w-[25%]">
       <div className="relative">
         <img
           src="https://cu-production.s3.amazonaws.com/rds/assets/graphics/grey-bg.jpg"

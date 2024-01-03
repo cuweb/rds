@@ -123,11 +123,11 @@ export const SingleEvent: Story = {
               </Column>
               <StackedList hasShadow>
                 {data.map(({ title, description }) => (
-                  <Listing key={title} noHover>
-                    <Listing.Content isSmall>
-                      <Listing.Header text={title} />
+                  <Listing key={title}>
+                    <Listing.Body>
+                      <Listing.Header>{title}</Listing.Header>
                       <Listing.Excerpt text={description} />
-                    </Listing.Content>
+                    </Listing.Body>
                   </Listing>
                 ))}
               </StackedList>
