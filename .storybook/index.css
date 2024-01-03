@@ -1570,7 +1570,7 @@ select {
   margin-top: 1.5555556em;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
-  font-size: 1.75em;
+  font-size: 1.7em;
 }
 
 .prose-xl :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -3414,6 +3414,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .px-1 {
@@ -6989,7 +6993,7 @@ StackedList for ToC
     margin-top: 1.5555556em !important;
     margin-bottom: 0.8888889em !important;
     line-height: 1.1111111 !important;
-    font-size: 1.75em !important;
+    font-size: 1.7em !important;
   }
 
   .ql-editor :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -7260,7 +7264,7 @@ StackedList for ToC
     margin-top: 1.5555556em;
     margin-bottom: 0.8888889em;
     line-height: 1.1111111;
-    font-size: 1.75em;
+    font-size: 1.7em;
   }
 
   .md\:prose-xl :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -8479,6 +8483,10 @@ StackedList for ToC
 
   .md\:p-20 {
     padding: 5rem;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 
   .md\:px-10 {
