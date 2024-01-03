@@ -1,10 +1,10 @@
 import React from 'react';
 export interface ListingProps {
     children: React.ReactNode;
-    noLink?: boolean;
+    noHover?: boolean;
 }
-export declare const ListingWrapper: ({ children, noLink }: ListingProps) => import("react/jsx-runtime").JSX.Element;
-export declare const Listing: (({ children, noLink }: ListingProps) => import("react/jsx-runtime").JSX.Element) & {
+export declare const ListingWrapper: ({ children, noHover }: ListingProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Listing: (({ children, noHover }: ListingProps) => import("react/jsx-runtime").JSX.Element) & {
     Figure: {
         ({ children }: import("./ListingFigure").ListingFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
