@@ -2265,6 +2265,10 @@ select {
   display: none;
 }
 
+.aspect-\[4\/2\.7\] {
+  aspect-ratio: 4/2.7;
+}
+
 .\!h-px {
   height: 1px !important;
 }
@@ -2495,6 +2499,10 @@ select {
 
 .w-\[28px\] {
   width: 28px;
+}
+
+.w-\[45\%\] {
+  width: 45%;
 }
 
 .w-auto {
@@ -4470,6 +4478,7 @@ StackedList for ToC
 }
 
 .cu-card img {
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -4788,7 +4797,11 @@ StackedList for ToC
 }
 
 .cu-listing img {
+  height: 100%;
+  width: 100%;
   border-radius: 0.375rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* TopBar Components */
@@ -8675,6 +8688,10 @@ StackedList for ToC
   @media (min-width: 768px) {
     .\@xl\:md\:h-\[180px\] {
       height: 180px;
+    }
+
+    .\@xl\:md\:w-\[25\%\] {
+      width: 25%;
     }
 
     .\@xl\:md\:max-w-\[25\%\] {

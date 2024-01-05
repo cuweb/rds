@@ -5,7 +5,7 @@ export interface ListingFigureProps {
 }
 
 export const ListingFigure = ({ children }: ListingFigureProps) => {
-  return <figure className="flex-none max-w-[40%] @xl:md:max-w-[25%]">{children}</figure>
+  return <figure className="flex-none max-w-[45%] @xl:md:max-w-[25%] aspect-[4/2.7]">{children}</figure>
 }
 
 ListingFigure.displayName = 'Listing.Figure'

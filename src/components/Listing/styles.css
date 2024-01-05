@@ -5,5 +5,5 @@
 }
 
 .cu-listing img {
-  @apply rounded-md;
+  @apply object-cover w-full h-full rounded-md;
 }
