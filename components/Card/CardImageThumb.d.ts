@@ -1,9 +1,10 @@
 /// <reference types="react" />
 export interface CardImageThumbProps {
     children: React.ReactNode;
+    isSquare?: boolean;
 }
 export declare const CardImageThumb: {
-    ({ children }: CardImageThumbProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isSquare }: CardImageThumbProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=CardImageThumb.d.ts.map

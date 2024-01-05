@@ -6,7 +6,7 @@ export interface ListingProps {
 export declare const ListingWrapper: ({ children, useArrow }: ListingProps) => import("react/jsx-runtime").JSX.Element;
 export declare const Listing: (({ children, useArrow }: ListingProps) => import("react/jsx-runtime").JSX.Element) & {
     Figure: {
-        ({ children }: import("./ListingFigure").ListingFigureProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, isSquare }: import("./ListingFigure").ListingFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Body: {

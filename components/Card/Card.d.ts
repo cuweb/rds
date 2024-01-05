@@ -22,7 +22,7 @@ export declare const Card: (({ children, isCenter, noHover, hasShadow, hasRedBor
         displayName: string;
     };
     ImageThumb: {
-        ({ children }: import("./CardImageThumb").CardImageThumbProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, isSquare }: import("./CardImageThumb").CardImageThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Video: {
