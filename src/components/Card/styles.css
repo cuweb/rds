@@ -17,7 +17,7 @@
 }
 
 .cu-card img {
-  @apply object-cover w-full;
+  @apply object-cover w-full h-full;
 }
 
 .cu-figure img,

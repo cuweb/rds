@@ -61,7 +61,7 @@ export const PeopleListing: Story = {
             <StackedList hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
-                  <Listing.Figure>
+                  <Listing.Figure isSquare>
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
@@ -83,7 +83,7 @@ export const PeopleListing: Story = {
             <StackedList cols="1" hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
-                  <Listing.Figure>
+                  <Listing.Figure isSquare>
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
@@ -105,7 +105,7 @@ export const PeopleListing: Story = {
             <StackedList hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
-                  <Listing.Figure>
+                  <Listing.Figure isSquare>
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
@@ -127,7 +127,7 @@ export const PeopleListing: Story = {
             <StackedList cols="1" hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
-                  <Listing.Figure>
+                  <Listing.Figure isSquare>
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
@@ -157,7 +157,7 @@ export const PeopleListing: Story = {
           <StackedList header="Our People" as="ul" cols="1" listType="posts" offset="right" hasShadow>
             {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
-                <Listing.Figure>
+                <Listing.Figure isSquare>
                   <img src={image} alt={alt} width="200" height="200" />
                 </Listing.Figure>
                 <Listing.Body>
