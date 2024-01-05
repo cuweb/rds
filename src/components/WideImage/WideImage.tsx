@@ -58,7 +58,10 @@ export const WideImageWrapper = ({
   }
 
   return (
-    <div style={inlineStyle} className={`${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}>
+    <div
+      style={inlineStyle}
+      className={`cu-wideimage cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
+    >
       {image && <div className={`${styles.imageOverlay} ${rdsOpacity[opacity]}`}></div>}
       <div className={`${styles.content} ${imageTextStyles} cu-wideimage-input-${isType}`}>
         {headerType === 'h1' && <h1 className={`${styles.header} ${styles.headerOne}`}>{title}</h1>}

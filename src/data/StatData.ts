@@ -1,4 +1,4 @@
-export const VideoDataSingle = {
+export const StatDataSingle = {
   stat: '3,000+',
   desc: 'Number of Employees',
 }

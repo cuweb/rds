@@ -169,6 +169,14 @@ export const ImageDualAngleReverse: Story = {
   ),
 }
 
+export const NoContent: Story = {
+  render: () => (
+    <TextImage>
+      <TextImage.Content title="Website and Application Development" />
+    </TextImage>
+  ),
+}
+
 export const NoImage: Story = {
   render: () => (
     <TextImage>

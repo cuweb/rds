@@ -1,31 +1,9 @@
-/* Listing Components */
-
-.cu-listing--nolink h2,
-.cu-listing--nolink h3 {
-  @apply group-hover:text-cu-red;
-}
+/* Listing Images */
 
 .cu-listing a {
-  @apply relative flex h-full flex-col items-start gap-6 p-8 focus:outline-none @lg:md:flex-row @lg:md:gap-8;
+  @apply inline-flex;
 }
 
 .cu-listing img {
-  @apply object-cover rounded-md;
-}
-
-.cu-listing--small {
-  @apply md:gap-1.5 !important;
-}
-
-.cu-listing--small h2,
-.cu-listing--small h3 {
-  @apply text-base @2xl:md:text-lg;
-}
-
-.cu-listing--small time {
-  @apply md:text-sm;
-}
-
-.cu-listing--small p:not(.cu-badges) {
-  @apply md:text-base;
+  @apply object-cover w-full h-full rounded-md;
 }
