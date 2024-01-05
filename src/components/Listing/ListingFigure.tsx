@@ -6,7 +6,7 @@ export interface ListingFigureProps {
 }
 
 export const ListingFigure = ({ children, isSquare }: ListingFigureProps) => {
-  const imageStyles = isSquare ? 'aspect-square' : 'aspect-square'
+  const imageStyles = isSquare ? 'aspect-square' : 'aspect-[4/2.7]'
 
   return <figure className={`flex-none max-w-[45%] @xl:md:max-w-[25%] ${imageStyles}`}>{children}</figure>
 }

@@ -17,7 +17,7 @@ export const styles = {
 export const figureStyles = {
   figure: `relative`,
   round: `pt-8 pb-2 px-6`,
-  imgThumb: `mx-6 mt-6 mb-2 overflow-hidden w-[45%] @xl:md:w-[25%] aspect-[4/2.7] rounded-md`,
+  imgThumb: `mx-6 mt-6 mb-2 overflow-hidden max-w-[45%] @xl:md:max-w-[25%] rounded-md`,
 }
 
 export const metaStyles = {
