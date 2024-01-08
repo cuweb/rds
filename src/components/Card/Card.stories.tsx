@@ -82,7 +82,7 @@ export const NewsCard: Story = {
 export const IconCard: Story = {
   render: () => (
     <Card hasShadow="onCard" noHover>
-      <Card.IconThumb icon={iconData.icon} svgPath="./assets/graphics/" />
+      <Card.IconThumb icon={iconData.icon} />
       <Card.Header>{iconData.title}</Card.Header>
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
