@@ -2349,6 +2349,10 @@ select {
   height: 2rem;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
 .h-96 {
   height: 24rem;
 }
@@ -2483,6 +2487,10 @@ select {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-\[130px\] {
@@ -3356,16 +3364,8 @@ select {
   fill: #999999;
 }
 
-.fill-cu-red {
-  fill: #E91C24;
-}
-
 .fill-red-600 {
   fill: #dc2626;
-}
-
-.fill-white {
-  fill: #fff;
 }
 
 .object-cover {
@@ -3407,6 +3407,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
 }
 
 .px-1 {
@@ -4475,7 +4479,7 @@ StackedList for ToC
   color: rgb(187 18 25 / var(--tw-text-opacity));
 }
 
-.cu-card img {
+.cu-card img:not(.cu-icon-thumb) {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;

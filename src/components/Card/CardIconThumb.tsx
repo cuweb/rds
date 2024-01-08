@@ -24,40 +24,30 @@ export const CardIconThumb = ({ icon, bgType = 'red', hasShadow }: CardIconThumb
   switch (bgType) {
     case 'none':
       iconDiv = 'w-10 h-10'
-      iconSvg = 'fill-cu-red'
+      iconSvg = ''
       break
     case 'red':
       iconDiv = 'w-16 h-16 bg-cu-red rounded-md'
-      iconSvg = 'p-3 fill-white'
+      iconSvg = 'p-3'
       break
     case 'white':
       iconDiv = 'w-16 h-16 bg-white rounded-md'
-      iconSvg = 'p-3 fill-cu-red'
+      iconSvg = 'p-3'
       break
     default:
       iconDiv = ''
-      iconSvg = ''
       break
   }
 
   return (
-    <>
-      <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden ${iconDiv} ${iconShadow}`}>
-        {icon && (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className={iconSvg}>
-            <use xlinkHref={iconPath} />
-          </svg>
-        )}
-      </figure>
-      <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden ${iconDiv} ${iconShadow}`}>
-        <img
-          src={iconPath}
-          alt={icon}
-          className={bgType === 'none' ? '' : 'p-3'}
-          style={bgType === 'red' ? whiteIcon : redIcon}
-        />
-      </figure>
-    </>
+    <figure className={`flex items-center justify-center mx-6 mt-6 mb-2 overflow-hidden ${iconDiv} ${iconShadow}`}>
+      <img
+        src={iconPath}
+        alt={icon}
+        className={`cu-icon-thumb ${iconSvg}`}
+        style={bgType === 'red' ? whiteIcon : redIcon}
+      />
+    </figure>
   )
 }
 
