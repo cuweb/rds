@@ -19,20 +19,16 @@ export const CardIconThumb = ({ icon, bgType = 'red', hasShadow }: CardIconThumb
 
   // Set classes on icon and wrapping div
   let iconDiv
-  let iconSvg
 
   switch (bgType) {
     case 'none':
       iconDiv = 'w-10 h-10'
-      iconSvg = ''
       break
     case 'red':
       iconDiv = 'w-16 h-16 bg-cu-red rounded-md'
-      iconSvg = 'p-3'
       break
     case 'white':
       iconDiv = 'w-16 h-16 bg-white rounded-md'
-      iconSvg = 'p-3'
       break
     default:
       iconDiv = ''
@@ -44,7 +40,7 @@ export const CardIconThumb = ({ icon, bgType = 'red', hasShadow }: CardIconThumb
       <img
         src={iconPath}
         alt={icon}
-        className={`cu-icon-thumb ${iconSvg}`}
+        className={`cu-icon-thumb ${bgType === 'none' ? '' : 'p-3'}`}
         style={bgType === 'red' ? whiteIcon : redIcon}
       />
     </figure>
