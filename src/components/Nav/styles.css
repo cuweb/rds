@@ -1,0 +1,251 @@
+
+
+.nav--bottom .p-plus-container {
+  @apply mx-auto max-w-screen-2xl;
+}
+
+.p-plus__primary > li {
+  flex: 0 0 auto;
+}
+
+/* Collapse nav at sm */
+@media (max-width: 640px) {
+  .p-plus__primary > li:first-child {
+    @apply w-full;
+  }
+}
+
+/* Add styles to current item */
+.cu-nav-current a,
+.cu-nav-current button {
+  @apply text-cu-red-700;
+}
+
+/* Hide submenus by default */
+.cu-nav-submenu {
+  @apply hidden;
+}
+
+.p-plus-container {
+  @apply static flex items-center w-full h-full sm:relative;
+}
+
+.p-plus:not(.p-plus--clone) {
+  @apply static items-center w-full h-full sm:relative;
+}
+
+.p-plus__overflow ul.cu-nav-submenu-children {
+  @apply hidden;
+}
+
+/* Button nav item alignment */
+button.cu-nav-child-menu-toggle,
+button.p-plus__toggle-btn {
+  @apply flex gap-0.5 items-center;
+}
+
+/*
+ ****
+ * Rotate all the things
+ ****
+*/
+
+.cu-nav-grandchild-menu-toggle.rotated {
+  @apply bg-cu-black-25 text-cu-red;
+}
+
+.cu-nav-child-menu-toggle svg,
+.cu-nav-grandchild-menu-toggle svg,
+.p-plus__toggle-btn svg {
+  @apply duration-300 origin-center rotate-0;
+  transform-box: fill-box;
+}
+
+.cu-nav-child-menu-toggle.rotated svg,
+.cu-nav-grandchild-menu-toggle.rotated svg,
+.p-plus__toggle-btn.rotated svg {
+  @apply rotate-90;
+}
+
+.p-plus__primary-wrapper {
+  @apply items-center;
+}
+
+/*
+ ****
+ * Desktop specific styles
+ ****
+*/
+
+@media (min-width: 641px) {
+  /* Child & grandchild menus, hidden on initial load */
+  .p-plus__primary-wrapper ul.cu-nav-submenu-children {
+    @apply absolute z-50 w-56 -ml-3 bg-white border rounded-md shadow-md top-8 border-cu-black-100;
+  }
+
+  .nav--bottom .p-plus__primary-wrapper ul.cu-nav-submenu-children {
+    @apply top-8;
+  }
+
+  /* Child level menu item */
+  .p-plus__primary-wrapper li.cu-nav-item-child {
+    @apply relative grid border-b border-cu-black-100 last:border-none;
+  }
+
+  /* Child & granchild level menu link */
+  .p-plus__primary-wrapper li.cu-nav-item-child > a,
+  .p-plus__primary-wrapper li.cu-nav-item-grandchild > a {
+    @apply block px-3.5 py-3.5 text-sm text-cu-black-700 hover:bg-cu-black-25 hover:text-cu-red-700;
+  }
+
+  .p-plus__primary-wrapper li.cu-nav-item-grandchild > a {
+    @apply pl-6;
+  }
+
+  /* Child level menu item that has grandchildren */
+  .p-plus__primary-wrapper li.cu-nav-has-grandchildren {
+    grid-template-columns: auto 40px;
+  }
+
+  /* Child menu, hidden on initial load */
+  .p-plus__primary-wrapper ul.cu-nav-submenu-grandchildren {
+    @apply w-full col-span-2 bg-cu-black-25;
+  }
+
+  .cu-nav-grandchild-menu-toggle {
+    @apply px-3 bg-white hover:bg-cu-black-25;
+  }
+}
+
+/*
+****
+* Overflow nav styles
+****
+*/
+
+/* Overflow Menu */
+.p-plus__overflow {
+  @apply z-50 w-56 bg-white border rounded-md shadow-md right-0 top-[3.25rem] border-cu-black-100;
+}
+
+.nav--bottom .p-plus__overflow {
+  @apply top-[2.31rem];
+}
+
+/* Child & granchild level menu link */
+.p-plus__overflow li.cu-nav-item > a,
+.p-plus__overflow li.cu-nav-item > button,
+.p-plus__overflow li.cu-nav-item-child > a,
+.p-plus__overflow li.cu-nav-item-grandchild > a {
+  @apply flex px-3.5 py-3.5 text-sm text-cu-black-700 hover:bg-cu-black-25 hover:text-cu-red;
+}
+
+.p-plus__overflow li.cu-nav-current > button,
+.p-plus__overflow li.cu-nav-current > a {
+  @apply text-cu-red-700;
+}
+
+.p-plus__overflow li.cu-nav-item-child > a {
+  @apply pl-7;
+}
+
+.p-plus__overflow li.cu-nav-item-grandchild > a {
+  @apply pl-10;
+}
+
+.p-plus__overflow button.cu-nav-child-menu-toggle {
+  @apply flex items-center w-full;
+}
+
+.p-plus__overflow button.cu-nav-grandchild-menu-toggle {
+  @apply justify-center;
+}
+
+.p-plus__overflow > li.cu-nav-item {
+  @apply border-b border-cu-black-100 last:border-none;
+}
+
+.p-plus__overflow > li.cu-nav-item button,
+.p-plus__overflow > li.cu-nav-item a,
+.p-plus__overflow li.cu-nav-item-child > button:hover,
+.p-plus__overflow li.cu-nav-item-child > a:hover {
+  @apply hover:!text-cu-red-700;
+}
+
+/* Child level menu item */
+.p-plus__overflow li.cu-nav-item,
+.p-plus__overflow li.cu-nav-item-child {
+  @apply grid;
+}
+
+/* Child level menu item that has grandchildren */
+.p-plus__overflow li.cu-nav-has-grandchildren {
+  grid-template-columns: auto 40px;
+}
+
+/* Child menu, hidden on initial load */
+.p-plus__overflow ul.cu-nav-submenu-grandchildren {
+  @apply w-full col-span-2 bg-cu-black-25;
+}
+
+.p-plus__overflow.p-plus_left {
+  @apply -left-3.5;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  body.no-scroll {
+    @apply overflow-hidden bg-cu-black-700;
+  }
+
+  body.no-scroll::before {
+    content: '';
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Transparent background color */
+    z-index: 1; /* Place the overlay on top of the content */
+    pointer-events: none; /* Allows interaction with the content beneath the overlay */
+  }
+
+  /* Primary menu styles */
+  .p-plus-container {
+    @apply static;
+  }
+
+  button.p-plus__toggle-btn {
+    @apply mb-0;
+  }
+
+  .p-plus__overflow {
+    /* Added extra padding to bottom to see last item */
+    @apply absolute rounded-none left-0 right-0 w-screen h-[calc(100vh-62px)] overflow-y-auto !top-full overflow-scroll pb-[2rem];
+  }
+
+  .p-plus__overflow.p-plus_left {
+    @apply left-0;
+  }
+
+  .nav--bottom .p-plus__overflow {
+    @apply h-[calc(100vh-62px-52px)];
+  }
+
+  .p-plus__overflow > li.cu-nav-item a,
+  .p-plus__overflow > li.cu-nav-item button {
+    @apply pl-8;
+  }
+
+  .p-plus__overflow li.cu-nav-item-child a {
+    @apply pl-12;
+  }
+
+  .p-plus__overflow li.cu-nav-item-grandchild a {
+    @apply pl-16;
+  }
+
+  .p-plus__overflow li.cu-nav-has-grandchildren button.cu-nav-grandchild-menu-toggle {
+    @apply px-0;
+  }
+}

@@ -5,13 +5,9 @@ import setupMenuToggle from './navToggles'
 
 export const NavMenu = ({ children }: PropsWithChildren) => {
   useEffect(() => {
-    menuPriority('.cu-topbar--menu1')
 
-    // Setup submenu toggle
-    setupMenuToggle('.cu-topbar--parent-link')
-
-    // Setup sub-submenu toggle
-    setupMenuToggle('.nav-grandchild-menu-toggle')
+    menuPriority('.cu-nav')
+    setupMenuToggle('.cu-nav-parent-item')
   })
 
   return (
@@ -19,7 +15,7 @@ export const NavMenu = ({ children }: PropsWithChildren) => {
       {children && (
         <ul className={navItemStyles.navWrapper}>
           {Children.map(children, (child, i) => (
-            <li key={i} className="11">
+            <li key={i} className={navItemStyles.navItemWrapper}>
               {child}
             </li>
           ))}

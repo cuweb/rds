@@ -2,6 +2,7 @@ import { useState, useEffect, PropsWithChildren } from 'react'
 import { NavLogo } from './NavLogo'
 import { NavAside } from './NavAside'
 import { NavPrimary } from './NavPrimary'
+import { NavSecondary } from './NavSecondary'
 import { NavMenu } from './NavMenu'
 import { NavSubMenu } from './NavSubMenu'
 import { navBaseStyles } from './Nav.Styles'
@@ -35,6 +36,7 @@ export const Nav = Object.assign(NavWrapper, {
   Logo: NavLogo,
   Aside: NavAside,
   Primary: NavPrimary,
+  Secondary: NavSecondary,
   Menu: NavMenu,
   SubMenu: NavSubMenu,
 })

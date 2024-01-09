@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
 import { TopBarDataSingle } from '../../data/TopBarData'
+import { navItemStyles } from './Nav.Styles'
 
 const meta: Meta<typeof Nav> = {
   title: 'Components/Nav',
@@ -27,13 +28,13 @@ export const Default: Story = {
               <>
                 {topBarLink.submenu ? (
                   <>
-                    <button key={index} className="cu-topbar--parent-link">
+                    <button key={index} className={navItemStyles.navItem}>
                       {topBarLink.title}
                     </button>
                     {topBarLink.submenu && <Nav.SubMenu submenu={topBarLink.submenu} />}
                   </>
                 ) : (
-                  <a key={index} href={topBarLink.href} className="">
+                  <a key={index} href={topBarLink.href} className={navItemStyles.navItem}>
                     {topBarLink.title}
                   </a>
                 )}
@@ -43,6 +44,39 @@ export const Default: Story = {
         </Nav.Menu>
         <Nav.Aside />
       </Nav.Primary>
+    </Nav>
+  ),
+}
+
+export const Secondary: Story = {
+  render: () => (
+    <Nav>
+      <Nav.Primary>
+        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Aside />
+      </Nav.Primary>
+      <Nav.Secondary>
+        <Nav.Menu>
+            {TopBarDataSingle.map((topBarLink, index) => {
+              return (
+                <>
+                  {topBarLink.submenu ? (
+                    <>
+                      <button key={index} className={navItemStyles.navItem}>
+                        {topBarLink.title}
+                      </button>
+                      {topBarLink.submenu && <Nav.SubMenu submenu={topBarLink.submenu} />}
+                    </>
+                  ) : (
+                    <a key={index} href={topBarLink.href} className={navItemStyles.navItem}>
+                      {topBarLink.title}
+                    </a>
+                  )}
+                </>
+              )
+            })}
+          </Nav.Menu>
+      </Nav.Secondary>
     </Nav>
   ),
 }
