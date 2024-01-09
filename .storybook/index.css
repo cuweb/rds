@@ -2349,10 +2349,6 @@ select {
   height: 2rem;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .h-96 {
   height: 24rem;
 }
@@ -2487,10 +2483,6 @@ select {
 
 .w-8 {
   width: 2rem;
-}
-
-.w-9 {
-  width: 2.25rem;
 }
 
 .w-\[130px\] {
@@ -3407,10 +3399,6 @@ select {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-2\.5 {
-  padding: 0.625rem;
 }
 
 .px-1 {
