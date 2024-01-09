@@ -6,7 +6,6 @@ export interface NavLogoProps {
 }
 
 export const NavLogo = ({ title, link }: NavLogoProps) => {
-
   return (
     <div className={navLogo.logoWrapper}>
       <a href="https://carleton.ca" className={navLogo.cuLogoLink}>
@@ -27,7 +26,9 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
       </a>
       {title && link && (
         <div className={navLogo.siteTitleWrapper}>
-          <a href={link} className={`${navLogo.siteTitle}`}>{title}</a>
+          <a href={link} className={`${navLogo.siteTitle}`}>
+            {title}
+          </a>
         </div>
       )}
     </div>
