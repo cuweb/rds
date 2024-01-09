@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
 import { TopBarDataSingle } from '../../data/TopBarData'
 import { navItemStyles } from './Nav.Styles'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const meta: Meta<typeof Nav> = {
   title: 'Components/Nav',
@@ -28,8 +29,9 @@ export const Default: Story = {
               <>
                 {topBarLink.submenu ? (
                   <>
-                    <button key={index} className={navItemStyles.navItem}>
+                    <button key={index} className={navItemStyles.navParentItem + ` ` + navItemStyles.navItem}>
                       {topBarLink.title}
+                      <ChevronDownIcon className={navItemStyles.navArrow} aria-hidden="true" />
                     </button>
                     {topBarLink.submenu && <Nav.SubMenu submenu={topBarLink.submenu} />}
                   </>
@@ -57,25 +59,26 @@ export const Secondary: Story = {
       </Nav.Primary>
       <Nav.Secondary>
         <Nav.Menu>
-            {TopBarDataSingle.map((topBarLink, index) => {
-              return (
-                <>
-                  {topBarLink.submenu ? (
-                    <>
-                      <button key={index} className={navItemStyles.navItem}>
-                        {topBarLink.title}
-                      </button>
-                      {topBarLink.submenu && <Nav.SubMenu submenu={topBarLink.submenu} />}
-                    </>
-                  ) : (
-                    <a key={index} href={topBarLink.href} className={navItemStyles.navItem}>
+          {TopBarDataSingle.map((topBarLink, index) => {
+            return (
+              <>
+                {topBarLink.submenu ? (
+                  <>
+                    <button key={index} className={navItemStyles.navParentItem + ` ` + navItemStyles.navItem}>
                       {topBarLink.title}
-                    </a>
-                  )}
-                </>
-              )
-            })}
-          </Nav.Menu>
+                      <ChevronDownIcon className={navItemStyles.navArrow} aria-hidden="true" />
+                    </button>
+                    {topBarLink.submenu && <Nav.SubMenu submenu={topBarLink.submenu} />}
+                  </>
+                ) : (
+                  <a key={index} href={topBarLink.href} className={navItemStyles.navItem}>
+                    {topBarLink.title}
+                  </a>
+                )}
+              </>
+            )
+          })}
+        </Nav.Menu>
       </Nav.Secondary>
     </Nav>
   ),

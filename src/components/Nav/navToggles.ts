@@ -7,8 +7,13 @@ function setupMenuToggle(buttonSelector: string) {
 
       if (submenu) {
         submenu.style.display = 'none'
-        button.classList.remove('rotated')
+
         button.setAttribute('aria-expanded', 'false')
+
+        const arrow = button.children[0];
+        if(arrow){
+          arrow.classList.add('-rotate-90')
+        }
       }
     })
   }
@@ -24,7 +29,10 @@ function setupMenuToggle(buttonSelector: string) {
       button.setAttribute('aria-expanded', 'false')
     } else {
       submenu.style.display = 'block'
-      button.classList.add('rotated')
+      const arrow = button.children[0];
+      if(arrow){
+        arrow.classList.remove('-rotate-90')
+      }
       button.setAttribute('aria-expanded', 'true')
     }
   }

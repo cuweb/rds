@@ -1,4 +1,4 @@
-import { navDropDownStyles } from './Nav.Styles'
+import { navSubMenuStyles, navItemStyles } from './Nav.Styles'
 
 export interface submenu {
   href: string
@@ -11,10 +11,10 @@ export interface submenuProps {
 
 export const NavSubMenu = ({ submenu }: submenuProps) => {
   return (
-    <ul className={navDropDownStyles.dropDownContainer}>
+    <ul className={navSubMenuStyles.subMenuContainer}>
       {submenu.map((topBarSubLink: submenu, index: number) => (
-        <li key={index} className={navDropDownStyles.dropDownItems}>
-          <a href={topBarSubLink.href} className={`cu-topbar--more-nav`}>
+        <li key={index} className={navSubMenuStyles.subMenuWrapper}>
+          <a href={topBarSubLink.href} className={navItemStyles.navItem + ` ` + navSubMenuStyles.subMenuItem}>
             {topBarSubLink.title}
           </a>
         </li>

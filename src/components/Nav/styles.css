@@ -1,7 +1,5 @@
-
-
-.nav--bottom .p-plus-container {
-  @apply mx-auto max-w-screen-2xl;
+.cu-nav__secondary .cu-nav__menu .cu-nav__submenu {
+  @apply top-9;
 }
 
 .p-plus__primary > li {
@@ -83,7 +81,7 @@ button.p-plus__toggle-btn {
     @apply absolute z-50 w-56 -ml-3 bg-white border rounded-md shadow-md top-8 border-cu-black-100;
   }
 
-  .nav--bottom .p-plus__primary-wrapper ul.cu-nav-submenu-children {
+  .cu-nav__secondary .p-plus__primary-wrapper ul.cu-nav-submenu-children {
     @apply top-8;
   }
 
@@ -128,7 +126,7 @@ button.p-plus__toggle-btn {
   @apply z-50 w-56 bg-white border rounded-md shadow-md right-0 top-[3.25rem] border-cu-black-100;
 }
 
-.nav--bottom .p-plus__overflow {
+.cu-nav__secondary .p-plus__overflow {
   @apply top-[2.31rem];
 }
 
@@ -228,7 +226,7 @@ button.p-plus__toggle-btn {
     @apply left-0;
   }
 
-  .nav--bottom .p-plus__overflow {
+  .cu-nav__secondary .p-plus__overflow {
     @apply h-[calc(100vh-62px-52px)];
   }
 

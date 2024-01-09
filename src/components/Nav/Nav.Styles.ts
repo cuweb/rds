@@ -1,31 +1,33 @@
 export const navBaseStyles = {
-  header: `sticky z-50 duration-300 ease-in-out bg-white border-t-2 border-b cu-topbar border-b-cu-black-100 border-t-cu-red transition-top`,
-  primaryWrapper: `flex items-center h-[64px] gap-8 px-8 py-3 mx-auto max-w-screen-2xl cu-topbar--primary`,
-  secondaryWrapper: `border-t border-t-cu-black-100 bg-cu-black-25 cu-topbar--secondary`,
-  navInnerWrapper: `flex gap-6 px-8 py-3.5 mx-auto max-w-screen-2xl`,
+  header: `cu-nav sticky z-50 duration-300 ease-in-out bg-white border-t-2 border-t-cu-red transition-top`,
+  wrapper: `border-b border-b-cu-black-100 py-3.5 px-5 sm:px-8`,
+  primaryWrapper: `cu-nav__primary nav nav--top sticky top-0 flex items-center gap-8 mx-auto max-w-screen-2xl `,
+  secondaryWrapper: `cu-nav__secondary nav nav--bottom sticky top-0 z-30 bg-cu-black-25`,
+  secondaryInnerWrapper: `flex gap-6 mx-auto max-w-screen-2xl`,
 }
 
-export const navLogoTitle = {
-  logoWrapper: `flex items-center gap-3 md:gap-5 cu-topbar--logo shrink-1 md:shrink-0`,
-  cuLogoLink: `shrink-0`, // added to rds/src/styles/topbar.css
-  cuLogo: `w-[130px] h-[35px] hidden md:block shrink-0`, // added to rds/src/styles/topbar.css
-  cuShield: `w-[28px] h-[35px] block md:hidden shrink-0`, // added to rds/src/styles/topbar.css
+export const navLogo = {
+  logoWrapper: `flex items-center gap-3 md:gap-5 shrink-1 md:shrink-0`,
+  cuLogoLink: `shrink-0`,
+  cuLogo: `w-[130px] h-[35px] hidden md:block shrink-0`,
+  cuShield: `w-[28px] h-[35px] block md:hidden shrink-0`,
   siteTitle: `font-semibold md:text-lg hover:text-cu-red text-cu-black-800`,
   oneLineHeader: `text-base whitespace-nowrap`,
-  twoLineHeader: `text-sm ms:text-base line-clamp-2`,
+  twoLineHeader: `cu-nav-arrow text-sm ms:text-base line-clamp-2`,
 }
 
 export const navItemStyles = {
-  navWrapper: `cu-nav flex gap-4 items-center overflow-hidden`,
-  navItemWrapper: `flex items-center grow-0`, // added to rds/src/styles/topbar.css
-  navItem: `cu-nav-parent-item text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 pr-3`, // added to rds/src/styles/topbar.css
-  navItemChildren: `flex items-center -mb-px`,
-  navArrow: `flex-none w-5 h-5 pt-1 text-cu-black-400`,
+  navWrapper: `cu-nav__menu flex gap-4 items-center`,
+  navItemWrapper: `relative flex items-center grow-0 pr-3 last:pr-0`,
+  navItem: `flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
+  navParentItem: `cu-nav__parent-item`,
+  navArrow: `flex-none w-4 h-4 text-cu-black-400 -rotate-90 transition ease-in`,
 }
 
-export const navDropDownStyles = {
-  dropDownContainer: `hidden absolute max-w-xs w-64 mt-2.5 -ml-3 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`, // added to rds/src/styles/topbar.css
-  dropDownItems: `block text-sm font-medium text-cu-black-600 px-5 py-4 border-b hover:text-cu-black-900 hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0`, // added to rds/src/styles/topbar.css
+export const navSubMenuStyles = {
+  subMenuContainer: `cu-nav__submenu hidden absolute top-[43px] left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
+  subMenuWrapper: `block text-sm font-medium text-cu-black-600 border-b hover:text-cu-red-700 hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0`,
+  subMenuItem: `px-5 py-4`,
 }
 
 export const navAsideStyles = {

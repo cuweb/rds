@@ -1953,6 +1953,10 @@ select {
   top: 1.25rem;
 }
 
+.top-\[43px\] {
+  top: 43px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1963,6 +1967,10 @@ select {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .z-40 {
@@ -2674,6 +2682,11 @@ select {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-rotate-90 {
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rotate-0 {
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2811,6 +2824,10 @@ select {
 
 .gap-0 {
   gap: 0px;
+}
+
+.gap-0\.5 {
+  gap: 0.125rem;
 }
 
 .gap-1 {
@@ -5024,10 +5041,8 @@ StackedList for ToC
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
-.nav--bottom .p-plus-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1536px;
+.cu-nav__secondary .cu-nav__menu .cu-nav__submenu {
+  top: 2.25rem;
 }
 
 .p-plus__primary > li {
@@ -5202,7 +5217,7 @@ button.p-plus__toggle-btn {
     }
   }
 
-  .nav--bottom .p-plus__primary-wrapper ul.cu-nav-submenu-children {
+  .cu-nav__secondary .p-plus__primary-wrapper ul.cu-nav-submenu-children {
     top: 2rem;
   }
 
@@ -5391,7 +5406,7 @@ button.p-plus__toggle-btn {
   }
 }
 
-.nav--bottom .p-plus__overflow {
+.cu-nav__secondary .p-plus__overflow {
   top: 2.31rem;
 }
 
@@ -5542,7 +5557,7 @@ button.p-plus__toggle-btn {
     left: 0px;
   }
 
-  .nav--bottom .p-plus__overflow {
+  .cu-nav__secondary .p-plus__overflow {
     height: calc(100vh - 62px - 52px);
   }
 
@@ -8362,6 +8377,10 @@ button.p-plus__toggle-btn {
   padding-bottom: 0px;
 }
 
+.last\:pr-0:last-child {
+  padding-right: 0px;
+}
+
 .odd\:bg-white:nth-child(odd) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -8801,6 +8820,11 @@ button.p-plus__toggle-btn {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .sm\:pb-36 {
