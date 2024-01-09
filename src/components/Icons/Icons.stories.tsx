@@ -10,7 +10,7 @@ type Story = StoryObj
 
 export const Icons: Story = {
   render: () => (
-    <div className="grid grid-cols-10 gap-16 px-12 mx-auto my-6 max-w-7xl">
+    <div className="grid grid-cols-4 gap-16 px-12 mx-auto my-6 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 max-w-screen-2xl">
       {iconNames.map((icon) => (
         <div key={icon.value}>
           <img src={`./public/assets/font-awesome/${icon.value}.svg`} alt="" />
