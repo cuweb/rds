@@ -16,7 +16,7 @@
   @apply block hover:text-cu-red-700;
 }
 
-.cu-card img {
+.cu-card img:not(.cu-icon-thumb) {
   @apply object-cover w-full h-full;
 }
 

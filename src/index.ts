@@ -61,6 +61,11 @@ export type { ColumnDefinitionType } from './components/Table/Table'
 export type { UserInfoType } from './components/Avatar/Avatar'
 
 //
+// Others
+// -----------------
+export * from '../public/assets/font-awesome/icon-list.js'
+
+//
 // DEPRECATED
 // -----------------
 // export { Banner } from './_deprecated/Banner/Banner'
