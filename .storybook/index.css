@@ -2549,6 +2549,14 @@ select {
   max-width: 80rem;
 }
 
+.max-w-\[200px\] {
+  max-width: 200px;
+}
+
+.max-w-\[233px\] {
+  max-width: 233px;
+}
+
 .max-w-\[320px\] {
   max-width: 320px;
 }
@@ -2623,6 +2631,10 @@ select {
 
 .grow-0 {
   flex-grow: 0;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .border-collapse {
@@ -3772,6 +3784,10 @@ select {
 
 .leading-6 {
   line-height: 1.5rem;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .text-blue-600 {
@@ -8744,6 +8760,10 @@ button.p-plus__toggle-btn {
     width: 100%;
   }
 
+  .sm\:max-w-\[245px\] {
+    max-width: 245px;
+  }
+
   .sm\:max-w-lg {
     max-width: 32rem;
   }
@@ -8969,6 +8989,10 @@ button.p-plus__toggle-btn {
 
   .md\:max-w-4xl {
     max-width: 56rem;
+  }
+
+  .md\:max-w-\[220px\] {
+    max-width: 220px;
   }
 
   .md\:max-w-lg {

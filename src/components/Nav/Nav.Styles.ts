@@ -11,13 +11,15 @@ export const navLogo = {
   cuLogoLink: `shrink-0`,
   cuLogo: `w-[130px] h-[35px] hidden md:block shrink-0`,
   cuShield: `w-[28px] h-[35px] block md:hidden shrink-0`,
-  siteTitle: `font-semibold md:text-lg hover:text-cu-red text-cu-black-800`,
+  siteTitleWrapper: `leading-none max-w-[200px] md:max-w-[220px]`,
+  siteTitle: `text-base md:text-lg font-semibold text-cu-black-800 hover:text-cu-red-700`,
   oneLineHeader: `text-base whitespace-nowrap`,
   twoLineHeader: `cu-nav-arrow text-sm ms:text-base line-clamp-2`,
 }
 
 export const navItemStyles = {
-  navWrapper: `cu-nav__menu flex gap-4 items-center`,
+  navBarWrapper: `grow`,
+  navBar: `cu-nav__menu flex gap-4 items-center`,
   navItemWrapper: `relative flex items-center grow-0 pr-3 last:pr-0`,
   navItem: `flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item`,

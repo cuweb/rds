@@ -12,13 +12,15 @@ export const NavMenu = ({ children }: PropsWithChildren) => {
   return (
     <>
       {children && (
-        <ul className={navItemStyles.navWrapper}>
-          {Children.map(children, (child, i) => (
-            <li key={i} className={navItemStyles.navItemWrapper}>
-              {child}
-            </li>
-          ))}
-        </ul>
+        <div className={navItemStyles.navBarWrapper}>
+          <ul className={navItemStyles.navBar}>
+            {Children.map(children, (child, i) => (
+              <li key={i} className={navItemStyles.navItemWrapper}>
+                {child}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </>
   )

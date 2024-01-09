@@ -6,8 +6,6 @@ export interface NavLogoProps {
 }
 
 export const NavLogo = ({ title, link }: NavLogoProps) => {
-  const titleLength = title ? title.length : 0
-  const titleLengthStyles = titleLength > 15 ? navLogo.twoLineHeader : navLogo.oneLineHeader
 
   return (
     <div className={navLogo.logoWrapper}>
@@ -28,9 +26,9 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
         />
       </a>
       {title && link && (
-        <h1 className={`${navLogo.siteTitle} ${titleLengthStyles}`}>
-          <a href={link}>{title}</a>
-        </h1>
+        <div className={navLogo.siteTitleWrapper}>
+          <a href={link} className={`${navLogo.siteTitle}`}>{title}</a>
+        </div>
       )}
     </div>
   )
