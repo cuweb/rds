@@ -10,8 +10,8 @@ function setupMenuToggle(buttonSelector: string) {
 
         button.setAttribute('aria-expanded', 'false')
 
-        const arrow = button.children[0];
-        if(arrow){
+        const arrow = button.children[0]
+        if (arrow) {
           arrow.classList.add('-rotate-90')
         }
       }
@@ -29,8 +29,8 @@ function setupMenuToggle(buttonSelector: string) {
       button.setAttribute('aria-expanded', 'false')
     } else {
       submenu.style.display = 'block'
-      const arrow = button.children[0];
-      if(arrow){
+      const arrow = button.children[0]
+      if (arrow) {
         arrow.classList.remove('-rotate-90')
       }
       button.setAttribute('aria-expanded', 'true')
