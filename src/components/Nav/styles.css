@@ -2,21 +2,14 @@
   flex: 0 0 auto;
 }
 
-/* Collapse nav at sm */
-@media (max-width: 640px) {
-  .p-plus__primary > li:first-child {
-    @apply w-full;
-  }
-}
-
 /* Overflow Menu */
 .p-plus__overflow {
   @apply z-50 absolute top-[43px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
 }
 
-.cu-nav__secondary .cu-nav__submenu ,
+.cu-nav__secondary .cu-nav__submenu,
 .cu-nav__secondary .p-plus__overflow {
-  @apply top-9
+  @apply top-9;
 }
 
 .p-plus__overflow.p-plus_left {
@@ -27,7 +20,7 @@
   @apply block pr-0 text-sm font-medium text-cu-black-600 border-b hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0;
 }
 
-.p-plus__overflow .p-plus__primary-nav-item a ,
+.p-plus__overflow .p-plus__primary-nav-item a,
 .p-plus__overflow .p-plus__primary-nav-item button {
   @apply flex items-center gap-0.5 w-full text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in px-5 py-3.5;
 }
@@ -38,12 +31,12 @@
 }
 
 .p-plus__overflow .cu-nav__submenu li {
-  @apply border-0
+  @apply border-0;
 }
 
 .p-plus__overflow .cu-nav__submenu li > a,
 .p-plus__overflow .cu-nav__submenu li > button {
-  @apply pl-7
+  @apply pl-7;
 }
 
 /* Add styles to current item */
@@ -60,32 +53,29 @@ button.p-plus__toggle-btn {
 }
 
 button.p-plus__toggle-btn svg {
-  @apply transition ease-in duration-300
+  @apply transition ease-in duration-300;
 }
 
 button.p-plus__toggle-btn.rotated svg {
-  @apply rotate-90
+  @apply rotate-90;
 }
 
 /* Mobile Styles */
 @media (max-width: 640px) {
+
+  /* Collapse nav at sm */
+  .p-plus__primary > li:first-child {
+    @apply w-full;
+  }
+
   body.no-scroll {
-    @apply overflow-hidden bg-cu-black-700;
+    @apply overflow-hidden bg-cu-black-700 before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-black before:z-[1] before:pointer-events-none;
   }
 
-  body.no-scroll::before {
-    content: '';
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Transparent background color */
-    z-index: 1; /* Place the overlay on top of the content */
-    pointer-events: none; /* Allows interaction with the content beneath the overlay */
+  .p-plus:not(.p-plus--clone) {
+    @apply static;
   }
 
-  /* Primary menu styles */
   .p-plus-container {
     @apply static;
   }
@@ -96,7 +86,7 @@ button.p-plus__toggle-btn.rotated svg {
 
   .p-plus__overflow {
     /* Added extra padding to bottom to see last item */
-    @apply absolute rounded-none left-0 right-0 w-screen h-[calc(100vh-62px)] overflow-y-auto !top-full overflow-scroll pb-[2rem];
+    @apply absolute left-0 bottom-0 w-full h-[calc(100vh-62px)] pb-[2rem] rounded-none overflow-y-auto overflow-scroll;
   }
 
   .p-plus__overflow.p-plus_left {

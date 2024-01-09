@@ -16,9 +16,8 @@ function menuPriority(nav: string) {
       `,
     })
 
-
     // Set the Browse dropdown style for small screen
-    // @ts-expect-error: Type error from priority-plus 
+    // @ts-expect-error: Type error from priority-plus
     navInstance.on('itemsChanged', () => {
       const overflowEl = document.querySelector('.p-plus__overflow')
 
@@ -26,8 +25,6 @@ function menuPriority(nav: string) {
         primaryNavItems = primaryEl ? primaryEl.querySelectorAll('.p-plus__primary-nav-item') : null
 
       if (overflowEl) {
-
-        console.log(primaryNavItems);
 
         if (primaryNavItems && primaryNavItems.length === 0) {
           overflowEl.classList.add('p-plus_left')
@@ -45,7 +42,7 @@ function menuPriority(nav: string) {
         navChildToggle.addEventListener('click', (item) => {
           const overflowEl = document.querySelector('.p-plus__overflow')
 
-          const target = item.target;
+          const target = item.target
 
           if (overflowEl && target && item.target && !overflowEl.contains(target as Node)) {
             navInstance.setOverflowNavOpen(false)
@@ -66,7 +63,7 @@ function menuPriority(nav: string) {
         document.body.classList.add('no-scroll')
         toggleBtn.classList.add('rotated')
 
-        const target = event.target;
+        const target = event.target
 
         // Check if the click was outside the menu and the toggle button
         if (target && !overflowNav.contains(target as Node) && !toggleBtn.contains(target as Node)) {
