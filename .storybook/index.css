@@ -5220,6 +5220,8 @@ button.p-plus__toggle-btn {
   display: flex;
   align-items: center;
   gap: 0.125rem;
+  --tw-text-opacity: 1;
+  color: rgb(77 77 77 / var(--tw-text-opacity));
 }
 
 button.p-plus__toggle-btn svg {
@@ -5280,21 +5282,26 @@ button.p-plus__toggle-btn.rotated svg {
     /* Added extra padding to bottom to see last item */
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    top: 100%;
     height: calc(100vh - 62px);
     width: 100%;
+    max-width: 100%;
     overflow: scroll;
     overflow-y: auto;
     border-radius: 0px;
     padding-bottom: 2rem;
   }
 
+  .cu-nav__secondary .p-plus__overflow {
+    height: calc(100vh - 62px - 52px);
+  }
+
   .p-plus__overflow.p-plus_left {
     left: 0px;
   }
 
-  .cu-nav__secondary .p-plus__overflow {
-    height: calc(100vh - 62px - 52px);
+  .p-plus__overflow .cu-nav__submenu {
+    max-width: 100%;
   }
 
   .p-plus__overflow > li.cu-nav-item a,

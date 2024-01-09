@@ -49,7 +49,7 @@
 
 /* Button nav item alignment */
 button.p-plus__toggle-btn {
-  @apply flex gap-0.5 items-center;
+  @apply flex gap-0.5 items-center text-cu-black-700;
 }
 
 button.p-plus__toggle-btn svg {
@@ -62,7 +62,6 @@ button.p-plus__toggle-btn.rotated svg {
 
 /* Mobile Styles */
 @media (max-width: 640px) {
-
   /* Collapse nav at sm */
   .p-plus__primary > li:first-child {
     @apply w-full;
@@ -86,15 +85,19 @@ button.p-plus__toggle-btn.rotated svg {
 
   .p-plus__overflow {
     /* Added extra padding to bottom to see last item */
-    @apply absolute left-0 bottom-0 w-full h-[calc(100vh-62px)] pb-[2rem] rounded-none overflow-y-auto overflow-scroll;
+    @apply absolute left-0 top-full w-full max-w-full h-[calc(100vh-62px)] pb-[2rem] rounded-none overflow-y-auto overflow-scroll;
+  }
+
+  .cu-nav__secondary .p-plus__overflow {
+    @apply h-[calc(100vh-62px-52px)];
   }
 
   .p-plus__overflow.p-plus_left {
     @apply left-0;
   }
 
-  .cu-nav__secondary .p-plus__overflow {
-    @apply h-[calc(100vh-62px-52px)];
+  .p-plus__overflow .cu-nav__submenu {
+    @apply max-w-full
   }
 
   .p-plus__overflow > li.cu-nav-item a,

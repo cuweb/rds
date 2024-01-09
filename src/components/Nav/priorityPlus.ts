@@ -25,7 +25,6 @@ function menuPriority(nav: string) {
         primaryNavItems = primaryEl ? primaryEl.querySelectorAll('.p-plus__primary-nav-item') : null
 
       if (overflowEl) {
-
         if (primaryNavItems && primaryNavItems.length === 0) {
           overflowEl.classList.add('p-plus_left')
         } else {
