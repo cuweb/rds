@@ -1,8 +1,7 @@
 import React from 'react'
 import { rdsMaxWidth, rdsOpacity } from '../../utils/optionClasses'
 import { styles } from './WideImage.Styles'
-import { WideImageMailChimp } from './WideImageMailChimp'
-import { WideImageCampaignMonitor } from './WideImageCampaignMonitor'
+import { WideImageSignupForm } from './WideImageSignupForm'
 
 export interface WideImageProps {
   children?: React.ReactNode
@@ -92,6 +91,5 @@ export const WideImageWrapper = ({
 }
 
 export const WideImage = Object.assign(WideImageWrapper, {
-  MailChimp: WideImageMailChimp,
-  CampaignMonitor: WideImageCampaignMonitor,
+  SignupForm: WideImageSignupForm,
 })

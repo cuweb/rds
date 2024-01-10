@@ -111,7 +111,7 @@ export const BgDark: Story = {
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
           reprehenderit ducimus.
         </p>
-        <WideImage.MailChimp buttonText="Subscribe" />
+        <WideImage.SignupForm buttonText="Subscribe" />
       </>
     ),
   },
