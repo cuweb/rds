@@ -1,7 +1,7 @@
 export const navBaseStyles = {
-  header: `cu-nav sticky z-50 duration-300 ease-in-out bg-white border-t-2 border-t-cu-red transition-top`,
-  wrapper: `border-b border-b-cu-black-100 py-3.5 px-5 sm:px-8`,
-  primaryWrapper: `cu-nav__primary nav nav--top sticky top-0 flex items-center gap-8 mx-auto max-w-screen-2xl `,
+  header: `cu-nav sticky z-50 duration-300 ease-in-out bg-white border-t-2 border-t-cu-red border-b border-b-cu-black-100 transition-top overflow`,
+  wrapper: `py-3.5 px-5 sm:px-8`,
+  primaryWrapper: `cu-nav__primary sticky top-0 w-full flex items-center gap-8 mx-auto max-w-screen-2xl `,
   secondaryWrapper: `cu-nav__secondary nav nav--bottom sticky top-0 z-30 bg-cu-black-25`,
   secondaryInnerWrapper: `flex gap-6 mx-auto max-w-screen-2xl`,
 }
