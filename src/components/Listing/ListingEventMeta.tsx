@@ -1,6 +1,5 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
 import { CalendarDaysIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import { metaStyles } from './Listing.Styles'
 
 export interface ListingEventMetaProps {
   startDateTime: string
@@ -9,6 +8,10 @@ export interface ListingEventMetaProps {
   onCampusBuilding?: string | null
   onCampusRoomNumber?: string | null
   eventAddress?: string
+}
+
+export const styles = {
+  redIcon: `mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300`,
 }
 
 export const ListingEventMeta = ({
@@ -47,14 +50,14 @@ export const ListingEventMeta = ({
     if (!isEventSameDay) {
       return (
         <>
-          <CalendarDaysIcon className={metaStyles.redIcon} aria-hidden="true" />
+          <CalendarDaysIcon className={styles.redIcon} aria-hidden="true" />
           {`${startMonth} ${startDay} — ${endMonth} ${endDay}`}
         </>
       )
     } else {
       return (
         <>
-          <ClockIcon className={metaStyles.redIcon} aria-hidden="true" />
+          <ClockIcon className={styles.redIcon} aria-hidden="true" />
           {`${startTime} — ${endTime}`}
         </>
       )
@@ -62,10 +65,10 @@ export const ListingEventMeta = ({
   }
 
   return (
-    <ul className={metaStyles.wrapper}>
-      <li className={`${metaStyles.item} ${metaStyles.alignIcon}`}>{multiDayDisplay()}</li>
-      <li className={`${metaStyles.item} ${metaStyles.alignIcon}`}>
-        <MapPinIcon className={metaStyles.redIcon} aria-hidden="true" />
+    <ul className="space-y-3 text-sm text-cu-black-600 @sm:md:text-base list-none">
+      <li className="flex">{multiDayDisplay()}</li>
+      <li className="flex">
+        <MapPinIcon className={styles.redIcon} aria-hidden="true" />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>

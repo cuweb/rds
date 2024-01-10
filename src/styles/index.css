@@ -4,6 +4,9 @@
 @import 'tailwindcss/utilities';
 
 /* RDS Layout CSS */
+@import '../layouts/StackedList/styles.css';
+
+/* RDS Layout CSS */
 @import './spacing.css';
 
 /* Components */

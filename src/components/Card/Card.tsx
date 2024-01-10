@@ -1,41 +1,53 @@
 import React from 'react'
-import { styles } from './Card.Styles'
-import { CardFigure } from './CardFigure'
-import { CardVideo } from './CardVideo'
-import { CardContent } from './CardContent'
-import { CardDateBox } from './CardDateBox'
-import { CardHeader } from './CardHeader'
+import { CardBody } from './CardBody'
+import { CardDateThumb } from './CardDateThumb'
 import { CardExcerpt } from './CardExcerpt'
-import { CardBadges } from './CardBadges'
-import { CardPostMeta } from './CardPostMeta'
 import { CardEventMeta } from './CardEventMeta'
+import { CardFigure } from './CardFigure'
+import { CardFooter } from './CardFooter'
+import { CardHeader } from './CardHeader'
+import { CardIconThumb } from './CardIconThumb'
+import { CardImageThumb } from './CardImageThumb'
 import { CardPeopleMeta } from './CardPeopleMeta'
-import { CardInitials } from './CardInitials'
 import { CardStats } from './CardStats'
+import { CardVideo } from './CardVideo'
 
 export interface CardProps {
   children: React.ReactNode
   isCenter?: boolean
-  noLink?: boolean
+  noHover?: boolean
   hasShadow?: 'onCard' | 'onHover'
   isGrey?: boolean
   hasRedBorder?: boolean
 }
 
-export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorder, isGrey }: CardProps) => {
-  const bgStyles = isGrey ? styles.greyBg : styles.whiteBg
+const cardStyles = {
+  card: ``,
+  whiteBg: `bg-white`,
+  greyBg: `bg-cu-black-25`,
+  shadow: `shadow-md shadow-cu-black-100`,
+  shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
+  center: `text-center`,
+  redBorder: `border-l-8 border-l-cu-red`,
+  zoom: `group duration-300 ease-in hover:scale-[1.04]`,
+}
+
+export const CardWrapper = ({ children, isCenter, noHover, hasShadow, hasRedBorder, isGrey }: CardProps) => {
+  const bgStyles = isGrey ? cardStyles.greyBg : cardStyles.whiteBg
   const addShadow =
     hasShadow === 'onCard'
-      ? `${styles.shadow} ${!noLink ? styles.shadowHover : ''}`
-      : hasShadow === 'onHover' && !noLink
-        ? styles.shadowHover
+      ? `${cardStyles.shadow} ${!noHover ? cardStyles.shadowHover : ''}`
+      : hasShadow === 'onHover' && !noHover
+        ? cardStyles.shadowHover
         : ''
-  const addRedBorder = hasRedBorder ? styles.redBorder : ''
-  const centerText = isCenter ? 'text-center' : ''
-  const noLinkStyles = noLink ? '' : styles.link
+  const addRedBorder = hasRedBorder ? cardStyles.redBorder : ''
+  const centerText = isCenter ? cardStyles.center : ''
+  const noHoverStyles = noHover ? '' : cardStyles.zoom
 
   return (
-    <div className={`cu-card ${styles.card} ${addRedBorder} ${addShadow} ${centerText} ${noLinkStyles} ${bgStyles}`}>
+    <div
+      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 ${addRedBorder} ${addShadow} ${centerText} ${noHoverStyles} ${bgStyles}`}
+    >
       {children}
     </div>
   )
@@ -43,15 +55,15 @@ export const CardWrapper = ({ children, isCenter, noLink, hasShadow, hasRedBorde
 
 export const Card = Object.assign(CardWrapper, {
   Figure: CardFigure,
+  DateThumb: CardDateThumb,
+  IconThumb: CardIconThumb,
+  ImageThumb: CardImageThumb,
   Video: CardVideo,
-  Content: CardContent,
-  DateBox: CardDateBox,
   Header: CardHeader,
+  Body: CardBody,
+  Footer: CardFooter,
   Excerpt: CardExcerpt,
-  Badges: CardBadges,
-  PostMeta: CardPostMeta,
   EventMeta: CardEventMeta,
   PeopleMeta: CardPeopleMeta,
-  Initials: CardInitials,
   Stats: CardStats,
 })

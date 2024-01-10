@@ -1,47 +1,50 @@
 import React from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 
-import { styles, linkStyles } from './Listing.Styles'
 import { ListingFigure } from './ListingFigure'
-import { ListingInitials } from './ListingInitials'
-import { ListingContent } from './ListingContent'
-import { ListingDateBox } from './ListingDateBox'
+import { ListingBody } from './ListingBody'
 import { ListingHeader } from './ListingHeader'
 import { ListingExcerpt } from './ListingExcerpt'
-import { ListingBadges } from './ListingBadges'
-import { ListingPostMeta } from './ListingPostMeta'
+import { ListingDateThumb } from './ListingDateThumb'
+import { ListingInitials } from './ListingInitials'
 import { ListingEventMeta } from './ListingEventMeta'
 import { ListingPeopleMeta } from './ListingPeopleMeta'
+import { ListingFooter } from './ListingFooter'
 
 export interface ListingProps {
   children: React.ReactNode
-  noLink?: boolean
+  useArrow?: boolean
 }
 
-export const ListingWrapper = ({ children, noLink }: ListingProps) => {
-  const noLinkStyles = noLink ? 'cu-listing--nolink  p-8' : linkStyles.baseLink
-  return (
-    <li className={`cu-listing ${styles.base} ${noLinkStyles}`}>
-      {children}
+export const ListingWrapper = ({ children, useArrow }: ListingProps) => {
+  const arrowStyles = useArrow ? 'pr-14' : ''
 
-      {!noLink && (
-        <div className={styles.arrowArea}>
-          <ChevronRightIcon className={styles.arrowIcon} aria-hidden="true" />
-        </div>
-      )}
+  return (
+    <li className={`cu-listing not-prose relative overflow-hidden @container bg-white p-6 ${arrowStyles}`}>
+      <div className="flex flex-col @lg:md:flex-row gap-5 @lg:md:gap-7 h-full">
+        {children}
+
+        {useArrow && (
+          <div className="absolute -mt-3 top-1/2 right-4">
+            <ChevronRightIcon
+              className="flex-none w-6 h-6 ml-auto text-cu-black-300 group-hover:text-cu-red"
+              aria-hidden="true"
+            />
+          </div>
+        )}
+      </div>
     </li>
   )
 }
 
 export const Listing = Object.assign(ListingWrapper, {
   Figure: ListingFigure,
-  Content: ListingContent,
-  DateBox: ListingDateBox,
+  Body: ListingBody,
   Header: ListingHeader,
   Excerpt: ListingExcerpt,
-  Badges: ListingBadges,
-  PostMeta: ListingPostMeta,
+  DateThumb: ListingDateThumb,
+  Initials: ListingInitials,
   EventMeta: ListingEventMeta,
   PeopleMeta: ListingPeopleMeta,
-  Initials: ListingInitials,
+  Footer: ListingFooter,
 })

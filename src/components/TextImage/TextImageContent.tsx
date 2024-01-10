@@ -38,6 +38,9 @@ export const TextImageContent = ({
   const contentPadding = imageUrl ? 'md:py-4' : ''
   const verticallyCenter = isCenter ? 'justify-center' : ''
 
+  // Header underline
+  const hasUnderline = children ? styles.underline : ''
+
   // Image options
   let hasImage
   let noImageOnMobile
@@ -123,8 +126,8 @@ export const TextImageContent = ({
         }`}
         style={inlineContentStyles}
       >
-        {title && headerType === 'h1' && <h1 className={`${styles.headerOne} ${styles.underline}`}>{title}</h1>}
-        {title && headerType === 'h2' && <h2 className={`${styles.headerTwo} ${styles.underline}`}>{title}</h2>}
+        {title && headerType === 'h1' && <h1 className={`${styles.headerOne} ${hasUnderline}`}>{title}</h1>}
+        {title && headerType === 'h2' && <h2 className={`${styles.headerTwo} ${hasUnderline}`}>{title}</h2>}
         {children}
       </div>
 

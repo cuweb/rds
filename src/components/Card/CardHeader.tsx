@@ -1,13 +1,33 @@
-import { styles } from './Card.Styles'
-
 export interface CardHeaderProps {
-  text: string
-  hasTitleHover?: boolean
+  children: React.ReactNode
+  as?: 'h2' | 'h3'
+  date?: string | Date
 }
 
-export const CardHeader = ({ text, hasTitleHover = true }: CardHeaderProps) => {
-  const titleHover = hasTitleHover ? 'group-hover:text-cu-red-700' : ''
-  return <h2 className={styles.header + ' ' + titleHover}>{text}</h2>
+export const headerStyles = {
+  base: ``,
+  header: ``,
+  date: ``,
+}
+
+export const CardHeader = ({ children, as = 'h2', date }: CardHeaderProps) => {
+  const HeaderComponent = as
+  const formatedDate = date
+    ? new Date(date).toLocaleString('en-US', {
+        month: 'long',
+        day: '2-digit',
+        year: 'numeric',
+      })
+    : null
+
+  return (
+    <header className="px-6 first:mt-6">
+      {date && <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">{formatedDate}</time>}
+      <HeaderComponent className="text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
+        {children}
+      </HeaderComponent>
+    </header>
+  )
 }
 
 CardHeader.displayName = 'Card.Header'

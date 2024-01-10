@@ -1,13 +1,14 @@
 import React from 'react'
-import { figureStyles } from './Listing.Styles'
 
 export interface ListingFigureProps {
   children: React.ReactNode
-  size?: 'small' | 'default'
+  isSquare?: boolean
 }
 
-export const ListingFigure = ({ children, size = 'default' }: ListingFigureProps) => {
-  return <figure className={`cu-figure ${figureStyles.figure} ${figureStyles[size]}`}>{children}</figure>
+export const ListingFigure = ({ children, isSquare }: ListingFigureProps) => {
+  const imageStyles = isSquare ? 'aspect-square' : 'aspect-[4/2.7]'
+
+  return <figure className={`flex-none max-w-[45%] @xl:md:max-w-[25%] ${imageStyles}`}>{children}</figure>
 }
 
 ListingFigure.displayName = 'Listing.Figure'
