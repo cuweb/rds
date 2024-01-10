@@ -2957,10 +2957,6 @@ select {
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 
-.overflow-auto {
-  overflow: auto;
-}
-
 .\!overflow-hidden {
   overflow: hidden !important;
 }
@@ -5057,14 +5053,6 @@ StackedList for ToC
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
-.p-plus__primary {
-  flex: 0 0 auto;
-}
-
-.p-plus__primary > li {
-  flex: 0 0 auto;
-}
-
 /* Overflow Menu */
 
 .p-plus__overflow {
@@ -5257,6 +5245,12 @@ button.p-plus__toggle-btn svg {
 button.p-plus__toggle-btn.rotated svg {
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@media (min-width: 640px) {
+  .p-plus__primary > li {
+    flex: 0 0 auto;
+  }
 }
 
 /* Mobile Styles */
