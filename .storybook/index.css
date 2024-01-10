@@ -2957,6 +2957,10 @@ select {
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .\!overflow-hidden {
   overflow: hidden !important;
 }
@@ -5053,6 +5057,10 @@ StackedList for ToC
   color: rgb(25 25 25 / var(--tw-text-opacity));
 }
 
+.p-plus__primary {
+  flex: 0 0 auto;
+}
+
 .p-plus__primary > li {
   flex: 0 0 auto;
 }
@@ -5220,8 +5228,21 @@ button.p-plus__toggle-btn {
   display: flex;
   align-items: center;
   gap: 0.125rem;
+  font-size: 15px;
+  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(77 77 77 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+button.p-plus__toggle-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(187 18 25 / var(--tw-text-opacity));
 }
 
 button.p-plus__toggle-btn svg {
