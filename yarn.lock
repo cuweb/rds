@@ -8223,6 +8223,11 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha512-66hKPCr+72mlfiSjlEB1+45IjXSqvVAIy6mocupoww4tBFE9R9IhwwUGoI4G++Tc9Aq+2rxOt0RFU6gPcrte0A==
 
+priority-plus@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/priority-plus/-/priority-plus-1.5.1.tgz#0e0c97241b70032624fd754892122c658a5c7d61"
+  integrity sha512-mIXWwkxz3X2kUfxTtkqKR80U9AihOBZeka6D/+jS7fEWa2H8A3bRcU3wCdmrNdjw9pXyOps7z1CYPVGAlqvghQ==
+
 prismjs@^1.27.0:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
