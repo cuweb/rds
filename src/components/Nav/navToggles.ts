@@ -1,13 +1,11 @@
-const closeAllSubmenus = ( buttonSelector : string ) => {
-  
+const closeAllSubmenus = (buttonSelector: string) => {
   const buttons = document.querySelectorAll(buttonSelector)
 
-  if ( buttons ) {
+  if (buttons) {
     buttons.forEach((button) => {
       const submenuParent = button.parentElement as HTMLElement
 
-      if(submenuParent) {
-
+      if (submenuParent) {
         const submenu = submenuParent.nextElementSibling as HTMLElement
 
         if (submenu) {
@@ -24,30 +22,26 @@ const closeAllSubmenus = ( buttonSelector : string ) => {
     })
   }
 
-  closeInnerSubMenus();
+  closeInnerSubMenus()
 }
 
 // Close all inner submenus
 const closeInnerSubMenus = () => {
-  const subArrows = document.querySelectorAll('.cu-nav__subarrow');
+  const subArrows = document.querySelectorAll('.cu-nav__subarrow')
 
-  if ( subArrows ) {
-    
+  if (subArrows) {
     subArrows.forEach((arrow) => {
-
-      if(arrow) {
+      if (arrow) {
         arrow.classList.remove('!rotate-[230deg]')
       }
     })
   }
 
-  const submenus = document.querySelectorAll('.cu-nav__submenu1');
+  const submenus = document.querySelectorAll('.cu-nav__submenu1')
 
-  if ( submenus ) {
-    
+  if (submenus) {
     submenus.forEach((submenu) => {
-
-      if(submenu) {
+      if (submenu) {
         submenu.classList.add('hidden')
         submenu.setAttribute('aria-expanded', 'false')
       }
@@ -59,8 +53,7 @@ const handleButtonClick = (button: HTMLElement) => {
   const submenuParent = button.parentElement as HTMLElement
   const isExpanded = button.getAttribute('aria-expanded') === 'true'
 
-  if(submenuParent) {
-
+  if (submenuParent) {
     const submenu = submenuParent.nextElementSibling as HTMLElement
 
     if (isExpanded) {
@@ -68,7 +61,7 @@ const handleButtonClick = (button: HTMLElement) => {
       button.setAttribute('aria-expanded', 'false')
     } else {
       submenu.style.display = 'block'
-      
+
       const arrow = button.children[0]
 
       if (arrow) {
@@ -96,31 +89,30 @@ const setupMenuToggle = (buttonSelector: string) => {
   document.addEventListener('click', (event: Event) => {
     const target = event.target as HTMLElement
 
-    if (target && ( !target.matches(buttonSelector) && !target.matches('.cu-nav__subarrow') )) {
+    if (target && !target.matches(buttonSelector) && !target.matches('.cu-nav__subarrow')) {
       closeAllSubmenus(buttonSelector)
     }
   })
 }
 
-const handleArrowClick = (arrow:HTMLElement) => {
+const handleArrowClick = (arrow: HTMLElement) => {
+  const parentElement = arrow.parentElement
+  const childElement = arrow.children[0]
 
-  const parentElement = arrow.parentElement;
-  const childElement = arrow.children[0];
+  const menuItemSelector = parentElement?.dataset?.menuItem
 
-  const menuItemSelector = parentElement?.dataset?.menuItem;
+  if (menuItemSelector) {
+    const menuItem = document.getElementById(menuItemSelector)
 
-  if(menuItemSelector) {
-    const menuItem = document.getElementById(menuItemSelector);
-
-    if(menuItem){
-      if(menuItem.classList.contains('hidden')) {
+    if (menuItem) {
+      if (menuItem.classList.contains('hidden')) {
         menuItem.classList.remove('hidden')
         menuItem.setAttribute('aria-expanded', 'true')
-        childElement.classList.add('!rotate-[230deg]');
+        childElement.classList.add('!rotate-[230deg]')
       } else {
         menuItem.classList.add('hidden')
         menuItem.setAttribute('aria-expanded', 'false')
-        childElement.classList.remove('!rotate-[230deg]');
+        childElement.classList.remove('!rotate-[230deg]')
       }
     }
   }
@@ -129,7 +121,7 @@ const handleArrowClick = (arrow:HTMLElement) => {
 export const setupArrowToggle = (arrowSelector: string) => {
   const arrows = document.querySelectorAll(arrowSelector)
 
-  if(arrows) {
+  if (arrows) {
     arrows.forEach((arrow) => {
       arrow.addEventListener('click', (event: Event) => {
         event.preventDefault()
@@ -144,5 +136,5 @@ export const setupArrowToggle = (arrowSelector: string) => {
 
 export default setupMenuToggle
 
-    setupMenuToggle('.cu-nav__parent-item')
-    setupArrowToggle('.cu-nav__subarrow')
+setupMenuToggle('.cu-nav__parent-item')
+setupArrowToggle('.cu-nav__subarrow')

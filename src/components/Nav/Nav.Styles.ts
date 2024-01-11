@@ -22,7 +22,7 @@ export const navItemStyles = {
   navItem: `flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item`,
   navArrow: `nav-arrow w-1.5 h-1.5 ml-[8px]`,
-  arrow: `arrow border-t border-t-cu-black-700 border-l border-l-cu-black-700 rotate-[135deg] transition ease-in duration-300`
+  arrow: `arrow border-t border-t-cu-black-700 border-l border-l-cu-black-700 rotate-[135deg] transition ease-in duration-300`,
 }
 
 export const navSubMenuStyles = {
@@ -31,7 +31,7 @@ export const navSubMenuStyles = {
   subMenuWrapper: `block text-sm font-medium text-cu-black-600 border-b border-b-cu-black-50 last:border-b-0`,
   subMenuItem: `px-5 py-3.5 grow hover:bg-cu-black-50/50`,
   subNavArrowWrapper: `cu-nav__subarrow flex items-center justify-center w-12 h-12 hover:bg-cu-black-50/50 transition ease-in duration-300`,
-  subNavArrow: `nav-subarrow w-2.5 h-2.5`
+  subNavArrow: `nav-subarrow w-2.5 h-2.5`,
 }
 
 export const navAsideStyles = {

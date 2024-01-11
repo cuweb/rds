@@ -9,7 +9,6 @@ import menuPriority from './priorityPlus'
 import setupMenuToggle, { setupArrowToggle } from './navToggles'
 
 export const NavWrapper = ({ children }: PropsWithChildren) => {
- 
   useEffect(() => {
     menuPriority('.cu-nav__menu')
     setupMenuToggle('.cu-nav__parent-item')
@@ -24,5 +23,5 @@ export const Nav = Object.assign(NavWrapper, {
   Aside: NavAside,
   Primary: NavPrimary,
   Secondary: NavSecondary,
-  Menu: NavMenu
+  Menu: NavMenu,
 })

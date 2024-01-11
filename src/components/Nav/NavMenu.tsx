@@ -5,14 +5,13 @@ export interface navMenuProps {
   menu: menuItem[]
 }
 
-export const NavMenu = ({ menu } : navMenuProps ) => {
-
+export const NavMenu = ({ menu }: navMenuProps) => {
   return (
     <>
       <div className={navItemStyles.navBarWrapper}>
         <ul className={navItemStyles.navBar}>
           {menu.map((menuItem: menuItem, index: number) => (
-            <NavMenuItem key={index} menuItem={menuItem}/>
+            <NavMenuItem key={index} menuItem={menuItem} />
           ))}
         </ul>
       </div>
