@@ -52,11 +52,13 @@ export const Default: Story = {
 
 export const Secondary: Story = {
   render: () => (
-    <Nav>
-      <Nav.Primary>
-        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-        <Nav.Aside />
-      </Nav.Primary>
+    <>
+      <Nav>
+        <Nav.Primary>
+          <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+          <Nav.Aside />
+        </Nav.Primary>
+      </Nav>
       <Nav.Secondary>
         <Nav.Menu>
           {TopBarDataSingle.map((topBarLink, index) => {
@@ -80,6 +82,6 @@ export const Secondary: Story = {
           })}
         </Nav.Menu>
       </Nav.Secondary>
-    </Nav>
+    </>
   ),
 }
