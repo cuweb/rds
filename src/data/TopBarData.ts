@@ -10,6 +10,20 @@ export const TopBarDataSingle = [
       {
         href: '/link-2.1',
         title: 'Link2.1',
+        submenu: [
+          {
+            href: '/link-2.1.1',
+            title: 'Link2.1.1',
+          },
+          {
+            href: '/link-2.1.2',
+            title: 'Link2.1.2',
+          },
+          {
+            href: '/link-2.1.3',
+            title: 'Link2.1.3',
+          },
+        ],
       },
       {
         href: '/link-2.2',

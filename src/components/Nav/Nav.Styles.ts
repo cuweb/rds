@@ -21,13 +21,17 @@ export const navItemStyles = {
   navItemWrapper: `relative flex items-center grow-0 pr-3 last:pr-0`,
   navItem: `flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item`,
-  navArrow: `flex-none w-4 h-4 text-cu-black-400 -rotate-90 transition ease-in duration-300`,
+  navArrow: `nav-arrow w-1.5 h-1.5 ml-[8px]`,
+  arrow: `arrow border-t border-t-cu-black-700 border-l border-l-cu-black-700 rotate-[135deg] transition ease-in duration-300`
 }
 
 export const navSubMenuStyles = {
   subMenuContainer: `cu-nav__submenu hidden absolute top-[43px] left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
-  subMenuWrapper: `block text-sm font-medium text-cu-black-600 border-b hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0`,
-  subMenuItem: `px-5 py-3.5`,
+  subMenuContainer1: `cu-nav__submenu1 hidden max-w-xs w-64 overflow-hidden bg-white`,
+  subMenuWrapper: `block text-sm font-medium text-cu-black-600 border-b border-b-cu-black-50 last:border-b-0`,
+  subMenuItem: `px-5 py-3.5 grow hover:bg-cu-black-50/50`,
+  subNavArrowWrapper: `cu-nav__subarrow flex items-center justify-center w-12 h-12 hover:bg-cu-black-50/50 transition ease-in duration-300`,
+  subNavArrow: `nav-subarrow w-2.5 h-2.5`
 }
 
 export const navAsideStyles = {

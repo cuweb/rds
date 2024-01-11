@@ -1,35 +1,22 @@
-import { useState, useEffect, PropsWithChildren } from 'react'
+import { useEffect, PropsWithChildren } from 'react'
 import { NavLogo } from './NavLogo'
 import { NavAside } from './NavAside'
 import { NavPrimary } from './NavPrimary'
 import { NavSecondary } from './NavSecondary'
 import { NavMenu } from './NavMenu'
-import { NavSubMenu } from './NavSubMenu'
 import { navBaseStyles } from './Nav.Styles'
+import menuPriority from './priorityPlus'
+import setupMenuToggle, { setupArrowToggle } from './navToggles'
 
 export const NavWrapper = ({ children }: PropsWithChildren) => {
-  const [navPosition, setNavPosition] = useState('top-0')
-  const [navScroll, setNavScroll] = useState(0)
-
+ 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrollingUp = window.scrollY < navScroll
+    menuPriority('.cu-nav__menu')
+    setupMenuToggle('.cu-nav__parent-item')
+    setupArrowToggle('.cu-nav__subarrow')
+  })
 
-      // If use is scrolling up set the position to top-0
-      setNavPosition(isScrollingUp ? 'top-0' : '-top-[66px]')
-      setNavScroll(window.scrollY)
-    }
-
-    // Attach the scroll event listener
-    window.addEventListener('scroll', handleScroll)
-
-    // Clean up the event listener on unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [navScroll])
-
-  return <header className={`${navPosition} ${navBaseStyles.header}`}>{children}</header>
+  return <header className={navBaseStyles.header}>{children}</header>
 }
 
 export const Nav = Object.assign(NavWrapper, {
@@ -37,6 +24,5 @@ export const Nav = Object.assign(NavWrapper, {
   Aside: NavAside,
   Primary: NavPrimary,
   Secondary: NavSecondary,
-  Menu: NavMenu,
-  SubMenu: NavSubMenu,
+  Menu: NavMenu
 })
