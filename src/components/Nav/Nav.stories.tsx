@@ -56,13 +56,23 @@ export const LoggedOut: Story = {
   ),
 }
 
+const userNoImage = {
+  firstName: 'Danny',
+  lastName: 'Brown',
+}
+
 export const LoggedIn: Story = {
   render: () => (
     <Nav>
       <Nav.Primary>
         <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
         <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData} LoggedInUser={true} LoggedInOptions={NavAsideLoggedInOptions} />
+        <Nav.Aside
+          menu={NavAsideData}
+          LoggedInUser={true}
+          LoggedMenu={NavAsideLoggedInOptions}
+          userNoImage={userNoImage}
+        />
       </Nav.Primary>
     </Nav>
   ),

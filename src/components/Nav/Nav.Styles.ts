@@ -18,7 +18,7 @@ export const navLogo = {
 export const navMenuItemStyles = {
   navBarWrapper: `grow`,
   navBar: `cu-nav__menu flex gap-4 items-center`,
-  menuWrapper: `relative flex items-center grow-0 pr-3 last:pr-0`,
+  menuWrapper: `relative flex items-center grow-0 min-h-8 pr-3 last:pr-0`,
   navItemWrapper: `flex items-stretch justify-between`,
   navItem: `flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item after:w-1.5 after:h-1.5`,
@@ -27,7 +27,7 @@ export const navMenuItemStyles = {
 }
 
 export const navSubMenuItemStyles = {
-  subMenuContainer: `cu-nav__submenu hidden absolute top-[43px] left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
+  subMenuContainer: `cu-nav__submenu hidden absolute top-[48px] left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
   subMenuWrapper: `block text-sm font-medium text-cu-black-600 border-b border-b-cu-black-50 last:border-b-0`,
   subMenuItem: `px-5 py-3.5 grow hover:bg-cu-black-50/50`,
   innerSubMenuContainer: `cu-nav__inner-submenu hidden w-full overflow-hidden bg-cu-black-50/35`,
