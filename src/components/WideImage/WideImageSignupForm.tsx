@@ -30,7 +30,10 @@ export const WideImageSignupForm = ({ buttonText = 'Submit Email' }: WideImageSi
         />
         <label htmlFor="optin" className="text-sm">
           I agree to receive email from Carleton University. Read our{' '}
-          <a href="www.carleton.ca" style={{ textDecoration: 'underline' }}>
+          <a
+            href="https://carleton.ca/privacy/privacy-notices/general-notice-of-collection-use-and-disclosure/"
+            style={{ textDecoration: 'underline' }}
+          >
             Privacy Policy
           </a>{' '}
           to learn more.
