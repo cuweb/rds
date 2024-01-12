@@ -6,13 +6,12 @@ import { NavSecondary } from './NavSecondary'
 import { NavMenu } from './NavMenu'
 import { navBaseStyles } from './Nav.Styles'
 import menuPriority from './priorityPlus'
-import setupMenuToggle, { setupArrowToggle } from './navToggles'
+import setupMenuToggle from './navToggles'
 
 export const NavWrapper = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     menuPriority('.cu-nav__menu')
-    setupMenuToggle('.cu-nav__parent-item')
-    setupArrowToggle('.cu-nav__subarrow')
+    setupMenuToggle()
   })
 
   return <header className={navBaseStyles.header}>{children}</header>

@@ -1,9 +1,15 @@
-const closeAllSubmenus = (buttonSelector: string) => {
-  const buttons = document.querySelectorAll(buttonSelector)
+const navArrowRotateClass = 'after:!rotate-[230deg]'
+const navArrowActiveClass = 'bg-cu-black-50/35'
+const parentMenuItemsSelector = '.cu-nav__parent-item'
+const innerSubMenuTogglesSelector = '.cu-nav__inner-submenu-toggle'
 
-  if (buttons) {
-    buttons.forEach((button) => {
-      const submenuParent = button.parentElement as HTMLElement
+// Close all sub menu items
+const closeAllSubmenus = () => {
+  const parentMenuItems = document.querySelectorAll(parentMenuItemsSelector)
+
+  if (parentMenuItems) {
+    parentMenuItems.forEach((menuItem) => {
+      const submenuParent = menuItem.parentElement as HTMLElement
 
       if (submenuParent) {
         const submenu = submenuParent.nextElementSibling as HTMLElement
@@ -11,36 +17,31 @@ const closeAllSubmenus = (buttonSelector: string) => {
         if (submenu) {
           submenu.style.display = 'none'
 
-          button.setAttribute('aria-expanded', 'false')
-
-          const arrow = button.children[0]
-          if (arrow) {
-            arrow.classList.remove('!rotate-[230deg]')
-          }
+          menuItem.setAttribute('aria-expanded', 'false')
+          menuItem.classList.remove(navArrowRotateClass)
         }
       }
     })
   }
 
+  // Close all inner submenus
   closeInnerSubMenus()
 }
 
-// Close all inner submenus
 const closeInnerSubMenus = () => {
-  const subArrows = document.querySelectorAll('.cu-nav__subarrow')
+  const innerSubMenuToggles = document.querySelectorAll(innerSubMenuTogglesSelector)
 
-  if (subArrows) {
-    subArrows.forEach((arrow) => {
-      if (arrow) {
-        arrow.classList.remove('!rotate-[230deg]')
-      }
+  if (innerSubMenuToggles) {
+    innerSubMenuToggles.forEach((toggle) => {
+      toggle.classList.remove(navArrowRotateClass)
+      toggle.classList.remove(navArrowActiveClass)
     })
   }
 
-  const submenus = document.querySelectorAll('.cu-nav__submenu1')
+  const innerSubmenus = document.querySelectorAll('.cu-nav__inner-submenu')
 
-  if (submenus) {
-    submenus.forEach((submenu) => {
+  if (innerSubmenus) {
+    innerSubmenus.forEach((submenu) => {
       if (submenu) {
         submenu.classList.add('hidden')
         submenu.setAttribute('aria-expanded', 'false')
@@ -49,55 +50,27 @@ const closeInnerSubMenus = () => {
   }
 }
 
-const handleButtonClick = (button: HTMLElement) => {
-  const submenuParent = button.parentElement as HTMLElement
-  const isExpanded = button.getAttribute('aria-expanded') === 'true'
+const handleMenuItemClick = (menuItem: HTMLElement) => {
+  const menuItemParent = menuItem.parentElement as HTMLElement
+  const isExpanded = menuItem.getAttribute('aria-expanded') === 'true'
 
-  if (submenuParent) {
-    const submenu = submenuParent.nextElementSibling as HTMLElement
+  if (menuItemParent) {
+    const submenu = menuItemParent.nextElementSibling as HTMLElement
 
     if (isExpanded) {
       submenu.style.display = 'none'
-      button.setAttribute('aria-expanded', 'false')
+      menuItem.classList.remove(navArrowRotateClass)
+      menuItem.setAttribute('aria-expanded', 'false')
     } else {
       submenu.style.display = 'block'
-
-      const arrow = button.children[0]
-
-      if (arrow) {
-        arrow.classList.add('!rotate-[230deg]')
-      }
-      button.setAttribute('aria-expanded', 'true')
+      menuItem.classList.add(navArrowRotateClass)
+      menuItem.setAttribute('aria-expanded', 'true')
     }
   }
 }
 
-const setupMenuToggle = (buttonSelector: string) => {
-  const buttons = document.querySelectorAll(buttonSelector)
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', (event: Event) => {
-      event.preventDefault()
-      const target = event.target
-      if (target instanceof HTMLElement) {
-        closeAllSubmenus(buttonSelector)
-        handleButtonClick(target)
-      }
-    })
-  })
-
-  document.addEventListener('click', (event: Event) => {
-    const target = event.target as HTMLElement
-
-    if (target && !target.matches(buttonSelector) && !target.matches('.cu-nav__subarrow')) {
-      closeAllSubmenus(buttonSelector)
-    }
-  })
-}
-
-const handleArrowClick = (arrow: HTMLElement) => {
+const handleInnerSubNavClick = (arrow: HTMLElement) => {
   const parentElement = arrow.parentElement
-  const childElement = arrow.children[0]
 
   const menuItemSelector = parentElement?.dataset?.menuItem
 
@@ -108,33 +81,54 @@ const handleArrowClick = (arrow: HTMLElement) => {
       if (menuItem.classList.contains('hidden')) {
         menuItem.classList.remove('hidden')
         menuItem.setAttribute('aria-expanded', 'true')
-        childElement.classList.add('!rotate-[230deg]')
+        arrow.classList.add(navArrowRotateClass)
+        arrow.classList.add(navArrowActiveClass)
       } else {
         menuItem.classList.add('hidden')
         menuItem.setAttribute('aria-expanded', 'false')
-        childElement.classList.remove('!rotate-[230deg]')
+        arrow.classList.remove(navArrowRotateClass)
+        arrow.classList.remove(navArrowActiveClass)
       }
     }
   }
 }
 
-export const setupArrowToggle = (arrowSelector: string) => {
-  const arrows = document.querySelectorAll(arrowSelector)
+const setupMenuToggle = () => {
+  const parentMenuItems = document.querySelectorAll(parentMenuItemsSelector)
 
-  if (arrows) {
-    arrows.forEach((arrow) => {
-      arrow.addEventListener('click', (event: Event) => {
+  if (parentMenuItems) {
+    parentMenuItems.forEach((menuItem) => {
+      menuItem.addEventListener('click', (event: Event) => {
         event.preventDefault()
         const target = event.target
-        if (target) {
-          handleArrowClick(target as HTMLElement)
+        if (target instanceof HTMLElement) {
+          closeAllSubmenus()
+          handleMenuItemClick(target)
         }
       })
     })
   }
+
+  const innerSubMenuToggles = document.querySelectorAll(innerSubMenuTogglesSelector)
+
+  if (innerSubMenuToggles) {
+    innerSubMenuToggles.forEach((toggle) => {
+      toggle.addEventListener('click', (event: Event) => {
+        event.preventDefault()
+        const target = event.target
+        if (target) {
+          handleInnerSubNavClick(target as HTMLElement)
+        }
+      })
+    })
+  }
+
+  document.addEventListener('click', (event: Event) => {
+    const target = event.target as HTMLElement
+    if (target && !target.matches(parentMenuItemsSelector) && !target.matches(innerSubMenuTogglesSelector)) {
+      closeAllSubmenus()
+    }
+  })
 }
 
 export default setupMenuToggle
-
-setupMenuToggle('.cu-nav__parent-item')
-setupArrowToggle('.cu-nav__subarrow')

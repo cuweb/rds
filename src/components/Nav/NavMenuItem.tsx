@@ -1,4 +1,4 @@
-import { navSubMenuStyles, navItemStyles } from './Nav.Styles'
+import { navMenuItemStyles, navSubMenuItemStyles } from './Nav.Styles'
 
 export interface menuItem {
   href: string
@@ -8,7 +8,7 @@ export interface menuItem {
 
 export interface menuItemProps {
   menuItem: menuItem
-  menuLevel?: number
+  isInnerSubMenu?: boolean
 }
 
 const convertToSlug = (text: string) => {
@@ -18,31 +18,31 @@ const convertToSlug = (text: string) => {
     .replace(/ +/g, '-')
 }
 
-export const NavMenuItem = ({ menuItem, menuLevel }: menuItemProps) => {
+export const NavMenuItem = ({ menuItem, isInnerSubMenu }: menuItemProps) => {
   return (
-    <li className={menuLevel ? navSubMenuStyles.subMenuWrapper : navItemStyles.navItemWrapper}>
-      <span className="flex items-center justify-between" data-menu-item={convertToSlug(menuItem.title)}>
+    <li className={isInnerSubMenu ? navSubMenuItemStyles.subMenuWrapper : navMenuItemStyles.navItemWrapper}>
+      <span className="flex items-stretch justify-between" data-menu-item={convertToSlug(menuItem.title)}>
         <a
           href={menuItem.href}
           className={
-            (menuItem.submenu && !menuLevel ? navItemStyles.navParentItem : '') +
+            (menuItem.submenu && !isInnerSubMenu
+              ? navMenuItemStyles.navParentItem + ' ' + navMenuItemStyles.navArrow
+              : '') +
             ` ` +
-            navItemStyles.navItem +
+            navMenuItemStyles.navItem +
             ` ` +
-            (menuLevel ? navSubMenuStyles.subMenuItem : '')
+            (isInnerSubMenu ? navSubMenuItemStyles.subMenuItem : '')
           }
         >
           {menuItem.title}
-          {menuItem.submenu && !menuLevel ? (
-            <span className={navItemStyles.arrow + ' ' + navItemStyles.navArrow}></span>
-          ) : (
-            ''
-          )}
         </a>
 
-        {menuItem.submenu && menuLevel ? (
-          <button className={menuLevel ? navSubMenuStyles.subNavArrowWrapper : ''} aria-expanded="false">
-            <span className={navItemStyles.arrow + ' ' + navSubMenuStyles.subNavArrow}></span>
+        {menuItem.submenu && isInnerSubMenu ? (
+          <button
+            className={isInnerSubMenu ? navSubMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow : ''}
+            aria-expanded="false"
+          >
+            <span className="sr-only">Click to open inner submenu</span>
           </button>
         ) : (
           <></>
@@ -51,14 +51,15 @@ export const NavMenuItem = ({ menuItem, menuLevel }: menuItemProps) => {
 
       {menuItem.submenu ? (
         (() => {
-          const menuLevelUp = menuLevel ? menuLevel + 1 : 1
           return (
             <ul
               id={convertToSlug(menuItem.title)}
-              className={menuLevel ? navSubMenuStyles.subMenuContainer1 : navSubMenuStyles.subMenuContainer}
+              className={
+                isInnerSubMenu ? navSubMenuItemStyles.innerSubMenuContainer : navSubMenuItemStyles.subMenuContainer
+              }
             >
               {menuItem.submenu.map((menuItem: menuItem, index: number) => (
-                <NavMenuItem key={index} menuItem={menuItem} menuLevel={menuLevelUp} />
+                <NavMenuItem key={index} menuItem={menuItem} isInnerSubMenu={true} />
               ))}
             </ul>
           )

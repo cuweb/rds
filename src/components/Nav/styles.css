@@ -37,8 +37,6 @@
 
 /* Add styles to current item */
 .cu-nav-current a,
-.cu-nav-current button,
-.p-plus__overflow li.cu-nav-current > button,
 .p-plus__overflow li.cu-nav-current > a {
   @apply text-cu-red-700;
 }
@@ -102,20 +100,11 @@ button.p-plus__toggle-btn.rotated svg {
     @apply max-w-full;
   }
 
-  .p-plus__overflow > li.cu-nav-item a,
-  .p-plus__overflow > li.cu-nav-item button {
+  .p-plus__overflow > li.cu-nav-item a {
     @apply pl-8;
   }
 
   .p-plus__overflow li.cu-nav-item-child a {
     @apply pl-12;
-  }
-
-  .p-plus__overflow li.cu-nav-item-grandchild a {
-    @apply pl-16;
-  }
-
-  .p-plus__overflow li.cu-nav-has-grandchildren button.cu-nav-grandchild-menu-toggle {
-    @apply px-0;
   }
 }
