@@ -38,7 +38,7 @@
 /* Add styles to current item */
 .cu-nav-current > span > a,
 .p-plus__overflow li.cu-nav-current > span > a {
-  @apply text-cu-red-700;
+  @apply text-cu-red-700 after:border-t-cu-red-700 after:border-l-cu-red-700;
 }
 
 /* Button nav item alignment */
