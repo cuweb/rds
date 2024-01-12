@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
@@ -105,7 +105,7 @@ export const WithContainers: Story = {
         </Section>
       </Main>
 
-      <FooterBasic />
+      <FooterStandard />
     </>
   ),
 }

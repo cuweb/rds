@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Nav } from '../../components/Nav/Nav'
 import { Heading } from '../../components/Heading/Heading'
@@ -278,7 +278,7 @@ export const EventListing: Story = {
         </Section>
       </Main>
 
-      <FooterBasic />
+      <FooterStandard />
     </>
   ),
 }

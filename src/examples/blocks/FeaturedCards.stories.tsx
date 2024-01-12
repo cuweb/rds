@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
 import { Heading } from '../../components/Heading/Heading'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -18,7 +18,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const SpotlightCards: Story = {
+export const FeaturedCards: Story = {
   render: () => (
     <>
       <Nav>
@@ -32,7 +32,7 @@ export const SpotlightCards: Story = {
       <Main>
         <Section hasProse>
           <TextImage>
-            <TextImage.Content headerType="h1" title="Spotlight Cards">
+            <TextImage.Content headerType="h1" title="Featured Cards">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -42,7 +42,7 @@ export const SpotlightCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Spotlight Cards: Shadow on Static & Hover" />
+            <Heading text="Featured Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} hasShadow="onCard" noHover>
@@ -62,7 +62,7 @@ export const SpotlightCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Spotlight Cards: Shadow on Static & Hover with Grey Bg" />
+            <Heading text="Featured Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} isGrey noHover>
@@ -82,7 +82,7 @@ export const SpotlightCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Spotlight Cards: Shadow on Static & Hover" />
+            <Heading text="Featured Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} noHover>
@@ -102,7 +102,7 @@ export const SpotlightCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Spotlight Cards: Shadow on Static & Hover with Grey Bg" />
+            <Heading text="Featured Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} isGrey hasShadow="onCard" noHover>
@@ -123,7 +123,7 @@ export const SpotlightCards: Story = {
         </Section>
       </Main>
 
-      <FooterBasic />
+      <FooterStandard />
     </>
   ),
 }
