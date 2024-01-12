@@ -11,7 +11,7 @@ export const NavMenu = ({ menu }: navMenuProps) => {
       <div className={navMenuItemStyles.navBarWrapper}>
         <ul className={navMenuItemStyles.navBar}>
           {menu.map((menuItem: ImenuItem, index: number) => (
-            <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false}/>
+            <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
           ))}
         </ul>
       </div>
