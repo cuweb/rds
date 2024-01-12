@@ -34,18 +34,10 @@ export const WideImageWrapper = ({
   let hasImageStyles
   let imageTextStyles
 
-  if (image) {
-    isType = 'image'
-  }
-
   switch (isType) {
     case 'light':
       imageTextStyles = 'text-cu-black-700'
       hasImageStyles = styles.noImage
-      break
-    case 'image':
-      imageTextStyles = 'text-white'
-      hasImageStyles = styles.imageBg
       break
     case 'dark':
       imageTextStyles = 'text-white'
@@ -54,6 +46,11 @@ export const WideImageWrapper = ({
     default:
       imageTextStyles = 'text-cu-black-700'
       hasImageStyles = styles.noImage
+  }
+
+  if (image != '') {
+    imageTextStyles = 'text-white'
+    hasImageStyles = styles.imageBg
   }
 
   return (
