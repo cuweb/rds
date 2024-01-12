@@ -36,8 +36,8 @@
 }
 
 /* Add styles to current item */
-.cu-nav-current a,
-.p-plus__overflow li.cu-nav-current > a {
+.cu-nav-current > span > a,
+.p-plus__overflow li.cu-nav-current > span > a {
   @apply text-cu-red-700;
 }
 
