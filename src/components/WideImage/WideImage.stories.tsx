@@ -103,6 +103,7 @@ export const BgDark: Story = {
   args: {
     ...Default.args,
     title: 'Subscribe to Our Newsletter',
+    image: '',
     isType: 'dark',
     maxWidth: '5xl',
     children: (
