@@ -1,4 +1,4 @@
-export const TopBarDataSingle = [
+export const NavDataSingle = [
   {
     href: '/link-1',
     title: 'Link1',
@@ -64,5 +64,27 @@ export const TopBarDataSingle = [
   {
     href: '/link-6',
     title: 'Link6',
+  },
+]
+
+export const NavAsideData = [
+  {
+    href: 'https://futurefunder.carleton.ca/',
+    title: 'Give',
+  },
+  {
+    href: 'https://admissions.carleton.ca/apply/',
+    title: 'Apply',
+  },
+]
+
+export const NavAsideLoggedInOptions = [
+  {
+    href: '/profile',
+    title: 'Profile',
+  },
+  {
+    href: '/',
+    title: 'Log OUT',
   },
 ]

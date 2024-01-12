@@ -1,8 +1,9 @@
 import { navMenuItemStyles } from './Nav.Styles'
-import { NavMenuItem, menuItem } from './NavMenuItem'
+import { ImenuItem } from './NavMenuItem'
+import { NavMenuItemWrapper } from './NavMenuItemWrapper'
 
 export interface navMenuProps {
-  menu: menuItem[]
+  menu: ImenuItem[]
 }
 
 export const NavMenu = ({ menu }: navMenuProps) => {
@@ -10,8 +11,8 @@ export const NavMenu = ({ menu }: navMenuProps) => {
     <>
       <div className={navMenuItemStyles.navBarWrapper}>
         <ul className={navMenuItemStyles.navBar}>
-          {menu.map((menuItem: menuItem, index: number) => (
-            <NavMenuItem key={index} menuItem={menuItem} />
+          {menu.map((menuItem: ImenuItem, index: number) => (
+            <NavMenuItemWrapper key={index} menuItem={menuItem} />
           ))}
         </ul>
       </div>

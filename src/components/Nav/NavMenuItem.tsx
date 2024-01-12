@@ -1,14 +1,15 @@
 import { navMenuItemStyles, navSubMenuItemStyles } from './Nav.Styles'
 
-export interface menuItem {
+export interface ImenuItem {
   href: string
   title: string
-  submenu?: menuItem[]
+  submenu?: ImenuItem[]
 }
-
 export interface menuItemProps {
-  menuItem: menuItem
+  menuItem: ImenuItem
+  isSubMenu?: boolean
   isInnerSubMenu?: boolean
+  id: string
 }
 
 const convertToSlug = (text: string) => {
@@ -18,56 +19,39 @@ const convertToSlug = (text: string) => {
     .replace(/ +/g, '-')
 }
 
-export const NavMenuItem = ({ menuItem, isInnerSubMenu }: menuItemProps) => {
+export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuItemProps) => {
   return (
-    <li className={isInnerSubMenu ? navSubMenuItemStyles.subMenuWrapper : navMenuItemStyles.navItemWrapper}>
-      <span className="flex items-stretch justify-between" data-menu-item={convertToSlug(menuItem.title)}>
-        <a
-          href={menuItem.href}
-          className={
-            (menuItem.submenu && !isInnerSubMenu
-              ? navMenuItemStyles.navParentItem + ' ' + navMenuItemStyles.navArrow
-              : '') +
-            ` ` +
-            navMenuItemStyles.navItem +
-            ` ` +
-            (isInnerSubMenu ? navSubMenuItemStyles.subMenuItem : '')
-          }
+    <span className={navMenuItemStyles.navItemWrapper} data-menu-item={convertToSlug(id)}>
+      <a
+        href={menuItem.href}
+        className={
+          (menuItem.submenu && !isInnerSubMenu
+            ? navMenuItemStyles.navParentItem +
+              ' ' +
+              navMenuItemStyles.navArrow +
+              ' ' +
+              navMenuItemStyles.navParentArrow
+            : '') +
+          ` ` +
+          navMenuItemStyles.navItem +
+          ` ` +
+          (isSubMenu ? navSubMenuItemStyles.subMenuItem : '')
+        }
+      >
+        {menuItem.title}
+      </a>
+
+      {menuItem.submenu && isInnerSubMenu ? (
+        <button
+          className={isInnerSubMenu ? navSubMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow : ''}
+          aria-expanded="false"
         >
-          {menuItem.title}
-        </a>
-
-        {menuItem.submenu && isInnerSubMenu ? (
-          <button
-            className={isInnerSubMenu ? navSubMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow : ''}
-            aria-expanded="false"
-          >
-            <span className="sr-only">Click to open inner submenu</span>
-          </button>
-        ) : (
-          <></>
-        )}
-      </span>
-
-      {menuItem.submenu ? (
-        (() => {
-          return (
-            <ul
-              id={convertToSlug(menuItem.title)}
-              className={
-                isInnerSubMenu ? navSubMenuItemStyles.innerSubMenuContainer : navSubMenuItemStyles.subMenuContainer
-              }
-            >
-              {menuItem.submenu.map((menuItem: menuItem, index: number) => (
-                <NavMenuItem key={index} menuItem={menuItem} isInnerSubMenu={true} />
-              ))}
-            </ul>
-          )
-        })()
+          <span className="sr-only">Click to open inner submenu</span>
+        </button>
       ) : (
         <></>
       )}
-    </li>
+    </span>
   )
 }
 

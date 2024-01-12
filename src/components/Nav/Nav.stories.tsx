@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
-import { TopBarDataSingle } from '../../data/TopBarData'
+import { NavDataSingle, NavAsideData, NavAsideLoggedInOptions } from '../../data/NavData'
 
 const meta: Meta<typeof Nav> = {
   title: 'Components/Nav',
@@ -21,8 +21,8 @@ export const Default: Story = {
     <Nav>
       <Nav.Primary>
         <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-        <Nav.Menu menu={TopBarDataSingle} />
-        <Nav.Aside />
+        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Aside menu={NavAsideData} />
       </Nav.Primary>
     </Nav>
   ),
@@ -34,12 +34,36 @@ export const Secondary: Story = {
       <Nav>
         <Nav.Primary>
           <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-          <Nav.Aside />
+          <Nav.Aside menu={NavAsideData} />
         </Nav.Primary>
       </Nav>
       <Nav.Secondary>
-        <Nav.Menu menu={TopBarDataSingle} />
+        <Nav.Menu menu={NavDataSingle} />
       </Nav.Secondary>
     </>
+  ),
+}
+
+export const LoggedOut: Story = {
+  render: () => (
+    <Nav>
+      <Nav.Primary>
+        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
+      </Nav.Primary>
+    </Nav>
+  ),
+}
+
+export const LoggedIn: Story = {
+  render: () => (
+    <Nav>
+      <Nav.Primary>
+        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Aside menu={NavAsideData} LoggedInUser={true} LoggedInOptions={NavAsideLoggedInOptions} />
+      </Nav.Primary>
+    </Nav>
   ),
 }

@@ -3692,10 +3692,6 @@ select {
   padding-top: 56.25%;
 }
 
-.pl-7 {
-  padding-left: 1.75rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -5218,10 +5214,18 @@ StackedList for ToC
 
 /* Add styles to current item */
 
-.cu-nav-current a,
-.p-plus__overflow li.cu-nav-current > a {
+.cu-nav-current > span > a,
+.p-plus__overflow li.cu-nav-current > span > a {
   --tw-text-opacity: 1;
   color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.cu-nav-current > span > a::after,
+.p-plus__overflow li.cu-nav-current > span > a::after {
+  border-top-color: rgb(187 18 25 / var(--tw-border-opacity));
+  content: var(--tw-content);
+  --tw-border-opacity: 1;
+  border-left-color: rgb(187 18 25 / var(--tw-border-opacity));
 }
 
 /* Button nav item alignment */
@@ -8705,6 +8709,11 @@ button.p-plus__toggle-btn.rotated svg {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .sm\:pb-36 {

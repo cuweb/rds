@@ -18,10 +18,12 @@ export const navLogo = {
 export const navMenuItemStyles = {
   navBarWrapper: `grow`,
   navBar: `cu-nav__menu flex gap-4 items-center`,
-  navItemWrapper: `relative flex items-center grow-0 pr-3 last:pr-0`,
+  menuWrapper: `relative flex items-center grow-0 pr-3 last:pr-0`,
+  navItemWrapper: `flex items-stretch justify-between`,
   navItem: `flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item after:w-1.5 after:h-1.5`,
   navArrow: `after:content-[''] hover:after:border-current after:ml-2 after:border-t after:border-t-cu-black-700 after:border-l after:border-l-cu-black-700 after:rotate-[135deg] after:transition after:ease-in after:duration-300`,
+  navParentArrow: `after:w-1.5 after:h-1.5`,
 }
 
 export const navSubMenuItemStyles = {

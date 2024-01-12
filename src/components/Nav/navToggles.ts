@@ -3,6 +3,16 @@ const navArrowActiveClass = 'bg-cu-black-50/35'
 const parentMenuItemsSelector = '.cu-nav__parent-item'
 const innerSubMenuTogglesSelector = '.cu-nav__inner-submenu-toggle'
 
+const isElementOverflowing = (element: HTMLElement) => {
+  const rect = element.getBoundingClientRect()
+  const bodyRect = document.body.getBoundingClientRect()
+
+  // Check if any part of the element is outside the body
+  const isOverflowing = rect.left < bodyRect.left || rect.right > bodyRect.right
+
+  return isOverflowing
+}
+
 // Close all sub menu items
 const closeAllSubmenus = () => {
   const parentMenuItems = document.querySelectorAll(parentMenuItemsSelector)
@@ -16,7 +26,8 @@ const closeAllSubmenus = () => {
 
         if (submenu) {
           submenu.style.display = 'none'
-
+          submenu.style.removeProperty('left')
+          submenu.style.removeProperty('right')
           menuItem.setAttribute('aria-expanded', 'false')
           menuItem.classList.remove(navArrowRotateClass)
         }
@@ -58,11 +69,22 @@ const handleMenuItemClick = (menuItem: HTMLElement) => {
     const submenu = menuItemParent.nextElementSibling as HTMLElement
 
     if (isExpanded) {
-      submenu.style.display = 'none'
+      if (submenu) {
+        submenu.style.display = 'none'
+        submenu.style.removeProperty('left')
+        submenu.style.removeProperty('right')
+      }
       menuItem.classList.remove(navArrowRotateClass)
       menuItem.setAttribute('aria-expanded', 'false')
     } else {
-      submenu.style.display = 'block'
+      if (submenu) {
+        submenu.style.display = 'block'
+
+        if (isElementOverflowing(submenu)) {
+          submenu.style.left = 'unset'
+          submenu.style.right = '0'
+        }
+      }
       menuItem.classList.add(navArrowRotateClass)
       menuItem.setAttribute('aria-expanded', 'true')
     }
@@ -125,8 +147,14 @@ const setupMenuToggle = () => {
 
   document.addEventListener('click', (event: Event) => {
     const target = event.target as HTMLElement
-    if (target && !target.matches(parentMenuItemsSelector) && !target.matches(innerSubMenuTogglesSelector)) {
-      closeAllSubmenus()
+    if (target) {
+      const parentElement = target.parentElement
+
+      if (parentElement?.classList.contains('cu-nav__parent-item')) {
+        handleMenuItemClick(parentElement as HTMLElement)
+      } else if (!target.matches(parentMenuItemsSelector) && !target.matches(innerSubMenuTogglesSelector)) {
+        closeAllSubmenus()
+      }
     }
   })
 }
