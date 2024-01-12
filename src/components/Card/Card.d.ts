@@ -14,7 +14,7 @@ export declare const Card: (({ children, isCenter, noHover, hasShadow, hasRedBor
         displayName: string;
     };
     DateThumb: {
-        ({ startDate, endDate }: import("./CardDateThumb").CardDateThumbProps): import("react/jsx-runtime").JSX.Element;
+        ({ as, startDate, endDate }: import("./CardDateThumb").CardDateThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     IconThumb: {
