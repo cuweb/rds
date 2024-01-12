@@ -1,14 +1,9 @@
 import { navMenuItemStyles, navSubMenuItemStyles } from './Nav.Styles'
-
-export interface ImenuItem {
-  href: string
-  title: string
-  submenu?: ImenuItem[]
-}
+import ImenuItem from './NavInterface'
 export interface menuItemProps {
   menuItem: ImenuItem
-  isSubMenu?: boolean
-  isInnerSubMenu?: boolean
+  isSubMenu: boolean
+  isInnerSubMenu: boolean
   id: string
 }
 

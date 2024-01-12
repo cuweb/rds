@@ -2,17 +2,13 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { navMenuItemStyles, navAsideStyles } from './Nav.Styles'
 import { Avatar } from './../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
-
-export interface menuItem {
-  href: string
-  title: string
-}
+import ImenuItem from './NavInterface'
 
 export interface NavAsideProps {
-  menu?: menuItem[]
+  menu?: ImenuItem[]
   LoggedInUser?: boolean
   LoggedOutUser?: boolean
-  LoggedInOptions?: menuItem[]
+  LoggedInOptions?: ImenuItem[]
 }
 
 const userNoImage = {
@@ -26,7 +22,7 @@ export const NavAside = ({ menu, LoggedInUser, LoggedOutUser, LoggedInOptions }:
       <MagnifyingGlassIcon className={navAsideStyles.searchIcon} />
       <ul className={navAsideStyles.unorderedList}>
         {menu &&
-          menu.map((menuItem: menuItem, index: number) => (
+          menu.map((menuItem: ImenuItem, index: number) => (
             <li key={index} className={navAsideStyles.listHidden}>
               <a href={menuItem.href} className={navAsideStyles.listItemLink}>
                 {menuItem.title}
