@@ -1,6 +1,6 @@
 /* Tailwind CSS */
 
-/* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1865,6 +1865,10 @@ select {
   top: -66px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .bottom-6 {
   bottom: 1.5rem;
 }
@@ -2813,6 +2817,10 @@ select {
   gap: 0.5rem;
 }
 
+.gap-2\.5 {
+  gap: 0.625rem;
+}
+
 .gap-20 {
   gap: 5rem;
 }
@@ -2887,6 +2895,12 @@ select {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2942,6 +2956,10 @@ select {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
 .break-all {
@@ -3437,6 +3455,11 @@ select {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
 }
 
 .px-4 {
@@ -4953,6 +4976,101 @@ StackedList for ToC
   background-color: rgb(242 242 242 / 0.5);
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.cu-wideimage-content > *:not(h1):not(h2):not(.cu-buttongroup):not(.cu-wideimage-signup) {
+  width: 100%;
+  max-width: 48rem;
+}
+
+.cu-wideimage .cu-buttongroup,
+.cu-wideimage .cu-wideimage-signup {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .cu-wideimage .cu-buttongroup,
+.cu-wideimage .cu-wideimage-signup {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Signup form input styles */
+
+.cu-wideimage-light input:first-of-type {
+  --tw-border-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-border-opacity));
+  background-color: rgb(255 255 255 / 0.4);
+  --tw-text-opacity: 1;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(102 102 102 / var(--tw-ring-opacity));
+}
+
+.cu-wideimage-light input:first-of-type:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(102 102 102 / var(--tw-ring-opacity));
+}
+
+.cu-wideimage-light input::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(153 153 153 / var(--tw-text-opacity));
+}
+
+.cu-wideimage-light input::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(153 153 153 / var(--tw-text-opacity));
+}
+
+.cu-wideimage-dark input:first-of-type {
+  --tw-border-opacity: 1;
+  border-color: rgb(102 102 102 / var(--tw-border-opacity));
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+}
+
+.cu-wideimage-dark input:first-of-type:focus {
+  background-color: rgb(255 255 255 / 0.1);
+  --tw-ring-color: rgb(255 255 255 / 0.4);
+}
+
+.cu-wideimage-dark input::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(179 179 179 / var(--tw-text-opacity));
+}
+
+.cu-wideimage-dark input::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(179 179 179 / var(--tw-text-opacity));
+}
+
+.cu-wideimage-image input:first-of-type {
+  border-color: rgb(255 255 255 / 0.4);
+  background-color: rgb(51 51 51 / 0.9);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+}
+
+.cu-wideimage-image input:first-of-type:focus {
+  background-color: rgb(25 25 25 / 0.4);
+  --tw-ring-color: rgb(255 255 255 / 0.5);
+}
+
+.cu-wideimage-image input::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(230 230 230 / var(--tw-text-opacity));
+}
+
+.cu-wideimage-image input::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(230 230 230 / var(--tw-text-opacity));
 }
 
 /* Layouts */
@@ -7930,6 +8048,12 @@ StackedList for ToC
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.focus\:ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -8520,6 +8644,16 @@ StackedList for ToC
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .md\:pb-10 {

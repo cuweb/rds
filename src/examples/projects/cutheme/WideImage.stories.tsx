@@ -111,7 +111,7 @@ export const WideImageBanner: Story = {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec tortor eu quam ultricies
               pellentesque et quis odio. Etiam sit amet ex commodo, scelerisque turpis ullamcorper, sollicitudin lacus.
             </p>
-            <WideImage.SignupForm buttonText="Subscribe" />
+            <WideImage.Signup buttonText="Subscribe" />
           </WideImage>
 
           <DoublePara />
