@@ -1,0 +1,42 @@
+/*
+StackedList for posts
+*/
+
+.cu-stackedlist-posts > li {
+  @apply border-b border-cu-black-100 last:-mb-px;
+}
+
+.cu-stackedlist-posts.md\:grid-cols-2 > li {
+  @apply last:mb-0 odd:border-r;
+}
+
+/*
+StackedList for ToC
+*/
+
+.cu-stackedlist-toc {
+  @apply px-5 py-6 text-cu-black-900;
+}
+
+.cu-stackedlist-toc a {
+  @apply text-cyan-700 hover:text-cu-red-700;
+}
+
+.cu-stackedlist-toc ul:not(:first-child) {
+  @apply pt-3;
+}
+
+.cu-stackedlist-toc li {
+  @apply py-1.5 ml-8 text-lg first:pt-0 last:pb-0;
+  list-style-type: decimal;
+}
+
+.cu-stackedlist-toc li li {
+  @apply ml-6;
+  list-style-type: lower-alpha;
+}
+
+.cu-stackedlist-toc li li li {
+  @apply ml-4;
+  list-style-type: lower-roman;
+}

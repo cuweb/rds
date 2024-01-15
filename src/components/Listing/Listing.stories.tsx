@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Listing } from './Listing'
-import { content } from '../../data/ListingData'
+import { EventDataSingle as eventData } from '../../data/EventData'
+import { NewsDataSingle as newsData } from '../../data/NewsData'
+import { PeopleDataSingle as peopleData } from '../../data/PeopleData'
 
 const meta: Meta<typeof Listing> = {
   title: 'Components/Listing',
@@ -16,107 +18,74 @@ const meta: Meta<typeof Listing> = {
 export default meta
 type Story = StoryObj<typeof Listing>
 
-export const Primary: Story = {}
+export const Default: Story = {
+  args: {
+    children: (
+      <Listing.Body>
+        <Listing.Header>How to Write for the Web</Listing.Header>
+        <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+        <Listing.Footer isType="button">
+          <a href="https://carleton.ca/webservices">More info</a>
+        </Listing.Footer>
+      </Listing.Body>
+    ),
+  },
+}
 
-Primary.args = {
-  children: (
-    <a href={content.link}>
-      <Listing.Content>
-        <Listing.Header text={content.title} />
-      </Listing.Content>
-    </a>
+export const EventListItem: Story = {
+  render: () => (
+    <Listing>
+      <Listing.DateThumb startDate={eventData.startDate} endDate={eventData.endDate} />
+      <Listing.Body>
+        <Listing.Header>{eventData.title}</Listing.Header>
+        <Listing.EventMeta
+          startDateTime={eventData.startDate}
+          endDateTime={eventData.endDate}
+          onCampus={eventData.on_campus}
+          onCampusBuilding={eventData.on_campus_building}
+          onCampusRoomNumber={eventData.on_campus_room_number}
+          eventAddress={eventData.event_address}
+        />
+        <Listing.Footer isType="button">
+          <a href={eventData.link}>Event details</a>
+        </Listing.Footer>
+      </Listing.Body>
+    </Listing>
   ),
 }
 
-export const SmallHeader: Story = {
-  args: {
-    children: (
-      <a href={content.link}>
-        <Listing.Content isSmall>
-          <Listing.Header text={content.title} />
-        </Listing.Content>
-      </a>
-    ),
-  },
+export const NewsListing: Story = {
+  render: () => (
+    <Listing>
+      <Listing.Figure>
+        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
+      </Listing.Figure>
+      <Listing.Body>
+        <Listing.Header date={newsData.date}>{newsData.title}</Listing.Header>
+        <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+        <Listing.Footer isType="button">
+          <a href={newsData.link}>Read more</a>
+        </Listing.Footer>
+      </Listing.Body>
+    </Listing>
+  ),
 }
 
-export const WithoutLink: Story = {
-  args: {
-    noLink: true,
-    children: (
-      <Listing.Content>
-        <Listing.Header text={content.title} />
-      </Listing.Content>
-    ),
-  },
-}
-
-export const WithDate: Story = {
-  args: {
-    children: (
-      <a href={content.link}>
-        <Listing.Content>
-          <Listing.PostMeta date={content.date} />
-          <Listing.Header text={content.title} />
-        </Listing.Content>
-      </a>
-    ),
-  },
-}
-
-export const WithBadges: Story = {
-  args: {
-    children: (
-      <a href={content.link}>
-        <Listing.Content>
-          <Listing.PostMeta date={content.date} />
-          <Listing.Header text={content.title} />
-        </Listing.Content>
-      </a>
-    ),
-  },
-}
-
-export const WithExcerpt: Story = {
-  args: {
-    children: (
-      <a href={content.link}>
-        <Listing.Content>
-          <Listing.PostMeta date={content.date} />
-          <Listing.Header text={content.title} />
-          <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-        </Listing.Content>
-      </a>
-    ),
-  },
-}
-
-export const WithImage: Story = {
-  args: {
-    children: (
-      <a href={content.link}>
-        <Listing.Figure>
-          <img src={content.image} alt={content.alt} width="400" height="266" />
-        </Listing.Figure>
-        <Listing.Content>
-          <Listing.PostMeta date={content.date} />
-          <Listing.Header text={content.title} />
-          <Listing.Excerpt text={content.excerpt} />
-        </Listing.Content>
-      </a>
-    ),
-  },
-}
-
-export const WithDatebox: Story = {
-  args: {
-    children: (
-      <a href={content.link}>
-        <Listing.DateBox startDate={content.startDate} endDate={content.endDate} />
-        <Listing.Content>
-          <Listing.Header text={content.title} />
-        </Listing.Content>
-      </a>
-    ),
-  },
+export const PeopleListing: Story = {
+  render: () => (
+    <Listing>
+      <Listing.Figure>
+        <img src={peopleData.image} alt={peopleData.alt} width="280" height="280" />
+      </Listing.Figure>
+      <Listing.Body>
+        <Listing.Header>{`${peopleData.firstName} ${peopleData.lastName}`}</Listing.Header>
+        <Listing.PeopleMeta jobTitle={peopleData.jobTitle} phone={peopleData.phone}>
+          <a href={`mailto:${peopleData.email}`}>{peopleData.email}</a>
+        </Listing.PeopleMeta>
+        <Listing.Footer isType="button">
+          <a href={peopleData.link}>View profile</a>
+        </Listing.Footer>
+      </Listing.Body>
+    </Listing>
+  ),
 }

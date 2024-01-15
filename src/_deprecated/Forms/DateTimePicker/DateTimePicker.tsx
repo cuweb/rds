@@ -29,8 +29,8 @@ export const DateTimePicker = ({
   const Hour12FormatDate = startDate
     ? format(new Date(startDate), 'h:mm a')
     : endDate
-    ? format(new Date(endDate), 'h:mm a')
-    : null
+      ? format(new Date(endDate), 'h:mm a')
+      : null
 
   const DateSplit = Hour12FormatDate?.split(' ').join(':').split(':')
 
