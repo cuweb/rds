@@ -33,7 +33,18 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
           (isSubMenu ? navSubMenuItemStyles.subMenuItem : '')
         }
       >
-        {menuItem.title}
+        <span>{menuItem.title}</span>
+
+        {menuItem.submenu && !isInnerSubMenu ? (
+          <button
+            className={`hidden ` + navSubMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}
+            aria-expanded="false"
+          >
+            <span className="sr-only">Click to open inner submenu</span>
+          </button>
+        ) : (
+          <></>
+        )}
       </a>
 
       {menuItem.submenu && isInnerSubMenu ? (

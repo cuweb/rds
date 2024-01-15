@@ -63,30 +63,30 @@ const closeInnerSubMenus = () => {
 
 const handleMenuItemClick = (menuItem: HTMLElement) => {
   const menuItemParent = menuItem.parentElement as HTMLElement
-  const isExpanded = menuItem.getAttribute('aria-expanded') === 'true'
 
   if (menuItemParent) {
     const submenu = menuItemParent.nextElementSibling as HTMLElement
+    const isExpanded = menuItem.getAttribute('aria-expanded') === 'true'
 
-    if (isExpanded) {
-      if (submenu) {
+    if (submenu) {
+      if (isExpanded) {
         submenu.style.display = 'none'
         submenu.style.removeProperty('left')
         submenu.style.removeProperty('right')
-      }
-      menuItem.classList.remove(navArrowRotateClass)
-      menuItem.setAttribute('aria-expanded', 'false')
-    } else {
-      if (submenu) {
+        menuItem.classList.remove(navArrowRotateClass)
+        menuItem.setAttribute('aria-expanded', 'false')
+      } else {
+        closeAllSubmenus()
+
         submenu.style.display = 'block'
 
         if (isElementOverflowing(submenu)) {
           submenu.style.left = 'unset'
           submenu.style.right = '0'
         }
+        menuItem.classList.add(navArrowRotateClass)
+        menuItem.setAttribute('aria-expanded', 'true')
       }
-      menuItem.classList.add(navArrowRotateClass)
-      menuItem.setAttribute('aria-expanded', 'true')
     }
   }
 }
@@ -124,7 +124,6 @@ const setupMenuToggle = () => {
         event.preventDefault()
         const target = event.target
         if (target instanceof HTMLElement) {
-          closeAllSubmenus()
           handleMenuItemClick(target)
         }
       })

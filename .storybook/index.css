@@ -1945,16 +1945,8 @@ select {
   top: 1.25rem;
 }
 
-.top-\[43px\] {
-  top: 43px;
-}
-
-.top-\[51px\] {
-  top: 51px;
-}
-
-.top-\[48px\] {
-  top: 48px;
+.top-\[36px\] {
+  top: 36px;
 }
 
 .isolate {
@@ -2374,6 +2366,10 @@ select {
   max-height: 20rem;
 }
 
+.min-h-8 {
+  min-height: 2rem;
+}
+
 .min-h-\[220px\] {
   min-height: 220px;
 }
@@ -2386,16 +2382,8 @@ select {
   min-height: 100%;
 }
 
-.min-h-\[32px\] {
-  min-height: 32px;
-}
-
-.min-h-8 {
-  min-height: 2rem;
-}
-
-.\!w-\[60px\] {
-  width: 60px !important;
+.\!w-\[45px\] {
+  width: 45px !important;
 }
 
 .\!w-px {
@@ -3546,11 +3534,6 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-\[5px\] {
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .pb-2 {
@@ -4913,7 +4896,7 @@ StackedList for ToC
 
 .p-plus__overflow {
   position: absolute;
-  top: 43px;
+  top: 36px;
   right: 0px;
   z-index: 50;
   width: 16rem;
@@ -4976,11 +4959,6 @@ StackedList for ToC
   }
 }
 
-.cu-nav__secondary .cu-nav__submenu,
-.cu-nav__secondary .p-plus__overflow {
-  top: 2.25rem;
-}
-
 .p-plus__overflow.p-plus_left {
   left: -0.875rem;
 }
@@ -5009,13 +4987,8 @@ StackedList for ToC
 .p-plus__overflow .p-plus__primary-nav-item a,
 .p-plus__overflow .p-plus__primary-nav-item button {
   display: flex;
-  width: 100%;
   align-items: center;
   gap: 0.125rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
   font-size: 15px;
   font-weight: 500;
   --tw-text-opacity: 1;
@@ -5032,6 +5005,28 @@ StackedList for ToC
 .p-plus__overflow .p-plus__primary-nav-item button:hover {
   --tw-text-opacity: 1;
   color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item {
+  justify-content: space-between;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item::after {
+  content: var(--tw-content);
+  display: none;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item),
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > span {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > button {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
 }
 
 /* Child level menu item */

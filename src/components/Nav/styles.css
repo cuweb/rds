@@ -1,11 +1,6 @@
 /* Overflow Menu */
 .p-plus__overflow {
-  @apply z-50 absolute top-[43px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
-}
-
-.cu-nav__secondary .cu-nav__submenu,
-.cu-nav__secondary .p-plus__overflow {
-  @apply top-9;
+  @apply z-50 absolute top-[36px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
 }
 
 .p-plus__overflow.p-plus_left {
@@ -18,7 +13,20 @@
 
 .p-plus__overflow .p-plus__primary-nav-item a,
 .p-plus__overflow .p-plus__primary-nav-item button {
-  @apply flex items-center gap-0.5 w-full text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in px-5 py-3.5;
+  @apply flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item {
+  @apply after:hidden justify-between;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item),
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > span {
+  @apply px-5 py-3.5;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > button {
+  @apply py-3.5;
 }
 
 /* Child level menu item */
