@@ -2226,10 +2226,6 @@ select {
   margin-top: auto;
 }
 
-.mt-px {
-  margin-top: 1px;
-}
-
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -3916,14 +3912,6 @@ select {
   text-underline-offset: auto;
 }
 
-.underline-offset-1 {
-  text-underline-offset: 1px;
-}
-
-.underline-offset-4 {
-  text-underline-offset: 4px;
-}
-
 .placeholder-cu-black-300::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(179 179 179 / var(--tw-placeholder-opacity));
@@ -5014,7 +5002,7 @@ StackedList for ToC
   border-color: rgb(204 204 204 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / 0.4);
   --tw-text-opacity: 1;
-  color: rgb(25 25 25 / var(--tw-text-opacity));
+  color: rgb(77 77 77 / var(--tw-text-opacity));
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(102 102 102 / var(--tw-ring-opacity));
 }
@@ -5028,12 +5016,12 @@ StackedList for ToC
 
 .cu-wideimage-light input::-moz-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(153 153 153 / var(--tw-text-opacity));
+  color: rgb(77 77 77 / var(--tw-text-opacity));
 }
 
 .cu-wideimage-light input::placeholder {
   --tw-text-opacity: 1;
-  color: rgb(153 153 153 / var(--tw-text-opacity));
+  color: rgb(77 77 77 / var(--tw-text-opacity));
 }
 
 .cu-wideimage-dark input:first-of-type {
@@ -5053,12 +5041,12 @@ StackedList for ToC
 
 .cu-wideimage-dark input::-moz-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(179 179 179 / var(--tw-text-opacity));
+  color: rgb(204 204 204 / var(--tw-text-opacity));
 }
 
 .cu-wideimage-dark input::placeholder {
   --tw-text-opacity: 1;
-  color: rgb(179 179 179 / var(--tw-text-opacity));
+  color: rgb(204 204 204 / var(--tw-text-opacity));
 }
 
 .cu-wideimage-image input:first-of-type {
@@ -5077,12 +5065,12 @@ StackedList for ToC
 
 .cu-wideimage-image input::-moz-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(230 230 230 / var(--tw-text-opacity));
+  color: rgb(204 204 204 / var(--tw-text-opacity));
 }
 
 .cu-wideimage-image input::placeholder {
   --tw-text-opacity: 1;
-  color: rgb(230 230 230 / var(--tw-text-opacity));
+  color: rgb(204 204 204 / var(--tw-text-opacity));
 }
 
 /* Layouts */
@@ -8007,16 +7995,6 @@ StackedList for ToC
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-cu-red-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(247 177 180 / var(--tw-text-opacity));
-}
-
-.hover\:text-cu-red-100:hover {
-  --tw-text-opacity: 1;
-  color: rgb(251 214 215 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
