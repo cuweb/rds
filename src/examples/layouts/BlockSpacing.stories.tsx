@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -81,7 +81,7 @@ export const BlockSpacing: Story = {
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noHover>
-                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
+                  <Card.IconThumb icon={icon} />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -109,7 +109,7 @@ export const BlockSpacing: Story = {
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noHover>
-                  <Card.IconThumb icon={icon} svgPath="./assets/graphics/" />
+                  <Card.IconThumb icon={icon} />
                   <Card.Header>{title}</Card.Header>
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
@@ -166,7 +166,7 @@ export const BlockSpacing: Story = {
         </Section>
       </Main>
 
-      <FooterBasic />
+      <FooterStandard />
     </>
   ),
 }

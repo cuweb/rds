@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
-import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
+import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { TopBar } from '../../components/TopBar/TopBar'
 import { Heading } from '../../components/Heading/Heading'
@@ -322,7 +322,7 @@ export const PeopleCards: Story = {
         </Section>
       </Main>
 
-      <FooterBasic />
+      <FooterStandard />
     </>
   ),
 }

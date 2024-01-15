@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -19,10 +19,10 @@
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "rds": ["src/index.ts"],
+      "rds": ["src/index.ts"]
     },
     "typeRoots": ["node_modules/@types", "src/index.d.ts"]
   },
-  "include": ["src", "types"],
+  "include": ["src", "types", "generateIconList.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

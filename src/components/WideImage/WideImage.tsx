@@ -1,7 +1,17 @@
 import React from 'react'
 import { rdsMaxWidth, rdsOpacity } from '../../utils/optionClasses'
-import { styles } from './WideImage.Styles'
-import { WideImageSignupForm } from './WideImageSignupForm'
+import { WideImageSignup } from './WideImageSignup'
+
+export const styles = {
+  baseBg: `relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
+  lightBg: `text-cu-black-800 py-20 bg-cu-black-50`,
+  darkBg: `text-white py-20 bg-cu-black-900`,
+  imageBg: `relative py-24 text-white bg-opacity-50 bg-cover bg-cu-black-50 md:py-28 lg:py-36 xl:py-48`,
+  overlay: `absolute w-full h-full bg-black`,
+  content: `relative z-10 flex flex-col items-center gap-2 text-center`,
+  headerOne: `font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl`,
+  headerTwo: `font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl`,
+}
 
 export interface WideImageProps {
   children?: React.ReactNode
@@ -32,24 +42,9 @@ export const WideImageWrapper = ({
   }
 
   let hasImageStyles
-  let imageTextStyles
+  hasImageStyles = isType === 'dark' ? styles.darkBg : styles.lightBg
 
-  switch (isType) {
-    case 'light':
-      imageTextStyles = 'text-cu-black-700'
-      hasImageStyles = styles.noImage
-      break
-    case 'dark':
-      imageTextStyles = 'text-white'
-      hasImageStyles = styles.darkBg
-      break
-    default:
-      imageTextStyles = 'text-cu-black-700'
-      hasImageStyles = styles.noImage
-  }
-
-  if (image != '') {
-    imageTextStyles = 'text-white'
+  if (image) {
     hasImageStyles = styles.imageBg
   }
 
@@ -58,38 +53,46 @@ export const WideImageWrapper = ({
       style={inlineStyle}
       className={`cu-wideimage cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
     >
-      {image && <div className={`${styles.imageOverlay} ${rdsOpacity[opacity]}`}></div>}
-      <div className={`${styles.content} ${imageTextStyles} cu-wideimage-input-${isType}`}>
-        {headerType === 'h1' && <h1 className={`${styles.header} ${styles.headerOne}`}>{title}</h1>}
-        {headerType === 'h2' && <h2 className={`${styles.header} ${styles.headerTwo}`}>{title}</h2>}
+      {image && <div className={`${styles.overlay} ${rdsOpacity[opacity]}`}></div>}
+
+      <div className={`${styles.content} cu-wideimage-content cu-wideimage-${isType}`}>
+        {headerType === 'h1' && <h1 className={`${styles.headerOne}`}>{title}</h1>}
+        {headerType === 'h2' && <h2 className={`${styles.headerTwo}`}>{title}</h2>}
+
         {children}
-        {isType === 'dark' && (
-          <svg
-            viewBox="0 0 1024 1024"
-            className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2"
-            aria-hidden="true"
-          >
-            <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
-            <defs>
-              <radialGradient
-                id="759c1415-0410-454c-8f7c-9a820de03641"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(512 512) rotate(90) scale(512)"
-              >
-                <stop stopColor="#cfcfd9" />
-                <stop offset="1" stopColor="#eeeeee" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-          </svg>
-        )}
       </div>
+
+      {isType === 'dark' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute bottom-0 w-full opacity-10"
+          fill="none"
+          viewBox="0 0 1280 260"
+        >
+          <g filter="url(#a)">
+            <ellipse cx="646" cy="260" fill="#fff" rx="640" ry="200" />
+          </g>
+          <defs>
+            <filter
+              id="a"
+              width="1400"
+              height="520"
+              x="-54"
+              y="0"
+              colorInterpolationFilters="sRGB"
+              filterUnits="userSpaceOnUse"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur result="effect1_foregroundBlur_6_9" stdDeviation="30" />
+            </filter>
+          </defs>
+        </svg>
+      )}
     </div>
   )
 }
 
 export const WideImage = Object.assign(WideImageWrapper, {
-  SignupForm: WideImageSignupForm,
+  Signup: WideImageSignup,
 })
