@@ -1,0 +1,33 @@
+.cu-wideimage-content > *:not(h1):not(h2):not(.cu-buttongroup):not(.cu-wideimage-signup) {
+  @apply w-full max-w-3xl;
+}
+
+.cu-wideimage .cu-buttongroup,
+.cu-wideimage .cu-wideimage-signup {
+  @apply mt-3 md:mt-6;
+}
+
+/* Signup form input styles */
+.cu-wideimage-light input:first-of-type {
+  @apply text-cu-black-700 ring-cu-black-600 focus:ring-cu-black-600 border-cu-black-200 bg-white/40 focus:bg-white;
+}
+
+.cu-wideimage-light input::placeholder {
+  @apply text-cu-black-700;
+}
+
+.cu-wideimage-dark input:first-of-type {
+  @apply text-white bg-transparent ring-white focus:ring-white/40 border-cu-black-600 focus:bg-white/10;
+}
+
+.cu-wideimage-dark input::placeholder {
+  @apply text-cu-black-200;
+}
+
+.cu-wideimage-image input:first-of-type {
+  @apply text-white ring-white focus:ring-white/50 border-white/40 bg-cu-black-800/90 focus:bg-cu-black-900/40;
+}
+
+.cu-wideimage-image input::placeholder {
+  @apply text-cu-black-200;
+}
