@@ -44,7 +44,7 @@ export const EventCard: Story = {
         <img src={eventData.image} alt={eventData.alt} width="400" height="175" />
       </Card.Figure>
       <Card.DateThumb startDate={eventData.startDate} endDate={eventData.endDate} />
-      <Card.Header>{eventData.title}</Card.Header>
+      <Card.Header as="h3">{eventData.title}</Card.Header>
       <Card.Body>
         <Card.EventMeta
           startDateTime={eventData.startDate}

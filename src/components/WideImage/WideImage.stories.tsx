@@ -19,24 +19,40 @@ type Story = StoryObj<typeof WideImage>
 export const Default: Story = {}
 
 Default.args = {
-  title: 'Wide image block with buttons and background image',
-}
-
-export const HeaderOne: Story = {
-  args: {
-    ...Default.args,
-    headerType: 'h1',
-  },
+  title: 'Wide image with defaults',
 }
 
 export const WithButtons: Story = {
   args: {
     ...Default.args,
+    title: 'Wide image with buttons, praesentium architecto a distinctio aut reprehenderit ducimus',
     children: (
       <ButtonGroup>
         <Button title="Apply Now" />
         <Button title="Request Information" color="dark-grey" />
       </ButtonGroup>
+    ),
+  },
+}
+
+export const BgDark: Story = {
+  args: {
+    ...Default.args,
+    title: 'Wide image with dark background',
+    image: '',
+    isType: 'dark',
+    children: (
+      <>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus.
+        </p>
+        {/* <WideImage.Signup /> */}
+        <ButtonGroup>
+          <Button title="Apply Now" />
+          <Button title="Request Information" color="dark-grey" />
+        </ButtonGroup>
+      </>
     ),
   },
 }
@@ -44,6 +60,8 @@ export const WithButtons: Story = {
 export const BgImage: Story = {
   args: {
     ...Default.args,
+    title: 'Wide image with image background',
+    isType: 'image',
     image: 'https://picsum.photos/1600/700',
     children: (
       <ButtonGroup>
@@ -54,43 +72,73 @@ export const BgImage: Story = {
   },
 }
 
-export const HeaderOneButtons: Story = {
+export const HeaderOne: Story = {
   args: {
     ...Default.args,
+    title: 'Wide image as banner with h1',
     headerType: 'h1',
     children: (
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" color="dark-grey" />
-      </ButtonGroup>
+      <>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus.
+        </p>
+        <ButtonGroup>
+          <Button title="Apply Now" />
+          <Button title="Request Information" color="dark-grey" />
+        </ButtonGroup>
+      </>
     ),
   },
 }
 
-export const BgImageHeaderOne: Story = {
+export const SignupLight: Story = {
   args: {
     ...Default.args,
-    headerType: 'h1',
-    image: 'https://picsum.photos/1600/700',
+    title: 'Subscribe to Our Newsletter',
     children: (
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" isType="outline" color="white" />
-      </ButtonGroup>
+      <>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus.
+        </p>
+        <WideImage.Signup />
+      </>
     ),
   },
 }
 
-export const Width5xl: Story = {
+export const SignupDark: Story = {
   args: {
     ...Default.args,
-    image: 'https://picsum.photos/1600/700',
-    maxWidth: '5xl',
+    title: 'Subscribe to Our Newsletter',
+    isType: 'dark',
     children: (
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" isType="outline" color="white" />
-      </ButtonGroup>
+      <>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus.
+        </p>
+        <WideImage.Signup />
+      </>
+    ),
+  },
+}
+
+export const SignupImage: Story = {
+  args: {
+    ...Default.args,
+    title: 'Subscribe to Our Newsletter',
+    isType: 'image',
+    image: 'https://picsum.photos/1600/700',
+    children: (
+      <>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus.
+        </p>
+        <WideImage.Signup />
+      </>
     ),
   },
 }
