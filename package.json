@@ -33,12 +33,12 @@
     "format": "prettier -w src",
     "lint": "eslint . --ext .ts,.tsx",
     "prepare": "husky install",
-    "clean": "rm -rf node_modules ; yarn install --frozen-lockfile"
+    "clean": "rm -rf node_modules ; yarn install --frozen-lockfile",
+    "rebuild": "rm -rf node_modules ; rm yarn.lock ; yarn install"
   },
   "resolutions": {
     "prettier": "2.8.1",
     "strip-ansi": "6.0.1"
-
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
