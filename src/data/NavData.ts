@@ -16,38 +16,6 @@ export const NavDataSingle = [
             title: 'Link2.1.1',
           },
           {
-            href: '/link-2.1.2',
-            title: 'Link2.1.2',
-            submenu: [
-              {
-                href: '/link-2.1.1',
-                title: 'Link2.2.1',
-              },
-              {
-                href: '/link-2.1.2',
-                title: 'Link2.3.2',
-                submenu: [
-                  {
-                    href: '/link-2.1.1',
-                    title: 'Link2.4.1',
-                  },
-                  {
-                    href: '/link-2.1.2',
-                    title: 'Link2.5.2',
-                  },
-                  {
-                    href: '/link-2.1.3',
-                    title: 'Link2.6.3',
-                  },
-                ],
-              },
-              {
-                href: '/link-2.1.3',
-                title: 'Link2.1.3',
-              },
-            ],
-          },
-          {
             href: '/link-2.1.3',
             title: 'Link2.1.3',
           },
