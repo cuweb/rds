@@ -20,8 +20,8 @@ export const Default: Story = {
   render: () => (
     <Nav>
       <Nav.Primary>
-        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
+        <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
         <Nav.Aside menu={NavAsideData} />
       </Nav.Primary>
     </Nav>
@@ -38,7 +38,7 @@ export const Secondary: Story = {
         </Nav.Primary>
       </Nav>
       <Nav.Secondary>
-        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
       </Nav.Secondary>
     </>
   ),
@@ -49,7 +49,7 @@ export const LoggedOut: Story = {
     <Nav>
       <Nav.Primary>
         <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
         <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
       </Nav.Primary>
     </Nav>
@@ -66,7 +66,7 @@ export const LoggedIn: Story = {
     <Nav>
       <Nav.Primary>
         <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
         <Nav.Aside
           menu={NavAsideData}
           LoggedInUser={true}

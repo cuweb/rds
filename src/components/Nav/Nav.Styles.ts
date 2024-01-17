@@ -19,6 +19,7 @@ export const navMenuItemStyles = {
   navBarWrapper: `grow`,
   navBar: `cu-nav__menu flex gap-4 items-center`,
   menuWrapper: `relative flex items-center grow-0 min-h-8 pr-3 last:pr-0`,
+  mobileWrapper: `sm:hidden`,
   navItemWrapper: `flex items-stretch justify-between`,
   navItem: `flex w-auto grow items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item items-between after:w-1.5 after:h-1.5`,
@@ -35,10 +36,10 @@ export const navSubMenuItemStyles = {
 }
 
 export const navAsideStyles = {
-  asideWrapper: `flex items-center gap-5 ml-auto`,
+  asideWrapper: `flex items-center gap-2 sm:gap-5 ml-auto`,
   searchIcon: `w-5 h-5 text-cu-black-400`,
-  unorderedList: `items-center hidden gap-5 pl-5 border-l md:flex border-cu-black-100`,
-  listHidden: `hidden md:block`,
+  unorderedList: `items-center flex gap-5 pl-2 sm:pl-5 border-l border-cu-black-100`,
+  listHidden: `hidden sm:block`,
   listItemLink: `text-[15px] font-medium text-cu-black-600 hover:text-cu-red`,
   megaMenuButton: `px-3 py-2 text-sm font-medium rounded md:text-[15px] text-cu-black-700 md:px-3.5 md:py-2.5 whitespace-nowrap cu-topnav--mega hover:text-white focus:outline-none bg-cu-black-50 hover:bg-cu-red`,
 }

@@ -1,6 +1,6 @@
 /* Tailwind CSS */
 
-/* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -2533,6 +2533,10 @@ select {
   max-width: 80rem;
 }
 
+.max-w-\[200px\] {
+  max-width: 200px;
+}
+
 .max-w-\[320px\] {
   max-width: 320px;
 }
@@ -2579,10 +2583,6 @@ select {
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-\[200px\] {
-  max-width: 200px;
 }
 
 .flex-1 {
@@ -3583,12 +3583,12 @@ select {
   padding-left: 2.75rem;
 }
 
-.pl-3 {
-  padding-left: 0.75rem;
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
-.pl-5 {
-  padding-left: 1.25rem;
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .pl-6 {
@@ -8546,6 +8546,10 @@ button.p-plus__toggle-btn.rotated svg {
     justify-content: space-between;
   }
 
+  .sm\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .sm\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(1.5rem * var(--tw-space-x-reverse));
@@ -8576,6 +8580,10 @@ button.p-plus__toggle-btn.rotated svg {
 
   .sm\:pb-4 {
     padding-bottom: 1rem;
+  }
+
+  .sm\:pl-5 {
+    padding-left: 1.25rem;
   }
 
   .sm\:pt-12 {
@@ -8714,16 +8722,16 @@ button.p-plus__toggle-btn.rotated svg {
     max-width: 56rem;
   }
 
+  .md\:max-w-\[220px\] {
+    max-width: 220px;
+  }
+
   .md\:max-w-lg {
     max-width: 32rem;
   }
 
   .md\:max-w-sm {
     max-width: 24rem;
-  }
-
-  .md\:max-w-\[220px\] {
-    max-width: 220px;
   }
 
   .md\:flex-1 {
