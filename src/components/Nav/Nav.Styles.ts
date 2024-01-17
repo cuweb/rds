@@ -38,7 +38,7 @@ export const navSubMenuItemStyles = {
 export const navAsideStyles = {
   asideWrapper: `flex items-center gap-2 sm:gap-5 ml-auto`,
   searchIcon: `w-5 h-5 text-cu-black-400`,
-  unorderedList: `items-center flex gap-5 pl-2 sm:pl-5 border-l border-cu-black-100`,
+  unorderedList: `hidden sm:flex items-center flex gap-5 pl-2 sm:pl-5 border-l border-cu-black-100`,
   listHidden: `hidden sm:block`,
   listItemLink: `text-[15px] font-medium text-cu-black-600 hover:text-cu-red`,
   megaMenuButton: `px-3 py-2 text-sm font-medium rounded md:text-[15px] text-cu-black-700 md:px-3.5 md:py-2.5 whitespace-nowrap cu-topnav--mega hover:text-white focus:outline-none bg-cu-black-50 hover:bg-cu-red`,

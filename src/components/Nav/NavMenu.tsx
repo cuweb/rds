@@ -7,22 +7,21 @@ export interface navMenuProps {
 }
 
 export const NavMenu = ({ menu, mobileAsideMenu }: navMenuProps) => {
-  let navMenu = menu
-
-  if (mobileAsideMenu) {
-    const updatedMobileAsideMenu = mobileAsideMenu.map((menuItem: ImenuItem) => ({ ...menuItem, isMobile: true }))
-
-    navMenu = [...menu, ...updatedMobileAsideMenu]
-  }
-
   return (
     <>
       <div className={navMenuItemStyles.navBarWrapper}>
         <ul className={navMenuItemStyles.navBar}>
-          {navMenu.map((menuItem: ImenuItem, index: number) => (
+          {menu.map((menuItem: ImenuItem, index: number) => (
             <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
           ))}
         </ul>
+        {mobileAsideMenu && (
+          <ul className={navMenuItemStyles.navBar}>
+            {mobileAsideMenu.map((menuItem: ImenuItem, index: number) => (
+              <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
+            ))}
+          </ul>
+        )}
       </div>
     </>
   )
