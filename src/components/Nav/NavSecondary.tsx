@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { navSecondaryStyles } from './Nav.Styles'
 
-
 export const NavSecondary = ({ children }: PropsWithChildren) => {
   return (
     <div className={navSecondaryStyles.navSecondary}>

@@ -1,3 +1,12 @@
+/* Aside */
+.cu-nav--secondary > .nav__aside {
+  @apply max-sm:hidden;
+}
+
+.cu-nav__secondary .nav__aside {
+  @apply sm:hidden;
+}
+
 /* Overflow Menu */
 .p-plus__overflow {
   @apply z-50 absolute top-[36px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;

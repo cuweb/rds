@@ -4923,6 +4923,20 @@ StackedList for ToC
      object-fit: cover;
 }
 
+/* Aside */
+
+@media not all and (min-width: 640px) {
+  .cu-nav--secondary > .nav__aside {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .cu-nav__secondary .nav__aside {
+    display: none;
+  }
+}
+
 /* Overflow Menu */
 
 .p-plus__overflow {
@@ -8454,10 +8468,6 @@ button.p-plus__toggle-btn.rotated svg {
     margin-right: -20px;
   }
 
-  .max-sm\:hidden {
-    display: none;
-  }
-
   .max-sm\:w-\[calc\(100\%\+40px\)\] {
     width: calc(100% + 40px);
   }
@@ -8928,6 +8938,11 @@ button.p-plus__toggle-btn.rotated svg {
   }
 
   .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:px-\[2rem\] {
     padding-left: 2rem;
     padding-right: 2rem;
   }

@@ -22,7 +22,7 @@ export const Default: Story = {
       <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData} hideMobile="unset"/>
+        <Nav.Aside menu={NavAsideData} />
       </Nav.Primary>
     </Nav>
   ),
@@ -33,10 +33,10 @@ export const Secondary: Story = {
     <>
       <Nav navType="secondary">
         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-        <Nav.Aside menu={NavAsideData} hideMobile={true}/>
+        <Nav.Aside menu={NavAsideData} />
         <Nav.Secondary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData} hideMobile={false}/>
+          <Nav.Aside menu={NavAsideData} />
         </Nav.Secondary>
       </Nav>
     </>
@@ -49,7 +49,7 @@ export const LoggedOut: Story = {
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} hideMobile="unset"/>
+        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
       </Nav.Primary>
     </Nav>
   ),
@@ -62,18 +62,23 @@ const userNoImage = {
 
 export const LoggedIn: Story = {
   render: () => (
-    <Nav navType="primary">
+    <Nav navType="secondary">
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-      <Nav.Primary>
+      <Nav.Aside
+        menu={NavAsideData}
+        LoggedInUser={true}
+        LoggedMenu={NavAsideLoggedInOptions}
+        userNoImage={userNoImage}
+      />
+      <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
         <Nav.Aside
           menu={NavAsideData}
           LoggedInUser={true}
           LoggedMenu={NavAsideLoggedInOptions}
           userNoImage={userNoImage}
-          hideMobile="unset"
         />
-      </Nav.Primary>
+      </Nav.Secondary>
     </Nav>
   ),
 }

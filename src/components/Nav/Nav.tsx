@@ -18,25 +18,9 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
     setupMenuToggle()
   }, [])
 
-  // Children.map(children, (child: ReactNode) => {
-    
-  //   const item = child as ReactElement<PropsWithChildren<NavAsideLoggedOutProps>>;
-
-  //   if (navType === 'secondary' && item.type === NavAside) {
-  //     if (isValidElement(child)) {
-  //       console.log(item.props, { ...item.props, hideMobile: true }, 's')
-  //       return <NavAside hideMobile={true}/>;
-  //     }
-  //   }
-
-  //   return child;
-  // })
-
   return (
-    <header
-      className={`${navStyles.header} ${navType != 'secondary' ? navStyles.headerPrimary : ''}`}
-    >
-      <nav className={`${navStyles.nav} ${navType != 'secondary' ? navStyles.navPrimary : ''}`}>
+    <header className={`${navStyles.header} ${navType != 'secondary' ? navStyles.headerPrimary : ''}`}>
+      <nav className={`cu-nav--${navType} ${navStyles.nav} ${navType != 'secondary' ? navStyles.navPrimary : ''}`}>
         {children}
       </nav>
     </header>

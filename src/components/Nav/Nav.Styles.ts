@@ -10,7 +10,7 @@ export const navPrimaryStyles = {
 }
 
 export const navSecondaryStyles = {
-  navSecondary: `cu-nav__secondary bg-cu-black-25 border-t border-t-cu-black-100 border-b border-b-cu-black-100 w-[calc(100%+40px)] md:w-[calc(100%+64px)] -mx-[20px] md:-mx-[32px] px-[20px] py-3.5`,
+  navSecondary: `cu-nav__secondary bg-cu-black-25 border-t border-t-cu-black-100 border-b border-b-cu-black-100 w-[calc(100%+40px)] md:w-[calc(100%+64px)] -mx-[20px] md:-mx-[32px] px-[20px] md:px-[2rem] py-3.5`,
   inner: `flex gap-6`,
 }
 
@@ -25,7 +25,7 @@ export const navLogoStyles = {
 
 export const navMenuStyles = {
   wrapper: `grow`,
-  navBar: `flex gap-4 items-center`,
+  navBar: `cu-nav__menu flex gap-4 items-center`,
 }
 
 export const NavMenuItemWrapperStyles = {
@@ -49,7 +49,7 @@ export const NavSubMenuStyles = {
 }
 
 export const navAsideStyles = {
-  asideWrapper: `flex items-center gap-4 sm:gap-5 ml-auto`,
+  asideWrapper: `nav__aside flex items-center gap-4 sm:gap-5 ml-auto`,
   searchIcon: `w-5 h-5 text-cu-black-400`,
   unorderedList: `flex items-center flex gap-4 sm:gap-5 pl-4 sm:pl-5 border-l border-cu-black-100`,
   listHidden: `block`,

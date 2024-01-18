@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { navMenuItemStyles, navAsideStyles } from './Nav.Styles'
+import { NavMenuItemWrapperStyles, navMenuItemStyles, navAsideStyles } from './Nav.Styles'
 import { Avatar, UserInfoType } from './../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
@@ -10,24 +10,21 @@ export interface NavAsideProps {
   LoggedOutUser?: false
   LoggedMenu?: null
   userNoImage?: null
-  hideMobile?: true
 }
 
 export interface NavAsideLoggedInProps {
   menu?: ImenuItem[]
   LoggedInUser?: false
-  LoggedOutUser?: true
+  LoggedOutUser: true
   LoggedMenu?: null
   userNoImage?: null
-  hideMobile?: true
 }
 export interface NavAsideLoggedOutProps {
   menu?: ImenuItem[]
-  LoggedInUser?: true
+  LoggedInUser: true
   LoggedOutUser?: false
   LoggedMenu: ImenuItem[]
   userNoImage: UserInfoType
-  hideMobile?: true
 }
 
 export const NavAside = ({
@@ -36,10 +33,9 @@ export const NavAside = ({
   LoggedOutUser,
   LoggedMenu,
   userNoImage,
-  hideMobile,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
   return (
-    <div className={navAsideStyles.asideWrapper + ' ' + (hideMobile ? 'max-sm:hidden' : 'flex sm:hidden')}>
+    <div className={navAsideStyles.asideWrapper}>
       <MagnifyingGlassIcon className={navAsideStyles.searchIcon} />
       <ul className={navAsideStyles.unorderedList}>
         {menu &&
@@ -59,7 +55,7 @@ export const NavAside = ({
         )}
         {LoggedInUser ? (
           LoggedMenu ? (
-            <li className={navMenuItemStyles.menuWrapper}>
+            <li className={NavMenuItemWrapperStyles.menuWrapper}>
               <span className={navMenuItemStyles.navItemWrapper} data-menu-item="profile">
                 <a href="/" className={navMenuItemStyles.navParentItem}>
                   <Avatar user={userNoImage} size="xs" rounded="full" />
