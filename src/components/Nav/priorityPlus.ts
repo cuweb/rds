@@ -1,19 +1,8 @@
 import priorityPlus from 'priority-plus'
 
-const checkOverflowItems = () => {
-  const overflowEl = document.querySelector('.p-plus__overflow')
-
-  console.log(overflowEl)
-
-  if (overflowEl) {
-    const innerLis = overflowEl.querySelectorAll('li')
-    console.log(innerLis)
-  }
-}
-
-const menuPriority = (nav: string) => {
+const menuPriority = () => {
   // Initialize the navigation
-  const navElement = document.querySelector(nav) as HTMLElement
+  const navElement = document.querySelector('.cu-nav__menu') as HTMLElement
 
   // If there's no navigation element, we don't need to run the rest of the script
   if (navElement) {
@@ -44,11 +33,6 @@ const menuPriority = (nav: string) => {
       }
     })
 
-    // @ts-expect-error: Type error from priority-plus
-    navInstance.on('init', () => {
-      checkOverflowItems()
-    })
-
     // Close browse submenu item on nav submenu open
     const navChildToggles = document.querySelectorAll('.cu-nav__parent-item')
 
@@ -65,15 +49,6 @@ const menuPriority = (nav: string) => {
         })
       })
     }
-
-    document.addEventListener(
-      'DOMContentLoaded',
-      function () {
-        console.log('test')
-        checkOverflowItems()
-      },
-      false,
-    )
 
     document.addEventListener('click', (event) => {
       const overflowNav = document.querySelector('[data-overflow-nav]')

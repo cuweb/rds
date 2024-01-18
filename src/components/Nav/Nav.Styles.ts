@@ -1,17 +1,17 @@
 export const navBaseStyles = {
-  header: `cu-nav px-5 sm:px-8 sticky top-0 z-50 duration-300 ease-in-out bg-white border-t-2 border-t-cu-red border-b border-b-cu-black-100 transition-top overflow`,
-  wrapper: `py-3.5`,
+  header: ``,
+  wrapper: ``,
   primaryWrapper: `cu-nav__primary w-full flex items-center gap-4 md:gap-8 mx-auto max-w-screen-2xl `,
-  secondaryWrapper: `cu-nav__secondary  px-5 sm:px-8 border-b border-b-cu-black-100 sticky top-0 z-30 bg-cu-black-25`,
+  secondaryWrapper: `cu-nav__secondary w-[calc(100%+62px)] -mx-[2rem] px-5 sm:px-8 border-b border-b-cu-black-100 sticky top-0 z-30 bg-cu-black-25`,
   secondaryInnerWrapper: `flex gap-6 mx-auto max-w-screen-2xl`,
 }
 
 export const navLogo = {
-  logoWrapper: `flex items-center gap-3 md:gap-5 shrink-1 md:shrink-0`,
+  logoWrapper: `flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow`,
   cuLogoLink: `shrink-0`,
   cuLogo: `w-[130px] h-[35px] hidden md:block shrink-0`,
   cuShield: `w-[28px] h-[35px] block md:hidden shrink-0`,
-  siteTitleWrapper: `leading-none max-w-[200px] md:max-w-[220px]`,
+  siteTitleWrapper: `leading-none md:max-w-[220px]`,
   siteTitle: `text-base md:text-lg font-semibold text-cu-black-800 hover:text-cu-red-700 text-ellipsis line-clamp-2 overflow-hidden`,
 }
 
@@ -36,10 +36,10 @@ export const navSubMenuItemStyles = {
 }
 
 export const navAsideStyles = {
-  asideWrapper: `flex items-center gap-2 sm:gap-5 ml-auto`,
+  asideWrapper: `flex items-center gap-4 sm:gap-5 ml-auto`,
   searchIcon: `w-5 h-5 text-cu-black-400`,
-  unorderedList: `hidden sm:flex items-center flex gap-5 pl-2 sm:pl-5 border-l border-cu-black-100`,
-  listHidden: `hidden sm:block`,
+  unorderedList: `flex items-center flex gap-4 sm:gap-5 pl-4 sm:pl-5 border-l border-cu-black-100`,
+  listHidden: `block`,
   listItemLink: `text-[15px] font-medium text-cu-black-600 hover:text-cu-red`,
   megaMenuButton: `px-3 py-2 text-sm font-medium rounded md:text-[15px] text-cu-black-700 md:px-3.5 md:py-2.5 whitespace-nowrap cu-topnav--mega hover:text-white focus:outline-none bg-cu-black-50 hover:bg-cu-red`,
 }
