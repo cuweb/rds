@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
-import { NavDataSingle, NavAsideData } from '../../data/NavData'
+import { NavDataSingle, NavAsideData, NavAsideLoggedInOptions } from '../../data/NavData'
 
 const meta: Meta<typeof Nav> = {
   title: 'Components/Nav',
@@ -22,7 +22,7 @@ export const Default: Story = {
       <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
+        <Nav.Aside menu={NavAsideData} hideMobile="unset"/>
       </Nav.Primary>
     </Nav>
   ),
@@ -33,74 +33,47 @@ export const Secondary: Story = {
     <>
       <Nav navType="secondary">
         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} hideMobile={true} />
+        <Nav.Aside menu={NavAsideData} hideMobile={true}/>
         <Nav.Secondary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
+          <Nav.Aside menu={NavAsideData} hideMobile={false}/>
         </Nav.Secondary>
       </Nav>
     </>
   ),
 }
 
-// export const Default: Story = {
-//   render: () => (
-//     <Nav>
-//       <Nav.Primary>
-//         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-//         <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
-//         <Nav.Aside menu={NavAsideData} />
-//       </Nav.Primary>
-//     </Nav>
-//   ),
-// }
+export const LoggedOut: Story = {
+  render: () => (
+    <Nav navType="primary">
+      <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+      <Nav.Primary>
+        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} hideMobile="unset"/>
+      </Nav.Primary>
+    </Nav>
+  ),
+}
 
-// export const Secondary: Story = {
-//   render: () => (
-//     <>
-//       <Nav>
-//         <Nav.Primary>
-//           <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-//           <Nav.Aside menu={NavAsideData} />
-//         </Nav.Primary>
-//       </Nav>
-//       <Nav.Secondary>
-//         <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
-//       </Nav.Secondary>
-//     </>
-//   ),
-// }
+const userNoImage = {
+  firstName: 'Danny',
+  lastName: 'Brown',
+}
 
-// export const LoggedOut: Story = {
-//   render: () => (
-//     <Nav>
-//       <Nav.Primary>
-//         <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-//         <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
-//         <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
-//       </Nav.Primary>
-//     </Nav>
-//   ),
-// }
-
-// const userNoImage = {
-//   firstName: 'Danny',
-//   lastName: 'Brown',
-// }
-
-// export const LoggedIn: Story = {
-//   render: () => (
-//     <Nav>
-//       <Nav.Primary>
-//         <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-//         <Nav.Menu menu={NavDataSingle} mobileAsideMenu={NavAsideData} />
-//         <Nav.Aside
-//           menu={NavAsideData}
-//           LoggedInUser={true}
-//           LoggedMenu={NavAsideLoggedInOptions}
-//           userNoImage={userNoImage}
-//         />
-//       </Nav.Primary>
-//     </Nav>
-//   ),
-// }
+export const LoggedIn: Story = {
+  render: () => (
+    <Nav navType="primary">
+      <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+      <Nav.Primary>
+        <Nav.Menu menu={NavDataSingle} />
+        <Nav.Aside
+          menu={NavAsideData}
+          LoggedInUser={true}
+          LoggedMenu={NavAsideLoggedInOptions}
+          userNoImage={userNoImage}
+          hideMobile="unset"
+        />
+      </Nav.Primary>
+    </Nav>
+  ),
+}

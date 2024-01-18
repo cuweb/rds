@@ -1,4 +1,4 @@
-import { navLogo } from './Nav.Styles'
+import { navLogoStyles } from './Nav.Styles'
 
 export interface NavLogoProps {
   title?: string
@@ -7,17 +7,17 @@ export interface NavLogoProps {
 
 export const NavLogo = ({ title, link }: NavLogoProps) => {
   return (
-    <div className={navLogo.logoWrapper}>
-      <a href="https://carleton.ca" className={navLogo.cuLogoLink}>
+    <div className={navLogoStyles.wrapper}>
+      <a href="https://carleton.ca" className={navLogoStyles.link}>
         <img
-          className={navLogo.cuLogo}
+          className={navLogoStyles.logo}
           src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
           width="130"
           height="35"
           alt="Logo"
         />
         <img
-          className={navLogo.cuShield}
+          className={navLogoStyles.shield}
           src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
           width="28"
           height="35"
@@ -25,8 +25,8 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
         />
       </a>
       {title && link && (
-        <div className={navLogo.siteTitleWrapper}>
-          <a href={link} className={`${navLogo.siteTitle}`}>
+        <div className={navLogoStyles.siteTitleWrapper}>
+          <a href={link} className={`${navLogoStyles.siteTitle}`}>
             {title}
           </a>
         </div>

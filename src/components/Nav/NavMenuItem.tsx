@@ -1,4 +1,4 @@
-import { navMenuItemStyles, navSubMenuItemStyles } from './Nav.Styles'
+import { navMenuItemStyles } from './Nav.Styles'
 import ImenuItem from './NavInterface'
 export interface menuItemProps {
   menuItem: ImenuItem
@@ -30,14 +30,14 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
           ` ` +
           navMenuItemStyles.navItem +
           ` ` +
-          (isSubMenu ? navSubMenuItemStyles.subMenuItem : '')
+          (isSubMenu ? navMenuItemStyles.subMenuItem : '')
         }
       >
         <span>{menuItem.title}</span>
 
         {menuItem.submenu && !isInnerSubMenu ? (
           <button
-            className={`hidden ` + navSubMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}
+            className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}
             aria-expanded="false"
           >
             <span className="sr-only">Click to open inner submenu</span>
@@ -49,7 +49,7 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
 
       {menuItem.submenu && isInnerSubMenu ? (
         <button
-          className={isInnerSubMenu ? navSubMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow : ''}
+          className={isInnerSubMenu ? navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow : ''}
           aria-expanded="false"
         >
           <span className="sr-only">Click to open inner submenu</span>

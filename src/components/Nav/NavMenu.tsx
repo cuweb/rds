@@ -1,4 +1,4 @@
-import { navMenuItemStyles } from './Nav.Styles'
+import { navMenuStyles } from './Nav.Styles'
 import { NavMenuItemWrapper } from './NavMenuItemWrapper'
 import ImenuItem from './NavInterface'
 
@@ -9,8 +9,8 @@ export interface navMenuProps {
 export const NavMenu = ({ menu }: navMenuProps) => {
   return (
     <>
-      <div className={navMenuItemStyles.navBarWrapper}>
-        <ul className={navMenuItemStyles.navBar}>
+      <div className={navMenuStyles.wrapper}>
+        <ul className={navMenuStyles.navBar}>
           {menu.map((menuItem: ImenuItem, index: number) => (
             <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
           ))}

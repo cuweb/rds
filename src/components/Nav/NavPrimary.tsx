@@ -1,8 +1,9 @@
 import { PropsWithChildren } from 'react'
+import { navPrimaryStyles } from './Nav.Styles'
 
 export const NavPrimary = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex items-center justify-center gap-4 lg:gap-8 grow max-sm:py-3.5 max-sm:w-[calc(100%+40px)] max-sm:-mx-[20px] max-sm:px-[20px] max-sm:bg-cu-black-25 max-sm:border-t max-sm:border-t-cu-black-100 sm:border-0">
+    <div className={`${navPrimaryStyles.navPrimary}`}>
       {children}
     </div>
   )

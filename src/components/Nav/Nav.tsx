@@ -4,10 +4,10 @@ import { NavAside } from './NavAside'
 import { NavPrimary } from './NavPrimary'
 import { NavSecondary } from './NavSecondary'
 import { NavMenu } from './NavMenu'
+import { navStyles } from './Nav.Styles'
 import menuPriority from './priorityPlus'
 import setupMenuToggle from './navToggles'
-
-interface NavWrapperProps {
+export interface NavWrapperProps {
   navType?: 'primary' | 'secondary'
   children: ReactNode
 }
@@ -18,19 +18,27 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
     setupMenuToggle()
   }, [])
 
-  const classes = navType != 'secondary' ? 'border-b border-b-cu-black-100' : ''
+  // Children.map(children, (child: ReactNode) => {
+    
+  //   const item = child as ReactElement<PropsWithChildren<NavAsideLoggedOutProps>>;
 
-  const classes1 = navType != 'secondary' ? 'sm:flex-nowrap' : ''
+  //   if (navType === 'secondary' && item.type === NavAside) {
+  //     if (isValidElement(child)) {
+  //       console.log(item.props, { ...item.props, hideMobile: true }, 's')
+  //       return <NavAside hideMobile={true}/>;
+  //     }
+  //   }
+
+  //   return child;
+  // })
 
   return (
     <header
-      className={
-        'cu-nav border-t-2 border-t-cu-red px-5 sm:px-8 sticky top-0 z-50 duration-300 ease-in-out bg-white transition-top' +
-        ' ' +
-        classes
-      }
+      className={`${navStyles.header} ${navType != 'secondary' ? navStyles.headerPrimary : ''}`}
     >
-      <nav className={`flex flex-wrap items-center gap-x-8 ` + classes1}>{children}</nav>
+      <nav className={`${navStyles.nav} ${navType != 'secondary' ? navStyles.navPrimary : ''}`}>
+        {children}
+      </nav>
     </header>
   )
 }
