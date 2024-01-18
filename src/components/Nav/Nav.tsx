@@ -18,7 +18,9 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
     setupMenuToggle()
   }, [])
 
-  const classes = navType != 'primary' ? 'border-b border-b-cu-black-100' : ''
+  const classes = navType != 'secondary' ? 'border-b border-b-cu-black-100' : ''
+
+  const classes1 = navType != 'secondary' ? 'sm:flex-nowrap' : ''
 
   return (
     <header
@@ -28,7 +30,7 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
         classes
       }
     >
-      <nav className="flex flex-wrap sm:flex-nowrap items-center gap-x-8">{children}</nav>
+      <nav className={`flex flex-wrap items-center gap-x-8 ` + classes1}>{children}</nav>
     </header>
   )
 }

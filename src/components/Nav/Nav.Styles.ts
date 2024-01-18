@@ -2,8 +2,8 @@ export const navBaseStyles = {
   header: ``,
   wrapper: ``,
   primaryWrapper: `cu-nav__primary w-full flex items-center gap-4 md:gap-8 mx-auto max-w-screen-2xl `,
-  secondaryWrapper: `cu-nav__secondary w-[calc(100%+62px)] -mx-[2rem] px-5 sm:px-8 border-b border-b-cu-black-100 sticky top-0 z-30 bg-cu-black-25`,
-  secondaryInnerWrapper: `flex gap-6 mx-auto max-w-screen-2xl`,
+  secondaryWrapper: `cu-nav__secondary px-5 sm:px-8 border-b border-b-cu-black-100 sticky top-0 z-30 bg-cu-black-25`,
+  secondaryInnerWrapper: `flex gap-6`,
 }
 
 export const navLogo = {
@@ -11,7 +11,7 @@ export const navLogo = {
   cuLogoLink: `shrink-0`,
   cuLogo: `w-[130px] h-[35px] hidden md:block shrink-0`,
   cuShield: `w-[28px] h-[35px] block md:hidden shrink-0`,
-  siteTitleWrapper: `leading-none md:max-w-[220px]`,
+  siteTitleWrapper: `leading-none max-w-[200px] md:max-w-[220px]`,
   siteTitle: `text-base md:text-lg font-semibold text-cu-black-800 hover:text-cu-red-700 text-ellipsis line-clamp-2 overflow-hidden`,
 }
 

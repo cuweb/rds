@@ -33,9 +33,10 @@ export const Secondary: Story = {
     <>
       <Nav navType="secondary">
         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-        <Nav.Aside menu={NavAsideData} />
+        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} hideMobile={true} />
         <Nav.Secondary>
           <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} LoggedOutUser={true} />
         </Nav.Secondary>
       </Nav>
     </>

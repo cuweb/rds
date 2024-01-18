@@ -10,6 +10,7 @@ export interface NavAsideProps {
   LoggedOutUser?: false
   LoggedMenu?: null
   userNoImage?: null
+  hideMobile?: true
 }
 
 export interface NavAsideLoggedInProps {
@@ -18,6 +19,7 @@ export interface NavAsideLoggedInProps {
   LoggedOutUser?: true
   LoggedMenu?: null
   userNoImage?: null
+  hideMobile?: true
 }
 export interface NavAsideLoggedOutProps {
   menu?: ImenuItem[]
@@ -25,6 +27,7 @@ export interface NavAsideLoggedOutProps {
   LoggedOutUser?: false
   LoggedMenu: ImenuItem[]
   userNoImage: UserInfoType
+  hideMobile?: true
 }
 
 export const NavAside = ({
@@ -33,9 +36,10 @@ export const NavAside = ({
   LoggedOutUser,
   LoggedMenu,
   userNoImage,
+  hideMobile,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
   return (
-    <div className={navAsideStyles.asideWrapper}>
+    <div className={navAsideStyles.asideWrapper + ' ' + (hideMobile ? 'max-sm:hidden' : 'flex sm:hidden')}>
       <MagnifyingGlassIcon className={navAsideStyles.searchIcon} />
       <ul className={navAsideStyles.unorderedList}>
         {menu &&
