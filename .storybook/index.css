@@ -5077,19 +5077,14 @@ StackedList for ToC
 
 .p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item {
   justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 1.25rem;
 }
 
 .p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item::after {
   content: var(--tw-content);
   display: none;
-}
-
-@media not all and (min-width: 640px) {
-  .p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 1.25rem;
-  }
 }
 
 .p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item),
