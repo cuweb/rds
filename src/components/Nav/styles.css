@@ -26,7 +26,7 @@
 }
 
 .p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item {
-  @apply after:hidden justify-between;
+  @apply after:hidden justify-between max-sm:pl-[1.25rem] max-sm:py-[5px];
 }
 
 .p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item),

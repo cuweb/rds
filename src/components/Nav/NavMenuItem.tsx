@@ -33,7 +33,7 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
           (isSubMenu ? navMenuItemStyles.subMenuItem : '')
         }
       >
-        <span>{menuItem.title}</span>
+        {menuItem.title}
 
         {menuItem.submenu && !isInnerSubMenu ? (
           <button
