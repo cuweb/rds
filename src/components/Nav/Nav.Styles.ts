@@ -15,7 +15,7 @@ export const navSecondaryStyles = {
 }
 
 export const navLogoStyles = {
-  wrapper: `flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow`,
+  wrapper: `cu-nav__top flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow`,
   link: `shrink-0`,
   logo: `w-[130px] h-[35px] hidden md:block shrink-0`,
   shield: `w-[28px] h-[35px] block md:hidden shrink-0`,

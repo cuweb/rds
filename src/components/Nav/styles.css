@@ -7,6 +7,10 @@
   @apply sm:hidden;
 }
 
+.p-plus-container {
+  @apply w-full;
+}
+
 /* Overflow Menu */
 .p-plus__overflow {
   @apply z-50 absolute top-[36px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
@@ -106,7 +110,7 @@ button.p-plus__toggle-btn.rotated svg {
   }
 
   .cu-nav__secondary .p-plus__overflow {
-    @apply h-[calc(100vh-62px-52px)];
+    @apply h-screen;
   }
 
   .p-plus__overflow.p-plus_left {

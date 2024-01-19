@@ -4960,6 +4960,10 @@ StackedList for ToC
   }
 }
 
+.p-plus-container {
+  width: 100%;
+}
+
 /* Overflow Menu */
 
 .p-plus__overflow {
@@ -5236,7 +5240,7 @@ button.p-plus__toggle-btn.rotated svg {
   }
 
   .cu-nav__secondary .p-plus__overflow {
-    height: calc(100vh - 62px - 52px);
+    height: 100vh;
   }
 
   .p-plus__overflow.p-plus_left {
@@ -5254,6 +5258,10 @@ button.p-plus__toggle-btn.rotated svg {
   .p-plus__overflow li.cu-nav-item-child a {
     padding-left: 3rem;
   }
+}
+
+#storybook-root {
+  height: 2000px;
 }
 
 .cu-wideimage-content > *:not(h1):not(h2):not(.cu-buttongroup):not(.cu-wideimage-signup) {
