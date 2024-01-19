@@ -68,6 +68,8 @@ const handleMenuItemClick = (menuItem: HTMLElement) => {
     const submenu = menuItemParent.nextElementSibling as HTMLElement
     const isExpanded = menuItem.getAttribute('aria-expanded') === 'true'
 
+    const arrow = menuItem.querySelector(innerSubMenuTogglesSelector)
+
     if (submenu) {
       if (isExpanded) {
         submenu.style.display = 'none'
@@ -75,10 +77,18 @@ const handleMenuItemClick = (menuItem: HTMLElement) => {
         submenu.style.removeProperty('right')
         menuItem.classList.remove(navArrowRotateClass)
         menuItem.setAttribute('aria-expanded', 'false')
+
+        if (arrow) {
+          arrow.classList.remove(navArrowRotateClass)
+        }
       } else {
         closeAllSubmenus()
 
         submenu.style.display = 'block'
+
+        if (arrow) {
+          arrow.classList.add(navArrowRotateClass)
+        }
 
         if (isElementOverflowing(submenu)) {
           submenu.style.left = 'unset'
