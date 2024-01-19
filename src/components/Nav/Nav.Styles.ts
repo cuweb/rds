@@ -24,7 +24,7 @@ export const navLogoStyles = {
 }
 
 export const navMenuStyles = {
-  wrapper: `grow`,
+  wrapper: `grow flex items-center`,
   navBar: `cu-nav__menu flex gap-4 items-center`,
 }
 
