@@ -12,15 +12,15 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
         <img
           className={navLogoStyles.logo}
           src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
-          width="130"
-          height="35"
+          width="148"
+          height="40"
           alt="Logo"
         />
         <img
           className={navLogoStyles.shield}
           src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
-          width="28"
-          height="35"
+          width="30"
+          height="38"
           alt="Logo"
         />
       </a>

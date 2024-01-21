@@ -10,17 +10,17 @@ export const navPrimaryStyles = {
 }
 
 export const navSecondaryStyles = {
-  navSecondary: `cu-nav__secondary bg-cu-black-25 border-t border-t-cu-black-100 border-b border-b-cu-black-100 w-[calc(100%+40px)] md:w-[calc(100%+64px)] -mx-[20px] md:-mx-[32px] px-[20px] md:px-[2rem] py-3.5`,
+  navSecondary: `cu-nav__secondary bg-cu-black-25 border-t border-t-cu-black-100 border-b border-b-cu-black-100 w-[calc(100%+40px)] md:w-[calc(100%+64px)] -mx-[20px] md:-mx-[32px] px-[20px] md:px-[2rem] py-2.5`,
   inner: `flex gap-6`,
 }
 
 export const navLogoStyles = {
   wrapper: `cu-nav__top flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow`,
   link: `shrink-0`,
-  logo: `w-[130px] h-[35px] hidden md:block shrink-0`,
-  shield: `w-[28px] h-[35px] block md:hidden shrink-0`,
-  siteTitleWrapper: `leading-none max-w-[200px] md:max-w-[220px]`,
-  siteTitle: `text-base md:text-lg font-semibold text-cu-black-800 hover:text-cu-red-700 text-ellipsis line-clamp-2 overflow-hidden`,
+  logo: `w-[148px] h-[40px] hidden md:block shrink-0`,
+  shield: `w-[30px] h-[38px] block md:hidden shrink-0`,
+  siteTitleWrapper: `leading-none max-w-[60%] sm:max-w-[200px] md:max-w-[220px]`,
+  siteTitle: `text-base md:text-lg leading-5 md:leading-6 font-semibold text-cu-black-800 hover:text-cu-red-700 text-ellipsis line-clamp-2 overflow-hidden`,
 }
 
 export const navMenuStyles = {

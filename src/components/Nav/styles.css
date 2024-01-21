@@ -1,3 +1,8 @@
+#storybook-root {
+  height: 2000px;
+  background-color: white;
+}
+
 /* Aside */
 .cu-nav--secondary > .nav__aside {
   @apply max-sm:hidden;
@@ -21,7 +26,7 @@
 }
 
 .p-plus__overflow .p-plus__primary-nav-item {
-  @apply block pr-0 text-sm font-medium text-cu-black-600 border-b hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0;
+  @apply block pr-0 text-sm font-medium border-b text-cu-black-600 hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0;
 }
 
 .p-plus__overflow .p-plus__primary-nav-item a,
@@ -44,7 +49,7 @@
 
 /* Child level menu item */
 .p-plus__overflow .cu-nav__submenu {
-  @apply relative w-full h-auto top-0 border-0 shadow-none;
+  @apply relative top-0 w-full h-auto border-0 shadow-none;
 }
 
 .p-plus__overflow .cu-nav__submenu li {
@@ -68,7 +73,7 @@ button.p-plus__toggle-btn {
 }
 
 button.p-plus__toggle-btn svg {
-  @apply transition ease-in duration-300;
+  @apply transition duration-300 ease-in;
 }
 
 button.p-plus__toggle-btn.rotated svg {
