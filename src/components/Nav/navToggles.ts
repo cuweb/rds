@@ -1,4 +1,4 @@
-const navArrowRotateClass = 'after:!rotate-[230deg]'
+const navArrowRotateClass = 'after:!rotate-[225deg]'
 const navArrowActiveClass = 'bg-cu-black-50/35'
 const parentMenuItemsSelector = '.cu-nav__parent-item'
 const innerSubMenuTogglesSelector = '.cu-nav__inner-submenu-toggle'

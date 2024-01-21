@@ -6,7 +6,7 @@
 /* Sub menu position */
 
 .cu-nav__primary .cu-nav__submenu {
-  @apply top-[44px];
+  @apply top-[42px];
 }
 
 .cu-nav__secondary .cu-nav__submenu {
