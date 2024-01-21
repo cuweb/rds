@@ -2071,6 +2071,10 @@ select {
   margin-bottom: 1.5rem;
 }
 
+.-ml-3 {
+  margin-left: -0.75rem;
+}
+
 .-ml-px {
   margin-left: -1px;
 }
@@ -2217,10 +2221,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.-ml-3 {
-  margin-left: -0.75rem;
 }
 
 .line-clamp-2 {

@@ -1,6 +1,6 @@
-import { NavSubMenuStyles } from './Nav.Styles'
 import { NavMenuItemWrapper } from './NavMenuItemWrapper'
 import ImenuItem from './NavInterface'
+
 export interface menuItemProps {
   submenu: ImenuItem[]
   isSubMenu: boolean
@@ -19,7 +19,11 @@ export const NavSubMenu = ({ submenu, isSubMenu, isInnerSubMenu, id }: menuItemP
   return (
     <ul
       id={convertToSlug(id)}
-      className={isInnerSubMenu ? NavSubMenuStyles.innerSubMenuContainer : NavSubMenuStyles.subMenuContainer}
+      className={
+        isInnerSubMenu
+          ? 'cu-nav__inner-submenu hidden w-full overflow-hidden bg-cu-black-50/35'
+          : 'cu-nav__submenu hidden absolute -ml-3 left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100'
+      }
     >
       {submenu.map((menuItem: ImenuItem, index: number) => (
         <NavMenuItemWrapper
