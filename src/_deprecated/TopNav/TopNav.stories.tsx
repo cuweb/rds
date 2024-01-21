@@ -50,8 +50,8 @@ const user = {
     src: 'https://static.wikia.nocookie.net/freshprince/images/a/ac/1carlton.jpg',
     alt: '',
   },
-  firstName: 'Danny',
-  lastName: 'Brown',
+  firstName: 'Web',
+  lastName: 'Services',
 }
 
 const userMenuItems = [

@@ -3,6 +3,16 @@
   background-color: white;
 }
 
+/* Sub menu position */
+
+.cu-nav__primary .cu-nav__submenu {
+  @apply top-[44px];
+}
+
+.cu-nav__secondary .cu-nav__submenu {
+  @apply top-[34px];
+}
+
 /* Aside */
 .cu-nav--secondary > .nav__aside {
   @apply max-sm:hidden;

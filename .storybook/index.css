@@ -2219,6 +2219,10 @@ select {
   margin-top: auto;
 }
 
+.-ml-3 {
+  margin-left: -0.75rem;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -3780,10 +3784,6 @@ select {
   line-height: 1rem;
 }
 
-.text-\[16px\] {
-  font-size: 16px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -4961,6 +4961,16 @@ StackedList for ToC
 #storybook-root {
   height: 2000px;
   background-color: white;
+}
+
+/* Sub menu position */
+
+.cu-nav__primary .cu-nav__submenu {
+  top: 44px;
+}
+
+.cu-nav__secondary .cu-nav__submenu {
+  top: 34px;
 }
 
 /* Aside */
@@ -9262,10 +9272,6 @@ button.p-plus__toggle-btn.rotated svg {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-\[16px\] {
-    font-size: 16px;
   }
 
   .md\:leading-10 {

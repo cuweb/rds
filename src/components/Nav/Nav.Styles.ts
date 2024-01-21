@@ -46,7 +46,8 @@ export const navMenuItemStyles = {
 }
 
 export const NavSubMenuStyles = {
-  subMenuContainer: `cu-nav__submenu hidden absolute top-[36px] left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
+  subMenuContainer: `cu-nav__submenu hidden absolute -ml-3 left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
+  // subMenuContainer: `cu-nav__submenu hidden absolute top-[36px] left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100`,
   innerSubMenuContainer: `cu-nav__inner-submenu hidden w-full overflow-hidden bg-cu-black-50/35`,
 }
 
