@@ -1,65 +1,113 @@
 export const NavDataSingle = [
   {
-    href: '/link-1',
-    title: 'Link1',
-  },
-  {
-    href: '/link-2',
-    title: 'Link2',
+    href: '#',
+    title: 'Academics',
     submenu: [
       {
-        href: '/link-2.1',
-        title: 'Link2.1',
+        href: '#',
+        title: 'Undergraduate Programs',
+      },
+      {
+        href: '#',
+        title: 'Graduate Programs',
+      },
+      {
+        href: '#',
+        title: 'Executive Education',
+      },
+    ],
+  },
+  {
+    href: '#',
+    title: 'Admissions'
+  },
+  {
+    href: '#',
+    title: 'Students',
+    submenu: [
+      {
+        href: '#',
+        title: 'Future Students',
         submenu: [
           {
-            href: '/link-2.1.1',
-            title: 'Link2.1.1',
+            href: '#',
+            title: 'The Carleton Advantage',
           },
           {
-            href: '/link-2.1.3',
-            title: 'Link2.1.3',
+            href: '#',
+            title: 'Virtual Tour',
           },
         ],
       },
       {
-        href: '/link-2.2',
-        title: 'Link2.2',
+        href: '#',
+        title: 'Current Students',
       },
       {
-        href: '/link-2.3',
-        title: 'Link2.3',
+        href: '#',
+        title: 'Graduate Students',
       },
     ],
   },
   {
-    href: '/link-3',
-    title: 'Link3',
+    href: '#',
+    title: 'Research',
   },
   {
-    href: '/link-4',
-    title: 'Link4',
+    href: '#',
+    title: 'About',
     submenu: [
       {
-        href: '/link-4.1',
-        title: 'Link4.1',
+        href: '#',
+        title: 'Our Campus',
       },
       {
-        href: '/link-4.2',
-        title: 'Link4.2',
+        href: '#',
+        title: 'Our History',
       },
       {
-        href: '/link-4.3',
-        title: 'Link4.3',
+        href: '#',
+        title: 'Facts & Figures',
+      },
+      {
+        href: '#',
+        title: 'Accountability',
+      },
+      {
+        href: '#',
+        title: 'Our Executives',
       },
     ],
   },
   {
-    href: '/link-5',
-    title: 'Link5',
+    href: '#',
+    title: 'Staff & Faculty',
+    submenu: [
+      {
+        href: '#',
+        title: 'Intranet',
+      },
+      {
+        href: '#',
+        title: 'Brightspace',
+      },
+      {
+        href: '#',
+        title: 'Carleton Central',
+      },
+      {
+        href: '#',
+        title: 'Human Resources',
+      },
+      {
+        href: '#',
+        title: 'Jobs at Carleton',
+      },
+    ],
   },
   {
-    href: '/link-6',
-    title: 'Link6',
+    href: '#',
+    title: 'Alumni',
   },
 ]
 

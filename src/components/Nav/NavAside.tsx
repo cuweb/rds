@@ -19,6 +19,7 @@ export interface NavAsideLoggedInProps {
   LoggedMenu?: null
   userNoImage?: null
 }
+
 export interface NavAsideLoggedOutProps {
   menu?: ImenuItem[]
   LoggedInUser: true

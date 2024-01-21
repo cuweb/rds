@@ -17,8 +17,10 @@ export const navSecondaryStyles = {
 export const navLogoStyles = {
   wrapper: `cu-nav__top flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow`,
   link: `shrink-0`,
-  logo: `w-[148px] h-[40px] hidden md:block shrink-0`,
-  shield: `w-[30px] h-[38px] block md:hidden shrink-0`,
+  logo: `w-[148px] h-[40px] shrink-0`,
+  shield: `w-[30px] h-[38px] shrink-0`,
+  // logo: `w-[148px] h-[40px] hidden md:block shrink-0`,
+  // shield: `w-[30px] h-[38px] block md:hidden shrink-0`,
   siteTitleWrapper: `leading-none max-w-[60%] sm:max-w-[200px] md:max-w-[220px]`,
   siteTitle: `text-base md:text-lg leading-5 md:leading-6 font-semibold text-cu-black-800 hover:text-cu-red-700 text-ellipsis line-clamp-2 overflow-hidden`,
 }
@@ -49,10 +51,10 @@ export const NavSubMenuStyles = {
 }
 
 export const navAsideStyles = {
-  asideWrapper: `nav__aside flex items-center gap-4 sm:gap-5 ml-auto`,
+  asideWrapper: `nav__aside flex items-center gap-5 sm:gap-6 ml-auto`,
   searchIcon: `w-5 h-5 text-cu-black-400`,
-  unorderedList: `flex items-center flex gap-4 sm:gap-5 pl-4 sm:pl-5 border-l border-cu-black-100`,
+  unorderedList: `flex items-center flex gap-5 sm:gap-6 pl-5 sm:pl-6 border-l border-solid border-cu-black-100 py-1`,
   listHidden: `block`,
-  listItemLink: `text-[15px] font-medium text-cu-black-600 hover:text-cu-red`,
+  listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red`,
   megaMenuButton: `px-3 py-2 text-sm font-medium rounded md:text-[15px] text-cu-black-700 md:px-3.5 md:py-2.5 whitespace-nowrap  hover:text-white focus:outline-none bg-cu-black-50 hover:bg-cu-red`,
 }

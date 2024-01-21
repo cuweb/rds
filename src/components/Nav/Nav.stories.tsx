@@ -18,19 +18,40 @@ type Story = StoryObj<typeof Nav>
 
 export const Default: Story = {
   render: () => (
-    <Nav navType="primary">
-      <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-      <Nav.Primary>
-        <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData} />
-      </Nav.Primary>
-    </Nav>
+    <>
+      {/* <Nav navType="primary">
+        <Nav.Logo />
+        <Nav.Primary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Primary>
+      </Nav>
+      <br />
+      <br /> */}
+      <Nav navType="primary">
+        <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
+        <Nav.Primary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Primary>
+      </Nav>
+    </>
   ),
 }
 
 export const Secondary: Story = {
   render: () => (
     <>
+      {/* <Nav navType="secondary">
+        <Nav.Logo />
+        <Nav.Aside menu={NavAsideData} />
+        <Nav.Secondary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Secondary>
+      </Nav>
+      <br />
+      <br /> */}
       <Nav navType="secondary">
         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
         <Nav.Aside menu={NavAsideData} />
