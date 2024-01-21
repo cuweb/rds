@@ -19,7 +19,7 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: 'Admissions'
+    title: 'Admissions',
   },
   {
     href: '#',
