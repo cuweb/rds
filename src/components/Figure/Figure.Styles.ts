@@ -7,15 +7,16 @@ export const styles = {
 }
 
 export const figureSize = {
-  small: `max-w-[320px]`,
-  medium: `max-w-[500px]`,
-  large: `max-w-3xl`,
+  xs: `max-w-[320px]`,
+  sm: `max-w-[440px]`,
+  md: `max-w-[512px]`,
+  lg: `max-w-3xl`,
   full: `max-w-full`,
 }
 
 export const figureAlign = {
-  left: `float-left mb-4`,
-  right: `float-right mb-4`,
+  left: `md:float-left md:mr-12 mb-6`,
+  right: `lg:float-right ml-0 lg:ml-12 mb-6`,
   center: `mx-auto`,
   none: ``,
 }

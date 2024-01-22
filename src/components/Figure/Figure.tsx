@@ -5,10 +5,9 @@ import { styles, figureSize, figureAlign, figureSpacing } from './Figure.Styles'
 export interface FigureProps {
   children: React.ReactNode
   caption?: string
-  size?: 'small' | 'medium' | 'large' | 'full'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'full'
   align?: 'left' | 'right' | 'center' | 'none'
   isRound?: boolean
-  isCircle?: boolean
   hasShadow?: boolean
 }
 
@@ -16,13 +15,11 @@ export const FigureWrapper = ({
   children,
   caption,
   isRound,
-  isCircle,
   hasShadow,
   size = 'full',
   align = 'none',
 }: FigureProps) => {
   const roundedCorners = isRound ? styles.rounded : ''
-  const fullCircle = isCircle ? styles.circle : ''
   const shadow = hasShadow ? styles.shadow : ''
 
   // Image Alignment
@@ -32,7 +29,7 @@ export const FigureWrapper = ({
   return (
     <figure className="cu-figure">
       <div
-        className={`${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow} ${floatLeft} ${floatRight} ${roundedCorners} ${fullCircle}`}
+        className={`not-prose ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow} ${floatLeft} ${floatRight} ${roundedCorners}`}
       >
         {children}
         {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
