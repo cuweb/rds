@@ -2350,10 +2350,6 @@ select {
   height: 100px;
 }
 
-.h-\[15px\] {
-  height: 15px;
-}
-
 .h-\[38px\] {
   height: 38px;
 }
@@ -2368,10 +2364,6 @@ select {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[16px\] {
-  height: 16px;
 }
 
 .max-h-72 {
@@ -2396,10 +2388,6 @@ select {
 
 .min-h-full {
   min-height: 100%;
-}
-
-.\!w-\[45px\] {
-  width: 45px !important;
 }
 
 .\!w-px {
@@ -2498,10 +2486,6 @@ select {
   width: 148px;
 }
 
-.w-\[15px\] {
-  width: 15px;
-}
-
 .w-\[30px\] {
   width: 30px;
 }
@@ -2520,10 +2504,6 @@ select {
 
 .w-px {
   width: 1px;
-}
-
-.w-\[16px\] {
-  width: 16px;
 }
 
 .min-w-full {
@@ -3202,11 +3182,6 @@ select {
 .border-b-cu-black-50 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(242 242 242 / var(--tw-border-opacity));
-}
-
-.border-l-cu-black-50 {
-  --tw-border-opacity: 1;
-  border-left-color: rgb(242 242 242 / var(--tw-border-opacity));
 }
 
 .border-l-cu-red {
@@ -5178,7 +5153,6 @@ StackedList for ToC
 button.p-plus__toggle-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.125rem;
   font-size: 15px;
   font-weight: 500;
@@ -5192,9 +5166,36 @@ button.p-plus__toggle-btn {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+button.p-plus__toggle-btn::after {
+  margin-left: 0.25rem;
+  margin-top: 1px;
+  height: 0.375rem;
+  width: 0.375rem;
+  --tw-rotate: 135deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-top-color: rgb(77 77 77 / var(--tw-border-opacity));
+  --tw-border-opacity: 1;
+  border-left-color: rgb(77 77 77 / var(--tw-border-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
 button.p-plus__toggle-btn:hover {
   --tw-text-opacity: 1;
   color: rgb(187 18 25 / var(--tw-text-opacity));
+}
+
+button.p-plus__toggle-btn:hover::after {
+  content: var(--tw-content);
+  border-color: currentColor;
 }
 
 button.p-plus__toggle-btn svg {
@@ -8121,16 +8122,6 @@ button.p-plus__toggle-btn.rotated svg {
   position: relative;
 }
 
-.after\:-left-1::after {
-  content: var(--tw-content);
-  left: -0.25rem;
-}
-
-.after\:-left-1\.5::after {
-  content: var(--tw-content);
-  left: -0.375rem;
-}
-
 .after\:bottom-0::after {
   content: var(--tw-content);
   bottom: 0px;
@@ -8156,44 +8147,14 @@ button.p-plus__toggle-btn.rotated svg {
   margin-left: -1.25rem;
 }
 
-.after\:ml-2::after {
-  content: var(--tw-content);
-  margin-left: 0.5rem;
-}
-
 .after\:ml-1::after {
   content: var(--tw-content);
   margin-left: 0.25rem;
 }
 
-.after\:mt-1::after {
-  content: var(--tw-content);
-  margin-top: 0.25rem;
-}
-
-.after\:mt-0::after {
-  content: var(--tw-content);
-  margin-top: 0px;
-}
-
-.after\:mt-0\.5::after {
-  content: var(--tw-content);
-  margin-top: 0.125rem;
-}
-
 .after\:mt-px::after {
   content: var(--tw-content);
   margin-top: 1px;
-}
-
-.after\:ml-0::after {
-  content: var(--tw-content);
-  margin-left: 0px;
-}
-
-.after\:ml-0\.5::after {
-  content: var(--tw-content);
-  margin-left: 0.125rem;
 }
 
 .after\:h-1::after {
@@ -8204,16 +8165,6 @@ button.p-plus__toggle-btn.rotated svg {
 .after\:h-1\.5::after {
   content: var(--tw-content);
   height: 0.375rem;
-}
-
-.after\:h-2::after {
-  content: var(--tw-content);
-  height: 0.5rem;
-}
-
-.after\:h-2\.5::after {
-  content: var(--tw-content);
-  height: 0.625rem;
 }
 
 .after\:h-px::after {
@@ -8234,16 +8185,6 @@ button.p-plus__toggle-btn.rotated svg {
 .after\:w-10::after {
   content: var(--tw-content);
   width: 2.5rem;
-}
-
-.after\:w-2::after {
-  content: var(--tw-content);
-  width: 0.5rem;
-}
-
-.after\:w-2\.5::after {
-  content: var(--tw-content);
-  width: 0.625rem;
 }
 
 .after\:\!rotate-\[225deg\]::after {
@@ -8616,11 +8557,6 @@ button.p-plus__toggle-btn.rotated svg {
 .group:hover .group-hover\:text-cu-red {
   --tw-text-opacity: 1;
   color: rgb(233 28 36 / var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:text-cu-red-700 {
-  --tw-text-opacity: 1;
-  color: rgb(187 18 25 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-white {
