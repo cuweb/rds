@@ -7,8 +7,8 @@ export const navMenuItemStyles = {
   navItemWrapper: `flex items-stretch justify-between`,
   navItem: `flex w-auto grow items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in`,
   navParentItem: `cu-nav__parent-item items-between after:w-1.5 after:h-1.5`,
-  navArrow: `after:content-[''] hover:after:border-current after:ml-2 after:border-t after:border-t-cu-black-700 after:border-l after:border-l-cu-black-700 after:rotate-[135deg] after:transition after:ease-in after:duration-300`,
+  navArrow: `after:content-[''] hover:after:border-current after:ml-1 after:mt-px after:border-t after:border-t-cu-black-700 after:border-l after:border-l-cu-black-700 after:rotate-[135deg] after:transition after:ease-in after:duration-300`,
   navParentArrow: `after:w-1.5 after:h-1.5`,
   subMenuItem: `px-5 py-3.5 hover:bg-cu-black-50/50`,
-  innerSubNavToggler: `cu-nav__inner-submenu-toggle flex items-center justify-center !w-[45px] h--[15px] hover:bg-cu-black-50/50 transition ease-in duration-300 border-l border-l-cu-black-50 after:w-2.5 after:h-2.5 after:-left-1.5 after:relative`,
+  innerSubNavToggler: `cu-nav__inner-submenu-toggle flex items-center justify-center w-12 hover:bg-cu-black-50/50 transition ease-in duration-300 after:w-1.5 after:h-1.5 after:right-1 after:relative`,
 }

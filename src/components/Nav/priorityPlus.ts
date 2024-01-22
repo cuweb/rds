@@ -10,7 +10,7 @@ const menuPriority = () => {
     const navInstance = priorityPlus(navElement, {
       collapseAtCount: 2,
       innerToggleTemplate: `Browse
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-none w-[15px] h-[15px] pt-1 text-cu-black-600 group-hover:text-cu-red-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-none w-[16px] h-[16px] pt-1 text-cu-black-700 group-hover:text-cu-red-700">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
         </svg>
       `,

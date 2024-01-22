@@ -2067,10 +2067,6 @@ select {
   margin-bottom: 1.5rem;
 }
 
-.-ml-3 {
-  margin-left: -0.75rem;
-}
-
 .-ml-px {
   margin-left: -1px;
 }
@@ -2374,6 +2370,10 @@ select {
   height: 100%;
 }
 
+.h-\[16px\] {
+  height: 16px;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
@@ -2520,6 +2520,10 @@ select {
 
 .w-px {
   width: 1px;
+}
+
+.w-\[16px\] {
+  width: 16px;
 }
 
 .min-w-full {
@@ -4959,6 +4963,10 @@ StackedList for ToC
   background-color: white;
 }
 
+.p-plus__primary .cu-nav__submenu {
+  margin-left: -0.75rem;
+}
+
 /* Sub menu position */
 
 .cu-nav__primary .cu-nav__submenu {
@@ -5170,6 +5178,7 @@ StackedList for ToC
 button.p-plus__toggle-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.125rem;
   font-size: 15px;
   font-weight: 500;
@@ -8137,6 +8146,11 @@ button.p-plus__toggle-btn.rotated svg {
   left: 1px;
 }
 
+.after\:right-1::after {
+  content: var(--tw-content);
+  right: 0.25rem;
+}
+
 .after\:-ml-5::after {
   content: var(--tw-content);
   margin-left: -1.25rem;
@@ -8145,6 +8159,41 @@ button.p-plus__toggle-btn.rotated svg {
 .after\:ml-2::after {
   content: var(--tw-content);
   margin-left: 0.5rem;
+}
+
+.after\:ml-1::after {
+  content: var(--tw-content);
+  margin-left: 0.25rem;
+}
+
+.after\:mt-1::after {
+  content: var(--tw-content);
+  margin-top: 0.25rem;
+}
+
+.after\:mt-0::after {
+  content: var(--tw-content);
+  margin-top: 0px;
+}
+
+.after\:mt-0\.5::after {
+  content: var(--tw-content);
+  margin-top: 0.125rem;
+}
+
+.after\:mt-px::after {
+  content: var(--tw-content);
+  margin-top: 1px;
+}
+
+.after\:ml-0::after {
+  content: var(--tw-content);
+  margin-left: 0px;
+}
+
+.after\:ml-0\.5::after {
+  content: var(--tw-content);
+  margin-left: 0.125rem;
 }
 
 .after\:h-1::after {
