@@ -83,7 +83,7 @@
 
 /* Button nav item alignment */
 button.p-plus__toggle-btn {
-  @apply flex gap-0.5 items-center text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in after:content-[''] hover:after:border-current after:w-1.5 after:h-1.5 after:ml-1 after:mt-px after:border-t after:border-t-cu-black-700 after:border-l after:border-l-cu-black-700 after:rotate-[135deg] after:transition after:ease-in after:duration-300
+  @apply flex gap-0.5 items-center text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in after:content-[''] hover:after:border-current after:w-1.5 after:h-1.5 after:ml-1 after:mt-px after:border-t after:border-t-cu-black-700 after:border-l after:border-l-cu-black-700 after:rotate-[135deg] after:transition after:ease-in after:duration-300;
 }
 
 button.p-plus__toggle-btn svg {
