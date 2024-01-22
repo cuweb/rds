@@ -7,6 +7,14 @@
   @apply -ml-3;
 }
 
+.cu-nav__submenu > li > span > a {
+  @apply max-sm:!pl-[2rem];
+}
+
+.cu-nav__inner-submenu > li > span > a {
+  @apply max-sm:!pl-[3rem] !pl-[2rem];
+}
+
 /* Sub menu position */
 
 .cu-nav__primary .cu-nav__submenu {

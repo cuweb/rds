@@ -4942,6 +4942,22 @@ StackedList for ToC
   margin-left: -0.75rem;
 }
 
+@media not all and (min-width: 640px) {
+  .cu-nav__submenu > li > span > a {
+    padding-left: 2rem !important;
+  }
+}
+
+.cu-nav__inner-submenu > li > span > a {
+  padding-left: 2rem !important;
+}
+
+@media not all and (min-width: 640px) {
+  .cu-nav__inner-submenu > li > span > a {
+    padding-left: 3rem !important;
+  }
+}
+
 /* Sub menu position */
 
 .cu-nav__primary .cu-nav__submenu {
