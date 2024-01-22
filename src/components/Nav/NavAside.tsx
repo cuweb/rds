@@ -40,7 +40,7 @@ export const NavAside = ({
   userNoImage,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
   return (
-    <div className="flex items-center gap-5 ml-auto nav__aside sm:gap-6">
+    <div className="cu-nav__aside flex items-center gap-5 ml-auto sm:gap-6">
       <MagnifyingGlassIcon className="w-5 h-5 text-cu-black-400" />
       <ul className="flex items-center gap-5 py-1 pl-5 border-l border-solid sm:gap-6 sm:pl-6 border-cu-black-100">
         {menu &&

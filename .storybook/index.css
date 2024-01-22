@@ -4952,16 +4952,20 @@ StackedList for ToC
   top: 34px;
 }
 
+.cu-nav__aside .cu-nav__submenu {
+  top: 34px;
+}
+
 /* Aside */
 
 @media not all and (min-width: 640px) {
-  .cu-nav--secondary > .nav__aside {
+  .cu-nav--secondary > .cu-nav__aside {
     display: none;
   }
 }
 
 @media (min-width: 640px) {
-  .cu-nav__secondary .nav__aside {
+  .cu-nav__secondary .cu-nav__aside {
     display: none;
   }
 }

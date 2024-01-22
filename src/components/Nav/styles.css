@@ -17,12 +17,16 @@
   @apply top-[34px];
 }
 
+.cu-nav__aside .cu-nav__submenu {
+  @apply top-[34px];
+}
+
 /* Aside */
-.cu-nav--secondary > .nav__aside {
+.cu-nav--secondary > .cu-nav__aside {
   @apply max-sm:hidden;
 }
 
-.cu-nav__secondary .nav__aside {
+.cu-nav__secondary .cu-nav__aside {
   @apply sm:hidden;
 }
 
