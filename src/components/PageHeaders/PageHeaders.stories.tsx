@@ -28,7 +28,12 @@ export const EventPageHeader: Story = {
     children: (
       <>
         <Figure size="sm" align="right" isRound hasShadow>
-          <img src="./sample-imgs/news-img.jpg" alt="Required alt text" width="200" height="133" />
+          <img
+            src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
+            alt="Required alt text"
+            width="200"
+            height="133"
+          />
         </Figure>
         <PageHeaders.Event
           eventType="Hybrid"

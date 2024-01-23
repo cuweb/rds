@@ -8241,10 +8241,6 @@ section div.cu-pageheaders-group:last-of-type {
     height: 1.5rem;
   }
 
-  .sm\:w-48 {
-    width: 12rem;
-  }
-
   .sm\:w-6 {
     width: 1.5rem;
   }
@@ -8457,10 +8453,6 @@ section div.cu-pageheaders-group:last-of-type {
 
   .md\:w-52 {
     width: 13rem;
-  }
-
-  .md\:w-72 {
-    width: 18rem;
   }
 
   .md\:w-8 {
@@ -8922,10 +8914,6 @@ section div.cu-pageheaders-group:last-of-type {
 
   .lg\:min-h-\[220px\] {
     min-height: 220px;
-  }
-
-  .lg\:w-96 {
-    width: 24rem;
   }
 
   .lg\:max-w-7xl {
