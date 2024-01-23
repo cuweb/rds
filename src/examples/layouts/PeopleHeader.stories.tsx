@@ -79,7 +79,7 @@ export const PeopleHeader: Story = {
       <Main>
         <Section hasProse>
           <PageHeaders header="Master Jedi Greely Wrinkle" pronoun="He/Him">
-            <Figure size="sm" align="right" isRound hasShadow>
+            <Figure size="sm" align="right" hasShadow>
               <img
                 src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
                 alt="Required alt text"

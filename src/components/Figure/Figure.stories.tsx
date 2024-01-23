@@ -52,7 +52,6 @@ export const ImageSmall: Story = {
 
 export const ImageRounded: Story = {
   args: {
-    isRound: true,
     size: 'md',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -68,7 +67,6 @@ export const ImageCircular: Story = {
 export const ImageWithCaption: Story = {
   args: {
     size: 'md',
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -77,7 +75,6 @@ export const ImageWithCaption: Story = {
 export const ImageWithShadow: Story = {
   args: {
     hasShadow: true,
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     size: 'md',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
@@ -89,7 +86,6 @@ export const ImageFloatLeft: Story = {
     align: 'left',
     hasShadow: true,
     size: 'md',
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -100,7 +96,6 @@ export const ImageFloatRight: Story = {
     align: 'right',
     hasShadow: true,
     size: 'md',
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -111,7 +106,6 @@ export const ImageCenterAlign: Story = {
     align: 'center',
     hasShadow: true,
     size: 'md',
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -127,7 +121,6 @@ export const VideoWithCaption: Story = {
   args: {
     size: 'md',
     hasShadow: true,
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <Figure.Video source={content.video} />,
   },

@@ -7,26 +7,15 @@ export interface FigureProps {
   caption?: string
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'full'
   align?: 'left' | 'right' | 'center' | 'none'
-  isRound?: boolean
   hasShadow?: boolean
 }
 
-export const FigureWrapper = ({
-  children,
-  caption,
-  isRound,
-  hasShadow,
-  size = 'full',
-  align = 'none',
-}: FigureProps) => {
-  const roundedCorners = isRound ? styles.rounded : ''
+export const FigureWrapper = ({ children, caption, hasShadow, size = 'full', align = 'none' }: FigureProps) => {
   const shadow = hasShadow ? styles.shadow : ''
 
   return (
     <figure className="cu-figure">
-      <div
-        className={`not-prose ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow} ${roundedCorners}`}
-      >
+      <div className={`not-prose rounded-lg ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow}`}>
         {children}
         {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
       </div>

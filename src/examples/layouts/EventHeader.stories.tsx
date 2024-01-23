@@ -79,7 +79,7 @@ export const EventHeader: Story = {
       <Main>
         <Section hasProse>
           <PageHeaders header="Event About a Thing">
-            <Figure size="sm" align="right" isRound hasShadow>
+            <Figure size="sm" align="right" hasShadow>
               <img src="./sample-imgs/news-img.jpg" alt="Required alt text" width="200" height="133" />
             </Figure>
             <PageHeaders.Event

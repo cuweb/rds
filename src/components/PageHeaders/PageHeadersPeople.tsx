@@ -62,14 +62,16 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
         <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
           <ul className={listStyles.listHorizontal}>
             {resume && (
-              <Button
-                isSmall
-                color="grey"
-                onClick={() => {
-                  window.location.href = resume
-                }}
-                title="Resume"
-              />
+              <li>
+                <Button
+                  isSmall
+                  color="grey"
+                  onClick={() => {
+                    window.location.href = resume
+                  }}
+                  title="Resume"
+                />
+              </li>
             )}
 
             {linkedin && (

@@ -27,7 +27,7 @@ export const EventPageHeader: Story = {
     header: 'Upcoming Event Header',
     children: (
       <>
-        <Figure size="sm" align="right" isRound hasShadow>
+        <Figure size="sm" align="right" hasShadow>
           <img
             src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
             alt="Required alt text"
@@ -60,7 +60,7 @@ export const PeoplePageHeader: Story = {
     pronoun: 'He/Him',
     children: (
       <>
-        <Figure size="sm" align="right" isRound hasShadow>
+        <Figure size="sm" align="right" hasShadow>
           <img
             src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
             alt="Required alt text"

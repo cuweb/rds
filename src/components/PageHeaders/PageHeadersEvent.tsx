@@ -96,27 +96,31 @@ export const PageHeadersEvent = ({
         <div className={listStyles.listWrapper}>
           <ul className={listStyles.listHorizontal}>
             {primaryButtonUrl && (
-              <Button
-                isSmall
-                onClick={() => {
-                  if (typeof primaryButtonUrl === 'string') {
-                    window.location.href = primaryButtonUrl
-                  }
-                }}
-                title={primaryButtonText ? primaryButtonText : 'Register Now'}
-              />
+              <li>
+                <Button
+                  isSmall
+                  onClick={() => {
+                    if (typeof primaryButtonUrl === 'string') {
+                      window.location.href = primaryButtonUrl
+                    }
+                  }}
+                  title={primaryButtonText ? primaryButtonText : 'Register Now'}
+                />
+              </li>
             )}
             {secondaryButtonUrl && (
-              <Button
-                isSmall
-                color="grey"
-                onClick={() => {
-                  if (typeof secondaryButtonUrl === 'string') {
-                    window.location.href = secondaryButtonUrl
-                  }
-                }}
-                title={secondaryButtonText ? secondaryButtonText : 'More Information'}
-              />
+              <li>
+                <Button
+                  isSmall
+                  color="grey"
+                  onClick={() => {
+                    if (typeof secondaryButtonUrl === 'string') {
+                      window.location.href = secondaryButtonUrl
+                    }
+                  }}
+                  title={secondaryButtonText ? secondaryButtonText : 'More Information'}
+                />
+              </li>
             )}
           </ul>
         </div>
