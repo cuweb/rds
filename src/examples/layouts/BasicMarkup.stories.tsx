@@ -2,13 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
-import { TopBar } from '../../components/TopBar/TopBar'
+import { Nav } from '../../components/Nav/Nav'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
+import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -111,29 +112,13 @@ const ToC = () => {
 export const BasicMarkup: Story = {
   render: () => (
     <>
-      <TopBar>
-        <TopBar.Primary>
-          <TopBar.Logo link="https://carleton.ca/webservices">
-            <a href="https://carleton.ca" className="cu-topbar--logo">
-              <img
-                className="culogo"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
-                width="130"
-                height="35"
-                alt="Logo"
-              />
-              <img
-                className="cushield"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
-                width="28"
-                height="35"
-                alt="Logo"
-              />
-            </a>
-          </TopBar.Logo>
-          <TopBar.Aside />
-        </TopBar.Primary>
-      </TopBar>
+      <Nav>
+        <Nav.Primary>
+          <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Primary>
+      </Nav>
 
       <Main>
         <Section hasProse>

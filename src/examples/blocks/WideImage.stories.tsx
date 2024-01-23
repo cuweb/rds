@@ -2,10 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { TopBar } from '../../components/TopBar/TopBar'
+import { Nav } from '../../components/Nav/Nav'
 import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
+import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Examples/Blocks',
@@ -17,29 +18,13 @@ type Story = StoryObj
 export const WideImages: Story = {
   render: () => (
     <>
-      <TopBar>
-        <TopBar.Primary>
-          <TopBar.Logo link="https://carleton.ca/webservices">
-            <a href="https://carleton.ca" className="cu-topbar--logo">
-              <img
-                className="culogo"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
-                width="130"
-                height="35"
-                alt="Logo"
-              />
-              <img
-                className="cushield"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
-                width="28"
-                height="35"
-                alt="Logo"
-              />
-            </a>
-          </TopBar.Logo>
-          <TopBar.Aside />
-        </TopBar.Primary>
-      </TopBar>
+      <Nav navType="primary">
+        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Primary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Primary>
+      </Nav>
 
       <Main>
         <Section hasProse>
