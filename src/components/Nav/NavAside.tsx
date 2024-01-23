@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { ReactNode } from 'react'
 import { NavMenuItemWrapperStyles, navMenuItemStyles } from './Nav.Styles'
 import { Avatar, UserInfoType } from './../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
@@ -14,6 +14,7 @@ export interface NavAsideProps {
   LoggedOutUser?: false
   LoggedMenu?: null
   userNoImage?: null
+  children?: ReactNode
 }
 
 export interface NavAsideLoggedInProps {
@@ -22,6 +23,7 @@ export interface NavAsideLoggedInProps {
   LoggedOutUser: true
   LoggedMenu?: null
   userNoImage?: null
+  children?: ReactNode
 }
 
 export interface NavAsideLoggedOutProps {
@@ -30,6 +32,7 @@ export interface NavAsideLoggedOutProps {
   LoggedOutUser?: false
   LoggedMenu: ImenuItem[]
   userNoImage: UserInfoType
+  children?: ReactNode
 }
 
 export const NavAside = ({
@@ -38,11 +41,18 @@ export const NavAside = ({
   LoggedOutUser,
   LoggedMenu,
   userNoImage,
+  children,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
   return (
     <div className="cu-nav__aside flex items-center gap-5 ml-auto sm:gap-6">
-      <MagnifyingGlassIcon className="w-5 h-5 text-cu-black-400" />
-      <ul className="flex items-center gap-5 py-1 pl-5 border-l border-solid sm:gap-6 sm:pl-6 border-cu-black-100">
+      {children}
+      <ul
+        className={
+          `flex items-center gap-5 py-1 pl-5 sm:gap-6 sm:pl-6` +
+          ' ' +
+          (children ? `border-l border-solid border-cu-black-100` : ``)
+        }
+      >
         {menu &&
           menu.map((menuItem: ImenuItem, index: number) => (
             <li key={index} className="block">
