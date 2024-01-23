@@ -1,5 +1,5 @@
 import { listStyles } from './PageHeaders.Styles'
-import { proseGroups } from '../../utils/globalClasses'
+import { proseStyles, proseGroups } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
 
 export interface PageHeadersEventProps {
@@ -44,7 +44,7 @@ export const PageHeadersEvent = ({
       {endDate && <p className={proseGroups.largeLight}>{endDate}</p>}
 
       {/* Check if details are set and output as ul */}
-      <div className={listStyles.listWrapper}>
+      <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
         <ul className={listStyles.listVertical}>
           <li>
             <strong className="font-semibold">{eventType} Event</strong>
@@ -71,7 +71,7 @@ export const PageHeadersEvent = ({
 
       {/* Check is socials are set and render div */}
       {Object.values(eventDetails).some((info) => info) && (
-        <div className={listStyles.listWrapper}>
+        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
           <ul className={listStyles.listVertical}>
             {contactName && (
               <li>

@@ -1,5 +1,5 @@
 import { listStyles, socialStyles } from './PageHeaders.Styles'
-import { proseGroups } from '../../utils/globalClasses'
+import { proseStyles, proseGroups } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
 
 export interface PageHeadersPeopleProps {
@@ -31,7 +31,7 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (
-        <div className={listStyles.listWrapper}>
+        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
           <ul className={listStyles.listVertical}>
             {degrees && <li>{degrees}</li>}
             {building && (
@@ -59,7 +59,7 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
 
       {/* Check is socials are set and render div */}
       {Object.values(socialDetails).some((info) => info) && (
-        <div className={listStyles.listWrapper}>
+        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
           <ul className={listStyles.listHorizontal}>
             {resume && (
               <Button

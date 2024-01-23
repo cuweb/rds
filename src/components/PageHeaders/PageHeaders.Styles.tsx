@@ -1,5 +1,5 @@
 export const listStyles = {
-  listWrapper: `cu-pageheaders-group not-prose mb-6`,
+  listWrapper: `cu-pageheaders-group not-prose mb-6 mt-6`,
   listGroup: `pl-0 list-none`,
   listVertical: `space-y-0.5`,
   listHorizontal: `flex gap-6 items-center`,
