@@ -3,7 +3,6 @@ import { proseGroups } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
 
 export interface PageHeadersPeopleProps {
-  children?: React.ReactNode
   jobTitle?: string
   degrees?: string
   building?: string
@@ -15,17 +14,14 @@ export interface PageHeadersPeopleProps {
 
 export interface PageHeadersSocialProps {
   resume?: string
+  website?: string
   linkedin?: string
   twitter?: string
   facebook?: string
 }
 
-export const PageHeadersPeople = ({
-  children,
-  jobTitle,
-  ...restProps
-}: PageHeadersPeopleProps & PageHeadersSocialProps) => {
-  const { degrees, building, room, email, phone, phoneExt, resume, linkedin, twitter, facebook } = restProps
+export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleProps & PageHeadersSocialProps) => {
+  const { degrees, building, room, email, phone, phoneExt, resume, website, linkedin, twitter, facebook } = restProps
   const profileDetails = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
   const socialDetails = ['resume', 'linkedin', 'twitter', 'facebook']
 
@@ -35,44 +31,47 @@ export const PageHeadersPeople = ({
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (
-        <ul className={listStyles.listGroup}>
-          {degrees && <li>{degrees}</li>}
-          {building && (
-            <li>
-              {room && `${room} `}
-              {building}
-            </li>
-          )}
-          {email && (
-            <li>
-              <a className={listStyles.listLink} href={`mailto:${email}`}>
-                {email}
-              </a>
-            </li>
-          )}
-          {phone && (
-            <li>
-              {phone}
-              {phoneExt && ` x${phoneExt}`}
-            </li>
-          )}
-        </ul>
+        <div className={listStyles.listWrapper}>
+          <ul className={listStyles.listVertical}>
+            {degrees && <li>{degrees}</li>}
+            {building && (
+              <li>
+                {room && `${room} `}
+                {building}
+              </li>
+            )}
+            {email && (
+              <li>
+                <a className={listStyles.listLink} href={`mailto:${email}`}>
+                  {email}
+                </a>
+              </li>
+            )}
+            {phone && (
+              <li>
+                {phone}
+                {phoneExt && ` x${phoneExt}`}
+              </li>
+            )}
+          </ul>
+        </div>
       )}
 
       {/* Check is socials are set and render div */}
       {Object.values(socialDetails).some((info) => info) && (
-        <div className={socialStyles.flex}>
-          {resume && (
-            <Button
-              isSmall
-              color="grey"
-              onClick={() => {
-                window.location.href = resume
-              }}
-              title="Resume"
-            />
-          )}
-          <ul className={socialStyles.flex}>
+        <div className={listStyles.listWrapper}>
+          <ul className={listStyles.listHorizontal}>
+            {resume && (
+              <Button
+                isSmall
+                color="grey"
+                onClick={() => {
+                  window.location.href = resume
+                }}
+                title="Resume"
+              />
+            )}
+
             {linkedin && (
               <li>
                 <a className={`${socialStyles.link} hover:text-[#0072b1]`} href={linkedin}>
@@ -123,13 +122,24 @@ export const PageHeadersPeople = ({
                 </a>
               </li>
             )}
-          </ul>
-        </div>
-      )}
 
-      {children && (
-        <div className="flex-none not-prose cu-textimage-people w-28 sm:w-48 md:w-72 lg:w-96">
-          <div className="overflow-hidden rounded-lg">{children}</div>
+            {website && (
+              <li>
+                <a className={`${socialStyles.link} hover:text-[#3e8060]`} href={website}>
+                  <span className="sr-only">View Website</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 512"
+                    fill="currentColor"
+                    className={socialStyles.icon}
+                    aria-hidden="true"
+                  >
+                    <path d="M580.3 267.2c56.2-56.2 56.2-147.3 0-203.5C526.8 10.2 440.9 7.3 383.9 57.2l-6.1 5.4c-10 8.7-11 23.9-2.3 33.9s23.9 11 33.9 2.3l6.1-5.4c38-33.2 95.2-31.3 130.9 4.4c37.4 37.4 37.4 98.1 0 135.6L433.1 346.6c-37.4 37.4-98.2 37.4-135.6 0c-35.7-35.7-37.6-92.9-4.4-130.9l4.7-5.4c8.7-10 7.7-25.1-2.3-33.9s-25.1-7.7-33.9 2.3l-4.7 5.4c-49.8 57-46.9 142.9 6.6 196.4c56.2 56.2 147.3 56.2 203.5 0L580.3 267.2zM59.7 244.8C3.5 301 3.5 392.1 59.7 448.2c53.6 53.6 139.5 56.4 196.5 6.5l6.1-5.4c10-8.7 11-23.9 2.3-33.9s-23.9-11-33.9-2.3l-6.1 5.4c-38 33.2-95.2 31.3-130.9-4.4c-37.4-37.4-37.4-98.1 0-135.6L207 165.4c37.4-37.4 98.1-37.4 135.6 0c35.7 35.7 37.6 92.9 4.4 130.9l-5.4 6.1c-8.7 10-7.7 25.1 2.3 33.9s25.1 7.7 33.9-2.3l5.4-6.1c49.9-57 47-142.9-6.5-196.5c-56.2-56.2-147.3-56.2-203.5 0L59.7 244.8z" />
+                  </svg>
+                </a>
+              </li>
+            )}
+          </ul>
         </div>
       )}
     </>

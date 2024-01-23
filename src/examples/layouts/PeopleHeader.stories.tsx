@@ -49,7 +49,7 @@ const DoublePara = () => {
   )
 }
 
-export const PageHeadersTest: Story = {
+export const PeopleHeader: Story = {
   render: () => (
     <>
       <TopBar>
@@ -78,30 +78,6 @@ export const PageHeadersTest: Story = {
 
       <Main>
         <Section hasProse>
-          {/* <PageHeaders header="Event About a Thing">
-            <Figure size="medium" align="right">
-              <img src="./sample-imgs/event-img.jpg" alt="Required alt text" width="200" height="133" />
-            </Figure>
-            <PageHeaders.Event
-              eventType="Hybrid"
-              virtualType="Teams"
-              virtualUrl="https://events.carleton.ca"
-              startDate="March 21st, 2023 at 6:00pm"
-              location="Raven's Nest, 1125 Colonel By Drive"
-              cost="$20 per adult, $15 for youth/senior"
-              contactName="John Doe"
-              contactEmail="johndoe@test.com"
-              contactPhone="613-520-2600 x1234"
-              primaryButtonUrl="https://carleton.ca"
-              secondaryButtonUrl="https://carleton.ca/webservices"
-              secondaryButtonText="More Information"
-            />
-          </PageHeaders>
-
-          <br />
-          <br />
-          <br /> */}
-
           <PageHeaders header="Master Jedi Greely Wrinkle" pronoun="He/Him">
             <Figure size="sm" align="right" isRound hasShadow>
               <img
@@ -120,6 +96,7 @@ export const PageHeadersTest: Story = {
               phone="613-520-2600"
               phoneExt="1234"
               resume="#"
+              website="#"
               linkedin="#"
               twitter="#"
               facebook="#"

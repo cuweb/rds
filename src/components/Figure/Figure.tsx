@@ -1,6 +1,6 @@
 import React from 'react'
 import { FigureVideo } from './Figure.Video'
-import { styles, figureSize, figureAlign, figureSpacing } from './Figure.Styles'
+import { styles, figureSize, figureAlign } from './Figure.Styles'
 
 export interface FigureProps {
   children: React.ReactNode
@@ -22,14 +22,10 @@ export const FigureWrapper = ({
   const roundedCorners = isRound ? styles.rounded : ''
   const shadow = hasShadow ? styles.shadow : ''
 
-  // Image Alignment
-  const floatLeft = align === 'left' && size !== 'full' ? figureSpacing.left : ''
-  const floatRight = align === 'right' && size !== 'full' ? figureSpacing.right : ''
-
   return (
     <figure className="cu-figure">
       <div
-        className={`not-prose ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow} ${floatLeft} ${floatRight} ${roundedCorners}`}
+        className={`not-prose ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow} ${roundedCorners}`}
       >
         {children}
         {caption && <figcaption className={styles.caption}>{caption}</figcaption>}

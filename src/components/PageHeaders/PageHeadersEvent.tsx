@@ -1,7 +1,6 @@
 import { listStyles } from './PageHeaders.Styles'
 import { proseGroups } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 export interface PageHeadersEventProps {
   children?: React.ReactNode
@@ -22,7 +21,6 @@ export interface PageHeadersEventProps {
 }
 
 export const PageHeadersEvent = ({
-  children,
   startDate,
   endDate,
   eventType,
@@ -46,81 +44,81 @@ export const PageHeadersEvent = ({
       {endDate && <p className={proseGroups.largeLight}>{endDate}</p>}
 
       {/* Check if details are set and output as ul */}
-      <ul className={listStyles.listGroup}>
-        <li>
-          <strong className="font-semibold">{eventType} Event</strong>
-        </li>
-        {(eventType === 'In-Person' || eventType === 'Hybrid') && location && <li>{location}</li>}
-        {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && virtualUrl && (
+      <div className={listStyles.listWrapper}>
+        <ul className={listStyles.listVertical}>
           <li>
-            <a className={listStyles.listLink} href={virtualUrl}>
-              {virtualType} meeting link
-            </a>
+            <strong className="font-semibold">{eventType} Event</strong>
           </li>
-        )}
-        {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && !virtualUrl && (
-          <li>Meeting link is not yet available</li>
-        )}
-      </ul>
-
-      {/* Check is socials are set and render div */}
-      {Object.values(eventDetails).some((info) => info) && (
-        <ul className={`${listStyles.listGroup} mt-6 mb-10`}>
+          {(eventType === 'In-Person' || eventType === 'Hybrid') && location && <li>{location}</li>}
+          {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && virtualUrl && (
+            <li>
+              <a className={listStyles.listLink} href={virtualUrl}>
+                {virtualType} meeting link
+              </a>
+            </li>
+          )}
+          {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && !virtualUrl && (
+            <li>Meeting link is not yet available</li>
+          )}
           {cost && (
             <li>
               <strong className="font-semibold">Cost: </strong>
               {cost}
             </li>
           )}
-          {contactName && (
-            <li>
-              <strong className="font-semibold">Contact: </strong>
-              {contactName && contactName}
-              {contactEmail && (
-                <>
-                  {' | '}
-                  <a className={listStyles.listLink} href={`mailto:${contactEmail}`}>
-                    {contactEmail}
-                  </a>
-                </>
-              )}
-              {contactPhone && <> | {contactPhone}</>}
-            </li>
-          )}
         </ul>
+      </div>
+
+      {/* Check is socials are set and render div */}
+      {Object.values(eventDetails).some((info) => info) && (
+        <div className={listStyles.listWrapper}>
+          <ul className={listStyles.listVertical}>
+            {contactName && (
+              <li>
+                <strong className="block font-semibold">Contact:</strong>
+                {contactName && contactName}
+                {contactEmail && (
+                  <>
+                    ,{' '}
+                    <a className={listStyles.listLink} href={`mailto:${contactEmail}`}>
+                      {contactEmail}
+                    </a>
+                  </>
+                )}
+                {contactPhone && <>, {contactPhone}</>}
+              </li>
+            )}
+          </ul>
+        </div>
       )}
 
       {primaryButtonUrl && (
-        <ButtonGroup>
-          {primaryButtonUrl && (
-            <Button
-              isSmall
-              onClick={() => {
-                if (typeof primaryButtonUrl === 'string') {
-                  window.location.href = primaryButtonUrl
-                }
-              }}
-              title={primaryButtonText ? primaryButtonText : 'Register Now'}
-            />
-          )}
-          {secondaryButtonUrl && (
-            <Button
-              isSmall
-              color="grey"
-              onClick={() => {
-                if (typeof secondaryButtonUrl === 'string') {
-                  window.location.href = secondaryButtonUrl
-                }
-              }}
-              title={secondaryButtonText ? secondaryButtonText : 'More Information'}
-            />
-          )}
-        </ButtonGroup>
-      )}
-
-      {startDate && (
-        <div className="flex-none not-prose w-28 sm:w-48 md:w-72 lg:w-96">
-          <div className="overflow-hidden rounded-lg">{children}</div>
+        <div className={listStyles.listWrapper}>
+          <ul className={listStyles.listHorizontal}>
+            {primaryButtonUrl && (
+              <Button
+                isSmall
+                onClick={() => {
+                  if (typeof primaryButtonUrl === 'string') {
+                    window.location.href = primaryButtonUrl
+                  }
+                }}
+                title={primaryButtonText ? primaryButtonText : 'Register Now'}
+              />
+            )}
+            {secondaryButtonUrl && (
+              <Button
+                isSmall
+                color="grey"
+                onClick={() => {
+                  if (typeof secondaryButtonUrl === 'string') {
+                    window.location.href = secondaryButtonUrl
+                  }
+                }}
+                title={secondaryButtonText ? secondaryButtonText : 'More Information'}
+              />
+            )}
+          </ul>
         </div>
       )}
     </>

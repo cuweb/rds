@@ -15,15 +15,10 @@ export const figureSize = {
 }
 
 export const figureAlign = {
-  left: `md:float-left md:mr-12 mb-6`,
+  left: `lg:float-left lg:mr-12 mb-6`,
   right: `lg:float-right ml-0 lg:ml-12 mb-6`,
   center: `mx-auto`,
   none: ``,
-}
-
-export const figureSpacing = {
-  left: `mr-10`,
-  right: `ml-10`,
 }
 
 export const videoStyles = {
