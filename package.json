@@ -1,7 +1,7 @@
 {
   "name": "@carletonuniversity/rds",
   "private": false,
-  "version": "0.6.5",
+  "version": "0.6.6",
   "license": "MIT",
   "type": "module",
   "main": "./dist/rds.umd.js",
@@ -45,6 +45,7 @@
     "@fortawesome/free-solid-svg-icons": "6.5.1",
     "@headlessui/react": "1.7.18",
     "@heroicons/react": "2.1.1",
+    "priority-plus": "^1.5.1",
     "rds-tailwind-theme": "0.6.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

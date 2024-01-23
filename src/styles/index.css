@@ -3,6 +3,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Priority Plus */
+@import 'priority-plus/dist/priority-plus.css';
+
 /* RDS Layout CSS */
 @import '../layouts/StackedList/styles.css';
 
@@ -13,7 +16,8 @@
 @import '../components/Alert/styles.css';
 @import '../components/Card/styles.css';
 @import '../components/Listing/styles.css';
-@import '../components/TopBar/styles.css';
+@import '../components/PageHeaders/styles.css';
+@import '../components/Nav/styles.css';
 @import '../components/WideImage/styles.css';
 
 /* Layouts */

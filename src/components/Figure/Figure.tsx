@@ -1,39 +1,21 @@
 import React from 'react'
 import { FigureVideo } from './Figure.Video'
-import { styles, figureSize, figureAlign, figureSpacing } from './Figure.Styles'
+import { styles, figureSize, figureAlign } from './Figure.Styles'
 
 export interface FigureProps {
   children: React.ReactNode
   caption?: string
-  size?: 'small' | 'medium' | 'large' | 'full'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'full'
   align?: 'left' | 'right' | 'center' | 'none'
-  isRound?: boolean
-  isCircle?: boolean
   hasShadow?: boolean
 }
 
-export const FigureWrapper = ({
-  children,
-  caption,
-  isRound,
-  isCircle,
-  hasShadow,
-  size = 'full',
-  align = 'none',
-}: FigureProps) => {
-  const roundedCorners = isRound ? styles.rounded : ''
-  const fullCircle = isCircle ? styles.circle : ''
+export const FigureWrapper = ({ children, caption, hasShadow, size = 'full', align = 'none' }: FigureProps) => {
   const shadow = hasShadow ? styles.shadow : ''
-
-  // Image Alignment
-  const floatLeft = align === 'left' && size !== 'full' ? figureSpacing.left : ''
-  const floatRight = align === 'right' && size !== 'full' ? figureSpacing.right : ''
 
   return (
     <figure className="cu-figure">
-      <div
-        className={`${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow} ${floatLeft} ${floatRight} ${roundedCorners} ${fullCircle}`}
-      >
+      <div className={`not-prose rounded-lg ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow}`}>
         {children}
         {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
       </div>

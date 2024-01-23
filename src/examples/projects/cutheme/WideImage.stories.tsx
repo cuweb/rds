@@ -3,13 +3,13 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
 
-import { TopBar } from '../../../components/TopBar/TopBar'
+import { Nav } from '../../../components/Nav/Nav'
 import { FooterBasic } from '../../../components/Footer/FooterBasic/FooterBasic'
 import { Button } from '../../../components/Button/Button'
 import { HeroTextImage } from '../../../_deprecated/HeroTextImage/HeroTextImage'
-import { TopBarDataSingle } from '../../../data/TopBarData'
 import { WideImage } from '../../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
+import { NavDataSingle, NavAsideData } from '../../../data/NavData'
 
 const meta: Meta = {
   title: 'Examples/Projects/cutheme',
@@ -45,51 +45,14 @@ const DoublePara = () => {
 export const WideImageBanner: Story = {
   render: () => (
     <>
-      <TopBar>
-        <TopBar.Primary>
-          <TopBar.Logo title="Raven Design System" link="https://carleton.ca/webservices">
-            <a href="https://carleton.ca" className="cu-topbar--logo">
-              <img
-                className="culogo"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
-                width="130"
-                height="35"
-                alt="Logo"
-              />
-              <img
-                className="cushield"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
-                width="28"
-                height="35"
-                alt="Logo"
-              />
-            </a>
-          </TopBar.Logo>
-          <TopBar.Aside />
-        </TopBar.Primary>
-        <TopBar.Secondary>
-          <TopBar.Menu>
-            {TopBarDataSingle.map((topBarLink, i) => (
-              <>
-                {!topBarLink.submenu && (
-                  <a key={i} href={topBarLink.href} className="cu-topbar--parent-link">
-                    {topBarLink.title}
-                  </a>
-                )}
-                {topBarLink.submenu && (
-                  <TopBar.SubMenu label={topBarLink.title}>
-                    {topBarLink.submenu.map((topBarSubLink, s) => (
-                      <a key={s} href={topBarSubLink.href} className="cu-topbar--more-nav">
-                        {topBarSubLink.title}
-                      </a>
-                    ))}
-                  </TopBar.SubMenu>
-                )}
-              </>
-            ))}
-          </TopBar.Menu>
-        </TopBar.Secondary>
-      </TopBar>
+      <Nav navType="secondary">
+        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Aside menu={NavAsideData} />
+        <Nav.Secondary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Secondary>
+      </Nav>
 
       <Main>
         <Section hasProse>
