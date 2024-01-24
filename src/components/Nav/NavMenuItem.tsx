@@ -16,7 +16,7 @@ const convertToSlug = (text: string) => {
 
 export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuItemProps) => {
   return (
-    <span className={navMenuItemStyles.navItemWrapper} data-menu-item={convertToSlug(id)}>
+    <span className={navMenuItemStyles.navItemWrapper} data-menu-item={convertToSlug(id)} aria-expanded="false">
       <a
         href={menuItem.href}
         className={
@@ -33,13 +33,10 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
           (isSubMenu ? navMenuItemStyles.subMenuItem : '')
         }
       >
-        {menuItem.title}
+        <span className={menuItem.title.length > 25 ? 'cu-nav__parent-inner' : ''}>{menuItem.title}</span>
 
         {menuItem.submenu && !isInnerSubMenu ? (
-          <button
-            className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}
-            aria-expanded="false"
-          >
+          <button className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}>
             <span className="sr-only">Click to open inner submenu</span>
           </button>
         ) : (
