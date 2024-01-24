@@ -1,7 +1,7 @@
 export const NavDataSingle = [
   {
     href: '#',
-    title: 'Academics',
+    title: 'Academics Academics Academics Academics',
     submenu: [
       {
         href: '#',
@@ -27,7 +27,7 @@ export const NavDataSingle = [
     submenu: [
       {
         href: '#',
-        title: 'Future Students',
+        title: 'Future Students Future Students Future Students',
         submenu: [
           {
             href: '#',

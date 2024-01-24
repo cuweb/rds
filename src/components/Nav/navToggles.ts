@@ -28,7 +28,7 @@ const closeAllSubmenus = () => {
           submenu.style.display = 'none'
           submenu.style.removeProperty('left')
           submenu.style.removeProperty('right')
-          menuItem.setAttribute('aria-expanded', 'false')
+          submenuParent.setAttribute('aria-expanded', 'false')
           menuItem.classList.remove(navArrowRotateClass)
         }
       }
@@ -55,7 +55,6 @@ const closeInnerSubMenus = () => {
     innerSubmenus.forEach((submenu) => {
       if (submenu) {
         submenu.classList.add('hidden')
-        submenu.setAttribute('aria-expanded', 'false')
       }
     })
   }
@@ -76,7 +75,7 @@ const handleMenuItemClick = (menuItem: HTMLElement) => {
         submenu.style.removeProperty('left')
         submenu.style.removeProperty('right')
         menuItem.classList.remove(navArrowRotateClass)
-        menuItem.setAttribute('aria-expanded', 'false')
+        menuItemParent.setAttribute('aria-expanded', 'false')
 
         if (arrow) {
           arrow.classList.remove(navArrowRotateClass)
@@ -95,7 +94,7 @@ const handleMenuItemClick = (menuItem: HTMLElement) => {
           submenu.style.right = '0'
         }
         menuItem.classList.add(navArrowRotateClass)
-        menuItem.setAttribute('aria-expanded', 'true')
+        menuItemParent.setAttribute('aria-expanded', 'true')
       }
     }
   }
@@ -112,12 +111,12 @@ const handleInnerSubNavClick = (arrow: HTMLElement) => {
     if (menuItem) {
       if (menuItem.classList.contains('hidden')) {
         menuItem.classList.remove('hidden')
-        menuItem.setAttribute('aria-expanded', 'true')
+        parentElement.setAttribute('aria-expanded', 'true')
         arrow.classList.add(navArrowRotateClass)
         arrow.classList.add(navArrowActiveClass)
       } else {
         menuItem.classList.add('hidden')
-        menuItem.setAttribute('aria-expanded', 'false')
+        parentElement.setAttribute('aria-expanded', 'false')
         arrow.classList.remove(navArrowRotateClass)
         arrow.classList.remove(navArrowActiveClass)
       }
