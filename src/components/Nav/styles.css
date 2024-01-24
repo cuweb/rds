@@ -18,7 +18,7 @@
 /* Top parent items */
 
 .cu-nav__menu > li > span > a.cu-nav__parent-item {
-  @apply max-w-[25ch];
+  @apply max-w-[30ch];
 }
 
 .cu-nav__menu > li > span > a.cu-nav__parent-item > .cu-nav__parent-inner {

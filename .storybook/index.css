@@ -4983,7 +4983,7 @@ section div.cu-pageheaders-group:last-of-type {
 /* Top parent items */
 
 .cu-nav__menu > li > span > a.cu-nav__parent-item {
-  max-width: 25ch;
+  max-width: 30ch;
 }
 
 @media (min-width: 640px) {
