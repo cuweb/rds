@@ -15,6 +15,16 @@
   @apply max-sm:!pl-[3rem] !pl-[2rem];
 }
 
+/* Top parent items */
+
+.cu-nav__menu > li > span > a.cu-nav__parent-item {
+  @apply max-w-[30ch];
+}
+
+.cu-nav__menu > li > span > a.cu-nav__parent-item > .cu-nav__parent-inner {
+  @apply sm:overflow-hidden sm:whitespace-nowrap sm:text-ellipsis;
+}
+
 /* Sub menu position */
 
 .cu-nav__primary .cu-nav__submenu {
@@ -64,8 +74,7 @@
   @apply after:hidden justify-between pl-[1.25rem] py-[5px];
 }
 
-.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item),
-.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > span {
+.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item) {
   @apply px-5 py-3.5;
 }
 

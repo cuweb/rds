@@ -2606,6 +2606,10 @@ select {
   flex-grow: 0;
 }
 
+.basis-12 {
+  flex-basis: 3rem;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -4976,6 +4980,20 @@ section div.cu-pageheaders-group:last-of-type {
   }
 }
 
+/* Top parent items */
+
+.cu-nav__menu > li > span > a.cu-nav__parent-item {
+  max-width: 30ch;
+}
+
+@media (min-width: 640px) {
+  .cu-nav__menu > li > span > a.cu-nav__parent-item > .cu-nav__parent-inner {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 /* Sub menu position */
 
 .cu-nav__primary .cu-nav__submenu {
@@ -5135,8 +5153,7 @@ section div.cu-pageheaders-group:last-of-type {
   display: none;
 }
 
-.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item),
-.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > span {
+.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item) {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-top: 0.875rem;
@@ -8223,6 +8240,21 @@ button.p-plus__toggle-btn.rotated svg {
 .after\:w-10::after {
   content: var(--tw-content);
   width: 2.5rem;
+}
+
+.after\:shrink-0::after {
+  content: var(--tw-content);
+  flex-shrink: 0;
+}
+
+.after\:grow-0::after {
+  content: var(--tw-content);
+  flex-grow: 0;
+}
+
+.after\:basis-\[6px\]::after {
+  content: var(--tw-content);
+  flex-basis: 6px;
 }
 
 .after\:\!rotate-\[225deg\]::after {
