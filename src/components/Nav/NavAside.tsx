@@ -1,8 +1,10 @@
-import { ReactNode } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode, useContext } from 'react'
 import { NavMenuItemWrapperStyles, navMenuItemStyles } from './Nav.Styles'
 import { Avatar, UserInfoType } from './../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
+import { LinkContext } from './NavLinkComponent'
 
 export const styles = {
   listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red`,
@@ -43,6 +45,8 @@ export const NavAside = ({
   userNoImage,
   children,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
+  const LinkComponent: any = useContext(LinkContext) ? useContext(LinkContext) : 'a'
+
   return (
     <div className="cu-nav__aside flex items-center gap-5 ml-auto sm:gap-6">
       {children}
@@ -56,33 +60,33 @@ export const NavAside = ({
         {menu &&
           menu.map((menuItem: ImenuItem, index: number) => (
             <li key={index} className="block">
-              <a href={menuItem.href} className={styles.listItemLink}>
+              <LinkComponent href={menuItem.href} className={styles.listItemLink}>
                 {menuItem.title}
-              </a>
+              </LinkComponent>
             </li>
           ))}
         {LoggedOutUser && (
           <li>
-            <a href="/" className={styles.listItemLink}>
+            <LinkComponent href="/" className={styles.listItemLink}>
               Login
-            </a>
+            </LinkComponent>
           </li>
         )}
         {LoggedInUser ? (
           LoggedMenu ? (
             <li className={NavMenuItemWrapperStyles.menuWrapper}>
               <span className={navMenuItemStyles.navItemWrapper} data-menu-item="profile">
-                <a href="/" className={navMenuItemStyles.navParentItem}>
+                <LinkComponent href="/" className={navMenuItemStyles.navParentItem}>
                   <Avatar user={userNoImage} size="xs" rounded="full" />
-                </a>
+                </LinkComponent>
               </span>
               <NavSubMenu submenu={LoggedMenu} isSubMenu={true} isInnerSubMenu={false} id="profile" />
             </li>
           ) : (
             <li>
-              <a href="/" className={styles.listItemLink}>
+              <LinkComponent href="/" className={styles.listItemLink}>
                 Logout
-              </a>
+              </LinkComponent>
             </li>
           )
         ) : (

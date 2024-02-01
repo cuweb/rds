@@ -12,5 +12,4 @@ export const NavLinkComponent = ({ component, children }: ILinker) => {
   return <LinkContext.Provider value={component}>{children}</LinkContext.Provider>
 }
 
-// export default Linker
 NavLinkComponent.displayName = 'Nav.LinkComponent'
