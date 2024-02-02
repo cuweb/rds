@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useContext } from 'react'
 import { navMenuItemStyles } from './Nav.Styles'
 import ImenuItem from './NavInterface'
-import { LinkContext } from './LinkProvider'
+import { useLinkContext } from './LinkProvider'
 
 export interface menuItemProps {
   menuItem: ImenuItem
@@ -19,7 +17,7 @@ const convertToSlug = (text: string) => {
 }
 
 export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuItemProps) => {
-  const LinkComponent: any = useContext(LinkContext) ? useContext(LinkContext) : 'a'
+  const LinkComponent = useLinkContext()
 
   return (
     <span className={navMenuItemStyles.navItemWrapper} data-menu-item={convertToSlug(id)} aria-expanded="false">

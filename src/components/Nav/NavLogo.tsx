@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useContext } from 'react'
-import { LinkContext } from './LinkProvider'
+import { useLinkContext } from './LinkProvider'
 
 export interface NavLogoProps {
   title?: string
@@ -8,7 +6,7 @@ export interface NavLogoProps {
 }
 
 export const NavLogo = ({ title, link }: NavLogoProps) => {
-  const LinkComponent: any = useContext(LinkContext) ? useContext(LinkContext) : 'a'
+  const LinkComponent = useLinkContext()
 
   return (
     <div className="cu-nav__top flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow">
