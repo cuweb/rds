@@ -4589,7 +4589,11 @@ StackedList for ToC
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
-.cu-card > *:not(a):last-child:not(.cu-card-stats) {
+.cu-card > figure:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.cu-card > *:not(a):not(figure):last-child:not(.cu-card-stats) {
   padding-bottom: 1.75rem;
 }
 
