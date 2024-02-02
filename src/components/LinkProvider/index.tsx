@@ -15,3 +15,7 @@ export const LinkProvider: FC<ILinkProvider> = ({ type, children }): JSX.Element
 }
 
 export const useLinkContext = (): any => useContext(LinkContext)
+
+// LinkProvider.displayName = 'Provider.LinkProvider'
+
+export const Provider = Object.assign(LinkProvider)

@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { ReactNode, useContext } from 'react'
+import { ReactNode } from 'react'
 import { NavMenuItemWrapperStyles, navMenuItemStyles } from './Nav.Styles'
 import { Avatar, UserInfoType } from './../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
-import { LinkContext } from './LinkProvider'
+import { useLinkContext } from '../LinkProvider'
 
 export const styles = {
   listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red`,
@@ -45,7 +44,7 @@ export const NavAside = ({
   userNoImage,
   children,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
-  const LinkComponent: any = useContext(LinkContext) ? useContext(LinkContext) : 'a'
+  const LinkComponent = useLinkContext()
 
   return (
     <div className="cu-nav__aside flex items-center gap-5 ml-auto sm:gap-6">

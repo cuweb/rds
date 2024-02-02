@@ -1,6 +1,6 @@
 import { navMenuItemStyles } from './Nav.Styles'
 import ImenuItem from './NavInterface'
-import { useLinkContext } from './LinkProvider'
+import { useLinkContext } from '../LinkProvider'
 
 export interface menuItemProps {
   menuItem: ImenuItem
