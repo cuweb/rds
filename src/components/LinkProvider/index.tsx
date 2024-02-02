@@ -10,12 +10,10 @@ export interface ILinkProvider {
   children: React.ReactNode
 }
 
-export const LinkProvider: FC<ILinkProvider> = ({ type, children }): JSX.Element => {
+export const Link: FC<ILinkProvider> = ({ type, children }): JSX.Element => {
   return <LinkContext.Provider value={type}>{children}</LinkContext.Provider>
 }
 
 export const useLinkContext = (): any => useContext(LinkContext)
 
-// LinkProvider.displayName = 'Provider.LinkProvider'
-
-export const Provider = Object.assign(LinkProvider)
+export const LinkProvider = Object.assign(Link)
