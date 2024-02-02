@@ -4,6 +4,7 @@ import { NavAside } from './NavAside'
 import { NavPrimary } from './NavPrimary'
 import { NavSecondary } from './NavSecondary'
 import { NavMenu } from './NavMenu'
+import { LinkProvider } from './LinkProvider'
 import menuPriority from './priorityPlus'
 import setupMenuToggle from './navToggles'
 import scrollingNav from './scrollingNav'
@@ -43,4 +44,5 @@ export const Nav = Object.assign(NavWrapper, {
   Primary: NavPrimary,
   Secondary: NavSecondary,
   Menu: NavMenu,
+  LinkProvider: LinkProvider,
 })
