@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext } from 'react'
-import { LinkContext } from './NavLinkComponent'
+import { LinkContext } from '../LinkProvider/LinkProvider'
 
 export interface NavLogoProps {
   title?: string

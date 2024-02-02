@@ -2,7 +2,7 @@
 import { useContext } from 'react'
 import { navMenuItemStyles } from './Nav.Styles'
 import ImenuItem from './NavInterface'
-import { LinkContext } from './NavLinkComponent'
+import { LinkContext } from '../LinkProvider/LinkProvider'
 
 export interface menuItemProps {
   menuItem: ImenuItem
