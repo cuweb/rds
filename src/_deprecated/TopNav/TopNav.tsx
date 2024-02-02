@@ -2,7 +2,7 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Avatar, UserInfoType } from '../../components/Avatar/Avatar'
 import { DropDown, DropDownItemProps } from '../../components/DropDown/DropDown'
-import { Link } from '../../components/Link/Link'
+import { useLinkContext } from '../../components/LinkProvider'
 import { Search } from '../../components/Search/Search'
 import { TopNavLoader } from '../../components/Loaders/TopNavLoader/TopNavLoader'
 import { useCallback, useState } from 'react'
@@ -84,6 +84,8 @@ export const TopNav = ({
     [setOpen],
   )
 
+  const LinkComponent = useLinkContext()
+
   return (
     <Disclosure
       as="nav"
@@ -97,7 +99,7 @@ export const TopNav = ({
           <div className="mx-auto flex h-20 max-w-7xl gap-6">
             {/* Logo  */}
             <div className="flex flex-shrink-0 items-center hover:text-cu-red">
-              <Link href={logoUrl ? logoUrl : '/'}>{brandLogo}</Link>
+              <LinkComponent href={logoUrl ? logoUrl : '/'}>{brandLogo}</LinkComponent>
             </div>
 
             {/* mobile Menu open Button  */}
@@ -130,7 +132,7 @@ export const TopNav = ({
                       item.active ? 'border-cu-red text-cu-red' : 'border-transparent'
                     }`}
                   >
-                    <Link href={item.link}>{item.title}</Link>
+                    <LinkComponent href={item.link}>{item.title}</LinkComponent>
                   </li>
                 ))}
             </ul>
@@ -179,15 +181,15 @@ export const TopNav = ({
                             : 'border-transparent'
                         }`}
                       >
-                        <Link
+                        <LinkComponent
                           href={item.link}
-                          onClick={(e) => {
+                          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                             e.preventDefault()
                             close()
                           }}
                         >
                           {item.title}
-                        </Link>
+                        </LinkComponent>
                       </Disclosure.Button>
                     ))}
 
@@ -199,16 +201,16 @@ export const TopNav = ({
                         as="div"
                         className={`block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-cu-black-800 hover:border-cu-black-200 hover:bg-gray-50 hover:text-cu-red `}
                       >
-                        <Link
+                        <LinkComponent
                           href={mobileLogin.link ? mobileLogin.link : ''}
-                          onClick={(e) => {
+                          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                             mobileLogin.onClick && e.preventDefault()
                             mobileLogin.onClick && mobileLogin.onClick(e)
                             close()
                           }}
                         >
                           {mobileLogin.title}
-                        </Link>
+                        </LinkComponent>
                       </Disclosure.Button>
                     </>
                   )}
@@ -235,16 +237,16 @@ export const TopNav = ({
                             as="div"
                             className={`block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-cu-black-800 hover:border-cu-black-200 hover:bg-gray-50 hover:text-cu-red `}
                           >
-                            <Link
+                            <LinkComponent
                               href={item.href ? item.href : ''}
-                              onClick={(e) => {
+                              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                 item.onClick && e.preventDefault()
                                 item.onClick && item.onClick(e)
                                 close()
                               }}
                             >
                               {item.title}
-                            </Link>
+                            </LinkComponent>
                           </Disclosure.Button>
                         ))}
                     </div>
