@@ -1,4 +1,8 @@
-.cu-card > *:not(a):last-child:not(.cu-card-stats) {
+.cu-card > figure:last-child {
+  @apply mb-6;
+}
+
+.cu-card > *:not(a):not(figure):last-child:not(.cu-card-stats) {
   @apply pb-7;
 }
 
