@@ -1,7 +1,7 @@
 import { FooterLogoLinks } from '../FooterLogoLinks/FooterLogoLinks'
 import { footerStyles } from '../../../utils/globalClasses'
 import { FooterStandardLinks as linkData } from '../../../data/FooterStandardData'
-import { Link } from '../../Link/Link'
+import { useLinkContext } from '../../LinkProvider'
 
 const Social = [
   {
@@ -86,6 +86,8 @@ const styles = {
 }
 
 export const FooterStandard = () => {
+  const LinkComponent = useLinkContext()
+
   return (
     <footer
       className={`cu-footerstandard not-prose px-8 py-8 bg-cu-black-900 md:px-10 md:py-12 ${footerStyles.wave}`}
@@ -102,9 +104,9 @@ export const FooterStandard = () => {
             <ul>
               {linkData.Admissions.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
-                  <Link href={item.href} className="text-cu-black-300 hover:text-white">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
-                  </Link>
+                  </LinkComponent>
                 </li>
               ))}
             </ul>
@@ -114,9 +116,9 @@ export const FooterStandard = () => {
             <ul>
               {linkData.Academics.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
-                  <Link href={item.href} className="text-cu-black-300 hover:text-white">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
-                  </Link>
+                  </LinkComponent>
                 </li>
               ))}
             </ul>
@@ -126,9 +128,9 @@ export const FooterStandard = () => {
             <ul>
               {linkData.Students.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
-                  <Link href={item.href} className="text-cu-black-300 hover:text-white">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
-                  </Link>
+                  </LinkComponent>
                 </li>
               ))}
             </ul>
@@ -138,9 +140,9 @@ export const FooterStandard = () => {
             <ul>
               {linkData.Campus.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
-                  <Link href={item.href} className="text-cu-black-300 hover:text-white">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
-                  </Link>
+                  </LinkComponent>
                 </li>
               ))}
             </ul>
@@ -150,19 +152,19 @@ export const FooterStandard = () => {
             <ul>
               {linkData.Ravens.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
-                  <Link href={item.href} className="text-cu-black-300 hover:text-white">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
-                  </Link>
+                  </LinkComponent>
                 </li>
               ))}
             </ul>
-            <Link href="https://goravens.carleton.ca" className="w-12 h-auto">
+            <LinkComponent href="https://goravens.carleton.ca" className="w-12 h-auto">
               <img
                 className="w-12 h-auto mt-8"
                 src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logos/ravens-logo.svg"
                 alt="Carleton"
               />
-            </Link>
+            </LinkComponent>
           </div>
         </div>
       </div>
@@ -171,28 +173,28 @@ export const FooterStandard = () => {
         <div className="flex flex-col-reverse items-center justify-between gap-2 mb-12 text-base lg:gap-4 lg:text-sm lg:items-start lg:flex-row text-cu-black-300">
           <p>
             Contact us by{' '}
-            <Link
+            <LinkComponent
               href="tel:+1-613-520-2600"
               className="font-semibold text-white underline underline-offset-auto hover:text-cu-red"
             >
               phone
-            </Link>{' '}
+            </LinkComponent>{' '}
             or{' '}
-            <Link
+            <LinkComponent
               href="https://carleton.ca/about/contact/"
               className="font-semibold text-white underline underline-offset-auto hover:text-cu-red"
             >
               email
-            </Link>
+            </LinkComponent>
           </p>
           <p>1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
           <ul className="flex justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
             {Social.map((item, index) => (
               <li key={index}>
-                <Link href={item.href} className="text-gray-200 hover:text-cu-red">
+                <LinkComponent href={item.href} className="text-gray-200 hover:text-cu-red">
                   <span className="sr-only">{item.name}</span>
                   <item.icon />
-                </Link>
+                </LinkComponent>
               </li>
             ))}
           </ul>

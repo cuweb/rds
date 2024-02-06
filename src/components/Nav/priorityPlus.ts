@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 import priorityPlus from 'priority-plus'
 
 const menuPriority = () => {
