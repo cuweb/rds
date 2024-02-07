@@ -31,45 +31,42 @@ export const ImageFull: Story = {
 
 export const ImageLarge: Story = {
   args: {
-    size: 'large',
+    size: 'lg',
     children: <img src={content.imageWide} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageMedium: Story = {
   args: {
-    size: 'medium',
+    size: 'md',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageSmall: Story = {
   args: {
-    size: 'small',
+    size: 'sm',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageRounded: Story = {
   args: {
-    isRound: true,
-    size: 'medium',
+    size: 'md',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageCircular: Story = {
   args: {
-    isCircle: true,
-    size: 'small',
+    size: 'sm',
     children: <img src={content.imageSquare} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageWithCaption: Story = {
   args: {
-    size: 'medium',
-    isRound: true,
+    size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -78,9 +75,8 @@ export const ImageWithCaption: Story = {
 export const ImageWithShadow: Story = {
   args: {
     hasShadow: true,
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
-    size: 'medium',
+    size: 'md',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
@@ -89,8 +85,7 @@ export const ImageFloatLeft: Story = {
   args: {
     align: 'left',
     hasShadow: true,
-    size: 'medium',
-    isRound: true,
+    size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -100,8 +95,7 @@ export const ImageFloatRight: Story = {
   args: {
     align: 'right',
     hasShadow: true,
-    size: 'medium',
-    isRound: true,
+    size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -111,8 +105,7 @@ export const ImageCenterAlign: Story = {
   args: {
     align: 'center',
     hasShadow: true,
-    size: 'medium',
-    isRound: true,
+    size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
@@ -126,9 +119,8 @@ export const Video: Story = {
 
 export const VideoWithCaption: Story = {
   args: {
-    size: 'medium',
+    size: 'md',
     hasShadow: true,
-    isRound: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <Figure.Video source={content.video} />,
   },

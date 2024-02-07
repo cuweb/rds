@@ -15,17 +15,15 @@ jobs:
 
       - name: Install
         run: yarn install --frozen-lockfile
-        # run: npm ci
 
       - name: Build
         run: yarn build-storybook
-        # run: npm run  build-storybook
         env:
           NODE_OPTIONS: --max_old_space_size=4096
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: storybook-static # output folder from `npm run build-storybook`
+          folder: storybook-static
         env:
           NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY: ${{secrets.GOOGLE_MAPS_API_KEY}}

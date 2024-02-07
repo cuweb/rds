@@ -1,0 +1,171 @@
+#storybook-root {
+  height: 2000px;
+  background-color: white;
+}
+
+.p-plus__primary .cu-nav__submenu {
+  @apply -ml-3;
+}
+
+.cu-nav__submenu > li > span > a {
+  @apply max-sm:!pl-[2rem];
+}
+
+.cu-nav__inner-submenu > li > span > a {
+  @apply max-sm:!pl-[3rem] !pl-[2rem];
+}
+
+/* Top parent items */
+
+.cu-nav__menu > li > span > a.cu-nav__parent-item {
+  @apply max-w-[30ch];
+}
+
+.cu-nav__menu > li > span > a.cu-nav__parent-item > .cu-nav__parent-inner {
+  @apply sm:overflow-hidden sm:whitespace-nowrap sm:text-ellipsis;
+}
+
+/* Sub menu position */
+
+.cu-nav__primary .cu-nav__submenu {
+  @apply top-[42px];
+}
+
+.cu-nav__secondary .cu-nav__submenu {
+  @apply top-[34px];
+}
+
+.cu-nav__aside .cu-nav__submenu {
+  @apply top-[34px];
+}
+
+/* Aside */
+.cu-nav--secondary > .cu-nav__aside {
+  @apply max-sm:hidden;
+}
+
+.cu-nav__secondary .cu-nav__aside {
+  @apply sm:hidden;
+}
+
+.p-plus-container {
+  @apply w-full;
+}
+
+/* Overflow Menu */
+.p-plus__overflow {
+  @apply z-50 absolute top-[36px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
+}
+
+.p-plus__overflow.p-plus_left {
+  @apply -left-3.5;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item {
+  @apply block pr-0 text-sm font-medium border-b text-cu-black-600 hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item a,
+.p-plus__overflow .p-plus__primary-nav-item button {
+  @apply flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item {
+  @apply after:hidden justify-between pl-[1.25rem] py-[5px];
+}
+
+.p-plus__overflow .p-plus__primary-nav-item span > a:not(.cu-nav__parent-item) {
+  @apply px-5 py-3.5;
+}
+
+.p-plus__overflow .p-plus__primary-nav-item .cu-nav__parent-item > button {
+  @apply py-3.5;
+}
+
+/* Child level menu item */
+.p-plus__overflow .cu-nav__submenu {
+  @apply relative top-0 w-full h-auto border-0 shadow-none;
+}
+
+.p-plus__overflow .cu-nav__submenu li {
+  @apply border-0;
+}
+
+.p-plus__overflow .cu-nav__submenu li > a,
+.p-plus__overflow .cu-nav__submenu li > button {
+  @apply pl-7;
+}
+
+/* Add styles to current item */
+.cu-nav-current > span > a,
+.p-plus__overflow li.cu-nav-current > span > a {
+  @apply text-cu-red-700 after:border-t-cu-red-700 after:border-l-cu-red-700;
+}
+
+/* Button nav item alignment */
+button.p-plus__toggle-btn {
+  @apply flex gap-0.5 items-center text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in after:content-[''] hover:after:border-current after:w-1.5 after:h-1.5 after:ml-1 after:mt-px after:border-t after:border-t-cu-black-700 after:border-l after:border-l-cu-black-700 after:rotate-[135deg] after:transition after:ease-in after:duration-300;
+}
+
+button.p-plus__toggle-btn svg {
+  @apply transition duration-300 ease-in;
+}
+
+button.p-plus__toggle-btn.rotated svg {
+  @apply rotate-90;
+}
+
+@media (min-width: 640px) {
+  .p-plus__primary > li {
+    flex: 0 0 auto;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  /* Collapse nav at sm */
+  .p-plus__primary > li:first-child {
+    @apply w-full;
+  }
+
+  body.no-scroll {
+    @apply overflow-hidden bg-cu-black-700 before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-black before:z-[1] before:pointer-events-none;
+  }
+
+  .p-plus:not(.p-plus--clone) {
+    @apply static;
+  }
+
+  .p-plus-container {
+    @apply static;
+  }
+
+  button.p-plus__toggle-btn {
+    @apply mb-0;
+  }
+
+  .p-plus__overflow {
+    /* Added extra padding to bottom to see last item */
+    @apply absolute left-0 top-full w-full max-w-full h-[calc(100vh-62px)] pb-[2rem] rounded-none overflow-y-auto overflow-scroll;
+  }
+
+  .cu-nav__secondary .p-plus__overflow {
+    @apply h-screen;
+  }
+
+  .p-plus__overflow.p-plus_left {
+    @apply left-0;
+  }
+
+  .p-plus__overflow .cu-nav__submenu {
+    @apply max-w-full;
+  }
+
+  .p-plus__overflow > li.cu-nav-item a {
+    @apply pl-8;
+  }
+
+  .p-plus__overflow li.cu-nav-item-child a {
+    @apply pl-12;
+  }
+}
