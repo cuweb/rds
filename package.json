@@ -37,8 +37,8 @@
     "rebuild": "rm -rf node_modules ; rm yarn.lock ; yarn install"
   },
   "resolutions": {
-    "prettier": "2.8.1",
-    "strip-ansi": "7.0.1"
+    "prettier": "^2.8.1",
+    "strip-ansi": "^6.0.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
