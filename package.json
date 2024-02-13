@@ -20,13 +20,13 @@
     }
   },
   "scripts": {
-    "dev": "concurrently 'pnpm run dev:css' 'pnpm run icon-list' 'tsc && vite build --watch'",
+    "dev": "concurrently 'yarn dev:css' 'yarn icon-list' 'tsc && vite build --watch'",
     "dev:css": "tailwindcss -w -i ./src/styles/index.css -o ./public/index.css",
-    "build": "tsc && pnpm run format && pnpm run lint && pnpm run icon-list && vite build && pnpm run build:css && pnpm run size",
+    "build": "tsc && yarn format && yarn lint && yarn icon-list && vite build && yarn build:css && yarn size",
     "build:css": "tailwindcss -m -i ./src/styles/index.css -o ./dist/index.css",
-    "storybook": "concurrently 'pnpm run storybook:css' 'storybook dev -p 6006'",
+    "storybook": "concurrently 'yarn storybook:css' 'storybook dev -p 6006'",
     "storybook:css": "tailwindcss -w -i ./src/styles/index.css -o ./.storybook/index.css",
-    "build-storybook": "concurrently 'pnpm run build-storybook:css' 'storybook build'",
+    "build-storybook": "concurrently 'yarn build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/styles/index.css -o ./.storybook/index.css",
     "icon-list": "node ./generateIconList.js",
     "size": "size-limit",
