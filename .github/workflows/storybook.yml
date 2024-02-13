@@ -1,9 +1,9 @@
 name: Storybook Deploy
-on: [pull_request]
-# on:
-#   push:
-#     branches:
-#       - develop
+# on: [pull_request]
+on:
+  push:
+    branches:
+      - develop
 jobs:
   build-and-deploy:
     name: Build and deploy Storybook

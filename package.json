@@ -34,7 +34,7 @@
     "lint": "eslint . --ext .ts,.tsx",
     "prepare": "husky install",
     "clean": "rm -rf node_modules ; yarn install",
-    "rebuild": "rm -rf node_modules ; rm pnpm-lock.yaml ; yarn install"
+    "rebuild": "rm -rf node_modules ; rm yarn.lock ; yarn install"
   },
   "resolutions": {
     "prettier": "2.8.1",
