@@ -3,7 +3,7 @@ import { Combobox, Dialog, Transition } from '@headlessui/react'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
 import { rdsOverlay } from '../../utils/optionClasses'
-import { Link } from '../../components/Link/Link'
+import { useLinkContext } from '../LinkProvider'
 
 export interface SourceDataProps {
   [k: string]: string | number
@@ -59,6 +59,8 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
   useEffect(() => {
     callback(open)
   }, [open, callback])
+
+  const LinkComponent = useLinkContext()
 
   return (
     <>
@@ -126,9 +128,9 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
                             classNames('cursor-default select-none px-4 py-2', active && 'bg-cu-red text-white')
                           }
                         >
-                          <Link href={`${record.url}`} onClick={() => setOpen(false)}>
+                          <LinkComponent href={`${record.url}`} onClick={() => setOpen(false)}>
                             {record[searchOn]}
-                          </Link>
+                          </LinkComponent>
                         </Combobox.Option>
                       ))}
                     </Combobox.Options>

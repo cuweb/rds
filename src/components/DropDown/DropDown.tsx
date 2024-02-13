@@ -2,8 +2,8 @@ import { Popover, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
 import { Icon } from '../Icon/Icon'
-import { Link } from '../Link/Link'
 import styles from './DropDown.styles'
+import { useLinkContext } from '../LinkProvider'
 
 export interface DropDownItemProps {
   title: string | React.ReactNode
@@ -28,6 +28,8 @@ export const DropDown = ({
   //   icon,
   menuAlign = 'left',
 }: DropDownProps) => {
+  const LinkComponent = useLinkContext()
+
   return (
     <Popover as="div" className="cu-dropdown not-prose relative inline-block flex-shrink-0">
       <div>
@@ -56,22 +58,23 @@ export const DropDown = ({
         <Popover.Panel static className={`${styles.core} ${menuAlign === 'left' ? 'left-0' : 'right-0'}`}>
           {({ close }) => (
             <>
-              {listItems.map((item, index) => (
-                <div key={index}>
-                  <Link
-                    href={item.href ? item.href : ''}
-                    className="group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    onClick={(e) => {
-                      item.onClick && e.preventDefault()
-                      item.onClick && item.onClick(e)
-                      close()
-                    }}
-                  >
-                    {item.icon && <Icon icon={item.icon} aria-hidden="true" size="4" />}
-                    <span className={item.icon ? 'ml-3' : ''}>{item.title}</span>
-                  </Link>
-                </div>
-              ))}
+              {listItems &&
+                listItems.map((item, index) => (
+                  <div key={index}>
+                    <LinkComponent
+                      href={item.href ? item.href : ''}
+                      className="group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                        item.onClick && e.preventDefault()
+                        item.onClick && item.onClick(e)
+                        close()
+                      }}
+                    >
+                      {item.icon && <Icon icon={item.icon} aria-hidden="true" size="4" />}
+                      <span className={item.icon ? 'ml-3' : ''}>{item.title}</span>
+                    </LinkComponent>
+                  </div>
+                ))}
             </>
           )}
         </Popover.Panel>

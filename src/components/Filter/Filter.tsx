@@ -2,8 +2,8 @@ import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Disclosure, Menu, Popover, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Link } from '../Link/Link'
 import styles from './Filter.styles'
+import { useLinkContext } from '../LinkProvider'
 
 export interface FilterProps {
   sortOptions?: {
@@ -55,6 +55,8 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
   useEffect(() => {
     callback(selectedItems)
   }, [selectedItems, callback])
+
+  const LinkComponent = useLinkContext()
 
   return (
     <div className="cu-filter not-prose">
@@ -181,7 +183,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
-                            <Link
+                            <LinkComponent
                               href={option.href}
                               className={classNames(
                                 option.name === sortItem ? 'font-medium text-cu-black-800' : 'text-cu-black-600',
@@ -191,7 +193,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                             >
                               {/* TODO: error reported here https://itsjira.carleton.ca/browse/WSDEV-2392 */}
                               {/* <span onClick={() => setSortItem(option.name)}>{option.name}</span> */}
-                            </Link>
+                            </LinkComponent>
                           )}
                         </Menu.Item>
                       ))}
