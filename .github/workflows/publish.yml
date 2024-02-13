@@ -23,9 +23,9 @@ jobs:
         run: npm install
 
       - name: Build package
-        run: npm build
+        run: npm run build
 
       - name: Publish package
-        run: npm publish --access public
+        run: npm run publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RDS_NPM_TOKEN }}
