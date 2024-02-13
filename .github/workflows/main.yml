@@ -7,8 +7,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['18.x'] # '16.x',
-        os: [ubuntu-latest] # macOS-latest windows-latest
+        node: ['20.x']
+        os: [ubuntu-latest]
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -16,22 +16,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Node v${{ matrix.node }}
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: 'pnpm'
 
-      - name: Install
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies with pnpm
         run: pnpm install
 
-      - name: Build
+      - name: Build with pnpm
         run: pnpm run build
 
-      - name: S3 Deploy
+      - name: Deploy to S3
         uses: Reggionick/s3-deploy@v3.2.0
         with:
           folder: dist
-          bucket: ${{ secrets.AWS_BUCKET_PATH }} # uses bucket + /path
+          bucket: ${{ secrets.AWS_BUCKET_PATH }}
           bucket-region: ${{ secrets.AWS_DEFAULT_REGION }}
           delete-removed: false
           cache: true

@@ -13,17 +13,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies with pnpm
         run: pnpm install
 
-      - name: Build
+      - name: Build Storybook
         run: pnpm build-storybook
         env:
           NODE_OPTIONS: --max_old_space_size=4096
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: storybook-static
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY: ${{secrets.GOOGLE_MAPS_API_KEY}}
+          NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
