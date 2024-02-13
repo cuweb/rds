@@ -1,7 +1,7 @@
 {
   "name": "@carletonuniversity/rds",
   "private": false,
-  "version": "0.6.9",
+  "version": "0.7.1",
   "license": "MIT",
   "type": "module",
   "main": "./dist/rds.umd.js",
@@ -33,19 +33,20 @@
     "format": "prettier -w src",
     "lint": "eslint . --ext .ts,.tsx",
     "prepare": "husky install",
-    "clean": "rm -rf node_modules ; yarn install --frozen-lockfile",
+    "clean": "rm -rf node_modules ; yarn install",
     "rebuild": "rm -rf node_modules ; rm yarn.lock ; yarn install"
   },
   "resolutions": {
-    "prettier": "2.8.1",
-    "strip-ansi": "6.0.1"
+    "prettier": "^2.8.1",
+    "strip-ansi": "^6.0.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.1",
     "@fortawesome/free-solid-svg-icons": "6.5.1",
     "@headlessui/react": "1.7.18",
     "@heroicons/react": "2.1.1",
-    "priority-plus": "^1.5.1",
+    "ci": "^2.3.0",
+    "priority-plus": "1.5.1",
     "rds-tailwind-theme": "0.6.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -55,6 +56,7 @@
   },
   "peerDependencies": {
     "@react-google-maps/api": "2.19.2",
+    "date-fns": "3.3.1",
     "formik": "2.4.5",
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.14.1",
@@ -70,6 +72,7 @@
     "@size-limit/esbuild-why": "11.0.2",
     "@size-limit/file": "11.0.2",
     "@storybook/addon-a11y": "7.6.8",
+    "@storybook/addon-docs": "7.6.14",
     "@storybook/addon-essentials": "7.6.8",
     "@storybook/addon-interactions": "7.6.8",
     "@storybook/addon-links": "7.6.8",
@@ -87,6 +90,7 @@
     "autoprefixer": "10.4.16",
     "concurrently": "8.2.2",
     "copyfiles": "2.4.1",
+    "date-fns": "3.3.1",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",

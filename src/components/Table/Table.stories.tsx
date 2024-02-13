@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
-import { Link } from '../Link/Link'
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
@@ -24,9 +23,9 @@ const tableData = TableData.map((obj) => {
     ...obj,
     link: (
       <>
-        <Link className="text-cu-red" href={link}>
+        <a className="text-cu-red" href={link}>
           Edit
-        </Link>
+        </a>
       </>
     ),
   }
