@@ -20,13 +20,13 @@
     }
   },
   "scripts": {
-    "dev": "concurrently 'pnpm dev:css' 'pnpm icon-list' 'tsc && vite build --watch'",
+    "dev": "concurrently 'pnpm run dev:css' 'pnpm run icon-list' 'tsc && vite build --watch'",
     "dev:css": "tailwindcss -w -i ./src/styles/index.css -o ./public/index.css",
-    "build": "tsc && pnpm format && pnpm lint && pnpm icon-list && vite build && pnpm build:css && pnpm size",
+    "build": "tsc && pnpm run format && pnpm run lint && pnpm run icon-list && vite build && pnpm run build:css && pnpm run size",
     "build:css": "tailwindcss -m -i ./src/styles/index.css -o ./dist/index.css",
-    "storybook": "concurrently 'pnpm storybook:css' 'storybook dev -p 6006'",
+    "storybook": "concurrently 'pnpm run storybook:css' 'storybook dev -p 6006'",
     "storybook:css": "tailwindcss -w -i ./src/styles/index.css -o ./.storybook/index.css",
-    "build-storybook": "concurrently 'pnpm build-storybook:css' 'storybook build'",
+    "build-storybook": "concurrently 'pnpm run build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/styles/index.css -o ./.storybook/index.css",
     "icon-list": "node ./generateIconList.js",
     "size": "size-limit",
