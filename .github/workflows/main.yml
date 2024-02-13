@@ -22,12 +22,10 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install
-        run: yarn install --frozen-lockfile
-        # run: npm ci
+        run: pnpm install
 
       - name: Build
-        run: yarn build
-        # run: npm run build
+        run: pnpm run build
 
       - name: S3 Deploy
         uses: Reggionick/s3-deploy@v3.2.0
