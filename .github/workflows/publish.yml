@@ -19,13 +19,13 @@ jobs:
       # - name: Install pnpm
       #   run: npm install -g pnpm
 
-      - name: Install dependencies with npm
-        run: npm install
+      - name: Install dependencies with yarn
+        run: yarn install
 
       - name: Build package
-        run: npm run build
+        run: yarn build
 
       - name: Publish package
-        run: npm run publish --access public
+        run: yarn publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RDS_NPM_TOKEN }}

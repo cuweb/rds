@@ -22,11 +22,11 @@ jobs:
       # - name: Install pnpm
       #   run: npm install -g pnpm
 
-      - name: Install dependencies with npm
-        run: npm install
+      - name: Install dependencies with yarn
+        run: yarn install
 
       - name: Build Storybook
-        run: npm run build-storybook
+        run: yarn build-storybook
         env:
           NODE_OPTIONS: --max_old_space_size=4096
 

@@ -25,11 +25,11 @@ jobs:
       # - name: Install pnpm
       #   run: npm install -g pnpm
 
-      - name: Install dependencies with npm
-        run: npm install
+      - name: Install dependencies with yarn
+        run: yarn install
 
-      - name: Build with npm
-        run: npm run build
+      - name: Build with yarn
+        run: yarn build
 
       - name: Deploy to S3
         uses: Reggionick/s3-deploy@v3.2.0
