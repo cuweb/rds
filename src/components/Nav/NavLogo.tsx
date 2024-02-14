@@ -1,9 +1,13 @@
+import { useLinkContext } from '../LinkProvider'
+
 export interface NavLogoProps {
   title?: string
   link?: string
 }
 
 export const NavLogo = ({ title, link }: NavLogoProps) => {
+  const LinkComponent = useLinkContext()
+
   return (
     <div className="cu-nav__top flex items-center py-3.5 gap-3 md:gap-5 shrink-1 md:shrink-0 max-sm:grow">
       {title && link && (
@@ -39,12 +43,12 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
 
       {title && link && (
         <div className="leading-none max-w-[60%] sm:max-w-[200px] md:max-w-[220px]">
-          <a
+          <LinkComponent
             href={link}
             className="overflow-hidden text-base font-semibold leading-5 md:text-lg md:leading-6 text-cu-black-800 hover:text-cu-red-700 text-ellipsis line-clamp-2"
           >
             {title}
-          </a>
+          </LinkComponent>
         </div>
       )}
     </div>
