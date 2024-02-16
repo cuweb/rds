@@ -6,6 +6,7 @@ import { ListingBody } from './ListingBody'
 import { ListingHeader } from './ListingHeader'
 import { ListingExcerpt } from './ListingExcerpt'
 import { ListingDateThumb } from './ListingDateThumb'
+import { ListingIconThumb } from './ListingIconThumb'
 import { ListingInitials } from './ListingInitials'
 import { ListingEventMeta } from './ListingEventMeta'
 import { ListingPeopleMeta } from './ListingPeopleMeta'
@@ -43,6 +44,7 @@ export const Listing = Object.assign(ListingWrapper, {
   Header: ListingHeader,
   Excerpt: ListingExcerpt,
   DateThumb: ListingDateThumb,
+  IconThumb: ListingIconThumb,
   Initials: ListingInitials,
   EventMeta: ListingEventMeta,
   PeopleMeta: ListingPeopleMeta,
