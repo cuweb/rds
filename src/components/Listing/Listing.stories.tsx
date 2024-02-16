@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Listing } from './Listing'
+import { IconDataSingle as iconData } from '../../data/IconData'
 import { EventDataSingle as eventData } from '../../data/EventData'
 import { NewsDataSingle as newsData } from '../../data/NewsData'
 import { PeopleDataSingle as peopleData } from '../../data/PeopleData'
@@ -65,6 +66,21 @@ export const NewsListing: Story = {
         <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         <Listing.Footer isType="button">
           <a href={newsData.link}>Read more</a>
+        </Listing.Footer>
+      </Listing.Body>
+    </Listing>
+  ),
+}
+
+export const IconListing: Story = {
+  render: () => (
+    <Listing>
+      <Listing.IconThumb icon={iconData.icon} />
+      <Listing.Body>
+        <Listing.Header>{iconData.title}</Listing.Header>
+        <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+        <Listing.Footer isType="button" buttonStyle="grey">
+          <a href={iconData.link}>Get informed</a>
         </Listing.Footer>
       </Listing.Body>
     </Listing>
