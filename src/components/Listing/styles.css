@@ -4,6 +4,6 @@
   @apply inline-flex;
 }
 
-.cu-listing img {
+.cu-listing img:not(.cu-icon-thumb) {
   @apply object-cover w-full h-full rounded-md;
 }
