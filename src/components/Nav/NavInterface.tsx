@@ -1,5 +1,6 @@
 export default interface ImenuItem {
-  href: string
+  href?: string
   title: string
+  onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
   submenu?: ImenuItem[]
 }
