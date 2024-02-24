@@ -66,12 +66,3 @@ export type { UserInfoType } from './components/Avatar/Avatar'
 // Others
 // -----------------
 export * from '../public/assets/font-awesome/icon-list.js'
-
-//
-// DEPRECATED
-// -----------------
-// export { Banner } from './_deprecated/Banner/Banner'
-// export { Form } from './_deprecated/Forms/Form/Form'
-// export { HeroTextImage } from './_deprecated/HeroTextImage/HeroTextImage'
-// export { Panel } from './layouts/Panel/Panel'
-// export { TopNav } from './_deprecated/TopNav/TopNav'

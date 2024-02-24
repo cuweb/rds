@@ -5,13 +5,11 @@ import { Column } from '../../layouts/Column/Column'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Aside } from '../../layouts/Aside/Aside'
 import { Article } from '../../layouts/Article/Article'
-
-import { Banner } from '../../_deprecated/Banner/Banner'
-
 import { Nav } from '../../components/Nav/Nav'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Button } from '../../components/Button/Button'
 import { Listing } from '../../components/Listing/Listing'
+import { WideImage } from '../../components/WideImage/WideImage'
 
 import { EventDetailsData as data } from '../../data/EventData'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
@@ -73,16 +71,13 @@ export const SingleEvent: Story = {
         </Nav.Primary>
       </Nav>
 
-      <Banner
-        title="Single Event Post Template"
-        align="left"
-        maxWidth="7xl"
-        isType="image"
-        image="https://carleton.ca/about/wp-content/uploads/about-header-1600w-3.jpg"
-      />
-
       <Main>
         <Section>
+          <WideImage
+            image="https://carleton.ca/about/wp-content/uploads/about-header-1600w-3.jpg"
+            title="Single Event Post Template"
+            maxWidth="max"
+          />
           <Column cols="2/3" maxWidth="7xl">
             <Article>
               <EventContent />

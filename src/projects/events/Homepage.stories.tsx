@@ -5,9 +5,6 @@ import { Container } from '../../layouts/Container/Container'
 import { Column } from '../../layouts/Column/Column'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Aside } from '../../layouts/Aside/Aside'
-
-import { Banner } from '../../_deprecated/Banner/Banner'
-
 import { Nav } from '../../components/Nav/Nav'
 import { Heading } from '../../components/Heading/Heading'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
@@ -16,6 +13,7 @@ import { Listing } from '../../components/Listing/Listing'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { Calendar } from '../../components/Calendar/Calendar'
 import { Filter } from '../../components/Filter/Filter'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 
 import { EventData as dataCard, EventData as dataList } from '../../data/EventData'
 import { FilterData as dataFilter } from '../../data/FilterData'
@@ -39,10 +37,9 @@ export const Homepage: Story = {
         </Nav.Primary>
       </Nav>
 
-      <Banner title="Featured Events" align="left" isType="light-grey" maxWidth="7xl" hasOverlap />
-
-      <Main hasOverlap>
+      <Main>
         <Section>
+          <PageHeaders header="Featured Events" />
           <Column cols="4" maxWidth="7xl">
             {dataCard.slice(0, 4).map((item) => (
               <Card key={item?.id} hasShadow="onCard">
