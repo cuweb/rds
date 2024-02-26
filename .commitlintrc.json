@@ -4,7 +4,20 @@
     "type-enum": [
       2,
       "always",
-      ["add", "change", "deprecate", "doc", "fix", "finish", "refactor", "release", "revert", "test", "upgrade"]
+      [
+        "add",
+        "change",
+        "deprecate",
+        "doc",
+        "fix",
+        "finish",
+        "refactor",
+        "release",
+        "remove",
+        "revert",
+        "test",
+        "upgrade"
+      ]
     ]
   }
 }

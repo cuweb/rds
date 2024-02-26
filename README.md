@@ -11,7 +11,6 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 - [Storybook](https://storybook.js.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Cypress](https://www.cypress.io)
 
 ## Getting Started
 
@@ -35,8 +34,7 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 
 4. Other useful shell commands
 
-- `npm run clean` - deletes node modules, package lock and run npm install
-- `npm run cypress` - launch cypress app
+- `npm run rebuild` - deletes node modules, package lock and run npm install
 - `npm run format` - format files with prettier
 - `npm run lint` - check for errors with eslint
 - `npm run size` - compare compiled size against pre-defined limit
@@ -47,13 +45,15 @@ When adding a commit with a commit you may be blocked if you do not prefix your 
 
 - `add` - used when adding something new such as a component, story or test file
 - `change` - used when making a change to an existing file in the project
+- `deprecate` - used when deprecating code
 - `doc` - used when updating something related to documentation
 - `fix` - used when fixing an error, warning or something else
-- `perf` - used when making changes relating to performance
+- `finish` - used when finishing a feature or fix
 - `refactor` - used when refactoring something such as a component or build tool
 - `release` - used when preparing a new release
 - `revert` - used when revert to a past commit
 - `test` - used when making changes relating to testing
+- `upgrade` - used when upgrading packages
 
 ## Deployment
 
