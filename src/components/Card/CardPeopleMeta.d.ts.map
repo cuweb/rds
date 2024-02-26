@@ -1,1 +1,0 @@
-{"version":3,"file":"CardPeopleMeta.d.ts","sourceRoot":"","sources":["../../../../src/components/Card/CardPeopleMeta.tsx"],"names":[],"mappings":";AAAA,MAAM,WAAW,mBAAmB;IAClC,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;IACzB,QAAQ,CAAC,EAAE,MAAM,CAAA;IACjB,KAAK,CAAC,EAAE,MAAM,CAAA;CACf;AAED,eAAO,MAAM,MAAM;;;;CAIlB,CAAA;AAED,eAAO,MAAM,cAAc;oCAAmC,mBAAmB;;CAYhF,CAAA"}

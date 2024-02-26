@@ -1,1 +1,0 @@
-{"version":3,"file":"Embed.d.ts","sourceRoot":"","sources":["../../../../src/components/Embed/Embed.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAA;AASzB,MAAM,WAAW,UAAU;IACzB,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;IACzB,QAAQ,CAAC,EAAE,MAAM,GAAG,KAAK,GAAG,KAAK,CAAA;CAClC;AAED,eAAO,MAAM,YAAY,2BAAoC,UAAU,4CAMtE,CAAA;AAED,eAAO,MAAM,KAAK,4BAR2C,UAAU;;;;;;;;;;;;;;;;;;;;;CAcrE,CAAA"}
