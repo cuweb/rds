@@ -1,0 +1,33 @@
+{
+  "name": "@carletonuniversity/rds",
+  "private": false,
+  "version": "0.7.2",
+  "resolutions": {
+    "prettier": "^2.8.1",
+    "strip-ansi": "^6.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "6.5.1",
+    "@fortawesome/free-solid-svg-icons": "6.5.1",
+    "ci": "^2.3.0",
+    "rds-tailwind-theme": "0.6.3",
+    "react-helmet": "6.1.0",
+    "react-intersection-observer": "9.5.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "0.4.4",
+    "@size-limit/esbuild": "11.0.2",
+    "@size-limit/esbuild-why": "11.0.2",
+    "@size-limit/file": "11.0.2",
+    "@storybook/addon-docs": "7.6.14",
+    "@whitespace/storybook-addon-html": "5.1.6",
+    "concurrently": "8.2.2",
+    "copyfiles": "2.4.1",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-react": "7.33.2",
+    "postcss-import": "16.0.0",
+    "prop-types": "15.8.1",
+    "vite-tsconfig-paths": "4.3.1"
+  }
+}
