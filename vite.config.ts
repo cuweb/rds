@@ -1,22 +1,21 @@
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import path from 'node:path'
+import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
-import tsConfigPaths from 'vite-tsconfig-paths'
-import terser from '@rollup/plugin-terser';
+import tailwindcss from 'tailwindcss'
 import * as packageJson from './package.json'
 
-export default defineConfig(() => ({
-  plugins: [
-    react(),
-    tsConfigPaths(),
-    dts({
-      include: ['src'],
-    }),
-  ],
+export default defineConfig({
+  plugins: [react(), dts({ include: ['lib'], insertTypesEntry: true })],
+  css: {
+    postcss: {
+      plugins: [tailwindcss],
+    },
+  },
   build: {
+    copyPublicDir: true,
     lib: {
-      entry: resolve('src', 'index.ts'),
+      entry: path.resolve(__dirname, 'lib/main.ts'),
       name: 'rds',
       formats: ['es', 'umd'],
       fileName: (format) => `rds.${format}.js`,
@@ -24,8 +23,15 @@ export default defineConfig(() => ({
     rollupOptions: {
       external: [...Object.keys(packageJson.dependencies), ...Object.keys(packageJson.peerDependencies)],
       output: {
-        plugins: [terser()]
-      }
+        globals: {
+          react: 'React',
+          'date-fns': 'dateFns',
+          'react-player': 'ReactPlayer',
+          '@headlessui/react': 'HeadlessUI',
+          '@react-google-maps/api': 'ReactGoogleMapsAPI',
+          'priority-plus': 'PriorityPlus',
+        },
+      },
     },
   },
-}))
+})

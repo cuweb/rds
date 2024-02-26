@@ -1,44 +1,34 @@
-import './index.css'
-export const parameters = {
-  backgrounds: {
-    default: 'light',
-  },
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+import type { Preview } from '@storybook/react'
+import '../lib/style.css'
+
+const preview: Preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
     },
-  },
-  options: {
-    storySort: {
-      method: 'alphabetical',
-      order: [
-        'Get Started',
-        ['Introduction', 'Changelog'],
-        'Examples',
-        [
-          'Blocks',
-          'Layouts',
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: [
+          'Get Started',
+          ['Introduction', 'Changelog'],
+          'Examples',
+          ['Blocks', 'Layouts'],
           'Projects',
-          ['cutheme', ['Page Layouts', 'Blocks'], 'Event Calendar', ['Homepage', 'Single Event']],
+          ['Event Calendar', ['Homepage', 'Single Event']],
+          'Components',
+          'Resources',
+          'Layouts',
+          ['Body', 'Main', 'Container', 'Article', 'Column', 'Aside', 'Panel', 'Stacked List'],
+          'Deprecated',
         ],
-        'Projects',
-        'Components',
-        'Resources',
-        'Layouts',
-        ['Body', 'Main', 'Container', 'Article', 'Column', 'Aside', 'Panel', 'Stacked List'],
-        'Deprecated',
-      ],
+      },
     },
   },
 }
 
-const script = document.createElement('script')
-
-// script.type = 'text/javascript'
-// script.src = `https://maps.googleapis.com/maps/api/js?key=${
-//   import.meta.env.GOOGLE_MAPS_API_KEY
-// }&libraries=places&callback=Function.prototype`
-
-document.body.appendChild(script)
+export default preview

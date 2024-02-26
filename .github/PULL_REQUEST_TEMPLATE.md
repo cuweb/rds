@@ -9,10 +9,6 @@
 - [ ] Optimization / Build Tools
 - [ ] Documentation Update
 
-### Related Tickets & Documents
-
-- Jira Ticket / Github Issue #
-
 ### Is this a breaking change?
 
 If yes, please note which project will be impacted.
