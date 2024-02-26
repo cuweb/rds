@@ -63,6 +63,7 @@ export const iconNames = [
   {"value":"file-chart-pie","label":"File chart pie"},
   {"value":"file-circle-question","label":"File circle question"},
   {"value":"file-code","label":"File code"},
+  {"value":"file-doc","label":"File doc"},
   {"value":"file-image","label":"File image"},
   {"value":"file-lines","label":"File lines"},
   {"value":"file-music","label":"File music"},

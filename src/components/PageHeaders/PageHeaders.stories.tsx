@@ -19,7 +19,23 @@ type Story = StoryObj<typeof PageHeaders>
 export const Default: Story = {}
 
 Default.args = {
-  header: 'Page header',
+  header: 'Large page header',
+  size: 'lg',
+  as: 'h1',
+}
+
+export const MediumPageHeader: Story = {
+  args: {
+    header: 'Medium page header',
+    size: 'md',
+  },
+}
+
+export const SmallPageHeader: Story = {
+  args: {
+    header: 'Small page header',
+    size: 'sm',
+  },
 }
 
 export const EventPageHeader: Story = {
