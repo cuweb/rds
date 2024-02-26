@@ -1,17 +1,17 @@
 {
-  "name": "@troychaplin79/ui-testing",
-  "version": "0.1.9",
+  "name": "@carletonuniversity/rds",
+  "version": "0.8.0",
   "private": false,
-  "description": "A library template built by Vite, React, Typescript, TailwindCSS and Storybook",
-  "author": "Troy Chaplin",
+  "description": "Raven Design System is Carleton University's design system",
+  "author": "Web Services",
   "license": "MIT",
-  "homepage": "https://github.com/troychaplin/ui-testing#readme",
+  "homepage": "https://github.com/cuweb/rds#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/troychaplin/ui-testing.git"
+    "url": "git+https://github.com/cuweb/rds.git"
   },
   "bugs": {
-    "url": "https://github.com/troychaplin/ui-testing/issues"
+    "url": "https://github.com/cuweb/rds/issues"
   },
   "main": "dist/rds.umd.js",
   "module": "dist/rds.es.js",
