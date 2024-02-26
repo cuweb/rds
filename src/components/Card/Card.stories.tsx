@@ -94,6 +94,22 @@ export const IconCard: Story = {
   ),
 }
 
+export const PageCard: Story = {
+  render: () => (
+    <Card hasShadow="onCard">
+      <Card.Header date={newsData.date} datePrefix="Modified on " datePosition="bottom">
+        {newsData.title}
+      </Card.Header>
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+      </Card.Body>
+      <Card.Footer isType="button">
+        <a href={newsData.link}>Read more</a>
+      </Card.Footer>
+    </Card>
+  ),
+}
+
 export const PeopleCard: Story = {
   render: () => (
     <Card hasShadow="onCard" isCenter>
