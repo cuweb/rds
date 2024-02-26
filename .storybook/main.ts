@@ -4,8 +4,8 @@ const config: StorybookConfig = {
   stories: [
     '../lib/**/*.mdx',
     '../lib/**/**/*.mdx',
-    '../lib/**/*.stories.@(js|jsx|ts|tsx)',
-    '../lib/**/**/*.stories.@(js|jsx|ts|tsx)',
+    '../lib/**/*.stories.@(mdx|js|jsx|ts|tsx)',
+    '../lib/**/**/*.stories.@(mdx|js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-a11y',
