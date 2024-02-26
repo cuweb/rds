@@ -122,13 +122,24 @@ export const NavAsideData = [
   },
 ]
 
-export const NavAsideLoggedInOptions = [
+export const NavAsideLoggedInOptionsHref = [
   {
     href: '/profile',
     title: 'Profile',
   },
   {
     href: '/',
-    title: 'Log OUT',
+    title: 'Log out',
+  },
+]
+
+export const NavAsideLoggedInOptionsOnClick = [
+  {
+    href: '/profile',
+    title: 'Profile',
+  },
+  {
+    onClickHandler: () => alert('Log out clicked'),
+    title: 'Log out',
   },
 ]

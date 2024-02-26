@@ -16,6 +16,7 @@ export interface NavAsideProps {
   LoggedMenu?: null
   userNoImage?: null
   children?: ReactNode
+  onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 export interface NavAsideLoggedInProps {
@@ -25,6 +26,7 @@ export interface NavAsideLoggedInProps {
   LoggedMenu?: null
   userNoImage?: null
   children?: ReactNode
+  onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 export interface NavAsideLoggedOutProps {
@@ -34,6 +36,7 @@ export interface NavAsideLoggedOutProps {
   LoggedMenu: ImenuItem[]
   userNoImage: UserInfoType
   children?: ReactNode
+  onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 export const NavAside = ({
@@ -43,6 +46,7 @@ export const NavAside = ({
   LoggedMenu,
   userNoImage,
   children,
+  onClickHandler,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
   const LinkComponent = useLinkContext()
 
@@ -66,26 +70,44 @@ export const NavAside = ({
           ))}
         {LoggedOutUser && (
           <li>
-            <LinkComponent href="/" className={styles.listItemLink}>
-              Login
-            </LinkComponent>
+            {onClickHandler ? (
+              <LinkComponent onClick={onClickHandler} className={styles.listItemLink}>
+                Login
+              </LinkComponent>
+            ) : (
+              <LinkComponent href="/" className={styles.listItemLink}>
+                Login
+              </LinkComponent>
+            )}
           </li>
         )}
         {LoggedInUser ? (
           LoggedMenu ? (
             <li className={NavMenuItemWrapperStyles.menuWrapper}>
               <span className={navMenuItemStyles.navItemWrapper} data-menu-item="profile">
-                <LinkComponent href="/" className={navMenuItemStyles.navParentItem}>
-                  <Avatar user={userNoImage} size="xs" rounded="full" />
-                </LinkComponent>
+                {onClickHandler ? (
+                  <LinkComponent onClick={onClickHandler} className={navMenuItemStyles.navParentItem}>
+                    <Avatar user={userNoImage} size="xs" rounded="full" />
+                  </LinkComponent>
+                ) : (
+                  <LinkComponent href="/" className={navMenuItemStyles.navParentItem}>
+                    <Avatar user={userNoImage} size="xs" rounded="full" />
+                  </LinkComponent>
+                )}
               </span>
               <NavSubMenu submenu={LoggedMenu} isSubMenu={true} isInnerSubMenu={false} id="profile" />
             </li>
           ) : (
             <li>
-              <LinkComponent href="/" className={styles.listItemLink}>
-                Logout
-              </LinkComponent>
+              {onClickHandler ? (
+                <LinkComponent onClick={onClickHandler} className={styles.listItemLink}>
+                  Logout
+                </LinkComponent>
+              ) : (
+                <LinkComponent href="/" className={styles.listItemLink}>
+                  Logout
+                </LinkComponent>
+              )}
             </li>
           )
         ) : (

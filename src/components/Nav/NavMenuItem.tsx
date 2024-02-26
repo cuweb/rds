@@ -21,32 +21,61 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
 
   return (
     <span className={navMenuItemStyles.navItemWrapper} data-menu-item={convertToSlug(id)} aria-expanded="false">
-      <LinkComponent
-        href={menuItem.href}
-        className={
-          (menuItem.submenu && !isInnerSubMenu
-            ? navMenuItemStyles.navParentItem +
-              ' ' +
-              navMenuItemStyles.navArrow +
-              ' ' +
-              navMenuItemStyles.navParentArrow
-            : '') +
-          ` ` +
-          navMenuItemStyles.navItem +
-          ` ` +
-          (isSubMenu ? navMenuItemStyles.subMenuItem : '')
-        }
-      >
-        <span className={menuItem.title.length > 25 ? 'cu-nav__parent-inner' : ''}>{menuItem.title}</span>
+      {menuItem.onClickHandler ? (
+        <LinkComponent
+          onClick={menuItem.onClickHandler}
+          className={
+            (menuItem.submenu && !isInnerSubMenu
+              ? navMenuItemStyles.navParentItem +
+                ' ' +
+                navMenuItemStyles.navArrow +
+                ' ' +
+                navMenuItemStyles.navParentArrow
+              : '') +
+            ` ` +
+            navMenuItemStyles.navItem +
+            ` ` +
+            (isSubMenu ? navMenuItemStyles.subMenuItem : '')
+          }
+        >
+          <span className={menuItem.title.length > 25 ? 'cu-nav__parent-inner' : ''}>{menuItem.title}</span>
 
-        {menuItem.submenu && !isInnerSubMenu ? (
-          <button className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}>
-            <span className="sr-only">Click to open inner submenu</span>
-          </button>
-        ) : (
-          <></>
-        )}
-      </LinkComponent>
+          {menuItem.submenu && !isInnerSubMenu ? (
+            <button className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}>
+              <span className="sr-only">Click to open inner submenu</span>
+            </button>
+          ) : (
+            <></>
+          )}
+        </LinkComponent>
+      ) : (
+        <LinkComponent
+          href={menuItem.href}
+          className={
+            (menuItem.submenu && !isInnerSubMenu
+              ? navMenuItemStyles.navParentItem +
+                ' ' +
+                navMenuItemStyles.navArrow +
+                ' ' +
+                navMenuItemStyles.navParentArrow
+              : '') +
+            ` ` +
+            navMenuItemStyles.navItem +
+            ` ` +
+            (isSubMenu ? navMenuItemStyles.subMenuItem : '')
+          }
+        >
+          <span className={menuItem.title.length > 25 ? 'cu-nav__parent-inner' : ''}>{menuItem.title}</span>
+
+          {menuItem.submenu && !isInnerSubMenu ? (
+            <button className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}>
+              <span className="sr-only">Click to open inner submenu</span>
+            </button>
+          ) : (
+            <></>
+          )}
+        </LinkComponent>
+      )}
 
       {menuItem.submenu && isInnerSubMenu ? (
         <button
