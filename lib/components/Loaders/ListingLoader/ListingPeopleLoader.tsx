@@ -1,6 +1,6 @@
-import { Listing } from '../../../../lib/components/Listing/Listing'
+import { Listing } from '../../Listing/Listing'
 
-export const ListingLoader = () => {
+export const ListingPeopleLoader = () => {
   return (
     <Listing>
       <div className="relative flex flex-col @xl:md:flex-row items-start h-full gap-4 @xl:md:gap-8 p-8 animate-pulse">
