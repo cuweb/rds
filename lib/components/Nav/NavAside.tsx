@@ -6,7 +6,7 @@ import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 
 export const styles = {
-  listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red`,
+  listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red cursor-pointer`,
 }
 
 export interface NavAsideProps {
@@ -71,9 +71,9 @@ export const NavAside = ({
         {LoggedOutUser && (
           <li>
             {onClickHandler ? (
-              <LinkComponent onClick={onClickHandler} className={styles.listItemLink}>
+              <a onClick={onClickHandler} className={styles.listItemLink}>
                 Login
-              </LinkComponent>
+              </a>
             ) : (
               <LinkComponent href="/" className={styles.listItemLink}>
                 Login
@@ -86,9 +86,9 @@ export const NavAside = ({
             <li className={NavMenuItemWrapperStyles.menuWrapper}>
               <span className={navMenuItemStyles.navItemWrapper} data-menu-item="profile">
                 {onClickHandler ? (
-                  <LinkComponent onClick={onClickHandler} className={navMenuItemStyles.navParentItem}>
+                  <a onClick={onClickHandler} className={navMenuItemStyles.navParentItem}>
                     <Avatar user={userNoImage} size="xs" rounded="full" />
-                  </LinkComponent>
+                  </a>
                 ) : (
                   <LinkComponent href="/" className={navMenuItemStyles.navParentItem}>
                     <Avatar user={userNoImage} size="xs" rounded="full" />
@@ -100,9 +100,9 @@ export const NavAside = ({
           ) : (
             <li>
               {onClickHandler ? (
-                <LinkComponent onClick={onClickHandler} className={styles.listItemLink}>
+                <a onClick={onClickHandler} className={styles.listItemLink}>
                   Logout
-                </LinkComponent>
+                </a>
               ) : (
                 <LinkComponent href="/" className={styles.listItemLink}>
                   Logout
