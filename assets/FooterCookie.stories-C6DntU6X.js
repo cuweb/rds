@@ -1,0 +1,3 @@
+import{j as a}from"./jsx-runtime-CKrituN3.js";import{F as s}from"./FooterCookie--ZXBeUQ3.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";import"./Button-DZIOirHR.js";import"./Icon-DPQQEofx.js";import"./optionClasses-nRtJeGr9.js";import"./ChevronDownIcon-DCf8Nrl_.js";const f={title:"Components/Footers/Cookie",component:s,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},o=()=>a.jsx(s,{});o.storyName="Default FooterCookie Banner";var r,t,e;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`() => {
+  return <FooterCookie />;
+}`,...(e=(t=o.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const F=["Default"];export{o as Default,F as __namedExportsOrder,f as default};
