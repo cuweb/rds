@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
-import { Listing } from '../../Listing/Listing'
 import { ListingEventLoader } from './ListingEventLoader'
 import { ListingNewsLoader } from './ListingNewsLoader'
 import { ListingIconLoader } from './ListingIconLoader'
