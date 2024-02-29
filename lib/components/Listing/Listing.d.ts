@@ -14,7 +14,7 @@ export declare const Listing: (({ children, useArrow }: ListingProps) => import(
         displayName: string;
     };
     Header: {
-        ({ children, as, date }: import("./ListingHeader").ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, as, date, datePrefix, datePosition }: import("./ListingHeader").ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Excerpt: {
