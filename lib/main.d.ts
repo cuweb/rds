@@ -37,6 +37,7 @@ export { WideImage } from './components/WideImage/WideImage';
 export { CardEventLoader } from './components/Loaders/CardLoader/CardEventLoader';
 export { CardIconLoader } from './components/Loaders/CardLoader/CardIconLoader';
 export { CardNewsLoader } from './components/Loaders/CardLoader/CardNewsLoader';
+export { CardPageLoader } from './components/Loaders/CardLoader/CardPageLoader';
 export { CardPeopleLoader } from './components/Loaders/CardLoader/CardPeopleLoader';
 export { CardVideoLoader } from './components/Loaders/CardLoader/CardVideoLoader';
 export { EventLoader } from './components/Loaders/EventLoader/EventLoader';
