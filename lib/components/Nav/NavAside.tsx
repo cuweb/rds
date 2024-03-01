@@ -6,7 +6,7 @@ import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 
 export const styles = {
-  listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red cursor-pointer`,
+  listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red-700 cursor-pointer`,
 }
 
 export interface NavAsideProps {
