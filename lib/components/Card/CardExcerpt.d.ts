@@ -1,5 +1,5 @@
 export interface CardExcerptProps {
-    text: string;
+    text?: string;
     hasMore?: boolean;
 }
 export declare const CardExcerpt: {
