@@ -20,7 +20,7 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
             alt="Logo"
           />
           <img
-            className="w-[30px] h-[38px] shrink-0 block md:hidden"
+            className="w-[30px] h-[38px] shrink-0 md:hidden"
             src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
             width="30"
             height="38"
