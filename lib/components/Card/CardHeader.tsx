@@ -6,12 +6,6 @@ export interface CardHeaderProps {
   datePosition?: 'top' | 'bottom'
 }
 
-export const headerStyles = {
-  base: ``,
-  header: ``,
-  date: ``,
-}
-
 export const CardHeader = ({ children, as = 'h2', date, datePrefix, datePosition = 'top' }: CardHeaderProps) => {
   const HeaderComponent = as
   const formattedDate = date

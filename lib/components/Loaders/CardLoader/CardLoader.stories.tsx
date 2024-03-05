@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../../../layouts/Column/Column'
 import { CardEventLoader } from './CardEventLoader'
 import { CardIconLoader } from './CardIconLoader'
+import { CardPageLoader } from './CardPageLoader'
 import { CardNewsLoader } from './CardNewsLoader'
 import { CardPageLoader } from './CardPageLoader'
 import { CardPeopleLoader } from './CardPeopleLoader'
@@ -46,6 +47,11 @@ export const Event: Story = {
 export const Icon: Story = {
   name: 'Icon Card',
   render: () => <CardIconLoader />,
+}
+
+export const Page: Story = {
+  name: 'Page Card',
+  render: () => <CardPageLoader />,
 }
 
 export const People: Story = {

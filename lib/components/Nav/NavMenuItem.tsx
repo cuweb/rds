@@ -22,7 +22,7 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
   return (
     <span className={navMenuItemStyles.navItemWrapper} data-menu-item={convertToSlug(id)} aria-expanded="false">
       {menuItem.onClickHandler ? (
-        <LinkComponent
+        <a
           onClick={menuItem.onClickHandler}
           className={
             (menuItem.submenu && !isInnerSubMenu
@@ -47,7 +47,7 @@ export const NavMenuItem = ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuIte
           ) : (
             <></>
           )}
-        </LinkComponent>
+        </a>
       ) : (
         <LinkComponent
           href={menuItem.href}
