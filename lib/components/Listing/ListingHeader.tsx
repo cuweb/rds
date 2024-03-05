@@ -2,17 +2,13 @@ export interface ListingHeaderProps {
   children: React.ReactNode
   as?: 'h2' | 'h3'
   date?: string | Date
+  datePrefix?: string
+  datePosition?: 'top' | 'bottom'
 }
 
-export const headerStyles = {
-  base: ``,
-  header: ``,
-  date: ``,
-}
-
-export const ListingHeader = ({ children, as = 'h2', date }: ListingHeaderProps) => {
+export const ListingHeader = ({ children, as = 'h2', date, datePrefix, datePosition = 'top' }: ListingHeaderProps) => {
   const HeaderComponent = as
-  const formatedDate = date
+  const formattedDate = date
     ? new Date(date).toLocaleString('en-US', {
         month: 'long',
         day: '2-digit',
@@ -22,10 +18,23 @@ export const ListingHeader = ({ children, as = 'h2', date }: ListingHeaderProps)
 
   return (
     <header>
-      {date && <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">{formatedDate}</time>}
+      {date && datePosition === 'top' && (
+        <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">
+          {datePrefix && `${datePrefix} `}
+          {formattedDate}
+        </time>
+      )}
+
       <HeaderComponent className="text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
         {children}
       </HeaderComponent>
+
+      {date && datePosition === 'bottom' && (
+        <time className="block mt-2 italic text-sm text-cu-black-600 @sm:md:text-base">
+          {datePrefix && `${datePrefix} `}
+          {formattedDate}
+        </time>
+      )}
     </header>
   )
 }
