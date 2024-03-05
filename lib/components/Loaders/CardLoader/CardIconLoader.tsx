@@ -2,7 +2,7 @@ import { Card } from '../../Card/Card'
 
 export const CardIconLoader = () => {
   return (
-    <Card>
+    <Card hasShadow="onCard">
       <div className="animate-pulse">
         <div className="p-6 space-y-3">
           <span className="block w-1/6 h-16 rounded-md bg-cu-black-100"></span>

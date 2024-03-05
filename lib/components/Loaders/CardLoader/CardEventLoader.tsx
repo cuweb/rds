@@ -2,7 +2,7 @@ import { Card } from '../../Card/Card'
 
 export const CardEventLoader = () => {
   return (
-    <Card>
+    <Card hasShadow="onCard">
       <div className="animate-pulse">
         <span className="block w-full rounded-t-lg h-60 bg-cu-black-100"></span>
         <span className="z-10 flex flex-col items-center justify-center w-20 h-20 mx-6 mb-2 -mt-10 bg-white rounded-md"></span>
