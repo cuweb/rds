@@ -4,6 +4,7 @@ import { Column } from '../../../layouts/Column/Column'
 import { CardEventLoader } from './CardEventLoader'
 import { CardIconLoader } from './CardIconLoader'
 import { CardNewsLoader } from './CardNewsLoader'
+import { CardPageLoader } from './CardPageLoader'
 import { CardPeopleLoader } from './CardPeopleLoader'
 import { CardVideoLoader } from './CardVideoLoader'
 
@@ -21,10 +22,15 @@ const meta: Meta<typeof CardNewsLoader> = {
 export default meta
 type Story = StoryObj<typeof CardNewsLoader>
 
-export const Default: Story = {}
+// export const Default: Story = {}
 
-Default.args = {
-  children: 'CardNewsLoader component',
+// Default.args = {
+//   children: 'CardPageLoader component',
+// }
+
+export const Page: Story = {
+  name: 'Page Card',
+  render: () => <CardPageLoader />,
 }
 
 export const News: Story = {
