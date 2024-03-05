@@ -10,11 +10,11 @@ export const ListingPeopleLoader = () => {
               <span className="block w-full h-full rounded-md bg-cu-black-100"></span>
             </div>
             <div className="flex flex-col flex-1 gap-3">
-              <span className="block w-56 h-6 rounded-md bg-cu-black-100"></span>
-              <span className="block w-64 h-6 rounded-md bg-cu-black-100"></span>
-              <span className="block h-4 rounded-md w-52 bg-cu-black-100"></span>
-              <span className="block w-32 h-4 mb-2 rounded-md bg-cu-black-100"></span>
-              <span className="block h-12 mt-auto rounded-md w-28 bg-cu-black-100"></span>
+              <div className="block w-full h-8 rounded-md max-w-80 bg-cu-black-100 item-center"></div>
+              <div className="block w-full h-4 rounded-md max-w-44 bg-cu-black-100"></div>
+              <div className="block w-full h-4 rounded-md max-w-52 bg-cu-black-100"></div>
+              <div className="block w-full h-4 rounded-md max-w-36 bg-cu-black-100"></div>
+              <div className="block w-full h-12 rounded-md max-w-36 bg-cu-black-100"></div>
             </div>
           </div>
         </div>

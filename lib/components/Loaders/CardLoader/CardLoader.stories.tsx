@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../../../layouts/Column/Column'
 import { CardEventLoader } from './CardEventLoader'
 import { CardIconLoader } from './CardIconLoader'
-import { CardPageLoader } from './CardPageLoader'
 import { CardNewsLoader } from './CardNewsLoader'
 import { CardPageLoader } from './CardPageLoader'
 import { CardPeopleLoader } from './CardPeopleLoader'
@@ -22,17 +21,6 @@ const meta: Meta<typeof CardNewsLoader> = {
 
 export default meta
 type Story = StoryObj<typeof CardNewsLoader>
-
-// export const Default: Story = {}
-
-// Default.args = {
-//   children: 'CardPageLoader component',
-// }
-
-export const Page: Story = {
-  name: 'Page Card',
-  render: () => <CardPageLoader />,
-}
 
 export const News: Story = {
   name: 'News Card',
