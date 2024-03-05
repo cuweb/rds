@@ -5,6 +5,7 @@ import { ListingEventLoader } from './ListingEventLoader'
 import { ListingNewsLoader } from './ListingNewsLoader'
 import { ListingIconLoader } from './ListingIconLoader'
 import { ListingPeopleLoader } from './ListingPeopleLoader'
+import { ListingLoader } from './ListingLoader'
 
 const meta: Meta<typeof ListingNewsLoader> = {
   title: 'Components/Load Screens/Listing Loader',
@@ -23,7 +24,7 @@ type Story = StoryObj<typeof ListingNewsLoader>
 export const Default: Story = {
   render: () => (
     <StackedList cols="1" hasShadow>
-      <ListingNewsLoader />
+      <ListingLoader />
     </StackedList>
   ),
 }
@@ -31,8 +32,7 @@ export const Default: Story = {
 export const Event: Story = {
   name: 'Event Listing',
   render: () => (
-    <StackedList cols="2" hasShadow>
-      <ListingEventLoader />
+    <StackedList cols="1" hasShadow>
       <ListingEventLoader />
     </StackedList>
   ),
@@ -41,8 +41,7 @@ export const Event: Story = {
 export const Icon: Story = {
   name: 'Icon Listing',
   render: () => (
-    <StackedList cols="2" hasShadow>
-      <ListingIconLoader />
+    <StackedList cols="1" hasShadow>
       <ListingIconLoader />
     </StackedList>
   ),
@@ -51,8 +50,7 @@ export const Icon: Story = {
 export const News: Story = {
   name: 'News Listing',
   render: () => (
-    <StackedList cols="2" hasShadow>
-      <ListingNewsLoader />
+    <StackedList cols="1" hasShadow>
       <ListingNewsLoader />
     </StackedList>
   ),
@@ -61,8 +59,7 @@ export const News: Story = {
 export const People: Story = {
   name: 'People Listing',
   render: () => (
-    <StackedList cols="2" hasShadow>
-      <ListingPeopleLoader />
+    <StackedList cols="1" hasShadow>
       <ListingPeopleLoader />
     </StackedList>
   ),
