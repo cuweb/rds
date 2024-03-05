@@ -4,7 +4,7 @@ import priorityPlus from 'priority-plus'
 
 const menuPriority = () => {
   // Initialize the navigation
-  const navElement = document.querySelector('.cu-nav__menu') as HTMLElement
+  const navElement = document.querySelector('.cu-nav__menu:not(.p-plus__primary)') as HTMLElement
 
   // If there's no navigation element, we don't need to run the rest of the script
   if (navElement) {

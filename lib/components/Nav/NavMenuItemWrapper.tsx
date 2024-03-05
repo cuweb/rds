@@ -11,7 +11,10 @@ interface NavMenuItemWrapperProps {
 
 export const NavMenuItemWrapper = ({ menuItem, isSubMenu, isInnerSubMenu }: NavMenuItemWrapperProps) => {
   return (
-    <li className={isSubMenu ? NavMenuItemWrapperStyles.subMenuWrapper : NavMenuItemWrapperStyles.menuWrapper}>
+    <li
+      key={menuItem.title}
+      className={isSubMenu ? NavMenuItemWrapperStyles.subMenuWrapper : NavMenuItemWrapperStyles.menuWrapper}
+    >
       <NavMenuItem menuItem={menuItem} isSubMenu={isSubMenu} isInnerSubMenu={isInnerSubMenu} id={menuItem.title} />
       {menuItem.submenu ? (
         <NavSubMenu submenu={menuItem.submenu} isSubMenu={true} isInnerSubMenu={isInnerSubMenu} id={menuItem.title} />

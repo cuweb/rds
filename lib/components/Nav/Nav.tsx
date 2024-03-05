@@ -4,7 +4,6 @@ import { NavAside } from './NavAside'
 import { NavPrimary } from './NavPrimary'
 import { NavSecondary } from './NavSecondary'
 import { NavMenu } from './NavMenu'
-import menuPriority from './priorityPlus'
 import setupMenuToggle from './navToggles'
 import scrollingNav from './scrollingNav'
 
@@ -15,7 +14,6 @@ export interface NavWrapperProps {
 
 export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
   useEffect(() => {
-    menuPriority()
     setupMenuToggle()
     scrollingNav()
   }, [])
