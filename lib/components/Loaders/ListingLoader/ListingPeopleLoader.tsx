@@ -5,7 +5,7 @@ export const ListingPeopleLoader = () => {
     <Listing>
       <Listing.Body>
         <div className="animate-pulse">
-          <div className="flex flex-col @lg:md:flex-row gap-5 @lg:md:gap-7 h-full">
+          <div className="flex flex-col @lg:md:flex-row gap-5 h-full">
             <div className="flex-none max-w-[45%] @xl:md:max-w-[25%] aspect-[4/2.7]">
               <span className="block w-full h-full rounded-md bg-cu-black-100"></span>
             </div>

@@ -5,8 +5,8 @@ export const ListingIconLoader = () => {
     <Listing>
       <Listing.Body>
         <div className="animate-pulse">
-          <div className="flex flex-wrap">
-            <div className="flex-none w-24 pb-4">
+          <div className="flex flex-wrap gap-5">
+            <div className="flex-none w-20 pb-4">
               <span className="block w-20 h-20 rounded-md bg-cu-black-100"></span>
             </div>
             <div className="grid flex-auto w-64 gap-3">
