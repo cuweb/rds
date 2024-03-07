@@ -6,9 +6,7 @@ export const ListingEventLoader = () => {
       <Listing.Body>
         <div className="animate-pulse">
           <div className="flex flex-wrap gap-5">
-            <div className="flex-none pb-4 w-20 @4xl:lg:w-32">
-              <span className="block rounded-md w-20 h-20 @4xl:lg:h-32 @4xl:lg:w-32 bg-cu-black-100"></span>
-            </div>
+            <span className="h-36 w-36 @4xl:lg:h-32 @4xl:lg:w-32 rounded-md bg-cu-black-100"></span>
             <div className="grid flex-auto w-64 gap-3">
               <span className="block h-8 rounded-md w-52 bg-cu-black-100"></span>
               <span className="block h-6 rounded-md w-36 bg-cu-black-100"></span>
