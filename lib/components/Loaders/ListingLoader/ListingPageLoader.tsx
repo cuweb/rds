@@ -1,6 +1,6 @@
 import { Listing } from '../../Listing/Listing'
 
-export const ListingLoader = () => {
+export const ListingPageLoader = () => {
   return (
     <Listing>
       <Listing.Body>
