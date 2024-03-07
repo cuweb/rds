@@ -25,6 +25,10 @@ export declare const Card: (({ children, isCenter, noHover, hasShadow, hasRedBor
         ({ children, isSquare }: import("./CardImageThumb").CardImageThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    Initials: {
+        ({ initials }: import("./CardInitials").CardInitialsProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
     Video: {
         ({ source }: import("./CardVideo").CardVideoProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
