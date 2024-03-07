@@ -23,32 +23,32 @@ export default meta
 type Story = StoryObj<typeof CardNewsLoader>
 
 export const News: Story = {
-  name: 'News Card',
+  name: 'News Card Loader',
   render: () => <CardNewsLoader />,
 }
 
 export const Event: Story = {
-  name: 'Event Card',
+  name: 'Event Card Loader',
   render: () => <CardEventLoader />,
 }
 
 export const Icon: Story = {
-  name: 'Icon Card',
+  name: 'Icon Card Loader',
   render: () => <CardIconLoader />,
 }
 
 export const Page: Story = {
-  name: 'Page Card',
+  name: 'Page Card Loader',
   render: () => <CardPageLoader />,
 }
 
 export const People: Story = {
-  name: 'People Card',
+  name: 'People Card Loader',
   render: () => <CardPeopleLoader />,
 }
 
 export const Video: Story = {
-  name: 'Video Card',
+  name: 'Video Card Loader',
   render: () => <CardVideoLoader />,
 }
 
