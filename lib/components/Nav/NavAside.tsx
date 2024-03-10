@@ -90,9 +90,9 @@ export const NavAside = ({
                     <Avatar user={userNoImage} size="xs" rounded="full" />
                   </a>
                 ) : (
-                  <LinkComponent href="/" className={navMenuItemStyles.navParentItem}>
+                  <div className={navMenuItemStyles.navParentItem}>
                     <Avatar user={userNoImage} size="xs" rounded="full" />
-                  </LinkComponent>
+                  </div>
                 )}
               </span>
               <NavSubMenu submenu={LoggedMenu} isSubMenu={true} isInnerSubMenu={false} id="profile" />
