@@ -16,7 +16,7 @@ const Toaster = ({ children }: PropsWithChildren) => {
   return (
     <div
       aria-live="assertive"
-      className="not-prose pointer-events-none fixed inset-0 top-20 z-40 flex items-end px-4 py-6 sm:items-start sm:p-6"
+      className="not-prose pointer-events-none z-[100] fixed top-16 bottom-0 left-0 right-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
     >
       <div className="flex w-full flex-col items-center space-y-4 sm:items-end">{children}</div>
     </div>
