@@ -1,9 +1,8 @@
 export const styles = {
-  table: `not-prose min-w-full border-collapse overflow-hidden rounded-lg`,
-  shadow: `shadow-lg`,
-  border: `border border-cu-black-300/50`,
-  thead: `bg-cu-black-50 font-semibold text-cu-black-900 border-b border-cu-black-300/50`,
-  tbody: `divide-y divide-cu-black-300/50 bg-white`,
-  td: `px-4 py-3.5 text-sm text-cu-black-600`,
-  striped: `odd:bg-white even:bg-cu-black-50/50 border-none`,
+  tableGlobal: `p-3 md:p-4 text-left align-text-top`,
+  tableHeaderRow: `font-semibold text-sm md:text-base`,
+  tableBodyRow: `text-sm md:text-base`,
+  borders: `border-b border-cu-black-100 last:border-none`,
+  striped: `odd:bg-white even:bg-cu-black-25`,
+  cellWidth: `min-w-48`,
 }
