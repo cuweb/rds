@@ -1,5 +1,5 @@
-import { styles } from './Table.Styles'
 import { ColumnDefinitionType } from './Table'
+import { styles } from './Table.Styles'
 
 type TableRowsProps = {
   data: {
@@ -7,27 +7,32 @@ type TableRowsProps = {
   }[]
   columns: ColumnDefinitionType[]
   striped: boolean
-  range: number[] // may be used for pagination , need to investigate more
+  range: number[]
 }
 
 const TableRows = ({ data, columns, striped }: TableRowsProps) => {
-  const stripedStyles = striped ? styles.striped : ''
+  const stripedStyles = striped ? `${styles.striped} ${styles.borders}` : styles.borders
 
-  const rows = data.map((row, index) => {
-    return (
-      <tr className={`${stripedStyles}`} key={`row-${index}`}>
-        {columns.map((column, index2) => {
-          return (
-            <td key={`cell-${index2}`} className={`${styles.td}`}>
-              <>{row[column.key]}</>
-            </td>
-          )
-        })}
-      </tr>
-    )
-  })
+  const rows = data.map((row, index) => (
+    <tr className={stripedStyles} key={`row-${index}`}>
+      {columns.map((column, index2) => {
+        // Directly checking and typecasting to string before checking length
+        const cellContent = row[column.key]
+        const isLongText = typeof cellContent === 'string' && cellContent.length > 20
 
-  return <tbody className={styles.tbody}>{rows}</tbody>
+        return (
+          <td
+            key={`cell-${index2}`}
+            className={`${styles.tableGlobal} ${styles.tableBodyRow} ${isLongText ? styles.cellWidth : ''}`}
+          >
+            {cellContent}
+          </td>
+        )
+      })}
+    </tr>
+  ))
+
+  return <tbody>{rows}</tbody>
 }
 
 export default TableRows

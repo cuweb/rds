@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Meta, StoryObj } from '@storybook/react'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
@@ -22,11 +24,9 @@ const tableData = TableData.map((obj) => {
   return {
     ...obj,
     link: (
-      <>
-        <a className="text-cu-red" href={link}>
-          Edit
-        </a>
-      </>
+      <a className="font-semibold text-cu-red" href={link}>
+        Edit
+      </a>
     ),
   }
 })
@@ -47,6 +47,13 @@ const columns: ColumnDefinitionType[] = [
     },
   },
   {
+    key: 'description' as never,
+    header: 'Description',
+    sort: {
+      sortable: false,
+    },
+  },
+  {
     key: 'link' as never,
     header: 'Edit',
     sort: {
@@ -60,7 +67,6 @@ Default.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasBorder: false,
   hasShadow: false,
 }
 
@@ -69,7 +75,6 @@ WithStripes.args = {
   data: tableData,
   columns: columns,
   hasStripes: true,
-  hasBorder: false,
   hasShadow: false,
 }
 
@@ -78,25 +83,6 @@ WithShadow.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasBorder: false,
-  hasShadow: true,
-}
-
-export const WithBorder: Story = {}
-WithBorder.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: true,
-  hasBorder: true,
-  hasShadow: false,
-}
-
-export const ShadowAndBorder: Story = {}
-ShadowAndBorder.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: true,
-  hasBorder: true,
   hasShadow: true,
 }
 
@@ -105,8 +91,7 @@ WithRangeOne.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasBorder: false,
-  hasShadow: false,
+  hasShadow: true,
   range: [1, 3],
 }
 
@@ -115,7 +100,6 @@ WithRangeTwo.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasBorder: false,
-  hasShadow: false,
+  hasShadow: true,
   range: [4, 5],
 }
