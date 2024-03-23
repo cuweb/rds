@@ -33,5 +33,5 @@ interface FooterSimpleProps {
     socialLinks?: SocialLinks[];
     footerButtons?: FooterButtons[];
 }
-export declare const FooterSimple: ({ deptName, deptUrl, buildingName, officeNumber, primaryTitle, primaryLinks, secondaryTitle, secondaryLinks, socialLinks, footerButtons, }: FooterSimpleProps) => import("react/jsx-runtime").JSX.Element;
+export declare const FooterSimple: ({ deptName, deptUrl, buildingName, officeNumber, primaryTitle, primaryLinks, secondaryTitle, secondaryLinks, socialLinks, footerButtons, }: FooterSimpleProps) => import('../../../../node_modules/react/jsx-runtime').JSX.Element;
 export {};

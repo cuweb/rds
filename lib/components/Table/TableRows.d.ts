@@ -8,5 +8,5 @@ type TableRowsProps = {
     striped: boolean;
     range: number[];
 };
-declare const TableRows: ({ data, columns, striped }: TableRowsProps) => import("react/jsx-runtime").JSX.Element;
+declare const TableRows: ({ data, columns, striped }: TableRowsProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default TableRows;

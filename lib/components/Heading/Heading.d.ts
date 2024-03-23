@@ -4,4 +4,4 @@ export interface HeadingProps {
     isCenter?: boolean;
     maxWidth?: 'full' | '5xl' | '7xl';
 }
-export declare const Heading: ({ text, intro, isCenter, maxWidth }: HeadingProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Heading: ({ text, intro, isCenter, maxWidth }: HeadingProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;

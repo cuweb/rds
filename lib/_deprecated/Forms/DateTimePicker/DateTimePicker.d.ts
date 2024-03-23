@@ -5,4 +5,4 @@ export interface PickerProps {
     startDate?: string;
     endDate?: string;
 }
-export declare const DateTimePicker: ({ startDate, endDate, label, condition, ...props }: PickerProps & FieldHookConfig<string>) => import("react/jsx-runtime").JSX.Element;
+export declare const DateTimePicker: ({ startDate, endDate, label, condition, ...props }: PickerProps & FieldHookConfig<string>) => import('../../../../node_modules/react/jsx-runtime').JSX.Element;

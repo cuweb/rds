@@ -3,6 +3,6 @@ export interface ListingExcerptProps {
     hasMore?: boolean;
 }
 export declare const ListingExcerpt: {
-    ({ text, hasMore }: ListingExcerptProps): import("react/jsx-runtime").JSX.Element;
+    ({ text, hasMore }: ListingExcerptProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

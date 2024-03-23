@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface PanelProps {
     children: React.ReactNode;
     maxWidth?: 'full' | '5xl' | '7xl';
@@ -6,4 +6,4 @@ export interface PanelProps {
     hasShadow?: boolean;
     hasSpacing?: boolean;
 }
-export declare const Panel: ({ children, maxWidth, hasBorder, hasShadow, hasSpacing }: PanelProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Panel: ({ children, maxWidth, hasBorder, hasShadow, hasSpacing }: PanelProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;

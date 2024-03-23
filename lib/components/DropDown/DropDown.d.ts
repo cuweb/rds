@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface DropDownItemProps {
     title: string | React.ReactNode;
     icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
@@ -12,4 +12,4 @@ export interface DropDownProps {
     menuAlign?: 'left' | 'right';
     listItems: DropDownItemProps[];
 }
-export declare const DropDown: ({ children, buttonText, renderAs, listItems, menuAlign }: DropDownProps) => import("react/jsx-runtime").JSX.Element;
+export declare const DropDown: ({ children, buttonText, renderAs, listItems, menuAlign }: DropDownProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;

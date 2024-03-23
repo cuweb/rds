@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export declare const styles: {
     baseBg: string;
     lightBg: string;
@@ -20,10 +20,10 @@ export interface WideImageProps {
     focalPointY?: string;
     isType?: 'light' | 'dark' | 'image';
 }
-export declare const WideImageWrapper: ({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps) => import("react/jsx-runtime").JSX.Element;
-export declare const WideImage: (({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps) => import("react/jsx-runtime").JSX.Element) & {
+export declare const WideImageWrapper: ({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const WideImage: (({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
     Signup: {
-        ({ buttonText }: import("./WideImageSignup").WideImageSignupProps): import("react/jsx-runtime").JSX.Element;
+        ({ buttonText }: import("./WideImageSignup").WideImageSignupProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
     };
 };

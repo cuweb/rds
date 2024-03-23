@@ -1,4 +1,4 @@
-import { ClassAttributes, InputHTMLAttributes } from 'react';
+import { ClassAttributes, InputHTMLAttributes } from '../../../../node_modules/react';
 export interface WYSIWYGProps {
     name: string;
     label?: string;
@@ -7,6 +7,6 @@ export interface WYSIWYGProps {
     placeholder?: string;
 }
 export declare const WYSIWYG: {
-    ({ label, editor, placeholder, ...props }: WYSIWYGProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): import("react/jsx-runtime").JSX.Element;
+    ({ label, editor, placeholder, ...props }: WYSIWYGProps & InputHTMLAttributes<HTMLInputElement> & ClassAttributes<HTMLInputElement>): import('../../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

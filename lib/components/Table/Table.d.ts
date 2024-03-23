@@ -15,4 +15,4 @@ export interface TableProps {
     hasShadow?: boolean;
     range?: number[];
 }
-export declare const Table: ({ data, columns, hasStripes, hasShadow, range }: TableProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Table: ({ data, columns, hasStripes, hasShadow, range }: TableProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface HeroTextImagePeopleProps {
     children?: React.ReactNode;
     designation?: string;
@@ -14,6 +14,6 @@ export interface HeroTextImagePeopleProps {
 }
 export declare const contactInfo: string[];
 export declare const HeroTextImagePeople: {
-    ({ children, designation, title, jobTitle, pronoun, ...contactInfo }: HeroTextImagePeopleProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, designation, title, jobTitle, pronoun, ...contactInfo }: HeroTextImagePeopleProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

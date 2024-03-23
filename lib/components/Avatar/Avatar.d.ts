@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export type ImageType = {
     src: string | undefined;
     alt: string | undefined;
@@ -21,4 +21,4 @@ export interface AvatarProps {
     user: UserInfoType;
     onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
-export declare const Avatar: ({ size, rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Avatar: ({ size, rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;

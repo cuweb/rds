@@ -5,7 +5,7 @@ interface NavMenuItemWrapperProps {
     isInnerSubMenu: boolean;
 }
 export declare const NavMenuItemWrapper: {
-    ({ menuItem, isSubMenu, isInnerSubMenu }: NavMenuItemWrapperProps): import("react/jsx-runtime").JSX.Element;
+    ({ menuItem, isSubMenu, isInnerSubMenu }: NavMenuItemWrapperProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };
 export {};

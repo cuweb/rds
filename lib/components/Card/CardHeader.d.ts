@@ -7,6 +7,6 @@ export interface CardHeaderProps {
     datePosition?: 'top' | 'bottom';
 }
 export declare const CardHeader: {
-    ({ children, as, date, datePrefix, datePosition }: CardHeaderProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, as, date, datePrefix, datePosition }: CardHeaderProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

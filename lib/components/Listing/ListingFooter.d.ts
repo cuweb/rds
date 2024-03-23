@@ -6,6 +6,6 @@ export interface ListingFooterProps {
     buttonStyle?: 'red' | 'white' | 'dark-grey' | 'grey';
 }
 export declare const ListingFooter: {
-    ({ children, isType, buttonType, buttonStyle }: ListingFooterProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isType, buttonType, buttonStyle }: ListingFooterProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

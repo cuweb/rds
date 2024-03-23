@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC } from '../../../node_modules/react';
 export declare const LinkContext: React.Context<string>;
 export interface ILinkProvider {
     type: any;

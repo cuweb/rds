@@ -6,6 +6,6 @@ export interface CardFooterProps {
     buttonStyle?: 'red' | 'white' | 'dark-grey' | 'grey';
 }
 export declare const CardFooter: {
-    ({ children, isType, buttonType, buttonStyle }: CardFooterProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isType, buttonType, buttonStyle }: CardFooterProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

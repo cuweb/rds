@@ -17,6 +17,6 @@ export interface HeroTextImageEventProps {
     contactEmail?: string;
 }
 export declare const HeroTextImageEvent: {
-    ({ title, startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: HeroTextImageEventProps): import("react/jsx-runtime").JSX.Element;
+    ({ title, startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: HeroTextImageEventProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

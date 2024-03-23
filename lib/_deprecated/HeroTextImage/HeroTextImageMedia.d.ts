@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface HeroTextImageMediaProps {
     children?: React.ReactNode;
     image?: string;
@@ -8,6 +8,6 @@ export interface HeroTextImageMediaProps {
     hasMobileImage?: boolean;
 }
 export declare const HeroTextImageMedia: {
-    ({ children, image, angle, focalPointX, focalPointY, hasMobileImage, }: HeroTextImageMediaProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, image, angle, focalPointX, focalPointY, hasMobileImage, }: HeroTextImageMediaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

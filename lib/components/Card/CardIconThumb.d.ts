@@ -4,6 +4,6 @@ export interface CardIconThumbProps {
     hasShadow?: boolean;
 }
 export declare const CardIconThumb: {
-    ({ icon, bgType, hasShadow }: CardIconThumbProps): import("react/jsx-runtime").JSX.Element;
+    ({ icon, bgType, hasShadow }: CardIconThumbProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

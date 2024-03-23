@@ -5,6 +5,6 @@ export interface HeroTextImageSocialProps {
     facebook?: string;
 }
 export declare const HeroTextImageSocial: {
-    ({ resume, linkedin, twitter, facebook }: HeroTextImageSocialProps): import("react/jsx-runtime").JSX.Element;
+    ({ resume, linkedin, twitter, facebook }: HeroTextImageSocialProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

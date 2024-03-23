@@ -3,5 +3,5 @@ interface TableHeaderProps {
     columns: ColumnDefinitionType[];
     sortData: (a: string, s: boolean) => void;
 }
-declare const TableHeader: ({ columns, sortData }: TableHeaderProps) => import("react/jsx-runtime").JSX.Element;
+declare const TableHeader: ({ columns, sortData }: TableHeaderProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default TableHeader;

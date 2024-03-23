@@ -5,6 +5,6 @@ export interface DescriptionMetaProps {
     useColumns?: boolean;
 }
 export declare const DescriptionMeta: {
-    ({ term, children, useColumns }: DescriptionMetaProps): import("react/jsx-runtime").JSX.Element;
+    ({ term, children, useColumns }: DescriptionMetaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

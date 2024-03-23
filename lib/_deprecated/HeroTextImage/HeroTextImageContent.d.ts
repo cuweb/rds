@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface HeroTextImageContentProps {
     children?: React.ReactNode;
     title: string;
@@ -8,6 +8,6 @@ export interface HeroTextImageContentProps {
     hasMediaCol?: boolean;
 }
 export declare const HeroTextImageContent: {
-    ({ children, title, paragraph, headerType, isCenter, hasMediaCol, }: HeroTextImageContentProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, paragraph, headerType, isCenter, hasMediaCol, }: HeroTextImageContentProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

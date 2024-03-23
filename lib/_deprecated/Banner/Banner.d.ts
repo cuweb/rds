@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface BannerProps {
     children?: React.ReactNode;
     title?: string;
@@ -16,11 +16,11 @@ export interface BannerImgProps {
     imageAlt?: string;
 }
 export declare const Banner: {
-    ({ children, title, paragraph, maxWidth, isType, fontSize, align, hasOverlap, image, imageAlt, }: BannerProps & BannerImgProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, paragraph, maxWidth, isType, fontSize, align, hasOverlap, image, imageAlt, }: BannerProps & BannerImgProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 } & {
     ButtonGroup: {
-        ({ children }: BannerProps): import("react/jsx-runtime").JSX.Element;
+        ({ children }: BannerProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
     };
 };

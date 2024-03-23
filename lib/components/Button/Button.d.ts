@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     title?: string;
     icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
@@ -11,4 +11,4 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     isCenter?: boolean;
     hasDropDown?: boolean;
 }
-export declare const Button: ({ isType, color, title, icon, isSmall, noBreak, hasShadow, isFull, isCenter, hasDropDown, ...rest }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Button: ({ isType, color, title, icon, isSmall, noBreak, hasShadow, isFull, isCenter, hasDropDown, ...rest }: ButtonProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;

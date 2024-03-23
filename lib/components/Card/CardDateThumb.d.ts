@@ -4,6 +4,6 @@ export interface CardDateThumbProps {
     endDate: string;
 }
 export declare const CardDateThumb: {
-    ({ as, startDate, endDate }: CardDateThumbProps): import("react/jsx-runtime").JSX.Element;
+    ({ as, startDate, endDate }: CardDateThumbProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };

@@ -1,1 +1,1 @@
-export declare const EventLoader: () => import("react/jsx-runtime").JSX.Element;
+export declare const EventLoader: () => import('../../../../node_modules/react/jsx-runtime').JSX.Element;

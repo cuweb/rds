@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren } from '../../../../node_modules/react';
 export interface UploadProps {
     label?: string;
     name: string;
@@ -13,7 +13,7 @@ export interface UploadProps {
     condition?: () => boolean;
 }
 export declare const Upload: {
-    ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: PropsWithChildren<UploadProps>): import("react/jsx-runtime").JSX.Element;
+    ({ label, onReset, onUpload, onValidate, setPreview, condition, ...props }: PropsWithChildren<UploadProps>): import('../../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
 };
 export interface UploadFieldProps {

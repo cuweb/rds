@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-CKrituN3.js";const o=({children:e})=>t.jsx("div",{className:"flex flex-wrap gap-5 cu-buttongroup md:flex-1",children:e});o.__docgenInfo={description:"",methods:[],displayName:"ButtonGroup",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""}}};export{o as B};

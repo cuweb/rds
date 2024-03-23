@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../node_modules/react';
 export interface StackedListProps {
     children: React.ReactNode;
     as?: 'ul' | 'div';
@@ -11,4 +11,4 @@ export interface StackedListProps {
     hasBorder?: boolean;
     hasShadow?: boolean;
 }
-export declare const StackedList: ({ children, as, cols, listType, maxWidth, offset, size, hasBorder, hasShadow, header, }: StackedListProps) => import("react/jsx-runtime").JSX.Element;
+export declare const StackedList: ({ children, as, cols, listType, maxWidth, offset, size, hasBorder, hasShadow, header, }: StackedListProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
