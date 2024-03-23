@@ -1,9 +1,8 @@
 export declare const styles: {
-    table: string;
-    shadow: string;
-    border: string;
-    thead: string;
-    tbody: string;
-    td: string;
+    tableGlobal: string;
+    tableHeaderRow: string;
+    tableBodyRow: string;
+    borders: string;
     striped: string;
+    cellWidth: string;
 };
