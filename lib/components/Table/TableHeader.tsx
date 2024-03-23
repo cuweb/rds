@@ -32,7 +32,7 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
       <th
         scope="col"
         key={`headerCell-${index}`}
-        className={`${styles.thead} ${styles.td} ${sortableStyles}`}
+        className={`${styles.tableGlobal} ${styles.tableHeaderRow} ${sortableStyles} ${column.header.length > 20 ? styles.cellWidth : ''}`}
         onClick={() => (column?.sort?.sortable ? handleSortChange(column.key) : undefined)}
         aria-sort={
           column.key === active && ascending
@@ -47,11 +47,11 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
           <div className="flex items-center">
             <div>{column.header}</div>
             {column.key === active && ascending ? (
-              <ChevronDownIcon className="ml-2 inline-block h-4 w-4" />
+              <ChevronDownIcon className="inline-block w-4 h-4 ml-2" />
             ) : column.key === active && !ascending ? (
-              <ChevronUpIcon className="ml-2 inline-block h-4 w-4" />
+              <ChevronUpIcon className="inline-block w-4 h-4 ml-2" />
             ) : (
-              <ChevronUpDownIcon className="ml-2 inline-block h-4 w-4" />
+              <ChevronUpDownIcon className="inline-block w-4 h-4 ml-2" />
             )}
           </div>
         ) : (
@@ -61,11 +61,7 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
     )
   })
 
-  return (
-    <thead className={styles.thead}>
-      <tr>{headers}</tr>
-    </thead>
-  )
+  return <thead className="border-b border-cu-black-200 bg-cu-black-50">{headers}</thead>
 }
 
 export default TableHeader
