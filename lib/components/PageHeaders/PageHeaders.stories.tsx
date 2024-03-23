@@ -38,6 +38,14 @@ export const SmallPageHeader: Story = {
   },
 }
 
+export const ExtraSmallPageHeader: Story = {
+  args: {
+    header: 'Extra small page header, no underline',
+    size: 'xs',
+    noUnderline: true,
+  },
+}
+
 export const EventPageHeader: Story = {
   args: {
     header: 'Upcoming Event Header',
