@@ -5,12 +5,14 @@ import { styles } from './Table.Styles'
 
 interface TableHeaderProps {
   columns: ColumnDefinitionType[]
+  noWordBreak: boolean
   sortData: (a: string, s: boolean) => void
 }
 
-const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
+const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
   const [ascending, setAscending] = useState(true)
   const [active, setActive] = useState('')
+  const wordBreakClass = noWordBreak ? 'whitespace-nowrap' : ''
 
   const handleSortChange = (key: string) => {
     const activeColumn = key
@@ -32,7 +34,7 @@ const TableHeader = ({ columns, sortData }: TableHeaderProps) => {
       <th
         scope="col"
         key={`headerCell-${index}`}
-        className={`${styles.tableGlobal} ${styles.tableHeaderRow} ${sortableStyles} ${column.header.length > 20 ? styles.cellWidth : ''}`}
+        className={`${styles.tableGlobal} ${styles.tableHeaderRow} ${sortableStyles} ${wordBreakClass} ${column.header.length > 20 ? styles.cellWidth : ''}`}
         onClick={() => (column?.sort?.sortable ? handleSortChange(column.key) : undefined)}
         aria-sort={
           column.key === active && ascending

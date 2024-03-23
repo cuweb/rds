@@ -15,17 +15,25 @@ export interface TableProps {
   columns: ColumnDefinitionType[]
   hasStripes?: boolean
   hasShadow?: boolean
+  noWordBreak?: boolean
   range?: number[]
 }
 
-export const Table = ({ data, columns, hasStripes = false, hasShadow, range = [1, -1] }: TableProps) => {
+export const Table = ({
+  data,
+  columns,
+  hasShadow = false,
+  hasStripes = false,
+  noWordBreak = false,
+  range = [1, -1],
+}: TableProps) => {
   const [tableData, setTableData] = useSortableTable(data)
   const shadowStyle = hasShadow ? 'shadow-lg' : ''
 
   return (
     <div className={`not-prose overflow-x-auto rounded-lg ${shadowStyle}`}>
       <table className="min-w-full table-auto cu-table">
-        <TableHeader columns={columns} sortData={setTableData} />
+        <TableHeader columns={columns} noWordBreak={noWordBreak} sortData={setTableData} />
         <TableRows data={tableData} columns={columns} striped={hasStripes} range={range} />
       </table>
     </div>
