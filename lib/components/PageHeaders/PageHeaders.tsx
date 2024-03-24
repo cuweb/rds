@@ -4,8 +4,9 @@ import { PageHeadersEvent } from './PageHeadersEvent'
 
 export interface PageHeadersProps {
   children?: React.ReactNode
-  header: string
   as?: 'h1' | 'h2' | 'h3'
+  header: string
+  content?: string
   size?: 'xs' | 'sm' | 'md' | 'lg'
   pronoun?: string
   noUnderline?: boolean
@@ -20,8 +21,9 @@ const headerSize = {
 
 export const PageHeadersWrapper = ({
   children,
-  header,
   as = 'h1',
+  header,
+  content,
   size = 'lg',
   noUnderline = false,
   pronoun,
@@ -31,26 +33,33 @@ export const PageHeadersWrapper = ({
   // Set spacing for header with underline
   let headerPadding
   let headerMargin
+  let contentStyle
+
   switch (size) {
     case 'xs':
       headerPadding = 'pb-4'
-      headerMargin = 'mb-8'
+      headerMargin = 'mb-6'
+      contentStyle = 'prose-md md:prose-lg'
       break
     case 'sm':
       headerPadding = 'pb-5'
-      headerMargin = 'mb-10'
+      headerMargin = 'mb-6'
+      contentStyle = 'prose-md md:prose-lg'
       break
     case 'md':
       headerPadding = 'pb-6'
       headerMargin = 'mb-10'
+      contentStyle = 'prose-lg md:prose-xl'
       break
     case 'lg':
       headerPadding = 'pb-8'
       headerMargin = 'mb-10'
+      contentStyle = 'prose-lg md:prose-xl'
       break
     default:
       headerPadding = 'pb-8'
       headerMargin = 'mb-10'
+      contentStyle = 'prose-lg md:prose-xl'
       break
   }
 
@@ -64,6 +73,7 @@ export const PageHeadersWrapper = ({
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
+      {content && <p className={contentStyle}>{content}</p>}
       {children}
     </>
   )

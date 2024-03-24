@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { PageHeaders } from './PageHeaders'
 import { Figure } from '../Figure/Figure'
@@ -41,6 +42,44 @@ export const SmallPageHeader: Story = {
 export const ExtraSmallPageHeader: Story = {
   args: {
     header: 'Extra small page header, no underline',
+    size: 'xs',
+    noUnderline: true,
+  },
+}
+
+export const DefaultWithContent: Story = {
+  args: {
+    header: 'Large header with content',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
+    size: 'lg',
+    as: 'h1',
+  },
+}
+
+export const MediumWithContent: Story = {
+  args: {
+    header: 'Medium header with content',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
+    size: 'md',
+  },
+}
+
+export const SmallWithContent: Story = {
+  args: {
+    header: 'Small header with content',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
+    size: 'sm',
+  },
+}
+
+export const ExtraSmallWithContent: Story = {
+  args: {
+    header: 'Extra small header with content, no underline',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
     size: 'xs',
     noUnderline: true,
   },
