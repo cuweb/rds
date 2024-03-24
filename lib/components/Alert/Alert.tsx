@@ -52,7 +52,7 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
       })}
       <div className={`${textSize == 'large' ? 'mt-0.5' : ''} ml-3 space-y-2 w-full`}>
         <p className={`${alertTextSize} ${AlertTypes[type].alertHeading} my-0 font-semibold`}>{title}</p>
-        <p className={`${alertTextSize} ${AlertTypes[type].alertSubhead}`}>{content}</p>
+        {content && <p className={`${alertTextSize} ${AlertTypes[type].alertSubhead}`}>{content}</p>}
       </div>
     </div>
   )
