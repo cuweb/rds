@@ -63,7 +63,11 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
     )
   })
 
-  return <thead className="border-b border-cu-black-200 bg-cu-black-50">{headers}</thead>
+  return (
+    <thead className="border-b border-cu-black-200 bg-cu-black-50">
+      <tr>{headers}</tr>
+    </thead>
+  )
 }
 
 export default TableHeader
