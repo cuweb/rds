@@ -35,7 +35,7 @@ export const Badge = ({ children, color = 'grey', noWordBreak = false }: BadgePr
 
   return (
     <p
-      className={`inline-flex px-3 py-1 mr-2 text-xs font-semibold cu-badge not-prose rounded-full last:mr-0 ${badgeColor} ${wordBreakClass}`}
+      className={`inline-flex px-3 py-1 text-xs font-semibold cu-badge not-prose rounded-full ${badgeColor} ${wordBreakClass}`}
     >
       {children}
     </p>
