@@ -1,6 +1,7 @@
 export { Alert } from './components/Alert/Alert';
 export { Avatar } from './components/Avatar/Avatar';
 export { Badge } from './components/Badge/Badge';
+export { BadgeGroup } from './components/BadgeGroup/BadgeGroup';
 export { Button } from './components/Button/Button';
 export { ButtonGroup } from './components/ButtonGroup/ButtonGroup';
 export { Calendar } from './components/Calendar/Calendar';
