@@ -84,15 +84,15 @@ export const NavAside = ({
         {LoggedInUser ? (
           LoggedMenu ? (
             <li className={NavMenuItemWrapperStyles.menuWrapper}>
-              <span className={navMenuItemStyles.navItemWrapper} data-menu-item="profile">
+              <span className={navMenuItemStyles.navItemWrapper} role="navigation" data-menu-item="profile">
                 {onClickHandler ? (
                   <a onClick={onClickHandler} className={navMenuItemStyles.navParentItem}>
                     <Avatar user={userNoImage} size="xs" rounded="full" />
                   </a>
                 ) : (
-                  <div className={navMenuItemStyles.navParentItem}>
+                  <span className={navMenuItemStyles.navParentItem}>
                     <Avatar user={userNoImage} size="xs" rounded="full" />
-                  </div>
+                  </span>
                 )}
               </span>
               <NavSubMenu submenu={LoggedMenu} isSubMenu={true} isInnerSubMenu={false} id="profile" />
