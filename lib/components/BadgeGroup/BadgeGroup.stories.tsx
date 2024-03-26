@@ -23,12 +23,12 @@ export const Primary: Story = {}
 Primary.args = {
   children: (
     <>
+      <Badge color="grey">Grey Badge</Badge>
       <Badge color="green">Green Badge</Badge>
       <Badge color="red">Red Badge</Badge>
       <Badge color="yellow">Yellow Badge</Badge>
       <Badge color="blue">Blue Badge</Badge>
       <Badge color="purple">Purple Badge</Badge>
-      <Badge color="grey">Grey Badge</Badge>
     </>
   ),
 }
