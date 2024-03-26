@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -17,7 +18,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const DescriptionListOptions: Story = {
+export const DescriptionList: Story = {
   render: () => (
     <>
       <Nav>
@@ -66,7 +67,7 @@ export const DescriptionListOptions: Story = {
             <Heading text="Description List: Columns" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
-                <Description.Meta key={id} term={term} useColumns>
+                <Description.Meta key={id} term={term} isSmall hasBorder useColumns>
                   <p>
                     Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
                     voluptatem non.
