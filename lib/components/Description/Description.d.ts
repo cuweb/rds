@@ -9,7 +9,7 @@ export declare const Description: (({ children }: DescriptionProps) => import('.
         displayName: string;
     };
     Meta: {
-        ({ term, children, useColumns }: import("./DescriptionMeta").DescriptionMetaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ term, children, hasBorder, useColumns, isSmall }: import("./DescriptionMeta").DescriptionMetaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
     };
 };

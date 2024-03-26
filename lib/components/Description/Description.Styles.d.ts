@@ -1,6 +1,5 @@
 export declare const styles: {
     base: string;
-    spacing: string;
     accordion: string;
     flexRow: string;
     flexCol: string;
@@ -8,4 +7,8 @@ export declare const styles: {
     chevron: string;
     term: string;
     desc: string;
+    textBase: string;
+    spacingBase: string;
+    textSmall: string;
+    spacingSmall: string;
 };
