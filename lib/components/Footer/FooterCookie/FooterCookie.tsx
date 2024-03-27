@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '../../Button/Button'
 
 export const IsCookieExpired = (cookieName: string) => {
@@ -29,9 +29,12 @@ export const SetCookie = (cookieName: string) => {
 }
 
 export const FooterCookie = () => {
-  const checkCookieExpired = IsCookieExpired('cookieConsent')
+  const [isVisible, setIsVisible] = useState(true)
 
-  const [isVisible, setIsVisible] = useState(checkCookieExpired ? true : false)
+  useEffect(() => {
+    const checkCookieExpired = IsCookieExpired('cookieConsent')
+    setIsVisible(checkCookieExpired ? true : false)
+  }, [])
 
   const handleButtonClick = () => {
     SetCookie('cookieConsent')
