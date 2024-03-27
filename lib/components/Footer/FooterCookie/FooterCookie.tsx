@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '../../Button/Button'
 
 export const IsCookieExpired = (cookieName: string) => {
-  if (document) {
+  if (typeof document !== 'undefined') {
     const cookie = document.cookie.split(';').find((cookie) => cookie.trim().startsWith(cookieName + '='))
 
     if (!cookie) {
@@ -17,7 +17,7 @@ export const IsCookieExpired = (cookieName: string) => {
 }
 
 export const SetCookie = (cookieName: string) => {
-  if (document) {
+  if (typeof document !== 'undefined') {
     const date = new Date()
 
     date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000)
