@@ -43,17 +43,31 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
               ? 'ascending'
               : undefined
         }
-        aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
       >
         {column.sort?.sortable ? (
           <div className="flex items-center">
             <div>{column.header}</div>
             {column.key === active && ascending ? (
-              <ChevronDownIcon className="inline-block w-4 h-4 ml-2" />
+              <button
+                className="block w-4 h-full ml-2"
+                aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by ascending order' : undefined}
+              >
+                <ChevronDownIcon className="inline-block" />
+              </button>
             ) : column.key === active && !ascending ? (
-              <ChevronUpIcon className="inline-block w-4 h-4 ml-2" />
+              <button
+                className="block w-4 h-full ml-2"
+                aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by descending order' : undefined}
+              >
+                <ChevronUpIcon className="inline-block" />
+              </button>
             ) : (
-              <ChevronUpDownIcon className="inline-block w-4 h-4 ml-2" />
+              <button
+                className="block w-4 h-full ml-2"
+                aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
+              >
+                <ChevronUpDownIcon className="inline-block" />
+              </button>
             )}
           </div>
         ) : (
