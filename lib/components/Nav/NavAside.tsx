@@ -84,7 +84,7 @@ export const NavAside = ({
         {LoggedInUser ? (
           LoggedMenu ? (
             <li className={NavMenuItemWrapperStyles.menuWrapper}>
-              <span className={navMenuItemStyles.navItemWrapper} data-menu-item="profile">
+              <div className={navMenuItemStyles.navItemWrapper} role="navigation" data-menu-item="profile">
                 {onClickHandler ? (
                   <a onClick={onClickHandler} className={navMenuItemStyles.navParentItem}>
                     <Avatar user={userNoImage} size="xs" rounded="full" />
@@ -94,7 +94,7 @@ export const NavAside = ({
                     <Avatar user={userNoImage} size="xs" rounded="full" />
                   </div>
                 )}
-              </span>
+              </div>
               <NavSubMenu submenu={LoggedMenu} isSubMenu={true} isInnerSubMenu={false} id="profile" />
             </li>
           ) : (

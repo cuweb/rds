@@ -17,14 +17,14 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
             src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
             width="148"
             height="40"
-            alt="Logo"
+            alt="Carleton University Logo"
           />
           <img
             className="w-[30px] h-[38px] shrink-0 md:hidden"
             src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-shield-color.svg"
             width="30"
             height="38"
-            alt="Logo"
+            alt="Carleton University Logo"
           />
         </a>
       )}
