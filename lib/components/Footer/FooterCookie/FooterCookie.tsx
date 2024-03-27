@@ -1,10 +1,40 @@
 import { useState } from 'react'
 import { Button } from '../../Button/Button'
 
+export const IsCookieExpired = (cookieName: string) => {
+  if (typeof document !== 'undefined') {
+    const cookie = document.cookie.split(';').find((cookie) => cookie.trim().startsWith(cookieName + '='))
+
+    if (!cookie) {
+      return true
+    }
+
+    const cookieValue = cookie.split('=')[1]
+    const expirationDate = new Date(cookieValue)
+    return expirationDate.getTime() <= Date.now()
+  }
+  return true
+}
+
+export const SetCookie = (cookieName: string) => {
+  if (typeof document !== 'undefined') {
+    const date = new Date()
+
+    date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000)
+
+    const expires = '; expires=' + date.toUTCString()
+
+    document.cookie = cookieName + '=true;expires=' + expires + ';path=/'
+  }
+}
+
 export const FooterCookie = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const checkCookieExpired = IsCookieExpired('cookieConsent')
+
+  const [isVisible, setIsVisible] = useState(checkCookieExpired ? true : false)
 
   const handleButtonClick = () => {
+    SetCookie('cookieConsent')
     setIsVisible(false)
   }
 
