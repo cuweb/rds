@@ -8,7 +8,7 @@ export const FooterLogoLinks = () => {
       <img
         className="mx-auto mb-6 h-32 w-auto sm:h-44"
         src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-vertical-outlined.svg"
-        alt="Carleton University logo"
+        alt="Logo of Carleton University"
       />
       <ul className="flex justify-center space-x-4 bg-cu-black-900 text-xs text-gray-400 sm:space-x-6 sm:text-sm">
         <li key="privacy">
