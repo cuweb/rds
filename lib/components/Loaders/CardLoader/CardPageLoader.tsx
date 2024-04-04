@@ -2,7 +2,7 @@ import { Card } from '../../Card/Card'
 
 export const CardPageLoader = () => {
   return (
-    <Card>
+    <Card hasShadow="onCard">
       <div className="animate-pulse">
         <div className="p-6 space-y-3">
           <span className="block w-11/12 h-8 rounded-md bg-cu-black-100"></span>
