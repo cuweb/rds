@@ -4,12 +4,19 @@ export interface PageHeadersProps {
     as?: 'h1' | 'h2' | 'h3';
     header: string;
     content?: string;
-    size?: 'xs' | 'sm' | 'md' | 'lg';
+    size?: keyof typeof headerSize;
+    isCenter?: boolean;
     pronoun?: string;
     noUnderline?: boolean;
 }
-export declare const PageHeadersWrapper: ({ children, as, header, content, size, noUnderline, pronoun, }: PageHeadersProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
-export declare const PageHeaders: (({ children, as, header, content, size, noUnderline, pronoun, }: PageHeadersProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
+declare const headerSize: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+};
+export declare const PageHeadersWrapper: ({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const PageHeaders: (({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
     People: {
         ({ jobTitle, ...restProps }: import("./PageHeadersPeople").PageHeadersPeopleProps & import("./PageHeadersPeople").PageHeadersSocialProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
@@ -19,3 +26,4 @@ export declare const PageHeaders: (({ children, as, header, content, size, noUnd
         displayName: string;
     };
 };
+export {};

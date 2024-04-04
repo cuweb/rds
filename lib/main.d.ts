@@ -15,7 +15,6 @@ export { FooterCookie } from './components/Footer/FooterCookie/FooterCookie';
 export { FooterLogoLinks } from './components/Footer/FooterLogoLinks/FooterLogoLinks';
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard';
 export { Figure } from './components/Figure/Figure';
-export { Heading } from './components/Heading/Heading';
 export { Icon } from './components/Icon/Icon';
 export { LinkProvider } from './components/LinkProvider';
 export { Listing } from './components/Listing/Listing';
