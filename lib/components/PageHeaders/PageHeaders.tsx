@@ -65,6 +65,9 @@ export const PageHeadersWrapper = ({
       break
   }
 
+  // Truncate content if it's longer than 250 characters
+  const truncatedContent = content && content.length > 250 ? `${content.substring(0, 250)}...` : content
+
   const hasUnderline = !noUnderline
     ? `relative after:absolute after:w-10 after:h-px after:bottom-0 after:bg-cu-red ${headerPadding} ${headerMargin}`
     : headerMargin
@@ -81,7 +84,7 @@ export const PageHeadersWrapper = ({
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
-      {content && <p className={`${contentStyle} ${centerText}`}>{content}</p>}
+      {truncatedContent && <p className={`${contentStyle} ${centerText}`}>{truncatedContent}</p>}
       {children}
     </>
   )
