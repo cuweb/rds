@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { DropDown } from './DropDown'
 import { DropDownItemData as listItems } from '../../data/DropDownData'
@@ -28,14 +29,4 @@ export const Default: Story = {
 
 Default.args = {
   buttonText: 'Basic Drop Down',
-}
-
-export const WithButton: Story = {}
-WithButton.args = {
-  children: <Button title="Button Dropdown" />,
-}
-
-export const WithButtonArrow: Story = {}
-WithButtonArrow.args = {
-  children: <Button isSmall title="Button Dropdown" hasDropDown />,
 }
