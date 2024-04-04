@@ -7,7 +7,8 @@ export interface PageHeadersProps {
   as?: 'h1' | 'h2' | 'h3'
   header: string
   content?: string
-  size?: 'xs' | 'sm' | 'md' | 'lg'
+  size?: keyof typeof headerSize
+  isCenter?: boolean
   pronoun?: string
   noUnderline?: boolean
 }
@@ -25,6 +26,7 @@ export const PageHeadersWrapper = ({
   header,
   content,
   size = 'lg',
+  isCenter,
   noUnderline = false,
   pronoun,
 }: PageHeadersProps) => {
@@ -64,16 +66,22 @@ export const PageHeadersWrapper = ({
   }
 
   const hasUnderline = !noUnderline
-    ? `relative after:absolute after:w-10 after:h-px after:bottom-0 after:bg-cu-red after:left-px ${headerPadding} ${headerMargin}`
+    ? `relative after:absolute after:w-10 after:h-px after:bottom-0 after:bg-cu-red ${headerPadding} ${headerMargin}`
     : headerMargin
+
+  const centerText = isCenter ? 'text-center mx-auto' : ''
+  const centerUnderline =
+    isCenter && !noUnderline ? `${hasUnderline} after:left-1/2 after:-ml-5` : `${hasUnderline} after:left-px`
 
   return (
     <>
-      <HeaderComponent className={`${headerSize[size]} font-semibold text-cu-black-700 not-prose ${hasUnderline}`}>
+      <HeaderComponent
+        className={`${headerSize[size]} font-semibold text-cu-black-700 not-prose ${centerText} ${centerUnderline}`}
+      >
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
-      {content && <p className={contentStyle}>{content}</p>}
+      {content && <p className={`${contentStyle} ${centerText}`}>{content}</p>}
       {children}
     </>
   )

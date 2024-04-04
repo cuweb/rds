@@ -4,7 +4,7 @@ import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { Heading } from '../../_deprecated/Heading/Heading'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
