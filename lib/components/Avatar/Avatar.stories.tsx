@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Avatar } from './Avatar'
 
@@ -39,43 +40,11 @@ Default.args = {
   },
 }
 
-export const RoundedCorners: Story = {}
-
-RoundedCorners.args = {
-  user: { ...user },
-  rounded: 'lg',
-  onClick: () => {
-    alert('I am an alert ')
-  },
-}
-
 export const FullCircle: Story = {}
 
 FullCircle.args = {
   user: { ...user },
   rounded: 'full',
-  onClick: () => {
-    alert('I am an alert ')
-  },
-}
-
-export const WithShadow: Story = {}
-
-WithShadow.args = {
-  user: { ...user },
-  rounded: 'lg',
-  hasShadow: true,
-  onClick: () => {
-    alert('I am an alert ')
-  },
-}
-
-export const WithBorder: Story = {}
-
-WithBorder.args = {
-  user: { ...user },
-  rounded: 'lg',
-  borderWidth: '4',
   onClick: () => {
     alert('I am an alert ')
   },
