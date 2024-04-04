@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -5,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Listing } from '../../components/Listing/Listing'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { PeopleData } from '../../data/PeopleData'
@@ -42,7 +43,7 @@ export const PeopleListing: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="People Listings: Default" />
+            <PageHeaders header="People Listings: Default" />
             <StackedList hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
@@ -64,7 +65,7 @@ export const PeopleListing: Story = {
           </Container>
 
           <Container>
-            <Heading text="People Listings: One Column" />
+            <PageHeaders header="People Listings: One Column" />
             <StackedList cols="1" hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
@@ -86,7 +87,7 @@ export const PeopleListing: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Listings: Default with Grey Bg" />
+            <PageHeaders header="People Listings: Default with Grey Bg" />
             <StackedList hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
@@ -108,7 +109,7 @@ export const PeopleListing: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Listings: One Column with Grey Bg" />
+            <PageHeaders header="People Listings: One Column with Grey Bg" />
             <StackedList cols="1" hasShadow>
               {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Listing key={id}>
@@ -129,7 +130,7 @@ export const PeopleListing: Story = {
             </StackedList>
           </Container>
 
-          <Heading text="People Listings: Offset" />
+          <PageHeaders header="People Listings: Offset" />
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.

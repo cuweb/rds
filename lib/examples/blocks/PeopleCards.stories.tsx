@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -5,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Card } from '../../components/Card/Card'
 import { PeopleData } from '../../data/PeopleData'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -42,7 +43,7 @@ export const PeopleCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="People Cards: Default" />
+            <PageHeaders header="People Cards: Default" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} isCenter>
@@ -64,7 +65,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="People Cards: Shadow on Hover" />
+            <PageHeaders header="People Cards: Shadow on Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onHover" isCenter>
@@ -86,7 +87,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="People Cards: Shadow on Static & Hover" />
+            <PageHeaders header="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onCard" isCenter>
@@ -108,7 +109,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="People Cards: Default with Grey Bg" />
+            <PageHeaders header="People Cards: Default with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} isGrey isCenter>
@@ -130,7 +131,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="People Cards: Shadow on Hover with Grey Bg" />
+            <PageHeaders header="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onHover" isGrey isCenter>
@@ -152,7 +153,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onCard" isGrey isCenter>
@@ -174,7 +175,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Cards: Default" />
+            <PageHeaders header="People Cards: Default" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} isCenter>
@@ -196,7 +197,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Cards: Shadow on Hover" />
+            <PageHeaders header="People Cards: Shadow on Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onHover" isCenter>
@@ -218,7 +219,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Cards: Shadow on Static & Hover" />
+            <PageHeaders header="People Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onCard" isCenter>
@@ -240,7 +241,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Cards: Default with Grey Bg" />
+            <PageHeaders header="People Cards: Default with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} isGrey isCenter>
@@ -262,7 +263,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Cards: Shadow on Hover with Grey Bg" />
+            <PageHeaders header="People Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onHover" isGrey isCenter>
@@ -284,7 +285,7 @@ export const PeopleCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="People Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="People Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
                 <Card key={id} hasShadow="onCard" isGrey isCenter>

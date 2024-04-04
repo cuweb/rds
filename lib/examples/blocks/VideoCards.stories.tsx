@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -5,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Card } from '../../components/Card/Card'
 import { VideoData } from '../../data/VideoData'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -42,7 +43,7 @@ export const VideoCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Video Cards: Default" />
+            <PageHeaders header="Video Cards: Default" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noHover>
@@ -54,7 +55,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Video Cards: Shadow on Static" />
+            <PageHeaders header="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noHover hasShadow="onCard">
@@ -66,7 +67,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Video Cards: Default with Grey Bg" />
+            <PageHeaders header="Video Cards: Default with Grey Bg" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noHover>
@@ -78,7 +79,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Video Cards: Shadow on Static" />
+            <PageHeaders header="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noHover hasShadow="onCard">
@@ -90,7 +91,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Video Cards: Default" />
+            <PageHeaders header="Video Cards: Default" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noHover>
@@ -102,7 +103,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Video Cards: Shadow on Static" />
+            <PageHeaders header="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} noHover hasShadow="onCard">
@@ -114,7 +115,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Video Cards: Default with Grey Bg" />
+            <PageHeaders header="Video Cards: Default with Grey Bg" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noHover>
@@ -126,7 +127,7 @@ export const VideoCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Video Cards: Shadow on Static" />
+            <PageHeaders header="Video Cards: Shadow on Static" />
             <Column cols="3">
               {VideoData.slice(0, 3).map(({ id, source, title }) => (
                 <Card key={id} isGrey noHover hasShadow="onCard">

@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -5,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Card } from '../../components/Card/Card'
 import { StatData } from '../../data/StatData'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -42,7 +43,7 @@ export const StatCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Stat Cards: Default" />
+            <PageHeaders header="Stat Cards: Default" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} hasRedBorder noHover>
@@ -53,7 +54,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Stat Cards: Shadow on Static" />
+            <PageHeaders header="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} hasRedBorder noHover hasShadow="onCard">
@@ -64,7 +65,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Stat Cards: Default with Grey Bg" />
+            <PageHeaders header="Stat Cards: Default with Grey Bg" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} isGrey hasRedBorder noHover>
@@ -75,7 +76,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Stat Cards: Shadow on Static" />
+            <PageHeaders header="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} isGrey hasRedBorder noHover hasShadow="onCard">
@@ -86,7 +87,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Stat Cards: Default" />
+            <PageHeaders header="Stat Cards: Default" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} hasRedBorder noHover>
@@ -97,7 +98,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Stat Cards: Shadow on Static" />
+            <PageHeaders header="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} hasRedBorder noHover hasShadow="onCard">
@@ -108,7 +109,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Stat Cards: Default with Grey Bg" />
+            <PageHeaders header="Stat Cards: Default with Grey Bg" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} isGrey hasRedBorder noHover>
@@ -119,7 +120,7 @@ export const StatCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Stat Cards: Shadow on Static" />
+            <PageHeaders header="Stat Cards: Shadow on Static" />
             <Column cols="3">
               {StatData.slice(0, 3).map(({ id, stat, desc }) => (
                 <Card key={id} isGrey hasRedBorder noHover hasShadow="onCard">

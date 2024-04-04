@@ -5,7 +5,7 @@ import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Description } from '../../components/Description/Description'
 import { DescriptionData } from '../../data/DescriptionData'
@@ -42,7 +42,7 @@ export const DescriptionList: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Descripton List: Stacked" />
+            <PageHeaders header="Descripton List: Stacked" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
                 <Description.Meta key={id} term={term}>
@@ -64,7 +64,7 @@ export const DescriptionList: Story = {
           </Container>
 
           <Container>
-            <Heading text="Description List: Columns" />
+            <PageHeaders header="Description List: Columns" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
                 <Description.Meta key={id} term={term} isSmall hasBorder useColumns>
@@ -86,7 +86,7 @@ export const DescriptionList: Story = {
           </Container>
 
           <Container>
-            <Heading text="Description List: Accordion" />
+            <PageHeaders header="Description List: Accordion" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
                 <Description.Accordion key={id} term={term}>
@@ -108,7 +108,7 @@ export const DescriptionList: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Descripton List: Stacked" />
+            <PageHeaders header="Descripton List: Stacked" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
                 <Description.Meta key={id} term={term}>
@@ -130,7 +130,7 @@ export const DescriptionList: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Description List: Columns" />
+            <PageHeaders header="Description List: Columns" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
                 <Description.Meta key={id} term={term} useColumns>
@@ -152,7 +152,7 @@ export const DescriptionList: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Description List: Accordion" />
+            <PageHeaders header="Description List: Accordion" />
             <Description>
               {DescriptionData.map(({ id, term }) => (
                 <Description.Accordion key={id} term={term}>
