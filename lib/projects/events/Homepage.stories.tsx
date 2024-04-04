@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../layouts/Main/Main'
 import { Section } from '../../layouts/Section/Section'
@@ -5,11 +6,9 @@ import { Container } from '../../layouts/Container/Container'
 import { Column } from '../../layouts/Column/Column'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Aside } from '../../layouts/Aside/Aside'
-
 import { Banner } from '../../_deprecated/Banner/Banner'
-
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { FooterBasic } from '../../components/Footer/FooterBasic/FooterBasic'
 import { Card } from '../../components/Card/Card'
 import { Listing } from '../../components/Listing/Listing'
@@ -69,7 +68,7 @@ export const Homepage: Story = {
           </Column>
 
           <Container maxWidth="7xl" isGrey>
-            <Heading text="Upcoming Events" maxWidth="7xl" />
+            <PageHeaders header="Upcoming Events" maxWidth="7xl" />
 
             <Column maxWidth="7xl">
               <Filter filters={dataFilter.filters} callback={() => undefined} sortOptions={dataFilter.sortOptions} />

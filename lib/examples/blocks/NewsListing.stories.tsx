@@ -6,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Listing } from '../../components/Listing/Listing'
 import { NewsData } from '../../data/NewsData'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -43,7 +43,7 @@ export const NewsListing: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="News Listings: Default" />
+            <PageHeaders header="News Listings: Default" />
             <StackedList hasShadow>
               {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
                 <Listing key={id}>
@@ -63,7 +63,7 @@ export const NewsListing: Story = {
           </Container>
 
           <Container>
-            <Heading text="News Listings: One Column" />
+            <PageHeaders header="News Listings: One Column" />
             <StackedList cols="1" hasShadow>
               {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
                 <Listing key={id}>
@@ -83,7 +83,7 @@ export const NewsListing: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Listings: Default with Grey Bg" />
+            <PageHeaders header="News Listings: Default with Grey Bg" />
             <StackedList hasShadow>
               {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
                 <Listing key={id}>
@@ -103,7 +103,7 @@ export const NewsListing: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Listings: One Column with Grey Bg" />
+            <PageHeaders header="News Listings: One Column with Grey Bg" />
             <StackedList cols="1" hasShadow>
               {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
                 <Listing key={id}>
@@ -122,7 +122,7 @@ export const NewsListing: Story = {
             </StackedList>
           </Container>
 
-          <Heading text="News Listings: Offset" />
+          <PageHeaders header="News Listings: Offset" />
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.

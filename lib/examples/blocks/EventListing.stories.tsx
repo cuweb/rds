@@ -6,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Listing } from '../../components/Listing/Listing'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { EventData } from '../../data/EventData'
@@ -43,7 +43,7 @@ export const EventListing: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Event Listings: Default" />
+            <PageHeaders header="Event Listings: Default" />
             <StackedList hasShadow>
               {EventData.slice(0, 4).map(
                 ({
@@ -80,7 +80,7 @@ export const EventListing: Story = {
           </Container>
 
           <Container>
-            <Heading text="Event Listings: One Column" />
+            <PageHeaders header="Event Listings: One Column" />
             <StackedList cols="1" hasShadow>
               {EventData.slice(0, 4).map(
                 ({
@@ -117,7 +117,7 @@ export const EventListing: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Listings: Default with Grey Bg" />
+            <PageHeaders header="Event Listings: Default with Grey Bg" />
             <StackedList hasShadow>
               {EventData.slice(0, 4).map(
                 ({
@@ -154,7 +154,7 @@ export const EventListing: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Listings: One Column with Grey Bg" />
+            <PageHeaders header="Event Listings: One Column with Grey Bg" />
             <StackedList cols="1" hasShadow>
               {EventData.slice(0, 4).map(
                 ({
@@ -190,7 +190,7 @@ export const EventListing: Story = {
             </StackedList>
           </Container>
 
-          <Heading text="Event Listings: Offset" />
+          <PageHeaders header="Event Listings: Offset" />
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.

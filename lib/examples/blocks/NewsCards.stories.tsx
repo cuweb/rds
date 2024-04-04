@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -5,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Card } from '../../components/Card/Card'
 import { NewsData } from '../../data/NewsData'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -42,7 +43,7 @@ export const NewsCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="News Cards: Default" />
+            <PageHeaders header="News Cards: Default" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id}>
@@ -62,7 +63,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="News Cards: Shadow on Hover" />
+            <PageHeaders header="News Cards: Shadow on Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onHover">
@@ -82,7 +83,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="News Cards: Shadow on Static & Hover" />
+            <PageHeaders header="News Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onCard">
@@ -102,7 +103,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="News Cards: Default with Grey Bg" />
+            <PageHeaders header="News Cards: Default with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} isGrey>
@@ -122,7 +123,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="News Cards: Shadow on Hover with Grey Bg" />
+            <PageHeaders header="News Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onHover" isGrey>
@@ -142,7 +143,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="News Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="News Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onCard" isGrey>
@@ -162,7 +163,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Cards: Default" />
+            <PageHeaders header="News Cards: Default" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id}>
@@ -182,7 +183,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Cards: Shadow on Hover" />
+            <PageHeaders header="News Cards: Shadow on Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onHover">
@@ -202,7 +203,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Cards: Shadow on Static & Hover" />
+            <PageHeaders header="News Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onCard">
@@ -222,7 +223,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Cards: Default with Grey Bg" />
+            <PageHeaders header="News Cards: Default with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} isGrey>
@@ -242,7 +243,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Cards: Shadow on Hover with Grey Bg" />
+            <PageHeaders header="News Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onHover" isGrey>
@@ -262,7 +263,7 @@ export const NewsCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="News Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="News Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 3).map(({ id, link, image, alt, date, title }) => (
                 <Card key={id} hasShadow="onCard" isGrey>

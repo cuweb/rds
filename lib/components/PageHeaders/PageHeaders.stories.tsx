@@ -25,25 +25,33 @@ Default.args = {
   as: 'h1',
 }
 
+export const PageHeaderCentre: Story = {
+  args: {
+    header: 'Page header centre',
+    size: 'lg',
+    as: 'h1',
+    isCenter: true,
+  },
+}
+
 export const MediumPageHeader: Story = {
   args: {
-    header: 'Medium page header',
+    header: 'Medium size',
     size: 'md',
   },
 }
 
 export const SmallPageHeader: Story = {
   args: {
-    header: 'Small page header',
+    header: 'Small size',
     size: 'sm',
   },
 }
 
 export const ExtraSmallPageHeader: Story = {
   args: {
-    header: 'Extra small page header, no underline',
+    header: 'Extra small page header',
     size: 'xs',
-    noUnderline: true,
   },
 }
 
@@ -54,6 +62,17 @@ export const DefaultWithContent: Story = {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
     size: 'lg',
     as: 'h1',
+  },
+}
+
+export const CenterWithContent: Story = {
+  args: {
+    header: 'Large center header with content',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
+    size: 'lg',
+    as: 'h1',
+    isCenter: true,
   },
 }
 

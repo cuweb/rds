@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -5,7 +6,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Card } from '../../components/Card/Card'
 import { EventData } from '../../data/EventData'
 import { TextImage } from '../../components/TextImage/TextImage'
@@ -42,7 +43,7 @@ export const EventCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Event Cards: Default" />
+            <PageHeaders header="Event Cards: Default" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -84,7 +85,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Event Cards: Shadow on Hover" />
+            <PageHeaders header="Event Cards: Shadow on Hover" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -126,7 +127,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Event Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Event Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -168,7 +169,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Event Cards: Default with Grey Bg" />
+            <PageHeaders header="Event Cards: Default with Grey Bg" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -210,7 +211,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Event Cards: Shadow on Hover with Grey Bg" />
+            <PageHeaders header="Event Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -252,7 +253,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Event Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="Event Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -294,7 +295,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Cards: Default" />
+            <PageHeaders header="Event Cards: Default" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -336,7 +337,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Cards: Shadow on Hover" />
+            <PageHeaders header="Event Cards: Shadow on Hover" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -378,7 +379,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Event Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -420,7 +421,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Cards: Default with Grey Bg" />
+            <PageHeaders header="Event Cards: Default with Grey Bg" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -462,7 +463,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Cards: Shadow on Hover with Grey Bg" />
+            <PageHeaders header="Event Cards: Shadow on Hover with Grey Bg" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({
@@ -504,7 +505,7 @@ export const EventCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Event Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="Event Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {EventData.slice(0, 3).map(
                 ({

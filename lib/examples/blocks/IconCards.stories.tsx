@@ -1,10 +1,11 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Column } from '../../layouts/Column/Column'
 import { IconData } from '../../data/IconData'
@@ -42,7 +43,7 @@ export const IconCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Icon Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noHover>
@@ -60,7 +61,7 @@ export const IconCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey noHover>
@@ -78,7 +79,7 @@ export const IconCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Icon Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} noHover>
@@ -96,7 +97,7 @@ export const IconCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Icon Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="Icon Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} isGrey hasShadow="onCard" noHover>

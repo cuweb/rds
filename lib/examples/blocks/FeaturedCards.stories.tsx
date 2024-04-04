@@ -1,10 +1,11 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Column } from '../../layouts/Column/Column'
 import { NewsData } from '../../data/NewsData'
@@ -42,7 +43,7 @@ export const FeaturedCards: Story = {
           </TextImage>
 
           <Container>
-            <Heading text="Featured Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Featured Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} hasShadow="onCard" noHover>
@@ -62,7 +63,7 @@ export const FeaturedCards: Story = {
           </Container>
 
           <Container>
-            <Heading text="Featured Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="Featured Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} isGrey noHover>
@@ -82,7 +83,7 @@ export const FeaturedCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Featured Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Featured Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} noHover>
@@ -102,7 +103,7 @@ export const FeaturedCards: Story = {
           </Container>
 
           <Container isGrey>
-            <Heading text="Featured Cards: Shadow on Static & Hover with Grey Bg" />
+            <PageHeaders header="Featured Cards: Shadow on Static & Hover with Grey Bg" />
             <Column cols="3">
               {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
                 <Card key={id} isGrey hasShadow="onCard" noHover>
