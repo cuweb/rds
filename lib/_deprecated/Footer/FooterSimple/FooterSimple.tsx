@@ -1,4 +1,4 @@
-import { Button } from '../../Button/Button'
+import { Button } from '../../../components/Button/Button'
 import { footerStyles } from '../../../utils/globalClasses'
 import { SmallLinks } from '../../../data/FooterData'
 
