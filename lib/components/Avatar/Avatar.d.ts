@@ -13,12 +13,19 @@ export type UserInfoType = {
     info?: React.ReactNode;
 };
 export interface AvatarProps {
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '4xl';
-    rounded?: 'lg' | 'full';
-    borderWidth?: '1' | '2' | '4' | '8';
-    borderColor?: 'black' | 'white' | 'red' | 'grey' | 'dark-grey';
-    hasShadow?: boolean;
+    size?: keyof typeof avatarSizes;
+    isCircle?: boolean;
     user: UserInfoType;
     onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
-export declare const Avatar: ({ size, rounded, borderWidth, borderColor, hasShadow, user, onClick }: AvatarProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+declare const avatarSizes: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    '2xl': string;
+    '4xl': string;
+};
+export declare const Avatar: ({ size, isCircle, user, onClick }: AvatarProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export {};
