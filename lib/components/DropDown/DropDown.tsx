@@ -14,18 +14,17 @@ export interface DropDownItemProps {
 export interface DropDownProps {
   children?: React.ReactNode
   buttonText?: string
-  renderAs?: 'button' | 'div'
   menuAlign?: 'left' | 'right'
   listItems: DropDownItemProps[]
 }
 
-export const DropDown = ({ children, buttonText, renderAs = 'div', listItems, menuAlign = 'left' }: DropDownProps) => {
+export const DropDown = ({ children, buttonText, menuAlign = 'left', listItems }: DropDownProps) => {
   const LinkComponent = useLinkContext()
 
   return (
     <Popover as="div" className="relative flex-shrink-0 inline-block cu-dropdown not-prose">
       <div>
-        <Popover.Button as={renderAs} className="cursor-pointer">
+        <Popover.Button as="div" className="cursor-pointer">
           <span className="sr-only">Open menu</span>
           {children && !buttonText ? (
             children
