@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
@@ -27,7 +28,26 @@ Default.args = {
 export const Red: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
 }
+
 Red.args = {
   icon: CheckCircleIcon,
   color: 'red',
+}
+
+export const Grey: Story = {
+  render: (args) => <Icon {...args} aria-hidden={true} />,
+}
+
+Grey.args = {
+  icon: CheckCircleIcon,
+  color: 'grey',
+}
+
+export const White: Story = {
+  render: (args) => <Icon {...args} aria-hidden={true} />,
+}
+
+White.args = {
+  icon: CheckCircleIcon,
+  color: 'white',
 }

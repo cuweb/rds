@@ -82,6 +82,18 @@ export const rdsFontSizes = {
   '6xl': 'md:text-6xl',
 }
 
+export const rdsIconSize = {
+  4: 'w-4 h-4',
+  5: 'w-5 h-5',
+  6: 'w-6 h-6',
+  7: 'w-7 h-7',
+  8: 'w-8 h-8',
+  12: 'w-12 h-12',
+  16: 'w-16 h-16',
+  20: 'w-20 h-20',
+  24: 'w-24 h-24',
+}
+
 export const rdsWidth = {
   4: 'w-4',
   5: 'w-5',
