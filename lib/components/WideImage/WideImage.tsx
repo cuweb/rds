@@ -13,28 +13,7 @@ const styles = {
   headerTwo: `font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl`,
 }
 
-type opacityValues =
-  | 60
-  | 61
-  | 62
-  | 63
-  | 64
-  | 65
-  | 66
-  | 67
-  | 68
-  | 69
-  | 70
-  | 71
-  | 72
-  | 73
-  | 74
-  | 75
-  | 76
-  | 77
-  | 78
-  | 79
-  | 80
+const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
@@ -42,7 +21,7 @@ export interface WideImageProps {
   image?: string
   headerType?: 'h1' | 'h2'
   maxWidth?: 'full' | '5xl' | '7xl' | 'max'
-  opacity?: opacityValues
+  opacity?: (typeof opacityValues)[number]
   focalPointX?: string
   focalPointY?: string
   isType?: 'light' | 'dark' | 'image'
