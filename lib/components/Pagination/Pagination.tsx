@@ -85,11 +85,7 @@ export const Pagination = ({
 
         <nav aria-label="Pagination">
           <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
-            <li
-              className={`${styles.pageListNumbers} ${styles.pageListArrows}`}
-              role="presentation"
-              onClick={onPrevious}
-            >
+            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onPrevious}>
               <span className="sr-only">Previous</span>
               <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
             </li>
@@ -105,10 +101,9 @@ export const Pagination = ({
                 }
                 return (
                   <li
-                    role="presentation"
                     key={index}
                     className={`${styles.pageListNumbers} ${
-                      Number(pageNumber) === currentPage ? 'bg-cu-black-50 font-semibold' : ''
+                      Number(pageNumber) === currentPage ? 'font-bold text-cu-red' : ''
                     }`}
                     onClick={() => onCurrent(Number(pageNumber))}
                   >
@@ -116,7 +111,7 @@ export const Pagination = ({
                   </li>
                 )
               })}
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} role="presentation" onClick={onNext}>
+            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
               <span className="sr-only">Next</span>
               <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
             </li>
