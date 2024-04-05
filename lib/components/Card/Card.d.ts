@@ -18,7 +18,7 @@ export declare const Card: (({ children, isCenter, noHover, hasShadow, hasRedBor
         displayName: string;
     };
     IconThumb: {
-        ({ icon, bgType, hasShadow }: import("./CardIconThumb").CardIconThumbProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ icon }: import("./CardIconThumb").CardIconThumbProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
     };
     ImageThumb: {
