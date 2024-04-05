@@ -72,6 +72,17 @@ export declare const rdsFontSizes: {
     '5xl': string;
     '6xl': string;
 };
+export declare const rdsIconSize: {
+    4: string;
+    5: string;
+    6: string;
+    7: string;
+    8: string;
+    12: string;
+    16: string;
+    20: string;
+    24: string;
+};
 export declare const rdsWidth: {
     4: string;
     5: string;

@@ -1,8 +1,9 @@
 /// <reference types="react" />
+import { rdsIconSize } from '../../utils/optionClasses';
 export interface IconProps {
     icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
-    color?: 'black' | 'blue' | 'white' | 'red' | 'grey' | 'dark-grey' | 'green' | 'yellow';
-    size?: '4' | '5' | '6' | '7' | '8' | '12' | '16' | '20';
+    color?: 'white' | 'red' | 'grey';
+    size?: keyof typeof rdsIconSize;
 }
 export declare const Icon: {
     ({ icon, color, size }: IconProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
