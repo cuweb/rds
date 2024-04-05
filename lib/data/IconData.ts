@@ -10,7 +10,7 @@ export const IconData = [
     id: 1,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    icon: 'saxophone',
+    icon: 'book-atlas',
   },
   {
     id: 2,
@@ -22,24 +22,24 @@ export const IconData = [
     id: 3,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    icon: 'trumpet',
+    icon: 'code',
   },
   {
     id: 4,
     title: ' How to Write for the Web',
     link: '#',
-    icon: 'album-collection',
+    icon: 'leaf',
   },
   {
     id: 5,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    icon: 'turntable',
+    icon: 'thumbs-up',
   },
   {
     id: 6,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    icon: 'headphones',
+    icon: 'scale-balanced',
   },
 ]
