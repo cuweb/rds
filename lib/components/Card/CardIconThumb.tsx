@@ -15,8 +15,8 @@ export const CardIconThumb = ({ icon }: CardIconThumbProps) => {
   }
 
   return (
-    <figure className="flex items-center justify-center w-12 h-12 mx-6 mt-5 mb-1.5 overflow-hidden">
-      <img src={iconPath} alt={`An icon of a ${iconAlt}`} className="cu-icon-thumb" style={redIcon} />
+    <figure className="flex items-center justify-center w-12 h-12 mx-6 mt-5 mb-1.5 bg-cyan-400 overflow-hidden">
+      <img src={iconPath} alt={`An icon of a ${iconAlt}`} className="object-cover cu-icon-thumb" style={redIcon} />
     </figure>
   )
 }

@@ -2,7 +2,7 @@ export const IconDataSingle = {
   id: 1,
   title: 'Captivating Captions: Why Caption Videos?',
   link: '#',
-  icon: 'album-collection',
+  icon: 'headphones',
 }
 
 export const IconData = [
@@ -22,13 +22,13 @@ export const IconData = [
     id: 3,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    icon: 'code',
+    icon: 'dumbbell',
   },
   {
     id: 4,
     title: ' How to Write for the Web',
     link: '#',
-    icon: 'leaf',
+    icon: 'code',
   },
   {
     id: 5,
