@@ -39,7 +39,7 @@ export const Button = ({
   const centerStyles = isCenter ? 'relative left-1/2 -translate-x-1/2 ' : ''
   const buttonSmall = isSmall ? buttonStyles.small : ''
   const wordBreak = noBreak ? 'whitespace-nowrap' : ''
-  const iconSize = isSmall ? '4' : '6'
+  const iconSize = isSmall ? 4 : 6
 
   return (
     <button

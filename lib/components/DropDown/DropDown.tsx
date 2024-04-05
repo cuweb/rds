@@ -64,7 +64,7 @@ export const DropDown = ({ children, buttonText, menuAlign = 'left', listItems }
                         close()
                       }}
                     >
-                      {item.icon && <Icon icon={item.icon} aria-hidden="true" size="4" />}
+                      {item.icon && <Icon icon={item.icon} aria-hidden="true" size={4} />}
                       <span className={item.icon ? 'ml-3' : ''}>{item.title}</span>
                     </LinkComponent>
                   </div>
