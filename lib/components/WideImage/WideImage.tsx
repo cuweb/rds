@@ -1,5 +1,5 @@
 import React from 'react'
-import { rdsMaxWidth, rdsOpacity } from '../../utils/optionClasses'
+import { rdsMaxWidth } from '../../utils/optionClasses'
 import { WideImageSignup } from './WideImageSignup'
 
 const styles = {
@@ -64,6 +64,10 @@ export const WideImageWrapper = ({
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
   }
 
+  const opacityStyle = {
+    opacity: `0.${opacity}`,
+  }
+
   let hasImageStyles
   hasImageStyles = isType === 'dark' ? styles.darkBg : styles.lightBg
 
@@ -76,7 +80,7 @@ export const WideImageWrapper = ({
       style={inlineStyle}
       className={`cu-wideimage cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
     >
-      {image && <div className={`${styles.overlay} ${rdsOpacity[opacity]}`}></div>}
+      {image && <div className={`${styles.overlay}`} style={opacityStyle}></div>}
 
       <div className={`${styles.content} cu-wideimage-content cu-wideimage-${isType}`}>
         {headerType === 'h1' && <h1 className={`${styles.headerOne}`}>{title}</h1>}
