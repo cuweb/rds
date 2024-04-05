@@ -1,21 +1,12 @@
 import React from '../../../node_modules/react';
-export declare const styles: {
-    baseBg: string;
-    lightBg: string;
-    darkBg: string;
-    imageBg: string;
-    overlay: string;
-    content: string;
-    headerOne: string;
-    headerTwo: string;
-};
+type opacityValues = 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79 | 80;
 export interface WideImageProps {
     children?: React.ReactNode;
     title?: string;
     image?: string;
     headerType?: 'h1' | 'h2';
     maxWidth?: 'full' | '5xl' | '7xl' | 'max';
-    opacity?: 40 | 50 | 60 | 70 | 80;
+    opacity?: opacityValues;
     focalPointX?: string;
     focalPointY?: string;
     isType?: 'light' | 'dark' | 'image';
@@ -27,3 +18,4 @@ export declare const WideImage: (({ children, title, image, headerType, maxWidth
         displayName: string;
     };
 };
+export {};
