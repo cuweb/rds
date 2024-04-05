@@ -2,7 +2,7 @@ import React from 'react'
 import { rdsMaxWidth, rdsOpacity } from '../../utils/optionClasses'
 import { WideImageSignup } from './WideImageSignup'
 
-export const styles = {
+const styles = {
   baseBg: `relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
   lightBg: `text-cu-black-800 py-20 bg-cu-black-50`,
   darkBg: `text-white py-20 bg-cu-black-900`,
@@ -13,13 +13,36 @@ export const styles = {
   headerTwo: `font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl`,
 }
 
+type opacityValues =
+  | 60
+  | 61
+  | 62
+  | 63
+  | 64
+  | 65
+  | 66
+  | 67
+  | 68
+  | 69
+  | 70
+  | 71
+  | 72
+  | 73
+  | 74
+  | 75
+  | 76
+  | 77
+  | 78
+  | 79
+  | 80
+
 export interface WideImageProps {
   children?: React.ReactNode
   title?: string
   image?: string
   headerType?: 'h1' | 'h2'
   maxWidth?: 'full' | '5xl' | '7xl' | 'max'
-  opacity?: 40 | 50 | 60 | 70 | 80
+  opacity?: opacityValues
   focalPointX?: string
   focalPointY?: string
   isType?: 'light' | 'dark' | 'image'
