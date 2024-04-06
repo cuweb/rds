@@ -32,7 +32,7 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
   const searchAvatar = children ? (
     children
   ) : (
-    <MagnifyingGlassIcon className="left-4 h-5 w-5 cursor-pointer text-gray-400" aria-hidden="true" />
+    <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
   )
 
   const handleComboboxChange = (selectedOption: SourceDataProps) => {
@@ -69,7 +69,7 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
       </button>
 
       <Transition.Root show={open} as={Fragment} afterLeave={() => setQuery('')} appear>
-        <Dialog as="div" className="cu-search not-prose relative z-50" onClose={setOpen}>
+        <Dialog as="div" className="relative z-50 cu-search not-prose" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -82,7 +82,7 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
             <div className={`fixed inset-0 transition-opacity ${rdsOverlay} `} />
           </Transition.Child>
 
-          <div className="z-100 fixed inset-0 overflow-y-auto p-4 sm:p-6 md:p-20">
+          <div className="fixed inset-0 p-4 overflow-y-auto z-100 sm:p-6 md:p-20">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -100,7 +100,7 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
                       aria-hidden="true"
                     />
                     <Combobox.Input
-                      className="h-12 w-full rounded-lg border border-cu-black-100 bg-transparent pl-11 pr-4 text-sm text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
+                      className="w-full h-12 pr-4 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
                       placeholder="Search..."
                       onChange={(event) => setQuery(event.target.value)}
                     />
@@ -118,7 +118,7 @@ export const Search = ({ searchOn = 'title', sourceData, children, callback }: P
                   {filteredDatabase.length > 0 && (
                     <Combobox.Options
                       static
-                      className="max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray-800"
+                      className="py-2 overflow-y-auto text-sm text-gray-800 max-h-72 scroll-py-2"
                     >
                       {filteredDatabase.map((record) => (
                         <Combobox.Option
