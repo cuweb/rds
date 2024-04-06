@@ -17,37 +17,25 @@ export interface CardProps {
   children: React.ReactNode
   isCenter?: boolean
   noHover?: boolean
-  hasShadow?: 'onCard' | 'onHover'
-  isGrey?: boolean
-  hasRedBorder?: boolean
+  leftBorder?: boolean
 }
 
 const cardStyles = {
-  card: ``,
-  whiteBg: `bg-white`,
-  greyBg: `bg-cu-black-25`,
-  shadow: `shadow-md shadow-cu-black-100`,
+  shadow: `shadow-lg shadow-cu-black-100`,
   shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
   center: `text-center`,
-  redBorder: `border-l-8 border-l-cu-red`,
+  border: `border-l-8 border-l-cu-red`,
   zoom: `group duration-300 ease-in hover:scale-[1.04]`,
 }
 
-export const CardWrapper = ({ children, isCenter, noHover, hasShadow, hasRedBorder, isGrey }: CardProps) => {
-  const bgStyles = isGrey ? cardStyles.greyBg : cardStyles.whiteBg
-  const addShadow =
-    hasShadow === 'onCard'
-      ? `${cardStyles.shadow} ${!noHover ? cardStyles.shadowHover : ''}`
-      : hasShadow === 'onHover' && !noHover
-        ? cardStyles.shadowHover
-        : ''
-  const addRedBorder = hasRedBorder ? cardStyles.redBorder : ''
+export const CardWrapper = ({ children, isCenter, noHover, leftBorder }: CardProps) => {
+  const addRedBorder = leftBorder ? cardStyles.border : ''
   const centerText = isCenter ? cardStyles.center : ''
-  const noHoverStyles = noHover ? '' : cardStyles.zoom
+  const hoverStyles = noHover ? '' : `${cardStyles.shadowHover} ${cardStyles.zoom}`
 
   return (
     <div
-      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 ${addRedBorder} ${addShadow} ${centerText} ${noHoverStyles} ${bgStyles}`}
+      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 bg-white ${centerText} ${addRedBorder} ${cardStyles.shadow} ${hoverStyles}`}
     >
       {children}
     </div>

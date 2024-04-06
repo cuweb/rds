@@ -4,12 +4,6 @@ export interface CardPeopleMetaProps {
   phone?: string
 }
 
-export const styles = {
-  list: ``,
-  font: ``,
-  bold: ``,
-}
-
 export const CardPeopleMeta = ({ jobTitle, children, phone }: CardPeopleMetaProps) => {
   return (
     <ul className="space-y-2 text-sm text-cu-black-600 @sm:md:text-base">

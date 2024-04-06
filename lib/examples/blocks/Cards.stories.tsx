@@ -315,7 +315,7 @@ export const Cards: Story = {
             <PageHeaders header="Stat Cards" as="h2" size="md" />
             <Column cols="3">
               {StatData.slice(0, 6).map(({ id, stat, desc }) => (
-                <Card key={id} hasRedBorder noHover>
+                <Card key={id} leftBorder noHover>
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
@@ -326,7 +326,7 @@ export const Cards: Story = {
             <PageHeaders header="Stat Cards" as="h2" size="md" />
             <Column cols="3">
               {StatData.slice(0, 6).map(({ id, stat, desc }) => (
-                <Card key={id} hasRedBorder noHover>
+                <Card key={id} leftBorder noHover>
                   <Card.Stats stat={stat} desc={desc} />
                 </Card>
               ))}
