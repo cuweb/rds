@@ -65,13 +65,3 @@ export { StackedList } from './layouts/StackedList/StackedList'
 
 // Javascript Files
 export { iconNames } from '../public/assets/font-awesome/icon-list.js'
-
-// Deprecated
-// export { Banner } from './_deprecated/Banner/Banner'
-// export { FooterSimple } from './_deprecated/Footer/FooterSimple/FooterSimple'
-// export { Form } from './_deprecated/Forms/Form/Form'
-// export { Heading } from './_deprecated/Heading/Heading'
-// export { HeroTextImage } from './_deprecated/HeroTextImage/HeroTextImage'
-// export { EventLoader } from './_deprecated/Loaders/EventLoader/EventLoader'
-// export { Panel } from './_deprecated/Panel/Panel'
-// export { TopNav } from './_deprecated/TopNav/TopNav'

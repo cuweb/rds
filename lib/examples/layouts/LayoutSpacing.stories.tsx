@@ -1,10 +1,10 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
-import { Panel } from '../../_deprecated/Panel/Panel'
 import { Nav } from '../../components/Nav/Nav'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
@@ -76,25 +76,6 @@ export const LayoutSpacing: Story = {
           <h2>Not in a container</h2>
           <SinglePara />
 
-          <Container isGrey>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>One</Column.Content>
-              <Column.Content>One</Column.Content>
-            </Column>
-            <Column cols="2">
-              <Column.Content>One</Column.Content>
-              <Column.Content>One</Column.Content>
-            </Column>
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-            <Column cols="2">
-              <Column.Content>One</Column.Content>
-              <Column.Content>One</Column.Content>
-            </Column>
-          </Container>
-
           <Container>
             <h2>This is a container</h2>
             <SinglePara />
@@ -119,84 +100,6 @@ export const LayoutSpacing: Story = {
               <Column.Content>
                 <SinglePara />
               </Column.Content>
-            </Column>
-            <SinglePara />
-          </Container>
-
-          <h2>Not in a container</h2>
-          <DoublePara />
-          <h2>Not in a container</h2>
-          <SinglePara />
-          <Panel hasBorder hasShadow>
-            <p>foo</p>
-          </Panel>
-          <Panel hasBorder hasShadow>
-            <p>foo</p>
-          </Panel>
-          <SinglePara />
-
-          <Container>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-            <SinglePara />
-          </Container>
-
-          <Container isGrey>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-            <SinglePara />
-          </Container>
-
-          <h2>Not in a container</h2>
-          <DoublePara />
-          <h2>Not in a container</h2>
-          <SinglePara />
-          <Column cols="2">
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-            <Panel hasBorder hasShadow>
-              <p>foo</p>
-            </Panel>
-          </Column>
-          <SinglePara />
-
-          <Container>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Column cols="2">
-              <Panel hasBorder hasShadow>
-                <p>foo</p>
-              </Panel>
-              <Panel hasBorder hasShadow>
-                <p>foo</p>
-              </Panel>
-            </Column>
-            <SinglePara />
-          </Container>
-
-          <Container isGrey>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Column cols="2">
-              <Panel hasBorder hasShadow>
-                <p>foo</p>
-              </Panel>
-              <Panel hasBorder hasShadow>
-                <p>foo</p>
-              </Panel>
             </Column>
             <SinglePara />
           </Container>
