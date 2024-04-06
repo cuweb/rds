@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
-import { videoStyles } from './Figure.Styles'
 
 export interface FigureVideoProps {
   source: string
+}
+
+const styles = {
+  container: `relative pt-[56.25%] bg-cu-black-900`,
 }
 
 export const FigureVideo = ({ source }: FigureVideoProps) => {
@@ -17,14 +20,14 @@ export const FigureVideo = ({ source }: FigureVideoProps) => {
   // Prevent the component from rendering and avoid hydration error
   if (!initialRender) {
     return (
-      <div className={videoStyles.container}>
+      <div className={styles.container}>
         <p className="hidden">Loading video</p>
       </div>
     )
   } else {
     return (
-      <div className={videoStyles.container}>
-        <ReactPlayer url={source} className={videoStyles.player} width="100%" height="100%" controls />
+      <div className={styles.container}>
+        <ReactPlayer url={source} className="absolute top-0 left-0" width="100%" height="100%" controls />
       </div>
     )
   }
