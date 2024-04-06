@@ -156,7 +156,7 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
         ))}
       </div>
       {showClear && (
-        <div className="mt-2">
+        <div className="mt-4">
           <Button
             title="Clear Calendar"
             isCenter
