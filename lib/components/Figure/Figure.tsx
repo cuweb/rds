@@ -8,13 +8,22 @@ export interface FigureProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'full'
   align?: 'left' | 'right' | 'center' | 'none'
   hasShadow?: boolean
+  noMobile?: boolean
 }
 
-export const FigureWrapper = ({ children, caption, hasShadow, size = 'full', align = 'none' }: FigureProps) => {
+export const FigureWrapper = ({
+  children,
+  caption,
+  hasShadow,
+  noMobile,
+  size = 'full',
+  align = 'none',
+}: FigureProps) => {
   const shadow = hasShadow ? styles.shadow : ''
+  const hideMobile = noMobile ? 'hidden md:block' : 'block'
 
   return (
-    <figure className="cu-figure">
+    <figure className={`cu-figure ${hideMobile}`}>
       <div className={`not-prose rounded-lg ${styles.container} ${figureSize[size]} ${figureAlign[align]} ${shadow}`}>
         {children}
         {caption && <figcaption className={styles.caption}>{caption}</figcaption>}

@@ -1,5 +1,5 @@
 import { listStyles } from './PageHeaders.Styles'
-import { proseStyles, proseGroups } from '../../utils/globalClasses'
+import { proseStyles } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
 
 export interface PageHeadersEventProps {
@@ -40,12 +40,18 @@ export const PageHeadersEvent = ({
 
   return (
     <>
-      {startDate && <p className={proseGroups.largeLight}>{startDate}</p>}
-      {endDate && <p className={proseGroups.largeLight}>{endDate}</p>}
+      {(startDate || endDate) && (
+        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
+          <ul>
+            {startDate && <li>{startDate}</li>}
+            {endDate && <li>{endDate}</li>}
+          </ul>
+        </div>
+      )}
 
       {/* Check if details are set and output as ul */}
       <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-        <ul className={listStyles.listVertical}>
+        <ul>
           <li>
             <strong className="font-semibold">{eventType} Event</strong>
           </li>
@@ -72,7 +78,7 @@ export const PageHeadersEvent = ({
       {/* Check is socials are set and render div */}
       {Object.values(eventDetails).some((info) => info) && (
         <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul className={listStyles.listVertical}>
+          <ul>
             {contactName && (
               <li>
                 <strong className="block font-semibold">Contact:</strong>
@@ -98,7 +104,6 @@ export const PageHeadersEvent = ({
             {primaryButtonUrl && (
               <li>
                 <Button
-                  isSmall
                   onClick={() => {
                     if (typeof primaryButtonUrl === 'string') {
                       window.location.href = primaryButtonUrl
@@ -111,7 +116,6 @@ export const PageHeadersEvent = ({
             {secondaryButtonUrl && (
               <li>
                 <Button
-                  isSmall
                   color="grey"
                   onClick={() => {
                     if (typeof secondaryButtonUrl === 'string') {
