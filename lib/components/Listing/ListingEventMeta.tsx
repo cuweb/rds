@@ -10,7 +10,7 @@ export interface ListingEventMetaProps {
   eventAddress?: string
 }
 
-export const styles = {
+const styles = {
   redIcon: `mr-2 h-6 w-6 flex-shrink-0 text-cu-red-300`,
 }
 
