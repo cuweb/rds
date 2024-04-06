@@ -11,6 +11,7 @@
 
 /* Components */
 @import './components/Alert/styles.css';
+@import './components/Button/styles.css';
 @import './components/Card/styles.css';
 @import './components/Description/styles.css';
 @import './components/Listing/styles.css';

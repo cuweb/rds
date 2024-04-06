@@ -164,7 +164,7 @@ export const FooterSimple = ({
               <div className="flex flex-col gap-5">
                 {footerButtons &&
                   footerButtons.map((link, index) => (
-                    <Button key={index} title={link.title} color={index === 0 ? 'red' : 'dark-grey'} />
+                    <Button key={index} title={link.title} color={index === 0 ? 'red' : 'grey'} />
                   ))}
               </div>
             )}

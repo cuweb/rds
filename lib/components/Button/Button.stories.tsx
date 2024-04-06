@@ -23,34 +23,10 @@ export const Primary: Story = {}
 
 Primary.args = {
   title: 'Primary Red',
-  hasShadow: false,
   isFull: false,
   isCenter: false,
-  hasDropDown: false,
   onClick: () => {
     alert('You clicked the button')
-  },
-}
-
-export const PrimaryGhost: Story = {
-  args: {
-    title: 'Primary Ghost Button',
-    isType: 'outline',
-  },
-}
-
-export const DarkGrey: Story = {
-  args: {
-    title: 'Dark Grey Button',
-    color: 'dark-grey',
-  },
-}
-
-export const DarkGreyGhost: Story = {
-  args: {
-    title: 'Dark Grey Ghost Button',
-    isType: 'outline',
-    color: 'dark-grey',
   },
 }
 
@@ -61,33 +37,9 @@ export const LightGrey: Story = {
   },
 }
 
-export const GreyGhost: Story = {
-  args: {
-    title: 'Grey Ghost Button',
-    isType: 'outline',
-    color: 'grey',
-  },
-}
-
-export const White: Story = {
-  args: {
-    title: 'White Button',
-    color: 'white',
-  },
-}
-
-export const WhiteGhost: Story = {
-  args: {
-    title: 'White Ghost Button',
-    isType: 'outline',
-    color: 'white',
-  },
-}
-
 export const Disabled: Story = {
   args: {
-    isType: 'disabled',
-    disabled: true,
+    isDisabled: true,
     title: 'Disabled Button',
   },
 }
