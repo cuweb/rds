@@ -11,7 +11,6 @@ export const Badge = ({ children, color = 'grey', noWordBreak = false }: BadgePr
 
   // Set color classes
   let badgeColor
-
   switch (color) {
     case 'green':
       badgeColor = 'bg-green-50 text-green-800'

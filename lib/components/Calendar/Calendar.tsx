@@ -140,10 +140,9 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
         ))}
       </div>
       {showClear && (
-        <div className="mt-2">
+        <div className="mt-4">
           <Button
             title="Clear Calendar"
-            isCenter
             isSmall
             onClick={() => {
               setSelectedDay(new Date())
