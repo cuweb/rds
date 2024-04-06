@@ -23,10 +23,8 @@ export const Primary: Story = {}
 
 Primary.args = {
   title: 'Primary Red',
-  hasShadow: false,
   isFull: false,
   isCenter: false,
-  hasDropDown: false,
   onClick: () => {
     alert('You clicked the button')
   },

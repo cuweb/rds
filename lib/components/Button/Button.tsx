@@ -1,47 +1,28 @@
 import React from 'react'
 import { Icon } from '../Icon/Icon'
-import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
-import { buttonStyles, solidStyles } from './Button.Styles'
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   title?: string
   icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
   color?: 'red' | 'grey' | 'white'
   isSmall?: boolean
-  noBreak?: boolean
-  hasShadow?: boolean
   isFull?: boolean
   isCenter?: boolean
   isDisabled?: boolean
-  hasDropDown?: boolean
 }
 
-export const Button = ({
-  color = 'red',
-  title,
-  icon,
-  isSmall,
-  noBreak,
-  hasShadow,
-  isFull,
-  isCenter,
-  isDisabled,
-  hasDropDown,
-  ...rest
-}: ButtonProps) => {
-  const disabledButton = isDisabled ? buttonStyles.disabled : solidStyles[color]
-  const shadowStyles = hasShadow ? buttonStyles.shadow : ''
-  const fullStyles = isFull ? 'w-full' : ''
-  const centerStyles = isCenter ? 'relative left-1/2 -translate-x-1/2 ' : ''
-  const buttonSmall = isSmall ? buttonStyles.small : ''
-  const wordBreak = noBreak ? 'whitespace-nowrap' : ''
+export const Button = ({ color = 'red', title, icon, isSmall, isFull, isCenter, isDisabled, ...rest }: ButtonProps) => {
+  const disabledButton = isDisabled ? 'cu-button--disabled' : `cu-button--${color}`
+  const fullStyles = isFull ? 'cu-button--full' : ''
+  const centerStyles = isCenter ? 'cu-button--center' : ''
+  const buttonSmall = isSmall ? 'cu-button--small' : ''
   const iconSize = isSmall ? 4 : 6
 
   return (
     <button
       type="button"
       aria-label={title ? title : 'Icon button'}
-      className={`cu-button ${buttonStyles.core} ${disabledButton} ${wordBreak} ${buttonSmall} ${shadowStyles} ${fullStyles} ${centerStyles}  `}
+      className={`cu-button not-prose ${disabledButton} ${buttonSmall} ${fullStyles} ${centerStyles}  `}
       disabled={isDisabled ? true : false}
       {...rest}
     >
@@ -51,7 +32,6 @@ export const Button = ({
         </span>
       )}
       {title}
-      {hasDropDown && <ChevronDownIcon className="w-4 h-4 mt-1 ml-1 -mr-1" aria-hidden="true" />}
     </button>
   )
 }

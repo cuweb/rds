@@ -56,7 +56,7 @@ export const SocialShare = ({ title, link }: SocialShareProps) => {
   ]
   return (
     <DropDown listItems={ShareItem}>
-      <Button title="Share Event" hasDropDown color="grey" isSmall icon={ShareIcon} />
+      <Button title="Share Event" color="grey" isSmall icon={ShareIcon} />
     </DropDown>
   )
 }

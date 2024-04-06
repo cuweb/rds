@@ -78,7 +78,6 @@ export const Modal = ({
                       title="Cancel"
                       isSmall
                       color="white"
-                      hasShadow
                     />
                   </div>
                 )}
