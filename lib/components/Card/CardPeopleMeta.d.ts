@@ -4,11 +4,6 @@ export interface CardPeopleMetaProps {
     jobTitle?: string;
     phone?: string;
 }
-export declare const styles: {
-    list: string;
-    font: string;
-    bold: string;
-};
 export declare const CardPeopleMeta: {
     ({ jobTitle, children, phone }: CardPeopleMetaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
     displayName: string;
