@@ -16,7 +16,7 @@ export interface ListingProps {
 
 export const ListingWrapper = ({ children }: ListingProps) => {
   return (
-    <li className={`cu-listing not-prose relative overflow-hidden @container bg-white p-6`}>
+    <li className={`cu-listing not-prose relative overflow-hidden @container bg-white p-6 md:p-8`}>
       <div className="flex flex-col @lg:md:flex-row gap-5 @lg:md:gap-7 h-full">{children}</div>
     </li>
   )
