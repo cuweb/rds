@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 import { useField } from 'formik'
 import type { FieldHookConfig } from 'formik'
 import { useCallback, useEffect, useState } from 'react'
-import { formStyles } from '../../../utils/formClasses'
+import { formStyles } from '../formClasses'
 import { Calendar } from '../../../components/Calendar/Calendar'
 
 const styles = {

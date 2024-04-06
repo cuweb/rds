@@ -2,7 +2,7 @@ import { ClassAttributes, InputHTMLAttributes } from 'react'
 import { useField } from 'formik'
 
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
-import { formErrorStyles, formStyles } from '../../../utils/formClasses'
+import { formErrorStyles, formStyles } from '../formClasses'
 
 export interface WYSIWYGProps {
   name: string

@@ -1,7 +1,7 @@
 import { InputHTMLAttributes, ClassAttributes } from 'react'
 import { useField, Field } from 'formik'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
-import { formStyles, formErrorStyles } from '../../../utils/formClasses'
+import { formStyles, formErrorStyles } from '../formClasses'
 
 export interface RadioProps {
   label?: string
