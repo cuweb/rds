@@ -28,5 +28,17 @@ export const Default: Story = {
 }
 
 Default.args = {
-  buttonText: 'Basic Drop Down',
+  text: 'Dropdown',
+}
+
+export const Outline: Story = {
+  render: (args) => (
+    <DropDown {...args} listItems={listItems} hasBorder>
+      {args.children}
+    </DropDown>
+  ),
+}
+
+Outline.args = {
+  text: 'Outline Dropdown',
 }

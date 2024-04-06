@@ -67,7 +67,6 @@ Default.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasShadow: false,
 }
 
 export const WithStripes: Story = {}
@@ -75,15 +74,6 @@ WithStripes.args = {
   data: tableData,
   columns: columns,
   hasStripes: true,
-  hasShadow: false,
-}
-
-export const WithShadow: Story = {}
-WithShadow.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: false,
-  hasShadow: true,
 }
 
 export const WithRangeOne: Story = {}
@@ -91,7 +81,6 @@ WithRangeOne.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasShadow: true,
   range: [1, 3],
 }
 
@@ -100,6 +89,5 @@ WithRangeTwo.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-  hasShadow: true,
   range: [4, 5],
 }

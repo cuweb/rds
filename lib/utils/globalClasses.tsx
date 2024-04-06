@@ -11,10 +11,6 @@ export const proseStyles = {
   base: `${proseGroups.base} ${proseGroups.text} ${proseGroups.image} ${proseGroups.quote} ${proseGroups.header}`,
 }
 
-export const footerStyles = {
-  wave: `bg-cu-waves-red bg-[length:100.5%] bg-bottom bg-no-repeat`,
-}
-
 export const layoutSpacing = {
   section: 'px-8 py-6 md:py-10 md:px-10',
   containerWhite: 'py-5 md:py-6 bg-white',

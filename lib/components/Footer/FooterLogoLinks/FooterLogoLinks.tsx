@@ -4,13 +4,13 @@ export const FooterLogoLinks = () => {
   const LinkComponent = useLinkContext()
 
   return (
-    <div className="not-prose grid justify-center pb-24 sm:pb-36 lg:pb-44">
+    <div className="grid justify-center pb-24 not-prose sm:pb-36 lg:pb-44">
       <img
-        className="mx-auto mb-6 h-32 w-auto sm:h-44"
+        className="w-auto h-32 mx-auto mb-6 sm:h-44"
         src="https://cu-production.s3.amazonaws.com/rds/assets/cu-logos/cu-logo-color-vertical-outlined.svg"
         alt="Logo of Carleton University"
       />
-      <ul className="flex justify-center space-x-4 bg-cu-black-900 text-xs text-gray-400 sm:space-x-6 sm:text-sm">
+      <ul className="flex justify-center space-x-4 text-xs bg-cu-black-900 text-cu-black-300 sm:space-x-6 sm:text-sm">
         <li key="privacy">
           <LinkComponent
             href="https://carleton.ca/privacy/privacy-notices/general-notice-of-collection-use-and-disclosure/"

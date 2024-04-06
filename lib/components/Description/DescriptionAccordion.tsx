@@ -13,16 +13,16 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
 
   return (
     <>
-      <div className={`accordion ${styles.base} ${styles.accordion}`}>
+      <div className={`accordion ${styles.base} pt-4 pb-3 md:pt-6 md:pb-5 first:border-t`}>
         <dt className={`${styles.term} ${proseStyles.base}`}>
           <button
-            className={`accordion__button ${styles.button}`}
+            className="flex items-center w-full accordion__button"
             aria-expanded="false"
             aria-controls={termLabel}
             onClick={toggleAccordion}
           >
             {term}
-            <ChevronRightIcon className={`accordion__icon ${styles.chevron} rotate-0}`} />
+            <ChevronRightIcon className="w-5 h-5 ml-auto transition-transform rotate-0 accordion__icon text-cu-black-500" />
           </button>
         </dt>
 
