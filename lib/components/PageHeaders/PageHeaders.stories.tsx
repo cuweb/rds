@@ -34,27 +34,6 @@ export const PageHeaderCentre: Story = {
   },
 }
 
-export const MediumPageHeader: Story = {
-  args: {
-    header: 'Medium size',
-    size: 'md',
-  },
-}
-
-export const SmallPageHeader: Story = {
-  args: {
-    header: 'Small size',
-    size: 'sm',
-  },
-}
-
-export const ExtraSmallPageHeader: Story = {
-  args: {
-    header: 'Extra small page header',
-    size: 'xs',
-  },
-}
-
 export const DefaultWithContent: Story = {
   args: {
     header: 'Large header with content',
@@ -76,40 +55,12 @@ export const CenterWithContent: Story = {
   },
 }
 
-export const MediumWithContent: Story = {
-  args: {
-    header: 'Medium header with content',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'md',
-  },
-}
-
-export const SmallWithContent: Story = {
-  args: {
-    header: 'Small header with content',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'sm',
-  },
-}
-
-export const ExtraSmallWithContent: Story = {
-  args: {
-    header: 'Extra small header with content, no underline',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'xs',
-    noUnderline: true,
-  },
-}
-
 export const EventPageHeader: Story = {
   args: {
     header: 'Upcoming Event Header',
     children: (
       <>
-        <Figure size="sm" align="right" hasShadow>
+        <Figure size="sm" align="right" hasShadow noMobile>
           <img
             src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
             alt="Required alt text"
