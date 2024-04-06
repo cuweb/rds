@@ -1,7 +1,6 @@
 export declare const listStyles: {
     listWrapper: string;
     listGroup: string;
-    listVertical: string;
     listHorizontal: string;
     listLink: string;
 };
