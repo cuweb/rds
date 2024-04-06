@@ -1,5 +1,4 @@
 import React from 'react'
-import { styles } from './StackedList.styles'
 import { rdsMaxWidth } from '../../utils/optionClasses'
 
 export interface StackedListProps {
@@ -9,10 +8,13 @@ export interface StackedListProps {
   listType?: 'posts' | 'toc'
   maxWidth?: '5xl' | '7xl'
   offset?: 'left' | 'right'
-  size?: 'sm' | 'lg'
   header?: string
-  hasBorder?: boolean
-  hasShadow?: boolean
+}
+
+const styles = {
+  offset: `md:mb-6 duration-300 ease-in`,
+  left: `md:float-left lg:ml-2 xl:ml-24 2xl:ml-[12%] md:mr-10`,
+  right: `md:float-right md:mr-0 xl:mr-24 2xl:mr-[12%] md:ml-10`,
 }
 
 export const StackedList = ({
@@ -22,22 +24,24 @@ export const StackedList = ({
   listType = 'posts',
   maxWidth = '5xl',
   offset,
-  size,
-  hasBorder,
-  hasShadow,
   header,
 }: StackedListProps) => {
   const ListComponent = as
-  const gridColumns = cols === '1' ? styles.oneCol : styles.twoCol
-  const borderStyle = hasBorder ? styles.border : ''
-  const shadowStyle = hasShadow ? styles.shadow : ''
-  const sizeStyles = size ? styles[size] : styles.sm
-  const offsetStyle = offset ? `${styles[offset]} ${styles.offset} ${sizeStyles}` : rdsMaxWidth[maxWidth]
+  const gridColumns = cols === '1' ? 'grid md:grid-cols-1' : 'grid md:grid-cols-2'
+  const offsetStyle = offset ? `${styles[offset]} ${styles.offset} md:max-w-sm lg:max-w-md` : rdsMaxWidth[maxWidth]
 
   return (
-    <div className={`${styles.wrapper} ${borderStyle} ${shadowStyle} ${offsetStyle}`}>
-      {header && <h2 className={`${styles.title}`}>{header}</h2>}
-      <ListComponent className={`cu-stackedlist-${listType} ${gridColumns}`}>{children}</ListComponent>
+    <div
+      className={`cu-stackedlist not-contained not-prose mx-auto overflow-hidden rounded-lg bg-white w-full shadow-lg ${offsetStyle}`}
+    >
+      {header && (
+        <h2 className="px-6 py-4 text-base font-semibold border-b rounded-t-lg md:text-xl bg-gray-50 text-cu-black-800">
+          {header}
+        </h2>
+      )}
+      <ListComponent className={`cu-stackedlist--${listType} cu-stackedlist--${cols} ${gridColumns}`}>
+        {children}
+      </ListComponent>
     </div>
   )
 }

@@ -1,15 +1,13 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
-import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Nav } from '../../components/Nav/Nav'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { Listing } from '../../components/Listing/Listing'
+import { NewsData } from '../../data/NewsData'
 import { TextImage } from '../../components/TextImage/TextImage'
-import { PeopleData } from '../../data/PeopleData'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
@@ -19,7 +17,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const PeopleListing: Story = {
+export const ListingSidebars: Story = {
   render: () => (
     <>
       <Nav>
@@ -33,7 +31,7 @@ export const PeopleListing: Story = {
       <Main>
         <Section hasProse>
           <TextImage hasBorder>
-            <TextImage.Content headerType="h1" title="People Listing">
+            <TextImage.Content headerType="h1" title="News Listing">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -41,96 +39,6 @@ export const PeopleListing: Story = {
               </p>
             </TextImage.Content>
           </TextImage>
-
-          <Container>
-            <PageHeaders header="People Listings: Default" />
-            <StackedList hasShadow>
-              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Listing key={id}>
-                  <Listing.Figure isSquare>
-                    <img src={image} alt={alt} width="200" height="200" />
-                  </Listing.Figure>
-                  <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
-                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </Listing.PeopleMeta>
-                    <Listing.Footer isType="button">
-                      <a href={link}>View profile</a>
-                    </Listing.Footer>
-                  </Listing.Body>
-                </Listing>
-              ))}
-            </StackedList>
-          </Container>
-
-          <Container>
-            <PageHeaders header="People Listings: One Column" />
-            <StackedList cols="1" hasShadow>
-              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Listing key={id}>
-                  <Listing.Figure isSquare>
-                    <img src={image} alt={alt} width="200" height="200" />
-                  </Listing.Figure>
-                  <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
-                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </Listing.PeopleMeta>
-                    <Listing.Footer isType="button">
-                      <a href={link}>View profile</a>
-                    </Listing.Footer>
-                  </Listing.Body>
-                </Listing>
-              ))}
-            </StackedList>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="People Listings: Default with Grey Bg" />
-            <StackedList hasShadow>
-              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Listing key={id}>
-                  <Listing.Figure isSquare>
-                    <img src={image} alt={alt} width="200" height="200" />
-                  </Listing.Figure>
-                  <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
-                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </Listing.PeopleMeta>
-                    <Listing.Footer isType="button">
-                      <a href={link}>View profile</a>
-                    </Listing.Footer>
-                  </Listing.Body>
-                </Listing>
-              ))}
-            </StackedList>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="People Listings: One Column with Grey Bg" />
-            <StackedList cols="1" hasShadow>
-              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Listing key={id}>
-                  <Listing.Figure isSquare>
-                    <img src={image} alt={alt} width="200" height="200" />
-                  </Listing.Figure>
-                  <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
-                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </Listing.PeopleMeta>
-                    <Listing.Footer isType="button">
-                      <a href={link}>View profile</a>
-                    </Listing.Footer>
-                  </Listing.Body>
-                </Listing>
-              ))}
-            </StackedList>
-          </Container>
-
-          <PageHeaders header="People Listings: Offset" />
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
@@ -140,19 +48,19 @@ export const PeopleListing: Story = {
             luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
           </p>
 
-          <StackedList header="Our People" as="ul" cols="1" listType="posts" offset="right" hasShadow>
-            {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+          <StackedList header="Recent News" as="ul" cols="1" offset="right">
+            {NewsData.slice(0, 3).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
-                <Listing.Figure isSquare>
-                  <img src={image} alt={alt} width="200" height="200" />
+                <Listing.Figure>
+                  <img src={image} alt={alt} width="400" height="266" />
                 </Listing.Figure>
                 <Listing.Body>
-                  <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
-                  <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                    <a href={`mailto:${email}`}>{email}</a>
-                  </Listing.PeopleMeta>
-                  <Listing.Footer isType="button">
-                    <a href={link}>View profile</a>
+                  <Listing.Header date={date}>{title}</Listing.Header>
+                  <Listing.Excerpt text={excerpt} />
+                  <Listing.Footer>
+                    <a href={link} className="cu-button cu-button--red">
+                      Read more
+                    </a>
                   </Listing.Footer>
                 </Listing.Body>
               </Listing>

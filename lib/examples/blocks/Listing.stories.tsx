@@ -1,0 +1,477 @@
+import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Section } from '../../layouts/Section/Section'
+import { Container } from '../../layouts/Container/Container'
+import { Main } from '../../layouts/Main/Main'
+import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
+import { StackedList } from '../../layouts/StackedList/StackedList'
+import { Nav } from '../../components/Nav/Nav'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { Listing } from '../../components/Listing/Listing'
+import { TextImage } from '../../components/TextImage/TextImage'
+import { EventData } from '../../data/EventData'
+import { IconData } from '../../data/IconData'
+import { NewsData } from '../../data/NewsData'
+import { PeopleData } from '../../data/PeopleData'
+import { NavDataSingle, NavAsideData } from '../../data/NavData'
+
+const meta: Meta = {
+  title: 'Examples/Blocks',
+}
+
+export default meta
+type Story = StoryObj
+
+export const Listings: Story = {
+  render: () => (
+    <>
+      <Nav>
+        <Nav.Primary>
+          <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData} />
+        </Nav.Primary>
+      </Nav>
+
+      <Main>
+        <Section hasProse>
+          <TextImage hasBorder>
+            <TextImage.Content headerType="h1" title="Listing Examples">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+
+          <Container>
+            <PageHeaders header="Event Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                    <Listing.Body>
+                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                      <Listing.Footer>
+                        <a href={link} className="cu-button cu-button--red">
+                          Event details
+                        </a>
+                      </Listing.Footer>
+                    </Listing.Body>
+                  </Listing>
+                ),
+              )}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="Event Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {EventData.slice(0, 4).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                    <Listing.Body>
+                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                      <Listing.Footer>
+                        <a href={link} className="cu-button cu-button--red">
+                          Event details
+                        </a>
+                      </Listing.Footer>
+                    </Listing.Body>
+                  </Listing>
+                ),
+              )}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="Event Listing: One Column" as="h2" size="md" />
+            <StackedList cols="1">
+              {EventData.slice(0, 3).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                    <Listing.Body>
+                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                      <Listing.Footer>
+                        <a href={link} className="cu-button cu-button--red">
+                          Event details
+                        </a>
+                      </Listing.Footer>
+                    </Listing.Body>
+                  </Listing>
+                ),
+              )}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="Event Listing: One Column" as="h2" size="md" />
+            <StackedList cols="1">
+              {EventData.slice(0, 3).map(
+                ({
+                  id,
+                  title,
+                  link,
+                  startDate,
+                  endDate,
+                  on_campus,
+                  on_campus_building,
+                  on_campus_room_number,
+                  event_address,
+                }) => (
+                  <Listing key={id}>
+                    <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                    <Listing.Body>
+                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.EventMeta
+                        startDateTime={startDate}
+                        endDateTime={endDate}
+                        onCampus={on_campus}
+                        onCampusBuilding={on_campus_building}
+                        onCampusRoomNumber={on_campus_room_number}
+                        eventAddress={event_address}
+                      />
+                      <Listing.Footer>
+                        <a href={link} className="cu-button cu-button--red">
+                          Event details
+                        </a>
+                      </Listing.Footer>
+                    </Listing.Body>
+                  </Listing>
+                ),
+              )}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="Icon Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
+                <Listing key={id}>
+                  <Listing.IconThumb icon={icon} />
+                  <Listing.Body>
+                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Get Informed
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="Icon Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
+                <Listing key={id}>
+                  <Listing.IconThumb icon={icon} />
+                  <Listing.Body>
+                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Get Informed
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="Icon Listing: One Columns" as="h2" size="md" />
+            <StackedList cols="1">
+              {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
+                <Listing key={id}>
+                  <Listing.IconThumb icon={icon} />
+                  <Listing.Body>
+                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Get Informed
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="Icon Listing: One Columns" as="h2" size="md" />
+            <StackedList cols="1">
+              {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
+                <Listing key={id}>
+                  <Listing.IconThumb icon={icon} />
+                  <Listing.Body>
+                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Get Informed
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="News Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
+                <Listing key={id}>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Excerpt text={excerpt} />
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Read more
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="News Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
+                <Listing key={id}>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Excerpt text={excerpt} />
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Read more
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="News Listing: One Column" as="h2" size="md" />
+            <StackedList cols="1">
+              {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
+                <Listing key={id}>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Excerpt text={excerpt} />
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Read more
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="News Listing: One Column" as="h2" size="md" />
+            <StackedList cols="1">
+              {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
+                <Listing key={id}>
+                  <Listing.Figure>
+                    <img src={image} alt={alt} width="400" height="266" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Excerpt text={excerpt} />
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        Read more
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="People Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Listing key={id}>
+                  <Listing.Figure isSquare>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        View profile
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="People Listing: Two Columns" as="h2" size="md" />
+            <StackedList>
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Listing key={id}>
+                  <Listing.Figure isSquare>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        View profile
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container>
+            <PageHeaders header="People Listing: One Column" as="h2" size="md" />
+            <StackedList cols="1">
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Listing key={id}>
+                  <Listing.Figure isSquare>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        View profile
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+
+          <Container isGrey>
+            <PageHeaders header="People Listing: One Column" as="h2" size="md" />
+            <StackedList cols="1">
+              {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+                <Listing key={id}>
+                  <Listing.Figure isSquare>
+                    <img src={image} alt={alt} width="200" height="200" />
+                  </Listing.Figure>
+                  <Listing.Body>
+                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </Listing.PeopleMeta>
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red">
+                        View profile
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+          </Container>
+        </Section>
+      </Main>
+
+      <FooterStandard />
+    </>
+  ),
+}
