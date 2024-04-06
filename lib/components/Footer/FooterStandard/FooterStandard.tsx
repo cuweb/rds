@@ -191,7 +191,7 @@ export const FooterStandard = () => {
           <ul className="flex justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
             {Social.map((item, index) => (
               <li key={index}>
-                <LinkComponent href={item.href} className="text-gray-200 hover:text-cu-red">
+                <LinkComponent href={item.href} className="text-cu-black-300 hover:text-cu-red">
                   <span className="sr-only">{item.name}</span>
                   <item.icon />
                 </LinkComponent>
