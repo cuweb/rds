@@ -9,9 +9,6 @@ export declare const proseGroups: {
 export declare const proseStyles: {
     base: string;
 };
-export declare const footerStyles: {
-    wave: string;
-};
 export declare const layoutSpacing: {
     section: string;
     containerWhite: string;
