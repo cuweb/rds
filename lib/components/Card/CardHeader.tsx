@@ -1,12 +1,18 @@
 export interface CardHeaderProps {
-  children: React.ReactNode
+  title: string
   as?: 'h2' | 'h3'
   date?: string | Date
   datePrefix?: string
   datePosition?: 'top' | 'bottom'
 }
 
-export const CardHeader = ({ children, as = 'h2', date, datePrefix, datePosition = 'top' }: CardHeaderProps) => {
+export const CardHeader = ({
+  title = 'No title available',
+  as = 'h2',
+  date,
+  datePrefix,
+  datePosition = 'top',
+}: CardHeaderProps) => {
   const HeaderComponent = as
   const formattedDate = date
     ? new Date(date).toLocaleString('en-US', {
@@ -25,8 +31,8 @@ export const CardHeader = ({ children, as = 'h2', date, datePrefix, datePosition
         </time>
       )}
 
-      <HeaderComponent className="text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
-        {children}
+      <HeaderComponent className="line-clamp-3 text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
+        {title}
       </HeaderComponent>
 
       {date && datePosition === 'bottom' && (

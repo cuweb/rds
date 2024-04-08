@@ -69,7 +69,7 @@ export const Cards: Story = {
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
                     <Card.DateThumb startDate={startDate} endDate={endDate} />
-                    <Card.Header>{title}</Card.Header>
+                    <Card.Header title={title} />
                     <Card.Body>
                       <Card.EventMeta
                         startDateTime={startDate}
@@ -113,7 +113,7 @@ export const Cards: Story = {
                       <img src={image} alt={alt} width={400} height={175} />
                     </Card.Figure>
                     <Card.DateThumb startDate={startDate} endDate={endDate} />
-                    <Card.Header>{title}</Card.Header>
+                    <Card.Header title={title} />
                     <Card.Body>
                       <Card.EventMeta
                         startDateTime={startDate}
@@ -143,7 +143,7 @@ export const Cards: Story = {
                   <Card.ImageThumb>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.ImageThumb>
-                  <Card.Header>{title}</Card.Header>
+                  <Card.Header title={title} />
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
@@ -165,7 +165,7 @@ export const Cards: Story = {
                   <Card.ImageThumb>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.ImageThumb>
-                  <Card.Header>{title}</Card.Header>
+                  <Card.Header title={title} />
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
@@ -185,7 +185,7 @@ export const Cards: Story = {
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id}>
                   <Card.IconThumb icon={icon} />
-                  <Card.Header>{title}</Card.Header>
+                  <Card.Header title={title} />
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
@@ -205,7 +205,7 @@ export const Cards: Story = {
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id}>
                   <Card.IconThumb icon={icon} />
-                  <Card.Header>{title}</Card.Header>
+                  <Card.Header title={title} />
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                   </Card.Body>
@@ -227,7 +227,7 @@ export const Cards: Story = {
                   <Card.Figure>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.Figure>
-                  <Card.Header date={date}>{title}</Card.Header>
+                  <Card.Header title={title} date={date} />
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                   </Card.Body>
@@ -249,7 +249,7 @@ export const Cards: Story = {
                   <Card.Figure>
                     <img src={image} alt={alt} width="400" height="266" />
                   </Card.Figure>
-                  <Card.Header date={date}>{title}</Card.Header>
+                  <Card.Header title={title} date={date} />
                   <Card.Body>
                     <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                   </Card.Body>
@@ -271,7 +271,7 @@ export const Cards: Story = {
                   <Card.Figure isRound>
                     <img src={image} alt={alt} width={280} height={280} />
                   </Card.Figure>
-                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Header title={`${firstName} ${lastName}`} />
                   <Card.Body>
                     <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
                       <a href={`mailto:${email}`}>{email}</a>
@@ -295,7 +295,7 @@ export const Cards: Story = {
                   <Card.Figure isRound>
                     <img src={image} alt={alt} width={280} height={280} />
                   </Card.Figure>
-                  <Card.Header>{`${firstName} ${lastName}`}</Card.Header>
+                  <Card.Header title={`${firstName} ${lastName}`} />
                   <Card.Body>
                     <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
                       <a href={`mailto:${email}`}>{email}</a>
@@ -339,7 +339,7 @@ export const Cards: Story = {
               {VideoData.slice(0, 6).map(({ id, source, title }) => (
                 <Card key={id} noHover>
                   <Card.Video source={source} />
-                  <Card.Header>{title}</Card.Header>
+                  <Card.Header title={title} />
                 </Card>
               ))}
             </Column>
@@ -351,7 +351,7 @@ export const Cards: Story = {
               {VideoData.slice(0, 6).map(({ id, source, title }) => (
                 <Card key={id} noHover>
                   <Card.Video source={source} />
-                  <Card.Header>{title}</Card.Header>
+                  <Card.Header title={title} />
                 </Card>
               ))}
             </Column>
