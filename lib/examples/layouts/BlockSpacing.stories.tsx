@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Container } from '../../layouts/Container/Container'
@@ -10,7 +11,7 @@ import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
 import { Card } from '../../components/Card/Card'
-import { Heading } from '../../components/Heading/Heading'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { IconData } from '../../data/IconData'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
@@ -62,7 +63,7 @@ export const BlockSpacing: Story = {
           <SinglePara />
 
           <Container>
-            <Heading text="Icon Cards: Shadow on Static & Hover" />
+            <PageHeaders header="Icon Cards: Shadow on Static & Hover" />
             <Column cols="3">
               {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
                 <Card key={id} hasShadow="onCard" noHover>
@@ -87,7 +88,7 @@ export const BlockSpacing: Story = {
           </WideImage>
 
           <Container isGrey>
-            <Heading
+            <PageHeaders
               text="Icon Cards: Shadow on Static & Hover"
               intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
             />

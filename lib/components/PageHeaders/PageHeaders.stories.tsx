@@ -25,25 +25,12 @@ Default.args = {
   as: 'h1',
 }
 
-export const MediumPageHeader: Story = {
+export const PageHeaderCentre: Story = {
   args: {
-    header: 'Medium page header',
-    size: 'md',
-  },
-}
-
-export const SmallPageHeader: Story = {
-  args: {
-    header: 'Small page header',
-    size: 'sm',
-  },
-}
-
-export const ExtraSmallPageHeader: Story = {
-  args: {
-    header: 'Extra small page header, no underline',
-    size: 'xs',
-    noUnderline: true,
+    header: 'Page header centre',
+    size: 'lg',
+    as: 'h1',
+    isCenter: true,
   },
 }
 
@@ -57,31 +44,14 @@ export const DefaultWithContent: Story = {
   },
 }
 
-export const MediumWithContent: Story = {
+export const CenterWithContent: Story = {
   args: {
-    header: 'Medium header with content',
+    header: 'Large center header with content',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'md',
-  },
-}
-
-export const SmallWithContent: Story = {
-  args: {
-    header: 'Small header with content',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'sm',
-  },
-}
-
-export const ExtraSmallWithContent: Story = {
-  args: {
-    header: 'Extra small header with content, no underline',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'xs',
-    noUnderline: true,
+    size: 'lg',
+    as: 'h1',
+    isCenter: true,
   },
 }
 
@@ -90,7 +60,7 @@ export const EventPageHeader: Story = {
     header: 'Upcoming Event Header',
     children: (
       <>
-        <Figure size="sm" align="right" hasShadow>
+        <Figure size="sm" align="right" hasShadow noMobile>
           <img
             src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
             alt="Required alt text"

@@ -16,6 +16,61 @@ Prefix the change with one of these keywords:
 
 ## [Unreleased]
 
+## [0.9.7]
+
+### Added
+
+- Button: added class based styles
+- Button: added support for type prop
+- Card Loader: page card loader was missing shadow
+- Dropdown: add hasBorder prop
+- Page Header: added isCenter prop
+- Page Header: character limit on content prop
+- Stat Card: character limit on stat and desc props
+- Text and Image: character limit on content
+
+### Changed
+
+- Avatar: removed hasShadow and hasBorder props
+- Avatar: replaced rounded prop with isCircle
+- Avatar: updated styles
+- Button: restricted to red and grey color
+- Button: removed outline style
+- Cards: removed button color options in footer sub component, restricted to red
+- Cards: removed shadow options, forced shadow on all cards
+- Cards: removed card bg color, forced white bg on all cards
+- Cards: updated card styles
+- Description List: updated styles
+- Dropdown: removed story view that uses Button component as child
+- Figure: updated props and styles
+- Footer: small link text below logo
+- Icon: restricted to only black, red, white and light grey
+- Icon Cards: restricted to red icons, removed shadow and bg colors
+- Icon Cards: fixed width and height for icons inside container
+- Listings: removed button color options in footer subcomponent, restricted to red
+- Listings: updated card styles
+- Multiday Calendar: updated clear button styles
+- Nav: space between logo and site title
+- Page Header: updated props and styles for event and people sub components
+- Pagination: active text changed to red
+- Search: changed icon color
+- SearchForm: changed icon color
+- Stacked List: removed border option
+- Stacked List: updated max width query sizes when offset used
+- Table: removed hasShadow, forced shadow style
+- Text and Image: header always has underline
+- Wide Image: opacity range set at 60-80
+
+### Deprecated
+
+- Heading: is being replaced by PageHeader
+- Text and Image: removed image angle options
+
+### Fixed
+
+- Stacked List: bottom border on odd / even items
+- Pagination: accessibility error relating to role="presentation"
+
 ## [0.9.6]
 
 ### Fixed

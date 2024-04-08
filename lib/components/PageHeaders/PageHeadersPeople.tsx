@@ -1,6 +1,5 @@
 import { listStyles, socialStyles } from './PageHeaders.Styles'
-import { proseStyles, proseGroups } from '../../utils/globalClasses'
-import { Button } from '../Button/Button'
+import { proseStyles } from '../../utils/globalClasses'
 
 export interface PageHeadersPeopleProps {
   jobTitle?: string
@@ -21,18 +20,24 @@ export interface PageHeadersSocialProps {
 }
 
 export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleProps & PageHeadersSocialProps) => {
-  const { degrees, building, room, email, phone, phoneExt, resume, website, linkedin, twitter, facebook } = restProps
+  const { degrees, building, room, email, phone, phoneExt, website, linkedin, twitter, facebook } = restProps
   const profileDetails = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
   const socialDetails = ['resume', 'linkedin', 'twitter', 'facebook']
 
   return (
     <>
-      {jobTitle && <p className={proseGroups.largeLight}>{jobTitle}</p>}
+      {jobTitle && (
+        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
+          <ul>
+            <li>{jobTitle}</li>
+          </ul>
+        </div>
+      )}
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (
         <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul className={listStyles.listVertical}>
+          <ul>
             {degrees && <li>{degrees}</li>}
             {building && (
               <li>
@@ -61,19 +66,6 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
       {Object.values(socialDetails).some((info) => info) && (
         <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
           <ul className={listStyles.listHorizontal}>
-            {resume && (
-              <li>
-                <Button
-                  isSmall
-                  color="grey"
-                  onClick={() => {
-                    window.location.href = resume
-                  }}
-                  title="Resume"
-                />
-              </li>
-            )}
-
             {linkedin && (
               <li>
                 <a className={`${socialStyles.link} hover:text-[#0072b1]`} href={linkedin}>

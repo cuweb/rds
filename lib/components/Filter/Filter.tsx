@@ -2,7 +2,6 @@ import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Disclosure, Menu, Popover, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import styles from './Filter.Styles'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 
 export interface FilterProps {
@@ -21,6 +20,11 @@ export interface FilterProps {
     }[]
   }[]
   callback: (k: string[]) => void
+}
+
+const styles = {
+  dropDownTitles: `inline-flex justify-center text-sm font-medium text-cu-black-800 group hover:text-cu-red`,
+  chevron: `flex-shrink-0 w-5 h-5 ml-1 text-cu-black-300 group-hover:text-cu-black-600`,
 }
 
 function classNames(...classes: string[]) {

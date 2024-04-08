@@ -1,7 +1,6 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '../Button/Button'
 import { Search } from './Search'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { useCallback, useState } from 'react'
 import { SearchDatabase } from '../../data/SearchData'
 
@@ -32,22 +31,6 @@ export const SearchDefault: Story = () => {
   return <Search sourceData={SearchDatabase} callback={callback} />
 }
 
-export const SearchCustomAvatar: Story = () => {
-  const [, setOpen] = useState(false)
-
-  const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
-    },
-    [setOpen],
-  )
-  return (
-    <Search sourceData={SearchDatabase} callback={callback}>
-      <Button icon={MagnifyingGlassIcon} />
-    </Search>
-  )
-}
-
 export const ValidationUrl: Story = () => {
   const [, setOpen] = useState(false)
 
@@ -73,6 +56,5 @@ export const ValidationKey: Story = () => {
 }
 
 SearchDefault.storyName = 'Default Search'
-SearchCustomAvatar.storyName = 'Custom Avatar Search'
 ValidationUrl.storyName = 'Validation Url Search'
 ValidationKey.storyName = 'Validation Key Search'

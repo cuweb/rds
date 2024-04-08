@@ -58,7 +58,7 @@ export const FooterCookie = () => {
           </a>
         </p>
         <div className="mt-5 ml-auto md:mt-0 cu-cookie-button">
-          <Button onClick={handleButtonClick} title="Ok, got it!" noBreak />
+          <Button onClick={handleButtonClick} title="Ok, got it!" />
         </div>
       </div>
     </div>

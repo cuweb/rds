@@ -87,11 +87,11 @@ export const NavAside = ({
               <div className={navMenuItemStyles.navItemWrapper} role="navigation" data-menu-item="profile">
                 {onClickHandler ? (
                   <a onClick={onClickHandler} className={navMenuItemStyles.navParentItem}>
-                    <Avatar user={userNoImage} size="xs" rounded="full" />
+                    <Avatar user={userNoImage} size="xs" isCircle />
                   </a>
                 ) : (
                   <div className={navMenuItemStyles.navParentItem}>
-                    <Avatar user={userNoImage} size="xs" rounded="full" />
+                    <Avatar user={userNoImage} size="xs" isCircle />
                   </div>
                 )}
               </div>

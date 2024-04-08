@@ -13,25 +13,26 @@ export interface DropDownItemProps {
 
 export interface DropDownProps {
   children?: React.ReactNode
-  buttonText?: string
-  renderAs?: 'button' | 'div'
+  text?: string
   menuAlign?: 'left' | 'right'
   listItems: DropDownItemProps[]
+  hasBorder?: boolean
 }
 
-export const DropDown = ({ children, buttonText, renderAs = 'div', listItems, menuAlign = 'left' }: DropDownProps) => {
+export const DropDown = ({ children, text, menuAlign = 'left', listItems, hasBorder }: DropDownProps) => {
   const LinkComponent = useLinkContext()
+  const borderStyle = hasBorder ? 'border border-cu-black-100 px-3 py-2 rounded-md' : ''
 
   return (
-    <Popover as="div" className="relative flex-shrink-0 inline-block cu-dropdown not-prose">
+    <Popover as="div" className={`relative flex-shrink-0 inline-block cu-dropdown not-prose`}>
       <div>
-        <Popover.Button as={renderAs} className="cursor-pointer">
+        <Popover.Button as="div" className={`cursor-pointer ${borderStyle}`}>
           <span className="sr-only">Open menu</span>
-          {children && !buttonText ? (
+          {children && !text ? (
             children
           ) : (
             <p className="flex">
-              {buttonText}
+              {text}
               <ChevronDownIcon className="w-4 h-4 mt-1 ml-1" aria-hidden="true" />
             </p>
           )}
@@ -49,7 +50,7 @@ export const DropDown = ({ children, buttonText, renderAs = 'div', listItems, me
       >
         <Popover.Panel
           static
-          className={`absolute z-10 w-48 py-1 mt-2 origin-top-left bg-white border rounded-md shadow-lg border-cu-black-100 focus:outline-none ${menuAlign === 'left' ? 'left-0' : 'right-0'}`}
+          className={`absolute z-10 mt-2 w-48 py-1 origin-top-left bg-white border rounded-md shadow-lg border-cu-black-100 focus:outline-none ${menuAlign === 'left' ? 'left-0' : 'right-0'}`}
         >
           {({ close }) => (
             <>
@@ -65,7 +66,7 @@ export const DropDown = ({ children, buttonText, renderAs = 'div', listItems, me
                         close()
                       }}
                     >
-                      {item.icon && <Icon icon={item.icon} aria-hidden="true" size="4" />}
+                      {item.icon && <Icon icon={item.icon} aria-hidden="true" size={4} />}
                       <span className={item.icon ? 'ml-3' : ''}>{item.title}</span>
                     </LinkComponent>
                   </div>

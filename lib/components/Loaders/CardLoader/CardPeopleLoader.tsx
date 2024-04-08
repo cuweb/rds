@@ -2,7 +2,7 @@ import { Card } from '../../Card/Card'
 
 export const CardPeopleLoader = () => {
   return (
-    <Card hasShadow="onCard" isCenter>
+    <Card isCenter>
       <div className="animate-pulse">
         <div className="flex items-center justify-center pt-6">
           <span className="block w-40 h-40 rounded-full bg-cu-black-100"></span>

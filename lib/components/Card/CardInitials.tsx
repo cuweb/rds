@@ -1,12 +1,15 @@
-import { figureStyles } from './Card.Styles'
-
 export interface CardInitialsProps {
   initials: string
 }
 
+const styles = {
+  figure: `relative`,
+  round: `pt-8 pb-2 px-6`,
+}
+
 export const CardInitials = ({ initials }: CardInitialsProps) => {
   return (
-    <figure className={`cu-figure cu-figure--round ${figureStyles.round} ${figureStyles.figure}`}>
+    <figure className={`cu-figure cu-figure--round ${styles.round} ${styles.figure}`}>
       <div className="relative">
         <img
           src="https://cu-production.s3.amazonaws.com/rds/assets/graphics/grey-bg.jpg"

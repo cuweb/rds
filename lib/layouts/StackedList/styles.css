@@ -2,41 +2,59 @@
 StackedList for posts
 */
 
-.cu-stackedlist-posts > li {
-  @apply border-b border-cu-black-100 last:-mb-px;
+/* Add bottom border for single column list */
+.cu-stackedlist--posts.cu-stackedlist--1 > li {
+  @apply border-b last:border-b-0;
 }
 
-.cu-stackedlist-posts.md\:grid-cols-2 > li {
-  @apply last:mb-0 odd:border-r;
+/* Add botom border to all items */
+.cu-stackedlist--posts.cu-stackedlist--2 > li {
+  @apply border-b last:border-b-0 md:last:border-b border-cu-black-100;
+}
+
+/* Add border right on all odd items */
+.cu-stackedlist--posts.cu-stackedlist--2 > li:nth-child(odd) {
+  @apply md:border-r;
+}
+
+/* If odd li is last child in stacked list and remove bottom border */
+.cu-stackedlist--posts.cu-stackedlist--2 > li:nth-child(odd):last-child {
+  @apply md:border-b-0;
+}
+
+/* If even li is last child in stacked list and remove full bottom border */
+.cu-stackedlist--posts.cu-stackedlist--2 > li:nth-child(even):last-child,
+.cu-stackedlist--posts.cu-stackedlist--2 > li:nth-child(odd):nth-last-child(2) {
+  @apply md:border-b-0;
 }
 
 /*
 StackedList for ToC
 */
 
-.cu-stackedlist-toc {
+.cu-stackedlist--toc {
   @apply px-5 py-6 text-cu-black-900;
 }
 
-.cu-stackedlist-toc a {
+.cu-stackedlist--toc a {
   @apply text-cyan-700 hover:text-cu-red-700;
 }
 
-.cu-stackedlist-toc ul:not(:first-child) {
+.cu-stackedlist--toc ul:not(:first-child) {
   @apply pt-3;
 }
 
-.cu-stackedlist-toc li {
+.cu-stackedlist--toc li {
   @apply py-1.5 ml-8 text-lg first:pt-0 last:pb-0;
   list-style-type: decimal;
 }
 
-.cu-stackedlist-toc li li {
+.cu-stackedlist--toc li li {
   @apply ml-6;
   list-style-type: lower-alpha;
 }
 
-.cu-stackedlist-toc li li li {
+.cu-stackedlist--toc li li li {
   @apply ml-4;
   list-style-type: lower-roman;
 }
