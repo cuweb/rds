@@ -37,6 +37,13 @@ export const LightGrey: Story = {
   },
 }
 
+export const DarkGrey: Story = {
+  args: {
+    title: 'Dark Grey Button',
+    color: 'dark-grey',
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,

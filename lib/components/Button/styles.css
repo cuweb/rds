@@ -7,7 +7,11 @@
 }
 
 .cu-button--grey {
-  @apply text-cu-black-700 bg-cu-black-50 hover:text-white hover:bg-cu-black-600;
+  @apply text-cu-black-700 bg-cu-black-50 hover:text-white hover:bg-cu-red;
+}
+
+.cu-button--dark-grey {
+  @apply text-white bg-cu-black-600 hover:text-white hover:bg-cu-red;
 }
 
 .cu-button--white {
