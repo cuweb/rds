@@ -32,7 +32,7 @@ export declare const Card: (({ children, isCenter, noHover, leftBorder }: CardPr
         displayName: string;
     };
     Header: {
-        ({ children, as, date, datePrefix, datePosition }: import("./CardHeader").CardHeaderProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ title, as, date, datePrefix, datePosition, }: import("./CardHeader").CardHeaderProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
     };
     Body: {

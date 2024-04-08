@@ -13,7 +13,7 @@ export declare const Listing: (({ children }: ListingProps) => import('../../../
         displayName: string;
     };
     Header: {
-        ({ children, as, date, datePrefix, datePosition }: import("./ListingHeader").ListingHeaderProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ title, as, date, datePrefix, datePosition, }: import("./ListingHeader").ListingHeaderProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
     };
     Excerpt: {
