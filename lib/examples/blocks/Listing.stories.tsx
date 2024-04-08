@@ -63,7 +63,7 @@ export const Listings: Story = {
                   <Listing key={id}>
                     <Listing.DateThumb startDate={startDate} endDate={endDate} />
                     <Listing.Body>
-                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.Header title={title} />
                       <Listing.EventMeta
                         startDateTime={startDate}
                         endDateTime={endDate}
@@ -102,7 +102,7 @@ export const Listings: Story = {
                   <Listing key={id}>
                     <Listing.DateThumb startDate={startDate} endDate={endDate} />
                     <Listing.Body>
-                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.Header title={title} />
                       <Listing.EventMeta
                         startDateTime={startDate}
                         endDateTime={endDate}
@@ -141,7 +141,7 @@ export const Listings: Story = {
                   <Listing key={id}>
                     <Listing.DateThumb startDate={startDate} endDate={endDate} />
                     <Listing.Body>
-                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.Header title={title} />
                       <Listing.EventMeta
                         startDateTime={startDate}
                         endDateTime={endDate}
@@ -180,7 +180,7 @@ export const Listings: Story = {
                   <Listing key={id}>
                     <Listing.DateThumb startDate={startDate} endDate={endDate} />
                     <Listing.Body>
-                      <Listing.Header>{title}</Listing.Header>
+                      <Listing.Header title={title} />
                       <Listing.EventMeta
                         startDateTime={startDate}
                         endDateTime={endDate}
@@ -208,7 +208,7 @@ export const Listings: Story = {
                 <Listing key={id}>
                   <Listing.IconThumb icon={icon} />
                   <Listing.Body>
-                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Header title={title} />
                     <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                     <Listing.Footer>
@@ -229,7 +229,7 @@ export const Listings: Story = {
                 <Listing key={id}>
                   <Listing.IconThumb icon={icon} />
                   <Listing.Body>
-                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Header title={title} />
                     <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                     <Listing.Footer>
@@ -250,7 +250,7 @@ export const Listings: Story = {
                 <Listing key={id}>
                   <Listing.IconThumb icon={icon} />
                   <Listing.Body>
-                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Header title={title} />
                     <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                     <Listing.Footer>
@@ -271,7 +271,7 @@ export const Listings: Story = {
                 <Listing key={id}>
                   <Listing.IconThumb icon={icon} />
                   <Listing.Body>
-                    <Listing.Header>{title}</Listing.Header>
+                    <Listing.Header title={title} />
                     <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                     <Listing.Footer>
@@ -294,7 +294,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="400" height="266" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Header title={title} date={date} />
                     <Listing.Excerpt text={excerpt} />
                     <Listing.Footer>
                       <a href={link} className="cu-button cu-button--red">
@@ -316,7 +316,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="400" height="266" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Header title={title} date={date} />
                     <Listing.Excerpt text={excerpt} />
                     <Listing.Footer>
                       <a href={link} className="cu-button cu-button--red">
@@ -338,7 +338,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="400" height="266" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Header title={title} date={date} />
                     <Listing.Excerpt text={excerpt} />
                     <Listing.Footer>
                       <a href={link} className="cu-button cu-button--red">
@@ -360,7 +360,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="400" height="266" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header date={date}>{title}</Listing.Header>
+                    <Listing.Header title={title} date={date} />
                     <Listing.Excerpt text={excerpt} />
                     <Listing.Footer>
                       <a href={link} className="cu-button cu-button--red">
@@ -382,7 +382,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.Header title={`${firstName} ${lastName}`} />
                     <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
                       <a href={`mailto:${email}`}>{email}</a>
                     </Listing.PeopleMeta>
@@ -406,7 +406,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.Header title={`${firstName} ${lastName}`} />
                     <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
                       <a href={`mailto:${email}`}>{email}</a>
                     </Listing.PeopleMeta>
@@ -430,7 +430,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.Header title={`${firstName} ${lastName}`} />
                     <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
                       <a href={`mailto:${email}`}>{email}</a>
                     </Listing.PeopleMeta>
@@ -454,7 +454,7 @@ export const Listings: Story = {
                     <img src={image} alt={alt} width="200" height="200" />
                   </Listing.Figure>
                   <Listing.Body>
-                    <Listing.Header>{`${firstName} ${lastName}`}</Listing.Header>
+                    <Listing.Header title={`${firstName} ${lastName}`} />
                     <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
                       <a href={`mailto:${email}`}>{email}</a>
                     </Listing.PeopleMeta>

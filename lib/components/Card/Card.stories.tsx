@@ -26,7 +26,7 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <Card.Header>How to Write for the Web</Card.Header>
+        <Card.Header title="How to Write for the Web" />
         <Card.Body>
           <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         </Card.Body>
@@ -47,7 +47,7 @@ export const EventCard: Story = {
         <img src={eventData.image} alt={eventData.alt} width="400" height="175" />
       </Card.Figure>
       <Card.DateThumb startDate={eventData.startDate} endDate={eventData.endDate} />
-      <Card.Header as="h3">{eventData.title}</Card.Header>
+      <Card.Header title={eventData.title} as="h3" />
       <Card.Body>
         <Card.EventMeta
           startDateTime={eventData.startDate}
@@ -73,7 +73,7 @@ export const NewsCard: Story = {
       <Card.Figure>
         <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
       </Card.Figure>
-      <Card.Header date={newsData.date}>{newsData.title}</Card.Header>
+      <Card.Header title={newsData.title} date={newsData.date} />
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
       </Card.Body>
@@ -90,7 +90,7 @@ export const IconCard: Story = {
   render: () => (
     <Card noHover>
       <Card.IconThumb icon={iconData.icon} />
-      <Card.Header>{iconData.title}</Card.Header>
+      <Card.Header title={iconData.title} />
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
       </Card.Body>
@@ -106,9 +106,7 @@ export const IconCard: Story = {
 export const PageCard: Story = {
   render: () => (
     <Card>
-      <Card.Header date={newsData.date} datePrefix="Modified on " datePosition="bottom">
-        {newsData.title}
-      </Card.Header>
+      <Card.Header title={newsData.title} date={newsData.date} datePrefix="Modified on " datePosition="bottom" />
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
       </Card.Body>
@@ -127,7 +125,7 @@ export const PeopleCard: Story = {
       <Card.Figure isRound>
         <img src={peopleData.image} alt={peopleData.alt} width="280" height="280" />
       </Card.Figure>
-      <Card.Header>{`${peopleData.firstName} ${peopleData.lastName}`}</Card.Header>
+      <Card.Header title={`${peopleData.firstName} ${peopleData.lastName}`} />
       <Card.Body>
         <Card.PeopleMeta jobTitle={peopleData.jobTitle} phone={peopleData.phone}>
           <a href={`mailto:${peopleData.email}`}>{peopleData.email}</a>
@@ -148,7 +146,7 @@ export const SpotlightCard: Story = {
       <Card.ImageThumb>
         <img src={newsData.image} alt={newsData.alt} width="200" height="133" />
       </Card.ImageThumb>
-      <Card.Header>{newsData.title}</Card.Header>
+      <Card.Header title={newsData.title} />
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
       </Card.Body>
@@ -173,7 +171,7 @@ export const VideoCard: Story = {
   render: () => (
     <Card noHover>
       <Card.Video source={videoData.source} />
-      <Card.Header>{videoData.title}</Card.Header>
+      <Card.Header title={videoData.title} />
     </Card>
   ),
 }
