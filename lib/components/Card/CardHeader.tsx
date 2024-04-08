@@ -1,5 +1,4 @@
 export interface CardHeaderProps {
-  // children: React.ReactNode
   title: string
   as?: 'h2' | 'h3'
   date?: string | Date
@@ -7,7 +6,13 @@ export interface CardHeaderProps {
   datePosition?: 'top' | 'bottom'
 }
 
-export const CardHeader = ({ title, as = 'h2', date, datePrefix, datePosition = 'top' }: CardHeaderProps) => {
+export const CardHeader = ({
+  title = 'No title available',
+  as = 'h2',
+  date,
+  datePrefix,
+  datePosition = 'top',
+}: CardHeaderProps) => {
   const HeaderComponent = as
   const formattedDate = date
     ? new Date(date).toLocaleString('en-US', {
