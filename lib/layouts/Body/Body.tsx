@@ -6,5 +6,5 @@ export interface BodyProps {
 }
 
 export const Body = ({ children, className }: BodyProps) => {
-  return <body className={`cu-body ${className}`}>{children}</body>
+  return <body className={`cu-body flex flex-col min-h-screen ${className ? className : ''}`}>{children}</body>
 }
