@@ -1,8 +1,8 @@
 import { Popover, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon'
-import { Icon } from '../Icon/Icon'
-import { useLinkContext } from '../LinkProvider/useLinkContext'
+import { Icon } from '../../components/Icon/Icon'
+import { useLinkContext } from '../../components/LinkProvider/useLinkContext'
 
 export interface DropDownItemProps {
   title: string | React.ReactNode
