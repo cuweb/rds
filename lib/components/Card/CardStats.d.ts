@@ -4,6 +4,6 @@ export interface CardStatsProps {
     reverse?: boolean;
 }
 export declare const CardStats: {
-    ({ stat, desc, reverse }: CardStatsProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ stat, desc, reverse }: CardStatsProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

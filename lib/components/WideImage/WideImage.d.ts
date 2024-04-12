@@ -1,4 +1,5 @@
-import React from '../../../node_modules/react';
+import { default as React } from '../../../node_modules/react';
+
 declare const opacityValues: number[];
 export interface WideImageProps {
     children?: React.ReactNode;
@@ -11,10 +12,16 @@ export interface WideImageProps {
     focalPointY?: string;
     isType?: 'light' | 'dark' | 'image';
 }
-export declare const WideImageWrapper: ({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
-export declare const WideImage: (({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
+export declare const WideImageWrapper: {
+    ({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+};
+export declare const WideImage: {
+    ({ children, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} & {
     Signup: {
-        ({ buttonText }: import("./WideImageSignup").WideImageSignupProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ buttonText }: import('./WideImageSignup').WideImageSignupProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

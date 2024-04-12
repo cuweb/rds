@@ -15,4 +15,4 @@ export interface FilterProps {
     }[];
     callback: (k: string[]) => void;
 }
-export declare const Filter: ({ sortOptions, filters, callback }: FilterProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const Filter: ({ sortOptions, filters, callback }: FilterProps) => import("react/jsx-runtime").JSX.Element;

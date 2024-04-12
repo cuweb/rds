@@ -11,5 +11,5 @@ interface FooterDeptProps {
     officeNumber?: string;
     footerButtons?: FooterButtons[];
 }
-export declare const FooterDept: ({ deptName, buildingName, officeNumber, phone, email, footerButtons }: FooterDeptProps) => import('../../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const FooterDept: ({ deptName, buildingName, officeNumber, phone, email, footerButtons }: FooterDeptProps) => import("react/jsx-runtime").JSX.Element;
 export {};

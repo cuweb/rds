@@ -1,4 +1,5 @@
-import React from '../../../node_modules/react';
+import { default as React } from '../../../node_modules/react';
+
 export interface PageHeadersProps {
     children?: React.ReactNode;
     as?: 'h1' | 'h2' | 'h3';
@@ -15,14 +16,20 @@ declare const headerSize: {
     md: string;
     lg: string;
 };
-export declare const PageHeadersWrapper: ({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
-export declare const PageHeaders: (({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
+export declare const PageHeadersWrapper: {
+    ({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+};
+export declare const PageHeaders: {
+    ({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} & {
     People: {
-        ({ jobTitle, ...restProps }: import("./PageHeadersPeople").PageHeadersPeopleProps & import("./PageHeadersPeople").PageHeadersSocialProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ jobTitle, ...restProps }: import('./PageHeadersPeople').PageHeadersPeopleProps & import('./PageHeadersPeople').PageHeadersSocialProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Event: {
-        ({ startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: import("./PageHeadersEvent").PageHeadersEventProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: import('./PageHeadersEvent').PageHeadersEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

@@ -1,6 +1,7 @@
-import { ReactNode } from '../../../node_modules/react';
+import { default as ImenuItem } from './NavInterface';
 import { UserInfoType } from './../Avatar/Avatar';
-import ImenuItem from './NavInterface';
+import { ReactNode } from '../../../node_modules/react';
+
 export declare const styles: {
     listItemLink: string;
 };
@@ -32,6 +33,6 @@ export interface NavAsideLoggedOutProps {
     onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 export declare const NavAside: {
-    ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, onClickHandler, }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, onClickHandler, }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

@@ -5,6 +5,6 @@ export interface ListingPeopleMetaProps {
     phone?: string;
 }
 export declare const ListingPeopleMeta: {
-    ({ jobTitle, children, phone }: ListingPeopleMetaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ jobTitle, children, phone }: ListingPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

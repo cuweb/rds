@@ -3,6 +3,6 @@ export interface EmbedPowerBiProps {
     url: string;
 }
 export declare const EmbedPowerBi: {
-    ({ title, url }: EmbedPowerBiProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ title, url }: EmbedPowerBiProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

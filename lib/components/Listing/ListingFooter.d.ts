@@ -3,6 +3,6 @@ export interface ListingFooterProps {
     children: React.ReactNode;
 }
 export declare const ListingFooter: {
-    ({ children }: ListingFooterProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ children }: ListingFooterProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

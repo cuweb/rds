@@ -1,1 +1,1 @@
-export declare const CardPageLoader: () => import('../../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const CardPageLoader: () => import("react/jsx-runtime").JSX.Element;

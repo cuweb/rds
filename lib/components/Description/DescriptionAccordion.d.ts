@@ -4,6 +4,6 @@ export interface DescriptionAccordionProps {
     children: React.ReactNode;
 }
 export declare const DescriptionAccordion: {
-    ({ term, children }: DescriptionAccordionProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ term, children }: DescriptionAccordionProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

@@ -22,5 +22,5 @@ export declare const SocialLinks: {
     title: string;
     url: string;
     hover: string;
-    icon: () => import('../../node_modules/react/jsx-runtime').JSX.Element;
+    icon: () => import("react/jsx-runtime").JSX.Element;
 }[];

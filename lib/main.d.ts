@@ -1,3 +1,4 @@
+
 export { Alert } from './components/Alert/Alert';
 export { Avatar } from './components/Avatar/Avatar';
 export { Badge } from './components/Badge/Badge';
@@ -17,7 +18,6 @@ export { Figure } from './components/Figure/Figure';
 export { Icon } from './components/Icon/Icon';
 export { LinkProvider } from './components/LinkProvider';
 export { Listing } from './components/Listing/Listing';
-export { Location } from './components/Location/Location';
 export { Meta } from './components/Meta/Meta';
 export { Modal } from './components/Modal/Modal';
 export { MultiDayCalendar } from './components/MultiDayCalendar/MultiDayCalendar';

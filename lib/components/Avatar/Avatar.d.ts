@@ -1,4 +1,5 @@
-import React from '../../../node_modules/react';
+import { default as React } from '../../../node_modules/react';
+
 export type ImageType = {
     src: string | undefined;
     alt: string | undefined;
@@ -27,5 +28,5 @@ declare const avatarSizes: {
     '2xl': string;
     '4xl': string;
 };
-export declare const Avatar: ({ size, isCircle, user, onClick }: AvatarProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const Avatar: ({ size, isCircle, user, onClick }: AvatarProps) => import("react/jsx-runtime").JSX.Element;
 export {};

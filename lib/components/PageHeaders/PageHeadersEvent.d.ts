@@ -17,6 +17,6 @@ export interface PageHeadersEventProps {
     contactEmail?: string;
 }
 export declare const PageHeadersEvent: {
-    ({ startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: PageHeadersEventProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: PageHeadersEventProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

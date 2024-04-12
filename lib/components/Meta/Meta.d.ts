@@ -1,4 +1,5 @@
 import { PropsWithChildren } from '../../../node_modules/react';
+
 export interface MetaProps {
     description?: string;
 }
@@ -15,15 +16,15 @@ export interface SocialProps {
     description?: string;
 }
 export declare const Meta: {
-    ({ description, children }: PropsWithChildren<MetaProps>): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ description, children }: PropsWithChildren<MetaProps>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Icons: {
-        ({ path }: IconsProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ path }: IconsProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Social: {
-        ({ type, locale, card, title, image, description }: SocialProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ type, locale, card, title, image, description }: SocialProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

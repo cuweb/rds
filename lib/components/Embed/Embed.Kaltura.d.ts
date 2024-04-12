@@ -3,6 +3,6 @@ export interface EmbedKalturaProps {
     url: string;
 }
 export declare const EmbedKaltura: {
-    ({ title, url }: EmbedKalturaProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ title, url }: EmbedKalturaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

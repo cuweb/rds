@@ -9,4 +9,4 @@ export interface CalendarProps {
     callback: (d: Date) => void;
     defaultDate?: string;
 }
-export declare const Calendar: ({ events, callback, defaultDate }: CalendarProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const Calendar: ({ events, callback, defaultDate }: CalendarProps) => import("react/jsx-runtime").JSX.Element;

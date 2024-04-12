@@ -1,1 +1,1 @@
-export declare const ListingNewsLoader: () => import('../../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const ListingNewsLoader: () => import("react/jsx-runtime").JSX.Element;

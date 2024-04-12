@@ -6,6 +6,6 @@ export interface ListingHeaderProps {
     datePosition?: 'top' | 'bottom';
 }
 export declare const ListingHeader: {
-    ({ title, as, date, datePrefix, datePosition, }: ListingHeaderProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ title, as, date, datePrefix, datePosition, }: ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

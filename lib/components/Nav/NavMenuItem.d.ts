@@ -1,4 +1,5 @@
-import ImenuItem from './NavInterface';
+import { default as ImenuItem } from './NavInterface';
+
 export interface menuItemProps {
     menuItem: ImenuItem;
     isSubMenu: boolean;
@@ -6,6 +7,6 @@ export interface menuItemProps {
     id: string;
 }
 export declare const NavMenuItem: {
-    ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuItemProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ menuItem, isSubMenu, isInnerSubMenu, id }: menuItemProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

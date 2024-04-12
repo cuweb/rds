@@ -1,4 +1,5 @@
-import React from '../../../node_modules/react';
+import { default as React } from '../../../node_modules/react';
+
 export interface ModalProps {
     children?: React.ReactNode;
     title?: string;
@@ -8,4 +9,4 @@ export interface ModalProps {
     setIsOpen: (k: boolean) => void;
     hasOverlay?: boolean;
 }
-export declare const Modal: ({ children, title, description, noButton, isOpen, setIsOpen, hasOverlay, }: ModalProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const Modal: ({ children, title, description, noButton, isOpen, setIsOpen, hasOverlay, }: ModalProps) => import("react/jsx-runtime").JSX.Element;

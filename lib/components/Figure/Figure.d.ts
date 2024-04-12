@@ -1,4 +1,5 @@
-import React from '../../../node_modules/react';
+import { default as React } from '../../../node_modules/react';
+
 export interface FigureProps {
     children: React.ReactNode;
     caption?: string;
@@ -7,10 +8,16 @@ export interface FigureProps {
     isRound?: boolean;
     noMobile?: boolean;
 }
-export declare const FigureWrapper: ({ children, caption, isRound, noMobile, size, align }: FigureProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
-export declare const Figure: (({ children, caption, isRound, noMobile, size, align }: FigureProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
+export declare const FigureWrapper: {
+    ({ children, caption, isRound, noMobile, size, align }: FigureProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+};
+export declare const Figure: {
+    ({ children, caption, isRound, noMobile, size, align }: FigureProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} & {
     Video: {
-        ({ source }: import("./Figure.Video").FigureVideoProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+        ({ source }: import('./Figure.Video').FigureVideoProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

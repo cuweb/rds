@@ -15,6 +15,6 @@ export interface PageHeadersSocialProps {
     facebook?: string;
 }
 export declare const PageHeadersPeople: {
-    ({ jobTitle, ...restProps }: PageHeadersPeopleProps & PageHeadersSocialProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ jobTitle, ...restProps }: PageHeadersPeopleProps & PageHeadersSocialProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

@@ -15,4 +15,4 @@ export interface TableProps {
     noWordBreak?: boolean;
     range?: number[];
 }
-export declare const Table: ({ data, columns, hasStripes, noWordBreak, range }: TableProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const Table: ({ data, columns, hasStripes, noWordBreak, range }: TableProps) => import("react/jsx-runtime").JSX.Element;

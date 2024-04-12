@@ -9,4 +9,4 @@ export interface MultiDayCalendarProps {
     callback: (selectedDays: Date[]) => void;
     defaultDate?: string;
 }
-export declare const MultiDayCalendar: ({ events, callback, defaultDate }: MultiDayCalendarProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const MultiDayCalendar: ({ events, callback, defaultDate }: MultiDayCalendarProps) => import("react/jsx-runtime").JSX.Element;

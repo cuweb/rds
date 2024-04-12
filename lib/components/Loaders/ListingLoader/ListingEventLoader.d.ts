@@ -1,1 +1,1 @@
-export declare const ListingEventLoader: () => import('../../../../node_modules/react/jsx-runtime').JSX.Element;
+export declare const ListingEventLoader: () => import("react/jsx-runtime").JSX.Element;

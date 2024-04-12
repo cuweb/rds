@@ -3,6 +3,6 @@ export interface EmbedVimeoProps {
     url: string;
 }
 export declare const EmbedVimeo: {
-    ({ title, url }: EmbedVimeoProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    ({ title, url }: EmbedVimeoProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
