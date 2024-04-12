@@ -27,3 +27,5 @@ export const Embed = Object.assign(EmbedWrapper, {
   TED: EmbedTED,
   Vimeo: EmbedVimeo,
 })
+
+EmbedWrapper.displayName = 'Embed'
