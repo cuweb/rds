@@ -5,8 +5,14 @@ export interface CardProps {
     noHover?: boolean;
     leftBorder?: boolean;
 }
-export declare const CardWrapper: ({ children, isCenter, noHover, leftBorder }: CardProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
-export declare const Card: (({ children, isCenter, noHover, leftBorder }: CardProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element) & {
+export declare const CardWrapper: {
+    ({ children, isCenter, noHover, leftBorder }: CardProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    displayName: string;
+};
+export declare const Card: {
+    ({ children, isCenter, noHover, leftBorder }: CardProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
+    displayName: string;
+} & {
     Figure: {
         ({ children, isRound }: import("./CardFigure").CardFigureProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
         displayName: string;
