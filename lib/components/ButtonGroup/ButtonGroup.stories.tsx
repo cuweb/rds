@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ButtonGroup } from './ButtonGroup'
 import { Button } from '../Button/Button'
@@ -20,6 +21,36 @@ type Story = StoryObj<typeof ButtonGroup>
 export const Primary: Story = {}
 
 Primary.args = {
+  children: (
+    <>
+      <Button
+        onClick={() => {
+          alert('You clicked the button')
+        }}
+        title="Primary Red"
+      />
+      <Button
+        onClick={() => {
+          alert('You clicked the button')
+        }}
+        title="Dark Grey"
+        color="dark-grey"
+      />
+      <Button
+        onClick={() => {
+          alert('You clicked the button')
+        }}
+        title="Light Grey"
+        color="grey"
+      />
+    </>
+  ),
+}
+
+export const CenterGroup: Story = {}
+
+CenterGroup.args = {
+  isCenter: true,
   children: (
     <>
       <Button

@@ -1,3 +1,8 @@
-section div.cu-pageheaders-group:last-of-type {
+/* section div.cu-pageheaders-group:last-of-type {
   @apply mb-6 md:mb-12;
-}
+} */
+
+/* .cu-pageheaders + .cu-column,
+.cu-pageheaders-content + .cu-column {
+  @apply mt-6 md:mt-10 !important;
+} */

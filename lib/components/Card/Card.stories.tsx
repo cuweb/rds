@@ -23,6 +23,22 @@ export default meta
 type Story = StoryObj<typeof Card>
 
 export const Default: Story = {
+  render: (args) => (
+    <Card {...args}>
+      <Card.Header title="How to Write for the Web" />
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+      </Card.Body>
+      <Card.Footer>
+        <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+          More info
+        </a>
+      </Card.Footer>
+    </Card>
+  ),
+}
+
+export const Default2: Story = {
   args: {
     children: (
       <>
