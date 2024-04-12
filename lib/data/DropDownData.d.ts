@@ -1,2 +1,2 @@
-import { DropDownItemProps } from '../components/DropDown/DropDown';
+import { DropDownItemProps } from '../_deprecated/DropDown/DropDown';
 export declare const DropDownItemData: DropDownItemProps[];
