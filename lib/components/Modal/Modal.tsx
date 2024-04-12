@@ -77,7 +77,7 @@ export const Modal = ({
                       }}
                       title="Cancel"
                       isSmall
-                      color="white"
+                      color="grey"
                     />
                   </div>
                 )}

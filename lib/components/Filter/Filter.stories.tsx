@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Filter } from './Filter'
 import { FilterData } from '../../data/FilterData'
@@ -16,13 +17,10 @@ const meta: Meta<typeof Filter> = {
 export default meta
 type Story = StoryObj<typeof Filter>
 
-export const Default: Story = () => {
-  return <Filter filters={FilterData.filters} callback={() => undefined} sortOptions={FilterData.sortOptions} />
+export const Default: Story = {
+  render: () => <Filter filters={FilterData.filters} callback={() => undefined} />,
 }
 
-export const NoSorting: Story = () => {
-  return <Filter filters={FilterData.filters} callback={() => undefined} />
+export const WithoutSorting: Story = {
+  render: () => <Filter filters={FilterData.filters} callback={() => undefined} sortOptions={FilterData.sortOptions} />,
 }
-
-Default.storyName = 'With Sorting'
-NoSorting.storyName = 'Without Sorting'

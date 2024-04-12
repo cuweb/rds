@@ -38,27 +38,28 @@ export const Default: Story = {
   ),
 }
 
-export const Default2: Story = {
-  args: {
-    children: (
-      <>
-        <Card.Header title="How to Write for the Web" />
-        <Card.Body>
-          <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-        </Card.Body>
-        <Card.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
-            More info
-          </a>
-        </Card.Footer>
-      </>
-    ),
-  },
+export const NewsCard: Story = {
+  render: (args) => (
+    <Card {...args}>
+      <Card.Figure>
+        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
+      </Card.Figure>
+      <Card.Header title={newsData.title} date={newsData.date} />
+      <Card.Body>
+        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+      </Card.Body>
+      <Card.Footer>
+        <a href={newsData.link} className="cu-button cu-button--red">
+          Read more
+        </a>
+      </Card.Footer>
+    </Card>
+  ),
 }
 
 export const EventCard: Story = {
-  render: () => (
-    <Card>
+  render: (args) => (
+    <Card {...args}>
       <Card.Figure>
         <img src={eventData.image} alt={eventData.alt} width="400" height="175" />
       </Card.Figure>
@@ -83,28 +84,9 @@ export const EventCard: Story = {
   ),
 }
 
-export const NewsCard: Story = {
-  render: () => (
-    <Card>
-      <Card.Figure>
-        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
-      </Card.Figure>
-      <Card.Header title={newsData.title} date={newsData.date} />
-      <Card.Body>
-        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-      </Card.Body>
-      <Card.Footer>
-        <a href={newsData.link} className="cu-button cu-button--red">
-          Read more
-        </a>
-      </Card.Footer>
-    </Card>
-  ),
-}
-
 export const IconCard: Story = {
-  render: () => (
-    <Card noHover>
+  render: (args) => (
+    <Card {...args} noHover>
       <Card.IconThumb icon={iconData.icon} />
       <Card.Header title={iconData.title} />
       <Card.Body>
@@ -120,8 +102,8 @@ export const IconCard: Story = {
 }
 
 export const PageCard: Story = {
-  render: () => (
-    <Card>
+  render: (args) => (
+    <Card {...args}>
       <Card.Header title={newsData.title} date={newsData.date} datePrefix="Modified on " datePosition="bottom" />
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
@@ -136,8 +118,8 @@ export const PageCard: Story = {
 }
 
 export const PeopleCard: Story = {
-  render: () => (
-    <Card isCenter>
+  render: (args) => (
+    <Card {...args} isCenter>
       <Card.Figure isRound>
         <img src={peopleData.image} alt={peopleData.alt} width="280" height="280" />
       </Card.Figure>
@@ -157,8 +139,8 @@ export const PeopleCard: Story = {
 }
 
 export const SpotlightCard: Story = {
-  render: () => (
-    <Card noHover>
+  render: (args) => (
+    <Card {...args} noHover>
       <Card.ImageThumb>
         <img src={newsData.image} alt={newsData.alt} width="200" height="133" />
       </Card.ImageThumb>
@@ -176,16 +158,16 @@ export const SpotlightCard: Story = {
 }
 
 export const StatCard: Story = {
-  render: () => (
-    <Card leftBorder noHover>
+  render: (args) => (
+    <Card {...args} leftBorder noHover>
       <Card.Stats stat={statData.stat} desc={statData.desc} />
     </Card>
   ),
 }
 
 export const VideoCard: Story = {
-  render: () => (
-    <Card noHover>
+  render: (args) => (
+    <Card {...args} noHover>
       <Card.Video source={videoData.source} />
       <Card.Header title={videoData.title} />
     </Card>

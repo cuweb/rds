@@ -19,8 +19,8 @@ export default meta
 type Story = StoryObj<typeof TextImage>
 
 export const DefaultTemplate: Story = {
-  render: () => (
-    <TextImage hasBorder>
+  render: (args) => (
+    <TextImage hasBorder {...args}>
       <TextImage.Content title="Website and Application Development" imageUrl="https://picsum.photos/400/266">
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
@@ -37,8 +37,8 @@ export const DefaultTemplate: Story = {
 }
 
 export const HeaderOne: Story = {
-  render: () => (
-    <TextImage hasBorder maxWidth="7xl">
+  render: (args) => (
+    <TextImage hasBorder maxWidth="7xl" {...args}>
       <TextImage.Content
         title="Website and Application Development"
         headerType="h1"
@@ -59,8 +59,8 @@ export const HeaderOne: Story = {
 }
 
 export const ImageLeft: Story = {
-  render: () => (
-    <TextImage hasBorder flipX>
+  render: (args) => (
+    <TextImage hasBorder flipX {...args}>
       <TextImage.Content
         title="Website and Application Development"
         imageUrl="https://picsum.photos/400/266"
@@ -81,16 +81,16 @@ export const ImageLeft: Story = {
 }
 
 export const NoContent: Story = {
-  render: () => (
-    <TextImage>
+  render: (args) => (
+    <TextImage {...args}>
       <TextImage.Content title="Website and Application Development" />
     </TextImage>
   ),
 }
 
 export const NoImage: Story = {
-  render: () => (
-    <TextImage>
+  render: (args) => (
+    <TextImage {...args}>
       <TextImage.Content title="Website and Application Development">
         <p>
           Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut

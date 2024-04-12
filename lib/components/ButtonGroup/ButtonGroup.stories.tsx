@@ -18,11 +18,9 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta
 type Story = StoryObj<typeof ButtonGroup>
 
-export const Primary: Story = {}
-
-Primary.args = {
-  children: (
-    <>
+export const Default: Story = {
+  render: (args) => (
+    <ButtonGroup {...args}>
       <Button
         onClick={() => {
           alert('You clicked the button')
@@ -43,36 +41,6 @@ Primary.args = {
         title="Light Grey"
         color="grey"
       />
-    </>
-  ),
-}
-
-export const CenterGroup: Story = {}
-
-CenterGroup.args = {
-  isCenter: true,
-  children: (
-    <>
-      <Button
-        onClick={() => {
-          alert('You clicked the button')
-        }}
-        title="Primary Red"
-      />
-      <Button
-        onClick={() => {
-          alert('You clicked the button')
-        }}
-        title="Dark Grey"
-        color="dark-grey"
-      />
-      <Button
-        onClick={() => {
-          alert('You clicked the button')
-        }}
-        title="Light Grey"
-        color="grey"
-      />
-    </>
+    </ButtonGroup>
   ),
 }

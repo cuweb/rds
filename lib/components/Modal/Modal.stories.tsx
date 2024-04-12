@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
 import { Button } from '../Button/Button'
@@ -32,13 +33,12 @@ export const Default: Story = () => {
         setIsOpen={setModalOpen}
       >
         <Button
+          title="Delete"
+          isSmall
           onClick={() => {
             alert(' delete are you sure you want to delete it')
             setModalOpen(false)
           }}
-          title="Delete"
-          isSmall
-          hasShadow
         />
       </Modal>
     </>
@@ -61,13 +61,12 @@ export const NoButton: Story = () => {
         hasOverlay
       >
         <Button
+          title="Delete"
+          isSmall
           onClick={() => {
             alert(' delete are you sure you want to delete it')
             setModalOpen(false)
           }}
-          title="Delete"
-          isSmall
-          hasShadow
         />
       </Modal>
     </>
@@ -75,4 +74,4 @@ export const NoButton: Story = () => {
 }
 
 Default.storyName = 'Default Modal'
-NoButton.storyName = 'ModalNoButton'
+NoButton.storyName = 'No Button on Modal'

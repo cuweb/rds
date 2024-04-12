@@ -1,3 +1,4 @@
+import React from 'react'
 import { useCallback, useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { SearchForm } from './SearchForm'

@@ -102,3 +102,5 @@ export const WideImageWrapper = ({
 export const WideImage = Object.assign(WideImageWrapper, {
   Signup: WideImageSignup,
 })
+
+WideImageWrapper.displayName = 'WideImage'

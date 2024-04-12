@@ -15,8 +15,5 @@ const meta: Meta<typeof TopNavLoader> = {
 export default meta
 type Story = StoryObj<typeof TopNavLoader>
 
-export const Primary: Story = {}
-
-Primary.args = {
-  children: 'TopNavLoader component',
-}
+export const Default: Story = {}
+Default.args = {}

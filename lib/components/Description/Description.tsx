@@ -13,3 +13,5 @@ export const Description = Object.assign(DescriptionWrapper, {
   Accordion: DescriptionAccordion,
   Meta: DescriptionMeta,
 })
+
+DescriptionWrapper.displayName = 'Description'
