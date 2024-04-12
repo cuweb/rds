@@ -15,9 +15,9 @@ const meta: Meta<typeof FooterDept> = {
 export default meta
 type Story = StoryObj<typeof FooterDept>
 
-export const DefaultTemplate: Story = {}
+export const Default: Story = {}
 
-DefaultTemplate.args = {
+Default.args = {
   deptName: 'Information Technology Services',
   officeNumber: '400',
   buildingName: 'Pigiarvik (ᐱᒋᐊᕐᕕᒃ)',
