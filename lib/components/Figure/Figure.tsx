@@ -44,3 +44,5 @@ export const FigureWrapper = ({ children, caption, isRound, noMobile, size = 'fu
 export const Figure = Object.assign(FigureWrapper, {
   Video: FigureVideo,
 })
+
+FigureWrapper.displayName = 'Figure'
