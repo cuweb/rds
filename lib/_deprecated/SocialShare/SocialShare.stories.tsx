@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { SocialShare } from './SocialShare'
 
 const meta: Meta<typeof SocialShare> = {
-  title: 'Components/SocialShare',
+  title: 'Deprecated/SocialShare',
   component: SocialShare,
   tags: ['autodocs'],
   parameters: {
