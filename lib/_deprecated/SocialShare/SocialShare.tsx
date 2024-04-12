@@ -1,6 +1,7 @@
 import { ShareIcon } from '@heroicons/react/24/outline'
-import { Button } from '../Button/Button'
-import { DropDown, DropDownItemProps } from '../DropDown/DropDown'
+
+import { DropDown, DropDownItemProps } from '../../_deprecated/DropDown/DropDown'
+import { Button } from '../../components/Button/Button'
 
 export interface SocialShareProps {
   title: string

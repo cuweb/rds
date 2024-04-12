@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { FooterCookie } from './FooterCookie'
 
@@ -16,8 +17,5 @@ export default meta
 
 type Story = StoryObj<typeof FooterCookie>
 
-export const Default: Story = () => {
-  return <FooterCookie />
-}
-
-Default.storyName = 'Default FooterCookie Banner'
+export const Default: Story = {}
+Default.args = {}

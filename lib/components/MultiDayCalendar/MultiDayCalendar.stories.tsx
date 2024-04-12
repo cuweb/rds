@@ -1,9 +1,10 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { MultiDayCalendar } from './MultiDayCalendar'
 import { useCallback, useState } from 'react'
 
 const meta: Meta<typeof MultiDayCalendar> = {
-  title: 'Components/MultiDayCalendar',
+  title: 'Components/Multi-day Calendar',
   component: MultiDayCalendar,
   tags: ['autodocs'],
   parameters: {

@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Figure } from './Figure'
 
@@ -23,91 +24,75 @@ const content = {
 export default meta
 type Story = StoryObj<typeof Figure>
 
-export const ImageFull: Story = {
-  args: {
-    children: <img src={content.imageWide} alt={content.alt} width="400" height="266" />,
-  },
+export const Default: Story = {
+  render: (args) => (
+    <Figure {...args}>
+      <img src={content.image} alt={content.alt} width="400" height="266" />
+    </Figure>
+  ),
 }
 
-export const ImageLarge: Story = {
+export const ImageLarge = {
+  ...Default,
   args: {
     size: 'lg',
-    children: <img src={content.imageWide} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageMedium: Story = {
+  ...Default,
   args: {
     size: 'md',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageSmall: Story = {
+  ...Default,
   args: {
     size: 'sm',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
-  },
-}
-
-export const ImageRounded: Story = {
-  args: {
-    size: 'md',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageCircular: Story = {
   args: {
+    isRound: true,
     size: 'sm',
     children: <img src={content.imageSquare} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageWithCaption: Story = {
+  ...Default,
   args: {
     size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
-  },
-}
-
-export const ImageWithShadow: Story = {
-  args: {
-    hasShadow: true,
-    caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
-    size: 'md',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageFloatLeft: Story = {
+  ...Default,
   args: {
     align: 'left',
-    hasShadow: true,
     size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageFloatRight: Story = {
+  ...Default,
   args: {
     align: 'right',
-    hasShadow: true,
     size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
 export const ImageCenterAlign: Story = {
+  ...Default,
   args: {
     align: 'center',
-    hasShadow: true,
     size: 'md',
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
-    children: <img src={content.image} alt={content.alt} width="400" height="266" />,
   },
 }
 
@@ -120,7 +105,6 @@ export const Video: Story = {
 export const VideoWithCaption: Story = {
   args: {
     size: 'md',
-    hasShadow: true,
     caption: 'Vestibulum facilisis nibh efficitur placerat. Maecenas vitae risus vehicula dolor.',
     children: <Figure.Video source={content.video} />,
   },

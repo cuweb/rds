@@ -57,3 +57,5 @@ export const Card = Object.assign(CardWrapper, {
   PeopleMeta: CardPeopleMeta,
   Stats: CardStats,
 })
+
+CardWrapper.displayName = 'Card'

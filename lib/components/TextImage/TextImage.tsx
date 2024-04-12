@@ -36,3 +36,5 @@ export const TextImageWrapper = ({
 export const TextImage = Object.assign(TextImageWrapper, {
   Content: TextImageContent,
 })
+
+TextImageWrapper.displayName = 'TextImage'

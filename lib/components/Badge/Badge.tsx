@@ -1,12 +1,10 @@
-import React from 'react'
-
 export interface BadgeProps {
-  children?: React.ReactNode
+  text: string
   color?: 'green' | 'red' | 'yellow' | 'blue' | 'purple' | 'grey'
   noWordBreak?: boolean
 }
 
-export const Badge = ({ children, color = 'grey', noWordBreak = false }: BadgeProps) => {
+export const Badge = ({ text = 'Badge', color = 'grey', noWordBreak = false }: BadgeProps) => {
   const wordBreakClass = noWordBreak ? 'whitespace-nowrap' : ''
 
   // Set color classes
@@ -36,7 +34,7 @@ export const Badge = ({ children, color = 'grey', noWordBreak = false }: BadgePr
     <p
       className={`inline-flex px-3 py-1 text-xs font-semibold cu-badge not-prose rounded-full ${badgeColor} ${wordBreakClass}`}
     >
-      {children}
+      {text}
     </p>
   )
 }

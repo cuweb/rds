@@ -2,10 +2,10 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { DropDown } from './DropDown'
 import { DropDownItemData as listItems } from '../../data/DropDownData'
-import { Button } from '../Button/Button'
+import { Button } from '../../components/Button/Button'
 
 const meta: Meta<typeof DropDown> = {
-  title: 'Components/DropDown',
+  title: 'Deprecated/DropDown',
   component: DropDown,
   tags: ['autodocs'],
   parameters: {
@@ -41,4 +41,16 @@ export const Outline: Story = {
 
 Outline.args = {
   text: 'Outline Dropdown',
+}
+
+export const ButtonDropdown: Story = {
+  render: (args) => (
+    <DropDown {...args} listItems={listItems}>
+      {args.children}
+    </DropDown>
+  ),
+}
+
+ButtonDropdown.args = {
+  children: <Button title="Dropdown Button" />,
 }

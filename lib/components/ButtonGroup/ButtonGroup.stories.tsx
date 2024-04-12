@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ButtonGroup } from './ButtonGroup'
 import { Button } from '../Button/Button'
@@ -17,11 +18,9 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta
 type Story = StoryObj<typeof ButtonGroup>
 
-export const Primary: Story = {}
-
-Primary.args = {
-  children: (
-    <>
+export const Default: Story = {
+  render: (args) => (
+    <ButtonGroup {...args}>
       <Button
         onClick={() => {
           alert('You clicked the button')
@@ -42,6 +41,6 @@ Primary.args = {
         title="Light Grey"
         color="grey"
       />
-    </>
+    </ButtonGroup>
   ),
 }
