@@ -42,3 +42,15 @@ export const Outline: Story = {
 Outline.args = {
   text: 'Outline Dropdown',
 }
+
+export const ButtonDropdown: Story = {
+  render: (args) => (
+    <DropDown {...args} listItems={listItems}>
+      {args.children}
+    </DropDown>
+  ),
+}
+
+ButtonDropdown.args = {
+  children: <Button title="Dropdown Button" />,
+}
