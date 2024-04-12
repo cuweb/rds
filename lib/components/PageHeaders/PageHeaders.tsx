@@ -94,3 +94,5 @@ export const PageHeaders = Object.assign(PageHeadersWrapper, {
   People: PageHeadersPeople,
   Event: PageHeadersEvent,
 })
+
+PageHeadersWrapper.displayName = 'PageHeader'
