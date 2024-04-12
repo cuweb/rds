@@ -23,7 +23,7 @@ type Story = StoryObj<typeof ListingNewsLoader>
 
 export const Default: Story = {
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingPageLoader />
     </StackedList>
   ),
@@ -32,7 +32,7 @@ export const Default: Story = {
 export const Event: Story = {
   name: 'Event Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingEventLoader />
     </StackedList>
   ),
@@ -41,7 +41,7 @@ export const Event: Story = {
 export const Icon: Story = {
   name: 'Icon Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingIconLoader />
     </StackedList>
   ),
@@ -50,7 +50,7 @@ export const Icon: Story = {
 export const News: Story = {
   name: 'News Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingNewsLoader />
     </StackedList>
   ),
@@ -59,7 +59,7 @@ export const News: Story = {
 export const Page: Story = {
   name: 'Page Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingPageLoader />
     </StackedList>
   ),
@@ -68,7 +68,7 @@ export const Page: Story = {
 export const People: Story = {
   name: 'People Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingPeopleLoader />
     </StackedList>
   ),
@@ -77,7 +77,7 @@ export const People: Story = {
 export const TwoCol: Story = {
   name: 'Two Columns',
   render: () => (
-    <StackedList cols="2" hasShadow>
+    <StackedList cols="2">
       <ListingNewsLoader />
       <ListingNewsLoader />
     </StackedList>

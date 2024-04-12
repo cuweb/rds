@@ -22,38 +22,31 @@ const meta: Meta<typeof CardNewsLoader> = {
 export default meta
 type Story = StoryObj<typeof CardNewsLoader>
 
-export const News: Story = {
-  name: 'News Card Loader',
+export const NewsCardLoader: Story = {
   render: () => <CardNewsLoader />,
 }
 
-export const Event: Story = {
-  name: 'Event Card Loader',
+export const EventCardLoader: Story = {
   render: () => <CardEventLoader />,
 }
 
-export const Icon: Story = {
-  name: 'Icon Card Loader',
+export const IconCardLoader: Story = {
   render: () => <CardIconLoader />,
 }
 
-export const Page: Story = {
-  name: 'Page Card Loader',
+export const PageCardLoader: Story = {
   render: () => <CardPageLoader />,
 }
 
-export const People: Story = {
-  name: 'People Card Loader',
+export const PeopleCardLoader: Story = {
   render: () => <CardPeopleLoader />,
 }
 
-export const Video: Story = {
-  name: 'Video Card Loader',
+export const VideoCardLoader: Story = {
   render: () => <CardVideoLoader />,
 }
 
-export const TwoCol: Story = {
-  name: 'Two Columns',
+export const TwoColumns: Story = {
   render: () => (
     <Column maxWidth="5xl" cols="2" gridGap="10">
       <CardNewsLoader />

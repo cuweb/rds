@@ -21,8 +21,8 @@ export default meta
 type Story = StoryObj<typeof Listing>
 
 export const Default: Story = {
-  args: {
-    children: (
+  render: (args) => (
+    <Listing {...args}>
       <Listing.Body>
         <Listing.Header title="How to Write for the Web" />
         <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
@@ -32,13 +32,32 @@ export const Default: Story = {
           </a>
         </Listing.Footer>
       </Listing.Body>
-    ),
-  },
+    </Listing>
+  ),
+}
+
+export const NewsListing: Story = {
+  render: (args) => (
+    <Listing {...args}>
+      <Listing.Figure>
+        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
+      </Listing.Figure>
+      <Listing.Body>
+        <Listing.Header title={newsData.title} date={newsData.date} />
+        <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+        <Listing.Footer>
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+            Read more
+          </a>
+        </Listing.Footer>
+      </Listing.Body>
+    </Listing>
+  ),
 }
 
 export const EventListItem: Story = {
-  render: () => (
-    <Listing>
+  render: (args) => (
+    <Listing {...args}>
       <Listing.DateThumb startDate={eventData.startDate} endDate={eventData.endDate} />
       <Listing.Body>
         <Listing.Header title={eventData.title} />
@@ -60,28 +79,9 @@ export const EventListItem: Story = {
   ),
 }
 
-export const NewsListing: Story = {
-  render: () => (
-    <Listing>
-      <Listing.Figure>
-        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
-      </Listing.Figure>
-      <Listing.Body>
-        <Listing.Header title={newsData.title} date={newsData.date} />
-        <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-        <Listing.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
-            Read more
-          </a>
-        </Listing.Footer>
-      </Listing.Body>
-    </Listing>
-  ),
-}
-
 export const IconListing: Story = {
-  render: () => (
-    <Listing>
+  render: (args) => (
+    <Listing {...args}>
       <Listing.IconThumb icon={iconData.icon} />
       <Listing.Body>
         <Listing.Header title={iconData.title} />
@@ -97,8 +97,8 @@ export const IconListing: Story = {
 }
 
 export const PeopleListing: Story = {
-  render: () => (
-    <Listing>
+  render: (args) => (
+    <Listing {...args}>
       <Listing.Figure>
         <img src={peopleData.image} alt={peopleData.alt} width="280" height="280" />
       </Listing.Figure>
