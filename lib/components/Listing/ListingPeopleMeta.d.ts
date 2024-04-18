@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface ListingPeopleMetaProps {
     children?: React.ReactNode;
     jobTitle?: string;
