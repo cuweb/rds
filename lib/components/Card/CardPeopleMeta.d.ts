@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface CardPeopleMetaProps {
     children: React.ReactNode;
     jobTitle?: string;
