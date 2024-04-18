@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Location } from './Location'
+import { LoadScript } from '@react-google-maps/api'
+import React from 'react'
 
 const meta: Meta<typeof Location> = {
   title: 'Components/Location',
@@ -10,6 +12,13 @@ const meta: Meta<typeof Location> = {
       sort: 'requiredFirst',
     },
   },
+  decorators: [
+    (Story) => (
+      <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY}>
+        <Story />
+      </LoadScript>
+    ),
+  ],
 }
 
 export default meta
