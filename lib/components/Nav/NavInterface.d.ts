@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export default interface ImenuItem {
     href?: string;
     title: string;
