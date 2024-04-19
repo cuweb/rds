@@ -10,7 +10,7 @@ export const CardPeopleMeta = ({ jobTitle, children, phone }: CardPeopleMetaProp
       {jobTitle && <li className="text-base @sm:md:text-lg italic">{jobTitle}</li>}
       {children && (
         <li>
-          <strong className="font-semibold break-all hover:text-cyan-700 text-cu-red-700">{children}</strong>
+          <strong className="font-semibold break-all hover:underline text-cu-red-700">{children}</strong>
         </li>
       )}
       {phone && <li>{phone}</li>}
