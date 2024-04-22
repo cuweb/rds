@@ -40,40 +40,22 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 - `npm run lint` - check for errors with eslint
 - `npm run size` - compare compiled size against pre-defined limit
 
-## Testing Components and End to End Testing
+## Component Testing
 
-### Start component and e2e tests
+Run Storybook and Cypress concurrently
 
-Will automaically run the storybook and cypress concurrently
-
-```shell
-   npm run test
+```
+npm run test
 ```
 
-OR
+You can also run Storybook and Cypress individually by using the following commands in different terminal windows:
 
-if you want to run them individually you can use the below commands
+- Run Storybook - `npm run storybook`
+- Run Cypress - `npx cypress Open`
 
-> [!WARNING]  
-> For testig storybook should be running
+### Other Commands
 
-1. Run storybook
-
-```shell
-   npm run storybook
-```
-
-2. Running the Cypress test
-
-```shell
-   npx cypress Open
-```
-
-### Running Cypress Test CI , Run headless / ci tests
-
-```shell
-   npm run test:ci
-```
+- Run tests in terminal while storybook is being launched - `npm run test:ci`
 
 ## Comment Linting
 
