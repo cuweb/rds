@@ -37,7 +37,8 @@
     "size": "size-limit",
     "clean": "rm -rf node_modules ; npm install ; npm run build",
     "rebuild": "rm -rf node_modules ; rm package-lock.json ; npm install ; npm run build",
-    "test": "echo \"No test specified\" && exit 0",
+    "test": "concurrently \"npm run  storybook --quiet --ci -p 6006\" \"npx cypress open\"",
+    "test:ci": "concurrently \"npm run  storybook --quiet --ci -p 6006\" \"npx cypress run --headless\"",
     "prepare": "husky"
   },
   "dependencies": {
@@ -91,6 +92,8 @@
     "@typescript-eslint/parser": "^7.6.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cypress": "^13.7.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
