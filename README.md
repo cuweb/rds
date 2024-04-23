@@ -11,6 +11,7 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 - [Storybook](https://storybook.js.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Cypress](https://www.cypress.io/)
 
 ## Getting Started
 
@@ -38,6 +39,23 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 - `npm run format` - format files with prettier
 - `npm run lint` - check for errors with eslint
 - `npm run size` - compare compiled size against pre-defined limit
+
+## Component Testing
+
+Run Storybook and Cypress concurrently
+
+```
+npm run test
+```
+
+You can also run Storybook and Cypress individually by using the following commands in different terminal windows:
+
+- Run Storybook - `npm run storybook`
+- Run Cypress - `npx cypress Open`
+
+### Other Commands
+
+- Run tests in terminal while storybook is being launched - `npm run test:ci`
 
 ## Comment Linting
 

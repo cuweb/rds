@@ -37,7 +37,7 @@ StackedList for ToC
 }
 
 .cu-stackedlist--toc a {
-  @apply text-cyan-700 hover:text-cu-red-700;
+  @apply font-medium text-cu-red-600 hover:underline;
 }
 
 .cu-stackedlist--toc ul:not(:first-child) {
