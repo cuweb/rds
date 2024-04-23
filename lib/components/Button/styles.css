@@ -35,6 +35,8 @@
 }
 
 .cu-column + .cu-button,
-.cu-column + .cu-buttongroup {
+.cu-column + .cu-buttongroup,
+.cu-stackedlist + .cu-button,
+.cu-stackedlist + .cu-buttongroup {
   @apply mt-8 md:mt-10;
 }
