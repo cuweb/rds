@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import { Button } from '@carletonuniversity/rds'
+import { Button } from '../../Button/Button'
 
 export interface FormButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title?: string
