@@ -312,7 +312,6 @@ export const ImageUpload: Story = () => {
 
 ImageUpload.storyName = 'Image Upload'
 
-
 export const AutoSuggest: Story = () => {
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
