@@ -308,9 +308,10 @@ export const WYSIWYG: Story = () => {
       initialValues={WysiwygInitialValues}
       validationSchema={WysiwygValidationSchema}
       validateOnBlur={true}
-      onSubmit={async (values) => {
-        console.log(values)
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
         alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
       }}
     >
       {({ isSubmitting }) => (
