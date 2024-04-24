@@ -316,7 +316,7 @@ export const WYSIWYG: Story = () => {
       {({ isSubmitting }) => (
         <Form method="post" className={primaryStyles.form}>
           <FieldWrapper>
-            <FieldControl control="wysiwyg" label="Wysiwyg Example" name="wysiwyg" required />
+            <FieldControl control="wysiwyg" label="Wysiwyg Example" name="wysiwyg" placeholder="Placeholder" required />
           </FieldWrapper>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />

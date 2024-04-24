@@ -1,5 +1,5 @@
 export const primaryStyles = {
-  form: `flex flex-col gap-2 md:gap-5`,
+  form: `flex flex-col gap-5`,
   wrapper: `flex flex-col gap-2 justify-center`,
 }
 

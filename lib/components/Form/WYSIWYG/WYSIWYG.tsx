@@ -1,16 +1,11 @@
-import React, { useState, Suspense } from 'react'
+import { useState, Suspense } from 'react'
 import { ErrorMessage, useField } from 'formik'
 import { primaryStyles, textStyles } from '../../../styles/form'
 import { maxWidthClasses } from '../../../helpers/optionClasses'
 import Error from '../Error/Error'
 import HelperText from '../HelperText/HelperText'
 import 'react-quill/dist/quill.snow.css'
-
-// Define a function that returns a Promise for the component import
-const importReactQuill = () => import('react-quill')
-
-// Lazy load the ReactQuill component
-const LazyReactQuill = React.lazy(importReactQuill)
+import ReactQuill from 'react-quill'
 
 export interface WYSIWYGProps {
   label: string
@@ -42,7 +37,7 @@ export const WYSIWYG = ({ ...props }: WYSIWYGProps) => {
 
       {/* Use Suspense to wrap the lazy-loaded component */}
       <Suspense fallback={<div>Loading...</div>}>
-        <LazyReactQuill value={text} onChange={handleTextChange} {...rest} />
+        <ReactQuill value={text} onChange={handleTextChange} {...rest} />
       </Suspense>
 
       {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
