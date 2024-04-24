@@ -15,7 +15,6 @@ export interface ImageUploadProps {
 export const ImageUpload = ({ ...props }: ImageUploadProps) => {
   const { label, name, maxWidth, helper, required, ...rest } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
-  const requiredClass = required ? primaryStyles.required : ''
   const initialValues = {
     file: null,
   }
@@ -29,7 +28,7 @@ export const ImageUpload = ({ ...props }: ImageUploadProps) => {
     onSubmit,
   })
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
       <label htmlFor={name} className={textStyles.label}>
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>

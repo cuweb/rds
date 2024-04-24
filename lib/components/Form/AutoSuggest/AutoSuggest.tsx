@@ -23,12 +23,11 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
   const { label, name, options, maxWidth, helper, disabled = false, required, ...rest } = props
 
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
-  const requiredClass = required ? primaryStyles.required : ''
   const [field] = useField(name)
   const { setFieldValue } = useFormikContext<unknown>()
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
       <label htmlFor={name} className={textStyles.label}>
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>

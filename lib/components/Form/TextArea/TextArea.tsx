@@ -14,10 +14,9 @@ export interface TextAreaProps {
 export const TextArea = ({ ...props }: TextAreaProps) => {
   const { label, name, maxWidth, helper, required, ...rest } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
-  const requiredClass = required ? primaryStyles.required : ''
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
       <label htmlFor={name} className={textStyles.label}>
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>

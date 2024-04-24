@@ -10,6 +10,7 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { FormButton } from './FormButton/FormButton'
 import fileUploadValidationSchema from '../../helpers/fileUploadValidationSchema'
 import imageUploadValidationSchema from '../../helpers/imageUploadValidationSchema'
+import { primaryStyles } from '../../styles/form'
 
 const meta: Meta<typeof FieldControl> = {
   title: 'Components/Form',
@@ -294,12 +295,28 @@ export const TextArea: Story = () => {
 TextArea.storyName = 'Text Area'
 
 export const WYSIWYG: Story = () => {
+  const WysiwygInitialValues = {
+    wysiwyg: '',
+  }
+
+  const WysiwygValidationSchema = Yup.object().shape({
+    wysiwyg: Yup.string().required('The field is required'),
+  })
+
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={WysiwygInitialValues}
+      validationSchema={WysiwygValidationSchema}
+      validateOnBlur={true}
+      onSubmit={async (values) => {
+        console.log(values)
+        alert(JSON.stringify(values, null, 2))
+      }}
+    >
       {({ isSubmitting }) => (
-        <Form method="post">
+        <Form method="post" className={primaryStyles.form}>
           <FieldWrapper>
-            <FieldControl control="wysiwyg" name="wysiwyg" />
+            <FieldControl control="wysiwyg" label="Wysiwyg Example" name="wysiwyg" required />
           </FieldWrapper>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />

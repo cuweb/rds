@@ -32,7 +32,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
     maxWidth,
     ...rest
   } = props
-  const requiredClass = required ? primaryStyles.required : ''
+
   const [field, , helpers] = useField(name)
   const { setValue, setTouched, setError } = helpers
 
@@ -45,7 +45,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   }
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
       <label htmlFor={name} className={textStyles.label}>
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>

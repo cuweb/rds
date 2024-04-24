@@ -16,12 +16,11 @@ export interface CheckboxProps {
 }
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {
-  const { label, name, options, isInline, helper, checkBoxRight, required, ...rest } = props
-  const requiredClass = required ? primaryStyles.required : ''
+  const { label, name, options, isInline, helper, checkBoxRight, ...rest } = props
   const displayInline = isInline ? fieldStyles.horizontalOptions : fieldStyles.verticalOptions
 
   return (
-    <div className={`${primaryStyles.wrapper} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} form-control`}>
       <fieldset className={displayInline} aria-describedby={name}>
         <legend className={textStyles.legend} id={name}>
           {label}

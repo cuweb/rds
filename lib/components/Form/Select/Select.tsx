@@ -19,10 +19,9 @@ export interface InputProps {
 export const Select = ({ ...props }: InputProps) => {
   const { label, name, options, maxWidth, helper, required, ...rest } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
-  const requiredClass = required ? primaryStyles.required : ''
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
       <label htmlFor={name} className={textStyles.label}>
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>

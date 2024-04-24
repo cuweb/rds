@@ -15,12 +15,11 @@ export interface RadioProps {
 }
 
 export const Radio = ({ ...props }: RadioProps) => {
-  const { label, name, options, isInline, helper, required, ...rest } = props
-  const requiredClass = required ? primaryStyles.required : ''
+  const { label, name, options, isInline, helper, ...rest } = props
   const displayInline = isInline ? fieldStyles.horizontalOptions : fieldStyles.verticalOptions
 
   return (
-    <div className={`${primaryStyles.wrapper} ${requiredClass} form-control`}>
+    <div className={`${primaryStyles.wrapper} form-control`}>
       <fieldset className={displayInline} aria-describedby={name}>
         <legend className={textStyles.legend} id={name}>
           {label}
