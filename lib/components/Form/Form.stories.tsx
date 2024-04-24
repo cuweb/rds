@@ -299,7 +299,7 @@ export const WYGIWYS: Story = () => {
       {({ isSubmitting }) => (
         <Form method="post">
           <FieldWrapper>
-            <FieldControl control="wysiwyg" name="wysiwyg" />{' '}
+            <FieldControl control="wysiwyg" name="wysiwyg" />
           </FieldWrapper>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />

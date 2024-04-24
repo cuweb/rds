@@ -3,6 +3,7 @@ import { ErrorMessage, useField } from 'formik'
 import { primaryStyles, textStyles } from '../../../styles/form'
 import { maxWidthClasses } from '../../../helpers/optionClasses'
 import Error from '../Error/Error'
+import HelperText from '../HelperText/HelperText'
 import 'react-quill/dist/quill.snow.css'
 
 // Define a function that returns a Promise for the component import
@@ -11,16 +12,17 @@ const importReactQuill = () => import('react-quill')
 // Lazy load the ReactQuill component
 const LazyReactQuill = React.lazy(importReactQuill)
 
-export interface WYSIWYGUploadProps {
+export interface WYSIWYGProps {
   label: string
   name: string
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
   required?: boolean
+  displayError?: boolean
 }
 
-export const WYSIWYG = ({ ...props }: WYSIWYGUploadProps) => {
-  const { label, name, maxWidth, helper, required, ...rest } = props
+export const WYSIWYG = ({ ...props }: WYSIWYGProps) => {
+  const { label, name, maxWidth, helper, required, displayError, ...rest } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
   const requiredClass = required ? primaryStyles.required : ''
   const [field] = useField(name)
@@ -37,14 +39,14 @@ export const WYSIWYG = ({ ...props }: WYSIWYGUploadProps) => {
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>
 
-      {helper && <div className={textStyles.helper}>{helper}</div>}
+      {helper && <HelperText>{helper}</HelperText>}
 
       {/* Use Suspense to wrap the lazy-loaded component */}
       <Suspense fallback={<div>Loading...</div>}>
         <LazyReactQuill value={text} onChange={handleTextChange} {...rest} />
       </Suspense>
 
-      <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>
+      {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
     </div>
   )
 }
