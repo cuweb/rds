@@ -293,7 +293,7 @@ export const TextArea: Story = () => {
 
 TextArea.storyName = 'Text Area'
 
-export const WYGIWYS: Story = () => {
+export const WYSIWYG: Story = () => {
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
@@ -310,4 +310,4 @@ export const WYGIWYS: Story = () => {
   )
 }
 
-WYGIWYS.storyName = 'WYGIWYS'
+WYSIWYG.storyName = 'WYSIWYG'
