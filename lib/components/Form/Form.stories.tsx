@@ -76,13 +76,19 @@ const handleSubmit = async (formData: any, { setSubmitting }: any) => {
   }
 }
 
-export const AutoSuggest: Story = () => {
+export const Input: Story = () => {
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldWrapper>
-            <FieldControl control="text" label="Text" name="text" placeholder="Placeholder" disabled={isSubmitting} />
+            <FieldControl
+              control="text"
+              label="inputText"
+              name="inputText"
+              placeholder="Placeholder"
+              disabled={isSubmitting}
+            />
           </FieldWrapper>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
@@ -93,7 +99,62 @@ export const AutoSuggest: Story = () => {
   )
 }
 
-AutoSuggest.storyName = 'Auto Suggest'
+Input.storyName = 'Input'
+
+export const TextArea: Story = () => {
+  return (
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      {({ isSubmitting }) => (
+        <FormikForm>
+          <FieldWrapper>
+            <FieldControl control="textarea" label="Textarea" name="textArea" placeholder="Text Area" rows="2" />
+          </FieldWrapper>
+          <ButtonGroup>
+            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+          </ButtonGroup>
+        </FormikForm>
+      )}
+    </Formik>
+  )
+}
+
+TextArea.storyName = 'TextArea'
+
+export const WYSIWYG: Story = () => {
+  const WysiwygInitialValues = {
+    wysiwyg: '',
+  }
+
+  const WysiwygValidationSchema = Yup.object().shape({
+    wysiwyg: Yup.string().required('The field is required'),
+  })
+
+  return (
+    <Formik
+      initialValues={WysiwygInitialValues}
+      validationSchema={WysiwygValidationSchema}
+      validateOnBlur={true}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
+      {({ isSubmitting }) => (
+        <FormikForm>
+          <FieldWrapper>
+            <FieldControl control="wysiwyg" label="Wysiwyg Example" name="wysiwyg" placeholder="Placeholder" required />
+          </FieldWrapper>
+          <ButtonGroup>
+            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+          </ButtonGroup>
+        </FormikForm>
+      )}
+    </Formik>
+  )
+}
+
+WYSIWYG.storyName = 'WYSIWYG'
 
 export const CheckBox: Story = () => {
   return (
@@ -124,104 +185,7 @@ export const CheckBox: Story = () => {
   )
 }
 
-CheckBox.storyName = 'Check Box'
-
-export const DateTime: Story = () => {
-  return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      {({ isSubmitting }) => (
-        <FormikForm>
-          <FieldWrapper cols={2}>
-            <FieldControl control="datetime" label="Start Date" name="startDate" disabled={isSubmitting} />
-            <FieldControl control="datetime" label="End Date" name="endDate" disabled={isSubmitting} />
-          </FieldWrapper>
-          <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
-          </ButtonGroup>
-        </FormikForm>
-      )}
-    </Formik>
-  )
-}
-
-DateTime.storyName = 'Date Time'
-
-export const FileUpload: Story = () => {
-  return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      {({ isSubmitting }) => (
-        <FormikForm>
-          <FieldWrapper cols={2}>
-            <FieldControl
-              control="fileUpload"
-              label="File Upload"
-              name="file"
-              placeholder="File Upload"
-              required
-              disabled={isSubmitting}
-            />
-          </FieldWrapper>
-          <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
-          </ButtonGroup>
-        </FormikForm>
-      )}
-    </Formik>
-  )
-}
-
-FileUpload.storyName = 'File Upload'
-
-export const ImageUpload: Story = () => {
-  return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      {({ isSubmitting }) => (
-        <FormikForm>
-          <FieldWrapper cols={2}>
-            <FieldControl
-              control="imageUpload"
-              label="Image Upload"
-              name="image"
-              placeholder="Image Upload"
-              required
-              disabled={isSubmitting}
-            />
-          </FieldWrapper>
-          <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
-          </ButtonGroup>
-        </FormikForm>
-      )}
-    </Formik>
-  )
-}
-
-ImageUpload.storyName = 'Image Upload'
-
-export const Input: Story = () => {
-  return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      {({ isSubmitting }) => (
-        <FormikForm>
-          <FieldWrapper>
-            <FieldControl
-              control="text"
-              label="inputText"
-              name="inputText"
-              placeholder="Placeholder"
-              disabled={isSubmitting}
-            />
-          </FieldWrapper>
-          <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
-          </ButtonGroup>
-        </FormikForm>
-      )}
-    </Formik>
-  )
-}
-
-Input.storyName = 'Input'
+CheckBox.storyName = 'CheckBox'
 
 export const Radio: Story = () => {
   return (
@@ -276,13 +240,86 @@ export const Select: Story = () => {
 
 Select.storyName = 'Select'
 
-export const TextArea: Story = () => {
+export const DateTime: Story = () => {
+  return (
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      {({ isSubmitting }) => (
+        <FormikForm>
+          <FieldWrapper cols={2}>
+            <FieldControl control="datetime" label="Start Date" name="startDate" disabled={isSubmitting} />
+            <FieldControl control="datetime" label="End Date" name="endDate" disabled={isSubmitting} />
+          </FieldWrapper>
+          <ButtonGroup>
+            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+          </ButtonGroup>
+        </FormikForm>
+      )}
+    </Formik>
+  )
+}
+
+DateTime.storyName = 'DateTime'
+
+export const FileUpload: Story = () => {
+  return (
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      {({ isSubmitting }) => (
+        <FormikForm>
+          <FieldWrapper cols={2}>
+            <FieldControl
+              control="fileUpload"
+              label="File Upload"
+              name="file"
+              placeholder="File Upload"
+              required
+              disabled={isSubmitting}
+            />
+          </FieldWrapper>
+          <ButtonGroup>
+            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+          </ButtonGroup>
+        </FormikForm>
+      )}
+    </Formik>
+  )
+}
+
+FileUpload.storyName = 'File Upload'
+
+export const ImageUpload: Story = () => {
+  return (
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      {({ isSubmitting }) => (
+        <FormikForm>
+          <FieldWrapper cols={2}>
+            <FieldControl
+              control="imageUpload"
+              label="Image Upload"
+              name="image"
+              placeholder="Image Upload"
+              required
+              disabled={isSubmitting}
+            />
+          </FieldWrapper>
+          <ButtonGroup>
+            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+          </ButtonGroup>
+        </FormikForm>
+      )}
+    </Formik>
+  )
+}
+
+ImageUpload.storyName = 'Image Upload'
+
+
+export const AutoSuggest: Story = () => {
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldWrapper>
-            <FieldControl control="textarea" label="Textarea" name="textArea" placeholder="Text Area" rows="2" />
+            <FieldControl control="text" label="Text" name="text" placeholder="Placeholder" disabled={isSubmitting} />
           </FieldWrapper>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
@@ -293,40 +330,4 @@ export const TextArea: Story = () => {
   )
 }
 
-TextArea.storyName = 'Text Area'
-
-export const WYSIWYG: Story = () => {
-  const WysiwygInitialValues = {
-    wysiwyg: '',
-  }
-
-  const WysiwygValidationSchema = Yup.object().shape({
-    wysiwyg: Yup.string().required('The field is required'),
-  })
-
-  return (
-    <Formik
-      initialValues={WysiwygInitialValues}
-      validationSchema={WysiwygValidationSchema}
-      validateOnBlur={true}
-      onSubmit={async (values, actions) => {
-        actions.setSubmitting(true)
-        alert(JSON.stringify(values, null, 2))
-        actions.setSubmitting(false)
-      }}
-    >
-      {({ isSubmitting }) => (
-        <FormikForm>
-          <FieldWrapper>
-            <FieldControl control="wysiwyg" label="Wysiwyg Example" name="wysiwyg" placeholder="Placeholder" required />
-          </FieldWrapper>
-          <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
-          </ButtonGroup>
-        </FormikForm>
-      )}
-    </Formik>
-  )
-}
-
-WYSIWYG.storyName = 'WYSIWYG'
+AutoSuggest.storyName = 'Auto Suggest'
