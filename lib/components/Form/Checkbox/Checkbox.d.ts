@@ -8,6 +8,7 @@ export interface CheckboxProps {
     options?: {
         key: string;
         value: string;
+        checked?: boolean;
     }[];
 }
 export declare const Checkbox: ({ ...props }: CheckboxProps) => import("react/jsx-runtime").JSX.Element;
