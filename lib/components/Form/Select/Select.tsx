@@ -1,8 +1,7 @@
 'use client'
-import { Field, ErrorMessage } from 'formik'
-import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
-import { maxWidthClasses } from '../../../helpers/optionClasses'
-import Error from '../Error/Error'
+import { Field } from 'formik'
+import { fieldStyles } from '../../../styles/form'
+import { FormField } from '../FormField/FormField'
 
 export interface InputProps {
   label: string
@@ -17,17 +16,10 @@ export interface InputProps {
 }
 
 export const Select = ({ ...props }: InputProps) => {
-  const { label, name, options, maxWidth, helper, required, ...rest } = props
-  const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
+  const { name, options, ...rest } = props
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
-      <label htmlFor={name} className={textStyles.label}>
-        {label} {required && <span className={textStyles.required}>*</span>}
-      </label>
-
-      {helper && <div className={textStyles.helper}>{helper}</div>}
-
+    <FormField name={name} {...rest}>
       <Field as="select" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest}>
         {options &&
           options.map((option) => {
@@ -38,8 +30,6 @@ export const Select = ({ ...props }: InputProps) => {
             )
           })}
       </Field>
-
-      <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>
-    </div>
+    </FormField>
   )
 }

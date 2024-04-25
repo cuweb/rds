@@ -1,9 +1,8 @@
-import { ErrorMessage, useField } from 'formik'
-import Error from '../Error/Error'
+import { useField } from 'formik'
 import DatePicker from 'react-datepicker'
-import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
-import { maxWidthClasses } from '../../../helpers/optionClasses'
+import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
+import { FormField } from '../FormField/FormField'
 
 export interface DateTimeProps {
   label: string
@@ -20,23 +19,17 @@ export interface DateTimeProps {
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
   const {
-    label,
     name,
-    helper,
-    required,
     showTime,
     dateFormat = 'MMMM d, yyyy',
     timeFormat = 'HH:mm',
     customMinDate,
     customMaxDate,
-    maxWidth,
     ...rest
   } = props
 
   const [field, , helpers] = useField(name)
   const { setValue, setTouched, setError } = helpers
-
-  const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
 
   const handleDateChange = (date: Date) => {
     setValue(date)
@@ -45,13 +38,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   }
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
-      <label htmlFor={name} className={textStyles.label}>
-        {label} {required && <span className={textStyles.required}>*</span>}
-      </label>
-
-      {helper && <div className={textStyles.helper}>{helper}</div>}
-
+    <FormField name={name} {...rest}>
       <DatePicker
         selected={field.value}
         name={name}
@@ -68,8 +55,6 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         className={`${fieldStyles.input} ${fieldStyles.disabled} w-full`}
         {...rest}
       />
-
-      <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>
-    </div>
+    </FormField>
   )
 }

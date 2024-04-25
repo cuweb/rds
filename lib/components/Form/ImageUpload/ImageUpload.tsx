@@ -1,8 +1,7 @@
-import { ErrorMessage, useFormik } from 'formik'
-import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
-import { maxWidthClasses } from '../../../helpers/optionClasses'
-import Error from '../Error/Error'
+import { useFormik } from 'formik'
+import { fieldStyles } from '../../../styles/form'
 import imageUploadValidationSchema from '../../../helpers/imageUploadValidationSchema'
+import { FormField } from '../FormField/FormField'
 
 export interface ImageUploadProps {
   label: string
@@ -13,8 +12,7 @@ export interface ImageUploadProps {
 }
 
 export const ImageUpload = ({ ...props }: ImageUploadProps) => {
-  const { label, name, maxWidth, helper, required, ...rest } = props
-  const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
+  const { name, ...rest } = props
   const initialValues = {
     file: null,
   }
@@ -28,13 +26,7 @@ export const ImageUpload = ({ ...props }: ImageUploadProps) => {
     onSubmit,
   })
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
-      <label htmlFor={name} className={textStyles.label}>
-        {label} {required && <span className={textStyles.required}>*</span>}
-      </label>
-
-      {helper && <div className={textStyles.helper}>{helper}</div>}
-
+    <FormField name={name} {...rest}>
       <input
         type="file"
         id="file"
@@ -47,8 +39,6 @@ export const ImageUpload = ({ ...props }: ImageUploadProps) => {
         onBlur={formik.handleBlur}
         {...rest}
       />
-
-      <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>
-    </div>
+    </FormField>
   )
 }

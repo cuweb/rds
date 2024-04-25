@@ -1,8 +1,7 @@
-import { useField, ErrorMessage, useFormikContext } from 'formik'
+import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
-import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
-import { maxWidthClasses } from '../../../helpers/optionClasses'
-import Error from '../Error/Error'
+import { fieldStyles } from '../../../styles/form'
+import { FormField } from '../FormField/FormField'
 
 interface Option {
   value: string
@@ -20,20 +19,12 @@ export interface AutoSuggestProps {
 }
 
 export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
-  const { label, name, options, maxWidth, helper, disabled = false, required, ...rest } = props
-
-  const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
+  const { name, options, disabled = false, ...rest } = props
   const [field] = useField(name)
   const { setFieldValue } = useFormikContext<unknown>()
 
   return (
-    <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
-      <label htmlFor={name} className={textStyles.label}>
-        {label} {required && <span className={textStyles.required}>*</span>}
-      </label>
-
-      {helper && <div className={textStyles.helper}>{helper}</div>}
-
+    <FormField name={name} {...rest}>
       <Select
         {...rest}
         inputId={name}
@@ -46,9 +37,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
         isDisabled={disabled}
         className={`${fieldStyles.input} ${fieldStyles.disabled}`}
       />
-
-      <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>
-    </div>
+    </FormField>
   )
 }
 
