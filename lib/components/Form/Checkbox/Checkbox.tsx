@@ -1,6 +1,6 @@
-import { Field, ErrorMessage, FieldProps } from 'formik'
-import Error from '../Error/Error'
-import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
+import { Field, FieldProps } from 'formik'
+import { FormFieldSet } from '../FormFieldSet/FormFieldSet'
+import { fieldStyles } from '../../../styles/form'
 
 export interface CheckboxProps {
   label: string
@@ -12,52 +12,39 @@ export interface CheckboxProps {
   options?: {
     key: string
     value: string
+    checked?: boolean
   }[]
 }
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {
-  const { label, name, options, isInline, helper, checkBoxRight, ...rest } = props
-  const displayInline = isInline ? fieldStyles.horizontalOptions : fieldStyles.verticalOptions
+  const { label, name, options, checkBoxRight, ...rest } = props
 
   return (
-    <div className={`${primaryStyles.wrapper} form-control`}>
-      <fieldset className={displayInline} aria-describedby={name}>
-        <legend className={textStyles.legend} id={name}>
-          {label}
-        </legend>
-
-        <Field name={name} {...rest}>
-          {({ field }: FieldProps) => {
-            return (
-              options &&
-              options.map((option) => {
-                return (
-                  <div key={option.key} className={fieldStyles.radioCheck}>
-                    {checkBoxRight && <label htmlFor={option.key}>{option.value}</label>}
-                    <input
-                      type="checkbox"
-                      id={option.key}
-                      {...field}
-                      {...rest}
-                      value={option.key}
-                      className={fieldStyles.disabledCheckbox}
-                    />
-                    {!checkBoxRight && <label htmlFor={option.key}>{option.value}</label>}
-                  </div>
-                )
-              })
-            )
-          }}
-        </Field>
-      </fieldset>
-
-      {helper && (
-        <div id={name} className={`${textStyles.helper} ${textStyles.legendHelper}`}>
-          {helper}
-        </div>
-      )}
-
-      <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>
-    </div>
+    <FormFieldSet label={label} name={name} {...rest}>
+      <Field name={name} {...rest}>
+        {({ field }: FieldProps) => {
+          return (
+            options &&
+            options.map((option) => {
+              return (
+                <div key={option.key} className={fieldStyles.radioCheck}>
+                  {checkBoxRight && <label htmlFor={option.key}>{option.value}</label>}
+                  <input
+                    type="checkbox"
+                    id={option.key}
+                    {...field}
+                    {...rest}
+                    value={option.key}
+                    className={fieldStyles.disabledCheckbox}
+                    checked={option?.checked === true ? true : false}
+                  />
+                  {!checkBoxRight && <label htmlFor={option.key}>{option.value}</label>}
+                </div>
+              )
+            })
+          )
+        }}
+      </Field>
+    </FormFieldSet>
   )
 }

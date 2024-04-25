@@ -58,6 +58,7 @@ const validationSchema = Yup.object().shape({
 const options = [
   { key: 'Option 1', value: 'Option 1' },
   { key: 'Option 2', value: 'Option 2' },
+  { key: 'Option 3', value: 'Option 3', checked: true },
 ]
 
 const selectValues = [
@@ -171,6 +172,7 @@ export const CheckBox: Story = () => {
                 {
                   key: 'Yes',
                   value: 'yes',
+                  checked: true,
                 },
               ]}
               required
@@ -196,12 +198,13 @@ export const Radio: Story = () => {
           <FieldGroup>
             <FieldControl
               control="radio"
-              label="Radio"
+              label="Label"
               name="radio"
               options={options}
               isInline
               required
               disabled={isSubmitting}
+              helper="Helper Text"
             />
           </FieldGroup>
           <ButtonGroup>
