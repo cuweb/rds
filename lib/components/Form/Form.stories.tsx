@@ -27,34 +27,6 @@ export default meta
 
 type Story = StoryObj<typeof FieldControl>
 
-const initialValues = {
-  text: '',
-  checkbox: 'yes',
-  startDate: null,
-  endDate: null,
-  file: undefined,
-  image: undefined,
-  inputText: undefined,
-  radio: 'Option 1',
-  select: 'Option 1',
-  textArea: undefined,
-  wysiwyg: undefined,
-}
-
-const validationSchema = Yup.object().shape({
-  text: Yup.string(),
-  checkbox: Yup.array().of(Yup.string()),
-  startDate: Yup.date().nullable(),
-  endDate: Yup.date().nullable(),
-  file: fileUploadValidationSchema,
-  image: imageUploadValidationSchema,
-  inputText: Yup.string(),
-  radio: Yup.string(),
-  select: Yup.string(),
-  textArea: Yup.string(),
-  wysiwyg: Yup.string(),
-})
-
 const options = [
   { key: 'Option 1', value: 'Option 1' },
   { key: 'Option 2', value: 'Option 2' },
@@ -65,16 +37,6 @@ const selectValues = [
   { value: '1', label: 'Option 1' },
   { value: '2', label: 'Option 2' },
 ]
-
-const handleSubmit = async (formData: any, { setSubmitting }: any) => {
-  try {
-    console.log(formData)
-  } catch (error) {
-    console.error('Error submitting form: ', error)
-  } finally {
-    setSubmitting(false)
-  }
-}
 
 export const Input: Story = () => {
   const InputInitialValues = {
@@ -237,8 +199,23 @@ export const CheckBox: Story = () => {
 CheckBox.storyName = 'CheckBox'
 
 export const Radio: Story = () => {
+  const radioInitialValues = {
+    radio: 'Option 1',
+  }
+
+  const radioValidationSchema = Yup.object().shape({
+    radio: Yup.string(),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={radioInitialValues}
+      validationSchema={radioValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
@@ -265,8 +242,23 @@ export const Radio: Story = () => {
 Radio.storyName = 'Radio'
 
 export const Select: Story = () => {
+  const selectInitialValues = {
+    select: 'Option 1',
+  }
+
+  const selectValidationSchema = Yup.object().shape({
+    select: Yup.string(),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={selectInitialValues}
+      validationSchema={selectValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
@@ -291,8 +283,25 @@ export const Select: Story = () => {
 Select.storyName = 'Select'
 
 export const DateTime: Story = () => {
+  const dateTimeInitialValues = {
+    startDate: null,
+    endDate: null,
+  }
+
+  const dateTimeValidationSchema = Yup.object().shape({
+    startDate: Yup.date().nullable(),
+    endDate: Yup.date().nullable(),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={dateTimeInitialValues}
+      validationSchema={dateTimeValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup cols={2}>
@@ -311,8 +320,19 @@ export const DateTime: Story = () => {
 DateTime.storyName = 'DateTime'
 
 export const FileUpload: Story = () => {
+  const fileUploadInitialValues = {
+    file: undefined,
+  }
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={fileUploadInitialValues}
+      validationSchema={fileUploadValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup cols={2}>
@@ -337,8 +357,19 @@ export const FileUpload: Story = () => {
 FileUpload.storyName = 'File Upload'
 
 export const ImageUpload: Story = () => {
+  const imageUploadInitialValues = {
+    file: undefined,
+  }
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={imageUploadInitialValues}
+      validationSchema={imageUploadValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup cols={2}>
@@ -363,8 +394,23 @@ export const ImageUpload: Story = () => {
 ImageUpload.storyName = 'Image Upload'
 
 export const AutoSuggest: Story = () => {
+  const autoSuggestInitialValues = {
+    text: '',
+  }
+
+  const autoSuggestValidationSchema = Yup.object().shape({
+    text: Yup.string(),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={autoSuggestInitialValues}
+      validationSchema={autoSuggestValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
