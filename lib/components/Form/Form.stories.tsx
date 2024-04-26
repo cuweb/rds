@@ -77,8 +77,24 @@ const handleSubmit = async (formData: any, { setSubmitting }: any) => {
 }
 
 export const Input: Story = () => {
+  const InputInitialValues = {
+    inputText: '',
+  }
+
+  const InputValidationSchema = Yup.object().shape({
+    inputText: Yup.string().required('The field is required'),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={InputInitialValues}
+      validationSchema={InputValidationSchema}
+      validateOnBlur={true}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
