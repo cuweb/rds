@@ -120,8 +120,23 @@ export const Input: Story = () => {
 Input.storyName = 'Input'
 
 export const TextArea: Story = () => {
+  const TextAreaInitialValues = {
+    textArea: '',
+  }
+
+  const TextAreaValidationSchema = Yup.object().shape({
+    textArea: Yup.string().required('The field is required'),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={TextAreaInitialValues}
+      validationSchema={TextAreaValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
