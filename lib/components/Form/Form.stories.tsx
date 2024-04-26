@@ -190,8 +190,23 @@ export const WYSIWYG: Story = () => {
 WYSIWYG.storyName = 'WYSIWYG'
 
 export const CheckBox: Story = () => {
+  const CheckBoxInitialValues = {
+    checkbox: 'yes',
+  }
+
+  const CheckBoxValidationSchema = Yup.object().shape({
+    checkbox: Yup.array().of(Yup.string()),
+  })
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={CheckBoxInitialValues}
+      validationSchema={CheckBoxValidationSchema}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true)
+        alert(JSON.stringify(values, null, 2))
+        actions.setSubmitting(false)
+      }}
+    >
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
