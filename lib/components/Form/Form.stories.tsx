@@ -290,14 +290,33 @@ Select.storyName = 'Select'
 
 export const DateTime: Story = () => {
   const dateTimeInitialValues = {
-    startDate: null,
-    endDate: null,
+    startDate: '',
+    endDate: '',
   }
 
   const dateTimeValidationSchema = Yup.object().shape({
-    startDate: Yup.date().nullable(),
-    endDate: Yup.date().nullable(),
+    startDate: Yup.lazy(() => {
+      return Yup.date()
+        .required('Please start end date')
+        .max(Yup.ref('startDate'), "end date can't be before start date")
+        .when('endDate', (endDate, schema) => {
+          if (endDate[0]) {
+            return schema.required('Please enter start date ')
+          }
+          return schema
+        })
+    }),
+    endDate: Yup.date()
+      .required('Please enter end date')
+      .min(Yup.ref('startDate'), "end date can't be before start date")
+      .when('startDate', (startDate, schema) => {
+        if (startDate[0]) {
+          return schema.required('Please enter end date')
+        }
+        return schema
+      }),
   })
+
   return (
     <Formik
       initialValues={dateTimeInitialValues}
@@ -311,8 +330,8 @@ export const DateTime: Story = () => {
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup cols={2}>
-            <FieldControl control="datetime" label="Start Date" name="startDate" disabled={isSubmitting} />
-            <FieldControl control="datetime" label="End Date" name="endDate" disabled={isSubmitting} />
+            <FieldControl required control="datetime" label="Start Date" name="startDate" disabled={isSubmitting} />
+            <FieldControl required control="datetime" label="End Date" name="endDate" disabled={isSubmitting} />
           </FieldGroup>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />

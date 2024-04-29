@@ -25,6 +25,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
     timeFormat = 'HH:mm',
     customMinDate,
     customMaxDate,
+    required,
     ...rest
   } = props
 
@@ -38,7 +39,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   }
 
   return (
-    <FormField name={name} {...rest}>
+    <FormField name={name} required={required} {...rest}>
       <DatePicker
         selected={field.value}
         name={name}
