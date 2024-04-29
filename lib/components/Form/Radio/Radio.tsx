@@ -1,4 +1,4 @@
-import { Field, FieldProps } from 'formik'
+import { Field } from 'formik'
 import { FormFieldSet } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 
@@ -11,38 +11,21 @@ export interface RadioProps {
   options?: {
     key: string
     value: string
-    checked?: boolean
   }[]
 }
 
 export const Radio = ({ ...props }: RadioProps) => {
-  const { label, name, options, ...rest } = props
+  const { label, name, options, required, isInline, ...rest } = props
 
   return (
-    <FormFieldSet label={label} name={name} {...rest}>
-      <Field name={name} {...rest}>
-        {({ field }: FieldProps) => {
-          return (
-            options &&
-            options.map((option) => {
-              return (
-                <div key={option.value} className={fieldStyles.radioCheck}>
-                  <input
-                    type="radio"
-                    id={option.key}
-                    {...field}
-                    {...rest}
-                    value={option.value}
-                    className={fieldStyles.disabledCheckbox}
-                    checked={option?.checked === true ? true : false}
-                  />
-                  <label htmlFor={option.key}>{option.value}</label>
-                </div>
-              )
-            })
-          )
-        }}
-      </Field>
+    <FormFieldSet label={label} name={name} key={name} required={required} isInline={isInline} {...rest}>
+      {options &&
+        options.map((option) => (
+          <label key={option.value} className={fieldStyles.radioCheck}>
+            <Field type="radio" name={name} value={option.value} {...rest} />
+            {option.key}
+          </label>
+        ))}
     </FormFieldSet>
   )
 }

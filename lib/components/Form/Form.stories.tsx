@@ -27,12 +27,6 @@ export default meta
 
 type Story = StoryObj<typeof FieldControl>
 
-const options = [
-  { key: 'Option 1', value: 'Option 1' },
-  { key: 'Option 2', value: 'Option 2' },
-  { key: 'Option 3', value: 'Option 3', checked: true },
-]
-
 const selectValues = [
   { value: '1', label: 'Option 1' },
   { value: '2', label: 'Option 2' },
@@ -188,6 +182,7 @@ export const CheckBox: Story = () => {
                 },
               ]}
               required
+              isInline
               disabled={isSubmitting}
             />
           </FieldGroup>
@@ -203,13 +198,20 @@ export const CheckBox: Story = () => {
 CheckBox.storyName = 'CheckBox'
 
 export const Radio: Story = () => {
+  const options = [
+    { key: 'Option 1', value: 'option1' },
+    { key: 'Option 2', value: 'option2' },
+    { key: 'Option 3', value: 'option3' },
+  ]
+
   const radioInitialValues = {
-    radio: 'Option 1',
+    radio: 'option2',
   }
 
   const radioValidationSchema = Yup.object().shape({
-    radio: Yup.string(),
+    radio: Yup.string().required('Field value is required.'),
   })
+
   return (
     <Formik
       initialValues={radioInitialValues}

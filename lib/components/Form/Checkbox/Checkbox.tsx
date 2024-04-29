@@ -16,10 +16,10 @@ export interface CheckboxProps {
 }
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {
-  const { label, name, options, checkBoxRight, required, ...rest } = props
+  const { label, name, options, checkBoxRight, required, isInline, ...rest } = props
 
   return (
-    <FormFieldSet label={label} name={name} key={name} required={required} {...rest}>
+    <FormFieldSet label={label} name={name} key={name} required={required} isInline={isInline} {...rest}>
       {options &&
         options.map((option) => (
           <label key={option.value} className={checkBoxRight ? fieldStyles.radioCheckRight : fieldStyles.radioCheck}>
