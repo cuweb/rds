@@ -11,6 +11,7 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { FormButton } from './FormButton/FormButton'
 import fileUploadValidationSchema from '../../helpers/fileUploadValidationSchema'
 import imageUploadValidationSchema from '../../helpers/imageUploadValidationSchema'
+import {AutoSuggestData} from './../../data/AutoSuggestData'
 
 const meta: Meta<typeof FieldControl> = {
   title: 'Components/Form',
@@ -439,7 +440,14 @@ export const AutoSuggest: Story = () => {
       {({ isSubmitting }) => (
         <FormikForm>
           <FieldGroup>
-            <FieldControl control="text" label="Text" name="text" placeholder="Placeholder" disabled={isSubmitting} />
+            <FieldControl
+              control="autosuggest"
+              label="Text"
+              name="text"
+              placeholder="Placeholder"
+              disabled={isSubmitting}
+              options={AutoSuggestData}
+            />
           </FieldGroup>
           <ButtonGroup>
             <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
