@@ -12,6 +12,7 @@ export declare const textStyles: {
 export declare const fieldStyles: {
     input: string;
     radioCheck: string;
+    radioCheckRight: string;
     horizontalOptions: string;
     verticalOptions: string;
     uploads: string;
