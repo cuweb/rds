@@ -153,12 +153,13 @@ WYSIWYG.storyName = 'WYSIWYG'
 
 export const CheckBox: Story = () => {
   const CheckBoxInitialValues = {
-    checkbox: 'yes',
+    checkbox: ['no'],
   }
 
   const CheckBoxValidationSchema = Yup.object().shape({
-    checkbox: Yup.array().of(Yup.string()),
+    checkbox: Yup.array().min(1, 'Please select at least one checkbox').required('Required'),
   })
+
   return (
     <Formik
       initialValues={CheckBoxInitialValues}
@@ -180,7 +181,10 @@ export const CheckBox: Story = () => {
                 {
                   key: 'Yes',
                   value: 'yes',
-                  checked: true,
+                },
+                {
+                  key: 'No',
+                  value: 'no',
                 },
               ]}
               required
