@@ -50,6 +50,7 @@ export { ListingPageLoader } from './components/Loaders/ListingLoader/ListingPag
 export { ListingPeopleLoader } from './components/Loaders/ListingLoader/ListingPeopleLoader'
 export { PageLoader } from './components/Loaders/PageLoader/PageLoader'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
+export { PageHeadLoader } from './components/Loaders/PageHeadLoader/PageHeadLoader.js'
 
 // Layouts
 export { Article } from './layouts/Article/Article'
