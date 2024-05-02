@@ -68,9 +68,9 @@ export const Modal = ({
                     </div>
                   </div>
                 </div>
-                {!noButton && (
-                  <div className="grid gap-4 px-4 py-3 sm:flex sm:w-auto sm:flex-row-reverse sm:px-6 sm:text-sm">
-                    {children}
+                <div className="grid gap-4 px-4 py-3 sm:flex sm:w-auto sm:flex-row-reverse sm:px-6 sm:text-sm">
+                  {children}
+                  {!noButton && (
                     <Button
                       onClick={() => {
                         setIsOpen(false)
@@ -79,8 +79,8 @@ export const Modal = ({
                       isSmall
                       color="grey"
                     />
-                  </div>
-                )}
+                  )}
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

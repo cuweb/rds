@@ -73,5 +73,27 @@ export const NoButton: Story = () => {
   )
 }
 
+export const WithChildren: Story = () => {
+  const [ModalOpen, setModalOpen] = useState(false)
+
+  return (
+    <>
+      <Button id="modalButton" title=" Click to Open Modal" onClick={() => setModalOpen(true)} />
+
+      <Modal
+        title="Printing Press"
+        description={'This is an image of a printing press'}
+        isOpen={ModalOpen}
+        setIsOpen={setModalOpen}
+        noButton
+        hasOverlay
+      >
+        <img src="http://localhost:6006/sample-imgs/news-img.jpg" alt="A printing press"></img>
+      </Modal>
+    </>
+  )
+}
+
 Default.storyName = 'Default Modal'
 NoButton.storyName = 'No Button on Modal'
+WithChildren.storyName = 'Add Children to Modal'
