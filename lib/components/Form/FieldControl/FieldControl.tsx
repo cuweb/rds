@@ -10,7 +10,7 @@ import { FileUpload } from '../FileUpload/FileUpload'
 import { ImageUpload } from '../ImageUpload/ImageUpload'
 import { WYSIWYG } from '../WYSIWYG/WYSIWYG'
 
-interface FieldControlProps {
+export interface FieldControlProps {
   control: string
   [key: string]: any
 }

@@ -13,10 +13,10 @@ export interface InputProps {
 }
 
 export const Input = ({ ...props }: InputProps) => {
-  const { name, ...rest } = props
+  const { name, required, ...rest } = props
 
   return (
-    <FormField name={name} {...rest}>
+    <FormField name={name} required={required} {...rest}>
       <Field type="text" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest} />
     </FormField>
   )

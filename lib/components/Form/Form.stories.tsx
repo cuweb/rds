@@ -2,20 +2,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Formik } from 'formik'
+import { Formik, useFormik } from 'formik'
 import * as Yup from 'yup'
-import FormikForm from './FormikForm/FormikForm'
-import FieldGroup from './FieldGroup/FieldGroup'
-import { FieldControl } from './FieldControl/FieldControl'
+import { FormikForm } from './FormikForm'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { FormButton } from './FormButton/FormButton'
 import fileUploadValidationSchema from '../../helpers/fileUploadValidationSchema'
 import imageUploadValidationSchema from '../../helpers/imageUploadValidationSchema'
-import {AutoSuggestData} from './../../data/AutoSuggestData'
+import { AutoSuggestData } from './../../data/AutoSuggestData'
 
-const meta: Meta<typeof FieldControl> = {
+const meta: Meta<typeof FormikForm.FieldControl> = {
   title: 'Components/Form',
-  component: FieldControl,
+  // component: FormikForm,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -26,7 +23,7 @@ const meta: Meta<typeof FieldControl> = {
 
 export default meta
 
-type Story = StoryObj<typeof FieldControl>
+type Story = StoryObj<typeof FormikForm.FieldControl>
 
 const selectValues = [
   { value: '1', label: 'Option 1' },
@@ -54,8 +51,8 @@ export const Input: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
               control="text"
               label="Label"
               name="inputText"
@@ -64,9 +61,13 @@ export const Input: Story = () => {
               required
               helper="Helper Text"
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -84,6 +85,14 @@ export const TextArea: Story = () => {
   const TextAreaValidationSchema = Yup.object().shape({
     textArea: Yup.string().required('The field is required'),
   })
+
+  const formik = useFormik({
+    initialValues: TextAreaInitialValues,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2))
+    },
+  })
+
   return (
     <Formik
       initialValues={TextAreaInitialValues}
@@ -96,12 +105,25 @@ export const TextArea: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl control="textarea" label="Textarea" name="textArea" placeholder="Text Area" rows="2" />
-          </FieldGroup>
+          {/* <FormikForm> */}
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
+              formik={formik}
+              control="textarea"
+              label="Textarea"
+              name="textArea"
+              placeholder="Text Area"
+              rows="2"
+            />
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
+          {/* </FormikForm> */}
         </FormikForm>
       )}
     </Formik>
@@ -132,11 +154,21 @@ export const WYSIWYG: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl control="wysiwyg" label="Wysiwyg Example" name="wysiwyg" placeholder="Placeholder" required />
-          </FieldGroup>
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
+              control="wysiwyg"
+              label="Wysiwyg Example"
+              name="wysiwyg"
+              placeholder="Placeholder"
+              required
+            />
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -167,8 +199,8 @@ export const CheckBox: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
               control="checkbox"
               name="checkbox"
               label="I acknowledge the statements above."
@@ -186,9 +218,13 @@ export const CheckBox: Story = () => {
               isInline
               disabled={isSubmitting}
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -225,8 +261,8 @@ export const Radio: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
               control="radio"
               label="Label"
               name="radio"
@@ -236,9 +272,13 @@ export const Radio: Story = () => {
               disabled={isSubmitting}
               helper="Helper Text"
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -268,8 +308,8 @@ export const Select: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
               control="select"
               label="Select"
               name="select"
@@ -277,9 +317,13 @@ export const Select: Story = () => {
               required
               disabled={isSubmitting}
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -330,12 +374,28 @@ export const DateTime: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup cols={2}>
-            <FieldControl required control="datetime" label="Start Date" name="startDate" disabled={isSubmitting} />
-            <FieldControl required control="datetime" label="End Date" name="endDate" disabled={isSubmitting} />
-          </FieldGroup>
+          <FormikForm.FieldGroup cols={2}>
+            <FormikForm.FieldControl
+              required
+              control="datetime"
+              label="Start Date"
+              name="startDate"
+              disabled={isSubmitting}
+            />
+            <FormikForm.FieldControl
+              required
+              control="datetime"
+              label="End Date"
+              name="endDate"
+              disabled={isSubmitting}
+            />
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -361,8 +421,8 @@ export const FileUpload: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup cols={2}>
-            <FieldControl
+          <FormikForm.FieldGroup cols={2}>
+            <FormikForm.FieldControl
               control="fileUpload"
               label="File Upload"
               name="file"
@@ -370,9 +430,13 @@ export const FileUpload: Story = () => {
               required
               disabled={isSubmitting}
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -398,8 +462,8 @@ export const ImageUpload: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup cols={2}>
-            <FieldControl
+          <FormikForm.FieldGroup cols={2}>
+            <FormikForm.FieldControl
               control="imageUpload"
               label="Image Upload"
               name="image"
@@ -407,9 +471,13 @@ export const ImageUpload: Story = () => {
               required
               disabled={isSubmitting}
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
@@ -439,8 +507,8 @@ export const AutoSuggest: Story = () => {
     >
       {({ isSubmitting }) => (
         <FormikForm>
-          <FieldGroup>
-            <FieldControl
+          <FormikForm.FieldGroup>
+            <FormikForm.FieldControl
               control="autosuggest"
               label="Text"
               name="text"
@@ -448,9 +516,13 @@ export const AutoSuggest: Story = () => {
               disabled={isSubmitting}
               options={AutoSuggestData}
             />
-          </FieldGroup>
+          </FormikForm.FieldGroup>
           <ButtonGroup>
-            <FormButton title={isSubmitting ? 'Submitting...' : 'Submit'} disabled={isSubmitting} type="submit" />
+            <FormikForm.FormButton
+              title={isSubmitting ? 'Submitting...' : 'Submit'}
+              disabled={isSubmitting}
+              type="submit"
+            />
           </ButtonGroup>
         </FormikForm>
       )}
