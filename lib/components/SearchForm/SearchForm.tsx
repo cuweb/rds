@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 export interface SearchFormProps {
   callback: (k: string) => void
+  placeholder: string
 }
 
-export const SearchForm = ({ callback }: SearchFormProps) => {
+export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps) => {
   const [message, setMessage] = useState('')
 
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
@@ -24,7 +25,7 @@ export const SearchForm = ({ callback }: SearchFormProps) => {
         name="search"
         type="search"
         autoComplete="off"
-        placeholder="Search"
+        placeholder={placeholder}
         onChange={handleChange}
         value={message}
       />
