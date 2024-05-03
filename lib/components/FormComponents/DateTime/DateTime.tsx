@@ -10,21 +10,23 @@ export interface DateTimeProps {
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
   required?: boolean
-  customMinDate?: Date
-  customMaxDate?: Date
+  minDate?: Date
+  maxDate?: Date
   showTime?: boolean
   dateFormat?: string
   timeFormat?: string
+  placeholder?: string
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
   const {
     name,
+    placeholder,
     showTime,
     dateFormat = 'MMMM d, yyyy',
     timeFormat = 'HH:mm',
-    customMinDate,
-    customMaxDate,
+    minDate,
+    maxDate,
     required,
     ...rest
   } = props
@@ -50,9 +52,9 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         showTimeSelect={showTime}
         timeFormat={timeFormat}
         dateFormat={dateFormat}
-        minDate={customMinDate}
-        maxDate={customMaxDate}
-        placeholderText={dateFormat}
+        minDate={minDate}
+        maxDate={maxDate}
+        placeholderText={placeholder ? placeholder : dateFormat}
         className={`${fieldStyles.input} ${fieldStyles.disabled} w-full`}
         {...rest}
       />

@@ -16,18 +16,9 @@ export interface InputProps {
 export const Input = ({ ...props }: InputProps) => {
   const { name, required, ...rest } = props
 
-  // console.log(name, formik, formik.getFieldProps(name), 'formik')
-
   return (
     <FormField name={name} required={required} {...rest}>
-      <Field
-        type="text"
-        id={name}
-        name={name}
-        className={`${fieldStyles.input} ${fieldStyles.disabled}`}
-        // {...formik.getFieldProps(name)}
-        {...rest}
-      />
+      <Field type="text" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest} />
     </FormField>
   )
 }

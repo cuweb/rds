@@ -19,15 +19,8 @@ export const Select = ({ ...props }: InputProps) => {
   const { name, options, required, ...rest } = props
 
   return (
-    <FormField name={name} {...rest}>
-      <Field
-        as="select"
-        id={name}
-        name={name}
-        required={required}
-        className={`${fieldStyles.input} ${fieldStyles.disabled}`}
-        {...rest}
-      >
+    <FormField name={name} required={required} {...rest}>
+      <Field as="select" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest}>
         {options &&
           options.map((option) => {
             return (
