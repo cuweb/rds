@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormikProvider } from 'formik'
+import { FieldGroup } from './FieldGroup/FieldGroup'
 import { FieldControl } from './FieldControl/FieldControl'
+import { primaryStyles } from '../../styles/form'
 
 export interface FormComponentsWrapperProps {
   children: React.ReactNode
@@ -9,13 +11,15 @@ export interface FormComponentsWrapperProps {
 
 export const FormComponentsWrapper = ({ children, formikProps }: FormComponentsWrapperProps) => {
   return (
-    // <Formik initialValues={initialValues} validationSchema={validationSchema} validateOnBlur={true} onSubmit={onSubmit}>
-    //   <Form method={method}>{children}</Form>
-    // </Formik>
-    <FormikProvider value={formikProps}>{children}</FormikProvider>
+    <FormikProvider value={formikProps}>
+      <form onSubmit={formikProps.handleSubmit} className={primaryStyles.form}>
+        {children}
+      </form>
+    </FormikProvider>
   )
 }
 
 export const FormComponents = Object.assign(FormComponentsWrapper, {
+  FieldGroup: FieldGroup,
   FieldControl: FieldControl,
 })

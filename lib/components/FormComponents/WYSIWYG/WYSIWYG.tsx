@@ -1,6 +1,7 @@
 import { useState, Suspense } from 'react'
 import { useField } from 'formik'
 import 'react-quill/dist/quill.snow.css'
+import '../../../styles/wysiwyg.css'
 import ReactQuill from 'react-quill'
 import { FormField } from '../FormField/FormField'
 
