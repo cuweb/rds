@@ -6,6 +6,7 @@ import { ListingNewsLoader } from './ListingNewsLoader'
 import { ListingIconLoader } from './ListingIconLoader'
 import { ListingPeopleLoader } from './ListingPeopleLoader'
 import { ListingPageLoader } from './ListingPageLoader'
+import { ListingDescriptionLoader } from './ListingDescriptionLoader'
 
 const meta: Meta<typeof ListingNewsLoader> = {
   title: 'Components/Load Screens/Listing Loader',
@@ -80,6 +81,15 @@ export const TwoCol: Story = {
     <StackedList cols="2">
       <ListingNewsLoader />
       <ListingNewsLoader />
+    </StackedList>
+  ),
+}
+
+export const Description: Story = {
+  name: 'Description Listing Loader',
+  render: () => (
+    <StackedList cols="1">
+      <ListingDescriptionLoader />
     </StackedList>
   ),
 }
