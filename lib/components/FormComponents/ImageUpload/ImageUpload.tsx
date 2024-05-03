@@ -12,7 +12,7 @@ export interface ImageUploadProps {
 }
 
 export const ImageUpload = ({ ...props }: ImageUploadProps) => {
-  const { name, ...rest } = props
+  const { name, required, ...rest } = props
   const initialValues = {
     file: null,
   }
@@ -26,7 +26,7 @@ export const ImageUpload = ({ ...props }: ImageUploadProps) => {
     onSubmit,
   })
   return (
-    <FormField name={name} {...rest}>
+    <FormField name={name} required={required} {...rest}>
       <input
         type="file"
         id="file"
