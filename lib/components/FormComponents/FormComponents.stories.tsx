@@ -1,6 +1,6 @@
 /* eslint-disable storybook/no-redundant-story-name */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react'
+import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -67,6 +67,8 @@ export const Input: Story = () => {
 Input.storyName = 'Input'
 
 export const Wysiwyg: Story = () => {
+  const [editorContent, setEditorContent] = useState<string | null>('abc')
+
   const WysiwygInitialValues = {
     wysiwygtext: '',
   }
@@ -76,9 +78,13 @@ export const Wysiwyg: Story = () => {
   })
 
   const onSubmit = async (values: any, actions: any) => {
+    console.log(values, editorContent)
+
+    alert('clicked')
     actions.setSubmitting(true)
-    await sleep(1000)
-    alert(JSON.stringify(values, null, 2))
+    alert(values)
+    // await sleep(1000)
+    // alert(JSON.stringify(values, null, 2))
     actions.setSubmitting(false)
   }
 
@@ -91,7 +97,15 @@ export const Wysiwyg: Story = () => {
   return (
     <FormComponents formikProps={formikProps}>
       <FormComponents.FieldGroup>
-        <FormComponents.FieldControl control="wysiwyg" label="Label" name="wysiwygtext" required helper="Helper Text" />
+        <FormComponents.FieldControl
+          control="text"
+          label="Label"
+          name="wysiwygtext"
+          required
+          helper="Helper Text"
+          // disable={formikProps.isSubmitting}
+        />
+        <FormComponents.Editor setEditorContent={setEditorContent} editorContent={editorContent} />
       </FormComponents.FieldGroup>
       <ButtonGroup>
         <Button title="Submit" type="submit" />

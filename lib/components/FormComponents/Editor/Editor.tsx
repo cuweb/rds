@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ExampleTheme from './themes/ExampleTheme'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
@@ -24,19 +25,74 @@ function Placeholder() {
   return <div className="editor-placeholder">Enter some rich text...</div>
 }
 
+const loadContent = () => {
+  const InitialData = {
+    root: {
+      children: [
+        {
+          children: [
+            {
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: 'Text 1',
+              type: 'text',
+              version: 1,
+            },
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          type: 'paragraph',
+          version: 1,
+          textFormat: 0,
+        },
+        {
+          children: [
+            {
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: 'Text 2',
+              type: 'text',
+              version: 1,
+            },
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          type: 'paragraph',
+          version: 1,
+          textFormat: 0,
+        },
+      ],
+      direction: 'ltr',
+      format: '',
+      indent: 0,
+      type: 'root',
+      version: 1,
+    },
+  }
+
+  const InitialDataStringify = JSON.stringify(InitialData)
+
+  return InitialDataStringify
+}
+
 const editorConfig = {
   namespace: 'editor',
-  // The editor theme
   theme: ExampleTheme,
-  // Handling of errors during update
   onError(error: unknown) {
     throw error
   },
-  // Any custom nodes go here
   nodes: [HeadingNode, ListNode, ListItemNode, QuoteNode, CodeNode, CodeHighlightNode, AutoLinkNode, LinkNode],
+  editorState: loadContent(),
 }
 
-export function Editor() {
+export const Editor = ({ setEditorContent }: any) => {
+  setEditorContent('test')
   return (
     <div id="editor-wrapper" className={'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg'}>
       <LexicalComposer initialConfig={editorConfig}>

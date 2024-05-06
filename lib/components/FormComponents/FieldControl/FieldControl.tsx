@@ -7,7 +7,6 @@ import { Radio } from '../Radio/Radio'
 import { AutoSuggest } from '../AutoSuggest/AutoSuggest'
 import { DateTime } from '../DateTime/DateTime'
 import { FileUpload } from '../FileUpload/FileUpload'
-import { Editor } from '../Editor/Editor'
 
 export interface FieldControlProps {
   control: string
@@ -34,8 +33,6 @@ export const FieldControl = ({ ...props }: FieldControlProps) => {
       return <DateTime label={rest.label} name={rest.name} {...rest} />
     case 'fileUpload':
       return <FileUpload label={rest.label} name={rest.name} {...rest} />
-    case 'wysiwyg':
-      return <Editor />
     default:
       return null
   }
