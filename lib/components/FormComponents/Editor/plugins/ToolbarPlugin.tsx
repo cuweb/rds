@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // @ts-nocheck
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
@@ -14,7 +14,6 @@ import {
   $getSelection,
   $isRangeSelection,
   $createParagraphNode,
-  $getNodeByKey,
 } from 'lexical'
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
 import { $isParentElementRTL, $wrapNodes, $isAtNodeEnd } from '@lexical/selection'
@@ -28,23 +27,20 @@ import {
 } from '@lexical/list'
 import { createPortal } from 'react-dom'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
-import { $createCodeNode, $isCodeNode, getDefaultCodeLanguage, getCodeLanguages } from '@lexical/code'
 
 const LowPriority = 1
 
-const supportedBlockTypes = new Set(['paragraph', 'quote', 'code', 'h1', 'h2', 'ul', 'ol'])
+const supportedBlockTypes = new Set(['paragraph', 'quote', 'h2', 'h3', 'h4', 'h5', 'ul', 'ol'])
 
 const blockTypeToBlockName = {
-  code: 'Code Block',
-  h1: 'Large Heading',
-  h2: 'Small Heading',
+  h2: 'Heading',
   h3: 'Heading',
-  h4: 'Heading',
-  h5: 'Heading',
+  h4: 'H4 Heading',
+  h5: 'H5 Heading',
   ol: 'Numbered List',
+  ul: 'Bulleted List',
   paragraph: 'Normal',
   quote: 'Quote',
-  ul: 'Bulleted List',
 }
 
 function Divider() {
@@ -204,19 +200,6 @@ function FloatingLinkEditor({ editor }: any) {
   )
 }
 
-function Select({ onChange, className, options, value }: any) {
-  return (
-    <select className={className} onChange={onChange} value={value}>
-      <option hidden={true} value="" />
-      {options.map((option: string) => (
-        <option key={option} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
-  )
-}
-
 function getSelectedNode(selection: any) {
   const anchor = selection.anchor
   const focus = selection.focus
@@ -280,26 +263,52 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
     setShowBlockOptionsDropDown(false)
   }
 
-  const formatLargeHeading = () => {
-    if (blockType !== 'h1') {
-      editor.update(() => {
-        const selection = $getSelection()
-
-        if ($isRangeSelection(selection)) {
-          $wrapNodes(selection, () => $createHeadingNode('h1'))
-        }
-      })
-    }
-    setShowBlockOptionsDropDown(false)
-  }
-
-  const formatSmallHeading = () => {
+  const formatH2Heading = () => {
     if (blockType !== 'h2') {
       editor.update(() => {
         const selection = $getSelection()
 
         if ($isRangeSelection(selection)) {
           $wrapNodes(selection, () => $createHeadingNode('h2'))
+        }
+      })
+    }
+    setShowBlockOptionsDropDown(false)
+  }
+
+  const formatH3Heading = () => {
+    if (blockType !== 'h3') {
+      editor.update(() => {
+        const selection = $getSelection()
+
+        if ($isRangeSelection(selection)) {
+          $wrapNodes(selection, () => $createHeadingNode('h3'))
+        }
+      })
+    }
+    setShowBlockOptionsDropDown(false)
+  }
+
+  const formatH4Heading = () => {
+    if (blockType !== 'h4') {
+      editor.update(() => {
+        const selection = $getSelection()
+
+        if ($isRangeSelection(selection)) {
+          $wrapNodes(selection, () => $createHeadingNode('h4'))
+        }
+      })
+    }
+    setShowBlockOptionsDropDown(false)
+  }
+
+  const formatH5Heading = () => {
+    if (blockType !== 'h5') {
+      editor.update(() => {
+        const selection = $getSelection()
+
+        if ($isRangeSelection(selection)) {
+          $wrapNodes(selection, () => $createHeadingNode('h5'))
         }
       })
     }
@@ -337,19 +346,6 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
     setShowBlockOptionsDropDown(false)
   }
 
-  const formatCode = () => {
-    if (blockType !== 'code') {
-      editor.update(() => {
-        const selection = $getSelection()
-
-        if ($isRangeSelection(selection)) {
-          $wrapNodes(selection, () => $createCodeNode())
-        }
-      })
-    }
-    setShowBlockOptionsDropDown(false)
-  }
-
   return (
     <div className="dropdown" ref={dropDownRef}>
       <button className="item" onClick={formatParagraph}>
@@ -357,15 +353,25 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
         <span className="text">Normal</span>
         {blockType === 'paragraph' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatLargeHeading}>
-        <span className="icon large-heading" />
-        <span className="text">Large Heading</span>
-        {blockType === 'h1' && <span className="active" />}
-      </button>
-      <button className="item" onClick={formatSmallHeading}>
-        <span className="icon small-heading" />
-        <span className="text">Small Heading</span>
+      <button className="item" onClick={formatH2Heading}>
+        <span className="icon h2" />
+        <span className="text">Heading</span>
         {blockType === 'h2' && <span className="active" />}
+      </button>
+      <button className="item" onClick={formatH3Heading}>
+        <span className="icon h3" />
+        <span className="text">Heading</span>
+        {blockType === 'h3' && <span className="active" />}
+      </button>
+      <button className="item" onClick={formatH4Heading}>
+        <span className="icon h4" />
+        <span className="text">H4 Heading</span>
+        {blockType === 'h4' && <span className="active" />}
+      </button>
+      <button className="item" onClick={formatH5Heading}>
+        <span className="icon h5" />
+        <span className="text">H5 Heading</span>
+        {blockType === 'h5' && <span className="active" />}
       </button>
       <button className="item" onClick={formatBulletList}>
         <span className="icon bullet-list" />
@@ -382,11 +388,6 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
         <span className="text">Quote</span>
         {blockType === 'quote' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatCode}>
-        <span className="icon code" />
-        <span className="text">Code Block</span>
-        {blockType === 'code' && <span className="active" />}
-      </button>
     </div>
   )
 }
@@ -399,14 +400,11 @@ export default function ToolbarPlugin() {
   const [blockType, setBlockType] = useState('paragraph')
   const [selectedElementKey, setSelectedElementKey] = useState<string | null>(null)
   const [showBlockOptionsDropDown, setShowBlockOptionsDropDown] = useState(false)
-  const [codeLanguage, setCodeLanguage] = useState('')
   const [, setIsRTL] = useState(false)
   const [isLink, setIsLink] = useState(false)
   const [isBold, setIsBold] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
-  const [isStrikethrough, setIsStrikethrough] = useState(false)
-  const [isCode, setIsCode] = useState(false)
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection()
@@ -424,17 +422,12 @@ export default function ToolbarPlugin() {
         } else {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType()
           setBlockType(type)
-          if ($isCodeNode(element)) {
-            setCodeLanguage(element.getLanguage() || getDefaultCodeLanguage())
-          }
         }
       }
       // Update text format
       setIsBold(selection.hasFormat('bold'))
       setIsItalic(selection.hasFormat('italic'))
       setIsUnderline(selection.hasFormat('underline'))
-      setIsStrikethrough(selection.hasFormat('strikethrough'))
-      setIsCode(selection.hasFormat('code'))
       setIsRTL($isParentElementRTL(selection))
 
       // Update links
@@ -481,21 +474,6 @@ export default function ToolbarPlugin() {
       ),
     )
   }, [editor, updateToolbar])
-
-  const codeLanguges = useMemo(() => getCodeLanguages(), [])
-  const onCodeLanguageSelect = useCallback(
-    (e) => {
-      editor.update(() => {
-        if (selectedElementKey !== null) {
-          const node = $getNodeByKey(selectedElementKey)
-          if ($isCodeNode(node)) {
-            node.setLanguage(e.target.value)
-          }
-        }
-      })
-    },
-    [editor, selectedElementKey],
-  )
 
   const insertLink = useCallback(() => {
     if (!isLink) {
@@ -552,110 +530,78 @@ export default function ToolbarPlugin() {
           <Divider />
         </>
       )}
-      {blockType === 'code' ? (
-        <>
-          <Select
-            className="toolbar-item code-language"
-            onChange={onCodeLanguageSelect}
-            options={codeLanguges}
-            value={codeLanguage}
-          />
-          <i className="chevron-down inside" />
-        </>
-      ) : (
-        <>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
-            }}
-            className={'toolbar-item spaced ' + (isBold ? 'active' : '')}
-            aria-label="Format Bold"
-          >
-            <i className="format bold" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
-            }}
-            className={'toolbar-item spaced ' + (isItalic ? 'active' : '')}
-            aria-label="Format Italics"
-          >
-            <i className="format italic" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
-            }}
-            className={'toolbar-item spaced ' + (isUnderline ? 'active' : '')}
-            aria-label="Format Underline"
-          >
-            <i className="format underline" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough')
-            }}
-            className={'toolbar-item spaced ' + (isStrikethrough ? 'active' : '')}
-            aria-label="Format Strikethrough"
-          >
-            <i className="format strikethrough" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'code')
-            }}
-            className={'toolbar-item spaced ' + (isCode ? 'active' : '')}
-            aria-label="Insert Code"
-          >
-            <i className="format code" />
-          </button>
-          <button
-            onClick={insertLink}
-            className={'toolbar-item spaced ' + (isLink ? 'active' : '')}
-            aria-label="Insert Link"
-          >
-            <i className="format link" />
-          </button>
-          {isLink && createPortal(<FloatingLinkEditor editor={editor} />, document.body)}
-          <Divider />
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
-            }}
-            className="toolbar-item spaced"
-            aria-label="Left Align"
-          >
-            <i className="format left-align" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
-            }}
-            className="toolbar-item spaced"
-            aria-label="Center Align"
-          >
-            <i className="format center-align" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
-            }}
-            className="toolbar-item spaced"
-            aria-label="Right Align"
-          >
-            <i className="format right-align" />
-          </button>
-          <button
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
-            }}
-            className="toolbar-item"
-            aria-label="Justify Align"
-          >
-            <i className="format justify-align" />
-          </button>{' '}
-        </>
-      )}
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
+        }}
+        className={'toolbar-item spaced ' + (isBold ? 'active' : '')}
+        aria-label="Format Bold"
+      >
+        <i className="format bold" />
+      </button>
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
+        }}
+        className={'toolbar-item spaced ' + (isItalic ? 'active' : '')}
+        aria-label="Format Italics"
+      >
+        <i className="format italic" />
+      </button>
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
+        }}
+        className={'toolbar-item spaced ' + (isUnderline ? 'active' : '')}
+        aria-label="Format Underline"
+      >
+        <i className="format underline" />
+      </button>
+      <button
+        onClick={insertLink}
+        className={'toolbar-item spaced ' + (isLink ? 'active' : '')}
+        aria-label="Insert Link"
+      >
+        <i className="format link" />
+      </button>
+      {isLink && createPortal(<FloatingLinkEditor editor={editor} />, document.body)}
+      <Divider />
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
+        }}
+        className="toolbar-item spaced"
+        aria-label="Left Align"
+      >
+        <i className="format left-align" />
+      </button>
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
+        }}
+        className="toolbar-item spaced"
+        aria-label="Center Align"
+      >
+        <i className="format center-align" />
+      </button>
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
+        }}
+        className="toolbar-item spaced"
+        aria-label="Right Align"
+      >
+        <i className="format right-align" />
+      </button>
+      <button
+        onClick={() => {
+          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
+        }}
+        className="toolbar-item"
+        aria-label="Justify Align"
+      >
+        <i className="format justify-align" />
+      </button>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 const exampleTheme = {
   ltr: 'ltr',
   rtl: 'rtl',
-  placeholder: 'editor-placeholder',
+  /*: 'editor-placeholder',
   paragraph: 'editor-paragraph',
   quote: 'editor-quote',
   heading: {
@@ -64,6 +64,7 @@ const exampleTheme = {
     url: 'editor-tokenOperator',
     variable: 'editor-tokenVariable',
   },
+  */
 }
 
 export default exampleTheme
