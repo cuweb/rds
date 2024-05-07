@@ -14,7 +14,7 @@ import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { TRANSFORMERS } from '@lexical/markdown'
-import { $getRoot, $createParagraphNode } from 'lexical'
+import { $getRoot } from 'lexical'
 import { $generateNodesFromDOM } from '@lexical/html'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import EditorTheme from './themes/EditorTheme'
@@ -41,9 +41,7 @@ const initialValueLoader = (editor: any, initialValue?: string) => {
     const nodes = $generateNodesFromDOM(editor, dom)
     const root = $getRoot()
     root.clear()
-    const paragraphNode = $createParagraphNode()
-    nodes.forEach((n) => paragraphNode.append(n))
-    root.append(paragraphNode)
+    nodes.forEach((n) => root.append(n))
   }
 }
 
