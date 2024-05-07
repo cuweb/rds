@@ -7,6 +7,15 @@ pre::-webkit-scrollbar-thumb {
   background: #999;
 }
 
+.editor-placeholder {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
 .debug-timetravel-panel {
   overflow: hidden;
   padding: 0 0 10px 0;
