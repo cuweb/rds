@@ -92,7 +92,11 @@ export const Editor: Story = () => {
   return (
     <FormComponents formikProps={formikProps}>
       <FormComponents.FieldGroup>
-        <FormComponents.Editor setEditorContent={setEditorContent} />
+        <FormComponents.Editor
+          value={initialValue}
+          placeholder="Text goes here..."
+          setEditorContent={setEditorContent}
+        />
       </FormComponents.FieldGroup>
       <ButtonGroup>
         <Button title="Submit" type="submit" />
