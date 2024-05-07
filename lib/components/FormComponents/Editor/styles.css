@@ -309,6 +309,14 @@ i.chevron-down {
   vertical-align: -0.25em;
 }
 
+i.undo {
+  background-image: url(https://5tncvy.csb.app/images/icons/arrow-counterclockwise.svg);
+}
+
+i.redo {
+  background-image: url(https://5tncvy.csb.app/images/icons/arrow-clockwise.svg);
+}
+
 .icon.paragraph {
   background-image: url(https://5tncvy.csb.app/images/icons/text-paragraph.svg);
 }

@@ -4,6 +4,7 @@ import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import { ListItemNode, ListNode } from '@lexical/list'
@@ -93,6 +94,7 @@ export const Editor = ({ ...props }: EditorProps) => {
                 ErrorBoundary={LexicalErrorBoundary}
               />
               {/* <TreeViewPlugin /> */}
+              <HistoryPlugin />
               <AutoFocusPlugin />
               <CodeHighlightPlugin />
               <ListPlugin />
