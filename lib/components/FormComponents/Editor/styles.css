@@ -7,6 +7,13 @@ pre::-webkit-scrollbar-thumb {
   background: #999;
 }
 
+.editor-container .editor-inner {
+  border: 1px solid #999;
+  border-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .editor-placeholder {
   overflow: hidden;
   position: absolute;
@@ -56,41 +63,13 @@ pre::-webkit-scrollbar-thumb {
   text-decoration: underline;
 }
 
-.emoji {
-  color: transparent;
-  background-size: 16px 16px;
-  background-position: center;
-  background-repeat: no-repeat;
-  vertical-align: middle;
-  margin: 0 -1px;
-}
-
-.emoji-inner {
-  padding: 0 0.15em;
-}
-
-.emoji-inner::selection {
-  color: transparent;
-  background-color: rgba(150, 150, 150, 0.4);
-}
-
-.emoji-inner::moz-selection {
-  color: transparent;
-  background-color: rgba(150, 150, 150, 0.4);
-}
-
-.emoji.happysmile {
-  background-image: url(./images/emoji/1F642.png);
-}
-
 .toolbar {
   display: flex;
   margin-bottom: 1px;
   background: #fff;
   padding: 4px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   vertical-align: middle;
+  border: 1px solid #ccc;
 }
 
 .toolbar button.toolbar-item {
@@ -215,51 +194,7 @@ i.chevron-down {
   background-image: url(https://5tncvy.csb.app/images/icons/chevron-down.svg);
 }
 
-#block-controls button:hover {
-  background-color: #efefef;
-}
-
-#block-controls button:focus-visible {
-  border-color: blue;
-}
-
-#block-controls span.block-type {
-  background-size: contain;
-  display: block;
-  width: 18px;
-  height: 18px;
-  margin: 2px;
-}
-
-#block-controls span.block-type.paragraph {
-  background-image: url(https://5tncvy.csb.app/images/icons/text-paragraph.svg);
-}
-
-#block-controls span.block-type.h1 {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-h1.svg);
-}
-
-#block-controls span.block-type.h2 {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-h2.svg);
-}
-
-#block-controls span.block-type.quote {
-  background-image: url(https://5tncvy.csb.app/images/icons/chat-square-quote.svg);
-}
-
-#block-controls span.block-type.ul {
-  background-image: url(https://5tncvy.csb.app/images/icons/list-ul.svg);
-}
-
-#block-controls span.block-type.ol {
-  background-image: url(https://5tncvy.csb.app/images/icons/list-ol.svg);
-}
-
-#block-controls span.block-type.code {
-  background-image: url(https://5tncvy.csb.app/images/icons/code.svg);
-}
-
-.dropdown {
+.editor-dropdown {
   z-index: 5;
   display: block;
   position: absolute;
@@ -273,7 +208,7 @@ i.chevron-down {
   background-color: #fff;
 }
 
-.dropdown .item {
+.editor-dropdown .item {
   margin: 0 8px 0 8px;
   padding: 8px;
   color: #050505;
@@ -291,33 +226,33 @@ i.chevron-down {
   min-width: 268px;
 }
 
-.dropdown .item .active {
+.editor-dropdown .item .active {
   display: flex;
   width: 20px;
   height: 20px;
   background-size: contain;
 }
 
-.dropdown .item:first-child {
+.editor-dropdown .item:first-child {
   margin-top: 8px;
 }
 
-.dropdown .item:last-child {
+.editor-dropdown .item:last-child {
   margin-bottom: 8px;
 }
 
-.dropdown .item:hover {
+.editor-dropdown .item:hover {
   background-color: #eee;
 }
 
-.dropdown .item .text {
+.editor-dropdown .item .text {
   display: flex;
   line-height: 20px;
   flex-grow: 1;
   width: 200px;
 }
 
-.dropdown .item .icon {
+.editor-dropdown .item .icon {
   display: flex;
   width: 20px;
   height: 20px;

@@ -22,7 +22,16 @@ import ToolbarPlugin from './plugins/ToolbarPlugin'
 import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
 import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
+import { FormField } from '../FormField/FormField'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
+
+export interface EditorProps {
+  name: string
+  label: string
+  setEditorContent: any
+  value?: string
+  placeholder?: string
+}
 
 const initialValueLoader = (editor: any, initialValue?: string) => {
   if (initialValue) {
@@ -61,7 +70,9 @@ function OnChangePlugin({ onChange }: any) {
   return null
 }
 
-export const Editor = ({ value, placeholder, setEditorContent }: any) => {
+export const Editor = ({ ...props }: EditorProps) => {
+  const { label, value, placeholder, setEditorContent, ...rest } = props
+
   function onChange(editorState: any) {
     const editorStateJSON = editorState.toJSON()
     setEditorContent(JSON.stringify(editorStateJSON))
@@ -70,7 +81,7 @@ export const Editor = ({ value, placeholder, setEditorContent }: any) => {
   const placeHolderText = placeholder ?? 'Enter some text...'
 
   return (
-    <div className="w-full">
+    <FormField label={label} {...rest}>
       <div className={'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg'}>
         <LexicalComposer initialConfig={editorConfig(value)}>
           <div className="editor-container">
@@ -94,6 +105,6 @@ export const Editor = ({ value, placeholder, setEditorContent }: any) => {
           </div>
         </LexicalComposer>
       </div>
-    </div>
+    </FormField>
   )
 }

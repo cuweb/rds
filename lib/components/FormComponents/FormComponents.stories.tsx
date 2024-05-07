@@ -93,6 +93,8 @@ export const Editor: Story = () => {
     <FormComponents formikProps={formikProps}>
       <FormComponents.FieldGroup>
         <FormComponents.Editor
+          label="Editor"
+          name="editor"
           value={initialValue}
           placeholder="Text goes here..."
           setEditorContent={setEditorContent}
