@@ -6,8 +6,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
-  REDO_COMMAND,
-  UNDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
   FORMAT_TEXT_COMMAND,
   FORMAT_ELEMENT_COMMAND,
@@ -395,8 +393,6 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
 export default function ToolbarPlugin() {
   const [editor] = useLexicalComposerContext()
   const toolbarRef = useRef(null)
-  const [canUndo, setCanUndo] = useState(false)
-  const [canRedo, setCanRedo] = useState(false)
   const [blockType, setBlockType] = useState('paragraph')
   const [selectedElementKey, setSelectedElementKey] = useState<string | null>(null)
   const [showBlockOptionsDropDown, setShowBlockOptionsDropDown] = useState(false)
