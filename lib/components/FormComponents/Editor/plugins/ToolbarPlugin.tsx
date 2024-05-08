@@ -220,17 +220,6 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
   const dropDownRef = useRef(null)
 
   useEffect(() => {
-    const toolbar = toolbarRef.current
-    const dropDown = dropDownRef.current
-
-    if (toolbar !== null && dropDown !== null) {
-      const { top, left } = toolbar.getBoundingClientRect()
-      dropDown.style.top = `${top + 40}px`
-      dropDown.style.left = `${left}px`
-    }
-  }, [dropDownRef, toolbarRef])
-
-  useEffect(() => {
     const dropDown = dropDownRef.current
     const toolbar = toolbarRef.current
 
@@ -348,42 +337,42 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
 
   return (
     <div className="editor-dropdown" ref={dropDownRef}>
-      <button type="button" className="item" onClick={formatParagraph}>
+      <button className="item" onClick={formatParagraph}>
         <span className="icon paragraph" />
         <span className="text">Normal</span>
         {blockType === 'paragraph' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatH2Heading}>
+      <button className="item" onClick={formatH2Heading}>
         <span className="icon h2" />
         <span className="text">Heading</span>
         {blockType === 'h2' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatH3Heading}>
+      <button className="item" onClick={formatH3Heading}>
         <span className="icon h3" />
         <span className="text">Heading</span>
         {blockType === 'h3' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatH4Heading}>
+      <button className="item" onClick={formatH4Heading}>
         <span className="icon h4" />
         <span className="text">H4 Heading</span>
         {blockType === 'h4' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatH5Heading}>
+      <button className="item" onClick={formatH5Heading}>
         <span className="icon h5" />
         <span className="text">H5 Heading</span>
         {blockType === 'h5' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatBulletList}>
+      <button className="item" onClick={formatBulletList}>
         <span className="icon bullet-list" />
         <span className="text">Bullet List</span>
         {blockType === 'ul' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatNumberedList}>
+      <button className="item" onClick={formatNumberedList}>
         <span className="icon numbered-list" />
         <span className="text">Numbered List</span>
         {blockType === 'ol' && <span className="active" />}
       </button>
-      <button type="button" className="item" onClick={formatQuote}>
+      <button className="item" onClick={formatQuote}>
         <span className="icon quote" />
         <span className="text">Quote</span>
         {blockType === 'quote' && <span className="active" />}
@@ -486,7 +475,6 @@ export default function ToolbarPlugin() {
   return (
     <div className="toolbar" ref={toolbarRef}>
       <button
-        type="button"
         disabled={!canUndo}
         onClick={() => {
           editor.dispatchCommand(UNDO_COMMAND)
@@ -497,7 +485,6 @@ export default function ToolbarPlugin() {
         <i className="format undo" />
       </button>
       <button
-        type="button"
         disabled={!canRedo}
         onClick={() => {
           editor.dispatchCommand(REDO_COMMAND)
@@ -511,10 +498,11 @@ export default function ToolbarPlugin() {
       {supportedBlockTypes.has(blockType) && (
         <>
           <button
+            className="relative toolbar-item block-controls"
             type="button"
-            className="toolbar-item block-controls"
             onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
             aria-label="Formatting Options"
+            id="texttype-dropdown"
           >
             <span className={'icon block-type ' + blockType} />
             <span className="text">{blockTypeToBlockName[blockType]}</span>
@@ -528,7 +516,7 @@ export default function ToolbarPlugin() {
                 toolbarRef={toolbarRef}
                 setShowBlockOptionsDropDown={setShowBlockOptionsDropDown}
               />,
-              document.body,
+              document.getElementById('texttype-dropdown'),
             )}
           <Divider />
         </>
