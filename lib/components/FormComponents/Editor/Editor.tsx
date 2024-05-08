@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect } from 'react'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
@@ -15,7 +14,7 @@ import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { TRANSFORMERS } from '@lexical/markdown'
 import { $getRoot } from 'lexical'
-import { $generateNodesFromDOM } from '@lexical/html'
+import { $generateNodesFromDOM, $generateHtmlFromNodes } from '@lexical/html'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import EditorTheme from './themes/EditorTheme'
 import './styles.css'
@@ -38,10 +37,13 @@ const initialValueLoader = (editor: any, initialValue?: string) => {
   if (initialValue) {
     const parser = new DOMParser()
     const dom = parser.parseFromString(initialValue, 'text/html')
-    const nodes = $generateNodesFromDOM(editor, dom)
-    const root = $getRoot()
-    root.clear()
-    nodes.forEach((n) => root.append(n))
+    // check if html format
+    if (Array.from(dom.body.childNodes).some((node) => node.nodeType === 1)) {
+      const nodes = $generateNodesFromDOM(editor, dom)
+      const root = $getRoot()
+      root.clear()
+      nodes.forEach((n) => root.append(n))
+    }
   }
 }
 
@@ -61,27 +63,28 @@ const editorConfig = (initialValue?: string) => {
 
 function OnChangePlugin({ onChange }: any) {
   const [editor] = useLexicalComposerContext()
-  useEffect(() => {
-    return editor.registerUpdateListener(({ editorState }) => {
-      onChange(editorState)
-    })
-  }, [editor, onChange])
+
+  editor.update(() => {
+    const htmlString = $generateHtmlFromNodes(editor, null)
+    return onChange(htmlString)
+  })
+
   return null
 }
 
 export const Editor = ({ ...props }: EditorProps) => {
   const { label, value, placeholder, setEditorContent, ...rest } = props
 
-  function onChange(editorState: any) {
-    const editorStateJSON = editorState.toJSON()
-    setEditorContent(JSON.stringify(editorStateJSON))
+  function onChange(htmlString: string) {
+    console.log(htmlString)
+    setEditorContent(htmlString)
   }
 
   const placeHolderText = placeholder ?? 'Enter some text...'
 
   return (
     <FormField label={label} {...rest}>
-      <div className={'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg'}>
+      <div className={'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full'}>
         <LexicalComposer initialConfig={editorConfig(value)}>
           <div className="editor-container">
             <ToolbarPlugin />
