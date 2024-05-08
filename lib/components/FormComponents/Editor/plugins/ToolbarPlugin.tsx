@@ -348,42 +348,42 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
 
   return (
     <div className="editor-dropdown" ref={dropDownRef}>
-      <button className="item" onClick={formatParagraph}>
+      <button type="button" className="item" onClick={formatParagraph}>
         <span className="icon paragraph" />
         <span className="text">Normal</span>
         {blockType === 'paragraph' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatH2Heading}>
+      <button type="button" className="item" onClick={formatH2Heading}>
         <span className="icon h2" />
         <span className="text">Heading</span>
         {blockType === 'h2' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatH3Heading}>
+      <button type="button" className="item" onClick={formatH3Heading}>
         <span className="icon h3" />
         <span className="text">Heading</span>
         {blockType === 'h3' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatH4Heading}>
+      <button type="button" className="item" onClick={formatH4Heading}>
         <span className="icon h4" />
         <span className="text">H4 Heading</span>
         {blockType === 'h4' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatH5Heading}>
+      <button type="button" className="item" onClick={formatH5Heading}>
         <span className="icon h5" />
         <span className="text">H5 Heading</span>
         {blockType === 'h5' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatBulletList}>
+      <button type="button" className="item" onClick={formatBulletList}>
         <span className="icon bullet-list" />
         <span className="text">Bullet List</span>
         {blockType === 'ul' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatNumberedList}>
+      <button type="button" className="item" onClick={formatNumberedList}>
         <span className="icon numbered-list" />
         <span className="text">Numbered List</span>
         {blockType === 'ol' && <span className="active" />}
       </button>
-      <button className="item" onClick={formatQuote}>
+      <button type="button" className="item" onClick={formatQuote}>
         <span className="icon quote" />
         <span className="text">Quote</span>
         {blockType === 'quote' && <span className="active" />}
@@ -486,6 +486,7 @@ export default function ToolbarPlugin() {
   return (
     <div className="toolbar" ref={toolbarRef}>
       <button
+        type="button"
         disabled={!canUndo}
         onClick={() => {
           editor.dispatchCommand(UNDO_COMMAND)
@@ -496,6 +497,7 @@ export default function ToolbarPlugin() {
         <i className="format undo" />
       </button>
       <button
+        type="button"
         disabled={!canRedo}
         onClick={() => {
           editor.dispatchCommand(REDO_COMMAND)
@@ -509,6 +511,7 @@ export default function ToolbarPlugin() {
       {supportedBlockTypes.has(blockType) && (
         <>
           <button
+            type="button"
             className="toolbar-item block-controls"
             onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
             aria-label="Formatting Options"
@@ -531,6 +534,7 @@ export default function ToolbarPlugin() {
         </>
       )}
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
         }}
@@ -540,6 +544,7 @@ export default function ToolbarPlugin() {
         <i className="format bold" />
       </button>
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
         }}
@@ -549,6 +554,7 @@ export default function ToolbarPlugin() {
         <i className="format italic" />
       </button>
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
         }}
@@ -558,6 +564,7 @@ export default function ToolbarPlugin() {
         <i className="format underline" />
       </button>
       <button
+        type="button"
         onClick={insertLink}
         className={'toolbar-item spaced ' + (isLink ? 'active' : '')}
         aria-label="Insert Link"
@@ -567,6 +574,7 @@ export default function ToolbarPlugin() {
       {isLink && createPortal(<FloatingLinkEditor editor={editor} />, document.body)}
       <Divider />
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
         }}
@@ -576,6 +584,7 @@ export default function ToolbarPlugin() {
         <i className="format left-align" />
       </button>
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
         }}
@@ -585,6 +594,7 @@ export default function ToolbarPlugin() {
         <i className="format center-align" />
       </button>
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
         }}
@@ -594,6 +604,7 @@ export default function ToolbarPlugin() {
         <i className="format right-align" />
       </button>
       <button
+        type="button"
         onClick={() => {
           editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
         }}

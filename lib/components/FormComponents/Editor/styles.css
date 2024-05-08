@@ -173,6 +173,8 @@ i.chevron-down {
   min-width: 100px;
   min-height: 40px;
   background-color: #fff;
+  top: calc(100% + 5px);
+  left: 0;
 }
 
 .editor-dropdown .item {
