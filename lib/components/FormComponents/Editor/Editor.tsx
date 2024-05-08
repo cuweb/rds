@@ -15,6 +15,7 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { TRANSFORMERS } from '@lexical/markdown'
 import { $getRoot } from 'lexical'
 import { $generateNodesFromDOM, $generateHtmlFromNodes } from '@lexical/html'
+import { $isRootTextContentEmpty } from '@lexical/text'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import EditorTheme from './themes/EditorTheme'
 import './styles.css'
@@ -23,14 +24,20 @@ import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
 import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
+import Error from '../Error/Error'
+
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 
 export interface EditorProps {
   name: string
   label: string
+  helper?: string
   setEditorContent: any
   value?: string
   placeholder?: string
+  disable?: boolean
+  required?: boolean
+  errorMessage?: string
 }
 
 const initialValueLoader = (editor: any, initialValue?: string) => {
@@ -47,7 +54,7 @@ const initialValueLoader = (editor: any, initialValue?: string) => {
   }
 }
 
-const editorConfig = (initialValue?: string) => {
+const editorConfig = (initialValue?: string, disable?: boolean) => {
   return {
     namespace: 'editor',
     theme: EditorTheme,
@@ -58,40 +65,50 @@ const editorConfig = (initialValue?: string) => {
     editorState: (editor: any) => {
       initialValueLoader(editor, initialValue)
     },
+    editable: disable,
   }
 }
 
-function OnChangePlugin({ onChange }: any) {
+function OnChangePlugin({ onChange, required }: any) {
   const [editor] = useLexicalComposerContext()
+
+  const emptyState = required ? null : ''
 
   editor.update(() => {
     const htmlString = $generateHtmlFromNodes(editor, null)
-    return onChange(htmlString)
+    const isEditorEmpty = $isRootTextContentEmpty(editor.isComposing(), true)
+    return onChange(!isEditorEmpty ? htmlString : emptyState)
   })
 
-  return null
+  return emptyState
 }
 
 export const Editor = ({ ...props }: EditorProps) => {
-  const { label, value, placeholder, setEditorContent, ...rest } = props
+  const {
+    label,
+    value,
+    placeholder = 'Enter some text...',
+    setEditorContent,
+    disable = false,
+    required,
+    errorMessage,
+    ...rest
+  } = props
 
   function onChange(htmlString: string) {
-    console.log(htmlString)
     setEditorContent(htmlString)
   }
 
-  const placeHolderText = placeholder ?? 'Enter some text...'
-
   return (
-    <FormField label={label} {...rest}>
+    <FormField label={label} required={required} {...rest}>
       <div className={'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full'}>
-        <LexicalComposer initialConfig={editorConfig(value)}>
+        <LexicalComposer initialConfig={editorConfig(value, !disable)}>
           <div className="editor-container">
             <ToolbarPlugin />
             <div className="editor-inner relative">
               <RichTextPlugin
                 contentEditable={<ContentEditable className="editor-input" />}
-                placeholder={<div className="editor-placeholder">{placeHolderText}</div>}
+                placeholder={<p className="editor-placeholder">{placeholder}</p>}
                 ErrorBoundary={LexicalErrorBoundary}
               />
               {/* <TreeViewPlugin /> */}
@@ -103,11 +120,13 @@ export const Editor = ({ ...props }: EditorProps) => {
               <AutoLinkPlugin />
               <ListMaxIndentLevelPlugin maxDepth={7} />
               <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-              <OnChangePlugin onChange={onChange} />
+              <OnChangePlugin onChange={onChange} required={required} />
             </div>
           </div>
         </LexicalComposer>
       </div>
+
+      {errorMessage && required && <Error>{errorMessage}</Error>}
     </FormField>
   )
 }
