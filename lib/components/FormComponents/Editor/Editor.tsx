@@ -101,7 +101,11 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   return (
     <FormField label={label} required={required} {...rest}>
-      <div className={'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full'}>
+      <div
+        className={
+          'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0'
+        }
+      >
         <LexicalComposer initialConfig={editorConfig(value, !disable)}>
           <div className="editor-container">
             <ToolbarPlugin />

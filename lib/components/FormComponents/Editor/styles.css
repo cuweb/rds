@@ -25,6 +25,11 @@ pre::-webkit-scrollbar-thumb {
   pointer-events: none;
 }
 
+.editor-input {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
 .toolbar {
   display: flex;
   margin-bottom: 1px;

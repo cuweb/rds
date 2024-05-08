@@ -22,7 +22,7 @@ export const Radio = ({ ...props }: RadioProps) => {
       {options &&
         options.map((option) => (
           <label key={option.label} className={fieldStyles.radioCheck}>
-            <Field type="radio" name={name} value={option.value} {...rest} />
+            <Field type="radio" name={name} className={`${fieldStyles.disabled}`} value={option.value} {...rest} />
             {option.label}
           </label>
         ))}

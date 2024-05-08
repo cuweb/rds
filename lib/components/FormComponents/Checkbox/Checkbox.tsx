@@ -23,7 +23,7 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
       {options &&
         options.map((option) => (
           <label key={option.value} className={checkBoxRight ? fieldStyles.radioCheckRight : fieldStyles.radioCheck}>
-            <Field type="checkbox" name={name} value={option.value} {...rest} />
+            <Field type="checkbox" name={name} value={option.value} className={`${fieldStyles.disabled}`} {...rest} />
             {option.key}
           </label>
         ))}

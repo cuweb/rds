@@ -116,7 +116,7 @@ export const Editor: Story = () => {
           label="Editor"
           name="editor"
           helper="Helper Text"
-          value={initialValue}
+          // value={initialValue}
           placeholder="Text goes here..."
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
