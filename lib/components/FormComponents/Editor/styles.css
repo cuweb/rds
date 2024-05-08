@@ -17,18 +17,17 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .editor-placeholder {
-  overflow: hidden;
-  position: absolute;
+  @apply overflow-hidden absolute text-base md:text-xl leading-7 pt-1;
   top: 1rem;
   left: 1rem;
   user-select: none;
   pointer-events: none;
 }
 
-.editor-input {
+/* .editor-input {
   margin-top: 1.2em;
   margin-bottom: 1.2em;
-}
+} */
 
 .toolbar {
   display: flex;

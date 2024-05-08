@@ -101,30 +101,34 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   return (
     <FormField label={label} required={required} {...rest}>
-      <LexicalComposer initialConfig={editorConfig(value, !disable)}>
-        <div className="editor-container">
-          <ToolbarPlugin />
-          <div className="editor-inner relative">
-            <RichTextPlugin
-              contentEditable={
-                <ContentEditable className="editor-input prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0" />
-              }
-              placeholder={<p className="editor-placeholder">{placeholder}</p>}
-              ErrorBoundary={LexicalErrorBoundary}
-            />
-            {/* <TreeViewPlugin /> */}
-            <HistoryPlugin />
-            <AutoFocusPlugin />
-            <CodeHighlightPlugin />
-            <ListPlugin />
-            <LinkPlugin />
-            <AutoLinkPlugin />
-            <ListMaxIndentLevelPlugin maxDepth={7} />
-            <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-            <OnChangePlugin onChange={onChange} required={required} />
+      <div
+        className={
+          'prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0'
+        }
+      >
+        <LexicalComposer initialConfig={editorConfig(value, !disable)}>
+          <div className="editor-container">
+            <ToolbarPlugin />
+            <div className="editor-inner relative">
+              <RichTextPlugin
+                contentEditable={<ContentEditable className="editor-input" />}
+                placeholder={<p className="editor-placeholder">{placeholder}</p>}
+                ErrorBoundary={LexicalErrorBoundary}
+              />
+              {/* <TreeViewPlugin /> */}
+              <HistoryPlugin />
+              <AutoFocusPlugin />
+              <CodeHighlightPlugin />
+              <ListPlugin />
+              <LinkPlugin />
+              <AutoLinkPlugin />
+              <ListMaxIndentLevelPlugin maxDepth={7} />
+              <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
+              <OnChangePlugin onChange={onChange} required={required} />
+            </div>
           </div>
-        </div>
-      </LexicalComposer>
+        </LexicalComposer>
+      </div>
 
       {errorMessage && required && <Error>{errorMessage}</Error>}
     </FormField>
