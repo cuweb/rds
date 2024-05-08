@@ -17,7 +17,8 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .editor-placeholder {
-  @apply overflow-hidden absolute text-base md:text-xl leading-7 pt-1;
+  overflow: hidden;
+  position: absolute;
   top: 1rem;
   left: 1rem;
   user-select: none;
