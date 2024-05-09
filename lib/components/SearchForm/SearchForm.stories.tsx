@@ -27,7 +27,7 @@ export const Default: Story = () => {
     },
     [setMessage],
   )
-  return <SearchForm callback={callback} />
+  return <SearchForm callback={callback} placeholder="Enter a search string" />
 }
 
 Default.storyName = 'Default Search Form'
