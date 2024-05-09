@@ -116,13 +116,24 @@ export const Editor: Story = () => {
           label="Editor"
           name="editor"
           helper="Helper Text"
-          value={initialValue}
+          // value={initialValue}
           placeholder="Text goes here..."
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
           required
           disable={formikProps.isSubmitting}
         />
+        {/* <FormComponents.Editor
+          label="Editor1"
+          name="editor1"
+          helper="Helper Text"
+          // value={initialValue}
+          placeholder="Text goes here..."
+          setEditorContent={setEditorContent}
+          errorMessage={editorError ? 'Field is required' : ''}
+          required
+          disable={formikProps.isSubmitting}
+        /> */}
       </FormComponents.FieldGroup>
       <ButtonGroup>
         <Button title="Submit" type="submit" />

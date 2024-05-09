@@ -31,8 +31,8 @@ import Error from '../Error/Error'
 export interface EditorProps {
   name: string
   label: string
-  helper?: string
   setEditorContent: any
+  helper?: string
   value?: string
   placeholder?: string
   disable?: boolean
@@ -54,7 +54,7 @@ const initialValueLoader = (editor: any, initialValue?: string) => {
   }
 }
 
-const editorConfig = (initialValue?: string, disable?: boolean) => {
+const editorConfig = (editable: boolean, initialValue?: string) => {
   return {
     namespace: 'editor',
     theme: EditorTheme,
@@ -65,7 +65,7 @@ const editorConfig = (initialValue?: string, disable?: boolean) => {
     editorState: (editor: any) => {
       initialValueLoader(editor, initialValue)
     },
-    editable: disable,
+    editable: editable,
   }
 }
 
@@ -85,10 +85,11 @@ function OnChangePlugin({ onChange, required }: any) {
 
 export const Editor = ({ ...props }: EditorProps) => {
   const {
+    name,
     label,
+    setEditorContent,
     value,
     placeholder = 'Enter some text...',
-    setEditorContent,
     disable = false,
     required,
     errorMessage,
@@ -100,10 +101,10 @@ export const Editor = ({ ...props }: EditorProps) => {
   }
 
   return (
-    <FormField label={label} required={required} {...rest}>
-      <LexicalComposer initialConfig={editorConfig(value, !disable)}>
+    <FormField name={name} label={label} required={required} {...rest}>
+      <LexicalComposer initialConfig={editorConfig(!disable, value)}>
         <div className="cu-editor">
-          <ToolbarPlugin />
+          <ToolbarPlugin name={name} />
           <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={

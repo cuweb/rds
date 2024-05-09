@@ -381,13 +381,16 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
   )
 }
 
-export default function ToolbarPlugin() {
+export interface ToolbarPluginProps {
+  name: string
+}
+
+export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
   const [editor] = useLexicalComposerContext()
   const toolbarRef = useRef(null)
   const [canUndo, setCanUndo] = useState(false)
   const [canRedo, setCanRedo] = useState(false)
   const [blockType, setBlockType] = useState('paragraph')
-  const [selectedElementKey, setSelectedElementKey] = useState<string | null>(null)
   const [showBlockOptionsDropDown, setShowBlockOptionsDropDown] = useState(false)
   const [, setIsRTL] = useState(false)
   const [isLink, setIsLink] = useState(false)
@@ -403,14 +406,13 @@ export default function ToolbarPlugin() {
       const elementKey = element.getKey()
       const elementDOM = editor.getElementByKey(elementKey)
       if (elementDOM !== null) {
-        setSelectedElementKey(elementKey)
         if ($isListNode(element)) {
           const parentList = $getNearestNodeOfType(anchorNode, ListNode)
           const type = parentList ? parentList.getTag() : element.getTag()
           setBlockType(type)
         } else {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType()
-          setBlockType(type)
+          setBlockType(type == 'root' ? 'paragraph' : type)
         }
       }
       // Update text format
@@ -439,7 +441,7 @@ export default function ToolbarPlugin() {
       }),
       editor.registerCommand(
         SELECTION_CHANGE_COMMAND,
-        (_payload, newEditor) => {
+        () => {
           updateToolbar()
           return false
         },
@@ -473,7 +475,7 @@ export default function ToolbarPlugin() {
   }, [editor, isLink])
 
   return (
-    <div className="toolbar" ref={toolbarRef}>
+    <div id={`toolbar` + name} className="toolbar" ref={toolbarRef}>
       <button
         disabled={!canUndo}
         onClick={() => {
@@ -495,32 +497,29 @@ export default function ToolbarPlugin() {
         <i className="format redo" />
       </button>
       <Divider />
-      {supportedBlockTypes.has(blockType) && (
-        <>
-          <button
-            className="relative toolbar-item block-controls"
-            type="button"
-            onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
-            aria-label="Formatting Options"
-            id="texttype-dropdown"
-          >
-            <span className={'icon block-type ' + blockType} />
-            <span className="text">{blockTypeToBlockName[blockType]}</span>
-            <i className="chevron-down" />
-          </button>
-          {showBlockOptionsDropDown &&
-            createPortal(
-              <BlockOptionsDropdownList
-                editor={editor}
-                blockType={blockType}
-                toolbarRef={toolbarRef}
-                setShowBlockOptionsDropDown={setShowBlockOptionsDropDown}
-              />,
-              document.getElementById('texttype-dropdown'),
-            )}
-          <Divider />
-        </>
-      )}
+
+      <button
+        className="relative toolbar-item block-controls"
+        type="button"
+        onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
+        aria-label="Formatting Options"
+      >
+        <span className={'icon block-type ' + blockType} />
+        <span className="text">{blockTypeToBlockName[blockType]}</span>
+        <i className="chevron-down" />
+      </button>
+      {showBlockOptionsDropDown &&
+        createPortal(
+          <BlockOptionsDropdownList
+            editor={editor}
+            blockType={blockType}
+            toolbarRef={toolbarRef}
+            setShowBlockOptionsDropDown={setShowBlockOptionsDropDown}
+          />,
+          document.getElementById(`toolbar` + name),
+        )}
+      <Divider />
+
       <button
         type="button"
         onClick={() => {

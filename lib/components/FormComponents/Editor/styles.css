@@ -12,7 +12,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .cu-editor .toolbar {
-  @apply flex bg-gradient-to-t from-cu-black-50 to-white rounded-t-md align-middle border-b border-cu-black-200 px-1 sticky top-0;
+  @apply flex bg-gradient-to-t from-cu-black-50 to-white rounded-t-md align-middle border-b border-cu-black-200 px-1 sticky top-0 z-[9];
 }
 
 .cu-editor-content {
@@ -20,7 +20,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .cu-editor-placeholder {
-  @apply absolute overflow-hidden top-20 left-8 select-none pointer-events-none;
+  @apply absolute overflow-hidden top-20 left-8 m-0 select-none pointer-events-none;
 }
 
 .cu-editor .toolbar button.toolbar-item {
