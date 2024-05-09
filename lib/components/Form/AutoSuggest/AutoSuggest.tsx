@@ -1,6 +1,6 @@
 import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
-import { fieldStyles } from '../../../styles/form'
+import './style.css'
 import { FormField } from '../FormField/FormField'
 
 interface Option {
@@ -14,7 +14,7 @@ export interface AutoSuggestProps {
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
   required?: boolean
-  options?: { value: string; label: string }[]
+  options?: Option[]
   disabled?: boolean
 }
 
@@ -35,7 +35,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
         isSearchable={true}
         isClearable={true}
         isDisabled={disabled}
-        className={`${fieldStyles.input} ${fieldStyles.disabled}`}
+        className="cu-autosuggest"
       />
     </FormField>
   )

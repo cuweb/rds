@@ -1,0 +1,7 @@
+.cu-autosuggest .css-13cymwt-control {
+  @apply border-cu-black-200 rounded-md placeholder:text-cu-black-400 min-h-11 !important;
+}
+
+.cu-autosuggest .css-13cymwt-control input {
+  @apply placeholder:text-cu-black-400 disabled:bg-slate-200 disabled:text-slate-500 disabled:border-slate-200 !important;
+}
