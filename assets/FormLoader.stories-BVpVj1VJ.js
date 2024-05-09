@@ -1,6 +1,0 @@
-import{j as e}from"./jsx-runtime-CKrituN3.js";import{R as d}from"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";const a=({cols:o})=>e.jsx("div",{className:"flex space-x-2 mb-2",children:Array.from({length:o},(t,s)=>e.jsx("span",{className:"animate-pulse block h-8 rounded-md w-52 bg-cu-black-100"},s))}),n=({children:o})=>e.jsxs(e.Fragment,{children:[d.Children.map(o,(t,s)=>e.jsx("div",{children:d.cloneElement(t,{})},s)),e.jsx("span",{className:"sr-only",children:"Loading..."})]});a.__docgenInfo={description:"",methods:[],displayName:"RowLoader",props:{cols:{required:!0,tsType:{name:"number"},description:""}}};n.__docgenInfo={description:"",methods:[],displayName:"FormLoader",props:{children:{required:!0,tsType:{name:"any"},description:""}}};const x={title:"Components/Load Screens/Form Loader",component:n,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},r={render:()=>e.jsxs(n,{children:[e.jsx(a,{cols:1}),e.jsx(a,{cols:3})]})};var c,m,i;r.parameters={...r.parameters,docs:{...(c=r.parameters)==null?void 0:c.docs,source:{originalSource:`{
-  render: () => <FormLoader>
-      <RowLoader cols={1} />
-      <RowLoader cols={3} />
-    </FormLoader>
-}`,...(i=(m=r.parameters)==null?void 0:m.docs)==null?void 0:i.source}}};const h=["Default"];export{r as Default,h as __namedExportsOrder,x as default};

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface DescriptionMetaProps {
     term?: string;
     children: React.ReactNode;
