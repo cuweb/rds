@@ -83,6 +83,7 @@ export const Editor: Story = () => {
       setEditorError(true)
     } else {
       await sleep(1000)
+      alert(editorContent)
       console.log(values, editorContent)
       actions.setSubmitting(false)
     }
@@ -100,36 +101,17 @@ export const Editor: Story = () => {
   return (
     <FormComponents formikProps={formikProps}>
       <FormComponents.FieldGroup>
-        <FormComponents.FieldControl
-          control="text"
-          label="Label"
-          name="inputText"
-          required
-          helper="Helper Text"
-          disable={formikProps.isSubmitting}
-        />
         <FormComponents.Editor
           label="Editor"
           name="editor"
           helper="Helper Text"
-          // value={initialValue}
+          value={initialValue}
           placeholder="Text goes here..."
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
           required
           disable={formikProps.isSubmitting}
         />
-        {/* <FormComponents.Editor
-          label="Editor1"
-          name="editor1"
-          helper="Helper Text"
-          // value={initialValue}
-          placeholder="Text goes here..."
-          setEditorContent={setEditorContent}
-          errorMessage={editorError ? 'Field is required' : ''}
-          required
-          disable={formikProps.isSubmitting}
-        /> */}
       </FormComponents.FieldGroup>
       <ButtonGroup>
         <Button title="Submit" type="submit" />
