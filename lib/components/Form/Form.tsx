@@ -5,12 +5,12 @@ import { FieldControl } from './FieldControl/FieldControl'
 import { primaryStyles } from '../../styles/form'
 import { Editor } from './Editor/Editor'
 
-export interface FormComponentsWrapperProps {
+export interface FormWrapperProps {
   children: React.ReactNode
   formikProps: any
 }
 
-export const FormComponentsWrapper = ({ children, formikProps }: FormComponentsWrapperProps) => {
+export const FormWrapper = ({ children, formikProps }: FormWrapperProps) => {
   return (
     <FormikProvider value={formikProps}>
       <form onSubmit={formikProps.handleSubmit} className={primaryStyles.form}>
@@ -20,7 +20,7 @@ export const FormComponentsWrapper = ({ children, formikProps }: FormComponentsW
   )
 }
 
-export const FormComponents = Object.assign(FormComponentsWrapper, {
+export const Form = Object.assign(FormWrapper, {
   FieldGroup: FieldGroup,
   FieldControl: FieldControl,
   Editor: Editor,
