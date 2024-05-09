@@ -11,6 +11,10 @@ pre::-webkit-scrollbar-thumb {
   @apply flex flex-col relative border border-cu-black-200 rounded-md;
 }
 
+.cu-editor__disabled {
+  @apply bg-slate-200 text-slate-500 border-slate-200;
+}
+
 .cu-editor .toolbar {
   @apply flex bg-gradient-to-t from-cu-black-50 to-white rounded-t-md align-middle border-b border-cu-black-200 px-1 sticky top-0 z-[9];
 }

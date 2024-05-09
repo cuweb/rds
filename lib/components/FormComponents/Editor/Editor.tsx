@@ -54,7 +54,7 @@ const initialValueLoader = (editor: any, initialValue?: string) => {
   }
 }
 
-const editorConfig = (editable: boolean, initialValue?: string) => {
+const editorConfig = (initialValue?: string) => {
   return {
     namespace: 'editor',
     theme: EditorTheme,
@@ -65,11 +65,10 @@ const editorConfig = (editable: boolean, initialValue?: string) => {
     editorState: (editor: any) => {
       initialValueLoader(editor, initialValue)
     },
-    editable: editable,
   }
 }
 
-function OnChangePlugin({ onChange, required }: any) {
+function OnChangePlugin({ onChange, required, disable }: any) {
   const [editor] = useLexicalComposerContext()
 
   const emptyState = required ? null : ''
@@ -79,6 +78,8 @@ function OnChangePlugin({ onChange, required }: any) {
     const isEditorEmpty = $isRootTextContentEmpty(editor.isComposing(), true)
     return onChange(!isEditorEmpty ? htmlString : emptyState)
   })
+
+  editor.setEditable(!disable)
 
   return emptyState
 }
@@ -100,10 +101,12 @@ export const Editor = ({ ...props }: EditorProps) => {
     setEditorContent(htmlString)
   }
 
+  const editorClass = disable ? 'cu-editor__disabled' : ''
+
   return (
     <FormField name={name} label={label} required={required} {...rest}>
-      <LexicalComposer initialConfig={editorConfig(!disable, value)}>
-        <div className="cu-editor">
+      <LexicalComposer initialConfig={editorConfig(value)}>
+        <div className={`cu-editor ` + editorClass}>
           <ToolbarPlugin name={name} />
           <div className="cu-editor-content">
             <RichTextPlugin
@@ -126,7 +129,7 @@ export const Editor = ({ ...props }: EditorProps) => {
             <AutoLinkPlugin />
             <ListMaxIndentLevelPlugin maxDepth={7} />
             <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-            <OnChangePlugin onChange={onChange} required={required} />
+            <OnChangePlugin onChange={onChange} required={required} disable={disable} />
           </div>
         </div>
       </LexicalComposer>
