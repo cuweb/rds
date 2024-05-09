@@ -102,9 +102,9 @@ export const Editor = ({ ...props }: EditorProps) => {
   return (
     <FormField label={label} required={required} {...rest}>
       <LexicalComposer initialConfig={editorConfig(value, !disable)}>
-        <div className="editor-container">
+        <div className="cu-editor">
           <ToolbarPlugin />
-          <div className="editor-inner relative">
+          <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={
                 <ContentEditable className="editor-input prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0" />

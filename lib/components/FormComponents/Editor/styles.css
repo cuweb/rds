@@ -7,55 +7,55 @@ pre::-webkit-scrollbar-thumb {
   background: #ccc;
 }
 
-.editor-container {
-  @apply flex flex-col gap-2;
+.cu-editor {
+  @apply flex flex-col relative border border-cu-black-200 rounded-md;
 }
 
-.editor-container .editor-inner {
-  @apply border border-cu-black-200 rounded-md p-5;
+.cu-editor .toolbar {
+  @apply flex bg-gradient-to-t from-cu-black-50 to-white rounded-t-md align-middle border-b border-cu-black-200 px-1 sticky top-0;
+}
+
+.cu-editor-content {
+  @apply p-8;
 }
 
 .editor-placeholder {
-  @apply absolute overflow-hidden top-5 left-5 select-none pointer-events-none;
+  @apply absolute overflow-hidden top-20 left-8 select-none pointer-events-none;
 }
 
-.toolbar {
-  @apply flex bg-cu-black-50 align-middle border border-cu-black-200 rounded-md px-1;
-}
-
-.toolbar button.toolbar-item {
+.cu-editor .toolbar button.toolbar-item {
   @apply flex bg-transparent p-3 cursor-pointer align-middle;
 }
 
-.toolbar button.toolbar-item:disabled {
+.cu-editor .toolbar button.toolbar-item:disabled {
   @apply cursor-not-allowed;
 }
 
-.toolbar button.toolbar-item.spaced {
+.cu-editor .toolbar button.toolbar-item.spaced {
   @apply mr-0.5;
 }
 
-.toolbar button.toolbar-item i.format {
+.cu-editor .toolbar button.toolbar-item i.format {
   @apply bg-contain h-5 w-5 mt-0.5;
 }
 
-.toolbar button.toolbar-item:disabled i.format {
+.cu-editor .toolbar button.toolbar-item:disabled i.format {
   @apply opacity-20;
 }
 
-.toolbar button.toolbar-item.active {
+.cu-editor .toolbar button.toolbar-item.active {
   @apply bg-white;
 }
 
-.toolbar .toolbar-item:hover:not([disabled]) {
+.cu-editor .toolbar .toolbar-item:hover:not([disabled]) {
   @apply bg-cu-black-100;
 }
 
-.toolbar .divider {
+.cu-editor .toolbar .divider {
   @apply w-px bg-cu-black-200;
 }
 
-.toolbar select.toolbar-item {
+.cu-editor .toolbar select.toolbar-item {
   border: 0;
   display: flex;
   background: none;
@@ -70,12 +70,12 @@ pre::-webkit-scrollbar-thumb {
   text-overflow: ellipsis;
 }
 
-.toolbar select.code-language {
+.cu-editor .toolbar select.code-language {
   text-transform: capitalize;
   width: 130px;
 }
 
-.toolbar .toolbar-item .text {
+.cu-editor .toolbar .toolbar-item .text {
   display: flex;
   line-height: 20px;
   width: 200px;
@@ -89,7 +89,7 @@ pre::-webkit-scrollbar-thumb {
   text-align: left;
 }
 
-.toolbar .toolbar-item .icon {
+.cu-editor .toolbar .toolbar-item .icon {
   display: flex;
   width: 20px;
   height: 20px;
@@ -99,7 +99,7 @@ pre::-webkit-scrollbar-thumb {
   background-size: contain;
 }
 
-.toolbar i.chevron-down {
+.cu-editor .toolbar i.chevron-down {
   margin-top: 3px;
   width: 16px;
   height: 16px;
@@ -107,7 +107,7 @@ pre::-webkit-scrollbar-thumb {
   user-select: none;
 }
 
-.toolbar i.chevron-down.inside {
+.cu-editor .toolbar i.chevron-down.inside {
   width: 16px;
   height: 16px;
   display: flex;
