@@ -107,10 +107,10 @@ export const Editor = ({ ...props }: EditorProps) => {
           <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={
-                <ContentEditable className="editor-input prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0" />
+                <ContentEditable className="prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0" />
               }
               placeholder={
-                <p className="editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
+                <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
                   {placeholder}
                 </p>
               }

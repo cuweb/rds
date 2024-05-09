@@ -19,7 +19,7 @@ pre::-webkit-scrollbar-thumb {
   @apply p-8;
 }
 
-.editor-placeholder {
+.cu-editor-placeholder {
   @apply absolute overflow-hidden top-20 left-8 select-none pointer-events-none;
 }
 
