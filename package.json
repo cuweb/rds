@@ -68,18 +68,18 @@
   "peerDependencies": {
     "@next-tools/dynamic": "^0.0.11",
     "@react-google-maps/api": "^2.19.3",
-    "@types/react-places-autocomplete": "^7.2.14",
     "@types/react-datepicker": "^6.2.0",
+    "@types/react-places-autocomplete": "^7.2.14",
     "@types/react-select": "^5.0.1",
     "date-fns": "^3.6.0",
     "formik": "^2.4.5",
     "react": "^18.2.0",
+    "react-date-picker": "^10.6.0",
+    "react-datepicker": "^6.9.0",
     "react-dom": "^18.2.0",
     "react-places-autocomplete": "^7.3.0",
     "react-player": "^2.16.0",
     "react-quill": "^2.0.0",
-    "react-date-picker": "^10.6.0",
-    "react-datepicker": "^6.9.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

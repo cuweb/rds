@@ -11,7 +11,7 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { FormButton } from './FormButton/FormButton'
 import fileUploadValidationSchema from '../../helpers/fileUploadValidationSchema'
 import imageUploadValidationSchema from '../../helpers/imageUploadValidationSchema'
-import {AutoSuggestData} from './../../data/AutoSuggestData'
+import { AutoSuggestData } from './../../data/AutoSuggestData'
 
 const meta: Meta<typeof FieldControl> = {
   title: 'Components/Form',
