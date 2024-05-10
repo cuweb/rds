@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // @ts-nocheck
 import { $getListDepth, $isListItemNode, $isListNode } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
@@ -12,17 +11,17 @@ import {
 } from 'lexical'
 import { useEffect } from 'react'
 
-function getElementNodesInSelection(selection: any) {
+function getElementNodesInSelection(selection: RangeSelection) {
   const nodesInSelection = selection.getNodes()
 
   if (nodesInSelection.length === 0) {
     return new Set([selection.anchor.getNode().getParentOrThrow(), selection.focus.getNode().getParentOrThrow()])
   }
 
-  return new Set(nodesInSelection.map((n: any) => ($isElementNode(n) ? n : n.getParentOrThrow())))
+  return new Set(nodesInSelection.map((n: number) => ($isElementNode(n) ? n : n.getParentOrThrow())))
 }
 
-function isIndentPermitted(maxDept: any) {
+function isIndentPermitted(maxDepth: number) {
   const selection = $getSelection()
 
   if (!$isRangeSelection(selection)) {
@@ -49,7 +48,7 @@ function isIndentPermitted(maxDept: any) {
   return totalDepth <= maxDepth
 }
 
-export default function ListMaxIndentLevelPlugin({ maxDepth }: any) {
+export default function ListMaxIndentLevelPlugin({ maxDepth }: { maxDepth: number }) {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {

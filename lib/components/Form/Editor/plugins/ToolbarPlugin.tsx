@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // @ts-nocheck
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -14,6 +13,8 @@ import {
   $getSelection,
   $isRangeSelection,
   $createParagraphNode,
+  LexicalEditor,
+  EditorState,
 } from 'lexical'
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
 import { $isParentElementRTL, $wrapNodes, $isAtNodeEnd } from '@lexical/selection'
@@ -30,8 +31,6 @@ import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/r
 
 const LowPriority = 1
 
-const supportedBlockTypes = new Set(['paragraph', 'quote', 'h2', 'h3', 'h4', 'h5', 'ul', 'ol'])
-
 const blockTypeToBlockName = {
   h2: 'Heading',
   h3: 'Heading',
@@ -47,7 +46,7 @@ function Divider() {
   return <div className="divider" />
 }
 
-function positionEditorElement(editor: any, rect: any) {
+function positionEditorElement(editor: LexicalEditor, rect: DOMRect | null) {
   if (rect === null) {
     editor.style.opacity = '0'
     editor.style.top = '-1000px'
@@ -59,7 +58,7 @@ function positionEditorElement(editor: any, rect: any) {
   }
 }
 
-function FloatingLinkEditor({ editor }: any) {
+function FloatingLinkEditor({ editor }: LexicalEditor) {
   const editorRef = useRef(null)
   const inputRef = useRef(null)
   const mouseDownRef = useRef(false)
@@ -124,7 +123,7 @@ function FloatingLinkEditor({ editor }: any) {
 
   useEffect(() => {
     return mergeRegister(
-      editor.registerUpdateListener(({ editorState }: any) => {
+      editor.registerUpdateListener(({ editorState }: EditorState) => {
         editorState.read(() => {
           updateLinkEditor()
         })
@@ -200,7 +199,7 @@ function FloatingLinkEditor({ editor }: any) {
   )
 }
 
-function getSelectedNode(selection: any) {
+function getSelectedNode(selection: RangeSelection) {
   const anchor = selection.anchor
   const focus = selection.focus
   const anchorNode = selection.anchor.getNode()
@@ -216,7 +215,19 @@ function getSelectedNode(selection: any) {
   }
 }
 
-function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockOptionsDropDown }: any) {
+export interface BlockOptionsDropdownListProp {
+  editor: LexicalEditor
+  blockType: string
+  toolbarRef: React.MutableRefObject<null>
+  setShowBlockOptionsDropDown: (value: boolean) => void
+}
+
+function BlockOptionsDropdownList({
+  editor,
+  blockType,
+  toolbarRef,
+  setShowBlockOptionsDropDown,
+}: BlockOptionsDropdownListProp) {
   const dropDownRef = useRef(null)
 
   useEffect(() => {
@@ -224,7 +235,7 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
     const toolbar = toolbarRef.current
 
     if (dropDown !== null && toolbar !== null) {
-      const handle = (event: any) => {
+      const handle = (event: React.MouseEvent<HTMLElement>) => {
         const target = event.target
 
         if (!dropDown.contains(target) && !toolbar.contains(target)) {
@@ -291,19 +302,6 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
     setShowBlockOptionsDropDown(false)
   }
 
-  const formatH5Heading = () => {
-    if (blockType !== 'h5') {
-      editor.update(() => {
-        const selection = $getSelection()
-
-        if ($isRangeSelection(selection)) {
-          $wrapNodes(selection, () => $createHeadingNode('h5'))
-        }
-      })
-    }
-    setShowBlockOptionsDropDown(false)
-  }
-
   const formatBulletList = () => {
     if (blockType !== 'ul') {
       editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND)
@@ -356,11 +354,6 @@ function BlockOptionsDropdownList({ editor, blockType, toolbarRef, setShowBlockO
         <span className="icon h4" />
         <span className="text">H4 Heading</span>
         {blockType === 'h4' && <span className="active" />}
-      </button>
-      <button className="item" onClick={formatH5Heading}>
-        <span className="icon h5" />
-        <span className="text">H5 Heading</span>
-        {blockType === 'h5' && <span className="active" />}
       </button>
       <button className="item" onClick={formatBulletList}>
         <span className="icon bullet-list" />
@@ -477,6 +470,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
   return (
     <div id={`toolbar` + name} className="toolbar" ref={toolbarRef}>
       <button
+        type="button"
         disabled={!canUndo}
         onClick={() => {
           editor.dispatchCommand(UNDO_COMMAND)
@@ -487,6 +481,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
         <i className="format undo" />
       </button>
       <button
+        type="button"
         disabled={!canRedo}
         onClick={() => {
           editor.dispatchCommand(REDO_COMMAND)
