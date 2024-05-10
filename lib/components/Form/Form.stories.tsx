@@ -3,6 +3,7 @@
 import React, { MouseEventHandler, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useFormik } from 'formik'
+import { FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
@@ -26,6 +27,10 @@ type Story = StoryObj<typeof Form>
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 export const Input: Story = () => {
+  type IInput = {
+    inputText: string
+  }
+
   const InputInitialValues = {
     inputText: '',
   }
@@ -34,7 +39,7 @@ export const Input: Story = () => {
     inputText: Yup.string().required('The field is required'),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
@@ -74,6 +79,10 @@ export const Input: Story = () => {
 Input.storyName = 'Input'
 
 export const TextArea: Story = () => {
+  type ITextArea = {
+    textareainput: string
+  }
+
   const TextAreaInitialValues = {
     textareainput: '',
   }
@@ -82,7 +91,7 @@ export const TextArea: Story = () => {
     textareainput: Yup.string().required('The field is required'),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: ITextArea, actions: FormikHelpers<ITextArea>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
@@ -117,6 +126,8 @@ export const TextArea: Story = () => {
 TextArea.storyName = 'TextArea'
 
 export const Editor: Story = () => {
+  type IEditor = object
+
   const [editorContent, setEditorContent] = useState<string | null>(null)
   const [editorError, setEditorError] = useState<boolean>(false)
 
@@ -124,7 +135,7 @@ export const Editor: Story = () => {
 
   const EditorValidationSchema = Yup.object().shape({})
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: IEditor, actions: FormikHelpers<IEditor>) => {
     actions.setSubmitting(true)
     setEditorError(false)
 
@@ -172,6 +183,10 @@ export const Editor: Story = () => {
 Editor.storyName = 'Editor'
 
 export const CheckBox: Story = () => {
+  type ICheckBox = {
+    checkbox: string[]
+  }
+
   const CheckBoxInitialValues = {
     checkbox: ['no'],
   }
@@ -180,7 +195,7 @@ export const CheckBox: Story = () => {
     checkbox: Yup.array().min(1, 'Please select at least one checkbox').required('Required'),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: ICheckBox, actions: FormikHelpers<ICheckBox>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
@@ -225,6 +240,10 @@ export const CheckBox: Story = () => {
 CheckBox.storyName = 'CheckBox'
 
 export const Radio: Story = () => {
+  type IRadio = {
+    radio: string
+  }
+
   const options = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
@@ -239,7 +258,7 @@ export const Radio: Story = () => {
     radio: Yup.string().required('Field value is required.'),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: IRadio, actions: FormikHelpers<IRadio>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
@@ -276,6 +295,10 @@ export const Radio: Story = () => {
 Radio.storyName = 'Radio'
 
 export const Select: Story = () => {
+  type ISelect = {
+    select: string
+  }
+
   const selectValues = [
     { value: '1', label: 'Option 1' },
     { value: '2', label: 'Option 2' },
@@ -289,7 +312,7 @@ export const Select: Story = () => {
     select: Yup.string(),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: ISelect, actions: FormikHelpers<ISelect>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
@@ -324,6 +347,11 @@ export const Select: Story = () => {
 Select.storyName = 'Select'
 
 export const DateTime: Story = () => {
+  type IDateTime = {
+    startDate: string
+    endDate: string
+  }
+
   const dateTimeInitialValues = {
     startDate: '',
     endDate: '',
@@ -350,7 +378,7 @@ export const DateTime: Story = () => {
       }),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: IDateTime, actions: FormikHelpers<IDateTime>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
@@ -393,15 +421,19 @@ export const DateTime: Story = () => {
 DateTime.storyName = 'DateTime'
 
 export const Media: Story = () => {
+  type IMedia = {
+    file: FileList | null
+  }
+
   const MediaInitialValues = {
-    file: '',
+    file: null,
   }
 
   const MediaValidationSchema = Yup.object().shape({
     file: Yup.mixed().required('The field is required'),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: IMedia, actions: FormikHelpers<IMedia>) => {
     actions.setSubmitting(true)
     console.log(values)
     alert('Please check console log')
@@ -415,8 +447,11 @@ export const Media: Story = () => {
     onSubmit,
   })
 
-  const handleChange = (e: any) => {
-    formikProps.setFieldValue('file', e.target.files[0])
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.currentTarget.files
+    if (files) {
+      formikProps.setFieldValue('file', files)
+    }
   }
 
   return (
@@ -443,6 +478,10 @@ export const Media: Story = () => {
 Media.storyName = 'Media'
 
 export const AutoSuggest: Story = () => {
+  type IAutoSuggest = {
+    text: string
+  }
+
   const autoSuggestInitialValues = {
     text: '',
   }
@@ -451,7 +490,7 @@ export const AutoSuggest: Story = () => {
     text: Yup.string(),
   })
 
-  const onSubmit = async (values: any, actions: any) => {
+  const onSubmit = async (values: IAutoSuggest, actions: FormikHelpers<IAutoSuggest>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
