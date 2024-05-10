@@ -1,5 +1,3 @@
-/* eslint-disable storybook/no-redundant-story-name */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { MouseEventHandler, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useFormik } from 'formik'
@@ -76,7 +74,7 @@ export const Input: Story = () => {
   )
 }
 
-Input.storyName = 'Input'
+// Input.storyName = 'Input'
 
 export const TextArea: Story = () => {
   type ITextArea = {
@@ -123,7 +121,7 @@ export const TextArea: Story = () => {
   )
 }
 
-TextArea.storyName = 'TextArea'
+// TextArea.storyName = 'TextArea'
 
 export const Editor: Story = () => {
   type IEditor = object
@@ -180,7 +178,7 @@ export const Editor: Story = () => {
   )
 }
 
-Editor.storyName = 'Editor'
+// Editor.storyName = 'Editor'
 
 export const CheckBox: Story = () => {
   type ICheckBox = {
@@ -237,7 +235,7 @@ export const CheckBox: Story = () => {
   )
 }
 
-CheckBox.storyName = 'CheckBox'
+// CheckBox.storyName = 'CheckBox'
 
 export const Radio: Story = () => {
   type IRadio = {
@@ -292,7 +290,7 @@ export const Radio: Story = () => {
   )
 }
 
-Radio.storyName = 'Radio'
+// Radio.storyName = 'Radio'
 
 export const Select: Story = () => {
   type ISelect = {
@@ -344,7 +342,7 @@ export const Select: Story = () => {
   )
 }
 
-Select.storyName = 'Select'
+// Select.storyName = 'Select'
 
 export const DateTime: Story = () => {
   type IDateTime = {
@@ -418,7 +416,7 @@ export const DateTime: Story = () => {
   )
 }
 
-DateTime.storyName = 'DateTime'
+// DateTime.storyName = 'DateTime'
 
 export const Media: Story = () => {
   type IMedia = {
@@ -475,7 +473,7 @@ export const Media: Story = () => {
   )
 }
 
-Media.storyName = 'Media'
+// Media.storyName = 'Media'
 
 export const AutoSuggest: Story = () => {
   type IAutoSuggest = {
@@ -522,4 +520,4 @@ export const AutoSuggest: Story = () => {
   )
 }
 
-AutoSuggest.storyName = 'AutoSuggest'
+// AutoSuggest.storyName = 'AutoSuggest'
