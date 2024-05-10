@@ -5,8 +5,8 @@ export interface RadioProps {
     isInline?: boolean;
     required?: boolean;
     options?: {
+        key: string;
         value: string;
-        label: string;
     }[];
 }
 export declare const Radio: ({ ...props }: RadioProps) => import("react/jsx-runtime").JSX.Element;

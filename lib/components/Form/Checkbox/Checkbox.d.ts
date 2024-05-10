@@ -6,7 +6,7 @@ export interface CheckboxProps {
     required?: boolean;
     checkBoxRight?: boolean;
     options?: {
-        label: string;
+        key: string;
         value: string;
     }[];
 }
