@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface ColumnDefinitionType {
     key: string;
     header: string;

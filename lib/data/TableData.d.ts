@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface TableDataProps {
     [k: string]: string | number | JSX.Element;
 }
