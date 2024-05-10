@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
@@ -13,7 +12,7 @@ import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { TRANSFORMERS } from '@lexical/markdown'
-import { $getRoot } from 'lexical'
+import { $getRoot, LexicalEditor } from 'lexical'
 import { $generateNodesFromDOM, $generateHtmlFromNodes } from '@lexical/html'
 import { $isRootTextContentEmpty } from '@lexical/text'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
@@ -31,7 +30,7 @@ import Error from '../Error/Error'
 export interface EditorProps {
   name: string
   label: string
-  setEditorContent: any
+  setEditorContent: (newValue: string | null) => void
   helper?: string
   value?: string
   placeholder?: string
@@ -40,7 +39,7 @@ export interface EditorProps {
   errorMessage?: string
 }
 
-const initialValueLoader = (editor: any, initialValue?: string) => {
+const initialValueLoader = (editor: LexicalEditor, initialValue?: string) => {
   if (initialValue) {
     const parser = new DOMParser()
     const dom = parser.parseFromString(initialValue, 'text/html')
@@ -62,13 +61,19 @@ const editorConfig = (initialValue?: string) => {
       throw error
     },
     nodes: [HeadingNode, ListNode, ListItemNode, QuoteNode, CodeNode, CodeHighlightNode, AutoLinkNode, LinkNode],
-    editorState: (editor: any) => {
+    editorState: (editor: LexicalEditor) => {
       initialValueLoader(editor, initialValue)
     },
   }
 }
 
-function OnChangePlugin({ onChange, required, disable }: any) {
+export interface OnChangePluginProps {
+  onChange: (htmlString: string | null) => void
+  required: boolean
+  disable: boolean
+}
+
+function OnChangePlugin({ onChange, required, disable }: OnChangePluginProps) {
   const [editor] = useLexicalComposerContext()
 
   const emptyState = required ? null : ''
@@ -92,12 +97,12 @@ export const Editor = ({ ...props }: EditorProps) => {
     value,
     placeholder = 'Enter some text...',
     disable = false,
-    required,
+    required = false,
     errorMessage,
     ...rest
   } = props
 
-  function onChange(htmlString: string) {
+  function onChange(htmlString: string | null) {
     setEditorContent(htmlString)
   }
 
