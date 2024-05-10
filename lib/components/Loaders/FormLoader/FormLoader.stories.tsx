@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { FormLoader, RowLoader } from './FormLoader'
+import { FormLoader } from './FormLoader'
 
 const meta: Meta<typeof FormLoader> = {
   title: 'Components/Load Screens/Form Loader',
@@ -19,8 +19,8 @@ type Story = StoryObj<typeof FormLoader>
 export const Default: Story = {
   render: () => (
     <FormLoader>
-      <RowLoader cols={1} />
-      <RowLoader cols={3} />
+      <FormLoader.RowLoader cols={1} />
+      <FormLoader.RowLoader cols={3} />
     </FormLoader>
   ),
 }
