@@ -40,7 +40,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .cu-editor .toolbar button.toolbar-item i.format {
-  @apply bg-contain h-5 w-5 mt-0.5;
+  @apply bg-contain bg-no-repeat bg-center h-5 w-5 mt-0.5;
 }
 
 .cu-editor .toolbar button.toolbar-item:disabled i.format {
@@ -85,7 +85,7 @@ pre::-webkit-scrollbar-thumb {
   width: 200px;
   vertical-align: middle;
   font-size: 14px;
-  color: #777;
+  color: #000;
   text-overflow: ellipsis;
   width: 70px;
   overflow: hidden;
@@ -100,6 +100,8 @@ pre::-webkit-scrollbar-thumb {
   user-select: none;
   margin-right: 8px;
   line-height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -197,6 +199,8 @@ i.chevron-down {
   user-select: none;
   margin-right: 12px;
   line-height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -286,87 +290,71 @@ i.chevron-down {
 }
 
 i.undo {
-  background-image: url(https://5tncvy.csb.app/images/icons/arrow-counterclockwise.svg);
+  background-image: url('../../../public/assets/font-awesome/rotate-left-light.svg');
 }
 
 i.redo {
-  background-image: url(https://5tncvy.csb.app/images/icons/arrow-clockwise.svg);
+  background-image: url('../../../public/assets/font-awesome/rotate-right-light.svg');
 }
 
 .icon.paragraph {
-  background-image: url(https://5tncvy.csb.app/images/icons/text-paragraph.svg);
+  background-image: url('../../../public/assets/font-awesome/paragraph-light.svg');
 }
 
 .icon.h2 {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-h2.svg);
+  background-image: url('../../../public/assets/font-awesome/h2-light.svg');
 }
 
 .icon.h3 {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-h3.svg);
+  background-image: url('../../../public/assets/font-awesome/h3-light.svg');
 }
 
 .icon.h4 {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-h4.svg);
-}
-
-.icon.h5 {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-h5.svg);
+  background-image: url('../../../public/assets/font-awesome/h4-light.svg');
 }
 
 .icon.bullet-list,
 .icon.ul {
-  background-image: url(https://5tncvy.csb.app/images/icons/list-ul.svg);
+  background-image: url('../../../public/assets/font-awesome/list-ul-light.svg');
 }
 
 .icon.numbered-list,
 .icon.ol {
-  background-image: url(https://5tncvy.csb.app/images/icons/list-ol.svg);
+  background-image: url('../../../public/assets/font-awesome/list-ol-light.svg');
 }
 
 .icon.quote {
-  background-image: url(https://5tncvy.csb.app/images/icons/chat-square-quote.svg);
-}
-
-.icon.code {
-  background-image: url(https://5tncvy.csb.app/images/icons/code.svg);
+  background-image: url('../../../public/assets/font-awesome/message-quote-light.svg');
 }
 
 i.bold {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-bold.svg);
+  background-image: url('../../../public/assets/font-awesome/bold-light.svg');
 }
 
 i.italic {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-italic.svg);
+  background-image: url('../../../public/assets/font-awesome/italic-light.svg');
 }
 
 i.underline {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-underline.svg);
-}
-
-i.strikethrough {
-  background-image: url(https://5tncvy.csb.app/images/icons/type-strikethrough.svg);
-}
-
-i.code {
-  background-image: url(https://5tncvy.csb.app/images/icons/code.svg);
+  background-image: url('../../../public/assets/font-awesome/underline-light.svg');
 }
 
 i.link {
-  background-image: url(https://5tncvy.csb.app/images/icons/link.svg);
+  background-image: url('../../../public/assets/font-awesome/link-light.svg');
 }
 
 i.left-align {
-  background-image: url(https://5tncvy.csb.app/images/icons/text-left.svg);
+  background-image: url('../../../public/assets/font-awesome/align-left-light.svg');
 }
 
 i.center-align {
-  background-image: url(https://5tncvy.csb.app/images/icons/text-center.svg);
+  background-image: url('../../../public/assets/font-awesome/align-center-light.svg');
 }
 
 i.right-align {
-  background-image: url(https://5tncvy.csb.app/images/icons/text-right.svg);
+  background-image: url('../../../public/assets/font-awesome/align-right-light.svg');
 }
 
 i.justify-align {
-  background-image: url(https://5tncvy.csb.app/images/icons/justify.svg);
+  background-image: url('../../../public/assets/font-awesome/align-justify-light.svg');
 }

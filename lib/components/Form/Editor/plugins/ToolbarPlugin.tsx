@@ -34,8 +34,7 @@ const LowPriority = 1
 const blockTypeToBlockName = {
   h2: 'Heading',
   h3: 'Heading',
-  h4: 'H4 Heading',
-  h5: 'H5 Heading',
+  h4: 'Heading',
   ol: 'Numbered List',
   ul: 'Bulleted List',
   paragraph: 'Normal',
@@ -352,7 +351,7 @@ function BlockOptionsDropdownList({
       </button>
       <button className="item" onClick={formatH4Heading}>
         <span className="icon h4" />
-        <span className="text">H4 Heading</span>
+        <span className="text">Heading</span>
         {blockType === 'h4' && <span className="active" />}
       </button>
       <button className="item" onClick={formatBulletList}>
