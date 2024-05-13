@@ -14,7 +14,7 @@ export const TableLoader: React.FC<TableLoaderProps> = ({ numRow = 5, numCol = 5
           {' '}
           {/* Added mb-2 for bottom margin */}
           {Array.from({ length: numCol }, (_, colIndex) => (
-            <span key={colIndex} className="animate-pulse block w-20 h-4 bg-cu-black-200"></span>
+            <span key={colIndex} className="animate-pulse grow h-7 bg-cu-black-200"></span>
           ))}
         </div>
       ) : (
@@ -22,7 +22,7 @@ export const TableLoader: React.FC<TableLoaderProps> = ({ numRow = 5, numCol = 5
           {' '}
           {/* Added mb-2 for bottom margin */}
           {Array.from({ length: numCol }, (_, colIndex) => (
-            <span key={colIndex} className="animate-pulse block w-20 h-4 bg-cu-black-100"></span>
+            <span key={colIndex} className="animate-pulse grow h-7 bg-cu-black-100"></span>
           ))}
         </div>
       )}
