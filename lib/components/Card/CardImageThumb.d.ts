@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface CardImageThumbProps {
     children: React.ReactNode;
     isSquare?: boolean;

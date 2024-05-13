@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface FormFieldProps {
     children: React.ReactNode;
     label: string;
