@@ -14,7 +14,7 @@ const gridColsClass: IGridColsClass = {
 }
 
 interface RowLoaderProps {
-  cols: number
+  cols: number | string
   fields: number
 }
 
@@ -24,7 +24,7 @@ export const RowLoader: React.FC<RowLoaderProps> = ({ cols, fields }) => {
   return (
     <div className={`grid ${gridSpacing} gap-5 items-start`}>
       {Array.from({ length: fields }, (_, fieldIndex) => (
-        <span key={fieldIndex} className="animate-pulse block w-full h-12 rounded-md bg-cu-black-100"></span>
+        <span key={fieldIndex} className="animate-pulse block w-full h-14 rounded-md bg-cu-black-100"></span>
       ))}
     </div>
   )

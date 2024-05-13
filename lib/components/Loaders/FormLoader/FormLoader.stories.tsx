@@ -19,8 +19,10 @@ type Story = StoryObj<typeof FormLoader>
 export const Default: Story = {
   render: () => (
     <FormLoader>
-      <FormLoader.RowLoader cols={4} fields={4} />
-      <FormLoader.RowLoader cols={3} fields={3} />
+      <FormLoader.RowLoader cols={1} fields={1} />
+      <FormLoader.RowLoader cols={4} fields={2} />
+      <FormLoader.RowLoader cols={3} fields={1} />
+      <FormLoader.RowLoader cols={4} fields={3} />
     </FormLoader>
   ),
 }
