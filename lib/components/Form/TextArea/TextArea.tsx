@@ -11,10 +11,10 @@ export interface TextAreaProps {
 }
 
 export const TextArea = ({ ...props }: TextAreaProps) => {
-  const { name, ...rest } = props
+  const { name, required, ...rest } = props
 
   return (
-    <FormField name={name} {...rest}>
+    <FormField name={name} required={required} {...rest}>
       <Field as="textarea" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest} />
     </FormField>
   )

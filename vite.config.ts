@@ -12,6 +12,11 @@ export default defineConfig({
       plugins: [tailwindcss],
     },
   },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext',
+    },
+  },
   build: {
     copyPublicDir: true,
     lib: {

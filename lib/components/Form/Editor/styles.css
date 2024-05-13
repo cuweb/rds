@@ -1,0 +1,210 @@
+pre::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.cu-editor {
+  @apply flex flex-col relative border border-cu-black-200 rounded-md;
+}
+
+.cu-editor__disabled {
+  @apply bg-slate-200 text-slate-500 border-slate-200;
+}
+
+.cu-editor .toolbar {
+  @apply flex bg-gradient-to-t from-cu-black-50 to-white rounded-t-md align-middle border-b border-cu-black-200 px-1 sticky top-0 z-[9];
+}
+
+.cu-editor-content {
+  @apply p-8;
+}
+
+.cu-editor-placeholder {
+  @apply absolute overflow-hidden top-20 left-8 m-0 select-none pointer-events-none;
+}
+
+.cu-editor .toolbar button.toolbar-item {
+  @apply flex gap-3 items-center bg-transparent p-3 cursor-pointer align-middle;
+}
+
+.cu-editor .toolbar button.toolbar-item:disabled {
+  @apply cursor-not-allowed;
+}
+
+.cu-editor .toolbar button.toolbar-item.spaced {
+  @apply mr-0.5;
+}
+
+.cu-editor .toolbar button.toolbar-item i.format {
+  @apply bg-contain bg-no-repeat bg-center h-5 w-5 mt-0.5;
+}
+
+.cu-editor .toolbar button.toolbar-item:disabled i.format {
+  @apply opacity-20;
+}
+
+.cu-editor .toolbar button.toolbar-item.active {
+  @apply bg-white;
+}
+
+.cu-editor .toolbar .toolbar-item:hover:not([disabled]) {
+  @apply bg-cu-black-100;
+}
+
+.cu-editor .toolbar .divider {
+  @apply w-px bg-cu-black-200;
+}
+
+.cu-editor .toolbar select.toolbar-item {
+  @apply w-16 pe-4 flex bg-none border-0 rounded-xl text-ellipsis;
+}
+
+.cu-editor .toolbar .toolbar-item .text {
+  @apply flex align-middle w-[100px] h-5 text-left text-cu-black-800 text-sm leading-5 text-ellipsis overflow-hidden;
+}
+
+.cu-editor .toolbar .toolbar-item .icon {
+  @apply flex w-5 h-5 leading-4 bg-center bg-no-repeat bg-contain;
+}
+
+.cu-editor .toolbar i.chevron-down {
+  @apply w-4 h-4 flex;
+}
+
+.cu-editor .toolbar i.chevron-down.inside {
+  @apply w-4 h-4 flex -ms-6 mt-3 mr-3 pointer-events-none;
+}
+
+i.chevron-down {
+  @apply bg-transparent bg-no-repeat bg-contain bg-[url('https://cdn.carleton.ca/rds/assets/lexical-icons/chevron-down-light.svg')];
+}
+
+.editor-dropdown {
+  @apply px-2 py-4 min-h-[100px] w-56 rounded-xl shadow-[0_12px_28px_0_rgba(0,0,0,0.2)] z-[5] absolute left-0 top-[calc(100%+2px)] block bg-white;
+}
+
+.editor-dropdown .item {
+  @apply w-full rounded-lg bg-white flex flex-row items-center justify-between cursor-pointer text-cu-black-900 p-2 hover:bg-cu-black-50;
+}
+
+.editor-dropdown .item .active {
+  @apply flex w-5 h-5 bg-contain;
+}
+
+.editor-dropdown .item .text {
+  @apply flex grow leading-5;
+}
+
+.editor-dropdown .item .icon {
+  @apply flex w-4 h-4 me-3 leading-4 bg-center bg-no-repeat bg-contain;
+}
+
+.link-editor {
+  @apply absolute z-[100] -top-[10000px] -left-[10000px] -mt-2 max-w-[300px] w-full opacity-0 bg-white shadow-[0_5px_10px__rgba(0,0,0,0.3)] rounded-lg;
+  transition: opacity 0.5s;
+}
+
+.link-editor .link-input {
+  @apply block w-[calc(100%-24px)] mx-3 my-2 px-3 py-2 bg-cu-black-50 rounded-2xl text-cu-black-900 border-0 outline-0 relative;
+}
+
+.link-editor div.link-edit {
+  @apply w-[35px] absolute right-0 top-0 bottom-0 cursor-pointer bg-center bg-no-repeat bg-[url('https://cdn.carleton.ca/rds/assets/lexical-icons/pencil-light.svg')];
+  background-size: 1rem;
+}
+
+.link-editor .link-input a {
+  @apply block text-cu-black no-underline whitespace-nowrap overflow-hidden text-ellipsis mr-7 hover:no-underline;
+}
+
+.link-editor .link-input a:hover {
+  @apply underline;
+}
+
+.link-editor .button {
+  @apply w-5 h-5 inline-block p-2 rounded-[0.5rem] cursor-pointer my-1;
+}
+
+.link-editor .button.hovered {
+  @apply w-5 h-5 inline-block bg-cu-black-100;
+}
+
+.link-editor .button i,
+.actions i {
+  vertical-align: -0.25em;
+  @apply bg-contain inline-block h-5 w-5;
+}
+
+i.undo {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/rotate-left-light.svg');
+}
+
+i.redo {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/rotate-right-light.svg');
+}
+
+.icon.paragraph {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/paragraph-light.svg');
+}
+
+.icon.h2 {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/h2-light.svg');
+}
+
+.icon.h3 {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/h3-light.svg');
+}
+
+.icon.h4 {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/h4-light.svg');
+}
+
+.icon.bullet-list,
+.icon.ul {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/list-ul-light.svg');
+}
+
+.icon.numbered-list,
+.icon.ol {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/list-ol-light.svg');
+}
+
+.icon.quote {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/message-quote-light.svg');
+}
+
+i.bold {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/bold-light.svg');
+}
+
+i.italic {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/italic-light.svg');
+}
+
+i.underline {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/underline-light.svg');
+}
+
+i.link {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/link-light.svg');
+}
+
+i.left-align {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/align-left-light.svg');
+}
+
+i.center-align {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/align-center-light.svg');
+}
+
+i.right-align {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/align-right-light.svg');
+}
+
+i.justify-align {
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/align-justify-light.svg');
+}

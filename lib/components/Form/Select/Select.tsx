@@ -16,10 +16,10 @@ export interface InputProps {
 }
 
 export const Select = ({ ...props }: InputProps) => {
-  const { name, options, ...rest } = props
+  const { name, options, required, ...rest } = props
 
   return (
-    <FormField name={name} {...rest}>
+    <FormField name={name} required={required} {...rest}>
       <Field as="select" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest}>
         {options &&
           options.map((option) => {
