@@ -1,22 +1,21 @@
 import React from 'react'
 import { RowLoader } from './RowLoader' // Import RowLoader component
 
-interface FormLoaderProps {
+interface FormLoaderWrapperProps {
   children: React.ReactNode
 }
 
 // Define FormLoader component
-export const FormLoader: React.FC<FormLoaderProps> & { RowLoader: React.FC<any> } = ({ children }) => {
+export const FormLoaderWrapper = ({ children }: FormLoaderWrapperProps) => {
   // Return FormLoader with children and RowLoader as property
   return (
     <>
-      {React.Children.map(children, (child, index) => (
-        <div key={index}>{React.cloneElement(child as React.ReactElement<any>, {})}</div>
-      ))}
+      <div className="flex flex-col gap-8 w-full">{children}</div>
       <span className="sr-only">Loading...</span>
     </>
   )
 }
 
-// Assign RowLoader to FormLoader
-FormLoader.RowLoader = RowLoader
+export const FormLoader = Object.assign(FormLoaderWrapper, {
+  RowLoader: RowLoader,
+})

@@ -1,14 +1,30 @@
 import React from 'react'
 
-interface RowLoaderProps {
-  cols: number
+interface IGridColsClass {
+  [key: string | number]: string
 }
 
-export const RowLoader: React.FC<RowLoaderProps> = ({ cols }) => {
+const gridColsClass: IGridColsClass = {
+  1: 'grid-cols-1',
+  2: 'md:grid-cols-2',
+  3: 'md:grid-cols-3',
+  4: 'md:grid-cols-2 lg:grid-cols-4',
+  '1/3': 'lg:grid-cols-3 lg:[&>*:last-child]:col-span-2',
+  '2/3': 'lg:grid-cols-3 lg:[&>*:first-child]:col-span-2',
+}
+
+interface RowLoaderProps {
+  cols: number
+  fields: number
+}
+
+export const RowLoader: React.FC<RowLoaderProps> = ({ cols, fields }) => {
+  const gridSpacing = cols ? gridColsClass[cols] : 'space-y-5'
+
   return (
-    <div className="flex space-x-2 mb-2">
-      {Array.from({ length: cols }, (_, colIndex) => (
-        <span key={colIndex} className="animate-pulse block h-8 rounded-md w-52 bg-cu-black-100"></span>
+    <div className={`grid ${gridSpacing} gap-5 items-start`}>
+      {Array.from({ length: fields }, (_, fieldIndex) => (
+        <span key={fieldIndex} className="animate-pulse block w-full h-12 rounded-md bg-cu-black-100"></span>
       ))}
     </div>
   )
