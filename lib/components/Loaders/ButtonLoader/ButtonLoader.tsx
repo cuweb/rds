@@ -1,12 +1,13 @@
-export const ButtonLoader = () => {
+interface ButtonLoaderProps {
+  number: number
+  isSmall: boolean
+}
+export const ButtonLoader = ({ number, isSmall = true }: ButtonLoaderProps) => {
   return (
-    <button>
-      <div className="animate-pulse">
-        <div className="flex flex-wrap gap-5">
-          <span className="block h-8 rounded-md w-52 bg-cu-black-100"></span>
-        </div>
-      </div>
-      <span className="sr-only">Loading...</span>
-    </button>
+    <div className="flex gap-5 animate-pulse">
+      {Array.from({ length: number }, (_: number, numberIndex: number) => (
+        <div className={`block rounded-md w-44 bg-cu-black-100 ${isSmall ? 'h-9' : 'h-12'}`} key={numberIndex}></div>
+      ))}
+    </div>
   )
 }

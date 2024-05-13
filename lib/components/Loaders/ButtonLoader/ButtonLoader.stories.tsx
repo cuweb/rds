@@ -15,5 +15,6 @@ const meta: Meta<typeof ButtonLoader> = {
 export default meta
 type Story = StoryObj<typeof ButtonLoader>
 
-export const Default: Story = {}
-Default.args = {}
+export const Default: Story = {
+  render: (args) => <ButtonLoader number={2} {...args} />,
+}
