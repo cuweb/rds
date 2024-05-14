@@ -1,6 +1,6 @@
-import { default as ImenuItem } from './NavInterface';
-import { UserInfoType } from './../Avatar/Avatar';
 import { ReactNode } from '../../../node_modules/react';
+import { UserInfoType } from './../Avatar/Avatar';
+import { default as ImenuItem } from './NavInterface';
 
 export declare const styles: {
     listItemLink: string;
