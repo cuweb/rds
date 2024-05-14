@@ -10,7 +10,7 @@ export interface CheckboxProps {
   required?: boolean
   checkBoxRight?: boolean
   options?: {
-    key: string
+    label: string
     value: string
   }[]
 }
@@ -23,8 +23,8 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
       {options &&
         options.map((option) => (
           <label key={option.value} className={checkBoxRight ? fieldStyles.radioCheckRight : fieldStyles.radioCheck}>
-            <Field type="checkbox" name={name} value={option.value} {...rest} />
-            {option.key}
+            <Field type="checkbox" name={name} value={option.value} className={`${fieldStyles.disabled}`} {...rest} />
+            {option.label}
           </label>
         ))}
     </FormFieldSet>

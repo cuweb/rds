@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "dsznajder.es7-react-js-snippets",
+    "paulshen.paul-typescript-toolkit",
+    "bradlc.vscode-tailwindcss",
+    "Gruntfuggly.todo-tree"
+  ]
+}
