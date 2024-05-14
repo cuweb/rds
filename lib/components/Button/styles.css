@@ -1,5 +1,5 @@
 .cu-button {
-  @apply inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap text-nowrap md:px-6 md:py-3 md:text-base;
+  @apply inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap text-nowrap hover:no-underline md:px-6 md:py-3 md:text-base;
 }
 
 .cu-button--red {
@@ -35,6 +35,8 @@
 }
 
 .cu-column + .cu-button,
-.cu-column + .cu-buttongroup {
+.cu-column + .cu-buttongroup,
+.cu-stackedlist + .cu-button,
+.cu-stackedlist + .cu-buttongroup {
   @apply mt-8 md:mt-10;
 }
