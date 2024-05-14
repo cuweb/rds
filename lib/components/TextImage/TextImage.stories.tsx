@@ -1,9 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { PageHeaders } from '../PageHeaders/PageHeaders'
 import { TextImage } from './TextImage'
 import { Button } from '../Button/Button'
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 const meta: Meta<typeof TextImage> = {
   title: 'Components/Text Image',
