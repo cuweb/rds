@@ -13,7 +13,7 @@ const gridColsClass: IGridColsClass = {
   '2/3': 'lg:grid-cols-3 lg:[&>*:first-child]:col-span-2',
 }
 
-interface RowLoaderProps {
+export interface RowLoaderProps {
   cols: number | string
   fields: number
 }
