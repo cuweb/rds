@@ -9,8 +9,8 @@ export interface RadioProps {
   isInline?: boolean
   required?: boolean
   options?: {
-    key: string
     value: string
+    label: string
   }[]
 }
 
@@ -21,9 +21,9 @@ export const Radio = ({ ...props }: RadioProps) => {
     <FormFieldSet label={label} name={name} key={name} required={required} isInline={isInline} {...rest}>
       {options &&
         options.map((option) => (
-          <label key={option.value} className={fieldStyles.radioCheck}>
-            <Field type="radio" name={name} value={option.value} {...rest} />
-            {option.key}
+          <label key={option.label} className={fieldStyles.radioCheck}>
+            <Field type="radio" name={name} className={`${fieldStyles.disabled}`} value={option.value} {...rest} />
+            {option.label}
           </label>
         ))}
     </FormFieldSet>
