@@ -1,0 +1,45 @@
+name: Deploy to CDN
+
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    name: Build storybook and deploy to cdn
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.x'
+
+      - name: 📦 Install
+        run: npm install
+
+      - name: 🔧 Build
+        run: npm run build
+
+      - name: Deploy to S3
+        uses: Reggionick/s3-deploy@v3.2.0
+        with:
+          folder: dist
+          bucket: ${{ secrets.AWS_BUCKET_PATH }}
+          bucket-region: ${{ secrets.AWS_DEFAULT_REGION }}
+          delete-removed: false
+          cache: true
+          no-cache: false
+          private: false
