@@ -5,8 +5,10 @@ export const maxWidthClasses = {
   lg: 'max-w-4xl',
   xl: 'max-w-7xl',
 }
+export interface IGridColsClass {
+  [key: string | number]: string
+}
 
-// This duplicates rdsGridColumns in RDS utils
 export const gridColsClass = {
   1: 'grid-cols-1',
   2: 'md:grid-cols-2',

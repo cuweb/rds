@@ -57,7 +57,7 @@ export const WideImageWrapper = ({
   return (
     <div
       style={inlineStyle}
-      className={`cu-wideimage cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
+      className={`cu-wideimage cu-block-spacing cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
     >
       {image && <div className={`${styles.overlay}`} style={opacityStyle}></div>}
 
