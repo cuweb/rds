@@ -1,1 +1,6 @@
-export declare const PageHeadLoader: () => import("react/jsx-runtime").JSX.Element;
+interface PageHeadLoaderProps {
+    content?: 'small' | 'large';
+    isCenter?: boolean;
+}
+export declare const PageHeadLoader: ({ content, isCenter }: PageHeadLoaderProps) => import("react/jsx-runtime").JSX.Element;
+export {};
