@@ -77,7 +77,7 @@ export const PageHeadersWrapper = ({
     isCenter && !noUnderline ? `${hasUnderline} after:left-1/2 after:-ml-5` : `${hasUnderline} after:left-px`
 
   return (
-    <header className="mb-6 md:mb-10">
+    <header className="cu-pageheaders cu-block-spacing mb-6 md:mb-10">
       <HeaderComponent
         className={`font-semibold text-cu-black-700 not-prose mb-4 md:mb-6 ${headerSize[size]} ${centerText} ${centerUnderline}`}
       >

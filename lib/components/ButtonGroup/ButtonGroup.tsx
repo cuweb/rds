@@ -7,5 +7,7 @@ export interface ButtonGroupProps {
 
 export const ButtonGroup = ({ children, isCenter }: ButtonGroupProps) => {
   const centerStyles = isCenter ? 'justify-center' : ''
-  return <div className={`flex flex-wrap gap-5 cu-buttongroup md:flex-1 ${centerStyles}`}>{children}</div>
+  return (
+    <div className={`cu-buttongroup cu-block-spacing flex flex-wrap gap-5 md:flex-1 ${centerStyles}`}>{children}</div>
+  )
 }

@@ -74,6 +74,11 @@
   @apply mt-4 md:mt-6;
 }
 
+/* If columns and panels are used consecutively */
+.cu-block-spacing + .cu-block-spacing {
+  @apply mt-4 md:mt-6;
+}
+
 .cu-column-content > * {
   @apply first:mt-0 last:mb-0;
 }

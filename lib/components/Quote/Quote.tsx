@@ -13,7 +13,7 @@ export const Quote = ({ children, cite, graphic = 'border', isCenter }: QuotePro
 
   return (
     <>
-      <div className="not-prose cu-quote">
+      <div className="cu-quote cu-block-spacing not-prose">
         <blockquote className={`${styles.container} ${styles.graphic[graphic]} ${centerQuote}`}>
           {children}
           {cite && <cite className={`${styles.cite}`}>{cite}</cite>}
