@@ -4,6 +4,9 @@ export declare const maxWidthClasses: {
     lg: string;
     xl: string;
 };
+export interface IGridColsClass {
+    [key: string | number]: string;
+}
 export declare const gridColsClass: {
     1: string;
     2: string;
