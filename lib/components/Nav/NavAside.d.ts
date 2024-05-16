@@ -12,6 +12,7 @@ export interface NavAsideProps {
     LoggedMenu?: null;
     userNoImage?: null;
     children?: ReactNode;
+    LoggedInLink?: string;
     onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 export interface NavAsideLoggedInProps {
@@ -21,6 +22,7 @@ export interface NavAsideLoggedInProps {
     LoggedMenu?: null;
     userNoImage?: null;
     children?: ReactNode;
+    LoggedInLink?: string;
     onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 export interface NavAsideLoggedOutProps {
@@ -30,9 +32,10 @@ export interface NavAsideLoggedOutProps {
     LoggedMenu: ImenuItem[];
     userNoImage: UserInfoType;
     children?: ReactNode;
+    LoggedInLink?: string;
     onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 export declare const NavAside: {
-    ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, onClickHandler, }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps): import("react/jsx-runtime").JSX.Element;
+    ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, LoggedInLink, onClickHandler, }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };

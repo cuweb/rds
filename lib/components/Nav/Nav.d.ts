@@ -11,7 +11,7 @@ export declare const Nav: (({ navType, children }: NavWrapperProps) => import("r
         displayName: string;
     };
     Aside: {
-        ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, onClickHandler, }: import('./NavAside').NavAsideProps | import('./NavAside').NavAsideLoggedInProps | import('./NavAside').NavAsideLoggedOutProps): import("react/jsx-runtime").JSX.Element;
+        ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, LoggedInLink, onClickHandler, }: import('./NavAside').NavAsideProps | import('./NavAside').NavAsideLoggedInProps | import('./NavAside').NavAsideLoggedOutProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Primary: {
