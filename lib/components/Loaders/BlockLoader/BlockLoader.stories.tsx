@@ -16,3 +16,9 @@ export default meta
 type Story = StoryObj<typeof BlockLoader>
 
 export const Default: Story = {}
+
+export const WithColumn: Story = {}
+WithColumn.args = {
+  height: 200,
+  cols: 2,
+}
