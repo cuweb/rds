@@ -54,6 +54,7 @@ export { PageLoader } from './components/Loaders/PageLoader/PageLoader'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
 export { PageHeadLoader } from './components/Loaders/PageHeadLoader/PageHeadLoader'
 export { FormLoader } from './components/Loaders/FormLoader/FormLoader'
+export { BlockLoader } from './components/Loaders/BlockLoader/BlockLoader'
 export { ButtonLoader } from './components/Loaders/ButtonLoader/ButtonLoader'
 export { TableLoader } from './components/Loaders/TableLoader/TableLoader'
 
