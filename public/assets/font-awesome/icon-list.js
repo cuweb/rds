@@ -2,6 +2,7 @@ export const iconNames = [
   { value: 'abacus', label: 'Abacus' },
   { value: 'address-book', label: 'Address book' },
   { value: 'address-card', label: 'Address card' },
+  { value: 'alicorn', label: 'Alicorn' },
   { value: 'apartment', label: 'Apartment' },
   { value: 'apple-whole', label: 'Apple whole' },
   { value: 'atom', label: 'Atom' },
