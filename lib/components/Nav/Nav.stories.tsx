@@ -112,7 +112,7 @@ export const LoggedOutWithHref: Story = () => {
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData} LoggedOutUser={true}>
+        <Nav.Aside menu={NavAsideData} LoggedOutUser={true} LoggedInLink="/login">
           <Search sourceData={SearchDatabase} callback={callback} />
         </Nav.Aside>
       </Nav.Primary>
