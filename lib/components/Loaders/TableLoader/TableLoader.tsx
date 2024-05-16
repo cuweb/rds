@@ -10,19 +10,15 @@ export const TableLoader: React.FC<TableLoaderProps> = ({ numRow = 5, numCol = 5
   const rows = Array.from({ length: numRow }, (_, rowIndex) => (
     <>
       {rowIndex % 2 === 0 ? (
-        <div key={rowIndex} className="flex space-x-2 mb-2">
-          {' '}
-          {/* Added mb-2 for bottom margin */}
+        <div key={rowIndex} className="flex space-x-1">
           {Array.from({ length: numCol }, (_, colIndex) => (
-            <span key={colIndex} className="animate-pulse grow h-7 bg-cu-black-200"></span>
+            <span key={colIndex} className="animate-pulse grow h-12 bg-cu-black-100"></span>
           ))}
         </div>
       ) : (
-        <div key={rowIndex} className="flex space-x-2 mb-2">
-          {' '}
-          {/* Added mb-2 for bottom margin */}
+        <div key={rowIndex} className="flex space-x-1">
           {Array.from({ length: numCol }, (_, colIndex) => (
-            <span key={colIndex} className="animate-pulse grow h-7 bg-cu-black-100"></span>
+            <span key={colIndex} className="animate-pulse grow h-12 bg-cu-black-50"></span>
           ))}
         </div>
       )}
@@ -30,9 +26,9 @@ export const TableLoader: React.FC<TableLoaderProps> = ({ numRow = 5, numCol = 5
   ))
 
   return (
-    <>
+    <div className="cu-loader-table cu-block-spacing rounded-md overflow-hidden grid gap-1">
       {rows}
       <span className="sr-only">Loading...</span>
-    </>
+    </div>
   )
 }

@@ -13,7 +13,7 @@ export interface FormWrapperProps {
 export const FormWrapper = ({ children, formikProps }: FormWrapperProps) => {
   return (
     <FormikProvider value={formikProps}>
-      <form onSubmit={formikProps.handleSubmit} className={primaryStyles.form}>
+      <form onSubmit={formikProps.handleSubmit} className={`cu-form cu-block-spacing ${primaryStyles.form}`}>
         {children}
       </form>
     </FormikProvider>

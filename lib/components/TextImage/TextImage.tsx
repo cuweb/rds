@@ -26,7 +26,7 @@ export const TextImageWrapper = ({
 
   return (
     <div
-      className={`${styles.base} ${rdsMaxWidth[maxWidth]} ${rdsFlexRow[flexRow]} ${flipXLayout} ${flipYsmLayout} ${borderStyle}`}
+      className={`cu-textimage cu-block-spacing ${styles.base} ${rdsMaxWidth[maxWidth]} ${rdsFlexRow[flexRow]} ${flipXLayout} ${flipYsmLayout} ${borderStyle}`}
     >
       {children}
     </div>
