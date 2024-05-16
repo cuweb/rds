@@ -17,7 +17,7 @@ export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps
   }, [message, callback])
 
   return (
-    <div className="cu-searchform relative flex items-center not-prose">
+    <div className="cu-searchform cu-block-spacing relative flex items-center not-prose">
       <MagnifyingGlassIcon className="absolute w-5 h-5 left-4 text-cu-black-300" aria-hidden="true" />
       <input
         className="w-full h-12 pr-4 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
