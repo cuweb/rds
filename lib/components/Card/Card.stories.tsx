@@ -86,18 +86,20 @@ export const EventCard: Story = {
 
 export const IconCard: Story = {
   render: (args) => (
-    <Card {...args} noHover>
-      <Card.IconThumb icon={iconData.icon} />
-      <Card.Header title={iconData.title} />
-      <Card.Body>
-        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-      </Card.Body>
-      <Card.Footer>
-        <a href={iconData.link} className="cu-button cu-button--red">
-          Get informed
-        </a>
-      </Card.Footer>
-    </Card>
+    <>
+      <Card {...args} noHover>
+        <Card.IconThumb icon={iconData.icon} />
+        <Card.Header title={iconData.title} />
+        <Card.Body>
+          <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+        </Card.Body>
+        <Card.Footer>
+          <a href={iconData.link} className="cu-button cu-button--red">
+            Get informed
+          </a>
+        </Card.Footer>
+      </Card>
+    </>
   ),
 }
 

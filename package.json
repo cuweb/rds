@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -69,12 +69,14 @@
   },
   "peerDependencies": {
     "@next-tools/dynamic": "^0.0.11",
+    "@lexical/react": "^0.14.5",
     "@react-google-maps/api": "^2.19.3",
     "@types/react-datepicker": "^6.2.0",
     "@types/react-places-autocomplete": "^7.2.14",
     "@types/react-select": "^5.0.1",
     "date-fns": "^3.6.0",
     "formik": "^2.4.6",
+    "lexical": "^0.14.5",
     "react": "^18.2.0",
     "react-date-picker": "^10.6.0",
     "react-datepicker": "^6.9.0",
