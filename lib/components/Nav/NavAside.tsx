@@ -70,15 +70,9 @@ export const NavAside = ({
           ))}
         {LoggedOutUser && (
           <li>
-            {onClickHandler ? (
-              <a onClick={onClickHandler} className={styles.listItemLink}>
-                Login
-              </a>
-            ) : (
-              <LinkComponent href="/" className={styles.listItemLink}>
-                Login
-              </LinkComponent>
-            )}
+            <LinkComponent href="/login" className={styles.listItemLink}>
+              Login
+            </LinkComponent>
           </li>
         )}
         {LoggedInUser ? (
