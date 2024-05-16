@@ -25,7 +25,7 @@ export const iconNames = [
   { value: 'car-bus', label: 'Car bus' },
   { value: 'car-side', label: 'Car side' },
   { value: 'car', label: 'Car' },
-  { value: 'cat-space', label: 'Cat in space' },
+  { value: 'cat-space', label: 'Cat space' },
   { value: 'chair-office', label: 'Chair office' },
   { value: 'chart-line-up', label: 'Chart line up' },
   { value: 'chart-line', label: 'Chart line' },
