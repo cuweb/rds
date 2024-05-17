@@ -8,12 +8,7 @@ interface FormLoaderWrapperProps {
 // Define FormLoader component
 export const FormLoaderWrapper = ({ children }: FormLoaderWrapperProps) => {
   // Return FormLoader with children and RowLoader as property
-  return (
-    <>
-      <div className="cu-loader-form cu-block-spacing flex flex-col gap-8 w-full">{children}</div>
-      <span className="sr-only">Loading...</span>
-    </>
-  )
+  return <div className="cu-loader-form cu-block-spacing flex flex-col gap-8 w-full">{children}</div>
 }
 
 export const FormLoader = Object.assign(FormLoaderWrapper, {
