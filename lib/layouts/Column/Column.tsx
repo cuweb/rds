@@ -15,7 +15,7 @@ const styles = {
 }
 
 export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1', reverse }: ColumnProps) => {
-  const reverseGrid = reverse ? 'cu-column--reverse' : ''
+  const reverseGrid = reverse && (cols === '1/3' || cols === '2/3') ? 'cu-column--reverse' : ''
 
   return (
     <div
