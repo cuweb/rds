@@ -20,4 +20,5 @@
 @import './components/WideImage/styles.css';
 
 /* Layouts */
+@import './layouts/Column/styles.css';
 @import './layouts/StackedList/styles.css';
