@@ -1,0 +1,3 @@
+.cu-column--reverse > *:last-child {
+  @apply order-first md:order-none;
+}
