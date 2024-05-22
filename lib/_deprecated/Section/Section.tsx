@@ -11,7 +11,5 @@ export const Section = ({ children, maxWidth = '5xl', hasProse }: SectionProps) 
   const addProse = hasProse ? proseStyles.base : ''
   const childWidth = maxWidth ? `cu-section-${maxWidth}` : ''
 
-  return (
-    <section className={`cu-section bg-white ${layoutSpacing.section} ${childWidth} ${addProse}`}>{children}</section>
-  )
+  return <section className={`cu-section bg-white ${layoutSpacing.main} ${childWidth} ${addProse}`}>{children}</section>
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { layoutSpacing } from '../../utils/globalClasses'
-// import { layoutSpacing, proseStyles } from '../../utils/globalClasses'
 
 export interface ContainerProps {
   children?: React.ReactNode
@@ -19,5 +18,4 @@ export const Container = ({ children, as = 'section', isGrey, maxWidth = '5xl' }
       {children}
     </ContainerComponent>
   )
-  // return <div className={`cu-container not-contained ${proseStyles.base} ${childWidth} ${bgStyles}`}>{children}</div>
 }
