@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
-import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
@@ -30,7 +29,7 @@ export const DescriptionList: Story = {
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage hasBorder>
             <TextImage.Content headerType="h1" title="Description List">
               <p>
@@ -40,138 +39,138 @@ export const DescriptionList: Story = {
               </p>
             </TextImage.Content>
           </TextImage>
+        </Section>
 
-          <Container>
-            <PageHeaders header="Descripton List: Stacked" />
-            <Description>
-              {DescriptionData.map(({ id, term }) => (
-                <Description.Meta key={id} term={term}>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
+        <Section>
+          <PageHeaders header="Descripton List: Stacked" />
+          <Description>
+            {DescriptionData.map(({ id, term }) => (
+              <Description.Meta key={id} term={term}>
+                <p>
+                  Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                  voluptatem non.
+                </p>
+                <p>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                  nec elit ultricies, sed tempus diam dignissim.
+                </p>
+                <p>
+                  Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna
+                  vel orci vulputate, eget vulputate neque porttitor.
+                </p>
+              </Description.Meta>
+            ))}
+          </Description>
+        </Section>
 
-          <Container>
-            <PageHeaders header="Description List: Columns" />
-            <Description>
-              {DescriptionData.map(({ id, term }) => (
-                <Description.Meta key={id} term={term} isSmall hasBorder useColumns>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
+        <Section>
+          <PageHeaders header="Description List: Columns" />
+          <Description>
+            {DescriptionData.map(({ id, term }) => (
+              <Description.Meta key={id} term={term} isSmall hasBorder useColumns>
+                <p>
+                  Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                  voluptatem non.
+                </p>
+                <p>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                  nec elit ultricies, sed tempus diam dignissim.
+                </p>
+                <p>
+                  Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna
+                  vel orci vulputate, eget vulputate neque porttitor.
+                </p>
+              </Description.Meta>
+            ))}
+          </Description>
+        </Section>
 
-          <Container>
-            <PageHeaders header="Description List: Accordion" />
-            <Description>
-              {DescriptionData.map(({ id, term }) => (
-                <Description.Accordion key={id} term={term}>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Accordion>
-              ))}
-            </Description>
-          </Container>
+        <Section>
+          <PageHeaders header="Description List: Accordion" />
+          <Description>
+            {DescriptionData.map(({ id, term }) => (
+              <Description.Accordion key={id} term={term}>
+                <p>
+                  Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                  voluptatem non.
+                </p>
+                <p>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                  nec elit ultricies, sed tempus diam dignissim.
+                </p>
+                <p>
+                  Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna
+                  vel orci vulputate, eget vulputate neque porttitor.
+                </p>
+              </Description.Accordion>
+            ))}
+          </Description>
+        </Section>
 
-          <Container isGrey>
-            <PageHeaders header="Descripton List: Stacked" />
-            <Description>
-              {DescriptionData.map(({ id, term }) => (
-                <Description.Meta key={id} term={term}>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
+        <Section isGrey>
+          <PageHeaders header="Descripton List: Stacked" />
+          <Description>
+            {DescriptionData.map(({ id, term }) => (
+              <Description.Meta key={id} term={term}>
+                <p>
+                  Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                  voluptatem non.
+                </p>
+                <p>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                  nec elit ultricies, sed tempus diam dignissim.
+                </p>
+                <p>
+                  Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna
+                  vel orci vulputate, eget vulputate neque porttitor.
+                </p>
+              </Description.Meta>
+            ))}
+          </Description>
+        </Section>
 
-          <Container isGrey>
-            <PageHeaders header="Description List: Columns" />
-            <Description>
-              {DescriptionData.map(({ id, term }) => (
-                <Description.Meta key={id} term={term} useColumns>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Meta>
-              ))}
-            </Description>
-          </Container>
+        <Section isGrey>
+          <PageHeaders header="Description List: Columns" />
+          <Description>
+            {DescriptionData.map(({ id, term }) => (
+              <Description.Meta key={id} term={term} useColumns>
+                <p>
+                  Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                  voluptatem non.
+                </p>
+                <p>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                  nec elit ultricies, sed tempus diam dignissim.
+                </p>
+                <p>
+                  Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna
+                  vel orci vulputate, eget vulputate neque porttitor.
+                </p>
+              </Description.Meta>
+            ))}
+          </Description>
+        </Section>
 
-          <Container isGrey>
-            <PageHeaders header="Description List: Accordion" />
-            <Description>
-              {DescriptionData.map(({ id, term }) => (
-                <Description.Accordion key={id} term={term}>
-                  <p>
-                    Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-                    voluptatem non.
-                  </p>
-                  <p>
-                    Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
-                    nec elit ultricies, sed tempus diam dignissim.
-                  </p>
-                  <p>
-                    Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum
-                    magna vel orci vulputate, eget vulputate neque porttitor.
-                  </p>
-                </Description.Accordion>
-              ))}
-            </Description>
-          </Container>
+        <Section isGrey>
+          <PageHeaders header="Description List: Accordion" />
+          <Description>
+            {DescriptionData.map(({ id, term }) => (
+              <Description.Accordion key={id} term={term}>
+                <p>
+                  Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                  voluptatem non.
+                </p>
+                <p>
+                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis
+                  nec elit ultricies, sed tempus diam dignissim.
+                </p>
+                <p>
+                  Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna
+                  vel orci vulputate, eget vulputate neque porttitor.
+                </p>
+              </Description.Accordion>
+            ))}
+          </Description>
         </Section>
       </Main>
 

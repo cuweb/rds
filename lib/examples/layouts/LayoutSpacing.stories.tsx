@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
-import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
@@ -60,7 +59,7 @@ export const LayoutSpacing: Story = {
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage>
             <TextImage.Content headerType="h1" title="Layout Spacing">
               <p>
@@ -70,67 +69,67 @@ export const LayoutSpacing: Story = {
               </p>
             </TextImage.Content>
           </TextImage>
+        </Section>
 
-          <h2>Not in a container</h2>
-          <DoublePara />
-          <h2>Not in a container</h2>
+        <h2>Not in a container</h2>
+        <DoublePara />
+        <h2>Not in a container</h2>
+        <SinglePara />
+
+        <Section>
+          <h2>This is a container</h2>
           <SinglePara />
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+          <SinglePara />
+        </Section>
 
-          <Container>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-            <SinglePara />
-          </Container>
+        <Section isGrey>
+          <h2>This is a container</h2>
+          <SinglePara />
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+          <SinglePara />
+        </Section>
 
-          <Container isGrey>
-            <h2>This is a container</h2>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-            <SinglePara />
-          </Container>
-
-          <Container isGrey>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
-
-          <Container isGrey>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
-
-          <h2>Not in a container</h2>
+        <Section isGrey>
+          <h2>This is a container</h2>
           <DoublePara />
+        </Section>
 
-          <Container isGrey>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
+        <Section isGrey>
+          <h2>This is a container</h2>
+          <DoublePara />
+        </Section>
 
-          <Container>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
+        <h2>Not in a container</h2>
+        <DoublePara />
 
-          <Container>
-            <h2>This is a container</h2>
-            <DoublePara />
-          </Container>
+        <Section isGrey>
+          <h2>This is a container</h2>
+          <DoublePara />
+        </Section>
+
+        <Section>
+          <h2>This is a container</h2>
+          <DoublePara />
+        </Section>
+
+        <Section>
+          <h2>This is a container</h2>
+          <DoublePara />
         </Section>
       </Main>
 

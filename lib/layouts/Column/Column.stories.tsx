@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { StackedList } from '../StackedList/StackedList'
-import { Container } from '../Container/Container'
+import { Section } from '../Section/Section'
 import { Column } from './Column'
 
 const meta: Meta<typeof Column> = {
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Column>
 export const TwoCol: Story = {
   name: 'Two Columns',
   render: () => (
-    <Container>
+    <Section>
       <Column cols="2" gridGap="10" reverse>
         <Column.Content>
           <p>
@@ -48,14 +48,14 @@ export const TwoCol: Story = {
           </p>
         </Column.Content>
       </Column>
-    </Container>
+    </Section>
   ),
 }
 
 export const ThreeCol: Story = {
   name: 'Three Columns',
   render: () => (
-    <Container>
+    <Section>
       <Column cols="3" gridGap="10">
         <Column.Content>
           <p>
@@ -94,14 +94,14 @@ export const ThreeCol: Story = {
           </p>
         </Column.Content>
       </Column>
-    </Container>
+    </Section>
   ),
 }
 
 export const FourCol: Story = {
   name: 'Four Columns',
   render: () => (
-    <Container maxWidth="7xl">
+    <Section maxWidth="7xl">
       <Column maxWidth="7xl" cols="4" gridGap="10">
         <Column.Content>
           <p>
@@ -132,14 +132,14 @@ export const FourCol: Story = {
           </p>
         </Column.Content>
       </Column>
-    </Container>
+    </Section>
   ),
 }
 
 export const OneThird: Story = {
   name: '1/3 Columns',
   render: () => (
-    <Container maxWidth="7xl">
+    <Section maxWidth="7xl">
       <Column maxWidth="7xl" cols="1/3" gridGap="10">
         <StackedList>
           <li className="px-6 py-5">
@@ -167,14 +167,14 @@ export const OneThird: Story = {
           </p>
         </Column.Content>
       </Column>
-    </Container>
+    </Section>
   ),
 }
 
 export const TwoThirds: Story = {
   name: '2/3 Columns',
   render: () => (
-    <Container maxWidth="7xl">
+    <Section maxWidth="7xl">
       <Column maxWidth="7xl" cols="2/3" gridGap="10">
         <Column.Content>
           <p className="pb-6 last:pb-0">
@@ -202,14 +202,14 @@ export const TwoThirds: Story = {
           <li className="px-6 py-5">Suspendisse vestibulum hendrerit.</li>
         </StackedList>
       </Column>
-    </Container>
+    </Section>
   ),
 }
 
 export const ConsCols: Story = {
   name: 'Consecutive Columns',
   render: () => (
-    <Container maxWidth="7xl">
+    <Section maxWidth="7xl">
       <Column maxWidth="7xl" cols="2" gridGap="10">
         <Column.Content>
           <p>
@@ -249,6 +249,6 @@ export const ConsCols: Story = {
           </p>
         </Column.Content>
       </Column>
-    </Container>
+    </Section>
   ),
 }
