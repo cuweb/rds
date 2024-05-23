@@ -10,7 +10,7 @@ export declare const proseStyles: {
     base: string;
 };
 export declare const layoutSpacing: {
-    section: string;
+    main: string;
     containerWhite: string;
     containerGrey: string;
 };

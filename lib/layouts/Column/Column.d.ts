@@ -2,7 +2,7 @@ import { default as React } from '../../../node_modules/react';
 
 export interface ColumnProps {
     children: React.ReactNode;
-    maxWidth?: 'full' | '5xl' | '7xl';
+    maxWidth?: '5xl' | '7xl';
     gridGap?: '0' | '5' | '10';
     cols?: '1' | '2' | '3' | '4' | '1/3' | '2/3';
     reverse?: boolean;
