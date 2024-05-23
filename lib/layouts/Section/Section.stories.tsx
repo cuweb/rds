@@ -1,13 +1,14 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Article } from '../Article/Article'
 import { Aside } from '../Aside/Aside'
 import { Column } from '../Column/Column'
-import { Container } from './Container'
+import { Section } from './Section'
 import { StackedList } from '../StackedList/StackedList'
 
-const meta: Meta<typeof Container> = {
-  title: 'Layouts/Container',
-  component: Container,
+const meta: Meta<typeof Section> = {
+  title: 'Layouts/Section',
+  component: Section,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -17,7 +18,7 @@ const meta: Meta<typeof Container> = {
 }
 
 export default meta
-type Story = StoryObj<typeof Container>
+type Story = StoryObj<typeof Section>
 
 export const Primary: Story = {}
 
@@ -27,14 +28,14 @@ Primary.args = {
 
 export const GreyBackground: Story = {
   args: {
-    children: 'Container component with grey background',
+    children: 'Section component with grey background',
     isGrey: true,
   },
 }
 
 export const WithColumns: Story = {
   render: () => (
-    <Container>
+    <Section>
       <Column cols="2/3">
         <Article>
           <p>
@@ -70,6 +71,6 @@ export const WithColumns: Story = {
           </StackedList>
         </Aside>
       </Column>
-    </Container>
+    </Section>
   ),
 }

@@ -1,12 +1,13 @@
 import React from 'react'
+import { layoutSpacing, proseStyles } from '../../utils/globalClasses'
 
 export interface MainProps {
   children: React.ReactNode
-  hasOverlap?: boolean
+  noProse?: boolean
 }
 
-export const Main = ({ children, hasOverlap }: MainProps) => {
-  const overlapStyles = hasOverlap ? 'z-20 cu-overlap' : ''
+export const Main = ({ children, noProse = false }: MainProps) => {
+  const useProse = noProse ? '' : proseStyles.base
 
-  return <main className={`cu-main relative ${overlapStyles}`}>{children}</main>
+  return <main className={`cu-main cu-section-5xl ${layoutSpacing.main} ${useProse}`}>{children}</main>
 }

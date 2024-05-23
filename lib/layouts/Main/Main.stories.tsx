@@ -1,6 +1,7 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Article } from '../Article/Article'
-import { Container } from '../Container/Container'
+import { Section } from '../Section/Section'
 import { Main } from './Main'
 
 const meta: Meta<typeof Main> = {
@@ -25,7 +26,7 @@ Primary.args = {
 
 export const WithContent: Story = {
   render: () => (
-    <Container>
+    <Section>
       <Article>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
@@ -49,6 +50,6 @@ export const WithContent: Story = {
           sapien in urna.
         </p>
       </Article>
-    </Container>
+    </Section>
   ),
 }
