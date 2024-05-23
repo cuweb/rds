@@ -7,6 +7,7 @@ import { Nav } from '../../components/Nav/Nav'
 import { Column } from '../../layouts/Column/Column'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { WideImage } from '../../components/WideImage/WideImage'
+import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
@@ -72,6 +73,39 @@ export const WithSections: Story = {
           </TextImage>
         </Section>
 
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+          in. Praesent quis ligula quis nulla malesuada tempor.
+        </p>
+        <p>
+          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+          reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+          in. Praesent quis ligula quis nulla malesuada tempor.
+        </p>
+
+        <Section>
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor.
+          </p>
+          <TextImage>
+            <TextImage.Content headerType="h2" title="Grey and White Sections">
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+            </TextImage.Content>
+          </TextImage>
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor.
+          </p>
+        </Section>
+
         <h2>Outside Section H2</h2>
         <DoublePara />
 
@@ -102,6 +136,7 @@ export const WithSections: Story = {
         </Column>
 
         <Section isGrey>
+          <PageHeaders as="h1" header="Large page header" size="lg" />
           <h2>Inside Section H2</h2>
           <DoublePara />
           <WideImage isType="dark" title="Wide image with dark bg">

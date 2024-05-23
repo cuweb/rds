@@ -1,0 +1,22 @@
+.cu-textimage-content {
+  @apply mb-0;
+}
+
+.cu-textimage-content > *:last-child {
+  @apply mb-0;
+}
+
+.cu-textimage img {
+  @apply w-full h-auto;
+}
+
+.cu-section > .cu-textimage:first-child {
+  @apply mb-6 md:mb-12;
+}
+
+/* 
+* Section and non-section spacing
+*/
+:not(.cu-section) + .cu-textimage {
+  @apply mt-6 md:mt-10;
+}

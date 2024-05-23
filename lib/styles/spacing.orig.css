@@ -72,7 +72,7 @@
 } */
 
 /* If columns and panels are used consecutively */
-.cu-block-spacing + .cu-block-spacing {
+.cu-component-spacing + .cu-component-spacing {
   @apply mt-4 md:mt-6;
 }
 

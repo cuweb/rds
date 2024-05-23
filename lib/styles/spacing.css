@@ -1,5 +1,4 @@
-/* TODO: rename not-contained to make more sense */
-/* TODO: rename cu-block-spacing to cu-component or cu-component-spacing */
+/* TODO: rename cu-component-spacing to cu-component or cu-component-spacing */
 
 /* 
 * Max Width for section size props
@@ -39,7 +38,10 @@
 * Section and non-section spacing
 */
 
-:not(.cu-section) + .cu-section,
+:not(.cu-section) + .cu-section {
+  @apply mt-6 md:mt-6;
+}
+
 .cu-section + :not(.cu-section) {
   @apply mt-6 md:mt-10;
 }
@@ -60,18 +62,6 @@
 * Consecutive individual components
 */
 
-.cu-block-spacing + .cu-block-spacing {
+.cu-component-spacing + .cu-component-spacing {
   @apply mt-4 md:mt-6;
-}
-
-/* 
-* First and last child inside column content
-*/
-
-.cu-column-content > *:first-child {
-  @apply mt-0;
-}
-
-.cu-column-content > *:last-child {
-  @apply mb-0;
 }

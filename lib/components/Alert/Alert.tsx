@@ -46,7 +46,7 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
 
   return (
     <div
-      className={`cu-alert cu-alert--${type} cu-block-spacing flex rounded-md p-4 not-prose ${AlertTypes[type].background}`}
+      className={`cu-alert cu-alert--${type} cu-component-spacing flex rounded-md p-4 not-prose ${AlertTypes[type].background}`}
     >
       {React.createElement(AlertTypes[type].icon, {
         className: `${alertIconSize} ${AlertTypes[type].alertHeading}`,
