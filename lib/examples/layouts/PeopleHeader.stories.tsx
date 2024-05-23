@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../_deprecated/Section/Section'
+import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../components/Nav/Nav'

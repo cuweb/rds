@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../_deprecated/Section/Section'
-import { Container } from '../../layouts/Container/Container'
+import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
@@ -46,7 +45,7 @@ export const BlockSpacing: Story = {
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage>
             <TextImage.Content headerType="h1" title="Block Spacing">
               <p>
@@ -56,100 +55,100 @@ export const BlockSpacing: Story = {
               </p>
             </TextImage.Content>
           </TextImage>
-
-          <h2>Header Two</h2>
-
-          <SinglePara />
-          <SinglePara />
-
-          <Container>
-            <PageHeaders header="Icon Cards: Shadow on Static & Hover" />
-            <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} hasShadow="onCard" noHover>
-                  <Card.IconThumb icon={icon} />
-                  <Card.Header>{title}</Card.Header>
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer isType="button" buttonStyle="grey">
-                    <a href={link}>More info</a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <WideImage title="Wide image block with buttons and background image">
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="white" isType="outline" title="Request Information" />
-            </ButtonGroup>
-          </WideImage>
-
-          <Container isGrey>
-            <PageHeaders
-              text="Icon Cards: Shadow on Static & Hover"
-              intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-            />
-            <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id} hasShadow="onCard" noHover>
-                  <Card.IconThumb icon={icon} />
-                  <Card.Header>{title}</Card.Header>
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer isType="button" buttonStyle="grey">
-                    <a href={link}>More info</a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="white" isType="outline" title="Request Information" />
-            </ButtonGroup>
-          </WideImage>
-
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-
-          <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="white" isType="outline" title="Request Information" />
-            </ButtonGroup>
-          </WideImage>
-
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-
-          <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="white" isType="outline" title="Request Information" />
-            </ButtonGroup>
-          </WideImage>
-
-          <SinglePara />
-          <SinglePara />
         </Section>
+
+        <h2>Header Two</h2>
+
+        <SinglePara />
+        <SinglePara />
+
+        <Section>
+          <PageHeaders header="Icon Cards: Shadow on Static & Hover" />
+          <Column cols="3">
+            {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              <Card key={id} hasShadow="onCard" noHover>
+                <Card.IconThumb icon={icon} />
+                <Card.Header>{title}</Card.Header>
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer isType="button" buttonStyle="grey">
+                  <a href={link}>More info</a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <WideImage title="Wide image block with buttons and background image">
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="white" isType="outline" title="Request Information" />
+          </ButtonGroup>
+        </WideImage>
+
+        <Section isGrey>
+          <PageHeaders
+            text="Icon Cards: Shadow on Static & Hover"
+            intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
+          />
+          <Column cols="3">
+            {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              <Card key={id} hasShadow="onCard" noHover>
+                <Card.IconThumb icon={icon} />
+                <Card.Header>{title}</Card.Header>
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer isType="button" buttonStyle="grey">
+                  <a href={link}>More info</a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="white" isType="outline" title="Request Information" />
+          </ButtonGroup>
+        </WideImage>
+
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+        </Column>
+
+        <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="white" isType="outline" title="Request Information" />
+          </ButtonGroup>
+        </WideImage>
+
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+        </Column>
+
+        <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="white" isType="outline" title="Request Information" />
+          </ButtonGroup>
+        </WideImage>
+
+        <SinglePara />
+        <SinglePara />
       </Main>
 
       <FooterStandard />

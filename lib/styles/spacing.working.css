@@ -1,0 +1,30 @@
+/* 
+* Individual Component Spacing
+*/
+
+/* Heading Component */
+.cu-section > .cu-heading:first-child,
+.cu-section > .cu-heading:first-child {
+  @apply pt-0 mt-0;
+}
+
+/* Text & Image Component */
+.cu-textimage + :not(.not-contained) {
+  @apply mt-2 md:mt-6;
+}
+
+:not(.not-contained) + .cu-textimage {
+  @apply mt-6 mb-6 md:mb-10 md:mt-10;
+}
+
+.cu-textimage-content {
+  @apply mb-0;
+}
+
+.cu-textimage-content > *:last-child {
+  @apply mb-0;
+}
+
+.cu-textimage img {
+  @apply w-full h-auto;
+}

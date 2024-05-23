@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../_deprecated/Section/Section'
-import { Container } from '../../layouts/Container/Container'
+import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
@@ -36,7 +35,7 @@ export const Cards: Story = {
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage hasBorder>
             <TextImage.Content headerType="h1" title="Card Examples">
               <p>
@@ -46,190 +45,40 @@ export const Cards: Story = {
               </p>
             </TextImage.Content>
           </TextImage>
+        </Section>
 
-          <Container>
-            <PageHeaders header="Event Cards" as="h2" size="md" />
-            <Column cols="3">
-              {EventData.slice(0, 6).map(
-                ({
-                  id,
-                  title,
-                  link,
-                  image,
-                  alt,
-                  startDate,
-                  endDate,
-                  on_campus,
-                  on_campus_building,
-                  on_campus_room_number,
-                  event_address,
-                }) => (
-                  <Card key={id}>
-                    <Card.Figure>
-                      <img src={image} alt={alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.DateThumb startDate={startDate} endDate={endDate} />
-                    <Card.Header title={title} />
-                    <Card.Body>
-                      <Card.EventMeta
-                        startDateTime={startDate}
-                        endDateTime={endDate}
-                        onCampus={on_campus}
-                        onCampusBuilding={on_campus_building}
-                        onCampusRoomNumber={on_campus_room_number}
-                        eventAddress={event_address}
-                      />
-                    </Card.Body>
-                    <Card.Footer>
-                      <a href={link} className="cu-button cu-button--red">
-                        More info
-                      </a>
-                    </Card.Footer>
-                  </Card>
-                ),
-              )}
-            </Column>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="Event Cards" as="h2" size="md" />
-            <Column cols="3">
-              {EventData.slice(0, 6).map(
-                ({
-                  id,
-                  title,
-                  link,
-                  image,
-                  alt,
-                  startDate,
-                  endDate,
-                  on_campus,
-                  on_campus_building,
-                  on_campus_room_number,
-                  event_address,
-                }) => (
-                  <Card key={id}>
-                    <Card.Figure>
-                      <img src={image} alt={alt} width={400} height={175} />
-                    </Card.Figure>
-                    <Card.DateThumb startDate={startDate} endDate={endDate} />
-                    <Card.Header title={title} />
-                    <Card.Body>
-                      <Card.EventMeta
-                        startDateTime={startDate}
-                        endDateTime={endDate}
-                        onCampus={on_campus}
-                        onCampusBuilding={on_campus_building}
-                        onCampusRoomNumber={on_campus_room_number}
-                        eventAddress={event_address}
-                      />
-                    </Card.Body>
-                    <Card.Footer>
-                      <a href={link} className="cu-button cu-button--red">
-                        More info
-                      </a>
-                    </Card.Footer>
-                  </Card>
-                ),
-              )}
-            </Column>
-          </Container>
-
-          <Container>
-            <PageHeaders header="Featured Cards" as="h2" size="md" />
-            <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
-                <Card key={id}>
-                  <Card.ImageThumb>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Card.ImageThumb>
-                  <Card.Header title={title} />
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="Featured Cards" as="h2" size="md" />
-            <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
-                <Card key={id}>
-                  <Card.ImageThumb>
-                    <img src={image} alt={alt} width="400" height="266" />
-                  </Card.ImageThumb>
-                  <Card.Header title={title} />
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <PageHeaders header="Icon Cards" as="h2" size="md" />
-            <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id}>
-                  <Card.IconThumb icon={icon} />
-                  <Card.Header title={title} />
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="Icon Cards" as="h2" size="md" />
-            <Column cols="3">
-              {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-                <Card key={id}>
-                  <Card.IconThumb icon={icon} />
-                  <Card.Header title={title} />
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <PageHeaders header="News Cards" as="h2" size="md" />
-            <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, image, alt, date, title }) => (
+        <Section>
+          <PageHeaders header="Event Cards" as="h2" size="md" />
+          <Column cols="3">
+            {EventData.slice(0, 6).map(
+              ({
+                id,
+                title,
+                link,
+                image,
+                alt,
+                startDate,
+                endDate,
+                on_campus,
+                on_campus_building,
+                on_campus_room_number,
+                event_address,
+              }) => (
                 <Card key={id}>
                   <Card.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
+                    <img src={image} alt={alt} width={400} height={175} />
                   </Card.Figure>
-                  <Card.Header title={title} date={date} />
+                  <Card.DateThumb startDate={startDate} endDate={endDate} />
+                  <Card.Header title={title} />
                   <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                    <Card.EventMeta
+                      startDateTime={startDate}
+                      endDateTime={endDate}
+                      onCampus={on_campus}
+                      onCampusBuilding={on_campus_building}
+                      onCampusRoomNumber={on_campus_room_number}
+                      eventAddress={event_address}
+                    />
                   </Card.Body>
                   <Card.Footer>
                     <a href={link} className="cu-button cu-button--red">
@@ -237,125 +86,275 @@ export const Cards: Story = {
                     </a>
                   </Card.Footer>
                 </Card>
-              ))}
-            </Column>
-          </Container>
+              ),
+            )}
+          </Column>
+        </Section>
 
-          <Container isGrey>
-            <PageHeaders header="News Cards" as="h2" size="md" />
-            <Column cols="3">
-              {NewsData.slice(0, 6).map(({ id, link, image, alt, date, title }) => (
+        <Section isGrey>
+          <PageHeaders header="Event Cards" as="h2" size="md" />
+          <Column cols="3">
+            {EventData.slice(0, 6).map(
+              ({
+                id,
+                title,
+                link,
+                image,
+                alt,
+                startDate,
+                endDate,
+                on_campus,
+                on_campus_building,
+                on_campus_room_number,
+                event_address,
+              }) => (
                 <Card key={id}>
                   <Card.Figure>
-                    <img src={image} alt={alt} width="400" height="266" />
+                    <img src={image} alt={alt} width={400} height={175} />
                   </Card.Figure>
-                  <Card.Header title={title} date={date} />
-                  <Card.Body>
-                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <PageHeaders header="People Cards" as="h2" size="md" />
-            <Column cols="3">
-              {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <Card.Figure isRound>
-                    <img src={image} alt={alt} width={280} height={280} />
-                  </Card.Figure>
-                  <Card.Header title={`${firstName} ${lastName}`} />
-                  <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </Card.PeopleMeta>
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="People Cards" as="h2" size="md" />
-            <Column cols="3">
-              {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
-                <Card key={id} isCenter>
-                  <Card.Figure isRound>
-                    <img src={image} alt={alt} width={280} height={280} />
-                  </Card.Figure>
-                  <Card.Header title={`${firstName} ${lastName}`} />
-                  <Card.Body>
-                    <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </Card.PeopleMeta>
-                  </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
-                      More info
-                    </a>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <PageHeaders header="Stat Cards" as="h2" size="md" />
-            <Column cols="3">
-              {StatData.slice(0, 6).map(({ id, stat, desc }) => (
-                <Card key={id} leftBorder noHover>
-                  <Card.Stats stat={stat} desc={desc} />
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container isGrey>
-            <PageHeaders header="Stat Cards" as="h2" size="md" />
-            <Column cols="3">
-              {StatData.slice(0, 6).map(({ id, stat, desc }) => (
-                <Card key={id} leftBorder noHover>
-                  <Card.Stats stat={stat} desc={desc} />
-                </Card>
-              ))}
-            </Column>
-          </Container>
-
-          <Container>
-            <PageHeaders header="Video Cards" as="h2" size="md" />
-            <Column cols="3">
-              {VideoData.slice(0, 6).map(({ id, source, title }) => (
-                <Card key={id} noHover>
-                  <Card.Video source={source} />
+                  <Card.DateThumb startDate={startDate} endDate={endDate} />
                   <Card.Header title={title} />
+                  <Card.Body>
+                    <Card.EventMeta
+                      startDateTime={startDate}
+                      endDateTime={endDate}
+                      onCampus={on_campus}
+                      onCampusBuilding={on_campus_building}
+                      onCampusRoomNumber={on_campus_room_number}
+                      eventAddress={event_address}
+                    />
+                  </Card.Body>
+                  <Card.Footer>
+                    <a href={link} className="cu-button cu-button--red">
+                      More info
+                    </a>
+                  </Card.Footer>
                 </Card>
-              ))}
-            </Column>
-          </Container>
+              ),
+            )}
+          </Column>
+        </Section>
 
-          <Container isGrey>
-            <PageHeaders header="Video Cards" as="h2" size="md" />
-            <Column cols="3">
-              {VideoData.slice(0, 6).map(({ id, source, title }) => (
-                <Card key={id} noHover>
-                  <Card.Video source={source} />
-                  <Card.Header title={title} />
-                </Card>
-              ))}
-            </Column>
-          </Container>
+        <Section>
+          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <Column cols="3">
+            {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
+              <Card key={id}>
+                <Card.ImageThumb>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.ImageThumb>
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section isGrey>
+          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <Column cols="3">
+            {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
+              <Card key={id}>
+                <Card.ImageThumb>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.ImageThumb>
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section>
+          <PageHeaders header="Icon Cards" as="h2" size="md" />
+          <Column cols="3">
+            {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              <Card key={id}>
+                <Card.IconThumb icon={icon} />
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section isGrey>
+          <PageHeaders header="Icon Cards" as="h2" size="md" />
+          <Column cols="3">
+            {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
+              <Card key={id}>
+                <Card.IconThumb icon={icon} />
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section>
+          <PageHeaders header="News Cards" as="h2" size="md" />
+          <Column cols="3">
+            {NewsData.slice(0, 6).map(({ id, link, image, alt, date, title }) => (
+              <Card key={id}>
+                <Card.Figure>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.Figure>
+                <Card.Header title={title} date={date} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section isGrey>
+          <PageHeaders header="News Cards" as="h2" size="md" />
+          <Column cols="3">
+            {NewsData.slice(0, 6).map(({ id, link, image, alt, date, title }) => (
+              <Card key={id}>
+                <Card.Figure>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.Figure>
+                <Card.Header title={title} date={date} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section>
+          <PageHeaders header="People Cards" as="h2" size="md" />
+          <Column cols="3">
+            {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+              <Card key={id} isCenter>
+                <Card.Figure isRound>
+                  <img src={image} alt={alt} width={280} height={280} />
+                </Card.Figure>
+                <Card.Header title={`${firstName} ${lastName}`} />
+                <Card.Body>
+                  <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                    <a href={`mailto:${email}`}>{email}</a>
+                  </Card.PeopleMeta>
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section isGrey>
+          <PageHeaders header="People Cards" as="h2" size="md" />
+          <Column cols="3">
+            {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+              <Card key={id} isCenter>
+                <Card.Figure isRound>
+                  <img src={image} alt={alt} width={280} height={280} />
+                </Card.Figure>
+                <Card.Header title={`${firstName} ${lastName}`} />
+                <Card.Body>
+                  <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
+                    <a href={`mailto:${email}`}>{email}</a>
+                  </Card.PeopleMeta>
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section>
+          <PageHeaders header="Stat Cards" as="h2" size="md" />
+          <Column cols="3">
+            {StatData.slice(0, 6).map(({ id, stat, desc }) => (
+              <Card key={id} leftBorder noHover>
+                <Card.Stats stat={stat} desc={desc} />
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section isGrey>
+          <PageHeaders header="Stat Cards" as="h2" size="md" />
+          <Column cols="3">
+            {StatData.slice(0, 6).map(({ id, stat, desc }) => (
+              <Card key={id} leftBorder noHover>
+                <Card.Stats stat={stat} desc={desc} />
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section>
+          <PageHeaders header="Video Cards" as="h2" size="md" />
+          <Column cols="3">
+            {VideoData.slice(0, 6).map(({ id, source, title }) => (
+              <Card key={id} noHover>
+                <Card.Video source={source} />
+                <Card.Header title={title} />
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section isGrey>
+          <PageHeaders header="Video Cards" as="h2" size="md" />
+          <Column cols="3">
+            {VideoData.slice(0, 6).map(({ id, source, title }) => (
+              <Card key={id} noHover>
+                <Card.Video source={source} />
+                <Card.Header title={title} />
+              </Card>
+            ))}
+          </Column>
         </Section>
       </Main>
 

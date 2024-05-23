@@ -8,5 +8,6 @@ export interface MainProps {
 
 export const Main = ({ children, noProse = false }: MainProps) => {
   const useProse = noProse ? '' : proseStyles.base
-  return <main className={`cu-main ${layoutSpacing.main} ${useProse}`}>{children}</main>
+
+  return <main className={`cu-main cu-section-5xl ${layoutSpacing.main} ${useProse}`}>{children}</main>
 }

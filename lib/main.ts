@@ -64,9 +64,8 @@ export { Article } from './layouts/Article/Article'
 export { Aside } from './layouts/Aside/Aside'
 export { Body } from './layouts/Body/Body'
 export { Column } from './layouts/Column/Column'
-export { Container } from './layouts/Container/Container'
+export { Section } from './layouts/Section/Section.js'
 export { Main } from './layouts/Main/Main'
-export { Section } from './_deprecated/Section/Section.js'
 export { StackedList } from './layouts/StackedList/StackedList'
 
 // Javascript Files

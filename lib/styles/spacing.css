@@ -1,135 +1,77 @@
+/* TODO: rename not-contained to make more sense */
+/* TODO: rename cu-block-spacing to cu-component or cu-component-spacing */
+
 /* 
-* Max Width for container size props
+* Max Width for section size props
+* Targets children of section and apply max width
 */
 
-/* Target children of container and apply max width 5xl */
-.cu-section-5xl > :not(.not-contained),
-.cu-container-5xl > :not(.not-contained) {
+.cu-section-5xl > :not(.not-contained) {
   @apply max-w-5xl mx-auto;
 }
 
-/* Target children of container and apply max width 7xl */
-.cu-section-7xl > :not(.not-contained),
-.cu-container-7xl > :not(.not-contained) {
+.cu-section-7xl > :not(.not-contained) {
   @apply mx-auto max-w-7xl;
 }
 
-/* Target children of container and apply max width full */
-.cu-section-full > :not(.not-contained),
-.cu-container-full > :not(.not-contained) {
+.cu-section-full > :not(.not-contained) {
   @apply max-w-full mx-auto;
 }
 
 /* 
-* Target containers based on bg color and position inside section
+* Consecutive section spacing
 */
 
-/* If first element inside section component is a container with white bg */
-.cu-section > .cu-container.bg-white:first-child {
-  @apply pt-0;
-}
-
-/* If last element inside section component is a container with white bg */
-.cu-section > .cu-container.bg-white:last-child {
-  @apply pb-0;
-}
-
-/* If there are consecutive white containers */
-.cu-container.bg-white + .cu-container.bg-white {
-  @apply mt-4;
-}
-
-/* If a grey container immediately follows a white container */
-.cu-container.bg-white + .cu-container.bg-cu-black-50,
-.cu-container.bg-white + .cu-container.cu-wideimage,
-.cu-container.bg-cu-black-50 + .cu-container.cu-wideimage,
-.cu-column + .cu-container.cu-wideimage {
+.cu-section + .cu-section,
+.cu-section + .cu-column {
   @apply mt-6 md:mt-10;
 }
 
-/* If there are consecutive grey containers */
-.cu-container.bg-cu-black-50:not(.cu-wideimage) + .cu-container.bg-cu-black-50:not(.cu-wideimage) {
-  @apply pt-2 -mt-2 rounded-t-none;
-}
-
-/* If a white container immediately follows a grey container */
-.cu-container.bg-cu-black-50 + .cu-container.bg-white {
+.cu-section.bg-white + .cu-column {
   @apply mt-6 md:mt-6;
 }
 
-/* If a grey container follows content not inside a container components */
-:not(.cu-container) + .cu-container.bg-cu-black-50 {
-  @apply mt-10 md:mt-12;
+.cu-section.bg-cu-black-50 + .cu-section.bg-cu-black-50 {
+  @apply pt-2 -mt-2 rounded-t-none;
 }
 
-/* If there are two consecutive panels not inside a column component */
-/* :not(.cu-column) > .cu-panel + .cu-panel {
-  @apply mt-6 md:mt-8;
-} */
+/* 
+* Section and non-section spacing
+*/
 
-/* If columns and panels are used consecutively */
-/* .cu-column + .cu-column,
-.cu-column + .cu-panel,
-.cu-panel + .cu-column {
-  @apply mt-4 md:mt-6;
-} */
+:not(.cu-section) + .cu-section,
+.cu-section + :not(.cu-section) {
+  @apply mt-6 md:mt-10;
+}
 
-/* If columns and panels are used consecutively */
+/* 
+* First and last child inside sections
+*/
+
+.cu-section > *:first-child {
+  @apply mt-0;
+}
+
+.cu-section > *:last-child {
+  @apply mb-0;
+}
+
+/* 
+* Consecutive individual components
+*/
+
 .cu-block-spacing + .cu-block-spacing {
   @apply mt-4 md:mt-6;
 }
 
-.cu-column-content > * {
-  @apply first:mt-0 last:mb-0;
-}
-
-/* If a container immediately follows a column component */
-.cu-column + .cu-container {
-  @apply mt-8;
-}
-
-/* If a column and grey container are used consecutively */
-.cu-container.bg-cu-black-50 + :not(.cu-container),
-.cu-container.bg-cu-black-50 + .cu-column,
-.cu-column + .cu-container.bg-cu-black-50 {
-  @apply mt-6 md:mt-12;
-}
-
 /* 
-* Add styles to first child of container to banner overlap
+* First and last child inside column content
 */
 
-.cu-overlap > .cu-section:first-child > *:first-child {
-  @apply md:z-20 md:-mt-28;
+.cu-column-content > *:first-child {
+  @apply mt-0;
 }
 
-/* 
-* Individual Component Spacing
-*/
-
-/* Heading Component */
-.cu-section > .cu-heading:first-child,
-.cu-container > .cu-heading:first-child {
-  @apply pt-0 mt-0;
-}
-
-/* Text & Image Component */
-.cu-textimage + :not(.not-contained) {
-  @apply mt-2 md:mt-6;
-}
-
-:not(.not-contained) + .cu-textimage {
-  @apply mt-6 mb-6 md:mb-10 md:mt-10;
-}
-
-.cu-textimage-content {
+.cu-column-content > *:last-child {
   @apply mb-0;
-}
-
-.cu-textimage-content > *:last-child {
-  @apply mb-0;
-}
-
-.cu-textimage img {
-  @apply w-full h-auto;
 }

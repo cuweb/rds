@@ -17,6 +17,7 @@ const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
+  as?: 'section' | 'div'
   title?: string
   image?: string
   headerType?: 'h1' | 'h2'
@@ -29,6 +30,7 @@ export interface WideImageProps {
 
 export const WideImageWrapper = ({
   children,
+  as = 'div',
   title,
   image,
   headerType = 'h2',
@@ -38,6 +40,8 @@ export const WideImageWrapper = ({
   focalPointY = '50',
   isType = 'light',
 }: WideImageProps) => {
+  const WideImageComponent = as
+
   const inlineStyle = {
     backgroundImage: `url(${image})`,
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
@@ -55,9 +59,9 @@ export const WideImageWrapper = ({
   }
 
   return (
-    <div
+    <WideImageComponent
       style={inlineStyle}
-      className={`cu-wideimage cu-block-spacing cu-container ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
+      className={`cu-wideimage cu-block-spacing cu-section ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
     >
       {image && <div className={`${styles.overlay}`} style={opacityStyle}></div>}
 
@@ -95,7 +99,7 @@ export const WideImageWrapper = ({
           </defs>
         </svg>
       )}
-    </div>
+    </WideImageComponent>
   )
 }
 

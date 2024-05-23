@@ -3,9 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
+import { Column } from '../../layouts/Column/Column'
 import { TextImage } from '../../components/TextImage/TextImage'
+import { WideImage } from '../../components/WideImage/WideImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
@@ -47,7 +48,7 @@ const DoublePara = () => {
   )
 }
 
-export const WithColumns: Story = {
+export const WithSections: Story = {
   render: () => (
     <>
       <Nav>
@@ -61,7 +62,7 @@ export const WithColumns: Story = {
       <Main>
         <Section>
           <TextImage>
-            <TextImage.Content headerType="h1" title="Columned Content">
+            <TextImage.Content headerType="h1" title="Grey and White Sections">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -71,25 +72,45 @@ export const WithColumns: Story = {
           </TextImage>
         </Section>
 
-        <h2>Header Two</h2>
+        <h2>Outside Section H2</h2>
         <DoublePara />
 
-        <h3>Header Three</h3>
-        <SinglePara />
+        <WideImage as="section" isType="dark" title="Wide image with dark bg">
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus.
+          </p>
+        </WideImage>
 
+        <h3>Outside Section H3</h3>
+        <SinglePara />
         <Column cols="2">
           <Column.Content>
-            <DoublePara />
             <SinglePara />
           </Column.Content>
           <Column.Content>
             <SinglePara />
-            <DoublePara />
+          </Column.Content>
+        </Column>
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
           </Column.Content>
         </Column>
 
         <Section isGrey>
-          <SinglePara />
+          <h2>Inside Section H2</h2>
+          <DoublePara />
+          <WideImage isType="dark" title="Wide image with dark bg">
+            <p>
+              Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus.
+            </p>
+          </WideImage>
+          <DoublePara />
           <Column cols="2">
             <Column.Content>
               <SinglePara />
@@ -98,22 +119,11 @@ export const WithColumns: Story = {
               <SinglePara />
             </Column.Content>
           </Column>
-          <SinglePara />
         </Section>
 
-        <SinglePara />
-        <Column cols="2">
-          <Column.Content>
-            <SinglePara />
-          </Column.Content>
-          <Column.Content>
-            <SinglePara />
-          </Column.Content>
-        </Column>
-        <SinglePara />
-
         <Section isGrey>
-          <SinglePara />
+          <h2>Inside Section H2</h2>
+          <DoublePara />
           <Column cols="2">
             <Column.Content>
               <SinglePara />
@@ -122,17 +132,55 @@ export const WithColumns: Story = {
               <SinglePara />
             </Column.Content>
           </Column>
-          <SinglePara />
         </Section>
 
-        <Column cols="2">
-          <Column.Content>
-            <SinglePara />
-          </Column.Content>
-          <Column.Content>
-            <SinglePara />
-          </Column.Content>
-        </Column>
+        <WideImage as="section" isType="dark" title="Wide image with dark bg">
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus.
+          </p>
+        </WideImage>
+
+        <Section isGrey>
+          <h2>Inside Section H2</h2>
+          <DoublePara />
+        </Section>
+
+        <Section>
+          <h2>Inside Section H2</h2>
+          <DoublePara />
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+        </Section>
+
+        <Section>
+          <h2>Inside Section H2</h2>
+          <DoublePara />
+        </Section>
+
+        <WideImage as="section" isType="dark" title="Wide image with dark bg">
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus.
+          </p>
+        </WideImage>
+
+        <Section>
+          <h2>Inside Section H2</h2>
+          <DoublePara />
+        </Section>
+
+        <Section isGrey>
+          <h2>Inside Section H2</h2>
+          <DoublePara />
+        </Section>
+        <DoublePara />
 
         <Column cols="2">
           <Column.Content>
@@ -142,6 +190,17 @@ export const WithColumns: Story = {
             <SinglePara />
           </Column.Content>
         </Column>
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+        </Column>
+
+        <h2>Outside Section H2</h2>
+        <DoublePara />
       </Main>
 
       <FooterStandard />

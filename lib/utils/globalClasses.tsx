@@ -14,8 +14,7 @@ export const proseStyles = {
 export const layoutSpacing = {
   main: 'px-8 py-6 md:py-10 md:px-10',
   containerWhite: 'bg-white',
-  // containerWhite: 'py-5 md:py-6 bg-white',
-  containerGrey: 'max-w-screen-2xl mx-auto bg-cu-black-50 rounded-xl px-6 py-6 md:py-10 md:p-10',
+  containerGrey: 'max-w-screen-2xl mx-auto bg-cu-black-50 rounded-xl px-6 py-5 md:px-14 md:py-12',
 }
 
 export const globalSpace = {
