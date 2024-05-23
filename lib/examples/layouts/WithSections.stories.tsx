@@ -61,7 +61,7 @@ export const WithSections: Story = {
       </Nav>
 
       <Main>
-        <Section>
+        <Section isGrey>
           <TextImage>
             <TextImage.Content headerType="h1" title="Grey and White Sections">
               <p>
