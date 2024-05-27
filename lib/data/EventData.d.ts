@@ -4,6 +4,7 @@ export declare const EventDataSingle: {
     link: string;
     startDate: string;
     endDate: string;
+    multiDate: string;
     event_address: string;
     on_campus: boolean;
     on_campus_building: string;

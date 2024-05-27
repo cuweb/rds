@@ -29,7 +29,7 @@ export declare const PageHeaders: {
         displayName: string;
     };
     Event: {
-        ({ startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, primaryButtonUrl, primaryButtonText, secondaryButtonUrl, secondaryButtonText, }: import('./PageHeadersEvent').PageHeadersEventProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, }: import('./PageHeadersEvent').PageHeadersEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
