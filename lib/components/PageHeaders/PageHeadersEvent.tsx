@@ -98,7 +98,7 @@ export const PageHeadersEvent = ({
         </div>
       )}
 
-      {primaryButtonUrl && (
+      {(primaryButtonUrl || secondaryButtonUrl) && (
         <div className={listStyles.listWrapper}>
           <ul className={listStyles.listHorizontal}>
             {primaryButtonUrl && (
