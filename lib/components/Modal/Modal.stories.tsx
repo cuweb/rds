@@ -27,7 +27,8 @@ export const Default: Story = () => {
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
 
       <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
-        <p>Poopy bacon</p>
+        <h4>Poop Heading</h4>
+        <p>This is some poopy text for your poop hole.</p>
         <Button
           title="Delete"
           isSmall
