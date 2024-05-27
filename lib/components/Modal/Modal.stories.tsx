@@ -27,16 +27,20 @@ export const Default: Story = () => {
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
 
       <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
-        <h4>Poop Heading</h4>
-        <p>This is some poopy text for your poop hole.</p>
-        <Button
-          title="Delete"
-          isSmall
-          onClick={() => {
-            alert(' delete are you sure you want to delete it')
-            setModalOpen(false)
-          }}
-        />
+        <div className="space-y-4 justify-center text-center">
+          <h3>Example Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris mi, sollicitudin pharetra ipsum vel,
+            pulvinar dignissim augue.
+          </p>
+          <Button
+            title="Close"
+            isSmall
+            onClick={() => {
+              setModalOpen(false)
+            }}
+          />
+        </div>
       </Modal>
     </>
   )
