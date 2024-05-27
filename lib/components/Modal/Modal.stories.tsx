@@ -26,12 +26,8 @@ export const Default: Story = () => {
     <>
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
 
-      <Modal
-        title="Modal Title"
-        description={'Description inside the modal'}
-        isOpen={ModalOpen}
-        setIsOpen={setModalOpen}
-      >
+      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
+        <p>Poopy bacon</p>
         <Button
           title="Delete"
           isSmall
@@ -52,14 +48,7 @@ export const NoButton: Story = () => {
     <>
       <Button id="modalButton" title=" Click to Open Modal" onClick={() => setModalOpen(true)} />
 
-      <Modal
-        title="Modal Title"
-        description={'Description inside the modal'}
-        isOpen={ModalOpen}
-        setIsOpen={setModalOpen}
-        noButton
-        hasOverlay
-      >
+      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} hasOverlay>
         <Button
           title="Delete"
           isSmall
