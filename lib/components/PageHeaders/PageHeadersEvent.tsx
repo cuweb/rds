@@ -1,3 +1,4 @@
+import { format, isSameDay, parseISO } from 'date-fns'
 import { listStyles } from './PageHeaders.Styles'
 import { proseStyles } from '../../utils/globalClasses'
 import { Button } from '../Button/Button'
@@ -38,14 +39,25 @@ export const PageHeadersEvent = ({
 }: PageHeadersEventProps) => {
   const eventDetails = ['cost', 'contactName', 'contactPhone', 'contactEmail']
 
+  // Parse dates
+  const parsedStartDate = startDate ? parseISO(startDate) : null
+  const parsedEndDate = endDate ? parseISO(endDate) : null
+
+  // Compare dates and build final one
+  let finalDate = ''
+  if (parsedStartDate && parsedEndDate) {
+    if (isSameDay(parsedStartDate, parsedEndDate)) {
+      finalDate = `${format(parsedStartDate, "EEEE, MMMM do, yyyy 'at' h:mmaaa")}`
+    } else {
+      finalDate = `${format(parsedStartDate, 'EEEE, MMMM do, yyyy')} to ${format(parsedEndDate, 'EEEE, MMMM do, yyyy')}`
+    }
+  }
+
   return (
     <>
-      {(startDate || endDate) && (
+      {finalDate && (
         <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul>
-            {startDate && <li>{startDate}</li>}
-            {endDate && <li>{endDate}</li>}
-          </ul>
+          <ul>{finalDate}</ul>
         </div>
       )}
 
