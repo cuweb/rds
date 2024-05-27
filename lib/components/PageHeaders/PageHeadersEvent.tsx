@@ -1,7 +1,6 @@
 import { format, isSameDay, parseISO } from 'date-fns'
 import { listStyles } from './PageHeaders.Styles'
 import { proseStyles } from '../../utils/globalClasses'
-import { Button } from '../Button/Button'
 
 export interface PageHeadersEventProps {
   children?: React.ReactNode
@@ -11,10 +10,6 @@ export interface PageHeadersEventProps {
   location?: string
   virtualType?: 'Teams' | 'Zoom'
   virtualUrl?: string
-  primaryButtonUrl?: string
-  primaryButtonText?: string
-  secondaryButtonUrl?: string
-  secondaryButtonText?: string
   cost?: string
   contactName?: string
   contactPhone?: string
@@ -22,6 +17,7 @@ export interface PageHeadersEventProps {
 }
 
 export const PageHeadersEvent = ({
+  children,
   startDate,
   endDate,
   eventType,
@@ -32,10 +28,6 @@ export const PageHeadersEvent = ({
   contactName,
   contactPhone,
   contactEmail,
-  primaryButtonUrl,
-  primaryButtonText,
-  secondaryButtonUrl,
-  secondaryButtonText,
 }: PageHeadersEventProps) => {
   const eventDetails = ['cost', 'contactName', 'contactPhone', 'contactEmail']
 
@@ -55,11 +47,7 @@ export const PageHeadersEvent = ({
 
   return (
     <>
-      {finalDate && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul>{finalDate}</ul>
-        </div>
-      )}
+      {finalDate && <p className="prose-lg md:prose-xl">{finalDate}</p>}
 
       {/* Check if details are set and output as ul */}
       <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
@@ -110,7 +98,9 @@ export const PageHeadersEvent = ({
         </div>
       )}
 
-      {(primaryButtonUrl || secondaryButtonUrl) && (
+      {children}
+
+      {/* {(primaryButtonUrl || secondaryButtonUrl) && (
         <div className={listStyles.listWrapper}>
           <ul className={listStyles.listHorizontal}>
             {primaryButtonUrl && (
@@ -140,7 +130,7 @@ export const PageHeadersEvent = ({
             )}
           </ul>
         </div>
-      )}
+      )} */}
     </>
   )
 }

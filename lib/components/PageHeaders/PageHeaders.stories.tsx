@@ -2,6 +2,8 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { PageHeaders } from './PageHeaders'
 import { Figure } from '../Figure/Figure'
+import { Button } from '..//Button/Button'
+import { ButtonGroup } from '..//ButtonGroup/ButtonGroup'
 import { EventDataSingle as eventData } from '../../data/EventData'
 
 const meta: Meta<typeof PageHeaders> = {
@@ -73,10 +75,16 @@ export const EventHeader: Story = {
         contactName="John Doe"
         contactEmail="johndoe@test.com"
         contactPhone="613-520-2600 x1234"
-        primaryButtonUrl="https://carleton.ca"
-        secondaryButtonUrl="https://carleton.ca/webservices"
-        secondaryButtonText="More Information"
-      />
+      >
+        <ButtonGroup>
+          <a href="https://carleton.ca" className="cu-button cu-button--red">
+            Register Now
+          </a>
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--grey">
+            Add to My Events
+          </a>
+        </ButtonGroup>
+      </PageHeaders.Event>
     </PageHeaders>
   ),
 }
@@ -95,16 +103,22 @@ export const EventHeaderMultiday: Story = {
         virtualType="Teams"
         virtualUrl="https://events.carleton.ca"
         startDate={eventData.startDate}
-        endDate="2023-04-04 13:30:00"
+        endDate={eventData.multiDate}
         location="Raven's Nest, 1125 Colonel By Drive"
         cost="$20 per adult, $15 for youth/senior"
         contactName="John Doe"
         contactEmail="johndoe@test.com"
         contactPhone="613-520-2600 x1234"
-        primaryButtonUrl="https://carleton.ca"
-        secondaryButtonUrl="https://carleton.ca/webservices"
-        secondaryButtonText="More Information"
-      />
+      >
+        <ButtonGroup>
+          <a href="https://carleton.ca" className="cu-button cu-button--red">
+            Register Now
+          </a>
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--grey">
+            Add to My Events
+          </a>
+        </ButtonGroup>
+      </PageHeaders.Event>
     </PageHeaders>
   ),
 }
