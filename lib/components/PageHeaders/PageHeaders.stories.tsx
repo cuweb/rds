@@ -2,6 +2,9 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { PageHeaders } from './PageHeaders'
 import { Figure } from '../Figure/Figure'
+import { Button } from '..//Button/Button'
+import { ButtonGroup } from '..//ButtonGroup/ButtonGroup'
+import { EventDataSingle as eventData } from '../../data/EventData'
 
 const meta: Meta<typeof PageHeaders> = {
   title: 'Components/PageHeaders',
@@ -59,32 +62,68 @@ export const EventHeader: Story = {
   render: (args) => (
     <PageHeaders {...args}>
       <Figure size="sm" align="right" noMobile>
-        <img
-          src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
-          alt="Required alt text"
-          width="200"
-          height="133"
-        />
+        <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
       </Figure>
       <PageHeaders.Event
         eventType="Hybrid"
         virtualType="Teams"
         virtualUrl="https://events.carleton.ca"
-        startDate="March 21st, 2023 at 6:00pm"
+        startDate={eventData.startDate}
+        endDate={eventData.endDate}
         location="Raven's Nest, 1125 Colonel By Drive"
         cost="$20 per adult, $15 for youth/senior"
         contactName="John Doe"
         contactEmail="johndoe@test.com"
         contactPhone="613-520-2600 x1234"
-        primaryButtonUrl="https://carleton.ca"
-        secondaryButtonUrl="https://carleton.ca/webservices"
-        secondaryButtonText="More Information"
-      />
+      >
+        <ButtonGroup>
+          <a href="https://carleton.ca" className="cu-button cu-button--red">
+            Register Now
+          </a>
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--grey">
+            Add to My Events
+          </a>
+        </ButtonGroup>
+      </PageHeaders.Event>
     </PageHeaders>
   ),
 }
 EventHeader.args = {
-  header: 'Upcoming Event',
+  header: 'Upcoming Single Day Event',
+}
+
+export const EventHeaderMultiday: Story = {
+  render: (args) => (
+    <PageHeaders {...args}>
+      <Figure size="sm" align="right" noMobile>
+        <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
+      </Figure>
+      <PageHeaders.Event
+        eventType="Hybrid"
+        virtualType="Teams"
+        virtualUrl="https://events.carleton.ca"
+        startDate={eventData.startDate}
+        endDate={eventData.multiDate}
+        location="Raven's Nest, 1125 Colonel By Drive"
+        cost="$20 per adult, $15 for youth/senior"
+        contactName="John Doe"
+        contactEmail="johndoe@test.com"
+        contactPhone="613-520-2600 x1234"
+      >
+        <ButtonGroup>
+          <a href="https://carleton.ca" className="cu-button cu-button--red">
+            Register Now
+          </a>
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--grey">
+            Add to My Events
+          </a>
+        </ButtonGroup>
+      </PageHeaders.Event>
+    </PageHeaders>
+  ),
+}
+EventHeaderMultiday.args = {
+  header: 'Event with Date Range',
 }
 
 export const PeopleHeader: Story = {

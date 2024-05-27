@@ -18,25 +18,6 @@ export interface TextImageMediaProps {
   hasMobileImage?: boolean
 }
 
-// const isValidChild = (child: React.ReactNode): child is React.ReactElement => {
-//   if (React.isValidElement(child)) {
-//     // Check for <p>, <ol>, <ul> tags directly
-//     if (
-//       typeof child.type === 'string' &&
-//       (child.type.toLowerCase() === 'p' || child.type.toLowerCase() === 'ol' || child.type.toLowerCase() === 'ul')
-//     ) {
-//       return true
-//     }
-
-//     // Check for elements with specific classes
-//     const className: string = child.props.className || ''
-//     if (className.includes('cu-buttongroup') || className.includes('cu-button') || className.includes('buttons')) {
-//       return true
-//     }
-//   }
-//   return false
-// }
-
 export const TextImageContent = ({
   children,
   title,
@@ -74,17 +55,6 @@ export const TextImageContent = ({
       }
     }
   }
-
-  // const validatedChildren = React.Children.map(children, (child) => {
-  //   if (React.isValidElement(child) && isValidChild(child)) {
-  //     return child
-  //   } else {
-  //     console.warn(
-  //       'TextImageContent only accepts <p> tags or elements with "cu-button-group" or "cu-button" classes as children.',
-  //     )
-  //     return null
-  //   }
-  // })
 
   return (
     <>
