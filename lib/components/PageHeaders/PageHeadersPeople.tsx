@@ -26,13 +26,7 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
 
   return (
     <>
-      {jobTitle && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul>
-            <li>{jobTitle}</li>
-          </ul>
-        </div>
-      )}
+      {jobTitle && <p className="prose-lg md:prose-xl">{jobTitle}</p>}
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (
