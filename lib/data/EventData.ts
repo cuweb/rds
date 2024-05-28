@@ -4,6 +4,7 @@ export const EventDataSingle = {
   link: '#',
   startDate: '2023-03-31 10:00:00',
   endDate: '2023-03-31 13:30:00',
+  multiDate: '2023-04-04 13:30:00',
   event_address: '71953 Schmidt Row Apt. 896\nLaurianefurt, TN 88829-0223',
   on_campus: true,
   on_campus_building: 'Robertson Hall',
