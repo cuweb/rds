@@ -28,7 +28,7 @@ export const Default: Story = () => {
 
       <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} noOutsideClose>
         <div className="space-y-4 justify-center text-center">
-          <h3>Example Heading</h3>
+          <h3 className="text-lg font-medium leading-6 text-gray-900">Example Heading</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris mi, sollicitudin pharetra ipsum vel,
             pulvinar dignissim augue.

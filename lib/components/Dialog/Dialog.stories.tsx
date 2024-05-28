@@ -31,16 +31,7 @@ export const Default: Story = () => {
         description={'Description inside the modal'}
         isOpen={DialogOpen}
         setIsOpen={setDialogOpen}
-      >
-        <Button
-          title="Delete"
-          isSmall
-          onClick={() => {
-            alert(' delete are you sure you want to delete it')
-            setDialogOpen(false)
-          }}
-        />
-      </Dialog>
+      ></Dialog>
     </>
   )
 }
@@ -59,16 +50,7 @@ export const NoButton: Story = () => {
         setIsOpen={setDialogOpen}
         noButton
         hasOverlay
-      >
-        <Button
-          title="Delete"
-          isSmall
-          onClick={() => {
-            alert(' delete are you sure you want to delete it')
-            setDialogOpen(false)
-          }}
-        />
-      </Dialog>
+      ></Dialog>
     </>
   )
 }
