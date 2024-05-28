@@ -8,7 +8,7 @@ export interface ModalProps {
   noOverlay?: boolean
 }
 
-export const Modal = ({ children, isOpen, noOverlay = false }: ModalProps) => {
+export const Modal = ({ children, isOpen, setIsOpen, noOverlay = false }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -19,15 +19,17 @@ export const Modal = ({ children, isOpen, noOverlay = false }: ModalProps) => {
     }
   }, [isOpen])
 
+  const handleClick = (event) => {
+    if (event.target === modalRef.current) {
+      setIsOpen(false)
+    }
+  }
+
   return (
     <>
-      <div
-        className={`flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0 ${noOverlay ? '' : 'bg-cu-black/30'}`}
-      >
-        <dialog ref={modalRef} className="cu-modal relative z-10 cu-modal not-prose">
-          <div className="relative sm:my-8 sm:w-full sm:max-w-lg">{children}</div>
-        </dialog>
-      </div>
+      <dialog ref={modalRef} className="cu-modal relative z-10 not-prose" onClick={handleClick}>
+        <div className="relative sm:w-full sm:max-w-lg p-6 min-h-full">{children}</div>
+      </dialog>
     </>
   )
 }
