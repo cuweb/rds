@@ -5,6 +5,6 @@
   padding: 0px;
 }
 
-dialog::backdrop {    
-    @apply bg-cu-black/30
+dialog::backdrop {
+  @apply bg-cu-black/30;
 }
