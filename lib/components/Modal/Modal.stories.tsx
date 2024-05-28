@@ -26,7 +26,7 @@ export const Default: Story = () => {
     <>
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
 
-      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
+      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} noOutsideClose>
         <div className="space-y-4 justify-center text-center">
           <h3>Example Heading</h3>
           <p>

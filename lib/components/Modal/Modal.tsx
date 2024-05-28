@@ -6,9 +6,10 @@ export interface ModalProps {
   isOpen: boolean
   setIsOpen: (k: boolean) => void
   noOverlay?: boolean
+  noOutsideClose?: boolean
 }
 
-export const Modal = ({ children, isOpen, setIsOpen, noOverlay = false }: ModalProps) => {
+export const Modal = ({ children, isOpen, setIsOpen, noOutsideClose = false }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export const Modal = ({ children, isOpen, setIsOpen, noOverlay = false }: ModalP
   }, [isOpen])
 
   const handleClick = (event) => {
-    if (event.target === modalRef.current) {
+    if (!noOutsideClose && event.target === modalRef.current) {
       setIsOpen(false)
     }
   }
