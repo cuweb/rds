@@ -5,7 +5,6 @@ export interface ModalProps {
   children?: React.ReactNode
   isOpen: boolean
   setIsOpen: (k: boolean) => void
-  noOverlay?: boolean
   noOutsideClose?: boolean
 }
 
@@ -20,7 +19,7 @@ export const Modal = ({ children, isOpen, setIsOpen, noOutsideClose = false }: M
     }
   }, [isOpen])
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (!noOutsideClose && event.target === modalRef.current) {
       setIsOpen(false)
     }
