@@ -63,9 +63,9 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', 
         </svg>
       </button>
       {content ? (
-        <div className={`cu-dialog-content ${useProse}`} dangerouslySetInnerHTML={{ __html: content }} />
+        <div className={useProse} dangerouslySetInnerHTML={{ __html: content }} />
       ) : (
-        <div className={`cu-dialog-content ${useProse}`}>{children}</div>
+        <div className={useProse}>{children}</div>
       )}
     </dialog>
   )
