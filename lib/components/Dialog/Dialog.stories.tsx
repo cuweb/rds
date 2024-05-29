@@ -25,15 +25,35 @@ export const Default: Story = () => {
   return (
     <>
       <Button id="modalButton" title=" Click to Open Dialog" onClick={() => setDialogOpen(true)} />
-
       <Dialog
         title="Dialog Title"
         description={'Description inside the dialog box'}
         isOpen={DialogOpen}
         setIsOpen={setDialogOpen}
-      ></Dialog>
+      />
     </>
   )
 }
 
 Default.storyName = 'Default Dialog'
+
+export const ConfirmButton: Story = () => {
+  const [DialogOpen, setDialogOpen] = useState(false)
+
+  return (
+    <>
+      <Button id="modalButton" title=" Click to Open Dialog" onClick={() => setDialogOpen(true)} />
+      <Dialog
+        title="Dialog Title"
+        description={'Description inside the dialog box'}
+        isOpen={DialogOpen}
+        setIsOpen={setDialogOpen}
+      >
+        <Button title="Confirm" isSmall />
+      </Dialog>
+    </>
+  )
+}
+
+Default.storyName = 'Default Dialog'
+ConfirmButton.storyName = 'With Confirm Button'
