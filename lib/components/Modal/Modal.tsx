@@ -11,7 +11,7 @@ export interface ModalProps {
   setIsOpen: (k: boolean) => void
 }
 
-export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '3xl', noProse = false }: ModalProps) => {
+export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', noProse = false }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
   const useProse = noProse ? '' : proseStyles.base
 
@@ -43,7 +43,7 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '3xl', 
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
+      className={`cu-dialog md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
       onClick={handleClick}
     >
       <button

@@ -1,5 +1,6 @@
 export const proseGroups = {
   base: `prose prose-rds max-w-none`,
+  // base: `prose prose-rds max-w-none`,
   text: `prose-lg md:prose-xl`,
   largeLight: `prose-xl md:prose-2xl font-light`,
   image: `prose-img:w-full prose-img:rounded-lg`,
