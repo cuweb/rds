@@ -43,7 +43,7 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', 
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
+      className={`cu-dialog ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
       onClick={handleClick}
     >
       <button
@@ -62,12 +62,11 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', 
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <div
-        className={`cu-dialog-content ${useProse}`}
-        dangerouslySetInnerHTML={content ? { __html: content } : undefined}
-      >
-        {!content && children}
-      </div>
+      {content ? (
+        <div className={`cu-dialog-content ${useProse}`} dangerouslySetInnerHTML={{ __html: content }} />
+      ) : (
+        <div className={`cu-dialog-content ${useProse}`}>{children}</div>
+      )}
     </dialog>
   )
 }
