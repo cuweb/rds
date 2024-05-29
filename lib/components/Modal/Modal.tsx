@@ -47,7 +47,7 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '3xl', 
       onClick={handleClick}
     >
       <button
-        className="absolute top-2 right-2 p-1 rounded-full bg-cu-black-50 text-cu-black-900 hover:bg-cu-red hover:text-white"
+        className="absolute top-2 right-2 p-1 rounded-md bg-cu-black-100 text-cu-black-900 hover:bg-cu-red hover:text-white"
         onClick={() => setIsOpen(false)}
       >
         <span className="sr-only">Close</span>
