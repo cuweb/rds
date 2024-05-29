@@ -1,15 +1,19 @@
-import React, { useRef } from 'react'
-import { useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
+import { rdsMaxWidth } from '../../utils/optionClasses'
+import { proseStyles } from '../../utils/globalClasses'
 
 export interface ModalProps {
   children?: React.ReactNode
+  maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl'
+  content?: string
+  noProse?: boolean
   isOpen: boolean
   setIsOpen: (k: boolean) => void
-  noOutsideClose?: boolean
 }
 
-export const Modal = ({ children, isOpen, setIsOpen, noOutsideClose = false }: ModalProps) => {
+export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', noProse = false }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
+  const useProse = noProse ? '' : proseStyles.base
 
   useEffect(() => {
     if (modalRef.current?.open && !isOpen) {
@@ -19,16 +23,33 @@ export const Modal = ({ children, isOpen, setIsOpen, noOutsideClose = false }: M
     }
   }, [isOpen])
 
+  // Add no scroll class to prevent background scroll when dialog is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('cu-no-body-scroll')
+    } else {
+      document.body.classList.remove('cu-no-body-scroll')
+    }
+    // Cleanup function to remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove('cu-no-body-scroll')
+    }
+  }, [isOpen])
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    if (!noOutsideClose && event.target === modalRef.current) {
+    if (event.target === modalRef.current) {
       setIsOpen(false)
     }
   }
 
   return (
     <>
-      <dialog ref={modalRef} className="cu-modal relative z-10 not-prose" onClick={handleClick}>
-        <div className="relative sm:w-full sm:max-w-lg p-6 min-h-full">{children}</div>
+      <dialog
+        ref={modalRef}
+        className={`cu-dialog ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
+        onClick={handleClick}
+      >
+        {content ? <div className="cu-dialog-content" dangerouslySetInnerHTML={{ __html: content }} /> : children}
       </dialog>
     </>
   )

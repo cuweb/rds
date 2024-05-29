@@ -1,8 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
 import { Button } from '../Button/Button'
-import { useState } from 'react'
+import { ArticleData as contentData } from '../../data/ArticleData'
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
@@ -25,74 +26,36 @@ export const Default: Story = () => {
   return (
     <>
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
-
       <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
-        <div className="space-y-4 justify-center text-center">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">Example Heading</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris mi, sollicitudin pharetra ipsum vel,
-            pulvinar dignissim augue.
-          </p>
-          <Button
-            title="Close"
-            isSmall
-            onClick={() => {
-              setModalOpen(false)
-            }}
-          />
-        </div>
-      </Modal>
-    </>
-  )
-}
-
-export const NoButton: Story = () => {
-  const [ModalOpen, setModalOpen] = useState(false)
-
-  return (
-    <>
-      <Button id="modalButton" title=" Click to Open Modal" onClick={() => setModalOpen(true)} />
-
-      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
-        <div className="space-y-4 justify-center text-center">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">Example Heading</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris mi, sollicitudin pharetra ipsum vel,
-            pulvinar dignissim augue.
-          </p>
-        </div>
-      </Modal>
-    </>
-  )
-}
-
-export const NoOutsideClose: Story = () => {
-  const [ModalOpen, setModalOpen] = useState(false)
-
-  return (
-    <>
-      <Button id="modalButton" title=" Click to Open Modal" onClick={() => setModalOpen(true)} />
-
-      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} noOutsideClose>
-        <div className="space-y-4 justify-center text-center">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">Example Heading</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris mi, sollicitudin pharetra ipsum vel,
-            pulvinar dignissim augue.
-          </p>
-          <Button
-            title="Close"
-            isSmall
-            onClick={() => {
-              setModalOpen(false)
-            }}
-          />
-        </div>
+        <h2>H2 Heading</h2>
+        <p>
+          Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget
+          aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
+          egestas fringilla sapien.
+        </p>
+        <p>
+          Faucibus commodo massa rhoncus, volutpat.
+          <strong>Dignissim</strong> sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet vitae sed
+          turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
+          Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
+          <a href="#">Mattis mauris semper</a> sed amet vitae sed turpis id.
+        </p>
       </Modal>
     </>
   )
 }
 
 Default.storyName = 'Default Modal'
-NoButton.storyName = 'No Button on Modal'
-NoOutsideClose.storyName = 'No Outside Closing of Modal'
+
+export const ContentProp: Story = () => {
+  const [ModalOpen, setModalOpen] = useState(false)
+
+  return (
+    <>
+      <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
+      <Modal isOpen={ModalOpen} content={contentData} setIsOpen={setModalOpen} />
+    </>
+  )
+}
+
+ContentProp.storyName = 'Content as Prop'

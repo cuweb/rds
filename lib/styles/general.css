@@ -1,3 +1,15 @@
 .cu-dialog::backdrop {
   @apply bg-cu-black-900/60;
 }
+
+.cu-dialog-content > *:first-child {
+  @apply mt-0;
+}
+
+.cu-dialog-content > *:last-child {
+  @apply mb-0;
+}
+
+.cu-no-body-scroll {
+  @apply overflow-hidden;
+}
