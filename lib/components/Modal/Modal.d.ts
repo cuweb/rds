@@ -2,8 +2,10 @@ import { default as React } from '../../../node_modules/react';
 
 export interface ModalProps {
     children?: React.ReactNode;
+    maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
+    content?: string;
+    noProse?: boolean;
     isOpen: boolean;
     setIsOpen: (k: boolean) => void;
-    noOutsideClose?: boolean;
 }
-export declare const Modal: ({ children, isOpen, setIsOpen, noOutsideClose }: ModalProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Modal: ({ children, content, isOpen, setIsOpen, maxWidth, noProse }: ModalProps) => import("react/jsx-runtime").JSX.Element;
