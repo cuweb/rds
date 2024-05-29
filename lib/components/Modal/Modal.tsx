@@ -23,14 +23,12 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '3xl', 
     }
   }, [isOpen])
 
-  // Add no scroll class to prevent background scroll when dialog is open
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('cu-no-body-scroll')
     } else {
       document.body.classList.remove('cu-no-body-scroll')
     }
-    // Cleanup function to remove the class when the component unmounts
     return () => {
       document.body.classList.remove('cu-no-body-scroll')
     }
@@ -45,9 +43,25 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '3xl', 
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
+      className={`cu-dialog ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
       onClick={handleClick}
     >
+      <button
+        className="absolute top-2 right-2 p-1 rounded-full bg-cu-black-50 text-cu-black-900 hover:bg-cu-red hover:text-white"
+        onClick={() => setIsOpen(false)}
+      >
+        <span className="sr-only">Close</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
       <div
         className={`cu-dialog-content ${useProse}`}
         dangerouslySetInnerHTML={content ? { __html: content } : undefined}
