@@ -16,6 +16,7 @@ import {
   parseISO,
   startOfToday,
 } from 'date-fns'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 export interface MultiDayCalendarProps {
   events?: {
@@ -156,17 +157,16 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
         ))}
       </div>
       {showClear && (
-        <div className="mt-4">
+        <ButtonGroup align="center">
           <Button
             title="Clear Calendar"
-            isCenter
             isSmall
             onClick={() => {
               setSelectedDays([])
               setShowClear(false)
             }}
           />
-        </div>
+        </ButtonGroup>
       )}
     </div>
   )

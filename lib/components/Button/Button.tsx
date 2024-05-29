@@ -8,7 +8,6 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   type?: 'button' | 'submit' | 'reset'
   isSmall?: boolean
   isFull?: boolean
-  isCenter?: boolean
   isDisabled?: boolean
 }
 
@@ -19,13 +18,11 @@ export const Button = ({
   type = 'button',
   isSmall,
   isFull,
-  isCenter,
   isDisabled,
   ...rest
 }: ButtonProps) => {
   const disabledButton = isDisabled ? 'cu-button--disabled' : `cu-button--${color}`
   const fullStyles = isFull ? 'cu-button--full' : ''
-  const centerStyles = isCenter ? 'cu-button--center' : ''
   const buttonSmall = isSmall ? 'cu-button--small' : ''
   const iconSize = isSmall ? 4 : 6
 
@@ -33,7 +30,7 @@ export const Button = ({
     <button
       type={type}
       aria-label={title ? title : 'Icon button'}
-      className={`cu-button not-prose ${disabledButton} ${buttonSmall} ${fullStyles} ${centerStyles}  `}
+      className={`cu-button not-prose ${disabledButton} ${buttonSmall} ${fullStyles}`}
       disabled={isDisabled ? true : false}
       {...rest}
     >

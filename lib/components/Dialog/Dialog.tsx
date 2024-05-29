@@ -1,58 +1,54 @@
 import React, { useRef } from 'react'
 import { Button } from '../Button/Button'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { useEffect } from 'react'
 
 export interface DialogProps {
   children?: React.ReactNode
-  title?: string
+  title: string
   description?: string
-  noButton?: boolean
   isOpen: boolean
   setIsOpen: (k: boolean) => void
-  noOutsideClose?: boolean
 }
 
-export const Dialog = ({ title, description, noButton, isOpen, setIsOpen, noOutsideClose = false }: DialogProps) => {
-  const modalRef = useRef<HTMLDialogElement>(null)
+export const Dialog = ({ children, title, description, isOpen, setIsOpen }: DialogProps) => {
+  const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
-    if (modalRef.current?.open && !isOpen) {
-      modalRef.current?.close()
-    } else if (!modalRef.current?.open && isOpen) {
-      modalRef.current?.showModal()
+    if (dialogRef.current?.open && !isOpen) {
+      dialogRef.current?.close()
+    } else if (!dialogRef.current?.open && isOpen) {
+      dialogRef.current?.showModal()
     }
   }, [isOpen])
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    if (!noOutsideClose && event.target === modalRef.current) {
-      setIsOpen(false)
+    if (event.target === dialogRef.current) {
+      setIsOpen(true)
     }
   }
 
   return (
-    <>
-      <dialog ref={modalRef} className="cu-modal relative z-10 not-prose" onClick={handleClick}>
-        <div className="relative sm:w-full sm:max-w-lg p-6 min-h-full">
-          <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">{title}</h3>
-            <div className="mt-2">
-              <p className="text-sm text-gray-500">{description}</p>
-            </div>
-            {!noButton && (
-              <div className="grid gap-4 pt-3 sm:flex sm:w-auto sm:flex-row-reverse sm:text-sm">
-                <Button
-                  onClick={() => {
-                    setIsOpen(false)
-                  }}
-                  title="Close"
-                  isSmall
-                  color="grey"
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </dialog>
-    </>
+    <dialog
+      ref={dialogRef}
+      className="cu-dialog z-10 not-prose min-w-96 max-w-5xl shadow-md rounded-md p-3.5"
+      onClick={handleClick}
+    >
+      <div className="p-3">
+        <h3 className="text-lg font-medium leading-6 text-gray-900 mb-3">{title}</h3>
+        {description && <p className="text-sm text-gray-500 mb-3">{description}</p>}
+      </div>
+      <ButtonGroup align="right" gap={3}>
+        {children}
+        <Button
+          onClick={() => {
+            setIsOpen(false)
+          }}
+          title="Close"
+          isSmall
+          color="grey"
+        />
+      </ButtonGroup>
+    </dialog>
   )
 }

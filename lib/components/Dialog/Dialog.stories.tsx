@@ -36,24 +36,6 @@ export const Default: Story = () => {
   )
 }
 
-export const NoButton: Story = () => {
-  const [DialogOpen, setDialogOpen] = useState(false)
-
-  return (
-    <>
-      <Button id="modalButton" title=" Click to Open Dialog" onClick={() => setDialogOpen(true)} />
-
-      <Dialog
-        title="Dialog Title"
-        description={'Description inside the dialog box'}
-        isOpen={DialogOpen}
-        setIsOpen={setDialogOpen}
-        noButton
-      ></Dialog>
-    </>
-  )
-}
-
 export const NoOutsideClose: Story = () => {
   const [DialogOpen, setDialogOpen] = useState(false)
 
@@ -73,5 +55,4 @@ export const NoOutsideClose: Story = () => {
 }
 
 Default.storyName = 'Default Dialog'
-NoButton.storyName = 'No Button on Dialog'
 NoOutsideClose.storyName = 'No Outside Click Closing of Dialog'
