@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Search } from './Search'
+
 import { useCallback, useState } from 'react'
 import { SearchDatabase } from '../../data/SearchData'
 
