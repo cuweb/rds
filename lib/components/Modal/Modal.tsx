@@ -8,11 +8,22 @@ export interface ModalProps {
   maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl'
   content?: string
   noProse?: boolean
+  ariaLabel: string
+  ariaDescription: string
   isOpen: boolean
   setIsOpen: (k: boolean) => void
 }
 
-export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', noProse = false }: ModalProps) => {
+export const Modal = ({
+  children,
+  content,
+  isOpen,
+  setIsOpen,
+  maxWidth = '5xl',
+  noProse = false,
+  ariaLabel,
+  ariaDescription,
+}: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
   const useProse = noProse ? '' : proseStyles.base
 
@@ -60,6 +71,8 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', 
       ref={modalRef}
       className={`cu-dialog ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
       onClick={handleClick}
+      aria-labelledby={ariaLabel}
+      aria-describedby={ariaDescription}
     >
       <button
         className="absolute top-2 right-2 p-1 rounded-md bg-cu-black-100 text-cu-black-900 hover:bg-cu-red hover:text-white"
