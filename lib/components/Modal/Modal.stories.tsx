@@ -20,12 +20,12 @@ export default meta
 type Story = StoryObj<typeof Modal>
 
 export const Default: Story = () => {
-  const [ModalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <>
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
-      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen}>
+      <Modal isOpen={modalOpen} setIsOpen={setModalOpen}>
         <h2>H2 Heading</h2>
         <p>
           Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget
@@ -47,12 +47,12 @@ export const Default: Story = () => {
 Default.storyName = 'Default Modal'
 
 export const ContentProp: Story = () => {
-  const [ModalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <>
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
-      <Modal isOpen={ModalOpen} content={contentData} setIsOpen={setModalOpen} />
+      <Modal isOpen={modalOpen} content={contentData} setIsOpen={setModalOpen} />
     </>
   )
 }
