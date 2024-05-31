@@ -35,6 +35,23 @@ export const Dialog = ({ children, title, description, isOpen, setIsOpen }: Dial
     }
   }, [isOpen])
 
+  // Prevent the dialog from closing when the user presses the Esc key or clicks outside the dialog
+  useEffect(() => {
+    const dialog = dialogRef.current
+
+    const preventClose = (event: Event) => {
+      event.preventDefault()
+    }
+
+    dialog?.addEventListener('cancel', preventClose)
+    dialog?.addEventListener('close', preventClose)
+
+    return () => {
+      dialog?.removeEventListener('cancel', preventClose)
+      dialog?.removeEventListener('close', preventClose)
+    }
+  }, [])
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (event.target === dialogRef.current) {
       setIsOpen(true)
