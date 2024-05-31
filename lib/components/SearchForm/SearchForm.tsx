@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { SearchFormResults } from './SearchFormResults'
+
 export interface SearchFormProps {
   callback: (k: string) => void
   placeholder: string
+  children?: React.ReactNode
 }
 
-export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps) => {
+export const SearchFormWrapper = ({ callback, placeholder = 'Search', children }: SearchFormProps) => {
   const [message, setMessage] = useState('')
 
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
@@ -29,6 +32,13 @@ export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps
         onChange={handleChange}
         value={message}
       />
+      <div className="absolute top-full -mt-4 left-0 right-0 bg-white rounded-lg shadow-xl">{children}</div>{' '}
     </div>
   )
 }
+
+export const SearchForm = Object.assign(SearchFormWrapper, {
+  Results: SearchFormResults,
+})
+
+SearchFormWrapper.displayName = 'SearchForm'
