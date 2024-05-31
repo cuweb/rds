@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { rdsMaxWidth } from '../../utils/optionClasses'
 import { proseStyles } from '../../utils/globalClasses'
+import { sanitizeContent } from '../../helpers/functions'
 
 export interface ModalProps {
   children?: React.ReactNode
@@ -77,7 +78,7 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', 
         </svg>
       </button>
       {content ? (
-        <div className={useProse} dangerouslySetInnerHTML={{ __html: content }} />
+        <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
       ) : (
         <div className={useProse}>{children}</div>
       )}
