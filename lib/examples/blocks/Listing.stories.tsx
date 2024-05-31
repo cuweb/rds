@@ -73,7 +73,7 @@ export const Listings: Story = {
                       eventAddress={event_address}
                     />
                     <Listing.Footer>
-                      <a href={link} className="cu-button cu-button--red">
+                      <a href={link} className="cu-button cu-button--red cu-button--small">
                         Event details
                       </a>
                     </Listing.Footer>
@@ -112,7 +112,7 @@ export const Listings: Story = {
                       eventAddress={event_address}
                     />
                     <Listing.Footer>
-                      <a href={link} className="cu-button cu-button--red">
+                      <a href={link} className="cu-button cu-button--red cu-button--small">
                         Event details
                       </a>
                     </Listing.Footer>
@@ -151,7 +151,7 @@ export const Listings: Story = {
                       eventAddress={event_address}
                     />
                     <Listing.Footer>
-                      <a href={link} className="cu-button cu-button--red">
+                      <a href={link} className="cu-button cu-button--red cu-button--small">
                         Event details
                       </a>
                     </Listing.Footer>
@@ -190,7 +190,7 @@ export const Listings: Story = {
                       eventAddress={event_address}
                     />
                     <Listing.Footer>
-                      <a href={link} className="cu-button cu-button--red">
+                      <a href={link} className="cu-button cu-button--red cu-button--small">
                         Event details
                       </a>
                     </Listing.Footer>
@@ -212,7 +212,7 @@ export const Listings: Story = {
                   <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Get Informed
                     </a>
                   </Listing.Footer>
@@ -233,7 +233,7 @@ export const Listings: Story = {
                   <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Get Informed
                     </a>
                   </Listing.Footer>
@@ -254,7 +254,7 @@ export const Listings: Story = {
                   <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Get Informed
                     </a>
                   </Listing.Footer>
@@ -275,7 +275,7 @@ export const Listings: Story = {
                   <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
 
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Get Informed
                     </a>
                   </Listing.Footer>
@@ -291,13 +291,13 @@ export const Listings: Story = {
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
                 <Listing.Figure>
-                  <img src={image} alt={alt} width="400" height="266" />
+                  <img src={image} alt={alt} width="400" height="300" />
                 </Listing.Figure>
                 <Listing.Body>
                   <Listing.Header title={title} date={date} />
                   <Listing.Excerpt text={excerpt} />
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Read more
                     </a>
                   </Listing.Footer>
@@ -313,13 +313,13 @@ export const Listings: Story = {
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
                 <Listing.Figure>
-                  <img src={image} alt={alt} width="400" height="266" />
+                  <img src={image} alt={alt} width="400" height="300" />
                 </Listing.Figure>
                 <Listing.Body>
                   <Listing.Header title={title} date={date} />
                   <Listing.Excerpt text={excerpt} />
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Read more
                     </a>
                   </Listing.Footer>
@@ -335,13 +335,13 @@ export const Listings: Story = {
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
                 <Listing.Figure>
-                  <img src={image} alt={alt} width="400" height="266" />
+                  <img src={image} alt={alt} width="400" height="300" />
                 </Listing.Figure>
                 <Listing.Body>
                   <Listing.Header title={title} date={date} />
                   <Listing.Excerpt text={excerpt} />
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Read more
                     </a>
                   </Listing.Footer>
@@ -357,13 +357,13 @@ export const Listings: Story = {
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
                 <Listing.Figure>
-                  <img src={image} alt={alt} width="400" height="266" />
+                  <img src={image} alt={alt} width="400" height="300" />
                 </Listing.Figure>
                 <Listing.Body>
                   <Listing.Header title={title} date={date} />
                   <Listing.Excerpt text={excerpt} />
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       Read more
                     </a>
                   </Listing.Footer>
@@ -387,7 +387,7 @@ export const Listings: Story = {
                     <a href={`mailto:${email}`}>{email}</a>
                   </Listing.PeopleMeta>
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       View profile
                     </a>
                   </Listing.Footer>
@@ -411,7 +411,7 @@ export const Listings: Story = {
                     <a href={`mailto:${email}`}>{email}</a>
                   </Listing.PeopleMeta>
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       View profile
                     </a>
                   </Listing.Footer>
@@ -435,7 +435,7 @@ export const Listings: Story = {
                     <a href={`mailto:${email}`}>{email}</a>
                   </Listing.PeopleMeta>
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       View profile
                     </a>
                   </Listing.Footer>
@@ -459,7 +459,7 @@ export const Listings: Story = {
                     <a href={`mailto:${email}`}>{email}</a>
                   </Listing.PeopleMeta>
                   <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       View profile
                     </a>
                   </Listing.Footer>
