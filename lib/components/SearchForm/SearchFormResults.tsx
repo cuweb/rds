@@ -58,7 +58,6 @@ export const SearchFormResults = ({ resultsData }: SearchProps) => {
               ))}
             </ul>
           )}
-          {resultsData && resultsData.length === 0 && <p className="p-4 text-sm text-gray-500">Search not found</p>}
         </>
       )}
     </>
