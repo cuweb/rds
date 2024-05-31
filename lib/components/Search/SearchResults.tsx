@@ -3,16 +3,21 @@ import { useLinkContext } from '../LinkProvider/useLinkContext'
 
 export interface SourceDataProps {
   [k: string]: string | number
+  url: string
 }
 export interface SearchProps {
   resultsData: SourceDataProps[]
 }
 
+export interface SelectedOption {
+  url: string
+}
+
 export const SearchResults = ({ resultsData }: SearchProps) => {
-  const [query, setQuery] = useState('')
+  const query = ''
   const [open, setOpen] = useState(true)
 
-  const handleComboboxChange = (selectedOption) => {
+  const handleComboboxChange = (selectedOption: SelectedOption) => {
     if (selectedOption) {
       const url = String(selectedOption.url)
       window.location.href = url
@@ -21,7 +26,7 @@ export const SearchResults = ({ resultsData }: SearchProps) => {
   }
 
   useEffect(() => {
-    function onKeydown(event) {
+    function onKeydown(event: KeyboardEvent) {
       if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
         setOpen(!open)
       }
