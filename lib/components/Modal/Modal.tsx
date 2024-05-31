@@ -34,6 +34,20 @@ export const Modal = ({ children, content, isOpen, setIsOpen, maxWidth = '5xl', 
     }
   }, [isOpen])
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen, setIsOpen])
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (event.target === modalRef.current) {
       setIsOpen(false)
