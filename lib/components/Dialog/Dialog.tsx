@@ -63,6 +63,8 @@ export const Dialog = ({ children, title, description, isOpen, setIsOpen }: Dial
       ref={dialogRef}
       className="cu-dialog z-10 not-prose w-11/12 md:w-full md:min-w-96 md:max-w-md shadow-md rounded-md p-3.5"
       onClick={handleClick}
+      aria-labelledby={title}
+      aria-describedby={description}
     >
       <div className="p-3">
         <h3 className="text-lg font-medium leading-6 text-gray-900 mb-3">{title}</h3>
