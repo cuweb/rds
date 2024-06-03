@@ -28,7 +28,7 @@ import {
 } from '@lexical/list'
 import { createPortal } from 'react-dom'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
-
+import ImageUploadPlugin from '../plugins/ImageUploadPlugin'
 const LowPriority = 1
 
 const blockTypeToBlockName = {
@@ -594,6 +594,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
       >
         <i className="format justify-align" />
       </button>
+      <ImageUploadPlugin />
     </div>
   )
 }

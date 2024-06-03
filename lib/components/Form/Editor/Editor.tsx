@@ -24,6 +24,7 @@ import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import Error from '../Error/Error'
+import { ImageNode } from './nodes/ImageNode'
 
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 
@@ -60,7 +61,17 @@ const editorConfig = (initialValue?: string) => {
     onError(error: unknown) {
       throw error
     },
-    nodes: [HeadingNode, ListNode, ListItemNode, QuoteNode, CodeNode, CodeHighlightNode, AutoLinkNode, LinkNode],
+    nodes: [
+      HeadingNode,
+      ListNode,
+      ListItemNode,
+      QuoteNode,
+      CodeNode,
+      CodeHighlightNode,
+      AutoLinkNode,
+      LinkNode,
+      ImageNode,
+    ],
     editorState: (editor: LexicalEditor) => {
       initialValueLoader(editor, initialValue)
     },
