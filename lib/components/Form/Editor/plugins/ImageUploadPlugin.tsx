@@ -1,10 +1,9 @@
-// ImageUploadPlugin.tsx
 import React, { useState } from 'react'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $createImageNode } from '../nodes/ImageNode'
 import { $getSelection } from 'lexical'
 
-const ImageUploadPlugin: React.FC = () => {
+const ImageUploadPlugin = () => {
   const [editor] = useLexicalComposerContext()
   const [fileInput, setFileInput] = useState<HTMLInputElement | null>(null)
 
@@ -15,10 +14,8 @@ const ImageUploadPlugin: React.FC = () => {
 
       reader.onload = () => {
         editor.update(() => {
-          const selection = $getSelection()
-
           const imageNode = $createImageNode(reader.result as string)
-          // const selection = editor.getEditorState().read(() => editor.getSelection())
+          const selection = $getSelection()
           if (selection) {
             selection.insertNodes([imageNode])
           }

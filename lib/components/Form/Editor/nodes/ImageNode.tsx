@@ -1,7 +1,8 @@
-// ImageNode.tsx
-import React from 'react'
-import { DecoratorNode, LexicalEditor, SerializedLexicalNode, Spread } from 'lexical'
+import { DecoratorNode, SerializedLexicalNode } from 'lexical'
 
+interface SerializedImageNode extends SerializedLexicalNode {
+  src: string
+}
 interface ImageNodeProps {
   src: string
 }
@@ -33,18 +34,18 @@ class ImageNode extends DecoratorNode<ImageNodeProps> {
     return false
   }
 
-  static importJSON(serializedNode: SerializedLexicalNode): ImageNode {
-    return new ImageNode((serializedNode as any).src)
+  static importJSON(serializedNode: SerializedImageNode): ImageNode {
+    return new ImageNode(serializedNode.src)
   }
 
-  exportJSON(): SerializedLexicalNode {
+  exportJSON(): SerializedImageNode {
     return {
-      type: 'image',
+      ...super.exportJSON(),
       src: this.__src,
     }
   }
 
-  decorate(editor: LexicalEditor) {
+  decorate(): JSX.Element {
     return <ImageComponent src={this.__src} />
   }
 }
