@@ -81,7 +81,7 @@ export const Cards: Story = {
                     />
                   </Card.Body>
                   <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       More info
                     </a>
                   </Card.Footer>
@@ -125,7 +125,7 @@ export const Cards: Story = {
                     />
                   </Card.Body>
                   <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red">
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
                       More info
                     </a>
                   </Card.Footer>
@@ -148,7 +148,7 @@ export const Cards: Story = {
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -170,7 +170,7 @@ export const Cards: Story = {
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -190,7 +190,7 @@ export const Cards: Story = {
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -210,7 +210,7 @@ export const Cards: Story = {
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -232,7 +232,7 @@ export const Cards: Story = {
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -254,7 +254,7 @@ export const Cards: Story = {
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -278,7 +278,7 @@ export const Cards: Story = {
                   </Card.PeopleMeta>
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>
@@ -302,7 +302,7 @@ export const Cards: Story = {
                   </Card.PeopleMeta>
                 </Card.Body>
                 <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red">
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
                     More info
                   </a>
                 </Card.Footer>

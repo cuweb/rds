@@ -27,7 +27,7 @@ export const Default: Story = {
         <Listing.Header title="How to Write for the Web" />
         <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         <Listing.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
             More info
           </a>
         </Listing.Footer>
@@ -40,13 +40,13 @@ export const NewsListing: Story = {
   render: (args) => (
     <Listing {...args}>
       <Listing.Figure>
-        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
+        <img src={newsData.image} alt={newsData.alt} width="400" height="300" />
       </Listing.Figure>
       <Listing.Body>
         <Listing.Header title={newsData.title} date={newsData.date} />
         <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         <Listing.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
             Read more
           </a>
         </Listing.Footer>
@@ -70,7 +70,7 @@ export const EventListItem: Story = {
           eventAddress={eventData.event_address}
         />
         <Listing.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
             Event details
           </a>
         </Listing.Footer>
@@ -87,7 +87,7 @@ export const IconListing: Story = {
         <Listing.Header title={iconData.title} />
         <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
         <Listing.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
             Get informed
           </a>
         </Listing.Footer>
@@ -108,7 +108,7 @@ export const PeopleListing: Story = {
           <a href={`mailto:${peopleData.email}`}>{peopleData.email}</a>
         </Listing.PeopleMeta>
         <Listing.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
             View profile
           </a>
         </Listing.Footer>
