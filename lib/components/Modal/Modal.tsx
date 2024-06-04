@@ -11,7 +11,7 @@ export interface ModalProps {
   ariaLabel: string
   ariaDescription: string
   isOpen: boolean
-  alignTop?: boolen
+  alignTop?: boolean
   setIsOpen: (k: boolean) => void
 }
 
