@@ -11,6 +11,7 @@ export interface ModalProps {
   ariaLabel: string
   ariaDescription: string
   isOpen: boolean
+  alignTop?: boolen
   setIsOpen: (k: boolean) => void
 }
 
@@ -21,6 +22,7 @@ export const Modal = ({
   setIsOpen,
   maxWidth = '5xl',
   noProse = false,
+  alignTop = false,
   ariaLabel,
   ariaDescription,
 }: ModalProps) => {
@@ -66,22 +68,24 @@ export const Modal = ({
     }
   }
 
+  const positionTop = alignTop ? 'mt-24' : ''
+
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
+      className={`cu-dialog ${positionTop} ${useProse} md:px-8 md:py-6 px-12 py-10 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md p-3.5`}
       onClick={handleClick}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
     >
       <button
-        className="absolute top-2 right-2 p-1 rounded-md bg-cu-black-100 text-cu-black-900 hover:bg-cu-red hover:text-white"
+        className="absolute top-2 right-2 rounded-md  text-cu-black-300 hover:bg-cu-red hover:text-white"
         onClick={() => setIsOpen(false)}
       >
         <span className="sr-only">Close</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="h-4 w-4"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

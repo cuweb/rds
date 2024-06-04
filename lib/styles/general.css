@@ -1,3 +1,8 @@
+.cu-dialog-full {
+  margin-top: 40px;
+  /* height: calc(100% - 80px); */
+}
+
 .cu-dialog::backdrop {
   @apply bg-cu-black-900/60;
 }

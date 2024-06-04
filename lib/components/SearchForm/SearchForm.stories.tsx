@@ -93,7 +93,7 @@ export const StoryModal: Story = () => {
   return (
     <>
       <Button title="Click to Open Search" onClick={() => setModalOpen(true)} />
-      <Modal isOpen={modalOpen} setIsOpen={setModalOpen}>
+      <Modal isOpen={modalOpen} setIsOpen={setModalOpen} alignTop>
         <SearchForm callback={callback} placeholder="Enter a search string">
           <SearchForm.Results resultsData={filteredResults} />
         </SearchForm>

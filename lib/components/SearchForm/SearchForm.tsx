@@ -20,8 +20,8 @@ export const SearchFormWrapper = ({ callback, placeholder = 'Search', children }
   }, [message, callback])
 
   return (
-    <div className="cu-searchform cu-component-spacing relative flex items-center not-prose">
-      <MagnifyingGlassIcon className="absolute w-5 h-5 left-4 text-cu-black-300" aria-hidden="true" />
+    <div className="cu-searchform cu-component-spacing relative items-center not-prose">
+      <MagnifyingGlassIcon className="absolute top-3 w-5 h-5 left-4 text-cu-black-300" aria-hidden="true" />
       <input
         className="w-full h-12 pr-4 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
         id="searchform__input"
@@ -32,7 +32,7 @@ export const SearchFormWrapper = ({ callback, placeholder = 'Search', children }
         onChange={handleChange}
         value={message}
       />
-      <div className="absolute top-full -mt-4 left-0 right-0 bg-white rounded-lg shadow-xl">{children}</div>{' '}
+      <div className="relative w-full">{children}</div>
     </div>
   )
 }
