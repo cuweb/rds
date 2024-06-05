@@ -26,7 +26,7 @@ export type InsertInlineImagePayload = Readonly<InlineImagePayload>
 export const INSERT_INLINE_IMAGE_COMMAND: LexicalCommand<InlineImagePayload> =
   createCommand('INSERT_INLINE_IMAGE_COMMAND')
 
-export default function InlineImagePlugin({ captionsEnabled }: { captionsEnabled?: boolean }): JSX.Element | null {
+const InlineImagePlugin = ({ captionsEnabled }: { captionsEnabled?: boolean }): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
@@ -50,6 +50,4 @@ export default function InlineImagePlugin({ captionsEnabled }: { captionsEnabled
   return null
 }
 
-const TRANSPARENT_IMAGE = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
-const img = document.createElement('img')
-img.src = TRANSPARENT_IMAGE
+export default InlineImagePlugin
