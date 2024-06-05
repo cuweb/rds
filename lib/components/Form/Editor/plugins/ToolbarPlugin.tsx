@@ -28,7 +28,7 @@ import {
 } from '@lexical/list'
 import { createPortal } from 'react-dom'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
-import { InsertInlineImageDialog } from './InlineImagePlugin'
+import { ImageModal } from '../utils/ImageModal'
 import { Modal } from '../../../Modal/Modal'
 
 const LowPriority = 1
@@ -602,7 +602,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
         <span className="text">Inline Image</span>
       </button>
       <Modal title="Insert Inline Image" isOpen={ModalOpen} setIsOpen={setModalOpen}>
-        <InsertInlineImageDialog activeEditor={editor} />
+        <ImageModal activeEditor={editor} />
       </Modal>
     </div>
   )

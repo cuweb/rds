@@ -22,17 +22,13 @@ import {
   LexicalCommand,
   LexicalEditor,
 } from 'lexical'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import {
   $createInlineImageNode,
   $isInlineImageNode,
   InlineImageNode,
   InlineImagePayload,
 } from './../nodes/InlineImageNode'
-
-import { Button } from '../../../Button/Button'
-
-import type { Position } from '../../nodes/InlineImageNode'
 
 export const CAN_USE_DOM: boolean =
   typeof window !== 'undefined' &&
@@ -46,102 +42,6 @@ const getDOMSelection = (targetWindow: Window | null): Selection | null =>
 
 export const INSERT_INLINE_IMAGE_COMMAND: LexicalCommand<InlineImagePayload> =
   createCommand('INSERT_INLINE_IMAGE_COMMAND')
-
-export function InsertInlineImageDialog({
-  activeEditor,
-  onClose,
-}: {
-  activeEditor: LexicalEditor
-  onClose: () => void
-}): JSX.Element {
-  const hasModifier = useRef(false)
-
-  const [src, setSrc] = useState('')
-  const [altText, setAltText] = useState('')
-  const [showCaption, setShowCaption] = useState(false)
-  const [position, setPosition] = useState<Position>('left')
-
-  const handleShowCaptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setShowCaption(e.target.checked)
-  }
-
-  const handlePositionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setPosition(e.target.value as Position)
-  }
-
-  const loadImage = (files: FileList | null) => {
-    const reader = new FileReader()
-
-    console.log(files, 'filesfiles')
-    reader.onload = function () {
-      if (typeof reader.result === 'string') {
-        setSrc(reader.result)
-      }
-      return ''
-    }
-    if (files !== null) {
-      console.log(files[0], 'asd')
-      reader.readAsDataURL(files[0])
-    }
-  }
-
-  const handleOnClick = () => {
-    const payload = { altText, src, showCaption, position }
-    activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
-  }
-
-  return (
-    <div className="flex gap-5 flex-col flex-wrap">
-      <div className="flex gap-5 w-full">
-        <label className="w-[40%]" htmlFor="image-modal-file-upload">
-          Image Upload
-        </label>
-        <input
-          type="file"
-          accept="image/*"
-          name="inline-image"
-          className="grow"
-          onChange={(e) => loadImage(e.target.files)}
-          id="image-modal-file-upload"
-        />
-      </div>
-
-      <div className="flex gap-5 w-full">
-        <label className="w-[40%]" htmlFor="image-modal-alt">
-          Alt Text
-        </label>
-        <textarea
-          className="grow"
-          name="inline-image-alt"
-          placeholder="Descriptive alternative text"
-          onChange={setAltText}
-          value={altText}
-          id="image-modal-alt"
-        />
-      </div>
-
-      <div className="flex gap-5 w-full">
-        <label className="w-[40%]" htmlFor="position-select">
-          Position
-        </label>
-        <select className="grow" name="position" onChange={handlePositionChange} id="position-select">
-          <option value="left">Left</option>
-          <option value="center">Center</option>
-          <option value="right">Right</option>
-        </select>
-      </div>
-
-      <div className="flex gap-5 w-full">
-        <label className="w-[40%]" htmlFor="caption">
-          Show Caption
-        </label>
-        <input id="caption" type="checkbox" checked={showCaption} onChange={handleShowCaptionChange} />
-      </div>
-
-      <Button title="Insert Image" isSmall onClick={() => handleOnClick()}></Button>
-    </div>
-  )
-}
 
 export default function InlineImagePlugin({ captionsEnabled }: { captionsEnabled?: boolean }): JSX.Element | null {
   const [editor] = useLexicalComposerContext()

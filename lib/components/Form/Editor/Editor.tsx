@@ -136,7 +136,6 @@ export const Editor = ({ ...props }: EditorProps) => {
               }
               ErrorBoundary={LexicalErrorBoundary}
             />
-            {/* <TreeViewPlugin /> */}
             <HistoryPlugin />
             <InlineImagePlugin />
             <AutoFocusPlugin />
