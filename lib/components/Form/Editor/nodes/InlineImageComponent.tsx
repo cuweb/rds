@@ -1,24 +1,12 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import type { LexicalEditor, NodeKey, NodeSelection, RangeSelection } from 'lexical'
-
-import type { Position } from './InlineImageNode'
-
-import './InlineImageNode.css'
-
-import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
 import { LexicalNestedComposer } from '@lexical/react/LexicalNestedComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
+import type { Position } from './InlineImageNode'
 
 import {
   $getNodeByKey,
@@ -34,7 +22,6 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical'
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 
 import useModal from '../hooks/useModal'
 import ContentEditable from '../ui/ContentEditable'
@@ -334,7 +321,7 @@ export default function InlineImageComponent({
           <div className="image-caption-container">
             <LexicalNestedComposer initialEditor={caption}>
               <RichTextPlugin
-                contentEditable={<ContentEditable className="InlineImageNode__contentEditable" />}
+                contentEditable={<ContentEditable className="h-[20px] border-0 block relative w-[calc(100%-20px)]" />}
                 placeholder={
                   <div className="prose prose-lg prose-rds md:prose-xl text-cu-black-400">Enter a caption...</div>
                 }

@@ -17,7 +17,7 @@ import { Suspense } from 'react'
 
 const InlineImageComponent = React.lazy(() => import('./InlineImageComponent'))
 
-export type Position = 'left' | 'right' | 'full' | undefined
+export type Position = 'left' | 'right' | 'center' | undefined
 
 export interface InlineImagePayload {
   altText: string
