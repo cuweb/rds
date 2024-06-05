@@ -4,6 +4,7 @@
 @import 'tailwindcss/utilities';
 
 /* Global Styles */
+@import './styles/general.css';
 @import './styles/spacing.css';
 
 /* Priority Plus */
