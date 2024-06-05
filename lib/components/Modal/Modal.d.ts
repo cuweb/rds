@@ -2,11 +2,13 @@ import { default as React } from '../../../node_modules/react';
 
 export interface ModalProps {
     children?: React.ReactNode;
-    title?: string;
-    description?: string;
-    noButton?: boolean;
+    maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
+    content?: string;
+    noProse?: boolean;
+    ariaLabel: string;
+    ariaDescription: string;
     isOpen: boolean;
+    alignTop?: boolean;
     setIsOpen: (k: boolean) => void;
-    hasOverlay?: boolean;
 }
-export declare const Modal: ({ children, title, description, noButton, isOpen, setIsOpen, hasOverlay, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Modal: ({ children, content, isOpen, setIsOpen, maxWidth, noProse, alignTop, ariaLabel, ariaDescription, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
