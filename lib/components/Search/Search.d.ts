@@ -1,18 +1,11 @@
-/// <reference types="react" />
-export interface SearchWrapper {
-    searchQuery: (query: string) => void;
-    children?: React.ReactNode;
+import { PropsWithChildren } from '../../../node_modules/react';
+
+export interface SourceDataProps {
+    [k: string]: string | number;
 }
-export declare const SearchWrapper: {
-    ({ searchQuery, children }: SearchWrapper): import("react/jsx-runtime").JSX.Element;
-    displayName: string;
-};
-export declare const Search: {
-    ({ searchQuery, children }: SearchWrapper): import("react/jsx-runtime").JSX.Element;
-    displayName: string;
-} & {
-    Results: {
-        ({ resultsData }: import('./SearchResults').SearchProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-};
+export interface SearchProps {
+    sourceData: SourceDataProps[];
+    searchOn?: string;
+    callback: (k: boolean) => void;
+}
+export declare const Search: ({ searchOn, sourceData, children, callback }: PropsWithChildren<SearchProps>) => import("react/jsx-runtime").JSX.Element;
