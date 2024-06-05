@@ -68,7 +68,7 @@ export const Modal = ({
     }
   }
 
-  const positionTop = alignTop ? 'mt-24' : ''
+  const positionTop = alignTop ? 'mt-12' : ''
 
   return (
     <dialog
@@ -79,7 +79,7 @@ export const Modal = ({
       aria-describedby={ariaDescription}
     >
       <button
-        className="absolute top-2 right-2 rounded-md  text-cu-black-300 hover:bg-cu-red hover:text-white"
+        className="absolute top-2 right-2 rounded-md  text-cu-black-300 hover:text-cu-red"
         onClick={() => setIsOpen(false)}
       >
         <span className="sr-only">Close</span>
