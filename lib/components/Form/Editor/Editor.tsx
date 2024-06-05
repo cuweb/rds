@@ -24,8 +24,8 @@ import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import Error from '../Error/Error'
-import { ImageNode } from './nodes/ImageNode'
-
+import InlineImagePlugin from './plugins/InlineImagePlugin'
+import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 
 export interface EditorProps {
@@ -70,7 +70,7 @@ const editorConfig = (initialValue?: string) => {
       CodeHighlightNode,
       AutoLinkNode,
       LinkNode,
-      ImageNode,
+      InlineImageNode,
     ],
     editorState: (editor: LexicalEditor) => {
       initialValueLoader(editor, initialValue)
@@ -138,6 +138,7 @@ export const Editor = ({ ...props }: EditorProps) => {
             />
             {/* <TreeViewPlugin /> */}
             <HistoryPlugin />
+            <InlineImagePlugin />
             <AutoFocusPlugin />
             <CodeHighlightPlugin />
             <ListPlugin />

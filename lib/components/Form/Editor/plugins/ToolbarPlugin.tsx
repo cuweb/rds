@@ -28,7 +28,9 @@ import {
 } from '@lexical/list'
 import { createPortal } from 'react-dom'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
-import ImageUploadPlugin from '../plugins/ImageUploadPlugin'
+import { InsertInlineImageDialog } from './InlineImagePlugin'
+import { Modal } from '../../../Modal/Modal'
+
 const LowPriority = 1
 
 const blockTypeToBlockName = {
@@ -389,6 +391,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
   const [isBold, setIsBold] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
+  const [ModalOpen, setModalOpen] = useState(false)
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection()
@@ -594,7 +597,13 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
       >
         <i className="format justify-align" />
       </button>
-      <ImageUploadPlugin />
+      <button type="button" onClick={() => setModalOpen(true)} className="item">
+        <i className="icon image" />
+        <span className="text">Inline Image</span>
+      </button>
+      <Modal title="Insert Inline Image" isOpen={ModalOpen} setIsOpen={setModalOpen}>
+        <InsertInlineImageDialog activeEditor={editor} />
+      </Modal>
     </div>
   )
 }

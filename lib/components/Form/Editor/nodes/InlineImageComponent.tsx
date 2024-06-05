@@ -1,4 +1,17 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
 import type { LexicalEditor, NodeKey, NodeSelection, RangeSelection } from 'lexical'
+
+import type { Position } from './InlineImageNode'
+
+import './InlineImageNode.css'
+
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
@@ -23,7 +36,11 @@ import {
 } from 'lexical'
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 
-export type Position = 'left' | 'right' | 'full' | undefined
+import useModal from '../hooks/useModal'
+import ContentEditable from '../ui/ContentEditable'
+import { $isInlineImageNode, InlineImageNode } from './InlineImageNode'
+import { DialogActions } from '../ui/Dialog'
+import { Button } from '../../../Button/Button'
 
 const imageCache = new Set()
 
@@ -85,7 +102,7 @@ export function UpdateInlineImageDialog({
   onClose: () => void
 }): JSX.Element {
   const editorState = activeEditor.getEditorState()
-  const node = editorState.read(() => $getNodeByKey(nodeKey) as ImageNode)
+  const node = editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode)
   const [altText, setAltText] = useState(node.getAltText())
   const [showCaption, setShowCaption] = useState(node.getShowCaption())
   const [position, setPosition] = useState<Position>(node.getPosition())
@@ -110,28 +127,26 @@ export function UpdateInlineImageDialog({
 
   return (
     <>
-      <div style={{ marginBottom: '1em' }}>
-        <TextInput
-          label="Alt Text"
+      <div className="Input__wrapper">
+        <label className="Input__label">Alt Text</label>
+        <input
+          type="text"
+          className="Input__input"
           placeholder="Descriptive alternative text"
-          onChange={setAltText}
           value={altText}
+          onChange={(e) => {
+            setAltText(e.target.value)
+          }}
           data-test-id="image-modal-alt-text-input"
         />
       </div>
 
-      <Select
-        style={{ marginBottom: '1em', width: '208px' }}
-        value={position}
-        label="Position"
-        name="position"
-        id="position-select"
-        onChange={handlePositionChange}
-      >
+      <label htmlFor="caption">Position</label>
+      <select value={position} name="position" id="position-select" onChange={handlePositionChange}>
         <option value="left">Left</option>
         <option value="right">Right</option>
         <option value="full">Full Width</option>
-      </Select>
+      </select>
 
       <div className="Input__wrapper">
         <input id="caption" type="checkbox" checked={showCaption} onChange={handleShowCaptionChange} />
@@ -171,7 +186,7 @@ export default function InlineImageComponent({
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
   const [editor] = useLexicalComposerContext()
-  const [selection, setSelection] = useState<RangeSelection | NodeSelection | GridSelection | null>(null)
+  const [selection, setSelection] = useState<RangeSelection | NodeSelection | null>(null)
   const activeEditorRef = useRef<LexicalEditor | null>(null)
 
   const onDelete = useCallback(
@@ -234,8 +249,8 @@ export default function InlineImageComponent({
     let isMounted = true
     const unregister = mergeRegister(
       editor.registerUpdateListener(({ editorState }) => {
-        if (isMounted) {
-          setSelection(editorState.read(() => $getSelection()))
+        if (isMounted && editorState) {
+          setSelection(editorState.read(() => $getSelection() as RangeSelection | NodeSelection | null))
         }
       }),
       editor.registerCommand(
@@ -318,13 +333,11 @@ export default function InlineImageComponent({
         {showCaption && (
           <div className="image-caption-container">
             <LexicalNestedComposer initialEditor={caption}>
-              <AutoFocusPlugin />
-              <LinkPlugin />
-              <FloatingLinkEditorPlugin />
-              <FloatingTextFormatToolbarPlugin />
               <RichTextPlugin
                 contentEditable={<ContentEditable className="InlineImageNode__contentEditable" />}
-                placeholder={<Placeholder className="InlineImageNode__placeholder">Enter a caption...</Placeholder>}
+                placeholder={
+                  <div className="prose prose-lg prose-rds md:prose-xl text-cu-black-400">Enter a caption...</div>
+                }
                 ErrorBoundary={LexicalErrorBoundary}
               />
             </LexicalNestedComposer>
