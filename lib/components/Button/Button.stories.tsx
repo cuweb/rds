@@ -24,7 +24,6 @@ export const Primary: Story = {}
 Primary.args = {
   title: 'Primary Red',
   isFull: false,
-  isCenter: false,
   onClick: () => {
     alert('You clicked the button')
   },
@@ -48,13 +47,6 @@ export const Disabled: Story = {
   args: {
     isDisabled: true,
     title: 'Disabled Button',
-  },
-}
-
-export const Center: Story = {
-  args: {
-    title: 'Centered Button',
-    isCenter: true,
   },
 }
 

@@ -1,0 +1,12 @@
+.cu-dialog-full {
+  margin-top: 40px;
+  /* height: calc(100% - 80px); */
+}
+
+.cu-dialog::backdrop {
+  @apply bg-cu-black-900/60;
+}
+
+.cu-no-body-scroll {
+  @apply overflow-hidden;
+}
