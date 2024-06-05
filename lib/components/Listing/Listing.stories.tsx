@@ -99,7 +99,7 @@ export const IconListing: Story = {
 export const PeopleListing: Story = {
   render: (args) => (
     <Listing {...args}>
-      <Listing.Figure>
+      <Listing.Figure isSquare>
         <img src={peopleData.image} alt={peopleData.alt} width="280" height="280" />
       </Listing.Figure>
       <Listing.Body>
