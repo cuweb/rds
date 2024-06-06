@@ -9,7 +9,7 @@ import {
   NavAsideLoggedInOptionsOnClick,
 } from '../../data/NavData'
 import { SearchDatabase } from '../../data/SearchData'
-import { Search } from '../Search/Search'
+import { SearchInput } from '../SearchInput/SearchInput'
 import { Modal } from '../Modal/Modal'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 
@@ -72,9 +72,9 @@ export const Default: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
@@ -124,9 +124,9 @@ export const WithTitle: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
@@ -181,9 +181,9 @@ export const TitleWithSecondary: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
@@ -233,9 +233,9 @@ export const LoggedOutWithHref: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
@@ -285,9 +285,9 @@ export const LoggedOutWithOnClick: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
@@ -357,9 +357,9 @@ export const LoggedInWithHref: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
@@ -424,9 +424,9 @@ export const LoggedInWithOnClick: Story = () => {
         setIsOpen={setModalOpen}
         alignTop
       >
-        <Search callback={callback} placeholder="Enter a search string">
-          <Search.Results resultsData={filteredResults} />
-        </Search>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )

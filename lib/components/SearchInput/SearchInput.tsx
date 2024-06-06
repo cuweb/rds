@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { SearchResults } from './SearchResults'
+import { SearchInputResults } from './SearchInputResults'
 
-export interface SearchProps {
+export interface SearchInputProps {
   callback: (k: string) => void
   placeholder: string
   children?: React.ReactNode
 }
 
-export const SearchWrapper = ({ callback, placeholder = 'Search', children }: SearchProps) => {
+export const SearchInputWrapper = ({ callback, placeholder = 'Search', children }: SearchInputProps) => {
   const [message, setMessage] = useState('')
 
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
@@ -37,8 +37,8 @@ export const SearchWrapper = ({ callback, placeholder = 'Search', children }: Se
   )
 }
 
-export const Search = Object.assign(SearchWrapper, {
-  Results: SearchResults,
+export const SearchInput = Object.assign(SearchInputWrapper, {
+  Results: SearchInputResults,
 })
 
-SearchWrapper.displayName = 'Search'
+SearchInputWrapper.displayName = 'Search Input'

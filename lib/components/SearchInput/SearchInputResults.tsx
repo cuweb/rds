@@ -5,7 +5,7 @@ export interface SourceDataProps {
   [k: string]: string | number
   url: string
 }
-export interface SearchProps {
+export interface SearchInputProps {
   resultsData: SourceDataProps[]
 }
 
@@ -13,7 +13,7 @@ export interface SelectedOption {
   url: string
 }
 
-export const SearchResults = ({ resultsData }: SearchProps) => {
+export const SearchInputResults = ({ resultsData }: SearchInputProps) => {
   const [open, setOpen] = useState(true)
 
   const handleComboboxChange = (selectedOption: SelectedOption) => {
@@ -64,4 +64,4 @@ export const SearchResults = ({ resultsData }: SearchProps) => {
   )
 }
 
-SearchResults.displayName = 'Search.Results'
+SearchInputResults.displayName = 'SearchInput.Results'
