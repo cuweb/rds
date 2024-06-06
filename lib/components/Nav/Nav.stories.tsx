@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
 import {
@@ -9,7 +9,9 @@ import {
   NavAsideLoggedInOptionsOnClick,
 } from '../../data/NavData'
 import { SearchDatabase } from '../../data/SearchData'
-import { Search } from './../Search/Search'
+import { Search } from '../Search/Search'
+import { Modal } from '../Modal/Modal'
+import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 
 const meta: Meta<typeof Nav> = {
   title: 'Components/Nav',
@@ -26,14 +28,29 @@ export default meta
 type Story = StoryObj<typeof Nav>
 
 export const Default: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
+
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
 
   return (
     <Nav navType="primary">
@@ -41,7 +58,20 @@ export const Default: Story = () => {
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
         <Nav.Aside menu={NavAsideData}>
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Primary>
     </Nav>
@@ -49,22 +79,49 @@ export const Default: Story = () => {
 }
 
 export const WithTitle: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
 
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
   return (
     <Nav navType="primary">
       <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
         <Nav.Aside menu={NavAsideData}>
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Primary>
     </Nav>
@@ -72,25 +129,54 @@ export const WithTitle: Story = () => {
 }
 
 export const TitleWithSecondary: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
 
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
   return (
     <Nav navType="secondary">
       <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
       <Nav.Aside menu={NavAsideData}>
-        <Search sourceData={SearchDatabase} callback={callback} />
+        <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+          <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+        </button>
       </Nav.Aside>
       <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
         <Nav.Aside menu={NavAsideData}>
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Secondary>
     </Nav>
@@ -98,22 +184,49 @@ export const TitleWithSecondary: Story = () => {
 }
 
 export const LoggedOutWithHref: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
 
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
   return (
     <Nav navType="primary">
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
         <Nav.Aside menu={NavAsideData} LoggedOutUser={true} LoggedInLink="/login">
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Primary>
     </Nav>
@@ -121,22 +234,49 @@ export const LoggedOutWithHref: Story = () => {
 }
 
 export const LoggedOutWithOnClick: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
 
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
   return (
     <Nav navType="primary">
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
       <Nav.Primary>
         <Nav.Menu menu={NavDataSingle} />
         <Nav.Aside menu={NavAsideData} LoggedOutUser={true} onClickHandler={() => alert('Sign in clicked')}>
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Primary>
     </Nav>
@@ -149,15 +289,29 @@ const userNoImage = {
 }
 
 export const LoggedInWithHref: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
 
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
   return (
     <Nav navType="secondary">
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
@@ -167,7 +321,9 @@ export const LoggedInWithHref: Story = () => {
         LoggedMenu={NavAsideLoggedInOptionsHref}
         userNoImage={userNoImage}
       >
-        <Search sourceData={SearchDatabase} callback={callback} />
+        <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+          <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+        </button>
       </Nav.Aside>
       <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
@@ -177,7 +333,20 @@ export const LoggedInWithHref: Story = () => {
           LoggedMenu={NavAsideLoggedInOptionsHref}
           userNoImage={userNoImage}
         >
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Secondary>
     </Nav>
@@ -185,15 +354,29 @@ export const LoggedInWithHref: Story = () => {
 }
 
 export const LoggedInWithOnClick: Story = () => {
-  const [, setOpen] = useState(false)
+  const [, setMessage] = useState('')
+  const [searchString, setSearchString] = useState('')
+  const [filteredResults, setFilteredResults] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
+  const searchOn = 'title'
 
   const callback = useCallback(
-    (itemOpen: boolean) => {
-      setOpen(itemOpen)
+    (message: string) => {
+      setMessage(message)
+      setSearchString(message)
     },
-    [setOpen],
+    [setMessage],
   )
 
+  useEffect(() => {
+    const filteredDatabase =
+      searchString === ''
+        ? []
+        : SearchDatabase.filter((data) => {
+            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+          })
+    setFilteredResults(filteredDatabase)
+  }, [searchString])
   return (
     <Nav navType="secondary">
       <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
@@ -203,7 +386,9 @@ export const LoggedInWithOnClick: Story = () => {
         LoggedMenu={NavAsideLoggedInOptionsOnClick}
         userNoImage={userNoImage}
       >
-        <Search sourceData={SearchDatabase} callback={callback} />
+        <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+          <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+        </button>
       </Nav.Aside>
       <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
@@ -213,7 +398,20 @@ export const LoggedInWithOnClick: Story = () => {
           LoggedMenu={NavAsideLoggedInOptionsOnClick}
           userNoImage={userNoImage}
         >
-          <Search sourceData={SearchDatabase} callback={callback} />
+          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+          </button>
+          <Modal
+            ariaLabel="Open Search"
+            ariaDescription="Search for content on this site"
+            isOpen={modalOpen}
+            setIsOpen={setModalOpen}
+            alignTop
+          >
+            <Search callback={callback} placeholder="Enter a search string">
+              <Search.Results resultsData={filteredResults} />
+            </Search>
+          </Modal>
         </Nav.Aside>
       </Nav.Secondary>
     </Nav>
