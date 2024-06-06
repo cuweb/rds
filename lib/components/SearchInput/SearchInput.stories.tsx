@@ -1,15 +1,15 @@
 import React from 'react'
 import { useCallback, useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { SearchForm } from './SearchForm'
+import { SearchInput } from './SearchInput'
 import { SearchDatabase } from '../../data/SearchData'
 import { Modal } from '../Modal/Modal'
 import { useEffect } from 'react'
 import { Button } from '../Button/Button'
 
-const meta: Meta<typeof SearchForm> = {
-  title: 'Components/Search Form',
-  component: SearchForm,
+const meta: Meta<typeof SearchInput> = {
+  title: 'Components/Search Input',
+  component: SearchInput,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -20,7 +20,7 @@ const meta: Meta<typeof SearchForm> = {
 
 export default meta
 
-type Story = StoryObj<typeof SearchForm>
+type Story = StoryObj<typeof SearchInput>
 
 export const Default: Story = () => {
   const [, setMessage] = useState('')
@@ -31,7 +31,7 @@ export const Default: Story = () => {
     },
     [setMessage],
   )
-  return <SearchForm callback={callback} placeholder="Enter a search string" />
+  return <SearchInput callback={callback} placeholder="Enter a search string" />
 }
 
 export const StoryList: Story = () => {
@@ -59,9 +59,9 @@ export const StoryList: Story = () => {
   }, [searchString])
 
   return (
-    <SearchForm callback={callback} placeholder="Enter a search string">
-      <SearchForm.Results resultsData={filteredResults} />
-    </SearchForm>
+    <SearchInput callback={callback} placeholder="Enter a search string">
+      <SearchInput.Results resultsData={filteredResults} />
+    </SearchInput>
   )
 }
 
@@ -94,14 +94,14 @@ export const StoryModal: Story = () => {
     <>
       <Button title="Click to Open Search" onClick={() => setModalOpen(true)} />
       <Modal isOpen={modalOpen} setIsOpen={setModalOpen} alignTop>
-        <SearchForm callback={callback} placeholder="Enter a search string">
-          <SearchForm.Results resultsData={filteredResults} />
-        </SearchForm>
+        <SearchInput callback={callback} placeholder="Enter a search string">
+          <SearchInput.Results resultsData={filteredResults} />
+        </SearchInput>
       </Modal>
     </>
   )
 }
 
-Default.storyName = 'Default Search Form'
-StoryList.storyName = 'Search Form with List'
-StoryModal.storyName = 'Search Form with List in Modal'
+Default.storyName = 'Default Search Input'
+StoryList.storyName = 'Search Input with List'
+StoryModal.storyName = 'Search Input with List in Modal'

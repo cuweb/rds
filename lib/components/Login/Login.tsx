@@ -17,7 +17,7 @@ export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: L
   }
 
   return (
-    <div className={`border border-cu-black-100 max-w-md shadow-md rounded-md ${centerBox}`}>
+    <div className={`not-contained border border-cu-black-100 max-w-md shadow-md rounded-md ${centerBox}`}>
       <img
         className="w-auto h-12 mx-auto -mt-4 bg-white border-l-[12px] border-r-[12px] border-white"
         src="https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
