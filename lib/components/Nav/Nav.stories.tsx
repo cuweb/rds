@@ -53,28 +53,30 @@ export const Default: Story = () => {
   }, [searchString])
 
   return (
-    <Nav navType="primary">
-      <Nav.Logo />
-      <Nav.Primary>
-        <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData}>
-          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-          </button>
-          <Modal
-            ariaLabel="Open Search"
-            ariaDescription="Search for content on this site"
-            isOpen={modalOpen}
-            setIsOpen={setModalOpen}
-            alignTop
-          >
-            <Search callback={callback} placeholder="Enter a search string">
-              <Search.Results resultsData={filteredResults} />
-            </Search>
-          </Modal>
-        </Nav.Aside>
-      </Nav.Primary>
-    </Nav>
+    <>
+      <Nav navType="primary">
+        <Nav.Logo />
+        <Nav.Primary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData}>
+            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+            </button>
+          </Nav.Aside>
+        </Nav.Primary>
+      </Nav>
+      <Modal
+        ariaLabel="Open Search"
+        ariaDescription="Search for content on this site"
+        isOpen={modalOpen}
+        setIsOpen={setModalOpen}
+        alignTop
+      >
+        <Search callback={callback} placeholder="Enter a search string">
+          <Search.Results resultsData={filteredResults} />
+        </Search>
+      </Modal>
+    </>
   )
 }
 
@@ -103,28 +105,30 @@ export const WithTitle: Story = () => {
     setFilteredResults(filteredDatabase)
   }, [searchString])
   return (
-    <Nav navType="primary">
-      <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-      <Nav.Primary>
-        <Nav.Menu menu={NavDataSingle} />
-        <Nav.Aside menu={NavAsideData}>
-          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-          </button>
-          <Modal
-            ariaLabel="Open Search"
-            ariaDescription="Search for content on this site"
-            isOpen={modalOpen}
-            setIsOpen={setModalOpen}
-            alignTop
-          >
-            <Search callback={callback} placeholder="Enter a search string">
-              <Search.Results resultsData={filteredResults} />
-            </Search>
-          </Modal>
-        </Nav.Aside>
-      </Nav.Primary>
-    </Nav>
+    <>
+      <Nav navType="primary">
+        <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
+        <Nav.Primary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData}>
+            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+            </button>
+          </Nav.Aside>
+        </Nav.Primary>
+      </Nav>
+      <Modal
+        ariaLabel="Open Search"
+        ariaDescription="Search for content on this site"
+        isOpen={modalOpen}
+        setIsOpen={setModalOpen}
+        alignTop
+      >
+        <Search callback={callback} placeholder="Enter a search string">
+          <Search.Results resultsData={filteredResults} />
+        </Search>
+      </Modal>
+    </>
   )
 }
 
@@ -153,44 +157,35 @@ export const TitleWithSecondary: Story = () => {
     setFilteredResults(filteredDatabase)
   }, [searchString])
   return (
-    <Nav navType="secondary">
-      <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-      <Nav.Aside menu={NavAsideData}>
-        <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-          <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-        </button>
-        <Modal
-          ariaLabel="Open Search"
-          ariaDescription="Search for content on this site"
-          isOpen={modalOpen}
-          setIsOpen={setModalOpen}
-          alignTop
-        >
-          <Search callback={callback} placeholder="Enter a search string">
-            <Search.Results resultsData={filteredResults} />
-          </Search>
-        </Modal>
-      </Nav.Aside>
-      <Nav.Secondary>
-        <Nav.Menu menu={NavDataSingle} />
+    <>
+      <Nav navType="secondary">
+        <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
         <Nav.Aside menu={NavAsideData}>
           <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
             <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
           </button>
-          <Modal
-            ariaLabel="Open Search"
-            ariaDescription="Search for content on this site"
-            isOpen={modalOpen}
-            setIsOpen={setModalOpen}
-            alignTop
-          >
-            <Search callback={callback} placeholder="Enter a search string">
-              <Search.Results resultsData={filteredResults} />
-            </Search>
-          </Modal>
         </Nav.Aside>
-      </Nav.Secondary>
-    </Nav>
+        <Nav.Secondary>
+          <Nav.Menu menu={NavDataSingle} />
+          <Nav.Aside menu={NavAsideData}>
+            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+            </button>
+          </Nav.Aside>
+        </Nav.Secondary>
+      </Nav>
+      <Modal
+        ariaLabel="Open Search"
+        ariaDescription="Search for content on this site"
+        isOpen={modalOpen}
+        setIsOpen={setModalOpen}
+        alignTop
+      >
+        <Search callback={callback} placeholder="Enter a search string">
+          <Search.Results resultsData={filteredResults} />
+        </Search>
+      </Modal>
+    </>
   )
 }
 
