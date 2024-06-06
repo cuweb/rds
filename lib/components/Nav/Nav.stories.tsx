@@ -156,9 +156,20 @@ export const TitleWithSecondary: Story = () => {
     <Nav navType="secondary">
       <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
       <Nav.Aside menu={NavAsideData}>
-        <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+        <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
           <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
         </button>
+        <Modal
+          ariaLabel="Open Search"
+          ariaDescription="Search for content on this site"
+          isOpen={modalOpen}
+          setIsOpen={setModalOpen}
+          alignTop
+        >
+          <Search callback={callback} placeholder="Enter a search string">
+            <Search.Results resultsData={filteredResults} />
+          </Search>
+        </Modal>
       </Nav.Aside>
       <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
@@ -321,9 +332,20 @@ export const LoggedInWithHref: Story = () => {
         LoggedMenu={NavAsideLoggedInOptionsHref}
         userNoImage={userNoImage}
       >
-        <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+        <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
           <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
         </button>
+        <Modal
+          ariaLabel="Open Search"
+          ariaDescription="Search for content on this site"
+          isOpen={modalOpen}
+          setIsOpen={setModalOpen}
+          alignTop
+        >
+          <Search callback={callback} placeholder="Enter a search string">
+            <Search.Results resultsData={filteredResults} />
+          </Search>
+        </Modal>
       </Nav.Aside>
       <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
@@ -386,9 +408,20 @@ export const LoggedInWithOnClick: Story = () => {
         LoggedMenu={NavAsideLoggedInOptionsOnClick}
         userNoImage={userNoImage}
       >
-        <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+        <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
           <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
         </button>
+        <Modal
+          ariaLabel="Open Search"
+          ariaDescription="Search for content on this site"
+          isOpen={modalOpen}
+          setIsOpen={setModalOpen}
+          alignTop
+        >
+          <Search callback={callback} placeholder="Enter a search string">
+            <Search.Results resultsData={filteredResults} />
+          </Search>
+        </Modal>
       </Nav.Aside>
       <Nav.Secondary>
         <Nav.Menu menu={NavDataSingle} />
