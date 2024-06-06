@@ -13,7 +13,7 @@ export interface SelectedOption {
   url: string
 }
 
-export const SearchFormResults = ({ resultsData }: SearchProps) => {
+export const SearchResults = ({ resultsData }: SearchProps) => {
   const [open, setOpen] = useState(true)
 
   const handleComboboxChange = (selectedOption: SelectedOption) => {
@@ -64,4 +64,4 @@ export const SearchFormResults = ({ resultsData }: SearchProps) => {
   )
 }
 
-SearchFormResults.displayName = 'SearchForm.Results'
+SearchResults.displayName = 'Search.Results'
