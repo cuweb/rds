@@ -1,59 +1,150 @@
-import { useState } from 'react'
+import { useEffect, Fragment, PropsWithChildren, useState } from 'react'
+import { Combobox, Dialog, Transition } from '@headlessui/react'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
-import { SearchResults } from './SearchResults'
+import { rdsOverlay } from '../../utils/optionClasses'
+import { useLinkContext } from '../LinkProvider/useLinkContext'
 
-export interface SearchWrapper {
-  searchQuery: (query: string) => void
-  children?: React.ReactNode
+export interface SourceDataProps {
+  [k: string]: string | number
+}
+export interface SearchProps {
+  sourceData: SourceDataProps[]
+  searchOn?: string
+  callback: (k: boolean) => void
 }
 
-export const SearchWrapper = ({ searchQuery, children }: SearchWrapper) => {
-  const [query, setQuery] = useState('')
+function classNames(...classes: (string | boolean)[]) {
+  return classes.filter(Boolean).join(' ')
+}
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value
-    setQuery(newValue) // Update state
-    searchQuery(newValue) // Call the provided callback with the new value
+export const Search = ({ searchOn = 'title', sourceData, children, callback }: PropsWithChildren<SearchProps>) => {
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
+
+  const filteredDatabase =
+    query === ''
+      ? []
+      : sourceData.filter((data: SourceDataProps) => {
+          return data[searchOn].toString().toLowerCase().includes(query.toLowerCase())
+        })
+
+  const searchAvatar = children ? (
+    children
+  ) : (
+    <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+  )
+
+  const handleComboboxChange = (selectedOption: SourceDataProps) => {
+    if (selectedOption) {
+      const url = String(selectedOption.url)
+      window.location.href = url
+      setOpen(false)
+    }
   }
+
+  useEffect(() => {
+    function onKeydown(event: KeyboardEvent) {
+      if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+        setOpen(!open)
+      }
+    }
+
+    window.addEventListener('keydown', onKeydown)
+    return () => {
+      window.removeEventListener('keydown', onKeydown)
+    }
+  }, [open])
+
+  useEffect(() => {
+    callback(open)
+  }, [open, callback])
+
+  const LinkComponent = useLinkContext()
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-        <div className="relative bg-white rounded-lg shadow-xl">
-          <div className="relative p-4">
-            <MagnifyingGlassIcon
-              className="absolute left-6 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
-              aria-hidden="true"
-            />
-            <input
-              type="text"
-              className="w-full h-12 pr-10 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
-              placeholder="Search..."
-              value={query}
-              onChange={handleInputChange}
-            />
-            {query && (
-              <XMarkIcon
-                className="absolute right-6 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 cursor-pointer"
-                aria-hidden="true"
-                onClick={() => {
-                  setQuery('')
-                  searchQuery('')
-                }}
-              />
-            )}
-          </div>
+      <button onClick={() => setOpen(true)} aria-label="search" className="not-prose">
+        {searchAvatar}
+      </button>
 
-          <div className="absolute top-full -mt-4 left-0 right-0 bg-white rounded-lg shadow-xl">{children}</div>
-        </div>
-      </div>
+      <Transition.Root show={open} as={Fragment} afterLeave={() => setQuery('')} appear>
+        <Dialog as="div" className="relative z-50 cu-search not-prose" onClose={setOpen}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className={`fixed inset-0 transition-opacity ${rdsOverlay} `} />
+          </Transition.Child>
+
+          <div className="fixed inset-0 p-4 overflow-y-auto z-100 sm:p-6 md:p-20">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="mx-auto mt-[20vh] max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+                <Combobox onChange={handleComboboxChange}>
+                  <div className="relative">
+                    <MagnifyingGlassIcon
+                      className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                    <Combobox.Input
+                      className="w-full h-12 pr-4 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
+                      placeholder="Search..."
+                      onChange={(event) => setQuery(event.target.value)}
+                    />
+                    {query && (
+                      <XMarkIcon
+                        className="absolute right-4 top-3.5 h-4 w-4 text-gray-400"
+                        aria-hidden="true"
+                        onClick={() => {
+                          setQuery('')
+                        }}
+                      />
+                    )}
+                  </div>
+
+                  {filteredDatabase.length > 0 && (
+                    <Combobox.Options
+                      static
+                      className="py-2 overflow-y-auto text-sm text-gray-800 max-h-72 scroll-py-2"
+                    >
+                      {filteredDatabase.map((record) => (
+                        <Combobox.Option
+                          key={record.id}
+                          value={record}
+                          className={({ active }) =>
+                            classNames('cursor-default select-none px-4 py-2', active && 'bg-cu-red text-white')
+                          }
+                        >
+                          <LinkComponent href={`${record.url}`} onClick={() => setOpen(false)}>
+                            {record[searchOn]}
+                          </LinkComponent>
+                        </Combobox.Option>
+                      ))}
+                    </Combobox.Options>
+                  )}
+
+                  {query !== '' && filteredDatabase.length === 0 && (
+                    <p className="p-4 text-sm text-gray-500">Search not found</p>
+                  )}
+                </Combobox>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition.Root>
     </>
   )
 }
-
-export const Search = Object.assign(SearchWrapper, {
-  Results: SearchResults,
-})
-
-SearchWrapper.displayName = 'Search'
