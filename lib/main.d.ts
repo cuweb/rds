@@ -28,7 +28,6 @@ export { PageHeaders } from './components/PageHeaders/PageHeaders';
 export { Pagination } from './components/Pagination/Pagination';
 export { Quote } from './components/Quote/Quote';
 export { Search } from './components/Search/Search';
-export { SearchForm } from './components/SearchForm/SearchForm';
 export { Table } from './components/Table/Table';
 export { TextImage } from './components/TextImage/TextImage';
 export { Toast } from './components/Toast/Toast';
