@@ -79,13 +79,13 @@ export const Modal = ({
       aria-describedby={ariaDescription}
     >
       <button
-        className="absolute top-2 right-2 rounded-md  text-cu-black-300 hover:text-cu-red"
+        className="absolute rounded-md top-2 right-2 text-cu-black-300 hover:text-cu-red"
         onClick={() => setIsOpen(false)}
       >
         <span className="sr-only">Close</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4"
+          className="w-4 h-4"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

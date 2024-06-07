@@ -93,7 +93,14 @@ export const StoryModal: Story = () => {
   return (
     <>
       <Button title="Click to Open Search" onClick={() => setModalOpen(true)} />
-      <Modal isOpen={modalOpen} setIsOpen={setModalOpen} alignTop>
+      <Modal
+        isOpen={modalOpen}
+        setIsOpen={setModalOpen}
+        ariaLabel="site-search"
+        ariaDescription="site-search"
+        alignTop
+        noProse
+      >
         <SearchInput callback={callback} placeholder="Enter a search string">
           <SearchInput.Results resultsData={filteredResults} />
         </SearchInput>

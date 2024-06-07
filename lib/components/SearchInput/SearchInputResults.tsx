@@ -48,7 +48,7 @@ export const SearchInputResults = ({ resultsData }: SearchInputProps) => {
               {resultsData.map((record) => (
                 <li
                   key={record.id}
-                  className="cursor-default select-none px-4 py-2 hover:bg-cu-red hover:text-white"
+                  className="px-4 py-2 cursor-default select-none hover:bg-cu-black-50 hover:rounded-md text-cu-black-800"
                   onClick={() => handleComboboxChange(record)}
                 >
                   <LinkComponent href={`${record.url}`} onClick={() => setOpen(false)}>
