@@ -73,7 +73,7 @@ export const Modal = ({
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog relative ${positionTop} ${useProse} p-5 md:p-6 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md`}
+      className={`cu-dialog relative ${positionTop} p-5 md:p-6 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md`}
       onClick={handleClick}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
