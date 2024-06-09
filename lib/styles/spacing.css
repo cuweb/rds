@@ -23,14 +23,14 @@
 
 .cu-section + .cu-section,
 .cu-section + .cu-column {
-  @apply mt-6 md:mt-10;
+  @apply mt-6 md:mt-12;
 }
 
 .cu-section.bg-white + .cu-column {
   @apply mt-6 md:mt-6;
 }
 
-.cu-section.bg-cu-black-50 + .cu-section.bg-cu-black-50 {
+:not(.cu-wideimage).cu-section.bg-cu-black-50 + :not(.cu-wideimage).cu-section.bg-cu-black-50 {
   @apply pt-2 -mt-2 rounded-t-none;
 }
 
@@ -39,7 +39,7 @@
 */
 
 :not(.cu-section) + .cu-section {
-  @apply mt-6 md:mt-6;
+  @apply mt-6 md:mt-10;
 }
 
 .cu-section + :not(.cu-section) {
@@ -63,5 +63,5 @@
 */
 
 .cu-component-spacing + .cu-component-spacing {
-  @apply mt-6 md:mt-8;
+  @apply mt-6 md:mt-6;
 }
