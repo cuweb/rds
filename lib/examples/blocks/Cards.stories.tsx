@@ -36,7 +36,7 @@ export const Cards: Story = {
 
       <Main>
         <Section>
-          <TextImage hasBorder>
+          <TextImage>
             <TextImage.Content headerType="h1" title="Card Examples">
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut

@@ -70,6 +70,7 @@ export const Default: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
@@ -122,6 +123,7 @@ export const WithTitle: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
@@ -179,6 +181,7 @@ export const TitleWithSecondary: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
@@ -231,6 +234,7 @@ export const LoggedOutWithHref: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
@@ -283,6 +287,7 @@ export const LoggedOutWithOnClick: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
@@ -355,6 +360,7 @@ export const LoggedInWithHref: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
@@ -422,6 +428,7 @@ export const LoggedInWithOnClick: Story = () => {
         ariaDescription="Search for content on this site"
         isOpen={modalOpen}
         setIsOpen={setModalOpen}
+        noProse
         alignTop
       >
         <SearchInput callback={callback} placeholder="Enter a search string">
