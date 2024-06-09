@@ -11,8 +11,8 @@ import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
 import { Card } from '../../components/Card/Card'
 import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
-import { IconData } from '../../data/IconData'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
+import { NewsData } from '../../data/NewsData'
 
 const meta: Meta = {
   title: 'Examples/Layouts',
@@ -62,18 +62,44 @@ export const BlockSpacing: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Section>
-          <PageHeaders header="Icon Cards: Shadow on Static & Hover" />
+        <Section as="div">
+          <PageHeaders header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
-            {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-              <Card key={id} hasShadow="onCard" noHover>
-                <Card.IconThumb icon={icon} />
-                <Card.Header>{title}</Card.Header>
+            {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
+              <Card key={id}>
+                <Card.ImageThumb>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.ImageThumb>
+                <Card.Header title={title} />
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
-                <Card.Footer isType="button" buttonStyle="grey">
-                  <a href={link}>More info</a>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section as="div">
+          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <Column cols="3">
+            {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
+              <Card key={id}>
+                <Card.ImageThumb>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.ImageThumb>
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    More info
+                  </a>
                 </Card.Footer>
               </Card>
             ))}
@@ -83,25 +109,48 @@ export const BlockSpacing: Story = {
         <WideImage title="Wide image block with buttons and background image">
           <ButtonGroup>
             <Button title="Apply Now" />
-            <Button color="white" isType="outline" title="Request Information" />
+            <Button color="white" title="Request Information" />
           </ButtonGroup>
         </WideImage>
 
-        <Section isGrey>
-          <PageHeaders
-            text="Icon Cards: Shadow on Static & Hover"
-            intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst."
-          />
+        <Section as="div" isGrey>
+          <PageHeaders header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
-            {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
-              <Card key={id} hasShadow="onCard" noHover>
-                <Card.IconThumb icon={icon} />
-                <Card.Header>{title}</Card.Header>
+            {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
+              <Card key={id}>
+                <Card.ImageThumb>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.ImageThumb>
+                <Card.Header title={title} />
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
-                <Card.Footer isType="button" buttonStyle="grey">
-                  <a href={link}>More info</a>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ))}
+          </Column>
+        </Section>
+
+        <Section as="div" isGrey>
+          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <Column cols="3">
+            {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
+              <Card key={id}>
+                <Card.ImageThumb>
+                  <img src={image} alt={alt} width="400" height="266" />
+                </Card.ImageThumb>
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    More info
+                  </a>
                 </Card.Footer>
               </Card>
             ))}
@@ -111,7 +160,7 @@ export const BlockSpacing: Story = {
         <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
           <ButtonGroup>
             <Button title="Apply Now" />
-            <Button color="white" isType="outline" title="Request Information" />
+            <Button color="white" title="Request Information" />
           </ButtonGroup>
         </WideImage>
 
@@ -127,7 +176,7 @@ export const BlockSpacing: Story = {
         <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
           <ButtonGroup>
             <Button title="Apply Now" />
-            <Button color="white" isType="outline" title="Request Information" />
+            <Button color="white" title="Request Information" />
           </ButtonGroup>
         </WideImage>
 
@@ -143,7 +192,7 @@ export const BlockSpacing: Story = {
         <WideImage image="https://picsum.photos/1600/700" title="Wide image block with buttons and background image">
           <ButtonGroup>
             <Button title="Apply Now" />
-            <Button color="white" isType="outline" title="Request Information" />
+            <Button color="white" title="Request Information" />
           </ButtonGroup>
         </WideImage>
 
