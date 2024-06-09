@@ -63,5 +63,5 @@
 */
 
 .cu-component-spacing + .cu-component-spacing {
-  @apply mt-6 md:mt-6;
+  @apply mt-6 md:mt-8;
 }
