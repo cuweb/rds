@@ -1,6 +1,6 @@
 import { format, isSameDay, parseISO } from 'date-fns'
 import { listStyles } from './PageHeaders.Styles'
-import { proseStyles } from '../../utils/globalClasses'
+import { proseStyles, proseGroups } from '../../utils/globalClasses'
 
 export interface PageHeadersEventProps {
   children?: React.ReactNode
@@ -47,7 +47,7 @@ export const PageHeadersEvent = ({
 
   return (
     <>
-      {finalDate && <p className="prose-lg md:prose-xl">{finalDate}</p>}
+      {finalDate && <p className={proseGroups.largeLight}>{finalDate}</p>}
 
       {/* Check if details are set and output as ul */}
       <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
