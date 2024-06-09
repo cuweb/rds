@@ -4,16 +4,15 @@ export interface TextImageProps {
     children?: React.ReactNode;
     maxWidth?: '5xl' | '7xl' | 'max';
     flexRow?: 'md' | 'lg';
-    hasBorder?: boolean;
     flipX?: boolean;
     flipYsm?: boolean;
 }
 export declare const TextImageWrapper: {
-    ({ children, maxWidth, flexRow, hasBorder, flipX, flipYsm, }: TextImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, maxWidth, flexRow, flipX, flipYsm }: TextImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const TextImage: {
-    ({ children, maxWidth, flexRow, hasBorder, flipX, flipYsm, }: TextImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, maxWidth, flexRow, flipX, flipYsm }: TextImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Content: {
