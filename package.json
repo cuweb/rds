@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.10.5",
+  "version": "0.10.6",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -57,7 +57,7 @@
     "dompurify": "^3.1.5",
     "formik": "^2.4.6",
     "lexical": "^0.14.5",
-    "rds-tailwind-theme": "^0.6.6",
+    "rds-tailwind-theme": "^0.6.7",
     "react": "^18.3.1",
     "react-date-picker": "^11.0.0",
     "react-datepicker": "^6.9.0",

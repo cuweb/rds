@@ -20,7 +20,7 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
 
   return (
     <header
-      className={`cu-header border-t-2 border-t-cu-red px-5 sm:px-8 sticky top-0 z-50 duration-300 ease-in-out bg-white transition-top ${
+      className={`cu-header border-t-2 border-t-cu-red px-5 sm:px-8 sticky top-0 z-40 duration-300 ease-in-out bg-white transition-top ${
         navType != 'secondary' ? 'border-b border-b-cu-black-100' : ''
       }`}
     >
