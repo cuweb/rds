@@ -26,10 +26,8 @@ export const FormFieldSet = ({ ...props }: FormFieldProps) => {
         <legend className={textStyles.legend} id={name}>
           {label} {required && <span className={textStyles.required}>*</span>}
         </legend>
-
-        {helper && <div className={textStyles.helper}>{helper}</div>}
-
         <div className={displayInline}>{children}</div>
+        {helper && <div className={textStyles.helper}>{helper}</div>}
       </fieldset>
 
       {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}

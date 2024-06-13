@@ -2,6 +2,7 @@ import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
 import './style.css'
 import { FormField } from '../FormField/FormField'
+import useErrorClass from '../UserError'
 
 interface Option {
   value: string
@@ -23,6 +24,8 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
   const [field] = useField(name)
   const { setFieldValue } = useFormikContext<unknown>()
 
+  const errorClass = useErrorClass(name)
+
   return (
     <FormField name={name} required={required} {...rest}>
       <Select
@@ -35,7 +38,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
         isSearchable={true}
         isClearable={true}
         isDisabled={disabled}
-        className="cu-autosuggest"
+        className={`cu-autosuggest ${errorClass}`}
       />
     </FormField>
   )

@@ -66,6 +66,7 @@ export const Input: Story = () => {
           name="inputText"
           required
           helper="Helper Text"
+          helperPosTop={true}
           disable={formikProps.isSubmitting}
         />
       </Form.FieldGroup>

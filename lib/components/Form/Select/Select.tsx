@@ -2,6 +2,7 @@
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
 import { FormField } from '../FormField/FormField'
+import useErrorClass from '../UserError'
 
 export interface InputProps {
   label: string
@@ -18,9 +19,17 @@ export interface InputProps {
 export const Select = ({ ...props }: InputProps) => {
   const { name, options, required, ...rest } = props
 
+  const errorClass = useErrorClass(name)
+
   return (
     <FormField name={name} required={required} {...rest}>
-      <Field as="select" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest}>
+      <Field
+        as="select"
+        id={name}
+        name={name}
+        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass}`}
+        {...rest}
+      >
         {options &&
           options.map((option) => {
             return (
