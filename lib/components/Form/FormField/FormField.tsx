@@ -24,9 +24,9 @@ export const FormField = ({ ...props }: FormFieldProps) => {
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>
 
-      {helper && <div className={textStyles.helper}>{helper}</div>}
-
       {children}
+
+      {helper && <div className={textStyles.helper}>{helper}</div>}
 
       {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
     </div>
