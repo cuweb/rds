@@ -6,6 +6,7 @@ export interface FormFieldProps {
     name: string;
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
     helper?: string;
+    helperPosTop?: boolean;
     required?: boolean;
     displayError?: boolean;
 }
