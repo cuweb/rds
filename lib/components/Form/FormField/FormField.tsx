@@ -10,12 +10,23 @@ export interface FormFieldProps {
   name: string
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
+  helperPosTop?: boolean
   required?: boolean
   displayError?: boolean
 }
 
 export const FormField = ({ ...props }: FormFieldProps) => {
-  const { children, label, hiddenLabel, name, maxWidth, helper, required, displayError = true } = props
+  const {
+    children,
+    label,
+    hiddenLabel,
+    name,
+    maxWidth,
+    helper,
+    helperPosTop = false,
+    required,
+    displayError = true,
+  } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
 
   return (
@@ -24,9 +35,11 @@ export const FormField = ({ ...props }: FormFieldProps) => {
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>
 
+      {helper && helperPosTop && <div className={textStyles.helper}>{helper}</div>}
+
       {children}
 
-      {helper && <div className={textStyles.helper}>{helper}</div>}
+      {helper && !helperPosTop && <div className={textStyles.helper}>{helper}</div>}
 
       {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
     </div>
