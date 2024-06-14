@@ -1,14 +1,9 @@
 import { Field } from 'formik'
-import { FormFieldSet } from '../FormFieldSet/FormFieldSet'
+import { FieldSetProps, FormFieldSet } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 import useErrorClass from '../UserError'
 
-export interface CheckboxProps {
-  label: string
-  name: string
-  helper?: string
-  isInline?: boolean
-  required?: boolean
+export interface CheckboxProps extends FieldSetProps {
   checkBoxRight?: boolean
   options?: {
     label: string
@@ -17,11 +12,34 @@ export interface CheckboxProps {
 }
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {
-  const { label, name, options, checkBoxRight, required, isInline, ...rest } = props
+  const {
+    label,
+    name,
+    options,
+    checkBoxRight,
+    required,
+    maxWidth,
+    helper,
+    displayError,
+    helperpostop,
+    isInline,
+    ...rest
+  } = props
   const errorClass = useErrorClass(name)
 
   return (
-    <FormFieldSet label={label} name={name} key={name} required={required} isInline={isInline} {...rest}>
+    <FormFieldSet
+      name={name}
+      label={label}
+      maxWidth={maxWidth}
+      helper={helper}
+      helperpostop={helperpostop}
+      required={required}
+      displayError={displayError}
+      key={name}
+      isInline={isInline}
+      {...rest}
+    >
       {options &&
         options.map((option) => (
           <label key={option.value} className={checkBoxRight ? fieldStyles.radioCheckRight : fieldStyles.radioCheck}>

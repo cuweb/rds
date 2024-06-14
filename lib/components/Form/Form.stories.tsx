@@ -63,7 +63,7 @@ export const Input: Story = () => {
           name="inputText"
           required
           helper="Helper Text"
-          helperpostop={true}
+          helperpostop
           disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
@@ -465,6 +465,7 @@ export const Media: Story = () => {
           onChange={handleChange}
           accept="application/pdf,application/vnd.ms-excel"
           disabled={formikProps.isSubmitting}
+          helperpostop
         />
       </Form.FieldGroup>
       <ButtonGroup>

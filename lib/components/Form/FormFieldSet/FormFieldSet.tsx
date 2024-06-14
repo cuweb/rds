@@ -3,18 +3,23 @@ import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
 import { maxWidthClasses } from '../../../helpers/optionClasses'
 import Error from '../Error/Error'
 
-export interface FormFieldProps {
-  children: React.ReactNode
+export interface FieldSetProps {
   label: string
+  hiddenLabel?: boolean
   name: string
-  helper?: string
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
-  isInline?: boolean
+  helper?: string
+  helperpostop?: boolean
   required?: boolean
+  isInline?: boolean
   displayError?: boolean
 }
 
-export const FormFieldSet = ({ ...props }: FormFieldProps) => {
+export interface FormFieldSetProps extends FieldSetProps {
+  children: React.ReactNode
+}
+
+export const FormFieldSet = ({ ...props }: FormFieldSetProps) => {
   const { children, label, name, maxWidth, helper, isInline, displayError = true, required } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
 

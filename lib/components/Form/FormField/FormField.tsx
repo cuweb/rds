@@ -3,8 +3,7 @@ import { primaryStyles, textStyles } from '../../../styles/form'
 import { maxWidthClasses } from '../../../helpers/optionClasses'
 import Error from '../Error/Error'
 
-export interface FormFieldProps {
-  children: React.ReactNode
+export interface FieldProps {
   label: string
   hiddenLabel?: boolean
   name: string
@@ -13,7 +12,10 @@ export interface FormFieldProps {
   helperpostop?: boolean
   required?: boolean
   displayError?: boolean
-  disabled?: boolean // Add disabled to the interface if needed
+}
+
+export interface FormFieldProps extends FieldProps {
+  children: React.ReactNode
 }
 
 export const FormField = ({
