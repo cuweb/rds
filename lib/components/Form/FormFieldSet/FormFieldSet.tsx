@@ -20,7 +20,7 @@ export interface FormFieldSetProps extends FieldSetProps {
 }
 
 export const FormFieldSet = ({ ...props }: FormFieldSetProps) => {
-  const { children, label, name, maxWidth, helper, isInline, displayError = true, required } = props
+  const { children, label, name, maxWidth, helper, isInline, displayError = true, required, helperpostop } = props
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
 
   const displayInline = isInline ? fieldStyles.horizontalOptions : fieldStyles.verticalOptions
@@ -31,8 +31,10 @@ export const FormFieldSet = ({ ...props }: FormFieldSetProps) => {
         <legend className={textStyles.legend} id={name}>
           {label} {required && <span className={textStyles.required}>*</span>}
         </legend>
+        {helper && helperpostop && <div className={textStyles.helper}>{helper}</div>}
+
         <div className={displayInline}>{children}</div>
-        {helper && <div className={textStyles.helper}>{helper}</div>}
+        {helper && !helperpostop && <div className={textStyles.helper}>{helper}</div>}
       </fieldset>
 
       {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
