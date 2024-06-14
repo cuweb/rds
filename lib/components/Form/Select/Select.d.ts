@@ -1,12 +1,9 @@
-export interface InputProps {
-    label: string;
-    name: string;
-    maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
-    helper?: string;
-    required?: boolean;
+import { FieldProps } from '../FormField/FormField';
+
+export interface SelectProps extends FieldProps {
     options?: {
         label: string;
         value: string;
     }[];
 }
-export declare const Select: ({ ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Select: ({ ...props }: SelectProps) => import("react/jsx-runtime").JSX.Element;

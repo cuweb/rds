@@ -1,6 +1,5 @@
 /// <reference types="react" />
-export interface FormFieldProps {
-    children: React.ReactNode;
+export interface FieldProps {
     label: string;
     hiddenLabel?: boolean;
     name: string;
@@ -9,7 +8,9 @@ export interface FormFieldProps {
     helperpostop?: boolean;
     required?: boolean;
     displayError?: boolean;
-    disabled?: boolean;
+}
+export interface FormFieldProps extends FieldProps {
+    children: React.ReactNode;
 }
 export declare const FormField: ({ children, label, hiddenLabel, name, maxWidth, helper, helperpostop, required, displayError, }: FormFieldProps) => import("react/jsx-runtime").JSX.Element;
 export default FormField;

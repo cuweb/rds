@@ -1,10 +1,6 @@
+import { FieldProps } from '../FormField/FormField';
 
-export interface DateTimeProps {
-    label: string;
-    name: string;
-    maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
-    helper?: string;
-    required?: boolean;
+export interface DateTimeProps extends FieldProps {
     minDate?: Date;
     maxDate?: Date;
     showTime?: boolean;

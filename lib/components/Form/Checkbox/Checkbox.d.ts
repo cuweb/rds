@@ -1,9 +1,6 @@
-export interface CheckboxProps {
-    label: string;
-    name: string;
-    helper?: string;
-    isInline?: boolean;
-    required?: boolean;
+import { FieldSetProps } from '../FormFieldSet/FormFieldSet';
+
+export interface CheckboxProps extends FieldSetProps {
     checkBoxRight?: boolean;
     options?: {
         label: string;
