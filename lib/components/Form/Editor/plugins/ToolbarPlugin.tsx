@@ -29,7 +29,6 @@ import {
 import { createPortal } from 'react-dom'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
 import { ImageModal } from '../utils/ImageModal'
-import { Modal } from '../../../Modal/Modal'
 
 const LowPriority = 1
 
@@ -391,7 +390,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
   const [isBold, setIsBold] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
-  const [ModalOpen, setModalOpen] = useState(false)
+  const [triggerModalOpen, setTriggerModalOpen] = useState(false)
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection()
@@ -470,140 +469,146 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
   }, [editor, isLink])
 
   return (
-    <div id={`toolbar` + name} className="toolbar" ref={toolbarRef}>
-      <button
-        type="button"
-        disabled={!canUndo}
-        onClick={() => {
-          editor.dispatchCommand(UNDO_COMMAND)
-        }}
-        className="toolbar-item spaced"
-        aria-label="Undo"
-      >
-        <i className="format undo" />
-      </button>
-      <button
-        type="button"
-        disabled={!canRedo}
-        onClick={() => {
-          editor.dispatchCommand(REDO_COMMAND)
-        }}
-        className="toolbar-item"
-        aria-label="Redo"
-      >
-        <i className="format redo" />
-      </button>
-      <Divider />
+    <>
+      <div id={`toolbar` + name} className="toolbar" ref={toolbarRef}>
+        <button
+          type="button"
+          disabled={!canUndo}
+          onClick={() => {
+            editor.dispatchCommand(UNDO_COMMAND)
+          }}
+          className="toolbar-item spaced"
+          aria-label="Undo"
+        >
+          <i className="format undo" />
+        </button>
+        <button
+          type="button"
+          disabled={!canRedo}
+          onClick={() => {
+            editor.dispatchCommand(REDO_COMMAND)
+          }}
+          className="toolbar-item"
+          aria-label="Redo"
+        >
+          <i className="format redo" />
+        </button>
+        <Divider />
 
-      <button
-        className="relative toolbar-item block-controls"
-        type="button"
-        onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
-        aria-label="Formatting Options"
-      >
-        <span className={'icon block-type ' + blockType} />
-        <span className="text">{blockTypeToBlockName[blockType]}</span>
-        <i className="chevron-down" />
-      </button>
-      {showBlockOptionsDropDown &&
-        createPortal(
-          <BlockOptionsDropdownList
-            editor={editor}
-            blockType={blockType}
-            toolbarRef={toolbarRef}
-            setShowBlockOptionsDropDown={setShowBlockOptionsDropDown}
-          />,
-          document.getElementById(`toolbar` + name),
-        )}
-      <Divider />
+        <button
+          className="relative toolbar-item block-controls"
+          type="button"
+          onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
+          aria-label="Formatting Options"
+        >
+          <span className={'icon block-type ' + blockType} />
+          <span className="text">{blockTypeToBlockName[blockType]}</span>
+          <i className="chevron-down" />
+        </button>
+        {showBlockOptionsDropDown &&
+          createPortal(
+            <BlockOptionsDropdownList
+              editor={editor}
+              blockType={blockType}
+              toolbarRef={toolbarRef}
+              setShowBlockOptionsDropDown={setShowBlockOptionsDropDown}
+            />,
+            document.getElementById(`toolbar` + name),
+          )}
+        <Divider />
 
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
-        }}
-        className={'toolbar-item spaced ' + (isBold ? 'active' : '')}
-        aria-label="Format Bold"
-      >
-        <i className="format bold" />
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
-        }}
-        className={'toolbar-item spaced ' + (isItalic ? 'active' : '')}
-        aria-label="Format Italics"
-      >
-        <i className="format italic" />
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
-        }}
-        className={'toolbar-item spaced ' + (isUnderline ? 'active' : '')}
-        aria-label="Format Underline"
-      >
-        <i className="format underline" />
-      </button>
-      <button
-        type="button"
-        onClick={insertLink}
-        className={'toolbar-item spaced ' + (isLink ? 'active' : '')}
-        aria-label="Insert Link"
-      >
-        <i className="format link" />
-      </button>
-      {isLink && createPortal(<FloatingLinkEditor editor={editor} />, document.body)}
-      <Divider />
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
-        }}
-        className="toolbar-item spaced"
-        aria-label="Left Align"
-      >
-        <i className="format left-align" />
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
-        }}
-        className="toolbar-item spaced"
-        aria-label="Center Align"
-      >
-        <i className="format center-align" />
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
-        }}
-        className="toolbar-item spaced"
-        aria-label="Right Align"
-      >
-        <i className="format right-align" />
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
-        }}
-        className="toolbar-item"
-        aria-label="Justify Align"
-      >
-        <i className="format justify-align" />
-      </button>
-      <button type="button" onClick={() => setModalOpen(true)} className="item">
-        <i className="icon image" />
-        <span className="text">Inline Image</span>
-      </button>
-      <Modal title="Insert Inline Image" isOpen={ModalOpen} setIsOpen={setModalOpen}>
-        <ImageModal activeEditor={editor} />
-      </Modal>
-    </div>
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
+          }}
+          className={'toolbar-item spaced ' + (isBold ? 'active' : '')}
+          aria-label="Format Bold"
+        >
+          <i className="format bold" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
+          }}
+          className={'toolbar-item spaced ' + (isItalic ? 'active' : '')}
+          aria-label="Format Italics"
+        >
+          <i className="format italic" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
+          }}
+          className={'toolbar-item spaced ' + (isUnderline ? 'active' : '')}
+          aria-label="Format Underline"
+        >
+          <i className="format underline" />
+        </button>
+        <button
+          type="button"
+          onClick={insertLink}
+          className={'toolbar-item spaced ' + (isLink ? 'active' : '')}
+          aria-label="Insert Link"
+        >
+          <i className="format link" />
+        </button>
+        {isLink && createPortal(<FloatingLinkEditor editor={editor} />, document.body)}
+        <Divider />
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
+          }}
+          className="toolbar-item spaced"
+          aria-label="Left Align"
+        >
+          <i className="format left-align" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
+          }}
+          className="toolbar-item spaced"
+          aria-label="Center Align"
+        >
+          <i className="format center-align" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
+          }}
+          className="toolbar-item spaced"
+          aria-label="Right Align"
+        >
+          <i className="format right-align" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
+          }}
+          className="toolbar-item"
+          aria-label="Justify Align"
+        >
+          <i className="format justify-align" />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setTriggerModalOpen(true)
+          }}
+          className="item"
+        >
+          <i className="icon image" />
+          <span className="text">Inline Image</span>
+        </button>
+      </div>
+      <ImageModal activeEditor={editor} triggerModalOpen={triggerModalOpen} setTriggerModalOpen={setTriggerModalOpen} />
+    </>
   )
 }
