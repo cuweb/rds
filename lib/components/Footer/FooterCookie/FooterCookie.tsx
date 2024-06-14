@@ -43,7 +43,7 @@ export const FooterCookie = () => {
 
   return (
     <div
-      className={`hidden fixed mx-auto max-w-7xl p-6 border-4 rounded-md shadow-lg bg-cu-black-25 bottom-6 right-6 left-6 border-white cu-cookie-notice ${
+      className={`hidden fixed z-50 mx-auto max-w-7xl p-6 border-4 rounded-md shadow-lg bg-cu-black-25 bottom-6 right-6 left-6 border-white cu-cookie-notice ${
         isVisible ? '!block' : ''
       }`}
     >

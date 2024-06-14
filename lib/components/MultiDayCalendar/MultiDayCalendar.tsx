@@ -16,6 +16,7 @@ import {
   parseISO,
   startOfToday,
 } from 'date-fns'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 export interface MultiDayCalendarProps {
   events?: {
@@ -66,7 +67,7 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
   }, [selectedDays, callback])
 
   return (
-    <div className="cu-calendar not-prose">
+    <div className="cu-calendar cu-component-spacing not-prose">
       <div className="flex items-center py-2 mb-6 bg-white border rounded-lg not-prose border-cu-black-100">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Previous month</span>
@@ -156,17 +157,16 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
         ))}
       </div>
       {showClear && (
-        <div className="mt-4">
+        <ButtonGroup align="center">
           <Button
             title="Clear Calendar"
-            isCenter
             isSmall
             onClick={() => {
               setSelectedDays([])
               setShowClear(false)
             }}
           />
-        </div>
+        </ButtonGroup>
       )}
     </div>
   )

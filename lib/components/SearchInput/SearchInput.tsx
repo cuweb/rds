@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-export interface SearchFormProps {
+import { SearchInputResults } from './SearchInputResults'
+
+export interface SearchInputProps {
   callback: (k: string) => void
   placeholder: string
+  children?: React.ReactNode
 }
 
-export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps) => {
+export const SearchInputWrapper = ({ callback, placeholder = 'Search', children }: SearchInputProps) => {
   const [message, setMessage] = useState('')
 
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
@@ -17,11 +20,11 @@ export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps
   }, [message, callback])
 
   return (
-    <div className="relative flex items-center cu-searchform not-prose">
-      <MagnifyingGlassIcon className="absolute w-5 h-5 left-4 text-cu-black-300" aria-hidden="true" />
+    <div className="cu-search cu-component-spacing relative items-center not-prose">
+      <MagnifyingGlassIcon className="absolute top-3 w-5 h-5 left-4 text-cu-black-300" aria-hidden="true" />
       <input
         className="w-full h-12 pr-4 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
-        id="searchform__input"
+        id="search__input"
         name="search"
         type="search"
         autoComplete="off"
@@ -29,6 +32,13 @@ export const SearchForm = ({ callback, placeholder = 'Search' }: SearchFormProps
         onChange={handleChange}
         value={message}
       />
+      <div className="relative w-full">{children}</div>
     </div>
   )
 }
+
+export const SearchInput = Object.assign(SearchInputWrapper, {
+  Results: SearchInputResults,
+})
+
+SearchInputWrapper.displayName = 'Search Input'

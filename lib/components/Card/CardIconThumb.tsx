@@ -4,8 +4,13 @@ export interface CardIconThumbProps {
 
 export const CardIconThumb = ({ icon }: CardIconThumbProps) => {
   const cdnPath = 'https://cdn.carleton.ca/rds/assets/font-awesome/'
-  const iconPath = `${cdnPath}${icon}.svg`
-  const iconAlt = icon ? icon.replace(/-/g, ' ') : ''
+
+  // Check if the icon starts with 'file-' and ends with 'x'
+  const modifiedIcon =
+    icon && icon.startsWith('file-') && icon.endsWith('x') ? icon.substring(0, icon.length - 1) : icon
+
+  const iconPath = `${cdnPath}${modifiedIcon}.svg`
+  const iconAlt = modifiedIcon ? modifiedIcon.replace(/-/g, ' ') : ''
 
   const redIcon = {
     filter: 'invert(20%) sepia(50%) saturate(7177%) hue-rotate(348deg) brightness(91%) contrast(100%)',

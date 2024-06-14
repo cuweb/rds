@@ -2,10 +2,28 @@ import React from 'react'
 
 export interface ButtonGroupProps {
   children: React.ReactNode
-  isCenter?: boolean
+  gap?: 3 | 5
+  align?: 'left' | 'right' | 'center'
 }
 
-export const ButtonGroup = ({ children, isCenter }: ButtonGroupProps) => {
-  const centerStyles = isCenter ? 'justify-center' : ''
-  return <div className={`flex flex-wrap gap-5 cu-buttongroup md:flex-1 ${centerStyles}`}>{children}</div>
+export const ButtonGroup = ({ children, gap = 5, align = 'left' }: ButtonGroupProps) => {
+  const gapStyle = gap === 5 ? 'gap-5' : 'gap-3'
+
+  let alignStyle = 'justify-start'
+  switch (align) {
+    case 'right':
+      alignStyle = 'justify-end'
+      break
+    case 'center':
+      alignStyle = 'justify-center'
+      break
+    default:
+      alignStyle = 'justify-start'
+  }
+
+  return (
+    <div className={`cu-buttongroup cu-component-spacing flex flex-wrap md:flex-1 ${gapStyle} ${alignStyle}`}>
+      {children}
+    </div>
+  )
 }

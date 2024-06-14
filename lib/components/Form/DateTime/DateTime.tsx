@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker'
 import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
 import { FormField } from '../FormField/FormField'
+import useErrorClass from '../UserError'
 
 export interface DateTimeProps {
   label: string
@@ -39,6 +40,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
     setTouched(true)
     setError(undefined)
   }
+  const errorClass = useErrorClass(name)
 
   return (
     <FormField name={name} required={required} {...rest}>
@@ -55,7 +57,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         minDate={minDate}
         maxDate={maxDate}
         placeholderText={placeholder ? placeholder : dateFormat}
-        className={`${fieldStyles.input} ${fieldStyles.disabled} w-full`}
+        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
         {...rest}
       />
     </FormField>

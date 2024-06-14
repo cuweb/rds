@@ -30,7 +30,7 @@ export const Default: Story = {
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
       </Card.Body>
       <Card.Footer>
-        <a href="https://carleton.ca/webservices" className="cu-button cu-button--red">
+        <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
           More info
         </a>
       </Card.Footer>
@@ -42,14 +42,14 @@ export const NewsCard: Story = {
   render: (args) => (
     <Card {...args}>
       <Card.Figure>
-        <img src={newsData.image} alt={newsData.alt} width="400" height="266" />
+        <img src={newsData.image} alt={newsData.alt} width="400" height="300" />
       </Card.Figure>
       <Card.Header title={newsData.title} date={newsData.date} />
       <Card.Body>
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
       </Card.Body>
       <Card.Footer>
-        <a href={newsData.link} className="cu-button cu-button--red">
+        <a href={newsData.link} className="cu-button cu-button--red cu-button--small">
           Read more
         </a>
       </Card.Footer>
@@ -61,7 +61,7 @@ export const EventCard: Story = {
   render: (args) => (
     <Card {...args}>
       <Card.Figure>
-        <img src={eventData.image} alt={eventData.alt} width="400" height="175" />
+        <img src={eventData.image} alt={eventData.alt} width="400" height="300" />
       </Card.Figure>
       <Card.DateThumb startDate={eventData.startDate} endDate={eventData.endDate} />
       <Card.Header title={eventData.title} as="h3" />
@@ -76,7 +76,7 @@ export const EventCard: Story = {
         />
       </Card.Body>
       <Card.Footer>
-        <a href={eventData.link} className="cu-button cu-button--red">
+        <a href={eventData.link} className="cu-button cu-button--red cu-button--small">
           Event details
         </a>
       </Card.Footer>
@@ -86,18 +86,20 @@ export const EventCard: Story = {
 
 export const IconCard: Story = {
   render: (args) => (
-    <Card {...args} noHover>
-      <Card.IconThumb icon={iconData.icon} />
-      <Card.Header title={iconData.title} />
-      <Card.Body>
-        <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-      </Card.Body>
-      <Card.Footer>
-        <a href={iconData.link} className="cu-button cu-button--red">
-          Get informed
-        </a>
-      </Card.Footer>
-    </Card>
+    <>
+      <Card {...args} noHover>
+        <Card.IconThumb icon={iconData.icon} />
+        <Card.Header title={iconData.title} />
+        <Card.Body>
+          <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
+        </Card.Body>
+        <Card.Footer>
+          <a href={iconData.link} className="cu-button cu-button--red cu-button--small">
+            Get informed
+          </a>
+        </Card.Footer>
+      </Card>
+    </>
   ),
 }
 
@@ -109,7 +111,7 @@ export const PageCard: Story = {
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
       </Card.Body>
       <Card.Footer>
-        <a href={newsData.link} className="cu-button cu-button--red">
+        <a href={newsData.link} className="cu-button cu-button--red cu-button--small">
           Read more
         </a>
       </Card.Footer>
@@ -130,7 +132,7 @@ export const PeopleCard: Story = {
         </Card.PeopleMeta>
       </Card.Body>
       <Card.Footer>
-        <a href={peopleData.link} className="cu-button cu-button--red">
+        <a href={peopleData.link} className="cu-button cu-button--red cu-button--small">
           View profile
         </a>
       </Card.Footer>
@@ -149,7 +151,7 @@ export const SpotlightCard: Story = {
         <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
       </Card.Body>
       <Card.Footer>
-        <a href={newsData.link} className="cu-button cu-button--red">
+        <a href={newsData.link} className="cu-button cu-button--red cu-button--small">
           Get informed
         </a>
       </Card.Footer>

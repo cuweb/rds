@@ -16,6 +16,7 @@ export interface NavAsideProps {
   LoggedMenu?: null
   userNoImage?: null
   children?: ReactNode
+  LoggedInLink?: string
   onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
@@ -26,6 +27,7 @@ export interface NavAsideLoggedInProps {
   LoggedMenu?: null
   userNoImage?: null
   children?: ReactNode
+  LoggedInLink?: string
   onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
@@ -36,6 +38,7 @@ export interface NavAsideLoggedOutProps {
   LoggedMenu: ImenuItem[]
   userNoImage: UserInfoType
   children?: ReactNode
+  LoggedInLink?: string
   onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
@@ -46,6 +49,7 @@ export const NavAside = ({
   LoggedMenu,
   userNoImage,
   children,
+  LoggedInLink,
   onClickHandler,
 }: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
   const LinkComponent = useLinkContext()
@@ -75,7 +79,7 @@ export const NavAside = ({
                 Login
               </a>
             ) : (
-              <LinkComponent href="/" className={styles.listItemLink}>
+              <LinkComponent href={LoggedInLink ? LoggedInLink : '/'} className={styles.listItemLink}>
                 Login
               </LinkComponent>
             )}

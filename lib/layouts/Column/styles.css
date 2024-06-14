@@ -1,0 +1,15 @@
+.cu-column--reverse > *:last-child {
+  @apply order-first md:order-none;
+}
+
+/* 
+* First and last child inside column content
+*/
+
+.cu-column-content > *:first-child {
+  @apply mt-0;
+}
+
+.cu-column-content > *:last-child {
+  @apply mb-0;
+}

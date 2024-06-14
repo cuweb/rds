@@ -34,33 +34,27 @@ export const PageHeadersWrapper = ({
 
   // Set spacing for header with underline
   let headerPadding
-  // let headerMargin
   let contentStyle
 
   switch (size) {
     case 'xs':
-      headerPadding = 'pb-4'
-      // headerMargin = 'mb-5 md:mb-6'
+      headerPadding = 'pb-3 after:w-6'
       contentStyle = 'prose-md md:prose-lg'
       break
     case 'sm':
-      headerPadding = 'pb-5'
-      // headerMargin = 'mb-5 md:mb-6'
+      headerPadding = 'pb-3.5 after:w-7'
       contentStyle = 'prose-md md:prose-lg'
       break
     case 'md':
-      headerPadding = 'pb-6'
-      // headerMargin = 'mb-5 md:mb-6'
+      headerPadding = 'pb-4 after:w-8'
       contentStyle = 'prose-lg md:prose-xl'
       break
     case 'lg':
-      headerPadding = 'pb-8'
-      // headerMargin = 'mb-5 md:mb-6'
+      headerPadding = 'pb-5 after:w-10'
       contentStyle = 'prose-lg md:prose-xl'
       break
     default:
-      headerPadding = 'pb-8'
-      // headerMargin = 'mb-5 md:mb-6'
+      headerPadding = 'pb-6 after:w-10'
       contentStyle = 'prose-lg md:prose-xl'
       break
   }
@@ -69,7 +63,7 @@ export const PageHeadersWrapper = ({
   const truncatedContent = content && content.length > 250 ? `${content.substring(0, 250)}...` : content
 
   const hasUnderline = !noUnderline
-    ? `relative after:absolute after:w-10 after:h-px after:bottom-0 after:bg-cu-red ${headerPadding}`
+    ? `relative after:absolute after:h-px after:bottom-0 after:bg-cu-red ${headerPadding}`
     : ''
 
   const centerText = isCenter ? 'text-center mx-auto' : ''
@@ -77,7 +71,7 @@ export const PageHeadersWrapper = ({
     isCenter && !noUnderline ? `${hasUnderline} after:left-1/2 after:-ml-5` : `${hasUnderline} after:left-px`
 
   return (
-    <header className="mb-6 md:mb-10">
+    <header className="cu-pageheaders cu-component-spacing mb-6 md:mb-12">
       <HeaderComponent
         className={`font-semibold text-cu-black-700 not-prose mb-4 md:mb-6 ${headerSize[size]} ${centerText} ${centerUnderline}`}
       >
@@ -95,4 +89,4 @@ export const PageHeaders = Object.assign(PageHeadersWrapper, {
   Event: PageHeadersEvent,
 })
 
-PageHeadersWrapper.displayName = 'PageHeader'
+PageHeadersWrapper.displayName = 'PageHeaders'

@@ -1,91 +1,104 @@
-import React, { Fragment, useRef } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { Button } from '../Button/Button'
-import { rdsOverlay } from '../../utils/optionClasses'
+import React, { useRef, useEffect } from 'react'
+import { rdsMaxWidth } from '../../utils/optionClasses'
+import { proseStyles } from '../../utils/globalClasses'
+import { sanitizeContent } from '../../helpers/functions'
 
 export interface ModalProps {
   children?: React.ReactNode
-  title?: string
-  description?: string
-  noButton?: boolean
+  maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl'
+  content?: string
+  noProse?: boolean
+  ariaLabel: string
+  ariaDescription: string
   isOpen: boolean
+  alignTop?: boolean
   setIsOpen: (k: boolean) => void
-  hasOverlay?: boolean
 }
 
 export const Modal = ({
   children,
-  title,
-  description,
-  noButton,
+  content,
   isOpen,
   setIsOpen,
-  hasOverlay = false,
+  maxWidth = '5xl',
+  noProse = false,
+  alignTop = false,
+  ariaLabel,
+  ariaDescription,
 }: ModalProps) => {
-  const cancelButtonRef = useRef(null)
+  const modalRef = useRef<HTMLDialogElement>(null)
+  const useProse = noProse ? '' : proseStyles.base
+
+  useEffect(() => {
+    if (modalRef.current?.open && !isOpen) {
+      modalRef.current?.close()
+    } else if (!modalRef.current?.open && isOpen) {
+      modalRef.current?.showModal()
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('cu-no-body-scroll')
+    } else {
+      document.body.classList.remove('cu-no-body-scroll')
+    }
+    return () => {
+      document.body.classList.remove('cu-no-body-scroll')
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen, setIsOpen])
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    if (event.target === modalRef.current) {
+      setIsOpen(false)
+    }
+  }
+
+  const positionTop = alignTop ? 'mt-12' : ''
 
   return (
-    <Transition.Root show={isOpen} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-10 cu-modal not-prose"
-        initialFocus={cancelButtonRef}
-        onClose={() => setIsOpen(false)}
+    <dialog
+      ref={modalRef}
+      className={`cu-dialog relative ${positionTop} p-5 md:p-6 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md`}
+      onClick={handleClick}
+      aria-labelledby={ariaLabel}
+      aria-describedby={ariaDescription}
+    >
+      <button
+        className="absolute top-0 right-0 z-50 p-0.5 rounded-bl-md bg-cu-black-50 text-cu-black-500 hover:bg-cu-red hover:text-white"
+        onClick={() => setIsOpen(false)}
       >
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+        <span className="sr-only">Close</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-3.5 h-3.5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
         >
-          <div className={`fixed inset-0 ${hasOverlay ? rdsOverlay : ''}  bg-opacity-60 transition-opacity`} />
-        </Transition.Child>
-
-        <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            >
-              <Dialog.Panel className="relative overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:w-full sm:max-w-lg">
-                <div className="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
-                  <div className="sm:flex sm:items-start">
-                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-                        {title}
-                      </Dialog.Title>
-                      <div className="mt-2">
-                        <p className="text-sm text-gray-500">{description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {!noButton && (
-                  <div className="grid gap-4 px-4 py-3 sm:flex sm:w-auto sm:flex-row-reverse sm:px-6 sm:text-sm">
-                    {children}
-                    <Button
-                      onClick={() => {
-                        setIsOpen(false)
-                      }}
-                      title="Cancel"
-                      isSmall
-                      color="grey"
-                    />
-                  </div>
-                )}
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </div>
-      </Dialog>
-    </Transition.Root>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      {content ? (
+        <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
+      ) : (
+        <div className={useProse}>{children}</div>
+      )}
+    </dialog>
   )
 }

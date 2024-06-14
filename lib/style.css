@@ -4,6 +4,7 @@
 @import 'tailwindcss/utilities';
 
 /* Global Styles */
+@import './styles/general.css';
 @import './styles/spacing.css';
 
 /* Priority Plus */
@@ -17,7 +18,9 @@
 @import './components/Listing/styles.css';
 @import './components/Nav/styles.css';
 @import './components/PageHeaders/styles.css';
+@import './components/TextImage/styles.css';
 @import './components/WideImage/styles.css';
 
 /* Layouts */
+@import './layouts/Column/styles.css';
 @import './layouts/StackedList/styles.css';

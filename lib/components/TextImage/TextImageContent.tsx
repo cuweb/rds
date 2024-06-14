@@ -1,5 +1,4 @@
 import React from 'react'
-import { styles, mediaStyles } from './TextImage.Styles'
 import { proseGroups } from '../../utils/globalClasses'
 
 export interface TextImageContentProps {
@@ -18,24 +17,10 @@ export interface TextImageMediaProps {
   hasMobileImage?: boolean
 }
 
-// const isValidChild = (child: React.ReactNode): child is React.ReactElement => {
-//   if (React.isValidElement(child)) {
-//     // Check for <p>, <ol>, <ul> tags directly
-//     if (
-//       typeof child.type === 'string' &&
-//       (child.type.toLowerCase() === 'p' || child.type.toLowerCase() === 'ol' || child.type.toLowerCase() === 'ul')
-//     ) {
-//       return true
-//     }
-
-//     // Check for elements with specific classes
-//     const className: string = child.props.className || ''
-//     if (className.includes('cu-buttongroup') || className.includes('cu-button') || className.includes('buttons')) {
-//       return true
-//     }
-//   }
-//   return false
-// }
+const styles = {
+  underline: `relative mb-6 after:absolute after:w-10 after:h-px after:bottom-0 after:bg-cu-red after:left-px pb-6`,
+  media: `relative flex-1 w-full h-full bg-no-repeat bg-cover min-h-[360px] lg:min-h-[220px]`,
+}
 
 export const TextImageContent = ({
   children,
@@ -49,8 +34,10 @@ export const TextImageContent = ({
   focalPointY = '50',
   hasMobileImage,
 }: TextImageContentProps & TextImageMediaProps) => {
-  const contentPadding = imageUrl ? 'md:py-4' : ''
+  const contentPadding = imageUrl ? 'md:mb-4' : ''
   const verticallyCenter = isCenter ? 'justify-center' : ''
+
+  // md:pt-4 md:mb-4
 
   // Image options
   let hasImage
@@ -59,7 +46,7 @@ export const TextImageContent = ({
   let inlineImageStyles
 
   if (imageUrl) {
-    hasImage = mediaStyles.mediaBgImage || ''
+    hasImage = styles.media || ''
     noImageOnMobile = hasMobileImage ? '' : 'hidden lg:block'
 
     if (hasImage) {
@@ -75,36 +62,37 @@ export const TextImageContent = ({
     }
   }
 
-  // const validatedChildren = React.Children.map(children, (child) => {
-  //   if (React.isValidElement(child) && isValidChild(child)) {
-  //     return child
-  //   } else {
-  //     console.warn(
-  //       'TextImageContent only accepts <p> tags or elements with "cu-button-group" or "cu-button" classes as children.',
-  //     )
-  //     return null
-  //   }
-  // })
-
   return (
     <>
       <div
-        className={`${styles.contentWrapper} ${contentPadding} ${verticallyCenter} ${
+        className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter} ${
           headerType === 'h1'
             ? `cu-textimage-as-h1 ${proseGroups.largeLight}`
             : `cu-textimage-as-h2 ${proseGroups.text}`
         }`}
         style={inlineContentStyles}
       >
-        {title && headerType === 'h1' && <h1 className={`${styles.headerOne} ${styles.underline}`}>{title}</h1>}
-        {title && headerType === 'h2' && <h2 className={`${styles.headerTwo} ${styles.underline}`}>{title}</h2>}
-        {/* {validatedChildren} */}
+        {title && headerType === 'h1' && (
+          <h1
+            className={`font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] text-cu-black-700 not-prose ${styles.underline}`}
+          >
+            {title}
+          </h1>
+        )}
+        {title && headerType === 'h2' && (
+          <h2
+            className={`font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] text-cu-black-700 not-prose ${styles.underline}`}
+          >
+            {title}
+          </h2>
+        )}
+
         {children}
       </div>
 
       {imageUrl && (
-        <div className={`${mediaStyles.mediaWrapper} ${noImageOnMobile}`}>
-          <div className={`${mediaStyles.mediaBgImage}`} style={inlineImageStyles}></div>
+        <div className={`relative flex-1 overflow-hidden rounded ${noImageOnMobile}`}>
+          <div className={styles.media} style={inlineImageStyles}></div>
         </div>
       )}
     </>

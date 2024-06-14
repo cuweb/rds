@@ -70,7 +70,7 @@ export const Pagination = ({
 
   return (
     <div
-      className={`cu-pagination not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
+      className={`cu-pagination cu-component-spacing not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
     >
       <div className="flex justify-between flex-1 sm:hidden">
         <button onClick={onPrevious} className={`${styles.mobileButtons}`}>

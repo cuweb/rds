@@ -1,5 +1,5 @@
 import { listStyles, socialStyles } from './PageHeaders.Styles'
-import { proseStyles } from '../../utils/globalClasses'
+import { proseStyles, proseGroups } from '../../utils/globalClasses'
 
 export interface PageHeadersPeopleProps {
   jobTitle?: string
@@ -26,13 +26,7 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
 
   return (
     <>
-      {jobTitle && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul>
-            <li>{jobTitle}</li>
-          </ul>
-        </div>
-      )}
+      {jobTitle && <p className={proseGroups.largeLight}>{jobTitle}</p>}
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (

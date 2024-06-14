@@ -45,7 +45,9 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
   }
 
   return (
-    <div className={`flex cu-alert cu-alert--${type} rounded-md p-4 my-2 not-prose ${AlertTypes[type].background}`}>
+    <div
+      className={`cu-alert cu-alert--${type} cu-component-spacing flex rounded-md p-4 not-prose ${AlertTypes[type].background}`}
+    >
       {React.createElement(AlertTypes[type].icon, {
         className: `${alertIconSize} ${AlertTypes[type].alertHeading}`,
         'aria-hidden': 'true',

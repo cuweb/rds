@@ -1,6 +1,6 @@
+import { format, isSameDay, parseISO } from 'date-fns'
 import { listStyles } from './PageHeaders.Styles'
-import { proseStyles } from '../../utils/globalClasses'
-import { Button } from '../Button/Button'
+import { proseStyles, proseGroups } from '../../utils/globalClasses'
 
 export interface PageHeadersEventProps {
   children?: React.ReactNode
@@ -10,10 +10,6 @@ export interface PageHeadersEventProps {
   location?: string
   virtualType?: 'Teams' | 'Zoom'
   virtualUrl?: string
-  primaryButtonUrl?: string
-  primaryButtonText?: string
-  secondaryButtonUrl?: string
-  secondaryButtonText?: string
   cost?: string
   contactName?: string
   contactPhone?: string
@@ -21,6 +17,7 @@ export interface PageHeadersEventProps {
 }
 
 export const PageHeadersEvent = ({
+  children,
   startDate,
   endDate,
   eventType,
@@ -31,23 +28,26 @@ export const PageHeadersEvent = ({
   contactName,
   contactPhone,
   contactEmail,
-  primaryButtonUrl,
-  primaryButtonText,
-  secondaryButtonUrl,
-  secondaryButtonText,
 }: PageHeadersEventProps) => {
   const eventDetails = ['cost', 'contactName', 'contactPhone', 'contactEmail']
 
+  // Parse dates
+  const parsedStartDate = startDate ? parseISO(startDate) : null
+  const parsedEndDate = endDate ? parseISO(endDate) : null
+
+  // Compare dates and build final one
+  let finalDate = ''
+  if (parsedStartDate && parsedEndDate) {
+    if (isSameDay(parsedStartDate, parsedEndDate)) {
+      finalDate = `${format(parsedStartDate, "EEEE, MMMM do, yyyy 'at' h:mmaaa")}`
+    } else {
+      finalDate = `${format(parsedStartDate, 'EEEE, MMMM do, yyyy')} to ${format(parsedEndDate, 'EEEE, MMMM do, yyyy')}`
+    }
+  }
+
   return (
     <>
-      {(startDate || endDate) && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
-          <ul>
-            {startDate && <li>{startDate}</li>}
-            {endDate && <li>{endDate}</li>}
-          </ul>
-        </div>
-      )}
+      {finalDate && <p className={proseGroups.largeLight}>{finalDate}</p>}
 
       {/* Check if details are set and output as ul */}
       <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
@@ -98,7 +98,9 @@ export const PageHeadersEvent = ({
         </div>
       )}
 
-      {primaryButtonUrl && (
+      {children}
+
+      {/* {(primaryButtonUrl || secondaryButtonUrl) && (
         <div className={listStyles.listWrapper}>
           <ul className={listStyles.listHorizontal}>
             {primaryButtonUrl && (
@@ -128,7 +130,7 @@ export const PageHeadersEvent = ({
             )}
           </ul>
         </div>
-      )}
+      )} */}
     </>
   )
 }
