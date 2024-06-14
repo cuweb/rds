@@ -6,8 +6,10 @@ export interface FormFieldProps {
     name: string;
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
     helper?: string;
-    helperPosTop?: boolean;
+    helperpostop?: boolean;
     required?: boolean;
     displayError?: boolean;
+    disabled?: boolean;
 }
-export declare const FormField: ({ ...props }: FormFieldProps) => import("react/jsx-runtime").JSX.Element;
+export declare const FormField: ({ children, label, hiddenLabel, name, maxWidth, helper, helperpostop, required, displayError, }: FormFieldProps) => import("react/jsx-runtime").JSX.Element;
+export default FormField;

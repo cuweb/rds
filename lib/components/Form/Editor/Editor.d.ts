@@ -6,13 +6,13 @@ export interface EditorProps {
     helper?: string;
     value?: string;
     placeholder?: string;
-    disable?: boolean;
+    disabled?: boolean;
     required?: boolean;
     errorMessage?: string;
 }
 export interface OnChangePluginProps {
     onChange: (htmlString: string | null) => void;
     required: boolean;
-    disable: boolean;
+    disabled: boolean;
 }
 export declare const Editor: ({ ...props }: EditorProps) => import("react/jsx-runtime").JSX.Element;
