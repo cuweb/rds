@@ -5,9 +5,6 @@ import { FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { FormButton } from './FormButton/FormButton'
-import fileUploadValidationSchema from '../../helpers/fileUploadValidationSchema'
-import imageUploadValidationSchema from '../../helpers/imageUploadValidationSchema'
 import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
 
@@ -66,7 +63,8 @@ export const Input: Story = () => {
           name="inputText"
           required
           helper="Helper Text"
-          disable={formikProps.isSubmitting}
+          helperpostop
+          disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -114,7 +112,7 @@ export const TextArea: Story = () => {
           name="textareainput"
           required
           helper="Helper Text"
-          disable={formikProps.isSubmitting}
+          disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -171,7 +169,7 @@ export const Editor: Story = () => {
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
           required
-          disable={formikProps.isSubmitting}
+          disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -467,6 +465,7 @@ export const Media: Story = () => {
           onChange={handleChange}
           accept="application/pdf,application/vnd.ms-excel"
           disabled={formikProps.isSubmitting}
+          helperpostop
         />
       </Form.FieldGroup>
       <ButtonGroup>

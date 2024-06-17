@@ -3,19 +3,32 @@ import { primaryStyles, textStyles } from '../../../styles/form'
 import { maxWidthClasses } from '../../../helpers/optionClasses'
 import Error from '../Error/Error'
 
-export interface FormFieldProps {
-  children: React.ReactNode
+export interface FieldProps {
   label: string
   hiddenLabel?: boolean
   name: string
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
+  helperpostop?: boolean
   required?: boolean
   displayError?: boolean
 }
 
-export const FormField = ({ ...props }: FormFieldProps) => {
-  const { children, label, hiddenLabel, name, maxWidth, helper, required, displayError = true } = props
+export interface FormFieldProps extends FieldProps {
+  children: React.ReactNode
+}
+
+export const FormField = ({
+  children,
+  label,
+  hiddenLabel,
+  name,
+  maxWidth,
+  helper,
+  helperpostop = false,
+  required = false,
+  displayError = true,
+}: FormFieldProps) => {
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
 
   return (
@@ -24,11 +37,15 @@ export const FormField = ({ ...props }: FormFieldProps) => {
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>
 
-      {helper && <div className={textStyles.helper}>{helper}</div>}
+      {helper && helperpostop && <div className={textStyles.helper}>{helper}</div>}
 
       {children}
+
+      {helper && !helperpostop && <div className={textStyles.helper}>{helper}</div>}
 
       {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
     </div>
   )
 }
+
+export default FormField

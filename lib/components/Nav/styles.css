@@ -54,7 +54,7 @@
 
 /* Overflow Menu */
 .p-plus__overflow {
-  @apply z-50 absolute top-[36px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
+  @apply z-40 absolute top-[36px] right-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100;
 }
 
 .p-plus__overflow.p-plus_left {

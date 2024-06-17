@@ -1,21 +1,30 @@
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
-import { FormField } from '../FormField/FormField'
+import { FieldProps, FormField } from '../FormField/FormField'
+import useErrorClass from '../UserError'
 
-export interface TextAreaProps {
-  label: string
-  name: string
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
-  helper?: string
-  required?: boolean
-}
+export const TextArea = ({ ...props }: FieldProps) => {
+  const { name, label, maxWidth, helper, helperpostop, required, displayError, ...rest } = props
 
-export const TextArea = ({ ...props }: TextAreaProps) => {
-  const { name, required, ...rest } = props
+  const errorClass = useErrorClass(name)
 
   return (
-    <FormField name={name} required={required} {...rest}>
-      <Field as="textarea" id={name} name={name} className={`${fieldStyles.input} ${fieldStyles.disabled}`} {...rest} />
+    <FormField
+      name={name}
+      label={label}
+      maxWidth={maxWidth}
+      helper={helper}
+      helperpostop={helperpostop}
+      required={required}
+      displayError={displayError}
+    >
+      <Field
+        as="textarea"
+        id={name}
+        name={name}
+        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass}`}
+        {...rest}
+      />
     </FormField>
   )
 }
