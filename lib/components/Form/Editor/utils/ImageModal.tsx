@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { LexicalEditor } from 'lexical'
 import { FieldControl } from '../../FieldControl/FieldControl'
 import { Button } from '../../../Button/Button'
@@ -27,6 +27,15 @@ export const ImageModal = ({
 
   useEffect(() => {
     setModalOpen(triggerModalOpen)
+
+    if (triggerModalOpen) {
+      setSrc('')
+      setSrcError(false)
+      setAltText('')
+      setAltTextError(false)
+      setPosition('left')
+      setShowCaption(false)
+    }
   }, [triggerModalOpen])
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +47,7 @@ export const ImageModal = ({
           setSrc(reader.result)
           setSrcError(false)
         }
+        return ''
       }
       if (files !== null) {
         reader.readAsDataURL(files[0])
@@ -71,6 +81,8 @@ export const ImageModal = ({
       activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
       setModalOpen(false)
       setTriggerModalOpen(false)
+      setSrc('')
+      setSrcError(false)
     }
   }
 
@@ -91,6 +103,8 @@ export const ImageModal = ({
     { value: 'center', label: 'Center' },
   ]
 
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
   return (
     <Modal
       isOpen={ModalOpen}
@@ -105,6 +119,7 @@ export const ImageModal = ({
           required
           name="inline-image"
           onChange={handleImageChange}
+          ref={fileInputRef}
         />
 
         {srcError && <Error>Please choose an image</Error>}

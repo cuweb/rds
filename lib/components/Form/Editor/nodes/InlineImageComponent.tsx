@@ -23,11 +23,11 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from 'lexical'
 
-import useModal from '../hooks/useModal'
 import ContentEditable from '../ui/ContentEditable'
 import { $isInlineImageNode, InlineImageNode } from './InlineImageNode'
 import { DialogActions } from '../ui/Dialog'
 import { Button } from '../../../Button/Button'
+import { Modal } from '../../../Modal/Modal'
 
 const imageCache = new Set()
 
@@ -82,11 +82,9 @@ function LazyImage({
 export function UpdateInlineImageDialog({
   activeEditor,
   nodeKey,
-  onClose,
 }: {
   activeEditor: LexicalEditor
   nodeKey: NodeKey
-  onClose: () => void
 }): JSX.Element {
   const editorState = activeEditor.getEditorState()
   const node = editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode)
@@ -109,7 +107,6 @@ export function UpdateInlineImageDialog({
         node.update(payload)
       })
     }
-    onClose()
   }
 
   return (
@@ -132,7 +129,7 @@ export function UpdateInlineImageDialog({
       <select value={position} name="position" id="position-select" onChange={handlePositionChange}>
         <option value="left">Left</option>
         <option value="right">Right</option>
-        <option value="full">Full Width</option>
+        <option value="center">Center</option>
       </select>
 
       <div className="Input__wrapper">
@@ -168,7 +165,6 @@ export default function InlineImageComponent({
   width: 'inherit' | number
   position: Position
 }): JSX.Element {
-  const [modal, showModal] = useModal()
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
@@ -290,23 +286,23 @@ export default function InlineImageComponent({
     }
   }, [clearSelection, editor, isSelected, nodeKey, onDelete, onEnter, onEscape, setSelected])
 
+  const [ModalOpen, setModalOpen] = useState(false)
+
   const draggable = isSelected && $isNodeSelection(selection)
   const isFocused = isSelected
   return (
     <Suspense fallback={null}>
       <>
-        <div draggable={draggable}>
-          <button
-            className="image-edit-button"
-            ref={buttonRef}
+        <span draggable={draggable}>
+          <Button
+            color="grey"
+            // ref={buttonRef}
             onClick={() => {
-              showModal('Update Inline Image', (onClose) => (
-                <UpdateInlineImageDialog activeEditor={editor} nodeKey={nodeKey} onClose={onClose} />
-              ))
+              setModalOpen(true)
             }}
           >
             Edit
-          </button>
+          </Button>
           <LazyImage
             className={isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : null}
             src={src}
@@ -316,7 +312,7 @@ export default function InlineImageComponent({
             height={height}
             position={position}
           />
-        </div>
+        </span>
         {showCaption && (
           <div className="image-caption-container">
             <LexicalNestedComposer initialEditor={caption}>
@@ -331,7 +327,10 @@ export default function InlineImageComponent({
           </div>
         )}
       </>
-      {modal}
+
+      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} ariaLabel="Edit image" ariaDescription="Edit image modal">
+        <UpdateInlineImageDialog activeEditor={editor} nodeKey={nodeKey} />
+      </Modal>
     </Suspense>
   )
 }
