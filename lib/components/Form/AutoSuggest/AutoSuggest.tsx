@@ -1,7 +1,7 @@
 import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
 import './style.css'
-import { FormField } from '../FormField/FormField'
+import { FieldProps, FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
 
 interface Option {
@@ -9,25 +9,39 @@ interface Option {
   label: string
 }
 
-export interface AutoSuggestProps {
-  label: string
-  name: string
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
-  helper?: string
-  required?: boolean
-  options?: Option[]
+export interface AutoSuggestProps extends FieldProps {
   disabled?: boolean
+  options?: Option[]
 }
 
 export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
-  const { name, options, disabled = false, required, ...rest } = props
+  const {
+    name,
+    label,
+    maxWidth,
+    helper,
+    helperpostop,
+    options,
+    disabled = false,
+    required,
+    displayError,
+    ...rest
+  } = props
   const [field] = useField(name)
   const { setFieldValue } = useFormikContext<unknown>()
 
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField name={name} required={required} {...rest}>
+    <FormField
+      name={name}
+      label={label}
+      maxWidth={maxWidth}
+      helper={helper}
+      helperpostop={helperpostop}
+      required={required}
+      displayError={displayError}
+    >
       <Select
         {...rest}
         inputId={name}

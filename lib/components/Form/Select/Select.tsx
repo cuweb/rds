@@ -1,28 +1,31 @@
 'use client'
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
-import { FormField } from '../FormField/FormField'
+import { FieldProps, FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
 
-export interface InputProps {
-  label: string
-  name: string
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
-  helper?: string
-  required?: boolean
+export interface SelectProps extends FieldProps {
   options?: {
     label: string
     value: string
   }[]
 }
 
-export const Select = ({ ...props }: InputProps) => {
-  const { name, options, required, ...rest } = props
+export const Select = ({ ...props }: SelectProps) => {
+  const { name, options, label, maxWidth, helper, helperpostop, required, displayError, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField name={name} required={required} {...rest}>
+    <FormField
+      name={name}
+      label={label}
+      maxWidth={maxWidth}
+      helper={helper}
+      helperpostop={helperpostop}
+      required={required}
+      displayError={displayError}
+    >
       <Field
         as="select"
         id={name}
