@@ -7,6 +7,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
 import type { Position } from './InlineImageNode'
+import Error from '../../Error/Error'
 
 import {
   $getNodeByKey,
@@ -25,9 +26,12 @@ import {
 
 import ContentEditable from '../ui/ContentEditable'
 import { $isInlineImageNode, InlineImageNode } from './InlineImageNode'
-import { DialogActions } from '../ui/Dialog'
 import { Button } from '../../../Button/Button'
 import { Modal } from '../../../Modal/Modal'
+import { FieldControl } from '../../FieldControl/FieldControl'
+import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
+import FieldGroup from '../../FieldGroup/FieldGroup'
+import { ImageModal } from '../utils/ImageModal'
 
 const imageCache = new Set()
 
@@ -82,15 +86,28 @@ function LazyImage({
 export function UpdateInlineImageDialog({
   activeEditor,
   nodeKey,
+  isOpen,
 }: {
   activeEditor: LexicalEditor
   nodeKey: NodeKey
+  isOpen: boolean
 }): JSX.Element {
   const editorState = activeEditor.getEditorState()
   const node = editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode)
   const [altText, setAltText] = useState(node.getAltText())
+  const [altTextError, setAltTextError] = useState(false)
   const [showCaption, setShowCaption] = useState(node.getShowCaption())
   const [position, setPosition] = useState<Position>(node.getPosition())
+  const [ModalOpen, setModalOpen] = useState(isOpen)
+
+  useEffect(() => {
+    setModalOpen(isOpen)
+  }, [isOpen])
+
+  const handleAltChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAltText(e.target.value)
+    setAltTextError(false)
+  }
 
   const handleShowCaptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setShowCaption(e.target.checked)
@@ -102,47 +119,66 @@ export function UpdateInlineImageDialog({
 
   const handleOnConfirm = () => {
     const payload = { altText, showCaption, position }
-    if (node) {
+    if (!setAltText) {
+      setAltTextError(true)
+    } else if (node) {
       activeEditor.update(() => {
         node.update(payload)
+        setModalOpen(false)
       })
     }
   }
 
+  const selectValues = [
+    { value: 'left', label: 'Left' },
+    { value: 'right', label: 'Right' },
+    { value: 'center', label: 'Center' },
+  ]
+
   return (
-    <>
-      <div className="Input__wrapper">
-        <label className="Input__label">Alt Text</label>
-        <input
-          type="text"
-          className="Input__input"
+    <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} ariaLabel="Edit image" ariaDescription="Edit image modal">
+      <FieldGroup>
+        <FieldControl
+          control="textarea"
+          label="Alt Text"
           placeholder="Descriptive alternative text"
           value={altText}
-          onChange={(e) => {
-            setAltText(e.target.value)
-          }}
-          data-test-id="image-modal-alt-text-input"
+          required
+          name="inline-image"
+          onChange={handleAltChange}
         />
-      </div>
 
-      <label htmlFor="caption">Position</label>
-      <select value={position} name="position" id="position-select" onChange={handlePositionChange}>
-        <option value="left">Left</option>
-        <option value="right">Right</option>
-        <option value="center">Center</option>
-      </select>
+        {altTextError && <Error>Please add alternative text</Error>}
 
-      <div className="Input__wrapper">
-        <input id="caption" type="checkbox" checked={showCaption} onChange={handleShowCaptionChange} />
-        <label htmlFor="caption">Show Caption</label>
-      </div>
+        <FieldControl
+          control="select"
+          label="Position"
+          options={selectValues}
+          value={position}
+          name="image-position"
+          onChange={handlePositionChange}
+        />
 
-      <DialogActions>
-        <Button data-test-id="image-modal-file-upload-btn" onClick={() => handleOnConfirm()}>
-          Confirm
-        </Button>
-      </DialogActions>
-    </>
+        <FieldControl
+          control="checkbox"
+          name="checkbox"
+          label="Show Caption"
+          options={[
+            {
+              label: 'Yes',
+              value: 'yes',
+            },
+          ]}
+          isInline
+          onChange={handleShowCaptionChange}
+          checked={showCaption}
+        />
+
+        <ButtonGroup align="right">
+          <Button title="Confirm" isDisabled={altTextError} onClick={handleOnConfirm}></Button>
+        </ButtonGroup>
+      </FieldGroup>
+    </Modal>
   )
 }
 
@@ -171,6 +207,19 @@ export default function InlineImageComponent({
   const [editor] = useLexicalComposerContext()
   const [selection, setSelection] = useState<RangeSelection | NodeSelection | null>(null)
   const activeEditorRef = useRef<LexicalEditor | null>(null)
+
+  const deleteNode = (event: React.MouseEvent<HTMLButtonElement>) => {
+    editor.update(() => {
+      if (isSelected && $isNodeSelection($getSelection())) {
+        event.preventDefault()
+        const node = $getNodeByKey(nodeKey)
+        if ($isInlineImageNode(node)) {
+          node?.remove()
+        }
+        setSelected(false)
+      }
+    })
+  }
 
   const onDelete = useCallback(
     (payload: KeyboardEvent) => {
@@ -290,47 +339,53 @@ export default function InlineImageComponent({
 
   const draggable = isSelected && $isNodeSelection(selection)
   const isFocused = isSelected
+
   return (
     <Suspense fallback={null}>
-      <>
-        <span draggable={draggable}>
+      <span draggable={draggable}>
+        <ButtonGroup>
           <Button
             color="grey"
-            // ref={buttonRef}
+            isSmall
             onClick={() => {
               setModalOpen(true)
             }}
-          >
-            Edit
-          </Button>
-          <LazyImage
-            className={isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : null}
-            src={src}
-            altText={altText}
-            imageRef={imageRef}
-            width={width}
-            height={height}
-            position={position}
+            title="Edit"
           />
-        </span>
-        {showCaption && (
-          <div className="image-caption-container">
-            <LexicalNestedComposer initialEditor={caption}>
-              <RichTextPlugin
-                contentEditable={<ContentEditable className="h-[20px] border-0 block relative w-[calc(100%-20px)]" />}
-                placeholder={
-                  <div className="prose prose-lg prose-rds md:prose-xl text-cu-black-400">Enter a caption...</div>
-                }
-                ErrorBoundary={LexicalErrorBoundary}
-              />
-            </LexicalNestedComposer>
-          </div>
-        )}
-      </>
+          <Button isSmall title="Delete" onClick={deleteNode}></Button>
+        </ButtonGroup>
 
-      <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} ariaLabel="Edit image" ariaDescription="Edit image modal">
-        <UpdateInlineImageDialog activeEditor={editor} nodeKey={nodeKey} />
-      </Modal>
+        <LazyImage
+          className={isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : null}
+          src={src}
+          altText={altText}
+          imageRef={imageRef}
+          width={width}
+          height={height}
+          position={position}
+        />
+      </span>
+      {showCaption && (
+        <div className="image-caption-container relative">
+          <LexicalNestedComposer initialEditor={caption}>
+            <RichTextPlugin
+              contentEditable={<ContentEditable className="border-0 block relative" />}
+              placeholder={
+                <div className="prose prose-lg prose-rds md:prose-xl text-cu-black-400 absolute top-0">
+                  Enter a caption...
+                </div>
+              }
+              ErrorBoundary={LexicalErrorBoundary}
+            />
+          </LexicalNestedComposer>
+        </div>
+      )}
+      <ImageModal
+        activeEditor={editor}
+        triggerModalOpen={ModalOpen}
+        setTriggerModalOpen={setModalOpen}
+        nodeKey={nodeKey}
+      />
     </Suspense>
   )
 }

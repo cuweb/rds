@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { LexicalEditor } from 'lexical'
+import { LexicalEditor, NodeKey } from 'lexical'
 import { FieldControl } from '../../FieldControl/FieldControl'
 import { Button } from '../../../Button/Button'
 import type { Position } from '../nodes/InlineImageNode'
@@ -7,28 +7,36 @@ import { INSERT_INLINE_IMAGE_COMMAND } from '../plugins/InlineImagePlugin'
 import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
 import { Modal } from '../../../Modal/Modal'
 import Error from '../../Error/Error'
+import FieldGroup from '../../FieldGroup/FieldGroup'
+import { $getNodeByKey } from 'lexical'
+import { InlineImageNode } from '../nodes/InlineImageNode'
 
 export const ImageModal = ({
   activeEditor,
   triggerModalOpen,
   setTriggerModalOpen,
+  nodeKey,
 }: {
   activeEditor: LexicalEditor
   triggerModalOpen: boolean
   setTriggerModalOpen: (isOpen: boolean) => void
+  nodeKey?: NodeKey
 }): JSX.Element => {
+  const editorState = activeEditor.getEditorState()
+  const node = nodeKey ? editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode) : null
+
   const [src, setSrc] = useState('')
   const [srcError, setSrcError] = useState(false)
-  const [altText, setAltText] = useState('')
+  const [altText, setAltText] = useState(node ? node.getAltText() : '')
   const [altTextError, setAltTextError] = useState(false)
-  const [position, setPosition] = useState<Position>('left')
-  const [showCaption, setShowCaption] = useState(false)
+  const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
+  const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
   const [ModalOpen, setModalOpen] = useState(triggerModalOpen)
 
   useEffect(() => {
     setModalOpen(triggerModalOpen)
 
-    if (triggerModalOpen) {
+    if (triggerModalOpen && !node) {
       setSrc('')
       setSrcError(false)
       setAltText('')
@@ -36,7 +44,7 @@ export const ImageModal = ({
       setPosition('left')
       setShowCaption(false)
     }
-  }, [triggerModalOpen])
+  }, [triggerModalOpen, node])
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
@@ -86,6 +94,19 @@ export const ImageModal = ({
     }
   }
 
+  const handleOnConfirm = () => {
+    const payload = { altText, showCaption, position }
+    if (!setAltText) {
+      setAltTextError(true)
+    } else if (node) {
+      activeEditor.update(() => {
+        node.update(payload)
+        setModalOpen(false)
+        setTriggerModalOpen(false)
+      })
+    }
+  }
+
   const handleCancelOnClick = () => {
     setSrc('')
     setAltText('')
@@ -112,17 +133,18 @@ export const ImageModal = ({
       ariaLabel="Insert Inline Image"
       ariaDescription="A modal to add the image"
     >
-      <div className="flex gap-5 flex-col flex-wrap">
-        <FieldControl
-          control="fileUpload"
-          label="Image Upload"
-          required
-          name="inline-image"
-          onChange={handleImageChange}
-          ref={fileInputRef}
-        />
-
-        {srcError && <Error>Please choose an image</Error>}
+      <FieldGroup>
+        {!nodeKey && (
+          <FieldControl
+            control="fileUpload"
+            label="Image Upload"
+            required
+            name="inline-image"
+            onChange={handleImageChange}
+            ref={fileInputRef}
+          />
+        )}
+        {!nodeKey && srcError && <Error>Please choose an image</Error>}
 
         <FieldControl
           control="textarea"
@@ -159,10 +181,14 @@ export const ImageModal = ({
         />
 
         <ButtonGroup align="right">
-          <Button title="Insert" isDisabled={srcError || altTextError} onClick={handleInsertOnClick}></Button>
+          {node ? (
+            <Button title="Confirm" isDisabled={altTextError} onClick={handleOnConfirm}></Button>
+          ) : (
+            <Button title="Insert" isDisabled={srcError || altTextError} onClick={handleInsertOnClick}></Button>
+          )}
           <Button color={'grey'} title="Cancel" onClick={handleCancelOnClick}></Button>
         </ButtonGroup>
-      </div>
+      </FieldGroup>
     </Modal>
   )
 }
