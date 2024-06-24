@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface DescriptionAccordionProps {
     term: string;
     children: React.ReactNode;
