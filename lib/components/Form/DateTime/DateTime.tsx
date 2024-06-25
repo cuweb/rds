@@ -4,6 +4,7 @@ import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
 import { FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
+import { Ref } from 'react'
 
 export interface DateTimeProps {
   label: string
@@ -17,6 +18,7 @@ export interface DateTimeProps {
   dateFormat?: string
   timeFormat?: string
   placeholder?: string
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {

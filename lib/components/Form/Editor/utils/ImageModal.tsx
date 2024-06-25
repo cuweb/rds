@@ -141,11 +141,10 @@ export const ImageModal = ({
             required
             name="inline-image"
             onChange={handleImageChange}
-            ref={fileInputRef}
+            refs={fileInputRef}
           />
         )}
         {!nodeKey && srcError && <Error>Please choose an image</Error>}
-
         <FieldControl
           control="text"
           required
@@ -154,9 +153,7 @@ export const ImageModal = ({
           name="image-alt"
           onChange={handleAltChange}
         />
-
         {altTextError && <Error>Please add alternative text</Error>}
-
         <FieldControl
           control="select"
           label="Position"
@@ -164,7 +161,6 @@ export const ImageModal = ({
           name="image-position"
           onChange={handlePositionChange}
         />
-
         <FieldControl
           control="checkbox"
           name="checkbox"

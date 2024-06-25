@@ -2,6 +2,7 @@ import { Field } from 'formik'
 import { FormFieldSet } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 import useErrorClass from '../UserError'
+import { Ref } from 'react'
 
 export interface CheckboxProps {
   label: string
@@ -14,6 +15,7 @@ export interface CheckboxProps {
     label: string
     value: string
   }[]
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {

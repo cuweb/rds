@@ -7,33 +7,34 @@ import { Radio } from '../Radio/Radio'
 import { AutoSuggest } from '../AutoSuggest/AutoSuggest'
 import { DateTime } from '../DateTime/DateTime'
 import { FileUpload } from '../FileUpload/FileUpload'
+import { forwardRef } from 'react'
 
 export interface FieldControlProps {
   control: string
+  label: string
+  name: string
   [key: string]: any
 }
 
-export const FieldControl = ({ ...props }: FieldControlProps) => {
-  const { control, ...rest } = props
-
+export const FieldControl = forwardRef<any, FieldControlProps>(({ control, label, name, ...rest }, refs) => {
   switch (control) {
     case 'text':
-      return <Input label={rest.label} name={rest.name} {...rest} />
+      return <Input label={label} refs={refs} name={name} {...rest} />
     case 'textarea':
-      return <TextArea label={rest.label} name={rest.name} {...rest} />
+      return <TextArea label={label} refs={refs} name={name} {...rest} />
     case 'select':
-      return <Select label={rest.label} name={rest.name} {...rest} />
+      return <Select label={label} refs={refs} name={name} {...rest} />
     case 'checkbox':
-      return <Checkbox label={rest.label} name={rest.name} {...rest} />
+      return <Checkbox label={label} refs={refs} name={name} {...rest} />
     case 'radio':
-      return <Radio label={rest.label} name={rest.name} {...rest} />
+      return <Radio label={label} refs={refs} name={name} {...rest} />
     case 'autosuggest':
-      return <AutoSuggest label={rest.label} name={rest.name} {...rest} />
+      return <AutoSuggest label={label} refs={refs} name={name} {...rest} />
     case 'datetime':
-      return <DateTime label={rest.label} name={rest.name} {...rest} />
+      return <DateTime label={label} refs={refs} name={name} {...rest} />
     case 'fileUpload':
-      return <FileUpload label={rest.label} name={rest.name} {...rest} />
+      return <FileUpload label={label} refs={refs} name={name} {...rest} />
     default:
       return null
   }
-}
+})

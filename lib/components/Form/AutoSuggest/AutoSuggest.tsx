@@ -3,6 +3,7 @@ import Select from 'react-select'
 import './style.css'
 import { FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
+import { Ref } from 'react'
 
 interface Option {
   value: string
@@ -17,6 +18,7 @@ export interface AutoSuggestProps {
   required?: boolean
   options?: Option[]
   disabled?: boolean
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {

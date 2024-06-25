@@ -1,3 +1,4 @@
+import { Ref } from 'react'
 import { fieldStyles } from '../../../styles/form'
 import { FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
@@ -8,6 +9,7 @@ export interface FileUploadProps {
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
   required?: boolean
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const FileUpload = ({ ...props }: FileUploadProps) => {

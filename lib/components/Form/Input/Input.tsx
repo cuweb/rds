@@ -3,6 +3,7 @@ import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
 import { FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
+import { Ref } from 'react'
 
 export interface InputProps {
   label: string
@@ -12,6 +13,7 @@ export interface InputProps {
   helper?: string
   required?: boolean
   displayError?: boolean
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const Input = ({ ...props }: InputProps) => {

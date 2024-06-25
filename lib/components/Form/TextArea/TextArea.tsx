@@ -2,6 +2,7 @@ import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
 import { FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
+import { Ref } from 'react'
 
 export interface TextAreaProps {
   label: string
@@ -9,6 +10,7 @@ export interface TextAreaProps {
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
   required?: boolean
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const TextArea = ({ ...props }: TextAreaProps) => {
