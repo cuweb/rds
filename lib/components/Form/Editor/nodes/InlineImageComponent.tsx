@@ -352,7 +352,7 @@ export default function InlineImageComponent({
             }}
             title="Edit"
           />
-          <Button isSmall title="Delete" onClick={deleteNode}></Button>
+          <Button isSmall title="Delete" onClick={deleteNode} disabled={!isSelected}></Button>
         </ButtonGroup>
 
         <LazyImage
