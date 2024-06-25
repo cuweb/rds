@@ -134,11 +134,13 @@ export const Editor: Story = () => {
 
   const EditorValidationSchema = Yup.object().shape({})
 
+  const isEditorRequired = true
+
   const onSubmit = async (values: IEditor, actions: FormikHelpers<IEditor>) => {
     actions.setSubmitting(true)
     setEditorError(false)
 
-    if (editorContent === null) {
+    if (editorContent === null && isEditorRequired) {
       setEditorError(true)
     } else {
       await sleep(1000)
@@ -167,7 +169,7 @@ export const Editor: Story = () => {
           placeholder="Text goes here..."
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
-          required
+          required={isEditorRequired}
           disable={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
