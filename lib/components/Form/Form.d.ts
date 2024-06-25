@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface FormWrapperProps {
     children: React.ReactNode;
     formikProps: any;

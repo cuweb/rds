@@ -1,10 +1,11 @@
-/// <reference types="react" />
 export interface ColumnDefinitionType {
     key: string;
     header: string;
     sort?: {
         sortable: boolean;
     };
+    order?: 'ascending' | 'descending';
+    default?: true;
 }
 export interface TableProps {
     data: {

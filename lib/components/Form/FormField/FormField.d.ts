@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface FieldProps {
     label: string;
     hiddenLabel?: boolean;

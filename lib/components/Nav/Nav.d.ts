@@ -15,15 +15,11 @@ export declare const Nav: (({ navType, children }: NavWrapperProps) => import("r
         displayName: string;
     };
     Primary: {
-        ({ children }: {
-            children?: ReactNode;
-        }): import("react/jsx-runtime").JSX.Element;
+        ({ children }: import('../../../node_modules/react').PropsWithChildren): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Secondary: {
-        ({ children }: {
-            children?: ReactNode;
-        }): import("react/jsx-runtime").JSX.Element;
+        ({ children }: import('../../../node_modules/react').PropsWithChildren): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Menu: {
