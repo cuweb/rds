@@ -147,7 +147,7 @@ export const ImageModal = ({
         {!nodeKey && srcError && <Error>Please choose an image</Error>}
 
         <FieldControl
-          control="textarea"
+          control="text"
           required
           label="Alt Text"
           placeholder="Descriptive alternative text"

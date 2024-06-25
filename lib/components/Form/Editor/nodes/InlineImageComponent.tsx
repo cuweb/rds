@@ -351,8 +351,9 @@ export default function InlineImageComponent({
               setModalOpen(true)
             }}
             title="Edit"
+            isDisabled={!isSelected}
           />
-          <Button isSmall title="Delete" onClick={deleteNode} disabled={!isSelected}></Button>
+          <Button isSmall title="Delete" onClick={deleteNode} isDisabled={!isSelected}></Button>
         </ButtonGroup>
 
         <LazyImage

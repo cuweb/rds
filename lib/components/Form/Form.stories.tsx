@@ -154,7 +154,7 @@ export const Editor: Story = () => {
     onSubmit,
   })
 
-  const initialValue = '<h2>H2 Heading</h2>'
+  const initialValue = ''
 
   return (
     <Form formikProps={formikProps}>

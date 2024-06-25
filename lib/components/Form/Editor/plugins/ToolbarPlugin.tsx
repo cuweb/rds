@@ -605,7 +605,7 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
           className="item"
           aria-label="Upload image"
         >
-          <i className="icon image" />
+          <i className="icon image" />s
         </button>
       </div>
       <ImageModal activeEditor={editor} triggerModalOpen={triggerModalOpen} setTriggerModalOpen={setTriggerModalOpen} />
