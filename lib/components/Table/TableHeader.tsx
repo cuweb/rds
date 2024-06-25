@@ -11,9 +11,7 @@ interface TableHeaderProps {
 
 const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
   const [ascending, setAscending] = useState(true)
-
   const [active, setActive] = useState('')
-
   const wordBreakClass = noWordBreak ? 'whitespace-nowrap' : ''
 
   const handleSortChange = (key: string) => {
@@ -37,7 +35,7 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
       setAscending(defaultColumn?.order === 'ascending' ? true : false)
       sortData(defaultColumn.key, defaultColumn?.order === 'ascending')
     }
-  }, [])
+  }, [columns, sortData])
 
   const headers = columns.map((column: ColumnDefinitionType, index) => {
     const sortableStyles = column?.sort?.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'
