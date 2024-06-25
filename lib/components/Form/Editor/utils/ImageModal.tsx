@@ -50,7 +50,7 @@ export const ImageModal = ({
     const files = e.target.files
     if (files && files.length > 0) {
       const reader = new FileReader()
-      reader.onload = function () {
+      reader.onload = () => {
         if (typeof reader.result === 'string') {
           setSrc(reader.result)
           setSrcError(false)

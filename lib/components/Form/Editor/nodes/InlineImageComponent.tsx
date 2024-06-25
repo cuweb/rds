@@ -357,7 +357,7 @@ export default function InlineImageComponent({
         </ButtonGroup>
 
         <LazyImage
-          className={isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : null}
+          className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''} !my-2`}
           src={src}
           altText={altText}
           imageRef={imageRef}
