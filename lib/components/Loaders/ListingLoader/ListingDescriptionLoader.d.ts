@@ -1,3 +1,4 @@
+/// <reference types="react" />
 interface ListingDescriptionLoaderProps {
     numCol?: number;
 }

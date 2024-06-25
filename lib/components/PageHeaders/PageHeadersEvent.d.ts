@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface PageHeadersEventProps {
     children?: React.ReactNode;
     startDate?: string;
