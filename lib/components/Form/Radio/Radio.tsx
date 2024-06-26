@@ -11,7 +11,19 @@ export interface RadioProps extends FieldSetProps {
 }
 
 export const Radio = ({ ...props }: RadioProps) => {
-  const { label, name, options, required, maxWidth, helper, displayError, helperpostop, isInline, ...rest } = props
+  const {
+    label,
+    name,
+    options,
+    required,
+    maxWidth,
+    helper,
+    displayError,
+    helperpostop,
+    isInline,
+    hiddenLabel,
+    ...rest
+  } = props
 
   const errorClass = useErrorClass(name)
 
@@ -26,6 +38,7 @@ export const Radio = ({ ...props }: RadioProps) => {
       displayError={displayError}
       key={name}
       isInline={isInline}
+      hiddenLabel={hiddenLabel}
       {...rest}
     >
       {options &&
