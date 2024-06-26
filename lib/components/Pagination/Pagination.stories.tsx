@@ -29,6 +29,19 @@ export const Spacing: Story = () => {
   return <Pagination hasBorder totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
 }
 
+export const Click: Story = () => {
+  return (
+    <Pagination
+      hasBorder
+      totalCount={48}
+      siblingCount={1}
+      pageSize={5}
+      callback={() => undefined}
+      onClickPage={() => undefined}
+    />
+  )
+}
 Default.storyName = 'Default item'
 Border.storyName = 'With Top Border'
 Spacing.storyName = 'With Spacing'
+Click.storyName = 'With Click'
