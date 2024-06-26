@@ -1,9 +1,8 @@
 import { styles } from './Embed.Styles'
 export interface EmbedSoundCloudProps {
   title: string
-  width?: string
-  height?: string
   url: string
+  width?: string
   autoPlay?: boolean
   hideRelated?: boolean
   showComments?: boolean
