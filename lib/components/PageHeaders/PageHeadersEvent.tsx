@@ -91,7 +91,11 @@ export const PageHeadersEvent = ({
                     </a>
                   </>
                 )}
-                {contactPhone && <>, {contactPhone}</>}
+                {contactPhone && (
+                  <>
+                    , <span className="whitespace-nowrap">{contactPhone}</span>
+                  </>
+                )}
               </li>
             )}
           </ul>
