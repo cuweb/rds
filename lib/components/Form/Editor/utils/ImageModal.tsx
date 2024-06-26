@@ -33,6 +33,8 @@ export const ImageModal = ({
   const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
   const [ModalOpen, setModalOpen] = useState(triggerModalOpen)
 
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
   useEffect(() => {
     setModalOpen(triggerModalOpen)
 
@@ -63,9 +65,9 @@ export const ImageModal = ({
     }
   }
 
-  const handleAltChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleAltChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAltText(e.target.value)
-    setAltTextError(false)
+    setAltTextError(!e.target.value)
   }
 
   const handlePositionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -77,11 +79,13 @@ export const ImageModal = ({
   }
 
   const handleInsertOnClick = () => {
-    if (!setSrc) {
+    if (!src) {
       setSrcError(true)
-    } else if (!setAltText) {
+    }
+    if (!altText) {
       setAltTextError(true)
-    } else {
+    }
+    if (src && altText) {
       setSrcError(false)
       setAltTextError(false)
 
@@ -91,12 +95,16 @@ export const ImageModal = ({
       setTriggerModalOpen(false)
       setSrc('')
       setSrcError(false)
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''
+      }
     }
   }
 
   const handleOnConfirm = () => {
     const payload = { altText, showCaption, position }
-    if (!setAltText) {
+    if (!altText) {
       setAltTextError(true)
     } else if (node) {
       activeEditor.update(() => {
@@ -116,6 +124,10 @@ export const ImageModal = ({
     setSrcError(false)
     setAltTextError(false)
     setTriggerModalOpen(false)
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ''
+    }
   }
 
   const selectValues = [
@@ -123,8 +135,6 @@ export const ImageModal = ({
     { value: 'right', label: 'Right' },
     { value: 'center', label: 'Center' },
   ]
-
-  const fileInputRef = useRef<HTMLInputElement>(null)
 
   return (
     <Modal
@@ -151,6 +161,7 @@ export const ImageModal = ({
           label="Alt Text"
           placeholder="Descriptive alternative text"
           name="image-alt"
+          value={altText}
           onChange={handleAltChange}
         />
         {altTextError && <Error>Please add alternative text</Error>}
@@ -178,9 +189,9 @@ export const ImageModal = ({
 
         <ButtonGroup align="right">
           {node ? (
-            <Button title="Confirm" isDisabled={altTextError} onClick={handleOnConfirm}></Button>
+            <Button title="Confirm" isDisabled={!altText} onClick={handleOnConfirm}></Button>
           ) : (
-            <Button title="Insert" isDisabled={srcError || altTextError} onClick={handleInsertOnClick}></Button>
+            <Button title="Insert" isDisabled={!src || !altText} onClick={handleInsertOnClick}></Button>
           )}
           <Button color={'grey'} title="Cancel" onClick={handleCancelOnClick}></Button>
         </ButtonGroup>
