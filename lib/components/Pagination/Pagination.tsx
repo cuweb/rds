@@ -15,6 +15,7 @@ export interface PaginationProps {
   siblingCount: number
   pageSize: number
   callback: (k: [number?, number?]) => void
+  onClickPage?: (page: number) => void
 }
 
 export const Pagination = ({
@@ -24,25 +25,37 @@ export const Pagination = ({
   siblingCount,
   pageSize,
   callback,
+  onClickPage,
 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1)
 
   const paginationRange = usePagination(totalCount, pageSize, siblingCount, currentPage)
-
   const onNext = () => {
     if (currentPage < lastPage) {
-      setCurrentPage(currentPage + 1)
+      if (onClickPage) {
+        onClickPage(currentPage + 1)
+      } else {
+        setCurrentPage(currentPage + 1)
+      }
     }
   }
 
   const onPrevious = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1)
+      if (onClickPage) {
+        onClickPage(currentPage - 1)
+      } else {
+        setCurrentPage(currentPage - 1)
+      }
     }
   }
 
   const onCurrent = (pageNumber: number) => {
-    setCurrentPage(Number(pageNumber))
+    if (onClickPage) {
+      onClickPage(pageNumber)
+    } else {
+      setCurrentPage(Number(pageNumber))
+    }
   }
 
   const borderStyles = hasBorder ? 'py-5 border-t border-cu-black-100' : ''
