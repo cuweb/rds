@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
 import { ColumnDefinitionType } from './Table'
 import { styles } from './Table.Styles'
@@ -26,6 +26,16 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
     setAscending(asc)
     sortData(activeColumn, asc)
   }
+
+  useEffect(() => {
+    const defaultColumn = columns.find((column) => column.default)
+
+    if (defaultColumn) {
+      setActive(defaultColumn.key)
+      setAscending(defaultColumn?.order === 'ascending' ? true : false)
+      sortData(defaultColumn.key, defaultColumn?.order === 'ascending')
+    }
+  }, [columns, sortData])
 
   const headers = columns.map((column: ColumnDefinitionType, index) => {
     const sortableStyles = column?.sort?.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'

@@ -23,6 +23,7 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
     displayError,
     helperpostop,
     isInline,
+    hiddenLabel,
     ...rest
   } = props
   const errorClass = useErrorClass(name)
@@ -38,6 +39,7 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
       displayError={displayError}
       key={name}
       isInline={isInline}
+      hiddenLabel={hiddenLabel}
       {...rest}
     >
       {options &&
