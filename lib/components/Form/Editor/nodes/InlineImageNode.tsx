@@ -12,10 +12,8 @@ import type {
 } from 'lexical'
 
 import { $applyNodeReplacement, createEditor, DecoratorNode } from 'lexical'
-import * as React from 'react'
 import { Suspense } from 'react'
-
-const InlineImageComponent = React.lazy(() => import('./InlineImageComponent'))
+import InlineImageComponent from './InlineImageComponent'
 
 export type Position = 'left' | 'right' | 'center' | undefined
 
@@ -132,12 +130,28 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   }
 
   exportDOM(): DOMExportOutput {
-    const element = document.createElement('img')
-    element.setAttribute('src', this.__src)
-    element.setAttribute('alt', this.__altText)
-    element.setAttribute('width', this.__width.toString())
-    element.setAttribute('height', this.__height.toString())
-    return { element }
+    const figure = document.createElement('figure')
+    const img = document.createElement('img')
+    img.setAttribute('src', this.__src)
+    img.setAttribute('alt', this.__altText)
+    img.setAttribute('width', this.__width.toString())
+    img.setAttribute('height', this.__height.toString())
+
+    figure.className = `position-${this.__position}`
+    figure.appendChild(img)
+
+    if (this.__showCaption && this.__caption) {
+      const figcaption = document.createElement('figcaption')
+      const captionEditorState = this.__caption.getEditorState()
+      const captionString = captionEditorState
+        .toJSON()
+        .root.children.map((child) => child.text)
+        .join(' ')
+      figcaption.textContent = captionString
+      figure.appendChild(figcaption)
+    }
+
+    return { element: figure }
   }
 
   exportJSON(): SerializedInlineImageNode {
@@ -205,22 +219,19 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  // View
-
-  createDOM(config: EditorConfig): HTMLElement {
+  createDOM(): HTMLElement {
     const span = document.createElement('span')
-    const theme = config.theme
-    const className = `${theme.image} position-${this.__position}`
+    const className = `position-${this.__position}`
     if (className !== undefined) {
       span.className = className
     }
     return span
   }
 
-  updateDOM(prevNode: InlineImageNode, dom: HTMLElement, config: EditorConfig): false {
+  updateDOM(prevNode: InlineImageNode, dom: HTMLElement): false {
     const position = this.__position
     if (position !== prevNode.__position) {
-      const className = `${config.theme.image} position-${position}`
+      const className = `position-${position}`
       if (className !== undefined) {
         dom.className = className
       }

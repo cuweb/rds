@@ -367,3 +367,15 @@ i.image {
   left: -6px;
   cursor: nw-resize;
 }
+
+.position-left .image-wrapper {
+  text-align: left;
+}
+
+.position-center .image-wrapper {
+  text-align: center;
+}
+
+.position-right .image-wrapper {
+  text-align: right;
+}

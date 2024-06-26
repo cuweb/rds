@@ -342,7 +342,7 @@ export default function InlineImageComponent({
 
   return (
     <Suspense fallback={null}>
-      <span draggable={draggable}>
+      <span className="image-wrapper" draggable={draggable}>
         <ButtonGroup>
           <Button
             color="grey"
