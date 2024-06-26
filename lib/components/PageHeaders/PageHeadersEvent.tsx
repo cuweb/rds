@@ -39,9 +39,9 @@ export const PageHeadersEvent = ({
   let finalDate = ''
   if (parsedStartDate && parsedEndDate) {
     if (isSameDay(parsedStartDate, parsedEndDate)) {
-      finalDate = `${format(parsedStartDate, "EEEE, MMMM do, yyyy 'at' h:mmaaa")}`
+      finalDate = `${format(parsedStartDate, 'EEEE, MMMM do, yyyy')} from ${format(parsedStartDate, 'h:mmaaa')} to ${format(parsedEndDate, 'h:mmaaa')}`
     } else {
-      finalDate = `${format(parsedStartDate, 'EEEE, MMMM do, yyyy')} to ${format(parsedEndDate, 'EEEE, MMMM do, yyyy')}`
+      finalDate = `${format(parsedStartDate, 'EEEE, MMMM do, yyyy')} at ${format(parsedStartDate, 'h:mmaaa')} to ${format(parsedEndDate, 'EEEE, MMMM do, yyyy')} at ${format(parsedEndDate, 'h:mmaaa')}`
     }
   }
 
