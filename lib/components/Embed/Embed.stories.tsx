@@ -65,7 +65,7 @@ export const TED: Story = {
   ),
 }
 
-export const SoundCloud: Story = {
+export const Soundcloud: Story = {
   render: (args) => (
     <Embed {...args}>
       <Embed.SoundCloud title="test" url="https://soundcloud.com/elephanttree/try" />
