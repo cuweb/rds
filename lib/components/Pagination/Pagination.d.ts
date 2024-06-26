@@ -5,5 +5,6 @@ export interface PaginationProps {
     siblingCount: number;
     pageSize: number;
     callback: (k: [number?, number?]) => void;
+    onClickPage?: (page: number) => void;
 }
-export declare const Pagination: ({ hasBorder, hasSpacing, totalCount, siblingCount, pageSize, callback, }: PaginationProps) => import("react/jsx-runtime").JSX.Element | null;
+export declare const Pagination: ({ hasBorder, hasSpacing, totalCount, siblingCount, pageSize, callback, onClickPage, }: PaginationProps) => import("react/jsx-runtime").JSX.Element | null;
