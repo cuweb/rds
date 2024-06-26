@@ -12,7 +12,7 @@ export interface SelectProps extends FieldProps {
 }
 
 export const Select = ({ ...props }: SelectProps) => {
-  const { name, options, label, maxWidth, helper, helperpostop, required, displayError, ...rest } = props
+  const { name, options, label, maxWidth, helper, helperpostop, required, displayError, hiddenLabel, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
@@ -25,6 +25,7 @@ export const Select = ({ ...props }: SelectProps) => {
       helperpostop={helperpostop}
       required={required}
       displayError={displayError}
+      hiddenLabel={hiddenLabel}
     >
       <Field
         as="select"

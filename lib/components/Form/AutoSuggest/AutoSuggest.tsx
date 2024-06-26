@@ -25,6 +25,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
     disabled = false,
     required,
     displayError,
+    hiddenLabel,
     ...rest
   } = props
   const [field] = useField(name)
@@ -41,6 +42,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
       helperpostop={helperpostop}
       required={required}
       displayError={displayError}
+      hiddenLabel={hiddenLabel}
     >
       <Select
         {...rest}
