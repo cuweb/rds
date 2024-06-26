@@ -6,6 +6,7 @@ import * as Yup from 'yup'
 import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
+import { Alert } from '../Alert/Alert'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
 
 const meta: Meta<typeof Form> = {
@@ -229,6 +230,18 @@ export const CheckBox: Story = () => {
           disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
+      <Alert
+        title="A copy of this submission will be automatically send to the submitter."
+        textSize="large"
+        type="info"
+      />
+
+      <Alert
+        title="Double-Payment Warnings / Errors"
+        content="Occurs when more than submission for a person, amount, fund, and begin/end dates. The submitter should see double-payment warnings when submitted. If possible, it would nice to see a warning but the submission is sent, to cancel if necessary. Self-Payee – submitter is paying themselves. Warning should appear for the signing authority."
+        textSize="large"
+        type="warning"
+      />
       <ButtonGroup>
         <Button title="Submit" type="submit" />
       </ButtonGroup>
@@ -400,15 +413,9 @@ export const DateTime: Story = () => {
           name="startDate"
           maxDate={formikProps.values.endDate}
           disabled={formikProps.isSubmitting}
+          hiddenLabel={true}
         />
-        <Form.FieldControl
-          required
-          control="datetime"
-          label="End Date"
-          name="endDate"
-          minDate={formikProps.values.startDate}
-          disabled={formikProps.isSubmitting}
-        />
+        <Button title="Submit" type="submit" />
       </Form.FieldGroup>
       <ButtonGroup>
         <Button title="Submit" type="submit" />
