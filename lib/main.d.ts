@@ -8,6 +8,7 @@ export { ButtonGroup } from './components/ButtonGroup/ButtonGroup';
 export { Calendar } from './components/Calendar/Calendar';
 export { Card } from './components/Card/Card';
 export { Description } from './components/Description/Description';
+export { Dialog } from './components/Dialog/Dialog';
 export { Embed } from './components/Embed/Embed';
 export { Form } from './components/Form/Form';
 export { Filter } from './components/Filter/Filter';
