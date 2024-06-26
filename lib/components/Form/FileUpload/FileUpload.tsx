@@ -3,7 +3,7 @@ import { FieldProps, FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
 
 export const FileUpload = ({ ...props }: FieldProps) => {
-  const { name, label, maxWidth, helper, helperpostop, displayError, required, ...rest } = props
+  const { name, label, maxWidth, helper, helperpostop, displayError, required, hiddenLabel, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
@@ -16,6 +16,7 @@ export const FileUpload = ({ ...props }: FieldProps) => {
       helperpostop={helperpostop}
       required={required}
       displayError={displayError}
+      hiddenLabel={hiddenLabel}
     >
       <input
         type="file"

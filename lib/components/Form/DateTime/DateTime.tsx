@@ -29,6 +29,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
     minDate,
     maxDate,
     required,
+    hiddenLabel,
     ...rest
   } = props
 
@@ -52,6 +53,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
       helperpostop={helperpostop}
       required={required}
       displayError={displayError}
+      hiddenLabel={hiddenLabel}
     >
       <DatePicker
         selected={field.value}
