@@ -4,7 +4,7 @@ import { FieldProps, FormField } from '../FormField/FormField'
 import useErrorClass from '../UserError'
 
 export const Input = ({ ...props }: FieldProps) => {
-  const { name, label, maxWidth, helper, helperpostop, required, displayError, ...rest } = props
+  const { name, label, maxWidth, helper, helperpostop, required, displayError, hiddenLabel, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
@@ -17,6 +17,7 @@ export const Input = ({ ...props }: FieldProps) => {
       helperpostop={helperpostop}
       required={required}
       displayError={displayError}
+      hiddenLabel={hiddenLabel}
     >
       <Field
         type="text"
