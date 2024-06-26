@@ -30,6 +30,7 @@ export const Table = ({ data, columns, hasStripes = false, noWordBreak = false, 
     if (defaultColumn) {
       setTableData(defaultColumn.key, defaultColumn?.order === 'ascending')
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

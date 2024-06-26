@@ -35,7 +35,8 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
       setAscending(defaultColumn?.order === 'ascending' ? true : false)
       sortData(defaultColumn.key, defaultColumn?.order === 'ascending')
     }
-  }, [columns, sortData])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const headers = columns.map((column: ColumnDefinitionType, index) => {
     const sortableStyles = column?.sort?.sortable ? 'hover:cursor-pointer' : 'hover:cursor-auto'
