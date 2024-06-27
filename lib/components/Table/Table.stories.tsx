@@ -47,8 +47,6 @@ const columns: ColumnDefinitionType[] = [
     sort: {
       sortable: true,
     },
-    order: 'descending',
-    default: true,
   },
   {
     key: 'description' as never,

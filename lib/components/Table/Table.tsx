@@ -1,7 +1,7 @@
 import TableHeader from './TableHeader'
 import TableRows from './TableRows'
 import { useSortableTable } from '../../hooks/useSortableTable'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 export interface ColumnDefinitionType {
   key: string
@@ -24,14 +24,18 @@ export interface TableProps {
 export const Table = ({ data, columns, hasStripes = false, noWordBreak = false, range = [1, -1] }: TableProps) => {
   const [tableData, setTableData] = useSortableTable(data)
 
-  useEffect(() => {
-    const defaultColumn = columns.find((column) => column.default)
+  const hasMounted = useRef(false)
 
-    if (defaultColumn) {
-      setTableData(defaultColumn.key, defaultColumn?.order === 'ascending')
+  useEffect(() => {
+    if (!hasMounted.current) {
+      const defaultColumn = columns.find((column) => column.default)
+
+      if (defaultColumn) {
+        setTableData(defaultColumn.key, defaultColumn?.order === 'ascending')
+      }
+      hasMounted.current = true
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [columns, setTableData])
 
   return (
     <div className={`cu-table cu-component-spacing not-prose overflow-x-auto rounded-lg shadow-lg`}>
