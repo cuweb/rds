@@ -68,7 +68,10 @@ export const TED: Story = {
 export const Soundcloud: Story = {
   render: (args) => (
     <Embed {...args}>
-      <Embed.SoundCloud title="test" url="https://soundcloud.com/elephanttree/try" />
+      <Embed.SoundCloud
+        title="test"
+        url="https://soundcloud.com/user-361886339/agnus-dei?in=user-361886339/sets/requiem-for-piece-carleton-university-choir-chamber-singers&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+      />
     </Embed>
   ),
 }
