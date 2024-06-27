@@ -78,13 +78,6 @@ WithStripes.args = {
   hasStripes: true,
 }
 
-export const DefaultSortColumn: Story = {}
-WithStripes.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: true,
-}
-
 export const WithRangeOne: Story = {}
 WithRangeOne.args = {
   data: tableData,
