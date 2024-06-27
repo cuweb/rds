@@ -47,8 +47,6 @@ const columns: ColumnDefinitionType[] = [
     sort: {
       sortable: true,
     },
-    order: 'descending',
-    default: true,
   },
   {
     key: 'description' as never,
@@ -74,13 +72,6 @@ Default.args = {
 }
 
 export const WithStripes: Story = {}
-WithStripes.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: true,
-}
-
-export const DefaultSortColumn: Story = {}
 WithStripes.args = {
   data: tableData,
   columns: columns,
