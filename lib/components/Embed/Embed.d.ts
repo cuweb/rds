@@ -20,10 +20,6 @@ export declare const Embed: {
         ({ title, url }: import('./Embed.Kaltura').EmbedKalturaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    SoundCloud: {
-        ({ title, url }: import('./Embed.SoundCloud').EmbedSoundCloudProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
     YouTube: {
         ({ title, url }: import('./Embed.YouTube').EmbedYouTubeProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
