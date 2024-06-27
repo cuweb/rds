@@ -1,6 +1,7 @@
 import React from 'react'
 import { EmbedPowerBi } from './Embed.PowerBi'
 import { EmbedKaltura } from './Embed.Kaltura'
+import { EmbedSoundCloud } from './Embed.SoundCloud'
 import { EmbedYouTube } from './Embed.YouTube'
 import { EmbedVimeo } from './Embed.Vimeo'
 import { EmbedTED } from './Embed.TED'
@@ -23,6 +24,7 @@ export const EmbedWrapper = ({ children, maxWidth = '5xl' }: EmbedProps) => {
 export const Embed = Object.assign(EmbedWrapper, {
   PowerBi: EmbedPowerBi,
   Kaltura: EmbedKaltura,
+  SoundCloud: EmbedSoundCloud,
   YouTube: EmbedYouTube,
   TED: EmbedTED,
   Vimeo: EmbedVimeo,
