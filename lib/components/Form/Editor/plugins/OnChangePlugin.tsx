@@ -18,11 +18,7 @@ function OnChangePlugin({ onChange, required, disabled }: OnChangePluginProps) {
     if (children.length === 0) return true
 
     return children.every((child) => {
-      const childType = child.getType()
-      if (childType === 'text') {
-        return child.getTextContent().trim() === ''
-      }
-      return false
+      return child.getTextContent().trim() === ''
     })
   }
 
