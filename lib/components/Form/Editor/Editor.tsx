@@ -71,22 +71,6 @@ export interface OnChangePluginProps {
   disabled: boolean
 }
 
-// function OnChangePlugin({ onChange, required, disabled }: OnChangePluginProps) {
-//   const [editor] = useLexicalComposerContext()
-
-//   const emptyState = required ? null : ''
-
-//   editor.update(() => {
-//     const htmlString = $generateHtmlFromNodes(editor, null)
-//     const isEditorEmpty = $isRootTextContentEmpty(editor.isComposing(), true)
-//     return onChange(!isEditorEmpty ? htmlString : emptyState)
-//   })
-
-//   editor.setEditable(!disabled)
-
-//   return emptyState
-// }
-
 export const Editor = ({ ...props }: EditorProps) => {
   const {
     name,

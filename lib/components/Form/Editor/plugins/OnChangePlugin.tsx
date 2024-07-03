@@ -25,10 +25,12 @@ function OnChangePlugin({ onChange, required, disabled }: OnChangePluginProps) {
   useEffect(() => {
     const handleUpdate = () => {
       editor.update(() => {
-        const htmlString = $generateHtmlFromNodes(editor, null)
-        const isEditorEmpty = checkIfEditorIsEmpty()
-        const emptyState = required ? null : ''
-        onChange(!isEditorEmpty ? htmlString : emptyState)
+        if (typeof document !== 'undefined' || typeof window !== 'undefined') {
+          const htmlString = $generateHtmlFromNodes(editor, null)
+          const isEditorEmpty = checkIfEditorIsEmpty()
+          const emptyState = required ? null : ''
+          onChange(!isEditorEmpty ? htmlString : emptyState)
+        }
       })
     }
 
