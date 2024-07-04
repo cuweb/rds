@@ -1,3 +1,4 @@
+import { Alert } from '../Alert/Alert'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
@@ -17,13 +18,13 @@ export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: L
   }
 
   return (
-    <div className={`not-contained border border-cu-black-100 max-w-md shadow-md rounded-md ${centerBox}`}>
+    <div className={`not-contained p-6 pt-0 border border-cu-black-100 max-w-md shadow-md rounded-md ${centerBox}`}>
       <img
         className="w-auto h-12 mx-auto -mt-4 bg-white border-l-[12px] border-r-[12px] border-white"
         src="https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
         alt="Logo of Carleton University"
       />
-      <div className="p-6">
+      <div className="py-6">
         <ButtonGroup>
           <Button title="Login with your Carleton account" onClick={handleCarletonClick} isFull />
         </ButtonGroup>
@@ -38,6 +39,12 @@ export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: L
           </ButtonGroup>
         </div>
       )}
+      <Alert
+        key="login-error"
+        title="What the hell did you do?"
+        content="Oh shit you've gone and fucked it all up!"
+        type="error"
+      />
     </div>
   )
 }
