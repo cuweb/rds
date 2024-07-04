@@ -5,10 +5,18 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 export interface LoginProps {
   isCenter?: boolean
   useSocial?: boolean
+  errorTitle?: string
+  errorDesc?: string
   onClickHandler?: () => void
 }
 
-export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: LoginProps) => {
+export const Login = ({
+  isCenter = false,
+  useSocial = false,
+  errorTitle = '',
+  errorDesc = '',
+  onClickHandler,
+}: LoginProps) => {
   const centerBox = isCenter ? 'mx-auto' : ''
 
   const handleCarletonClick = () => {
@@ -24,7 +32,12 @@ export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: L
         src="https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
         alt="Logo of Carleton University"
       />
-      <div className="py-6">
+      {(errorTitle || errorDesc) && (
+        <div className="pt-6">
+          <Alert key="login-error" title={errorTitle} content={errorDesc} type="error" />
+        </div>
+      )}
+      <div className="pt-6">
         <ButtonGroup>
           <Button title="Login with your Carleton account" onClick={handleCarletonClick} isFull />
         </ButtonGroup>
@@ -39,7 +52,6 @@ export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: L
           </ButtonGroup>
         </div>
       )}
-      <Alert key="login-error" title="Error title" content="Add some content here" type="error" />
     </div>
   )
 }
