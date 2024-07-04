@@ -39,12 +39,7 @@ export const Login = ({ isCenter = false, useSocial = false, onClickHandler }: L
           </ButtonGroup>
         </div>
       )}
-      <Alert
-        key="login-error"
-        title="What the hell did you do?"
-        content="Oh shit you've gone and fucked it all up!"
-        type="error"
-      />
+      <Alert key="login-error" title="Error title" content="Add some content here" type="error" />
     </div>
   )
 }
