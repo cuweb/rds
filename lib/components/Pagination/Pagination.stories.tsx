@@ -18,18 +18,32 @@ export default meta
 type Story = StoryObj<typeof Pagination>
 
 export const Default: Story = () => {
-  return <Pagination totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
+  return (
+    <Pagination
+      totalCount={48}
+      siblingCount={1}
+      pageSize={5}
+      callback={() => undefined}
+      callbackPage={() => undefined}
+    />
+  )
 }
 
 export const Border: Story = () => {
-  return <Pagination hasBorder hasSpacing totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
+  return (
+    <Pagination
+      hasBorder
+      hasSpacing
+      totalCount={48}
+      siblingCount={1}
+      pageSize={5}
+      callback={() => undefined}
+      callbackPage={() => undefined}
+    />
+  )
 }
 
 export const Spacing: Story = () => {
-  return <Pagination hasBorder totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
-}
-
-export const Click: Story = () => {
   return (
     <Pagination
       hasBorder
@@ -37,11 +51,11 @@ export const Click: Story = () => {
       siblingCount={1}
       pageSize={5}
       callback={() => undefined}
-      onClickPage={() => undefined}
+      callbackPage={() => undefined}
     />
   )
 }
+
 Default.storyName = 'Default item'
 Border.storyName = 'With Top Border'
 Spacing.storyName = 'With Spacing'
-Click.storyName = 'With Click'
