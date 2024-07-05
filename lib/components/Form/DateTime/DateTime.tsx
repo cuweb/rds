@@ -12,6 +12,7 @@ export interface DateTimeProps extends FieldProps {
   dateFormat?: string
   timeFormat?: string
   placeholder?: string
+  onChange?: (date: Date) => void
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
@@ -26,10 +27,9 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
     showTime,
     dateFormat = 'MMMM d, yyyy',
     timeFormat = 'HH:mm',
-    minDate,
-    maxDate,
     required,
     hiddenLabel,
+    onChange,
     ...rest
   } = props
 
@@ -41,6 +41,10 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
     setValue(date)
     setTouched(true)
     setError(undefined)
+
+    if (onChange) {
+      onChange(date)
+    }
   }
   const errorClass = useErrorClass(name)
 
@@ -65,8 +69,6 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         showTimeSelect={showTime}
         timeFormat={timeFormat}
         dateFormat={dateFormat}
-        minDate={minDate}
-        maxDate={maxDate}
         placeholderText={placeholder ? placeholder : dateFormat}
         className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
         {...rest}
