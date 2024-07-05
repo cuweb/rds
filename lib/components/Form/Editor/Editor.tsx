@@ -13,9 +13,7 @@ import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { TRANSFORMERS } from '@lexical/markdown'
 import { $getRoot, LexicalEditor } from 'lexical'
-import { $generateNodesFromDOM, $generateHtmlFromNodes } from '@lexical/html'
-import { $isRootTextContentEmpty } from '@lexical/text'
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { $generateNodesFromDOM } from '@lexical/html'
 import EditorTheme from './themes/EditorTheme'
 import './styles.css'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
@@ -24,7 +22,7 @@ import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import Error from '../Error/Error'
-
+import OnChangePlugin from './plugins/OnChangePlugin'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 
 export interface EditorProps {
@@ -71,22 +69,6 @@ export interface OnChangePluginProps {
   onChange: (htmlString: string | null) => void
   required: boolean
   disabled: boolean
-}
-
-function OnChangePlugin({ onChange, required, disabled }: OnChangePluginProps) {
-  const [editor] = useLexicalComposerContext()
-
-  const emptyState = required ? null : ''
-
-  editor.update(() => {
-    const htmlString = $generateHtmlFromNodes(editor, null)
-    const isEditorEmpty = $isRootTextContentEmpty(editor.isComposing(), true)
-    return onChange(!isEditorEmpty ? htmlString : emptyState)
-  })
-
-  editor.setEditable(!disabled)
-
-  return emptyState
 }
 
 export const Editor = ({ ...props }: EditorProps) => {
