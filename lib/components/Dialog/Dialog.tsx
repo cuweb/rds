@@ -61,7 +61,7 @@ export const Dialog = ({ children, title, description, isOpen, setIsOpen }: Dial
   return (
     <dialog
       ref={dialogRef}
-      className="cu-dialog z-10 not-prose w-11/12 md:w-full md:min-w-96 md:max-w-md shadow-md rounded-md p-3.5"
+      className="cu-dialog z-10 not-prose w-11/12 md:w-full md:min-w-96 md:max-w-md shadow-md rounded-md p-3.5 m-auto"
       onClick={handleClick}
       aria-labelledby={title}
       aria-describedby={description}
