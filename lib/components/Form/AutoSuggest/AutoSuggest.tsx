@@ -2,7 +2,7 @@ import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
 import './style.css'
 import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import useErrorClass from '../UseError'
 
 interface Option {
   value: string

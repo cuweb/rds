@@ -1,7 +1,7 @@
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
 import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import useErrorClass from '../UseError'
 
 export const TextArea = ({ ...props }: FieldProps) => {
   const { name, label, maxWidth, helper, helperpostop, required, displayError, hiddenLabel, ...rest } = props

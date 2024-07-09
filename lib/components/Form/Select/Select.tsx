@@ -2,7 +2,7 @@
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
 import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import useErrorClass from '../UseError'
 
 export interface SelectProps extends FieldProps {
   options?: {

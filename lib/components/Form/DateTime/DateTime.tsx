@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker'
 import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
 import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import useErrorClass from '../UseError'
 
 export interface DateTimeProps extends FieldProps {
   minDate?: Date

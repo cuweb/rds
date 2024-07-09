@@ -1,7 +1,7 @@
 import { Field } from 'formik'
 import { FieldSetProps, FormFieldSet } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
-import useErrorClass from '../UserError'
+import useErrorClass from '../UseError'
 
 export interface CheckboxProps extends FieldSetProps {
   checkBoxRight?: boolean
