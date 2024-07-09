@@ -7,8 +7,6 @@ import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
-import setHours from 'date-fns/setHours'
-import setMinutes from 'date-fns/setMinutes'
 
 const meta: Meta<typeof Form> = {
   title: 'Components/Form',
@@ -77,8 +75,6 @@ export const Input: Story = () => {
   )
 }
 
-// Input.storyName = 'Input'
-
 export const TextArea: Story = () => {
   type ITextArea = {
     textareainput: string
@@ -123,8 +119,6 @@ export const TextArea: Story = () => {
     </Form>
   )
 }
-
-// TextArea.storyName = 'TextArea'
 
 export const Editor: Story = () => {
   type IEditor = object
@@ -183,8 +177,6 @@ export const Editor: Story = () => {
   )
 }
 
-// Editor.storyName = 'Editor'
-
 export const CheckBox: Story = () => {
   type ICheckBox = {
     checkbox: string[]
@@ -240,8 +232,6 @@ export const CheckBox: Story = () => {
   )
 }
 
-// CheckBox.storyName = 'CheckBox'
-
 export const Radio: Story = () => {
   type IRadio = {
     radio: string
@@ -295,8 +285,6 @@ export const Radio: Story = () => {
   )
 }
 
-// Radio.storyName = 'Radio'
-
 export const Select: Story = () => {
   type ISelect = {
     select: string
@@ -346,8 +334,6 @@ export const Select: Story = () => {
     </Form>
   )
 }
-
-// Select.storyName = 'Select'
 
 export const SimpleDate: Story = () => {
   type IDate = {
@@ -622,8 +608,6 @@ export const Media: Story = () => {
   )
 }
 
-// Media.storyName = 'Media'
-
 export const AutoSuggest: Story = () => {
   type IAutoSuggest = {
     text: string
@@ -668,5 +652,3 @@ export const AutoSuggest: Story = () => {
     </Form>
   )
 }
-
-// AutoSuggest.storyName = 'AutoSuggest'
