@@ -2,7 +2,7 @@ import { useField } from 'formik'
 import DatePicker from 'react-datepicker'
 import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
-import { FieldProps, FormField } from '../FormField/FormField'
+import { FieldProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 
 export interface DateTimeProps extends FieldProps {
@@ -16,22 +16,7 @@ export interface DateTimeProps extends FieldProps {
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const {
-    name,
-    label,
-    maxWidth,
-    helper,
-    helperpostop,
-    displayError,
-    placeholder,
-    showTime,
-    dateFormat = 'MMMM d, yyyy',
-    timeFormat = 'HH:mm',
-    required,
-    hiddenLabel,
-    onChange,
-    ...rest
-  } = props
+  const { name, placeholder, showTime, dateFormat = 'MMMM d, yyyy', timeFormat = 'HH:mm', onChange, ...rest } = props
 
   const [field, , helpers] = useField(name)
 
@@ -49,30 +34,19 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField
+    <DatePicker
+      selected={field.value}
       name={name}
-      label={label}
-      maxWidth={maxWidth}
-      helper={helper}
-      helperpostop={helperpostop}
-      required={required}
-      displayError={displayError}
-      hiddenLabel={hiddenLabel}
-    >
-      <DatePicker
-        selected={field.value}
-        name={name}
-        id={name}
-        onChange={(date: Date) => {
-          handleDateChange(date)
-        }}
-        showTimeSelect={showTime}
-        timeFormat={timeFormat}
-        dateFormat={dateFormat}
-        placeholderText={placeholder ? placeholder : dateFormat}
-        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
-        {...rest}
-      />
-    </FormField>
+      id={name}
+      onChange={(date: Date) => {
+        handleDateChange(date)
+      }}
+      showTimeSelect={showTime}
+      timeFormat={timeFormat}
+      dateFormat={dateFormat}
+      placeholderText={placeholder ? placeholder : dateFormat}
+      className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
+      {...rest}
+    />
   )
 }

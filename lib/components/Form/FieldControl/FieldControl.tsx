@@ -7,32 +7,161 @@ import { Radio } from '../Radio/Radio'
 import { AutoSuggest } from '../AutoSuggest/AutoSuggest'
 import { DateTime } from '../DateTime/DateTime'
 import { FileUpload } from '../FileUpload/FileUpload'
+import { FieldProps, FormField } from '../FormField/FormField'
+import { FieldSetProps, FormFieldSet } from '../FormFieldSet/FormFieldSet'
 
-export interface FieldControlProps {
-  control: string
+export interface FieldControlProps extends FieldProps {
+  control: 'text' | 'textarea' | 'select' | 'autosuggest' | 'datetime' | 'fileUpload'
   [key: string]: any
 }
 
-export const FieldControl = ({ ...props }: FieldControlProps) => {
-  const { control, ...rest } = props
+export interface FieldControlSetProps extends FieldSetProps {
+  control: 'checkbox' | 'radio'
+  [key: string]: any
+}
+
+export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetProps) => {
+  const {
+    control,
+    name,
+    label,
+    maxWidth,
+    helper,
+    helperpostop,
+    required,
+    displayError,
+    hiddenLabel,
+    isInline,
+    ...rest
+  } = props
 
   switch (control) {
     case 'text':
-      return <Input label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormField
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          hiddenLabel={hiddenLabel}
+        >
+          <Input label={label} name={name} {...rest} />
+        </FormField>
+      )
     case 'textarea':
-      return <TextArea label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormField
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          hiddenLabel={hiddenLabel}
+        >
+          <TextArea label={rest.label} name={rest.name} {...rest} />
+        </FormField>
+      )
     case 'select':
-      return <Select label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormField
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          hiddenLabel={hiddenLabel}
+        >
+          <Select label={rest.label} name={rest.name} {...rest} />
+        </FormField>
+      )
     case 'checkbox':
-      return <Checkbox label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormFieldSet
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          key={name}
+          isInline={isInline}
+          hiddenLabel={hiddenLabel}
+          {...rest}
+        >
+          <Checkbox label={rest.label} name={rest.name} {...rest} />
+        </FormFieldSet>
+      )
     case 'radio':
-      return <Radio label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormFieldSet
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          key={name}
+          isInline={isInline}
+          hiddenLabel={hiddenLabel}
+          {...rest}
+        >
+          <Radio label={rest.label} name={rest.name} {...rest} />
+        </FormFieldSet>
+      )
     case 'autosuggest':
-      return <AutoSuggest label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormField
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          hiddenLabel={hiddenLabel}
+        >
+          <AutoSuggest label={rest.label} name={rest.name} {...rest} />
+        </FormField>
+      )
     case 'datetime':
-      return <DateTime label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormField
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          hiddenLabel={hiddenLabel}
+        >
+          <DateTime label={rest.label} name={rest.name} {...rest} />
+        </FormField>
+      )
     case 'fileUpload':
-      return <FileUpload label={rest.label} name={rest.name} {...rest} />
+      return (
+        <FormField
+          name={name}
+          label={label}
+          maxWidth={maxWidth}
+          helper={helper}
+          helperpostop={helperpostop}
+          required={required}
+          displayError={displayError}
+          hiddenLabel={hiddenLabel}
+        >
+          <FileUpload label={rest.label} name={rest.name} {...rest} />
+        </FormField>
+      )
     default:
       return null
   }
