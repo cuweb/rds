@@ -122,6 +122,13 @@ export const NavAsideData = [
   },
 ]
 
+export const NavAsideEventCal = [
+  {
+    href: '#',
+    title: 'Login',
+  },
+]
+
 export const NavAsideLoggedInOptionsHref = [
   {
     href: '/profile',

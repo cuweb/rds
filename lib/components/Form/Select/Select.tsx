@@ -1,10 +1,10 @@
 'use client'
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
-import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import { FieldComponentProps } from '../FormField/FormField'
+import useErrorClass from '../UseError'
 
-export interface SelectProps extends FieldProps {
+export interface SelectProps extends FieldComponentProps {
   options?: {
     label: string
     value: string
@@ -12,37 +12,26 @@ export interface SelectProps extends FieldProps {
 }
 
 export const Select = ({ ...props }: SelectProps) => {
-  const { name, options, label, maxWidth, helper, helperpostop, required, displayError, hiddenLabel, ...rest } = props
+  const { name, options, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField
+    <Field
+      as="select"
+      id={name}
       name={name}
-      label={label}
-      maxWidth={maxWidth}
-      helper={helper}
-      helperpostop={helperpostop}
-      required={required}
-      displayError={displayError}
-      hiddenLabel={hiddenLabel}
+      className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass}`}
+      {...rest}
     >
-      <Field
-        as="select"
-        id={name}
-        name={name}
-        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass}`}
-        {...rest}
-      >
-        {options &&
-          options.map((option) => {
-            return (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            )
-          })}
-      </Field>
-    </FormField>
+      {options &&
+        options.map((option) => {
+          return (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          )
+        })}
+    </Field>
   )
 }
