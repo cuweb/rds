@@ -66,22 +66,24 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
         onChange={handleMediaChange}
         {...rest}
       />
-      <div className="flex flex-row flex-wrap gap-5">
-        {previews.map((src, index) => (
-          <div className="relative w-32 h-32" key={index}>
-            <img key={index} src={src} alt={`preview-${index}`} className="w-full h-auto bg-contain" />
+      {previews && previews.length > 0 && (
+        <div className="flex flex-row flex-wrap gap-5 border-[1px] border-cu-black-100 rounded-xl p-6">
+          {previews.map((src, index) => (
+            <div className="relative w-32 h-auto" key={index}>
+              <img key={index} src={src} alt={`preview-${index}`} className="w-full h-auto bg-contain" />
 
-            <button
-              type="button"
-              onClick={() => handleDelete(index)}
-              className="absolute inset-0 w-6 h-6 cursor-pointer bg-gray-800 text-white"
-            >
-              <span className="sr-only">Click to delete the image</span>
-              &times;
-            </button>
-          </div>
-        ))}
-      </div>
+              <button
+                type="button"
+                onClick={() => handleDelete(index)}
+                className="absolute inset-0 w-6 h-6 cursor-pointer bg-gray-800 text-white"
+              >
+                <span className="sr-only">Click to delete the image</span>
+                &times;
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
