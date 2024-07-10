@@ -91,8 +91,9 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
         <div>F</div>
         <div>S</div>
       </div>
+
       <div
-        className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
+        className={`${styles.calendarGrid} cu-component-spacing isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
       >
         {days.map((day, dayIdx) => (
           <div
@@ -156,19 +157,18 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
           </div>
         ))}
       </div>
+
       {showClear && (
-        <div className="mt-2">
-          <ButtonGroup align="center">
-            <Button
-              title="Clear Calendar"
-              isSmall
-              onClick={() => {
-                setSelectedDays([])
-                setShowClear(false)
-              }}
-            />
-          </ButtonGroup>
-        </div>
+        <ButtonGroup align="center">
+          <Button
+            title="Clear Calendar"
+            isSmall
+            onClick={() => {
+              setSelectedDays([])
+              setShowClear(false)
+            }}
+          />
+        </ButtonGroup>
       )}
     </div>
   )
