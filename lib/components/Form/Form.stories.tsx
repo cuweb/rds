@@ -568,20 +568,31 @@ export const DateTime: Story = () => {
 
 export const Media: Story = () => {
   type IMedia = {
+    image: FileList | null
     file: FileList | null
   }
 
   const MediaInitialValues = {
+    image: null,
     file: null,
   }
 
   const MediaValidationSchema = Yup.object().shape({
-    file: Yup.mixed().required('The field is required'),
+    image: Yup.mixed()
+      .test('fileSize', 'The image is required', (value) => {
+        return value && value.length > 0
+      })
+      .required('The field is required'),
+    file: Yup.mixed()
+      .test('fileSize', 'The file is required', (value) => {
+        return value && value.length > 0
+      })
+      .required('The field is required'),
   })
 
   const onSubmit = async (values: IMedia, actions: FormikHelpers<IMedia>) => {
     actions.setSubmitting(true)
-    console.log(values)
+    console.log(values, 'values')
     alert('Please check console log')
     await sleep(1000)
     actions.setSubmitting(false)
@@ -593,8 +604,13 @@ export const Media: Story = () => {
     onSubmit,
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.currentTarget.files
+  const handleImageChange = (files: FileList | null) => {
+    if (files) {
+      formikProps.setFieldValue('image', files)
+    }
+  }
+
+  const handleFileChange = (files: FileList | null) => {
     if (files) {
       formikProps.setFieldValue('file', files)
     }
@@ -605,12 +621,25 @@ export const Media: Story = () => {
       <Form.FieldGroup>
         <Form.FieldControl
           control="fileUpload"
+          label="Images"
+          name="image"
+          required
+          helper="Helper Text"
+          onChange={handleImageChange}
+          accept="image/*"
+          multiple="multiple"
+          disabled={formikProps.isSubmitting}
+          helperpostop
+        />
+        <Form.FieldControl
+          control="fileUpload"
           label="Media"
           name="file"
           required
           helper="Helper Text"
-          onChange={handleChange}
+          onChange={handleFileChange}
           accept="application/pdf,application/vnd.ms-excel"
+          multiple="multiple"
           disabled={formikProps.isSubmitting}
           helperpostop
         />
