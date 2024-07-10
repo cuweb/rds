@@ -1,10 +1,10 @@
-import { FieldProps } from '../FormField/FormField';
+import { FieldComponentProps } from '../FormField/FormField';
 
 interface Option {
     value: string;
     label: string;
 }
-export interface AutoSuggestProps extends FieldProps {
+export interface AutoSuggestProps extends FieldComponentProps {
     disabled?: boolean;
     options?: Option[];
 }

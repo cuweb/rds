@@ -1,6 +1,6 @@
-import { FieldProps } from '../FormField/FormField';
+import { FieldComponentProps } from '../FormField/FormField';
 
-export interface SelectProps extends FieldProps {
+export interface SelectProps extends FieldComponentProps {
     options?: {
         label: string;
         value: string;

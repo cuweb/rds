@@ -1,6 +1,6 @@
-import { FieldProps } from '../FormField/FormField';
+import { FieldComponentProps } from '../FormField/FormField';
 
-export interface DateTimeProps extends FieldProps {
+export interface DateTimeProps extends FieldComponentProps {
     minDate?: Date;
     maxDate?: Date;
     showTime?: boolean;

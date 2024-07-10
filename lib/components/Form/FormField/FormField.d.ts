@@ -1,11 +1,13 @@
-export interface FieldProps {
+export interface FieldComponentProps {
+    name: string;
+    required?: boolean;
+}
+export interface FieldProps extends FieldComponentProps {
     label: string;
     hiddenLabel?: boolean;
-    name: string;
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
     helper?: string;
     helperpostop?: boolean;
-    required?: boolean;
     displayError?: boolean;
 }
 export interface FormFieldProps extends FieldProps {
