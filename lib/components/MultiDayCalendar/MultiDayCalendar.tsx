@@ -157,16 +157,18 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
         ))}
       </div>
       {showClear && (
-        <ButtonGroup align="center">
-          <Button
-            title="Clear Calendar"
-            isSmall
-            onClick={() => {
-              setSelectedDays([])
-              setShowClear(false)
-            }}
-          />
-        </ButtonGroup>
+        <div className="mt-2">
+          <ButtonGroup align="center">
+            <Button
+              title="Clear Calendar"
+              isSmall
+              onClick={() => {
+                setSelectedDays([])
+                setShowClear(false)
+              }}
+            />
+          </ButtonGroup>
+        </div>
       )}
     </div>
   )
