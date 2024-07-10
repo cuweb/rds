@@ -37,102 +37,25 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
 
   switch (control) {
     case 'text':
-      return (
-        <FormField
-          name={name}
-          label={label}
-          maxWidth={maxWidth}
-          helper={helper}
-          helperpostop={helperpostop}
-          required={required}
-          displayError={displayError}
-          hiddenLabel={hiddenLabel}
-        >
-          <Input label={label} name={name} {...rest} />
-        </FormField>
-      )
     case 'textarea':
-      return (
-        <FormField
-          name={name}
-          label={label}
-          maxWidth={maxWidth}
-          helper={helper}
-          helperpostop={helperpostop}
-          required={required}
-          displayError={displayError}
-          hiddenLabel={hiddenLabel}
-        >
-          <TextArea label={label} name={name} {...rest} />
-        </FormField>
-      )
     case 'select':
-      return (
-        <FormField
-          name={name}
-          label={label}
-          maxWidth={maxWidth}
-          helper={helper}
-          helperpostop={helperpostop}
-          required={required}
-          displayError={displayError}
-          hiddenLabel={hiddenLabel}
-        >
-          <Select label={label} name={name} {...rest} />
-        </FormField>
-      )
-    case 'checkbox':
-      return (
-        <FormFieldSet
-          name={name}
-          label={label}
-          maxWidth={maxWidth}
-          helper={helper}
-          helperpostop={helperpostop}
-          required={required}
-          displayError={displayError}
-          key={name}
-          isInline={isInline}
-          hiddenLabel={hiddenLabel}
-          {...rest}
-        >
-          <Checkbox label={label} name={name} {...rest} />
-        </FormFieldSet>
-      )
-    case 'radio':
-      return (
-        <FormFieldSet
-          name={name}
-          label={label}
-          maxWidth={maxWidth}
-          helper={helper}
-          helperpostop={helperpostop}
-          required={required}
-          displayError={displayError}
-          key={name}
-          isInline={isInline}
-          hiddenLabel={hiddenLabel}
-          {...rest}
-        >
-          <Radio label={label} name={name} {...rest} />
-        </FormFieldSet>
-      )
     case 'autosuggest':
-      return (
-        <FormField
-          name={name}
-          label={label}
-          maxWidth={maxWidth}
-          helper={helper}
-          helperpostop={helperpostop}
-          required={required}
-          displayError={displayError}
-          hiddenLabel={hiddenLabel}
-        >
-          <AutoSuggest label={label} name={name} {...rest} />
-        </FormField>
-      )
     case 'datetime':
+    case 'fileUpload': {
+      const Component =
+        control === 'text'
+          ? Input
+          : control === 'textarea'
+            ? TextArea
+            : control === 'select'
+              ? Select
+              : control === 'autosuggest'
+                ? AutoSuggest
+                : control === 'datetime'
+                  ? DateTime
+                  : control === 'fileUpload'
+                    ? FileUpload
+                    : null
       return (
         <FormField
           name={name}
@@ -144,12 +67,16 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          <DateTime label={label} name={name} {...rest} />
+          {Component && <Component label={label} name={name} {...rest} />}
         </FormField>
       )
-    case 'fileUpload':
+    }
+
+    case 'checkbox':
+    case 'radio': {
+      const Component = control === 'checkbox' ? Checkbox : Radio
       return (
-        <FormField
+        <FormFieldSet
           name={name}
           label={label}
           maxWidth={maxWidth}
@@ -157,11 +84,15 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           helperpostop={helperpostop}
           required={required}
           displayError={displayError}
+          key={name}
+          isInline={isInline}
           hiddenLabel={hiddenLabel}
+          {...rest}
         >
-          <FileUpload label={label} name={name} {...rest} />
-        </FormField>
+          <Component label={label} name={name} {...rest} />
+        </FormFieldSet>
       )
+    }
     default:
       return null
   }
