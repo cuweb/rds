@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { fieldStyles } from '../../../styles/form'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
+import { useField } from 'formik'
 
 export interface FileUploadProps extends FieldComponentProps {
-  onChange?: (File: any) => void
+  onChange?: (File: FileList | File[] | null) => void
 }
 
 export const FileUpload = ({ ...props }: FileUploadProps) => {
@@ -14,6 +14,10 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
 
   const [files, setFiles] = useState<File[]>([])
   const [previews, setPreviews] = useState<string[]>([])
+
+  const [, , helpers] = useField(name)
+
+  const { setValue, setTouched, setError } = helpers
 
   const handleMediaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newFiles = event.target.files
@@ -27,9 +31,13 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
         })
         .filter(Boolean) as string[]
 
-      setFiles((prevFiles) => [...prevFiles, ...Array.from(newFiles)])
-      setPreviews((prevPreviews) => [...prevPreviews, ...newPreviews])
+      setFiles(Array.from(newFiles))
+      setPreviews(newPreviews)
     }
+
+    setValue(newFiles)
+    setTouched(true)
+    setError(undefined)
 
     if (onChange) {
       onChange(newFiles)

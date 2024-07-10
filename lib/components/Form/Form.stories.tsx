@@ -553,13 +553,13 @@ export const DateTime: Story = () => {
 
 export const Media: Story = () => {
   type IMedia = {
-    image: FileList | null
-    file: FileList | null
+    image: File[]
+    file: File[]
   }
 
   const MediaInitialValues = {
-    image: null,
-    file: null,
+    image: [],
+    file: [],
   }
 
   const MediaValidationSchema = Yup.object().shape({
@@ -589,18 +589,6 @@ export const Media: Story = () => {
     onSubmit,
   })
 
-  const handleImageChange = (files: FileList | null) => {
-    if (files) {
-      formikProps.setFieldValue('image', files)
-    }
-  }
-
-  const handleFileChange = (files: FileList | null) => {
-    if (files) {
-      formikProps.setFieldValue('file', files)
-    }
-  }
-
   return (
     <Form formikProps={formikProps}>
       <Form.FieldGroup>
@@ -610,7 +598,6 @@ export const Media: Story = () => {
           name="image"
           required
           helper="Helper Text"
-          onChange={handleImageChange}
           accept="image/*"
           multiple="multiple"
           disabled={formikProps.isSubmitting}
@@ -622,7 +609,6 @@ export const Media: Story = () => {
           name="file"
           required
           helper="Helper Text"
-          onChange={handleFileChange}
           accept="application/pdf,application/vnd.ms-excel"
           multiple="multiple"
           disabled={formikProps.isSubmitting}
