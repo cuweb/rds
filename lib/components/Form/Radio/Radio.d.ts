@@ -1,6 +1,6 @@
-import { FieldSetProps } from '../FormFieldSet/FormFieldSet';
+import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet';
 
-export interface RadioProps extends FieldSetProps {
+export interface RadioProps extends FieldSetComponentProps {
     options?: {
         label: string;
         value: string;
