@@ -2,10 +2,10 @@ import { useField } from 'formik'
 import DatePicker from 'react-datepicker'
 import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
-import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import { FieldComponentProps } from '../FormField/FormField'
+import useErrorClass from '../UseError'
 
-export interface DateTimeProps extends FieldProps {
+export interface DateTimeProps extends FieldComponentProps {
   minDate?: Date
   maxDate?: Date
   showTime?: boolean
@@ -16,22 +16,7 @@ export interface DateTimeProps extends FieldProps {
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const {
-    name,
-    label,
-    maxWidth,
-    helper,
-    helperpostop,
-    displayError,
-    placeholder,
-    showTime,
-    dateFormat = 'MMMM d, yyyy',
-    timeFormat = 'HH:mm',
-    required,
-    hiddenLabel,
-    onChange,
-    ...rest
-  } = props
+  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, ...rest } = props
 
   const [field, , helpers] = useField(name)
 
@@ -46,19 +31,11 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
       onChange(date)
     }
   }
+
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField
-      name={name}
-      label={label}
-      maxWidth={maxWidth}
-      helper={helper}
-      helperpostop={helperpostop}
-      required={required}
-      displayError={displayError}
-      hiddenLabel={hiddenLabel}
-    >
+    <>
       <DatePicker
         selected={field.value}
         name={name}
@@ -73,6 +50,6 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
         {...rest}
       />
-    </FormField>
+    </>
   )
 }
