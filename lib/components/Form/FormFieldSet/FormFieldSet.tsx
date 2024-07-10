@@ -3,14 +3,17 @@ import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
 import { maxWidthClasses } from '../../../helpers/optionClasses'
 import Error from '../Error/Error'
 
-export interface FieldSetProps {
+export interface FieldSetComponentProps {
+  name: string
+  required?: boolean
+}
+
+export interface FieldSetProps extends FieldSetComponentProps {
   label: string
   hiddenLabel?: boolean
-  name: string
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
   helper?: string
   helperpostop?: boolean
-  required?: boolean
   isInline?: boolean
   displayError?: boolean
 }

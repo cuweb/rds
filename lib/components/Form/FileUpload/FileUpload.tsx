@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { fieldStyles } from '../../../styles/form'
-import { FieldProps, FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import { FieldComponentProps } from '../FormField/FormField'
+import useErrorClass from '../UseError'
 
-export interface FileUploadProps extends FieldProps {
+export interface FileUploadProps extends FieldComponentProps {
   onChange?: (File: any) => void
 }
 
 export const FileUpload = ({ ...props }: FileUploadProps) => {
-  const { name, label, maxWidth, helper, helperpostop, displayError, required, hiddenLabel, onChange, ...rest } = props
+  const { name, onChange, ...rest } = props
   const errorClass = useErrorClass(name)
 
   const [files, setFiles] = useState<File[]>([])
@@ -49,42 +49,31 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
   }
 
   return (
-    <FormField
-      name={name}
-      label={label}
-      maxWidth={maxWidth}
-      helper={helper}
-      helperpostop={helperpostop}
-      required={required}
-      displayError={displayError}
-      hiddenLabel={hiddenLabel}
-    >
-      <div className="flex flex-col gap-5">
-        <input
-          type="file"
-          id="file"
-          name={name}
-          className={fieldStyles.uploads + ' ' + fieldStyles.disabled + errorClass}
-          onChange={handleMediaChange}
-          {...rest}
-        />
-        <div className="flex flex-row flex-wrap gap-5">
-          {previews.map((src, index) => (
-            <div className="relative w-32 h-32" key={index}>
-              <img key={index} src={src} alt={`preview-${index}`} className="w-full h-auto bg-contain" />
+    <div className="flex flex-col gap-5">
+      <input
+        type="file"
+        id="file"
+        name={name}
+        className={fieldStyles.uploads + ' ' + fieldStyles.disabled + errorClass}
+        onChange={handleMediaChange}
+        {...rest}
+      />
+      <div className="flex flex-row flex-wrap gap-5">
+        {previews.map((src, index) => (
+          <div className="relative w-32 h-32" key={index}>
+            <img key={index} src={src} alt={`preview-${index}`} className="w-full h-auto bg-contain" />
 
-              <button
-                type="button"
-                onClick={() => handleDelete(index)}
-                className="absolute inset-0 w-6 h-6 cursor-pointer bg-gray-800 text-white"
-              >
-                <span className="sr-only">Click to delete the image</span>
-                &times;
-              </button>
-            </div>
-          ))}
-        </div>
+            <button
+              type="button"
+              onClick={() => handleDelete(index)}
+              className="absolute inset-0 w-6 h-6 cursor-pointer bg-gray-800 text-white"
+            >
+              <span className="sr-only">Click to delete the image</span>
+              &times;
+            </button>
+          </div>
+        ))}
       </div>
-    </FormField>
+    </div>
   )
 }
