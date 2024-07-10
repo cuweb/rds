@@ -553,20 +553,31 @@ export const DateTime: Story = () => {
 
 export const Media: Story = () => {
   type IMedia = {
-    file: FileList | null
+    image: File[]
+    file: File[]
   }
 
   const MediaInitialValues = {
-    file: null,
+    image: [],
+    file: [],
   }
 
   const MediaValidationSchema = Yup.object().shape({
-    file: Yup.mixed().required('The field is required'),
+    image: Yup.mixed()
+      .test('fileSize', 'The image is required', (value) => {
+        return value && value.length > 0
+      })
+      .required('The field is required'),
+    file: Yup.mixed()
+      .test('fileSize', 'The file is required', (value) => {
+        return value && value.length > 0
+      })
+      .required('The field is required'),
   })
 
   const onSubmit = async (values: IMedia, actions: FormikHelpers<IMedia>) => {
     actions.setSubmitting(true)
-    console.log(values)
+    console.log(values, 'values')
     alert('Please check console log')
     await sleep(1000)
     actions.setSubmitting(false)
@@ -578,24 +589,28 @@ export const Media: Story = () => {
     onSubmit,
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.currentTarget.files
-    if (files) {
-      formikProps.setFieldValue('file', files)
-    }
-  }
-
   return (
     <Form formikProps={formikProps}>
       <Form.FieldGroup>
+        <Form.FieldControl
+          control="fileUpload"
+          label="Images"
+          name="image"
+          required
+          helper="Helper Text"
+          accept="image/*"
+          multiple="multiple"
+          disabled={formikProps.isSubmitting}
+          helperpostop
+        />
         <Form.FieldControl
           control="fileUpload"
           label="Media"
           name="file"
           required
           helper="Helper Text"
-          onChange={handleChange}
           accept="application/pdf,application/vnd.ms-excel"
+          multiple="multiple"
           disabled={formikProps.isSubmitting}
           helperpostop
         />
