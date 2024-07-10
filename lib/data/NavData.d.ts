@@ -22,6 +22,10 @@ export declare const NavAsideData: {
     href: string;
     title: string;
 }[];
+export declare const NavAsideEventCal: {
+    href: string;
+    title: string;
+}[];
 export declare const NavAsideLoggedInOptionsHref: {
     href: string;
     title: string;

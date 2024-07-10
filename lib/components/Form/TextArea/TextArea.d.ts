@@ -1,3 +1,3 @@
-import { FieldComponentProps } from '../FormField/FormField';
+import { FieldProps } from '../FormField/FormField';
 
-export declare const TextArea: ({ ...props }: FieldComponentProps) => import("react/jsx-runtime").JSX.Element;
+export declare const TextArea: ({ ...props }: FieldProps) => import("react/jsx-runtime").JSX.Element;

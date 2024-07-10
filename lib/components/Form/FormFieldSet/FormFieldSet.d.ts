@@ -1,13 +1,11 @@
-export interface FieldSetComponentProps {
-    name: string;
-    required?: boolean;
-}
-export interface FieldSetProps extends FieldSetComponentProps {
+export interface FieldSetProps {
     label: string;
     hiddenLabel?: boolean;
+    name: string;
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
     helper?: string;
     helperpostop?: boolean;
+    required?: boolean;
     isInline?: boolean;
     displayError?: boolean;
 }

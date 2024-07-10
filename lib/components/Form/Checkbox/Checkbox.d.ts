@@ -1,6 +1,6 @@
-import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet';
+import { FieldSetProps } from '../FormFieldSet/FormFieldSet';
 
-export interface CheckboxProps extends FieldSetComponentProps {
+export interface CheckboxProps extends FieldSetProps {
     checkBoxRight?: boolean;
     options?: {
         label: string;
