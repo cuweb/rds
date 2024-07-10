@@ -1,16 +1,11 @@
 'use client'
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
-import { FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
+import { FieldComponentProps } from '../FormField/FormField'
+import useErrorClass from '../UseError'
 import { Ref } from 'react'
 
-export interface InputProps {
-  label: string
-  name: string
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
-  helper?: string
-  required?: boolean
+export interface SelectProps extends FieldComponentProps {
   options?: {
     label: string
     value: string
@@ -18,29 +13,27 @@ export interface InputProps {
   refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
-export const Select = ({ ...props }: InputProps) => {
-  const { name, options, required, ...rest } = props
+export const Select = ({ ...props }: SelectProps) => {
+  const { name, options, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField name={name} required={required} {...rest}>
-      <Field
-        as="select"
-        id={name}
-        name={name}
-        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass}`}
-        {...rest}
-      >
-        {options &&
-          options.map((option) => {
-            return (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            )
-          })}
-      </Field>
-    </FormField>
+    <Field
+      as="select"
+      id={name}
+      name={name}
+      className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass}`}
+      {...rest}
+    >
+      {options &&
+        options.map((option) => {
+          return (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          )
+        })}
+    </Field>
   )
 }

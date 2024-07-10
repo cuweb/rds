@@ -38,6 +38,8 @@ const columns: ColumnDefinitionType[] = [
     sort: {
       sortable: true,
     },
+    order: 'descending',
+    default: true,
   },
   {
     key: 'title' as never,

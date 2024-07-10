@@ -22,9 +22,9 @@ import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import Error from '../Error/Error'
+import OnChangePlugin from './plugins/OnChangePlugin'
 import InlineImagePlugin from './plugins/InlineImagePlugin'
 import { InlineImageNode } from './nodes/InlineImageNode'
-import OnChangePlugin from './plugins/OnChangePlugin' // Import the updated OnChangePlugin
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 
 export interface EditorProps {
@@ -34,7 +34,7 @@ export interface EditorProps {
   helper?: string
   value?: string
   placeholder?: string
-  disable?: boolean
+  disabled?: boolean
   required?: boolean
   errorMessage?: string
 }
@@ -80,7 +80,7 @@ const editorConfig = (initialValue?: string) => {
 export interface OnChangePluginProps {
   onChange: (htmlString: string | null) => void
   required: boolean
-  disable: boolean
+  disabled: boolean
 }
 
 export const Editor = ({ ...props }: EditorProps) => {
@@ -90,7 +90,7 @@ export const Editor = ({ ...props }: EditorProps) => {
     setEditorContent,
     value,
     placeholder = 'Enter some text...',
-    disable = false,
+    disabled = false,
     required = false,
     errorMessage,
     ...rest
@@ -100,7 +100,7 @@ export const Editor = ({ ...props }: EditorProps) => {
     setEditorContent(htmlString)
   }
 
-  const editorClass = disable ? 'cu-editor__disabled' : ''
+  const editorClass = disabled ? 'cu-editor__disabled' : ''
 
   return (
     <FormField name={name} label={label} required={required} {...rest}>
@@ -128,7 +128,7 @@ export const Editor = ({ ...props }: EditorProps) => {
             <AutoLinkPlugin />
             <ListMaxIndentLevelPlugin maxDepth={7} />
             <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-            <OnChangePlugin onChange={onChange} required={required} disable={disable} />
+            <OnChangePlugin onChange={onChange} required={required} disabled={disabled} />
           </div>
         </div>
       </LexicalComposer>

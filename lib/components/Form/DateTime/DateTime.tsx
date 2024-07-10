@@ -2,50 +2,40 @@ import { useField } from 'formik'
 import DatePicker from 'react-datepicker'
 import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
-import { FormField } from '../FormField/FormField'
-import useErrorClass from '../UserError'
-import { Ref } from 'react'
+import { FieldComponentProps } from '../FormField/FormField'
+import useErrorClass from '../UseError'
 
-export interface DateTimeProps {
-  label: string
-  name: string
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
-  helper?: string
-  required?: boolean
+export interface DateTimeProps extends FieldComponentProps {
   minDate?: Date
   maxDate?: Date
   showTime?: boolean
   dateFormat?: string
   timeFormat?: string
   placeholder?: string
-  refs?: Ref<HTMLInputElement | HTMLSelectElement>
+  onChange?: (date: Date) => void
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const {
-    name,
-    placeholder,
-    showTime,
-    dateFormat = 'MMMM d, yyyy',
-    timeFormat = 'HH:mm',
-    minDate,
-    maxDate,
-    required,
-    ...rest
-  } = props
+  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, ...rest } = props
 
   const [field, , helpers] = useField(name)
+
   const { setValue, setTouched, setError } = helpers
 
   const handleDateChange = (date: Date) => {
     setValue(date)
     setTouched(true)
     setError(undefined)
+
+    if (onChange) {
+      onChange(date)
+    }
   }
+
   const errorClass = useErrorClass(name)
 
   return (
-    <FormField name={name} required={required} {...rest}>
+    <>
       <DatePicker
         selected={field.value}
         name={name}
@@ -56,12 +46,10 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         showTimeSelect={showTime}
         timeFormat={timeFormat}
         dateFormat={dateFormat}
-        minDate={minDate}
-        maxDate={maxDate}
         placeholderText={placeholder ? placeholder : dateFormat}
         className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
         {...rest}
       />
-    </FormField>
+    </>
   )
 }

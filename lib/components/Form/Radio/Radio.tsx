@@ -1,29 +1,24 @@
 import { Field } from 'formik'
-import { FormFieldSet } from '../FormFieldSet/FormFieldSet'
+import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
-import useErrorClass from '../UserError'
+import useErrorClass from '../UseError'
 import { Ref } from 'react'
 
-export interface RadioProps {
-  label: string
-  name: string
-  helper?: string
-  isInline?: boolean
-  required?: boolean
+export interface RadioProps extends FieldSetComponentProps {
   options?: {
-    value: string
     label: string
+    value: string
   }[]
   refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const Radio = ({ ...props }: RadioProps) => {
-  const { label, name, options, required, isInline, ...rest } = props
+  const { name, options, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
   return (
-    <FormFieldSet label={label} name={name} key={name} required={required} isInline={isInline} {...rest}>
+    <>
       {options &&
         options.map((option) => (
           <label key={option.label} className={fieldStyles.radioCheck}>
@@ -37,6 +32,6 @@ export const Radio = ({ ...props }: RadioProps) => {
             {option.label}
           </label>
         ))}
-    </FormFieldSet>
+    </>
   )
 }

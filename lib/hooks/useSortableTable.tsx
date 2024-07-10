@@ -22,6 +22,7 @@ export const useSortableTable = (data: DataProps[]) => {
           }) * (asc ? 1 : -1)
         )
       })
+
       setTableData(sortedData)
     }
   }

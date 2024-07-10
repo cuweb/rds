@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react'
+import React, { MouseEventHandler, useMemo, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useFormik } from 'formik'
 import { FormikHelpers } from 'formik'
@@ -63,8 +63,8 @@ export const Input: Story = () => {
           name="inputText"
           required
           helper="Helper Text"
-          helperPosTop={true}
-          disable={formikProps.isSubmitting}
+          helperpostop
+          disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -74,8 +74,6 @@ export const Input: Story = () => {
     </Form>
   )
 }
-
-// Input.storyName = 'Input'
 
 export const TextArea: Story = () => {
   type ITextArea = {
@@ -112,7 +110,7 @@ export const TextArea: Story = () => {
           name="textareainput"
           required
           helper="Helper Text"
-          disable={formikProps.isSubmitting}
+          disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -121,8 +119,6 @@ export const TextArea: Story = () => {
     </Form>
   )
 }
-
-// TextArea.storyName = 'TextArea'
 
 export const Editor: Story = () => {
   type IEditor = object
@@ -134,13 +130,13 @@ export const Editor: Story = () => {
 
   const EditorValidationSchema = Yup.object().shape({})
 
-  const isEditorRequired = true
+  const requiredEditor = true
 
   const onSubmit = async (values: IEditor, actions: FormikHelpers<IEditor>) => {
     actions.setSubmitting(true)
     setEditorError(false)
 
-    if (editorContent === null && isEditorRequired) {
+    if (editorContent === null && requiredEditor == true) {
       setEditorError(true)
     } else {
       await sleep(1000)
@@ -169,8 +165,8 @@ export const Editor: Story = () => {
           placeholder="Text goes here..."
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
-          required={isEditorRequired}
-          disable={formikProps.isSubmitting}
+          required={requiredEditor}
+          disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -179,8 +175,6 @@ export const Editor: Story = () => {
     </Form>
   )
 }
-
-// Editor.storyName = 'Editor'
 
 export const CheckBox: Story = () => {
   type ICheckBox = {
@@ -237,8 +231,6 @@ export const CheckBox: Story = () => {
   )
 }
 
-// CheckBox.storyName = 'CheckBox'
-
 export const Radio: Story = () => {
   type IRadio = {
     radio: string
@@ -292,8 +284,6 @@ export const Radio: Story = () => {
   )
 }
 
-// Radio.storyName = 'Radio'
-
 export const Select: Story = () => {
   type ISelect = {
     select: string
@@ -344,7 +334,77 @@ export const Select: Story = () => {
   )
 }
 
-// Select.storyName = 'Select'
+export const SimpleDate: Story = () => {
+  type IDate = {
+    startDate: string
+    endDate: string
+  }
+
+  const dateInitialValues = {
+    startDate: '',
+    endDate: '',
+  }
+
+  const dateValidationSchema = Yup.object().shape({
+    startDate: Yup.lazy(() => {
+      return Yup.date()
+        .required('Please select start date')
+        .when('endDate', (endDate, schema) => {
+          if (endDate[0]) {
+            return schema.required("Start date can't be after end date")
+          }
+          return schema
+        })
+    }),
+    endDate: Yup.date()
+      .required('Please select end date')
+      .when('startDate', (startDate, schema) => {
+        if (startDate[0]) {
+          return schema.required("End date can't be before start date")
+        }
+        return schema
+      }),
+  })
+
+  const onSubmit = async (values: IDate, actions: FormikHelpers<IDate>) => {
+    actions.setSubmitting(true)
+    alert(JSON.stringify(values, null, 2))
+    await sleep(1000)
+    actions.setSubmitting(false)
+  }
+
+  const formikProps = useFormik({
+    initialValues: dateInitialValues,
+    validationSchema: dateValidationSchema,
+    onSubmit,
+  })
+
+  return (
+    <Form formikProps={formikProps}>
+      <Form.FieldGroup cols={2}>
+        <Form.FieldControl
+          required
+          control="datetime"
+          label="Start Date"
+          name="startDate"
+          maxDate={formikProps.values.endDate}
+          disabled={formikProps.isSubmitting}
+        />
+        <Form.FieldControl
+          required
+          control="datetime"
+          label="End Date"
+          name="endDate"
+          minDate={formikProps.values.startDate}
+          disabled={formikProps.isSubmitting}
+        />
+      </Form.FieldGroup>
+      <ButtonGroup>
+        <Button title="Submit" type="submit" />
+      </ButtonGroup>
+    </Form>
+  )
+}
 
 export const DateTime: Story = () => {
   type IDateTime = {
@@ -391,6 +451,62 @@ export const DateTime: Story = () => {
     onSubmit,
   })
 
+  const [startDate, setStartDate] = useState(new Date())
+  const [endDate, setEndDate] = useState(new Date())
+
+  const defaultMinTime = new Date()
+  defaultMinTime.setHours(0, 0, 0, 0)
+
+  const defaultMaxTime = new Date()
+  defaultMaxTime.setHours(23, 59, 59, 999)
+
+  const minStartTime = useMemo(() => {
+    const todayDate = new Date()
+    todayDate.setHours(0, 0, 0, 0)
+    if (startDate) {
+      const selectedDate = new Date(startDate)
+      selectedDate.setHours(0, 0, 0, 0)
+      if (selectedDate.getTime() === todayDate.getTime()) {
+        return new Date()
+      }
+    }
+    return defaultMinTime
+  }, [startDate, defaultMinTime])
+
+  const maxStartTime = useMemo(() => {
+    if (startDate) {
+      const maxTime = new Date(startDate)
+      maxTime.setHours(23, 59, 59, 999)
+      return maxTime
+    }
+    return defaultMaxTime
+  }, [startDate, defaultMaxTime])
+
+  const minEndTime = useMemo(() => {
+    const todayDate = new Date()
+    todayDate.setHours(0, 0, 0, 0)
+
+    if (startDate) {
+      const minEndTime = new Date(startDate)
+      minEndTime.setMinutes(minEndTime.getMinutes() + 1)
+      return minEndTime
+    } else if (endDate && endDate.getTime() === todayDate.getTime()) {
+      const minEndTime = new Date(endDate)
+      minEndTime.setMinutes(minEndTime.getMinutes() + 1)
+      return minEndTime
+    }
+    return defaultMinTime
+  }, [startDate, endDate, defaultMinTime])
+
+  const maxEndTime = useMemo(() => {
+    if (endDate) {
+      const maxTime = new Date(endDate)
+      maxTime.setHours(23, 59, 59, 999)
+      return maxTime
+    }
+    return defaultMaxTime
+  }, [endDate, defaultMaxTime])
+
   return (
     <Form formikProps={formikProps}>
       <Form.FieldGroup cols={2}>
@@ -401,6 +517,14 @@ export const DateTime: Story = () => {
           name="startDate"
           maxDate={formikProps.values.endDate}
           disabled={formikProps.isSubmitting}
+          showTime={true}
+          dateFormat="MMMM d, yyyy h:mm aa"
+          timeFormat="HH:mm"
+          minTime={minStartTime}
+          maxTime={maxStartTime}
+          onChange={(date: Date) => {
+            setStartDate(date)
+          }}
         />
         <Form.FieldControl
           required
@@ -409,6 +533,14 @@ export const DateTime: Story = () => {
           name="endDate"
           minDate={formikProps.values.startDate}
           disabled={formikProps.isSubmitting}
+          showTime={true}
+          dateFormat="MMMM d, yyyy h:mm aa"
+          timeFormat="HH:mm"
+          minTime={minEndTime}
+          maxTime={maxEndTime}
+          onChange={(date: Date) => {
+            setEndDate(date)
+          }}
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -418,24 +550,33 @@ export const DateTime: Story = () => {
   )
 }
 
-// DateTime.storyName = 'DateTime'
-
 export const Media: Story = () => {
   type IMedia = {
-    file: FileList | null
+    image: File[]
+    file: File[]
   }
 
   const MediaInitialValues = {
-    file: null,
+    image: [],
+    file: [],
   }
 
   const MediaValidationSchema = Yup.object().shape({
-    file: Yup.mixed().required('The field is required'),
+    image: Yup.mixed()
+      .test('fileSize', 'The image is required', (value) => {
+        return value && value.length > 0
+      })
+      .required('The field is required'),
+    file: Yup.mixed()
+      .test('fileSize', 'The file is required', (value) => {
+        return value && value.length > 0
+      })
+      .required('The field is required'),
   })
 
   const onSubmit = async (values: IMedia, actions: FormikHelpers<IMedia>) => {
     actions.setSubmitting(true)
-    console.log(values)
+    console.log(values, 'values')
     alert('Please check console log')
     await sleep(1000)
     actions.setSubmitting(false)
@@ -447,25 +588,30 @@ export const Media: Story = () => {
     onSubmit,
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.currentTarget.files
-    if (files) {
-      formikProps.setFieldValue('file', files)
-    }
-  }
-
   return (
     <Form formikProps={formikProps}>
       <Form.FieldGroup>
+        <Form.FieldControl
+          control="fileUpload"
+          label="Images"
+          name="image"
+          required
+          helper="Helper Text"
+          accept="image/*"
+          multiple="multiple"
+          disabled={formikProps.isSubmitting}
+          helperpostop
+        />
         <Form.FieldControl
           control="fileUpload"
           label="Media"
           name="file"
           required
           helper="Helper Text"
-          onChange={handleChange}
           accept="application/pdf,application/vnd.ms-excel"
+          multiple="multiple"
           disabled={formikProps.isSubmitting}
+          helperpostop
         />
       </Form.FieldGroup>
       <ButtonGroup>
@@ -474,8 +620,6 @@ export const Media: Story = () => {
     </Form>
   )
 }
-
-// Media.storyName = 'Media'
 
 export const AutoSuggest: Story = () => {
   type IAutoSuggest = {
@@ -521,5 +665,3 @@ export const AutoSuggest: Story = () => {
     </Form>
   )
 }
-
-// AutoSuggest.storyName = 'AutoSuggest'

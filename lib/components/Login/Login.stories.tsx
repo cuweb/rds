@@ -27,3 +27,16 @@ export const SocialLogins: Story = {
     useSocial: true,
   },
 }
+
+export const LoginErrorShort: Story = {
+  args: {
+    errorTitle: 'Error: Please Contact Site Administrator',
+  },
+}
+
+export const LoginErrorDescription: Story = {
+  args: {
+    errorTitle: 'Login Error',
+    errorDesc: 'Please ensure you are connected to the VPN and try again.',
+  },
+}
