@@ -1,9 +1,9 @@
 import { Field } from 'formik'
-import { FieldSetProps } from '../FormFieldSet/FormFieldSet'
+import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 import useErrorClass from '../UseError'
 
-export interface CheckboxProps extends FieldSetProps {
+export interface CheckboxProps extends FieldSetComponentProps {
   checkBoxRight?: boolean
   options?: {
     label: string

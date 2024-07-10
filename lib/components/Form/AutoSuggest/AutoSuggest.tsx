@@ -1,7 +1,7 @@
 import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
 import './style.css'
-import { FieldProps } from '../FormField/FormField'
+import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 
 interface Option {
@@ -9,7 +9,7 @@ interface Option {
   label: string
 }
 
-export interface AutoSuggestProps extends FieldProps {
+export interface AutoSuggestProps extends FieldComponentProps {
   disabled?: boolean
   options?: Option[]
 }

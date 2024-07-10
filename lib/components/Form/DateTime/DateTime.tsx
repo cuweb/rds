@@ -2,10 +2,10 @@ import { useField } from 'formik'
 import DatePicker from 'react-datepicker'
 import { fieldStyles } from '../../../styles/form'
 import 'react-datepicker/dist/react-datepicker.css'
-import { FieldProps } from '../FormField/FormField'
+import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 
-export interface DateTimeProps extends FieldProps {
+export interface DateTimeProps extends FieldComponentProps {
   minDate?: Date
   maxDate?: Date
   showTime?: boolean

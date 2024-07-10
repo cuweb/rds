@@ -1,8 +1,8 @@
 import { fieldStyles } from '../../../styles/form'
-import { FieldProps } from '../FormField/FormField'
+import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 
-export const FileUpload = ({ ...props }: FieldProps) => {
+export const FileUpload = ({ ...props }: FieldComponentProps) => {
   const { name, ...rest } = props
 
   const errorClass = useErrorClass(name)

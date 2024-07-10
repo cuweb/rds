@@ -67,7 +67,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          {Component && <Component label={label} name={name} {...rest} />}
+          {Component && <Component name={name} {...rest} />}
         </FormField>
       )
     }
@@ -89,7 +89,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           hiddenLabel={hiddenLabel}
           {...rest}
         >
-          <Component label={label} name={name} {...rest} />
+          <Component name={name} {...rest} />
         </FormFieldSet>
       )
     }

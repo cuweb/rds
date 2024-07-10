@@ -1,9 +1,9 @@
 import { Field } from 'formik'
-import { FieldSetProps } from '../FormFieldSet/FormFieldSet'
+import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 import useErrorClass from '../UseError'
 
-export interface RadioProps extends FieldSetProps {
+export interface RadioProps extends FieldSetComponentProps {
   options?: {
     label: string
     value: string

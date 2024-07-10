@@ -1,10 +1,10 @@
 'use client'
 import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
-import { FieldProps } from '../FormField/FormField'
+import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 
-export interface SelectProps extends FieldProps {
+export interface SelectProps extends FieldComponentProps {
   options?: {
     label: string
     value: string
