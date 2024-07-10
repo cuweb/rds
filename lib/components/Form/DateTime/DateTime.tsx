@@ -16,7 +16,7 @@ export interface DateTimeProps extends FieldProps {
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const { name, placeholder, dateFormat = 'MMMM d, yyyy', onChange, ...rest } = props
+  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, ...rest } = props
 
   const [field, , helpers] = useField(name)
 
@@ -43,9 +43,9 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         onChange={(date: Date) => {
           handleDateChange(date)
         }}
-        // showTimeSelect={showTime}
-        // timeFormat={timeFormat}
-        // dateFormat={dateFormat}
+        showTimeSelect={showTime}
+        timeFormat={timeFormat}
+        dateFormat={dateFormat}
         placeholderText={placeholder ? placeholder : dateFormat}
         className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
         {...rest}

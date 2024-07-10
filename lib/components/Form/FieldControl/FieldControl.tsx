@@ -63,7 +63,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          <TextArea label={rest.label} name={rest.name} {...rest} />
+          <TextArea label={label} name={name} {...rest} />
         </FormField>
       )
     case 'select':
@@ -78,7 +78,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          <Select label={rest.label} name={rest.name} {...rest} />
+          <Select label={label} name={name} {...rest} />
         </FormField>
       )
     case 'checkbox':
@@ -96,7 +96,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           hiddenLabel={hiddenLabel}
           {...rest}
         >
-          <Checkbox label={rest.label} name={rest.name} {...rest} />
+          <Checkbox label={label} name={name} {...rest} />
         </FormFieldSet>
       )
     case 'radio':
@@ -114,7 +114,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           hiddenLabel={hiddenLabel}
           {...rest}
         >
-          <Radio label={rest.label} name={rest.name} {...rest} />
+          <Radio label={label} name={name} {...rest} />
         </FormFieldSet>
       )
     case 'autosuggest':
@@ -129,7 +129,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          <AutoSuggest label={rest.label} name={rest.name} {...rest} />
+          <AutoSuggest label={label} name={name} {...rest} />
         </FormField>
       )
     case 'datetime':
@@ -144,7 +144,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          <DateTime label={rest.label} name={rest.name} {...rest} />
+          <DateTime label={label} name={name} {...rest} />
         </FormField>
       )
     case 'fileUpload':
@@ -159,7 +159,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          <FileUpload label={rest.label} name={rest.name} {...rest} />
+          <FileUpload label={label} name={name} {...rest} />
         </FormField>
       )
     default:

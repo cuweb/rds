@@ -541,7 +541,6 @@ export const DateTime: Story = () => {
           maxTime={maxEndTime}
           onChange={(date: Date) => {
             setEndDate(date)
-            console.log('dsf')
           }}
         />
       </Form.FieldGroup>
