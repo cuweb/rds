@@ -48,8 +48,7 @@ export const ImageModal = ({
     }
   }, [triggerModalOpen, node])
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files
+  const handleImageChange = (files: File[]) => {
     if (files && files.length > 0) {
       const reader = new FileReader()
       reader.onload = () => {

@@ -70,12 +70,17 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
         <div className="flex flex-row flex-wrap gap-5 border-[1px] border-cu-black-100 rounded-xl p-6">
           {previews.map((src, index) => (
             <div className="relative w-32 h-auto" key={index}>
-              <img key={index} src={src} alt={`preview-${index}`} className="w-full h-auto bg-contain" />
+              <img
+                key={index}
+                src={src}
+                alt={`preview-${index}`}
+                className="w-full h-auto bg-contain !rounded-none !m-0"
+              />
 
               <button
                 type="button"
                 onClick={() => handleDelete(index)}
-                className="absolute inset-0 w-6 h-6 cursor-pointer bg-gray-800 text-white"
+                className="absolute inset-0 w-6 h-6 leading-none cursor-pointer bg-gray-800 text-white"
               >
                 <span className="sr-only">Click to delete the image</span>
                 &times;

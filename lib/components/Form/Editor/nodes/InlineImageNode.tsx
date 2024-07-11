@@ -2,7 +2,6 @@ import type {
   DOMConversionMap,
   DOMConversionOutput,
   DOMExportOutput,
-  EditorConfig,
   LexicalEditor,
   LexicalNode,
   NodeKey,
@@ -140,16 +139,16 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     figure.className = `position-${this.__position}`
     figure.appendChild(img)
 
-    if (this.__showCaption && this.__caption) {
-      const figcaption = document.createElement('figcaption')
-      const captionEditorState = this.__caption.getEditorState()
-      const captionString = captionEditorState
-        .toJSON()
-        .root.children.map((child) => child.text)
-        .join(' ')
-      figcaption.textContent = captionString
-      figure.appendChild(figcaption)
-    }
+    // if (this.__showCaption && this.__caption) {
+    //   const figcaption = document.createElement('figcaption')
+    //   const captionEditorState = this.__caption.getEditorState()
+    //   const captionString = captionEditorState
+    // .toJSON()
+    // // .root.children.map((child) => child.text)
+    // .join(' ')
+    //   figcaption.textContent = captionString
+    //   figure.appendChild(figcaption)
+    // }
 
     return { element: figure }
   }
