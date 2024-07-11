@@ -7,7 +7,6 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
 import type { Position } from './InlineImageNode'
-import Error from '../../Error/Error'
 
 import {
   $getNodeByKey,
@@ -25,12 +24,9 @@ import {
 } from 'lexical'
 
 import ContentEditable from '../ui/ContentEditable'
-import { $isInlineImageNode, InlineImageNode } from './InlineImageNode'
+import { $isInlineImageNode } from './InlineImageNode'
 import { Button } from '../../../Button/Button'
-import { Modal } from '../../../Modal/Modal'
-import { FieldControl } from '../../FieldControl/FieldControl'
 import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
-import FieldGroup from '../../FieldGroup/FieldGroup'
 import { ImageModal } from '../utils/ImageModal'
 
 const imageCache = new Set()
@@ -80,105 +76,6 @@ function LazyImage({
       }}
       draggable="false"
     />
-  )
-}
-
-export function UpdateInlineImageDialog({
-  activeEditor,
-  nodeKey,
-  isOpen,
-}: {
-  activeEditor: LexicalEditor
-  nodeKey: NodeKey
-  isOpen: boolean
-}): JSX.Element {
-  const editorState = activeEditor.getEditorState()
-  const node = editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode)
-  const [altText, setAltText] = useState(node.getAltText())
-  const [altTextError, setAltTextError] = useState(false)
-  const [showCaption, setShowCaption] = useState(node.getShowCaption())
-  const [position, setPosition] = useState<Position>(node.getPosition())
-  const [ModalOpen, setModalOpen] = useState(isOpen)
-
-  useEffect(() => {
-    setModalOpen(isOpen)
-  }, [isOpen])
-
-  const handleAltChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAltText(e.target.value)
-    setAltTextError(false)
-  }
-
-  const handleShowCaptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setShowCaption(e.target.checked)
-  }
-
-  const handlePositionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setPosition(e.target.value as Position)
-  }
-
-  const handleOnConfirm = () => {
-    const payload = { altText, showCaption, position }
-    if (!setAltText) {
-      setAltTextError(true)
-    } else if (node) {
-      activeEditor.update(() => {
-        node.update(payload)
-        setModalOpen(false)
-      })
-    }
-  }
-
-  const selectValues = [
-    { value: 'left', label: 'Left' },
-    { value: 'right', label: 'Right' },
-    { value: 'center', label: 'Center' },
-  ]
-
-  return (
-    <Modal isOpen={ModalOpen} setIsOpen={setModalOpen} ariaLabel="Edit image" ariaDescription="Edit image modal">
-      <FieldGroup>
-        <FieldControl
-          control="textarea"
-          label="Alt Text"
-          placeholder="Descriptive alternative text"
-          value={altText}
-          required
-          name="inline-image"
-          onChange={handleAltChange}
-        />
-
-        {altTextError && <Error>Please add alternative text</Error>}
-
-        <FieldControl
-          control="select"
-          label="Position"
-          options={selectValues}
-          value={position}
-          name="image-position"
-          onChange={handlePositionChange}
-        />
-
-        <FieldControl
-          control="checkbox"
-          name="checkbox"
-          label="Show Caption"
-          options={[
-            {
-              label: 'Yes',
-              value: 'yes',
-            },
-          ]}
-          isInline
-          onChange={handleShowCaptionChange}
-          checked={showCaption}
-        />
-
-        <ButtonGroup align="right">
-          <Button title="Confirm" isDisabled={altTextError} onClick={handleOnConfirm}></Button>
-        </ButtonGroup>
-      </FieldGroup>
-    </Modal>
   )
 }
 
