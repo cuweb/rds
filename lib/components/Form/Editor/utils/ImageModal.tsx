@@ -31,6 +31,7 @@ export const ImageModal = ({
   const [altTextError, setAltTextError] = useState(false)
   const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
   const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
+  const [caption, setCaption] = useState(node ? node.getCaption() : '')
   const [ModalOpen, setModalOpen] = useState(triggerModalOpen)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -77,6 +78,10 @@ export const ImageModal = ({
     setShowCaption(e.target.checked)
   }
 
+  const handleCaptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCaption(e.target.value)
+  }
+
   const handleInsertOnClick = () => {
     if (!src) {
       setSrcError(true)
@@ -88,7 +93,7 @@ export const ImageModal = ({
       setSrcError(false)
       setAltTextError(false)
 
-      const payload = { altText, src, showCaption, position }
+      const payload = { altText, src, showCaption, position, caption }
       activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
       setModalOpen(false)
       setTriggerModalOpen(false)
@@ -102,7 +107,8 @@ export const ImageModal = ({
   }
 
   const handleOnConfirm = () => {
-    const payload = { altText, showCaption, position }
+    const payload = { altText, showCaption, position, caption }
+
     if (!altText) {
       setAltTextError(true)
     } else if (node) {
@@ -185,6 +191,18 @@ export const ImageModal = ({
           onChange={handleShowCaptionChange}
           checked={showCaption}
         />
+
+        {showCaption && (
+          <FieldControl
+            control="text"
+            required
+            label="Caption"
+            placeholder="Descriptive caption text"
+            name="image-caption"
+            value={caption}
+            onChange={handleCaptionChange}
+          />
+        )}
 
         <ButtonGroup align="right">
           {node ? (

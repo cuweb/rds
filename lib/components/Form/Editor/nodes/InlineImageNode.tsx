@@ -2,15 +2,13 @@ import type {
   DOMConversionMap,
   DOMConversionOutput,
   DOMExportOutput,
-  LexicalEditor,
   LexicalNode,
   NodeKey,
-  SerializedEditor,
   SerializedLexicalNode,
   Spread,
 } from 'lexical'
 
-import { $applyNodeReplacement, createEditor, DecoratorNode } from 'lexical'
+import { $applyNodeReplacement, DecoratorNode } from 'lexical'
 import { Suspense } from 'react'
 import InlineImageComponent from './InlineImageComponent'
 
@@ -18,7 +16,7 @@ export type Position = 'left' | 'right' | 'center' | undefined
 
 export interface InlineImagePayload {
   altText: string
-  caption?: LexicalEditor
+  caption?: string
   height?: number
   key?: NodeKey
   showCaption?: boolean
@@ -31,6 +29,7 @@ export interface UpdateInlineImagePayload {
   altText?: string
   showCaption?: boolean
   position?: Position
+  caption?: string
 }
 
 function convertInlineImageElement(domNode: Node): null | DOMConversionOutput {
@@ -45,7 +44,7 @@ function convertInlineImageElement(domNode: Node): null | DOMConversionOutput {
 export type SerializedInlineImageNode = Spread<
   {
     altText: string
-    caption: SerializedEditor
+    caption: string
     height?: number
     showCaption: boolean
     src: string
@@ -61,7 +60,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   __width: 'inherit' | number
   __height: 'inherit' | number
   __showCaption: boolean
-  __caption: LexicalEditor
+  __caption: string
   __position: Position
 
   static getType(): string {
@@ -90,12 +89,9 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
       src,
       width,
       position,
+      caption,
     })
-    const nestedEditor = node.__caption
-    const editorState = nestedEditor.parseEditorState(caption.editorState)
-    if (!editorState.isEmpty()) {
-      nestedEditor.setEditorState(editorState)
-    }
+
     return node
   }
 
@@ -115,7 +111,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     width?: 'inherit' | number,
     height?: 'inherit' | number,
     showCaption?: boolean,
-    caption?: LexicalEditor,
+    caption?: string,
     key?: NodeKey,
   ) {
     super(key)
@@ -124,7 +120,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     this.__width = width || 'inherit'
     this.__height = height || 'inherit'
     this.__showCaption = showCaption || false
-    this.__caption = caption || createEditor()
+    this.__caption = caption || ''
     this.__position = position
   }
 
@@ -139,24 +135,13 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     figure.className = `position-${this.__position}`
     figure.appendChild(img)
 
-    // if (this.__showCaption && this.__caption) {
-    //   const figcaption = document.createElement('figcaption')
-    //   const captionEditorState = this.__caption.getEditorState()
-    //   const captionString = captionEditorState
-    // .toJSON()
-    // // .root.children.map((child) => child.text)
-    // .join(' ')
-    //   figcaption.textContent = captionString
-    //   figure.appendChild(figcaption)
-    // }
-
     return { element: figure }
   }
 
   exportJSON(): SerializedInlineImageNode {
     return {
       altText: this.getAltText(),
-      caption: this.__caption.toJSON(),
+      caption: this.__caption,
       height: this.__height === 'inherit' ? 0 : this.__height,
       showCaption: this.__showCaption,
       src: this.getSrc(),
@@ -186,6 +171,15 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     writable.__height = height
   }
 
+  getCaption() {
+    return this.__caption
+  }
+
+  setCaption(caption: string) {
+    const writable = this.getWritable()
+    writable.__caption = caption
+  }
+
   getShowCaption(): boolean {
     return this.__showCaption
   }
@@ -206,12 +200,15 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   update(payload: UpdateInlineImagePayload): void {
     const writable = this.getWritable()
-    const { altText, showCaption, position } = payload
+    const { altText, showCaption, position, caption } = payload
     if (altText !== undefined) {
       writable.__altText = altText
     }
     if (showCaption !== undefined) {
       writable.__showCaption = showCaption
+    }
+    if (caption !== undefined) {
+      writable.__caption = caption
     }
     if (position !== undefined) {
       writable.__position = position

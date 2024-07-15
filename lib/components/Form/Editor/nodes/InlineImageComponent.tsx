@@ -1,9 +1,6 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import type { LexicalEditor, NodeKey, NodeSelection, RangeSelection } from 'lexical'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
-import { LexicalNestedComposer } from '@lexical/react/LexicalNestedComposer'
-import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
 import type { Position } from './InlineImageNode'
@@ -23,7 +20,6 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from 'lexical'
 
-import ContentEditable from '../ui/ContentEditable'
 import { $isInlineImageNode } from './InlineImageNode'
 import { Button } from '../../../Button/Button'
 import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
@@ -90,7 +86,7 @@ export default function InlineImageComponent({
   position,
 }: {
   altText: string
-  caption: LexicalEditor
+  caption: string
   height: 'inherit' | number
   nodeKey: NodeKey
   showCaption: boolean
@@ -143,7 +139,6 @@ export default function InlineImageComponent({
           // Move focus into nested editor
           $setSelection(null)
           event.preventDefault()
-          caption.focus()
           return true
         } else if (buttonElem !== null && buttonElem !== document.activeElement) {
           event.preventDefault()
@@ -158,7 +153,7 @@ export default function InlineImageComponent({
 
   const onEscape = useCallback(
     (event: KeyboardEvent) => {
-      if (activeEditorRef.current === caption || buttonRef.current === event.target) {
+      if (buttonRef.current === event.target) {
         $setSelection(null)
         editor.update(() => {
           setSelected(true)
@@ -171,7 +166,7 @@ export default function InlineImageComponent({
       }
       return false
     },
-    [caption, editor, setSelected],
+    [editor, setSelected],
   )
 
   useEffect(() => {
@@ -263,21 +258,7 @@ export default function InlineImageComponent({
           position={position}
         />
       </span>
-      {showCaption && (
-        <div className="image-caption-container relative">
-          <LexicalNestedComposer initialEditor={caption}>
-            <RichTextPlugin
-              contentEditable={<ContentEditable className="border-0 block relative" />}
-              placeholder={
-                <div className="prose prose-lg prose-rds md:prose-xl text-cu-black-400 absolute top-0">
-                  Enter a caption...
-                </div>
-              }
-              ErrorBoundary={LexicalErrorBoundary}
-            />
-          </LexicalNestedComposer>
-        </div>
-      )}
+      {showCaption && caption && <div>{caption}</div>}
       <ImageModal
         activeEditor={editor}
         triggerModalOpen={ModalOpen}
