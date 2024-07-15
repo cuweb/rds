@@ -6,10 +6,11 @@ import { useField } from 'formik'
 
 export interface FileUploadProps extends FieldComponentProps {
   onChange?: (File: FileList | File[] | null) => void
+  nopreview?: boolean
 }
 
 export const FileUpload = ({ ...props }: FileUploadProps) => {
-  const { name, onChange, ...rest } = props
+  const { name, onChange, nopreview = false, ...rest } = props
   const errorClass = useErrorClass(name)
 
   const [files, setFiles] = useState<File[]>([])
@@ -17,7 +18,7 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
 
   const [, , helpers] = useField(name)
 
-  const { setValue, setTouched, setError } = helpers
+  const { setValue } = helpers
 
   const handleMediaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newFiles = event.target.files
@@ -36,8 +37,6 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
     }
 
     setValue(newFiles)
-    setTouched(true)
-    setError(undefined)
 
     if (onChange) {
       onChange(newFiles)
@@ -66,7 +65,7 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
         onChange={handleMediaChange}
         {...rest}
       />
-      {previews && previews.length > 0 && (
+      {!nopreview && previews && previews.length > 0 && (
         <div className="flex flex-row flex-wrap gap-5 border-[1px] border-cu-black-100 rounded-xl p-6">
           {previews.map((src, index) => (
             <div className="relative w-32 h-auto" key={index}>

@@ -369,7 +369,9 @@ i.image {
 }
 
 .position-left .image-wrapper {
-  text-align: left;
+  float: left;
+  width: 50%;
+  margin: 1em 1em 0 0;
 }
 
 .position-center .image-wrapper {
@@ -377,5 +379,7 @@ i.image {
 }
 
 .position-right .image-wrapper {
-  text-align: right;
+  float: right;
+  width: 50%;
+  margin: 1em 0 0 1em;
 }

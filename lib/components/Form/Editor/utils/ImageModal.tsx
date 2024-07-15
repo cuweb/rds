@@ -40,12 +40,7 @@ export const ImageModal = ({
     setModalOpen(triggerModalOpen)
 
     if (triggerModalOpen && !node) {
-      setSrc('')
-      setSrcError(false)
-      setAltText('')
-      setAltTextError(false)
-      setPosition('left')
-      setShowCaption(false)
+      resetFields()
     }
   }, [triggerModalOpen, node])
 
@@ -97,12 +92,7 @@ export const ImageModal = ({
       activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
       setModalOpen(false)
       setTriggerModalOpen(false)
-      setSrc('')
-      setSrcError(false)
-
-      if (fileInputRef.current) {
-        fileInputRef.current.value = ''
-      }
+      resetFields()
     }
   }
 
@@ -117,19 +107,24 @@ export const ImageModal = ({
         setModalOpen(false)
         setTriggerModalOpen(false)
       })
+      resetFields()
     }
   }
 
   const handleCancelOnClick = () => {
+    resetFields()
+    setModalOpen(false)
+    setTriggerModalOpen(false)
+  }
+
+  const resetFields = () => {
     setSrc('')
+    setSrcError(false)
     setAltText('')
+    setAltTextError(false)
     setPosition('left')
     setShowCaption(false)
-    setModalOpen(false)
-    setSrcError(false)
-    setAltTextError(false)
-    setTriggerModalOpen(false)
-
+    setCaption('')
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
     }
@@ -157,6 +152,7 @@ export const ImageModal = ({
             name="inline-image"
             onChange={handleImageChange}
             refs={fileInputRef}
+            nopreview
           />
         )}
         {!nodeKey && srcError && <Error>Please choose an image</Error>}
@@ -194,7 +190,7 @@ export const ImageModal = ({
 
         {showCaption && (
           <FieldControl
-            control="text"
+            control="textarea"
             required
             label="Caption"
             placeholder="Descriptive caption text"
