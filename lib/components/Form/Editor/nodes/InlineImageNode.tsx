@@ -135,6 +135,12 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     figure.className = `position-${this.__position}`
     figure.appendChild(img)
 
+    if (this.__caption) {
+      const figcaption = document.createElement('figcaption')
+      figcaption.textContent = this.__caption
+      figure.appendChild(figcaption)
+    }
+
     return { element: figure }
   }
 
