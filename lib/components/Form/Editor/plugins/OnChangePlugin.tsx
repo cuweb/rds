@@ -15,10 +15,15 @@ function OnChangePlugin({ onChange, required, disabled }: OnChangePluginProps) {
   const checkIfEditorIsEmpty = () => {
     const root = $getRoot()
     const children = root.getChildren()
+
     if (children.length === 0) return true
 
-    return children.every((child) => {
-      return child.getTextContent().trim() === ''
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return children.every((child: any) => {
+      if (child.__first > 0) {
+        return false
+      }
+      return true
     })
   }
 

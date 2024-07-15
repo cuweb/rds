@@ -148,7 +148,7 @@ export default function InlineImageComponent({
       }
       return false
     },
-    [caption, isSelected, showCaption],
+    [isSelected, showCaption],
   )
 
   const onEscape = useCallback(
