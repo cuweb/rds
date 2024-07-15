@@ -139,6 +139,18 @@ i.chevron-down {
   @apply bg-contain inline-block h-5 w-5;
 }
 
+.position-left .image-wrapper {
+  @apply float-start w-[50%] mt-4 me-4;
+}
+
+.position-center .image-wrapper {
+  @apply text-center;
+}
+
+.position-right .image-wrapper {
+  @apply float-start w-[50%] mt-4 ms-4;
+}
+
 i.undo {
   background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/rotate-left-light.svg');
 }
@@ -211,175 +223,4 @@ i.justify-align {
 
 i.image {
   background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/image-regular.svg');
-}
-
-.cu-editor-content span.editor-image {
-  cursor: default;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  /* user-select: none; */
-}
-
-.cu-editor-content .editor-image img {
-  max-width: 100%;
-  cursor: default;
-}
-
-.cu-editor-content .editor-image img.focused {
-  outline: 2px solid rgb(60, 132, 244);
-  /* user-select: none; */
-}
-
-.cu-editor-content .editor-image img.focused.draggable {
-  cursor: grab;
-}
-
-.cu-editor-content .editor-image img.focused.draggable:active {
-  cursor: grabbing;
-}
-
-.cu-editor-content .editor-image .image-caption-container .tree-view-output {
-  margin: 0;
-  border-radius: 0;
-}
-
-.cu-editor-content .editor-image.position-full {
-  margin: 1em 0 1em 0;
-}
-
-.cu-editor-content .editor-image.position-left {
-  float: left;
-  width: 50%;
-  margin: 1em 1em 0 0;
-}
-
-.cu-editor-content .editor-image.position-right {
-  float: right;
-  width: 50%;
-  margin: 1em 0 0 1em;
-}
-
-.cu-editor-content .editor-image .image-edit-button {
-  display: block;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 6px 8px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  min-width: 60px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-
-.cu-editor-content .editor-image .image-edit-button:hover {
-  background-color: rgba(60, 132, 244, 0.5);
-}
-
-.cu-editor-content .editor-image .image-caption-container {
-  display: block;
-  /* position: absolute; */
-  background-color: #f4f4f4;
-  min-width: 100%;
-  color: #000;
-  overflow: hidden;
-}
-
-.cu-editor-content .editor-image .image-caption-button {
-  display: block;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  width: 30%;
-  padding: 10px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  min-width: 100px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-
-.cu-editor-content .editor-image .image-caption-button:hover {
-  background-color: rgba(60, 132, 244, 0.5);
-}
-
-.cu-editor-content .editor-image .image-resizer {
-  display: block;
-  width: 7px;
-  height: 7px;
-  position: absolute;
-  background-color: rgb(60, 132, 244);
-  border: 1px solid #fff;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-n {
-  top: -6px;
-  left: 48%;
-  cursor: n-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-ne {
-  top: -6px;
-  right: -6px;
-  cursor: ne-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-e {
-  bottom: 48%;
-  right: -6px;
-  cursor: e-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-se {
-  bottom: -2px;
-  right: -6px;
-  cursor: nwse-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-s {
-  bottom: -2px;
-  left: 48%;
-  cursor: s-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-sw {
-  bottom: -2px;
-  left: -6px;
-  cursor: sw-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-w {
-  bottom: 48%;
-  left: -6px;
-  cursor: w-resize;
-}
-
-.cu-editor-content .editor-image .image-resizer.image-resizer-nw {
-  top: -6px;
-  left: -6px;
-  cursor: nw-resize;
-}
-
-.position-left .image-wrapper {
-  float: left;
-  width: 50%;
-  margin: 1em 1em 0 0;
-}
-
-.position-center .image-wrapper {
-  text-align: center;
-}
-
-.position-right .image-wrapper {
-  float: right;
-  width: 50%;
-  margin: 1em 0 0 1em;
 }
