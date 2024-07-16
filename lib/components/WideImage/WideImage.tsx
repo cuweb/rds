@@ -3,7 +3,7 @@ import { rdsMaxWidth } from '../../utils/optionClasses'
 import { WideImageSignup } from './WideImageSignup'
 
 const styles = {
-  baseBg: `relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
+  baseBg: `relative flex items-center bg-cu-waves-white justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
   lightBg: `text-cu-black-800 py-20 bg-cu-black-50`,
   darkBg: `text-white py-20 bg-cu-black-900`,
   imageBg: `relative py-24 text-white bg-opacity-50 bg-cover bg-cu-black-50 md:py-28 lg:py-36 xl:py-48`,
