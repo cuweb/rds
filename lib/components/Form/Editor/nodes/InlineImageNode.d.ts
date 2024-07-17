@@ -1,6 +1,6 @@
 import { DOMConversionMap, DOMExportOutput, LexicalNode, NodeKey, SerializedLexicalNode, Spread, DecoratorNode } from 'lexical';
 
-export type Position = 'left' | 'right' | 'center' | undefined;
+export type Position = 'left' | 'right' | 'full' | undefined;
 export interface InlineImagePayload {
     altText: string;
     caption?: string;
