@@ -132,7 +132,7 @@ export const ImageModal = ({
   const selectValues = [
     { value: 'left', label: 'Left' },
     { value: 'right', label: 'Right' },
-    { value: 'center', label: 'Center' },
+    { value: 'full', label: 'Full' },
   ]
 
   return (
