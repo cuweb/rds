@@ -12,6 +12,7 @@ export interface InlineImagePayload {
     position?: Position;
 }
 export interface UpdateInlineImagePayload {
+    src?: string;
     altText?: string;
     showCaption?: boolean;
     position?: Position;
