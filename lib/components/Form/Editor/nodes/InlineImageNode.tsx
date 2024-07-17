@@ -26,6 +26,7 @@ export interface InlineImagePayload {
 }
 
 export interface UpdateInlineImagePayload {
+  src?: string
   altText?: string
   showCaption?: boolean
   position?: Position
@@ -206,7 +207,11 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   update(payload: UpdateInlineImagePayload): void {
     const writable = this.getWritable()
-    const { altText, showCaption, position, caption } = payload
+    const { src, altText, showCaption, position, caption } = payload
+    if (src !== undefined) {
+      console.log(src, 'srcsrc')
+      writable.__src = src
+    }
     if (altText !== undefined) {
       writable.__altText = altText
     }

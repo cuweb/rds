@@ -78,11 +78,9 @@ export const ImageModal = ({
   const handleInsertOnClick = () => {
     if (!src) {
       setSrcError(true)
-    }
-    if (!altText) {
+    } else if (!altText) {
       setAltTextError(true)
-    }
-    if (src && altText) {
+    } else if (src && altText) {
       setSrcError(false)
       setAltTextError(false)
 
@@ -95,12 +93,16 @@ export const ImageModal = ({
   }
 
   const handleOnConfirm = () => {
-    const payload = { altText, showCaption, position, caption }
-
-    if (!altText) {
+    if (!src) {
+      setSrcError(true)
+    } else if (!altText) {
       setAltTextError(true)
     } else if (node) {
       activeEditor.update(() => {
+        setSrcError(false)
+        setAltTextError(false)
+
+        const payload = { altText, src, showCaption, position, caption }
         node.update(payload)
         setTriggerModalOpen(false)
         setTriggerModalOpen(false)
