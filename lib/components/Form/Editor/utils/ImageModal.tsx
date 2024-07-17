@@ -31,17 +31,16 @@ export const ImageModal = ({
   const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
   const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
   const [caption, setCaption] = useState(node ? node.getCaption() : '')
-  const [ModalOpen, setModalOpen] = useState(triggerModalOpen)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    setModalOpen(triggerModalOpen)
+    setTriggerModalOpen(triggerModalOpen)
 
     if (triggerModalOpen && !node) {
       resetFields()
     }
-  }, [triggerModalOpen, node])
+  }, [triggerModalOpen, setTriggerModalOpen, node])
 
   const handleImageChange = (files: File[]) => {
     if (files && files.length > 0) {
@@ -89,7 +88,7 @@ export const ImageModal = ({
 
       const payload = { altText, src, showCaption, position, caption }
       activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
-      setModalOpen(false)
+      setTriggerModalOpen(false)
       setTriggerModalOpen(false)
       resetFields()
     }
@@ -103,7 +102,7 @@ export const ImageModal = ({
     } else if (node) {
       activeEditor.update(() => {
         node.update(payload)
-        setModalOpen(false)
+        setTriggerModalOpen(false)
         setTriggerModalOpen(false)
       })
       resetFields()
@@ -112,7 +111,7 @@ export const ImageModal = ({
 
   const handleCancelOnClick = () => {
     resetFields()
-    setModalOpen(false)
+    setTriggerModalOpen(false)
     setTriggerModalOpen(false)
   }
 
@@ -137,8 +136,8 @@ export const ImageModal = ({
 
   return (
     <Modal
-      isOpen={ModalOpen}
-      setIsOpen={setModalOpen}
+      isOpen={triggerModalOpen}
+      setIsOpen={setTriggerModalOpen}
       ariaLabel="Insert Inline Image"
       ariaDescription="A modal to add the image"
     >
@@ -148,7 +147,7 @@ export const ImageModal = ({
             control="fileUpload"
             label="Image Upload"
             required
-            name="inline-image"
+            name="inline-img"
             onChange={handleImageChange}
             refs={fileInputRef}
             nopreview

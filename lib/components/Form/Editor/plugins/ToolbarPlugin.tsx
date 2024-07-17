@@ -608,7 +608,13 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
           <i className="format image" />
         </button>
       </div>
-      <ImageModal activeEditor={editor} triggerModalOpen={triggerModalOpen} setTriggerModalOpen={setTriggerModalOpen} />
+      {triggerModalOpen && (
+        <ImageModal
+          activeEditor={editor}
+          triggerModalOpen={triggerModalOpen}
+          setTriggerModalOpen={setTriggerModalOpen}
+        />
+      )}
     </>
   )
 }
