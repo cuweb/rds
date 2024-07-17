@@ -24,7 +24,7 @@ export const ImageModal = ({
 }): JSX.Element => {
   const editorState = activeEditor.getEditorState()
   const node = nodeKey ? editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode) : null
-  const [src, setSrc] = useState('')
+  const [src, setSrc] = useState(node ? node.getSrc() : '')
   const [srcError, setSrcError] = useState(false)
   const [altText, setAltText] = useState(node ? node.getAltText() : '')
   const [altTextError, setAltTextError] = useState(false)
@@ -142,18 +142,17 @@ export const ImageModal = ({
       ariaDescription="A modal to add the image"
     >
       <FieldGroup>
-        {!nodeKey && (
-          <FieldControl
-            control="fileUpload"
-            label="Image Upload"
-            required
-            name="inline-img"
-            onChange={handleImageChange}
-            refs={fileInputRef}
-            nopreview
-          />
-        )}
-        {!nodeKey && srcError && <Error>Please choose an image</Error>}
+        <FieldControl
+          control="fileUpload"
+          label="Image Upload"
+          required
+          name="inline-img"
+          onChange={handleImageChange}
+          refs={fileInputRef}
+          preview={node && [src]}
+        />
+
+        {srcError && <Error>Please choose an image</Error>}
         <FieldControl
           control="text"
           required

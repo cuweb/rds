@@ -7,14 +7,15 @@ import { useField } from 'formik'
 export interface FileUploadProps extends FieldComponentProps {
   onChange?: (File: FileList | File[] | null) => void
   nopreview?: boolean
+  preview?: string[]
 }
 
 export const FileUpload = ({ ...props }: FileUploadProps) => {
-  const { name, onChange, nopreview = false, ...rest } = props
+  const { name, onChange, nopreview = false, preview, ...rest } = props
   const errorClass = useErrorClass(name)
 
   const [files, setFiles] = useState<File[]>([])
-  const [previews, setPreviews] = useState<string[]>([])
+  const [previews, setPreviews] = useState<string[]>(preview ? preview : [])
 
   const [, , helpers] = useField(name)
 
