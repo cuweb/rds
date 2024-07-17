@@ -24,7 +24,6 @@ export const ImageModal = ({
 }): JSX.Element => {
   const editorState = activeEditor.getEditorState()
   const node = nodeKey ? editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode) : null
-
   const [src, setSrc] = useState('')
   const [srcError, setSrcError] = useState(false)
   const [altText, setAltText] = useState(node ? node.getAltText() : '')
@@ -170,6 +169,7 @@ export const ImageModal = ({
           control="select"
           label="Position"
           options={selectValues}
+          value={position}
           name="image-position"
           onChange={handlePositionChange}
         />

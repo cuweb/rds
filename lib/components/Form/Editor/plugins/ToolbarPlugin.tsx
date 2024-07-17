@@ -602,10 +602,10 @@ export default function ToolbarPlugin({ name }: ToolbarPluginProps) {
           onClick={() => {
             setTriggerModalOpen(true)
           }}
-          className="item"
+          className="toolbar-item spaced"
           aria-label="Upload image"
         >
-          <i className="icon image" />s
+          <i className="format image" />
         </button>
       </div>
       <ImageModal activeEditor={editor} triggerModalOpen={triggerModalOpen} setTriggerModalOpen={setTriggerModalOpen} />

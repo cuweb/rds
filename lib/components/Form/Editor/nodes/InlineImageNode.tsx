@@ -12,7 +12,7 @@ import { $applyNodeReplacement, DecoratorNode } from 'lexical'
 import { Suspense } from 'react'
 import InlineImageComponent from './InlineImageComponent'
 
-export type Position = 'left' | 'right' | 'center' | undefined
+export type Position = 'left' | 'right' | 'full' | undefined
 
 export interface InlineImagePayload {
   altText: string

@@ -139,7 +139,7 @@ i.chevron-down {
   @apply bg-contain inline-block h-5 w-5;
 }
 
-.position-left .image-wrapper {
+/* .position-left .image-wrapper {
   @apply float-start w-[50%] mt-4 me-4;
 }
 
@@ -149,7 +149,7 @@ i.chevron-down {
 
 .position-right .image-wrapper {
   @apply float-start w-[50%] mt-4 ms-4;
-}
+} */
 
 i.undo {
   background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/rotate-left-light.svg');
@@ -222,5 +222,6 @@ i.justify-align {
 }
 
 i.image {
-  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/image-regular.svg');
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/align-justify-light.svg');
+  /* background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/image-regular.svg'); */
 }

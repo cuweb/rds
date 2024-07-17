@@ -259,12 +259,15 @@ export default function InlineImageComponent({
         />
       </span>
       {showCaption && caption && <div>{caption}</div>}
-      <ImageModal
-        activeEditor={editor}
-        triggerModalOpen={ModalOpen}
-        setTriggerModalOpen={setModalOpen}
-        nodeKey={nodeKey}
-      />
+
+      {ModalOpen && (
+        <ImageModal
+          activeEditor={editor}
+          triggerModalOpen={ModalOpen}
+          setTriggerModalOpen={setModalOpen}
+          nodeKey={nodeKey}
+        />
+      )}
     </Suspense>
   )
 }
