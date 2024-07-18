@@ -87,6 +87,23 @@ BgImage.args = {
   image: 'https://picsum.photos/1600/700',
 }
 
+export const ScrollTo: Story = {
+  render: (args) => (
+    <WideImage {...args}>
+      <p>
+        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+        reprehenderit ducimus.
+      </p>
+    </WideImage>
+  ),
+}
+ScrollTo.args = {
+  ...Default.args,
+  title: 'Wide image with bg image',
+  isType: 'image',
+  image: 'https://picsum.photos/1600/700',
+}
+
 export const SignupLight: Story = {
   render: (args) => (
     <WideImage {...args}>

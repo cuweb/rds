@@ -4,9 +4,9 @@ import { WideImageSignup } from './WideImageSignup'
 
 const styles = {
   baseBg: `relative flex items-center bg-cu-waves-white justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
-  lightBg: `text-cu-black-800 py-20 bg-cu-black-50`,
-  darkBg: `text-white py-20 bg-cu-black-900`,
-  imageBg: `relative py-24 text-white bg-opacity-50 bg-cover bg-cu-black-50 md:py-28 lg:py-36 xl:py-48`,
+  lightBg: `text-cu-black-800 bg-cu-black-50`,
+  darkBg: `text-white bg-cu-black-900`,
+  imageBg: `relative text-white bg-opacity-50 bg-cover bg-cu-black-50`,
   overlay: `absolute w-full h-full bg-black`,
   content: `relative z-10 flex flex-col items-center gap-2 text-center`,
   headerOne: `font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl`,
@@ -17,8 +17,8 @@ const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
-  downArrow?: React.ReactNode
-  maxHeight?: 'full' | 'sm' | 'md' | 'lg' //I created a prop and rdsmaxheight in optionClasses file but not sure what to values to pass
+  scrollTo?: React.ReactNode
+  maxHeight?: 'full' | 'sm' | 'md' | 'lg'
   as?: 'section' | 'div'
   title?: string
   image?: string
@@ -32,13 +32,13 @@ export interface WideImageProps {
 
 export const WideImageWrapper = ({
   children,
-  downArrow,
+  scrollTo,
   as = 'div',
   title,
   image,
   headerType = 'h2',
   maxWidth = 'max',
-  // maxHeight,
+  maxHeight = 'sm',
   opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
@@ -60,13 +60,34 @@ export const WideImageWrapper = ({
 
   if (image) {
     hasImageStyles = styles.imageBg
-    // maxHeight = 'md'
+    maxHeight = 'md'
   }
+
+  let topBottomSpace = ''
+
+  switch (maxHeight) {
+    case 'sm':
+      topBottomSpace = 'py-20'
+      break
+    case 'md':
+      topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
+      break
+    case 'lg':
+      topBottomSpace = 'pt-24 pb-36'
+      break
+    case 'full':
+      topBottomSpace = 'h-screen'
+      break
+    default:
+      break
+  }
+
+  console.log(topBottomSpace)
 
   return (
     <WideImageComponent
       style={inlineStyle}
-      className={`cu-wideimage cu-section ${styles.baseBg} ${rdsMaxWidth[maxWidth]}  ${hasImageStyles}`}
+      className={`cu-wideimage cu-section ${styles.baseBg} ${topBottomSpace} ${rdsMaxWidth[maxWidth]}  ${hasImageStyles}`}
     >
       {image && <div className={`${styles.overlay}`} style={opacityStyle}></div>}
 
@@ -75,7 +96,7 @@ export const WideImageWrapper = ({
         {headerType === 'h2' && <h2 className={`${styles.headerTwo}`}>{title}</h2>}
 
         {children}
-        {downArrow}
+        {scrollTo}
       </div>
 
       {isType === 'dark' && (
