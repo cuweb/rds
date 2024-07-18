@@ -215,7 +215,6 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     const writable = this.getWritable()
     const { src, altText, showCaption, position, caption } = payload
     if (src !== undefined) {
-      console.log(src, 'srcsrc')
       writable.__src = src
     }
     if (altText !== undefined) {

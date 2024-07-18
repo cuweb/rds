@@ -26,7 +26,13 @@ export type InsertInlineImagePayload = Readonly<InlineImagePayload>
 export const INSERT_INLINE_IMAGE_COMMAND: LexicalCommand<InlineImagePayload> =
   createCommand('INSERT_INLINE_IMAGE_COMMAND')
 
-export default function InlineImagePlugin({ captionsEnabled }: { captionsEnabled?: boolean }): JSX.Element | null {
+export default function InlineImagePlugin({
+  captionsEnabled,
+  setCaptionsEnabled,
+}: {
+  captionsEnabled?: boolean
+  setCaptionsEnabled?: Dispatch<SetStateAction<boolean>>
+}): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
@@ -40,12 +46,14 @@ export default function InlineImagePlugin({ captionsEnabled }: { captionsEnabled
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
           }
 
+          setCaptionsEnabled(true)
+
           return true
         },
         COMMAND_PRIORITY_EDITOR,
       ),
     )
-  }, [captionsEnabled, editor])
+  }, [captionsEnabled, setCaptionsEnabled, editor])
 
   return null
 }

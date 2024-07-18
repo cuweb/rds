@@ -26,6 +26,8 @@ import OnChangePlugin from './plugins/OnChangePlugin'
 import InlineImagePlugin from './plugins/InlineImagePlugin'
 import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
+import RichTextEditorHit from './utils/RichTextEditorHit'
+import { useState } from 'react'
 
 export interface EditorProps {
   name: string
@@ -89,7 +91,7 @@ export const Editor = ({ ...props }: EditorProps) => {
     label,
     setEditorContent,
     value,
-    placeholder = 'Enter some text...',
+    placeholder = 'Start typing your content here...',
     disabled = false,
     required = false,
     errorMessage,
@@ -102,6 +104,8 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   const editorClass = disabled ? 'cu-editor__disabled' : ''
 
+  const [captionsEnabled, setCaptionsEnabled] = useState(false)
+
   return (
     <FormField name={name} label={label} required={required} {...rest}>
       <LexicalComposer initialConfig={editorConfig(value)}>
@@ -110,7 +114,7 @@ export const Editor = ({ ...props }: EditorProps) => {
           <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={
-                <ContentEditable className="prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0" />
+                <ContentEditable className="prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none" />
               }
               placeholder={
                 <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
@@ -120,7 +124,8 @@ export const Editor = ({ ...props }: EditorProps) => {
               ErrorBoundary={LexicalErrorBoundary}
             />
             <HistoryPlugin />
-            <InlineImagePlugin />
+            <InlineImagePlugin captionsEnabled={captionsEnabled} setCaptionsEnabled={setCaptionsEnabled} />
+            <RichTextEditorHit captionsEnabled={captionsEnabled} />
             <AutoFocusPlugin />
             <CodeHighlightPlugin />
             <ListPlugin />

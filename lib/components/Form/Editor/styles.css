@@ -140,11 +140,11 @@ i.chevron-down {
 }
 
 .image-position img.focused {
-  @apply outline-1 outline-dashed outline-sky-600;
+  @apply outline-1 outline-dashed outline-offset-2 outline-blue-950;
 }
 
 .image-position--left .image-wrapper {
-  @apply float-start mt-4 me-4;
+  @apply float-start me-5;
 }
 
 .image-position--center .image-wrapper {
@@ -152,7 +152,11 @@ i.chevron-down {
 }
 
 .image-position--right .image-wrapper {
-  @apply float-end mt-4 ms-4;
+  @apply float-end ms-5;
+}
+
+.hint-text {
+  @apply text-cu-black-500 relative pointer-events-none;
 }
 
 i.undo {
