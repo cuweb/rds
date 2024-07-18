@@ -8,6 +8,10 @@ export const rdsMaxWidth = {
   full: 'max-w-full',
 }
 
+export const rdsMaxHeight = {
+  full: 'max-h-full',
+}
+
 export const rdsFlexRow = {
   sm: 'sm:flex-row',
   md: 'md:flex-row',

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { WideImage } from './WideImage'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 const meta: Meta<typeof WideImage> = {
   title: 'Components/Wide Image',
@@ -21,6 +22,14 @@ export const Default: Story = {}
 
 Default.args = {
   title: 'Wide image default',
+}
+
+const handleScroll = () => {
+  window.scroll({
+    top: document.body.offsetHeight,
+    left: 0,
+    behavior: 'smooth',
+  })
 }
 
 export const WithButtons: Story = {
@@ -46,6 +55,12 @@ export const BgDark: Story = {
         <Button title="Apply Now" />
         <Button title="Request Information" color="grey" />
       </ButtonGroup>
+      <ChevronDownIcon
+        onClick={handleScroll}
+        className="w-8 h-8 mt-5 transition-transform rotate-0 accordion__icon flex items-center justify-center cursor-pointer"
+        stroke={'white'}
+        strokeWidth={2}
+      />
     </WideImage>
   ),
 }

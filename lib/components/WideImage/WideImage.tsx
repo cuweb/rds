@@ -17,6 +17,8 @@ const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
+  downArrow?: React.ReactNode
+  maxHeight?: 'full' | 'sm' | 'md' | 'lg' //I created a prop and rdsmaxheight in optionClasses file but not sure what to values to pass
   as?: 'section' | 'div'
   title?: string
   image?: string
@@ -30,11 +32,13 @@ export interface WideImageProps {
 
 export const WideImageWrapper = ({
   children,
+  downArrow,
   as = 'div',
   title,
   image,
   headerType = 'h2',
   maxWidth = 'max',
+  // maxHeight,
   opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
@@ -56,12 +60,13 @@ export const WideImageWrapper = ({
 
   if (image) {
     hasImageStyles = styles.imageBg
+    // maxHeight = 'md'
   }
 
   return (
     <WideImageComponent
       style={inlineStyle}
-      className={`cu-wideimage cu-section ${styles.baseBg} ${rdsMaxWidth[maxWidth]} ${hasImageStyles}`}
+      className={`cu-wideimage cu-section ${styles.baseBg} ${rdsMaxWidth[maxWidth]}  ${hasImageStyles}`}
     >
       {image && <div className={`${styles.overlay}`} style={opacityStyle}></div>}
 
@@ -70,6 +75,7 @@ export const WideImageWrapper = ({
         {headerType === 'h2' && <h2 className={`${styles.headerTwo}`}>{title}</h2>}
 
         {children}
+        {downArrow}
       </div>
 
       {isType === 'dark' && (
