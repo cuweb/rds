@@ -232,12 +232,12 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   }
 
   createDOM(): HTMLElement {
-    const span = document.createElement('span')
+    const div = document.createElement('div')
     const className = `image-position image-position--${this.__position}`
     if (className !== undefined) {
-      span.className = className
+      div.className = className
     }
-    return span
+    return div
   }
 
   updateDOM(prevNode: InlineImageNode, dom: HTMLElement): false {

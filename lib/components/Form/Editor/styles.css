@@ -139,20 +139,32 @@ i.chevron-down {
   @apply bg-contain inline-block h-5 w-5;
 }
 
+.image-wrapper .image-wrapper__caption {
+  @apply m-0 p-0 text-base leading-6 italic text-cu-black-700;
+}
+
+br {
+  min-width: 1px;
+}
+
 .image-position img.focused {
   @apply outline-1 outline-dashed outline-offset-2 outline-blue-950;
 }
 
-.image-position--left .image-wrapper {
-  @apply float-start w-[50%] me-5;
+.image-position--left {
+  @apply float-left mr-5;
+  clear: both;
+  display: block;
 }
 
-.image-position--center .image-wrapper {
+.image-position--center {
   @apply text-center;
 }
 
-.image-position--right .image-wrapper {
-  @apply float-end  w-[50%] ms-5;
+.image-position--right {
+  @apply float-right ml-5;
+  clear: both;
+  display: block;
 }
 
 .hint-text {

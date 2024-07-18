@@ -205,7 +205,7 @@ export default function InlineImageComponent({
 
   return (
     <Suspense fallback={null}>
-      <span className="image-wrapper" draggable={draggable}>
+      <div className="image-wrapper" draggable={draggable}>
         <ButtonGroup>
           <Button
             color="grey"
@@ -225,17 +225,16 @@ export default function InlineImageComponent({
           altText={altText}
           imageRef={imageRef}
         />
-        {showCaption && caption && <div>{caption}</div>}
-      </span>
-
-      {ModalOpen && (
-        <ImageModal
-          activeEditor={editor}
-          triggerModalOpen={ModalOpen}
-          setTriggerModalOpen={setModalOpen}
-          nodeKey={nodeKey}
-        />
-      )}
+        {showCaption && caption && <div className="image-wrapper__caption">{caption}</div>}
+        {ModalOpen && (
+          <ImageModal
+            activeEditor={editor}
+            triggerModalOpen={ModalOpen}
+            setTriggerModalOpen={setModalOpen}
+            nodeKey={nodeKey}
+          />
+        )}
+      </div>
     </Suspense>
   )
 }

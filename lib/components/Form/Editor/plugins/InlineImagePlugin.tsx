@@ -1,8 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
-import { useEffect } from 'react'
+import { Dispatch, SetStateAction, useEffect } from 'react'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
 import {
@@ -31,7 +27,7 @@ export default function InlineImagePlugin({
   setCaptionsEnabled,
 }: {
   captionsEnabled?: boolean
-  setCaptionsEnabled?: Dispatch<SetStateAction<boolean>>
+  setCaptionsEnabled: Dispatch<SetStateAction<boolean>>
 }): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
@@ -41,7 +37,10 @@ export default function InlineImagePlugin({
         INSERT_INLINE_IMAGE_COMMAND,
         (payload) => {
           const imageNode = $createInlineImageNode(payload)
-          $insertNodes([imageNode])
+          const paragraphNode = $createParagraphNode()
+          paragraphNode.append(imageNode)
+          $insertNodes([paragraphNode])
+
           if ($isRootOrShadowRoot(imageNode.getParentOrThrow())) {
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
           }
