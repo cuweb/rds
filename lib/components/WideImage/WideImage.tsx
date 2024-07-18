@@ -1,13 +1,14 @@
 import React from 'react'
 import { rdsMaxWidth } from '../../utils/optionClasses'
 import { WideImageSignup } from './WideImageSignup'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 const styles = {
   baseBg: `relative flex items-center bg-cu-waves-white justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
   lightBg: `text-cu-black-800 bg-cu-black-50`,
   darkBg: `text-white bg-cu-black-900`,
   imageBg: `relative text-white bg-opacity-50 bg-cover bg-cu-black-50`,
-  overlay: `absolute w-full h-full bg-black`,
+  overlay: `absolute w-full h-screen bg-black`,
   content: `relative z-10 flex flex-col items-center gap-2 text-center`,
   headerOne: `font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl`,
   headerTwo: `font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl`,
@@ -55,12 +56,25 @@ export const WideImageWrapper = ({
     opacity: `0.${opacity}`,
   }
 
+  const handleScroll = () => {
+    window.scroll({
+      top: document.body.offsetHeight,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
+
   let hasImageStyles
   hasImageStyles = isType === 'dark' ? styles.darkBg : styles.lightBg
 
-  if (image) {
+  if (image && !scrollTo) {
     hasImageStyles = styles.imageBg
     maxHeight = 'md'
+  }
+
+  if (image && scrollTo) {
+    hasImageStyles = styles.imageBg
+    maxHeight = 'lg'
   }
 
   let topBottomSpace = ''
@@ -73,7 +87,8 @@ export const WideImageWrapper = ({
       topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
       break
     case 'lg':
-      topBottomSpace = 'pt-24 pb-36'
+      // topBottomSpace = 'pt-24 md:pt-28 lg:pt-36 xl:pt-48 pb-32 md:pb-36 lg:pb-44 xl:pb-60'
+      topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
       break
     case 'full':
       topBottomSpace = 'h-screen'
@@ -96,10 +111,20 @@ export const WideImageWrapper = ({
         {headerType === 'h2' && <h2 className={`${styles.headerTwo}`}>{title}</h2>}
 
         {children}
-        {scrollTo}
+
+        {scrollTo && (
+          <ChevronDownIcon
+            onClick={handleScroll}
+            className="w-8 h-8 mt-5 cursor-pointer"
+            stroke={'white'}
+            strokeWidth={2}
+          />
+        )}
       </div>
 
-      {isType === 'dark' && (
+      {/* {scrollTo && <div className="absolute w-full cu-waves-red bg-bottom bg-cover py-12"></div>} */}
+
+      {/* {isType === 'dark' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0 w-full opacity-10"
@@ -125,7 +150,7 @@ export const WideImageWrapper = ({
             </filter>
           </defs>
         </svg>
-      )}
+      )} */}
     </WideImageComponent>
   )
 }
