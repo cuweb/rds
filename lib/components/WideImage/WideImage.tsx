@@ -1,14 +1,13 @@
 import React from 'react'
 import { rdsMaxWidth } from '../../utils/optionClasses'
 import { WideImageSignup } from './WideImageSignup'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
   scrollTo?: React.ReactNode
-  maxHeight?: 'full' | 'sm' | 'md' | 'lg'
+  maxHeight?: 'sm' | 'md' | 'lg'
   as?: 'section' | 'div'
   title?: string
   image?: string
@@ -18,6 +17,44 @@ export interface WideImageProps {
   focalPointX?: string
   focalPointY?: string
   isType?: 'light' | 'dark' | 'image'
+}
+
+const getInlineStyle = (image: string = '', focalPointX: string, focalPointY: string) => ({
+  backgroundImage: `url(${image})`,
+  backgroundPosition: `${focalPointX}% ${focalPointY}%`,
+})
+
+const getOpacityStyle = (opacity: number) => ({
+  opacity: `0.${opacity}`,
+})
+
+const handleScroll = () => {
+  window.scroll({
+    top: document.body.offsetHeight,
+    left: 0,
+    behavior: 'smooth',
+  })
+}
+
+const getImageStyles = (isType: string, image: string | undefined, scrollTo: React.ReactNode | undefined) => {
+  if (image && !scrollTo) return 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
+  if (image && scrollTo) return 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
+  return isType === 'dark' ? 'text-white bg-cu-black-900' : 'text-cu-black-800 bg-cu-black-50'
+}
+
+const getTopBottomSpace = (maxHeight: string) => {
+  switch (maxHeight) {
+    case 'sm':
+      return 'py-20'
+    case 'md':
+      return 'py-24 md:py-28 lg:py-36 xl:py-48'
+    case 'lg':
+      return 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-96'
+    case 'full':
+      return 'h-screen'
+    default:
+      return ''
+  }
 }
 
 export const WideImageWrapper = ({
@@ -35,58 +72,10 @@ export const WideImageWrapper = ({
   isType = 'light',
 }: WideImageProps) => {
   const WideImageComponent = as
-
-  const inlineStyle = {
-    backgroundImage: `url(${image})`,
-    backgroundPosition: `${focalPointX}% ${focalPointY}%`,
-  }
-
-  const opacityStyle = {
-    opacity: `0.${opacity}`,
-  }
-
-  const handleScroll = () => {
-    window.scroll({
-      top: document.body.offsetHeight,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
-
-  let hasImageStyles
-  hasImageStyles = isType === 'dark' ? 'text-white bg-cu-black-900' : 'text-cu-black-800 bg-cu-black-50'
-
-  if (image && !scrollTo) {
-    hasImageStyles = 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
-    maxHeight = 'md'
-  }
-
-  if (image && scrollTo) {
-    hasImageStyles = 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
-    maxHeight = 'lg'
-  }
-
-  let topBottomSpace = ''
-
-  switch (maxHeight) {
-    case 'sm':
-      topBottomSpace = 'py-20'
-      break
-    case 'md':
-      topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
-      break
-    case 'lg':
-      // topBottomSpace = 'pt-24 md:pt-28 lg:pt-36 xl:pt-48 pb-32 md:pb-36 lg:pb-44 xl:pb-60'
-      topBottomSpace = 'py-28 md:py-36 lg:py-48 xl:py-60'
-      break
-    case 'full':
-      topBottomSpace = 'h-screen'
-      break
-    default:
-      break
-  }
-
-  console.log(topBottomSpace)
+  const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
+  const opacityStyle = getOpacityStyle(opacity)
+  const hasImageStyles = getImageStyles(isType, image, scrollTo)
+  const topBottomSpace = getTopBottomSpace(maxHeight)
 
   return (
     <WideImageComponent
@@ -112,22 +101,25 @@ export const WideImageWrapper = ({
       <div
         className={`relative z-10 flex flex-col items-center gap-2 text-center cu-wideimage-content cu-wideimage-${isType}`}
       >
-        {headerType === 'h1' && (
-          <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl">{title}</h1>
-        )}
-        {headerType === 'h2' && (
-          <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl">{title}</h2>
+        {headerType === 'h1' ? (
+          <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl mb-2">{title}</h1>
+        ) : (
+          <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl mb-2">{title}</h2>
         )}
 
         {children}
 
         {scrollTo && image && (
-          <ChevronDownIcon
-            onClick={handleScroll}
-            className="w-8 h-8 mt-5 cursor-pointer"
-            stroke={'white'}
-            strokeWidth={2}
-          />
+          <div className="mt-2 flex justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              className="w-12 h-12 cursor-pointer fill-white hover:bg-cu-red rounded-full p-2 pt-2.5"
+              onClick={handleScroll}
+            >
+              <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+            </svg>
+          </div>
         )}
       </div>
 
