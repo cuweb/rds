@@ -17,14 +17,16 @@ export interface UpdateInlineImagePayload {
     showCaption?: boolean;
     position?: Position;
     caption?: string;
+    width?: number | 'inherit';
+    height?: number | 'inherit';
 }
 export type SerializedInlineImageNode = Spread<{
     altText: string;
     caption: string;
-    height?: number;
+    height?: number | 'inherit';
     showCaption: boolean;
     src: string;
-    width?: number;
+    width?: number | 'inherit';
     position?: Position;
 }, SerializedLexicalNode>;
 export declare class InlineImageNode extends DecoratorNode<JSX.Element> {
