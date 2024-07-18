@@ -144,7 +144,7 @@ i.chevron-down {
 }
 
 .image-position--left .image-wrapper {
-  @apply float-start me-5;
+  @apply float-start w-[50%] me-5;
 }
 
 .image-position--center .image-wrapper {
@@ -152,7 +152,7 @@ i.chevron-down {
 }
 
 .image-position--right .image-wrapper {
-  @apply float-end ms-5;
+  @apply float-end  w-[50%] ms-5;
 }
 
 .hint-text {
