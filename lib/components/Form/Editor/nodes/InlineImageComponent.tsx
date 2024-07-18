@@ -106,7 +106,7 @@ export default function InlineImageComponent({
       if (isSelected && $isNodeSelection($getSelection())) {
         event.preventDefault()
         const node = $getNodeByKey(nodeKey)
-        if ($isInlineImageNode(node)) {
+        if (node && node.__type === 'inline-image') {
           node?.remove()
         }
         setSelected(false)
@@ -255,8 +255,8 @@ export default function InlineImageComponent({
           height={height}
           position={position}
         />
+        {showCaption && caption && <div>{caption}</div>}
       </span>
-      {showCaption && caption && <div>{caption}</div>}
 
       {ModalOpen && (
         <ImageModal
