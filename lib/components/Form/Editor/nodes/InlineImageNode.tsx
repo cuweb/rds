@@ -139,7 +139,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     img.setAttribute('width', this.__width.toString())
     img.setAttribute('height', this.__height.toString())
 
-    figure.className = `position-${this.__position}`
+    figure.className = `image-position image-position--${this.__position}`
     figure.appendChild(img)
 
     if (this.__caption) {
@@ -234,7 +234,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   createDOM(): HTMLElement {
     const span = document.createElement('span')
-    const className = `position-${this.__position}`
+    const className = `image-position image-position--${this.__position}`
     if (className !== undefined) {
       span.className = className
     }
@@ -244,7 +244,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   updateDOM(prevNode: InlineImageNode, dom: HTMLElement): false {
     const position = this.__position
     if (position !== prevNode.__position) {
-      const className = `position-${position}`
+      const className = `image-position image-position--${position}`
       if (className !== undefined) {
         dom.className = className
       }
@@ -258,12 +258,9 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
         <InlineImageComponent
           src={this.__src}
           altText={this.__altText}
-          width={this.__width}
-          height={this.__height}
           nodeKey={this.getKey()}
           showCaption={this.__showCaption}
           caption={this.__caption}
-          position={this.__position}
         />
       </Suspense>
     )

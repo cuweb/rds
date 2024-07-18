@@ -139,16 +139,20 @@ i.chevron-down {
   @apply bg-contain inline-block h-5 w-5;
 }
 
-.position-left .image-wrapper {
-  @apply float-start w-[50%] mt-4 me-4;
+.image-position img.focused {
+  @apply outline-1 outline-dashed outline-sky-600;
 }
 
-.position-center .image-wrapper {
+.image-position--left .image-wrapper {
+  @apply float-start mt-4 me-4;
+}
+
+.image-position--center .image-wrapper {
   @apply text-center;
 }
 
-.position-right .image-wrapper {
-  @apply float-start w-[50%] mt-4 ms-4;
+.image-position--right .image-wrapper {
+  @apply float-end mt-4 ms-4;
 }
 
 i.undo {

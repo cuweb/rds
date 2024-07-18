@@ -3,7 +3,6 @@ import type { LexicalEditor, NodeKey, NodeSelection, RangeSelection } from 'lexi
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
-import type { Position } from './InlineImageNode'
 
 import {
   $getNodeByKey,
@@ -45,54 +44,28 @@ function LazyImage({
   className,
   imageRef,
   src,
-  width,
-  height,
-  position,
 }: {
   altText: string
   className: string | null
-  height: 'inherit' | number
   imageRef: { current: null | HTMLImageElement }
   src: string
-  width: 'inherit' | number
-  position: Position
 }): JSX.Element {
   useSuspenseImage(src)
-  return (
-    <img
-      className={className || undefined}
-      src={src}
-      alt={altText}
-      ref={imageRef}
-      data-position={position}
-      style={{
-        height,
-        width,
-        display: 'block',
-      }}
-      draggable="false"
-    />
-  )
+  return <img className={className || undefined} src={src} alt={altText} ref={imageRef} draggable="false" />
 }
 
 export default function InlineImageComponent({
   src,
   altText,
   nodeKey,
-  width,
-  height,
   showCaption,
   caption,
-  position,
 }: {
   altText: string
   caption: string
-  height: 'inherit' | number
   nodeKey: NodeKey
   showCaption: boolean
   src: string
-  width: 'inherit' | number
-  position: Position
 }): JSX.Element {
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
@@ -251,9 +224,6 @@ export default function InlineImageComponent({
           src={src}
           altText={altText}
           imageRef={imageRef}
-          width={width}
-          height={height}
-          position={position}
         />
         {showCaption && caption && <div>{caption}</div>}
       </span>
