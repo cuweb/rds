@@ -3,16 +3,6 @@ import { rdsMaxWidth } from '../../utils/optionClasses'
 import { WideImageSignup } from './WideImageSignup'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
-const styles = {
-  baseBg: `relative flex items-center bg-cu-waves-white justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose`,
-  lightBg: `text-cu-black-800 bg-cu-black-50`,
-  darkBg: `text-white bg-cu-black-900`,
-  imageBg: `relative text-white bg-opacity-50 bg-cover bg-cu-black-50`,
-  content: `relative z-10 flex flex-col items-center gap-2 text-center`,
-  headerOne: `font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl`,
-  headerTwo: `font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl`,
-}
-
 const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
@@ -64,15 +54,15 @@ export const WideImageWrapper = ({
   }
 
   let hasImageStyles
-  hasImageStyles = isType === 'dark' ? styles.darkBg : styles.lightBg
+  hasImageStyles = isType === 'dark' ? 'text-white bg-cu-black-900' : 'text-cu-black-800 bg-cu-black-50'
 
   if (image && !scrollTo) {
-    hasImageStyles = styles.imageBg
+    hasImageStyles = 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
     maxHeight = 'md'
   }
 
   if (image && scrollTo) {
-    hasImageStyles = styles.imageBg
+    hasImageStyles = 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
     maxHeight = 'lg'
   }
 
@@ -101,9 +91,9 @@ export const WideImageWrapper = ({
   return (
     <WideImageComponent
       style={inlineStyle}
-      className={`cu-wideimage cu-section ${styles.baseBg} ${topBottomSpace} ${rdsMaxWidth[maxWidth]}  ${hasImageStyles}`}
+      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${rdsMaxWidth[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
     >
-      {scrollTo && (
+      {scrollTo && image && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0 w-full z-50"
@@ -119,13 +109,19 @@ export const WideImageWrapper = ({
       )}
       {image && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
 
-      <div className={`${styles.content} cu-wideimage-content cu-wideimage-${isType}`}>
-        {headerType === 'h1' && <h1 className={`${styles.headerOne}`}>{title}</h1>}
-        {headerType === 'h2' && <h2 className={`${styles.headerTwo}`}>{title}</h2>}
+      <div
+        className={`relative z-10 flex flex-col items-center gap-2 text-center cu-wideimage-content cu-wideimage-${isType}`}
+      >
+        {headerType === 'h1' && (
+          <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl">{title}</h1>
+        )}
+        {headerType === 'h2' && (
+          <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl">{title}</h2>
+        )}
 
         {children}
 
-        {scrollTo && (
+        {scrollTo && image && (
           <ChevronDownIcon
             onClick={handleScroll}
             className="w-8 h-8 mt-5 cursor-pointer"
@@ -135,7 +131,7 @@ export const WideImageWrapper = ({
         )}
       </div>
 
-      {/* {isType === 'dark' && (
+      {isType === 'dark' && !scrollTo && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0 w-full opacity-10"
@@ -161,7 +157,7 @@ export const WideImageWrapper = ({
             </filter>
           </defs>
         </svg>
-      )} */}
+      )}
     </WideImageComponent>
   )
 }

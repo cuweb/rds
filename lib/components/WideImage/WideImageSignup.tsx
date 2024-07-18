@@ -8,7 +8,7 @@ export interface WideImageSignupProps {
 
 export const WideImageSignup = ({ buttonText = 'Submit Email' }: WideImageSignupProps) => {
   return (
-    <div className="w-full max-w-xl space-y-5 cu-wideimage-signup bg-cu-waves-white">
+    <div className="w-full max-w-xl space-y-5 cu-wideimage-signup">
       <div className="flex gap-2.5">
         <label htmlFor="email" className="sr-only">
           Enter you email address
