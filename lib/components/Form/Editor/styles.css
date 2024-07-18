@@ -143,8 +143,13 @@ i.chevron-down {
   @apply m-0 p-0 text-base leading-6 italic text-cu-black-700;
 }
 
-br {
-  min-width: 1px;
+.image-position {
+  margin-bottom: 20px;
+}
+
+.image-position + br {
+  clear: both;
+  display: block;
 }
 
 .image-position img.focused {
@@ -168,7 +173,7 @@ br {
 }
 
 .hint-text {
-  @apply text-cu-black-500 relative pointer-events-none;
+  @apply text-cu-black-400 relative pointer-events-none;
 }
 
 i.undo {

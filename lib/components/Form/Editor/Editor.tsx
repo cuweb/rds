@@ -98,13 +98,14 @@ export const Editor = ({ ...props }: EditorProps) => {
     ...rest
   } = props
 
-  function onChange(htmlString: string | null) {
+  const [captionsEnabled, setCaptionsEnabled] = useState(false)
+
+  const onChange = (htmlString: string | null) => {
     setEditorContent(htmlString)
+    setCaptionsEnabled(htmlString ? true : false)
   }
 
   const editorClass = disabled ? 'cu-editor__disabled' : ''
-
-  const [captionsEnabled, setCaptionsEnabled] = useState(false)
 
   return (
     <FormField name={name} label={label} required={required} {...rest}>
@@ -125,7 +126,7 @@ export const Editor = ({ ...props }: EditorProps) => {
             />
             <HistoryPlugin />
             <InlineImagePlugin captionsEnabled={captionsEnabled} setCaptionsEnabled={setCaptionsEnabled} />
-            <RichTextEditorHit captionsEnabled={captionsEnabled} />
+            <RichTextEditorHit captionsEnabled={captionsEnabled} placeholder={placeholder} />
             <AutoFocusPlugin />
             <CodeHighlightPlugin />
             <ListPlugin />
