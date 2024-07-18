@@ -31,6 +31,8 @@ export const ImageModal = ({
   const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
   const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
   const [caption, setCaption] = useState(node ? node.getCaption() : '')
+  const [width, setWidth] = useState<number | string>(node ? node.__width : 0)
+  const [height, setHeight] = useState<number | string>(node ? node.__height : 0)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -47,11 +49,34 @@ export const ImageModal = ({
       const reader = new FileReader()
       reader.onload = () => {
         if (typeof reader.result === 'string') {
+          const img = new Image()
+          img.src = reader.result
+
+          img.onload = () => {
+            const imageWidth = img.width
+            const imageHeight = img.height
+
+            setWidth(imageWidth)
+            setHeight(imageHeight)
+          }
+
+          img.onerror = (err) => {
+            console.error('Error loading image:', err)
+            setSrcError(true)
+          }
+
           setSrc(reader.result)
           setSrcError(false)
         }
-        return ''
       }
+
+      reader.onerror = (err) => {
+        console.error('Error reading file:', err)
+        setSrcError(true)
+        setWidth(0)
+        setHeight(0)
+      }
+
       if (files !== null) {
         reader.readAsDataURL(files[0])
       }
@@ -84,7 +109,20 @@ export const ImageModal = ({
       setSrcError(false)
       setAltTextError(false)
 
-      const payload = { altText, src, showCaption, position, caption }
+      // Ensure height and width are numbers or undefined
+      const parsedHeight = typeof height === 'number' ? height : undefined
+      const parsedWidth = typeof width === 'number' ? width : undefined
+
+      const payload = {
+        altText,
+        height: parsedHeight,
+        showCaption,
+        src,
+        width: parsedWidth,
+        position,
+        caption,
+      }
+
       activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
       setTriggerModalOpen(false)
       setTriggerModalOpen(false)

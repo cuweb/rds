@@ -31,6 +31,8 @@ export interface UpdateInlineImagePayload {
   showCaption?: boolean
   position?: Position
   caption?: string
+  width?: number | 'inherit'
+  height?: number | 'inherit'
 }
 
 function convertInlineImageElement(domNode: Node): null | DOMConversionOutput {
@@ -46,10 +48,10 @@ export type SerializedInlineImageNode = Spread<
   {
     altText: string
     caption: string
-    height?: number
+    height?: number | 'inherit'
     showCaption: boolean
     src: string
-    width?: number
+    width?: number | 'inherit'
     position?: Position
   },
   SerializedLexicalNode
@@ -83,12 +85,16 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   static importJSON(serializedNode: SerializedInlineImageNode): InlineImageNode {
     const { altText, height, width, caption, src, showCaption, position } = serializedNode
+
+    const parsedHeight = typeof height === 'number' ? height : undefined
+    const parsedWidth = typeof width === 'number' ? width : undefined
+
     const node = $createInlineImageNode({
       altText,
-      height,
+      height: parsedHeight,
       showCaption,
       src,
-      width,
+      width: parsedWidth,
       position,
       caption,
     })
