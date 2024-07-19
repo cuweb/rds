@@ -18,7 +18,7 @@ import EditorTheme from './themes/EditorTheme'
 import './styles.css'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
 import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
-import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
+// import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import Error from '../Error/Error'
@@ -26,7 +26,7 @@ import OnChangePlugin from './plugins/OnChangePlugin'
 import InlineImagePlugin from './plugins/InlineImagePlugin'
 import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
-import RichTextEditorHit from './utils/RichTextEditorHit'
+// import RichTextEditorHit from './utils/RichTextEditorHit'
 import { useState } from 'react'
 
 export interface EditorProps {
@@ -126,9 +126,10 @@ export const Editor = ({ ...props }: EditorProps) => {
             />
             <HistoryPlugin />
             <InlineImagePlugin captionsEnabled={captionsEnabled} setCaptionsEnabled={setCaptionsEnabled} />
-            <RichTextEditorHit captionsEnabled={captionsEnabled} placeholder={placeholder} />
+            {/* <RichTextEditorHit captionsEnabled={captionsEnabled} placeholder={placeholder} /> */}
             <AutoFocusPlugin />
-            <CodeHighlightPlugin />
+            {/* <CodeHighlightPlugin /> */}
+            {/* <CustomPlaceholderPlugin /> */}
             <ListPlugin />
             <LinkPlugin />
             <AutoLinkPlugin />
