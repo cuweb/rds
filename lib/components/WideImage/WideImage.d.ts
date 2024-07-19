@@ -3,6 +3,8 @@ import { default as React } from '../../../node_modules/react';
 declare const opacityValues: number[];
 export interface WideImageProps {
     children?: React.ReactNode;
+    scrollTo?: React.ReactNode;
+    maxHeight?: 'sm' | 'md' | 'lg';
     as?: 'section' | 'div';
     title?: string;
     image?: string;
@@ -14,11 +16,11 @@ export interface WideImageProps {
     isType?: 'light' | 'dark' | 'image';
 }
 export declare const WideImageWrapper: {
-    ({ children, as, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, scrollTo, as, title, image, headerType, maxWidth, maxHeight, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const WideImage: {
-    ({ children, as, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, scrollTo, as, title, image, headerType, maxWidth, maxHeight, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Signup: {
