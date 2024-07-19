@@ -150,6 +150,7 @@ i.chevron-down {
 .image-position + br {
   clear: both;
   display: block;
+  margin-bottom: 24px;
 }
 
 .image-position img.focused {
