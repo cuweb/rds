@@ -17,7 +17,6 @@ const tailwindPlaceholderClasses = [
   'after:content-[attr(data-placeholder)]',
   'after:-mt-[35px]',
   'after:first-of-type:-mt-[60px]',
-  // 'after:h-0',
 ]
 
 export const ParagraphPlaceholderPlugin = ({ placeholder, hideOnEmptyEditor }: ParagraphPlaceholderPluginProps) => {
