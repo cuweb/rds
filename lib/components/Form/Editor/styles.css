@@ -139,6 +139,14 @@ i.chevron-down {
   @apply bg-contain inline-block h-5 w-5;
 }
 
+.image-wrapper {
+  @apply relative;
+}
+
+.image-wrapper .image-wrapper__action {
+  @apply absolute left-0 top-0;
+}
+
 .image-wrapper .image-wrapper__caption {
   @apply m-0 p-0 text-base leading-6 italic text-cu-black-700;
 }

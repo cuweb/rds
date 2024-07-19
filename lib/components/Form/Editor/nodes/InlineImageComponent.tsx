@@ -3,6 +3,7 @@ import type { LexicalEditor, NodeKey, NodeSelection, RangeSelection } from 'lexi
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
+import { TrashIcon, PencilIcon } from '@heroicons/react/24/outline'
 
 import {
   $getNodeByKey,
@@ -206,18 +207,22 @@ export default function InlineImageComponent({
   return (
     <Suspense fallback={null}>
       <div className="image-wrapper" draggable={draggable}>
-        <ButtonGroup>
-          <Button
-            color="grey"
-            isSmall
-            onClick={() => {
-              setModalOpen(true)
-            }}
-            title="Edit"
-            isDisabled={!isSelected}
-          />
-          <Button isSmall title="Delete" onClick={deleteNode} isDisabled={!isSelected}></Button>
-        </ButtonGroup>
+        {isSelected && (
+          <div className="image-wrapper__action">
+            <ButtonGroup>
+              <Button
+                color="grey"
+                isSmall
+                onClick={() => {
+                  setModalOpen(true)
+                }}
+                isDisabled={!isSelected}
+                icon={PencilIcon}
+              />
+              <Button isSmall onClick={deleteNode} isDisabled={!isSelected} icon={TrashIcon}></Button>
+            </ButtonGroup>
+          </div>
+        )}
 
         <LazyImage
           className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''} !my-2`}
