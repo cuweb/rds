@@ -148,7 +148,7 @@ i.chevron-down {
 }
 
 .image-position + br {
-  display: block;
+  /* display: block; */
   margin-bottom: 24px;
   white-space: pre-wrap;
   min-width: 1px;

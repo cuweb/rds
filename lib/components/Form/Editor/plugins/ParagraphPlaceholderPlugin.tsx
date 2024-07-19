@@ -13,10 +13,10 @@ type ParagraphPlaceholderPluginProps = {
 const tailwindPlaceholderClasses = [
   'after:float-left',
   'after:text-cu-black-400',
-  'after:-mt-[35px]',
   'after:pointer-events-none',
-  'after:h-0',
   'after:content-[attr(data-placeholder)]',
+  'after:-mt-[60px]',
+  'after:h-0',
 ]
 
 export const ParagraphPlaceholderPlugin = ({ placeholder, hideOnEmptyEditor }: ParagraphPlaceholderPluginProps) => {
