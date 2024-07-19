@@ -3,6 +3,7 @@ import type { LexicalEditor, NodeKey, NodeSelection, RangeSelection } from 'lexi
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
+import { TrashIcon, PencilIcon } from '@heroicons/react/24/outline'
 
 import {
   $getNodeByKey,
@@ -215,10 +216,10 @@ export default function InlineImageComponent({
                 onClick={() => {
                   setModalOpen(true)
                 }}
-                title="Edit"
                 isDisabled={!isSelected}
+                icon={PencilIcon}
               />
-              <Button isSmall title="Delete" onClick={deleteNode} isDisabled={!isSelected}></Button>
+              <Button isSmall onClick={deleteNode} isDisabled={!isSelected} icon={TrashIcon}></Button>
             </ButtonGroup>
           </div>
         )}
