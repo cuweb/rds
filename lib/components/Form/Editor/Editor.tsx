@@ -115,7 +115,7 @@ export const Editor = ({ ...props }: EditorProps) => {
           <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={
-                <ContentEditable className="prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none" />
+                <ContentEditable className="cu-editor-richtext prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none" />
               }
               placeholder={
                 <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
