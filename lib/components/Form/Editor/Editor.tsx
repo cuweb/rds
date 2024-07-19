@@ -28,6 +28,7 @@ import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 // import RichTextEditorHit from './utils/RichTextEditorHit'
 import { useState } from 'react'
+import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
 
 export interface EditorProps {
   name: string
@@ -124,6 +125,7 @@ export const Editor = ({ ...props }: EditorProps) => {
               }
               ErrorBoundary={LexicalErrorBoundary}
             />
+            <ParagraphPlaceholderPlugin placeholder={placeholder} hideOnEmptyEditor />
             <HistoryPlugin />
             <InlineImagePlugin captionsEnabled={captionsEnabled} setCaptionsEnabled={setCaptionsEnabled} />
             {/* <RichTextEditorHit captionsEnabled={captionsEnabled} placeholder={placeholder} /> */}

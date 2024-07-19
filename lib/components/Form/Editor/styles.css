@@ -139,19 +139,6 @@ i.chevron-down {
   @apply bg-contain inline-block h-5 w-5;
 }
 
-p:has(br) {
-  @apply relative;
-}
-
-p:has(br)::before {
-  content: 'Text goes here...';
-  @apply text-cu-black-400 text-[1rem] relative top-2;
-}
-
-.cu-editor-richtext p:first-child:has(br:first-child:last-child)::before {
-  content: '';
-}
-
 .image-wrapper .image-wrapper__caption {
   @apply m-0 p-0 text-base leading-6 italic text-cu-black-700;
 }

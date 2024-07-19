@@ -37,9 +37,7 @@ export default function InlineImagePlugin({
         INSERT_INLINE_IMAGE_COMMAND,
         (payload) => {
           const imageNode = $createInlineImageNode(payload)
-          const paragraphNode = $createParagraphNode()
-          paragraphNode.append(imageNode)
-          $insertNodes([paragraphNode])
+          $insertNodes([imageNode])
 
           if ($isRootOrShadowRoot(imageNode.getParentOrThrow())) {
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
