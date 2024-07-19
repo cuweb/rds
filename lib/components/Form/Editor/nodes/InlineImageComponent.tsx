@@ -206,18 +206,22 @@ export default function InlineImageComponent({
   return (
     <Suspense fallback={null}>
       <div className="image-wrapper" draggable={draggable}>
-        <ButtonGroup>
-          <Button
-            color="grey"
-            isSmall
-            onClick={() => {
-              setModalOpen(true)
-            }}
-            title="Edit"
-            isDisabled={!isSelected}
-          />
-          <Button isSmall title="Delete" onClick={deleteNode} isDisabled={!isSelected}></Button>
-        </ButtonGroup>
+        {isSelected && (
+          <div className="image-wrapper__action">
+            <ButtonGroup>
+              <Button
+                color="grey"
+                isSmall
+                onClick={() => {
+                  setModalOpen(true)
+                }}
+                title="Edit"
+                isDisabled={!isSelected}
+              />
+              <Button isSmall title="Delete" onClick={deleteNode} isDisabled={!isSelected}></Button>
+            </ButtonGroup>
+          </div>
+        )}
 
         <LazyImage
           className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''} !my-2`}
