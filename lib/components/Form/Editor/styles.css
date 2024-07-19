@@ -144,7 +144,7 @@ i.chevron-down {
 }
 
 .image-wrapper .image-wrapper__action {
-  @apply absolute left-0 top-0;
+  @apply absolute left-3 top-3;
 }
 
 .image-wrapper .image-wrapper__caption {
@@ -172,8 +172,8 @@ i.chevron-down {
   display: block;
 }
 
-.image-position--center {
-  @apply text-center;
+.image-position--full {
+  @apply w-full clear-both;
 }
 
 .image-position--right {
@@ -257,6 +257,5 @@ i.justify-align {
 }
 
 i.image {
-  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/align-justify-light.svg');
-  /* background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/image-regular.svg'); */
+  background-image: url('https://cdn.carleton.ca/rds/assets/lexical-icons/image-regular.svg');
 }

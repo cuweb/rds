@@ -209,7 +209,7 @@ export default function InlineImageComponent({
       <div className="image-wrapper" draggable={draggable}>
         {isSelected && (
           <div className="image-wrapper__action">
-            <ButtonGroup>
+            <ButtonGroup gap={3}>
               <Button
                 color="grey"
                 isSmall
