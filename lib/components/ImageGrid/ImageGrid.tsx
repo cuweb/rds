@@ -31,7 +31,10 @@ export const ImageGrid = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-5 sm:px-5">
           {items.map(({ id, src, span, headerText, text }) => (
             <div key={id} className={`shadow-md relative col-span-${span}  shadow-gray-600 rounded-lg overflow-hidden`}>
-              <button className="border w-3/5 rounded-md px-5 py-1 items-end bg-black hover:scale-105 text-white bg-opacity-65 border-none mx-2 absolute bottom-4 start-0">
+              <button
+                onClick={() => alert('Button clicked')}
+                className="border w-3/5 rounded-md px-5 py-1 items-end bg-black hover:scale-105 text-white bg-opacity-65 border-none mx-2 absolute bottom-4 start-0"
+              >
                 <h3 className="text-left font-bold">{headerText}</h3>
                 <p className="text-left">{text}</p>
               </button>
