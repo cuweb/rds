@@ -2,6 +2,7 @@ import { Field } from 'formik'
 import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 import useErrorClass from '../UseError'
+import { Ref } from 'react'
 
 export interface CheckboxProps extends FieldSetComponentProps {
   checkBoxRight?: boolean
@@ -9,6 +10,7 @@ export interface CheckboxProps extends FieldSetComponentProps {
     label: string
     value: string
   }[]
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {

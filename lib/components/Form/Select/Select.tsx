@@ -3,12 +3,14 @@ import { Field } from 'formik'
 import { fieldStyles } from '../../../styles/form'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
+import { Ref } from 'react'
 
 export interface SelectProps extends FieldComponentProps {
   options?: {
     label: string
     value: string
   }[]
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const Select = ({ ...props }: SelectProps) => {
