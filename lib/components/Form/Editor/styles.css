@@ -48,7 +48,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .cu-editor .toolbar button.toolbar-item.active {
-  @apply bg-white;
+  @apply bg-cu-black-100;
 }
 
 .cu-editor .toolbar .toolbar-item:hover:not([disabled]) {
