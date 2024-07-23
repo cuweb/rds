@@ -6,5 +6,6 @@ declare const EditorTheme: {
         italic: string;
         underline: string;
     };
+    image: string;
 };
 export default EditorTheme;
