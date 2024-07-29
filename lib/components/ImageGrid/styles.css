@@ -1,27 +1,3 @@
-.cu-imagegrid > img {
-  @apply object-fill rounded-lg;
-}
-
-.cu-imagegrid-span-2-col {
-  @apply col-span-2;
-}
-
-.cu-imagegrid-span-3-col {
-  @apply col-span-3;
-}
-
-.cu-imagegrid-span-4-col {
-  @apply col-span-4;
-}
-
-.cu-imagegrid-span-2-row {
-  @apply row-span-2;
-}
-
-.cu-imagegrid-span-3-row {
-  @apply row-span-3;
-}
-
-.cu-imagegrid-span-4-row {
-  @apply row-span-4;
+.cu-imagegrid img {
+  @apply object-fill;
 }

@@ -1,22 +1,33 @@
 export const imageData = [
   {
     id: 1,
-    src: 'https://picsum.photos/1600/700',
-    link: 'link here',
+    image: 'https://picsum.photos/640/400',
+    link: '#',
+    alt: 'Image requirement',
     span: '2',
-    text: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!',
-    headerText: 'Ottawa Bluefest 30',
+    title: 'Ottawa Bluefest 30',
+    content:
+      'Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!',
   },
   {
     id: 2,
-    src: 'https://picsum.photos/1600/700',
-    link: 'link here',
-    headerText: 'Ottawa Tulip Festival',
+    image: 'https://picsum.photos/640/400',
+    link: '#',
+    alt: 'Image requirement',
   },
   {
     id: 3,
-    src: 'https://picsum.photos/1600/700',
-    link: 'link here',
-    headerText: 'Parliament Building Tours',
+    image: 'https://picsum.photos/640/400',
+    link: '#',
+    alt: 'Image requirement',
+  },
+  {
+    id: 4,
+    image: 'https://picsum.photos/640/400',
+    link: '#',
+    alt: 'Image requirement',
+    title: 'Ottawa Tulip Festival',
+    content:
+      'Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!',
   },
 ]
