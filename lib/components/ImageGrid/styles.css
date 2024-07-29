@@ -1,0 +1,3 @@
+.cu-imagegrid img {
+  @apply h-full w-full object-cover;
+}
