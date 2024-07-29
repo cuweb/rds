@@ -18,12 +18,17 @@ import EditorTheme from './themes/EditorTheme'
 import './styles.css'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
 import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
-import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
+// import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import Error from '../Error/Error'
 import OnChangePlugin from './plugins/OnChangePlugin'
+import InlineImagePlugin from './plugins/InlineImagePlugin'
+import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
+// import RichTextEditorHit from './utils/RichTextEditorHit'
+import { useState } from 'react'
+import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
 
 export interface EditorProps {
   name: string
@@ -58,7 +63,17 @@ const editorConfig = (initialValue?: string) => {
     onError(error: unknown) {
       throw error
     },
-    nodes: [HeadingNode, ListNode, ListItemNode, QuoteNode, CodeNode, CodeHighlightNode, AutoLinkNode, LinkNode],
+    nodes: [
+      HeadingNode,
+      ListNode,
+      ListItemNode,
+      QuoteNode,
+      CodeNode,
+      CodeHighlightNode,
+      AutoLinkNode,
+      LinkNode,
+      InlineImageNode,
+    ],
     editorState: (editor: LexicalEditor) => {
       initialValueLoader(editor, initialValue)
     },
@@ -77,15 +92,18 @@ export const Editor = ({ ...props }: EditorProps) => {
     label,
     setEditorContent,
     value,
-    placeholder = 'Enter some text...',
+    placeholder = 'Start typing your content here...',
     disabled = false,
     required = false,
     errorMessage,
     ...rest
   } = props
 
-  function onChange(htmlString: string | null) {
+  const [captionsEnabled, setCaptionsEnabled] = useState(false)
+
+  const onChange = (htmlString: string | null) => {
     setEditorContent(htmlString)
+    setCaptionsEnabled(htmlString ? true : false)
   }
 
   const editorClass = disabled ? 'cu-editor__disabled' : ''
@@ -98,7 +116,7 @@ export const Editor = ({ ...props }: EditorProps) => {
           <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={
-                <ContentEditable className="prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0" />
+                <ContentEditable className="cu-editor-richtext prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none" />
               }
               placeholder={
                 <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
@@ -107,10 +125,13 @@ export const Editor = ({ ...props }: EditorProps) => {
               }
               ErrorBoundary={LexicalErrorBoundary}
             />
-            {/* <TreeViewPlugin /> */}
+            <ParagraphPlaceholderPlugin placeholder={placeholder} hideOnEmptyEditor />
             <HistoryPlugin />
+            <InlineImagePlugin captionsEnabled={captionsEnabled} setCaptionsEnabled={setCaptionsEnabled} />
+            {/* <RichTextEditorHit captionsEnabled={captionsEnabled} placeholder={placeholder} /> */}
             <AutoFocusPlugin />
-            <CodeHighlightPlugin />
+            {/* <CodeHighlightPlugin /> */}
+            {/* <CustomPlaceholderPlugin /> */}
             <ListPlugin />
             <LinkPlugin />
             <AutoLinkPlugin />

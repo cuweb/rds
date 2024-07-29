@@ -2,6 +2,10 @@
   @apply w-full max-w-3xl;
 }
 
+.cu-wideimage-content > p {
+  @apply text-base md:text-lg;
+}
+
 .cu-wideimage .cu-buttongroup,
 .cu-wideimage .cu-wideimage-signup {
   @apply mt-3 md:mt-6;
