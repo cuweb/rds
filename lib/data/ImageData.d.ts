@@ -1,15 +1,25 @@
 export declare const imageData: ({
     id: number;
-    src: string;
+    image: string;
     link: string;
+    alt: string;
     span: string;
-    text: string;
-    headerText: string;
+    title: string;
+    content: string;
 } | {
     id: number;
-    src: string;
+    image: string;
     link: string;
-    headerText: string;
+    alt: string;
     span?: undefined;
-    text?: undefined;
+    title?: undefined;
+    content?: undefined;
+} | {
+    id: number;
+    image: string;
+    link: string;
+    alt: string;
+    title: string;
+    content: string;
+    span?: undefined;
 })[];

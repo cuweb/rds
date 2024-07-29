@@ -13,6 +13,18 @@ export declare const rdsFlexRow: {
     lg: string;
 };
 export declare const rdsOverlay = "bg-cu-black/30";
+export declare const rdsColSpan: {
+    '1': string;
+    '2': string;
+    '3': string;
+    '4': string;
+};
+export declare const rdsRowSpan: {
+    '1': string;
+    '2': string;
+    '3': string;
+    '4': string;
+};
 export declare const rdsGridColumns: {
     '1': string;
     '2': string;
