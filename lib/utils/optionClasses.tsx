@@ -16,6 +16,20 @@ export const rdsFlexRow = {
 
 export const rdsOverlay = 'bg-cu-black/30'
 
+export const rdsColSpan = {
+  '1': 'col-span-1',
+  '2': 'col-span-2',
+  '3': 'col-span-3',
+  '4': 'col-span-4',
+}
+
+export const rdsRowSpan = {
+  '1': 'row-span-1',
+  '2': 'row-span-2',
+  '3': 'row-span-3',
+  '4': 'row-span-4',
+}
+
 export const rdsGridColumns = {
   '1': '',
   '2': 'md:grid-cols-2',

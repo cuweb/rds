@@ -6,6 +6,7 @@ const EditorTheme = {
     italic: 'italic',
     underline: 'underline',
   },
+  image: 'editor-image',
 }
 
 export default EditorTheme

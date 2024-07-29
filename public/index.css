@@ -2918,8 +2918,8 @@ select {
   background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-red.svg');
 }
 
-.bg-cu-waves-white-10 {
-  background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-white-10.svg');
+.bg-cu-waves-white {
+  background-image: url('https://rds-tailwind.s3.amazonaws.com/assets/cu-waves-white.svg');
 }
 
 .bg-gradient-to-b {

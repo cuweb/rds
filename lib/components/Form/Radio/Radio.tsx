@@ -2,12 +2,14 @@ import { Field } from 'formik'
 import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../../../styles/form'
 import useErrorClass from '../UseError'
+import { Ref } from 'react'
 
 export interface RadioProps extends FieldSetComponentProps {
   options?: {
     label: string
     value: string
   }[]
+  refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
 export const Radio = ({ ...props }: RadioProps) => {
