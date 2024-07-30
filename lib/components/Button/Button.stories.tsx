@@ -78,3 +78,27 @@ export const SmallButtonWithIcon: Story = {
     icon: ArrowDownCircleIcon,
   },
 }
+
+export const ButtonWithAriaLabel: Story = {
+  args: {
+    title: 'Button with Aria Label',
+    isSmall: true,
+    icon: ArrowDownCircleIcon,
+    ariaLabel: 'label',
+  },
+}
+
+export const ButtonWithNoAriaLabel: Story = {
+  args: {
+    title: 'Button with No Aria Label',
+    isSmall: true,
+    icon: ArrowDownCircleIcon,
+  },
+}
+
+export const ButtonWithNoAriaLabelNoTitle: Story = {
+  args: {
+    isSmall: true,
+    icon: ArrowDownCircleIcon,
+  },
+}
