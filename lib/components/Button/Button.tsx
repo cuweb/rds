@@ -4,7 +4,7 @@ import { Icon } from '../Icon/Icon'
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   title?: string
   icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
-  color?: 'red' | 'grey' | 'dark-grey' | 'white'
+  color?: 'red' | 'grey' | 'dark-grey' | 'black' | 'white'
   type?: 'button' | 'submit' | 'reset'
   isSmall?: boolean
   isFull?: boolean
