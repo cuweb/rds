@@ -1,26 +1,24 @@
 import React from 'react'
 import { Icon } from '../Icon/Icon'
 
-export interface ButtonTitleProps extends React.ComponentPropsWithoutRef<'button'> {
-  title: string
-  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
   color?: 'red' | 'grey' | 'dark-grey' | 'white'
   type?: 'button' | 'submit' | 'reset'
   isSmall?: boolean
   isFull?: boolean
   isDisabled?: boolean
+}
+
+export interface ButtonTitleProps extends ButtonProp {
+  title: string
+  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
   ariaLabel?: string
 }
 
-export interface ButtonNoTitleProps extends React.ComponentPropsWithoutRef<'button'> {
+export interface ButtonNoTitleProps extends ButtonProp {
   title?: string
-  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
-  color?: 'red' | 'grey' | 'dark-grey' | 'white'
-  type?: 'button' | 'submit' | 'reset'
-  isSmall?: boolean
-  isFull?: boolean
-  isDisabled?: boolean
-  ariaLabel?: string
+  icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  ariaLabel: string
 }
 
 export const Button = ({

@@ -218,8 +218,15 @@ export default function InlineImageComponent({
                 }}
                 isDisabled={!isSelected}
                 icon={PencilIcon}
+                ariaLabel="Click to Edit the image"
               />
-              <Button isSmall onClick={deleteNode} isDisabled={!isSelected} icon={TrashIcon}></Button>
+              <Button
+                isSmall
+                onClick={deleteNode}
+                isDisabled={!isSelected}
+                icon={TrashIcon}
+                ariaLabel="Click to Delete the image"
+              ></Button>
             </ButtonGroup>
           </div>
         )}
