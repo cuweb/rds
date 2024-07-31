@@ -29,6 +29,7 @@ import { InlineImageNode } from './nodes/InlineImageNode'
 // import RichTextEditorHit from './utils/RichTextEditorHit'
 import { useState } from 'react'
 import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
+import { useFormikContext } from 'formik'
 
 export interface EditorProps {
   name: string
@@ -99,11 +100,14 @@ export const Editor = ({ ...props }: EditorProps) => {
     ...rest
   } = props
 
+  const { setFieldValue } = useFormikContext<string>()
+
   const [captionsEnabled, setCaptionsEnabled] = useState(false)
 
   const onChange = (htmlString: string | null) => {
     setEditorContent(htmlString)
     setCaptionsEnabled(htmlString ? true : false)
+    setFieldValue(name, htmlString)
   }
 
   const editorClass = disabled ? 'cu-editor__disabled' : ''

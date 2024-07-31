@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, useMemo, useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import { composeStories, type Meta, type StoryObj } from '@storybook/react'
 import { useFormik } from 'formik'
 import { FormikHelpers } from 'formik'
 import * as Yup from 'yup'
@@ -7,6 +7,31 @@ import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
+
+interface LexicalEditorContent {
+  root: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    children: any[]
+  }
+}
+
+// Custom method to check if Lexical Editor content is not empty
+Yup.addMethod<Yup.MixedSchema<LexicalEditorContent | undefined>>(Yup.mixed, 'lexicalRequired', function (message) {
+  return this.test('lexicalRequired', message, function (value) {
+    const { path, createError } = this
+
+    if (!value) {
+      return createError({ path, message: message ?? 'This field is required' })
+    } else {
+      return true
+    }
+
+    // const isEmpty = value.root.children.length === 0
+
+    // console.log(isEmpty, 'isEmptyisEmpty')
+    // return isEmpty ? createError({ path, message: message ?? 'This field is required' }) : true
+  })
+})
 
 const meta: Meta<typeof Form> = {
   title: 'Components/Form',
@@ -121,14 +146,23 @@ export const TextArea: Story = () => {
 }
 
 export const Editor: Story = () => {
-  type IEditor = object
+  type IEditor = {
+    editor: string
+    inputText: string
+  }
 
   const [editorContent, setEditorContent] = useState<string | null>(null)
   const [editorError, setEditorError] = useState<boolean>(false)
 
-  const EditorInitialValues = {}
+  const EditorInitialValues = {
+    editor: '',
+    inputText: '',
+  }
 
-  const EditorValidationSchema = Yup.object().shape({})
+  const EditorValidationSchema = Yup.object().shape({
+    editor: Yup.mixed().lexicalRequired('Content is required'),
+    inputText: Yup.string().required('The field is required'),
+  })
 
   const requiredEditor = true
 
@@ -136,14 +170,14 @@ export const Editor: Story = () => {
     actions.setSubmitting(true)
     setEditorError(false)
 
-    if (editorContent === null && requiredEditor == true) {
-      setEditorError(true)
-    } else {
-      await sleep(1000)
-      alert(editorContent)
-      console.log(values, editorContent)
-      actions.setSubmitting(false)
-    }
+    // if (editorContent === null && requiredEditor == true) {
+    //   // setEditorError(true)
+    // } else {
+    await sleep(1000)
+    alert(editorContent)
+    console.log(values, editorContent)
+    actions.setSubmitting(false)
+    // }
   }
 
   const formikProps = useFormik({
@@ -169,6 +203,15 @@ export const Editor: Story = () => {
           setEditorContent={setEditorContent}
           errorMessage={editorError ? 'Field is required' : ''}
           required={requiredEditor}
+          disabled={formikProps.isSubmitting}
+        />
+        <Form.FieldControl
+          control="text"
+          label="Label"
+          name="inputText"
+          required
+          helper="Helper Text"
+          helperpostop
           disabled={formikProps.isSubmitting}
         />
       </Form.FieldGroup>
