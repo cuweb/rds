@@ -8,6 +8,7 @@ export interface PageHeadersProps {
   header: string
   content?: string
   size?: keyof typeof headerSize
+  isWhite?: boolean
   isCenter?: boolean
   pronoun?: string
   noUnderline?: boolean
@@ -26,6 +27,7 @@ export const PageHeadersWrapper = ({
   header,
   content,
   size = 'lg',
+  isWhite,
   isCenter,
   noUnderline = false,
   pronoun,
@@ -66,6 +68,7 @@ export const PageHeadersWrapper = ({
     ? `relative after:absolute after:h-px after:bottom-0 after:bg-cu-red ${headerPadding}`
     : ''
 
+  const textColor = isWhite ? 'text-white' : ''
   const centerText = isCenter ? 'text-center mx-auto' : ''
   const centerUnderline =
     isCenter && !noUnderline ? `${hasUnderline} after:left-1/2 after:-ml-5` : `${hasUnderline} after:left-px`
@@ -73,12 +76,12 @@ export const PageHeadersWrapper = ({
   return (
     <header className="cu-pageheaders cu-component-spacing mb-6 md:mb-12">
       <HeaderComponent
-        className={`font-semibold text-cu-black-700 not-prose mb-4 md:mb-6 ${headerSize[size]} ${centerText} ${centerUnderline}`}
+        className={`font-semibold text-cu-black-700 not-prose mb-4 md:mb-6 ${headerSize[size]} ${textColor} ${centerText} ${centerUnderline}`}
       >
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
-      {truncatedContent && <p className={`${contentStyle} ${centerText}`}>{truncatedContent}</p>}
+      {truncatedContent && <p className={`${contentStyle} ${centerText} ${textColor}`}>{truncatedContent}</p>}
       {children}
     </header>
   )
