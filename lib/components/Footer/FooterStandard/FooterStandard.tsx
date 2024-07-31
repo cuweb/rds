@@ -96,7 +96,7 @@ export const FooterStandard = () => {
         Footer
       </h2>
 
-      <div className="flex-col hidden lg:pb-8 lg:mx-auto lg:mb-8 lg:border-b lg:flex lg:max-w-7xl lg:border-cu-black-700">
+      <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <div id="footer-links" className="flex justify-between w-full">
           <div>
             <h3 className={styles.linkHeaders}>Admissions</h3>
