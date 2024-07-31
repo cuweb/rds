@@ -61,8 +61,8 @@ export const PageHeadersWrapper = ({
       break
   }
 
-  // Truncate content if it's longer than 250 characters
-  const truncatedContent = content && content.length > 250 ? `${content.substring(0, 250)}...` : content
+  // Truncate content if it's longer than 320 characters
+  const truncatedContent = content && content.length > 320 ? `${content.substring(0, 320)}...` : content
 
   const hasUnderline = !noUnderline
     ? `relative after:absolute after:h-px after:bottom-0 after:bg-cu-red ${headerPadding}`
