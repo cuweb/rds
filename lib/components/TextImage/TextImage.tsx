@@ -3,11 +3,12 @@ import { TextImageContent } from './TextImageContent'
 import { maxWidthClasses, flexRowClasses } from '../../utils/propClasses'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
+type flexRowKeys = keyof typeof flexRowClasses
 
 export interface TextImageProps {
   children?: React.ReactNode
   maxWidth?: maxWidthKeys
-  flexRow?: 'md' | 'lg'
+  flexRow?: flexRowKeys
   flipX?: boolean
   flipYsm?: boolean
 }
