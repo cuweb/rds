@@ -50,11 +50,13 @@
 * First and last child inside sections
 */
 
-.cu-section > *:first-child {
+.cu-section > *:first-child,
+.cu-article > *:first-child {
   @apply mt-0;
 }
 
-.cu-section > *:last-child {
+.cu-section > *:last-child,
+.cu-article > *:last-child {
   @apply mb-0;
 }
 
