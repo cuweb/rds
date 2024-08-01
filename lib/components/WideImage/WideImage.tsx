@@ -1,6 +1,8 @@
 import React from 'react'
-import { rdsMaxWidth } from '../../utils/optionClasses'
+import { maxWidthClasses } from '../../utils/propClasses'
 import { WideImageSignup } from './WideImageSignup'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
@@ -12,7 +14,7 @@ export interface WideImageProps {
   title?: string
   image?: string
   headerType?: 'h1' | 'h2'
-  maxWidth?: 'full' | '5xl' | '7xl' | 'max'
+  maxWidth?: maxWidthKeys
   opacity?: (typeof opacityValues)[number]
   focalPointX?: string
   focalPointY?: string
@@ -97,7 +99,7 @@ export const WideImageWrapper = ({
   return (
     <WideImageComponent
       style={inlineStyle}
-      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${rdsMaxWidth[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
+      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${maxWidthClasses[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
     >
       {isType === 'wave' && (
         <svg

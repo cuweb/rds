@@ -1,11 +1,13 @@
 import React, { useRef, useEffect } from 'react'
-import { rdsMaxWidth } from '../../utils/optionClasses'
+import { maxWidthClasses } from '../../utils/propClasses'
 import { proseStyles } from '../../utils/globalClasses'
 import { sanitizeContent } from '../../helpers/functions'
 
+type maxWidthKeys = keyof typeof maxWidthClasses
+
 export interface ModalProps {
   children?: React.ReactNode
-  maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl'
+  maxWidth?: maxWidthKeys
   content?: string
   noProse?: boolean
   ariaLabel: string
@@ -73,7 +75,7 @@ export const Modal = ({
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog relative ${positionTop} p-5 md:p-6 z-10 w-11/12 ${rdsMaxWidth[maxWidth]} shadow-md rounded-md`}
+      className={`cu-dialog relative ${positionTop} p-5 md:p-6 z-10 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md`}
       onClick={handleClick}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}

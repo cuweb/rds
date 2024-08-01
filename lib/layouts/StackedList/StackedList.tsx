@@ -1,12 +1,14 @@
 import React from 'react'
-import { rdsMaxWidth } from '../../utils/optionClasses'
+import { maxWidthClasses } from '../../utils/propClasses'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 export interface StackedListProps {
   children: React.ReactNode
   as?: 'ul' | 'div'
   cols?: '1' | '2'
   listType?: 'posts' | 'toc'
-  maxWidth?: '5xl' | '7xl'
+  maxWidth?: maxWidthKeys
   offset?: 'left' | 'right'
   header?: string
 }
@@ -28,7 +30,7 @@ export const StackedList = ({
 }: StackedListProps) => {
   const ListComponent = as
   const gridColumns = cols === '1' ? 'grid md:grid-cols-1' : 'grid md:grid-cols-2'
-  const offsetStyle = offset ? `${styles[offset]} ${styles.offset} md:max-w-sm lg:max-w-md` : rdsMaxWidth[maxWidth]
+  const offsetStyle = offset ? `${styles[offset]} ${styles.offset} md:max-w-sm lg:max-w-md` : maxWidthClasses[maxWidth]
 
   return (
     <div

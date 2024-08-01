@@ -1,7 +1,9 @@
 import { ErrorMessage } from 'formik'
 import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
-import { maxWidthClasses } from '../../../helpers/optionClasses'
+import { maxWidthClasses } from '../../../helpers/optionClasses' // TODO: convert to main propClasses
 import Error from '../Error/Error'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 export interface FieldSetComponentProps {
   name: string
@@ -11,7 +13,7 @@ export interface FieldSetComponentProps {
 export interface FieldSetProps extends FieldSetComponentProps {
   label: string
   hiddenLabel?: boolean
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
+  maxWidth?: maxWidthKeys
   helper?: string
   helperpostop?: boolean
   isInline?: boolean

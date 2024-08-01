@@ -1,10 +1,12 @@
 import React from 'react'
 import { TextImageContent } from './TextImageContent'
-import { rdsMaxWidth, rdsFlexRow } from '../../utils/optionClasses'
+import { maxWidthClasses, flexRowClasses } from '../../utils/propClasses'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 export interface TextImageProps {
   children?: React.ReactNode
-  maxWidth?: '5xl' | '7xl' | 'max'
+  maxWidth?: maxWidthKeys
   flexRow?: 'md' | 'lg'
   flipX?: boolean
   flipYsm?: boolean
@@ -16,7 +18,7 @@ export const TextImageWrapper = ({ children, maxWidth = '5xl', flexRow = 'lg', f
 
   return (
     <div
-      className={`cu-textimage cu-component not-contained flex flex-col lg:flex-row gap-6 mx-auto cu-textimage lg:gap-10 ${rdsMaxWidth[maxWidth]} ${rdsFlexRow[flexRow]} ${flipXLayout} ${flipYsmLayout}`}
+      className={`cu-textimage cu-component not-contained flex flex-col lg:flex-row gap-6 mx-auto cu-textimage lg:gap-10 ${maxWidthClasses[maxWidth]} ${flexRowClasses[flexRow]} ${flipXLayout} ${flipYsmLayout}`}
     >
       {children}
     </div>
