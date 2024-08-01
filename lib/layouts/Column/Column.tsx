@@ -11,7 +11,7 @@ export interface ColumnProps {
 }
 
 const styles = {
-  column: `cu-column cu-component-spacing not-contained mx-auto grid`,
+  column: `cu-column cu-component not-contained mx-auto grid`,
 }
 
 export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1', reverse }: ColumnProps) => {

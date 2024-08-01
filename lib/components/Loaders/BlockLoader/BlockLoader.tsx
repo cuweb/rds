@@ -8,7 +8,7 @@ interface BlockLoaderProps {
 export const BlockLoader = ({ height = 100, cols = 1 }: BlockLoaderProps) => {
   const gridSpacing = cols ? gridColsClass[cols] : 'space-y-5'
   return (
-    <div className={`cu-loader-block cu-component-spacing grid ${gridSpacing} gap-5 items-start`}>
+    <div className={`cu-loader-block cu-component grid ${gridSpacing} gap-5 items-start`}>
       <div className={`block rounded-md w-full bg-cu-black-100`} style={{ height: height + 'px' }}></div>
     </div>
   )

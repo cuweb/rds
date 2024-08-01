@@ -1,4 +1,4 @@
-/* TODO: rename cu-component-spacing to cu-component or cu-component-spacing */
+/* TODO: rename cu-component to cu-component or cu-component */
 
 /* 
 * Max Width for section size props
@@ -62,6 +62,6 @@
 * Consecutive individual components
 */
 
-.cu-component-spacing + .cu-component-spacing {
+.cu-component + .cu-component {
   @apply mt-6 md:mt-8;
 }

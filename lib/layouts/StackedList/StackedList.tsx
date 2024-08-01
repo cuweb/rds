@@ -32,7 +32,7 @@ export const StackedList = ({
 
   return (
     <div
-      className={`cu-stackedlist cu-component-spacing not-contained not-prose mx-auto overflow-hidden rounded-lg bg-white w-full shadow-lg ${offsetStyle}`}
+      className={`cu-stackedlist cu-component not-contained not-prose mx-auto overflow-hidden rounded-lg bg-white w-full shadow-lg ${offsetStyle}`}
     >
       {header && (
         <h2 className="px-6 py-4 text-base font-semibold border-b rounded-t-lg md:text-xl bg-gray-50 text-cu-black-800">

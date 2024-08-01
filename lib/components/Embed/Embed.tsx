@@ -15,7 +15,7 @@ export interface EmbedProps {
 
 export const EmbedWrapper = ({ children, maxWidth = '5xl' }: EmbedProps) => {
   return (
-    <figure className={`cu-embed cu-component-spacing not-contained mx-auto ${rdsMaxWidth[maxWidth]}`}>
+    <figure className={`cu-embed cu-component not-contained mx-auto ${rdsMaxWidth[maxWidth]}`}>
       <div className={`${styles.base}`}>{children}</div>
     </figure>
   )

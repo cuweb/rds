@@ -67,7 +67,7 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
   }, [selectedDays, callback])
 
   return (
-    <div className="cu-calendar cu-component-spacing not-prose">
+    <div className="cu-calendar cu-component not-prose">
       <div className="flex items-center py-2 mb-6 bg-white border rounded-lg not-prose border-cu-black-100">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Previous month</span>
@@ -93,7 +93,7 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
       </div>
 
       <div
-        className={`${styles.calendarGrid} cu-component-spacing isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
+        className={`${styles.calendarGrid} cu-component isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
       >
         {days.map((day, dayIdx) => (
           <div
