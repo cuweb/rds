@@ -21,7 +21,6 @@ import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
 // import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
-import Error from '../Error/Error'
 import OnChangePlugin from './plugins/OnChangePlugin'
 import InlineImagePlugin from './plugins/InlineImagePlugin'
 import { InlineImageNode } from './nodes/InlineImageNode'
@@ -34,13 +33,11 @@ import { useFormikContext } from 'formik'
 export interface EditorProps {
   name: string
   label: string
-  setEditorContent: (newValue: string | null) => void
   helper?: string
   value?: string
   placeholder?: string
   disabled?: boolean
   required?: boolean
-  errorMessage?: string
 }
 
 const initialValueLoader = (editor: LexicalEditor, initialValue?: string) => {
@@ -91,12 +88,10 @@ export const Editor = ({ ...props }: EditorProps) => {
   const {
     name,
     label,
-    setEditorContent,
     value,
     placeholder = 'Start typing your content here...',
     disabled = false,
     required = false,
-    errorMessage,
     ...rest
   } = props
 
@@ -105,7 +100,6 @@ export const Editor = ({ ...props }: EditorProps) => {
   const [captionsEnabled, setCaptionsEnabled] = useState(false)
 
   const onChange = (htmlString: string | null) => {
-    setEditorContent(htmlString)
     setCaptionsEnabled(htmlString ? true : false)
     setFieldValue(name, htmlString)
   }
@@ -145,8 +139,6 @@ export const Editor = ({ ...props }: EditorProps) => {
           </div>
         </div>
       </LexicalComposer>
-
-      {errorMessage && required && <Error>{errorMessage}</Error>}
     </FormField>
   )
 }
