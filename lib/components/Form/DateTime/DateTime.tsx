@@ -40,8 +40,10 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         selected={field.value}
         name={name}
         id={name}
-        onChange={(date: Date) => {
-          handleDateChange(date)
+        onChange={(date: Date | null) => {
+          if (date) {
+            handleDateChange(date)
+          }
         }}
         showTimeSelect={showTime}
         timeFormat={timeFormat}

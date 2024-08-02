@@ -342,17 +342,17 @@ function BlockOptionsDropdownList({
       </button>
       <button className="item" onClick={formatH2Heading}>
         <span className="icon h2" />
-        <span className="text">Heading</span>
+        <span className="text">Heading 2</span>
         {blockType === 'h2' && <span className="active" />}
       </button>
       <button className="item" onClick={formatH3Heading}>
         <span className="icon h3" />
-        <span className="text">Heading</span>
+        <span className="text">Heading 3</span>
         {blockType === 'h3' && <span className="active" />}
       </button>
       <button className="item" onClick={formatH4Heading}>
         <span className="icon h4" />
-        <span className="text">Heading</span>
+        <span className="text">Heading 4</span>
         {blockType === 'h4' && <span className="active" />}
       </button>
       <button className="item" onClick={formatBulletList}>

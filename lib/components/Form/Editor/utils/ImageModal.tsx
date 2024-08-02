@@ -3,7 +3,7 @@ import { LexicalEditor, NodeKey } from 'lexical'
 import { FieldControl } from '../../FieldControl/FieldControl'
 import { Button } from '../../../Button/Button'
 import type { Position } from '../nodes/InlineImageNode'
-import { INSERT_INLINE_IMAGE_COMMAND } from '../plugins/InlineImagePlugin'
+import { INSERT_INLINE_IMAGE_COMMAND } from '../utils/insertInlineImageCommand'
 import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
 import { Modal } from '../../../Modal/Modal'
 import Error from '../../Error/Error'
@@ -189,7 +189,7 @@ export const ImageModal = ({
           name="inline-img"
           onChange={handleImageChange}
           refs={fileInputRef}
-          preview={node && [src]}
+          setFieldValue={false}
         />
 
         {srcError && <Error>Please choose an image</Error>}
