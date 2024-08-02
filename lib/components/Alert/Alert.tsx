@@ -9,13 +9,13 @@ import {
 export interface AlertProps {
   title: string
   content?: React.ReactNode | string
-  type: 'success' | 'error' | 'warning' | 'info'
-  textSize?: 'small' | 'large'
+  type?: 'success' | 'error' | 'warning' | 'info'
+  textSize?: 'sm' | 'lg'
 }
 
-export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChildren<AlertProps>) => {
-  const alertTextSize = textSize === 'small' ? 'text-sm' : 'text-lg'
-  const alertIconSize = textSize === 'small' ? 'w-5 h-5' : 'w-8 h-8'
+export const Alert = ({ title, content, type = 'success', textSize = 'sm' }: PropsWithChildren<AlertProps>) => {
+  const alertTextSize = textSize === 'sm' ? 'text-base' : 'text-lg mt-0.5'
+  const alertIconSize = textSize === 'sm' ? 'w-6 h-6' : 'w-8 h-8'
 
   const AlertTypes = {
     success: {
@@ -46,15 +46,15 @@ export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChi
 
   return (
     <div
-      className={`cu-alert cu-alert--${type} cu-component flex rounded-md p-4 not-prose ${AlertTypes[type].background}`}
+      className={`cu-alert cu-alert--${type} cu-component not-prose flex rounded-md p-4 ${AlertTypes[type].background}`}
     >
       {React.createElement(AlertTypes[type].icon, {
         className: `${alertIconSize} ${AlertTypes[type].alertHeading}`,
         'aria-hidden': 'true',
       })}
-      <div className={`${textSize == 'large' ? 'mt-0.5' : ''} ml-3 space-y-2 w-full`}>
-        <p className={`${alertTextSize} ${AlertTypes[type].alertHeading} my-0 font-semibold`}>{title}</p>
-        {content && <p className={`${alertTextSize} ${AlertTypes[type].alertSubhead}`}>{content}</p>}
+      <div className="ml-2 w-full">
+        <p className={`${AlertTypes[type].alertHeading} ${alertTextSize} font-semibold`}>{title}</p>
+        {content && <p className={`${AlertTypes[type].alertSubhead} text-base`}>{content}</p>}
       </div>
     </div>
   )
