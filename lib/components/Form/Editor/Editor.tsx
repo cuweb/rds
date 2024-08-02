@@ -12,7 +12,7 @@ import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { TRANSFORMERS } from '@lexical/markdown'
-import { $getRoot, LexicalEditor } from 'lexical'
+import { $getRoot, $createParagraphNode, $createTextNode, LexicalEditor } from 'lexical'
 import { $generateNodesFromDOM } from '@lexical/html'
 import EditorTheme from './themes/EditorTheme'
 import './styles.css'
@@ -50,6 +50,14 @@ const initialValueLoader = (editor: LexicalEditor, initialValue?: string) => {
       const root = $getRoot()
       root.clear()
       nodes.forEach((n) => root.append(n))
+    } else {
+      // If not in HTML format, consider it as plain text and wrap it in a <p> tag
+      const root = $getRoot()
+      root.clear()
+      const paragraphNode = $createParagraphNode()
+      const textNode = $createTextNode(initialValue)
+      paragraphNode.append(textNode)
+      root.append(paragraphNode)
     }
   }
 }
