@@ -59,6 +59,7 @@ export const iconNames = [
   { value: 'dumbbell', label: 'Dumbbell' },
   { value: 'earth-americas', label: 'Earth americas' },
   { value: 'envelope', label: 'Envelope' },
+  { value: 'external-link', label: 'External link' },
   { value: 'eye-low-vision', label: 'Eye low vision' },
   { value: 'face-anxious-sweat', label: 'Face anxious sweat' },
   { value: 'facebook-square', label: 'Facebook square' },
