@@ -1,6 +1,3 @@
-import { maxWidthClasses } from '../../../helpers/optionClasses';
-
-type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface FieldComponentProps {
     name: string;
     required?: boolean;
@@ -8,7 +5,7 @@ export interface FieldComponentProps {
 export interface FieldProps extends FieldComponentProps {
     label: string;
     hiddenLabel?: boolean;
-    maxWidth?: maxWidthKeys;
+    maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
     helper?: string;
     helperpostop?: boolean;
     displayError?: boolean;

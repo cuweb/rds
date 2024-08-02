@@ -1,7 +1,7 @@
-import { colSpanClasses, rowSpanClasses } from '../../utils/propClasses';
+import { rdsColSpan, rdsRowSpan } from '../../utils/optionClasses';
 
-type colSpanKeys = keyof typeof colSpanClasses;
-type rowSpanKeys = keyof typeof rowSpanClasses;
+type colSpanKeys = keyof typeof rdsColSpan;
+type rowSpanKeys = keyof typeof rdsRowSpan;
 export interface ImageGridItemProps {
     children: React.ReactNode;
     colSpan?: colSpanKeys;

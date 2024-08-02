@@ -6,7 +6,6 @@ export interface PageHeadersProps {
     header: string;
     content?: string;
     size?: keyof typeof headerSize;
-    isWhite?: boolean;
     isCenter?: boolean;
     pronoun?: string;
     noUnderline?: boolean;
@@ -18,11 +17,11 @@ declare const headerSize: {
     lg: string;
 };
 export declare const PageHeadersWrapper: {
-    ({ children, as, header, content, size, isWhite, isCenter, noUnderline, pronoun, }: PageHeadersProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const PageHeaders: {
-    ({ children, as, header, content, size, isWhite, isCenter, noUnderline, pronoun, }: PageHeadersProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, as, header, content, size, isCenter, noUnderline, pronoun, }: PageHeadersProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     People: {

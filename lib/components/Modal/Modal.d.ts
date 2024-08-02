@@ -1,10 +1,8 @@
 import { default as React } from '../../../node_modules/react';
-import { maxWidthClasses } from '../../utils/propClasses';
 
-type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface ModalProps {
     children?: React.ReactNode;
-    maxWidth?: maxWidthKeys;
+    maxWidth?: '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
     content?: string;
     noProse?: boolean;
     ariaLabel: string;
@@ -14,4 +12,3 @@ export interface ModalProps {
     setIsOpen: (k: boolean) => void;
 }
 export declare const Modal: ({ children, content, isOpen, setIsOpen, maxWidth, noProse, alignTop, ariaLabel, ariaDescription, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
-export {};
