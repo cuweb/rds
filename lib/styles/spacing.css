@@ -1,9 +1,21 @@
-/* TODO: rename cu-component-spacing to cu-component or cu-component-spacing */
+/* TODO: rename cu-component to cu-component or cu-component */
 
 /* 
 * Max Width for section size props
 * Targets children of section and apply max width
 */
+
+.cu-section-2xl > :not(.not-contained) {
+  @apply max-w-2xl mx-auto;
+}
+
+.cu-section-3xl > :not(.not-contained) {
+  @apply max-w-3xl mx-auto;
+}
+
+.cu-section-4xl > :not(.not-contained) {
+  @apply mx-auto max-w-4xl;
+}
 
 .cu-section-5xl > :not(.not-contained) {
   @apply max-w-5xl mx-auto;
@@ -50,11 +62,17 @@
 * First and last child inside sections
 */
 
-.cu-section > *:first-child {
+.cu-section > *:first-child,
+.cu-article > *:first-child,
+.cu-aside > *:first-child,
+.cu-aside .sticky > *:first-child {
   @apply mt-0;
 }
 
-.cu-section > *:last-child {
+.cu-section > *:last-child,
+.cu-article > *:last-child,
+.cu-aside > *:last-child,
+.cu-aside .sticky > *:last-child {
   @apply mb-0;
 }
 
@@ -62,6 +80,6 @@
 * Consecutive individual components
 */
 
-.cu-component-spacing + .cu-component-spacing {
+.cu-component + .cu-component {
   @apply mt-6 md:mt-8;
 }

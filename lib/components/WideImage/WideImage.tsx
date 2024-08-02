@@ -1,22 +1,24 @@
 import React from 'react'
-import { rdsMaxWidth } from '../../utils/optionClasses'
+import { maxWidthClasses } from '../../utils/propClasses'
 import { WideImageSignup } from './WideImageSignup'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
   scrollTo?: React.ReactNode
-  maxHeight?: 'sm' | 'md' | 'lg'
+  // maxHeight?: 'sm' | 'md' | 'lg'
   as?: 'section' | 'div'
   title?: string
   image?: string
   headerType?: 'h1' | 'h2'
-  maxWidth?: 'full' | '5xl' | '7xl' | 'max'
+  maxWidth?: maxWidthKeys
   opacity?: (typeof opacityValues)[number]
   focalPointX?: string
   focalPointY?: string
-  isType?: 'light' | 'dark' | 'image'
+  isType?: 'light' | 'dark' | 'image' | 'wave'
 }
 
 const getInlineStyle = (image: string = '', focalPointX: string, focalPointY: string) => ({
@@ -42,20 +44,19 @@ const getImageStyles = (isType: string, image: string | undefined, scrollTo: Rea
   return isType === 'dark' ? 'text-white bg-cu-black-900' : 'text-cu-black-800 bg-cu-black-50'
 }
 
-const getTopBottomSpace = (maxHeight: string) => {
-  switch (maxHeight) {
-    case 'sm':
-      return 'py-20'
-    case 'md':
-      return 'py-24 md:py-28 lg:py-36 xl:py-48'
-    case 'lg':
-      return 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-96'
-    case 'full':
-      return 'h-screen'
-    default:
-      return ''
-  }
-}
+// const getPaddingY = (isType: string) => {
+//   switch (isType) {
+//     case 'light':
+//     case 'dark':
+//       return 'py-20'
+//     case 'image':
+//       return 'py-24 md:py-28 lg:py-36 xl:py-48'
+//     case 'wave':
+//       return 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-96'
+//     default:
+//       return 'py-20'
+//   }
+// }
 
 export const WideImageWrapper = ({
   children,
@@ -65,7 +66,7 @@ export const WideImageWrapper = ({
   image,
   headerType = 'h2',
   maxWidth = 'max',
-  maxHeight = 'sm',
+  // maxHeight = 'sm',
   opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
@@ -75,14 +76,32 @@ export const WideImageWrapper = ({
   const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
   const opacityStyle = getOpacityStyle(opacity)
   const hasImageStyles = getImageStyles(isType, image, scrollTo)
-  const topBottomSpace = getTopBottomSpace(maxHeight)
+  // const topBottomSpace = getPaddingY(maxHeight)
+
+  let topBottomSpace
+
+  switch (isType) {
+    case 'light':
+    case 'dark':
+      topBottomSpace = 'py-20'
+      break
+    case 'image':
+      topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
+      break
+    case 'wave':
+      topBottomSpace = 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-72'
+      break
+    default:
+      topBottomSpace = 'py-20'
+      break
+  }
 
   return (
     <WideImageComponent
       style={inlineStyle}
-      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${rdsMaxWidth[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
+      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${maxWidthClasses[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
     >
-      {scrollTo && image && (
+      {isType === 'wave' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0 w-full z-50"
@@ -96,6 +115,7 @@ export const WideImageWrapper = ({
           <path fill="#fff" d="M-3.066 295.067 32.06 304.1v9.033H-3.066v-18.066Z" />
         </svg>
       )}
+
       {image && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
 
       <div

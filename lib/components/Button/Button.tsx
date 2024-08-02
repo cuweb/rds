@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from '../Icon/Icon'
 
 export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
-  color?: 'red' | 'grey' | 'dark-grey' | 'white'
+  color?: 'red' | 'grey' | 'dark-grey' | 'black' | 'white'
   type?: 'button' | 'submit' | 'reset'
   isSmall?: boolean
   isFull?: boolean

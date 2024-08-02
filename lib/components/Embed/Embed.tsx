@@ -5,17 +5,19 @@ import { EmbedSoundCloud } from './Embed.SoundCloud'
 import { EmbedYouTube } from './Embed.YouTube'
 import { EmbedVimeo } from './Embed.Vimeo'
 import { EmbedTED } from './Embed.TED'
-import { rdsMaxWidth } from '../../utils/optionClasses'
+import { maxWidthClasses } from '../../utils/propClasses'
 import { styles } from './Embed.Styles'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 export interface EmbedProps {
   children: React.ReactNode
-  maxWidth?: 'full' | '5xl' | '7xl'
+  maxWidth?: maxWidthKeys
 }
 
 export const EmbedWrapper = ({ children, maxWidth = '5xl' }: EmbedProps) => {
   return (
-    <figure className={`cu-embed cu-component-spacing not-contained mx-auto ${rdsMaxWidth[maxWidth]}`}>
+    <figure className={`cu-embed cu-component not-contained mx-auto ${maxWidthClasses[maxWidth]}`}>
       <div className={`${styles.base}`}>{children}</div>
     </figure>
   )

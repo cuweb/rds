@@ -1,6 +1,6 @@
 export const TopNavLoader = () => {
   return (
-    <div role="status" className="cu-loader-topnav cu-component-spacing ">
+    <div role="status" className="cu-loader-topnav cu-component ">
       <svg
         aria-hidden="true"
         className="mr-2 h-8 w-8 animate-spin fill-red-600 text-gray-200 dark:text-gray-600"

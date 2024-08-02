@@ -63,7 +63,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
   const LinkComponent = useLinkContext()
 
   return (
-    <div className="cu-filter cu-component-spacing not-prose">
+    <div className="cu-filter cu-component not-prose">
       {/* Mobile filter dialog */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 sm:hidden" onClose={setOpen}>
