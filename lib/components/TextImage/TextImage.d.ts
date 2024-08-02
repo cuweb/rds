@@ -1,9 +1,12 @@
 import { default as React } from '../../../node_modules/react';
+import { maxWidthClasses, flexRowClasses } from '../../utils/propClasses';
 
+type maxWidthKeys = keyof typeof maxWidthClasses;
+type flexRowKeys = keyof typeof flexRowClasses;
 export interface TextImageProps {
     children?: React.ReactNode;
-    maxWidth?: '5xl' | '7xl' | 'max';
-    flexRow?: 'md' | 'lg';
+    maxWidth?: maxWidthKeys;
+    flexRow?: flexRowKeys;
     flipX?: boolean;
     flipYsm?: boolean;
 }
@@ -20,3 +23,4 @@ export declare const TextImage: {
         displayName: string;
     };
 };
+export {};

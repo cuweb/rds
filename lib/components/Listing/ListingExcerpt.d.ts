@@ -1,5 +1,5 @@
 export interface ListingExcerptProps {
-    text: string;
+    text?: string;
     hasMore?: boolean;
 }
 export declare const ListingExcerpt: {
