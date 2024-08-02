@@ -189,7 +189,7 @@ export const ImageModal = ({
           name="inline-img"
           onChange={handleImageChange}
           refs={fileInputRef}
-          preview={node && [src]}
+          setFieldValue={false}
         />
 
         {srcError && <Error>Please choose an image</Error>}
