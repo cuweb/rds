@@ -2,6 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { $getRoot } from 'lexical'
 import { $generateHtmlFromNodes } from '@lexical/html'
 import { useEffect } from 'react'
+import { IsDomAvailable } from '../utils/domAvailability'
 
 interface OnChangePluginProps {
   onChange: (htmlString: string | null) => void
@@ -30,7 +31,7 @@ function OnChangePlugin({ onChange, required, disabled }: OnChangePluginProps) {
   useEffect(() => {
     const handleUpdate = () => {
       editor.update(() => {
-        if (typeof document !== 'undefined' || typeof window !== 'undefined') {
+        if (IsDomAvailable) {
           const htmlString = $generateHtmlFromNodes(editor, null)
           const isEditorEmpty = checkIfEditorIsEmpty()
           const emptyState = required ? null : ''

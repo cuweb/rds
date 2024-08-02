@@ -139,6 +139,7 @@ export const Editor: Story = () => {
     actions.setSubmitting(true)
     await sleep(1000)
     alert(JSON.stringify(values, null, 2))
+    console.log(values)
     actions.setSubmitting(false)
   }
 
