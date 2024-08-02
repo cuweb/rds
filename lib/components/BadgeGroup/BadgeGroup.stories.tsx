@@ -17,15 +17,18 @@ const meta: Meta<typeof BadgeGroup> = {
 export default meta
 type Story = StoryObj<typeof BadgeGroup>
 
-export const Default: Story = {
-  render: (args) => (
-    <BadgeGroup {...args}>
-      <Badge text="Grey Badge" color="grey" />
-      <Badge text="Green Badge" color="green" />
-      <Badge text="Red Badge" color="red" />
-      <Badge text="Yellow Badge" color="yellow" />
-      <Badge text="Blue Badge" color="blue" />
-      <Badge text="Purple Badge" color="purple" />
-    </BadgeGroup>
-  ),
+export const Primary: Story = {
+  args: {},
+  render: (args) => {
+    return (
+      <BadgeGroup {...args}>
+        <Badge color="grey">Grey Badge</Badge>
+        <Badge color="green">Green Badge</Badge>
+        <Badge color="red">Red Badge</Badge>
+        <Badge color="yellow">Yellow Badge</Badge>
+        <Badge color="blue">Blue Badge</Badge>
+        <Badge color="purple">Purple Badge</Badge>
+      </BadgeGroup>
+    )
+  },
 }
