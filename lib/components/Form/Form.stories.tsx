@@ -155,10 +155,13 @@ export const Editor: Story = () => {
           label="Editor"
           name="editor"
           helper="Helper Text"
-          value={EditorInitialValues.editor}
+          value={formikProps.values.editor}
           placeholder="Text goes here..."
           required={true}
           disabled={formikProps.isSubmitting}
+          onChange={() => {
+            console.log('Changing')
+          }}
         />
       </Form.FieldGroup>
       <ButtonGroup>

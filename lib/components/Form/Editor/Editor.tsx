@@ -30,15 +30,17 @@ import { useState } from 'react'
 import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
 import { useFormikContext } from 'formik'
 import useErrorClass from '../UseError'
+import { FieldProps } from '../FormField/FormField'
 
-export interface EditorProps {
+export interface EditorProps extends FieldProps, React.HTMLAttributes<HTMLDivElement> {
   name: string
   label: string
+  value: string
   helper?: string
-  value?: string
   placeholder?: string
   disabled?: boolean
   required?: boolean
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const initialValueLoader = (editor: LexicalEditor, initialValue?: string) => {
@@ -87,20 +89,20 @@ const editorConfig = (initialValue?: string) => {
   }
 }
 
-export interface OnChangePluginProps {
-  onChange: (htmlString: string | null) => void
-  required: boolean
-  disabled: boolean
-}
-
 export const Editor = ({ ...props }: EditorProps) => {
   const {
     name,
     label,
+    maxWidth,
+    helper,
+    helperpostop,
+    required = false,
+    disabled = false,
+    displayError,
+    hiddenLabel,
     value,
     placeholder = 'Start typing your content here...',
-    disabled = false,
-    required = false,
+    onChange,
     ...rest
   } = props
 
@@ -108,9 +110,18 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   const [captionsEnabled, setCaptionsEnabled] = useState(false)
 
-  const onChange = (htmlString: string | null) => {
+  const onDefaultChange = (htmlString: string | null) => {
     setCaptionsEnabled(htmlString ? true : false)
     setFieldValue(name, htmlString)
+
+    if (onChange) {
+      onChange({
+        target: {
+          name,
+          value: name,
+        },
+      } as React.ChangeEvent<HTMLInputElement>)
+    }
   }
 
   const errorClass = useErrorClass(name)
@@ -118,14 +129,26 @@ export const Editor = ({ ...props }: EditorProps) => {
   const editorClass = disabled ? 'cu-editor__disabled' : ''
 
   return (
-    <FormField name={name} label={label} required={required} {...rest}>
+    <FormField
+      name={name}
+      label={label}
+      maxWidth={maxWidth}
+      helper={helper}
+      helperpostop={helperpostop}
+      required={required}
+      displayError={displayError}
+      hiddenLabel={hiddenLabel}
+    >
       <LexicalComposer initialConfig={editorConfig(value)}>
         <div className={`cu-editor ` + editorClass + errorClass}>
           <ToolbarPlugin name={name} />
           <div className="cu-editor-content">
             <RichTextPlugin
               contentEditable={
-                <ContentEditable className="cu-editor-richtext prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none" />
+                <ContentEditable
+                  className="cu-editor-richtext prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none"
+                  {...rest}
+                />
               }
               placeholder={
                 <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
@@ -146,7 +169,7 @@ export const Editor = ({ ...props }: EditorProps) => {
             <AutoLinkPlugin />
             <ListMaxIndentLevelPlugin maxDepth={7} />
             <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-            <OnChangePlugin onChange={onChange} required={required} disabled={disabled} />
+            <OnChangePlugin onChange={onDefaultChange} required={required} disabled={disabled} />
           </div>
         </div>
       </LexicalComposer>
