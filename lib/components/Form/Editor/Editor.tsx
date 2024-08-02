@@ -29,6 +29,7 @@ import { InlineImageNode } from './nodes/InlineImageNode'
 import { useState } from 'react'
 import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
 import { useFormikContext } from 'formik'
+import useErrorClass from '../UseError'
 
 export interface EditorProps {
   name: string
@@ -112,12 +113,14 @@ export const Editor = ({ ...props }: EditorProps) => {
     setFieldValue(name, htmlString)
   }
 
+  const errorClass = useErrorClass(name)
+
   const editorClass = disabled ? 'cu-editor__disabled' : ''
 
   return (
     <FormField name={name} label={label} required={required} {...rest}>
       <LexicalComposer initialConfig={editorConfig(value)}>
-        <div className={`cu-editor ` + editorClass}>
+        <div className={`cu-editor ` + editorClass + errorClass}>
           <ToolbarPlugin name={name} />
           <div className="cu-editor-content">
             <RichTextPlugin
