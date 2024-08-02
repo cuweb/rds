@@ -11,6 +11,7 @@ import type {
 import { $applyNodeReplacement, DecoratorNode } from 'lexical'
 import { Suspense } from 'react'
 import InlineImageComponent from './InlineImageComponent'
+import { IsDomAvailable } from '../utils/domAvailability'
 
 export type Position = 'left' | 'right' | 'full' | undefined
 
@@ -132,23 +133,26 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   }
 
   exportDOM(): DOMExportOutput {
-    const figure = document.createElement('figure')
-    const img = document.createElement('img')
-    img.setAttribute('src', this.__src)
-    img.setAttribute('alt', this.__altText)
-    img.setAttribute('width', this.__width.toString())
-    img.setAttribute('height', this.__height.toString())
+    if (IsDomAvailable) {
+      const figure = document.createElement('figure')
+      const img = document.createElement('img')
+      img.setAttribute('src', this.__src)
+      img.setAttribute('alt', this.__altText)
+      img.setAttribute('width', this.__width.toString())
+      img.setAttribute('height', this.__height.toString())
 
-    figure.className = `image-position image-position--${this.__position}`
-    figure.appendChild(img)
+      figure.className = `image-position image-position--${this.__position}`
+      figure.appendChild(img)
 
-    if (this.__caption) {
-      const figcaption = document.createElement('figcaption')
-      figcaption.textContent = this.__caption
-      figure.appendChild(figcaption)
+      if (this.__caption) {
+        const figcaption = document.createElement('figcaption')
+        figcaption.textContent = this.__caption
+        figure.appendChild(figcaption)
+      }
+
+      return { element: figure }
     }
-
-    return { element: figure }
+    return { element: null }
   }
 
   exportJSON(): SerializedInlineImageNode {
@@ -232,12 +236,25 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   }
 
   createDOM(): HTMLElement {
-    const div = document.createElement('div')
-    const className = `image-position image-position--${this.__position}`
-    if (className !== undefined) {
-      div.className = className
+    if (IsDomAvailable) {
+      const div = document.createElement('div')
+      const className = `image-position image-position--${this.__position}`
+      if (className !== undefined) {
+        div.className = className
+      }
+      return div
     }
-    return div
+
+    const fallbackDiv = {
+      tagName: 'div',
+      className: '',
+      style: {},
+      attributes: {},
+      appendChild: () => {},
+      removeChild: () => {},
+    } as unknown as HTMLElement
+
+    return fallbackDiv
   }
 
   updateDOM(prevNode: InlineImageNode, dom: HTMLElement): false {

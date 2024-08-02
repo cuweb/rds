@@ -1,4 +1,4 @@
-// Function to determine the maxWidth class
+// TODO: this is out of sync with propClasses
 export const maxWidthClasses = {
   sm: 'max-w-xs',
   md: 'max-w-xl',

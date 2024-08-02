@@ -38,7 +38,7 @@ export const Table = ({ data, columns, hasStripes = false, noWordBreak = false, 
   }, [columns, setTableData])
 
   return (
-    <div className={`cu-table cu-component-spacing not-prose overflow-x-auto rounded-lg shadow-lg`}>
+    <div className={`cu-table cu-component not-prose overflow-x-auto rounded-lg shadow-lg`}>
       <table className="min-w-full table-auto cu-table">
         <TableHeader columns={columns} noWordBreak={noWordBreak} sortData={setTableData} />
         <TableRows data={tableData} columns={columns} striped={hasStripes} range={range} />

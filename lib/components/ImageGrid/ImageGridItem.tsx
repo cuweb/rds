@@ -1,8 +1,8 @@
-import { rdsColSpan, rdsRowSpan } from '../../utils/optionClasses'
+import { colSpanClasses, rowSpanClasses } from '../../utils/propClasses'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 
-type colSpanKeys = keyof typeof rdsColSpan
-type rowSpanKeys = keyof typeof rdsRowSpan
+type colSpanKeys = keyof typeof colSpanClasses
+type rowSpanKeys = keyof typeof rowSpanClasses
 
 export interface ImageGridItemProps {
   children: React.ReactNode
@@ -18,7 +18,7 @@ export const ImageGridItem = ({ children, colSpan = '1', rowSpan = '1', title, c
 
   return (
     <div
-      className={`relative overflow-hidden ${rdsColSpan[colSpan]} ${rdsRowSpan[rowSpan]} rounded-lg bg-cu-black-200`}
+      className={`relative overflow-hidden ${colSpanClasses[colSpan]} ${rowSpanClasses[rowSpan]} rounded-lg bg-cu-black-200`}
     >
       {children}
 

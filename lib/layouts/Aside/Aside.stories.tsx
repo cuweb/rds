@@ -1,7 +1,9 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
+import { Main } from '../Main/Main'
+import { Section } from '../Section/Section'
 import { Column } from '../Column/Column'
 import { Aside } from './Aside'
-import { StackedList } from '../StackedList/StackedList'
 
 const meta: Meta<typeof Aside> = {
   title: 'Layouts/Aside',
@@ -22,44 +24,122 @@ export const Primary: Story = {}
 Primary.args = {
   children: 'Aside HTML5 tag as component',
   isSticky: false,
+  topSpace: 0,
 }
 
-export const AsSidebar: Story = {
-  render: () => (
-    <Column maxWidth="7xl" cols="2/3" gridGap="10">
-      <div>
-        <p className="pb-6 last:pb-0">
-          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
-          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
-          Phasellus in egestas sapien ac libero.
-        </p>
-        <p className="pb-6 last:pb-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-          egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus, et
-          tristique dolor. Suspendisse vestibulum hendrerit.
-        </p>
-        <p className="pb-6 last:pb-0">
-          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
-          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
-          Phasellus in egestas sapien ac libero.
-        </p>
-        <p className="pb-6 last:pb-0">
-          Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
-          lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida tempus.
-          Phasellus in egestas sapien ac libero.
-        </p>
-      </div>
+export const AsRightSidebar: Story = {
+  args: {},
+  render: (args) => {
+    return (
+      <Main>
+        <Section>
+          <Column cols="2/3">
+            <Column.Content>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+            </Column.Content>
+            <Aside {...args}>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla.
+              </p>
+              <ul>
+                <li>Item One</li>
+                <li>Item Two</li>
+                <li>Item Three</li>
+              </ul>
+            </Aside>
+          </Column>
+        </Section>
+      </Main>
+    )
+  },
+}
 
-      <Aside>
-        <StackedList hasShadow>
-          <li className="px-6 py-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-            egestas vitae nulla.
-          </li>
-          <li className="px-6 py-5">Quisque auctor ultrices mauris, et semper urna aliquam quis.</li>
-          <li className="px-6 py-5">Suspendisse vestibulum hendrerit.</li>
-        </StackedList>
-      </Aside>
-    </Column>
-  ),
+export const LeftSidebarWithSticky: Story = {
+  args: {
+    isSticky: true,
+    topSpace: 16,
+  },
+  render: (args) => {
+    return (
+      <Main>
+        <Section>
+          <Column cols="1/3">
+            <Aside {...args}>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla.
+              </p>
+              <ul>
+                <li>Item One</li>
+                <li>Item Two</li>
+                <li>Item Three</li>
+              </ul>
+            </Aside>
+            <Column.Content>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+            </Column.Content>
+          </Column>
+        </Section>
+      </Main>
+    )
+  },
 }

@@ -1,14 +1,24 @@
 import React from 'react'
 import { Icon } from '../Icon/Icon'
 
-export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
-  title?: string
-  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
-  color?: 'red' | 'grey' | 'dark-grey' | 'white'
+export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
+  color?: 'red' | 'grey' | 'dark-grey' | 'black' | 'white'
   type?: 'button' | 'submit' | 'reset'
   isSmall?: boolean
   isFull?: boolean
   isDisabled?: boolean
+}
+
+export interface ButtonTitleProps extends ButtonProp {
+  title: string
+  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  ariaLabel?: string
+}
+
+export interface ButtonNoTitleProps extends ButtonProp {
+  title?: string
+  icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  ariaLabel: string
 }
 
 export const Button = ({
@@ -19,8 +29,9 @@ export const Button = ({
   isSmall,
   isFull,
   isDisabled,
+  ariaLabel = 'aria-label',
   ...rest
-}: ButtonProps) => {
+}: ButtonNoTitleProps | ButtonTitleProps) => {
   const disabledButton = isDisabled ? 'cu-button--disabled' : `cu-button--${color}`
   const fullStyles = isFull ? 'cu-button--full' : ''
   const buttonSmall = isSmall ? 'cu-button--small' : ''
@@ -29,7 +40,7 @@ export const Button = ({
   return (
     <button
       type={type}
-      aria-label={title ? title : 'Icon button'}
+      aria-label={!ariaLabel ? title : ariaLabel}
       className={`cu-button not-prose ${disabledButton} ${buttonSmall} ${fullStyles}`}
       disabled={isDisabled ? true : false}
       {...rest}
