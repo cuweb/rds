@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../Main/Main'
-import { Column, ColumnProps } from './Column'
+import { Column } from './Column'
 
 const meta: Meta<typeof Column> = {
   title: 'Layouts/Column',
@@ -128,6 +128,7 @@ export const ThreeColumns: Story = {
   args: {
     ...Columns.args,
     cols: '3',
+    maxWidth: '7xl',
   },
   render: (args) => {
     return (
@@ -164,6 +165,7 @@ export const FourColumns: Story = {
   args: {
     ...Columns.args,
     cols: '4',
+    maxWidth: '7xl',
   },
   render: (args) => {
     return (

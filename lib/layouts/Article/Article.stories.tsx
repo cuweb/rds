@@ -23,23 +23,15 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: 'Article HTML5 tag as component',
-}
-
-export const ContentProp: Story = {
-  name: 'Content as a Prop',
-  args: {
-    content: data,
-  },
+  content: '',
 }
 
 export const WithMainAndSection: Story = {
-  args: {
-    content: '',
-  } as ArticleProps,
+  args: {} as ArticleProps,
   render: (args) => (
     <Main>
       <Section>
-        <Article content={args.content}>
+        <Article {...args}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
             vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
@@ -54,6 +46,20 @@ export const WithMainAndSection: Story = {
             in. Praesent quis ligula quis nulla malesuada tempor.
           </p>
         </Article>
+      </Section>
+    </Main>
+  ),
+}
+
+export const ContentProp: Story = {
+  name: 'Content as a Prop',
+  args: {
+    content: data,
+  },
+  render: (args) => (
+    <Main>
+      <Section>
+        <Article {...args} />
       </Section>
     </Main>
   ),

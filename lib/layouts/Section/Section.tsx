@@ -1,11 +1,14 @@
 import React from 'react'
+import { maxWidthClasses } from '../../utils/propClasses'
 import { proseStyles, layoutSpacing } from '../../utils/globalClasses'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 export interface SectionProps {
   children?: React.ReactNode
   as?: 'section' | 'div'
   isGrey?: boolean
-  maxWidth?: 'none' | 'full' | '5xl' | '7xl'
+  maxWidth?: maxWidthKeys
   noProse?: boolean
 }
 
