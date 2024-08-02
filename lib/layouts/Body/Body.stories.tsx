@@ -19,4 +19,5 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: 'Body component',
+  className: 'bg-white',
 }

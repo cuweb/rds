@@ -1,10 +1,9 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Article } from '../Article/Article'
-import { Aside } from '../Aside/Aside'
-import { Column } from '../Column/Column'
+import { Main } from '../Main/Main'
 import { Section } from './Section'
-import { StackedList } from '../StackedList/StackedList'
+import { Column } from '../Column/Column'
+import { Aside } from '../Aside/Aside'
 
 const meta: Meta<typeof Section> = {
   title: 'Layouts/Section',
@@ -24,6 +23,10 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: 'Section HTML5 tag as container component',
+  as: 'section',
+  isGrey: false,
+  maxWidth: '5xl',
+  noProse: false,
 }
 
 export const GreyBackground: Story = {
@@ -34,43 +37,106 @@ export const GreyBackground: Story = {
 }
 
 export const WithColumns: Story = {
-  render: () => (
-    <Section>
-      <Column cols="2/3">
-        <Article>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-            vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-            condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
-            volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
-            malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
-            sapien in urna.
-          </p>
-          <p>
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-            vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-            condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
-            volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
-            malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
-            sapien in urna.
-          </p>
-        </Article>
-        <Aside>
-          <StackedList hasShadow>
-            <li className="px-6 py-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-              egestas vitae nulla.
-            </li>
-            <li className="px-6 py-5">Quisque auctor ultrices mauris, et semper urna aliquam quis.</li>
-            <li className="px-6 py-5">Suspendisse vestibulum hendrerit.</li>
-          </StackedList>
-        </Aside>
-      </Column>
-    </Section>
+  args: {
+    maxWidth: '7xl',
+  },
+  render: (args) => (
+    <Main>
+      <Section {...args}>
+        <Column cols="2">
+          <Column.Content>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+            <p>
+              Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+              lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
+              tempus. Phasellus in egestas sapien ac libero.
+            </p>
+          </Column.Content>
+          <Column.Content>
+            <p>
+              Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+              viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+              malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+            <p>
+              Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+              lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
+              tempus. Phasellus in egestas sapien ac libero.
+            </p>
+          </Column.Content>
+        </Column>
+      </Section>
+    </Main>
+  ),
+}
+
+export const WithAside: Story = {
+  args: {
+    maxWidth: '7xl',
+  },
+  render: (args) => (
+    <Main>
+      <Section {...args}>
+        <Column cols="1/3">
+          <Aside {...args}>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla.
+            </p>
+            <ul>
+              <li>Item One</li>
+              <li>Item Two</li>
+              <li>Item Three</li>
+            </ul>
+          </Aside>
+          <Column.Content>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+            <p>
+              Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+              lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
+              tempus. Phasellus in egestas sapien ac libero.
+            </p>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+            <p>
+              Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+              lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
+              tempus. Phasellus in egestas sapien ac libero.
+            </p>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+            <p>
+              Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+              lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
+              tempus. Phasellus in egestas sapien ac libero.
+            </p>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+            <p>
+              Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
+              lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
+              tempus. Phasellus in egestas sapien ac libero.
+            </p>
+          </Column.Content>
+        </Column>
+      </Section>
+    </Main>
   ),
 }

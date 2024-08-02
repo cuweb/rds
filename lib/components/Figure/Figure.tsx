@@ -30,7 +30,7 @@ export const FigureWrapper = ({ children, caption, isRound, noMobile, size = 'fu
   const hideMobile = noMobile ? 'hidden md:block' : 'block'
 
   return (
-    <figure className={`cu-figure cu-component-spacing ${hideMobile}`}>
+    <figure className={`cu-figure cu-component ${hideMobile}`}>
       <div
         className={`not-prose overflow-hidden bg-white shadow-lg ${roundStyle} ${figureSize[size]} ${figureAlign[align]}`}
       >

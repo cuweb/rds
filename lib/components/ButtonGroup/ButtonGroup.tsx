@@ -22,8 +22,6 @@ export const ButtonGroup = ({ children, gap = 5, align = 'left' }: ButtonGroupPr
   }
 
   return (
-    <div className={`cu-buttongroup cu-component-spacing flex flex-wrap md:flex-1 ${gapStyle} ${alignStyle}`}>
-      {children}
-    </div>
+    <div className={`cu-buttongroup cu-component flex flex-wrap md:flex-1 ${gapStyle} ${alignStyle}`}>{children}</div>
   )
 }

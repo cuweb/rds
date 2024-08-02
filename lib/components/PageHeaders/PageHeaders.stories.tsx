@@ -26,6 +26,10 @@ Default.args = {
   header: 'Large page header',
   size: 'lg',
   as: 'h1',
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
+  isWhite: false,
+  isCenter: false,
 }
 
 export const PageHeaderCentre: Story = {

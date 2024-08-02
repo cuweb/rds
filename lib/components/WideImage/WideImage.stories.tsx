@@ -72,6 +72,22 @@ BgImage.args = {
   image: 'https://picsum.photos/1600/700',
 }
 
+export const Wave: Story = {
+  render: (args) => (
+    <WideImage {...args}>
+      <p>Author Name Goes Here</p>
+      <p>Add a Photo Credit</p>
+    </WideImage>
+  ),
+}
+Wave.args = {
+  ...Default.args,
+  title: 'Wide image with bg image',
+  headerType: 'h1',
+  isType: 'wave',
+  image: 'https://picsum.photos/1600/700',
+}
+
 export const ScrollTo: Story = {
   render: (args) => (
     <WideImage {...args}>
@@ -82,11 +98,9 @@ export const ScrollTo: Story = {
 }
 ScrollTo.args = {
   ...Default.args,
-  maxHeight: 'lg',
   scrollTo: true,
   title: 'Wide image with bg image',
-  headerType: 'h1',
-  isType: 'image',
+  isType: 'wave',
   image: 'https://picsum.photos/1600/700',
 }
 

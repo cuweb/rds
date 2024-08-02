@@ -1,19 +1,23 @@
 import { ImageGridItem } from './ImageGridItem'
-import { rdsGridColumns, rdsGridSpacing, rdsMaxWidth } from '../../utils/optionClasses'
+import { gridColumnClasses, gridGapClasses, maxWidthClasses } from '../../utils/propClasses'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
+type gridColumnKeys = keyof typeof gridColumnClasses
+type gridGapKeys = keyof typeof gridGapClasses
 
 export interface ImageGridProps {
   children: React.ReactNode
-  maxWidth?: '5xl' | '7xl'
-  gridGap?: '0' | '5' | '10'
-  cols?: '2' | '3' | '4'
+  maxWidth?: maxWidthKeys
+  cols?: gridColumnKeys
+  gridGap?: gridGapKeys
 }
 
 export const ImageGridWrapper = ({ children, maxWidth = '5xl', gridGap = '5', cols = '3' }: ImageGridProps) => {
   return (
     <div
       className={`cu-imagegrid cu-imagegrid-${cols} grid
-        ${rdsGridColumns[cols]}
-        ${rdsMaxWidth[maxWidth]} ${rdsGridSpacing[gridGap]}
+        ${gridColumnClasses[cols]}
+        ${maxWidthClasses[maxWidth]} ${gridGapClasses[gridGap]}
       `}
     >
       {children}
