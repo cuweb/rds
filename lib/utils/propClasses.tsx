@@ -20,6 +20,7 @@ export const gridColumnClasses = {
 
 export const gridGapClasses = {
   '0': 'gap-0',
+  '2': 'gap-1 md:gap-2',
   '5': 'gap-3 md:gap-5',
   '10': 'gap-6 md:gap-10',
 }

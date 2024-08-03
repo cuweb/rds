@@ -19,7 +19,10 @@ export default meta
 type Story = StoryObj<typeof ButtonGroup>
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    gap: '2',
+    align: 'start',
+  },
   render: (args) => {
     return (
       <ButtonGroup {...args}>

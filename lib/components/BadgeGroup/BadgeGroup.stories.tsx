@@ -18,7 +18,9 @@ export default meta
 type Story = StoryObj<typeof BadgeGroup>
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    gap: '2',
+  },
   render: (args) => {
     return (
       <BadgeGroup {...args}>

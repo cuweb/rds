@@ -10,7 +10,7 @@ export interface ButtonGroupProps {
   align?: justifyContentKey
 }
 
-export const ButtonGroup = ({ children, gap = '5', align = 'start' }: ButtonGroupProps) => {
+export const ButtonGroup = ({ children, gap = '2', align = 'start' }: ButtonGroupProps) => {
   return (
     <div
       className={`cu-buttongroup cu-component flex flex-wrap md:flex-1 ${gridGapClasses[gap]} ${justifyContentClasses[align]}`}
