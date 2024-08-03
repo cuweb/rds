@@ -23,13 +23,13 @@ Primary.args = {
   title: 'Alert title',
   type: 'success',
   content: 'Records have been updated.',
-  textSize: 'sm',
+  size: 'sm',
 }
 
 export const TwoColumns: Story = {
   args: {
     ...Primary.args,
-    textSize: 'lg',
+    size: 'lg',
   },
   render: (args) => {
     return (
