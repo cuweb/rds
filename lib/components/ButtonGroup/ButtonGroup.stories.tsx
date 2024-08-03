@@ -18,29 +18,32 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta
 type Story = StoryObj<typeof ButtonGroup>
 
-export const Default: Story = {
-  render: (args) => (
-    <ButtonGroup {...args}>
-      <Button
-        onClick={() => {
-          alert('You clicked the button')
-        }}
-        title="Primary Red"
-      />
-      <Button
-        onClick={() => {
-          alert('You clicked the button')
-        }}
-        title="Dark Grey"
-        color="dark-grey"
-      />
-      <Button
-        onClick={() => {
-          alert('You clicked the button')
-        }}
-        title="Light Grey"
-        color="grey"
-      />
-    </ButtonGroup>
-  ),
+export const Primary: Story = {
+  args: {},
+  render: (args) => {
+    return (
+      <ButtonGroup {...args}>
+        <Button
+          onClick={() => {
+            alert('You clicked the button')
+          }}
+          title="Primary Red"
+        />
+        <Button
+          onClick={() => {
+            alert('You clicked the button')
+          }}
+          title="Dark Grey"
+          color="dark-grey"
+        />
+        <Button
+          onClick={() => {
+            alert('You clicked the button')
+          }}
+          title="Light Grey"
+          color="grey"
+        />
+      </ButtonGroup>
+    )
+  },
 }
