@@ -7,7 +7,7 @@ import { WideImage } from '../../components/WideImage/WideImage'
 import { Nav } from '../../components/Nav/Nav'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { Column } from '../../layouts/Column/Column'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Aside } from '../../layouts/Aside/Aside'
@@ -63,7 +63,7 @@ export const EventsHome: Story = {
         </Section>
 
         <Section maxWidth="7xl">
-          <PageHeaders as="h2" header="Featured Events" size="md" />
+          <PageHeader as="h2" header="Featured Events" size="md" />
           <Column cols="4" maxWidth="7xl">
             {EventData.slice(0, 4).map(
               ({
@@ -107,7 +107,7 @@ export const EventsHome: Story = {
         </Section>
 
         <Section maxWidth="7xl" isGrey>
-          <PageHeaders as="h2" header="Upcoming Events" size="md" />
+          <PageHeader as="h2" header="Upcoming Events" size="md" />
           <Filter filters={FilterData.filters} callback={() => undefined} />
           <Column cols="2/3" maxWidth="7xl">
             <Column.Content>

@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../layouts/Main/Main'
 import { Section } from '../../layouts/Section/Section'
-import { PageHeaders } from '../PageHeaders/PageHeaders'
+import { PageHeader } from '../PageHeader/PageHeader'
 import { Description } from './Description'
 import { DescriptionData as descMeta } from '../../data/DescriptionData'
 
@@ -59,7 +59,7 @@ export const MultipleStacked: Story = {
   render: (args) => (
     <Main>
       <Section>
-        <PageHeaders as="h2" header="Description header" size="md" />
+        <PageHeader as="h2" header="Description header" size="md" />
         <Description {...args}>
           {descMeta.map((item) => (
             <Description.Meta key={item?.id} term={item?.term}>
@@ -76,7 +76,7 @@ export const MultipleColumns: Story = {
   render: (args) => (
     <Main>
       <Section>
-        <PageHeaders as="h2" header="Description header" size="md" />
+        <PageHeader as="h2" header="Description header" size="md" />
         <Description {...args}>
           {descMeta.map((item) => (
             <Description.Meta key={item?.id} term={item?.term} useColumns>
@@ -93,7 +93,7 @@ export const MultipleAccordions: Story = {
   render: (args) => (
     <Main>
       <Section>
-        <PageHeaders as="h2" header="Description header" size="md" />
+        <PageHeader as="h2" header="Description header" size="md" />
         <Description {...args}>
           {descMeta.map((item) => (
             <Description.Accordion key={item?.id} term={item?.term}>

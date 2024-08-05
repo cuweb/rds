@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { Card } from '../../components/Card/Card'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
@@ -48,7 +48,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Event Cards" as="h2" size="md" />
+          <PageHeader header="Event Cards" as="h2" size="md" />
           <Column cols="3">
             {EventData.slice(0, 6).map(
               ({
@@ -92,7 +92,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Event Cards" as="h2" size="md" />
+          <PageHeader header="Event Cards" as="h2" size="md" />
           <Column cols="3">
             {EventData.slice(0, 6).map(
               ({
@@ -136,7 +136,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <PageHeader header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
               <Card key={id}>
@@ -158,7 +158,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <PageHeader header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 6).map(({ id, link, title, image, alt }) => (
               <Card key={id}>
@@ -180,7 +180,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Icon Cards" as="h2" size="md" />
+          <PageHeader header="Icon Cards" as="h2" size="md" />
           <Column cols="3">
             {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
               <Card key={id}>
@@ -200,7 +200,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Icon Cards" as="h2" size="md" />
+          <PageHeader header="Icon Cards" as="h2" size="md" />
           <Column cols="3">
             {IconData.slice(0, 6).map(({ id, link, title, icon }) => (
               <Card key={id}>
@@ -220,7 +220,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="News Cards" as="h2" size="md" />
+          <PageHeader header="News Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 6).map(({ id, link, image, alt, date, title }) => (
               <Card key={id}>
@@ -242,7 +242,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="News Cards" as="h2" size="md" />
+          <PageHeader header="News Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 6).map(({ id, link, image, alt, date, title }) => (
               <Card key={id}>
@@ -264,7 +264,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="People Cards" as="h2" size="md" />
+          <PageHeader header="People Cards" as="h2" size="md" />
           <Column cols="3">
             {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Card key={id} isCenter>
@@ -288,7 +288,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="People Cards" as="h2" size="md" />
+          <PageHeader header="People Cards" as="h2" size="md" />
           <Column cols="3">
             {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Card key={id} isCenter>
@@ -312,7 +312,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Stat Cards" as="h2" size="md" />
+          <PageHeader header="Stat Cards" as="h2" size="md" />
           <Column cols="3">
             {StatData.slice(0, 6).map(({ id, stat, desc }) => (
               <Card key={id} leftBorder noHover>
@@ -323,7 +323,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Stat Cards" as="h2" size="md" />
+          <PageHeader header="Stat Cards" as="h2" size="md" />
           <Column cols="3">
             {StatData.slice(0, 6).map(({ id, stat, desc }) => (
               <Card key={id} leftBorder noHover>
@@ -334,7 +334,7 @@ export const Cards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Video Cards" as="h2" size="md" />
+          <PageHeader header="Video Cards" as="h2" size="md" />
           <Column cols="3">
             {VideoData.slice(0, 6).map(({ id, source, title }) => (
               <Card key={id} noHover>
@@ -346,7 +346,7 @@ export const Cards: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Video Cards" as="h2" size="md" />
+          <PageHeader header="Video Cards" as="h2" size="md" />
           <Column cols="3">
             {VideoData.slice(0, 6).map(({ id, source, title }) => (
               <Card key={id} noHover>

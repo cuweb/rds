@@ -10,7 +10,7 @@ import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
 import { Card } from '../../components/Card/Card'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 import { NewsData } from '../../data/NewsData'
 
@@ -63,7 +63,7 @@ export const BlockSpacing: Story = {
         <SinglePara />
 
         <Section as="div">
-          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <PageHeader header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
               <Card key={id}>
@@ -85,7 +85,7 @@ export const BlockSpacing: Story = {
         </Section>
 
         <Section as="div">
-          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <PageHeader header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
               <Card key={id}>
@@ -114,7 +114,7 @@ export const BlockSpacing: Story = {
         </WideImage>
 
         <Section as="div" isGrey>
-          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <PageHeader header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
               <Card key={id}>
@@ -136,7 +136,7 @@ export const BlockSpacing: Story = {
         </Section>
 
         <Section as="div" isGrey>
-          <PageHeaders header="Featured Cards" as="h2" size="md" />
+          <PageHeader header="Featured Cards" as="h2" size="md" />
           <Column cols="3">
             {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
               <Card key={id}>

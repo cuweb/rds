@@ -7,7 +7,7 @@ import { Nav } from '../../components/Nav/Nav'
 import { Column } from '../../layouts/Column/Column'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { WideImage } from '../../components/WideImage/WideImage'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
@@ -136,7 +136,7 @@ export const WithSections: Story = {
         </Column>
 
         <Section isGrey>
-          <PageHeaders as="h1" header="Large page header" size="lg" />
+          <PageHeader as="h1" header="Large page header" size="lg" />
           <h2>Inside Section H2</h2>
           <DoublePara />
           <WideImage isType="dark" title="Wide image with dark bg">

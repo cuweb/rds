@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Nav } from '../../components/Nav/Nav'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { Listing } from '../../components/Listing/Listing'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { EventData } from '../../data/EventData'
@@ -46,7 +46,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Event Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="Event Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {EventData.slice(0, 4).map(
               ({
@@ -85,7 +85,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Event Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="Event Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {EventData.slice(0, 4).map(
               ({
@@ -124,7 +124,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Event Listing: One Column" as="h2" size="md" />
+          <PageHeader header="Event Listing: One Column" as="h2" size="md" />
           <StackedList cols="1">
             {EventData.slice(0, 3).map(
               ({
@@ -163,7 +163,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Event Listing: One Column" as="h2" size="md" />
+          <PageHeader header="Event Listing: One Column" as="h2" size="md" />
           <StackedList cols="1">
             {EventData.slice(0, 3).map(
               ({
@@ -202,7 +202,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Icon Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="Icon Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
               <Listing key={id}>
@@ -223,7 +223,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Icon Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="Icon Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
               <Listing key={id}>
@@ -244,7 +244,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Icon Listing: One Columns" as="h2" size="md" />
+          <PageHeader header="Icon Listing: One Columns" as="h2" size="md" />
           <StackedList cols="1">
             {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
               <Listing key={id}>
@@ -265,7 +265,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="Icon Listing: One Columns" as="h2" size="md" />
+          <PageHeader header="Icon Listing: One Columns" as="h2" size="md" />
           <StackedList cols="1">
             {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
               <Listing key={id}>
@@ -286,7 +286,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="News Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="News Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
@@ -308,7 +308,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="News Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="News Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
@@ -330,7 +330,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="News Listing: One Column" as="h2" size="md" />
+          <PageHeader header="News Listing: One Column" as="h2" size="md" />
           <StackedList cols="1">
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
@@ -352,7 +352,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="News Listing: One Column" as="h2" size="md" />
+          <PageHeader header="News Listing: One Column" as="h2" size="md" />
           <StackedList cols="1">
             {NewsData.slice(0, 4).map(({ id, title, link, excerpt, date, image, alt }) => (
               <Listing key={id}>
@@ -374,7 +374,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="People Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="People Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
@@ -398,7 +398,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="People Listing: Two Columns" as="h2" size="md" />
+          <PageHeader header="People Listing: Two Columns" as="h2" size="md" />
           <StackedList>
             {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
@@ -422,7 +422,7 @@ export const Listings: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="People Listing: One Column" as="h2" size="md" />
+          <PageHeader header="People Listing: One Column" as="h2" size="md" />
           <StackedList cols="1">
             {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>
@@ -446,7 +446,7 @@ export const Listings: Story = {
         </Section>
 
         <Section isGrey>
-          <PageHeaders header="People Listing: One Column" as="h2" size="md" />
+          <PageHeader header="People Listing: One Column" as="h2" size="md" />
           <StackedList cols="1">
             {PeopleData.slice(0, 4).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
               <Listing key={id}>

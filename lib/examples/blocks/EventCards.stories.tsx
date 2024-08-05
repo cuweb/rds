@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { Card } from '../../components/Card/Card'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
@@ -43,7 +43,7 @@ export const EventCards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Original" as="h2" size="md" />
+          <PageHeader header="Original" as="h2" size="md" />
           <Column cols="3">
             {EventData.slice(0, 3).map(
               ({
@@ -87,7 +87,7 @@ export const EventCards: Story = {
         </Section>
 
         <Section>
-          <PageHeaders header="Matching News Cards" as="h2" size="md" />
+          <PageHeader header="Matching News Cards" as="h2" size="md" />
           <Column cols="3">
             {EventData.slice(0, 3).map(
               ({

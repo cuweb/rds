@@ -1,9 +1,9 @@
-interface PageHeadersLoaderProps {
+interface PageHeaderLoaderProps {
   content?: 'small' | 'large'
   isCenter?: boolean
 }
 
-export const PageHeadersLoader = ({ content, isCenter }: PageHeadersLoaderProps) => {
+export const PageHeaderLoader = ({ content, isCenter }: PageHeaderLoaderProps) => {
   return (
     <div className="cu-loader-pageheaders cu-component animate-pulse">
       <div className={`flex flex-wrap gap-10 ${isCenter ? 'justify-center' : ''}`}>
