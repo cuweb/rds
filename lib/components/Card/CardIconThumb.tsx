@@ -1,29 +1,46 @@
+import { useEffect, useState } from 'react'
+
 export interface CardIconThumbProps {
   icon?: string
+  cdnPath?: string
 }
 
-export const CardIconThumb = ({ icon }: CardIconThumbProps) => {
-  const cdnPath = 'https://cdn.carleton.ca/rds/assets/font-awesome/'
+export const CardIconThumb = ({ icon, cdnPath = './assets/font-awesome/' }: CardIconThumbProps) => {
+  const [svgContent, setSvgContent] = useState<string | null>(null)
 
-  // Check if the icon starts with 'file-' and ends with 'x'
-  const modifiedIcon =
-    icon && icon.startsWith('file-') && icon.endsWith('x') ? icon.substring(0, icon.length - 1) : icon
+  useEffect(() => {
+    const fetchSvg = async () => {
+      if (!icon) return
 
-  const iconPath = `${cdnPath}${modifiedIcon}.svg`
-  const iconAlt = modifiedIcon ? modifiedIcon.replace(/-/g, ' ') : ''
+      const modifiedIcon = icon.startsWith('file-') && icon.endsWith('x') ? icon.substring(0, icon.length - 1) : icon
+      const iconPath = `${cdnPath}${modifiedIcon}.svg`
 
-  const redIcon = {
-    filter: 'invert(20%) sepia(50%) saturate(7177%) hue-rotate(348deg) brightness(91%) contrast(100%)',
-  }
+      try {
+        const response = await fetch(iconPath)
+        if (!response.ok) {
+          throw new Error(`Failed to fetch SVG: ${response.statusText}`)
+        }
+        const text = await response.text()
+        setSvgContent(text)
+      } catch (error) {
+        console.error('Error fetching SVG:', error)
+        setSvgContent(null)
+      }
+    }
+
+    fetchSvg()
+  }, [icon, cdnPath])
 
   return (
-    <figure className="flex items-center justify-center w-12 h-12 mx-6 mt-5 mb-1.5 overflow-hidden">
-      <img
-        src={iconPath}
-        alt={`An icon of a ${iconAlt}`}
-        className="object-cover max-h-full cu-icon-thumb max-w-none"
-        style={redIcon}
-      />
+    <figure className="flex mx-6 mt-5 mb-1.5 overflow-hidden">
+      {svgContent ? (
+        <div
+          className="object-cover max-h-full cu-icon-thumb w-12 h-12 max-w-none cu-icon-red"
+          dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+      ) : (
+        <p>{icon ? 'Loading...' : 'No icon provided'}</p>
+      )}
     </figure>
   )
 }
