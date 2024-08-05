@@ -45,6 +45,13 @@ export const rowSpanClasses = {
   '4': 'row-span-4',
 }
 
+export const headerSizeClasses = {
+  xs: `text-lg md:text-xl lg:text-2xl lg:leading-[2rem]`,
+  sm: `text-xl md:text-2xl lg:text-3xl lg:leading-[2.5rem]`,
+  md: `text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]`,
+  lg: `text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem]`,
+}
+
 export const textColorClasses = {
   white: 'text-white',
   red: 'text-cu-red',

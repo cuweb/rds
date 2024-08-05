@@ -1,7 +1,7 @@
-import { listStyles, socialStyles } from './PageHeaders.Styles'
+import { listStyles, socialStyles } from './PageHeader.Styles'
 import { proseStyles, proseGroups } from '../../utils/globalClasses'
 
-export interface PageHeadersPeopleProps {
+export interface PageHeaderPeopleProps {
   jobTitle?: string
   degrees?: string
   building?: string
@@ -11,7 +11,7 @@ export interface PageHeadersPeopleProps {
   phoneExt?: string
 }
 
-export interface PageHeadersSocialProps {
+export interface PageHeaderSocialProps {
   resume?: string
   website?: string
   linkedin?: string
@@ -19,7 +19,7 @@ export interface PageHeadersSocialProps {
   facebook?: string
 }
 
-export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleProps & PageHeadersSocialProps) => {
+export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeopleProps & PageHeaderSocialProps) => {
   const { degrees, building, room, email, phone, phoneExt, website, linkedin, twitter, facebook } = restProps
   const profileDetails = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
   const socialDetails = ['resume', 'linkedin', 'twitter', 'facebook']
@@ -134,4 +134,4 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
   )
 }
 
-PageHeadersPeople.displayName = 'PageHeaders.People'
+PageHeaderPeople.displayName = 'PageHeader.People'

@@ -1,27 +1,23 @@
 import React from 'react'
-import { PageHeadersPeople } from './PageHeadersPeople'
-import { PageHeadersEvent } from './PageHeadersEvent'
+import { PageHeaderPeople } from './PageHeaderPeople'
+import { PageHeaderEvent } from './PageHeaderEvent'
+import { headerSizeClasses } from '../../utils/propClasses'
 
-export interface PageHeadersProps {
+type headerSizeKeys = keyof typeof headerSizeClasses
+
+export interface PageHeaderProps {
   children?: React.ReactNode
   as?: 'h1' | 'h2' | 'h3'
   header: string
   content?: string
-  size?: keyof typeof headerSize
+  size?: headerSizeKeys
   isWhite?: boolean
   isCenter?: boolean
   pronoun?: string
   noUnderline?: boolean
 }
 
-const headerSize = {
-  xs: `text-lg md:text-xl lg:text-2xl lg:leading-[2rem]`,
-  sm: `text-xl md:text-2xl lg:text-3xl lg:leading-[2.5rem]`,
-  md: `text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]`,
-  lg: `text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem]`,
-}
-
-export const PageHeadersWrapper = ({
+export const PageHeaderWrapper = ({
   children,
   as = 'h1',
   header,
@@ -31,7 +27,7 @@ export const PageHeadersWrapper = ({
   isCenter,
   noUnderline = false,
   pronoun,
-}: PageHeadersProps) => {
+}: PageHeaderProps) => {
   const HeaderComponent = as
 
   // Set spacing for header with underline
@@ -76,7 +72,7 @@ export const PageHeadersWrapper = ({
   return (
     <header className="cu-pageheaders cu-component mb-6 md:mb-12">
       <HeaderComponent
-        className={`font-semibold text-cu-black-700 not-prose mb-4 md:mb-6 ${headerSize[size]} ${textColor} ${centerText} ${centerUnderline}`}
+        className={`font-semibold text-cu-black-700 not-prose mb-4 md:mb-6 ${headerSizeClasses[size]} ${textColor} ${centerText} ${centerUnderline}`}
       >
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
@@ -87,9 +83,9 @@ export const PageHeadersWrapper = ({
   )
 }
 
-export const PageHeaders = Object.assign(PageHeadersWrapper, {
-  People: PageHeadersPeople,
-  Event: PageHeadersEvent,
+export const PageHeader = Object.assign(PageHeaderWrapper, {
+  People: PageHeaderPeople,
+  Event: PageHeaderEvent,
 })
 
-PageHeadersWrapper.displayName = 'PageHeaders'
+PageHeaderWrapper.displayName = 'PageHeader'
