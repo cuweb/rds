@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 
 export interface CardIconThumbProps {
   icon?: string
-  cdnPath?: string
+  assetPath?: string
 }
 
-export const CardIconThumb = ({ icon, cdnPath = './assets/font-awesome/' }: CardIconThumbProps) => {
+export const CardIconThumb = ({ icon, assetPath = './assets/font-awesome/' }: CardIconThumbProps) => {
   const [svgContent, setSvgContent] = useState<string | null>(null)
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const CardIconThumb = ({ icon, cdnPath = './assets/font-awesome/' }: Card
       if (!icon) return
 
       const modifiedIcon = icon.startsWith('file-') && icon.endsWith('x') ? icon.substring(0, icon.length - 1) : icon
-      const iconPath = `${cdnPath}${modifiedIcon}.svg`
+      const iconPath = `${assetPath}${modifiedIcon}.svg`
 
       try {
         const response = await fetch(iconPath)
@@ -29,7 +29,7 @@ export const CardIconThumb = ({ icon, cdnPath = './assets/font-awesome/' }: Card
     }
 
     fetchSvg()
-  }, [icon, cdnPath])
+  }, [icon, assetPath])
 
   return (
     <figure className="flex mx-6 mt-5 mb-1.5 overflow-hidden">
