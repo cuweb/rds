@@ -21,12 +21,12 @@ export const Modal = ({
   children,
   content,
   isOpen,
-  setIsOpen,
   maxWidth = '5xl',
   noProse = false,
   alignTop = false,
   ariaLabel,
   ariaDescription,
+  setIsOpen,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
   const useProse = noProse ? '' : proseStyles.base
@@ -75,7 +75,7 @@ export const Modal = ({
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog relative ${positionTop} p-5 md:p-6 z-10 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md`}
+      className={`cu-dialog relative ${positionTop} p-6 md:p-10 z-10 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md`}
       onClick={handleClick}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
