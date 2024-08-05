@@ -64,32 +64,11 @@ const columns: ColumnDefinitionType[] = [
   },
 ]
 
-export const Default: Story = {}
-Default.args = {
+export const Primary: Story = {}
+Primary.args = {
   data: tableData,
   columns: columns,
   hasStripes: false,
-}
-
-export const WithStripes: Story = {}
-WithStripes.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: true,
-}
-
-export const WithRangeOne: Story = {}
-WithRangeOne.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: false,
-  range: [1, 3],
-}
-
-export const WithRangeTwo: Story = {}
-WithRangeTwo.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: false,
-  range: [4, 5],
+  noWordBreak: false,
+  range: [1, -1],
 }
