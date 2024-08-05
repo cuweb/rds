@@ -1,26 +1,15 @@
 import React from 'react'
 import { FigureVideo } from './Figure.Video'
+import { figureSizeClasses, figureAlignClasses } from '../../utils/propClasses'
 
-const figureSize = {
-  xs: `max-w-[320px]`,
-  sm: `max-w-[440px]`,
-  md: `max-w-[512px]`,
-  lg: `max-w-3xl`,
-  full: `max-w-full`,
-}
-
-const figureAlign = {
-  left: `lg:float-left lg:mr-12 mb-6`,
-  right: `lg:float-right ml-0 lg:ml-12 mb-6`,
-  center: `mx-auto`,
-  none: ``,
-}
+type figureSizeKeys = keyof typeof figureSizeClasses
+type figureAlignKeys = keyof typeof figureAlignClasses
 
 export interface FigureProps {
   children: React.ReactNode
   caption?: string
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'full'
-  align?: 'left' | 'right' | 'center' | 'none'
+  size?: figureSizeKeys
+  align?: figureAlignKeys
   isRound?: boolean
   noMobile?: boolean
 }
@@ -32,7 +21,7 @@ export const FigureWrapper = ({ children, caption, isRound, noMobile, size = 'fu
   return (
     <figure className={`cu-figure cu-component ${hideMobile}`}>
       <div
-        className={`not-prose overflow-hidden bg-white shadow-lg ${roundStyle} ${figureSize[size]} ${figureAlign[align]}`}
+        className={`not-prose overflow-hidden bg-white shadow-lg ${roundStyle} ${figureSizeClasses[size]} ${figureAlignClasses[align]}`}
       >
         {children}
         {caption && <figcaption className="px-5 py-4 text-base italic text-cu-black-700">{caption}</figcaption>}

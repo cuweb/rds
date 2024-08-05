@@ -59,6 +59,21 @@ export const justifyContentClasses = {
   center: 'justify-center',
 }
 
+export const figureSizeClasses = {
+  xs: `max-w-[320px]`,
+  sm: `max-w-[440px]`,
+  md: `max-w-[512px]`,
+  lg: `max-w-3xl`,
+  full: `max-w-full`,
+}
+
+export const figureAlignClasses = {
+  left: `lg:float-left mb-6 lg:mr-12`,
+  right: `lg:float-right mb-6 ml-0 lg:ml-12`,
+  center: `mx-auto`,
+  none: ``,
+}
+
 export const bgOpacityClasses = {
   70: 'bg-opacity-[.70]',
   75: 'bg-opacity-[.75]',

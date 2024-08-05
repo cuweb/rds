@@ -1,3 +1,7 @@
+.cu-prose {
+  @apply prose prose-rds max-w-none prose-lg md:prose-xl;
+}
+
 .cu-dialog-full {
   margin-top: 40px;
   /* height: calc(100% - 80px); */
