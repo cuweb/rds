@@ -34,5 +34,3 @@ export const Primary: Story = {
     return <MultiDayCalendar events={args.events} callback={callbackcal} />
   },
 }
-
-Default.storyName = 'Default MultiDay Calendar'
