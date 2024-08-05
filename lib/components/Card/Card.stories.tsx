@@ -24,7 +24,7 @@ const meta: Meta<typeof Card> = {
 export default meta
 type Story = StoryObj<typeof Card>
 
-export const Default: Story = {
+export const Primary: Story = {
   render: (args) => (
     <Card {...args}>
       <Card.Header title="How to Write for the Web" />

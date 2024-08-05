@@ -21,7 +21,7 @@ const meta: Meta<typeof Description> = {
 export default meta
 type Story = StoryObj<typeof Description>
 
-export const Default: Story = {
+export const Primary: Story = {
   render: (args) => (
     <Description {...args}>
       <Description.Meta term={descMeta[0].term}>{descMeta[0].details}</Description.Meta>
