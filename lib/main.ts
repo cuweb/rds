@@ -70,3 +70,6 @@ export { StackedList } from './layouts/StackedList/StackedList'
 
 // Javascript Files
 export { iconNames } from '../public/assets/font-awesome/icon-list.js'
+
+// Utils
+export * as utils from './utils/propClasses'
