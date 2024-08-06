@@ -181,7 +181,7 @@ export const PeopleCard: Story = {
   args: {},
   render: (args) => (
     <Column cols="3">
-      {PeopleData.slice(0, 6).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+      {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
         <Card key={id} {...args} isCenter>
           <Card.Figure isRound>
             <img src={image} alt={alt} width={280} height={280} />
