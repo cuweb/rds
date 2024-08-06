@@ -9,9 +9,11 @@ import { TextImage } from '../../components/TextImage/TextImage'
 import { WideImage } from '../../components/WideImage/WideImage'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
+import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
+import { Button } from '../../components/Button/Button'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta
@@ -114,6 +116,11 @@ export const WithSections: Story = {
             Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
             reprehenderit ducimus.
           </p>
+          <ButtonGroup align="start" gap="2">
+            <Button onClick={() => {}} title="Primary Red" />
+            <Button color="dark-grey" onClick={() => {}} title="Dark Grey" />
+            <Button color="grey" onClick={() => {}} title="Light Grey" />
+          </ButtonGroup>
         </WideImage>
 
         <h3>Outside Section H3</h3>

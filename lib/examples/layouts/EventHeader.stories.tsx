@@ -10,7 +10,7 @@ import { Figure } from '../../components/Figure/Figure'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta

@@ -106,14 +106,12 @@ export const WideImageWrapper = ({
 
       {image && isType === 'image' && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
 
-      <div
-        className={`relative z-10 max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-content cu-wideimage-${isType}`}
-      >
+      <div className={`relative z-10 max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-${isType}`}>
         <PageHeader
           header={title}
           as={headerType}
           size={headerType === 'h1' ? 'lg' : 'md'}
-          isWhite={image && isType !== 'light' ? true : false}
+          isWhite={isType !== 'light' ? true : false}
           isCenter
           noUnderline
         >

@@ -8,8 +8,8 @@
   @apply text-white;
 }
 
-.cu-wideimage-content > p {
-  @apply text-base md:text-lg;
+.cu-wideimage {
+  @apply text-center;
 }
 
 .cu-wideimage .cu-buttongroup,

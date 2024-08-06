@@ -25,7 +25,7 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
       }`}
     >
       <nav
-        className={`cu-nav--${navType} cu-nav flex flex-wrap items-center gap-x-8 ${
+        className={`cu-nav--${navType} cu-nav max-w-screen-2xl mx-auto flex flex-wrap items-center gap-x-8 ${
           navType != 'secondary' ? 'sm:flex-nowrap' : ''
         }`}
       >

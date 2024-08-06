@@ -18,12 +18,12 @@ import { Pagination } from '../../components/Pagination/Pagination'
 import { MultiDayCalendar } from '../../components/MultiDayCalendar/MultiDayCalendar'
 
 import { FilterData } from '../../data/FilterData'
-import { NavAsideEventCal } from '../../data/NavData'
+import { NavAsideData } from '../../data/NavData'
 import { EventData } from '../../data/EventData'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta = {
-  title: 'Projects/Events',
+  title: 'Prototypes/Projects',
 }
 
 export default meta
@@ -35,7 +35,7 @@ export const EventsHome: Story = {
       <Nav>
         <Nav.Primary>
           <Nav.Logo title="Events Calendar" link="https://events.carleton.ca" />
-          <Nav.Aside menu={NavAsideEventCal}>
+          <Nav.Aside menu={NavAsideData}>
             <button aria-label="search" className="not-prose">
               <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
             </button>
@@ -49,7 +49,9 @@ export const EventsHome: Story = {
             title="True Leaders Challenge What's Possible"
             headerType="h1"
             isType="image"
+            maxWidth="max"
             image="https://picsum.photos/1600/700"
+            hasWave
           >
             <p>
               True leaders don't just accept challenges. They challenge the status quo. Join us on May 8th for

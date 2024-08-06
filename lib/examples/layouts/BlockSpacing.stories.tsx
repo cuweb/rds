@@ -15,7 +15,7 @@ import { NavDataSingle, NavAsideData } from '../../data/NavData'
 import { NewsData } from '../../data/NewsData'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta
