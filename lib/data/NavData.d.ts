@@ -21,7 +21,6 @@ export declare const NavDataSingle: ({
 export declare const NavAsideData: {
     href: string;
     title: string;
-    buttonColor: string;
 }[];
 export declare const NavAsideEventCal: {
     href: string;

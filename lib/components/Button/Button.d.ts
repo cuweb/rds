@@ -6,8 +6,15 @@ export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
     isSmall?: boolean;
     isFull?: boolean;
     isDisabled?: boolean;
-    title?: string;
+}
+export interface ButtonTitleProps extends ButtonProp {
+    title: string;
     icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
     ariaLabel?: string;
 }
-export declare const Button: ({ color, title, icon, type, isSmall, isFull, isDisabled, ariaLabel, ...rest }: ButtonProp) => import("react/jsx-runtime").JSX.Element;
+export interface ButtonNoTitleProps extends ButtonProp {
+    title?: string;
+    icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
+    ariaLabel: string;
+}
+export declare const Button: ({ color, title, icon, type, isSmall, isFull, isDisabled, ariaLabel, ...rest }: ButtonNoTitleProps | ButtonTitleProps) => import("react/jsx-runtime").JSX.Element;

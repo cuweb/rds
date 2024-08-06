@@ -14,4 +14,12 @@ export declare const imageData: ({
     span?: undefined;
     title?: undefined;
     content?: undefined;
+} | {
+    id: number;
+    image: string;
+    link: string;
+    alt: string;
+    title: string;
+    content: string;
+    span?: undefined;
 })[];

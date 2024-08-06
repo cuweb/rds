@@ -5,24 +5,23 @@ type maxWidthKeys = keyof typeof maxWidthClasses;
 declare const opacityValues: number[];
 export interface WideImageProps {
     children?: React.ReactNode;
+    scrollTo?: React.ReactNode;
     as?: 'section' | 'div';
-    title: string;
+    title?: string;
     image?: string;
     headerType?: 'h1' | 'h2';
     maxWidth?: maxWidthKeys;
     opacity?: (typeof opacityValues)[number];
     focalPointX?: string;
     focalPointY?: string;
-    isType?: 'light' | 'dark' | 'image';
-    hasWave?: boolean;
-    hasScroll?: boolean;
+    isType?: 'light' | 'dark' | 'image' | 'wave';
 }
 export declare const WideImageWrapper: {
-    ({ children, as, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, hasScroll, hasWave, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, scrollTo, as, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const WideImage: {
-    ({ children, as, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, hasScroll, hasWave, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, scrollTo, as, title, image, headerType, maxWidth, opacity, focalPointX, focalPointY, isType, }: WideImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Signup: {

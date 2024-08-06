@@ -23,7 +23,7 @@ export declare const Card: {
         displayName: string;
     };
     IconThumb: {
-        ({ icon, assetPath, }: import('./CardIconThumb').CardIconThumbProps): import("react/jsx-runtime").JSX.Element;
+        ({ icon }: import('./CardIconThumb').CardIconThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     ImageThumb: {

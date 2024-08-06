@@ -17,7 +17,7 @@ export declare const PeopleDataSingle: {
         }[];
     };
 };
-export declare const PeopleData: {
+export declare const PeopleData: ({
     id: number;
     firstName: string;
     lastName: string;
@@ -35,4 +35,22 @@ export declare const PeopleData: {
             slug: string;
         }[];
     };
-}[];
+} | {
+    id: number;
+    firstName: string;
+    lastName: string;
+    link: string;
+    image: string;
+    alt: string;
+    email: string;
+    phone: string;
+    phoneExt: string;
+    tags: {
+        category: {
+            id: number;
+            name: string;
+            slug: string;
+        }[];
+    };
+    jobTitle?: undefined;
+})[];

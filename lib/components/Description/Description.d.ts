@@ -14,7 +14,7 @@ export declare const Description: {
         displayName: string;
     };
     Meta: {
-        ({ term, children, useColumns }: import('./DescriptionMeta').DescriptionMetaProps): import("react/jsx-runtime").JSX.Element;
+        ({ term, children, hasBorder, useColumns, isSmall }: import('./DescriptionMeta').DescriptionMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
