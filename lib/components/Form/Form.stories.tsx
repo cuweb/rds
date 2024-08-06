@@ -661,3 +661,49 @@ export const AutoSuggest: Story = () => {
     </Form>
   )
 }
+
+
+
+export const PlacesAutoComplete: Story = () => {
+  type IPlacesAutoComplete = {
+    location: string
+  }
+
+  const placesAutoCompleteInitialValues = {
+    location: '',
+  }
+
+  const placesAutoCompleteValidationSchema = Yup.object().shape({
+    location: Yup.string(),
+  })
+
+  const onSubmit = async (values: IPlacesAutoComplete, actions: FormikHelpers<IPlacesAutoComplete>) => {
+    actions.setSubmitting(true)
+    alert(JSON.stringify(values, null, 2))
+    await sleep(1000)
+    actions.setSubmitting(false)
+  }
+
+  const formikProps = useFormik({
+    initialValues: placesAutoCompleteInitialValues,
+    validationSchema: placesAutoCompleteValidationSchema,
+    onSubmit,
+  })
+
+  return (
+    <Form formikProps={formikProps}>
+      <Form.FieldGroup>
+        <Form.FieldControl
+          control="placesAutoComplete"
+          label="Location Picker"
+          name="location"
+          placeholder="Placeholder"
+          disabled={formikProps.isSubmitting}
+        />
+      </Form.FieldGroup>
+      <ButtonGroup>
+        <Button title="Submit" type="submit" />
+      </ButtonGroup>
+    </Form>
+  )
+}
