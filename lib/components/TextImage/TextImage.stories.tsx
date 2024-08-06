@@ -2,6 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { TextImage } from './TextImage'
 import { Button } from '../Button/Button'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 const meta: Meta<typeof TextImage> = {
   title: 'Components/Text Image',
@@ -32,10 +33,10 @@ export const Primary: Story = {
             reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
             in. Praesent quis ligula quis nulla malesuada tempor.
           </p>
-          <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+          <ButtonGroup>
             <Button title="Primary" />
             <Button title="Secondary" color="grey" />
-          </div>
+          </ButtonGroup>
         </TextImage.Content>
       </TextImage>
     )
@@ -59,10 +60,10 @@ export const HeaderOne: Story = {
           reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
           in. Praesent quis ligula quis nulla malesuada tempor.
         </p>
-        <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+        <ButtonGroup>
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
-        </div>
+        </ButtonGroup>
       </TextImage.Content>
     </TextImage>
   ),
@@ -86,10 +87,10 @@ export const ImageLeft: Story = {
           reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
           in. Praesent quis ligula quis nulla malesuada tempor.
         </p>
-        <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+        <ButtonGroup>
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
-        </div>
+        </ButtonGroup>
       </TextImage.Content>
     </TextImage>
   ),
@@ -118,10 +119,10 @@ export const NoImage: Story = {
           reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
           in. Praesent quis ligula quis nulla malesuada tempor.
         </p>
-        <div className="flex flex-wrap gap-4 mt-6 buttons md:gap-6 md:mt-10">
+        <ButtonGroup>
           <Button title="Primary" />
           <Button title="Secondary" color="grey" />
-        </div>
+        </ButtonGroup>
       </TextImage.Content>
     </TextImage>
   ),

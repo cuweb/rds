@@ -17,7 +17,8 @@ type Story = StoryObj<typeof Badge>
 
 export const Primary: Story = {
   args: {
-    children: 'Badge Example',
+    text: 'Badge Example',
+    link: '',
     color: 'grey',
     noWordBreak: false,
   },

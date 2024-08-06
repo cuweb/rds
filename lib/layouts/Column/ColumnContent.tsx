@@ -5,7 +5,7 @@ export interface ColumnContentProps {
 }
 
 export const ColumnContent = ({ children }: ColumnContentProps) => {
-  return <div className="cu-prose cu-column-content">{children}</div>
+  return <div className="cu-column-content">{children}</div>
 }
 
 ColumnContent.displayName = 'Column.Content'
