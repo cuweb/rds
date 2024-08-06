@@ -13,5 +13,5 @@ export interface ModalProps {
     alignTop?: boolean;
     setIsOpen: (k: boolean) => void;
 }
-export declare const Modal: ({ children, content, isOpen, setIsOpen, maxWidth, noProse, alignTop, ariaLabel, ariaDescription, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Modal: ({ children, content, isOpen, maxWidth, noProse, alignTop, ariaLabel, ariaDescription, setIsOpen, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
 export {};

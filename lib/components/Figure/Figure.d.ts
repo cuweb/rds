@@ -1,10 +1,13 @@
 import { default as React } from '../../../node_modules/react';
+import { figureSizeClasses, figureAlignClasses } from '../../utils/propClasses';
 
+type figureSizeKeys = keyof typeof figureSizeClasses;
+type figureAlignKeys = keyof typeof figureAlignClasses;
 export interface FigureProps {
     children: React.ReactNode;
     caption?: string;
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'full';
-    align?: 'left' | 'right' | 'center' | 'none';
+    size?: figureSizeKeys;
+    align?: figureAlignKeys;
     isRound?: boolean;
     noMobile?: boolean;
 }
@@ -21,3 +24,4 @@ export declare const Figure: {
         displayName: string;
     };
 };
+export {};

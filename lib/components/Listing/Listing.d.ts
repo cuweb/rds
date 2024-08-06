@@ -32,7 +32,7 @@ export declare const Listing: {
         displayName: string;
     };
     IconThumb: {
-        ({ icon }: import('./ListingIconThumb').ListingIconThumbProps): import("react/jsx-runtime").JSX.Element;
+        ({ icon, assetPath }: import('./ListingIconThumb').ListingIconThumbProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Initials: {

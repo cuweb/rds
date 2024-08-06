@@ -1,7 +1,8 @@
 export interface CardIconThumbProps {
     icon?: string;
+    assetPath?: string;
 }
 export declare const CardIconThumb: {
-    ({ icon }: CardIconThumbProps): import("react/jsx-runtime").JSX.Element;
+    ({ icon, assetPath }: CardIconThumbProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
