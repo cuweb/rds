@@ -10,18 +10,16 @@ export interface FigureProps {
   caption?: string
   size?: figureSizeKeys
   align?: figureAlignKeys
-  isRound?: boolean
   noMobile?: boolean
 }
 
-export const FigureWrapper = ({ children, caption, isRound, noMobile, size = 'full', align = 'none' }: FigureProps) => {
-  const roundStyle = isRound ? 'rounded-full' : 'rounded-lg'
+export const FigureWrapper = ({ children, caption, noMobile, size = 'full', align = 'none' }: FigureProps) => {
   const hideMobile = noMobile ? 'hidden md:block' : 'block'
 
   return (
     <figure className={`cu-figure cu-component ${hideMobile}`}>
       <div
-        className={`not-prose overflow-hidden bg-white shadow-lg ${roundStyle} ${figureSizeClasses[size]} ${figureAlignClasses[align]}`}
+        className={`not-prose overflow-hidden bg-white shadow-lg ${figureSizeClasses[size]} ${figureAlignClasses[align]}`}
       >
         {children}
         {caption && <figcaption className="px-5 py-4 text-base italic text-cu-black-700">{caption}</figcaption>}

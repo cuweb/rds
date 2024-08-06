@@ -23,12 +23,11 @@ export const Primary: Story = {
     caption: '',
     size: 'full',
     align: 'none',
-    isRound: false,
     noMobile: false,
   },
   render: (args) => {
     return (
-      <>
+      <Section>
         <Figure {...args}>
           <img
             src="https://picsum.photos/id/15/1600/900"
@@ -55,7 +54,7 @@ export const Primary: Story = {
             </p>
           </div>
         )}
-      </>
+      </Section>
     )
   },
 }
@@ -78,45 +77,6 @@ export const WithCaption: Story = {
               alt="Sample for figure stories file"
               width="400"
               height="266"
-            />
-          </Figure>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra in,
-            egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada metus,
-            et tristique dolor. Suspendisse vestibulum hendrerit. Aliquam blandit tellus odio, nec commodo est efficitur
-            sit amet. Proin molestie, risus in mollis laoreet, lectus dui egestas augue, eu maximus velit dui sed quam.
-            Pellentesque iaculis suscipit libero gravida tempus. Phasellus in egestas sapien ac libero.
-          </p>
-          <p>
-            Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis laoreet,
-            lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero gravida
-            tempus. Phasellus in egestas sapien ac libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Aliquam augue turpis, feugiat vitae viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et
-            semper urna aliquam quis. Duis sed malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
-          </p>
-        </Section>
-      </Main>
-    )
-  },
-}
-
-export const Circular: Story = {
-  args: {
-    ...Primary.args,
-    size: 'md',
-    align: 'left',
-    isRound: true,
-  },
-  render: (args) => {
-    return (
-      <Main>
-        <Section>
-          <Figure {...args}>
-            <img
-              src="https://picsum.photos/id/15/400/400"
-              alt="Sample for figure stories file"
-              width="400"
-              height="400"
             />
           </Figure>
           <p>
