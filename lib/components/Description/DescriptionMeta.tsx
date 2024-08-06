@@ -7,11 +7,10 @@ export interface DescriptionMetaProps {
 }
 
 export const DescriptionMeta = ({ term, children, useColumns }: DescriptionMetaProps) => {
-  // const topBorder = hasBorder ? 'first:border-t' : 'first:pt-0'
   const columns = useColumns ? 'md:grid-cols-left-260 gap-2 md:gap-6' : 'grid-row gap-2'
 
   return (
-    <div className={`${styles.base} ${styles.baseMeta} ${columns}`}>
+    <div className={`cu-prose ${styles.base} ${styles.baseMeta} ${columns}`}>
       <dt className={`${styles.term}`}>{term}</dt>
       <dd className={`${styles.desc}`}>{children}</dd>
     </div>

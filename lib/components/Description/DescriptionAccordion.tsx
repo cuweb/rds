@@ -1,6 +1,5 @@
 import { styles } from './Description.Styles'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
-import { proseStyles } from '../../utils/globalClasses'
 import { toggleAccordion } from './script'
 
 export interface DescriptionAccordionProps {
@@ -14,7 +13,7 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
   return (
     <>
       <div className={`accordion ${styles.base} first:border-t`}>
-        <dt className={`${styles.term} ${proseStyles.base}`}>
+        <dt className={`${styles.term} cu-prose`}>
           <button
             className="flex items-center w-full accordion__button"
             aria-expanded="false"

@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
-import { proseStyles } from '../../utils/globalClasses'
 import { sanitizeContent } from '../../helpers/functions'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
@@ -29,7 +28,7 @@ export const Modal = ({
   setIsOpen,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
-  const useProse = noProse ? '' : proseStyles.base
+  const useProse = noProse ? '' : 'cu-prose'
 
   useEffect(() => {
     if (modalRef.current?.open && !isOpen) {

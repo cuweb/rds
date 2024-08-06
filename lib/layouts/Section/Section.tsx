@@ -1,6 +1,6 @@
 import React from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
-import { proseStyles, layoutSpacing } from '../../utils/globalClasses'
+import { layoutSpacing } from '../../utils/globalClasses'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
 
@@ -16,7 +16,7 @@ export const Section = ({ children, as = 'section', noProse = false, isGrey, max
   const SectionComponent = as
   const childWidth = maxWidth ? `cu-section-${maxWidth}` : ''
   const bgStyles = isGrey ? layoutSpacing.containerGrey : layoutSpacing.containerWhite
-  const useProse = noProse ? '' : proseStyles.base
+  const useProse = noProse ? '' : 'cu-prose'
 
   return (
     <SectionComponent className={`cu-section ${childWidth} not-contained ${bgStyles} ${useProse}`}>

@@ -1,3 +1,10 @@
+/* TODO: rename cu-component to cu-component or cu-component */
+
+/* 
+* Max Width for section size props
+* Targets children of section and apply max width
+*/
+
 .cu-section-2xl > :not(.not-contained) {
   @apply max-w-2xl mx-auto;
 }

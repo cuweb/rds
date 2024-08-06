@@ -1,6 +1,6 @@
 'use client'
 import { Field } from 'formik'
-import { fieldStyles } from '../../../styles/form'
+import { fieldStyles } from '../form.Styles'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 import { Ref } from 'react'
