@@ -5,7 +5,10 @@ export interface CardIconThumbProps {
   assetPath?: string
 }
 
-export const CardIconThumb = ({ icon, assetPath = './assets/font-awesome/' }: CardIconThumbProps) => {
+export const CardIconThumb = ({
+  icon,
+  assetPath = 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/',
+}: CardIconThumbProps) => {
   const [svgContent, setSvgContent] = useState<string | null>(null)
 
   useEffect(() => {

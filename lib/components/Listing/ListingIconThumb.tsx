@@ -5,7 +5,10 @@ export interface ListingIconThumbProps {
   assetPath?: string
 }
 
-export const ListingIconThumb = ({ icon, assetPath = './assets/font-awesome/' }: ListingIconThumbProps) => {
+export const ListingIconThumb = ({
+  icon,
+  assetPath = 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/',
+}: ListingIconThumbProps) => {
   const [svgContent, setSvgContent] = useState<string | null>(null)
 
   useEffect(() => {
