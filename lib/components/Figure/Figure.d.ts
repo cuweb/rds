@@ -8,15 +8,14 @@ export interface FigureProps {
     caption?: string;
     size?: figureSizeKeys;
     align?: figureAlignKeys;
-    isRound?: boolean;
     noMobile?: boolean;
 }
 export declare const FigureWrapper: {
-    ({ children, caption, isRound, noMobile, size, align }: FigureProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, caption, noMobile, size, align }: FigureProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Figure: {
-    ({ children, caption, isRound, noMobile, size, align }: FigureProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, caption, noMobile, size, align }: FigureProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Video: {
