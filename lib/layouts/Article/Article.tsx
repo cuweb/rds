@@ -8,8 +8,8 @@ export interface ArticleProps {
 export const Article = ({ children, content }: ArticleProps) => {
   return (
     <>
-      {content && <article className="cu-article cu-prose" dangerouslySetInnerHTML={{ __html: content }} />}
-      {!content && <article className="cu-article cu-prose">{children}</article>}
+      {content && <article className="cu-article" dangerouslySetInnerHTML={{ __html: content }} />}
+      {!content && <article className="cu-article">{children}</article>}
     </>
   )
 }

@@ -13,7 +13,7 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
   return (
     <>
       <div className={`accordion ${styles.base} first:border-t`}>
-        <dt className={`${styles.term} cu-prose`}>
+        <dt className={`${styles.term}`}>
           <button
             className="flex items-center w-full accordion__button"
             aria-expanded="false"

@@ -10,7 +10,7 @@ export const DescriptionMeta = ({ term, children, useColumns }: DescriptionMetaP
   const columns = useColumns ? 'md:grid-cols-left-260 gap-2 md:gap-6' : 'grid-row gap-2'
 
   return (
-    <div className={`cu-prose ${styles.base} ${styles.baseMeta} ${columns}`}>
+    <div className={`${styles.base} ${styles.baseMeta} ${columns}`}>
       <dt className={`${styles.term}`}>{term}</dt>
       <dd className={`${styles.desc}`}>{children}</dd>
     </div>
