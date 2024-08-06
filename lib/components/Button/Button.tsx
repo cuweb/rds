@@ -7,9 +7,16 @@ export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
   isSmall?: boolean
   isFull?: boolean
   isDisabled?: boolean
-  title?: string
+}
+export interface ButtonTitleProps extends ButtonProp {
+  title: string
   icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
   ariaLabel?: string
+}
+export interface ButtonNoTitleProps extends ButtonProp {
+  title?: string
+  icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  ariaLabel: string
 }
 
 export const Button = ({
@@ -22,7 +29,7 @@ export const Button = ({
   isDisabled,
   ariaLabel = 'aria-label',
   ...rest
-}: ButtonProp) => {
+}: ButtonNoTitleProps | ButtonTitleProps) => {
   const disabledButton = isDisabled ? 'cu-button--disabled' : `cu-button--${color}`
   const fullStyles = isFull ? 'cu-button--full' : ''
   const buttonSmall = isSmall ? 'cu-button--small' : ''
