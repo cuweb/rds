@@ -29,6 +29,7 @@ export const Primary: Story = {
     focalPointY: '50',
     isType: 'light',
     hasWave: false,
+    hasScroll: false,
   },
   render: (args) => {
     return (

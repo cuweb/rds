@@ -9,7 +9,6 @@ const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
-  scrollTo?: React.ReactNode
   as?: 'section' | 'div'
   title: string
   image?: string
@@ -20,6 +19,7 @@ export interface WideImageProps {
   focalPointY?: string
   isType?: 'light' | 'dark' | 'image'
   hasWave?: boolean
+  hasScroll?: boolean
 }
 
 const getInlineStyle = (image: string = '', focalPointX: string, focalPointY: string) => ({
@@ -46,7 +46,6 @@ const getImageStyles = (isType: string, image: string | undefined) => {
 
 export const WideImageWrapper = ({
   children,
-  scrollTo,
   as = 'div',
   title,
   image,
@@ -56,6 +55,7 @@ export const WideImageWrapper = ({
   focalPointX = '50',
   focalPointY = '50',
   isType = 'light',
+  hasScroll,
   hasWave,
 }: WideImageProps) => {
   const WideImageComponent = as
@@ -118,7 +118,7 @@ export const WideImageWrapper = ({
           {children}
         </PageHeader>
 
-        {scrollTo && (
+        {hasScroll && (
           <div className="mt-2 flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
