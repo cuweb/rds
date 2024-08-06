@@ -30,39 +30,21 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
   }
 
   const AlertTypes = {
-    success: {
-      icon: CheckCircleIcon,
-      alertHeading: 'text-green-700',
-      background: 'bg-green-50',
-    },
-    warning: {
-      icon: ShieldExclamationIcon,
-      alertHeading: 'text-yellow-700',
-      background: 'bg-yellow-50',
-    },
-    error: {
-      icon: ExclamationCircleIcon,
-      alertHeading: 'text-cu-red-700',
-      background: 'bg-cu-red-50',
-    },
-    info: {
-      icon: InformationCircleIcon,
-      alertHeading: 'text-blue-700',
-      background: 'bg-blue-50',
-    },
+    success: CheckCircleIcon,
+    warning: ShieldExclamationIcon,
+    error: ExclamationCircleIcon,
+    info: InformationCircleIcon,
   }
 
   return (
-    <div
-      className={`cu-alert cu-alert--${type} cu-component not-prose flex rounded-md p-4 ${AlertTypes[type].background}`}
-    >
-      {React.createElement(AlertTypes[type].icon, {
-        className: `${AlertSizes[size].alertIconSize} ${AlertTypes[type].alertHeading}`,
+    <div className={`cu-alert cu-alert--${type} cu-component not-prose flex rounded-md p-4`}>
+      {React.createElement(AlertTypes[type], {
+        className: `${AlertSizes[size].alertIconSize}`,
         'aria-hidden': 'true',
       })}
       <div className="ml-3 w-full">
-        <p className={`${AlertTypes[type].alertHeading} ${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
-        {content && <p className="text-sm md:text-base cu-black-600">{content}</p>}
+        <p className={`${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
+        {content && <p className="text-sm md:text-base text-cu-black-900">{content}</p>}
       </div>
     </div>
   )
