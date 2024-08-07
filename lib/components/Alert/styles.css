@@ -6,10 +6,6 @@
   @apply font-semibold;
 }
 
-/* Sizes */
-
-.cu-alert
-
 /* Success */
 
 .cu-alert--success {
