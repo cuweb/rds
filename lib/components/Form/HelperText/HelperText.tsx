@@ -1,4 +1,4 @@
-import { textStyles } from '../../../styles/form'
+import { textStyles } from '../form.Styles'
 
 export interface HelperTextProps {
   children: string

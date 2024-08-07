@@ -20,6 +20,7 @@ export const gridColumnClasses = {
 
 export const gridGapClasses = {
   '0': 'gap-0',
+  '2': 'gap-1 md:gap-2',
   '5': 'gap-3 md:gap-5',
   '10': 'gap-6 md:gap-10',
 }
@@ -44,12 +45,50 @@ export const rowSpanClasses = {
   '4': 'row-span-4',
 }
 
+export const headerSizeClasses = {
+  xs: `text-lg md:text-xl lg:text-2xl lg:leading-[2rem]`,
+  sm: `text-xl md:text-2xl lg:text-3xl lg:leading-[2.5rem]`,
+  md: `text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]`,
+  lg: `text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem]`,
+}
+
 export const textColorClasses = {
   white: 'text-white',
   red: 'text-cu-red',
   grey: 'text-cu-black-50',
   darkGrey: 'text-cu-black-600',
   black: 'text-cu-black-900',
+}
+
+export const justifyContentClasses = {
+  start: 'justify-start',
+  end: 'justify-end',
+  center: 'justify-center',
+}
+
+export const figureSizeClasses = {
+  xs: `max-w-[320px]`,
+  sm: `max-w-[440px]`,
+  md: `max-w-[512px]`,
+  lg: `max-w-3xl`,
+  full: `max-w-full`,
+}
+
+export const figureAlignClasses = {
+  left: `lg:float-left mb-6 lg:mr-12`,
+  right: `lg:float-right mb-6 ml-0 lg:ml-12`,
+  center: `mx-auto`,
+  none: ``,
+}
+
+export const bgOpacityClasses = {
+  70: 'bg-opacity-[.70]',
+  75: 'bg-opacity-[.75]',
+  80: 'bg-opacity-[.80]',
+  85: 'bg-opacity-[.85]',
+  90: 'bg-opacity-[.90]',
+  95: 'bg-opacity-[.95]',
+  100: 'bg-opacity-[1]',
 }
 
 export const iconSizeClasses = {

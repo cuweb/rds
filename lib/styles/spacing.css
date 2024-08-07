@@ -1,8 +1,5 @@
-/* TODO: rename cu-component to cu-component or cu-component */
-
 /* 
-* Max Width for section size props
-* Targets children of section and apply max width
+* Section children max width
 */
 
 .cu-section-2xl > :not(.not-contained) {
@@ -30,16 +27,21 @@
 }
 
 /* 
-* Consecutive section spacing
+* Consecutive component spacing
 */
 
 .cu-section + .cu-section,
-.cu-section + .cu-column {
+.cu-section + .cu-column,
+.cu-component + .cu-component {
   @apply mt-6 md:mt-12;
 }
 
 .cu-section.bg-white + .cu-column {
   @apply mt-6 md:mt-6;
+}
+
+.cu-section.bg-cu-black-50 {
+  @apply max-w-screen-2xl;
 }
 
 :not(.cu-wideimage).cu-section.bg-cu-black-50 + :not(.cu-wideimage).cu-section.bg-cu-black-50 {
@@ -74,12 +76,4 @@
 .cu-aside > *:last-child,
 .cu-aside .sticky > *:last-child {
   @apply mb-0;
-}
-
-/* 
-* Consecutive individual components
-*/
-
-.cu-component + .cu-component {
-  @apply mt-6 md:mt-8;
 }

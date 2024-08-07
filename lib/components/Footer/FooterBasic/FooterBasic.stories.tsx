@@ -14,5 +14,5 @@ const meta: Meta<typeof FooterBasic> = {
 export default meta
 type Story = StoryObj<typeof FooterBasic>
 
-export const Default: Story = {}
-Default.args = {}
+export const Primary: Story = {}
+Primary.args = {}

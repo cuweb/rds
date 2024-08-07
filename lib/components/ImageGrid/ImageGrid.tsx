@@ -1,4 +1,4 @@
-import { ImageGridItem } from './ImageGridItem'
+import { ImageGridImage } from './ImageGridImage'
 import { gridColumnClasses, gridGapClasses, maxWidthClasses } from '../../utils/propClasses'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
@@ -26,5 +26,7 @@ export const ImageGridWrapper = ({ children, maxWidth = '5xl', gridGap = '5', co
 }
 
 export const ImageGrid = Object.assign(ImageGridWrapper, {
-  Item: ImageGridItem,
+  Image: ImageGridImage,
 })
+
+ImageGridWrapper.displayName = 'ImageGrid'

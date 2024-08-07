@@ -18,74 +18,49 @@ export default meta
 
 type Story = StoryObj<typeof ImageGrid>
 
-export const Default: Story = {
-  render: (args) => (
-    <ImageGrid {...args}>
-      {imageData.slice(0, 3).map(({ id, link, title, content, image, alt }) => (
-        <ImageGrid.Item key={id} title={title} content={content} link={link}>
-          <img src={image} alt={alt} />
-        </ImageGrid.Item>
-      ))}
-    </ImageGrid>
-  ),
-}
-
-export const FourColumns: Story = {
+export const Primary: Story = {
   args: {
-    cols: '4',
-  } as ImageGridProps,
-  render: (args) => (
-    <ImageGrid {...args}>
-      {imageData.slice(0, 4).map(({ id, link, title, content, image, alt }) => (
-        <ImageGrid.Item key={id} title={title} content={content} link={link}>
-          <img src={image} alt={alt} />
-        </ImageGrid.Item>
-      ))}
-    </ImageGrid>
-  ),
-}
+    maxWidth: '5xl',
+    gridGap: '2',
+    cols: '3',
+  },
+  render: (args) => {
+    const { cols } = args
+    const setCols = cols !== '1/3' && cols !== '2/3' ? Number(cols) : 1
 
-export const TwoColumns: Story = {
-  args: {
-    cols: '2',
-  } as ImageGridProps,
-  render: (args) => (
-    <ImageGrid {...args}>
-      {imageData.slice(0, 2).map(({ id, link, title, content, image, alt }) => (
-        <ImageGrid.Item key={id} title={title} content={content} link={link}>
-          <img src={image} alt={alt} />
-        </ImageGrid.Item>
-      ))}
-    </ImageGrid>
-  ),
+    return (
+      <ImageGrid {...args}>
+        {imageData.slice(0, setCols).map(({ id, image, alt }) => (
+          <ImageGrid.Image key={id}>
+            <img src={image} alt={alt} />
+          </ImageGrid.Image>
+        ))}
+      </ImageGrid>
+    )
+  },
 }
 
 export const ColSpan2: Story = {
   args: {
+    ...Primary.args,
     cols: '4',
-  } as ImageGridProps,
+  },
   render: (args) => (
     <ImageGrid {...args}>
-      <ImageGrid.Item
+      <ImageGrid.Image
         colSpan="2"
         rowSpan="2"
-        title="Ottawa Bluefest 30"
+        title="Overlay Image Title"
         content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
+        link="https://github.com/cuweb/rds"
       >
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
+        <img src="https://picsum.photos/id/337/600/400" alt="test" />
+      </ImageGrid.Image>
+      {imageData.slice(0, 4).map(({ id, image, alt }) => (
+        <ImageGrid.Image key={id}>
+          <img src={image} alt={alt} />
+        </ImageGrid.Image>
+      ))}
     </ImageGrid>
   ),
 }
@@ -96,32 +71,24 @@ export const ColSpan3: Story = {
   } as ImageGridProps,
   render: (args) => (
     <ImageGrid {...args}>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item
+      {imageData.slice(0, 1).map(({ id, image, alt }) => (
+        <ImageGrid.Image key={id}>
+          <img src={image} alt={alt} />
+        </ImageGrid.Image>
+      ))}
+      <ImageGrid.Image
         colSpan="3"
         rowSpan="2"
-        title="Ottawa Bluefest 30"
+        title="Overlay Image Title"
         content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
       >
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
+        <img src="https://picsum.photos/id/74/1200/800" alt="test" />
+      </ImageGrid.Image>
+      {imageData.slice(1, 6).map(({ id, image, alt }) => (
+        <ImageGrid.Image key={id}>
+          <img src={image} alt={alt} />
+        </ImageGrid.Image>
+      ))}
     </ImageGrid>
   ),
 }
@@ -132,34 +99,29 @@ export const StackedTwoFour: Story = {
   } as ImageGridProps,
   render: (args) => (
     <ImageGrid {...args}>
-      <ImageGrid.Item
+      <ImageGrid.Image
         colSpan="2"
         rowSpan="2"
-        title="Ottawa Bluefest 30"
+        title="Overlay Image Title"
         content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
+        link="https://github.com/cuweb/rds"
       >
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item
+        <img src="https://picsum.photos/id/143/600/400" alt="test" />
+      </ImageGrid.Image>
+      <ImageGrid.Image
         colSpan="2"
         rowSpan="2"
         title="Ottawa Tulip Festival"
         content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
+        link="https://github.com/cuweb/rds"
       >
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
-      <ImageGrid.Item>
-        <img src="./sample-imgs/news-img.jpg" alt="test" />
-      </ImageGrid.Item>
+        <img src="https://picsum.photos/id/572/600/400" alt="test" />
+      </ImageGrid.Image>
+      {imageData.slice(2, 6).map(({ id, image, alt }) => (
+        <ImageGrid.Image key={id}>
+          <img src={image} alt={alt} />
+        </ImageGrid.Image>
+      ))}
     </ImageGrid>
   ),
 }

@@ -31,9 +31,9 @@ const userNoImage = {
 
 type Story = StoryObj<typeof Avatar>
 
-export const Default: Story = {}
+export const Primary: Story = {}
 
-Default.args = {
+Primary.args = {
   user: { ...user },
   onClick: () => {
     alert('I am an alert ')

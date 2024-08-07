@@ -19,41 +19,37 @@ export default meta
 
 type Story = StoryObj<typeof Dialog>
 
-export const Default: Story = () => {
-  const [DialogOpen, setDialogOpen] = useState(false)
+export const Primary: Story = {
+  args: {
+    title: 'Click to Open Dialog',
+    description: 'Description inside the dialog box',
+  },
+  render: (args) => {
+    const [DialogOpen, setDialogOpen] = useState(false)
 
-  return (
-    <>
-      <Button id="modalButton" title=" Click to Open Dialog" onClick={() => setDialogOpen(true)} />
-      <Dialog
-        title="Dialog Title"
-        description={'Description inside the dialog box'}
-        isOpen={DialogOpen}
-        setIsOpen={setDialogOpen}
-      />
-    </>
-  )
+    return (
+      <>
+        <Button id="modalButton" title="Click to Open Dialog" onClick={() => setDialogOpen(true)} />
+        <Dialog {...args} isOpen={DialogOpen} setIsOpen={setDialogOpen} />
+      </>
+    )
+  },
 }
 
-Default.storyName = 'Default Dialog'
+export const ConfirmButton: Story = {
+  args: {
+    ...Primary.args,
+  },
+  render: (args) => {
+    const [DialogOpen, setDialogOpen] = useState(false)
 
-export const ConfirmButton: Story = () => {
-  const [DialogOpen, setDialogOpen] = useState(false)
-
-  return (
-    <>
-      <Button id="modalButton" title=" Click to Open Dialog" onClick={() => setDialogOpen(true)} />
-      <Dialog
-        title="Dialog Title"
-        description={'Description inside the dialog box'}
-        isOpen={DialogOpen}
-        setIsOpen={setDialogOpen}
-      >
-        <Button title="Confirm" isSmall />
-      </Dialog>
-    </>
-  )
+    return (
+      <>
+        <Button id="modalButton" title="Click to Open Dialog" onClick={() => setDialogOpen(true)} />
+        <Dialog {...args} isOpen={DialogOpen} setIsOpen={setDialogOpen}>
+          <Button title="Confirm" isSmall />
+        </Dialog>
+      </>
+    )
+  },
 }
-
-Default.storyName = 'Default Dialog'
-ConfirmButton.storyName = 'With Confirm Button'

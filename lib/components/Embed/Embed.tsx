@@ -6,7 +6,6 @@ import { EmbedYouTube } from './Embed.YouTube'
 import { EmbedVimeo } from './Embed.Vimeo'
 import { EmbedTED } from './Embed.TED'
 import { maxWidthClasses } from '../../utils/propClasses'
-import { styles } from './Embed.Styles'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
 
@@ -18,7 +17,7 @@ export interface EmbedProps {
 export const EmbedWrapper = ({ children, maxWidth = '5xl' }: EmbedProps) => {
   return (
     <figure className={`cu-embed cu-component not-contained mx-auto ${maxWidthClasses[maxWidth]}`}>
-      <div className={`${styles.base}`}>{children}</div>
+      <div className="relative w-full pb-[56.25%] overflow-hidden border border-cu-black-100">{children}</div>
     </figure>
   )
 }

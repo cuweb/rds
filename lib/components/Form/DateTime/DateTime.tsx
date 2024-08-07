@@ -1,6 +1,6 @@
 import { useField } from 'formik'
 import DatePicker from 'react-datepicker'
-import { fieldStyles } from '../../../styles/form'
+import { fieldStyles } from '../form.Styles'
 import 'react-datepicker/dist/react-datepicker.css'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'

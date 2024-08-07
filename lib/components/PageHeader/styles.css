@@ -1,0 +1,3 @@
+.cu-pageheader--center .cu-buttongroup {
+  @apply justify-center;
+}
