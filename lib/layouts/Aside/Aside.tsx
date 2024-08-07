@@ -8,7 +8,7 @@ export interface AsideProps {
 
 export const Aside = ({ children, isSticky, topSpace = 0 }: AsideProps) => {
   return (
-    <aside className="relative cu-aside">
+    <aside className="relative cu-aside cu-prose">
       {isSticky ? (
         <div className="sticky" style={{ top: `${topSpace}px` }}>
           {children}

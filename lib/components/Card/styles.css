@@ -73,3 +73,9 @@
 .cu-card-button-white.cu-card-button-outline a {
   @apply border border-white text-cu-black-800 hover:bg-white hover:text-cu-red;
 }
+
+/* Icon SVG Fill Color */
+
+.cu-icon-red svg {
+  @apply fill-cu-red w-auto h-full;
+}

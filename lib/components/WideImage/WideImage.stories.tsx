@@ -17,140 +17,28 @@ const meta: Meta<typeof WideImage> = {
 export default meta
 type Story = StoryObj<typeof WideImage>
 
-export const Default: Story = {}
-
-Default.args = {
-  title: 'Wide image default',
-}
-
-export const WithButtons: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" color="dark-grey" />
-      </ButtonGroup>
-    </WideImage>
-  ),
-}
-WithButtons.args = { ...Default.args, title: 'Wide image with buttons' }
-
-export const BgDark: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" color="grey" />
-      </ButtonGroup>
-    </WideImage>
-  ),
-}
-BgDark.args = { ...Default.args, title: 'Wide image with dark bg', isType: 'dark' }
-
-export const BgImage: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" color="grey" />
-      </ButtonGroup>
-    </WideImage>
-  ),
-}
-BgImage.args = {
-  ...Default.args,
-  title: 'Wide image with bg image',
-  isType: 'image',
-  image: 'https://picsum.photos/1600/700',
-}
-
-export const Wave: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>Author Name Goes Here</p>
-      <p>Add a Photo Credit</p>
-    </WideImage>
-  ),
-}
-Wave.args = {
-  ...Default.args,
-  title: 'Wide image with bg image',
-  headerType: 'h1',
-  isType: 'wave',
-  image: 'https://picsum.photos/1600/700',
-}
-
-export const ScrollTo: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>Author Name Goes Here</p>
-      <p>Add a Photo Credit</p>
-    </WideImage>
-  ),
-}
-ScrollTo.args = {
-  ...Default.args,
-  scrollTo: true,
-  title: 'Wide image with bg image',
-  isType: 'wave',
-  image: 'https://picsum.photos/1600/700',
-}
-
-export const SignupLight: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-      <WideImage.Signup />
-    </WideImage>
-  ),
-}
-SignupLight.args = {
-  ...Default.args,
-  title: 'Subscribe to Our Newsletter',
-}
-
-export const SignupDark: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-      <WideImage.Signup />
-    </WideImage>
-  ),
-}
-SignupDark.args = {
-  ...Default.args,
-  title: 'Subscribe to Our Newsletter',
-  isType: 'dark',
-}
-
-export const SignupImage: Story = {
-  render: (args) => (
-    <WideImage {...args}>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-      <WideImage.Signup />
-    </WideImage>
-  ),
-}
-SignupImage.args = {
-  ...Default.args,
-  title: 'Subscribe to Our Newsletter',
-  isType: 'image',
-  image: 'https://picsum.photos/1600/700',
+export const Primary: Story = {
+  args: {
+    as: 'section',
+    title: 'Wide Image',
+    image: 'https://picsum.photos/id/381/600/400',
+    headerType: 'h1',
+    maxWidth: '7xl',
+    opacity: 60,
+    focalPointX: '50',
+    focalPointY: '50',
+    isType: 'light',
+    hasWave: false,
+    hasScroll: false,
+  },
+  render: (args) => {
+    return (
+      <WideImage {...args}>
+        <ButtonGroup>
+          <Button title="Apply Now" />
+          <Button title="Request Information" color="dark-grey" />
+        </ButtonGroup>
+      </WideImage>
+    )
+  },
 }

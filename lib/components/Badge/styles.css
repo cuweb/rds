@@ -1,0 +1,23 @@
+.cu-badge--grey {
+  @apply bg-cu-black-50 text-cu-black-800;
+}
+
+.cu-badge--green {
+  @apply bg-green-50 text-green-800;
+}
+
+.cu-badge--red {
+  @apply bg-red-50 text-red-800;
+}
+
+.cu-badge--yellow {
+  @apply bg-yellow-50 text-yellow-800;
+}
+
+.cu-badge--blue {
+  @apply bg-blue-50 text-blue-800;
+}
+
+.cu-badge--purple {
+  @apply bg-purple-50 text-purple-800;
+}

@@ -17,10 +17,11 @@ const meta: Meta<typeof Filter> = {
 export default meta
 type Story = StoryObj<typeof Filter>
 
-export const Default: Story = {
-  render: () => <Filter filters={FilterData.filters} callback={() => undefined} />,
-}
-
-export const WithoutSorting: Story = {
-  render: () => <Filter filters={FilterData.filters} callback={() => undefined} sortOptions={FilterData.sortOptions} />,
+export const Primary: Story = {
+  args: {
+    callback: () => undefined,
+    filters: FilterData.filters,
+    sortOptions: FilterData.sortOptions,
+  },
+  render: (args) => <Filter {...args} />,
 }

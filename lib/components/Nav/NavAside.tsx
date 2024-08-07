@@ -4,6 +4,7 @@ import { Avatar, UserInfoType } from './../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 export const styles = {
   listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red-700 cursor-pointer`,
@@ -57,22 +58,28 @@ export const NavAside = ({
   return (
     <div className="flex items-center gap-5 ml-auto cu-nav__aside sm:gap-6">
       {children}
-      <ul
-        className={
-          `flex items-center gap-5 py-1 pl-5 sm:gap-6 sm:pl-6` +
-          ' ' +
-          (children ? `border-l border-solid border-cu-black-100` : ``)
-        }
-      >
-        {menu &&
-          menu.map((menuItem: ImenuItem, index: number) => (
-            <li key={index} className="block">
-              <LinkComponent href={menuItem.href} className={styles.listItemLink}>
-                {menuItem.title}
-              </LinkComponent>
-            </li>
+      {menu && (
+        <ButtonGroup>
+          {menu.map((menuItem: ImenuItem, index: number) => (
+            <LinkComponent
+              key={index}
+              href={menuItem.href}
+              className={`cu-button cu-button--${menuItem.buttonColor} cu-button--small`}
+            >
+              {menuItem.title}
+            </LinkComponent>
           ))}
-        {LoggedOutUser && (
+        </ButtonGroup>
+      )}
+
+      {LoggedOutUser && (
+        <ul
+          className={
+            `flex items-center gap-5 py-1 pl-5 sm:gap-6 sm:pl-6` +
+            ' ' +
+            (children ? `border-l border-solid border-cu-black-100` : ``)
+          }
+        >
           <li>
             {onClickHandler ? (
               <a onClick={onClickHandler} className={styles.listItemLink}>
@@ -84,9 +91,17 @@ export const NavAside = ({
               </LinkComponent>
             )}
           </li>
-        )}
-        {LoggedInUser ? (
-          LoggedMenu ? (
+        </ul>
+      )}
+      {LoggedInUser ? (
+        LoggedMenu ? (
+          <ul
+            className={
+              `flex items-center gap-5 py-1 pl-5 sm:gap-6 sm:pl-6` +
+              ' ' +
+              (children ? `border-l border-solid border-cu-black-100` : ``)
+            }
+          >
             <li className={NavMenuItemWrapperStyles.menuWrapper}>
               <div className={navMenuItemStyles.navItemWrapper} role="navigation" data-menu-item="profile">
                 {onClickHandler ? (
@@ -101,7 +116,15 @@ export const NavAside = ({
               </div>
               <NavSubMenu submenu={LoggedMenu} isSubMenu={true} isInnerSubMenu={false} id="profile" />
             </li>
-          ) : (
+          </ul>
+        ) : (
+          <ul
+            className={
+              `flex items-center gap-5 py-1 pl-5 sm:gap-6 sm:pl-6` +
+              ' ' +
+              (children ? `border-l border-solid border-cu-black-100` : ``)
+            }
+          >
             <li>
               {onClickHandler ? (
                 <a onClick={onClickHandler} className={styles.listItemLink}>
@@ -113,11 +136,11 @@ export const NavAside = ({
                 </LinkComponent>
               )}
             </li>
-          )
-        ) : (
-          <></>
-        )}
-      </ul>
+          </ul>
+        )
+      ) : (
+        <></>
+      )}
     </div>
   )
 }

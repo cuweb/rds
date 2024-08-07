@@ -6,16 +6,40 @@
   @apply font-semibold;
 }
 
+/* Success */
+
+.cu-alert--success {
+  @apply bg-green-50 text-green-700;
+}
+
 .cu-alert--success a {
   @apply text-green-700;
+}
+
+/* Error */
+
+.cu-alert--error {
+  @apply bg-cu-red-50 text-cu-red-700;
 }
 
 .cu-alert--error a {
   @apply text-cu-red-700;
 }
 
+/* Warning */
+
+.cu-alert--warning {
+  @apply bg-yellow-50 text-yellow-700;
+}
+
 .cu-alert--warning a {
   @apply text-yellow-700;
+}
+
+/* Info */
+
+.cu-alert--info {
+  @apply bg-blue-50 text-blue-700;
 }
 
 .cu-alert--info a {

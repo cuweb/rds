@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PageHeadersLoader } from './PageHeadersLoader'
+import { PageHeaderLoader } from './PageHeaderLoader'
 
-const meta: Meta<typeof PageHeadersLoader> = {
-  title: 'Components/Load Screens/PageHeaders Loader',
-  component: PageHeadersLoader,
+const meta: Meta<typeof PageHeaderLoader> = {
+  title: 'Components/Load Screens/PageHeader Loader',
+  component: PageHeaderLoader,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof PageHeadersLoader> = {
 }
 
 export default meta
-type Story = StoryObj<typeof PageHeadersLoader>
+type Story = StoryObj<typeof PageHeaderLoader>
 
 export const Default: Story = {}
 Default.args = {}

@@ -16,21 +16,19 @@ const meta: Meta<typeof Quote> = {
 export default meta
 type Story = StoryObj<typeof Quote>
 
-export const Default: Story = {}
-Default.args = {
-  cite: 'John Doe',
-  children: (
-    <p>
-      Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit
-      ducimus.
-    </p>
-  ),
-}
-
-export const QuoteMark: Story = {
-  render: (args) => <Quote {...args} />,
-}
-QuoteMark.args = {
-  ...Default.args,
-  graphic: 'quote',
+export const Primary: Story = {
+  args: {
+    cite: 'John Doe',
+    children: (
+      <p>
+        Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+        reprehenderit ducimus.
+      </p>
+    ),
+    graphic: 'border',
+    isCenter: false,
+  },
+  render: (args) => {
+    return <Quote {...args} />
+  },
 }
