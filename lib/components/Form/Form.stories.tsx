@@ -7,6 +7,8 @@ import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
+import { LoadScript } from '@react-google-maps/api'
+import { SingleMarkerInterface } from './PlacesAutoComplete/PlacesAutoComplete'
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
@@ -662,19 +664,29 @@ export const AutoSuggest: Story = () => {
   )
 }
 
-
-
 export const PlacesAutoComplete: Story = () => {
   type IPlacesAutoComplete = {
-    location: string
+    location: SingleMarkerInterface
   }
 
   const placesAutoCompleteInitialValues = {
-    location: '',
+    location: {
+      coordinates: {
+        lat: 45.3850225,
+        lng: -75.6946679,
+      },
+      address: "Carleton University Raven's Nest",
+    },
   }
 
   const placesAutoCompleteValidationSchema = Yup.object().shape({
-    location: Yup.string(),
+    location: Yup.object().shape({
+      address: Yup.string(),
+      coordinates: Yup.object().shape({
+        lat: Yup.number(),
+        lng: Yup.number(),
+      }),
+    }),
   })
 
   const onSubmit = async (values: IPlacesAutoComplete, actions: FormikHelpers<IPlacesAutoComplete>) => {
@@ -691,19 +703,23 @@ export const PlacesAutoComplete: Story = () => {
   })
 
   return (
-    <Form formikProps={formikProps}>
-      <Form.FieldGroup>
-        <Form.FieldControl
-          control="placesAutoComplete"
-          label="Location Picker"
-          name="location"
-          placeholder="Placeholder"
-          disabled={formikProps.isSubmitting}
-        />
-      </Form.FieldGroup>
-      <ButtonGroup>
-        <Button title="Submit" type="submit" />
-      </ButtonGroup>
-    </Form>
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY} libraries={['places']}>
+      <Form formikProps={formikProps}>
+        <Form.FieldGroup>
+          <Form.FieldControl
+            control="placesAutoComplete"
+            label="Location Picker"
+            name="location"
+            placeholder="Placeholder"
+            disabled={formikProps.isSubmitting}
+            helper="Helper Text"
+            showmap={false}
+          />
+        </Form.FieldGroup>
+        <ButtonGroup>
+          <Button title="Submit" type="submit" />
+        </ButtonGroup>
+      </Form>
+    </LoadScript>
   )
 }
