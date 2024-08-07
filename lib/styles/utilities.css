@@ -1,0 +1,15 @@
+/* Prose Classes */
+
+.cu-prose {
+  @apply prose prose-rds max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4;
+}
+
+.cu-prose-light {
+  @apply prose-xl md:prose-2xl font-light;
+}
+
+/* Body Classes */
+
+.cu-no-body-scroll {
+  @apply overflow-hidden;
+}

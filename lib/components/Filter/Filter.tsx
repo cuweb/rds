@@ -1,5 +1,21 @@
 import { Fragment, useState, useEffect } from 'react'
-import { Dialog, Disclosure, Menu, Popover, Transition } from '@headlessui/react'
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosurePanel,
+  DisclosureButton,
+  Menu,
+  MenuItems,
+  MenuItem,
+  MenuButton,
+  Popover,
+  PopoverGroup,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
+  TransitionChild,
+} from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
@@ -65,9 +81,9 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
   return (
     <div className="cu-filter cu-component not-prose">
       {/* Mobile filter dialog */}
-      <Transition.Root show={open} as={Fragment}>
+      <Transition show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 sm:hidden" onClose={setOpen}>
-          <Transition.Child
+          <TransitionChild
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
             enterFrom="opacity-0"
@@ -77,10 +93,10 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
             leaveTo="opacity-0"
           >
             <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
+          </TransitionChild>
 
           <div className="fixed inset-0 z-40 flex">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="transition ease-in-out duration-300 transform"
               enterFrom="translate-x-full"
@@ -89,7 +105,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <Dialog.Panel className="relative flex flex-col w-full h-full max-w-xs ml-auto overflow-y-auto bg-white shadow-xl">
+              <DialogPanel className="relative flex flex-col w-full h-full max-w-xs ml-auto overflow-y-auto bg-white shadow-xl">
                 <div className="flex items-center justify-between px-4 py-3 bg-cu-black-50">
                   <h2 className="text-base font-medium text-cu-black-800">Filters</h2>
                   <button
@@ -109,7 +125,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                       {({ open }) => (
                         <>
                           <h3 className="flow-root -mx-2 -my-3 group">
-                            <Disclosure.Button className="flex items-center justify-between w-full px-2 py-3 text-sm bg-white text-cu-black-300 group-hover:text-cu-black-600">
+                            <DisclosureButton className="flex items-center justify-between w-full px-2 py-3 text-sm bg-white text-cu-black-300 group-hover:text-cu-black-600">
                               <span className="font-medium text-cu-black-600">{section.name}</span>
                               <span className="flex items-center ml-6">
                                 <ChevronDownIcon
@@ -117,9 +133,9 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                                   aria-hidden="true"
                                 />
                               </span>
-                            </Disclosure.Button>
+                            </DisclosureButton>
                           </h3>
-                          <Disclosure.Panel className="pt-6">
+                          <DisclosurePanel className="pt-6">
                             <div className="space-y-6">
                               {section.options.map((option, optionIdx) => (
                                 <div key={optionIdx} className="flex items-center">
@@ -141,17 +157,17 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                                 </div>
                               ))}
                             </div>
-                          </Disclosure.Panel>
+                          </DisclosurePanel>
                         </>
                       )}
                     </Disclosure>
                   ))}
                 </form>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </div>
         </Dialog>
-      </Transition.Root>
+      </Transition>
 
       <section aria-labelledby="filter-heading">
         <h2 id="filter-heading" className="sr-only">
@@ -164,10 +180,10 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
             <Menu as="div" className="relative">
               {sortOptions && sortOptions?.length > 0 && (
                 <div>
-                  <Menu.Button className={styles.dropDownTitles}>
+                  <MenuButton className={styles.dropDownTitles}>
                     Sort
                     <ChevronDownIcon className={styles.chevron} aria-hidden="true" />
-                  </Menu.Button>
+                  </MenuButton>
                 </div>
               )}
 
@@ -181,11 +197,11 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                 leaveTo="transform opacity-0 scale-95"
               >
                 {/* Sort drop down menu */}
-                <Menu.Items className="absolute z-10 w-40 mt-2 bg-white rounded-md shadow-lg -left-4 ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <MenuItems className="absolute z-10 w-40 mt-2 bg-white rounded-md shadow-lg -left-4 ring-1 ring-black ring-opacity-5 focus:outline-none">
                   {sortOptions && sortOptions?.length > 0 && (
                     <div className="py-1">
                       {sortOptions.map((option) => (
-                        <Menu.Item key={option.name}>
+                        <MenuItem key={option.name}>
                           {({ active }) => (
                             <LinkComponent
                               href={option.href}
@@ -199,11 +215,11 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                               {/* <span onClick={() => setSortItem(option.name)}>{option.name}</span> */}
                             </LinkComponent>
                           )}
-                        </Menu.Item>
+                        </MenuItem>
                       ))}
                     </div>
                   )}
-                </Menu.Items>
+                </MenuItems>
               </Transition>
             </Menu>
 
@@ -217,13 +233,13 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
 
             <div className="hidden sm:block">
               <div className="flow-root">
-                <Popover.Group className="flex items-center -mx-4 divide-x divide-gray-200">
+                <PopoverGroup className="flex items-center -mx-4 divide-x divide-gray-200">
                   {filters.map((section, sectionIdx) => (
                     <Popover key={sectionIdx} className="relative inline-block px-4 text-left">
-                      <Popover.Button className={styles.dropDownTitles}>
+                      <PopoverButton className={styles.dropDownTitles}>
                         <span>{section.name}</span>
                         <ChevronDownIcon className={styles.chevron} aria-hidden="true" />
-                      </Popover.Button>
+                      </PopoverButton>
 
                       <Transition
                         as={Fragment}
@@ -234,7 +250,7 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Popover.Panel className="absolute right-0 z-10 p-4 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <PopoverPanel className="absolute right-0 z-10 p-4 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           <form className="space-y-4">
                             {section.options.map((option, optionIdx) => (
                               <div key={optionIdx} className="flex items-center">
@@ -256,11 +272,11 @@ export const Filter = ({ sortOptions, filters, callback }: FilterProps) => {
                               </div>
                             ))}
                           </form>
-                        </Popover.Panel>
+                        </PopoverPanel>
                       </Transition>
                     </Popover>
                   ))}
-                </Popover.Group>
+                </PopoverGroup>
               </div>
             </div>
           </div>

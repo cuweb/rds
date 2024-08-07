@@ -1,8 +1,7 @@
 import { format, isSameDay, parseISO } from 'date-fns'
-import { listStyles } from './PageHeaders.Styles'
-import { proseStyles, proseGroups } from '../../utils/globalClasses'
+import { listStyles } from './PageHeader.Styles'
 
-export interface PageHeadersEventProps {
+export interface PageHeaderEventProps {
   children?: React.ReactNode
   startDate?: string
   endDate?: string
@@ -16,7 +15,7 @@ export interface PageHeadersEventProps {
   contactEmail?: string
 }
 
-export const PageHeadersEvent = ({
+export const PageHeaderEvent = ({
   children,
   startDate,
   endDate,
@@ -28,7 +27,7 @@ export const PageHeadersEvent = ({
   contactName,
   contactPhone,
   contactEmail,
-}: PageHeadersEventProps) => {
+}: PageHeaderEventProps) => {
   const eventDetails = ['cost', 'contactName', 'contactPhone', 'contactEmail']
 
   // Parse dates
@@ -47,10 +46,10 @@ export const PageHeadersEvent = ({
 
   return (
     <>
-      {finalDate && <p className={proseGroups.largeLight}>{finalDate}</p>}
+      {finalDate && <p className="cu-prose-light">{finalDate}</p>}
 
       {/* Check if details are set and output as ul */}
-      <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
+      <div className={`${listStyles.listWrapper} cu-prose`}>
         <ul>
           <li>
             <strong className="font-semibold">{eventType} Event</strong>
@@ -77,7 +76,7 @@ export const PageHeadersEvent = ({
 
       {/* Check is socials are set and render div */}
       {Object.values(eventDetails).some((info) => info) && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
+        <div className={`${listStyles.listWrapper} cu-prose`}>
           <ul>
             {contactName && (
               <li>
@@ -139,4 +138,4 @@ export const PageHeadersEvent = ({
   )
 }
 
-PageHeadersEvent.displayName = 'PageHeaders.Event'
+PageHeaderEvent.displayName = 'PageHeader.Event'

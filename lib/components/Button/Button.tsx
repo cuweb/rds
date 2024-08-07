@@ -8,13 +8,11 @@ export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
   isFull?: boolean
   isDisabled?: boolean
 }
-
 export interface ButtonTitleProps extends ButtonProp {
   title: string
   icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
   ariaLabel?: string
 }
-
 export interface ButtonNoTitleProps extends ButtonProp {
   title?: string
   icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
@@ -46,7 +44,7 @@ export const Button = ({
       {...rest}
     >
       {icon && (
-        <span className={title ? 'mr-0.5' : ''}>
+        <span className={title ? 'mr-0.5 -ml-1' : ''}>
           <Icon icon={icon} size={iconSize} />
         </span>
       )}

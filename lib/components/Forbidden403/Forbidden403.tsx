@@ -1,5 +1,5 @@
 import { Section } from '../../layouts/Section/Section'
-import { PageHeaders } from '../PageHeaders/PageHeaders'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 export interface Forbidden403Props {
   children?: React.ReactNode
@@ -13,7 +13,7 @@ export const Forbidden403 = ({
   return (
     <>
       <Section maxWidth="7xl">
-        <PageHeaders as="h1" header="403 - Forbidden" content={content} size="md" isCenter />
+        <PageHeader as="h1" header="403 - Forbidden" content={content} size="md" isCenter />
         {children}
       </Section>
     </>

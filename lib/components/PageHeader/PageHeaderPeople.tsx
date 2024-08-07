@@ -1,7 +1,6 @@
-import { listStyles, socialStyles } from './PageHeaders.Styles'
-import { proseStyles, proseGroups } from '../../utils/globalClasses'
+import { listStyles, socialStyles } from './PageHeader.Styles'
 
-export interface PageHeadersPeopleProps {
+export interface PageHeaderPeopleProps {
   jobTitle?: string
   degrees?: string
   building?: string
@@ -11,7 +10,7 @@ export interface PageHeadersPeopleProps {
   phoneExt?: string
 }
 
-export interface PageHeadersSocialProps {
+export interface PageHeaderSocialProps {
   resume?: string
   website?: string
   linkedin?: string
@@ -19,18 +18,18 @@ export interface PageHeadersSocialProps {
   facebook?: string
 }
 
-export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleProps & PageHeadersSocialProps) => {
+export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeopleProps & PageHeaderSocialProps) => {
   const { degrees, building, room, email, phone, phoneExt, website, linkedin, twitter, facebook } = restProps
   const profileDetails = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
   const socialDetails = ['resume', 'linkedin', 'twitter', 'facebook']
 
   return (
     <>
-      {jobTitle && <p className={proseGroups.largeLight}>{jobTitle}</p>}
+      {jobTitle && <p className="cu-prose-light">{jobTitle}</p>}
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
+        <div className={`${listStyles.listWrapper} cu-prose`}>
           <ul>
             {degrees && <li>{degrees}</li>}
             {building && (
@@ -58,7 +57,7 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
 
       {/* Check is socials are set and render div */}
       {Object.values(socialDetails).some((info) => info) && (
-        <div className={`${listStyles.listWrapper} ${proseStyles.base}`}>
+        <div className={`${listStyles.listWrapper} cu-prose`}>
           <ul className={listStyles.listHorizontal}>
             {linkedin && (
               <li>
@@ -134,4 +133,4 @@ export const PageHeadersPeople = ({ jobTitle, ...restProps }: PageHeadersPeopleP
   )
 }
 
-PageHeadersPeople.displayName = 'PageHeaders.People'
+PageHeaderPeople.displayName = 'PageHeader.People'

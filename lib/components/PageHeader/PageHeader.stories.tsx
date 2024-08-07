@@ -1,14 +1,14 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { PageHeaders } from './PageHeaders'
+import { PageHeader } from './PageHeader'
 import { Figure } from '../Figure/Figure'
-import { Button } from '..//Button/Button'
-import { ButtonGroup } from '..//ButtonGroup/ButtonGroup'
+import { Button } from '../Button/Button'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { EventDataSingle as eventData } from '../../data/EventData'
 
-const meta: Meta<typeof PageHeaders> = {
-  title: 'Components/PageHeaders',
-  component: PageHeaders,
+const meta: Meta<typeof PageHeader> = {
+  title: 'Components/PageHeader',
+  component: PageHeader,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -18,57 +18,28 @@ const meta: Meta<typeof PageHeaders> = {
 }
 
 export default meta
-type Story = StoryObj<typeof PageHeaders>
+type Story = StoryObj<typeof PageHeader>
 
-export const Default: Story = {}
+export const Primary: Story = {}
 
-Default.args = {
-  header: 'Large page header',
-  size: 'lg',
+Primary.args = {
+  header: 'Page Header',
   as: 'h1',
+  size: 'lg',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
   isWhite: false,
   isCenter: false,
-}
-
-export const PageHeaderCentre: Story = {
-  args: {
-    header: 'Page header centre',
-    size: 'lg',
-    as: 'h1',
-    isCenter: true,
-  },
-}
-
-export const DefaultWithContent: Story = {
-  args: {
-    header: 'Large header with content',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'lg',
-    as: 'h1',
-  },
-}
-
-export const CenterWithContent: Story = {
-  args: {
-    header: 'Large center header with content',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-    size: 'lg',
-    as: 'h1',
-    isCenter: true,
-  },
+  noUnderline: false,
 }
 
 export const EventHeader: Story = {
   render: (args) => (
-    <PageHeaders {...args}>
+    <PageHeader {...args}>
       <Figure size="sm" align="right" noMobile>
         <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
       </Figure>
-      <PageHeaders.Event
+      <PageHeader.Event
         eventType="Hybrid"
         virtualType="Teams"
         virtualUrl="https://events.carleton.ca"
@@ -88,8 +59,8 @@ export const EventHeader: Story = {
             Add to My Events
           </a>
         </ButtonGroup>
-      </PageHeaders.Event>
-    </PageHeaders>
+      </PageHeader.Event>
+    </PageHeader>
   ),
 }
 EventHeader.args = {
@@ -98,11 +69,11 @@ EventHeader.args = {
 
 export const EventHeaderMultiday: Story = {
   render: (args) => (
-    <PageHeaders {...args}>
+    <PageHeader {...args}>
       <Figure size="sm" align="right" noMobile>
         <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
       </Figure>
-      <PageHeaders.Event
+      <PageHeader.Event
         eventType="Hybrid"
         virtualType="Teams"
         virtualUrl="https://events.carleton.ca"
@@ -122,8 +93,8 @@ export const EventHeaderMultiday: Story = {
             Add to My Events
           </a>
         </ButtonGroup>
-      </PageHeaders.Event>
-    </PageHeaders>
+      </PageHeader.Event>
+    </PageHeader>
   ),
 }
 EventHeaderMultiday.args = {
@@ -132,7 +103,7 @@ EventHeaderMultiday.args = {
 
 export const PeopleHeader: Story = {
   render: (args) => (
-    <PageHeaders {...args}>
+    <PageHeader {...args}>
       <Figure size="sm" align="right">
         <img
           src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
@@ -141,7 +112,7 @@ export const PeopleHeader: Story = {
           height="133"
         />
       </Figure>
-      <PageHeaders.People
+      <PageHeader.People
         jobTitle="Jedi Master & Jedi Council Member"
         degrees="Certificate, Padawan Academy of Jedi Arts"
         building="Onraed"
@@ -155,7 +126,7 @@ export const PeopleHeader: Story = {
         twitter="#"
         facebook="#"
       />
-    </PageHeaders>
+    </PageHeader>
   ),
 }
 PeopleHeader.args = {

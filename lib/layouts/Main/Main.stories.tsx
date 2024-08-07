@@ -1,6 +1,5 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Article } from '../Article/Article'
 import { Section } from '../Section/Section'
 import { Main, MainProps } from './Main'
 

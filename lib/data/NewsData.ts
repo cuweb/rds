@@ -2,7 +2,7 @@ export const NewsDataSingle = {
   id: 1,
   title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
   link: '#',
-  image: './sample-imgs/news-img.jpg',
+  image: 'https://picsum.photos/id/4/600/400',
   icon: 'cloud-music',
   alt: 'Image alt text',
   excerpt:
@@ -29,7 +29,7 @@ export const NewsData = [
     id: 1,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    image: './sample-imgs/news-img.jpg',
+    image: 'https://picsum.photos/id/15/600/400',
     icon: 'list-music',
     alt: 'Image alt text',
     excerpt:
@@ -54,7 +54,7 @@ export const NewsData = [
     id: 2,
     title: 'How to Write for the Web',
     link: '#',
-    image: './sample-imgs/news-img.jpg',
+    image: 'https://picsum.photos/id/42/600/400',
     icon: 'headphones',
     alt: 'Image alt text',
     excerpt:
@@ -74,7 +74,7 @@ export const NewsData = [
     id: 3,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    image: './sample-imgs/news-img.jpg',
+    image: 'https://picsum.photos/id/40/600/400',
     icon: 'cloud-music',
     alt: 'Image alt text',
     excerpt:
@@ -94,7 +94,7 @@ export const NewsData = [
     id: 4,
     title: ' How to Write for the Web',
     link: '#',
-    image: './sample-imgs/news-img.jpg',
+    image: 'https://picsum.photos/id/57/600/400',
     icon: 'album-collection',
     alt: 'Image alt text',
     excerpt:
@@ -114,7 +114,7 @@ export const NewsData = [
     id: 5,
     title: 'Captivating Captions: Why We Use Captions on Videos',
     link: '#',
-    image: './sample-imgs/news-img.jpg',
+    image: 'https://picsum.photos/id/89/600/400',
     icon: 'turntable',
     alt: 'Image alt text',
     excerpt:
@@ -134,7 +134,7 @@ export const NewsData = [
     id: 6,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    image: './sample-imgs/news-img.jpg',
+    image: 'https://picsum.photos/id/1/600/400',
     icon: 'trumpet',
     alt: 'Image alt text',
     excerpt:

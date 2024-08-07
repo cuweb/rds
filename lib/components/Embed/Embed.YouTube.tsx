@@ -1,4 +1,3 @@
-import { styles } from './Embed.Styles'
 export interface EmbedYouTubeProps {
   title: string
   url: string
@@ -18,7 +17,7 @@ export const EmbedYouTube = ({ title, url }: EmbedYouTubeProps) => {
     <iframe
       title={title}
       src={embedURL}
-      className={`${styles.iframe}`}
+      className="cu-embed-iframe"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
     ></iframe>
