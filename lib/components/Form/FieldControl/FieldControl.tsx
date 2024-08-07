@@ -8,10 +8,11 @@ import { AutoSuggest } from '../AutoSuggest/AutoSuggest'
 import { DateTime } from '../DateTime/DateTime'
 import { FileUpload } from '../FileUpload/FileUpload'
 import { FieldProps, FormField } from '../FormField/FormField'
+import { PlacesAutoComplete } from '../PlacesAutoComplete/PlacesAutoComplete'
 import { FieldSetProps, FormFieldSet } from '../FormFieldSet/FormFieldSet'
 
 export interface FieldControlProps extends FieldProps {
-  control: 'text' | 'textarea' | 'select' | 'autosuggest' | 'datetime' | 'fileUpload'
+  control: 'text' | 'textarea' | 'select' | 'autosuggest' | 'datetime' | 'fileUpload' | 'placesAutoComplete'
   [key: string]: any
 }
 
@@ -41,6 +42,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
     case 'select':
     case 'autosuggest':
     case 'datetime':
+    case 'placesAutoComplete':
     case 'fileUpload': {
       const Component =
         control === 'text'
@@ -55,7 +57,9 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
                   ? DateTime
                   : control === 'fileUpload'
                     ? FileUpload
-                    : null
+                    : control === 'placesAutoComplete'
+                      ? PlacesAutoComplete
+                      : null
       return (
         <FormField
           name={name}
@@ -93,6 +97,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
         </FormFieldSet>
       )
     }
+
     default:
       return null
   }
