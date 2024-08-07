@@ -40,6 +40,10 @@
   @apply mt-6 md:mt-6;
 }
 
+.cu-section.bg-cu-black-50 {
+  @apply max-w-screen-2xl;
+}
+
 :not(.cu-wideimage).cu-section.bg-cu-black-50 + :not(.cu-wideimage).cu-section.bg-cu-black-50 {
   @apply pt-2 -mt-2 rounded-t-none;
 }
