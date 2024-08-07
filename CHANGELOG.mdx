@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Prefix the change with one of these keywords:
 
 - _Added_: for new features.
+- _Breaking_: for higher visibility of breaking changes
 - _Changed_: for changes in existing functionality.
 - _Deprecated_: for soon-to-be removed features.
 - _Removed_: for now removed features.
@@ -15,6 +16,63 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## [Unreleased]
+
+### Breaking
+
+- **Alerts:** textSize prop renamed to size, options changed to use sm, md, lg
+- **Badges:** no longer accepts children, new text prop is required, new link is optional
+- **ButtonGroup:** gap prop requires string, previously integer
+- **Card:** refactored icon card, now required assetPath prop
+- **Description:** removed isSmall and hasBorder props
+- **Listing:** refactored icon card, now required assetPath prop
+- **PageHeadersLoader:** refactored name to be singular as PageHeaderLoader
+- **PageHeaders:** refactored name to be singular as PageHeader
+- **WideImage**: remove isType wave in lieu of hasWave boolean
+
+### Added
+
+- **propClasses:** bgOpacityClasses and justifyContentClasses
+- **propClasses:** add new gridGapClasses options
+- **propClasses:** add figureSizeClasses and figureAlignClasses
+- **propClasses:** added as part of package
+
+### Changed
+
+- **Alerts:** conditional text and icon sizes
+- **Alerts:** updated stories file for improved examples
+- **Badge:** changed styles to use cu-badge--color classes
+- **Badge:** replaced text prop with children to allow for links
+- **Badge:** update stories file for improved examples
+- **BadgeGroup:** updated stories file for improved examples
+- **Button**: merged prop groups
+- **Button**: updated stories file for improved examples
+- **Calendar**: updated stories file for improved examples
+- **Card**: updated max width and hover styles
+- **Card**: updated stories file for improved examples
+- **Description:**: updated styles to increase consistency
+- **Description**: updated stories file for improved examples
+- **Dialogue**: updated stories file for improved examples
+- **Embed**: moved iframe styles to a class
+- **Figure:** removed isRound prop
+- **Figure**: updated stories file for improved examples
+- **Filter**: updated deprecated headless ui components
+- **Filter**: updated stories file for improved examples
+- **Footers**: updated stories file for improved examples
+- **ImageGrid**: refactored text overlay, improved prop checks, added new styles
+- **ImageGrid**: updated stories file for improved examples
+- **Listing**: updated stories file for improved examples
+- **Modal**: increased padding
+- **MultiDayCalendar**: updated stories file for improved examples
+- **Nav**: changed aside li's for donate and apply to buttons
+- **PageHeader**: updated stories file for improved examples
+- **Pagination**: updated stories file for improved examples
+- **Quote**: updated stories file for improved examples
+- **SearchInput**: updated stories file for improved examples
+- **Table**: updated stories file for improved examples
+- **TextImage**: updated stories file for improved examples
+- **WideImage**: updated styles based on conditions
+- **WideImage**: updated stories file for improved examples
+- **Prose Classes:** replaced utilities for cu-prose classes
 
 ## [0.14.0]
 
@@ -32,13 +90,13 @@ Prefix the change with one of these keywords:
 - noProse prop set to false by default on Main and Section, removed from other components
 - Updated story files for all layout components, updating story display and configuration options
 - Upgraded react-datepicker and lexical packages
+- Black color option for buttons
+- isWhite prop for PageHeaders text
 
 ### Fixed
 
 - Undefined document error in Lexical
 - Issues with FieldArray component and props in Lexical Editor
-- Black color option for buttons
-- isWhite prop for PageHeaders text
 
 ## [0.13.0]
 

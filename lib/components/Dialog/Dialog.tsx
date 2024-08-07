@@ -70,7 +70,7 @@ export const Dialog = ({ children, title, description, isOpen, setIsOpen }: Dial
         <h3 className="text-lg font-medium leading-6 text-gray-900 mb-3">{title}</h3>
         {description && <p className="text-sm text-gray-500 mb-3">{description}</p>}
       </div>
-      <ButtonGroup align="right" gap={3}>
+      <ButtonGroup align="end" gap="5">
         {children}
         <Button
           onClick={() => {

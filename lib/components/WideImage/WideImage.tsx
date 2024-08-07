@@ -1,6 +1,7 @@
 import React from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
 import { WideImageSignup } from './WideImageSignup'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
 
@@ -8,17 +9,17 @@ const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
-  scrollTo?: React.ReactNode
-  // maxHeight?: 'sm' | 'md' | 'lg'
   as?: 'section' | 'div'
-  title?: string
+  title: string
   image?: string
   headerType?: 'h1' | 'h2'
   maxWidth?: maxWidthKeys
   opacity?: (typeof opacityValues)[number]
   focalPointX?: string
   focalPointY?: string
-  isType?: 'light' | 'dark' | 'image' | 'wave'
+  isType?: 'light' | 'dark' | 'image'
+  hasWave?: boolean
+  hasScroll?: boolean
 }
 
 const getInlineStyle = (image: string = '', focalPointX: string, focalPointY: string) => ({
@@ -38,45 +39,29 @@ const handleScroll = () => {
   })
 }
 
-const getImageStyles = (isType: string, image: string | undefined, scrollTo: React.ReactNode | undefined) => {
-  if (image && !scrollTo) return 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
-  if (image && scrollTo) return 'relative text-white bg-opacity-50 bg-cover bg-cu-black-50'
-  return isType === 'dark' ? 'text-white bg-cu-black-900' : 'text-cu-black-800 bg-cu-black-50'
+const getImageStyles = (isType: string, image: string | undefined) => {
+  if (image && isType === 'image') return 'relative bg-opacity-50 bg-cover bg-cu-black-50'
+  return isType === 'dark' ? 'bg-cu-black-900' : 'bg-cu-black-50'
 }
-
-// const getPaddingY = (isType: string) => {
-//   switch (isType) {
-//     case 'light':
-//     case 'dark':
-//       return 'py-20'
-//     case 'image':
-//       return 'py-24 md:py-28 lg:py-36 xl:py-48'
-//     case 'wave':
-//       return 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-96'
-//     default:
-//       return 'py-20'
-//   }
-// }
 
 export const WideImageWrapper = ({
   children,
-  scrollTo,
   as = 'div',
   title,
   image,
   headerType = 'h2',
   maxWidth = 'max',
-  // maxHeight = 'sm',
   opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
   isType = 'light',
+  hasScroll,
+  hasWave,
 }: WideImageProps) => {
   const WideImageComponent = as
   const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
   const opacityStyle = getOpacityStyle(opacity)
-  const hasImageStyles = getImageStyles(isType, image, scrollTo)
-  // const topBottomSpace = getPaddingY(maxHeight)
+  const hasImageStyles = getImageStyles(isType, image)
 
   let topBottomSpace
 
@@ -88,20 +73,23 @@ export const WideImageWrapper = ({
     case 'image':
       topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
       break
-    case 'wave':
-      topBottomSpace = 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-72'
-      break
     default:
       topBottomSpace = 'py-20'
       break
   }
 
+  if (hasWave && isType === 'image' && image) {
+    topBottomSpace = 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-72'
+  } else if (hasWave) {
+    topBottomSpace = 'pt-20 pb-24 md:pb-32 lg:pb-40 xl:pb-48'
+  }
+
   return (
     <WideImageComponent
-      style={inlineStyle}
+      style={isType === 'image' ? inlineStyle : undefined}
       className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${maxWidthClasses[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
     >
-      {isType === 'wave' && (
+      {hasWave && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0 w-full z-50"
@@ -116,20 +104,21 @@ export const WideImageWrapper = ({
         </svg>
       )}
 
-      {image && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
+      {image && isType === 'image' && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
 
-      <div
-        className={`relative z-10 flex flex-col items-center gap-2 text-center cu-wideimage-content cu-wideimage-${isType}`}
-      >
-        {headerType === 'h1' ? (
-          <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] max-w-5xl mb-2">{title}</h1>
-        ) : (
-          <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] max-w-5xl mb-2">{title}</h2>
-        )}
+      <div className={`relative z-10 max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-${isType}`}>
+        <PageHeader
+          header={title}
+          as={headerType}
+          size={headerType === 'h1' ? 'lg' : 'md'}
+          isWhite={isType !== 'light' ? true : false}
+          isCenter
+          noUnderline
+        >
+          {children}
+        </PageHeader>
 
-        {children}
-
-        {scrollTo && image && (
+        {hasScroll && (
           <div className="mt-2 flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +132,7 @@ export const WideImageWrapper = ({
         )}
       </div>
 
-      {isType === 'dark' && !scrollTo && (
+      {isType === 'dark' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0 w-full opacity-10"

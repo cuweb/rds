@@ -9,52 +9,42 @@ import {
 export interface AlertProps {
   title: string
   content?: React.ReactNode | string
-  type: 'success' | 'error' | 'warning' | 'info'
-  textSize?: 'small' | 'large'
+  type?: 'success' | 'error' | 'warning' | 'info'
+  size?: 'sm' | 'md' | 'lg'
 }
 
-export const Alert = ({ title, content, type, textSize = 'small' }: PropsWithChildren<AlertProps>) => {
-  const alertTextSize = textSize === 'small' ? 'text-sm' : 'text-lg'
-  const alertIconSize = textSize === 'small' ? 'w-5 h-5' : 'w-8 h-8'
-
-  const AlertTypes = {
-    success: {
-      icon: CheckCircleIcon,
-      alertHeading: 'text-green-700',
-      alertSubhead: 'cu-black-600',
-      background: 'bg-green-50',
+export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWithChildren<AlertProps>) => {
+  const AlertSizes = {
+    sm: {
+      alertTitleSize: 'text-sm md:text-base',
+      alertIconSize: 'w-6 h-6',
     },
-    warning: {
-      icon: ShieldExclamationIcon,
-      alertHeading: 'text-yellow-700',
-      alertSubhead: 'cu-black-600',
-      background: 'bg-yellow-50',
+    md: {
+      alertTitleSize: 'text-base md:text-lg mt-0.5',
+      alertIconSize: 'w-8 h-8',
     },
-    error: {
-      icon: ExclamationCircleIcon,
-      alertHeading: 'text-cu-red-700',
-      alertSubhead: 'cu-black-600',
-      background: 'bg-cu-red-50',
-    },
-    info: {
-      icon: InformationCircleIcon,
-      alertHeading: 'text-blue-700',
-      alertSubhead: 'cu-black-600',
-      background: 'bg-blue-50',
+    lg: {
+      alertTitleSize: 'text-base md:text-2xl mt-1',
+      alertIconSize: 'w-10 h-10',
     },
   }
 
+  const AlertTypes = {
+    success: CheckCircleIcon,
+    warning: ShieldExclamationIcon,
+    error: ExclamationCircleIcon,
+    info: InformationCircleIcon,
+  }
+
   return (
-    <div
-      className={`cu-alert cu-alert--${type} cu-component flex rounded-md p-4 not-prose ${AlertTypes[type].background}`}
-    >
-      {React.createElement(AlertTypes[type].icon, {
-        className: `${alertIconSize} ${AlertTypes[type].alertHeading}`,
+    <div className={`cu-alert cu-alert--${type} cu-component not-prose flex rounded-md p-4`}>
+      {React.createElement(AlertTypes[type], {
+        className: `${AlertSizes[size].alertIconSize}`,
         'aria-hidden': 'true',
       })}
-      <div className={`${textSize == 'large' ? 'mt-0.5' : ''} ml-3 space-y-2 w-full`}>
-        <p className={`${alertTextSize} ${AlertTypes[type].alertHeading} my-0 font-semibold`}>{title}</p>
-        {content && <p className={`${alertTextSize} ${AlertTypes[type].alertSubhead}`}>{content}</p>}
+      <div className="ml-3 w-full">
+        <p className={`${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
+        {content && <p className="text-sm md:text-base text-cu-black-900">{content}</p>}
       </div>
     </div>
   )

@@ -1,4 +1,3 @@
-import { styles } from './Embed.Styles'
 export interface EmbedKalturaProps {
   title: string
   url: string
@@ -19,7 +18,7 @@ export const EmbedKaltura = ({ title, url }: EmbedKalturaProps) => {
       id={`kmsembed-${lastPiece}`}
       title={title}
       src={kalturaUrl}
-      className={styles.iframe}
+      className="cu-embed-iframe"
       allowFullScreen
       allow="autoplay *; fullscreen *; encrypted-media *"
       referrerPolicy="no-referrer-when-downgrade"

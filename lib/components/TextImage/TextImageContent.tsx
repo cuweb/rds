@@ -1,5 +1,4 @@
 import React from 'react'
-import { proseGroups } from '../../utils/globalClasses'
 
 export interface TextImageContentProps {
   children?: React.ReactNode
@@ -66,9 +65,7 @@ export const TextImageContent = ({
     <>
       <div
         className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter} ${
-          headerType === 'h1'
-            ? `cu-textimage-as-h1 ${proseGroups.largeLight}`
-            : `cu-textimage-as-h2 ${proseGroups.text}`
+          headerType === 'h1' ? `cu-prose cu-prose-light` : `cu-prose`
         }`}
         style={inlineContentStyles}
       >

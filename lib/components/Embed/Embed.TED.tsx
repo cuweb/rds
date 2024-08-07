@@ -1,4 +1,3 @@
-import { styles } from './Embed.Styles'
 export interface EmbedTEDProps {
   title: string
   url: string
@@ -15,7 +14,7 @@ export const EmbedTED = ({ title, url }: EmbedTEDProps) => {
   }
 
   return (
-    <iframe title={title} src={embedURL} width="854" height="480" className={styles.iframe} allowFullScreen></iframe>
+    <iframe title={title} src={embedURL} width="854" height="480" className="cu-embed-iframe" allowFullScreen></iframe>
   )
 }
 

@@ -1,5 +1,5 @@
 import { ErrorMessage } from 'formik'
-import { primaryStyles, textStyles, fieldStyles } from '../../../styles/form'
+import { primaryStyles, textStyles, fieldStyles } from '../form.Styles'
 import { maxWidthClasses } from '../../../helpers/optionClasses' // TODO: convert to main propClasses
 import Error from '../Error/Error'
 

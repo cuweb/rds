@@ -29,7 +29,7 @@ export { Meta } from './components/Meta/Meta'
 export { Modal } from './components/Modal/Modal'
 export { MultiDayCalendar } from './components/MultiDayCalendar/MultiDayCalendar'
 export { Nav } from './components/Nav/Nav'
-export { PageHeaders } from './components/PageHeaders/PageHeaders'
+export { PageHeader } from './components/PageHeader/PageHeader'
 export { Pagination } from './components/Pagination/Pagination'
 export { Quote } from './components/Quote/Quote'
 export { SearchInput } from './components/SearchInput/SearchInput'
@@ -53,7 +53,7 @@ export { ListingPeopleLoader } from './components/Loaders/ListingLoader/ListingP
 export { ListingDescriptionLoader } from './components/Loaders/ListingLoader/ListingDescriptionLoader'
 export { PageLoader } from './components/Loaders/PageLoader/PageLoader'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
-export { PageHeadersLoader } from './components/Loaders/PageHeadersLoader/PageHeadersLoader'
+export { PageHeaderLoader } from './components/Loaders/PageHeaderLoader/PageHeaderLoader'
 export { FormLoader } from './components/Loaders/FormLoader/FormLoader'
 export { BlockLoader } from './components/Loaders/BlockLoader/BlockLoader'
 export { ButtonLoader } from './components/Loaders/ButtonLoader/ButtonLoader'
@@ -70,3 +70,6 @@ export { StackedList } from './layouts/StackedList/StackedList'
 
 // Javascript Files
 export { iconNames } from '../public/assets/font-awesome/icon-list.js'
+
+// Utils
+export * as utils from './utils/propClasses'

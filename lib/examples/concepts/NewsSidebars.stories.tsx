@@ -11,13 +11,13 @@ import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
-  title: 'Examples/Blocks',
+  title: 'Prototypes/Concepts',
 }
 
 export default meta
 type Story = StoryObj
 
-export const ListingSidebars: Story = {
+export const NewsSidebar: Story = {
   render: () => (
     <>
       <Nav>
