@@ -37,23 +37,23 @@ export const PageHeaderWrapper = ({
   switch (size) {
     case 'xs':
       headerPadding = 'pb-3 after:w-6'
-      contentStyle = 'prose-md md:prose-lg'
+      contentStyle = 'prose-md md:prose-lg font-light'
       break
     case 'sm':
       headerPadding = 'pb-3.5 after:w-7'
-      contentStyle = 'prose-md md:prose-lg'
+      contentStyle = 'prose-md md:prose-lg font-light'
       break
     case 'md':
       headerPadding = 'pb-4 after:w-8'
-      contentStyle = 'prose-lg md:prose-xl'
+      contentStyle = 'prose-lg md:prose-xl font-light'
       break
     case 'lg':
       headerPadding = 'pb-5 after:w-10'
-      contentStyle = 'prose-lg md:prose-xl'
+      contentStyle = 'prose-lg md:prose-2xl font-light'
       break
     default:
       headerPadding = 'pb-6 after:w-10'
-      contentStyle = 'prose-lg md:prose-xl'
+      contentStyle = 'prose-lg md:prose-2xl font-light'
       break
   }
 
