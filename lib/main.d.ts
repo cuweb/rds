@@ -41,6 +41,7 @@ export { CardNewsLoader } from './components/Loaders/CardLoader/CardNewsLoader';
 export { CardPageLoader } from './components/Loaders/CardLoader/CardPageLoader';
 export { CardPeopleLoader } from './components/Loaders/CardLoader/CardPeopleLoader';
 export { CardVideoLoader } from './components/Loaders/CardLoader/CardVideoLoader';
+export { DescriptionLoader } from './components/Loaders/DescriptionLoader/DescriptionLoader';
 export { ListingEventLoader } from './components/Loaders/ListingLoader/ListingEventLoader';
 export { ListingIconLoader } from './components/Loaders/ListingLoader/ListingIconLoader';
 export { ListingNewsLoader } from './components/Loaders/ListingLoader/ListingNewsLoader';
