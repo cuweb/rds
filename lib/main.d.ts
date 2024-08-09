@@ -22,6 +22,8 @@ export { Icon } from './components/Icon/Icon';
 export { LinkProvider } from './components/LinkProvider';
 export { Listing } from './components/Listing/Listing';
 export { Login } from './components/Login/Login';
+export { Location } from './components/Location/Location';
+export { LocationPicker } from './components/LocationPicker/LocationPicker';
 export { Meta } from './components/Meta/Meta';
 export { Modal } from './components/Modal/Modal';
 export { MultiDayCalendar } from './components/MultiDayCalendar/MultiDayCalendar';
