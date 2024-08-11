@@ -1,18 +1,24 @@
 import { useLinkContext } from '../LinkProvider/useLinkContext'
+import { borderRadiusClasses } from '../../utils/propClasses'
+
+type borderRadiusKeys = keyof typeof borderRadiusClasses
 
 export interface BadgeProps {
   text: string
   link?: string
-  color?: 'green' | 'red' | 'yellow' | 'blue' | 'purple' | 'grey'
+  rounded?: borderRadiusKeys
+  color?: 'grey' | 'white' | 'black60' | 'white60' | 'green' | 'red' | 'yellow' | 'blue' | 'purple'
   noWordBreak?: boolean
 }
 
-export const Badge = ({ text, link, color = 'grey', noWordBreak = false }: BadgeProps) => {
+export const Badge = ({ text, link, rounded = 'full', color = 'grey', noWordBreak = false }: BadgeProps) => {
   const LinkComponent = useLinkContext()
   const wordBreakClass = noWordBreak ? 'whitespace-nowrap' : ''
 
   return (
-    <p className={`inline-flex cu-badge cu-badge--${color} not-prose rounded-full ${wordBreakClass}`}>
+    <p
+      className={`inline-flex cu-badge cu-badge--${color} not-prose ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
+    >
       {link ? (
         <LinkComponent href={link} className="cursor-pointer block">
           <span className="px-3.5 py-1.5 text-xs font-semibold block">{text}</span>

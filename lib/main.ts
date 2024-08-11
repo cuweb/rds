@@ -21,6 +21,7 @@ export { FooterStandard } from './components/Footer/FooterStandard/FooterStandar
 export { Forbidden403 } from './components/Forbidden403/Forbidden403'
 export { Figure } from './components/Figure/Figure'
 export { Icon } from './components/Icon/Icon'
+export { ImageGrid } from './components/ImageGrid/ImageGrid'
 export { LinkProvider } from './components/LinkProvider'
 export { Listing } from './components/Listing/Listing'
 export { Login } from './components/Login/Login'

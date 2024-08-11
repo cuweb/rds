@@ -77,7 +77,7 @@ export const PageHeaderWrapper = ({
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
-      {truncatedContent && <p className={`${contentStyle} ${centerText} ${textColor}`}>{truncatedContent}</p>}
+      {truncatedContent && <p className={`max-w-5xl ${contentStyle} ${centerText} ${textColor}`}>{truncatedContent}</p>}
       {children}
     </header>
   )
