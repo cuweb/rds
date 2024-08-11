@@ -10,6 +10,7 @@ import Error from '../../Error/Error'
 import FieldGroup from '../../FieldGroup/FieldGroup'
 import { $getNodeByKey } from 'lexical'
 import { InlineImageNode } from '../nodes/InlineImageNode'
+import { AddToS3 } from '../../../../utils/AWSUploads'
 
 export const ImageModal = ({
   activeEditor,
@@ -24,6 +25,7 @@ export const ImageModal = ({
 }): JSX.Element => {
   const editorState = activeEditor.getEditorState()
   const node = nodeKey ? editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode) : null
+  const [files, setFiles] = useState<File[]>()
   const [src, setSrc] = useState(node ? node.getSrc() : '')
   const [srcError, setSrcError] = useState(false)
   const [altText, setAltText] = useState(node ? node.getAltText() : '')
@@ -65,6 +67,7 @@ export const ImageModal = ({
             setSrcError(true)
           }
 
+          setFiles(files)
           setSrc(reader.result)
           setSrcError(false)
         }
@@ -108,6 +111,11 @@ export const ImageModal = ({
     } else if (src && altText) {
       setSrcError(false)
       setAltTextError(false)
+
+      console.log(files, 'files')
+      if (files) {
+        AddToS3(files[0])
+      }
 
       // Ensure height and width are numbers or undefined
       const parsedHeight = typeof height === 'number' ? height : undefined

@@ -293,7 +293,6 @@ export function $createInlineImageNode({
   caption,
   key,
 }: InlineImagePayload): InlineImageNode {
-  // AddToS3()
   return $applyNodeReplacement(new InlineImageNode(src, altText, position, width, height, showCaption, caption, key))
 }
 
