@@ -2,6 +2,10 @@
   @apply bg-cu-black-50 text-cu-black-800;
 }
 
+.cu-badge--white {
+  @apply bg-white text-cu-black-800;
+}
+
 .cu-badge--green {
   @apply bg-green-50 text-green-800;
 }
@@ -20,4 +24,14 @@
 
 .cu-badge--purple {
   @apply bg-purple-50 text-purple-800;
+}
+
+/* Transparent */
+
+.cu-badge--black60 {
+  @apply bg-black/60 text-white;
+}
+
+.cu-badge--white60 {
+  @apply bg-white/60 text-cu-black-800;
 }

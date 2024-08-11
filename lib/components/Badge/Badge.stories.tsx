@@ -19,6 +19,7 @@ export const Primary: Story = {
   args: {
     text: 'Badge Example',
     link: '',
+    rounded: 'full',
     color: 'grey',
     noWordBreak: false,
   },

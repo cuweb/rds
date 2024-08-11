@@ -32,8 +32,22 @@
 
 .cu-section + .cu-section,
 .cu-section + .cu-column,
+.cu-component + .cu-component,
+:not(.cu-section) + .cu-section,
+.cu-section + :not(.cu-section) {
+  @apply mt-4 md:mt-6 lg:mt-12;
+  /* @apply mt-6 md:mt-12; */
+}
+
+/* .cu-section + .cu-section,
+.cu-section + .cu-column,
 .cu-component + .cu-component {
   @apply mt-6 md:mt-12;
+} */
+
+.cu-section + .cu-widewaves,
+.cu-widewaves + .cu-widewaves {
+  @apply mt-8 md:mt-10 lg:mt-20;
 }
 
 .cu-section.bg-white + .cu-column {
