@@ -13,3 +13,9 @@
 .cu-no-body-scroll {
   @apply overflow-hidden;
 }
+
+/* Allow a component to hit the browsers edge */
+
+.cu-browsers-edge {
+  @apply -mx-6 md:-mx-8;
+}

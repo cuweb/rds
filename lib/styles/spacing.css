@@ -45,6 +45,11 @@
   @apply mt-6 md:mt-12;
 } */
 
+.cu-section + .cu-widewaves,
+.cu-widewaves + .cu-widewaves {
+  @apply mt-8 md:mt-10 lg:mt-20;
+}
+
 .cu-section.bg-white + .cu-column {
   @apply mt-6 md:mt-6;
 }

@@ -20,6 +20,11 @@ type Story = StoryObj<typeof BadgeGroup>
 export const Primary: Story = {
   args: {
     gap: '2',
+    isAbsolute: false,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
   },
   render: (args) => {
     return (
