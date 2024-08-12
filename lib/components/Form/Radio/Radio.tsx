@@ -1,6 +1,6 @@
 import { Field } from 'formik'
 import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
-import { fieldStyles } from '../../../styles/form'
+import { fieldStyles } from '../form.Styles'
 import useErrorClass from '../UseError'
 import { Ref } from 'react'
 

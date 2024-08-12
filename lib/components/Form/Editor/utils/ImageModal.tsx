@@ -249,7 +249,7 @@ export const ImageModal = ({
           />
         )}
 
-        <ButtonGroup align="right">
+        <ButtonGroup align="end">
           {node ? (
             <Button title="Confirm" isDisabled={!altText} onClick={handleOnConfirm}></Button>
           ) : (

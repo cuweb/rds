@@ -5,12 +5,12 @@ import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../components/Nav/Nav'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { Figure } from '../../components/Figure/Figure'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta
@@ -63,11 +63,11 @@ export const EventHeader: Story = {
 
       <Main>
         <Section hasProse>
-          <PageHeaders header="Event About a Thing">
+          <PageHeader header="Event About a Thing">
             <Figure size="sm" align="right" hasShadow>
               <img src="./sample-imgs/news-img.jpg" alt="Required alt text" width="200" height="133" />
             </Figure>
-            <PageHeaders.Event
+            <PageHeader.Event
               eventType="Hybrid"
               virtualType="Teams"
               virtualUrl="https://events.carleton.ca"
@@ -81,7 +81,7 @@ export const EventHeader: Story = {
               secondaryButtonUrl="https://carleton.ca/webservices"
               secondaryButtonText="More Information"
             />
-          </PageHeaders>
+          </PageHeader>
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.

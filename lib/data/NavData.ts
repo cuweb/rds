@@ -113,12 +113,14 @@ export const NavDataSingle = [
 
 export const NavAsideData = [
   {
-    href: 'https://futurefunder.carleton.ca/',
-    title: 'Give',
-  },
-  {
     href: 'https://admissions.carleton.ca/apply/',
     title: 'Apply',
+    buttonColor: 'red',
+  },
+  {
+    href: 'https://futurefunder.carleton.ca/',
+    title: 'Donate',
+    buttonColor: 'black',
   },
 ]
 

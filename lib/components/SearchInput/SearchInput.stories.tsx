@@ -1,11 +1,17 @@
-import React from 'react'
-import { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { SearchInput } from './SearchInput'
 import { SearchDatabase } from '../../data/SearchData'
 import { Modal } from '../Modal/Modal'
-import { useEffect } from 'react'
 import { Button } from '../Button/Button'
+
+// Define the type for your search data
+interface SearchData {
+  id: number
+  title: string
+  description: string
+  url: string
+}
 
 const meta: Meta<typeof SearchInput> = {
   title: 'Components/Search Input',
@@ -19,96 +25,107 @@ const meta: Meta<typeof SearchInput> = {
 }
 
 export default meta
-
 type Story = StoryObj<typeof SearchInput>
 
-export const Default: Story = () => {
-  const [, setMessage] = useState('')
+export const Primary: Story = {
+  args: {
+    placeholder: 'Enter a search string',
+  },
+  render: (args) => {
+    const [, setMessage] = useState('')
+    const callback = useCallback(
+      (message: string) => {
+        setMessage(message)
+      },
+      [setMessage],
+    )
 
-  const callback = useCallback(
-    (message: string) => {
-      setMessage(message)
-    },
-    [setMessage],
-  )
-  return <SearchInput callback={callback} placeholder="Enter a search string" />
+    return <SearchInput callback={callback} placeholder={args.placeholder} />
+  },
 }
 
-export const StoryList: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
-  const searchOn = 'title'
+export const AutoSuggest: Story = {
+  args: {
+    ...Primary.args,
+  },
+  render: (args) => {
+    const [, setMessage] = useState('')
+    const [searchString, setSearchString] = useState('')
+    const [filteredResults, setFilteredResults] = useState<SearchData[]>([])
+    const searchOn = 'title'
 
-  const callback = useCallback(
-    (message: string) => {
-      setMessage(message)
-      setSearchString(message)
-    },
-    [setMessage],
-  )
+    const callback = useCallback(
+      (message: string) => {
+        setMessage(message)
+        setSearchString(message)
+      },
+      [setMessage],
+    )
 
-  useEffect(() => {
-    const filteredDatabase =
-      searchString === ''
-        ? []
-        : SearchDatabase.filter((data) => {
-            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
-          })
-    setFilteredResults(filteredDatabase)
-  }, [searchString])
+    useEffect(() => {
+      const filteredDatabase: SearchData[] =
+        searchString === ''
+          ? []
+          : SearchDatabase.filter((data) => {
+              return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+            })
+      setFilteredResults(filteredDatabase)
+    }, [searchString])
 
-  return (
-    <SearchInput callback={callback} placeholder="Enter a search string">
-      <SearchInput.Results resultsData={filteredResults} />
-    </SearchInput>
-  )
+    return (
+      <SearchInput callback={callback} placeholder={args.placeholder}>
+        <SearchInput.Results resultsData={filteredResults} />
+      </SearchInput>
+    )
+  },
 }
 
-export const StoryModal: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
-  const [modalOpen, setModalOpen] = useState(false)
-  const searchOn = 'title'
+export const InsideModal: Story = {
+  args: {
+    ...Primary.args,
+  },
+  render: (args) => {
+    const [, setMessage] = useState('')
+    const [searchString, setSearchString] = useState('')
+    const [filteredResults, setFilteredResults] = useState<SearchData[]>([])
+    const [modalOpen, setModalOpen] = useState(false)
+    const searchOn = 'title'
 
-  const callback = useCallback(
-    (message: string) => {
-      setMessage(message)
-      setSearchString(message)
-    },
-    [setMessage],
-  )
+    const callback = useCallback(
+      (message: string) => {
+        setMessage(message)
+        setSearchString(message)
+      },
+      [setMessage],
+    )
 
-  useEffect(() => {
-    const filteredDatabase =
-      searchString === ''
-        ? []
-        : SearchDatabase.filter((data) => {
-            return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
-          })
-    setFilteredResults(filteredDatabase)
-  }, [searchString])
+    useEffect(() => {
+      const filteredDatabase: SearchData[] =
+        searchString === ''
+          ? []
+          : SearchDatabase.filter((data) => {
+              return data[searchOn].toString().toLowerCase().includes(searchString.toLowerCase())
+            })
+      setFilteredResults(filteredDatabase)
+    }, [searchString])
 
-  return (
-    <>
-      <Button title="Click to Open Search" onClick={() => setModalOpen(true)} />
-      <Modal
-        isOpen={modalOpen}
-        setIsOpen={setModalOpen}
-        ariaLabel="site-search"
-        ariaDescription="site-search"
-        alignTop
-        noProse
-      >
-        <SearchInput callback={callback} placeholder="Enter a search string">
-          <SearchInput.Results resultsData={filteredResults} />
-        </SearchInput>
-      </Modal>
-    </>
-  )
+    return (
+      <>
+        <Button title="Click to Open Search" onClick={() => setModalOpen(true)} />
+
+        <Modal
+          isOpen={modalOpen}
+          setIsOpen={setModalOpen}
+          ariaLabel="site-search"
+          ariaDescription="site-search"
+          alignTop
+          noProse
+        >
+          <SearchInput callback={callback} placeholder={args.placeholder}>
+            <SearchInput.Results resultsData={filteredResults} />
+          </SearchInput>
+        </Modal>
+      </>
+    )
+  },
 }
-
-Default.storyName = 'Default Search Input'
-StoryList.storyName = 'Search Input with List'
-StoryModal.storyName = 'Search Input with List in Modal'

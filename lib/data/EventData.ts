@@ -9,7 +9,7 @@ export const EventDataSingle = {
   on_campus: true,
   on_campus_building: 'Robertson Hall',
   on_campus_room_number: '420',
-  image: './sample-imgs/event-img.jpg',
+  image: 'https://picsum.photos/id/84/600/400',
   alt: `Images need alt text`,
   tags: {
     category: [
@@ -51,7 +51,7 @@ export const EventData = [
     on_campus: true,
     on_campus_building: 'Robertson Hall',
     on_campus_room_number: '420',
-    image: './sample-imgs/event-img.jpg',
+    image: 'https://picsum.photos/id/88/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
@@ -91,7 +91,7 @@ export const EventData = [
     on_campus: false,
     on_campus_building: null,
     on_campus_room_number: null,
-    image: './sample-imgs/event-img.jpg',
+    image: 'https://picsum.photos/id/90/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
@@ -131,7 +131,7 @@ export const EventData = [
     on_campus: false,
     on_campus_building: null,
     on_campus_room_number: null,
-    image: './sample-imgs/event-img.jpg',
+    image: 'https://picsum.photos/id/95/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
@@ -171,7 +171,7 @@ export const EventData = [
     on_campus: false,
     on_campus_building: null,
     on_campus_room_number: null,
-    image: './sample-imgs/event-img.jpg',
+    image: 'https://picsum.photos/id/102/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
@@ -202,7 +202,7 @@ export const EventData = [
     multiday: true,
   },
   {
-    id: 1,
+    id: 5,
     title: 'Ottawa Trivia Session #2',
     link: '#',
     startDate: '2023-03-31 11:00:00',
@@ -211,7 +211,7 @@ export const EventData = [
     on_campus: true,
     on_campus_building: 'Robertson Hall',
     on_campus_room_number: '420',
-    image: './sample-imgs/event-img.jpg',
+    image: 'https://picsum.photos/id/106/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
@@ -242,7 +242,7 @@ export const EventData = [
     multiday: false,
   },
   {
-    id: 2,
+    id: 6,
     title: 'Carleton University Escape Room',
     link: '#',
     startDate: '2023-04-02 19:30:00',
@@ -251,7 +251,7 @@ export const EventData = [
     on_campus: false,
     on_campus_building: null,
     on_campus_room_number: null,
-    image: './sample-imgs/event-img.jpg',
+    image: 'https://picsum.photos/id/111/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
