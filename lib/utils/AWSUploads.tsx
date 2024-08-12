@@ -30,17 +30,13 @@ const deleteObjectFromS3 = async (fileName: string) => {
   return client.send(command)
 }
 
-export async function AddToS3(file: File) {
-  const { name, type } = file
-
-  console.log(name, type)
+export const AddToS3 = async (file: File): Promise<string> => {
+  const { type } = file
 
   const fileName = 'uploadedImage' + Date.now()
 
   try {
     const signedUrl = await createPresignedUrlWithClient(type, fileName)
-
-    console.log('🚀 ~ POST ~ signedUrl:', signedUrl)
 
     // Upload the file using the signed URL
     const response = await fetch(signedUrl, {
@@ -55,11 +51,12 @@ export async function AddToS3(file: File) {
       throw new Error('Failed to upload file')
     }
 
-    console.log('File uploaded successfully')
-    return JSON.stringify({ url: signedUrl })
-  } catch (err) {
-    console.error(err)
-    return JSON.stringify({ error: 'Failed to generate signed URL' })
+    const objectUrl = `https://${bucket}.s3.${region}.amazonaws.com/${fileName}`
+
+    return objectUrl
+  } catch (error) {
+    console.error(error)
+    throw new Error('Failed to generate signed URL')
   }
 }
 

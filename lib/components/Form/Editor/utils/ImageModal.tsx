@@ -103,7 +103,7 @@ export const ImageModal = ({
     setCaption(e.target.value)
   }
 
-  const handleInsertOnClick = () => {
+  const handleInsertOnClick = async () => {
     if (!src) {
       setSrcError(true)
     } else if (!altText) {
@@ -112,29 +112,32 @@ export const ImageModal = ({
       setSrcError(false)
       setAltTextError(false)
 
-      console.log(files, 'files')
       if (files) {
-        AddToS3(files[0])
+        try {
+          const uploadedSrc: string = await AddToS3(files[0])
+
+          // Ensure height and width are numbers or undefined
+          const parsedHeight = typeof height === 'number' ? height : undefined
+          const parsedWidth = typeof width === 'number' ? width : undefined
+
+          const payload = {
+            altText,
+            height: parsedHeight,
+            showCaption,
+            src: uploadedSrc,
+            width: parsedWidth,
+            position,
+            caption,
+          }
+
+          activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
+          setTriggerModalOpen(false)
+          setTriggerModalOpen(false)
+          resetFields()
+        } catch (err) {
+          console.error(err)
+        }
       }
-
-      // Ensure height and width are numbers or undefined
-      const parsedHeight = typeof height === 'number' ? height : undefined
-      const parsedWidth = typeof width === 'number' ? width : undefined
-
-      const payload = {
-        altText,
-        height: parsedHeight,
-        showCaption,
-        src,
-        width: parsedWidth,
-        position,
-        caption,
-      }
-
-      activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
-      setTriggerModalOpen(false)
-      setTriggerModalOpen(false)
-      resetFields()
     }
   }
 
