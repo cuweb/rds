@@ -10,7 +10,7 @@ import Error from '../../Error/Error'
 import FieldGroup from '../../FieldGroup/FieldGroup'
 import { $getNodeByKey } from 'lexical'
 import { InlineImageNode } from '../nodes/InlineImageNode'
-import { AddToS3 } from '../../../../utils/AWSUploads'
+import { uploadImageToAWS } from '../../../../utils/AWSUploads'
 
 export const ImageModal = ({
   activeEditor,
@@ -114,7 +114,7 @@ export const ImageModal = ({
 
       if (files) {
         try {
-          const uploadedSrc: string = await AddToS3(files[0])
+          const imageURL = await uploadImageToAWS(files[0])
 
           // Ensure height and width are numbers or undefined
           const parsedHeight = typeof height === 'number' ? height : undefined
@@ -124,7 +124,7 @@ export const ImageModal = ({
             altText,
             height: parsedHeight,
             showCaption,
-            src: uploadedSrc,
+            src: imageURL,
             width: parsedWidth,
             position,
             caption,

@@ -12,8 +12,6 @@ import { SingleMarkerInterface } from './PlacesAutoComplete/PlacesAutoComplete'
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
-
 const meta: Meta<typeof Form> = {
   title: 'Components/Form',
   component: Form,
