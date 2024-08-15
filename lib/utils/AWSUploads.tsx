@@ -22,7 +22,7 @@ const createPresignedUrlWithClient = (contentType: string, fileName: string) => 
   return getSignedUrl(client, command, { expiresIn: 20 })
 }
 
-export const uploadImageToAWS = async (file: File): Promise<string> => {
+export const uploadImageToAWS = async (file: File): Promise<{ preSignedUrl: string; fileName: string }> => {
   const { name, type } = file
 
   const fileNameWithoutExtension = name.split('.').slice(0, -1).join('.')
@@ -32,29 +32,59 @@ export const uploadImageToAWS = async (file: File): Promise<string> => {
   try {
     const preSignedUrl = await createPresignedUrlWithClient(type, fileName)
 
-    try {
-      const response = await fetch(preSignedUrl, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': type,
-        },
-        body: file,
-      })
+    return { preSignedUrl: preSignedUrl, fileName: fileName }
+    // try {
+    //   const response = await fetch(preSignedUrl, {
+    //     method: 'PUT',
+    //     headers: {
+    //       'Content-Type': type,
+    //     },
+    //     body: file,
+    //   })
 
-      if (!response.ok) {
-        throw new Error('Failed to upload signed image')
-      }
+    //   if (!response.ok) {
+    //     throw new Error('Failed to upload signed image')
+    //   }
 
-      const AWSImageURL = `https://${bucket}.s3.${region}.amazonaws.com/${fileName}`
+    //   const AWSImageURL = `https://${bucket}.s3.${region}.amazonaws.com/${fileName}`
 
-      return AWSImageURL
-    } catch (uploadError) {
-      console.error(uploadError)
-      throw uploadError
-    }
+    //   return AWSImageURL
+    // } catch (uploadError) {
+    //   console.error(uploadError)
+    //   throw uploadError
+    // }
   } catch (urlError) {
     console.error(urlError)
     throw new Error('Failed to generate signed URL')
+  }
+}
+
+export const uploadPresignedImageToAWS = async (
+  file: File,
+  preSignedUrl: string,
+  fileName: string,
+): Promise<string> => {
+  const { type } = file
+
+  try {
+    const response = await fetch(preSignedUrl, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': type,
+      },
+      body: file,
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to upload signed image')
+    }
+
+    const AWSImageURL = `https://${bucket}.s3.${region}.amazonaws.com/${fileName}`
+
+    return AWSImageURL
+  } catch (uploadError) {
+    console.error(uploadError)
+    throw uploadError
   }
 }
 

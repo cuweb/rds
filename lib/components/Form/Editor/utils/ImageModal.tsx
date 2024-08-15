@@ -10,7 +10,7 @@ import Error from '../../Error/Error'
 import FieldGroup from '../../FieldGroup/FieldGroup'
 import { $getNodeByKey } from 'lexical'
 import { InlineImageNode } from '../nodes/InlineImageNode'
-import { uploadImageToAWS } from '../../../../utils/AWSUploads'
+import { uploadImageToAWS, uploadPresignedImageToAWS } from '../../../../utils/AWSUploads'
 
 export const ImageModal = ({
   activeEditor,
@@ -25,9 +25,11 @@ export const ImageModal = ({
 }): JSX.Element => {
   const editorState = activeEditor.getEditorState()
   const node = nodeKey ? editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode) : null
-  const [files, setFiles] = useState<File[]>()
   const [src, setSrc] = useState(node ? node.getSrc() : '')
   const [srcError, setSrcError] = useState(false)
+  const [preSignedData, setPreSignedData] = useState<{ file: File; preSignedUrl: string; fileName: string } | null>(
+    null,
+  )
   const [altText, setAltText] = useState(node ? node.getAltText() : '')
   const [altTextError, setAltTextError] = useState(false)
   const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
@@ -46,42 +48,55 @@ export const ImageModal = ({
     }
   }, [triggerModalOpen, setTriggerModalOpen, node])
 
-  const handleImageChange = (files: File[]) => {
+  const handleImageChange = async (files: File[]) => {
     if (files && files.length > 0) {
       const reader = new FileReader()
-      reader.onload = () => {
-        if (typeof reader.result === 'string') {
-          const img = new Image()
-          img.src = reader.result
+      reader.onload = async () => {
+        const preSignedData = await uploadImageToAWS(files[0])
 
-          img.onload = () => {
-            const imageWidth = img.width
-            const imageHeight = img.height
+        if (preSignedData) {
+          const { preSignedUrl, fileName } = preSignedData
 
-            setWidth(imageWidth)
-            setHeight(imageHeight)
+          console.log('asd')
+
+          const data = {
+            file: files[0],
+            preSignedUrl: preSignedUrl,
+            fileName: fileName,
           }
+          setPreSignedData(data)
 
-          img.onerror = (err) => {
-            console.error('Error loading image:', err)
-            setSrcError(true)
+          if (typeof reader.result === 'string') {
+            const img = new Image()
+            img.src = reader.result
+
+            img.onload = () => {
+              const imageWidth = img.width
+              const imageHeight = img.height
+
+              setWidth(imageWidth)
+              setHeight(imageHeight)
+            }
+
+            img.onerror = (err) => {
+              console.error('Error loading image:', err)
+              setSrcError(true)
+            }
+
+            setSrc(reader.result)
+            setSrcError(false)
           }
-
-          setFiles(files)
-          setSrc(reader.result)
-          setSrcError(false)
         }
-      }
+        reader.onerror = (err) => {
+          console.error('Error reading file:', err)
+          setSrcError(true)
+          setWidth(0)
+          setHeight(0)
+        }
 
-      reader.onerror = (err) => {
-        console.error('Error reading file:', err)
-        setSrcError(true)
-        setWidth(0)
-        setHeight(0)
-      }
-
-      if (files !== null) {
-        reader.readAsDataURL(files[0])
+        // if (files !== null) {
+        //   reader.readAsDataURL(files[0])
+        // }
       }
     }
   }
@@ -112,9 +127,14 @@ export const ImageModal = ({
       setSrcError(false)
       setAltTextError(false)
 
-      if (files) {
-        try {
-          const imageURL = await uploadImageToAWS(files[0])
+      console.log(preSignedData, 'preSignedDatapreSignedData')
+      try {
+        if (preSignedData) {
+          const imageURL = await uploadPresignedImageToAWS(
+            preSignedData?.file,
+            preSignedData?.preSignedUrl,
+            preSignedData?.fileName,
+          )
 
           // Ensure height and width are numbers or undefined
           const parsedHeight = typeof height === 'number' ? height : undefined
@@ -131,12 +151,13 @@ export const ImageModal = ({
           }
 
           activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
+          setPreSignedData(null)
           setTriggerModalOpen(false)
           setTriggerModalOpen(false)
           resetFields()
-        } catch (err) {
-          console.error(err)
         }
+      } catch (err) {
+        console.error(err)
       }
     }
   }
@@ -201,6 +222,7 @@ export const ImageModal = ({
           onChange={handleImageChange}
           refs={fileInputRef}
           setFieldValue={false}
+          preview={src ? [src] : null}
         />
 
         {srcError && <Error>Please choose an image</Error>}
