@@ -734,7 +734,7 @@ export const CustomFormError: Story = () => {
   return (
     <>
       <Form formikProps={formikProps}>
-        <Form.FormError> Custom form error </Form.FormError>
+        <Form.Error> Custom form error </Form.Error>
       </Form>
     </>
   )
