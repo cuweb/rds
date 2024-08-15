@@ -33,26 +33,6 @@ export const uploadImageToAWS = async (file: File): Promise<{ preSignedUrl: stri
     const preSignedUrl = await createPresignedUrlWithClient(type, fileName)
 
     return { preSignedUrl: preSignedUrl, fileName: fileName }
-    // try {
-    //   const response = await fetch(preSignedUrl, {
-    //     method: 'PUT',
-    //     headers: {
-    //       'Content-Type': type,
-    //     },
-    //     body: file,
-    //   })
-
-    //   if (!response.ok) {
-    //     throw new Error('Failed to upload signed image')
-    //   }
-
-    //   const AWSImageURL = `https://${bucket}.s3.${region}.amazonaws.com/${fileName}`
-
-    //   return AWSImageURL
-    // } catch (uploadError) {
-    //   console.error(uploadError)
-    //   throw uploadError
-    // }
   } catch (urlError) {
     console.error(urlError)
     throw new Error('Failed to generate signed URL')
@@ -89,17 +69,21 @@ export const uploadPresignedImageToAWS = async (
 }
 
 const deleteObjectFromS3 = async (fileName: string) => {
-  const client = new S3Client({ region })
+  const client = new S3Client({
+    region,
+    credentials: {
+      accessKeyId,
+      secretAccessKey,
+    },
+  })
   const command = new DeleteObjectCommand({ Bucket: bucket, Key: fileName })
   return client.send(command)
 }
 
-export async function DeleteFromS3(file: File) {
-  const { name } = file
-  console.log('🚀 ~ DELETE ~ name:', name)
-
+export async function DeleteFromS3(name: string) {
   try {
-    await deleteObjectFromS3(name)
+    const a = await deleteObjectFromS3(name)
+    console.log(a, 'sd')
     return true
   } catch (error) {
     console.error(error)

@@ -50,53 +50,51 @@ export const ImageModal = ({
 
   const handleImageChange = async (files: File[]) => {
     if (files && files.length > 0) {
+      const preSignedData = await uploadImageToAWS(files[0])
+      if (preSignedData) {
+        const { preSignedUrl, fileName } = preSignedData
+
+        const data = {
+          file: files[0],
+          preSignedUrl: preSignedUrl,
+          fileName: fileName,
+        }
+        setPreSignedData(data)
+      }
+
       const reader = new FileReader()
-      reader.onload = async () => {
-        const preSignedData = await uploadImageToAWS(files[0])
+      reader.onload = () => {
+        if (typeof reader.result === 'string') {
+          const img = new Image()
+          img.src = reader.result
 
-        if (preSignedData) {
-          const { preSignedUrl, fileName } = preSignedData
+          img.onload = () => {
+            const imageWidth = img.width
+            const imageHeight = img.height
 
-          console.log('asd')
-
-          const data = {
-            file: files[0],
-            preSignedUrl: preSignedUrl,
-            fileName: fileName,
+            setWidth(imageWidth)
+            setHeight(imageHeight)
           }
-          setPreSignedData(data)
 
-          if (typeof reader.result === 'string') {
-            const img = new Image()
-            img.src = reader.result
-
-            img.onload = () => {
-              const imageWidth = img.width
-              const imageHeight = img.height
-
-              setWidth(imageWidth)
-              setHeight(imageHeight)
-            }
-
-            img.onerror = (err) => {
-              console.error('Error loading image:', err)
-              setSrcError(true)
-            }
-
-            setSrc(reader.result)
-            setSrcError(false)
+          img.onerror = (err) => {
+            console.error('Error loading image:', err)
+            setSrcError(true)
           }
-        }
-        reader.onerror = (err) => {
-          console.error('Error reading file:', err)
-          setSrcError(true)
-          setWidth(0)
-          setHeight(0)
-        }
 
-        // if (files !== null) {
-        //   reader.readAsDataURL(files[0])
-        // }
+          setSrc(reader.result)
+          setSrcError(false)
+        }
+      }
+
+      reader.onerror = (err) => {
+        console.error('Error reading file:', err)
+        setSrcError(true)
+        setWidth(0)
+        setHeight(0)
+      }
+
+      if (files !== null) {
+        reader.readAsDataURL(files[0])
       }
     }
   }
@@ -127,7 +125,6 @@ export const ImageModal = ({
       setSrcError(false)
       setAltTextError(false)
 
-      console.log(preSignedData, 'preSignedDatapreSignedData')
       try {
         if (preSignedData) {
           const imageURL = await uploadPresignedImageToAWS(
