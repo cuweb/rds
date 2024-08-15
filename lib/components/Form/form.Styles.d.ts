@@ -18,4 +18,5 @@ export declare const fieldStyles: {
     uploads: string;
     disabled: string;
     disabledCheckbox: string;
+    error: string;
 };
