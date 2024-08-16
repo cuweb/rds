@@ -18,13 +18,13 @@ import EditorTheme from './themes/EditorTheme'
 import './styles.css'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
 import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
-// import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 import AutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { FormField } from '../FormField/FormField'
 import OnChangePlugin from './plugins/OnChangePlugin'
 import InlineImagePlugin from './plugins/InlineImagePlugin'
 import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
+// import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 // import RichTextEditorHit from './utils/RichTextEditorHit'
 import { useState } from 'react'
 import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
@@ -128,6 +128,10 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   const editorClass = disabled ? 'cu-editor__disabled' : ''
 
+  const [images, setImages] = useState<string[]>([])
+
+  console.log('🚀 ~ Editor ~ images:', images)
+
   return (
     <FormField
       name={name}
@@ -165,11 +169,12 @@ export const Editor = ({ ...props }: EditorProps) => {
             />
             <ParagraphPlaceholderPlugin placeholder={placeholder} hideOnEmptyEditor />
             <HistoryPlugin />
-            <InlineImagePlugin captionsEnabled={captionsEnabled} setCaptionsEnabled={setCaptionsEnabled} />
-            {/* <RichTextEditorHit captionsEnabled={captionsEnabled} placeholder={placeholder} /> */}
+            <InlineImagePlugin
+              captionsEnabled={captionsEnabled}
+              setCaptionsEnabled={setCaptionsEnabled}
+              setImages={setImages}
+            />
             <AutoFocusPlugin />
-            {/* <CodeHighlightPlugin /> */}
-            {/* <CustomPlaceholderPlugin /> */}
             <ListPlugin />
             <LinkPlugin />
             <AutoLinkPlugin />
