@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export interface QuoteProps {
     children?: React.ReactNode;
     cite?: string;

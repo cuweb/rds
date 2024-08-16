@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export interface SearchInputProps {
     callback: (k: string) => void;
     placeholder: string;

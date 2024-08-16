@@ -1,6 +1,5 @@
 import { default as React } from '../../../node_modules/react';
 import { headerSizeClasses } from '../../utils/propClasses';
-
 type headerSizeKeys = keyof typeof headerSizeClasses;
 export interface PageHeaderProps {
     children?: React.ReactNode;

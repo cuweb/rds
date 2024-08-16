@@ -1,6 +1,5 @@
 import { default as React } from '../../../node_modules/react';
 import { maxWidthClasses } from '../../utils/propClasses';
-
 type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface SectionProps {
     children?: React.ReactNode;

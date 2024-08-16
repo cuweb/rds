@@ -1,5 +1,4 @@
 import { PropsWithChildren } from '../../../node_modules/react';
-
 export interface ToastBaseProps {
     type: 'success' | 'error' | 'warning' | 'info';
 }

@@ -1,5 +1,4 @@
 import { iconSizeClasses, textColorClasses } from '../../utils/propClasses';
-
 type textColorKeys = keyof typeof textColorClasses;
 type iconSizeKeys = keyof typeof iconSizeClasses;
 export interface IconProps {

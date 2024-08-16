@@ -1,6 +1,5 @@
 import { default as React } from '../../../node_modules/react';
 import { gridGapClasses, justifyContentClasses } from '../../utils/propClasses';
-
 type gridGapKey = keyof typeof gridGapClasses;
 type justifyContentKey = keyof typeof justifyContentClasses;
 export interface ButtonGroupProps {

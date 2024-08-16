@@ -1,5 +1,4 @@
 import { default as ImenuItem } from './NavInterface';
-
 export interface menuItemProps {
     menuItem: ImenuItem;
     isSubMenu: boolean;

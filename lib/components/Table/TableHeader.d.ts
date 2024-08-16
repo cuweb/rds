@@ -1,5 +1,4 @@
 import { ColumnDefinitionType } from './Table';
-
 interface TableHeaderProps {
     columns: ColumnDefinitionType[];
     noWordBreak: boolean;

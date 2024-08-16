@@ -1,5 +1,4 @@
 import { LexicalEditor } from 'lexical';
-
 export interface BlockOptionsDropdownListProp {
     editor: LexicalEditor;
     blockType: string;

@@ -1,6 +1,5 @@
 import { default as React } from '../../../node_modules/react';
 import { figureSizeClasses, figureAlignClasses } from '../../utils/propClasses';
-
 type figureSizeKeys = keyof typeof figureSizeClasses;
 type figureAlignKeys = keyof typeof figureAlignClasses;
 export interface FigureProps {

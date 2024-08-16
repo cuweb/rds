@@ -1,5 +1,4 @@
 import { maxWidthClasses } from '../../../helpers/optionClasses';
-
 type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface FieldComponentProps {
     name: string;

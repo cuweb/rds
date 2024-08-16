@@ -1,5 +1,4 @@
 import { FieldProps } from '../FormField/FormField';
-
 export interface EditorProps extends FieldProps, React.HTMLAttributes<HTMLDivElement> {
     name: string;
     label: string;

@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
     color?: 'red' | 'grey' | 'dark-grey' | 'black' | 'white';
     type?: 'button' | 'submit' | 'reset';

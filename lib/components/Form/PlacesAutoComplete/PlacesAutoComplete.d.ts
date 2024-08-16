@@ -1,5 +1,4 @@
 import { FieldComponentProps } from '../FormField/FormField';
-
 export interface SingleMarkerInterface {
     coordinates: {
         lat: number;

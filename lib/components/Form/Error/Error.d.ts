@@ -1,5 +1,4 @@
 import { ReactNode } from '../../../../node_modules/react';
-
 export interface ErrorProps {
     children: ReactNode;
     className?: string;

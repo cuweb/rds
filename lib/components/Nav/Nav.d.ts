@@ -1,5 +1,4 @@
 import { ReactNode } from '../../../node_modules/react';
-
 export interface NavWrapperProps {
     navType?: 'primary' | 'secondary';
     children: ReactNode;

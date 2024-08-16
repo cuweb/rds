@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export interface CardFigureProps {
     children: React.ReactNode;
     isRound?: boolean;

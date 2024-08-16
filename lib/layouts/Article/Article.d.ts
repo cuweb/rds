@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export interface ArticleProps {
     children?: React.ReactNode;
     content?: string;

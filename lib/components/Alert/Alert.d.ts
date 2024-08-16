@@ -1,5 +1,4 @@
 import { default as React, PropsWithChildren } from '../../../node_modules/react';
-
 export interface AlertProps {
     title: string;
     content?: React.ReactNode | string;

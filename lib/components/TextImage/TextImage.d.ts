@@ -1,6 +1,5 @@
 import { default as React } from '../../../node_modules/react';
 import { maxWidthClasses, flexRowClasses } from '../../utils/propClasses';
-
 type maxWidthKeys = keyof typeof maxWidthClasses;
 type flexRowKeys = keyof typeof flexRowClasses;
 export interface TextImageProps {

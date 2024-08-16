@@ -1,6 +1,5 @@
 import { FieldComponentProps } from '../FormField/FormField';
 import { Ref } from '../../../../node_modules/react';
-
 export interface SelectProps extends FieldComponentProps {
     options?: {
         label: string;

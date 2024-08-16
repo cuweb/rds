@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export type ImageType = {
     src: string | undefined;
     alt: string | undefined;

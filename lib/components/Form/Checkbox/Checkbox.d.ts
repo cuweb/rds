@@ -1,6 +1,5 @@
 import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet';
 import { Ref } from '../../../../node_modules/react';
-
 export interface CheckboxProps extends FieldSetComponentProps {
     checkBoxRight?: boolean;
     options?: {

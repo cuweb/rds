@@ -1,5 +1,4 @@
 import { FieldComponentProps } from '../FormField/FormField';
-
 interface Option {
     value: string;
     label: string;

@@ -1,5 +1,4 @@
 import { gridColumnClasses, gridGapClasses, maxWidthClasses } from '../../utils/propClasses';
-
 type maxWidthKeys = keyof typeof maxWidthClasses;
 type gridColumnKeys = keyof typeof gridColumnClasses;
 type gridGapKeys = keyof typeof gridGapClasses;

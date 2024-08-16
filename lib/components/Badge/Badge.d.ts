@@ -1,5 +1,4 @@
 import { borderRadiusClasses } from '../../utils/propClasses';
-
 type borderRadiusKeys = keyof typeof borderRadiusClasses;
 export interface BadgeProps {
     text: string;
