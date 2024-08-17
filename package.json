@@ -57,7 +57,7 @@
     "dompurify": "3.1.6",
     "formik": "2.4.6",
     "lexical": "0.17.0",
-    "rds-tailwind-theme": "0.7.2",
+    "rds-tailwind-theme": "0.7.3",
     "react": "18.3.1",
     "react-date-picker": "11.0.0",
     "react-datepicker": "7.3.0",
