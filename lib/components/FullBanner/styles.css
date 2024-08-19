@@ -1,0 +1,19 @@
+.cu-fullbanner .cu-pageheader h1 {
+  @apply text-lg sm:text-xl md:text-3xl lg:text-4xl;
+}
+
+.cu-fullbanner--center {
+  @apply text-center;
+}
+
+.cu-fullbanner--center .cu-buttongroup {
+  @apply justify-center;
+}
+
+.cu-fullbanner--end {
+  @apply text-right justify-end;
+}
+
+.cu-fullbanner--end .cu-buttongroup {
+  @apply justify-end;
+}

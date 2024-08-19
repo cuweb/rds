@@ -58,6 +58,10 @@ export const WideImageWrapper = ({
   hasScroll,
   hasWave,
 }: WideImageProps) => {
+  if (!opacityValues.includes(opacity)) {
+    console.warn(`Invalid opacity value: ${opacity}. It should be one of ${opacityValues.join(', ')}.`)
+  }
+
   const WideImageComponent = as
   const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
   const opacityStyle = getOpacityStyle(opacity)
