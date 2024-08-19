@@ -11,6 +11,7 @@ import FieldGroup from '../../FieldGroup/FieldGroup'
 import { $getNodeByKey } from 'lexical'
 import { InlineImageNode } from '../nodes/InlineImageNode'
 import { uploadImage } from '../../../../utils/AWS'
+import { useAWSImages } from '../context/useAWSImages'
 
 export const ImageModal = ({
   activeEditor,
@@ -37,6 +38,8 @@ export const ImageModal = ({
   const [height, setHeight] = useState<number | string>(node ? node.__height : 0)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const AWSImageContextData = useAWSImages()
 
   useEffect(() => {
     setTriggerModalOpen(triggerModalOpen)
@@ -167,6 +170,7 @@ export const ImageModal = ({
       setSrc(imageSrc)
 
       activeEditor.update(() => {
+        AWSImageContextData.addImage(imageSrc)
         node.setSrc(imageSrc)
         node.setAltText(altText)
         node.setShowCaption(showCaption)
