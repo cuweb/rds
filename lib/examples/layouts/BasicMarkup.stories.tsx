@@ -116,13 +116,12 @@ export const BasicMarkup: Story = {
       <Nav>
         <Nav.Primary>
           <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-          <Nav.Menu menu={NavDataSingle} />
           <Nav.Aside menu={NavAsideData} />
         </Nav.Primary>
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage>
             <TextImage.Content headerType="h1" title="Basic Markup">
               <p>
