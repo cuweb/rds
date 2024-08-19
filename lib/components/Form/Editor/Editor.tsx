@@ -114,10 +114,7 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   const { setFieldValue } = useFormikContext<string>()
 
-  const [captionsEnabled, setCaptionsEnabled] = useState(false)
-
   const onDefaultChange = (htmlString: string | null) => {
-    setCaptionsEnabled(htmlString ? true : false)
     setFieldValue(name, htmlString)
     setEditorContent(htmlString)
 
@@ -198,11 +195,7 @@ export const Editor = ({ ...props }: EditorProps) => {
             />
             <ParagraphPlaceholderPlugin placeholder={placeholder} hideOnEmptyEditor />
             <HistoryPlugin />
-            <InlineImagePlugin
-              captionsEnabled={captionsEnabled}
-              setCaptionsEnabled={setCaptionsEnabled}
-              setImages={setImages}
-            />
+            <InlineImagePlugin setImages={setImages} />
             <AutoFocusPlugin />
             <ListPlugin />
             <LinkPlugin />

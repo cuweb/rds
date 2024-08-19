@@ -10,12 +10,8 @@ import { INSERT_INLINE_IMAGE_COMMAND } from '../utils/insertInlineImageCommand'
 export type InsertInlineImagePayload = Readonly<InlineImagePayload>
 
 export default function InlineImagePlugin({
-  captionsEnabled,
-  setCaptionsEnabled,
   setImages,
 }: {
-  captionsEnabled?: boolean
-  setCaptionsEnabled: Dispatch<SetStateAction<boolean>>
   setImages: Dispatch<SetStateAction<string[]>>
 }): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
@@ -34,14 +30,12 @@ export default function InlineImagePlugin({
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
           }
 
-          setCaptionsEnabled(true)
-
           return true
         },
         COMMAND_PRIORITY_EDITOR,
       ),
     )
-  }, [captionsEnabled, setCaptionsEnabled, editor, setImages])
+  }, [editor, setImages])
 
   return null
 }
