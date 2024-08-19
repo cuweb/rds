@@ -173,6 +173,11 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     return this.__src
   }
 
+  setSrc(src: string): void {
+    const writable = this.getWritable()
+    writable.__src = src
+  }
+
   getAltText(): string {
     return this.__altText
   }

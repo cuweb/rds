@@ -39,7 +39,7 @@ export const ImageModal = ({
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    // setTriggerModalOpen(triggerModalOpen)
+    setTriggerModalOpen(triggerModalOpen)
 
     if (triggerModalOpen && !node) {
       resetFields()
@@ -166,10 +166,12 @@ export const ImageModal = ({
 
       setSrc(imageSrc)
 
-      const payload = { altText, imageSrc, showCaption, position, caption }
-
       activeEditor.update(() => {
-        node.update(payload)
+        node.setSrc(imageSrc)
+        node.setAltText(altText)
+        node.setShowCaption(showCaption)
+        node.setPosition(position)
+        node.setCaption(caption)
       })
 
       setTriggerModalOpen(false)
