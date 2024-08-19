@@ -31,6 +31,7 @@ import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin
 import { useFormikContext } from 'formik'
 import useErrorClass from '../UseError'
 import { FieldProps } from '../FormField/FormField'
+import { deleteImage } from '../../../utils/AWS'
 
 export interface EditorProps extends FieldProps, React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -41,7 +42,7 @@ export interface EditorProps extends FieldProps, React.HTMLAttributes<HTMLDivEle
   disabled?: boolean
   required?: boolean
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  handleFormSubmit: (f: () => void) => void
+  onFormSubmit: (f: () => Promise<void>) => void
 }
 
 const initialValueLoader = (editor: LexicalEditor, initialValue?: string) => {
@@ -104,9 +105,12 @@ export const Editor = ({ ...props }: EditorProps) => {
     value,
     placeholder = 'Start typing your content here...',
     onChange,
-    handleFormSubmit,
+    onFormSubmit,
     ...rest
   } = props
+
+  const [editorContent, setEditorContent] = useState<string | null>(null)
+  const [images, setImages] = useState<string[]>([])
 
   const { setFieldValue } = useFormikContext<string>()
 
@@ -115,6 +119,7 @@ export const Editor = ({ ...props }: EditorProps) => {
   const onDefaultChange = (htmlString: string | null) => {
     setCaptionsEnabled(htmlString ? true : false)
     setFieldValue(name, htmlString)
+    setEditorContent(htmlString)
 
     if (onChange) {
       onChange({
@@ -130,15 +135,31 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   const editorClass = disabled ? 'cu-editor__disabled' : ''
 
-  const [images, setImages] = useState<string[]>([])
+  const AWSImagesCleanup = async () => {
+    if (images.length && editorContent) {
+      console.log('🚀 ~ Editor ~ images:', images)
+      await Promise.all(
+        images.map(async (image) => {
+          if (!editorContent.includes(image)) {
+            try {
+              const fileName = image.split('/').pop()
+              if (fileName) {
+                await deleteImage(fileName)
+              }
+            } catch (error) {
+              console.log(error)
+            }
+          }
+        }),
+      )
+    }
+  }
 
   useEffect(() => {
-    const AWSImagesCleanup = () => {
-      console.log('🚀 ~ Editor ~ images1:', images)
+    if (images.length && editorContent) {
+      onFormSubmit(AWSImagesCleanup)
     }
-    // Pass the childFunction to the parent when the component mounts
-    handleFormSubmit(AWSImagesCleanup)
-  }, [images])
+  }, [images, editorContent])
 
   return (
     <FormField
