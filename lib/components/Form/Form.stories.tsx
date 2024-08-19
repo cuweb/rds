@@ -136,10 +136,19 @@ export const Editor: Story = () => {
     editor: Yup.string().required('Content is required'),
   })
 
+  const [triggerLexicalSubmitEvent, setTriggerLexicalSubmitEvent] = useState<(() => void) | null>(null)
+
+  const handleReceiveFunction = (f) => {
+    setTriggerLexicalSubmitEvent(() => f)
+  }
+
   const onSubmit = async (values: IEditor, actions: FormikHelpers<IEditor>) => {
     actions.setSubmitting(true)
     await sleep(1000)
     alert(JSON.stringify(values, null, 2))
+    if (triggerLexicalSubmitEvent) {
+      triggerLexicalSubmitEvent()
+    }
     console.log(values)
     actions.setSubmitting(false)
   }
@@ -161,9 +170,7 @@ export const Editor: Story = () => {
           placeholder="Text goes here..."
           required={true}
           disabled={formikProps.isSubmitting}
-          onChange={() => {
-            console.log('Changing')
-          }}
+          handleFormSubmit={handleReceiveFunction}
         />
       </Form.FieldGroup>
       <ButtonGroup>

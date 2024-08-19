@@ -26,7 +26,7 @@ import { InlineImageNode } from './nodes/InlineImageNode'
 // import TreeViewPlugin from './plugins/TreeViewPlugin'
 // import CodeHighlightPlugin from './plugins/CodeHighlightPlugin'
 // import RichTextEditorHit from './utils/RichTextEditorHit'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ParagraphPlaceholderPlugin } from './plugins/ParagraphPlaceholderPlugin'
 import { useFormikContext } from 'formik'
 import useErrorClass from '../UseError'
@@ -41,6 +41,7 @@ export interface EditorProps extends FieldProps, React.HTMLAttributes<HTMLDivEle
   disabled?: boolean
   required?: boolean
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleFormSubmit: (f: () => void) => void
 }
 
 const initialValueLoader = (editor: LexicalEditor, initialValue?: string) => {
@@ -103,6 +104,7 @@ export const Editor = ({ ...props }: EditorProps) => {
     value,
     placeholder = 'Start typing your content here...',
     onChange,
+    handleFormSubmit,
     ...rest
   } = props
 
@@ -130,7 +132,13 @@ export const Editor = ({ ...props }: EditorProps) => {
 
   const [images, setImages] = useState<string[]>([])
 
-  console.log('🚀 ~ Editor ~ images:', images)
+  useEffect(() => {
+    const AWSImagesCleanup = () => {
+      console.log('🚀 ~ Editor ~ images1:', images)
+    }
+    // Pass the childFunction to the parent when the component mounts
+    handleFormSubmit(AWSImagesCleanup)
+  }, [images])
 
   return (
     <FormField
