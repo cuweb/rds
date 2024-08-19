@@ -5,7 +5,7 @@ import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
 const meta: Meta<typeof TextImage> = {
-  title: 'Components/Text Image',
+  title: 'Deprecated/Text & Image',
   component: TextImage,
   tags: ['autodocs'],
   parameters: {

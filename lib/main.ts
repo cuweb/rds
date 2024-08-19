@@ -41,7 +41,7 @@ export { Quote } from './components/Quote/Quote'
 export { SearchInput } from './components/SearchInput/SearchInput'
 export { Table } from './components/Table/Table'
 export { Testimonial } from './components/Testimonial/Testimonial'
-export { TextImage } from './components/TextImage/TextImage'
+export { TextMedia } from './components/TextMedia/TextMedia'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
 
@@ -81,3 +81,6 @@ export { iconNames } from '../public/assets/font-awesome/icon-list.js'
 
 // Utils
 export * as utils from './utils/propClasses'
+
+// Deprecated
+export { TextImage } from './components/TextImage/TextImage'
