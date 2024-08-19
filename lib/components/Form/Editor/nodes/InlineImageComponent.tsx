@@ -24,7 +24,6 @@ import { $isInlineImageNode, InlineImageNode } from './InlineImageNode'
 import { Button } from '../../../Button/Button'
 import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
 import { ImageModal } from '../utils/ImageModal'
-import { DeleteFromS3 } from '../../../../utils/AWSUploads'
 
 const imageCache = new Set()
 
@@ -84,7 +83,6 @@ export default function InlineImageComponent({
 
         if (node && node.__type === 'inline-image') {
           if (node && node.__src) {
-            DeleteFromS3(node.__src)
             node?.remove()
           }
         }

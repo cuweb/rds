@@ -77,3 +77,4 @@ export { iconNames } from '../public/assets/font-awesome/icon-list.js'
 
 // Utils
 export * as utils from './utils/propClasses'
+export * as AWS from './utils/AWS'
