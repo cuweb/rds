@@ -29,7 +29,7 @@ export const Testimonial = ({
   return (
     <div className="cu-testimonial md:py-8">
       <div className="bg-cu-black-50 rounded-xl">
-        <div className="mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-14 lg:gap-20 items-center md:pl-8 md:pr-12 md:flex-row md:items-stretch">
+        <div className="mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center md:pl-8 md:pr-12 md:flex-row md:items-stretch">
           <div
             className="w-full md:-my-8 hidden md:block md:flex-[0_0_30%] bg-cu-red rounded-lg bg-cover"
             style={inlineImageStyles}
