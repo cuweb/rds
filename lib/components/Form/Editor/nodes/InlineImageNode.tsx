@@ -141,7 +141,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
       img.setAttribute('width', this.__width.toString())
       img.setAttribute('height', this.__height.toString())
 
-      figure.className = `image-position image-position--${this.__position}`
+      figure.className = this.__position ? `image-position image-position--${this.__position}` : `image-position`
       figure.appendChild(img)
 
       if (this.__caption) {
@@ -171,6 +171,11 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   getSrc(): string {
     return this.__src
+  }
+
+  setSrc(src: string): void {
+    const writable = this.getWritable()
+    writable.__src = src
   }
 
   getAltText(): string {

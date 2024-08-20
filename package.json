@@ -41,6 +41,10 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "3.617.0",
+    "@aws-sdk/credential-providers": "3.617.0",
+    "@aws-sdk/s3-request-presigner": "3.617.0",
+    "@aws-sdk/util-format-url": "3.609.0",
     "@headlessui/react": "2.1.2",
     "@heroicons/react": "2.1.5",
     "@lexical/react": "0.17.0",
@@ -67,6 +71,10 @@
     "yup": "1.4.0"
   },
   "peerDependencies": {
+    "@aws-sdk/client-s3": "3.617.0",
+    "@aws-sdk/credential-providers": "3.617.0",
+    "@aws-sdk/s3-request-presigner": "3.617.0",
+    "@aws-sdk/util-format-url": "3.609.0",
     "@lexical/react": "0.17.0",
     "@next-tools/dynamic": "0.0.11",
     "@react-google-maps/api": "2.19.3",
