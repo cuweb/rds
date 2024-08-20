@@ -166,6 +166,10 @@ i.chevron-down {
   @apply outline-1 outline-dashed outline-offset-4 outline-blue-950;
 }
 
+.image-position img {
+  @apply w-auto h-auto m-auto;
+}
+
 .image-position--left {
   @apply float-left mr-5;
   clear: both;

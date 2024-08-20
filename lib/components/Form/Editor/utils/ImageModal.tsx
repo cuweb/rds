@@ -31,7 +31,7 @@ export const ImageModal = ({
   const [file, setFile] = useState<File | null>(null)
   const [altText, setAltText] = useState(node ? node.getAltText() : '')
   const [altTextError, setAltTextError] = useState(false)
-  const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
+  const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'full')
   const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
   const [caption, setCaption] = useState(node ? node.getCaption() : '')
   const [width, setWidth] = useState<number | string>(node ? node.__width : 0)
@@ -194,7 +194,7 @@ export const ImageModal = ({
     setFile(null)
     setAltText('')
     setAltTextError(false)
-    setPosition('left')
+    setPosition('full')
     setShowCaption(false)
     setCaption('')
     if (fileInputRef.current) {
@@ -203,9 +203,9 @@ export const ImageModal = ({
   }
 
   const selectValues = [
+    { value: 'full', label: 'None (Center)' },
     { value: 'left', label: 'Left' },
     { value: 'right', label: 'Right' },
-    { value: 'full', label: 'Full' },
   ]
 
   return (
