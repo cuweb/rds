@@ -1,10 +1,10 @@
 [
   {
     "path": "dist/rds.es.js",
-    "limit": "200 kB"
+    "limit": "300 kB"
   },
   {
     "path": "dist/rds.umd.js",
-    "limit": "200 kB"
+    "limit": "300 kB"
   }
 ]

@@ -1,4 +1,3 @@
-import React from 'react'
 import { PageHeader } from '@carletonuniversity/rds'
 import { justifyContentClasses } from '../../utils/propClasses'
 

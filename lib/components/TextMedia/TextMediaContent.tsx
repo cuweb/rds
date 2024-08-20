@@ -20,8 +20,8 @@ export const TextMediaContent = ({
   headerType = 'h2',
   width = 60,
   align = 'start',
-  hasUnderline,
-  isWhite,
+  hasUnderline = true,
+  isWhite = false,
 }: TextMediaContentProps) => {
   const inlineContentStyles = {
     flex: `0 0 ${width}%`,
@@ -32,7 +32,7 @@ export const TextMediaContent = ({
       <PageHeader
         as={headerType}
         header={title}
-        size="md"
+        size={headerType === 'h2' ? 'md' : 'lg'}
         noUnderline={hasUnderline ? false : true}
         isWhite={isWhite ? true : false}
       />

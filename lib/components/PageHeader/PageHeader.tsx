@@ -60,9 +60,23 @@ export const PageHeaderWrapper = ({
   // Truncate content if it's longer than 320 characters
   const truncatedContent = content && content.length > 320 ? `${content.substring(0, 320)}...` : content
 
-  const hasUnderline = !noUnderline
-    ? `relative after:absolute after:h-px after:bottom-0 after:bg-cu-red ${headerPadding}`
-    : ''
+  // const hasUnderline = !noUnderline
+  //   ? `relative after:absolute after:h-px after:bottom-0 after:bg-cu-red ${headerPadding}`
+  //   : ''
+
+  let hasUnderline
+  switch (noUnderline) {
+    case false:
+      hasUnderline = `relative after:absolute after:h-px after:bottom-0 ${headerPadding}`
+      if (isWhite) {
+        hasUnderline = `${hasUnderline} after:bg-white`
+      } else {
+        hasUnderline = `${hasUnderline} after:bg-cu-red`
+      }
+      break
+    default:
+      hasUnderline = ''
+  }
 
   const textColor = isWhite ? 'text-white' : ''
   const centerText = isCenter ? 'text-center mx-auto' : ''

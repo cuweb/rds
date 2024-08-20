@@ -42,9 +42,7 @@ export const Primary: Story = {
               </a>
             </ButtonGroup>
           </TextMedia.Content>
-          <TextMedia.Aside align="center" border="lg" borderColor="white">
-            <img src="https://picsum.photos/id/431/600/460" alt="Presentation only" width="600" height="460" />
-          </TextMedia.Aside>
+          <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
         </TextMedia>
       </Section>
     )
@@ -74,7 +72,9 @@ export const BgImage: Story = {
               </a>
             </ButtonGroup>
           </TextMedia.Content>
-          <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
+          <TextMedia.Aside align="center" border="lg" borderColor="white">
+            <img src="https://picsum.photos/id/431/600/460" alt="Presentation only" width="600" height="460" />
+          </TextMedia.Aside>
         </TextMedia>
       </Section>
     )
@@ -91,38 +91,6 @@ export const HeaderOne: Story = {
       <Section>
         <TextMedia {...args}>
           <TextMedia.Content title="Website and Application Development" headerType="h1" width={50} hasUnderline>
-            <p>
-              Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-              accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-            </p>
-            <ButtonGroup>
-              <a
-                href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/"
-                className="cu-button cu-button--red"
-              >
-                Read more
-              </a>
-            </ButtonGroup>
-          </TextMedia.Content>
-          <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
-        </TextMedia>
-      </Section>
-    )
-  },
-}
-
-export const Reverse: Story = {
-  args: {
-    ...Primary.args,
-    maxWidth: '7xl',
-    reverse: true,
-  },
-  render: (args) => {
-    return (
-      <Section>
-        <TextMedia {...args}>
-          <TextMedia.Content title="Website and Application Development" width={50} hasUnderline>
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
               reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores

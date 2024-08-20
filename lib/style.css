@@ -29,4 +29,6 @@
 
 /* Layouts */
 @import './layouts/Column/styles.css';
+@import './layouts/ImageCover/styles.css';
 @import './layouts/StackedList/styles.css';
+@import './layouts/WideWave/styles.css';
