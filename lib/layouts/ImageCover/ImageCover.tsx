@@ -31,7 +31,7 @@ export const ImageCover = ({
 
   return (
     <section
-      className={`cu-imagecover relative ${innerPadding} bg-cover bg-no-repeat cu-browsers-edge not-contained`}
+      className={`cu-imagecover relative ${innerPadding} bg-cover bg-no-repeat cu-no-browsers-edge not-contained`}
       style={inlineImageStyles}
     >
       <div className={`relative ${maxWidthClasses[maxWidth]} mx-auto z-30`}>{children}</div>

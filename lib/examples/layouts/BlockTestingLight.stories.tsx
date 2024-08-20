@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from '../../components/Nav/Nav'
 import { Main } from '../../layouts/Main/Main'
 import { Section } from '../../layouts/Section/Section'
+import { WideWave } from '../../layouts/WideWave/WideWave'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
@@ -26,10 +27,10 @@ export const BlockTestingLight: Story = {
         </Nav.Primary>
       </Nav>
 
-      <Main isDark>
-        <Section proseType="light">
+      <Main>
+        <WideWave wave="black">
           <BlockTesting />
-        </Section>
+        </WideWave>
       </Main>
 
       <FooterDept

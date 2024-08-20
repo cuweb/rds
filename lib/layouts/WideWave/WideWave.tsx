@@ -25,7 +25,7 @@ export const WideWave = ({ children, wave = 'red', hasRaven = false }: WideWaveP
 
   return (
     <section
-      className={`relative cu-widewaves cu-prose cu-prose-light ${waveBgClass} ${waveBgColor} ${edgePadding} ${topPadding} pb-8 md:pb-20 bg-[length:100.5%] bg-no-repeat cu-browsers-edge not-contained`}
+      className={`relative cu-widewaves cu-prose cu-prose-light ${waveBgClass} ${waveBgColor} ${edgePadding} ${topPadding} pb-8 md:pb-20 bg-[length:100.5%] bg-no-repeat cu-no-browsers-edge not-contained`}
       style={waveBgPosition}
     >
       {hasRaven && wave === 'black' ? (

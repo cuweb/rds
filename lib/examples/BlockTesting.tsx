@@ -1,5 +1,11 @@
-import { Alert } from '../components/Alert/Alert'
 import { Column } from '../layouts/Column/Column'
+
+import { Alert } from '../components/Alert/Alert'
+import { BadgeGroup } from '../components/BadgeGroup/BadgeGroup'
+import { Badge } from '../components/Badge/Badge'
+import { ButtonGroup } from '../components/ButtonGroup/ButtonGroup'
+import { Button } from '../components/Button/Button'
+import { Calendar } from '../components/Calendar/Calendar'
 import { Quote } from '../components/Quote/Quote'
 import { TextImage } from '../components/TextImage/TextImage'
 
@@ -50,11 +56,95 @@ export const BlockTesting = () => {
         </TextImage.Content>
       </TextImage>
 
-      <h2>Alert Block Examples</h2>
       <SinglePara />
+
       <Alert content="Records have been updated." size="sm" title="Alert title" type="success" />
+
       <SinglePara />
-      <Alert content="Records have been updated." size="lg" title="Alert title" type="warning" />
+
+      <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
+        <Badge color="grey" text="Grey Badge" />
+        <Badge color="green" text="Green Badge" />
+        <Badge color="red" text="Red Badge" />
+        <Badge color="yellow" text="Yellow Badge" />
+        <Badge color="blue" text="Blue Badge" />
+        <Badge color="purple" text="Purple Badge" />
+      </BadgeGroup>
+
+      <SinglePara />
+
+      <ButtonGroup align="start" gap="2">
+        <Button onClick={() => {}} title="Primary Red" />
+        <Button color="dark-grey" onClick={() => {}} title="Dark Grey" />
+        <Button color="grey" onClick={() => {}} title="Light Grey" />
+      </ButtonGroup>
+
+      <SinglePara />
+
+      <Calendar
+        callback={() => {}}
+        events={[
+          {
+            endDatetime: '2022-10-21T14:30',
+            id: 1,
+            imageUrl:
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'Leslie Alexander',
+            startDatetime: '2022-10-21T13:00',
+          },
+          {
+            endDatetime: '2022-10-21T11:30',
+            id: 2,
+            imageUrl:
+              'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'Michael Foster',
+            startDatetime: '2022-10-21T09:00',
+          },
+          {
+            endDatetime: '2022-10-24T18:30',
+            id: 3,
+            imageUrl:
+              'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'Dries Vincent',
+            startDatetime: '2022-10-24T17:00',
+          },
+          {
+            endDatetime: '2022-10-26T14:30',
+            id: 4,
+            imageUrl:
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'Leslie Alexander',
+            startDatetime: '2022-10-26T13:00',
+          },
+          {
+            endDatetime: '2022-10-30T14:30',
+            id: 5,
+            imageUrl:
+              'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'Michael Foster',
+            startDatetime: '2022-10-30T14:00',
+          },
+        ]}
+      />
+
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
+      <SinglePara />
       <SinglePara />
 
       <h2>Heading Two</h2>
