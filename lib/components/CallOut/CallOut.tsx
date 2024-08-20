@@ -1,6 +1,6 @@
 import React from 'react'
 import { maxWidthClasses, justifyContentClasses } from '../../utils/propClasses'
-import { PageHeader } from '@carletonuniversity/rds'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
 type justifyContentKeys = keyof typeof justifyContentClasses

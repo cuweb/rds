@@ -1,5 +1,5 @@
 import React from 'react'
-import { Quote } from '@carletonuniversity/rds'
+import { Quote } from '../Quote/Quote'
 
 export interface TestimonialProps {
   children: React.ReactNode

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader } from '@carletonuniversity/rds'
+import { PageHeader } from '../PageHeader/PageHeader'
 import { justifyContentClasses } from '../../utils/propClasses'
 
 type justifyContentKeys = keyof typeof justifyContentClasses
