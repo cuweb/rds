@@ -44,6 +44,7 @@ export declare class InlineImageNode extends DecoratorNode<JSX.Element> {
     exportDOM(): DOMExportOutput;
     exportJSON(): SerializedInlineImageNode;
     getSrc(): string;
+    setSrc(src: string): void;
     getAltText(): string;
     setAltText(altText: string): void;
     setWidthAndHeight(width: 'inherit' | number, height: 'inherit' | number): void;

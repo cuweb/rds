@@ -4,5 +4,6 @@ export interface FileUploadProps extends FieldComponentProps {
     displayPreview?: boolean;
     setFieldValue?: boolean;
     preview?: string[];
+    handleOnDelete?: () => void;
 }
 export declare const FileUpload: ({ ...props }: FileUploadProps) => import("react/jsx-runtime").JSX.Element;

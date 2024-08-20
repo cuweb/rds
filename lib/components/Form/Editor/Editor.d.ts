@@ -8,5 +8,6 @@ export interface EditorProps extends FieldProps, React.HTMLAttributes<HTMLDivEle
     disabled?: boolean;
     required?: boolean;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onFormSubmit: (f: () => Promise<void>) => void;
 }
 export declare const Editor: ({ ...props }: EditorProps) => import("react/jsx-runtime").JSX.Element;
