@@ -29,7 +29,9 @@ export const BlockTestingLight: Story = {
 
       <Main>
         <WideWave wave="black">
-          <BlockTesting />
+          <Section proseType="light">
+            <BlockTesting />
+          </Section>
         </WideWave>
       </Main>
 
