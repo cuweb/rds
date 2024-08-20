@@ -25,7 +25,7 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
 
   return (
     <>
-      {jobTitle && <p className="cu-prose-light">{jobTitle}</p>}
+      {jobTitle && <p className="cu-prose-font-light">{jobTitle}</p>}
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (

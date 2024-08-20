@@ -1,18 +1,19 @@
 /* Prose Classes */
 
 .cu-prose {
-  @apply prose prose-rds max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4;
+  @apply prose max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4;
+  /* @apply prose prose-dark max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4; */
 }
 
-.cu-prose-rds {
-  @apply prose-rds;
-}
-
-.cu-prose-white {
-  @apply prose-white;
+.cu-prose-dark {
+  @apply prose-dark;
 }
 
 .cu-prose-light {
+  @apply prose-light;
+}
+
+.cu-prose-font-light {
   @apply prose-xl md:prose-2xl font-light;
 }
 

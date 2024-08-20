@@ -46,7 +46,7 @@ export const PageHeaderEvent = ({
 
   return (
     <>
-      {finalDate && <p className="cu-prose-light">{finalDate}</p>}
+      {finalDate && <p className="cu-prose-font-light">{finalDate}</p>}
 
       {/* Check if details are set and output as ul */}
       <div className={`${listStyles.listWrapper} cu-prose`}>

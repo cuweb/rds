@@ -65,7 +65,7 @@ export const TextImageContent = ({
     <>
       <div
         className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter} ${
-          headerType === 'h1' ? `cu-prose cu-prose-light` : `cu-prose`
+          headerType === 'h1' ? `cu-prose` : `cu-prose`
         }`}
         style={inlineContentStyles}
       >

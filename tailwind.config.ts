@@ -40,7 +40,7 @@ const config: Config = {
             },
           },
         },
-        rds: {
+        dark: {
           css: {
             '--tw-prose-body': theme('colors.cu-black[800]'),
             '--tw-prose-headings': theme('colors.cu-black[700]'),
@@ -51,7 +51,7 @@ const config: Config = {
             '--tw-prose-quote-borders': theme('colors.cu-red[DEFAULT]'),
           },
         },
-        white: {
+        light: {
           css: {
             '--tw-prose-body': theme('colors.white'),
             '--tw-prose-headings': theme('colors.white'),

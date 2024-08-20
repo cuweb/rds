@@ -146,10 +146,10 @@ export const Editor = ({ ...props }: EditorProps) => {
             <RichTextPlugin
               contentEditable={
                 <ContentEditable
-                  className="cu-editor-richtext prose prose-lg prose-rds md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none"
+                  className="cu-editor-richtext prose prose-lg prose-dark md:prose-xl prose-img:w-full prose-img:rounded-lg max-w-full first:mt-0 last:mb-0 outline-none"
                   aria-placeholder={placeholder}
                   placeholder={
-                    <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
+                    <p className="cu-editor-placeholder prose prose-lg prose-dark md:prose-xl text-cu-black-400">
                       {placeholder}
                     </p>
                   }
@@ -157,7 +157,7 @@ export const Editor = ({ ...props }: EditorProps) => {
                 />
               }
               placeholder={
-                <p className="cu-editor-placeholder prose prose-lg prose-rds md:prose-xl text-cu-black-400">
+                <p className="cu-editor-placeholder prose prose-lg prose-dark md:prose-xl text-cu-black-400">
                   {placeholder}
                 </p>
               }
