@@ -148,7 +148,7 @@ i.chevron-down {
 }
 
 .image-wrapper .image-wrapper__caption {
-  @apply m-0 p-0 text-base leading-6 italic text-cu-black-700;
+  @apply m-0 pt-3 px-5 pb-4 italic text-base leading-3 rounded-b-lg shadow-lg;
 }
 
 .image-position {
