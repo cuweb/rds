@@ -42,7 +42,7 @@ const config: Config = {
         },
         rds: {
           css: {
-            '--tw-prose-body': theme('colors.cu-red[800]'),
+            '--tw-prose-body': theme('colors.cu-black[800]'),
             '--tw-prose-headings': theme('colors.cu-black[700]'),
             '--tw-prose-links': theme('colors.cu-red[DEFAULT]'),
             '--tw-prose-bold': theme('colors.cu-black[900]'),
