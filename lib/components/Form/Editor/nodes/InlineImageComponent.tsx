@@ -47,7 +47,7 @@ function LazyImage({
   src,
 }: {
   altText: string
-  className: string | null
+  className?: string | null
   imageRef: { current: null | HTMLImageElement }
   src: string
 }): JSX.Element {
@@ -233,14 +233,10 @@ export default function InlineImageComponent({
             </ButtonGroup>
           </div>
         )}
-
-        <LazyImage
-          className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''} !my-2`}
-          src={src}
-          altText={altText}
-          imageRef={imageRef}
-        />
-        {showCaption && caption && <div className="image-wrapper__caption">{caption}</div>}
+        <div className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''}  rounded-lg`}>
+          <LazyImage className={`!my-2`} src={src} altText={altText} imageRef={imageRef} />
+          {showCaption && caption && <div className="image-wrapper__caption">{caption}</div>}
+        </div>
         {ModalOpen && (
           <ImageModal
             activeEditor={editor}

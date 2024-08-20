@@ -162,8 +162,8 @@ i.chevron-down {
   min-width: 1px;
 }
 
-.image-position img.focused {
-  @apply outline-1 outline-dashed outline-offset-2 outline-blue-950;
+.image-position .focused {
+  @apply outline-1 outline-dashed outline-offset-4 outline-blue-950;
 }
 
 .image-position--left {
