@@ -10,6 +10,8 @@ import Error from '../../Error/Error'
 import FieldGroup from '../../FieldGroup/FieldGroup'
 import { $getNodeByKey } from 'lexical'
 import { InlineImageNode } from '../nodes/InlineImageNode'
+import { uploadImage } from '../../../../utils/AWS'
+import { useAWSImages } from '../context/useAWSImages'
 
 export const ImageModal = ({
   activeEditor,
@@ -26,15 +28,18 @@ export const ImageModal = ({
   const node = nodeKey ? editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode) : null
   const [src, setSrc] = useState(node ? node.getSrc() : '')
   const [srcError, setSrcError] = useState(false)
+  const [file, setFile] = useState<File | null>(null)
   const [altText, setAltText] = useState(node ? node.getAltText() : '')
   const [altTextError, setAltTextError] = useState(false)
-  const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'left')
+  const [position, setPosition] = useState<Position>(node ? node.getPosition() : 'full')
   const [showCaption, setShowCaption] = useState(node ? node.getShowCaption() : false)
   const [caption, setCaption] = useState(node ? node.getCaption() : '')
   const [width, setWidth] = useState<number | string>(node ? node.__width : 0)
   const [height, setHeight] = useState<number | string>(node ? node.__height : 0)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const AWSImageContextData = useAWSImages()
 
   useEffect(() => {
     setTriggerModalOpen(triggerModalOpen)
@@ -66,12 +71,14 @@ export const ImageModal = ({
           }
 
           setSrc(reader.result)
+          setFile(files[0])
           setSrcError(false)
         }
       }
 
       reader.onerror = (err) => {
         console.error('Error reading file:', err)
+        setFile(null)
         setSrcError(true)
         setWidth(0)
         setHeight(0)
@@ -80,6 +87,8 @@ export const ImageModal = ({
       if (files !== null) {
         reader.readAsDataURL(files[0])
       }
+    } else {
+      setSrcError(true)
     }
   }
 
@@ -100,7 +109,7 @@ export const ImageModal = ({
     setCaption(e.target.value)
   }
 
-  const handleInsertOnClick = () => {
+  const handleInsertOnClick = async () => {
     if (!src) {
       setSrcError(true)
     } else if (!altText) {
@@ -108,43 +117,68 @@ export const ImageModal = ({
     } else if (src && altText) {
       setSrcError(false)
       setAltTextError(false)
+      if (file) {
+        try {
+          const imageURL = await uploadImage(file)
 
-      // Ensure height and width are numbers or undefined
-      const parsedHeight = typeof height === 'number' ? height : undefined
-      const parsedWidth = typeof width === 'number' ? width : undefined
+          setSrc(imageURL)
 
-      const payload = {
-        altText,
-        height: parsedHeight,
-        showCaption,
-        src,
-        width: parsedWidth,
-        position,
-        caption,
+          // Ensure height and width are numbers or undefined
+          const parsedHeight = typeof height === 'number' ? height : undefined
+          const parsedWidth = typeof width === 'number' ? width : undefined
+
+          const payload = {
+            altText,
+            height: parsedHeight,
+            showCaption,
+            src: imageURL,
+            width: parsedWidth,
+            position,
+            caption,
+          }
+
+          activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
+
+          setTriggerModalOpen(false)
+          resetFields()
+        } catch (err) {
+          console.error(err)
+        }
       }
-
-      activeEditor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, payload)
-      setTriggerModalOpen(false)
-      setTriggerModalOpen(false)
-      resetFields()
     }
   }
 
-  const handleOnConfirm = () => {
+  const handleOnConfirm = async () => {
     if (!src) {
       setSrcError(true)
     } else if (!altText) {
       setAltTextError(true)
     } else if (node) {
-      activeEditor.update(() => {
-        setSrcError(false)
-        setAltTextError(false)
+      setSrcError(false)
+      setAltTextError(false)
 
-        const payload = { altText, src, showCaption, position, caption }
-        node.update(payload)
-        setTriggerModalOpen(false)
-        setTriggerModalOpen(false)
+      let imageSrc = src
+      if (file) {
+        try {
+          imageSrc = await uploadImage(file)
+        } catch (error) {
+          console.error('Error uploading image:', error)
+          return
+        }
+      }
+
+      setSrc(imageSrc)
+
+      activeEditor.update(() => {
+        AWSImageContextData.addImage(imageSrc)
+        node.setSrc(imageSrc)
+        node.setAltText(altText)
+        node.setShowCaption(showCaption)
+        node.setPosition(position)
+        node.setCaption(caption)
       })
+
+      setTriggerModalOpen(false)
       resetFields()
     }
   }
@@ -152,15 +186,15 @@ export const ImageModal = ({
   const handleCancelOnClick = () => {
     resetFields()
     setTriggerModalOpen(false)
-    setTriggerModalOpen(false)
   }
 
   const resetFields = () => {
     setSrc('')
     setSrcError(false)
+    setFile(null)
     setAltText('')
     setAltTextError(false)
-    setPosition('left')
+    setPosition('full')
     setShowCaption(false)
     setCaption('')
     if (fileInputRef.current) {
@@ -169,9 +203,9 @@ export const ImageModal = ({
   }
 
   const selectValues = [
+    { value: 'full', label: 'None (Center)' },
     { value: 'left', label: 'Left' },
     { value: 'right', label: 'Right' },
-    { value: 'full', label: 'Full' },
   ]
 
   return (
@@ -190,6 +224,12 @@ export const ImageModal = ({
           onChange={handleImageChange}
           refs={fileInputRef}
           setFieldValue={false}
+          preview={src ? [src] : null}
+          handleOnDelete={() => {
+            setSrc('')
+            setFile(null)
+            setSrcError(true)
+          }}
         />
 
         {srcError && <Error>Please choose an image</Error>}
@@ -240,7 +280,7 @@ export const ImageModal = ({
 
         <ButtonGroup align="end">
           {node ? (
-            <Button title="Confirm" isDisabled={!altText} onClick={handleOnConfirm}></Button>
+            <Button title="Confirm" isDisabled={!src || !altText} onClick={handleOnConfirm}></Button>
           ) : (
             <Button title="Insert" isDisabled={!src || !altText} onClick={handleInsertOnClick}></Button>
           )}
