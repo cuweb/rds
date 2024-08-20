@@ -9,10 +9,11 @@ export interface FileUploadProps extends FieldComponentProps {
   displayPreview?: boolean
   setFieldValue?: boolean
   preview?: string[]
+  handleOnDelete?: () => void
 }
 
 export const FileUpload = ({ ...props }: FileUploadProps) => {
-  const { name, onChange, displayPreview = true, setFieldValue = true, preview, ...rest } = props
+  const { name, onChange, displayPreview = true, setFieldValue = true, preview, handleOnDelete, ...rest } = props
   const errorClass = useErrorClass(name)
 
   const [files, setFiles] = useState<File[]>([])
@@ -66,6 +67,10 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
 
     if (onChange) {
       onChange(updatedFiles)
+    }
+
+    if (handleOnDelete) {
+      handleOnDelete()
     }
   }
 

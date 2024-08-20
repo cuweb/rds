@@ -7,7 +7,7 @@ export interface LoginProps {
   useSocial?: boolean
   errorTitle?: string
   errorDesc?: string
-  onClickHandler?: () => void
+  onClickHandler?: { default: () => void; google: () => void; linkedIn: () => void; twitter: () => void }
 }
 
 export const Login = ({
@@ -18,13 +18,6 @@ export const Login = ({
   onClickHandler,
 }: LoginProps) => {
   const centerBox = isCenter ? 'mx-auto' : ''
-
-  const handleCarletonClick = () => {
-    if (onClickHandler) {
-      onClickHandler()
-    }
-  }
-
   return (
     <div className={`not-contained p-6 pt-0 border border-cu-black-100 max-w-md shadow-md rounded-md ${centerBox}`}>
       <img
@@ -39,16 +32,16 @@ export const Login = ({
       )}
       <div className="pt-6">
         <ButtonGroup>
-          <Button title="Login with your Carleton account" onClick={handleCarletonClick} isFull />
+          <Button title="Login with your Carleton account" onClick={onClickHandler?.default} isFull />
         </ButtonGroup>
       </div>
       {useSocial && (
         <div className="p-6 bg-cu-black-50 rounded-b-md">
           <p className="mb-6 font-semibold text-center">Or login with one of the following:</p>
           <ButtonGroup>
-            <Button title="Social Network A" color="white" onClick={() => {}} isFull />
-            <Button title="Social Network B" color="white" onClick={() => {}} isFull />
-            <Button title="Social Network C" color="white" onClick={() => {}} isFull />
+            <Button title="Login with Google" color="white" onClick={onClickHandler?.google} isFull />
+            <Button title="Login with LinkedIn" color="white" onClick={onClickHandler?.linkedIn} isFull />
+            <Button title="Login with Twitter" color="white" onClick={onClickHandler?.twitter} isFull />
           </ButtonGroup>
         </div>
       )}

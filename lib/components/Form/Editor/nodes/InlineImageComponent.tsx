@@ -24,6 +24,7 @@ import { $isInlineImageNode, InlineImageNode } from './InlineImageNode'
 import { Button } from '../../../Button/Button'
 import { ButtonGroup } from '../../../ButtonGroup/ButtonGroup'
 import { ImageModal } from '../utils/ImageModal'
+import { Dialog } from '../../../Dialog/Dialog'
 
 const imageCache = new Set()
 
@@ -47,7 +48,7 @@ function LazyImage({
   src,
 }: {
   altText: string
-  className: string | null
+  className?: string | null
   imageRef: { current: null | HTMLImageElement }
   src: string
 }): JSX.Element {
@@ -75,19 +76,17 @@ export default function InlineImageComponent({
   const [selection, setSelection] = useState<RangeSelection | NodeSelection | null>(null)
   const activeEditorRef = useRef<LexicalEditor | null>(null)
 
-  const deleteNode = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const deleteNode = () => {
     editor.update(() => {
-      if (isSelected && $isNodeSelection($getSelection())) {
-        event.preventDefault()
-        const node: InlineImageNode | null = $getNodeByKey(nodeKey)
+      const node: InlineImageNode | null = $getNodeByKey(nodeKey)
 
-        if (node && node.__type === 'inline-image') {
-          if (node && node.__src) {
-            node?.remove()
-          }
+      if (node && node.__type === 'inline-image') {
+        if (node && node.__src) {
+          node?.remove()
         }
-        setSelected(false)
       }
+      setSelected(false)
+      setDialogOpen(false)
     })
   }
 
@@ -207,8 +206,13 @@ export default function InlineImageComponent({
   const draggable = isSelected && $isNodeSelection(selection)
   const isFocused = isSelected
 
+  const [DialogOpen, setDialogOpen] = useState(false)
+
   return (
     <Suspense fallback={null}>
+      <Dialog title="Are you sure you want to delete an image?" isOpen={DialogOpen} setIsOpen={setDialogOpen}>
+        <Button isSmall title="Confirm" onClick={deleteNode} />
+      </Dialog>
       <div className="image-wrapper" draggable={draggable}>
         {isSelected && (
           <div className="image-wrapper__action">
@@ -225,22 +229,18 @@ export default function InlineImageComponent({
               />
               <Button
                 isSmall
-                onClick={deleteNode}
                 isDisabled={!isSelected}
                 icon={TrashIcon}
                 ariaLabel="Click to Delete the image"
+                onClick={() => setDialogOpen(true)}
               ></Button>
             </ButtonGroup>
           </div>
         )}
-
-        <LazyImage
-          className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''} !my-2`}
-          src={src}
-          altText={altText}
-          imageRef={imageRef}
-        />
-        {showCaption && caption && <div className="image-wrapper__caption">{caption}</div>}
+        <div className={`${isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : ''}  rounded-lg`}>
+          <LazyImage className={`!my-2`} src={src} altText={altText} imageRef={imageRef} />
+          {showCaption && caption && <div className="image-wrapper__caption">{caption}</div>}
+        </div>
         {ModalOpen && (
           <ImageModal
             activeEditor={editor}
