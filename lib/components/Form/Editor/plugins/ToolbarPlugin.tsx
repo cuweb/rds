@@ -52,9 +52,22 @@ function positionEditorElement(editor: LexicalEditor, rect: DOMRect | null) {
     editor.style.top = '-1000px'
     editor.style.left = '-1000px'
   } else {
+    const editorWidth = editor.offsetWidth
+    const viewportWidth = window.innerWidth
+
+    // Initial left position calculation
+    const leftPosition = rect.left + window.pageXOffset - editorWidth / 2 + rect.width / 2
+
+    // Ensure the left position doesn't overflow on the left or right side
+    const minLeftPosition = 54 // Minimum gap from the left edge (you mentioned 54px)
+    const maxLeftPosition = viewportWidth - editorWidth - 10 // Minimum 10px gap from the right edge
+
+    const adjustedLeftPosition = Math.max(minLeftPosition, Math.min(leftPosition, maxLeftPosition))
+
+    // Apply calculated positions
     editor.style.opacity = '1'
-    editor.style.top = `${rect.top + rect.height + window.pageYOffset + 10}px`
-    editor.style.left = `${rect.left + window.pageXOffset - editor.offsetWidth / 2 + rect.width / 2}px`
+    editor.style.top = `${rect.top + rect.height + window.pageYOffset + 15}px`
+    editor.style.left = `${adjustedLeftPosition}px`
   }
 }
 
@@ -178,22 +191,20 @@ function FloatingLinkEditor({ editor }: LexicalEditor) {
           }}
         />
       ) : (
-        <>
-          <div className="link-input">
-            <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-              {linkUrl}
-            </a>
-            <div
-              className="link-edit"
-              role="button"
-              tabIndex={0}
-              onMouseDown={(event) => event.preventDefault()}
-              onClick={() => {
-                setEditMode(true)
-              }}
-            />
-          </div>
-        </>
+        <div className="link-input">
+          <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+            {linkUrl}
+          </a>
+          <div
+            className="link-edit"
+            role="button"
+            tabIndex={0}
+            onMouseDown={(event) => event.preventDefault()}
+            onClick={() => {
+              setEditMode(true)
+            }}
+          />
+        </div>
       )}
     </div>
   )
