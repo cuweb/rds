@@ -64,21 +64,24 @@ export const TextImageContent = ({
   return (
     <>
       <div
-        className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter} ${
-          headerType === 'h1' ? `cu-prose` : `cu-prose`
-        }`}
+        className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter}`}
+        // className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter} ${
+        //   headerType === 'h1' ? `cu-prose` : `cu-prose`
+        // }`}
         style={inlineContentStyles}
       >
         {title && headerType === 'h1' && (
           <h1
-            className={`font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] text-cu-black-700 not-prose ${styles.underline}`}
+            className={`font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] ${styles.underline}`}
+            // className={`font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] text-cu-black-700 not-prose ${styles.underline}`}
           >
             {title}
           </h1>
         )}
         {title && headerType === 'h2' && (
           <h2
-            className={`font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] text-cu-black-700 not-prose ${styles.underline}`}
+            className={`font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] ${styles.underline}`}
+            // className={`font-semibold text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem] text-cu-black-700 not-prose ${styles.underline}`}
           >
             {title}
           </h2>

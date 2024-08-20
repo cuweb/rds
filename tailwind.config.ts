@@ -34,7 +34,7 @@ const config: Config = {
             h4: {
               'font-size': '1.1em',
             },
-            'h2, h3, h4': {
+            'h1, h2, h3, h4': {
               'font-weight': '600',
               'margin-bottom': '0.5em',
             },
