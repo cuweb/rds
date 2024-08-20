@@ -21,9 +21,29 @@ Default.args = {
   useSocial: false,
 }
 
+const clickCufed = () => {
+  console.log('HEllo')
+}
+const clickGoogle = () => {
+  console.log('GOOGLE')
+}
+const clicklinkedIn = () => {
+  console.log('LINKEDIN')
+}
+const clickTwitter = () => {
+  console.log('TWITTER')
+}
+
+const clickHandlers = {
+  default: clickCufed,
+  google: clickGoogle,
+  linkedIn: clicklinkedIn,
+  twitter: clickTwitter,
+}
 export const SocialLogins: Story = {
   args: {
     useSocial: true,
+    onClickHandler: clickHandlers,
   },
 }
 

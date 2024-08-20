@@ -5,6 +5,7 @@ import { FieldControl } from './FieldControl/FieldControl'
 import { FieldArrayContainer } from './FieldArrayContainer/FieldArrayContainer'
 import { primaryStyles } from './form.Styles'
 import { Editor } from './Editor/Editor'
+import { Error } from './Error/Error'
 
 export interface FormWrapperProps {
   children: React.ReactNode
@@ -26,4 +27,5 @@ export const Form = Object.assign(FormWrapper, {
   FieldControl: FieldControl,
   FieldArrayContainer: FieldArrayContainer,
   Editor: Editor,
+  Error: Error,
 })

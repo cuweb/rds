@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
 import { $createParagraphNode, $insertNodes, $isRootOrShadowRoot, COMMAND_PRIORITY_EDITOR } from 'lexical'
@@ -6,17 +6,14 @@ import { InlineImagePayload } from './../nodes/InlineImageNode'
 import { $createInlineImageNode } from '../nodes/InlineImageNode'
 import { IsDomAvailable } from '../utils/domAvailability'
 import { INSERT_INLINE_IMAGE_COMMAND } from '../utils/insertInlineImageCommand'
+import { useAWSImages } from '../context/useAWSImages'
 
 export type InsertInlineImagePayload = Readonly<InlineImagePayload>
 
-export default function InlineImagePlugin({
-  captionsEnabled,
-  setCaptionsEnabled,
-}: {
-  captionsEnabled?: boolean
-  setCaptionsEnabled: Dispatch<SetStateAction<boolean>>
-}): JSX.Element | null {
+export default function InlineImagePlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
+
+  const AWSImageContextData = useAWSImages()
 
   useEffect(() => {
     return mergeRegister(
@@ -26,18 +23,18 @@ export default function InlineImagePlugin({
           const imageNode = $createInlineImageNode(payload)
           $insertNodes([imageNode])
 
+          AWSImageContextData.addImage(payload.src)
+
           if ($isRootOrShadowRoot(imageNode.getParentOrThrow())) {
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
           }
-
-          setCaptionsEnabled(true)
 
           return true
         },
         COMMAND_PRIORITY_EDITOR,
       ),
     )
-  }, [captionsEnabled, setCaptionsEnabled, editor])
+  }, [editor, AWSImageContextData])
 
   return null
 }

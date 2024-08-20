@@ -20,4 +20,5 @@ export const fieldStyles = {
   uploads: `max-w-xs focus:outline-none`,
   disabled: `disabled:bg-slate-200 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none `,
   disabledCheckbox: `disabled:pointer-events-none disabled:bg-gray-300 disabled:text-black-800 `,
+  error: `font-semibold text-sm error text-cu-red `,
 }

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { fieldStyles } from '../form.Styles'
 
 export interface ErrorProps {
   children: ReactNode
@@ -6,11 +7,7 @@ export interface ErrorProps {
 }
 
 export const Error = ({ ...props }: ErrorProps) => {
-  return (
-    <div className={`font-semibold text-sm error text-cu-red ${props.className ? props.className : ''} `}>
-      {props.children}
-    </div>
-  )
+  return <div className={`${fieldStyles.error} ${props.className ? props.className : ''} `}>{props.children}</div>
 }
 
 export default Error

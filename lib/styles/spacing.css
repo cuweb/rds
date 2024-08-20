@@ -27,6 +27,18 @@
 }
 
 /* 
+* Section and non-section spacing
+*/
+
+:not(.cu-section) + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+.cu-section + :not(.cu-section) {
+  @apply mt-6 md:mt-10;
+}
+
+/* 
 * Consecutive component spacing
 */
 
@@ -60,18 +72,6 @@
 
 :not(.cu-wideimage).cu-section.bg-cu-black-50 + :not(.cu-wideimage).cu-section.bg-cu-black-50 {
   @apply pt-2 -mt-2 rounded-t-none;
-}
-
-/* 
-* Section and non-section spacing
-*/
-
-:not(.cu-section) + .cu-section {
-  @apply mt-6 md:mt-10;
-}
-
-.cu-section + :not(.cu-section) {
-  @apply mt-6 md:mt-10;
 }
 
 /* 
