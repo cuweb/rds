@@ -70,6 +70,42 @@ const DoublePara = () => {
 export const BlockTesting = () => {
   return (
     <>
+      <FullBanner
+        as="div"
+        focalPointX="50"
+        focalPointY="50"
+        image="https://picsum.photos/id/20/1600/700"
+        justify="start"
+        opacity={70}
+        title="The nostalgia is real. The launch of the iPod revolutionized how the world consumes music on the move!"
+      >
+        <ButtonGroup>
+          <Button title="Apply Now" />
+          <Button color="grey" title="Request Information" />
+        </ButtonGroup>
+      </FullBanner>
+
+      <SinglePara />
+      <SinglePara />
+
+      <FullBanner
+        as="div"
+        focalPointX="50"
+        focalPointY="50"
+        image="https://picsum.photos/id/20/1600/700"
+        justify="start"
+        opacity={70}
+        title="The nostalgia is real. The launch of the iPod revolutionized how the world consumes music on the move!"
+      >
+        <ButtonGroup>
+          <Button title="Apply Now" />
+          <Button color="grey" title="Request Information" />
+        </ButtonGroup>
+      </FullBanner>
+
+      <SinglePara />
+      <SinglePara />
+
       <TextMedia>
         <TextMedia.Content headerType="h1" title="Block Testing" width={100}>
           <p>

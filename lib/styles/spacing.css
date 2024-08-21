@@ -46,7 +46,9 @@
 .cu-section + .cu-column,
 .cu-component + .cu-component,
 :not(.cu-section) + .cu-section,
-.cu-section + :not(.cu-section) {
+.cu-section + :not(.cu-section),
+:not(.cu-fullbanner) + .cu-fullbanner,
+.cu-fullbanner + :not(.cu-fullbanner) {
   @apply mt-4 md:mt-6 lg:mt-12;
   /* @apply mt-6 md:mt-12; */
 }
@@ -78,7 +80,7 @@
 * First and last child inside sections
 */
 
-.cu-section > *:first-child,
+.cu-section > *:first-child:not(.cu-fullbanner),
 .cu-article > *:first-child,
 .cu-aside > *:first-child,
 .cu-aside .sticky > *:first-child {
