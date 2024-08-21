@@ -1,13 +1,11 @@
 import { Alert } from '../Alert/Alert'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { maxWidthClasses, justifyContentClasses } from '../../utils/propClasses'
+import { maxWidthClasses } from '../../utils/propClasses'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
-type justifyContentKeys = keyof typeof justifyContentClasses
 
 export interface LoginProps {
-  justify?: justifyContentKeys
   maxWidth?: maxWidthKeys
   useSocial?: boolean
   errorTitle?: string
@@ -17,7 +15,6 @@ export interface LoginProps {
 
 export const Login = ({
   maxWidth = '2xl',
-  justify = 'start',
   useSocial = false,
   errorTitle = '',
   errorDesc = '',
@@ -25,7 +22,7 @@ export const Login = ({
 }: LoginProps) => {
   return (
     <div
-      className={`cu-login cu-login--${justify} not-prose p-6 pt-0 border border-cu-black-100 cu-component not-contained ${maxWidthClasses[maxWidth]} shadow-md rounded-md bg-white`}
+      className={`cu-login not-prose p-6 pt-0 border border-cu-black-100 cu-component not-contained ${maxWidthClasses[maxWidth]} shadow-md rounded-md bg-white`}
     >
       <img
         className="w-auto h-20 mx-auto -mt-8 bg-white border-x-[16px] border-y-[12px] border-white rounded-md"

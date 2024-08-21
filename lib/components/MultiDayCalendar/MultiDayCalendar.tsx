@@ -67,7 +67,7 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
   }, [selectedDays, callback])
 
   return (
-    <div className="not-prose cu-calendar cu-component">
+    <div className="cu-calendar cu-component not-prose">
       <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Previous month</span>
