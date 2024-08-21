@@ -44,22 +44,18 @@
 
 .cu-section + .cu-section,
 .cu-section + .cu-column,
-.cu-component + .cu-component,
 :not(.cu-section) + .cu-section,
 .cu-section + :not(.cu-section),
-:not(.cu-component) + .cu-component,
-.cu-component + :not(.cu-component),
 :not(.cu-fullbanner) + .cu-fullbanner,
 .cu-fullbanner + :not(.cu-fullbanner) {
   @apply mt-5 md:mt-6 lg:mt-12;
-  /* @apply mt-6 md:mt-12; */
 }
 
-/* .cu-section + .cu-section,
-.cu-section + .cu-column,
-.cu-component + .cu-component {
-  @apply mt-6 md:mt-12;
-} */
+.cu-component + .cu-component,
+:not(.cu-component) + .cu-component,
+.cu-component + :not(.cu-component) {
+  @apply mt-3 md:mt-5 lg:mt-10;
+}
 
 .cu-section + .cu-widewaves,
 .cu-widewaves + .cu-widewaves {

@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from '../../components/Nav/Nav'
 import { Main } from '../../layouts/Main/Main'
 import { Section } from '../../layouts/Section/Section'
-import { WideWave } from '../../layouts/WideWave/WideWave'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
@@ -17,7 +16,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const BlockTestingLight: Story = {
+export const ComponentTesting: Story = {
   render: () => (
     <>
       <Nav>
@@ -28,11 +27,9 @@ export const BlockTestingLight: Story = {
       </Nav>
 
       <Main>
-        <WideWave wave="black">
-          <Section proseType="light">
-            <BlockTesting />
-          </Section>
-        </WideWave>
+        <Section>
+          <BlockTesting />
+        </Section>
       </Main>
 
       <FooterDept
