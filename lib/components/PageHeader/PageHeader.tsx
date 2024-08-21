@@ -41,11 +41,11 @@ export const PageHeaderWrapper = ({
       break
     case 'sm':
       headerPadding = 'pb-3.5 after:w-7'
-      contentStyle = 'prose-md md:prose-lg font-light'
+      contentStyle = 'prose-lg md:prose-xl font-light'
       break
     case 'md':
       headerPadding = 'pb-4 after:w-8'
-      contentStyle = 'prose-lg md:prose-xl font-light'
+      contentStyle = 'prose-xl md:prose-xl font-light'
       break
     case 'lg':
       headerPadding = 'pb-5 after:w-10'

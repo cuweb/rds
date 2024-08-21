@@ -51,7 +51,7 @@
 .cu-component + :not(.cu-component),
 :not(.cu-fullbanner) + .cu-fullbanner,
 .cu-fullbanner + :not(.cu-fullbanner) {
-  @apply mt-4 md:mt-6 lg:mt-12;
+  @apply mt-5 md:mt-6 lg:mt-12;
   /* @apply mt-6 md:mt-12; */
 }
 
