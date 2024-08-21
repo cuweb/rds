@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { WideImage } from './WideImage'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof WideImage> = {
   title: 'Components/Wide Image',
@@ -39,6 +40,25 @@ export const Primary: Story = {
           <Button title="Request Information" color="dark-grey" />
         </ButtonGroup>
       </WideImage>
+    )
+  },
+}
+
+export const InsideSection: Story = {
+  args: {
+    ...Primary.args,
+    as: 'div',
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <WideImage {...args}>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button title="Request Information" color="dark-grey" />
+          </ButtonGroup>
+        </WideImage>
+      </Section>
     )
   },
 }
