@@ -8,6 +8,9 @@ const config: Config = {
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
+            'h1, h2, h3, h4': {
+              'font-weight': '600',
+            },
             a: {
               'font-weight': 'semibold',
               'text-decoration': 'none',
@@ -23,6 +26,13 @@ const config: Config = {
             },
           },
         },
+        lg: {
+          css: {
+            h1: {
+              'font-size': '2em',
+            },
+          },
+        },
         xl: {
           css: {
             h2: {
@@ -33,10 +43,6 @@ const config: Config = {
             },
             h4: {
               'font-size': '1.1em',
-            },
-            'h1, h2, h3, h4': {
-              'font-weight': '600',
-              'margin-bottom': '0.5em',
             },
           },
         },

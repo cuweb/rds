@@ -1,4 +1,5 @@
 import { format, isSameDay, parseISO } from 'date-fns'
+import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { listStyles } from './PageHeader.Styles'
 
 export interface PageHeaderEventProps {
@@ -29,6 +30,7 @@ export const PageHeaderEvent = ({
   contactEmail,
 }: PageHeaderEventProps) => {
   const eventDetails = ['cost', 'contactName', 'contactPhone', 'contactEmail']
+  const LinkComponent = useLinkContext()
 
   // Parse dates
   const parsedStartDate = startDate ? parseISO(startDate) : null
@@ -57,9 +59,9 @@ export const PageHeaderEvent = ({
           {(eventType === 'In-Person' || eventType === 'Hybrid') && location && <li>{location}</li>}
           {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && virtualUrl && (
             <li>
-              <a className={listStyles.listLink} href={virtualUrl}>
+              <LinkComponent className={listStyles.listLink} href={virtualUrl}>
                 {virtualType} meeting link
-              </a>
+              </LinkComponent>
             </li>
           )}
           {(eventType === 'Virtual' || eventType === 'Hybrid') && virtualType && !virtualUrl && (
@@ -85,9 +87,9 @@ export const PageHeaderEvent = ({
                 {contactEmail && (
                   <>
                     ,{' '}
-                    <a className={listStyles.listLink} href={`mailto:${contactEmail}`}>
+                    <LinkComponent className={listStyles.listLink} href={`mailto:${contactEmail}`}>
                       {contactEmail}
-                    </a>
+                    </LinkComponent>
                   </>
                 )}
                 {contactPhone && (

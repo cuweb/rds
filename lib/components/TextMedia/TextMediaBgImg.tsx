@@ -25,7 +25,7 @@ export const TextMediaBgImg = ({
 
   return (
     <div
-      className={`cu-textmedia-bgimg not-prose flex-1 rounded-lg bg-no-repeat bg-cover border-solid border-white ${borderWidthClasses[border]}`}
+      className={`cu-textmedia-bgimg flex-1 rounded-lg bg-no-repeat bg-cover border-solid border-white ${borderWidthClasses[border]}`}
       style={inlineImageStyles}
     />
   )

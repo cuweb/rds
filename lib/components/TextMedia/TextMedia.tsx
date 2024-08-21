@@ -20,7 +20,7 @@ export const TextMediaWrapper = ({ children, maxWidth = '5xl', gridGap = '10', r
   return (
     <>
       <div
-        className={`cu-textmedia cu-component flex flex-col lg:flex-row mx-auto ${gridGapClasses[gridGap]} ${maxWidthClasses[maxWidth]} ${reverseLayout}`}
+        className={`cu-textmedia cu-component not-contained flex flex-col lg:flex-row mx-auto ${gridGapClasses[gridGap]} ${maxWidthClasses[maxWidth]} ${reverseLayout}`}
       >
         {children}
       </div>
