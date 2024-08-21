@@ -2,6 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Badge } from '../Badge/Badge'
 import { BadgeGroup } from './BadgeGroup'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof BadgeGroup> = {
   title: 'Components/Badge Group',
@@ -28,14 +29,16 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <BadgeGroup {...args}>
-        <Badge text="Grey Badge" color="grey" />
-        <Badge text="Green Badge" color="green" />
-        <Badge text="Red Badge" color="red" />
-        <Badge text="Yellow Badge" color="yellow" />
-        <Badge text="Blue Badge" color="blue" />
-        <Badge text="Purple Badge" color="purple" />
-      </BadgeGroup>
+      <Section>
+        <BadgeGroup {...args}>
+          <Badge text="Grey Badge" color="grey" />
+          <Badge text="Green Badge" color="green" />
+          <Badge text="Red Badge" color="red" />
+          <Badge text="Yellow Badge" color="yellow" />
+          <Badge text="Blue Badge" color="blue" />
+          <Badge text="Purple Badge" color="purple" />
+        </BadgeGroup>
+      </Section>
     )
   },
 }
