@@ -20,19 +20,6 @@ const meta: Meta<typeof PageHeader> = {
 export default meta
 type Story = StoryObj<typeof PageHeader>
 
-// export const Primary: Story = {}
-
-// Primary.args = {
-//   header: 'Page Header',
-//   as: 'h1',
-//   size: 'lg',
-//   content:
-//     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis.',
-//   isWhite: false,
-//   isCenter: false,
-//   noUnderline: false,
-// }
-
 export const Primary: Story = {
   args: {
     header: 'Page Header',
