@@ -20,11 +20,11 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
       alertIconSize: 'w-6 h-6',
     },
     md: {
-      alertTitleSize: 'text-base md:text-lg',
+      alertTitleSize: 'text-base md:text-lg mt-0.5',
       alertIconSize: 'w-8 h-8',
     },
     lg: {
-      alertTitleSize: 'text-base md:text-2xl',
+      alertTitleSize: 'text-base md:text-2xl mt-1',
       alertIconSize: 'w-10 h-10',
     },
   }
