@@ -1,6 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Quote } from './Quote'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Quote> = {
   title: 'Components/Quote',
@@ -29,6 +30,10 @@ export const Primary: Story = {
     isCenter: false,
   },
   render: (args) => {
-    return <Quote {...args} />
+    return (
+      <Section>
+        <Quote {...args} />
+      </Section>
+    )
   },
 }
