@@ -71,7 +71,7 @@ export const BlockTesting = () => {
   return (
     <>
       <TextMedia>
-        <TextMedia.Content headerType="h1" title="Block Testing (Prose Dark)" width={100}>
+        <TextMedia.Content headerType="h1" title="Block Testing" width={100}>
           <p>
             Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
             reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus

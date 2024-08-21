@@ -49,7 +49,7 @@ export const PageHeaderEvent = ({
       {finalDate && <p className="cu-prose-font-light">{finalDate}</p>}
 
       {/* Check if details are set and output as ul */}
-      <div className={`${listStyles.listWrapper} cu-prose`}>
+      <div className={`${listStyles.listWrapper}`}>
         <ul>
           <li>
             <strong className="font-semibold">{eventType} Event</strong>
@@ -76,7 +76,7 @@ export const PageHeaderEvent = ({
 
       {/* Check is socials are set and render div */}
       {Object.values(eventDetails).some((info) => info) && (
-        <div className={`${listStyles.listWrapper} cu-prose`}>
+        <div className={`${listStyles.listWrapper}`}>
           <ul>
             {contactName && (
               <li>

@@ -29,7 +29,7 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
 
       {/* Check if details are set and output as ul */}
       {Object.values(profileDetails).some((info) => info) && (
-        <div className={`${listStyles.listWrapper} cu-prose`}>
+        <div className={`${listStyles.listWrapper}`}>
           <ul>
             {degrees && <li>{degrees}</li>}
             {building && (
@@ -57,7 +57,7 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
 
       {/* Check is socials are set and render div */}
       {Object.values(socialDetails).some((info) => info) && (
-        <div className={`${listStyles.listWrapper} cu-prose`}>
+        <div className={`${listStyles.listWrapper}`}>
           <ul className={listStyles.listHorizontal}>
             {linkedin && (
               <li>
