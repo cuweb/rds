@@ -17,7 +17,7 @@ export const Badge = ({ text, link, rounded = 'full', color = 'grey', noWordBrea
 
   return (
     <p
-      className={`not-prose cu-badge cu-badge--${color} inline-flex ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
+      className={`inline-flex cu-badge cu-badge--${color} not-prose ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
     >
       {link ? (
         <LinkComponent href={link} className="cursor-pointer block">
