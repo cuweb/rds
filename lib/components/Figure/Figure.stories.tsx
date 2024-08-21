@@ -23,6 +23,7 @@ export const Primary: Story = {
     caption: '',
     size: 'full',
     align: 'none',
+    rounded: 'none',
     noMobile: false,
   },
   render: (args) => {
