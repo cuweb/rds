@@ -16,7 +16,9 @@ export const Badge = ({ text, link, rounded = 'full', color = 'grey', noWordBrea
   const wordBreakClass = noWordBreak ? 'whitespace-nowrap' : ''
 
   return (
-    <p className={`inline-flex cu-badge cu-badge--${color} ${borderRadiusClasses[rounded]} ${wordBreakClass}`}>
+    <p
+      className={`not-prose cu-badge cu-badge--${color} inline-flex ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
+    >
       {link ? (
         <LinkComponent href={link} className="cursor-pointer block">
           <span className="px-3.5 py-1.5 text-xs font-semibold block">{text}</span>

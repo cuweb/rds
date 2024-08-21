@@ -39,7 +39,7 @@ export const Button = ({
     <button
       type={type}
       aria-label={!ariaLabel ? title : ariaLabel}
-      className={`cu-button not-prose ${disabledButton} ${buttonSmall} ${fullStyles}`}
+      className={`not-prose cu-button ${disabledButton} ${buttonSmall} ${fullStyles}`}
       disabled={isDisabled ? true : false}
       {...rest}
     >

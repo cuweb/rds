@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Calendar } from './Calendar'
 import { CalendarData } from '../../data/CalendarData'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Calendar> = {
   title: 'Components/Calendar',
@@ -31,6 +32,10 @@ export const Primary: Story = {
       [setSelectedDate],
     )
 
-    return <Calendar events={args.events} callback={callbackcal} />
+    return (
+      <Section>
+        <Calendar events={args.events} callback={callbackcal} />
+      </Section>
+    )
   },
 }
