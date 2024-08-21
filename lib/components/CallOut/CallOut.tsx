@@ -15,7 +15,7 @@ export interface CallOutProps {
 export const CallOut = ({ children, title, maxWidth = '4xl', justify = 'center' }: CallOutProps) => {
   return (
     <div
-      className={`cu-callout cu-callout--${justify} cu-component-spacing not-contained ${maxWidthClasses[maxWidth]} mx-auto border-8 md:border-[12px] border-solid border-cu-black-50 px-8 pt-5 pb-6 md:px-16 md:pt-8 md:py-10 rounded-lg`}
+      className={`cu-callout cu-callout--${justify} cu-component not-contained ${maxWidthClasses[maxWidth]} mx-auto border-8 md:border-[12px] border-solid border-cu-black-50 px-8 pt-5 pb-6 md:px-16 md:pt-8 md:py-10 rounded-lg`}
     >
       <PageHeader as="h2" header={title} size="md" isCenter={justify === 'center' ? true : false} />
       {children}

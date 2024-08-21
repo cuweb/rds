@@ -46,7 +46,7 @@ export const FullBanner = ({
   // TODO: change negative top margin to be only if FullBanner is first block inside main
   return (
     <FullBannerComponent
-      className={`cu-fullbanner cu-fullbanner--${justify} cu-no-browsers-edge not-contained overflow-hidden bg-cu-black-200 bg-cover mb-6 pt-80 pb-0 md:pt-48 md:pb-12 lg:pt-64 lg:pb-24 xl:pt-96 xl:pb-36 px-0 md:px-10`}
+      className={`cu-fullbanner cu-fullbanner--${justify} cu-component cu-no-browsers-edge not-contained overflow-hidden bg-cu-black-200 bg-cover mb-6 pt-80 pb-0 md:pt-48 md:pb-12 lg:pt-64 lg:pb-24 xl:pt-96 xl:pb-36 px-0 md:px-10`}
       style={inlineStyle}
     >
       <div className="mx-auto max-w-screen-2xl">

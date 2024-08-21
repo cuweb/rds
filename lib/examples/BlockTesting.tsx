@@ -382,7 +382,7 @@ export const BlockTesting = () => {
       <SinglePara />
 
       <FullBanner
-        as="section"
+        as="div"
         focalPointX="50"
         focalPointY="50"
         image="https://picsum.photos/id/20/1600/700"
