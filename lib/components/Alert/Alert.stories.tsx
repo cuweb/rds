@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../layouts/Main/Main'
+import { Section } from '../../layouts/Section/Section'
 import { Alert } from './Alert'
 
 const meta: Meta<typeof Alert> = {
@@ -33,9 +33,9 @@ export const TwoColumns: Story = {
   },
   render: (args) => {
     return (
-      <Main>
+      <Section>
         <Alert {...args} />
-      </Main>
+      </Section>
     )
   },
 }
