@@ -72,13 +72,13 @@ export const WideImageWrapper = ({
   switch (isType) {
     case 'light':
     case 'dark':
-      topBottomSpace = 'py-20'
+      topBottomSpace = 'py-12'
       break
     case 'image':
       topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
       break
     default:
-      topBottomSpace = 'py-20'
+      topBottomSpace = 'py-12'
       break
   }
 
