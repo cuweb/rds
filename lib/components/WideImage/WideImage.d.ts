@@ -10,8 +10,8 @@ export interface WideImageProps {
     headerType?: 'h1' | 'h2';
     maxWidth?: maxWidthKeys;
     opacity?: (typeof opacityValues)[number];
-    focalPointX?: string;
-    focalPointY?: string;
+    focalPointX?: number;
+    focalPointY?: number;
     isType?: 'light' | 'dark' | 'image';
     hasWave?: boolean;
     hasScroll?: boolean;

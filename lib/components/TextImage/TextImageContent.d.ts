@@ -9,8 +9,8 @@ export interface TextImageMediaProps {
     imageUrl?: string;
     contentWidth?: number;
     imageZoom?: number;
-    focalPointX?: string;
-    focalPointY?: string;
+    focalPointX?: number;
+    focalPointY?: number;
     hasMobileImage?: boolean;
 }
 export declare const TextImageContent: {

@@ -1,5 +1,7 @@
+import { maxWidthClasses } from '../../utils/propClasses';
+type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface LoginProps {
-    isCenter?: boolean;
+    maxWidth?: maxWidthKeys;
     useSocial?: boolean;
     errorTitle?: string;
     errorDesc?: string;
@@ -10,4 +12,5 @@ export interface LoginProps {
         twitter: () => void;
     };
 }
-export declare const Login: ({ isCenter, useSocial, errorTitle, errorDesc, onClickHandler, }: LoginProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Login: ({ maxWidth, useSocial, errorTitle, errorDesc, onClickHandler, }: LoginProps) => import("react/jsx-runtime").JSX.Element;
+export {};

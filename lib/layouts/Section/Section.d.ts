@@ -6,7 +6,7 @@ export interface SectionProps {
     as?: 'section' | 'div';
     isGrey?: boolean;
     maxWidth?: maxWidthKeys;
-    noProse?: boolean;
+    proseType?: 'none' | 'light' | 'dark';
 }
-export declare const Section: ({ children, as, noProse, isGrey, maxWidth }: SectionProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Section: ({ children, as, proseType, isGrey, maxWidth, }: SectionProps) => import("react/jsx-runtime").JSX.Element;
 export {};
