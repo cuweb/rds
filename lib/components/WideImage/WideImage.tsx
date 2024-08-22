@@ -15,14 +15,14 @@ export interface WideImageProps {
   headerType?: 'h1' | 'h2'
   maxWidth?: maxWidthKeys
   opacity?: (typeof opacityValues)[number]
-  focalPointX?: string
-  focalPointY?: string
+  focalPointX?: number
+  focalPointY?: number
   isType?: 'light' | 'dark' | 'image'
   hasWave?: boolean
   hasScroll?: boolean
 }
 
-const getInlineStyle = (image: string = '', focalPointX: string, focalPointY: string) => ({
+const getInlineStyle = (image: string = '', focalPointX: number, focalPointY: number) => ({
   backgroundImage: `url(${image})`,
   backgroundPosition: `${focalPointX}% ${focalPointY}%`,
 })
@@ -52,12 +52,16 @@ export const WideImageWrapper = ({
   headerType = 'h2',
   maxWidth = 'max',
   opacity = 70,
-  focalPointX = '50',
-  focalPointY = '50',
+  focalPointX = 50,
+  focalPointY = 50,
   isType = 'light',
   hasScroll,
   hasWave,
 }: WideImageProps) => {
+  if (!opacityValues.includes(opacity)) {
+    console.warn(`Invalid opacity value: ${opacity}. It should be one of ${opacityValues.join(', ')}.`)
+  }
+
   const WideImageComponent = as
   const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
   const opacityStyle = getOpacityStyle(opacity)

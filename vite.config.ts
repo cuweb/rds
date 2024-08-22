@@ -22,19 +22,21 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'lib/main.ts'),
       name: 'rds',
-      formats: ['es', 'umd'],
+      formats: ['es', 'cjs', 'umd'],
       fileName: (format) => `rds.${format}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(packageJson.dependencies), ...Object.keys(packageJson.peerDependencies)],
+      external: [...Object.keys(packageJson.dependencies || {}), ...Object.keys(packageJson.peerDependencies || {})],
       output: {
         globals: {
           react: 'React',
+          'react-dom': 'ReactDOM',
           'date-fns': 'dateFns',
           'react-player': 'ReactPlayer',
           '@headlessui/react': 'HeadlessUI',
           '@react-google-maps/api': 'ReactGoogleMapsAPI',
-          'priority-plus': 'PriorityPlus',
+          formik: 'Formik',
+          yup: 'Yup',
         },
       },
     },

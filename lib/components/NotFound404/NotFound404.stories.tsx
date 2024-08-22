@@ -20,15 +20,6 @@ type Story = StoryObj<typeof NotFound404>
 
 export const Primary: Story = {
   args: {
-    isCenter: true,
-  },
-  render: (args) => {
-    return <NotFound404 {...args} />
-  },
-}
-
-export const SectionWrapper: Story = {
-  args: {
     isCenter: false,
   },
   render: (args) => {

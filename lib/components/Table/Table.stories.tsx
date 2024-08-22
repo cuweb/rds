@@ -3,6 +3,7 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
@@ -64,11 +65,28 @@ const columns: ColumnDefinitionType[] = [
   },
 ]
 
-export const Primary: Story = {}
-Primary.args = {
-  data: tableData,
-  columns: columns,
-  hasStripes: false,
-  noWordBreak: false,
-  range: [1, -1],
+// export const Primary: Story = {}
+// Primary.args = {
+//   data: tableData,
+//   columns: columns,
+//   hasStripes: false,
+//   noWordBreak: false,
+//   range: [1, -1],
+// }
+
+export const Primary: Story = {
+  args: {
+    data: tableData,
+    columns: columns,
+    hasStripes: false,
+    noWordBreak: false,
+    range: [1, -1],
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Table {...args} />
+      </Section>
+    )
+  },
 }

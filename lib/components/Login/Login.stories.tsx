@@ -1,5 +1,7 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Login } from './Login'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Login> = {
   title: 'Components/Login',
@@ -15,10 +17,17 @@ const meta: Meta<typeof Login> = {
 export default meta
 type Story = StoryObj<typeof Login>
 
-export const Default: Story = {}
-
-Default.args = {
-  useSocial: false,
+export const Primary: Story = {
+  args: {
+    useSocial: false,
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Login {...args} />
+      </Section>
+    )
+  },
 }
 
 const clickCufed = () => {
@@ -45,11 +54,25 @@ export const SocialLogins: Story = {
     useSocial: true,
     onClickHandler: clickHandlers,
   },
+  render: (args) => {
+    return (
+      <Section>
+        <Login {...args} />
+      </Section>
+    )
+  },
 }
 
 export const LoginErrorShort: Story = {
   args: {
     errorTitle: 'Error: Please Contact Site Administrator',
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Login {...args} />
+      </Section>
+    )
   },
 }
 
@@ -57,5 +80,12 @@ export const LoginErrorDescription: Story = {
   args: {
     errorTitle: 'Login Error',
     errorDesc: 'Please ensure you are connected to the VPN and try again.',
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Login {...args} />
+      </Section>
+    )
   },
 }
