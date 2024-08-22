@@ -49,7 +49,7 @@ export const Primary: Story = {
   },
 }
 
-export const BgImage: Story = {
+export const ImageInColumn: Story = {
   args: {
     ...Primary.args,
   },
