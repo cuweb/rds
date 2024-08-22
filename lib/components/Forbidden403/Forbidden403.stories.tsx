@@ -20,15 +20,6 @@ type Story = StoryObj<typeof Forbidden403>
 
 export const Primary: Story = {
   args: {
-    isCenter: true,
-  },
-  render: (args) => {
-    return <Forbidden403 {...args} />
-  },
-}
-
-export const SectionWrapper: Story = {
-  args: {
     isCenter: false,
   },
   render: (args) => {

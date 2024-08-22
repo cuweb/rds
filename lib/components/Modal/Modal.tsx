@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
 import { sanitizeContent } from '../../helpers/functions'
+import { Section } from '../../layouts/Section/Section'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
 
@@ -28,7 +29,7 @@ export const Modal = ({
   setIsOpen,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
-  const useProse = noProse ? '' : 'cu-prose'
+  const useProse = noProse ? '' : 'cu-prose cu-prose-dark'
 
   useEffect(() => {
     if (modalRef.current?.open && !isOpen) {
@@ -98,7 +99,9 @@ export const Modal = ({
       {content ? (
         <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
       ) : (
-        <div className={useProse}>{children}</div>
+        <div className={useProse}>
+          <Section>{children}</Section>
+        </div>
       )}
     </dialog>
   )

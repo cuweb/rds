@@ -6,7 +6,7 @@ export interface Forbidden403Props {
   isCenter?: boolean
 }
 
-export const Forbidden403 = ({ isCenter = true }: Forbidden403Props) => {
+export const Forbidden403 = ({ isCenter = false }: Forbidden403Props) => {
   const LinkComponent = useLinkContext()
 
   return (

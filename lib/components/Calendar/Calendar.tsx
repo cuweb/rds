@@ -68,7 +68,7 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
 
   return (
     <div className="cu-calendar cu-component not-prose">
-      <div className="flex items-center py-2 mb-6 bg-white border rounded-lg not-prose border-cu-black-100">
+      <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Previous month</span>
           <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />

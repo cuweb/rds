@@ -1,10 +1,19 @@
 /* Prose Classes */
 
 .cu-prose {
-  @apply prose prose-rds max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4;
+  @apply prose max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4;
+  /* @apply prose prose-dark max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4; */
+}
+
+.cu-prose-dark {
+  @apply prose-dark;
 }
 
 .cu-prose-light {
+  @apply prose-light;
+}
+
+.cu-prose-font-light {
   @apply prose-xl md:prose-2xl font-light;
 }
 
@@ -17,5 +26,9 @@
 /* Allow a component to hit the browsers edge */
 
 .cu-browsers-edge {
-  @apply -mx-6 md:-mx-8;
+  @apply px-6 md:px-8 lg:px-10;
+}
+
+.cu-no-browsers-edge {
+  @apply -mx-6 md:-mx-8 lg:-mx-10;
 }

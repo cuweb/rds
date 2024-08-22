@@ -6,7 +6,7 @@ export interface NotFound404Props {
   isCenter?: boolean
 }
 
-export const NotFound404 = ({ isCenter = true }: NotFound404Props) => {
+export const NotFound404 = ({ isCenter = false }: NotFound404Props) => {
   const LinkComponent = useLinkContext()
 
   return (

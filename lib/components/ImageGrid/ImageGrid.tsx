@@ -15,7 +15,7 @@ export interface ImageGridProps {
 export const ImageGridWrapper = ({ children, maxWidth = '5xl', gridGap = '5', cols = '3' }: ImageGridProps) => {
   return (
     <div
-      className={`cu-imagegrid cu-imagegrid-${cols} grid
+      className={`cu-imagegrid cu-imagegrid-${cols} cu-component grid
         ${gridColumnClasses[cols]}
         ${maxWidthClasses[maxWidth]} ${gridGapClasses[gridGap]}
       `}
