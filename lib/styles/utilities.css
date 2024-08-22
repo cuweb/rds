@@ -17,6 +17,17 @@
   @apply prose-xl md:prose-2xl font-light;
 }
 
+/* List Spacing */
+
+.cu-prose li {
+  @apply my-2;
+}
+
+.cu-prose ul ul,
+.cu-prose ol ol {
+  @apply my-2;
+}
+
 /* Body Classes */
 
 .cu-no-body-scroll {
