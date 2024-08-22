@@ -63,12 +63,12 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
           <ul className={listStyles.listHorizontal}>
             {linkedin && (
               <li>
-                <LinkComponent className={`${socialStyles.link} hover:text-[#0072b1]`} href={linkedin}>
+                <LinkComponent className={socialStyles.link} href={linkedin}>
                   <span className="sr-only">View on LinkedIn</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 448 512"
-                    fill="currentColor"
+                    fill="#0072b1"
                     className={socialStyles.icon}
                     aria-hidden="true"
                   >
@@ -80,12 +80,12 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
 
             {twitter && (
               <li>
-                <LinkComponent className={`${socialStyles.link} hover:text-[#00acee]`} href={linkedin}>
+                <LinkComponent className={socialStyles.link} href={linkedin}>
                   <span className="sr-only">View on Twitter</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
-                    fill="currentColor"
+                    fill="#00acee"
                     className={socialStyles.icon}
                     aria-hidden="true"
                   >
@@ -97,12 +97,12 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
 
             {facebook && (
               <li>
-                <LinkComponent className={`${socialStyles.link} hover:text-[#3b5998]`} href={linkedin}>
+                <LinkComponent className={socialStyles.link} href={linkedin}>
                   <span className="sr-only">View on Facebook</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
-                    fill="currentColor"
+                    fill="#3b5998"
                     className={socialStyles.icon}
                     aria-hidden="true"
                   >
@@ -114,12 +114,12 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
 
             {website && (
               <li>
-                <LinkComponent className={`${socialStyles.link} hover:text-[#3e8060]`} href={website}>
+                <LinkComponent className={socialStyles.link} href={website}>
                   <span className="sr-only">View Website</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 640 512"
-                    fill="currentColor"
+                    fill="#3e8060"
                     className={socialStyles.icon}
                     aria-hidden="true"
                   >

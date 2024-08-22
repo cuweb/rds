@@ -44,7 +44,7 @@ export const EventHeader: Story = {
   render: (args) => (
     <Section>
       <PageHeader {...args}>
-        <Figure size="sm" align="right" noMobile>
+        <Figure size="sm" align="right" rounded="lg" noMobile>
           <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
         </Figure>
         <PageHeader.Event
@@ -78,32 +78,34 @@ EventHeader.args = {
 
 export const EventHeaderMultiday: Story = {
   render: (args) => (
-    <PageHeader {...args}>
-      <Figure size="sm" align="right" noMobile>
-        <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
-      </Figure>
-      <PageHeader.Event
-        eventType="Hybrid"
-        virtualType="Teams"
-        virtualUrl="https://events.carleton.ca"
-        startDate={eventData.startDate}
-        endDate={eventData.multiDate}
-        location="Raven's Nest, 1125 Colonel By Drive"
-        cost="$20 per adult, $15 for youth/senior"
-        contactName="John Doe"
-        contactEmail="johndoe@test.com"
-        contactPhone="613-520-2600 x1234"
-      >
-        <ButtonGroup>
-          <a href="https://carleton.ca" className="cu-button cu-button--red">
-            Register Now
-          </a>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--grey">
-            Add to My Events
-          </a>
-        </ButtonGroup>
-      </PageHeader.Event>
-    </PageHeader>
+    <Section>
+      <PageHeader {...args}>
+        <Figure size="sm" align="right" noMobile>
+          <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
+        </Figure>
+        <PageHeader.Event
+          eventType="Hybrid"
+          virtualType="Teams"
+          virtualUrl="https://events.carleton.ca"
+          startDate={eventData.startDate}
+          endDate={eventData.multiDate}
+          location="Raven's Nest, 1125 Colonel By Drive"
+          cost="$20 per adult, $15 for youth/senior"
+          contactName="John Doe"
+          contactEmail="johndoe@test.com"
+          contactPhone="613-520-2600 x1234"
+        >
+          <ButtonGroup>
+            <a href="https://carleton.ca" className="cu-button cu-button--red">
+              Register Now
+            </a>
+            <a href="https://carleton.ca/webservices" className="cu-button cu-button--grey">
+              Add to My Events
+            </a>
+          </ButtonGroup>
+        </PageHeader.Event>
+      </PageHeader>
+    </Section>
   ),
 }
 EventHeaderMultiday.args = {
@@ -112,30 +114,32 @@ EventHeaderMultiday.args = {
 
 export const PeopleHeader: Story = {
   render: (args) => (
-    <PageHeader {...args}>
-      <Figure size="sm" align="right">
-        <img
-          src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
-          alt="Required alt text"
-          width="200"
-          height="133"
+    <Section>
+      <PageHeader {...args}>
+        <Figure size="sm" align="right">
+          <img
+            src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
+            alt="Required alt text"
+            width="200"
+            height="133"
+          />
+        </Figure>
+        <PageHeader.People
+          jobTitle="Jedi Master & Jedi Council Member"
+          degrees="Certificate, Padawan Academy of Jedi Arts"
+          building="Onraed"
+          room="Sector A29"
+          email="greely@thejediyouseek.com"
+          phone="613-520-2600"
+          phoneExt="1234"
+          resume="#"
+          website="#"
+          linkedin="#"
+          twitter="#"
+          facebook="#"
         />
-      </Figure>
-      <PageHeader.People
-        jobTitle="Jedi Master & Jedi Council Member"
-        degrees="Certificate, Padawan Academy of Jedi Arts"
-        building="Onraed"
-        room="Sector A29"
-        email="greely@thejediyouseek.com"
-        phone="613-520-2600"
-        phoneExt="1234"
-        resume="#"
-        website="#"
-        linkedin="#"
-        twitter="#"
-        facebook="#"
-      />
-    </PageHeader>
+      </PageHeader>
+    </Section>
   ),
 }
 PeopleHeader.args = {

@@ -24,8 +24,8 @@ export const Primary: Story = {
     name: 'Jane Doe',
     imageUrl: 'https://picsum.photos/id/342/600/400',
     imageZoom: 0,
-    focalPointX: '50',
-    focalPointY: '50',
+    focalPointX: 50,
+    focalPointY: 50,
     quoteType: 'quote',
   },
   render: (args) => {

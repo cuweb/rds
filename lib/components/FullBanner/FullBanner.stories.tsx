@@ -24,8 +24,8 @@ export const Primary: Story = {
     as: 'section',
     image: 'https://picsum.photos/id/20/1600/700',
     opacity: 70,
-    focalPointX: '50',
-    focalPointY: '50',
+    focalPointX: 50,
+    focalPointY: 50,
     justify: 'start',
   },
   render: (args) => {

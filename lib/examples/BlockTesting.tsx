@@ -72,8 +72,8 @@ export const BlockTesting = () => {
     <>
       <FullBanner
         as="div"
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         image="https://picsum.photos/id/20/1600/700"
         justify="start"
         opacity={70}
@@ -90,8 +90,8 @@ export const BlockTesting = () => {
 
       <FullBanner
         as="div"
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         image="https://picsum.photos/id/20/1600/700"
         justify="start"
         opacity={70}
@@ -383,8 +383,8 @@ export const BlockTesting = () => {
 
       <FullBanner
         as="div"
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         image="https://picsum.photos/id/20/1600/700"
         justify="start"
         opacity={70}
@@ -650,8 +650,8 @@ export const BlockTesting = () => {
       <SinglePara />
 
       <Testimonial
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         imageUrl="https://picsum.photos/id/342/600/400"
         imageZoom={0}
         name="Jane Doe"
@@ -714,8 +714,8 @@ export const BlockTesting = () => {
 
       <WideImage
         as="div"
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         headerType="h1"
         image="https://picsum.photos/id/381/600/400"
         isType="light"
@@ -734,8 +734,8 @@ export const BlockTesting = () => {
 
       <WideImage
         as="div"
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         headerType="h1"
         image="https://picsum.photos/id/381/600/400"
         isType="dark"
@@ -754,8 +754,8 @@ export const BlockTesting = () => {
 
       <WideImage
         as="div"
-        focalPointX="50"
-        focalPointY="50"
+        focalPointX={50}
+        focalPointY={50}
         headerType="h1"
         image="https://picsum.photos/id/381/600/400"
         isType="image"

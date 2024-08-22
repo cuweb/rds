@@ -6,8 +6,8 @@ export interface TestimonialProps {
   name: string
   imageUrl: string
   imageZoom?: number
-  focalPointX?: string
-  focalPointY?: string
+  focalPointX?: number
+  focalPointY?: number
   quoteType?: 'border' | 'quote'
 }
 
@@ -16,8 +16,8 @@ export const Testimonial = ({
   name,
   imageUrl,
   imageZoom = 0,
-  focalPointX = '50',
-  focalPointY = '50',
+  focalPointX = 50,
+  focalPointY = 50,
   quoteType = 'quote',
 }: TestimonialProps) => {
   const inlineImageStyles = {

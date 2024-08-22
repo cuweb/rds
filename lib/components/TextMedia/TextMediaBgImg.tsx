@@ -5,16 +5,16 @@ type borderWidthKeys = keyof typeof borderWidthClasses
 export interface TextMediaBgImgProps {
   imageUrl: string
   imageZoom?: number
-  focalPointX?: string
-  focalPointY?: string
+  focalPointX?: number
+  focalPointY?: number
   border?: borderWidthKeys
 }
 
 export const TextMediaBgImg = ({
   imageUrl,
   imageZoom = 0,
-  focalPointX = '50',
-  focalPointY = '50',
+  focalPointX = 50,
+  focalPointY = 50,
   border = 'none',
 }: TextMediaBgImgProps) => {
   const inlineImageStyles = {

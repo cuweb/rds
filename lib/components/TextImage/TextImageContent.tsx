@@ -11,8 +11,8 @@ export interface TextImageMediaProps {
   imageUrl?: string
   contentWidth?: number
   imageZoom?: number
-  focalPointX?: string
-  focalPointY?: string
+  focalPointX?: number
+  focalPointY?: number
   hasMobileImage?: boolean
 }
 
@@ -29,8 +29,8 @@ export const TextImageContent = ({
   imageUrl,
   contentWidth = 50,
   imageZoom = 0,
-  focalPointX = '50',
-  focalPointY = '50',
+  focalPointX = 50,
+  focalPointY = 50,
   hasMobileImage,
 }: TextImageContentProps & TextImageMediaProps) => {
   const contentPadding = imageUrl ? 'md:mb-4' : ''

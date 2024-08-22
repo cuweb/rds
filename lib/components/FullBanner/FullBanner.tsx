@@ -10,14 +10,14 @@ export interface FullBannerProps {
   as?: 'section' | 'div'
   title: string
   image?: string
-  focalPointX?: string
-  focalPointY?: string
+  focalPointX?: number
+  focalPointY?: number
   justify?: justifyContentKeys
   opacity?: (typeof opacityValues)[number]
 }
 
 // Used in WideImage, make a helper function when moving this component into RDS
-const getBackgroundImageStyles = (image: string = '', focalPointX: string, focalPointY: string) => ({
+const getBackgroundImageStyles = (image: string = '', focalPointX: number, focalPointY: number) => ({
   backgroundImage: `url(${image})`,
   backgroundPosition: `${focalPointX}% ${focalPointY}%`,
 })
@@ -27,8 +27,8 @@ export const FullBanner = ({
   as = 'section',
   title,
   image,
-  focalPointX = '50',
-  focalPointY = '50',
+  focalPointX = 50,
+  focalPointY = 50,
   opacity = 70,
   justify = 'start',
 }: FullBannerProps) => {
