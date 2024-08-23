@@ -8,4 +8,4 @@ export interface AutoSuggestProps extends FieldComponentProps {
     options?: Option[];
 }
 export declare const AutoSuggest: ({ ...props }: AutoSuggestProps) => import("react/jsx-runtime").JSX.Element;
-export default AutoSuggest;
+export {};
