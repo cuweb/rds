@@ -65,15 +65,6 @@ const columns: ColumnDefinitionType[] = [
   },
 ]
 
-// export const Primary: Story = {}
-// Primary.args = {
-//   data: tableData,
-//   columns: columns,
-//   hasStripes: false,
-//   noWordBreak: false,
-//   range: [1, -1],
-// }
-
 export const Primary: Story = {
   args: {
     data: tableData,
@@ -81,6 +72,24 @@ export const Primary: Story = {
     hasStripes: false,
     noWordBreak: false,
     range: [1, -1],
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Table {...args} />
+      </Section>
+    )
+  },
+}
+
+export const RowHeader: Story = {
+  args: {
+    data: tableData,
+    columns: columns,
+    hasStripes: false,
+    noWordBreak: false,
+    range: [1, -1],
+    enableRowHeader: true,
   },
   render: (args) => {
     return (
