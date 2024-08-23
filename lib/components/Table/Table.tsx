@@ -19,9 +19,17 @@ export interface TableProps {
   hasStripes?: boolean
   noWordBreak?: boolean
   range?: number[]
+  enableRowHeader?: boolean
 }
 
-export const Table = ({ data, columns, hasStripes = false, noWordBreak = false, range = [1, -1] }: TableProps) => {
+export const Table = ({
+  data,
+  columns,
+  hasStripes = false,
+  noWordBreak = false,
+  range = [1, -1],
+  enableRowHeader = false,
+}: TableProps) => {
   const [tableData, setTableData] = useSortableTable(data)
 
   const hasMounted = useRef(false)
@@ -41,7 +49,13 @@ export const Table = ({ data, columns, hasStripes = false, noWordBreak = false, 
     <div className={`cu-table cu-component not-prose overflow-x-auto rounded-lg shadow-lg`}>
       <table className="min-w-full table-auto cu-table">
         <TableHeader columns={columns} noWordBreak={noWordBreak} sortData={setTableData} />
-        <TableRows data={tableData} columns={columns} striped={hasStripes} range={range} />
+        <TableRows
+          data={tableData}
+          columns={columns}
+          striped={hasStripes}
+          range={range}
+          enableRowHeader={enableRowHeader}
+        />
       </table>
     </div>
   )
