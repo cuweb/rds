@@ -6,6 +6,7 @@ type TableRowsProps = {
     columns: ColumnDefinitionType[];
     striped: boolean;
     range: number[];
+    enableRowHeader: boolean;
 };
-declare const TableRows: ({ data, columns, striped }: TableRowsProps) => import("react/jsx-runtime").JSX.Element;
+declare const TableRows: ({ data, columns, striped, enableRowHeader }: TableRowsProps) => import("react/jsx-runtime").JSX.Element;
 export default TableRows;
