@@ -1,6 +1,5 @@
 import { useField, useFormikContext } from 'formik'
 import Select from 'react-select'
-import './style.css'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 
@@ -31,10 +30,8 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
       onBlur={field.onBlur}
       isSearchable={true}
       isClearable={true}
+      className={errorClass + ` cu-autosuggest`}
       isDisabled={disabled}
-      className={`cu-autosuggest ${errorClass}`}
     />
   )
 }
-
-export default AutoSuggest
