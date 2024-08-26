@@ -15,7 +15,7 @@ export const FooterStandardLinks = {
     { name: 'Support Services', href: 'https://carleton.ca/academics/support/' },
     { name: 'Calendars', href: 'https://calendar.carleton.ca/' },
     { name: 'Carleton Online', href: 'https://carleton.ca/cuol/' },
-    { name: 'Discovery Centre', href: 'https://carleton.ca/discoverycentre/' },
+    { name: 'Future Learning Lab', href: 'https://carleton.ca/tls/future-learning-lab/' },
   ],
   Students: [
     { name: 'Career Services', href: 'https://carleton.ca/career/' },
