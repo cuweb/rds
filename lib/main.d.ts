@@ -71,5 +71,4 @@ export { Section } from './layouts/Section/Section.js';
 export { StackedList } from './layouts/StackedList/StackedList';
 export { iconNames } from '../public/assets/font-awesome/icon-list.js';
 export * as utils from './utils/propClasses';
-export * as AWS from './utils/AWS';
 export { TextImage } from './components/TextImage/TextImage';
