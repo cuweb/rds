@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.16.2",
+  "version": "0.16.3",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -41,13 +41,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "3.617.0",
-    "@aws-sdk/credential-providers": "3.617.0",
-    "@aws-sdk/s3-request-presigner": "3.617.0",
-    "@aws-sdk/util-format-url": "3.609.0",
     "@headlessui/react": "2.1.2",
     "@heroicons/react": "2.1.5",
-    "@lexical/react": "0.17.0",
     "@next-tools/dynamic": "0.0.11",
     "@react-google-maps/api": "2.19.3",
     "@tailwindcss/aspect-ratio": "0.4.2",
@@ -60,7 +55,6 @@
     "date-fns": "3.6.0",
     "dompurify": "3.1.6",
     "formik": "2.4.6",
-    "lexical": "0.17.0",
     "rds-tailwind-theme": "0.8.0",
     "react": "18.3.1",
     "react-date-picker": "11.0.0",
@@ -72,11 +66,6 @@
     "yup": "1.4.0"
   },
   "peerDependencies": {
-    "@aws-sdk/client-s3": "3.617.0",
-    "@aws-sdk/credential-providers": "3.617.0",
-    "@aws-sdk/s3-request-presigner": "3.617.0",
-    "@aws-sdk/util-format-url": "3.609.0",
-    "@lexical/react": "0.17.0",
     "@next-tools/dynamic": "0.0.11",
     "@react-google-maps/api": "2.19.3",
     "@types/react-datepicker": "7.0.0",
@@ -84,7 +73,6 @@
     "@types/react-select": "5.0.1",
     "date-fns": "3.6.0",
     "formik": "2.4.6",
-    "lexical": "0.17.0",
     "react": "18.3.1",
     "react-date-picker": "11.0.0",
     "react-datepicker": "7.3.0",
