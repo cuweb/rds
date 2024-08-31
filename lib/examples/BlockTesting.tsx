@@ -649,14 +649,7 @@ export const BlockTesting = () => {
       <SinglePara />
       <SinglePara />
 
-      <Testimonial
-        focalPointX={50}
-        focalPointY={50}
-        imageUrl="https://picsum.photos/id/342/600/400"
-        imageZoom={0}
-        name="Jane Doe"
-        quoteType="quote"
-      >
+      <Testimonial focalPointX={50} focalPointY={50} imageUrl="https://picsum.photos/id/342/600/400" imageZoom={0}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam mollis
           feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor.
