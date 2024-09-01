@@ -20,7 +20,7 @@ type Story = StoryObj<typeof FullBanner>
 
 export const Primary: Story = {
   args: {
-    title: 'The nostalgia is real. The launch of the iPod revolutionized how the world consumes music on the move!',
+    title: 'The nostalgia is real.',
     as: 'section',
     image: 'https://picsum.photos/id/20/1600/700',
     opacity: 70,
@@ -31,6 +31,10 @@ export const Primary: Story = {
   render: (args) => {
     return (
       <FullBanner {...args}>
+        <p>
+          The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
+          revolutionized how the world consumes music on the move!
+        </p>
         <ButtonGroup>
           <Button title="Apply Now" />
           <Button color="grey" title="Request Information" />
