@@ -9,6 +9,7 @@ export interface FullBannerProps {
   children?: React.ReactNode
   as?: 'section' | 'div'
   title: string
+  headerType?: 'h1' | 'h2'
   image?: string
   focalPointX?: number
   focalPointY?: number
@@ -26,6 +27,7 @@ export const FullBanner = ({
   children,
   as = 'section',
   title,
+  headerType = 'h1',
   image,
   focalPointX = 50,
   focalPointY = 50,
@@ -54,7 +56,7 @@ export const FullBanner = ({
             className={`relative overflow-hidden w-full md:max-w-xl lg:max-w-2xl xl:max-w-3xl md:rounded-lg ${contentAlign}`}
           >
             <div className="relative z-10 px-5 md:px-8 pt-3 pb-5 md:pt-6 md:pb-8">
-              <PageHeader header={title} as="h1" size="md" noUnderline isWhite>
+              <PageHeader header={title} as={headerType} size={headerType === 'h1' ? 'md' : 'sm'} noUnderline isWhite>
                 {children}
               </PageHeader>
             </div>

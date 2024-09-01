@@ -20,8 +20,9 @@ type Story = StoryObj<typeof FullBanner>
 
 export const Primary: Story = {
   args: {
-    title: 'The nostalgia is real.',
     as: 'section',
+    title: 'The nostalgia is real.',
+    headerType: 'h1',
     image: 'https://picsum.photos/id/20/1600/700',
     opacity: 70,
     focalPointX: 50,
