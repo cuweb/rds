@@ -53,7 +53,7 @@ export const FullBanner = ({
       <div className="mx-auto max-w-screen-2xl">
         <div className={`flex ${justifyContentClasses[justify]}`}>
           <div
-            className={`relative overflow-hidden w-full md:max-w-xl lg:max-w-2xl xl:max-w-3xl md:rounded-lg ${contentAlign}`}
+            className={`relative overflow-hidden min-w-[420px] md:max-w-xl lg:max-w-2xl xl:max-w-3xl md:rounded-lg ${contentAlign}`}
           >
             <div className="relative z-10 px-5 md:px-8 pt-3 pb-5 md:pt-6 md:pb-8">
               <PageHeader header={title} as={headerType} size={headerType === 'h1' ? 'md' : 'sm'} noUnderline isWhite>
