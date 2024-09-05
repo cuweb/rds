@@ -28,16 +28,12 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
     setSelectedOption(initialOption || null)
   }, [field.value, options])
 
-  console.log('selectedOption', selectedOption)
-
   useEffect(() => {
     if (meta.touched && !meta.value) {
       setFieldValue(name, '')
       setSelectedOption(null)
     }
-  }, [meta.touched, meta.value])
-
-  // value={options?.find((option) => option.value === field.value)}
+  }, [meta.touched, meta.value, name, setFieldValue])
 
   return (
     <Select

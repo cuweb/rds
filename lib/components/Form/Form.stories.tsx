@@ -590,6 +590,7 @@ export const AutoSuggest: Story = () => {
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
     actions.setSubmitting(false)
+    formikProps.resetForm()
   }
 
   const formikProps = useFormik({
