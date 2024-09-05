@@ -575,18 +575,22 @@ export const AutoSuggest: Story = () => {
   }
 
   const autoSuggestInitialValues = {
-    text: '',
+    text: 'zlnud',
   }
 
   const autoSuggestValidationSchema = Yup.object().shape({
     text: Yup.string(),
   })
+  const onReset: MouseEventHandler<HTMLButtonElement> = () => {
+    formikProps.resetForm()
+  }
 
   const onSubmit = async (values: IAutoSuggest, actions: FormikHelpers<IAutoSuggest>) => {
     actions.setSubmitting(true)
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
     actions.setSubmitting(false)
+    formikProps.resetForm()
   }
 
   const formikProps = useFormik({
@@ -609,6 +613,7 @@ export const AutoSuggest: Story = () => {
       </Form.FieldGroup>
       <ButtonGroup>
         <Button title="Submit" type="submit" />
+        <Button title="Reset" type="reset" color="grey" onClick={onReset} />
       </ButtonGroup>
     </Form>
   )
