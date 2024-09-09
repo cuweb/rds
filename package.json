@@ -33,6 +33,7 @@
     "build": "tsc && npm run icon-list && npm run prettier && vite build && npm run size",
     "build:storybook": "storybook build",
     "icon-list": "node ./generateIconList.mjs",
+    "img-list": "node ./generateBgImgList.mjs",
     "prettier": "prettier --write .",
     "size": "size-limit",
     "clean": "rm -rf node_modules ; rm package-lock.json ; npm install ; npm run build",
