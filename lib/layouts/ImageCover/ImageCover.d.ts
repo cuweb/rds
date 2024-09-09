@@ -4,10 +4,10 @@ type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface ImageCoverProps {
     children?: React.ReactNode;
     maxWidth?: maxWidthKeys;
-    imageUrl: string;
+    image: string;
     imageZoom?: number;
     focalPointX?: string;
     focalPointY?: string;
 }
-export declare const ImageCover: ({ children, maxWidth, imageUrl, imageZoom, focalPointX, focalPointY, }: ImageCoverProps) => import("react/jsx-runtime").JSX.Element;
+export declare const ImageCover: ({ children, maxWidth, image, imageZoom, focalPointX, focalPointY, }: ImageCoverProps) => import("react/jsx-runtime").JSX.Element;
 export {};
