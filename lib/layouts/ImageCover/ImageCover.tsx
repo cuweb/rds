@@ -6,7 +6,7 @@ type maxWidthKeys = keyof typeof maxWidthClasses
 export interface ImageCoverProps {
   children?: React.ReactNode
   maxWidth?: maxWidthKeys
-  imageUrl: string
+  image: string
   imageZoom?: number
   focalPointX?: string
   focalPointY?: string
@@ -15,13 +15,15 @@ export interface ImageCoverProps {
 export const ImageCover = ({
   children,
   maxWidth = '7xl',
-  imageUrl,
+  image,
   imageZoom = 0,
   focalPointX = '50',
   focalPointY = '50',
 }: ImageCoverProps) => {
+  const imagePath = `https://cdn.carleton.ca/rds/assets/bg-images/${image}.jpg`
+
   const inlineImageStyles = {
-    backgroundImage: `url(${imageUrl})`,
+    backgroundImage: `url(${imagePath})`,
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
     transform: `scale(1.${imageZoom})`,
   }

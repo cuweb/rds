@@ -27,7 +27,7 @@ export const Primary: Story = {}
 Primary.args = {
   children: '',
   maxWidth: '7xl',
-  imageUrl: 'https://picsum.photos/id/516/1600/1200',
+  image: 'tory',
   imageZoom: 0,
   focalPointX: '50',
   focalPointY: '50',
