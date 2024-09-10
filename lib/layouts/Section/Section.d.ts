@@ -8,5 +8,5 @@ export interface SectionProps {
     maxWidth?: maxWidthKeys;
     proseType?: 'none' | 'light' | 'dark';
 }
-export declare const Section: ({ children, as, proseType, isGrey, maxWidth, }: SectionProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Section: ({ children, as, proseType, isGrey, maxWidth }: SectionProps) => import("react/jsx-runtime").JSX.Element;
 export {};
