@@ -13,6 +13,14 @@
   @apply prose-light;
 }
 
+.cu-prose-first-last > *:first-child {
+  @apply !mt-0;
+}
+
+.cu-prose-first-last > *:last-child {
+  @apply !mb-0;
+}
+
 .cu-prose-font-light {
   @apply prose-xl md:prose-2xl font-light;
 }
