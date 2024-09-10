@@ -7,25 +7,16 @@ export interface WideWaveProps {
 }
 
 export const WideWave = ({ children, wave = 'red', hasRaven = false }: WideWaveProps) => {
+  const topPadding = 'pt-16 sm:pt-24 md:pt-28 lg:pt-36 xl:pt-40 2xl:pt-40'
   const waveBgClass = wave === 'red' ? 'bg-cu-waves-hard-edge-red' : 'bg-cu-waves-hard-edge-black'
-
+  const waveBgColor = wave === 'red' ? 'bg-cu-red' : 'bg-cu-black-900'
   const waveBgPosition = {
     backgroundPosition: '-1px -1px',
   }
 
-  const waveBgColor = wave === 'red' ? 'bg-cu-red' : 'bg-cu-black-900'
-
-  const topPadding =
-    wave === 'red'
-      ? 'pt-16 sm:pt-24 md:pt-28 lg:pt-36 xl:pt-40 2xl:pt-44'
-      : 'pt-20 sm:pt-24 md:pt-32 lg:pt-44 xl:pt-56 2xl:pt-60'
-
-  // Needs to be a class for consistency in RDS
-  const edgePadding = 'px-8 md:px-10'
-
   return (
     <section
-      className={`relative cu-widewaves cu-prose cu-prose-light ${waveBgClass} ${waveBgColor} ${edgePadding} ${topPadding} pb-8 md:pb-20 bg-[length:100.5%] bg-no-repeat cu-no-browsers-edge not-contained`}
+      className={`relative cu-widewaves cu-prose cu-prose-light cu-no-browsers-edge not-contained ${waveBgClass} ${waveBgColor} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
       style={waveBgPosition}
     >
       {hasRaven && wave === 'black' ? (
