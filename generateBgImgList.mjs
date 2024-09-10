@@ -13,9 +13,9 @@ async function generateBgImgList() {
     const files = await fs.readdir(directoryPath)
 
     // Filter by jpg files
-    const imgFiles = files.filter((file) => path.extname(file).toLowerCase() === '.jpg')
+    const sourceFiles = files.filter((file) => path.extname(file).toLowerCase() === '.jpg')
 
-    const images = imgFiles.map((file) => {
+    const images = sourceFiles.map((file) => {
       const name = path.parse(file).name
       return {
         value: name,
