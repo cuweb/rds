@@ -43,5 +43,5 @@ jobs:
         run: |
           aws s3 sync ./dist s3://${{ secrets.AWS_BUCKET_PROD }}/${{ secrets.AWS_FOLDER_PATH }} --exclude '*.gz' --delete --acl public-read
 
-      - name: Invalidate Plugin Files
+      - name: Invalidate S3 Assets
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_ID }} --paths "${{ secrets.AWS_FOLDER_PATH }}*"
