@@ -41,7 +41,7 @@
 }
 
 .cu-no-browsers-edge {
-  @apply -mx-8 md:-mx-10;
+  @apply -mx-6 md:-mx-8 lg:-mx-10;
 }
 
 /* Adding autosuggest form field style */
