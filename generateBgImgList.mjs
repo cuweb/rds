@@ -1,8 +1,8 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-const directoryPath = './public/assets/font-awesome'
-const outputJsPath = './public/assets/font-awesome/icon-list.js'
+const directoryPath = './public/assets/bg-images'
+const outputJsPath = './public/assets/bg-images/bg-image-list.js'
 
 function formatLabel(name) {
   return name.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase())
@@ -13,7 +13,7 @@ async function generateBgImgList() {
     const files = await fs.readdir(directoryPath)
 
     // Filter by jpg files
-    const sourceFiles = files.filter((file) => path.extname(file).toLowerCase() === '.svg')
+    const sourceFiles = files.filter((file) => path.extname(file).toLowerCase() === '.jpg')
 
     const images = sourceFiles.map((file) => {
       const name = path.parse(file).name
@@ -24,7 +24,7 @@ async function generateBgImgList() {
     })
 
     // Generate JS file with unquoted keys, single-quoted values, and trailing comma
-    const outputJsFile = `export const iconNames = [\n  ${images
+    const outputJsFile = `export const bgImageNames = [\n  ${images
       .map((icon) => `{ value: '${icon.value}', label: '${icon.label}' }`)
       .join(',\n  ')},\n]\n`
 
