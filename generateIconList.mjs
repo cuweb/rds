@@ -8,14 +8,14 @@ function formatLabel(name) {
   return name.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase())
 }
 
-async function generateIconLists() {
+async function generateBgImgList() {
   try {
     const files = await fs.readdir(directoryPath)
 
-    // Filter by svg files
-    const svgFiles = files.filter((file) => path.extname(file).toLowerCase() === '.svg')
+    // Filter by jpg files
+    const sourceFiles = files.filter((file) => path.extname(file).toLowerCase() === '.svg')
 
-    const icons = svgFiles.map((file) => {
+    const images = sourceFiles.map((file) => {
       const name = path.parse(file).name
       return {
         value: name,
@@ -23,12 +23,15 @@ async function generateIconLists() {
       }
     })
 
-    // Generate JS file
-    const outputJsFile = `export const iconNames = [\n  ${icons.map((icon) => JSON.stringify(icon)).join(',\n  ')}\n];`
+    // Generate JS file with unquoted keys, single-quoted values, and trailing comma
+    const outputJsFile = `export const iconNames = [\n  ${images
+      .map((icon) => `{ value: '${icon.value}', label: '${icon.label}' }`)
+      .join(',\n  ')},\n]\n`
+
     await fs.writeFile(outputJsPath, outputJsFile)
   } catch (err) {
     console.error('Error processing the files:', err)
   }
 }
 
-generateIconLists()
+generateBgImgList()

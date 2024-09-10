@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.16.7",
+  "version": "0.16.8",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -30,10 +30,9 @@
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
-    "build": "tsc && npm run icon-list && npm run prettier && vite build && npm run size",
+    "build": "tsc && npm run create-lists && npm run prettier && vite build && npm run size",
     "build:storybook": "storybook build",
-    "icon-list": "node ./generateIconList.mjs",
-    "img-list": "node ./generateBgImgList.mjs",
+    "create-lists": "node ./generateIconList.mjs && node ./generateBgImgList.mjs",
     "prettier": "prettier --write .",
     "size": "size-limit",
     "clean": "rm -rf node_modules ; rm package-lock.json ; npm install ; npm run build",
