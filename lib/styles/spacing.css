@@ -22,6 +22,10 @@
   @apply mx-auto max-w-7xl;
 }
 
+.cu-section-max > :not(.not-contained) {
+  @apply mx-auto max-w-screen-2xl;
+}
+
 .cu-section-full > :not(.not-contained) {
   @apply max-w-full mx-auto;
 }
@@ -79,6 +83,7 @@
 */
 
 .cu-section > *:first-child:not(.cu-fullbanner),
+.cu-section > *:first-child:not(.cu-imagecover),
 .cu-article > *:first-child,
 .cu-aside > *:first-child,
 .cu-aside .sticky > *:first-child {
