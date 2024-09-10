@@ -23,6 +23,7 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: '',
+  as: 'section',
   wave: 'red',
   hasRaven: false,
 }
