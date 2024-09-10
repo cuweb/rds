@@ -4,8 +4,9 @@ on:
   pull_request:
     branches:
       - develop
-    types:
-      - closed
+  push:
+    tags:
+      - '*'
 
 jobs:
   run:
@@ -41,3 +42,6 @@ jobs:
       - name: Deploy Theme - Other Files
         run: |
           aws s3 sync ./dist s3://${{ secrets.AWS_BUCKET_PROD }}/${{ secrets.AWS_FOLDER_PATH }} --exclude '*.gz' --delete --acl public-read
+
+      - name: Invalidate Plugin Files
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_ID }} --paths "${{ secrets.AWS_FOLDER_PATH }}"
