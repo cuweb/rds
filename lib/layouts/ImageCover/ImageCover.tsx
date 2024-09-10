@@ -38,16 +38,15 @@ export const ImageCover = ({
 
   return (
     <SectionComponent
-      className={`cu-imagecover bg-cover bg-no-repeat cu-no-browsers-edge not-contained`}
+      className={`cu-section cu-imagecover bg-cover bg-no-repeat cu-no-browsers-edge not-contained`}
       style={mainBgImage}
     >
+      <div className={`absolute bottom-0 h-full w-full ${bgImgClass} -mb-1`} />
       <div
         className={`cu-imagecover-content cu-prose cu-prose-dark cu-prose-first-last ${childWidth} ${childPadding} mx-auto bg-white/80 `}
       >
         {children}
       </div>
-
-      <div className={`absolute bottom-0 h-full w-full ${bgImgClass} -mb-1`} />
     </SectionComponent>
   )
 }
