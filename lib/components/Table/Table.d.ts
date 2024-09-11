@@ -12,9 +12,10 @@ export interface TableProps {
         [k: string]: string | number | JSX.Element;
     }[];
     columns: ColumnDefinitionType[];
+    colgroup?: number[];
     hasStripes?: boolean;
     noWordBreak?: boolean;
     range?: number[];
     enableRowHeader?: boolean;
 }
-export declare const Table: ({ data, columns, hasStripes, noWordBreak, range, enableRowHeader, }: TableProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Table: ({ data, columns, colgroup, hasStripes, noWordBreak, range, enableRowHeader, }: TableProps) => import("react/jsx-runtime").JSX.Element;
