@@ -18,7 +18,7 @@ export const WideWave = ({ children, as = 'section', wave = 'red', hasRaven = fa
 
   return (
     <SectionComponent
-      className={`relative cu-widewaves cu-prose cu-prose-light cu-no-browsers-edge not-contained ${waveBgClass} ${waveBgColor} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
+      className={`relative cu-section cu-widewaves cu-prose cu-prose-light cu-no-browsers-edge not-contained ${waveBgClass} ${waveBgColor} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
       style={waveBgPosition}
     >
       {hasRaven && wave === 'black' ? (
