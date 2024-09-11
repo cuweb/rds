@@ -64,6 +64,7 @@ Primary.args = {
   maxWidth: '5xl',
   image: 'tory',
   imageZoom: 0,
+  opacity: 85,
   focalPointX: '50',
   focalPointY: '50',
 }
