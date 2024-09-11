@@ -82,6 +82,25 @@ export const Primary: Story = {
   },
 }
 
+export const CustomColumnsWidth: Story = {
+  args: {
+    data: tableData,
+    columns: columns,
+    colgroup: [10, 30, 40, 20],
+    hasStripes: false,
+    noWordBreak: false,
+    range: [1, -1],
+    enableRowHeader: true,
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Table {...args} />
+      </Section>
+    )
+  },
+}
+
 export const RowHeader: Story = {
   args: {
     data: tableData,
