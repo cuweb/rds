@@ -2,6 +2,7 @@ import React from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
+const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface ImageCoverProps {
   children?: React.ReactNode
@@ -9,6 +10,7 @@ export interface ImageCoverProps {
   maxWidth?: maxWidthKeys
   image: string
   imageZoom?: number
+  opacity?: (typeof opacityValues)[number]
   focalPointX?: string
   focalPointY?: string
 }
@@ -19,6 +21,7 @@ export const ImageCover = ({
   maxWidth = '5xl',
   image,
   imageZoom = 0,
+  opacity = 70,
   focalPointX = '50',
   focalPointY = '50',
 }: ImageCoverProps) => {
@@ -33,6 +36,10 @@ export const ImageCover = ({
     transform: `scale(1.${imageZoom})`,
   }
 
+  const overlayBg = {
+    backgroundColor: `rgba(255,255,255,0.${opacity})`,
+  }
+
   const bgImgClass =
     'bg-cu-waves-repeating-bottom-red bg-[length:200px] md:bg-[length:300px] xl:bg-[length:400px] bg-repeat-x bg-bottom'
 
@@ -43,7 +50,8 @@ export const ImageCover = ({
     >
       <div className={`absolute bottom-0 h-full w-full ${bgImgClass} -mb-1`} />
       <div
-        className={`cu-imagecover-content cu-prose cu-prose-dark cu-prose-first-last ${childWidth} ${childPadding} mx-auto bg-white/80 `}
+        className={`cu-imagecover-content cu-prose cu-prose-dark cu-prose-first-last ${childWidth} ${childPadding} mx-auto`}
+        style={overlayBg}
       >
         {children}
       </div>
