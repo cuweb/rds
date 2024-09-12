@@ -9,6 +9,7 @@ export interface ColumnDefinitionType {
   sort?: { sortable: boolean }
   order?: 'ascending' | 'descending'
   default?: true
+  width?: string
 }
 
 export interface TableProps {
@@ -47,9 +48,11 @@ export const Table = ({
     }
   }, [columns, setTableData])
 
+  const tableClassName = columns.some((column) => column.width) ? 'table-fixed w-full' : 'table-auto'
+
   return (
     <div className={`cu-table cu-component not-prose overflow-x-auto rounded-lg shadow-lg`}>
-      <table className="min-w-full table-auto cu-table">
+      <table className={`min-w-full cu-table ${tableClassName}`}>
         {colgroup && (
           <colgroup>
             {colgroup.map((width, index) => (
