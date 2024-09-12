@@ -72,7 +72,7 @@ export const WideImageWrapper = ({
   switch (isType) {
     case 'light':
     case 'dark':
-      topBottomSpace = 'pt-10 pb-12'
+      topBottomSpace = headerType === 'h1' ? 'pt-10 pb-12' : 'pt-10 pb-12'
       break
     case 'image':
       topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
