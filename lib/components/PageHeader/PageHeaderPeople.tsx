@@ -9,6 +9,7 @@ export interface PageHeaderPeopleProps {
   email?: string
   phone?: string
   phoneExt?: string
+  orcidID?: string
 }
 
 export interface PageHeaderSocialProps {
@@ -20,7 +21,7 @@ export interface PageHeaderSocialProps {
 }
 
 export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeopleProps & PageHeaderSocialProps) => {
-  const { degrees, building, room, email, phone, phoneExt, website, linkedin, twitter, facebook } = restProps
+  const { degrees, building, room, email, phone, phoneExt, orcidID, website, linkedin, twitter, facebook } = restProps
   const profileDetails = ['degrees', 'building', 'room', 'email', 'phone', 'phoneExt']
   const socialDetails = ['resume', 'linkedin', 'twitter', 'facebook']
   const LinkComponent = useLinkContext()
@@ -51,6 +52,13 @@ export const PageHeaderPeople = ({ jobTitle, ...restProps }: PageHeaderPeoplePro
               <li>
                 {phone}
                 {phoneExt && ` x${phoneExt}`}
+              </li>
+            )}
+            {orcidID && (
+              <li>
+                <LinkComponent className={listStyles.listLink} href={`https://orcid.org/${orcidID}`}>
+                  ORCID: {orcidID}
+                </LinkComponent>
               </li>
             )}
           </ul>

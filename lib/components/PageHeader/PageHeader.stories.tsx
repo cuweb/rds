@@ -132,6 +132,7 @@ export const PeopleHeader: Story = {
           email="greely@thejediyouseek.com"
           phone="613-520-2600"
           phoneExt="1234"
+          orcidID="1234"
           resume="#"
           website="#"
           linkedin="#"
