@@ -37,19 +37,6 @@ export const Primary: Story = {
     return (
       <Main>
         <WideImage {...args}>
-          {/* <ButtonGroup>
-          <Button title="Apply Now" />
-          <Button title="Request Information" color="dark-grey" />
-        </ButtonGroup> */}
-        </WideImage>
-        <WideImage {...args}>
-          <ButtonGroup>
-            <Button title="Apply Now" />
-            <Button title="Request Information" color="dark-grey" />
-          </ButtonGroup>
-        </WideImage>
-        <WideImage {...args} headerType="h2" />
-        <WideImage {...args} headerType="h2">
           <ButtonGroup>
             <Button title="Apply Now" />
             <Button title="Request Information" color="dark-grey" />
