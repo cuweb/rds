@@ -17,7 +17,6 @@ export interface TableProps {
     [k: string]: string | number | JSX.Element
   }[]
   columns: ColumnDefinitionType[]
-  colgroup?: number[]
   hasStripes?: boolean
   noWordBreak?: boolean
   range?: number[]
@@ -27,7 +26,6 @@ export interface TableProps {
 export const Table = ({
   data,
   columns,
-  colgroup,
   hasStripes = false,
   noWordBreak = false,
   range = [1, -1],
@@ -53,13 +51,6 @@ export const Table = ({
   return (
     <div className={`cu-table cu-component not-prose overflow-x-auto rounded-lg shadow-lg`}>
       <table className={`min-w-full cu-table ${tableClassName}`}>
-        {colgroup && (
-          <colgroup>
-            {colgroup.map((width, index) => (
-              <col key={`col-${index}`} style={{ width: `${width}%` }}></col>
-            ))}
-          </colgroup>
-        )}
         <TableHeader columns={columns} noWordBreak={noWordBreak} sortData={setTableData} />
         <TableRows
           data={tableData}
