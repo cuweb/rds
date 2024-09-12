@@ -72,13 +72,13 @@ export const WideImageWrapper = ({
   switch (isType) {
     case 'light':
     case 'dark':
-      topBottomSpace = 'py-12'
+      topBottomSpace = 'pt-10 pb-12'
       break
     case 'image':
       topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
       break
     default:
-      topBottomSpace = 'py-12'
+      topBottomSpace = 'py-10 pb-12'
       break
   }
 
@@ -110,7 +110,9 @@ export const WideImageWrapper = ({
 
       {image && isType === 'image' && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
 
-      <div className={`relative z-10 max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-${isType}`}>
+      <div
+        className={`relative z-10 max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-${isType} cu-zero-first-last`}
+      >
         <PageHeader
           header={title}
           as={headerType}

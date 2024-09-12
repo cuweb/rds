@@ -2,6 +2,10 @@
   @apply w-full max-w-4xl;
 } */
 
+.cu-wideimage .cu-pageheader > *:last-child {
+  @apply mb-2;
+}
+
 .cu-wideimage-dark,
 .cu-wideimage-image,
 .cu-wideimage-wave {
