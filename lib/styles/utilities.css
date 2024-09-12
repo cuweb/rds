@@ -13,11 +13,13 @@
   @apply prose-light;
 }
 
-.cu-prose-first-last > *:first-child {
+.cu-prose-first-last > *:first-child,
+.cu-zero-first-last > *:first-child {
   @apply !mt-0;
 }
 
-.cu-prose-first-last > *:last-child {
+.cu-prose-first-last > *:last-child,
+.cu-zero-first-last > *:last-child {
   @apply !mb-0;
 }
 
