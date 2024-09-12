@@ -41,6 +41,7 @@ export { Quote } from './components/Quote/Quote'
 export { SearchInput } from './components/SearchInput/SearchInput'
 export { Table } from './components/Table/Table'
 export { Testimonial } from './components/Testimonial/Testimonial'
+export { TextImage } from './components/TextImage/TextImage'
 export { TextMedia } from './components/TextMedia/TextMedia'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
@@ -76,6 +77,7 @@ export { ImageCover } from './layouts/ImageCover/ImageCover'
 export { Main } from './layouts/Main/Main'
 export { Section } from './layouts/Section/Section.js'
 export { StackedList } from './layouts/StackedList/StackedList'
+export { WideWave } from './layouts/WideWave/WideWave'
 
 // Javascript Files
 export { iconNames } from '../public/assets/font-awesome/icon-list.js'
@@ -83,6 +85,3 @@ export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js'
 
 // Utils
 export * as utils from './utils/propClasses'
-
-// Deprecated
-export { TextImage } from './components/TextImage/TextImage'
