@@ -6,6 +6,7 @@ export interface PageHeaderPeopleProps {
     email?: string;
     phone?: string;
     phoneExt?: string;
+    orcidID?: string;
 }
 export interface PageHeaderSocialProps {
     resume?: string;
