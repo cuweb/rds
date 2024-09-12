@@ -2,7 +2,16 @@
   @apply w-full max-w-4xl;
 } */
 
+/* .cu-wideimage .cu-pageheader > *:last-child:not(h1):not(h2) {
+  @apply mb-4;
+} */
+
 .cu-wideimage .cu-pageheader > *:last-child {
+  @apply mb-4;
+}
+
+.cu-wideimage .cu-pageheader > h1:last-child,
+.cu-wideimage .cu-pageheader > h2:last-child {
   @apply mb-2;
 }
 
