@@ -1,6 +1,11 @@
-/* .cu-wideimage-content > *:not(h1):not(h2):not(.cu-buttongroup):not(.cu-wideimage-signup) {
-  @apply w-full max-w-4xl;
-} */
+.cu-wideimage .cu-pageheader > *:last-child {
+  @apply mb-4;
+}
+
+.cu-wideimage .cu-pageheader > h1:last-child,
+.cu-wideimage .cu-pageheader > h2:last-child {
+  @apply mb-2;
+}
 
 .cu-wideimage-dark,
 .cu-wideimage-image,
