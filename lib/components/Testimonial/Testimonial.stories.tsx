@@ -27,7 +27,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Section maxWidth="7xl">
         <Testimonial {...args}>
           <Quote cite="Jane Doe" graphic="quote">
             <p>

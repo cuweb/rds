@@ -63,6 +63,7 @@ export const BlackWave: Story = {
   args: {
     ...Primary.args,
     wave: 'black',
+    hasRaven: true,
   },
   render: (args) => (
     <Main>
