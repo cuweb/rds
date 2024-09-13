@@ -1,3 +1,7 @@
 .cu-widewaves > * {
   @apply px-6 md:px-8 lg:px-10;
 }
+
+.cu-widewaves-content > :not(.not-contained) {
+  @apply max-w-5xl mx-auto;
+}
