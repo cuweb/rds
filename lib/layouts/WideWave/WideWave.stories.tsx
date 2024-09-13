@@ -67,6 +67,13 @@ export const BlackWave: Story = {
   render: (args) => (
     <Main>
       <WideWave {...args}>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non placerat massa. Morbi ornare maximus
+          ultricies. Nunc tempus nisl non ullamcorper sagittis. Suspendisse imperdiet vulputate tortor a dignissim.
+          Praesent quam felis, laoreet id odio vitae, fringilla auctor lacus. Cras est libero, faucibus sit amet
+          tristique vitae, auctor a justo. Fusce molestie, justo fermentum vehicula efficitur, leo ligula eleifend ante,
+          in commodo diam turpis in ante.
+        </p>
         <TextMedia maxWidth="7xl" reverse>
           <TextMedia.Content title="Red Wave with Text & Media" width={60} hasUnderline isWhite>
             <p>

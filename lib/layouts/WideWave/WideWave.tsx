@@ -21,13 +21,9 @@ export const WideWave = ({ children, as = 'section', wave = 'red', hasRaven = fa
       className={`relative cu-section cu-widewaves cu-prose cu-prose-light cu-no-browsers-edge not-contained ${waveBgClass} ${waveBgColor} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
       style={waveBgPosition}
     >
-      {hasRaven && wave === 'black' ? (
-        <>
-          <div className="relative z-20">{children}</div>
-          <div className="bg-cu-ravens-logo-white opacity-10 bg-[length:400px] z-10 bg-[bottom_right] bg-no-repeat bottom-20 -right-44 w-full h-full absolute" />
-        </>
-      ) : (
-        <>{children}</>
+      <div className="cu-widewaves-content relative z-20">{children}</div>
+      {hasRaven && wave === 'black' && (
+        <div className="bg-cu-ravens-logo-white opacity-10 bg-[length:400px] z-10 bg-[bottom_right] bg-no-repeat bottom-20 -right-44 w-full h-full absolute" />
       )}
     </SectionComponent>
   )
