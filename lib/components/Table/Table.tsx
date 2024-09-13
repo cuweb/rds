@@ -9,13 +9,13 @@ export interface ColumnDefinitionType {
   sort?: { sortable: boolean }
   order?: 'ascending' | 'descending'
   default?: true
-  width?: string
 }
 
 export interface TableProps {
   data: {
     [k: string]: string | number | JSX.Element
   }[]
+  colgroup?: number[]
   columns: ColumnDefinitionType[]
   hasStripes?: boolean
   noWordBreak?: boolean
@@ -25,6 +25,7 @@ export interface TableProps {
 
 export const Table = ({
   data,
+  colgroup,
   columns,
   hasStripes = false,
   noWordBreak = false,
@@ -46,11 +47,16 @@ export const Table = ({
     }
   }, [columns, setTableData])
 
-  const tableClassName = columns.some((column) => column.width) ? 'table-fixed w-full' : 'table-auto'
-
   return (
     <div className={`cu-table cu-component not-prose overflow-x-auto rounded-lg shadow-lg`}>
-      <table className={`min-w-full cu-table ${tableClassName}`}>
+      <table className={`min-w-full cu-table ${colgroup ? `table-fixed lg:w-full` : `table-auto`}`}>
+        {colgroup && (
+          <colgroup>
+            {colgroup.map((width, index) => (
+              <col key={`col-${index}`} style={{ width: `${width}%` }}></col>
+            ))}
+          </colgroup>
+        )}
         <TableHeader columns={columns} noWordBreak={noWordBreak} sortData={setTableData} />
         <TableRows
           data={tableData}

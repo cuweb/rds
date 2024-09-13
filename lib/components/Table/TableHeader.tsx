@@ -47,7 +47,6 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
       <th
         scope="col"
         key={`headerCell-${index}`}
-        {...(column.width ? { style: { width: column.width } } : {})}
         className={`${styles.tableGlobal} ${styles.tableHeaderRow} ${sortableStyles} ${wordBreakClass} ${column.header.length > 20 ? styles.cellWidth : ''}`}
         onClick={() => (column?.sort?.sortable ? handleSortChange(column.key) : undefined)}
         aria-sort={

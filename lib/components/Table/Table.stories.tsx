@@ -82,46 +82,11 @@ export const Primary: Story = {
   },
 }
 
-const columnsWithWidth: ColumnDefinitionType[] = [
-  {
-    key: 'id' as never,
-    header: 'ID',
-    sort: {
-      sortable: true,
-    },
-    order: 'descending',
-    default: true,
-    width: '5%',
-  },
-  {
-    key: 'title' as never,
-    header: 'Title',
-    sort: {
-      sortable: true,
-    },
-    width: '20%',
-  },
-  {
-    key: 'description' as never,
-    header: 'Description',
-    sort: {
-      sortable: false,
-    },
-  },
-  {
-    key: 'link' as never,
-    header: 'Edit',
-    sort: {
-      sortable: false,
-    },
-    width: '5%',
-  },
-]
-
 export const CustomColumnsWidth: Story = {
   args: {
     data: tableData,
-    columns: columnsWithWidth,
+    columns: columns,
+    colgroup: [10, 30, 40, 20],
     hasStripes: false,
     noWordBreak: false,
     range: [1, -1],
