@@ -1,7 +1,10 @@
 <h1 align="center">Raven Design System</h1>
 
-![npm](https://img.shields.io/npm/v/@carletonuniversity/rds)
+<div align="center">
 
+[![npm](https://img.shields.io/npm/v/@carletonuniversity/rds)](https://www.npmjs.com/package/@carletonuniversity/rds) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Storybook](https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg)](https://github.com/storybooks/storybook) ![Repo Size](https://img.shields.io/github/repo-size/cuweb/rds)
+
+</div>
 Raven Design System, better known as RDS, is Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language.
 
 ## Build Tools
