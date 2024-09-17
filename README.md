@@ -1,4 +1,4 @@
-# Raven Design System
+<h1 align="center">Raven Design System</h1>
 
 ![npm](https://img.shields.io/npm/v/@carletonuniversity/rds)
 
