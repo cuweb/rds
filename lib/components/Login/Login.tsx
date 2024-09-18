@@ -10,6 +10,7 @@ export interface LoginProps {
   useSocial?: boolean
   errorTitle?: string
   errorDesc?: string
+  useTwitter?: boolean
   onClickHandler?: { default: () => void; google: () => void; linkedIn: () => void; twitter: () => void }
 }
 
@@ -19,6 +20,7 @@ export const Login = ({
   errorTitle = '',
   errorDesc = '',
   onClickHandler,
+  useTwitter = false,
 }: LoginProps) => {
   return (
     <div
@@ -44,7 +46,7 @@ export const Login = ({
           <ButtonGroup>
             <Button title="Login with Google" color="white" onClick={onClickHandler?.google} isFull />
             <Button title="Login with LinkedIn" color="white" onClick={onClickHandler?.linkedIn} isFull />
-            <Button title="Login with Twitter" color="white" onClick={onClickHandler?.twitter} isFull />
+            {useTwitter && <Button title="Login with Twitter" color="white" onClick={onClickHandler?.twitter} isFull />}
           </ButtonGroup>
         </div>
       )}
