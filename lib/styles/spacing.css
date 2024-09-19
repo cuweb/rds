@@ -61,13 +61,6 @@
   @apply mt-3 md:mt-5 lg:mt-10;
 }
 
-/* Add margin 0 if the element is empty */
-.cu-component:empty,
-:not(.cu-component):empty + .cu-component,
-.cu-component + :empty {
-  margin: 0;
-}
-
 .cu-section + .cu-widewaves,
 .cu-widewaves + .cu-widewaves {
   @apply mt-8 md:mt-10 lg:mt-20;
