@@ -1,0 +1,22 @@
+/* Adding autosuggest form field style */
+.cu-autosuggest .css-1u9des2-indicatorSeparator {
+  @apply !hidden;
+}
+
+.cu-autosuggest .css-1jqq78o-placeholder {
+  @apply text-base;
+}
+
+.cu-autosuggest .css-1dimb5e-singleValue {
+  @apply text-base;
+}
+
+.cu-autosuggest .css-16xfy0z-control {
+  @apply text-base bg-slate-200 text-slate-500 border-slate-200 shadow-none !min-h-10;
+}
+
+.cu-autosuggest .css-1mkvw8y,
+.cu-autosuggest .css-hlgwow,
+.cu-autosuggest .css-19bb58m {
+  @apply m-0 py-0;
+}

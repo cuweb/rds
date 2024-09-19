@@ -32,10 +32,8 @@ export const Primary: Story = {
     return (
       <Section>
         <ImageGrid {...args}>
-          {imageData.slice(0, setCols).map(({ id, image, alt }) => (
-            <ImageGrid.Image key={id}>
-              <img src={image} alt={alt} />
-            </ImageGrid.Image>
+          {imageData.slice(0, setCols).map(({ id, image }) => (
+            <ImageGrid.Image key={id} imageUrl={image} />
           ))}
         </ImageGrid>
       </Section>
@@ -52,18 +50,15 @@ export const ColSpan2: Story = {
     <Section>
       <ImageGrid {...args}>
         <ImageGrid.Image
+          imageUrl={imageData[0].image}
           colSpan="2"
           rowSpan="2"
           title="Overlay Image Title"
           content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
           link="https://github.com/cuweb/rds"
-        >
-          <img src="https://picsum.photos/id/337/600/400" alt="test" />
-        </ImageGrid.Image>
-        {imageData.slice(0, 4).map(({ id, image, alt }) => (
-          <ImageGrid.Image key={id}>
-            <img src={image} alt={alt} />
-          </ImageGrid.Image>
+        />
+        {imageData.slice(0, 4).map(({ id, image }) => (
+          <ImageGrid.Image key={id} imageUrl={image} />
         ))}
       </ImageGrid>
     </Section>
@@ -77,23 +72,18 @@ export const ColSpan3: Story = {
   render: (args) => (
     <Section>
       <ImageGrid {...args}>
-        {imageData.slice(0, 1).map(({ id, image, alt }) => (
-          <ImageGrid.Image key={id}>
-            <img src={image} alt={alt} />
-          </ImageGrid.Image>
+        {imageData.slice(0, 1).map(({ id, image }) => (
+          <ImageGrid.Image key={id} imageUrl={image} />
         ))}
         <ImageGrid.Image
+          imageUrl={imageData[0].image}
           colSpan="3"
           rowSpan="2"
           title="Overlay Image Title"
           content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
-        >
-          <img src="https://picsum.photos/id/74/1200/800" alt="test" />
-        </ImageGrid.Image>
-        {imageData.slice(1, 6).map(({ id, image, alt }) => (
-          <ImageGrid.Image key={id}>
-            <img src={image} alt={alt} />
-          </ImageGrid.Image>
+        />
+        {imageData.slice(1, 6).map(({ id, image }) => (
+          <ImageGrid.Image key={id} imageUrl={image} />
         ))}
       </ImageGrid>
     </Section>
@@ -108,27 +98,23 @@ export const StackedTwoFour: Story = {
     <Section>
       <ImageGrid {...args}>
         <ImageGrid.Image
+          imageUrl={imageData[0].image}
           colSpan="2"
           rowSpan="2"
           title="Overlay Image Title"
           content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
           link="https://github.com/cuweb/rds"
-        >
-          <img src="https://picsum.photos/id/143/600/400" alt="test" />
-        </ImageGrid.Image>
+        />
         <ImageGrid.Image
+          imageUrl={imageData[0].image}
           colSpan="2"
           rowSpan="2"
           title="Ottawa Tulip Festival"
           content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
           link="https://github.com/cuweb/rds"
-        >
-          <img src="https://picsum.photos/id/572/600/400" alt="test" />
-        </ImageGrid.Image>
-        {imageData.slice(2, 6).map(({ id, image, alt }) => (
-          <ImageGrid.Image key={id}>
-            <img src={image} alt={alt} />
-          </ImageGrid.Image>
+        />
+        {imageData.slice(2, 6).map(({ id, image }) => (
+          <ImageGrid.Image key={id} imageUrl={image} />
         ))}
       </ImageGrid>
     </Section>

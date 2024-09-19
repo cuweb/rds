@@ -50,7 +50,7 @@ export const WithChildren: Story = {
               </a>
             </ButtonGroup>
           </TextMedia.Content>
-          <TextMedia.Aside align="center" border="lg" borderColor="white">
+          <TextMedia.Aside align="center" border="sm" borderColor="white">
             <img src="https://picsum.photos/id/431/600/460" alt="Presentation only" width="600" height="460" />
           </TextMedia.Aside>
         </TextMedia>
@@ -90,7 +90,7 @@ export const BlackWave: Story = {
               </a>
             </ButtonGroup>
           </TextMedia.Content>
-          <TextMedia.Aside align="center" border="lg" borderColor="white">
+          <TextMedia.Aside align="center" border="sm" borderColor="white">
             <img src="https://picsum.photos/id/431/600/460" alt="Presentation only" width="600" height="460" />
           </TextMedia.Aside>
         </TextMedia>

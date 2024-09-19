@@ -63,6 +63,16 @@ export const ImageInColumn: Story = {
               reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
               accusamus in. Praesent quis ligula quis nulla malesuada tempor.
             </p>
+            <p>
+              Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+              accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+            </p>
+            <p>
+              Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+              reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+              accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+            </p>
             <ButtonGroup>
               <a
                 href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/"

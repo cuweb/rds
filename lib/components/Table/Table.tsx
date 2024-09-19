@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 
 export interface ColumnDefinitionType {
   key: string
-  header: string
+  header: string | React.ReactNode
   sort?: { sortable: boolean }
   order?: 'ascending' | 'descending'
   default?: true
@@ -15,8 +15,8 @@ export interface TableProps {
   data: {
     [k: string]: string | number | JSX.Element
   }[]
-  columns: ColumnDefinitionType[]
   colgroup?: number[]
+  columns: ColumnDefinitionType[]
   hasStripes?: boolean
   noWordBreak?: boolean
   range?: number[]
@@ -25,8 +25,8 @@ export interface TableProps {
 
 export const Table = ({
   data,
-  columns,
   colgroup,
+  columns,
   hasStripes = false,
   noWordBreak = false,
   range = [1, -1],
@@ -49,7 +49,7 @@ export const Table = ({
 
   return (
     <div className={`cu-table cu-component not-prose overflow-x-auto rounded-lg shadow-lg`}>
-      <table className="min-w-full table-auto cu-table">
+      <table className={`min-w-full cu-table ${colgroup ? `table-fixed lg:w-full` : `table-auto`}`}>
         {colgroup && (
           <colgroup>
             {colgroup.map((width, index) => (

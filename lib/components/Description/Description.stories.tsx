@@ -1,6 +1,5 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../layouts/Main/Main'
 import { Section } from '../../layouts/Section/Section'
 import { PageHeader } from '../PageHeader/PageHeader'
 import { Description } from './Description'
