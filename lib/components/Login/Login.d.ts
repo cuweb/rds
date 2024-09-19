@@ -9,7 +9,7 @@ export interface LoginProps {
         default: () => void;
         google: () => void;
         linkedIn: () => void;
-        twitter: () => void;
+        twitter?: () => void;
     };
 }
 export declare const Login: ({ maxWidth, useSocial, errorTitle, errorDesc, onClickHandler, }: LoginProps) => import("react/jsx-runtime").JSX.Element;
