@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
 import { Section } from '../../layouts/Section/Section'
+import { Button } from '../Button/Button'
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
@@ -65,6 +66,41 @@ const columns: ColumnDefinitionType[] = [
   },
 ]
 
+const columnsWithReactNode: ColumnDefinitionType[] = [
+  {
+    key: 'id' as never,
+    header: (
+      <>
+        <label className="sr-only" htmlFor={`select-all-checkbox`}>
+          Select all for bulk action
+        </label>
+        <input type="checkbox" id={`select-all-checkbox`} name="checked" value="all" />
+      </>
+    ),
+  },
+  {
+    key: 'title' as never,
+    header: 'Title',
+    sort: {
+      sortable: true,
+    },
+  },
+  {
+    key: 'description' as never,
+    header: 'Description',
+    sort: {
+      sortable: false,
+    },
+  },
+  {
+    key: 'link' as never,
+    header: 'Edit',
+    sort: {
+      sortable: false,
+    },
+  },
+]
+
 export const Primary: Story = {
   args: {
     data: tableData,
@@ -87,6 +123,24 @@ export const CustomColumnsWidth: Story = {
     data: tableData,
     columns: columns,
     colgroup: [10, 30, 40, 20],
+    hasStripes: false,
+    noWordBreak: false,
+    range: [1, -1],
+    enableRowHeader: true,
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Table {...args} />
+      </Section>
+    )
+  },
+}
+
+export const ReactNodeInColumn: Story = {
+  args: {
+    data: tableData,
+    columns: columnsWithReactNode,
     hasStripes: false,
     noWordBreak: false,
     range: [1, -1],

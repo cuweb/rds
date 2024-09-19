@@ -40,19 +40,19 @@
 }
 
 .cu-textmedia-img-border-sm img {
-  @apply border-2;
+  @apply border-2 border-solid;
 }
 
 .cu-textmedia-img-border-md img {
-  @apply border-4;
+  @apply border-4 border-solid;
 }
 
 .cu-textmedia-img-border-lg img {
-  @apply border-[6px];
+  @apply border-[6px] border-solid;
 }
 
 .cu-textmedia-img-border-xl img {
-  @apply border-8;
+  @apply border-8 border-solid;
 }
 
 /* .cu-textmedia-aside img {

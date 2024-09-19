@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 
 export interface ColumnDefinitionType {
   key: string
-  header: string
+  header: string | React.ReactNode
   sort?: { sortable: boolean }
   order?: 'ascending' | 'descending'
   default?: true
