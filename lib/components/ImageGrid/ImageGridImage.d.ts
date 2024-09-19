@@ -1,16 +1,20 @@
-import { colSpanClasses, rowSpanClasses } from '../../utils/propClasses';
+import { colSpanClasses, rowSpanClasses, aspectRatioClasses } from '../../utils/propClasses';
 type colSpanKeys = keyof typeof colSpanClasses;
 type rowSpanKeys = keyof typeof rowSpanClasses;
+type aspectRatioKeys = keyof typeof aspectRatioClasses;
 export interface ImageGridImageProps {
-    children: React.ReactNode;
+    imageUrl: string;
+    focalPointX?: number;
+    focalPointY?: number;
     colSpan?: colSpanKeys;
     rowSpan?: rowSpanKeys;
     title?: string;
     content?: string;
     link?: string;
+    aspectRatio?: aspectRatioKeys;
 }
 export declare const ImageGridImage: {
-    ({ children, colSpan, rowSpan, title, content, link, }: ImageGridImageProps): import("react/jsx-runtime").JSX.Element;
+    ({ imageUrl, focalPointX, focalPointY, colSpan, rowSpan, title, content, link, aspectRatio, }: ImageGridImageProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export {};

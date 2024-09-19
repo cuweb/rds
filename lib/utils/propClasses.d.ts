@@ -49,6 +49,12 @@ export declare const rowSpanClasses: {
     '3': string;
     '4': string;
 };
+export declare const aspectRatioClasses: {
+    landscape: string;
+    portrait: string;
+    square: string;
+    wide: string;
+};
 export declare const headerSizeClasses: {
     xs: string;
     sm: string;

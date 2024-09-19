@@ -17,7 +17,7 @@ export declare const ImageGrid: {
     displayName: string;
 } & {
     Image: {
-        ({ children, colSpan, rowSpan, title, content, link, }: import('./ImageGridImage').ImageGridImageProps): import("react/jsx-runtime").JSX.Element;
+        ({ imageUrl, focalPointX, focalPointY, colSpan, rowSpan, title, content, link, aspectRatio, }: import('./ImageGridImage').ImageGridImageProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
