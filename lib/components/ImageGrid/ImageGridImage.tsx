@@ -1,34 +1,44 @@
-import { colSpanClasses, rowSpanClasses } from '../../utils/propClasses'
+import { colSpanClasses, rowSpanClasses, aspectRatioClasses } from '../../utils/propClasses'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 
 type colSpanKeys = keyof typeof colSpanClasses
 type rowSpanKeys = keyof typeof rowSpanClasses
+type aspectRatioKeys = keyof typeof aspectRatioClasses
 
 export interface ImageGridImageProps {
-  children: React.ReactNode
+  imageUrl: string
+  focalPointX?: number
+  focalPointY?: number
   colSpan?: colSpanKeys
   rowSpan?: rowSpanKeys
   title?: string
   content?: string
   link?: string
+  aspectRatio?: aspectRatioKeys
 }
 
 export const ImageGridImage = ({
-  children,
+  imageUrl,
+  focalPointX = 50,
+  focalPointY = 50,
   colSpan = '1',
   rowSpan = '1',
   title,
   content,
   link,
+  aspectRatio = 'landscape',
 }: ImageGridImageProps) => {
   const LinkComponent = useLinkContext()
+  const inlineImageStyles = {
+    backgroundImage: `url(${imageUrl})`,
+    backgroundPosition: `${focalPointX}% ${focalPointY}%`,
+  }
 
   return (
     <div
-      className={`relative not-prose overflow-hidden ${colSpanClasses[colSpan]} ${rowSpanClasses[rowSpan]} rounded-lg bg-black`}
+      className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center ${colSpanClasses[colSpan]} ${rowSpanClasses[rowSpan]} rounded-lg bg-black`}
+      style={inlineImageStyles}
     >
-      {children}
-
       {(title || content) && (
         <div
           className={`bg-black/75 text-white absolute bottom-2 left-2 right-2 px-4 py-2.5 rounded-md ${link ? 'hover:bg-cu-red/85' : ''}`}
