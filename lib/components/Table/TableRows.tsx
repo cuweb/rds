@@ -19,21 +19,13 @@ const TableRows = ({ data, columns, striped, enableRowHeader }: TableRowsProps) 
       {columns.map((column, index) => {
         // Directly checking and typecasting to string before checking length
         const cellContent = row[column.key]
-        const isLongText = typeof cellContent === 'string' && cellContent.length > 20
 
         return enableRowHeader && index == 0 ? (
-          <th
-            scope="row"
-            key={`cell-${index}`}
-            className={`${styles.tableGlobal} ${styles.tableBodyRow} ${isLongText ? styles.cellWidth : ''}`}
-          >
+          <th scope="row" key={`cell-${index}`} className={`${styles.tableGlobal} ${styles.tableBodyRow}`}>
             {cellContent}
           </th>
         ) : (
-          <td
-            key={`cell-${index}`}
-            className={`${styles.tableGlobal} ${styles.tableBodyRow} ${isLongText ? styles.cellWidth : ''}`}
-          >
+          <td key={`cell-${index}`} className={`${styles.tableGlobal} ${styles.tableBodyRow}`}>
             {cellContent}
           </td>
         )

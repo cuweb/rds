@@ -4,5 +4,4 @@ export const styles = {
   tableBodyRow: `text-sm md:text-base`,
   borders: `border-b border-cu-black-100 last:border-none`,
   striped: `odd:bg-white even:bg-cu-black-25`,
-  cellWidth: `min-w-48`,
 }
