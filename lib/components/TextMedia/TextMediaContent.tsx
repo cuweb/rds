@@ -5,7 +5,7 @@ import { justifyContentClasses } from '../../utils/propClasses'
 type justifyContentKeys = keyof typeof justifyContentClasses
 
 export interface TextMediaContentProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   title: string
   headerType?: 'h1' | 'h2'
   width?: number
