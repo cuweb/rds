@@ -5,3 +5,11 @@
 .cu-widewaves-content > :not(.not-contained) {
   @apply max-w-5xl mx-auto;
 }
+
+.cu-textmedia-aside > *:first-child {
+  @apply mt-0;
+}
+
+.cu-textmedia-aside > *:last-child {
+  @apply mb-0;
+}

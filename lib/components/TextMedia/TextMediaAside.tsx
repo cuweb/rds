@@ -21,4 +21,4 @@ export const TextMediaAside = ({ children, align, border, borderColor }: TextMed
   return <div className={`cu-textmedia-aside flex-1 ${marginAuto} ${imageBorder}`}>{children}</div>
 }
 
-TextMediaAside.displayName = 'TextMedia.BgImage'
+TextMediaAside.displayName = 'TextMedia.Aside'
