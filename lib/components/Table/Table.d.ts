@@ -1,6 +1,6 @@
 export interface ColumnDefinitionType {
     key: string;
-    header: string;
+    header: string | React.ReactNode;
     sort?: {
         sortable: boolean;
     };

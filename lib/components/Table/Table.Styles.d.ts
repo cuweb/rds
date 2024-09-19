@@ -4,5 +4,4 @@ export declare const styles: {
     tableBodyRow: string;
     borders: string;
     striped: string;
-    cellWidth: string;
 };
