@@ -65,7 +65,7 @@
 .cu-component:empty,
 :not(.cu-component):empty + .cu-component,
 .cu-component + :empty {
-  margin: 0;
+  @apply m-0;
 }
 
 .cu-section + .cu-widewaves,
