@@ -4,7 +4,7 @@ import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../components/Nav/Nav'
-import { TextImage } from '../../components/TextImage/TextImage'
+import { TextMedia } from '../../components/TextMedia/TextMedia'
 import { NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
@@ -28,15 +28,27 @@ export const GridImages: Story = {
 
       <Main>
         <Section>
-          <TextImage>
-            <TextImage.Content headerType="h1" title="News Listing">
+          <TextMedia>
+            <TextMedia.Content headerType="h1" title="News Listing" />
+          </TextMedia>
+
+          <p>
+            Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
+            in. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam
+            luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+          </p>
+
+          <TextMedia>
+            <TextMedia.Content headerType="h1" title="News Listing">
               <p>
+                Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+                reprehenderit ducimus.
               </p>
-            </TextImage.Content>
-          </TextImage>
+            </TextMedia.Content>
+          </TextMedia>
 
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
