@@ -48,6 +48,22 @@ export const GridImages: Story = {
 
           <Section as="div">
             <div className="grid grid-cols-4 gap-5">
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')] col-span-2 row-span-2"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[4/3] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+            </div>
+          </Section>
+
+          <p>Nobis voluptatem dolorum et eum doloremque cupiditate velit.</p>
+
+          <Section as="div">
+            <div className="grid grid-cols-4 gap-5">
               <div className="aspect-[3/4] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')] col-span-2 row-span-2"></div>
               <div className="aspect-[3/4] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
               <div className="aspect-[3/4] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
@@ -60,11 +76,24 @@ export const GridImages: Story = {
             </div>
           </Section>
 
-          <p>
-            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus
-            in. Praesent quis ligula quis nulla malesuada tempor.
-          </p>
+          <p>Nobis voluptatem dolorum et eum doloremque cupiditate velit.</p>
+
+          <Section as="div">
+            <div className="grid grid-cols-4 gap-5">
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')] col-span-2 row-span-2"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+              <div className="aspect-[1/1] bg-green-500 bg-cover bg-center bg-[url('https://picsum.photos/id/431/600/460')]"></div>
+            </div>
+          </Section>
+
+          <p>Nobis voluptatem dolorum et eum doloremque cupiditate velit.</p>
+
           <p>
             Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
             Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
