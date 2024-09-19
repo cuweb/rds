@@ -57,7 +57,7 @@ export const SocialLogins: Story = {
   render: (args) => {
     return (
       <Section>
-        <Login useTwitter={true} {...args} />
+        <Login {...args} />
       </Section>
     )
   },
