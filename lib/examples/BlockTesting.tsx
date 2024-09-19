@@ -400,27 +400,11 @@ export const BlockTesting = () => {
       <SinglePara />
 
       <ImageGrid cols="4" gridGap="2" maxWidth="5xl">
-        <ImageGrid.Image
-          colSpan="2"
-          content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
-          link="https://github.com/cuweb/rds"
-          rowSpan="2"
-          title="Overlay Image Title"
-        >
-          <img alt="test" src="https://picsum.photos/id/337/600/400" />
-        </ImageGrid.Image>
-        <ImageGrid.Image>
-          <img alt="Image requirement" src="https://picsum.photos/id/531/600/400" />
-        </ImageGrid.Image>
-        <ImageGrid.Image>
-          <img alt="Image requirement" src="https://picsum.photos/id/626/600/400" />
-        </ImageGrid.Image>
-        <ImageGrid.Image>
-          <img alt="Image requirement" src="https://picsum.photos/id/381/600/400" />
-        </ImageGrid.Image>
-        <ImageGrid.Image>
-          <img alt="Image requirement" src="https://picsum.photos/id/691/600/400" />
-        </ImageGrid.Image>
+        <ImageGrid.Image imageUrl="https://picsum.photos/id/337/600/400" />
+        <ImageGrid.Image imageUrl="https://picsum.photos/id/531/600/400" />
+        <ImageGrid.Image imageUrl="https://picsum.photos/id/626/600/400" />
+        <ImageGrid.Image imageUrl="https://picsum.photos/id/381/600/400" />
+        <ImageGrid.Image imageUrl="https://picsum.photos/id/691/600/400" />
       </ImageGrid>
 
       <SinglePara />

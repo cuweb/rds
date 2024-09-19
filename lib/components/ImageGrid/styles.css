@@ -1,3 +1,7 @@
 .cu-imagegrid img {
   @apply h-full w-full object-cover;
 }
+
+.cu-imagegrid a {
+  @apply text-white;
+}

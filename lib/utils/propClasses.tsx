@@ -57,6 +57,13 @@ export const rowSpanClasses = {
   '4': 'row-span-4',
 }
 
+export const aspectRatioClasses = {
+  landscape: 'aspect-[4/3]',
+  portrait: 'aspect-[3/4]',
+  square: 'aspect-[1/1]',
+  wide: 'aspect-[16/9]',
+}
+
 export const headerSizeClasses = {
   xs: `text-lg md:text-xl lg:text-2xl lg:leading-[2rem]`,
   sm: `text-xl md:text-2xl lg:text-3xl lg:leading-[2.5rem]`,
