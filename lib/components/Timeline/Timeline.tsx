@@ -1,16 +1,18 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 import './styles.css' // Importing the dedicated CSS file
 
-export interface TimelineEventProps {
-  date: string
+// Timeline Item Props
+export interface TimelineItemProps {
+  aside: string
   title: string
   description: string
 }
 
-export const TimelineEvent = ({ date, title, description }: TimelineEventProps) => {
+// Timeline.Item Component
+export const TimelineItem = ({ aside, title, description }: TimelineItemProps) => {
   return (
     <li className="timeline-list-item">
-      <span className="timeline-date">{date}</span>
+      <span className="timeline-aside">{aside}</span>
       <div className="timeline-content">
         <h3 className="timeline-title">{title}</h3>
         <p className="timeline-description">{description}</p>
@@ -19,18 +21,19 @@ export const TimelineEvent = ({ date, title, description }: TimelineEventProps) 
   )
 }
 
+// Timeline Wrapper Props
 export interface TimelineProps {
-  events: TimelineEventProps[]
+  children: ReactNode
 }
 
-export const Timeline = ({ events }: PropsWithChildren<TimelineProps>) => {
+// Timeline Wrapper Component
+export const Timeline = ({ children }: PropsWithChildren<TimelineProps>) => {
   return (
     <div className="timeline-wrapper">
-      <ul className="timeline-ul">
-        {events.map((event, index) => (
-          <TimelineEvent key={index} date={event.date} title={event.title} description={event.description} />
-        ))}
-      </ul>
+      <ul className="timeline-ul">{children}</ul>
     </div>
   )
 }
+
+// Assign TimelineItem as Subcomponent of Timeline
+Timeline.Item = TimelineItem
