@@ -63,6 +63,7 @@
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.16.0",
     "react-quill": "2.0.0",
+    "slick-carousel": "^1.8.1",
     "yup": "1.4.0"
   },
   "peerDependencies": {

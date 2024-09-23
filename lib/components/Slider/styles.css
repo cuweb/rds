@@ -1,0 +1,46 @@
+.cu-button {
+  @apply inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap text-nowrap hover:no-underline md:px-6 md:py-3 md:text-base;
+}
+
+.cu-button--red {
+  @apply text-white bg-cu-red hover:bg-cu-black-600;
+}
+
+.cu-button--grey {
+  @apply text-cu-black-700 bg-cu-black-50 hover:text-white hover:bg-cu-red;
+}
+
+.cu-button--dark-grey {
+  @apply text-white bg-cu-black-600 hover:text-white hover:bg-cu-red;
+}
+
+.cu-button--black {
+  @apply text-white bg-cu-black-900 hover:text-white hover:bg-cu-red;
+}
+
+.cu-button--white {
+  @apply bg-white text-cu-black hover:text-white hover:bg-cu-red;
+}
+
+.cu-button--disabled {
+  @apply cursor-default border-slate-300 bg-slate-300 text-cu-black-600;
+}
+
+.cu-button--full {
+  @apply w-full;
+}
+
+.cu-button--center {
+  @apply relative -translate-x-1/2 left-1/2;
+}
+
+.cu-button--small {
+  @apply px-3 py-2 text-sm;
+}
+
+.cu-column + .cu-button,
+.cu-column + .cu-buttongroup,
+.cu-stackedlist + .cu-button,
+.cu-stackedlist + .cu-buttongroup {
+  @apply mt-8 md:mt-10;
+}
