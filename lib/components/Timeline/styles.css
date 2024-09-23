@@ -31,7 +31,7 @@
   color: #666;
   margin-bottom: 5px;
   margin-left: -150px;
-  text-align: right; /* Align the date to the right */ 
+  text-align: right; /* Align the date to the right */
   width: 100%;
 }
 
@@ -80,7 +80,9 @@
     padding-right: 0;
   }
 
-  .timeline-title, .timeline-description, .read-more {
+  .timeline-title,
+  .timeline-description,
+  .read-more {
     padding-left: 4px; /* Adjust spacing for smaller screens */
   }
 }
