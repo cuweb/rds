@@ -1,27 +1,4 @@
 import { PropsWithChildren, ReactNode } from 'react'
-import './styles.css' // Importing the dedicated CSS file
-
-// Timeline Item Props
-export interface TimelineItemProps {
-  aside: string
-  title: string
-  description: string
-}
-
-// Timeline.Item Component
-export const TimelineItem = ({ aside, title, description }: TimelineItemProps) => {
-  return (
-    <li className="timeline-list-item">
-      <span className="timeline-aside">{aside}</span>
-      <div className="timeline-content">
-        <h3 className="timeline-title">{title}</h3>
-        <p className="timeline-description">{description}</p>
-      </div>
-    </li>
-  )
-}
-
-// Timeline Wrapper Props
 export interface TimelineProps {
   children: ReactNode
 }
@@ -29,11 +6,8 @@ export interface TimelineProps {
 // Timeline Wrapper Component
 export const Timeline = ({ children }: PropsWithChildren<TimelineProps>) => {
   return (
-    <div className="timeline-wrapper">
-      <ul className="timeline-ul">{children}</ul>
+    <div className="relative py-10 w-full bg-gray-100">
+      <ul className="list-none p-0 m-0 relative border-l-2 border-gray-300 w-[60%] mx-auto">{children}</ul>
     </div>
   )
 }
-
-// Assign TimelineItem as Subcomponent of Timeline
-Timeline.Item = TimelineItem
