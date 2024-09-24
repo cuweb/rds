@@ -28,10 +28,10 @@
 
 /* Transparent */
 
-.cu-badge--black60 {
-  @apply bg-black/60 text-white;
+.cu-badge--black80 {
+  @apply bg-black/80 text-white;
 }
 
-.cu-badge--white60 {
-  @apply bg-white/60 text-cu-black-800;
+.cu-badge--white80 {
+  @apply bg-white/80 text-cu-black-800;
 }
