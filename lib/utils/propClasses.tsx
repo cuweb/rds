@@ -44,17 +44,17 @@ export const flexRowClasses = {
 }
 
 export const colSpanClasses = {
-  '1': 'col-span-1',
-  '2': 'col-span-2',
-  '3': 'col-span-3',
-  '4': 'col-span-4',
+  '1': 'md:col-span-1',
+  '2': 'md:col-span-2',
+  '3': 'md:col-span-3',
+  '4': 'md:col-span-4',
 }
 
 export const rowSpanClasses = {
-  '1': 'row-span-1',
-  '2': 'row-span-2',
-  '3': 'row-span-3',
-  '4': 'row-span-4',
+  '1': 'md:row-span-1',
+  '2': 'md:row-span-2',
+  '3': 'md:row-span-3',
+  '4': 'md:row-span-4',
 }
 
 export const aspectRatioClasses = {
