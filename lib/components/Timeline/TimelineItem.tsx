@@ -1,30 +1,24 @@
+import { PageHeader } from '../PageHeader/PageHeader'
 export interface TimelineItemProps {
-  aside: string
   title: string
-  description: string
+  headerType?: 'h2' | 'h3'
+  children?: React.ReactNode
+  aside: string
 }
 
-export const TimelineItem = ({ aside, title, description }: TimelineItemProps) => {
+export const TimelineItem = ({ title, headerType = 'h2', children, aside }: TimelineItemProps) => {
   return (
-    <li className="relative flex items-start">
-      {/* Circle style */}
-      <span className="absolute bg-red-500 rounded-full -ml-[35px] w-3 h-3 -left-1 top-3.5"></span>
-      <div className="pl-10">
-        {/* Aside styling */}
-        <span className="text-sm italic text-gray-600 mb-1 -ml-[220px] text-right w-full">{aside}</span>
-        {/* Title styling */}
-        <h3 style={{ marginTop: '-30px', marginBottom: '0px' }} className="text-lg font-bold text-gray-800 -ml-[50px]">
-          {title}
-        </h3>{' '}
-        {/* Use padding to move down */}
-        {/* Description styling */}
-        <p
-          style={{ marginTop: '5px', marginBottom: '60px' }}
-          className="text-sm text-gray-600 leading-relaxed mb-1 -ml-[50px] "
-        >
-          {description}
-        </p>{' '}
+    <div className="cu-timeline-item flex md:gap-10 flex-col md:flex-row border-l border-cu-black-100 border-solid md:border-none">
+      <div className="flex-none w-full max-w-60 md:text-right md:border-r md:border-cu-black-100 md:border-solid">
+        <p className="cu-timeline-aside not-prose relative mt-4 md:mt-0 md:py-6 text-base italic text-cu-black-500 md:pr-10 pl-6 md:pl-0">
+          {aside}
+        </p>
       </div>
-    </li>
+
+      <div className="cu-prose cu-prose-dark cu-prose-first-last flex-1 mt-5 lg:mt-3.5 pb-10 pl-6 md:pl-0">
+        <PageHeader as={headerType} header={title} noUnderline size="sm" />
+        {children && children}
+      </div>
+    </div>
   )
 }
