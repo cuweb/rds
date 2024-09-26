@@ -43,6 +43,7 @@ export { Table } from './components/Table/Table'
 export { Testimonial } from './components/Testimonial/Testimonial'
 export { TextImage } from './components/TextImage/TextImage'
 export { TextMedia } from './components/TextMedia/TextMedia'
+export { Timeline } from './components/Timeline/Timeline'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
 
