@@ -7,6 +7,10 @@
 @import './styles/utilities.css';
 @import './styles/spacing.css';
 
+/* Slick slider */
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
 /* Priority Plus */
 /* @import 'priority-plus/dist/priority-plus.css'; */
 
@@ -22,6 +26,7 @@
 @import './components/FullBanner/styles.css';
 @import './components/Form/AutoSuggest/styles.css';
 @import './components/ImageGrid/styles.css';
+@import './components/ImageSlider/styles.css';
 @import './components/Listing/styles.css';
 @import './components/Login/styles.css';
 @import './components/Nav/styles.css';

@@ -1,0 +1,7 @@
+.slick-list {
+  @apply -mx-1 md:-mx-2;
+}
+
+.slick-slide {
+  @apply px-1 md:px-2;
+}
