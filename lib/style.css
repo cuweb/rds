@@ -26,11 +26,11 @@
 @import './components/FullBanner/styles.css';
 @import './components/Form/AutoSuggest/styles.css';
 @import './components/ImageGrid/styles.css';
-@import './components/ImageSlider/styles.css';
 @import './components/Listing/styles.css';
 @import './components/Login/styles.css';
 @import './components/Nav/styles.css';
 @import './components/PageHeader/styles.css';
+@import './components/Slider/styles.css';
 @import './components/TextImage/styles.css';
 @import './components/TextMedia/styles.css';
 @import './components/WideImage/styles.css';

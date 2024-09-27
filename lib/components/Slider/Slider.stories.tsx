@@ -1,10 +1,11 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ImageSlider } from './ImageSlider'
+import { Slider } from './Slider'
+import { imageData } from '../../data/ImageData'
 
-const meta: Meta<typeof ImageSlider> = {
-  title: 'Components/ImageSlider',
-  component: ImageSlider,
+const meta: Meta<typeof Slider> = {
+  title: 'Components/Slider',
+  component: Slider,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -14,7 +15,7 @@ const meta: Meta<typeof ImageSlider> = {
 }
 
 export default meta
-type Story = StoryObj<typeof ImageSlider>
+type Story = StoryObj<typeof Slider>
 
 export const Primary: Story = {
   args: {
@@ -25,6 +26,6 @@ export const Primary: Story = {
     speed: 1000,
   },
   render: (args) => {
-    return <ImageSlider {...args} />
+    return <Slider {...args} images={imageData} />
   },
 }
