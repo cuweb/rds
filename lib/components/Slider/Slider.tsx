@@ -5,7 +5,6 @@ import SwiperSlider from './script'
 
 export interface SliderProp {
   children: React.ReactNode
-  pagination?: boolean
   loop?: boolean
   speed?: number
   slidesPerViewMobile?: number
