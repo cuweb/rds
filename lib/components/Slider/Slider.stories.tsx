@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Slider } from './Slider'
-import { imageData } from '../../data/ImageData'
+import { sliderData } from '../../data/SliderData'
 
 const meta: Meta<typeof Slider> = {
   title: 'Components/Slider',
@@ -26,6 +26,23 @@ export const Primary: Story = {
     speed: 1000,
   },
   render: (args) => {
-    return <Slider {...args} images={imageData} />
+    return (
+      <Slider {...args}>
+        {sliderData.map((image, index) => {
+          const { image: imageUrl, title, link, focalPointX, focalPointY, aspectRatio } = image
+          return (
+            <Slider.Image
+              key={index}
+              imageUrl={imageUrl}
+              title={title}
+              link={link}
+              focalPointX={focalPointX}
+              focalPointY={focalPointY}
+              aspectRatio={aspectRatio}
+            />
+          )
+        })}
+      </Slider>
+    )
   },
 }

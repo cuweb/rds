@@ -1,17 +1,25 @@
 import ReactSlider from 'react-slick'
-import { ImageGrid } from '../ImageGrid/ImageGrid'
+import { SliderImage } from './SliderImage'
 
 export interface SliderProp {
+  children: React.ReactNode
   slidesToShow: number
   slidesToScroll: number
   dots?: boolean
   infinite?: boolean
   speed?: number
   customClass?: string
-  images: string[]
 }
 
-export const Slider = ({ dots, infinite, speed, slidesToShow, slidesToScroll, customClass, images }: SliderProp) => {
+export const SliderWrapper = ({
+  children,
+  dots,
+  infinite,
+  speed,
+  slidesToShow,
+  slidesToScroll,
+  customClass,
+}: SliderProp) => {
   const settings = {
     dots: dots,
     infinite: infinite,
@@ -23,9 +31,13 @@ export const Slider = ({ dots, infinite, speed, slidesToShow, slidesToScroll, cu
 
   return (
     <ReactSlider {...settings} className={customClass}>
-      {images.map((image, index) => (
-        <ImageGrid.Image key={index} imageUrl={image} />
-      ))}
+      {children}
     </ReactSlider>
   )
 }
+
+export const Slider = Object.assign(SliderWrapper, {
+  Image: SliderImage,
+})
+
+SliderWrapper.displayName = 'Slider'
