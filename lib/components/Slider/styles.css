@@ -1,7 +1,7 @@
-.slick-list {
-  @apply -mx-1 md:-mx-2;
+.swiper {
+  @apply pb-8;
 }
 
-.slick-slide {
-  @apply px-1 md:px-2;
+.swiper .swiper-pagination {
+  @apply bottom-0;
 }

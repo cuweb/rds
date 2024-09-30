@@ -19,10 +19,10 @@ type Story = StoryObj<typeof Slider>
 
 export const Primary: Story = {
   args: {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
+    customClass: 'slider',
+    slidesPerView: 3,
+    pagination: true,
+    loop: true,
     speed: 1000,
   },
   render: (args) => {

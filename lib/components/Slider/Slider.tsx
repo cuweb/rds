@@ -1,38 +1,42 @@
-import ReactSlider from 'react-slick'
+import { useEffect } from 'react'
 import { SliderImage } from './SliderImage'
+import SwiperSlider from './script'
 
 export interface SliderProp {
   children: React.ReactNode
-  slidesToShow: number
-  slidesToScroll: number
-  dots?: boolean
-  infinite?: boolean
+  pagination?: boolean
+  loop?: boolean
   speed?: number
+  slidesPerView: number
   customClass?: string
 }
 
 export const SliderWrapper = ({
   children,
-  dots,
-  infinite,
-  speed,
-  slidesToShow,
-  slidesToScroll,
+  pagination = true,
+  loop = false,
+  speed = 500,
+  slidesPerView,
   customClass,
 }: SliderProp) => {
-  const settings = {
-    dots: dots,
-    infinite: infinite,
-    speed: speed,
-    slidesToShow: slidesToShow,
-    slidesToScroll: slidesToScroll,
-    autoplay: false,
-  }
+  useEffect(() => {
+    SwiperSlider()
+  }, [])
 
   return (
-    <ReactSlider {...settings} className={customClass}>
-      {children}
-    </ReactSlider>
+    <div
+      className={`swiper swiper--slider ${customClass ? customClass : ''}`}
+      data-swiper-class={`${customClass ? customClass : 'swiper'}`}
+      data-swiper-loop={loop}
+      data-swiper-speed={speed}
+      data-swiper-perview={slidesPerView}
+      data-pagination={pagination}
+    >
+      <div className="swiper-wrapper">{children}</div>
+      <div className="swiper-pagination"></div>
+      <div className="swiper-button-prev"></div>
+      <div className="swiper-button-next"></div>
+    </div>
   )
 }
 

@@ -28,7 +28,7 @@ export const SliderImage = ({
 
   return (
     <div
-      className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black`}
+      className={`swiper-slide relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black`}
       style={inlineImageStyles}
     >
       {title && (
