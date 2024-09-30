@@ -23,7 +23,6 @@ export const Primary: Story = {
     slidesPerViewMobile: 1,
     slidesPerViewTablet: 3,
     slidesPerViewDesktop: 4,
-    pagination: true,
     loop: true,
     speed: 1000,
   },

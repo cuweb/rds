@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import { SliderImage } from './SliderImage'
 import SwiperSlider from './script'
 
@@ -15,7 +16,6 @@ export interface SliderProp {
 
 export const SliderWrapper = ({
   children,
-  pagination = true,
   loop = false,
   speed = 500,
   slidesPerViewMobile = 1,
@@ -36,12 +36,20 @@ export const SliderWrapper = ({
       data-swiper-perview-mobile={slidesPerViewMobile}
       data-swiper-perview-tablet={slidesPerViewTablet}
       data-swiper-perview-desktop={slidesPerViewDesktop}
-      data-pagination={pagination}
     >
       <div className="swiper-wrapper">{children}</div>
-      <div className="swiper-pagination"></div>
-      <div className="swiper-button-prev"></div>
-      <div className="swiper-button-next"></div>
+      {/* <div className="swiper-button-prev"></div>
+      <div className="swiper-button-next"></div> */}
+      {/* <div className="swiper__footer"> */}
+      <div className="swiper__button swiper__button--prev" aria-label="Previous slide">
+        <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+      </div>
+      <div className="swiper__button swiper__button--next" aria-label="Next slide">
+        <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+      </div>
+      <div className="swiper__pagination"></div>
+
+      {/* </div> */}
     </div>
   )
 }

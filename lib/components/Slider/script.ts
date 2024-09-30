@@ -17,6 +17,10 @@ const SwiperSlider = () => {
       const swiperSlidesPerViewDesktop = SwiperSlider.getAttribute('data-swiper-perview-desktop') || '4'
 
       new Swiper(classname, {
+        a11y: {
+          prevSlideMessage: 'Previous slide',
+          nextSlideMessage: 'Next slide',
+        },
         loop: swiperLoop,
         speed: parseInt(swiperSpeed),
         slidesPerView: parseInt(swiperSlidesPerViewMobile),
@@ -30,11 +34,15 @@ const SwiperSlider = () => {
           },
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper__pagination',
+          clickable: true,
+          renderBullet: (index: number, className: string) => {
+            return '<button type="button" class="' + className + '">' + (index + 1) + '</button>'
+          },
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper__button--next',
+          prevEl: '.swiper__button--prev',
         },
       })
     }
