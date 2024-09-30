@@ -7,7 +7,9 @@ export interface SliderProp {
   pagination?: boolean
   loop?: boolean
   speed?: number
-  slidesPerView: number
+  slidesPerViewMobile?: number
+  slidesPerViewTablet?: number
+  slidesPerViewDesktop: number
   customClass?: string
 }
 
@@ -16,7 +18,9 @@ export const SliderWrapper = ({
   pagination = true,
   loop = false,
   speed = 500,
-  slidesPerView,
+  slidesPerViewMobile = 1,
+  slidesPerViewTablet = 2,
+  slidesPerViewDesktop = 3,
   customClass,
 }: SliderProp) => {
   useEffect(() => {
@@ -29,7 +33,9 @@ export const SliderWrapper = ({
       data-swiper-class={`${customClass ? customClass : 'swiper'}`}
       data-swiper-loop={loop}
       data-swiper-speed={speed}
-      data-swiper-perview={slidesPerView}
+      data-swiper-perview-mobile={slidesPerViewMobile}
+      data-swiper-perview-tablet={slidesPerViewTablet}
+      data-swiper-perview-desktop={slidesPerViewDesktop}
       data-pagination={pagination}
     >
       <div className="swiper-wrapper">{children}</div>

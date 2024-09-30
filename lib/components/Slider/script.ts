@@ -12,19 +12,21 @@ const SwiperSlider = () => {
       const classname = `.${swiperClass}`
       const swiperLoop = SwiperSlider.getAttribute('data-swiper-loop') === 'true'
       const swiperSpeed = SwiperSlider.getAttribute('data-swiper-speed') || '500'
-      const swiperSlidesPerView = SwiperSlider.getAttribute('data-swiper-perview') || '1'
+      const swiperSlidesPerViewMobile = SwiperSlider.getAttribute('data-swiper-perview-mobile') || '1'
+      const swiperSlidesPerViewTablet = SwiperSlider.getAttribute('data-swiper-perview-tablet') || '3'
+      const swiperSlidesPerViewDesktop = SwiperSlider.getAttribute('data-swiper-perview-desktop') || '4'
 
       new Swiper(classname, {
         loop: swiperLoop,
         speed: parseInt(swiperSpeed),
-        slidesPerView: 1,
+        slidesPerView: parseInt(swiperSlidesPerViewMobile),
         spaceBetween: 8,
         breakpoints: {
-          480: {
-            slidesPerView: 2,
+          768: {
+            slidesPerView: parseInt(swiperSlidesPerViewTablet),
           },
-          640: {
-            slidesPerView: parseInt(swiperSlidesPerView),
+          1024: {
+            slidesPerView: parseInt(swiperSlidesPerViewDesktop),
           },
         },
         pagination: {
