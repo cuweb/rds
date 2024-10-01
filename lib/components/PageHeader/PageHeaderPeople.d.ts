@@ -14,6 +14,7 @@ export interface PageHeaderSocialProps {
     linkedin?: string;
     twitter?: string;
     facebook?: string;
+    instagram?: string;
 }
 export declare const PageHeaderPeople: {
     ({ jobTitle, ...restProps }: PageHeaderPeopleProps & PageHeaderSocialProps): import("react/jsx-runtime").JSX.Element;
