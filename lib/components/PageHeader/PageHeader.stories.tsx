@@ -134,10 +134,11 @@ export const PeopleHeader: Story = {
           phoneExt="1234"
           orcidID="1234"
           resume="#"
-          website="#"
-          linkedin="#"
-          twitter="#"
-          facebook="#"
+          website="#website"
+          linkedin="#linkedin"
+          twitter="#twitter"
+          facebook="#facebook"
+          instagram="#instagram"
         />
       </PageHeader>
     </Section>
