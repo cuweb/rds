@@ -34,9 +34,11 @@ export const ImageGridImage = ({
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
   }
 
+  const imageOrder = colSpan === '2' ? 'order-none' : 'md:order-1 lg:order-none'
+
   return (
     <div
-      className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center ${colSpanClasses[colSpan]} ${rowSpanClasses[rowSpan]} rounded-lg bg-black`}
+      className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center ${colSpanClasses[colSpan]} ${rowSpanClasses[rowSpan]} ${imageOrder} rounded-lg bg-black`}
       style={inlineImageStyles}
     >
       {(title || content) && (
