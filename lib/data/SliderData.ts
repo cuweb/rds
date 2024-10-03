@@ -54,4 +54,16 @@ export const sliderData: IsliderData[] = [
     link: '#',
     alt: 'Image requirement',
   },
+  {
+    id: 7,
+    image: 'https://picsum.photos/id/111/600/400',
+    link: '#',
+    alt: 'Image requirement',
+  },
+  {
+    id: 8,
+    image: 'https://picsum.photos/id/888/600/400',
+    link: '#',
+    alt: 'Image requirement',
+  },
 ]

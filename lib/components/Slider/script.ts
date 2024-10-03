@@ -33,6 +33,7 @@ const SwiperSlider = () => {
             slidesPerView: parseInt(swiperSlidesPerViewDesktop),
           },
         },
+        centeredSlides: true,
         pagination: {
           el: '.swiper__pagination',
           clickable: true,
