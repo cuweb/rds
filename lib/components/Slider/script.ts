@@ -34,13 +34,7 @@ const SwiperSlider = () => {
           },
         },
         centeredSlides: true,
-        pagination: {
-          el: '.swiper__pagination',
-          clickable: true,
-          renderBullet: (index: number, className: string) => {
-            return '<button type="button" class="' + className + '">' + (index + 1) + '</button>'
-          },
-        },
+        pagination: false,
         navigation: {
           nextEl: '.swiper__button--next',
           prevEl: '.swiper__button--prev',

@@ -37,18 +37,14 @@ export const SliderWrapper = ({
       data-swiper-perview-desktop={slidesPerViewDesktop}
     >
       <div className="swiper-wrapper">{children}</div>
-      {/* <div className="swiper-button-prev"></div>
-      <div className="swiper-button-next"></div> */}
-      {/* <div className="swiper__footer"> */}
-      <div className="swiper__button swiper__button--prev" aria-label="Previous slide">
-        <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+      <div className="swiper__footer">
+        <button type="button" className="swiper__button swiper__button--prev" aria-label="Previous slide">
+          <ChevronLeftIcon className="w-8 h-8" aria-hidden="true" />
+        </button>
+        <button type="button" className="swiper__button swiper__button--next" aria-label="Next slide">
+          <ChevronRightIcon className="w-8 h-8" aria-hidden="true" />
+        </button>
       </div>
-      <div className="swiper__button swiper__button--next" aria-label="Next slide">
-        <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-      </div>
-      <div className="swiper__pagination"></div>
-
-      {/* </div> */}
     </div>
   )
 }
