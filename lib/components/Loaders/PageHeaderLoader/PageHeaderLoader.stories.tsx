@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { PageHeaderLoader } from './PageHeaderLoader'
-import { PageHeaderEvent } from './PageHeaderEvent'
+import { PageHeaderEventLoader } from './PageHeaderEventLoader'
 
 import React from 'react'
+import { PageHeaderPeopleLoader } from './PageHeaderPeopleLoader'
 
 const meta: Meta<typeof PageHeaderLoader> = {
   title: 'Components/Load Screens/PageHeader Loader',
@@ -32,7 +33,11 @@ WithLargeContent.args = {
 }
 
 export const EventPageHeader: Story = {
-  render: () => <PageHeaderEvent />,
+  render: () => <PageHeaderEventLoader />,
+}
+
+export const PeoplePageHeader: Story = {
+  render: () => <PageHeaderPeopleLoader />,
 }
 
 export const Center: Story = {}
