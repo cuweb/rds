@@ -1,5 +1,9 @@
-.swiper .swiper-slide-active {
-  /* @apply relative !w-[800px]; */
+.swiper .swiper-slide {
+  @apply relative md:w-[300px] lg:w-[400px] md:h-[300px] lg:h-[400px] my-auto transition-[width] duration-1000 ease-in-out;
+}
+
+.swiper .swiper-slide.swiper-slide-active {
+  @apply relative md:w-[400px] lg:w-[500px] md:h-[400px] lg:h-[500px];
 }
 
 .swiper__footer {
@@ -7,5 +11,5 @@
 }
 
 .swiper__button {
-  @apply bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-20;
+  @apply bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50;
 }

@@ -39,10 +39,10 @@ export const SliderWrapper = ({
       <div className="swiper-wrapper">{children}</div>
       <div className="swiper__footer">
         <button type="button" className="swiper__button swiper__button--prev" aria-label="Previous slide">
-          <ChevronLeftIcon className="w-8 h-8" aria-hidden="true" />
+          <ChevronLeftIcon className="w-8 h-8 [&>path]:stroke-[2]" aria-hidden="true" />
         </button>
         <button type="button" className="swiper__button swiper__button--next" aria-label="Next slide">
-          <ChevronRightIcon className="w-8 h-8" aria-hidden="true" />
+          <ChevronRightIcon className="w-8 h-8 [&>path]:stroke-[2]" aria-hidden="true" />
         </button>
       </div>
     </div>
