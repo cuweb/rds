@@ -4,7 +4,6 @@ import { Meta, StoryObj } from '@storybook/react'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
 import { Section } from '../../layouts/Section/Section'
-import { Button } from '../Button/Button'
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
