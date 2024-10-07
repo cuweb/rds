@@ -40,6 +40,7 @@ export const Primary: Story = {
               focalPointX={focalPointX}
               focalPointY={focalPointY}
               aspectRatio={aspectRatio}
+              className={index == 0 ? `swiper-slide-active` : ``}
             />
           )
         })}

@@ -10,6 +10,7 @@ export interface SliderImageProps {
   title?: string
   link?: string
   aspectRatio?: aspectRatioKeys
+  className?: string
 }
 
 export const SliderImage = ({
@@ -19,6 +20,7 @@ export const SliderImage = ({
   title,
   link,
   aspectRatio = 'landscape',
+  className,
 }: SliderImageProps) => {
   const LinkComponent = useLinkContext()
   const inlineImageStyles = {
@@ -26,10 +28,12 @@ export const SliderImage = ({
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
   }
 
+  const classes = className ? `${className} swiper-slide` : 'swiper-slide'
+
   return (
-    <div className="swiper-slide">
+    <div className={classes}>
       <div
-        className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full`}
+        className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full transition-[width] duration-[5000] ease-in-out`}
         style={inlineImageStyles}
       >
         {title && (

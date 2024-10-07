@@ -13,8 +13,8 @@ const SwiperSlider = () => {
       const swiperLoop = SwiperSlider.getAttribute('data-swiper-loop') === 'true'
       const swiperSpeed = SwiperSlider.getAttribute('data-swiper-speed') || '500'
       const swiperSlidesPerViewMobile = SwiperSlider.getAttribute('data-swiper-perview-mobile') || '1'
-      // const swiperSlidesPerViewTablet = SwiperSlider.getAttribute('data-swiper-perview-tablet') || '3'
-      // const swiperSlidesPerViewDesktop = SwiperSlider.getAttribute('data-swiper-perview-desktop') || '4'
+      const swiperSlidesPerViewTablet = SwiperSlider.getAttribute('data-swiper-perview-tablet') || '3'
+      const swiperSlidesPerViewDesktop = SwiperSlider.getAttribute('data-swiper-perview-desktop') || '4'
 
       new Swiper(classname, {
         a11y: {
@@ -28,11 +28,12 @@ const SwiperSlider = () => {
         spaceBetween: 8,
         breakpoints: {
           768: {
-            slidesPerView: 'auto',
+            // slidesPerView: 'auto',
+            slidesPerView: parseInt(swiperSlidesPerViewTablet),
           },
-          // 1024: {
-          //   slidesPerView: parseInt(swiperSlidesPerViewDesktop),
-          // },
+          1024: {
+            slidesPerView: parseInt(swiperSlidesPerViewDesktop),
+          },
         },
         centeredSlides: true,
         pagination: false,
