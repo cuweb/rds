@@ -64,6 +64,8 @@ export { ListingDescriptionLoader } from './components/Loaders/ListingLoader/Lis
 export { PageLoader } from './components/Loaders/PageLoader/PageLoader'
 export { TopNavLoader } from './components/Loaders/TopNavLoader/TopNavLoader'
 export { PageHeaderLoader } from './components/Loaders/PageHeaderLoader/PageHeaderLoader'
+export { PageHeaderEventLoader } from './components/Loaders/PageHeaderLoader/PageHeaderEventLoader'
+export { PageHeaderPeopleLoader } from './components/Loaders/PageHeaderLoader/PageHeaderPeopleLoader'
 export { FormLoader } from './components/Loaders/FormLoader/FormLoader'
 export { BlockLoader } from './components/Loaders/BlockLoader/BlockLoader'
 export { ButtonLoader } from './components/Loaders/ButtonLoader/ButtonLoader'
