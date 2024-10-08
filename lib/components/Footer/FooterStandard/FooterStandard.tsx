@@ -97,6 +97,13 @@ export const FooterStandard = () => {
       </h2>
 
       <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
+        <p className="text-base md:text-lg text-center font-semibold text-white">
+          Carleton University acknowledges the location of its campus on the traditional, unceeded territories of the
+          Algonquin nation.
+        </p>
+      </div>
+
+      <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <div id="footer-links" className="flex justify-between w-full">
           <div>
             <h3 className={styles.linkHeaders}>Admissions</h3>
@@ -167,7 +174,6 @@ export const FooterStandard = () => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-col mx-auto max-w-7xl">
         <div className="flex flex-col-reverse items-center justify-between gap-2 mb-12 text-base lg:gap-4 lg:text-sm lg:items-start lg:flex-row text-cu-black-300">
           <p>
