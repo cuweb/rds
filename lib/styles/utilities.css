@@ -13,6 +13,11 @@
   @apply prose-light;
 }
 
+.cu-prose-light input::placeholder,
+.cu-prose-light textarea::placeholder {
+  @apply text-white/60;
+}
+
 .cu-prose-first-last > *:first-child,
 .cu-zero-first-last > *:first-child {
   @apply !mt-0;
