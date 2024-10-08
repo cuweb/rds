@@ -14,8 +14,6 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-const inlineImageStyles = `background-image: url("https://picsum.photos/id/431/600/460"); background-position: 50% 50%; transform: scale(1)`
-
 export const GridImages: Story = {
   render: () => (
     <>
@@ -29,7 +27,7 @@ export const GridImages: Story = {
       <Main>
         <Section>
           <TextMedia>
-            <TextMedia.Content headerType="h1" title="News Listing" />
+            <TextMedia.Content headerType="h1" title="Image Grid" />
           </TextMedia>
 
           <p>
@@ -41,7 +39,7 @@ export const GridImages: Story = {
           </p>
 
           <TextMedia>
-            <TextMedia.Content headerType="h1" title="News Listing">
+            <TextMedia.Content headerType="h1" title="Image Grid">
               <p>
                 Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
