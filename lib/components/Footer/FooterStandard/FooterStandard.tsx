@@ -98,8 +98,8 @@ export const FooterStandard = () => {
 
       <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <p className="text-base md:text-lg text-center font-semibold text-white">
-          Carleton University acknowledges the location of its campus on the traditional, unceeded territories of the
-          Algonquin nation.
+          Carleton University acknowledges the location of its campus on the traditional, unceded territories of the
+          Algonquin Anishinàbeg nation
         </p>
       </div>
 
