@@ -4,7 +4,7 @@ import { Section } from '../../../layouts/Section/Section'
 import React from 'react'
 
 const meta: Meta<typeof PaginationLoader> = {
-  title: 'Components/Load Screens/PaginationLoader',
+  title: 'Components/Load Screens/Pagination Loader',
   component: PaginationLoader,
   tags: ['autodocs'],
   parameters: {
@@ -19,8 +19,8 @@ type Story = StoryObj<typeof PaginationLoader>
 
 export const Primary: Story = {
   args: {
-    hasBorder: false,
-    hasSpacing: false,
+    hasBorder: true,
+    pageCount: 5,
   },
   render: (args) => {
     return (
