@@ -10,7 +10,7 @@ export const FooterLogoLinks = () => {
         src="https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-vertical-outlined.svg"
         alt="Logo of Carleton University"
       />
-      <ul className="flex justify-center space-x-4 text-xs bg-cu-black-900 text-cu-black-300 sm:space-x-6 sm:text-sm">
+      <ul className="flex flex-wrap justify-center space-x-4 gap-y-4 text-xs bg-cu-black-900 text-cu-black-300 sm:space-x-6 sm:text-sm">
         <li key="privacy">
           <LinkComponent
             href="https://carleton.ca/privacy/privacy-notices/general-notice-of-collection-use-and-disclosure/"

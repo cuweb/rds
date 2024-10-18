@@ -192,8 +192,8 @@ export const FooterStandard = () => {
               email
             </LinkComponent>
           </p>
-          <p>1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
-          <ul className="flex justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
+          <p className="text-center">1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
+          <ul className="flex flex-wrap justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
             {Social.map((item, index) => (
               <li key={index}>
                 <LinkComponent href={item.href} className="text-cu-black-300 hover:text-cu-red">
