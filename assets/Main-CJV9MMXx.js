@@ -1,1 +1,0 @@
-import{j as s}from"./jsx-runtime-Nms4Y4qS.js";const a=({children:e})=>s.jsx("main",{className:"cu-main cu-section-5xl cu-browsers-edge py-4 md:py-6 lg:py-12",children:e});a.__docgenInfo={description:"",methods:[],displayName:"Main",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""}}};export{a as M};
