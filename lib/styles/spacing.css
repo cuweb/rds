@@ -77,7 +77,7 @@
   @apply mt-6 md:mt-6;
 }
 
-.cu-section.bg-cu-black-50 {
+.cu-section.bg-cu-black-50:not(.cu-wideimage) {
   @apply max-w-screen-2xl;
 }
 

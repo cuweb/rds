@@ -96,7 +96,7 @@ export const WideImageWrapper = ({
       {hasWave && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 w-full z-50"
+          className="absolute bottom-0 w-full z-[1]"
           fill="none"
           viewBox="0 0 1280 312"
         >
@@ -108,10 +108,12 @@ export const WideImageWrapper = ({
         </svg>
       )}
 
-      {image && isType === 'image' && <div className="absolute w-full h-screen bg-black" style={opacityStyle}></div>}
+      {image && isType === 'image' && (
+        <div className="absolute top-0 w-full h-screen bg-black" style={opacityStyle}></div>
+      )}
 
       <div
-        className={`relative z-10 max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-${isType} cu-zero-first-last`}
+        className={`relative z-[2] max-w-4xl w-full flex flex-col items-center gap-2 cu-wideimage-${isType} cu-zero-first-last`}
       >
         <PageHeader
           header={title}

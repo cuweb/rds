@@ -96,6 +96,13 @@ export const FooterStandard = () => {
         Footer
       </h2>
 
+      <div className="flex-col pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
+        <p className="text-sm md:text-base text-center font-medium text-white">
+          Carleton University acknowledges the location of its campus on the traditional, unceded territories of the
+          Algonquin Anishinàbeg nation
+        </p>
+      </div>
+
       <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <div id="footer-links" className="flex justify-between w-full">
           <div>
@@ -167,7 +174,6 @@ export const FooterStandard = () => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-col mx-auto max-w-7xl">
         <div className="flex flex-col-reverse items-center justify-between gap-2 mb-12 text-base lg:gap-4 lg:text-sm lg:items-start lg:flex-row text-cu-black-300">
           <p>
@@ -186,8 +192,8 @@ export const FooterStandard = () => {
               email
             </LinkComponent>
           </p>
-          <p>1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
-          <ul className="flex justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
+          <p className="text-center">1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
+          <ul className="flex flex-wrap justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
             {Social.map((item, index) => (
               <li key={index}>
                 <LinkComponent href={item.href} className="text-cu-black-300 hover:text-cu-red">
