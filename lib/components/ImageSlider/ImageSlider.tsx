@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
-import { SliderImage } from './SliderImage'
+import { ImageSliderItem } from './ImageSliderItem'
 import SwiperSlider from './script'
 
-export interface SliderProp {
+export interface ImageSliderProp {
   children: React.ReactNode
   loop?: boolean
   speed?: number
@@ -13,7 +13,7 @@ export interface SliderProp {
   customClass?: string
 }
 
-export const SliderWrapper = ({
+export const ImageSliderWrapper = ({
   children,
   loop = false,
   speed = 500,
@@ -21,7 +21,7 @@ export const SliderWrapper = ({
   slidesPerViewTablet = 2,
   slidesPerViewDesktop = 3,
   customClass,
-}: SliderProp) => {
+}: ImageSliderProp) => {
   useEffect(() => {
     SwiperSlider()
   }, [])
@@ -49,8 +49,8 @@ export const SliderWrapper = ({
   )
 }
 
-export const Slider = Object.assign(SliderWrapper, {
-  Image: SliderImage,
+export const ImageSlider = Object.assign(ImageSliderWrapper, {
+  Item: ImageSliderItem,
 })
 
-SliderWrapper.displayName = 'Slider'
+ImageSliderWrapper.displayName = 'ImageSlider'

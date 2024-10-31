@@ -3,7 +3,7 @@ import { useLinkContext } from '../LinkProvider/useLinkContext'
 
 type aspectRatioKeys = keyof typeof aspectRatioClasses
 
-export interface SliderImageProps {
+export interface ImageSliderItemProps {
   imageUrl: string
   focalPointX?: number
   focalPointY?: number
@@ -13,7 +13,7 @@ export interface SliderImageProps {
   className?: string
 }
 
-export const SliderImage = ({
+export const ImageSliderItem = ({
   imageUrl,
   focalPointX = 50,
   focalPointY = 50,
@@ -21,7 +21,7 @@ export const SliderImage = ({
   link,
   aspectRatio = 'landscape',
   className,
-}: SliderImageProps) => {
+}: ImageSliderItemProps) => {
   const LinkComponent = useLinkContext()
   const inlineImageStyles = {
     backgroundImage: `url(${imageUrl})`,
@@ -54,4 +54,4 @@ export const SliderImage = ({
   )
 }
 
-SliderImage.displayName = 'SliderImage.Image'
+ImageSliderItem.displayName = 'ImageSlider.Item'

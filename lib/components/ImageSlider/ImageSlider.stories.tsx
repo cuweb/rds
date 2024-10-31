@@ -1,11 +1,11 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Slider } from './Slider'
+import { ImageSlider } from './ImageSlider'
 import { sliderData } from '../../data/SliderData'
 
-const meta: Meta<typeof Slider> = {
-  title: 'Components/Slider',
-  component: Slider,
+const meta: Meta<typeof ImageSlider> = {
+  title: 'Components/Image Slider',
+  component: ImageSlider,
   tags: ['autodocs'],
   parameters: {
     controls: {
@@ -15,7 +15,7 @@ const meta: Meta<typeof Slider> = {
 }
 
 export default meta
-type Story = StoryObj<typeof Slider>
+type Story = StoryObj<typeof ImageSlider>
 
 export const Primary: Story = {
   args: {
@@ -28,14 +28,14 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Slider {...args}>
+      <ImageSlider {...args}>
         {sliderData.map((image, index) => {
           const { image: imageUrl, title, link, focalPointX, focalPointY, aspectRatio } = image
           return (
-            <Slider.Image
+            <ImageSlider.Item
               key={index}
               imageUrl={imageUrl}
-              title={title}
+              title={aspectRatio}
               link={link}
               focalPointX={focalPointX}
               focalPointY={focalPointY}
@@ -44,7 +44,7 @@ export const Primary: Story = {
             />
           )
         })}
-      </Slider>
+      </ImageSlider>
     )
   },
 }
