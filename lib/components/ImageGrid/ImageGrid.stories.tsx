@@ -5,7 +5,7 @@ import { imageData } from '../../data/ImageData'
 import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof ImageGrid> = {
-  title: 'Components/ImageGrid',
+  title: 'Components/Image Grid',
   component: ImageGrid,
   tags: ['autodocs'],
   parameters: {

@@ -97,7 +97,7 @@ export const FooterStandard = () => {
       </h2>
 
       <div className="flex-col pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
-        <p className="text-sm md:text-base lg:text-lg text-center font-semibold text-white">
+        <p className="text-sm md:text-base text-center font-medium text-white">
           Carleton University acknowledges the location of its campus on the traditional, unceded territories of the
           Algonquin Anishinàbeg nation
         </p>
@@ -192,8 +192,8 @@ export const FooterStandard = () => {
               email
             </LinkComponent>
           </p>
-          <p>1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
-          <ul className="flex justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
+          <p className="text-center">1125 Colonel By Drive, Ottawa, ON, K1S 5B6, Canada</p>
+          <ul className="flex flex-wrap justify-center gap-5 mb-4 lg:mb-0 lg:justify-end">
             {Social.map((item, index) => (
               <li key={index}>
                 <LinkComponent href={item.href} className="text-cu-black-300 hover:text-cu-red">
