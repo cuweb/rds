@@ -35,7 +35,7 @@ export const Primary: Story = {
             <ImageSlider.Item
               key={index}
               imageUrl={imageUrl}
-              title={aspectRatio}
+              title={title}
               link={link}
               focalPointX={focalPointX}
               focalPointY={focalPointY}
