@@ -13,7 +13,6 @@ export { Card } from './components/Card/Card'
 export { Description } from './components/Description/Description'
 export { Dialog } from './components/Dialog/Dialog'
 export { Embed } from './components/Embed/Embed'
-export { Form } from './components/Form/Form'
 export { Filter } from './components/Filter/Filter'
 export { FooterBasic } from './components/Footer/FooterBasic/FooterBasic'
 export { FooterCookie } from './components/Footer/FooterCookie/FooterCookie'
@@ -47,6 +46,10 @@ export { TextMedia } from './components/TextMedia/TextMedia'
 export { Timeline } from './components/Timeline/Timeline'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
+
+// Forms
+export { Form } from './components/Form/Form'
+export { InputAddon } from './components/Form/InputAddon/InputAddon'
 
 // Loaders
 export { CalendarLoader } from './components/Loaders/CalendarLoader/CalendarLoader'
