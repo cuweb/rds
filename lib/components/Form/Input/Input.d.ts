@@ -1,2 +1,6 @@
 import { FieldComponentProps } from '../FormField/FormField';
-export declare const Input: ({ ...props }: FieldComponentProps) => import("react/jsx-runtime").JSX.Element;
+export interface InputProps extends FieldComponentProps {
+    hasPrefix?: React.ReactNode;
+    hasSuffix?: React.ReactNode;
+}
+export declare const Input: ({ ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
