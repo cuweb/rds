@@ -9,7 +9,7 @@ import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
 import { LoadScript } from '@react-google-maps/api'
 import { SingleMarkerInterface } from './PlacesAutoComplete/PlacesAutoComplete'
-import FormError from './FormError/FormError'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
@@ -69,6 +69,69 @@ export const Input: Story = () => {
           helper="Helper Text"
           helperpostop
           disabled={formikProps.isSubmitting}
+        />
+      </Form.FieldGroup>
+      <ButtonGroup>
+        <Button title="Submit" type="submit" />
+        <Button title="Reset" type="reset" color="grey" onClick={onReset} />
+      </ButtonGroup>
+    </Form>
+  )
+}
+
+// input with icon
+export const InputWithIcon: Story = () => {
+  type IInput = {
+    inputText: string
+  }
+
+  const InputInitialValues = {
+    inputText: '',
+  }
+
+  const InputValidationSchema = Yup.object().shape({
+    inputText: Yup.string().required('The field is required'),
+  })
+
+  const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
+    actions.setSubmitting(true)
+    alert(JSON.stringify(values, null, 2))
+    await sleep(1000)
+    actions.setSubmitting(false)
+  }
+
+  const onReset: MouseEventHandler<HTMLButtonElement> = () => {
+    formikProps.resetForm()
+  }
+
+  const formikProps = useFormik({
+    initialValues: InputInitialValues,
+    validationSchema: InputValidationSchema,
+    onSubmit,
+  })
+
+  return (
+    <Form formikProps={formikProps}>
+      <Form.FieldGroup cols={2}>
+        <Form.FieldControl
+          control="text"
+          label="Label"
+          name="inputText"
+          required
+          helper="Helper Text"
+          helperpostop
+          disabled={formikProps.isSubmitting}
+          leftIcon={CheckCircleIcon}
+        />
+        <Form.FieldControl
+          control="text"
+          label="Label"
+          name="inputText"
+          required
+          helper="Helper Text"
+          helperpostop
+          disabled={formikProps.isSubmitting}
+          rightIcon={CheckCircleIcon}
         />
       </Form.FieldGroup>
       <ButtonGroup>
