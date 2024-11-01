@@ -33,8 +33,6 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
               <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
             </li>
             <div className="flex justify-between space-x-2 gap-2 ">
-              {/* Pulse elements as placeholders for the pagination numbers */}
-
               {Array.from({ length: pageCount }).map((_, index) => (
                 <li key={index} className={`${styles.pageListNumbers} `}>
                   <div className={styles.pulseElement}></div>

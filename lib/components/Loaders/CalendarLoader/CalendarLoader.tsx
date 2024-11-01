@@ -1,17 +1,7 @@
-// interface FormLoaderWrapperProps {
-//   children: React.ReactNode
-// }
-
 import { format, getDay, isBefore, startOfToday, eachDayOfInterval, endOfMonth, parse } from 'date-fns'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
-
-// // Define FormLoader component
-// export const FormLoaderWrapper = ({ children }: FormLoaderWrapperProps) => {
-//   // Return FormLoader with children and RowLoader as property
-//   return <div className="cu-loader-form cu-component flex flex-col gap-8 w-full">{children}</div>
-// }
 
 const styles = {
   prevNextArrows: `flex items-center justify-center flex-none p-2 text-cu-black-800 hover:text-cu-red`,
@@ -30,7 +20,6 @@ export interface CalendarLoaderProps {
 export const CalendarLoader = ({ showClearButton }: CalendarLoaderProps) => {
   const today = startOfToday()
   const [currentMonth] = useState(format(today, 'MMM-yyyy'))
-  // const [showClear, setShowClear] = useState(true)
   const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
   const colStartClasses = ['', 'col-start-2', 'col-start-3', 'col-start-4', 'col-start-5', 'col-start-6', 'col-start-7']
   const days = eachDayOfInterval({
@@ -75,39 +64,11 @@ export const CalendarLoader = ({ showClearButton }: CalendarLoaderProps) => {
                 key={day.toString()}
                 className={classNames(dayIdx === 0 && colStartClasses[getDay(day)], 'bg-white py-2')}
               >
-                <button
-                  type="button"
-                  disabled={isBefore(day, today)}
-                  // className={classNames(
-                  //   isEqual(day, selectedDay) && 'text-white',
-                  //   isSameDay(day, selectedDay) && 'text-white',
-                  //   !isEqual(day, selectedDay) && isToday(day) && 'text-cu-red',
-                  //   !isEqual(day, selectedDay) &&
-                  //     !isToday(day) &&
-                  //     isSameMonth(day, firstDayCurrentMonth) &&
-                  //     'text-cu-black-900',
-                  //   !isEqual(day, selectedDay) &&
-                  //     !isToday(day) &&
-                  //     !isSameMonth(day, firstDayCurrentMonth) &&
-                  //     'text-cu-black-400',
-                  //   isEqual(day, selectedDay) && isToday(day) && 'bg-cu-red',
-                  //   isEqual(day, selectedDay) && !isToday(day) && 'bg-cu-red',
-                  //   isSameDay(day, selectedDay) && isToday(day) && 'bg-cu-red',
-                  //   isSameDay(day, selectedDay) && !isToday(day) && 'bg-cu-red',
-                  //   !isEqual(day, selectedDay) && 'hover:bg-cu-red hover:text-white',
-                  //   (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',
-                  //   'mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:bg-cu-black-50 disabled:text-cu-black-900',
-                  // )}
-                >
-                  {/* <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time> */}
+                <button type="button" disabled={isBefore(day, today)}>
                   <div className={styles.element}></div>
                 </button>
 
-                <div className="w-1 h-1 mx-auto mt-1">
-                  {/* {events?.some((event) => isSameDay(parseISO(event.startDatetime), day)) && (
-                    <div className="w-1 h-1 rounded-full bg-sky-500"></div>
-                  )} */}
-                </div>
+                <div className="w-1 h-1 mx-auto mt-1"></div>
               </div>
             ))}
           </div>
