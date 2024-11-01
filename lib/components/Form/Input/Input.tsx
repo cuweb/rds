@@ -10,16 +10,14 @@ export const Input = ({ ...props }: FieldComponentProps) => {
   const errorClass = useErrorClass(name)
 
   return (
-    <div className={`${fieldStyles.input} ${fieldStyles.disabled} flex items-center`}>
-      <InputAddon>$</InputAddon>
-      <Field
-        type="text"
-        id={name}
-        name={name}
-        className={`border-none bg-cu-black-50 w-full ${errorClass}`}
-        {...rest}
-      />
-      <InputAddon>Poop</InputAddon>
+    <div className={`${fieldStyles.input} ${fieldStyles.disabled} flex items-stretch`}>
+      <InputAddon border="right" isGrey>
+        $
+      </InputAddon>
+      <Field type="text" id={name} name={name} className={`border-none w-full ${errorClass}`} {...rest} />
+      <InputAddon border="left" isGrey>
+        Poop
+      </InputAddon>
     </div>
   )
 }
