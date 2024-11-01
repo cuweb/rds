@@ -21,8 +21,12 @@ export const InputAddon = ({ children, ...props }: InputAddonProps) => {
       break
 
     default:
+      greyBg = ''
+      hasBorder = ''
       break
   }
 
   return <span className={`px-4 flex items-center ${hasBorder}`}>{children}</span>
 }
+
+export default InputAddon

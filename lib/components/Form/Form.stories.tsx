@@ -9,9 +9,7 @@ import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
 import { LoadScript } from '@react-google-maps/api'
 import { SingleMarkerInterface } from './PlacesAutoComplete/PlacesAutoComplete'
-// import FormError from './FormError/FormError'
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+import InputAddon from './InputAddon/InputAddon'
 
 const meta: Meta<typeof Form> = {
   title: 'Components/Form',
@@ -67,6 +65,67 @@ export const Input: Story = () => {
           name="inputText"
           required
           helper="Helper Text"
+          helperpostop
+          disabled={formikProps.isSubmitting}
+        />
+      </Form.FieldGroup>
+      <ButtonGroup>
+        <Button title="Submit" type="submit" />
+        <Button title="Reset" type="reset" color="grey" onClick={onReset} />
+      </ButtonGroup>
+    </Form>
+  )
+}
+
+export const InputAddonStory: Story = () => {
+  type IInput = {
+    inputText: string
+  }
+
+  const InputInitialValues = {
+    inputText: '',
+  }
+
+  const InputValidationSchema = Yup.object().shape({
+    inputText: Yup.string().required('The field is required'),
+  })
+
+  const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
+    actions.setSubmitting(true)
+    alert(JSON.stringify(values, null, 2))
+    await sleep(1000)
+    actions.setSubmitting(false)
+  }
+
+  const onReset: MouseEventHandler<HTMLButtonElement> = () => {
+    formikProps.resetForm()
+  }
+
+  const formikProps = useFormik({
+    initialValues: InputInitialValues,
+    validationSchema: InputValidationSchema,
+    onSubmit,
+  })
+
+  return (
+    <Form formikProps={formikProps}>
+      <Form.FieldGroup>
+        <Form.FieldControl
+          control="text"
+          label="Label"
+          name="inputText"
+          required
+          helper="Helper Text"
+          hasPrefix={
+            <InputAddon border="right" isGrey>
+              $
+            </InputAddon>
+          }
+          hasSuffix={
+            <InputAddon border="left" isGrey>
+              USD
+            </InputAddon>
+          }
           helperpostop
           disabled={formikProps.isSubmitting}
         />

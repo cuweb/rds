@@ -49,6 +49,7 @@ export { WideImage } from './components/WideImage/WideImage'
 
 // Forms
 export { Form } from './components/Form/Form'
+export { InputAddon } from './components/Form/InputAddon/InputAddon'
 
 // Loaders
 export { CardEventLoader } from './components/Loaders/CardLoader/CardEventLoader'
