@@ -38,6 +38,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         isClearable
         name={name}
         id={name}
+        autoComplete="test"
         selected={field.value ? field.value : null}
         selectsStart
         timeFormat={timeFormat}
