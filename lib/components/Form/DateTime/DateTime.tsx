@@ -20,7 +20,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
 
   const [field, , helpers] = useField(name)
 
-  const { setValue, setError } = helpers
+  const { setValue, setError, setTouched } = helpers
 
   const handleDateChange = (date: Date | null) => {
     setValue(date, true)
@@ -38,13 +38,15 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
         isClearable
         name={name}
         id={name}
-        autoComplete="test"
+        autoComplete="on"
         selected={field.value ? field.value : null}
-        selectsStart
         timeFormat={timeFormat}
         dateFormat={dateFormat}
         placeholderText={placeholder ? placeholder : dateFormat}
         showTimeSelect={showTime}
+        onBlur={() => {
+          setTouched(true, true)
+        }}
         onChange={(date: Date | null) => {
           handleDateChange(date)
         }}
