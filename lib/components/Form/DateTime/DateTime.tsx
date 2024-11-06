@@ -12,11 +12,12 @@ export interface DateTimeProps extends FieldComponentProps {
   dateFormat?: string
   timeFormat?: string
   placeholder?: string
+  isClearable?: boolean
   onChange?: (date: Date | null) => void
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, ...rest } = props
+  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, isClearable, ...rest } = props
 
   const [field, , helpers] = useField(name)
 
@@ -35,7 +36,7 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   return (
     <>
       <DatePicker
-        isClearable
+        isClearable={isClearable}
         name={name}
         id={name}
         autoComplete="on"
