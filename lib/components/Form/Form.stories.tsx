@@ -396,6 +396,7 @@ export const SimpleDate: Story = () => {
           name="startDate"
           maxDate={formikProps.values.endDate}
           disabled={formikProps.isSubmitting}
+          isClearable
         />
         <Form.FieldControl
           required
