@@ -348,7 +348,7 @@ export const SimpleDate: Story = () => {
   }
 
   const dateInitialValues = {
-    startDate: '',
+    startDate: 'Sat Nov 23 2024 00:00:00 GMT-0500 (Eastern Standard Time)',
     endDate: '',
   }
 
@@ -396,6 +396,7 @@ export const SimpleDate: Story = () => {
           name="startDate"
           maxDate={formikProps.values.endDate}
           disabled={formikProps.isSubmitting}
+          isClearable
         />
         <Form.FieldControl
           required

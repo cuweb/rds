@@ -12,21 +12,20 @@ export interface DateTimeProps extends FieldComponentProps {
   dateFormat?: string
   timeFormat?: string
   placeholder?: string
-  onChange?: (date: Date) => void
+  isClearable?: boolean
+  onChange?: (date: Date | null) => void
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, ...rest } = props
+  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, isClearable, ...rest } = props
 
   const [field, , helpers] = useField(name)
 
-  const { setValue, setTouched, setError } = helpers
+  const { setValue, setError, setTouched } = helpers
 
-  const handleDateChange = (date: Date) => {
-    setValue(date)
-    setTouched(true)
+  const handleDateChange = (date: Date | null) => {
+    setValue(date, true)
     setError(undefined)
-
     if (onChange) {
       onChange(date)
     }
@@ -37,18 +36,21 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   return (
     <>
       <DatePicker
-        selected={field.value}
+        isClearable={isClearable}
         name={name}
         id={name}
-        onChange={(date: Date | null) => {
-          if (date) {
-            handleDateChange(date)
-          }
-        }}
-        showTimeSelect={showTime}
+        autoComplete="on"
+        selected={field.value ? field.value : null}
         timeFormat={timeFormat}
         dateFormat={dateFormat}
         placeholderText={placeholder ? placeholder : dateFormat}
+        showTimeSelect={showTime}
+        onBlur={() => {
+          setTouched(true, true)
+        }}
+        onChange={(date: Date | null) => {
+          handleDateChange(date)
+        }}
         className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
         {...rest}
       />
