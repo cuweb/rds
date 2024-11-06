@@ -6,6 +6,7 @@ export interface DateTimeProps extends FieldComponentProps {
     dateFormat?: string;
     timeFormat?: string;
     placeholder?: string;
+    isClearable?: boolean;
     onChange?: (date: Date | null) => void;
 }
 export declare const DateTime: ({ ...props }: DateTimeProps) => import("react/jsx-runtime").JSX.Element;
