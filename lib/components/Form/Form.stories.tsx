@@ -375,7 +375,6 @@ export const SimpleDate: Story = () => {
 
   const onSubmit = async (values: IDate, actions: FormikHelpers<IDate>) => {
     actions.setSubmitting(true)
-    console.log(values, 'values')
     alert(JSON.stringify(values, null, 2))
     await sleep(1000)
     actions.setSubmitting(false)
