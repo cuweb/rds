@@ -78,14 +78,6 @@ export const MultipleColumns: Story = {
           </Description.Meta>
         ))}
       </Description>
-      <PageHeader as="h2" header="Description Tightened" size="md" />
-      <Description {...args}>
-        {descMeta.map((item) => (
-          <Description.Meta key={item?.id} term={item?.term} spacing="tight" useColumns>
-            {item?.details}
-          </Description.Meta>
-        ))}
-      </Description>
     </Section>
   ),
 }
