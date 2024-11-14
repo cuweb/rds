@@ -24,11 +24,7 @@ const tableData = TableData.map((obj) => {
   const link = 'http://thing/' + obj.id
   return {
     ...obj,
-    link: (
-      <a className="font-semibold text-cu-red" href={link}>
-        Edit
-      </a>
-    ),
+    link: <a href={link}>Edit</a>,
   }
 })
 
@@ -159,6 +155,24 @@ export const RowHeader: Story = {
     data: tableData,
     columns: columns,
     hasStripes: false,
+    noWordBreak: false,
+    range: [1, -1],
+    enableRowHeader: true,
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Table {...args} />
+      </Section>
+    )
+  },
+}
+
+export const HasStripes: Story = {
+  args: {
+    data: tableData,
+    columns: columns,
+    hasStripes: true,
     noWordBreak: false,
     range: [1, -1],
     enableRowHeader: true,
