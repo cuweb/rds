@@ -679,6 +679,86 @@ export const AutoSuggest: Story = () => {
   )
 }
 
+export const AutoSelectSubsequentFields: Story = () => {
+  type IAutoSuggest = {
+    text: string
+  }
+
+  const autoSuggestInitialValues = {
+    text: 'option7',
+  }
+
+  const autoSuggestValidationSchema = Yup.object().shape({
+    text: Yup.string(),
+    textName: Yup.string(),
+  })
+  const onReset: MouseEventHandler<HTMLButtonElement> = () => {
+    formikProps.resetForm()
+  }
+
+  const onSubmit = async (values: IAutoSuggest, actions: FormikHelpers<IAutoSuggest>) => {
+    actions.setSubmitting(true)
+    alert(JSON.stringify(values, null, 2))
+    await sleep(1000)
+    actions.setSubmitting(false)
+    formikProps.resetForm()
+  }
+
+  const formikProps = useFormik({
+    initialValues: autoSuggestInitialValues,
+    validationSchema: autoSuggestValidationSchema,
+    onSubmit,
+  })
+
+  return (
+    <Form formikProps={formikProps}>
+      <Form.FieldGroup>
+        <Form.FieldControl
+          control="autosuggest"
+          isSearchable
+          label="Auto Select Dropdown with typeahead"
+          name="text"
+          onChange={(selectedValue) => {
+            if (selectedValue) {
+              formikProps.setFieldValue('textName', selectedValue)
+            } else {
+              formikProps.setFieldValue('textName', '')
+            }
+          }}
+          disabled={formikProps.isSubmitting}
+          options={[
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+            { label: 'Option 4', value: 'option4' },
+            { label: 'Option 5', value: 'option5' },
+            { label: 'Option 6', value: 'option6' },
+            { label: 'Option 7', value: 'option7' },
+            { label: 'Option 8', value: 'option8' },
+            { label: 'Option 9', value: 'option9' },
+            { label: 'Option 10', value: 'option10' },
+          ]}
+        />
+      </Form.FieldGroup>
+
+      <Form.FieldGroup>
+        <Form.FieldControl
+          control="text"
+          label="Selected Value"
+          name="textName"
+          disabled={formikProps.isSubmitting}
+          helper="This will have value only if auto suggest file selected"
+          helperpostop
+        />
+      </Form.FieldGroup>
+      <ButtonGroup>
+        <Button title="Submit" type="submit" />
+        <Button title="Reset" type="reset" color="grey" onClick={onReset} />
+      </ButtonGroup>
+    </Form>
+  )
+}
+
 export const PlacesAutoComplete: Story = () => {
   type IPlacesAutoComplete = {
     location: SingleMarkerInterface
