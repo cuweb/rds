@@ -35,7 +35,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
       {...rest}
       inputId={name}
       options={options}
-      value={selectedOption || null}
+      value={selectedOption}
       onChange={(option: Option | null) => {
         setFieldValue(name, option?.value)
         setSelectedOption(option)
