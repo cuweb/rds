@@ -727,6 +727,7 @@ export const AutoSelectSubsequentFields: Story = () => {
           }}
           disabled={formikProps.isSubmitting}
           options={[
+            { label: '--select an option--', value: '' },
             { label: 'Option 1', value: 'option1' },
             { label: 'Option 2', value: 'option2' },
             { label: 'Option 3', value: 'option3' },
@@ -738,6 +739,12 @@ export const AutoSelectSubsequentFields: Story = () => {
             { label: 'Option 9', value: 'option9' },
             { label: 'Option 10', value: 'option10' },
           ]}
+          onBlur={() => {
+            console.log('onBlur is getting run')
+            if (formikProps.values.text === 'option5') {
+              formikProps.setFieldValue('text', '')
+            }
+          }}
         />
       </Form.FieldGroup>
 
