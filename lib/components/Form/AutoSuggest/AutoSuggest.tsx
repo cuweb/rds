@@ -1,5 +1,6 @@
 import { useField, useFormikContext } from 'formik'
-import Select from 'react-select'
+import Select, { StylesConfig } from 'react-select'
+import { CSSObject } from '@emotion/react'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 import { useEffect, useState } from 'react'
@@ -7,6 +8,18 @@ import { useEffect, useState } from 'react'
 interface Option {
   value: string
   label: string
+}
+const customStyles: StylesConfig<Option, false> = {
+  option: (provided: CSSObject) => ({
+    ...provided,
+    cursor: 'pointer',
+    fontSize: '1rem',
+  }),
+  menu: (provided: CSSObject) => ({
+    ...provided,
+    borderRadius: '0.5rem',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  }),
 }
 
 export interface AutoSuggestProps extends FieldComponentProps {
@@ -50,6 +63,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
       isClearable={true}
       className={errorClass + ` cu-autosuggest`}
       isDisabled={disabled}
+      styles={customStyles}
     />
   )
 }
