@@ -20,14 +20,10 @@
 .cu-autosuggest .css-19bb58m {
   @apply m-0 py-0;
 }
- .cu-autosuggest .css-1nmdiq5-menu {
-  border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-
+.cu-autosuggest .css-1nmdiq5-menu {
+  @apply rounded-lg;
 }
 
-.cu-autosuggest .css-10wo9uf-option{
-  cursor:pointer;
-    font-size: 1rem;
+.cu-autosuggest .css-10wo9uf-option {
+ @apply text-base;
 }
