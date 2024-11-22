@@ -20,3 +20,11 @@
 .cu-autosuggest .css-19bb58m {
   @apply m-0 py-0;
 }
+
+.cu-autosuggest .css-1nmdiq5-menu {
+  @apply rounded-lg overflow-hidden;
+}
+
+.cu-autosuggest .css-10wo9uf-option {
+  @apply text-base;
+}
