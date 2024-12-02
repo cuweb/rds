@@ -93,6 +93,8 @@ export declare const figureAlignClasses: {
     none: string;
 };
 export declare const bgOpacityClasses: {
+    60: string;
+    65: string;
     70: string;
     75: string;
     80: string;
