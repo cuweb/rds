@@ -35,7 +35,7 @@ export const FullBanner = ({
         </div>
       )}
 
-      <div className="lg:absolute lg:bottom-8 xl:bottom-12 w-full px-8 md:px-10">
+      <div className="lg:absolute lg:bottom-8 w-full px-8 lg:px-10">
         <div className={`max-w-screen-2xl mx-auto flex ${justifyContentClasses[justify]}`}>
           <div
             className={`w-full lg:max-w-2xl bg-cu-black-900 ${bgOpacityClasses[opacity]} lg:px-8 pt-3 pb-5 lg:pt-6 lg:pb-8 rounded-lg text-white`}
