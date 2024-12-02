@@ -72,8 +72,6 @@ export const BlockTesting = () => {
     <>
       <FullBanner
         as="div"
-        focalPointX={50}
-        focalPointY={50}
         image="https://picsum.photos/id/20/1600/700"
         justify="start"
         opacity={70}
@@ -90,8 +88,6 @@ export const BlockTesting = () => {
 
       <FullBanner
         as="div"
-        focalPointX={50}
-        focalPointY={50}
         image="https://picsum.photos/id/20/1600/700"
         justify="start"
         opacity={70}
@@ -383,8 +379,6 @@ export const BlockTesting = () => {
 
       <FullBanner
         as="div"
-        focalPointX={50}
-        focalPointY={50}
         image="https://picsum.photos/id/20/1600/700"
         justify="start"
         opacity={70}

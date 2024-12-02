@@ -108,6 +108,8 @@ export const figureAlignClasses = {
 }
 
 export const bgOpacityClasses = {
+  60: 'bg-opacity-[.60]',
+  65: 'bg-opacity-[.65]',
   70: 'bg-opacity-[.70]',
   75: 'bg-opacity-[.75]',
   80: 'bg-opacity-[.80]',

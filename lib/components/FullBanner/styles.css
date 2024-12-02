@@ -1,3 +1,7 @@
+.cu-fullbanner--content > * {
+  @apply z-50 relative;
+}
+
 /* Top spacing when first block */
 
 main.cu-main > .cu-fullbanner:first-of-type,
@@ -16,23 +20,11 @@ section.cu-section > .cu-fullbanner:first-of-type {
 }
 
 .cu-fullbanner .cu-pageheader p {
-  @apply leading-7 md:leading-8 mt-0;
+  @apply md:text-xl;
 }
 
 /* Justification */
 
-.cu-fullbanner--center {
+.cu-fullbanner .justify-center {
   @apply text-center;
-}
-
-.cu-fullbanner--center .cu-buttongroup {
-  @apply justify-center;
-}
-
-.cu-fullbanner--end {
-  @apply text-right justify-end;
-}
-
-.cu-fullbanner--end .cu-buttongroup {
-  @apply justify-end;
 }
