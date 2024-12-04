@@ -13,6 +13,12 @@ section.cu-section > .cu-fullbanner:first-of-type {
   @apply mb-0;
 }
 
+/* Image */
+
+.cu-fullbanner img {
+  @apply rounded-none w-full h-auto;
+}
+
 /* Font Styles */
 
 .cu-fullbanner .cu-pageheader h1 {
