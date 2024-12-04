@@ -28,7 +28,7 @@ export const FigureWrapper = ({
   return (
     <figure className={`cu-figure cu-component ${hideMobile}`}>
       <div
-        className={`not-prose overflow-hidden bg-white shadow-lg ${figureSizeClasses[size]} ${borderRadiusClasses[rounded]} ${figureAlignClasses[align]}`}
+        className={`not-prose overflow-hidden bg-white shadow-lg w-full ${figureSizeClasses[size]} ${borderRadiusClasses[rounded]} ${figureAlignClasses[align]}`}
       >
         {children}
         {caption && <figcaption className="px-5 py-4 text-base italic text-cu-black-700">{caption}</figcaption>}
