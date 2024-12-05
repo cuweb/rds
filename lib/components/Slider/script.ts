@@ -1,4 +1,4 @@
-const Slider1 = () => {
+const SliderScript = () => {
   // Initial setup
   const slider = document.querySelector('.slider') as HTMLElement
 
@@ -92,4 +92,4 @@ const Slider1 = () => {
   initializeSlider()
 }
 
-export default Slider1
+export default SliderScript

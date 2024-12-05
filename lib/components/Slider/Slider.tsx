@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
-import { SliderItem } from './SliderItem'
-import Slider1 from './script.ts'
+import { Slide } from './Slide'
+import { SliderImage } from './SliderImage.tsx'
+import SliderScript from './script.ts'
 
 export interface SliderProp {
   children: React.ReactNode
@@ -17,7 +18,7 @@ export const SliderWrapper = ({
   slidesPerViewDesktop,
 }: SliderProp) => {
   useEffect(() => {
-    Slider1()
+    SliderScript()
   })
 
   return (
@@ -32,15 +33,12 @@ export const SliderWrapper = ({
 
       {/* Slider Arrow */}
       <div className="flex align-items-center gap-3 justify-center mt-4">
-        <button className="slider__arrow slider__arrow--prev previous-arrow bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50">
+        <button className="slider__arrow slider__arrow--prev bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50">
           <span className="sr-only">Previous Slide</span>
           <ChevronLeftIcon className="w-8 h-8 [&>path]:stroke-[2]" aria-hidden="true" />
         </button>
 
-        <button
-          className="slider__arrow slider__arrow--next next-arrow bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50"
-          id="next-arrow"
-        >
+        <button className="slider__arrow slider__arrow--next bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50">
           <span className="sr-only">Next Slide</span>
           <ChevronRightIcon className="w-8 h-8 [&>path]:stroke-[2]" aria-hidden="true" />
         </button>
@@ -50,7 +48,8 @@ export const SliderWrapper = ({
 }
 
 export const Slider = Object.assign(SliderWrapper, {
-  Item: SliderItem,
+  Slide: Slide,
+  Image: SliderImage,
 })
 
-SliderWrapper.displayName = 'ImageSlider'
+SliderWrapper.displayName = 'Slider'
