@@ -17,9 +17,9 @@ const SliderScript = () => {
   let currentIndex = 0
   const totalSlides = slides.length
 
-  const slidesPerViewMobile = Number(slider.getAttribute('data-slides-mobile')) || 1
-  const slidesPerViewTablet = Number(slider.getAttribute('data-slides-tablet')) || 2
   const slidesPerViewDesktop = Number(slider.getAttribute('data-slides-desktop')) || 4
+  const slidesPerViewTablet = Number(slider.getAttribute('data-slides-tablet')) || slidesPerViewDesktop
+  const slidesPerViewMobile = Number(slider.getAttribute('data-slides-mobile')) || slidesPerViewTablet
 
   let perView = slidesPerViewDesktop
 

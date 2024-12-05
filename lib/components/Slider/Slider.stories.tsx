@@ -19,9 +19,9 @@ type Story = StoryObj<typeof Slider>
 
 export const Primary: Story = {
   args: {
-    slidesPerViewMobile: 1,
-    slidesPerViewTablet: 2,
     slidesPerViewDesktop: 3,
+    slidesPerViewTablet: 2,
+    slidesPerViewMobile: 1,
   },
   render: (args) => {
     return (
