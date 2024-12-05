@@ -1,8 +1,17 @@
-// export interface FullBannerVideoProps {
-//   children?: React.ReactNode
-// }
+const videos = [
+  { name: 'cu-flyby', description: 'A flyby video of campus with scenic views of buildings and greenery.' },
+  { name: 'timelapse-quad', description: 'A timelapse of the main quad showing students and campus life.' },
+] as const
 
-export const FullBannerVideo = () => {
+type VideoNameKeys = (typeof videos)[number]['name']
+
+export interface FullBannerVideoProps {
+  videoName?: VideoNameKeys
+}
+
+export const FullBannerVideo = ({ videoName = 'cu-flyby' }: FullBannerVideoProps) => {
+  const video = videos.find((v) => v.name === videoName)
+
   return (
     <div className="relative">
       <video
@@ -10,19 +19,12 @@ export const FullBannerVideo = () => {
         autoPlay
         muted
         loop
-        playsInline
         controls
-        aria-label="Video of a flyby scene"
+        aria-label={video?.description || 'Default video description'}
       >
-        <source src="https://cu-media.s3.amazonaws.com/videos/cu-flyby.webm" type="video/webm" />
-        <source src="https://cu-media.s3.amazonaws.com/videos/cu-flyby.mp4" type="video/mp4" />
-        <track
-          src="https://cu-media.s3.amazonaws.com/videos/cu-flyby-captions.vtt"
-          kind="subtitles"
-          srcLang="en"
-          label="English"
-        />
-        Your browser does not support the video tag.
+        <source src={`https://cu-media.s3.amazonaws.com/videos/${videoName}.webm`} type="video/webm" />
+        <source src={`https://cu-media.s3.amazonaws.com/videos/${videoName}.mp4`} type="video/mp4" />
+        <p>Your browser does not support the video tag.</p>
       </video>
     </div>
   )
