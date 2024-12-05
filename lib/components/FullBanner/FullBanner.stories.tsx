@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { FullBanner } from './FullBanner'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
-import { FullBannerImage } from './FullBannerImage'
 
 const meta: Meta<typeof FullBanner> = {
   title: 'Components/Full Banner',
