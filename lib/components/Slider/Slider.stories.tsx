@@ -30,15 +30,18 @@ export const Primary: Story = {
           const { image: imageUrl, title, link, focalPointX, focalPointY, aspectRatio } = image
           return (
             <Slider.Slide key={index}>
-              <Slider.Image
-                key={index}
-                imageUrl={imageUrl}
-                title={title}
-                link={link}
-                focalPointX={focalPointX}
-                focalPointY={focalPointY}
-                aspectRatio={aspectRatio}
-              />
+              <>
+                {index}
+                <Slider.Image
+                  key={index}
+                  imageUrl={imageUrl}
+                  title={title}
+                  link={link}
+                  focalPointX={focalPointX}
+                  focalPointY={focalPointY}
+                  aspectRatio={aspectRatio}
+                />
+              </>
             </Slider.Slide>
           )
         })}

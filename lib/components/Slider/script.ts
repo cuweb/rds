@@ -21,72 +21,78 @@ const SliderScript = () => {
   const slidesPerViewTablet = Number(slider.getAttribute('data-slides-tablet')) || slidesPerViewDesktop
   const slidesPerViewMobile = Number(slider.getAttribute('data-slides-mobile')) || slidesPerViewTablet
 
-  let perView = slidesPerViewDesktop
+  let slidesPerView = slidesPerViewDesktop
 
   // Function to update `perView` based on screen size
   function updatePerView() {
     if (window.innerWidth < 768) {
-      perView = slidesPerViewMobile
+      slidesPerView = slidesPerViewMobile
     } else if (window.innerWidth < 1024) {
-      perView = slidesPerViewTablet
+      slidesPerView = slidesPerViewTablet
     } else {
-      perView = slidesPerViewDesktop
+      slidesPerView = slidesPerViewDesktop
     }
   }
 
   // Adjust slide widths dynamically
-  function adjustSlides() {
+  function adjustSlidesWidth() {
     updatePerView()
 
     const containerWidth = slider.offsetWidth
-    const slideWidth = containerWidth / perView
+    const slideWidth = containerWidth / slidesPerView
 
-    slides.forEach((slide) => {
+    slides.forEach((slide, key) => {
       const slideElement = slide as HTMLElement
       slideElement.style.flex = `0 0 ${slideWidth}px`
       slideElement.style.maxWidth = `${slideWidth}px`
+      slideElement.setAttribute('data-slide-index', key.toString())
     })
   }
 
-  // Update active slide and button states
-  function updateActiveSlide() {
-    slides.forEach((slide) => slide.classList.remove('active'))
-    slides[currentIndex].classList.add('active')
-  }
-
-  // Move to the next slide
   function nextSlide() {
-    if (currentIndex < totalSlides - perView) {
-      currentIndex++
-      sliderWrap.style.transform = `translateX(-${currentIndex * (100 / perView)}%)`
+    const nextSlideIndex = (currentIndex + 1) % totalSlides
+
+    const firstSlide = sliderWrap.firstElementChild as HTMLElement
+    sliderWrap.append(firstSlide)
+
+    currentIndex = nextSlideIndex - 1
+
+    sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
+    sliderWrap.style.transition = 'transform 0.5s ease'
+
+    setTimeout(() => {
       sliderWrap.style.transition = 'transform 0.5s ease'
-      updateActiveSlide()
-    }
+      sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
+    }, 50)
   }
 
-  // Move to the previous slide
   function previousSlide() {
-    if (currentIndex > 0) {
-      currentIndex--
-      sliderWrap.style.transform = `translateX(-${currentIndex * (100 / perView)}%)`
+    const prevSlideIndex = (currentIndex + totalSlides) % totalSlides
+
+    const lastSlide = sliderWrap.lastElementChild as HTMLElement
+    sliderWrap.prepend(lastSlide)
+
+    currentIndex = prevSlideIndex
+    sliderWrap.style.transition = 'none'
+    sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
+
+    setTimeout(() => {
       sliderWrap.style.transition = 'transform 0.5s ease'
-      updateActiveSlide()
-    }
+      sliderWrap.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`
+    }, 50)
   }
 
   // Initialize the slider
   function initializeSlider() {
-    // Set initial active slide
-    slides[0].classList.add('active')
-
     // Add event listeners for navigation
     previousArrow.addEventListener('click', previousSlide)
     nextArrow.addEventListener('click', nextSlide)
 
     // Adjust slides on load and resize
-    adjustSlides()
-    window.addEventListener('resize', adjustSlides)
+    adjustSlidesWidth()
   }
+
+  window.addEventListener('resize', adjustSlidesWidth)
 
   // Run the slider
   initializeSlider()
