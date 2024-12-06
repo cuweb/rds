@@ -24,7 +24,7 @@ const SliderScript = () => {
   let slidesPerView = slidesPerViewDesktop
 
   // Function to update `perView` based on screen size
-  function updatePerView() {
+  const updatePerView = () => {
     if (window.innerWidth < 768) {
       slidesPerView = slidesPerViewMobile
     } else if (window.innerWidth < 1024) {
@@ -35,21 +35,20 @@ const SliderScript = () => {
   }
 
   // Adjust slide widths dynamically
-  function adjustSlidesWidth() {
+  const adjustSlidesWidth = () => {
     updatePerView()
 
     const containerWidth = slider.offsetWidth
     const slideWidth = containerWidth / slidesPerView
 
-    slides.forEach((slide, key) => {
+    slides.forEach((slide) => {
       const slideElement = slide as HTMLElement
       slideElement.style.flex = `0 0 ${slideWidth}px`
       slideElement.style.maxWidth = `${slideWidth}px`
-      slideElement.setAttribute('data-slide-index', key.toString())
     })
   }
 
-  function nextSlide() {
+  const nextSlide = () => {
     const nextSlideIndex = (currentIndex + 1) % totalSlides
 
     const firstSlide = sliderWrap.firstElementChild as HTMLElement
@@ -57,8 +56,8 @@ const SliderScript = () => {
 
     currentIndex = nextSlideIndex - 1
 
-    sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
     sliderWrap.style.transition = 'transform 0.5s ease'
+    sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
 
     setTimeout(() => {
       sliderWrap.style.transition = 'transform 0.5s ease'
@@ -66,7 +65,7 @@ const SliderScript = () => {
     }, 50)
   }
 
-  function previousSlide() {
+  const previousSlide = () => {
     const prevSlideIndex = (currentIndex + totalSlides) % totalSlides
 
     const lastSlide = sliderWrap.lastElementChild as HTMLElement
@@ -83,7 +82,7 @@ const SliderScript = () => {
   }
 
   // Initialize the slider
-  function initializeSlider() {
+  const initializeSlider = () => {
     // Add event listeners for navigation
     previousArrow.addEventListener('click', previousSlide)
     nextArrow.addEventListener('click', nextSlide)
