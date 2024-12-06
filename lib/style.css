@@ -6,15 +6,13 @@
 /* Global Styles */
 @import './styles/spacing.css';
 
-/* Priority Plus */
-/* @import 'priority-plus/dist/priority-plus.css'; */
-
 /* Components */
 @import './components/Alert/styles.css';
 @import './components/Button/styles.css';
 @import './components/Card/styles.css';
 @import './components/Description/styles.css';
 @import './components/Listing/styles.css';
+@import './components/Nav/priority-plus/priority-plus.css';
 @import './components/Nav/styles.css';
 @import './components/PageHeaders/styles.css';
 @import './components/WideImage/styles.css';

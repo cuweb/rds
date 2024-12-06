@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
-import priorityPlus from 'priority-plus'
+import priorityPlus from './priority-plus/priorityPlus'
 
 const menuPriority = () => {
   // Initialize the navigation
