@@ -1,22 +1,22 @@
 import { useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import { Slide } from './Slide'
-import { SliderImage } from './SliderImage.tsx'
+import { Image } from './Image'
 import SliderScript from './script.ts'
 
-export interface SliderProp {
+export interface ImageSliderProp {
   children: React.ReactNode
   slidesPerViewDesktop: number
   slidesPerViewTablet?: number
   slidesPerViewMobile?: number
 }
 
-export const SliderWrapper = ({
+export const ImageSliderWrapper = ({
   children,
   slidesPerViewDesktop,
   slidesPerViewTablet,
   slidesPerViewMobile,
-}: SliderProp) => {
+}: ImageSliderProp) => {
   useEffect(() => {
     SliderScript()
   })
@@ -50,9 +50,9 @@ export const SliderWrapper = ({
   )
 }
 
-export const Slider = Object.assign(SliderWrapper, {
+export const ImageSlider = Object.assign(ImageSliderWrapper, {
   Slide: Slide,
-  Image: SliderImage,
+  Image: Image,
 })
 
-SliderWrapper.displayName = 'Slider'
+ImageSliderWrapper.displayName = 'ImageSlider'
