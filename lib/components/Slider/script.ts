@@ -54,7 +54,9 @@ const SliderScript = () => {
     const firstSlide = sliderWrap.firstElementChild as HTMLElement
     sliderWrap.append(firstSlide)
 
-    currentIndex = nextSlideIndex - 1
+    if (currentIndex !== 0) {
+      currentIndex = nextSlideIndex - 1
+    }
 
     sliderWrap.style.transition = 'none'
     sliderWrap.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`
