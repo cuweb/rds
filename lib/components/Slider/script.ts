@@ -46,6 +46,9 @@ const SliderScript = () => {
       slideElement.style.flex = `0 0 ${slideWidth}px`
       slideElement.style.maxWidth = `${slideWidth}px`
     })
+
+    sliderWrap.style.transition = 'transform 0.5s ease'
+    sliderWrap.style.transform = `translateX(0%)`
   }
 
   const nextSlide = () => {
