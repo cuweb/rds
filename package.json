@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.18.10",
+  "version": "0.18.11",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -80,7 +80,6 @@
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.16.0",
     "react-quill": "2.0.0",
-    "swiper": "^11.1.14",
     "yup": "1.4.0"
   },
   "devDependencies": {
@@ -100,7 +99,7 @@
     "@storybook/testing-library": "0.2.2",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
-    "@types/react-slick": "^0.23.13",
+    "@types/react-slick": "0.23.13",
     "@typescript-eslint/eslint-plugin": "8.12.2",
     "@typescript-eslint/parser": "8.12.2",
     "@vitejs/plugin-react": "4.3.3",

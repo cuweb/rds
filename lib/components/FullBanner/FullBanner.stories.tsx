@@ -24,9 +24,7 @@ export const Primary: Story = {
     title: 'The nostalgia is real.',
     headerType: 'h1',
     image: 'https://picsum.photos/id/20/1600/700',
-    opacity: 70,
-    focalPointX: 50,
-    focalPointY: 50,
+    opacity: 80,
     justify: 'start',
   },
   render: (args) => {
@@ -36,7 +34,7 @@ export const Primary: Story = {
           The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
           revolutionized how the world consumes music on the move!
         </p>
-        <ButtonGroup>
+        <ButtonGroup align={args.justify}>
           <Button title="Apply Now" />
           <Button color="grey" title="Request Information" />
         </ButtonGroup>
