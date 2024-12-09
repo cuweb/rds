@@ -1,22 +1,17 @@
 export interface ImageSliderProp {
     children: React.ReactNode;
-    loop?: boolean;
-    speed?: number;
-    slidesPerViewMobile?: number;
-    slidesPerViewTablet?: number;
     slidesPerViewDesktop: number;
-    customClass?: string;
+    slidesPerViewTablet?: number;
+    slidesPerViewMobile?: number;
 }
 export declare const ImageSliderWrapper: {
-    ({ children, loop, speed, slidesPerViewMobile, slidesPerViewTablet, slidesPerViewDesktop, customClass, }: ImageSliderProp): import("react/jsx-runtime").JSX.Element;
+    ({ children, slidesPerViewDesktop, slidesPerViewTablet, slidesPerViewMobile, }: ImageSliderProp): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const ImageSlider: {
-    ({ children, loop, speed, slidesPerViewMobile, slidesPerViewTablet, slidesPerViewDesktop, customClass, }: ImageSliderProp): import("react/jsx-runtime").JSX.Element;
+    ({ children, slidesPerViewDesktop, slidesPerViewTablet, slidesPerViewMobile, }: ImageSliderProp): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
-    Item: {
-        ({ imageUrl, focalPointX, focalPointY, title, link, aspectRatio, className, }: import('./ImageSliderItem').ImageSliderItemProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
+    Slide: ({ children, noSpace }: import('./Slide').SlideProps) => import("react/jsx-runtime").JSX.Element;
+    Image: ({ imageUrl, focalPointX, focalPointY, title, link, aspectRatio, }: import('./Image').ImageProps) => import("react/jsx-runtime").JSX.Element;
 };

@@ -1,2 +1,2 @@
-declare const SwiperSlider: () => void;
-export default SwiperSlider;
+declare const SliderScript: () => void;
+export default SliderScript;
