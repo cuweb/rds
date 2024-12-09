@@ -80,7 +80,6 @@
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.16.0",
     "react-quill": "2.0.0",
-    "swiper": "11.1.14",
     "yup": "1.4.0"
   },
   "devDependencies": {
