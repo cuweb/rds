@@ -56,8 +56,8 @@ const SliderScript = () => {
 
     currentIndex = nextSlideIndex - 1
 
-    sliderWrap.style.transition = 'transform 0.5s ease'
-    sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
+    sliderWrap.style.transition = 'none'
+    sliderWrap.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`
 
     setTimeout(() => {
       sliderWrap.style.transition = 'transform 0.5s ease'

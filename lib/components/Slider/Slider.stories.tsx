@@ -41,6 +41,7 @@ export const Primary: Story = {
                   focalPointY={focalPointY}
                   aspectRatio={aspectRatio}
                 />
+                {index}
               </>
             </Slider.Slide>
           )
