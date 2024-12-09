@@ -21,6 +21,9 @@ export const SliderWrapper = ({
     SliderScript()
   })
 
+  const arrowButtons = `bg-cu-black-50 text-cu-black-800 hover:bg-cu-red hover:text-white hover:bg-cu-red relative flex items-center justify-center rounded-md h-8 w-8 z-50`
+  const arrowIcons = `w-5 h-5 [&>path]:stroke-[2]`
+
   return (
     <div
       className="slider overflow-hidden"
@@ -33,14 +36,14 @@ export const SliderWrapper = ({
 
       {/* Slider Arrow */}
       <div className="flex align-items-center gap-3 justify-center mt-4">
-        <button className="slider__arrow slider__arrow--prev bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50">
+        <button className={`slider__arrow slider__arrow--prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
-          <ChevronLeftIcon className="w-8 h-8 [&>path]:stroke-[2]" aria-hidden="true" />
+          <ChevronLeftIcon className={arrowIcons} aria-hidden="true" />
         </button>
 
-        <button className="slider__arrow slider__arrow--next bg-cu-black-800 text-white hover:bg-cu-red text-2xl relative flex items-center justify-center rounded-full p-1 h-12 w-12 z-50">
+        <button className={`slider__arrow slider__arrow--next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
-          <ChevronRightIcon className="w-8 h-8 [&>path]:stroke-[2]" aria-hidden="true" />
+          <ChevronRightIcon className={arrowIcons} aria-hidden="true" />
         </button>
       </div>
     </div>
