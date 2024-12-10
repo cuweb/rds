@@ -70,33 +70,39 @@ const DoublePara = () => {
 export const BlockTesting = () => {
   return (
     <>
-      <FullBanner
-        as="div"
-        image="https://picsum.photos/id/20/1600/700"
-        justify="start"
-        opacity={70}
-        title="The nostalgia is real. The launch of the iPod revolutionized how the world consumes music on the move!"
-      >
-        <ButtonGroup>
-          <Button title="Apply Now" />
-          <Button color="grey" title="Request Information" />
-        </ButtonGroup>
+      <FullBanner as="div">
+        <FullBanner.Image>
+          <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
+        </FullBanner.Image>
+        <FullBanner.Content headerType="h1" title="The nostalgia is real.">
+          <p>
+            The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
+            revolutionized how the world consumes music on the move!
+          </p>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="grey" title="Request Information" />
+          </ButtonGroup>
+        </FullBanner.Content>
       </FullBanner>
 
       <SinglePara />
       <SinglePara />
 
-      <FullBanner
-        as="div"
-        image="https://picsum.photos/id/20/1600/700"
-        justify="start"
-        opacity={70}
-        title="The nostalgia is real. The launch of the iPod revolutionized how the world consumes music on the move!"
-      >
-        <ButtonGroup>
-          <Button title="Apply Now" />
-          <Button color="grey" title="Request Information" />
-        </ButtonGroup>
+      <FullBanner as="div">
+        <FullBanner.Image>
+          <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
+        </FullBanner.Image>
+        <FullBanner.Content headerType="h1" title="The nostalgia is real.">
+          <p>
+            The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
+            revolutionized how the world consumes music on the move!
+          </p>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="grey" title="Request Information" />
+          </ButtonGroup>
+        </FullBanner.Content>
       </FullBanner>
 
       <SinglePara />
@@ -377,17 +383,20 @@ export const BlockTesting = () => {
       <SinglePara />
       <SinglePara />
 
-      <FullBanner
-        as="div"
-        image="https://picsum.photos/id/20/1600/700"
-        justify="start"
-        opacity={70}
-        title="The nostalgia is real. The launch of the iPod revolutionized how the world consumes music on the move!"
-      >
-        <ButtonGroup>
-          <Button title="Apply Now" />
-          <Button color="grey" title="Request Information" />
-        </ButtonGroup>
+      <FullBanner as="div">
+        <FullBanner.Image>
+          <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
+        </FullBanner.Image>
+        <FullBanner.Content headerType="h1" title="The nostalgia is real.">
+          <p>
+            The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
+            revolutionized how the world consumes music on the move!
+          </p>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="grey" title="Request Information" />
+          </ButtonGroup>
+        </FullBanner.Content>
       </FullBanner>
 
       <SinglePara />
