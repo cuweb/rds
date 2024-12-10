@@ -15,6 +15,10 @@
   @apply !text-base bg-gray-300 !text-slate-500 border-slate-200 shadow-none !min-h-10;
 }
 
+.cu-autosuggest .css-13cymwt-control {
+  @apply min-h-[42px] rounded-md;
+}
+
 .cu-autosuggest .css-1mkvw8y,
 .cu-autosuggest .css-hlgwow,
 .cu-autosuggest .css-19bb58m {
@@ -27,4 +31,8 @@
 
 .cu-autosuggest .css-10wo9uf-option {
   @apply text-base;
+}
+
+.cu-autosuggest .css-1xc3v61-indicatorContainer {
+  @apply text-cu-black-800;
 }
