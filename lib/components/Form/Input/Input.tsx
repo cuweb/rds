@@ -15,7 +15,7 @@ export const Input = ({ ...props }: InputProps) => {
   const errorClass = useErrorClass(name)
 
   return (
-    <div className={`${fieldStyles.inputWrapper} flex items-stretch`}>
+    <div className={`${fieldStyles.input} flex items-stretch`}>
       {hasPrefix && hasPrefix}
       <Field
         type="text"

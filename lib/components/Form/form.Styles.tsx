@@ -12,8 +12,7 @@ export const textStyles = {
 }
 
 export const fieldStyles = {
-  inputWrapper: `border border-cu-black-200 rounded-md placeholder:text-cu-black-400 overflow-hidden`,
-  input: `border border-cu-black-200 placeholder:text-cu-black-400`,
+  input: `border border-cu-black-200 rounded-md placeholder:text-cu-black-400 overflow-hidden`,
   radioCheck: `flex items-center gap-2`,
   radioCheckRight: `flex items-center flex-row-reverse gap-2`,
   horizontalOptions: `flex flex-row flex-wrap gap-x-8 gap-y-2`,
