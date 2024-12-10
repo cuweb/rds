@@ -1,14 +1,21 @@
-import { justifyContentClasses, bgOpacityClasses } from '../../utils/propClasses';
-type justifyContentKeys = keyof typeof justifyContentClasses;
-type bgOpacityKeys = keyof typeof bgOpacityClasses;
 export interface FullBannerProps {
     children?: React.ReactNode;
     as?: 'section' | 'div';
-    title: string;
-    headerType?: 'h1' | 'h2';
-    image?: string;
-    justify?: justifyContentKeys;
-    opacity?: bgOpacityKeys;
 }
-export declare const FullBanner: ({ children, as, title, headerType, image, opacity, justify, }: FullBannerProps) => import("react/jsx-runtime").JSX.Element;
-export {};
+export declare const FullBannerWrapper: {
+    ({ children, as }: FullBannerProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+};
+export declare const FullBanner: {
+    ({ children, as }: FullBannerProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} & {
+    Content: {
+        ({ children, title, headerType, opacity, justify, }: import('./FullBannerContent').FullBannerContentProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+    Image: {
+        ({ children }: import('./FullBannerImage').FullBannerImageProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+};
