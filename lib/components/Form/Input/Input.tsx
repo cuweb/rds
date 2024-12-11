@@ -6,17 +6,25 @@ import useErrorClass from '../UseError'
 export interface InputProps extends FieldComponentProps {
   hasPrefix?: React.ReactNode
   hasSuffix?: React.ReactNode
+  disabled?: boolean
 }
 
 export const Input = ({ ...props }: InputProps) => {
-  const { name, hasPrefix, hasSuffix, ...rest } = props
+  const { name, hasPrefix, hasSuffix, disabled, ...rest } = props
 
   const errorClass = useErrorClass(name)
 
   return (
-    <div className={`${fieldStyles.input} ${fieldStyles.disabled} flex items-stretch`}>
+    <div className={`${fieldStyles.input} flex items-stretch`}>
       {hasPrefix && hasPrefix}
-      <Field type="text" id={name} name={name} className={`border-none rounded-md w-full ${errorClass}`} {...rest} />
+      <Field
+        type="text"
+        id={name}
+        name={name}
+        disabled={disabled}
+        className={`border-none w-full ${errorClass} ${disabled ? fieldStyles.disabled : ''} `}
+        {...rest}
+      />
       {hasSuffix && hasSuffix}
     </div>
   )
