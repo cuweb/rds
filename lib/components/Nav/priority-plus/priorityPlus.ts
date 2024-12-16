@@ -20,6 +20,7 @@ enum El {
   PrimaryNavWrapper = 'primary-nav-wrapper',
   PrimaryNav = 'primary-nav',
   OverflowNav = 'overflow-nav',
+  OverflowNavNew = 'overflow-nav-new',
   ToggleBtn = 'toggle-btn',
   NavItems = 'nav-item',
 }
@@ -45,6 +46,7 @@ interface ElementRefs {
     [El.PrimaryNav]: HTMLElement
     [El.NavItems]: HTMLLIElement[]
     [El.OverflowNav]: HTMLElement
+    [El.OverflowNavNew]: HTMLElement
     [El.ToggleBtn]: HTMLElement
   }
 }
@@ -68,6 +70,7 @@ interface Options {
     [El.PrimaryNavWrapper]: string[]
     [El.PrimaryNav]: string[]
     [El.OverflowNav]: string[]
+    [El.OverflowNavNew]: string[]
     [El.ToggleBtn]: string[]
     [El.NavItems]: string[]
   }
@@ -84,6 +87,7 @@ const defaultOptions: Options = {
     [El.PrimaryNavWrapper]: ['p-plus__primary-wrapper'],
     [El.PrimaryNav]: ['p-plus__primary'],
     [El.OverflowNav]: ['p-plus__overflow'],
+    [El.OverflowNavNew]: ['p-plus__overflow-new'],
     [El.ToggleBtn]: ['p-plus__toggle-btn'],
     [El.NavItems]: ['p-plus__primary-nav-item'],
   },
@@ -226,7 +230,13 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     el.primary[El.PrimaryNav] = original.querySelector(`[${dv(El.PrimaryNav)}]`) as HTMLElement
     el.primary[El.NavItems] = Array.from(original.querySelectorAll(`[${dv(El.NavItems)}]`)) as HTMLLIElement[]
     el.primary[El.OverflowNav] = original.querySelector(`[${dv(El.OverflowNav)}]`) as HTMLElement
+    el.primary[El.OverflowNavNew] = document.querySelector(`[${dv(El.OverflowNavNew)}]`) as HTMLElement
     el.primary[El.ToggleBtn] = original.querySelector(`[${dv(El.ToggleBtn)}]`) as HTMLElement
+
+    console.log(original, el.primary, 'targetElem')
+
+    // el.primary[El.OverflowNav] = document.querySelector('.cu-nav__overflow') as HTMLElement
+    // el.primary[El.ToggleBtn] = document.querySelector('.cu-nav__toggle-btn') as HTMLElement
 
     el.clone[El.Main] = cloned.querySelector(`[${dv(El.Main)}]`) as HTMLElement
     el.clone[El.NavItems] = Array.from(cloned.querySelectorAll(`[${dv(El.NavItems)}]`)) as HTMLElement[]
@@ -242,10 +252,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     // By default every item belongs in the primary nav, since the intersection
     // observer will run on-load anyway.
     el.clone[El.NavItems].forEach((item) => itemMap.set(item, El.PrimaryNav))
-    el.primary[El.NavItems].forEach((item) => {
-      console.log('item', item)
-      itemMap.set(item, El.OverflowNav)
-    })
 
     const parent = targetElem.parentNode as HTMLElement
     parent.replaceChild(container, targetElem)
@@ -347,7 +353,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     // Update the navs to reflect the new changes
     ;([El.PrimaryNav, El.OverflowNav] as NavType[]).forEach(updateNav)
-    console.log('coming here on each nav change')
 
     eventHandler.trigger(
       createItemsChangedEvent({
