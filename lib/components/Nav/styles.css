@@ -169,3 +169,7 @@ button.p-plus__toggle-btn.rotated svg {
     @apply pl-12;
   }
 }
+
+.p-plus__primary-nav-item--hidden {
+  @apply hidden;
+}

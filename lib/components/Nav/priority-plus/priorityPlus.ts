@@ -233,8 +233,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     el.primary[El.OverflowNavNew] = document.querySelector(`[${dv(El.OverflowNavNew)}]`) as HTMLElement
     el.primary[El.ToggleBtn] = original.querySelector(`[${dv(El.ToggleBtn)}]`) as HTMLElement
 
-    console.log(original, el.primary, 'targetElem')
-
     // el.primary[El.OverflowNav] = document.querySelector('.cu-nav__overflow') as HTMLElement
     // el.primary[El.ToggleBtn] = document.querySelector('.cu-nav__toggle-btn') as HTMLElement
 
@@ -341,7 +339,21 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
    * We use this opportunity to check which type of nav the items belong to.
    */
   function onIntersect({ target, intersectionRatio }: IntersectionObserverEntry) {
-    inst.itemMap.set(target, intersectionRatio < 0.99 ? El.OverflowNav : El.PrimaryNav)
+    // inst.itemMap.set(target, intersectionRatio < 0.99 ? El.OverflowNav : El.PrimaryNav)
+
+    const primaryNavItem = getElemMirror(el.clone[El.NavItems], el.primary[El.NavItems]).get(target as HTMLElement)
+
+    let overflowNavNewItem = Array.from(el.primary[El.OverflowNavNew].children).find((element) => {
+      return element.innerHTML.includes(target.innerHTML)
+    })
+
+    if (intersectionRatio < 0.99) {
+      overflowNavNewItem?.classList.remove(`${classNames[El.NavItems][0]}--hidden`)
+      primaryNavItem?.classList.add(`${classNames[El.NavItems][0]}--hidden`)
+    } else {
+      overflowNavNewItem?.classList.add(`${classNames[El.NavItems][0]}--hidden`)
+      primaryNavItem?.classList.remove(`${classNames[El.NavItems][0]}--hidden`)
+    }
   }
 
   /**
