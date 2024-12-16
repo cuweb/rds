@@ -113,6 +113,7 @@ export const iconNames = [
   { value: 'landmark', label: 'Landmark' },
   { value: 'laptop-mobile', label: 'Laptop mobile' },
   { value: 'laptop', label: 'Laptop' },
+  { value: 'leaf-maple', label: 'Leaf maple' },
   { value: 'leaf', label: 'Leaf' },
   { value: 'light-emergency-on', label: 'Light emergency on' },
   { value: 'lightbulb', label: 'Lightbulb' },
