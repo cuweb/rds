@@ -242,6 +242,10 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     // By default every item belongs in the primary nav, since the intersection
     // observer will run on-load anyway.
     el.clone[El.NavItems].forEach((item) => itemMap.set(item, El.PrimaryNav))
+    el.primary[El.NavItems].forEach((item) => {
+      console.log('item', item)
+      itemMap.set(item, El.OverflowNav)
+    })
 
     const parent = targetElem.parentNode as HTMLElement
     parent.replaceChild(container, targetElem)
@@ -343,6 +347,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     // Update the navs to reflect the new changes
     ;([El.PrimaryNav, El.OverflowNav] as NavType[]).forEach(updateNav)
+    console.log('coming here on each nav change')
 
     eventHandler.trigger(
       createItemsChangedEvent({

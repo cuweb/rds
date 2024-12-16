@@ -19,10 +19,6 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: 'Admissions',
-  },
-  {
-    href: '#',
     title: 'Students',
     submenu: [
       {
@@ -108,6 +104,30 @@ export const NavDataSingle = [
   {
     href: '#',
     title: 'Alumni',
+  },
+  {
+    href: '#',
+    title: 'Admissions1',
+  },
+  {
+    href: '#',
+    title: 'Admissions2',
+  },
+  {
+    href: '#',
+    title: 'Admissions3',
+  },
+  {
+    href: '#',
+    title: 'Admissions4',
+  },
+  {
+    href: '#',
+    title: 'Admissions4',
+  },
+  {
+    href: '#',
+    title: 'Admissions4',
   },
 ]
 
