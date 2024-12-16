@@ -1,6 +1,6 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
-import { Container } from '../../layouts/Container/Container'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
@@ -9,7 +9,7 @@ import { TextImage } from '../../components/TextImage/TextImage'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta
@@ -59,7 +59,7 @@ export const WithColumns: Story = {
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage>
             <TextImage.Content headerType="h1" title="Columned Content">
               <p>
@@ -69,79 +69,79 @@ export const WithColumns: Story = {
               </p>
             </TextImage.Content>
           </TextImage>
-
-          <h2>Header Two</h2>
-          <DoublePara />
-
-          <h3>Header Three</h3>
-          <SinglePara />
-
-          <Column cols="2">
-            <Column.Content>
-              <DoublePara />
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-              <DoublePara />
-            </Column.Content>
-          </Column>
-
-          <Container isGrey>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-            <SinglePara />
-          </Container>
-
-          <SinglePara />
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-          <SinglePara />
-
-          <Container isGrey>
-            <SinglePara />
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-            <SinglePara />
-          </Container>
-
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-            </Column.Content>
-          </Column>
         </Section>
+
+        <h2>Header Two</h2>
+        <DoublePara />
+
+        <h3>Header Three</h3>
+        <SinglePara />
+
+        <Column cols="2">
+          <Column.Content>
+            <DoublePara />
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+            <DoublePara />
+          </Column.Content>
+        </Column>
+
+        <Section isGrey>
+          <SinglePara />
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+          <SinglePara />
+        </Section>
+
+        <SinglePara />
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+        </Column>
+        <SinglePara />
+
+        <Section isGrey>
+          <SinglePara />
+          <Column cols="2">
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+            <Column.Content>
+              <SinglePara />
+            </Column.Content>
+          </Column>
+          <SinglePara />
+        </Section>
+
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+        </Column>
+
+        <Column cols="2">
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+          <Column.Content>
+            <SinglePara />
+          </Column.Content>
+        </Column>
       </Main>
 
       <FooterStandard />

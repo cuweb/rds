@@ -1,7 +1,10 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { WideImage } from './WideImage'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
+import { Main } from '../../layouts/Main/Main'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof WideImage> = {
   title: 'Components/Wide Image',
@@ -16,129 +19,49 @@ const meta: Meta<typeof WideImage> = {
 export default meta
 type Story = StoryObj<typeof WideImage>
 
-export const Default: Story = {}
-
-Default.args = {
-  title: 'Wide image with defaults',
-}
-
-export const WithButtons: Story = {
+export const Primary: Story = {
   args: {
-    ...Default.args,
-    title: 'Wide image with buttons, praesentium architecto a distinctio aut reprehenderit ducimus',
-    children: (
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" color="dark-grey" />
-      </ButtonGroup>
-    ),
-  },
-}
-
-export const BgDark: Story = {
-  args: {
-    ...Default.args,
-    title: 'Wide image with dark background',
-    image: '',
-    isType: 'dark',
-    children: (
-      <>
-        <p>
-          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-          reprehenderit ducimus.
-        </p>
-        {/* <WideImage.Signup /> */}
-        <ButtonGroup>
-          <Button title="Apply Now" />
-          <Button title="Request Information" color="dark-grey" />
-        </ButtonGroup>
-      </>
-    ),
-  },
-}
-
-export const BgImage: Story = {
-  args: {
-    ...Default.args,
-    title: 'Wide image with image background',
-    isType: 'image',
-    image: 'https://picsum.photos/1600/700',
-    children: (
-      <ButtonGroup>
-        <Button title="Apply Now" />
-        <Button title="Request Information" isType="outline" color="white" />
-      </ButtonGroup>
-    ),
-  },
-}
-
-export const HeaderOne: Story = {
-  args: {
-    ...Default.args,
-    title: 'Wide image as banner with h1',
+    as: 'section',
+    title: 'Wide Image',
+    image: 'https://picsum.photos/id/381/600/400',
     headerType: 'h1',
-    children: (
-      <>
-        <p>
-          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-          reprehenderit ducimus.
-        </p>
-        <ButtonGroup>
-          <Button title="Apply Now" />
-          <Button title="Request Information" color="dark-grey" />
-        </ButtonGroup>
-      </>
-    ),
+    maxWidth: '7xl',
+    opacity: 60,
+    focalPointX: 50,
+    focalPointY: 50,
+    isType: 'light',
+    hasWave: false,
+    hasScroll: false,
+  },
+  render: (args) => {
+    return (
+      <Main>
+        <WideImage {...args}>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button title="Request Information" color="dark-grey" />
+          </ButtonGroup>
+        </WideImage>
+      </Main>
+    )
   },
 }
 
-export const SignupLight: Story = {
+export const InsideSection: Story = {
   args: {
-    ...Default.args,
-    title: 'Subscribe to Our Newsletter',
-    children: (
-      <>
-        <p>
-          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-          reprehenderit ducimus.
-        </p>
-        <WideImage.Signup />
-      </>
-    ),
+    ...Primary.args,
+    as: 'div',
   },
-}
-
-export const SignupDark: Story = {
-  args: {
-    ...Default.args,
-    title: 'Subscribe to Our Newsletter',
-    isType: 'dark',
-    children: (
-      <>
-        <p>
-          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-          reprehenderit ducimus.
-        </p>
-        <WideImage.Signup />
-      </>
-    ),
-  },
-}
-
-export const SignupImage: Story = {
-  args: {
-    ...Default.args,
-    title: 'Subscribe to Our Newsletter',
-    isType: 'image',
-    image: 'https://picsum.photos/1600/700',
-    children: (
-      <>
-        <p>
-          Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-          reprehenderit ducimus.
-        </p>
-        <WideImage.Signup />
-      </>
-    ),
+  render: (args) => {
+    return (
+      <Section>
+        <WideImage {...args}>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button title="Request Information" color="dark-grey" />
+          </ButtonGroup>
+        </WideImage>
+      </Section>
+    )
   },
 }

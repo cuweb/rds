@@ -5,12 +5,12 @@ import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../components/Nav/Nav'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
-import { PageHeaders } from '../../components/PageHeaders/PageHeaders'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { Figure } from '../../components/Figure/Figure'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta
@@ -63,7 +63,7 @@ export const PeopleHeader: Story = {
 
       <Main>
         <Section hasProse>
-          <PageHeaders header="Master Jedi Greely Wrinkle" pronoun="He/Him">
+          <PageHeader header="Master Jedi Greely Wrinkle" pronoun="He/Him">
             <Figure size="sm" align="right" hasShadow>
               <img
                 src="https://fastly.picsum.photos/id/1062/400/400.jpg?hmac=zaTGri35k94fGnPFBesQ7tRVfjy6BUCtXDFQdWQ3r-k"
@@ -72,7 +72,7 @@ export const PeopleHeader: Story = {
                 height="133"
               />
             </Figure>
-            <PageHeaders.People
+            <PageHeader.People
               jobTitle="Jedi Master & Jedi Council Member"
               degrees="Certificate, Padawan Academy of Jedi Arts"
               building="Onraed"
@@ -86,7 +86,7 @@ export const PeopleHeader: Story = {
               twitter="#"
               facebook="#"
             />
-          </PageHeaders>
+          </PageHeader>
 
           <DoublePara />
           <SinglePara />

@@ -1,5 +1,7 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Quote } from './Quote'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Quote> = {
   title: 'Components/Quote',
@@ -15,7 +17,7 @@ const meta: Meta<typeof Quote> = {
 export default meta
 type Story = StoryObj<typeof Quote>
 
-export const Default: Story = {
+export const Primary: Story = {
   args: {
     cite: 'John Doe',
     children: (
@@ -24,18 +26,14 @@ export const Default: Story = {
         reprehenderit ducimus.
       </p>
     ),
+    graphic: 'border',
+    isCenter: false,
   },
-}
-
-export const QuoteMark: Story = {
-  args: {
-    cite: 'John Doe',
-    graphic: 'quote',
-    children: (
-      <p>
-        Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus.
-      </p>
-    ),
+  render: (args) => {
+    return (
+      <Section>
+        <Quote {...args} />
+      </Section>
+    )
   },
 }

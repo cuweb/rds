@@ -1,5 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
+import { Section } from '../../layouts/Section/Section'
+import { PageHeader } from '../PageHeader/PageHeader'
 import { Description } from './Description'
 import { DescriptionData as descMeta } from '../../data/DescriptionData'
 
@@ -7,6 +9,7 @@ const meta: Meta<typeof Description> = {
   title: 'Components/Description',
   component: Description,
   tags: ['autodocs'],
+  argTypes: {},
   parameters: {
     controls: {
       sort: 'requiredFirst',
@@ -17,96 +20,79 @@ const meta: Meta<typeof Description> = {
 export default meta
 type Story = StoryObj<typeof Description>
 
-export const Stacked: Story = {}
-Stacked.args = {
-  children: <Description.Meta term={descMeta[0].term}>{descMeta[0].details}</Description.Meta>,
-}
-
-export const Columns: Story = {}
-Columns.args = {
-  children: (
-    <Description.Meta term={descMeta[0].term} useColumns>
-      {descMeta[0].details}
-    </Description.Meta>
+export const Primary: Story = {
+  render: (args) => (
+    <Section>
+      <Description {...args}>
+        <Description.Meta term={descMeta[0].term}>{descMeta[0].details}</Description.Meta>
+      </Description>
+    </Section>
   ),
 }
 
-export const Accordion: Story = {}
-Accordion.args = {
-  children: <Description.Accordion term={descMeta[0].term}>{descMeta[0].details}</Description.Accordion>,
+export const Columns: Story = {
+  render: (args) => (
+    <Section>
+      <Description {...args}>
+        <Description.Meta term={descMeta[0].term} useColumns>
+          {descMeta[0].details}
+        </Description.Meta>
+      </Description>
+    </Section>
+  ),
+}
+
+export const Accordion: Story = {
+  render: (args) => (
+    <Section>
+      <Description {...args}>
+        <Description.Accordion term={descMeta[0].term}>{descMeta[0].details}</Description.Accordion>
+      </Description>
+    </Section>
+  ),
 }
 
 export const MultipleStacked: Story = {
-  render: () => (
-    <>
-      <Description>
+  render: (args) => (
+    <Section>
+      <PageHeader as="h2" header="Description header" size="md" />
+      <Description {...args}>
         {descMeta.map((item) => (
           <Description.Meta key={item?.id} term={item?.term}>
-            <p>
-              Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-              voluptatem non.
-            </p>
-            <p>
-              Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec
-              elit ultricies, sed tempus diam dignissim.
-            </p>
-            <p>
-              Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel
-              orci vulputate, eget vulputate neque porttitor.
-            </p>
+            {item?.details}
           </Description.Meta>
         ))}
       </Description>
-    </>
+    </Section>
   ),
 }
 
 export const MultipleColumns: Story = {
-  render: () => (
-    <>
-      <Description>
+  render: (args) => (
+    <Section>
+      <PageHeader as="h2" header="Description header" size="md" />
+      <Description {...args}>
         {descMeta.map((item) => (
           <Description.Meta key={item?.id} term={item?.term} useColumns>
-            <p>
-              Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-              voluptatem non.
-            </p>
-            <p>
-              Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec
-              elit ultricies, sed tempus diam dignissim.
-            </p>
-            <p>
-              Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel
-              orci vulputate, eget vulputate neque porttitor.
-            </p>
+            {item?.details}
           </Description.Meta>
         ))}
       </Description>
-    </>
+    </Section>
   ),
 }
 
 export const MultipleAccordions: Story = {
-  render: () => (
-    <>
-      <Description>
+  render: (args) => (
+    <Section>
+      <PageHeader as="h2" header="Description header" size="md" />
+      <Description {...args}>
         {descMeta.map((item) => (
           <Description.Accordion key={item?.id} term={item?.term}>
-            <p>
-              Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
-              voluptatem non.
-            </p>
-            <p>
-              Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo. Vivamus imperdiet turpis nec
-              elit ultricies, sed tempus diam dignissim.
-            </p>
-            <p>
-              Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse condimentum magna vel
-              orci vulputate, eget vulputate neque porttitor.
-            </p>
+            {item?.details}
           </Description.Accordion>
         ))}
       </Description>
-    </>
+    </Section>
   ),
 }

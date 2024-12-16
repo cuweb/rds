@@ -2,11 +2,8 @@ import React from 'react'
 
 export interface MainProps {
   children: React.ReactNode
-  hasOverlap?: boolean
 }
 
-export const Main = ({ children, hasOverlap }: MainProps) => {
-  const overlapStyles = hasOverlap ? 'z-20 cu-overlap' : ''
-
-  return <main className={`cu-main relative ${overlapStyles}`}>{children}</main>
+export const Main = ({ children }: MainProps) => {
+  return <main className="cu-main cu-section-5xl cu-browsers-edge py-4 md:py-6 lg:py-12">{children}</main>
 }

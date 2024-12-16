@@ -15,8 +15,5 @@ const meta: Meta<typeof PageLoader> = {
 export default meta
 type Story = StoryObj<typeof PageLoader>
 
-export const Primary: Story = {}
-
-Primary.args = {
-  children: 'PageLoader component',
-}
+export const Default: Story = {}
+Default.args = {}

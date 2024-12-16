@@ -10,12 +10,12 @@ export const FooterStandardLinks = {
   ],
   Academics: [
     { name: 'Schedules & Dates', href: 'https://carleton.ca/academics/schedules-dates/' },
-    { name: 'Bightspace', href: 'https://brightspace.carleton.ca/' },
+    { name: 'Brightspace', href: 'https://brightspace.carleton.ca/' },
     { name: 'Library', href: 'https://library.carleton.ca/' },
     { name: 'Support Services', href: 'https://carleton.ca/academics/support/' },
     { name: 'Calendars', href: 'https://calendar.carleton.ca/' },
-    { name: 'Carleton Online', href: 'https://carleton.ca/cuol/' },
-    { name: 'Discovery Centre', href: 'https://carleton.ca/discoverycentre/' },
+    { name: 'Carleton Online', href: 'https://carleton.ca/online/' },
+    { name: 'Future Learning Lab', href: 'https://carleton.ca/tls/future-learning-lab/' },
   ],
   Students: [
     { name: 'Career Services', href: 'https://carleton.ca/career/' },
@@ -33,7 +33,7 @@ export const FooterStandardLinks = {
     { name: 'Parking', href: 'https://carleton.ca/parking/' },
     { name: 'Safety', href: 'https://carleton.ca/safety/' },
     { name: 'Dining Services', href: 'https://dining.carleton.ca/' },
-    { name: 'Clubs & Societies', href: 'https://cusaonline.ca/clubs/' },
+    { name: 'Clubs & Societies', href: 'https://www.cusaclubs.ca/' },
   ],
   Ravens: [
     { name: 'Giving to Carleton', href: 'https://futurefunder.carleton.ca/' },

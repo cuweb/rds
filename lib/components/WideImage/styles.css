@@ -1,5 +1,20 @@
-.cu-wideimage-content > *:not(h1):not(h2):not(.cu-buttongroup):not(.cu-wideimage-signup) {
-  @apply w-full max-w-3xl;
+.cu-wideimage .cu-pageheader > *:last-child {
+  @apply mb-4;
+}
+
+.cu-wideimage .cu-pageheader > h1:last-child,
+.cu-wideimage .cu-pageheader > h2:last-child {
+  @apply mb-2;
+}
+
+.cu-wideimage-dark,
+.cu-wideimage-image,
+.cu-wideimage-wave {
+  @apply text-white;
+}
+
+.cu-wideimage {
+  @apply text-center;
 }
 
 .cu-wideimage .cu-buttongroup,
@@ -24,10 +39,12 @@
   @apply text-cu-black-200;
 }
 
-.cu-wideimage-image input:first-of-type {
+.cu-wideimage-image input:first-of-type,
+.cu-wideimage-wave input:first-of-type {
   @apply text-white ring-white focus:ring-white/50 border-white/40 bg-cu-black-800/90 focus:bg-cu-black-900/40;
 }
 
-.cu-wideimage-image input::placeholder {
+.cu-wideimage-image input::placeholder,
+.cu-wideimage-wave input::placeholder {
   @apply text-cu-black-200;
 }

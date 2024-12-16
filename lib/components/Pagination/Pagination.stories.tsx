@@ -1,5 +1,7 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Pagination } from './Pagination'
+import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Components/Pagination',
@@ -13,21 +15,23 @@ const meta: Meta<typeof Pagination> = {
 }
 
 export default meta
-
 type Story = StoryObj<typeof Pagination>
 
-export const Default: Story = () => {
-  return <Pagination totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
+export const Primary: Story = {
+  args: {
+    totalCount: 48,
+    siblingCount: 1,
+    pageSize: 5,
+    callback: () => undefined,
+    callbackPage: () => undefined,
+    hasBorder: false,
+    hasSpacing: false,
+  },
+  render: (args) => {
+    return (
+      <Section>
+        <Pagination {...args} />
+      </Section>
+    )
+  },
 }
-
-export const Border: Story = () => {
-  return <Pagination hasBorder hasSpacing totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
-}
-
-export const Spacing: Story = () => {
-  return <Pagination hasBorder totalCount={48} siblingCount={1} pageSize={5} callback={() => undefined} />
-}
-
-Default.storyName = 'Default item'
-Border.storyName = 'With Top Border'
-Spacing.storyName = 'With Spacing'

@@ -1,25 +1,33 @@
 import React from 'react'
 import { ColumnContent } from './ColumnContent'
-import { rdsGridColumns, rdsGridSpacing, rdsMaxWidth } from '../../utils/optionClasses'
+import { gridColumnClasses, gridGapClasses, maxWidthClasses } from '../../utils/propClasses'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
+type gridColumnKeys = keyof typeof gridColumnClasses
+type gridGapKeys = keyof typeof gridGapClasses
 
 export interface ColumnProps {
   children: React.ReactNode
-  maxWidth?: 'full' | '5xl' | '7xl'
-  gridGap?: '0' | '5' | '10'
-  cols?: '1' | '2' | '3' | '4' | '1/3' | '2/3'
+  maxWidth?: maxWidthKeys
+  cols?: gridColumnKeys
+  gridGap?: gridGapKeys
+  reverse?: boolean
 }
 
 const styles = {
-  column: `cu-column not-contained mx-auto grid`,
+  column: `cu-column cu-component not-contained mx-auto grid`,
 }
 
-export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1' }: ColumnProps) => {
+export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1', reverse }: ColumnProps) => {
+  const reverseGrid = reverse && (cols === '1/3' || cols === '2/3') ? 'cu-column--reverse' : ''
+
   return (
     <div
       className={`
         ${styles.column}
-        ${rdsGridColumns[cols]}
-        ${rdsMaxWidth[maxWidth]} ${rdsGridSpacing[gridGap]}
+        ${gridColumnClasses[cols]}
+        ${maxWidthClasses[maxWidth]} ${gridGapClasses[gridGap]}
+        ${reverseGrid}
       `}
     >
       {children}
@@ -30,3 +38,5 @@ export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols
 export const Column = Object.assign(ColumnWrapper, {
   Content: ColumnContent,
 })
+
+ColumnWrapper.displayName = 'Column'

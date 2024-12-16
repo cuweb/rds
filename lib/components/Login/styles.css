@@ -1,0 +1,15 @@
+.cu-login--start {
+  @apply mr-auto;
+}
+
+.cu-login--center {
+  @apply mx-auto;
+}
+
+.cu-login--end {
+  @apply ml-auto;
+}
+
+.cu-login .cu-buttongroup {
+  @apply mt-6;
+}

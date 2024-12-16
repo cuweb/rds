@@ -1,0 +1,27 @@
+.cu-callout .cu-pageheader {
+  @apply md:mb-6;
+}
+
+.cu-callout--end .cu-pageheader h2:after {
+  @apply left-auto right-px;
+}
+
+.cu-callout .cu-buttongroup {
+  @apply mb-0;
+}
+
+.cu-callout--center {
+  @apply text-center;
+}
+
+.cu-callout--center .cu-buttongroup {
+  @apply justify-center;
+}
+
+.cu-callout--end {
+  @apply text-right justify-end;
+}
+
+.cu-callout--end .cu-buttongroup {
+  @apply justify-end;
+}

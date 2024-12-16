@@ -31,9 +31,9 @@ const userNoImage = {
 
 type Story = StoryObj<typeof Avatar>
 
-export const Default: Story = {}
+export const Primary: Story = {}
 
-Default.args = {
+Primary.args = {
   user: { ...user },
   onClick: () => {
     alert('I am an alert ')
@@ -44,7 +44,7 @@ export const FullCircle: Story = {}
 
 FullCircle.args = {
   user: { ...user },
-  rounded: 'full',
+  isCircle: true,
   onClick: () => {
     alert('I am an alert ')
   },
@@ -76,13 +76,13 @@ export const SizesSquare: Story = {
 export const SizesRounded: Story = {
   render: () => (
     <div className="grid gap-8">
-      <Avatar user={userNoImage} size="xs" rounded="full" />
-      <Avatar user={userNoImage} size="sm" rounded="full" />
-      <Avatar user={userNoImage} size="md" rounded="full" />
-      <Avatar user={userNoImage} size="lg" rounded="full" />
-      <Avatar user={userNoImage} size="xl" rounded="full" />
-      <Avatar user={userNoImage} size="2xl" rounded="full" />
-      <Avatar user={userNoImage} size="4xl" rounded="full" />
+      <Avatar user={userNoImage} size="xs" isCircle />
+      <Avatar user={userNoImage} size="sm" isCircle />
+      <Avatar user={userNoImage} size="md" isCircle />
+      <Avatar user={userNoImage} size="lg" isCircle />
+      <Avatar user={userNoImage} size="xl" isCircle />
+      <Avatar user={userNoImage} size="2xl" isCircle />
+      <Avatar user={userNoImage} size="4xl" isCircle />
     </div>
   ),
 }

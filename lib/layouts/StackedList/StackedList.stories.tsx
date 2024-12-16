@@ -1,4 +1,7 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
+import { Main } from '../Main/Main'
+import { Section } from '../Section/Section'
 import { StackedList } from './StackedList'
 
 const meta: Meta<typeof StackedList> = {
@@ -19,82 +22,27 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: `Stacked list component`,
-  hasShadow: false,
-  hasBorder: false,
-}
-
-export const HasShadow: Story = {
-  render: () => (
-    <>
-      <StackedList hasShadow>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-      </StackedList>
-    </>
-  ),
-}
-
-export const HasBorder: Story = {
-  render: () => (
-    <>
-      <StackedList hasBorder>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-      </StackedList>
-    </>
-  ),
-}
-
-export const ShadowBorder: Story = {
-  name: 'Shadow & Border',
-  render: () => (
-    <>
-      <StackedList hasShadow hasBorder>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-      </StackedList>
-    </>
-  ),
-}
-
-export const WithHeader: Story = {
-  render: () => (
-    <>
-      <StackedList header="Stacked list header" hasShadow hasBorder>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-      </StackedList>
-    </>
-  ),
+  as: 'ul',
+  cols: '2',
+  listType: 'posts',
+  maxWidth: '5xl',
 }
 
 export const WithListItems: Story = {
-  render: () => (
-    <>
-      <StackedList hasShadow hasBorder>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-      </StackedList>
-    </>
-  ),
-}
-
-export const Testing: Story = {
-  render: () => (
-    <>
-      <StackedList header="Post Listing" hasShadow>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-        <li className="p-6">This is a list item</li>
-      </StackedList>
-      <StackedList header="Container" as="div" cols="1" listType="toc" hasShadow>
-        <p>This is a div container</p>
-      </StackedList>
-    </>
-  ),
+  args: {
+    ...Primary.args,
+  },
+  render: (args) => {
+    return (
+      <Main>
+        <Section>
+          <StackedList {...args}>
+            <li className="p-6">This is a list item</li>
+            <li className="p-6">This is a list item</li>
+            <li className="p-6">This is a list item</li>
+          </StackedList>
+        </Section>
+      </Main>
+    )
+  },
 }

@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
@@ -12,7 +13,7 @@ import { Column } from '../../layouts/Column/Column'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
-  title: 'Examples/Layouts',
+  title: 'Prototypes/Layouts',
 }
 
 export default meta
@@ -23,11 +24,11 @@ const SinglePara = () => {
     <>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
-        condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
-        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
-        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
-        sapien in urna.
+        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies,{' '}
+        <a href="https://carleton.ca">sed tempus diam dignissim</a>. Suspendisse condimentum magna vel orci vulputate,
+        eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in
+        vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget
+        suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
       </p>
     </>
   )
@@ -115,13 +116,12 @@ export const BasicMarkup: Story = {
       <Nav>
         <Nav.Primary>
           <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
-          <Nav.Menu menu={NavDataSingle} />
           <Nav.Aside menu={NavAsideData} />
         </Nav.Primary>
       </Nav>
 
       <Main>
-        <Section hasProse>
+        <Section>
           <TextImage>
             <TextImage.Content headerType="h1" title="Basic Markup">
               <p>
@@ -133,7 +133,14 @@ export const BasicMarkup: Story = {
           </TextImage>
 
           <h2>Heading Two</h2>
+
           <SinglePara />
+
+          <p>
+            Nobis voluptatem dolorum et eum <code>doloremque cupiditate</code> velit. Praesentium architecto a
+            distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas
+            dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+          </p>
 
           <StackedList header="Table of Contents" as="div" cols="1" listType="toc" offset="right" hasShadow>
             <ToC />

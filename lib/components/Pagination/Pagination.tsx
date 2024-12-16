@@ -15,6 +15,7 @@ export interface PaginationProps {
   siblingCount: number
   pageSize: number
   callback: (k: [number?, number?]) => void
+  callbackPage: (page: number) => void
 }
 
 export const Pagination = ({
@@ -24,11 +25,11 @@ export const Pagination = ({
   siblingCount,
   pageSize,
   callback,
+  callbackPage,
 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1)
 
   const paginationRange = usePagination(totalCount, pageSize, siblingCount, currentPage)
-
   const onNext = () => {
     if (currentPage < lastPage) {
       setCurrentPage(currentPage + 1)
@@ -54,7 +55,8 @@ export const Pagination = ({
 
   useEffect(() => {
     callback([startResult, endResult])
-  }, [startResult, endResult, callback])
+    callbackPage(currentPage)
+  }, [startResult, endResult, callback, callbackPage, currentPage])
 
   if (totalCount > currentPage * pageSize) {
     endResult = currentPage * pageSize
@@ -70,7 +72,7 @@ export const Pagination = ({
 
   return (
     <div
-      className={`cu-pagination not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
+      className={`cu-pagination cu-component not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
     >
       <div className="flex justify-between flex-1 sm:hidden">
         <button onClick={onPrevious} className={`${styles.mobileButtons}`}>

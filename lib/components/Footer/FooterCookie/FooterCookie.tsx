@@ -13,7 +13,7 @@ export const IsCookieExpired = (cookieName: string) => {
     const expirationDate = new Date(cookieValue)
     return expirationDate.getTime() <= Date.now()
   }
-  return true
+  return false
 }
 
 export const SetCookie = (cookieName: string) => {
@@ -29,7 +29,7 @@ export const SetCookie = (cookieName: string) => {
 }
 
 export const FooterCookie = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const checkCookieExpired = IsCookieExpired('cookieConsent')
@@ -43,9 +43,9 @@ export const FooterCookie = () => {
 
   return (
     <div
-      className={`${
-        isVisible ? '' : 'hidden'
-      } fixed mx-auto max-w-7xl p-6 border-4 rounded-md shadow-lg bg-cu-black-25 bottom-6 right-6 left-6 border-white cu-cookie-notice`}
+      className={`hidden fixed z-50 mx-auto max-w-7xl p-6 border-4 rounded-md shadow-lg bg-cu-black-25 bottom-6 right-6 left-6 border-white cu-cookie-notice ${
+        isVisible ? '!block' : ''
+      }`}
     >
       <div className="gap-5 text-center md:item-center md:text-left md:flex">
         <p className="max-w-3xl text-sm text-cu-black-600 md:text-base">

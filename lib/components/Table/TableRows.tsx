@@ -8,23 +8,24 @@ type TableRowsProps = {
   columns: ColumnDefinitionType[]
   striped: boolean
   range: number[]
+  enableRowHeader: boolean
 }
 
-const TableRows = ({ data, columns, striped }: TableRowsProps) => {
+const TableRows = ({ data, columns, striped, enableRowHeader }: TableRowsProps) => {
   const stripedStyles = striped ? `${styles.striped} ${styles.borders}` : styles.borders
 
   const rows = data.map((row, index) => (
     <tr className={stripedStyles} key={`row-${index}`}>
-      {columns.map((column, index2) => {
+      {columns.map((column, index) => {
         // Directly checking and typecasting to string before checking length
         const cellContent = row[column.key]
-        const isLongText = typeof cellContent === 'string' && cellContent.length > 20
 
-        return (
-          <td
-            key={`cell-${index2}`}
-            className={`${styles.tableGlobal} ${styles.tableBodyRow} ${isLongText ? styles.cellWidth : ''}`}
-          >
+        return enableRowHeader && index == 0 ? (
+          <th scope="row" key={`cell-${index}`} className={`${styles.tableGlobal} ${styles.tableBodyRow}`}>
+            {cellContent}
+          </th>
+        ) : (
+          <td key={`cell-${index}`} className={`${styles.tableGlobal} ${styles.tableBodyRow}`}>
             {cellContent}
           </td>
         )

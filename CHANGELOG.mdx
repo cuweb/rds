@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Prefix the change with one of these keywords:
 
 - _Added_: for new features.
+- _Breaking_: for higher visibility of breaking changes
 - _Changed_: for changes in existing functionality.
 - _Deprecated_: for soon-to-be removed features.
 - _Removed_: for now removed features.
@@ -15,6 +16,693 @@ Prefix the change with one of these keywords:
 - _Security_: in case of vulnerabilities.
 
 ## [Unreleased]
+
+## [0.18.13]
+
+### Fixed
+
+- Form Autosuggest style
+- Form Datetime clear icon style
+- Form Input style with prefix and suffix
+- Table horizontal scroll
+
+### Changed
+
+- Changed spacing on `cu-no-browsers-edge` utility class
+
+## [0.18.12]
+
+### Changed
+
+- Created full banner subcomponents and abstracted out image
+
+## [0.18.11]
+
+### Added
+
+- Custom Slider
+
+### Fixed
+
+- Figure component to display the image size for retina display
+
+### Changed
+
+- Refactored Full Banner to remove bg image, position and improve mobile experience
+
+##[0.18.10]
+
+### Changed
+
+- autosuggest initial value and adding onchange when coming from rest
+
+## [0.18.9]
+
+### Changed
+
+- updating the a tag color to cu-red-700 to help with the accessibility
+
+## [0.18.8]
+
+### Changed
+
+- updated the date picker component to have clearable and other attributes for hr project
+
+## [0.18.7]
+
+### Added
+
+- Input Addon Component for before and after element in Input Form Field
+- Loader for Pagination , Events and calendar
+
+## [0.18.6]
+
+### Changed
+
+- Nav component icon style for desktop and mobile with and without title
+
+### Changed
+
+- Added clear button and autocomplete to date time picker component and fixed validation error for input fields.
+
+### Fixed
+
+- Footer style issue to text align center in
+- Z-index issue in ImageCover
+- Overflow issue in WideWave
+
+## [0.18.5]
+
+### Changed
+
+- Improved responsiveness of land acknowledgement
+
+## [0.18.4]
+
+### Added
+
+- Placeholder style for light prose
+- Loader for Event and People Page header
+- Land acknowledgement in footer
+
+### Fix
+
+- Position issue when badges used in news cards
+
+## [0.18.3]
+
+### Changed
+
+- Image order added to image grid based on col span prop
+
+## [0.18.2]
+
+### Added
+
+- Instagram logo and ORCID logo to social icons in PageHeader for people
+
+### Changed
+
+- Twitter icon with X in PageHeader for people
+
+## [0.18.1]
+
+### Changed
+
+- colSpanClasses and rowSpanClasses utilities classes
+
+## [0.18.0]
+
+### Added
+
+- Timeline Component
+
+## [0.17.8]
+
+### Fixed
+
+- Style issue in WideImage component
+
+## [0.17.7]
+
+### Fixed
+
+- Style issue in WideImage component
+- Spacing style to exclude WideImage block's max width
+
+## [0.17.6]
+
+### Added
+
+- Add cover, badges, and technology icons to README
+- Style to remove margin from empty elements
+
+### Changed
+
+- Table header type to accept ReactNodes
+
+### Fixed
+
+- Auto suggest component's style
+- Adding classes to table component
+- Accordion Content style by removing extra padding in mobile screen
+- Margin classes for the PageHeader with and without children
+
+### Fixed
+
+- Form auto suggest menu, options style
+
+### Refactored
+
+- ImageGrid block to use aspect ratio and bg images
+
+## [0.17.5]
+
+### Changed
+
+- Wide Wave markup for ravens bg
+
+## [0.17.4]
+
+### Added
+
+- ORCID prop to PageHeader.People
+- WideWave to export
+
+## [0.17.3]
+
+### Changed
+
+- Spacing on wide image component
+
+### [0.17.2]
+
+### Added
+
+- Added custom column option to table
+- Opacity option to Image Cover
+
+## [0.17.1]
+
+### Fixed
+
+- Issues with bg wave on image cover
+
+## [0.17.0]
+
+### Added
+
+- bgImageNames added to compiled package
+
+## [0.16.9]
+
+### Changed
+
+- Repeating wave graphic for Image Cover
+
+## [0.16.8]
+
+### Added
+
+- Images for Image Cover component
+- Script to generate array of images
+
+### Changed
+
+- Spacing on full banner and `cu-no-browsers-edge` util class
+- Made bg wave on Wide Wave repeat after 1200px wide
+- Conditional left and right spacing on Wide Wave
+- Spacing on subcomponents used in Wide Wave
+
+### Fixed
+
+- Issue in generate icons script
+
+## [0.16.7]
+
+### Changed
+
+- Width type on full banner
+
+## [0.16.6]
+
+### Change
+
+- Replaced full width with min width on full banner content overlay
+
+### Fixed
+
+- Reset Autosuggest on form reset
+
+## [0.16.6]
+
+### Changed
+
+- Added header type prop to Full Banner
+
+## [0.16.5]
+
+### Changed
+
+- Content styles on Full Banner
+
+## [0.16.4]
+
+### Changed
+
+- Testimonial no longer forces quote component to be used
+
+## [0.16.3]
+
+### Removed
+
+- Removed Lexical Editor
+- Removed AWS util function
+
+## [0.16.2]
+
+### Fixed
+
+- Autosuggest form field style
+
+### Added
+
+- Row header option to table
+
+### Change
+
+- Discovery Center footer link changed to Future Learning Lab
+
+## [0.16.1]
+
+### Change
+
+- Wide image padding-y for light and dark backgrounds
+- Reduced spacing between list items in basic content
+
+## [0.16.0]
+
+### Added
+
+- New Component: Call Out
+- New Component: Placeholder
+- New Component: Full Banner
+- New Component: Testimonial
+- New Component: Text & Media (to replace Text & Image)
+- New Layout Component: Image Cover
+- New Layout Component: Wide Wave
+- Data: to pass admissions content into card views
+- Example Layouts: Block testing
+- Description: added `cu-component` class
+- Figure: added rounded prop
+- Image Grid: added `cu-component` class
+- Login: added maxWidth prop
+- Modal: added Section wrapper for children
+- Page Header: added styles for ul, ol, li to over ride prose
+- Section: added `proseType` prop for dark or light
+- Tailwind Theme: included RDS Tailwind Theme in config
+
+### Changed
+
+- Alert: updated stories
+- Badge Group: updated stories
+- Button Group: updated stories
+- Calendar: updated stories
+- Calendar: removed nested `not-prose` class
+- Card: updated stories
+- Description: updated stories
+- Embed: updated stories
+- Figure: updated stories
+- Filter: updated stories
+- Forbidden 403: updated stories
+- Editor: changed `prose-rds` to `prose-dark`
+- Image Grid: updated stories
+- Listing: updated stories
+- Login: updated stories
+- Modal: updated stories
+- Multiday Calendar: updated stories
+- Multiday Calendar: removed nested `not-prose` class
+- Not Found 404: updated stories
+- Page Header: updated stories
+- Page Header: updated conditional content sizes
+- Page Header: removed text colors to fallback on prose-dark or prose-light
+- Page Header Events: replaced a tags with `useLinkContext`
+- Page Header Events: updated prose class for light font
+- Page Header Events: removed prose class from ul wrappers
+- Page Header People: replaced a tags with `useLinkContext`
+- Page Header People: updated prose class for light font
+- Page Header People: removed prose class from ul wrappers
+- Pagination: updated stories
+- Quote: updated stories
+- Search Input: updated stories
+- Table: updated stories
+- Wide Image: updated stories
+- Spacing: consecutive components, first child full banner
+- Prose: removed `prose-rds` and replaced with `prose-dark` and `prose-light`
+- Vite Config: added `cjs` file to build, updated globals
+
+### Deprecated
+
+- Text & Image component
+
+### Fixed
+
+- Forbidden 403: isCenter toggle properly aligns left
+- Not Found 404: isCenter toggle properly aligns left
+
+### Removed
+
+- Main: remove prose class
+- Section: remove `noProse` prop
+
+## [0.15.3]
+
+### Added
+
+- A new Custom Form Error Component has been added
+- AWS image upload to lexical editor
+- AWS utility functions
+
+## [0.15.2]
+
+### Added
+
+- **Badge:** new colors - white, black/60, white/60
+- **Badge:** rounded prop
+- **BadgeGroup:** props for absolute position and top, bottom, left, right
+- **propClasses:** several new prop classes
+- **Styles:** new util class to remove spacing, allow component to go to browsers edge
+- **Styles:** updated global spacing between components
+
+## [0.15.1]
+
+### Added
+
+- DescriptionLoader with all types
+- Keys to the TableLoader row
+- adding the location and location picker components. Also using them to create a form component
+
+## [0.15.0]
+
+### Breaking
+
+- **Alerts:** textSize prop renamed to size, options changed to use sm, md, lg
+- **Badges:** no longer accepts children, new text prop is required, new link is optional
+- **ButtonGroup:** gap prop requires string, previously integer
+- **Card:** refactored icon card, now required assetPath prop
+- **Description:** removed isSmall and hasBorder props
+- **Listing:** refactored icon card, now required assetPath prop
+- **PageHeadersLoader:** refactored name to be singular as PageHeaderLoader
+- **PageHeaders:** refactored name to be singular as PageHeader
+- **WideImage**: remove isType wave in lieu of hasWave boolean
+
+### Added
+
+- **propClasses:** bgOpacityClasses and justifyContentClasses
+- **propClasses:** add new gridGapClasses options
+- **propClasses:** add figureSizeClasses and figureAlignClasses
+- **propClasses:** added as part of package
+- New Component for 404 and 403 named NotFound404 and Forbidden403
+
+### Changed
+
+- **Alerts:** conditional text and icon sizes
+- **Alerts:** updated stories file for improved examples
+- **Badge:** changed styles to use cu-badge--color classes
+- **Badge:** replaced text prop with children to allow for links
+- **Badge:** update stories file for improved examples
+- **BadgeGroup:** updated stories file for improved examples
+- **Button**: merged prop groups
+- **Button**: updated stories file for improved examples
+- **Calendar**: updated stories file for improved examples
+- **Card**: updated max width and hover styles
+- **Card**: updated stories file for improved examples
+- **Description:**: updated styles to increase consistency
+- **Description**: updated stories file for improved examples
+- **Dialogue**: updated stories file for improved examples
+- **Embed**: moved iframe styles to a class
+- **Figure:** removed isRound prop
+- **Figure**: updated stories file for improved examples
+- **Filter**: updated deprecated headless ui components
+- **Filter**: updated stories file for improved examples
+- **Footers**: updated stories file for improved examples
+- **ImageGrid**: refactored text overlay, improved prop checks, added new styles
+- **ImageGrid**: updated stories file for improved examples
+- **Listing**: updated stories file for improved examples
+- **Modal**: increased padding
+- **MultiDayCalendar**: updated stories file for improved examples
+- **Nav**: changed aside li's for donate and apply to buttons
+- **PageHeader**: updated stories file for improved examples
+- **Pagination**: updated stories file for improved examples
+- **Quote**: updated stories file for improved examples
+- **SearchInput**: updated stories file for improved examples
+- **Table**: updated stories file for improved examples
+- **TextImage**: updated stories file for improved examples
+- **WideImage**: updated styles based on conditions
+- **WideImage**: updated stories file for improved examples
+- **Prose Classes:** replaced utilities for cu-prose classes
+
+## [0.14.0]
+
+### Added
+
+- Validation for Lexical Editor using Yup
+- Props for Form's media input to disable preview and set up form value properly
+
+### Changed
+
+- WideImage scrollTo and isType wave conditional styles
+- Renamed global class cu-component-spacing to be cu-component
+- First and last child spacing on Article component to match Section
+- Set prose to true on Main as default
+- noProse prop set to false by default on Main and Section, removed from other components
+- Updated story files for all layout components, updating story display and configuration options
+- Upgraded react-datepicker and lexical packages
+- Black color option for buttons
+- isWhite prop for PageHeaders text
+
+### Fixed
+
+- Undefined document error in Lexical
+- Issues with FieldArray component and props in Lexical Editor
+
+## [0.13.0]
+
+### Added
+
+- New props to wide image to accommodate scroll to and wave graphic
+- Image upload to lexical editor in form component
+- Image Grid component
+
+## [0.12.1]
+
+### Added
+
+- Added image preview option for image formik component
+
+### Fixed
+
+- Add space between calendar and button
+- Update to dialog component to fix centering
+- Update Formik form's inline component ( radio, checkbox ) style
+- Fixed Formik wrapper and control with proper typescript
+
+## [0.12.0]
+
+### Fixed
+
+- Update a function to check Lexical editor empty states
+
+### Added
+
+- Added error messaging to Login component
+
+## [0.11.1]
+
+### Added
+
+- Added SoundCloud subcomponent to Embed component
+- Added prop to pagination to handle paginated endpoints
+
+### Fixed
+
+- Fix for the table initial sorting
+
+## [0.11.0]
+
+### Added
+
+- Updating the table to have default sort options
+- Added white space no break in event header contact info
+- Added hidden label prop to add form fields
+- Added FieldArray Container
+
+### Changed
+
+- Updating the dialog in the main.tsx to be used in components outside this project
+- Updated output of single and multi day events in page header
+- Form.group to add the alignment prop and spacing
+
+## [0.10.7]
+
+### Added
+
+- Added helper text position option in form component
+- Added error class to inputs in form component
+
+### Fixed
+
+- helperpostop and disabled attributes in the form components
+- Passing all the prop of FormField from all form fields
+
+## [0.10.6]
+
+### Added
+
+- Icons: lightning bolt, stacked boxes, glasses
+
+## [0.10.5]
+
+### Changed
+
+- Changed prose stlye for page header event data and people title
+- TextImage top and bottom spacing
+- Updated TextImage style imports
+
+### Removed
+
+- Removed hasBorder prop from TextImage
+
+## [0.10.4]
+
+### Changed
+
+- Search component new name is SearchInput
+- Search component no longer uses Headless UI components
+- Nav component uses new version of Search component
+
+### Fixed
+
+- Max width on login component
+
+### Removed
+
+- Search Form component has been removed in favour of the Search component
+
+## [0.10.3]
+
+### Added
+
+- Dialog component to be used to prompt users with title and description text
+- Created new helper function to sanitize HTML using DOMPurify package
+- Search Form now includes subcomponents to show a list of results either on page or in a modal
+
+### Changed
+
+- Updated Modal component to only accept content as children or a prop.
+
+### Deprecated
+
+- isCenter prop on button, moving all alignment options to button group for greater control
+
+## [0.10.2]
+
+### Changed
+
+- Card and Listing image sizes to meet a 4/3 ratio
+
+## [0.10.1]
+
+### Changed
+
+- Page header event subcomponent start and end date logic
+- Removed button props in page header event subcomponent, allowed children instead
+
+## [0.10.0]
+
+### Changed
+
+- Section component, merging it with container
+- Refactored spacing on main, section, and various components
+
+### Deprecated
+
+- Container component
+
+## [0.9.16]
+
+### Added
+
+- Reverse prop for columns set at 1/3 or 2/3
+
+### Changed
+
+- PageHeader underline styles and spacing
+
+## [0.9.15]
+
+### Fixed
+
+- Fixed few component for the spacing
+
+## [0.9.14]
+
+### Added
+
+- Add new Login component
+
+### Changed
+
+- Update Login link in the Navigation component
+
+## [0.9.13]
+
+- Troy goofed and release without pulling from develop
+
+## [0.9.12]
+
+### Added
+
+- Block loader with height option in loading component
+- New icon assets
+- Global class for block spacing, applied to all components
+
+### Fixed
+
+- Page header to display loader for the content
+- Adjusted table loader cell height
+
+## [0.9.11]
+
+### Changed
+
+- peer dependencies
+
+## [0.9.10]
+
+### Changed
+
+- changed the location story to include the google api key as environment variable
+- adding cypress for component and E2E testing.
+- SearchForm: add the ability for custom placeholder text
+- isSticky config on Aside component
+
+### Fixed
+
+- Fixed cu-button class to remove hover underline
+- Fixed footer cookie condition to hide it when cookie existing
+- Fixed form components with formik and lexical editor
+
+## [0.9.9]
+
+### Changed
+
+- Upgrade footer and body classes to display footer at page bottom
+- Replaced children prop with text string in Badge component
+
+### Deprecated
+
+- Moving the dropdown and social share component to deprecated
 
 ## [0.9.8]
 
@@ -1379,3 +2067,11 @@ Prefix the change with one of these keywords:
 
 - Updated secret keys for Google Maps API
 - Renamed README.md to README.mdx
+
+### Changed
+
+- Updated onClick handlers for social login buttons to use single object handler
+
+### Changed
+
+- Made social login buttons optional on login page

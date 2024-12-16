@@ -20,22 +20,14 @@ export interface CardProps {
   leftBorder?: boolean
 }
 
-const cardStyles = {
-  shadow: `shadow-lg shadow-cu-black-100`,
-  shadowHover: `hover:shadow-lg hover:shadow-cu-black-200`,
-  center: `text-center`,
-  border: `border-l-8 border-l-cu-red`,
-  zoom: `group duration-300 ease-in hover:scale-[1.04]`,
-}
-
 export const CardWrapper = ({ children, isCenter, noHover, leftBorder }: CardProps) => {
-  const addRedBorder = leftBorder ? cardStyles.border : ''
-  const centerText = isCenter ? cardStyles.center : ''
-  const hoverStyles = noHover ? '' : `${cardStyles.shadowHover} ${cardStyles.zoom}`
+  const addRedBorder = leftBorder ? 'border-l-8 border-l-cu-red' : ''
+  const centerText = isCenter ? 'text-center' : ''
+  const hoverStyles = noHover ? '' : 'group duration-300 ease-in hover:scale-[1.02] hover:shadow-cu-black-200'
 
   return (
     <div
-      className={`not-prose cu-card rounded-lg @container md:max-w-lg flex flex-col gap-3 bg-white ${centerText} ${addRedBorder} ${cardStyles.shadow} ${hoverStyles}`}
+      className={`not-prose cu-card rounded-lg @container md:max-w-xl flex flex-col gap-3 bg-white shadow-lg shadow-cu-black-100 ${centerText} ${addRedBorder} ${hoverStyles}`}
     >
       {children}
     </div>
@@ -57,3 +49,5 @@ export const Card = Object.assign(CardWrapper, {
   PeopleMeta: CardPeopleMeta,
   Stats: CardStats,
 })
+
+CardWrapper.displayName = 'Card'

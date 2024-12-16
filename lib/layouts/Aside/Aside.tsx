@@ -1,19 +1,21 @@
 import React from 'react'
-import { rdsTopSpacing } from '../../utils/optionClasses'
 
 export interface AsideProps {
   children: React.ReactNode
   isSticky?: boolean
-  topSpace?: '5' | '10'
+  topSpace?: number
 }
 
-export const Aside = ({ children, isSticky, topSpace }: AsideProps) => {
-  const stickyClass = isSticky ? 'sticky' : ''
-  const topClass = topSpace ? rdsTopSpacing[topSpace] : ''
-
+export const Aside = ({ children, isSticky, topSpace = 0 }: AsideProps) => {
   return (
-    <aside className="cu-aside relative">
-      <div className={`${stickyClass} ${topClass}`}>{children}</div>
+    <aside className="relative cu-aside cu-prose">
+      {isSticky ? (
+        <div className="sticky" style={{ top: `${topSpace}px` }}>
+          {children}
+        </div>
+      ) : (
+        children
+      )}
     </aside>
   )
 }

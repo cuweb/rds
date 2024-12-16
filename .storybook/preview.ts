@@ -16,10 +16,8 @@ const preview: Preview = {
         order: [
           'Get Started',
           ['Introduction', 'Changelog'],
-          'Examples',
-          ['Blocks', 'Layouts'],
-          'Projects',
-          ['Event Calendar', ['Homepage', 'Single Event']],
+          'Prototypes',
+          ['Layouts'],
           'Components',
           'Resources',
           'Layouts',

@@ -1,4 +1,3 @@
-import { styles } from './Embed.Styles'
 export interface EmbedVimeoProps {
   title: string
   url: string
@@ -18,7 +17,7 @@ export const EmbedVimeo = ({ title, url }: EmbedVimeoProps) => {
     <iframe
       title={title}
       src={embedURL}
-      className={`${styles.iframe}`}
+      className="cu-embed-iframe"
       allow="autoplay; fullscreen; picture-in-picture"
       allowFullScreen
     ></iframe>

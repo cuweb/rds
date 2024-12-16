@@ -16,8 +16,5 @@ export default meta
 
 type Story = StoryObj<typeof FooterCookie>
 
-export const Default: Story = () => {
-  return <FooterCookie />
-}
-
-Default.storyName = 'Default FooterCookie Banner'
+export const Primary: Story = {}
+Primary.args = {}

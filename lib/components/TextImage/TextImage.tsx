@@ -1,32 +1,25 @@
 import React from 'react'
 import { TextImageContent } from './TextImageContent'
-import { rdsMaxWidth, rdsFlexRow } from '../../utils/optionClasses'
-import { styles } from './TextImage.Styles'
+import { maxWidthClasses, flexRowClasses } from '../../utils/propClasses'
+
+type maxWidthKeys = keyof typeof maxWidthClasses
+type flexRowKeys = keyof typeof flexRowClasses
 
 export interface TextImageProps {
   children?: React.ReactNode
-  maxWidth?: '5xl' | '7xl' | 'max'
-  flexRow?: 'md' | 'lg'
-  hasBorder?: boolean
+  maxWidth?: maxWidthKeys
+  flexRow?: flexRowKeys
   flipX?: boolean
   flipYsm?: boolean
 }
 
-export const TextImageWrapper = ({
-  children,
-  maxWidth = '5xl',
-  flexRow = 'lg',
-  hasBorder,
-  flipX,
-  flipYsm,
-}: TextImageProps) => {
+export const TextImageWrapper = ({ children, maxWidth = '5xl', flexRow = 'lg', flipX, flipYsm }: TextImageProps) => {
   const flipXLayout = flipX ? 'lg:flex-row-reverse' : ''
   const flipYsmLayout = flipYsm ? 'flex-col-reverse sm:flex-row' : ''
-  const borderStyle = hasBorder ? styles.border : ''
 
   return (
     <div
-      className={`${styles.base} ${rdsMaxWidth[maxWidth]} ${rdsFlexRow[flexRow]} ${flipXLayout} ${flipYsmLayout} ${borderStyle}`}
+      className={`cu-textimage cu-component not-contained flex flex-col lg:flex-row gap-6 mx-auto lg:gap-10 ${maxWidthClasses[maxWidth]} ${flexRowClasses[flexRow]} ${flipXLayout} ${flipYsmLayout}`}
     >
       {children}
     </div>
@@ -36,3 +29,5 @@ export const TextImageWrapper = ({
 export const TextImage = Object.assign(TextImageWrapper, {
   Content: TextImageContent,
 })
+
+TextImageWrapper.displayName = 'TextImage'

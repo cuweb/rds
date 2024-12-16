@@ -34,3 +34,5 @@ export const Listing = Object.assign(ListingWrapper, {
   PeopleMeta: ListingPeopleMeta,
   Footer: ListingFooter,
 })
+
+ListingWrapper.displayName = 'Listing'

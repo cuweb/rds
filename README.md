@@ -1,16 +1,17 @@
 # Raven Design System
 
-![npm](https://img.shields.io/npm/v/@carletonuniversity/rds)
+[![npm](https://img.shields.io/npm/v/@carletonuniversity/rds)](https://www.npmjs.com/package/@carletonuniversity/rds) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Storybook](https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg)](https://github.com/storybooks/storybook) ![Repo Size](https://img.shields.io/github/repo-size/cuweb/rds)
 
 Raven Design System, better known as RDS, is Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language.
 
-## Build Tools
+## Technologies Used
 
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+![Storybook](https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ## Getting Started
 
@@ -38,6 +39,23 @@ Raven Design System, better known as RDS, is Carleton University’s design syst
 - `npm run format` - format files with prettier
 - `npm run lint` - check for errors with eslint
 - `npm run size` - compare compiled size against pre-defined limit
+
+## Component Testing
+
+Run Storybook and Cypress concurrently
+
+```
+npm run test
+```
+
+You can also run Storybook and Cypress individually by using the following commands in different terminal windows:
+
+- Run Storybook - `npm run storybook`
+- Run Cypress - `npx cypress Open`
+
+### Other Commands
+
+- Run tests in terminal while storybook is being launched - `npm run test:ci`
 
 ## Comment Linting
 

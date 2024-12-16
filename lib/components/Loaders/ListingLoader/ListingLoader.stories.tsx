@@ -6,6 +6,7 @@ import { ListingNewsLoader } from './ListingNewsLoader'
 import { ListingIconLoader } from './ListingIconLoader'
 import { ListingPeopleLoader } from './ListingPeopleLoader'
 import { ListingPageLoader } from './ListingPageLoader'
+import { ListingDescriptionLoader } from './ListingDescriptionLoader'
 
 const meta: Meta<typeof ListingNewsLoader> = {
   title: 'Components/Load Screens/Listing Loader',
@@ -23,7 +24,7 @@ type Story = StoryObj<typeof ListingNewsLoader>
 
 export const Default: Story = {
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingPageLoader />
     </StackedList>
   ),
@@ -32,7 +33,7 @@ export const Default: Story = {
 export const Event: Story = {
   name: 'Event Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingEventLoader />
     </StackedList>
   ),
@@ -41,7 +42,7 @@ export const Event: Story = {
 export const Icon: Story = {
   name: 'Icon Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingIconLoader />
     </StackedList>
   ),
@@ -50,7 +51,7 @@ export const Icon: Story = {
 export const News: Story = {
   name: 'News Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingNewsLoader />
     </StackedList>
   ),
@@ -59,7 +60,7 @@ export const News: Story = {
 export const Page: Story = {
   name: 'Page Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingPageLoader />
     </StackedList>
   ),
@@ -68,7 +69,7 @@ export const Page: Story = {
 export const People: Story = {
   name: 'People Listing Loader',
   render: () => (
-    <StackedList cols="1" hasShadow>
+    <StackedList cols="1">
       <ListingPeopleLoader />
     </StackedList>
   ),
@@ -77,9 +78,18 @@ export const People: Story = {
 export const TwoCol: Story = {
   name: 'Two Columns',
   render: () => (
-    <StackedList cols="2" hasShadow>
+    <StackedList cols="2">
       <ListingNewsLoader />
       <ListingNewsLoader />
+    </StackedList>
+  ),
+}
+
+export const Description: Story = {
+  name: 'Description Listing Loader',
+  render: () => (
+    <StackedList cols="1">
+      <ListingDescriptionLoader />
     </StackedList>
   ),
 }

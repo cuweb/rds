@@ -1,42 +1,31 @@
-import React from 'react'
+import { useLinkContext } from '../LinkProvider/useLinkContext'
+import { borderRadiusClasses } from '../../utils/propClasses'
+
+type borderRadiusKeys = keyof typeof borderRadiusClasses
 
 export interface BadgeProps {
-  children?: React.ReactNode
-  color?: 'green' | 'red' | 'yellow' | 'blue' | 'purple' | 'grey'
+  text: string
+  link?: string
+  rounded?: borderRadiusKeys
+  color?: 'grey' | 'white' | 'black80' | 'white80' | 'green' | 'red' | 'yellow' | 'blue' | 'purple'
   noWordBreak?: boolean
 }
 
-export const Badge = ({ children, color = 'grey', noWordBreak = false }: BadgeProps) => {
+export const Badge = ({ text, link, rounded = 'full', color = 'grey', noWordBreak = false }: BadgeProps) => {
+  const LinkComponent = useLinkContext()
   const wordBreakClass = noWordBreak ? 'whitespace-nowrap' : ''
-
-  // Set color classes
-  let badgeColor
-  switch (color) {
-    case 'green':
-      badgeColor = 'bg-green-50 text-green-800'
-      break
-    case 'red':
-      badgeColor = 'bg-red-50 text-red-800'
-      break
-    case 'yellow':
-      badgeColor = 'bg-yellow-50 text-yellow-800'
-      break
-    case 'blue':
-      badgeColor = 'bg-blue-50 text-blue-800'
-      break
-    case 'purple':
-      badgeColor = 'bg-purple-50 text-purple-800'
-      break
-    default:
-      badgeColor = 'bg-cu-black-50 text-cu-black-800'
-      break
-  }
 
   return (
     <p
-      className={`inline-flex px-3 py-1 text-xs font-semibold cu-badge not-prose rounded-full ${badgeColor} ${wordBreakClass}`}
+      className={`inline-flex cu-badge cu-badge--${color} not-prose ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
     >
-      {children}
+      {link ? (
+        <LinkComponent href={link} className="cursor-pointer block">
+          <span className="px-3.5 py-1.5 text-xs font-semibold block">{text}</span>
+        </LinkComponent>
+      ) : (
+        <span className="px-3.5 py-1.5 text-xs font-semibold block">{text}</span>
+      )}
     </p>
   )
 }

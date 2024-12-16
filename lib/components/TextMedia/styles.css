@@ -1,0 +1,79 @@
+.cu-section > .cu-textmedia:first-child {
+  @apply mb-6 md:mb-12;
+}
+
+.cu-section > .cu-textmedia:last-child {
+  @apply mb-0 md:mb-0;
+}
+
+.cu-textmedia-content {
+  @apply mb-0;
+}
+
+/* .cu-textmedia-content,
+.cu-textmedia-aside:not([class$='-auto']) {
+  @apply mb-0;
+} */
+
+.cu-textmedia-content > *:first-child,
+.cu-textmedia-aside:not([class$='-auto']) > *:first-child {
+  @apply mt-0;
+}
+
+.cu-textmedia-content > *:last-child,
+.cu-textmedia-aside:not([class$='-auto']) > *:last-child {
+  @apply mb-0;
+}
+
+/* Aside with Images */
+
+.cu-textmedia-aside img {
+  @apply rounded-lg;
+}
+
+.cu-textmedia-img-border-white img {
+  @apply border-white rounded-md;
+}
+
+.cu-textmedia-img-border-grey img {
+  @apply border-cu-black-50;
+}
+
+.cu-textmedia-img-border-sm img {
+  @apply border-2 border-solid;
+}
+
+.cu-textmedia-img-border-md img {
+  @apply border-4 border-solid;
+}
+
+.cu-textmedia-img-border-lg img {
+  @apply border-[6px] border-solid;
+}
+
+.cu-textmedia-img-border-xl img {
+  @apply border-8 border-solid;
+}
+
+/* .cu-textmedia-aside img {
+  @apply w-full h-auto;
+} */
+
+/* 
+* Section and non-section spacing
+*/
+/* :not(.cu-section) + .cu-textmedia {
+  @apply mt-6 md:mt-10;
+} */
+
+/* .cu-column--reverse > *:last-child {
+  @apply order-first md:order-none;
+}
+
+.cu-column-content > *:first-child {
+  @apply mt-0;
+}
+
+.cu-column-content > *:last-child {
+  @apply mb-0;
+} */
