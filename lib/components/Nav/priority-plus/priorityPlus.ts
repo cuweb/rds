@@ -265,7 +265,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
       // We need to do it for both, as layout is affected
       ;[el.primary[El.ToggleBtn], el.clone[El.ToggleBtn]].forEach((btn) => {
         btn.innerHTML = processTemplate(options.innerToggleTemplate, {
-          toggleCount: el.primary[El.OverflowNav].children.length,
+          toggleCount: countVisibleChildren(el.primary[El.OverflowNavNew]),
           totalCount: el.clone[El.NavItems].length,
         })
       })
@@ -371,7 +371,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     // Update the navs to reflect the new changes
     // ;([El.PrimaryNav] as NavType[]).forEach(updateNav)
-    ;([El.OverflowNav] as NavType[]).forEach(updateNav)
+    // ;([El.OverflowNav] as NavType[]).forEach(updateNav)
 
     eventHandler.trigger(
       createItemsChangedEvent({

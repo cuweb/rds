@@ -12,13 +12,16 @@
   left: 0;
   width: calc(100% - 5px);
   pointer-events: none;
+  /* margin-top: 10px; */
   visibility: hidden;
 }
 .p-plus--clone,
 .p-plus--clone .p-plus__primary-wrapper {
   overflow: hidden;
 }
-.p-plus--is-showing-overflow .p-plus__overflow {
+.p-plus--is-showing-overflow .p-plus__overflow,
+.p-plus--is-showing-overflow .p-plus__overflow-new,
+.cu-nav__overflow-nav-new {
   display: block;
 }
 .p-plus:not(.p-plus--is-showing-toggle) .p-plus__toggle-btn {
@@ -44,12 +47,15 @@
 .p-plus__primary > li {
   flex: 1 0 auto;
 }
-.p-plus__overflow {
+.p-plus__overflow,
+.p-plus__overflow-new,
+.cu-nav__overflow-nav-new {
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
 }
+
 .p-plus__toggle-btn {
   flex-shrink: 0;
 }
