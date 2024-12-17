@@ -107,27 +107,27 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: '7 Admissions1',
+    title: '7 Admissions',
   },
   {
     href: '#',
-    title: '8 Admissions2',
+    title: '8 Admissions',
   },
   {
     href: '#',
-    title: '9 Admissions3',
+    title: '9 Admissions',
   },
   {
     href: '#',
-    title: '10 Admissions4',
+    title: '10 Admissions',
   },
   {
     href: '#',
-    title: '11 Admissions5',
+    title: '11 Admissions',
   },
   {
     href: '#',
-    title: '12 Admissions6',
+    title: '12 Admissions',
   },
 ]
 

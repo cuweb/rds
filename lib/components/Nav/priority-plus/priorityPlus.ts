@@ -87,7 +87,7 @@ const defaultOptions: Options = {
     [El.PrimaryNavWrapper]: ['p-plus__primary-wrapper'],
     [El.PrimaryNav]: ['p-plus__primary'],
     [El.OverflowNav]: ['p-plus__overflow'],
-    [El.OverflowNavNew]: ['p-plus__overflow-new'],
+    [El.OverflowNavNew]: ['cu-nav__overflow-nav-new'],
     [El.ToggleBtn]: ['p-plus__toggle-btn'],
     [El.NavItems]: ['p-plus__primary-nav-item'],
   },
@@ -339,7 +339,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
    * We use this opportunity to check which type of nav the items belong to.
    */
   function onIntersect({ target, intersectionRatio }: IntersectionObserverEntry) {
-    // inst.itemMap.set(target, intersectionRatio < 0.99 ? El.OverflowNav : El.PrimaryNav)
+    inst.itemMap.set(target, intersectionRatio < 0.99 && El.PrimaryNav)
 
     const primaryNavItem = getElemMirror(el.clone[El.NavItems], el.primary[El.NavItems]).get(target as HTMLElement)
 
@@ -356,6 +356,12 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     }
   }
 
+  function countVisibleChildren(navElement: HTMLElement): number {
+    return Array.from(navElement.children).filter(
+      (child) => !child.classList.contains(`${classNames[El.NavItems][0]}--hidden`),
+    ).length
+  }
+
   /**
    * The IO callback, which collects intersection events.
    */
@@ -364,11 +370,12 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     events.forEach(onIntersect)
 
     // Update the navs to reflect the new changes
-    ;([El.PrimaryNav, El.OverflowNav] as NavType[]).forEach(updateNav)
+    // ;([El.PrimaryNav] as NavType[]).forEach(updateNav)
+    ;([El.OverflowNav] as NavType[]).forEach(updateNav)
 
     eventHandler.trigger(
       createItemsChangedEvent({
-        overflowCount: el.primary[El.OverflowNav].children.length,
+        overflowCount: countVisibleChildren(el.primary[El.OverflowNavNew]),
       }),
     )
 
@@ -387,8 +394,10 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   function setOverflowNavOpen(open = true) {
     const openClass = `${classNames[El.Main][0]}--${StateModifiers.OverflowVisible}`
     el.primary[El.Main].classList[open ? 'add' : 'remove'](openClass)
-    el.primary[El.OverflowNav].setAttribute('aria-hidden', open ? 'false' : 'true')
+    el.primary[El.OverflowNavNew].setAttribute('aria-hidden', open ? 'false' : 'true')
+    el.primary[El.OverflowNavNew].classList[open ? 'add' : 'remove']('cu-nav__overflow-nav-new--open')
     el.primary[El.ToggleBtn].setAttribute('aria-expanded', open ? 'true' : 'false')
+    el.primary[El.ToggleBtn].classList[open ? 'add' : 'remove']('p-plus__toggle-btn--open')
 
     eventHandler.trigger(open ? createShowOverflowEvent() : createHideOverflowEvent())
 
