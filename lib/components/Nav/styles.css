@@ -209,7 +209,7 @@ button.p-plus__toggle-btn.rotated svg {
 }
 
 .p-plus__primary-nav-item--hidden {
-  @apply hidden;
+  @apply !hidden;
 }
 
 .cu-nav__overflow-nav-new.p-plus--is-showing-overflow {

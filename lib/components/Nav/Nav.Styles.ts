@@ -1,5 +1,5 @@
 export const NavMenuItemWrapperStyles = {
-  menuWrapper: `relative flex items-center grow-0 min-h-8 pr-3 last:pr-0`,
+  menuWrapper: `relative flex items-center grow-0 min-h-8 pr-3 last:pr-0 p-plus__primary-nav-item`,
   subMenuWrapper: `block text-sm font-medium text-cu-black-600 border-b border-b-cu-black-50 last:border-b-0`,
 }
 
