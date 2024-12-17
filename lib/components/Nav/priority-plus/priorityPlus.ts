@@ -20,12 +20,11 @@ enum El {
   PrimaryNavWrapper = 'primary-nav-wrapper',
   PrimaryNav = 'primary-nav',
   OverflowNav = 'overflow-nav',
-  OverflowNavNew = 'overflow-nav-new',
   ToggleBtn = 'toggle-btn',
   NavItems = 'nav-item',
 }
 
-type NavType = El.PrimaryNav | El.OverflowNav
+type NavType = El.PrimaryNav
 
 enum StateModifiers {
   ButtonVisible = 'is-showing-toggle',
@@ -46,7 +45,6 @@ interface ElementRefs {
     [El.PrimaryNav]: HTMLElement
     [El.NavItems]: HTMLLIElement[]
     [El.OverflowNav]: HTMLElement
-    [El.OverflowNavNew]: HTMLElement
     [El.ToggleBtn]: HTMLElement
   }
 }
@@ -70,7 +68,6 @@ interface Options {
     [El.PrimaryNavWrapper]: string[]
     [El.PrimaryNav]: string[]
     [El.OverflowNav]: string[]
-    [El.OverflowNavNew]: string[]
     [El.ToggleBtn]: string[]
     [El.NavItems]: string[]
   }
@@ -87,7 +84,6 @@ const defaultOptions: Options = {
     [El.PrimaryNavWrapper]: ['p-plus__primary-wrapper'],
     [El.PrimaryNav]: ['p-plus__primary'],
     [El.OverflowNav]: ['p-plus__overflow'],
-    [El.OverflowNavNew]: ['cu-nav__overflow-nav-new'],
     [El.ToggleBtn]: ['p-plus__toggle-btn'],
     [El.NavItems]: ['p-plus__primary-nav-item'],
   },
@@ -166,12 +162,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
           class="${cn(El.ToggleBtn)}"
           aria-expanded="false"
         >${processTemplate(options.innerToggleTemplate)}</button>
-        <${targetElem.tagName}
-          ${dv(El.OverflowNav)}
-          class="${cn(El.OverflowNav)}"
-          aria-hidden="true"
-        >
-        </${targetElem.tagName}>
       </div>
     `
   }
@@ -229,12 +219,8 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     el.primary[El.Main] = original.querySelector(`[${dv(El.Main)}]`) as HTMLElement
     el.primary[El.PrimaryNav] = original.querySelector(`[${dv(El.PrimaryNav)}]`) as HTMLElement
     el.primary[El.NavItems] = Array.from(original.querySelectorAll(`[${dv(El.NavItems)}]`)) as HTMLLIElement[]
-    el.primary[El.OverflowNav] = original.querySelector(`[${dv(El.OverflowNav)}]`) as HTMLElement
-    el.primary[El.OverflowNavNew] = document.querySelector(`[${dv(El.OverflowNavNew)}]`) as HTMLElement
+    el.primary[El.OverflowNav] = document.querySelector(`[${dv(El.OverflowNav)}]`) as HTMLElement
     el.primary[El.ToggleBtn] = original.querySelector(`[${dv(El.ToggleBtn)}]`) as HTMLElement
-
-    // el.primary[El.OverflowNav] = document.querySelector('.cu-nav__overflow') as HTMLElement
-    // el.primary[El.ToggleBtn] = document.querySelector('.cu-nav__toggle-btn') as HTMLElement
 
     el.clone[El.Main] = cloned.querySelector(`[${dv(El.Main)}]`) as HTMLElement
     el.clone[El.NavItems] = Array.from(cloned.querySelectorAll(`[${dv(El.NavItems)}]`)) as HTMLElement[]
@@ -265,7 +251,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
       // We need to do it for both, as layout is affected
       ;[el.primary[El.ToggleBtn], el.clone[El.ToggleBtn]].forEach((btn) => {
         btn.innerHTML = processTemplate(options.innerToggleTemplate, {
-          toggleCount: countVisibleChildren(el.primary[El.OverflowNavNew]),
+          toggleCount: countVisibleChildren(el.primary[El.OverflowNav]),
           totalCount: el.clone[El.NavItems].length,
         })
       })
@@ -343,7 +329,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     const primaryNavItem = getElemMirror(el.clone[El.NavItems], el.primary[El.NavItems]).get(target as HTMLElement)
 
-    let overflowNavNewItem = Array.from(el.primary[El.OverflowNavNew].children).find((element) => {
+    let overflowNavNewItem = Array.from(el.primary[El.OverflowNav].children).find((element) => {
       return element.innerHTML.includes(target.innerHTML)
     })
 
@@ -371,11 +357,11 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     // Update the navs to reflect the new changes
     // ;([El.PrimaryNav] as NavType[]).forEach(updateNav)
-    // ;([El.OverflowNav] as NavType[]).forEach(updateNav)
+    // ;([El.OverflowNav1] as NavType[]).forEach(updateNav)
 
     eventHandler.trigger(
       createItemsChangedEvent({
-        overflowCount: countVisibleChildren(el.primary[El.OverflowNavNew]),
+        overflowCount: countVisibleChildren(el.primary[El.OverflowNav]),
       }),
     )
 
@@ -394,10 +380,9 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   function setOverflowNavOpen(open = true) {
     const openClass = `${classNames[El.Main][0]}--${StateModifiers.OverflowVisible}`
     el.primary[El.Main].classList[open ? 'add' : 'remove'](openClass)
-    el.primary[El.OverflowNavNew].setAttribute('aria-hidden', open ? 'false' : 'true')
-    el.primary[El.OverflowNavNew].classList[open ? 'add' : 'remove']('cu-nav__overflow-nav-new--open')
+    el.primary[El.OverflowNav].setAttribute('aria-hidden', open ? 'false' : 'true')
+    el.primary[El.OverflowNav].classList[open ? 'add' : 'remove']('cu-nav__overflow-nav-new--open')
     el.primary[El.ToggleBtn].setAttribute('aria-expanded', open ? 'true' : 'false')
-    el.primary[El.ToggleBtn].classList[open ? 'add' : 'remove']('p-plus__toggle-btn--open')
 
     eventHandler.trigger(open ? createShowOverflowEvent() : createHideOverflowEvent())
 

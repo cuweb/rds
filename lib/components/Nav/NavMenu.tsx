@@ -13,7 +13,7 @@ export const NavMenu = ({ menu }: navMenuProps) => {
           <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
         ))}
       </ul>
-      <ul data-overflow-nav-new="" className="cu-nav__overflow-nav-new" aria-hidden="true">
+      <ul data-overflow-nav="" className="p-plus__overflow" aria-hidden="true">
         {menu.map((menuItem: ImenuItem, index: number) => (
           <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
         ))}
