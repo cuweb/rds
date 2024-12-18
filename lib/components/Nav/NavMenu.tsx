@@ -17,11 +17,11 @@ export const NavMenu = ({ menu }: navMenuProps) => {
               ))}
             </ul>
           </div>
-          <button data-toggle-btn="" className="p-plus__toggle-btn" aria-expanded="false">
+          <button className="p-plus__toggle-btn" data-toggle-btn="" aria-expanded="false">
             Browse
           </button>
         </div>
-        <ul data-overflow-nav="" className="overflow-nav p-plus__overflow" aria-hidden="true">
+        <ul className="p-plus__overflow" data-overflow-nav="" aria-hidden="true">
           {menu.map((menuItem: ImenuItem, index: number) => (
             <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
           ))}

@@ -151,33 +151,15 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   }
 
   /**
-   * Clones the target menu and enhances it with additional properties, such
-   * as data attributes and classes.
+   * Enhance a menu list-item with classes/attributes.
    */
-  function cloneNav(elem: HTMLElement): HTMLElement {
-    const targetClone = elem.cloneNode(true) as HTMLElement
-    enhanceOriginalMenu(targetClone)
+  function enhanceNavItem(Nav: HTMLLIElement) {
+    const navItems = Array.from(Nav.children) as HTMLLIElement[]
 
-    const navItems = Array.from(targetClone.children) as HTMLLIElement[]
-    navItems.forEach(enhanceOriginalNavItem)
-
-    return targetClone
-  }
-
-  /**
-   * Enhance the original list element with classes/attributes.
-   */
-  function enhanceOriginalMenu(elem: HTMLElement) {
-    elem.classList.add(...classNames[El.PrimaryNav])
-    elem.setAttribute(dv(El.PrimaryNav), '')
-  }
-
-  /**
-   * Enhance an original menu list-item with classes/attributes.
-   */
-  function enhanceOriginalNavItem(elem: HTMLLIElement) {
-    elem.classList.add(...classNames[El.NavItems])
-    elem.setAttribute(dv(El.NavItems), '')
+    navItems.forEach((item) => {
+      item.classList.add(...classNames[El.NavItems])
+      item.setAttribute(dv(El.NavItems), '')
+    })
   }
 
   /**
@@ -198,12 +180,13 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     // Establish references. By this point the menu is fully built.
     el.primary[El.Main] = original.querySelector(`[${dv(El.Main)}]`) as HTMLElement
     el.primary[El.PrimaryNav] = original.querySelector(`[${dv(El.PrimaryNav)}]`) as HTMLElement
-    el.primary[El.NavItems] = Array.from(original.querySelectorAll(`.p-plus__primary-nav-item`)) as HTMLLIElement[]
-    el.primary[El.OverflowNav] = document.querySelector(`[${dv(El.OverflowNav)}]`) as HTMLElement
+    el.primary[El.NavItems] = el.primary[El.PrimaryNav].children as HTMLLIElement[]
+    el.primary[El.OverflowNav] = original.querySelector(`[${dv(El.OverflowNav)}]`) as HTMLElement
+    el.primary[El.OverflowNavItems] = el.primary[El.OverflowNav].children as HTMLLIElement[]
     el.primary[El.ToggleBtn] = original.querySelector(`[${dv(El.ToggleBtn)}]`) as HTMLElement
 
-    const navItems = Array.from(el.primary[El.NavItems]) as HTMLLIElement[]
-    navItems.forEach(enhanceOriginalNavItem)
+    enhanceNavItem(el.primary[El.PrimaryNav])
+    enhanceNavItem(el.primary[El.OverflowNav])
 
     const cloned = original.querySelector(`[${dv(El.Main)}]`)?.cloneNode(true) as HTMLElement
 
@@ -236,68 +219,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   }
 
   /**
-   * Get array of cloned navItems from primary/overflow.
-   */
-  function getCloneItemsByType(navType: NavType) {
-    const { itemMap } = inst
-    // Always use the clone as the base for our new nav,
-    // since the order is canonical and it is never filtered.
-    return el.clone[El.NavItems].filter((item) => itemMap.get(item) === navType)
-  }
-
-  /**
-   * Get a list of cloned elements that we need to
-   * render for our navType.
-   */
-  function getRenderableItems(navType: NavType) {
-    const { collapseAtCount } = options
-
-    if (navType === El.PrimaryNav || collapseAtCount < 0) {
-      return getCloneItemsByType(navType)
-    }
-
-    const primaryCount = getCloneItemsByType(El.PrimaryNav).length
-
-    if (primaryCount > 0 && primaryCount <= collapseAtCount) {
-      return el.clone[El.NavItems]
-    }
-
-    return getCloneItemsByType(navType)
-  }
-
-  /**
-   * (Re) generate the navigation list for either the visible or the overflow nav.
-   * We use this to completely recreate the nav each time we update it,
-   * avoiding ordering complexity and having to run append multiple times on
-   * the mounted nav.
-   */
-  function generateNav(navType: NavType): HTMLElement {
-    const newNav = el.primary[navType].cloneNode()
-
-    getRenderableItems(navType).forEach((item) => {
-      const elem = getElemMirror(el.clone[El.NavItems], el.primary[El.NavItems]).get(item) as HTMLElement
-
-      newNav.appendChild(elem)
-    })
-
-    return newNav as HTMLElement
-  }
-
-  /**
-   * Replaces the passed in nav type with a newly generated copy in the DOM.
-   */
-  function updateNav(navType: NavType) {
-    const newNav = generateNav(navType)
-    const parent = el.primary[navType].parentNode as HTMLElement
-
-    // Replace the existing nav element in the DOM
-    parent.replaceChild(newNav, el.primary[navType])
-
-    // Update our reference to it
-    el.primary[navType] = newNav
-  }
-
-  /**
    * Run every time a nav item intersects with the parent container.
    * We use this opportunity to check which type of nav the items belong to.
    */
@@ -306,7 +227,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     const primaryNavItem = getElemMirror(el.clone[El.NavItems], el.primary[El.NavItems]).get(target as HTMLElement)
 
-    let overflowNavNewItem = Array.from(el.primary[El.OverflowNav].children).find((element) => {
+    let overflowNavNewItem = Array.from(el.primary[El.OverflowNavItems]).find((element) => {
       return element.innerHTML.includes(target.innerHTML)
     })
 
@@ -331,10 +252,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   function intersectionCallback(events: IntersectionObserverEntry[]) {
     // Update the designation
     events.forEach(onIntersect)
-
-    // Update the navs to reflect the new changes
-    // ;([El.PrimaryNav] as NavType[]).forEach(updateNav)
-    // ;([El.OverflowNav1] as NavType[]).forEach(updateNav)
 
     eventHandler.trigger(
       createItemsChangedEvent({
