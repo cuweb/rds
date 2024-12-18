@@ -201,28 +201,29 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
    */
   function setupEl() {
     const { itemMap } = inst
-    const markup = createMarkup()
-    const container = document.createElement('div')
-    container.classList.add(...classNames[El.Container])
-    container.setAttribute(dv(El.Container), 'true')
-    el[El.Container] = container
 
-    const original = document.createRange().createContextualFragment(markup)
+    const target = targetElem as HTMLElement
+    const original = target.querySelector(`[${dv(El.Container)}]`) as HTMLElement
+    const container = original
+
+    target.classList.add('loaded')
 
     // Setup the wrapper and clone/enhance the original menu.
     el.primary[El.PrimaryNavWrapper] = original.querySelector(`[${dv(El.PrimaryNavWrapper)}]`) as HTMLElement
-    el.primary[El.PrimaryNavWrapper].appendChild(cloneNav(targetElem))
-
-    const cloned = original.cloneNode(true) as Element
 
     // Establish references. By this point the menu is fully built.
     el.primary[El.Main] = original.querySelector(`[${dv(El.Main)}]`) as HTMLElement
     el.primary[El.PrimaryNav] = original.querySelector(`[${dv(El.PrimaryNav)}]`) as HTMLElement
-    el.primary[El.NavItems] = Array.from(original.querySelectorAll(`[${dv(El.NavItems)}]`)) as HTMLLIElement[]
+    el.primary[El.NavItems] = Array.from(original.querySelectorAll(`.p-plus__primary-nav-item`)) as HTMLLIElement[]
     el.primary[El.OverflowNav] = document.querySelector(`[${dv(El.OverflowNav)}]`) as HTMLElement
     el.primary[El.ToggleBtn] = original.querySelector(`[${dv(El.ToggleBtn)}]`) as HTMLElement
 
-    el.clone[El.Main] = cloned.querySelector(`[${dv(El.Main)}]`) as HTMLElement
+    const navItems = Array.from(el.primary[El.NavItems]) as HTMLLIElement[]
+    navItems.forEach(enhanceOriginalNavItem)
+
+    const cloned = original.querySelector(`[${dv(El.Main)}]`)?.cloneNode(true) as HTMLElement
+
+    el.clone[El.Main] = cloned as HTMLElement
     el.clone[El.NavItems] = Array.from(cloned.querySelectorAll(`[${dv(El.NavItems)}]`)) as HTMLElement[]
     el.clone[El.ToggleBtn] = cloned.querySelector(`[${dv(El.ToggleBtn)}]`) as HTMLElement
     el.clone[El.Main].setAttribute('aria-hidden', 'true')
@@ -230,15 +231,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     el.clone[El.Main].classList.add(`${classNames[El.Main][0]}--clone`)
     el.clone[El.Main].classList.add(`${classNames[El.Main][0]}--${StateModifiers.ButtonVisible}`)
 
-    container.appendChild(original)
-    container.appendChild(cloned)
-
-    // By default every item belongs in the primary nav, since the intersection
-    // observer will run on-load anyway.
-    el.clone[El.NavItems].forEach((item) => itemMap.set(item, El.PrimaryNav))
-
-    const parent = targetElem.parentNode as HTMLElement
-    parent.replaceChild(container, targetElem)
+    container.append(el.clone[El.Main])
   }
 
   /**
