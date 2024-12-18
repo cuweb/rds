@@ -21,12 +21,12 @@ export const NavMenu = ({ menu }: navMenuProps) => {
             Browse
           </button>
         </div>
+        <ul data-overflow-nav="" className="overflow-nav p-plus__overflow" aria-hidden="true">
+          {menu.map((menuItem: ImenuItem, index: number) => (
+            <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
+          ))}
+        </ul>
       </div>
-      <ul data-overflow-nav="" className="overflow-nav p-plus__overflow" aria-hidden="true">
-        {menu.map((menuItem: ImenuItem, index: number) => (
-          <NavMenuItemWrapper key={index} menuItem={menuItem} isSubMenu={false} isInnerSubMenu={false} />
-        ))}
-      </ul>
     </div>
   )
 }
