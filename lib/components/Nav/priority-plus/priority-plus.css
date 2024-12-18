@@ -12,7 +12,6 @@
   left: 0;
   width: calc(100% - 5px);
   pointer-events: none;
-  /* margin-top: 10px; */
   visibility: hidden;
 }
 .p-plus--clone,

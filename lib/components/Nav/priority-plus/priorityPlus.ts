@@ -151,22 +151,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   }
 
   /**
-   * Generates the HTML wrapper to use in-place of the user's supplied menu.
-   */
-  function createMarkup(): string {
-    return `
-      <div ${dv(El.Main)} class="${cn(El.Main)}">
-        <div class="${cn(El.PrimaryNavWrapper)}" ${dv(El.PrimaryNavWrapper)}></div>
-        <button
-          ${dv(El.ToggleBtn)}
-          class="${cn(El.ToggleBtn)}"
-          aria-expanded="false"
-        >${processTemplate(options.innerToggleTemplate)}</button>
-      </div>
-    `
-  }
-
-  /**
    * Clones the target menu and enhances it with additional properties, such
    * as data attributes and classes.
    */
