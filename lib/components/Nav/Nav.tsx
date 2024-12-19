@@ -18,7 +18,7 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
     menuPriority()
     setupMenuToggle()
     scrollingNav()
-  }, [])
+  })
 
   return (
     <header

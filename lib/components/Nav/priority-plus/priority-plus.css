@@ -1,5 +1,5 @@
 body.no-scroll {
-  @apply overflow-hidden bg-cu-black-700 before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-black before:z-[1] before:pointer-events-none;
+  @apply max-sm:overflow-hidden max-sm:bg-cu-black-700 max-sm:before:content-[''] max-sm:before:fixed max-sm:before:inset-0 max-sm:before:w-full max-sm:before:h-full max-sm:before:bg-black max-sm:before:z-[1] max-sm:before:pointer-events-none;
 }
 
 .p-plus {
