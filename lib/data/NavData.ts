@@ -1,7 +1,7 @@
 export const NavDataSingle = [
   {
     href: '#',
-    title: 'Academics',
+    title: '1 Academics',
     submenu: [
       {
         href: '#',
@@ -19,11 +19,7 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: 'Admissions',
-  },
-  {
-    href: '#',
-    title: 'Students',
+    title: '2 Students',
     submenu: [
       {
         href: '#',
@@ -51,11 +47,11 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: 'Research',
+    title: '3 Research',
   },
   {
     href: '#',
-    title: 'About',
+    title: '4 About',
     submenu: [
       {
         href: '#',
@@ -81,7 +77,7 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: 'Staff & Faculty',
+    title: '5 Staff & Faculty',
     submenu: [
       {
         href: '#',
@@ -107,7 +103,31 @@ export const NavDataSingle = [
   },
   {
     href: '#',
-    title: 'Alumni',
+    title: '6 Alumni',
+  },
+  {
+    href: '#',
+    title: '7 Admissions',
+  },
+  {
+    href: '#',
+    title: '8 Admissions',
+  },
+  {
+    href: '#',
+    title: '9 Admissions',
+  },
+  {
+    href: '#',
+    title: '10 Admissions',
+  },
+  {
+    href: '#',
+    title: '11 Admissions',
+  },
+  {
+    href: '#',
+    title: '12 Admissions',
   },
 ]
 
