@@ -13,23 +13,6 @@ const menuPriority = () => {
       collapseAtCount: 2,
     })
 
-    // Close browse submenu item on nav submenu open
-    const navChildToggles = document.querySelectorAll('.cu-nav__parent-item')
-
-    if (navChildToggles.length) {
-      navChildToggles.forEach((navChildToggle) => {
-        navChildToggle.addEventListener('click', (item) => {
-          const overflowEl = document.querySelector('.p-plus__overflow')
-
-          const target = item.target
-
-          if (overflowEl && target && item.target && !overflowEl.contains(target as Node)) {
-            navInstance.setOverflowNavOpen(false)
-          }
-        })
-      })
-    }
-
     document.addEventListener('click', (event) => {
       const overflowNav = document.querySelector('[data-overflow-nav]')
       const toggleBtn = document.querySelector('[data-toggle-btn]')
