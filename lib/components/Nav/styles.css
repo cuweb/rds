@@ -82,6 +82,10 @@
   @apply py-3.5;
 }
 
+.p-plus__primary-nav-item--hidden {
+  @apply !hidden;
+}
+
 /* Child level menu item */
 .p-plus__overflow .cu-nav__submenu {
   @apply relative top-0 w-full h-auto border-0 shadow-none;
@@ -168,8 +172,4 @@ button.p-plus__toggle-btn.rotated svg {
   .p-plus__overflow li.cu-nav-item-child a {
     @apply pl-12;
   }
-}
-
-.p-plus__primary-nav-item--hidden {
-  @apply !hidden;
 }
