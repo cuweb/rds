@@ -372,6 +372,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     // Check if the click was outside the menu and the toggle button
     if (
       target &&
+      el.primary[El.OverflowNav].getAttribute('aria-hidden') === 'false' &&
       !el.primary[El.OverflowNav].contains(target as Node) &&
       !el.primary[El.ToggleBtn].contains(target as Node)
     ) {
