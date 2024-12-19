@@ -13,23 +13,6 @@ const menuPriority = () => {
       collapseAtCount: 2,
     })
 
-    // Set the Browse dropdown style for small screen
-    // @ts-expect-error: Type error from priority-plus
-    navInstance.on('itemsChanged', () => {
-      const overflowEl = document.querySelector('.p-plus__overflow')
-
-      const primaryEl = document.querySelector('.p-plus__primary'),
-        primaryNavItems = primaryEl ? primaryEl.querySelectorAll('.p-plus__primary-nav-item') : null
-
-      if (overflowEl) {
-        if (primaryNavItems && primaryNavItems.length === 0) {
-          overflowEl.classList.add('p-plus_left')
-        } else {
-          overflowEl.classList.remove('p-plus_left')
-        }
-      }
-    })
-
     // Close browse submenu item on nav submenu open
     const navChildToggles = document.querySelectorAll('.cu-nav__parent-item')
 
@@ -57,7 +40,6 @@ const menuPriority = () => {
       // Check if the overflow menu is open
       if (overflowNav.getAttribute('aria-hidden') === 'false') {
         document.body.classList.add('no-scroll')
-        toggleBtn.classList.add('after:!rotate-[225deg]')
 
         const target = event.target
 
@@ -66,11 +48,9 @@ const menuPriority = () => {
           // Use the stored instance to close the overflow menu
           navInstance.setOverflowNavOpen(false)
           document.body.classList.remove('no-scroll')
-          toggleBtn.classList.remove('after:!rotate-[225deg]')
         }
       } else {
         document.body.classList.remove('no-scroll')
-        toggleBtn.classList.remove('after:!rotate-[225deg]')
       }
     })
   }

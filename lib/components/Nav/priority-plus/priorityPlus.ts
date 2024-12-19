@@ -110,7 +110,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
   /**
    * 'Instance' state variables and misc references.
-   * Force a cast as we know we will initialise these.
+   * Force a cast as we know we will initialize these.
    */
   const inst: Instance = {
     eventListeners: new Map(),
@@ -119,7 +119,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
   /**
    * References to DOM elements so we can easily retrieve them.
-   * Force a cast as we know we will initialise these.
+   * Force a cast as we know we will initialize these.
    */
   const el: ElementRefs = {
     clone: {},
@@ -288,7 +288,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     el.primary[El.Main].classList[open ? 'add' : 'remove'](openClass)
     el.primary[El.OverflowNav].setAttribute('aria-hidden', open ? 'false' : 'true')
     el.primary[El.OverflowNav].classList[open ? 'add' : 'remove']('!block')
-    el.primary[El.ToggleBtn].classList[open ? 'add' : 'remove']('after:!rotate-[225deg];')
+    el.primary[El.ToggleBtn].classList[open ? 'add' : 'remove']('after:!rotate-[225deg]')
     el.primary[El.ToggleBtn].setAttribute('aria-expanded', open ? 'true' : 'false')
 
     eventHandler.trigger(open ? createShowOverflowEvent() : createHideOverflowEvent())
@@ -325,6 +325,18 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   }
 
   /**
+   * Set the Browse dropdown style for small screen
+   */
+  function updateOverflowNavClass() {
+    const visiblePrimaryItem = Array.from(el.primary[El.NavItems]).filter(
+      (child) =>
+        !child.classList.contains(`${classNames[El.NavItems][0]}--hidden`) && !child.classList.contains(`hidden`),
+    ).length
+
+    el.primary[El.OverflowNav].classList[visiblePrimaryItem ? 'remove' : 'add']('p-plus_left')
+  }
+
+  /**
    * Callback for when either nav is updated.
    */
   function onItemsChanged({ detail: { overflowCount } = {} }: CustomEvent<{ [x: string]: any }>) {
@@ -333,6 +345,8 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     if (overflowCount === 0) {
       setOverflowNavOpen(false)
     }
+
+    updateOverflowNavClass()
 
     setPrimaryHidden(overflowCount === el.clone[El.NavItems].length)
   }
