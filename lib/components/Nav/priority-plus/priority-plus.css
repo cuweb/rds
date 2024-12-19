@@ -1,56 +1,60 @@
 .p-plus-container {
-  position: relative;
-}
-.p-plus {
-  display: flex;
-  position: relative;
-  z-index: 0;
-}
-.p-plus--clone {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: calc(100% - 5px);
-  pointer-events: none;
-  visibility: hidden;
-}
-.p-plus--clone,
-.p-plus--clone .p-plus__primary-wrapper {
-  overflow: hidden;
-}
-.p-plus--is-showing-overflow .p-plus__overflow {
-  display: block;
-}
-.p-plus:not(.p-plus--is-showing-toggle) .p-plus__toggle-btn {
-  display: none;
-}
-.p-plus--is-hiding-primary .p-plus__toggle-btn {
-  flex-grow: 1;
-}
-.p-plus--is-hiding-primary .p-plus__primary-wrapper {
-  display: none;
-}
-.p-plus__primary-wrapper {
-  display: flex;
-  flex-grow: 1;
-}
-.p-plus__primary {
-  display: flex;
-  flex: 1 0 auto;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.p-plus__primary > li {
-  flex: 1 0 auto;
-}
-.p-plus__overflow {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
+  @apply relative;
 }
 
-.p-plus__toggle-btn {
-  flex-shrink: 0;
+.p-plus {
+  @apply flex relative z-0;
+
+  .p-plus__primary-wrapper {
+    @apply flex grow;
+  }
+
+  .p-plus__primary {
+    @apply flex flex-1 list-none p-0 m-0;
+
+    > li {
+      @apply flex-shrink-0 flex-grow-0;
+    }
+  }
+
+  /* Toggle Button */
+  .p-plus__toggle-btn {
+    @apply flex-shrink-0;
+  }
+
+  &.p-plus--is-showing-overflow {
+    .p-plus__overflow {
+      @apply block;
+    }
+  }
+
+  &:not(.p-plus--is-showing-toggle) {
+    .p-plus__toggle-btn {
+      @apply hidden;
+    }
+  }
+
+  &.p-plus--is-hiding-primary {
+    .p-plus__toggle-btn {
+      @apply grow;
+    }
+
+    .p-plus__primary-wrapper {
+      @apply hidden;
+    }
+  }
+}
+
+/* Overflow Menu */
+.p-plus__overflow {
+  @apply hidden absolute top-full right-0;
+}
+
+/* Clone Nav */
+.p-plus--clone {
+  @apply absolute top-0 left-0 w-[calc(100%-5px)] invisible overflow-hidden;
+
+  .p-plus__primary-wrapper {
+    @apply overflow-hidden;
+  }
 }

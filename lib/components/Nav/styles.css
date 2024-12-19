@@ -119,12 +119,6 @@ button.p-plus__toggle-btn.rotated svg {
   @apply rotate-90;
 }
 
-@media (min-width: 640px) {
-  .p-plus__primary > li {
-    flex: 0 0 auto;
-  }
-}
-
 /* Mobile Styles */
 @media (max-width: 640px) {
   /* Collapse nav at sm */
