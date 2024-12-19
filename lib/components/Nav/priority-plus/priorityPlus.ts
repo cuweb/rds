@@ -172,7 +172,7 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     const original = target.querySelector(`[${dv(El.Container)}]`) as HTMLElement
     const container = original
 
-    target.classList.add('loaded')
+    target.classList.add('p-plus-initialized')
 
     // Setup the wrapper and clone/enhance the original menu.
     el.primary[El.PrimaryNavWrapper] = original.querySelector(`[${dv(El.PrimaryNavWrapper)}]`) as HTMLElement
@@ -398,6 +398,8 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   }
 
   ;(function init() {
+    if (targetElem.classList.contains('p-plus-initialized')) return
+
     validateAndThrow(targetElem, userOptions, defaultOptions)
     setupEl()
     bindListeners()

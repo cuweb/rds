@@ -223,8 +223,3 @@ button.p-plus__toggle-btn.rotated svg {
 .p-plus__toggle-btn--open {
   @apply after:!rotate-[225deg];
 }
-
-.hide-it {
-  border: 1px solid red;
-  display: none;
-}
