@@ -1,17 +1,11 @@
-.p-plus-container {
-  @apply relative;
+body.no-scroll {
+  @apply overflow-hidden bg-cu-black-700 before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-black before:z-[1] before:pointer-events-none;
 }
 
 .p-plus {
   @apply flex relative z-0;
 
-  .p-plus__primary-wrapper {
-    @apply flex grow;
-  }
-
   .p-plus__primary {
-    @apply flex flex-1 list-none p-0 m-0;
-
     > li {
       @apply flex-shrink-0 flex-grow-0;
     }
@@ -19,7 +13,9 @@
 
   /* Toggle Button */
   .p-plus__toggle-btn {
-    @apply flex-shrink-0;
+    svg {
+      @apply transition duration-300 ease-in;
+    }
   }
 
   &.p-plus--is-showing-overflow {
@@ -45,9 +41,37 @@
   }
 }
 
+/* Hidden class */
+.p-plus__primary-nav-item--hidden {
+  @apply !hidden;
+}
+
 /* Overflow Menu */
 .p-plus__overflow {
-  @apply hidden absolute top-full right-0;
+  &.p-plus_left {
+    @apply sm:-left-3.5;
+  }
+
+  .p-plus__primary-nav-item {
+    @apply block pr-0 text-sm font-medium border-b text-cu-black-600 hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0;
+
+    a,
+    button {
+      @apply flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in;
+    }
+
+    .cu-nav__parent-item {
+      @apply after:hidden justify-between pl-[1.25rem] py-[5px];
+
+      > button {
+        @apply py-3.5;
+      }
+    }
+
+    span > a:not(.cu-nav__parent-item) {
+      @apply px-5 py-3.5;
+    }
+  }
 }
 
 /* Clone Nav */
