@@ -11,7 +11,6 @@ import {
 import createEventHandler from './events/eventHandler'
 import DeepPartial from './types/DeepPartial'
 import createMirror from './utils/createMirror'
-import processTemplate from './utils/processTemplate'
 import validateAndThrow from './validation'
 
 enum El {
@@ -74,7 +73,6 @@ interface Options {
   collapseAtCount: number
   defaultOverflowVisible: boolean
   openOnToggle: boolean
-  innerToggleTemplate: string | ((args: object) => string)
 }
 
 const defaultOptions: Options = {
@@ -90,7 +88,6 @@ const defaultOptions: Options = {
   collapseAtCount: -1,
   openOnToggle: true,
   defaultOverflowVisible: false,
-  innerToggleTemplate: 'More',
 }
 
 function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options> = {}) {
@@ -206,16 +203,6 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
    */
   function updateBtnDisplay(show: boolean = true) {
     el.primary[El.Main].classList[show ? 'add' : 'remove'](`${classNames[El.Main][0]}--${StateModifiers.ButtonVisible}`)
-
-    if (typeof options.innerToggleTemplate !== 'string') {
-      // We need to do it for both, as layout is affected
-      ;[el.primary[El.ToggleBtn], el.clone[El.ToggleBtn]].forEach((btn) => {
-        btn.innerHTML = processTemplate(options.innerToggleTemplate, {
-          toggleCount: countVisibleChildren(el.primary[El.OverflowNav]),
-          totalCount: el.clone[El.NavItems].length,
-        })
-      })
-    }
   }
 
   /**

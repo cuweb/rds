@@ -11,7 +11,6 @@ const menuPriority = () => {
     // Store the instance of priorityPlus
     const navInstance = priorityPlus(navElement, {
       collapseAtCount: 2,
-      innerToggleTemplate: `Browse`,
     })
 
     // Set the Browse dropdown style for small screen
