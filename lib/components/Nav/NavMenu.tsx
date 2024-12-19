@@ -7,7 +7,7 @@ export interface navMenuProps {
 
 export const NavMenu = ({ menu }: navMenuProps) => {
   return (
-    <div className="flex items-center grow relative cu-nav__menu">
+    <div className="flex items-center grow static sm:relative cu-nav__menu">
       <div className="p-plus-container" data-container="true">
         <div className="p-plus" data-main="">
           <div className="p-plus__primary-wrapper" data-primary-nav-wrapper="">

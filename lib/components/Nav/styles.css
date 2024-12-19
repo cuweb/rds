@@ -215,11 +215,3 @@ button.p-plus__toggle-btn.rotated svg {
 .cu-nav__overflow-nav-new.p-plus--is-showing-overflow {
   @apply block;
 }
-
-.cu-nav__overflow-nav-new--open {
-  @apply block;
-}
-
-.p-plus__toggle-btn--open {
-  @apply after:!rotate-[225deg];
-}

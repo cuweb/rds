@@ -287,7 +287,8 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     const openClass = `${classNames[El.Main][0]}--${StateModifiers.OverflowVisible}`
     el.primary[El.Main].classList[open ? 'add' : 'remove'](openClass)
     el.primary[El.OverflowNav].setAttribute('aria-hidden', open ? 'false' : 'true')
-    el.primary[El.OverflowNav].classList[open ? 'add' : 'remove']('cu-nav__overflow-nav-new--open')
+    el.primary[El.OverflowNav].classList[open ? 'add' : 'remove']('!block')
+    el.primary[El.ToggleBtn].classList[open ? 'add' : 'remove']('after:!rotate-[225deg];')
     el.primary[El.ToggleBtn].setAttribute('aria-expanded', open ? 'true' : 'false')
 
     eventHandler.trigger(open ? createShowOverflowEvent() : createHideOverflowEvent())
