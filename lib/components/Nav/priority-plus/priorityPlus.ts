@@ -293,6 +293,9 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     eventHandler.trigger(open ? createShowOverflowEvent() : createHideOverflowEvent())
 
+    // Add class to body to prevent scrolling for small screens
+    document.body.classList[open ? 'add' : 'remove']('no-scroll')
+
     return this
   }
 
@@ -361,6 +364,22 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
   }
 
   /**
+   * Close the overflow menu on outside click.
+   */
+  function autoCloseOverflowNav(e: Event) {
+    const target = event.target
+
+    // Check if the click was outside the menu and the toggle button
+    if (
+      target &&
+      !el.primary[El.OverflowNav].contains(target as Node) &&
+      !el.primary[El.ToggleBtn].contains(target as Node)
+    ) {
+      setOverflowNavOpen(false)
+    }
+  }
+
+  /**
    * Establishes initial event listeners.
    */
   function bindListeners() {
@@ -375,6 +394,8 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     el.primary[El.ToggleBtn].addEventListener('click', onToggleClick)
 
     eventHandler.on(Events.ItemsChanged, onItemsChanged, false)
+
+    document.addEventListener('click', autoCloseOverflowNav)
 
     if (options.openOnToggle) {
       eventHandler.on(Events.ToggleClicked, toggleOverflowNav, false)
