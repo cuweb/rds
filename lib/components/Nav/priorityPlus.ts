@@ -10,7 +10,7 @@ const menuPriority = () => {
   if (navElement) {
     // Store the instance of priorityPlus
     const navInstance = priorityPlus(navElement, {
-      collapseAtCount: 2,
+      collapseAtCount: 4,
       innerToggleTemplate: `Browse`,
     })
 

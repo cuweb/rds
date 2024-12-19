@@ -253,6 +253,34 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
     // Update the designation
     events.forEach(onIntersect)
 
+    const { collapseAtCount } = options
+
+    if (collapseAtCount > countVisibleChildren(el.primary[El.PrimaryNav])) {
+      Array.from(el.primary[El.NavItems]).forEach((item, index) => {
+        if (index < collapseAtCount) {
+          item?.classList.add(`hidden`)
+        }
+      })
+      Array.from(el.primary[El.OverflowNavItems]).forEach((item, index) => {
+        if (index < collapseAtCount) {
+          item?.classList.remove(`hidden`)
+          item?.classList.remove(`${classNames[El.NavItems][0]}--hidden`)
+        }
+      })
+    } else {
+      Array.from(el.primary[El.NavItems]).forEach((item, index) => {
+        if (index < collapseAtCount) {
+          item?.classList.remove(`hidden`)
+        }
+      })
+      Array.from(el.primary[El.OverflowNavItems]).forEach((item, index) => {
+        if (index < collapseAtCount) {
+          item?.classList.add(`hidden`)
+          item?.classList.add(`${classNames[El.NavItems][0]}--hidden`)
+        }
+      })
+    }
+
     eventHandler.trigger(
       createItemsChangedEvent({
         overflowCount: countVisibleChildren(el.primary[El.OverflowNav]),
