@@ -106,7 +106,7 @@ const handleInnerSubNavClick = (arrow: HTMLElement) => {
   const menuItemSelector = parentElement?.dataset?.menuItem
 
   if (menuItemSelector) {
-    const menuItem = document.getElementById(menuItemSelector)
+    const menuItem = parentElement.nextElementSibling
 
     if (menuItem) {
       if (menuItem.classList.contains('hidden')) {
