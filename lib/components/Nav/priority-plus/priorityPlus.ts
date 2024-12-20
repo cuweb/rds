@@ -214,8 +214,9 @@ function priorityPlus(targetElem: HTMLElement, userOptions: DeepPartial<Options>
 
     const primaryNavItem = getElemMirror(el.clone[El.NavItems], el.primary[El.NavItems]).get(target as HTMLElement)
 
+    const targetMenuItemName = target.querySelector('span').getAttribute('data-menu-item')
     let overflowNavNewItem = Array.from(el.primary[El.OverflowNavItems]).find((element) => {
-      return element.innerHTML.includes(target.innerHTML)
+      return targetMenuItemName === element.querySelector('span').getAttribute('data-menu-item')
     })
 
     if (intersectionRatio < 0.99) {
