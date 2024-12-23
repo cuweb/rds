@@ -27,7 +27,7 @@ export const ImageSliderItem = ({
   }
 
   return (
-    <div className="cu-slider--item pl-4 first:pl-0">
+    <div className="cu-slider--item pr-4">
       <div
         className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full transition ease-in-out duration-[5000]`}
         style={inlineImageStyles}
