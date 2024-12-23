@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
-import { Slide } from './Slide'
-import { Image } from './Image'
+import { ImageSliderItem } from './ImageSliderItem'
 import SliderScript from './script.ts'
 
 export interface ImageSliderProp {
@@ -26,22 +25,22 @@ export const ImageSliderWrapper = ({
 
   return (
     <div
-      className="slider overflow-hidden"
+      className="cu-slider cu-component overflow-hidden"
       data-slides-desktop={slidesPerViewDesktop}
       data-slides-tablet={slidesPerViewTablet}
       data-slides-mobile={slidesPerViewMobile}
     >
       {/* Slider Slides */}
-      <div className="slider__wrap flex align-items-center">{children}</div>
+      <div className="cu-slider--wrap flex align-items-center">{children}</div>
 
       {/* Slider Arrow */}
       <div className="flex align-items-center gap-3 justify-center mt-4">
-        <button className={`slider__arrow slider__arrow--prev ${arrowButtons}`}>
+        <button className={`cu-slider--arrow cu-slider--arrow-prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
           <ChevronLeftIcon className={arrowIcons} aria-hidden="true" />
         </button>
 
-        <button className={`slider__arrow slider__arrow--next ${arrowButtons}`}>
+        <button className={`cu-slider--arrow cu-slider--arrow-next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
           <ChevronRightIcon className={arrowIcons} aria-hidden="true" />
         </button>
@@ -51,8 +50,7 @@ export const ImageSliderWrapper = ({
 }
 
 export const ImageSlider = Object.assign(ImageSliderWrapper, {
-  Slide: Slide,
-  Image: Image,
+  Item: ImageSliderItem,
 })
 
 ImageSliderWrapper.displayName = 'ImageSlider'

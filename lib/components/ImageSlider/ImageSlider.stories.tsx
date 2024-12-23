@@ -29,17 +29,15 @@ export const Primary: Story = {
         {sliderData.map((image, index) => {
           const { image: imageUrl, title, link, focalPointX, focalPointY, aspectRatio } = image
           return (
-            <ImageSlider.Slide key={index}>
-              <ImageSlider.Image
-                key={index}
-                imageUrl={imageUrl}
-                title={title}
-                link={link}
-                focalPointX={focalPointX}
-                focalPointY={focalPointY}
-                aspectRatio={aspectRatio}
-              />
-            </ImageSlider.Slide>
+            <ImageSlider.Item
+              key={index}
+              imageUrl={imageUrl}
+              title={title}
+              link={link}
+              focalPointX={focalPointX}
+              focalPointY={focalPointY}
+              aspectRatio={aspectRatio}
+            />
           )
         })}
       </ImageSlider>

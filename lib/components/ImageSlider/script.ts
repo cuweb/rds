@@ -1,16 +1,16 @@
 const SliderScript = () => {
   // Initial setup
-  const slider = document.querySelector('.slider') as HTMLElement
+  const slider = document.querySelector('.cu-slider') as HTMLElement
 
   if (slider === null) return
 
-  const sliderWrap = slider.querySelector('.slider__wrap') as HTMLElement
-  const slides = slider.querySelectorAll('.slider__slide')
+  const sliderWrap = slider.querySelector('.cu-slider--wrap') as HTMLElement
+  const slides = slider.querySelectorAll('.cu-slider--item')
 
   if (slider === null || slides === null) return
 
-  const previousArrow = slider.querySelector('.slider__arrow--prev') as HTMLElement
-  const nextArrow = slider.querySelector('.slider__arrow--next') as HTMLElement
+  const previousArrow = slider.querySelector('.cu-slider--arrow-prev') as HTMLElement
+  const nextArrow = slider.querySelector('.cu-slider--arrow-next') as HTMLElement
 
   if (previousArrow === null || nextArrow === null) return
 
