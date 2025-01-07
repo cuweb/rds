@@ -19,12 +19,9 @@ type Story = StoryObj<typeof ImageSlider>
 
 export const Primary: Story = {
   args: {
-    customClass: 'slider',
+    slidesPerViewDesktop: 3,
+    slidesPerViewTablet: 2,
     slidesPerViewMobile: 1,
-    slidesPerViewTablet: 3,
-    slidesPerViewDesktop: 4,
-    loop: true,
-    speed: 1000,
   },
   render: (args) => {
     return (
@@ -40,7 +37,6 @@ export const Primary: Story = {
               focalPointX={focalPointX}
               focalPointY={focalPointY}
               aspectRatio={aspectRatio}
-              className={index == 0 ? `swiper-slide-active` : ``}
             />
           )
         })}

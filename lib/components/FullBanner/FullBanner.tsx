@@ -1,6 +1,5 @@
 import { FullBannerContent } from './FullBannerContent'
 import { FullBannerImage } from './FullBannerImage'
-// import { FullBannerVideo } from './FullBannerVideo'
 
 export interface FullBannerProps {
   children?: React.ReactNode
@@ -12,8 +11,7 @@ export const FullBannerWrapper = ({ children, as = 'section' }: FullBannerProps)
 
   return (
     <FullBannerComponent
-      // cu-no-browsers-edge
-      className={`cu-fullbanner cu-component bg-cu-black-900 relative not-prose not-contained`}
+      className={`cu-fullbanner cu-component bg-cu-black-900 relative cu-no-browsers-edge not-prose not-contained`}
     >
       {children}
     </FullBannerComponent>
@@ -23,7 +21,6 @@ export const FullBannerWrapper = ({ children, as = 'section' }: FullBannerProps)
 export const FullBanner = Object.assign(FullBannerWrapper, {
   Content: FullBannerContent,
   Image: FullBannerImage,
-  // Video: FullBannerVideo,
 })
 
 FullBannerWrapper.displayName = 'FullBanner'

@@ -34,26 +34,24 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   const errorClass = useErrorClass(name)
 
   return (
-    <>
-      <DatePicker
-        isClearable={isClearable}
-        name={name}
-        id={name}
-        autoComplete="on"
-        selected={field.value ? field.value : null}
-        timeFormat={timeFormat}
-        dateFormat={dateFormat}
-        placeholderText={placeholder ? placeholder : dateFormat}
-        showTimeSelect={showTime}
-        onBlur={() => {
-          setTouched(true, true)
-        }}
-        onChange={(date: Date | null) => {
-          handleDateChange(date)
-        }}
-        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full`}
-        {...rest}
-      />
-    </>
+    <DatePicker
+      isClearable={isClearable}
+      name={name}
+      id={name}
+      autoComplete="on"
+      selected={field.value ? field.value : null}
+      timeFormat={timeFormat}
+      dateFormat={dateFormat}
+      placeholderText={placeholder ? placeholder : dateFormat}
+      showTimeSelect={showTime}
+      onBlur={() => {
+        setTouched(true, true)
+      }}
+      onChange={(date: Date | null) => {
+        handleDateChange(date)
+      }}
+      className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full rounded-md`}
+      {...rest}
+    />
   )
 }

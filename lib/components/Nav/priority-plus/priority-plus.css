@@ -1,0 +1,84 @@
+body.no-scroll {
+  @apply max-sm:overflow-hidden max-sm:bg-cu-black-700 max-sm:before:content-[''] max-sm:before:fixed max-sm:before:inset-0 max-sm:before:w-full max-sm:before:h-full max-sm:before:bg-black max-sm:before:z-[1] max-sm:before:pointer-events-none;
+}
+
+.p-plus {
+  @apply flex relative z-0;
+
+  .p-plus__primary {
+    > li {
+      @apply flex-shrink-0 flex-grow-0;
+    }
+  }
+
+  /* Toggle Button */
+  .p-plus__toggle-btn {
+    svg {
+      @apply transition duration-300 ease-in;
+    }
+  }
+
+  &.p-plus--is-showing-overflow {
+    .p-plus__overflow {
+      @apply block;
+    }
+  }
+
+  &:not(.p-plus--is-showing-toggle) {
+    .p-plus__toggle-btn {
+      @apply hidden;
+    }
+  }
+
+  &.p-plus--is-hiding-primary {
+    .p-plus__toggle-btn {
+      @apply grow;
+    }
+
+    .p-plus__primary-wrapper {
+      @apply hidden;
+    }
+  }
+}
+
+/* Hidden class */
+.p-plus__primary-nav-item--hidden {
+  @apply !hidden;
+}
+
+/* Overflow Menu */
+.p-plus__overflow {
+  &.p-plus_left {
+    @apply sm:-left-3.5;
+  }
+
+  .p-plus__primary-nav-item {
+    @apply block pr-0 text-sm font-medium border-b text-cu-black-600 hover:bg-cu-black-50/50 border-b-cu-black-50 last:border-b-0;
+
+    a,
+    button {
+      @apply flex items-center gap-0.5 text-[15px] font-medium text-cu-black-700 hover:text-cu-red-700 transition ease-in;
+    }
+
+    .cu-nav__parent-item {
+      @apply after:hidden justify-between pl-[1.25rem] py-[5px];
+
+      > button {
+        @apply py-3.5;
+      }
+    }
+
+    span > a:not(.cu-nav__parent-item) {
+      @apply px-5 py-3.5;
+    }
+  }
+}
+
+/* Clone Nav */
+.p-plus--clone {
+  @apply absolute top-0 left-0 w-[calc(100%-5px)] invisible overflow-hidden;
+
+  .p-plus__primary-wrapper {
+    @apply overflow-hidden;
+  }
+}

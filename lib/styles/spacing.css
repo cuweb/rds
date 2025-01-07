@@ -56,7 +56,7 @@
 }
 
 .cu-component + .cu-component,
-:not(.cu-component) + .cu-component,
+:not(.cu-component) + .cu-component:not(.cu-buttongroup),
 .cu-component + :not(.cu-component) {
   @apply mt-3 md:mt-5 lg:mt-10;
 }

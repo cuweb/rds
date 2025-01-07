@@ -3,6 +3,7 @@ import Select from 'react-select'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
 import { useEffect, useState } from 'react'
+import { CSSObject } from '@emotion/react'
 
 interface Option {
   value: string
@@ -30,6 +31,20 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
     setSelectedOption(optionValue || null)
   }, [optionValue])
 
+  const customStyles = {
+    option: (provided: CSSObject) => ({
+      ...provided,
+      cursor: 'pointer',
+      fontSize: '1rem',
+    }),
+    menu: (provided: CSSObject) => ({
+      ...provided,
+      borderRadius: '0.5rem',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      paddingBottom: '0.5rem',
+    }),
+  }
+
   return (
     <Select
       {...rest}
@@ -47,6 +62,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
       isClearable={true}
       className={errorClass + ` cu-autosuggest`}
       isDisabled={disabled}
+      styles={customStyles}
     />
   )
 }

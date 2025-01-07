@@ -1,49 +1,105 @@
-import Swiper from 'swiper/bundle'
+const SliderScript = () => {
+  // Initial setup
+  const slider = document.querySelector('.cu-slider') as HTMLElement
 
-const SwiperSlider = () => {
-  const SwiperSliders = document.querySelectorAll('.swiper--slider')
+  if (slider === null) return
 
-  if (SwiperSliders.length === 0) return
+  const sliderWrap = slider.querySelector('.cu-slider--wrap') as HTMLElement
+  const slides = slider.querySelectorAll('.cu-slider--item')
 
-  SwiperSliders.forEach((SwiperSlider) => {
-    const swiperClass = SwiperSlider.getAttribute('data-swiper-class')
+  if (slider === null || slides === null) return
 
-    if (swiperClass) {
-      const classname = `.${swiperClass}`
-      const swiperLoop = SwiperSlider.getAttribute('data-swiper-loop') === 'true'
-      const swiperSpeed = SwiperSlider.getAttribute('data-swiper-speed') || '500'
-      const swiperSlidesPerViewMobile = SwiperSlider.getAttribute('data-swiper-perview-mobile') || '1'
-      const swiperSlidesPerViewTablet = SwiperSlider.getAttribute('data-swiper-perview-tablet') || '3'
-      const swiperSlidesPerViewDesktop = SwiperSlider.getAttribute('data-swiper-perview-desktop') || '4'
+  const previousArrow = slider.querySelector('.cu-slider--arrow-prev') as HTMLElement
+  const nextArrow = slider.querySelector('.cu-slider--arrow-next') as HTMLElement
 
-      new Swiper(classname, {
-        a11y: {
-          prevSlideMessage: 'Previous slide',
-          nextSlideMessage: 'Next slide',
-        },
-        updateOnWindowResize: true,
-        loop: swiperLoop,
-        speed: parseInt(swiperSpeed),
-        slidesPerView: parseInt(swiperSlidesPerViewMobile),
-        spaceBetween: 8,
-        breakpoints: {
-          768: {
-            // slidesPerView: 'auto',
-            slidesPerView: parseInt(swiperSlidesPerViewTablet),
-          },
-          1024: {
-            slidesPerView: parseInt(swiperSlidesPerViewDesktop),
-          },
-        },
-        centeredSlides: true,
-        pagination: false,
-        navigation: {
-          nextEl: '.swiper__button--next',
-          prevEl: '.swiper__button--prev',
-        },
-      })
+  if (previousArrow === null || nextArrow === null) return
+
+  let currentIndex = 0
+  const totalSlides = slides.length
+
+  const slidesPerViewDesktop = Number(slider.getAttribute('data-slides-desktop')) || 4
+  const slidesPerViewTablet = Number(slider.getAttribute('data-slides-tablet')) || slidesPerViewDesktop
+  const slidesPerViewMobile = Number(slider.getAttribute('data-slides-mobile')) || slidesPerViewTablet
+
+  let slidesPerView = slidesPerViewDesktop
+
+  // Function to update `perView` based on screen size
+  const updatePerView = () => {
+    if (window.innerWidth < 768) {
+      slidesPerView = slidesPerViewMobile
+    } else if (window.innerWidth < 1024) {
+      slidesPerView = slidesPerViewTablet
+    } else {
+      slidesPerView = slidesPerViewDesktop
     }
-  })
+  }
+
+  // Adjust slide widths dynamically
+  const adjustSlidesWidth = () => {
+    updatePerView()
+
+    const containerWidth = slider.offsetWidth
+    const slideWidth = containerWidth / slidesPerView
+
+    slides.forEach((slide) => {
+      const slideElement = slide as HTMLElement
+      slideElement.style.flex = `0 0 ${slideWidth}px`
+      slideElement.style.maxWidth = `${slideWidth}px`
+    })
+
+    sliderWrap.style.transition = 'transform 0.5s ease'
+    sliderWrap.style.transform = `translateX(0%)`
+  }
+
+  const nextSlide = () => {
+    const nextSlideIndex = (currentIndex + 1) % totalSlides
+
+    const firstSlide = sliderWrap.firstElementChild as HTMLElement
+    sliderWrap.append(firstSlide)
+
+    if (currentIndex !== 0) {
+      currentIndex = nextSlideIndex - 1
+    }
+
+    sliderWrap.style.transition = 'none'
+    sliderWrap.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`
+
+    setTimeout(() => {
+      sliderWrap.style.transition = 'transform 0.5s ease'
+      sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
+    }, 50)
+  }
+
+  const previousSlide = () => {
+    const prevSlideIndex = (currentIndex + totalSlides) % totalSlides
+
+    const lastSlide = sliderWrap.lastElementChild as HTMLElement
+    sliderWrap.prepend(lastSlide)
+
+    currentIndex = prevSlideIndex
+    sliderWrap.style.transition = 'none'
+    sliderWrap.style.transform = `translateX(-${currentIndex + 1 * (100 / slidesPerView)}%)`
+
+    setTimeout(() => {
+      sliderWrap.style.transition = 'transform 0.5s ease'
+      sliderWrap.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`
+    }, 50)
+  }
+
+  // Initialize the slider
+  const initializeSlider = () => {
+    // Add event listeners for navigation
+    previousArrow.addEventListener('click', previousSlide)
+    nextArrow.addEventListener('click', nextSlide)
+
+    // Adjust slides on load and resize
+    adjustSlidesWidth()
+  }
+
+  window.addEventListener('resize', adjustSlidesWidth)
+
+  // Run the slider
+  initializeSlider()
 }
 
-export default SwiperSlider
+export default SliderScript

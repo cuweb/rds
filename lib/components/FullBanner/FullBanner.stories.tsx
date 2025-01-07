@@ -26,7 +26,7 @@ export const Primary: Story = {
     return (
       <FullBanner {...args}>
         <FullBanner.Image>
-          <img src="https://picsum.photos/id/20/1600/700" className="rounded-none w-full h-auto" />
+          <img src="https://picsum.photos/id/20/1920/840" alt="Top down view of a desk" />
         </FullBanner.Image>
         <FullBanner.Content title="The nostalgia is real." headerType="h1">
           <p>

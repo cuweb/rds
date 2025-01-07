@@ -70,9 +70,9 @@ const DoublePara = () => {
 export const BlockTesting = () => {
   return (
     <>
-      <FullBanner as="section">
+      <FullBanner as="div">
         <FullBanner.Image>
-          <img className="rounded-none w-full h-auto" src="https://picsum.photos/id/20/1600/700" />
+          <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
         </FullBanner.Image>
         <FullBanner.Content headerType="h1" title="The nostalgia is real.">
           <p>
@@ -89,9 +89,9 @@ export const BlockTesting = () => {
       <SinglePara />
       <SinglePara />
 
-      <FullBanner as="section">
+      <FullBanner as="div">
         <FullBanner.Image>
-          <img className="rounded-none w-full h-auto" src="https://picsum.photos/id/20/1600/700" />
+          <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
         </FullBanner.Image>
         <FullBanner.Content headerType="h1" title="The nostalgia is real.">
           <p>
@@ -383,9 +383,9 @@ export const BlockTesting = () => {
       <SinglePara />
       <SinglePara />
 
-      <FullBanner as="section">
+      <FullBanner as="div">
         <FullBanner.Image>
-          <img className="rounded-none w-full h-auto" src="https://picsum.photos/id/20/1600/700" />
+          <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
         </FullBanner.Image>
         <FullBanner.Content headerType="h1" title="The nostalgia is real.">
           <p>

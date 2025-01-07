@@ -7,12 +7,6 @@
 @import './styles/utilities.css';
 @import './styles/spacing.css';
 
-/* Swiper slider */
-@import 'swiper/css/bundle';
-
-/* Priority Plus */
-/* @import 'priority-plus/dist/priority-plus.css'; */
-
 /* Components */
 @import './components/Alert/styles.css';
 @import './components/Badge/styles.css';
@@ -24,9 +18,11 @@
 @import './components/Embed/styles.css';
 @import './components/FullBanner/styles.css';
 @import './components/Form/AutoSuggest/styles.css';
+@import './components/Form/DateTime/styles.css';
 @import './components/ImageGrid/styles.css';
-@import './components/ImageSlider/styles.css';
 @import './components/Listing/styles.css';
+@import './components/Nav/priority-plus/priority-plus.css';
+@import './components/Nav/styles.css';
 @import './components/Login/styles.css';
 @import './components/Nav/styles.css';
 @import './components/PageHeader/styles.css';

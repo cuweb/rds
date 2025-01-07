@@ -10,7 +10,6 @@ export interface ImageSliderItemProps {
   title?: string
   link?: string
   aspectRatio?: aspectRatioKeys
-  className?: string
 }
 
 export const ImageSliderItem = ({
@@ -20,7 +19,6 @@ export const ImageSliderItem = ({
   title,
   link,
   aspectRatio = 'landscape',
-  className,
 }: ImageSliderItemProps) => {
   const LinkComponent = useLinkContext()
   const inlineImageStyles = {
@@ -28,12 +26,10 @@ export const ImageSliderItem = ({
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
   }
 
-  const classes = className ? `${className} swiper-slide` : 'swiper-slide'
-
   return (
-    <div className={classes}>
+    <div className="cu-slider--item pr-4">
       <div
-        className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full transition-[width] duration-[5000] ease-in-out`}
+        className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full transition ease-in-out duration-[5000]`}
         style={inlineImageStyles}
       >
         {title && (
