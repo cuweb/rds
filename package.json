@@ -43,13 +43,11 @@
   "dependencies": {
     "@headlessui/react": "2.2.0",
     "@heroicons/react": "2.1.5",
-    "@next-tools/dynamic": "0.0.11",
     "@react-google-maps/api": "2.20.3",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/container-queries": "0.1.1",
     "@tailwindcss/forms": "0.5.9",
     "@tailwindcss/typography": "0.5.15",
-    "@types/react-datepicker": "7.0.0",
     "@types/react-places-autocomplete": "7.2.14",
     "@types/react-select": "5.0.1",
     "date-fns": "4.1.0",
@@ -62,15 +60,11 @@
     "react-dom": "18.3.1",
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.16.0",
-    "react-quill": "2.0.0",
     "yup": "1.4.0"
   },
   "peerDependencies": {
-    "@next-tools/dynamic": "0.0.11",
     "@react-google-maps/api": "2.20.3",
-    "@types/react-datepicker": "7.0.0",
     "@types/react-places-autocomplete": "7.2.14",
-    "@types/react-select": "5.0.1",
     "date-fns": "4.1.0",
     "formik": "2.4.6",
     "react": "18.3.1",
@@ -79,7 +73,6 @@
     "react-dom": "18.3.1",
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.16.0",
-    "react-quill": "2.0.0",
     "yup": "1.4.0"
   },
   "devDependencies": {
@@ -99,7 +92,6 @@
     "@storybook/testing-library": "0.2.2",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
-    "@types/react-slick": "0.23.13",
     "@typescript-eslint/eslint-plugin": "8.12.2",
     "@typescript-eslint/parser": "8.12.2",
     "@vitejs/plugin-react": "4.3.3",
@@ -114,6 +106,7 @@
     "eslint-plugin-storybook": "0.10.1",
     "husky": "9.1.6",
     "postcss": "8.4.47",
+    "postcss-nesting": "^13.0.1",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.8",
     "size-limit": "11.1.6",
