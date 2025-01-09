@@ -24,6 +24,9 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta = {
   title: 'Prototypes/Projects',
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export default meta

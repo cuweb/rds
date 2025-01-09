@@ -10,10 +10,13 @@ import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
-import { NavDataSingle, NavAsideData } from '../../data/NavData'
+import { NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Layouts',
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export default meta

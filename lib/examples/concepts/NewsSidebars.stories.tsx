@@ -12,6 +12,9 @@ import { NavDataSingle, NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Concepts',
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export default meta

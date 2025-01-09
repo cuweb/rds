@@ -1,0 +1,31 @@
+.cu-max-w-child-2xl > :not(.cu-no-max-w-children) {
+  @apply max-w-2xl mx-auto;
+}
+
+.cu-max-w-child-3xl > :not(.cu-no-max-w-children) {
+  @apply max-w-3xl mx-auto;
+}
+
+.cu-max-w-child-4xl > :not(.cu-no-max-w-children) {
+  @apply max-w-4xl mx-auto;
+}
+
+.cu-max-w-child-5xl > :not(.cu-no-max-w-children) {
+  @apply max-w-5xl mx-auto;
+}
+
+.cu-max-w-child-6xl > :not(.cu-no-max-w-children) {
+  @apply max-w-6xl mx-auto;
+}
+
+.cu-max-w-child-7xl > :not(.cu-no-max-w-children) {
+  @apply mx-auto max-w-7xl;
+}
+
+.cu-max-w-child-max > :not(.cu-no-max-w-children) {
+  @apply mx-auto max-w-max;
+}
+
+.cu-max-w-child-full > :not(.cu-no-max-w-children) {
+  @apply max-w-full mx-auto;
+}

@@ -1,11 +1,6 @@
 import React from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
 
-const layoutSpacing = {
-  main: 'px-8 py-6 md:py-10 md:px-10',
-  containerGrey: 'max-w-screen-2xl mx-auto bg-cu-black-50 rounded-xl px-6 py-5 md:px-14 md:py-12',
-}
-
 type maxWidthKeys = keyof typeof maxWidthClasses
 
 export interface SectionProps {
@@ -16,15 +11,18 @@ export interface SectionProps {
   proseType?: 'none' | 'light' | 'dark'
 }
 
-export const Section = ({ children, as = 'section', proseType = 'dark', isGrey, maxWidth = '5xl' }: SectionProps) => {
+export const Section = ({ children, as = 'section', isGrey, maxWidth = '5xl' }: SectionProps) => {
   const SectionComponent = as
-  const childWidth = maxWidth ? `cu-section-${maxWidth}` : ''
-  const bgStyles = isGrey ? layoutSpacing.containerGrey : ''
-  const useProse = `cu-prose cu-prose-${proseType}`
+  const bgStyles = isGrey ? 'bg-cu-black-50 max-w-screen-2xl mx-auto rounded-xl' : ''
+  const greySpacing = isGrey ? 'px-6 py-5 md:px-14 md:py-12' : ''
+
+  // TODO: primary spacing --> px-4 md:px-6 lg:px-12
 
   return (
-    <SectionComponent className={`cu-section ${childWidth} not-contained ${bgStyles} ${useProse}`}>
-      {children}
-    </SectionComponent>
+    <>
+      <SectionComponent className={`cu-section w-screen ml-offset-center px-4 md:px-6 lg:px-12`}>
+        <div className={`cu-max-w-child-${maxWidth} ${bgStyles} ${greySpacing} cu-prose-first-last`}>{children}</div>
+      </SectionComponent>
+    </>
   )
 }

@@ -4,8 +4,10 @@
 @import 'tailwindcss/utilities';
 
 /* Global Styles */
-@import './styles/utilities.css';
+@import './styles/max-width.css';
+@import './styles/max-width-child.css';
 @import './styles/spacing.css';
+@import './styles/utilities.css';
 
 /* Components */
 @import './components/Alert/styles.css';
