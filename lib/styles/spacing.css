@@ -1,7 +1,23 @@
-.test {
-  @apply bg-slate-300;
+/* .cu-main > .cu-section > .cu-section:first-child {
+  @apply mt-6 md:mt-10;
+} */
+
+.cu-section + .cu-section {
+  @apply mt-6 md:mt-10;
 }
 
-.cu-main > .cu-section > .cu-section {
+:not(.cu-section) + .cu-section,
+.cu-section + :not(.cu-section) {
   @apply mt-6 md:mt-10;
+}
+
+/* Consecutive grey backgrounds */
+
+.cu-section--grey + .cu-section--grey {
+  @apply mt-0 md:mt-0;
+}
+
+/* TODO: primary spacing countered with negative margin --> px-4 md:px-6 lg:px-12 */
+.cu-section--grey + .cu-section--grey > .bg-cu-black-50 {
+  @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
 }

@@ -11,7 +11,7 @@ export const FullBannerWrapper = ({ children, as = 'section' }: FullBannerProps)
 
   return (
     <FullBannerComponent
-      className={`cu-fullbanner cu-component bg-cu-black-900 relative cu-no-browsers-edge not-prose not-contained`}
+      className={`cu-fullbanner bg-cu-black-900 relative cu-no-browsers-edge not-prose not-contained`}
     >
       {children}
     </FullBannerComponent>

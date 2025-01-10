@@ -2,7 +2,7 @@
 * Section children max width
 */
 
-.cu-section-2xl > :not(.not-contained) {
+/* .cu-section-2xl > :not(.not-contained) {
   @apply max-w-2xl mx-auto;
 }
 
@@ -28,19 +28,19 @@
 
 .cu-section-full > :not(.not-contained) {
   @apply max-w-full mx-auto;
-}
+} */
 
 /* 
 * Section and non-section spacing
 */
 
-:not(.cu-section) + .cu-section {
+/* :not(.cu-section) + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
 .cu-section + :not(.cu-section) {
   @apply mt-6 md:mt-10;
-}
+} */
 
 /* 
 * Consecutive component spacing

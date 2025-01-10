@@ -9,7 +9,7 @@ import { TextImage } from '../../components/TextImage/TextImage'
 import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
-import { Card } from '../../components/Card/Card'
+import { FullBanner } from '../../components/FullBanner/FullBanner'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { NavDataSingle, NavAsideData } from '../../data/NavData'
 import { NewsData } from '../../data/NewsData'
@@ -47,7 +47,25 @@ export const BlockSpacing: Story = {
         </Nav.Primary>
       </Nav>
 
-      <Main>
+      <Main maxWidth="3xl">
+        {/* <Section maxWidth="full">
+          <FullBanner as="section">
+            <FullBanner.Image>
+              <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
+            </FullBanner.Image>
+            <FullBanner.Content headerType="h1" title="The nostalgia is real.">
+              <p>
+                The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
+                revolutionized how the world consumes music on the move!
+              </p>
+              <ButtonGroup>
+                <Button title="Apply Now" />
+                <Button color="grey" title="Request Information" />
+              </ButtonGroup>
+            </FullBanner.Content>
+          </FullBanner>
+        </Section> */}
+
         <Section>
           <h2>White Background</h2>
           <SinglePara />
