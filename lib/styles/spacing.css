@@ -1,8 +1,13 @@
+.cu-main > .cu-section--primary {
+  @apply my-6 md:my-10;
+}
+
 /* .cu-main > .cu-section > .cu-section:first-child {
   @apply mt-6 md:mt-10;
 } */
 
-.cu-section + .cu-section {
+.cu-section + .cu-section,
+.cu-column + .cu-column {
   @apply mt-6 md:mt-10;
 }
 

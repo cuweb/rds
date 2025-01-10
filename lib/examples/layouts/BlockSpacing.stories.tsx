@@ -2,6 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
+import { Article } from '../../layouts/Article/Article'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
@@ -47,7 +48,7 @@ export const BlockSpacing: Story = {
         </Nav.Primary>
       </Nav>
 
-      <Main maxWidth="3xl">
+      <Main maxWidth="5xl">
         {/* <Section maxWidth="full">
           <FullBanner as="section">
             <FullBanner.Image>
@@ -66,6 +67,42 @@ export const BlockSpacing: Story = {
           </FullBanner>
         </Section> */}
 
+        <Section maxWidth="max">
+          <WideImage
+            as="section"
+            focalPointX={50}
+            focalPointY={50}
+            headerType="h1"
+            image="https://picsum.photos/id/381/600/400"
+            isType="light"
+            maxWidth="7xl"
+            opacity={60}
+            title="Wide Image"
+          >
+            <ButtonGroup>
+              <Button title="Apply Now" />
+              <Button color="dark-grey" title="Request Information" />
+            </ButtonGroup>
+          </WideImage>
+        </Section>
+
+        <WideImage
+          as="section"
+          focalPointX={50}
+          focalPointY={50}
+          headerType="h1"
+          image="https://picsum.photos/id/381/600/400"
+          isType="light"
+          maxWidth="7xl"
+          opacity={60}
+          title="Wide Image"
+        >
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="dark-grey" title="Request Information" />
+          </ButtonGroup>
+        </WideImage>
+
         <Section>
           <h2>White Background</h2>
           <SinglePara />
@@ -97,6 +134,93 @@ export const BlockSpacing: Story = {
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
+
+        <Column cols="2" gridGap="10" maxWidth="5xl">
+          <Column.Content>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+          <Column.Content>
+            <p>
+              Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+              viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+              malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+        </Column>
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
+        <Column cols="3" gridGap="10" maxWidth="7xl">
+          <Column.Content>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+          <Column.Content>
+            <p>
+              Middle. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+              viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+              malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+          <Column.Content>
+            <p>
+              Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+              viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+              malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+        </Column>
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
+        <Column cols="2" gridGap="10" maxWidth="5xl">
+          <Column.Content>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+          <Column.Content>
+            <p>
+              Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+              viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+              malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+        </Column>
+
+        <Column cols="2" gridGap="10" maxWidth="5xl">
+          <Column.Content>
+            <p>
+              Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
+              in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed malesuada
+              metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+          <Column.Content>
+            <p>
+              Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+              viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+              malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+            </p>
+          </Column.Content>
+        </Column>
       </Main>
 
       <FooterStandard />

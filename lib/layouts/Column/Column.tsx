@@ -21,17 +21,23 @@ const styles = {
 export const ColumnWrapper = ({ children, maxWidth = '5xl', gridGap = '10', cols = '1', reverse }: ColumnProps) => {
   const reverseGrid = reverse && (cols === '1/3' || cols === '2/3') ? 'cu-column--reverse' : ''
 
+  // TODO: break out of main width --> w-screen ml-offset-center
+
   return (
-    <div
-      className={`
+    <>
+      <div className="w-screen ml-offset-center">
+        <div
+          className={`
         ${styles.column}
         ${gridColumnClasses[cols]}
         ${maxWidthClasses[maxWidth]} ${gridGapClasses[gridGap]}
         ${reverseGrid}
-      `}
-    >
-      {children}
-    </div>
+        `}
+        >
+          {children}
+        </div>
+      </div>
+    </>
   )
 }
 

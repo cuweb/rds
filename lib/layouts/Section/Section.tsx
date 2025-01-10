@@ -18,6 +18,7 @@ export const Section = ({ children, as = 'section', isGrey, maxWidth = '5xl' }: 
   const greySpacing = isGrey ? 'px-6 py-5 md:px-14 md:py-12' : ''
 
   // TODO: primary spacing --> px-4 md:px-6 lg:px-12
+  // TODO: break out of main width --> w-screen ml-offset-center
 
   return (
     <>
