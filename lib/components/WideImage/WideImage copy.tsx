@@ -1,8 +1,9 @@
 import React from 'react'
+import { maxWidthClasses } from '../../utils/propClasses'
 import { WideImageSignup } from './WideImageSignup'
 import { PageHeader } from '../PageHeader/PageHeader'
 
-// TODO: Discussion --> removing the hasScroll option
+type maxWidthKeys = keyof typeof maxWidthClasses
 
 const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
@@ -12,6 +13,7 @@ export interface WideImageProps {
   title: string
   image?: string
   headerType?: 'h1' | 'h2'
+  maxWidth?: maxWidthKeys
   opacity?: (typeof opacityValues)[number]
   focalPointX?: number
   focalPointY?: number
@@ -48,6 +50,7 @@ export const WideImageWrapper = ({
   title,
   image,
   headerType = 'h2',
+  maxWidth = 'max',
   opacity = 70,
   focalPointX = 50,
   focalPointY = 50,
@@ -88,7 +91,7 @@ export const WideImageWrapper = ({
   return (
     <WideImageComponent
       style={isType === 'image' ? inlineStyle : undefined}
-      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${hasImageStyles} ${topBottomSpace}`}
+      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${maxWidthClasses[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
     >
       {hasWave && (
         <svg

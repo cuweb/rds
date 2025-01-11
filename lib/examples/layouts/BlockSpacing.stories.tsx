@@ -2,18 +2,10 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
-import { Article } from '../../layouts/Article/Article'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { TextImage } from '../../components/TextImage/TextImage'
-import { WideImage } from '../../components/WideImage/WideImage'
-import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
-import { Button } from '../../components/Button/Button'
-import { FullBanner } from '../../components/FullBanner/FullBanner'
-import { PageHeader } from '../../components/PageHeader/PageHeader'
-import { NavDataSingle, NavAsideData } from '../../data/NavData'
-import { NewsData } from '../../data/NewsData'
+import { NavAsideData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Layouts',
@@ -49,60 +41,6 @@ export const BlockSpacing: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        {/* <Section maxWidth="full">
-          <FullBanner as="section">
-            <FullBanner.Image>
-              <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-            </FullBanner.Image>
-            <FullBanner.Content headerType="h1" title="The nostalgia is real.">
-              <p>
-                The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
-                revolutionized how the world consumes music on the move!
-              </p>
-              <ButtonGroup>
-                <Button title="Apply Now" />
-                <Button color="grey" title="Request Information" />
-              </ButtonGroup>
-            </FullBanner.Content>
-          </FullBanner>
-        </Section> */}
-
-        <Section maxWidth="max">
-          <WideImage
-            as="section"
-            focalPointX={50}
-            focalPointY={50}
-            headerType="h1"
-            image="https://picsum.photos/id/381/600/400"
-            isType="light"
-            maxWidth="7xl"
-            opacity={60}
-            title="Wide Image"
-          >
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="dark-grey" title="Request Information" />
-            </ButtonGroup>
-          </WideImage>
-        </Section>
-
-        <WideImage
-          as="section"
-          focalPointX={50}
-          focalPointY={50}
-          headerType="h1"
-          image="https://picsum.photos/id/381/600/400"
-          isType="light"
-          maxWidth="7xl"
-          opacity={60}
-          title="Wide Image"
-        >
-          <ButtonGroup>
-            <Button title="Apply Now" />
-            <Button color="dark-grey" title="Request Information" />
-          </ButtonGroup>
-        </WideImage>
-
         <Section>
           <h2>White Background</h2>
           <SinglePara />

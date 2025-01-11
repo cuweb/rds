@@ -8,7 +8,6 @@ export interface SectionProps {
   as?: 'section' | 'div'
   isGrey?: boolean
   maxWidth?: maxWidthKeys
-  proseType?: 'none' | 'light' | 'dark'
 }
 
 export const Section = ({ children, as = 'section', isGrey, maxWidth = '5xl' }: SectionProps) => {

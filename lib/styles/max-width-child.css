@@ -23,7 +23,7 @@
 }
 
 .cu-max-w-child-max > :not(.cu-no-max-w-children) {
-  @apply mx-auto max-w-max;
+  @apply mx-auto max-w-screen-2xl;
 }
 
 .cu-max-w-child-full > :not(.cu-no-max-w-children) {
