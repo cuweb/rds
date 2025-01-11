@@ -8,7 +8,6 @@ const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
-  as?: 'section' | 'div'
   title: string
   image?: string
   headerType?: 'h1' | 'h2'
