@@ -131,11 +131,18 @@ export const UsageExamples: Story = {
         <SinglePara />
 
         <WideImage as="section" isType="light" title="Wide Image">
-          <ButtonGroup>
-            <Button title="Apply Now" />
-            <Button color="dark-grey" title="Request Information" />
-          </ButtonGroup>
+          <WideImage.Signup />
         </WideImage>
+
+        <WideImage as="section" isType="dark" title="Wide Image">
+          <WideImage.Signup />
+        </WideImage>
+
+        <Section maxWidth="7xl">
+          <WideImage as="section" title="Wide Image" image="https://picsum.photos/id/381/600/400" isType="image">
+            <WideImage.Signup />
+          </WideImage>
+        </Section>
 
         <Column cols="2" gridGap="10" maxWidth="5xl">
           <Column.Content>
@@ -157,7 +164,6 @@ export const UsageExamples: Story = {
         <Section maxWidth="full">
           <WideImage
             as="section"
-            headerType="h1"
             image="https://picsum.photos/id/381/600/400"
             isType="image"
             title="Wide Image Examples"
