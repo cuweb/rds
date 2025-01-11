@@ -27,6 +27,14 @@
   @apply mt-6 md:mt-10;
 }
 
+.cu-widewave + .cu-widewave,
+:not(.cu-widewave) + .cu-widewave,
+.cu-widewave + :not(.cu-widewave),
+.cu-section + .cu-widewave,
+.cu-widewave + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Consecutive grey backgrounds */
 
 .cu-section--grey + .cu-section--grey {
