@@ -2,10 +2,6 @@
   @apply my-6 md:my-10;
 }
 
-/* .cu-main > .cu-section > .cu-section:first-child {
-  @apply mt-6 md:mt-10;
-} */
-
 .cu-section + .cu-section,
 .cu-column + .cu-column {
   @apply mt-6 md:mt-10;
@@ -13,6 +9,13 @@
 
 :not(.cu-section) + .cu-section,
 .cu-section + :not(.cu-section) {
+  @apply mt-6 md:mt-10;
+}
+
+:not(.cu-fullbanner) + .cu-fullbanner,
+.cu-fullbanner + :not(.cu-fullbanner),
+.cu-section + .cu-fullbanner,
+.cu-fullbanner + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
