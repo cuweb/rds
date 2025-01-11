@@ -19,6 +19,14 @@
   @apply mt-6 md:mt-10;
 }
 
+.cu-imagecover + .cu-imagecover,
+:not(.cu-imagecover) + .cu-imagecover,
+.cu-imagecover + :not(.cu-imagecover),
+.cu-section + .cu-imagecover,
+.cu-imagecover + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Consecutive grey backgrounds */
 
 .cu-section--grey + .cu-section--grey {

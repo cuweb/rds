@@ -1,4 +1,9 @@
-.cu-imagecover .cu-section.bg-white {
+/* TODO GLOBAL: negative top based on primary spacing */
+.cu-main > .cu-section > .cu-imagecover:first-of-type {
+  @apply -mt-4 md:-mt-6 lg:-mt-12;
+}
+
+/* .cu-imagecover .cu-section.bg-white {
   @apply bg-transparent;
 }
 
@@ -8,4 +13,4 @@
 
 .cu-imagecover .cu-imagecover-content > div {
   @apply relative z-10;
-}
+} */
