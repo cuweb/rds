@@ -32,7 +32,7 @@ const SinglePara = () => {
   )
 }
 
-export const UsageExamples: Story = {
+export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
@@ -64,6 +64,13 @@ export const UsageExamples: Story = {
             </ButtonGroup>
           </WideImage>
         </Section>
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
+        <WideImage as="section" isType="light" title="Wide Image" />
+        <WideImage as="section" isType="light" title="Wide Image" />
 
         <h2>Header Two</h2>
         <SinglePara />

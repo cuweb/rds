@@ -16,12 +16,15 @@ export const Section = ({ children, as = 'section', isGrey, maxWidth = '5xl' }: 
   const bgStyles = isGrey ? 'bg-cu-black-50 max-w-screen-2xl mx-auto rounded-xl' : ''
   const greySpacing = isGrey ? 'px-6 py-5 md:px-14 md:py-12' : ''
 
-  // TODO: primary spacing --> px-4 md:px-6 lg:px-12
-  // TODO: break out of main width --> w-screen ml-offset-center
+  // TODO GLOBAL: break out of main width
+  const $breakoutMaxWidth = `w-screen ml-offset-center`
+
+  // TODO GLOBAL:
+  const $primarySpacing = `px-4 md:px-6 lg:px-12`
 
   return (
     <>
-      <SectionComponent className={`cu-section ${sectionClass} w-screen ml-offset-center px-4 md:px-6 lg:px-12`}>
+      <SectionComponent className={`cu-section ${sectionClass} ${$breakoutMaxWidth} ${$primarySpacing}`}>
         <div className={`cu-max-w-child-${maxWidth} ${bgStyles} ${greySpacing} cu-prose-first-last`}>{children}</div>
       </SectionComponent>
     </>
