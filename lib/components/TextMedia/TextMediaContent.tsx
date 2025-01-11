@@ -28,7 +28,10 @@ export const TextMediaContent = ({
   }
 
   return (
-    <div className={`cu-textmedia-content ${justifyContentClasses[align]}`} style={inlineContentStyles}>
+    <div
+      className={`cu-textmedia-content cu-prose-first-last ${justifyContentClasses[align]}`}
+      style={inlineContentStyles}
+    >
       <PageHeader
         as={headerType}
         header={title}

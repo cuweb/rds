@@ -64,7 +64,7 @@ export const LayoutExamples: Story = {
                 </a>
               </ButtonGroup>
             </TextMedia.Content>
-            <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
+            <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" hasBorder />
           </TextMedia>
         </Section>
 
@@ -93,7 +93,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <TextMedia gridGap="10" maxWidth="7xl">
+        <TextMedia>
           <TextMedia.Content hasUnderline title="Text and Image Component" width={50}>
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
@@ -114,10 +114,37 @@ export const LayoutExamples: Story = {
               </a>
             </ButtonGroup>
           </TextMedia.Content>
-          <TextMedia.Aside align="center" border="lg" borderColor="white">
+          <TextMedia.Aside align="center">
             <img alt="Presentation only" height="460" src="https://picsum.photos/id/431/600/460" width="600" />
           </TextMedia.Aside>
         </TextMedia>
+
+        <Section maxWidth="7xl" isGrey>
+          <TextMedia>
+            <TextMedia.Content hasUnderline title="Text and Image Component" width={50}>
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+              <p>
+                Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                voluptatem non. Nobis voluptatem dolorum et eum doloremque cupiditate velit.
+              </p>
+              <ButtonGroup>
+                <a
+                  className="cu-button cu-button--red"
+                  href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/"
+                >
+                  Read more
+                </a>
+              </ButtonGroup>
+            </TextMedia.Content>
+            <TextMedia.Aside align="center" hasBorder>
+              <img alt="Presentation only" height="460" src="https://picsum.photos/id/431/600/460" width="600" />
+            </TextMedia.Aside>
+          </TextMedia>
+        </Section>
 
         <Section>
           <h2>White Background</h2>
@@ -187,13 +214,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <p>ADD COMPONENT</p>
-
-        <Section maxWidth="7xl">
-          <p>ADD COMPONENT</p>
-        </Section>
-
-        <Column cols="2" gridGap="10" maxWidth="5xl">
+        <Column cols="2">
           <Column.Content>
             <p>
               Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
@@ -210,8 +231,31 @@ export const LayoutExamples: Story = {
           </Column.Content>
         </Column>
 
-        <Section maxWidth="full">
-          <p>ADD COMPONENT</p>
+        <Section maxWidth="full" isGrey>
+          <TextMedia>
+            <TextMedia.Content hasUnderline title="Text and Image Component" width={50}>
+              <p>
+                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              </p>
+              <p>
+                Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil
+                voluptatem non. Nobis voluptatem dolorum et eum doloremque cupiditate velit.
+              </p>
+              <ButtonGroup>
+                <a
+                  className="cu-button cu-button--red"
+                  href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/"
+                >
+                  Read more
+                </a>
+              </ButtonGroup>
+            </TextMedia.Content>
+            <TextMedia.Aside align="center" hasBorder>
+              <img alt="Presentation only" height="460" src="https://picsum.photos/id/431/600/460" width="600" />
+            </TextMedia.Aside>
+          </TextMedia>
         </Section>
       </Main>
 
