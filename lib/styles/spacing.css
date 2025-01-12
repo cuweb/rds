@@ -135,7 +135,16 @@
   @apply mt-6 md:mt-10;
 }
 
-/* Image Cover */
+/* Login */
+.cu-login + .cu-login,
+:not(.cu-login) + .cu-login,
+.cu-login + :not(.cu-login),
+.cu-section + .cu-login,
+.cu-login + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Page Header */
 .cu-pageheader + .cu-pageheader,
 :not(.cu-pageheader) + .cu-pageheader,
 .cu-pageheader + :not(.cu-pageheader),

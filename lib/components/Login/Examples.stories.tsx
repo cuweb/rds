@@ -5,6 +5,8 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
+import { Login } from './Login'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {
   title: 'Components/Login/Examples',
@@ -40,56 +42,25 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <Section maxWidth="7xl">
-          <p>COMPONENT</p>
-        </Section>
+        <PageHeader
+          as="h1"
+          header="Login Page Example"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
+          size="lg"
+        />
+        <Login
+          onClickHandler={{
+            default: () => {},
+            google: () => {},
+            linkedIn: () => {},
+            twitter: () => {},
+          }}
+          useSocial
+        />
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
-
-        <p>COMPONENT</p>
-        <p>COMPONENT</p>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <p>COMPONENT</p>
-
-        <Section maxWidth="7xl" isGrey>
-          <p>COMPONENT</p>
-        </Section>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <p>COMPONENT</p>
-
-        <Section maxWidth="7xl">
-          <p>COMPONENT</p>
-        </Section>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <Section maxWidth="full" isGrey>
-          <p>COMPONENT</p>
-        </Section>
       </Main>
 
       <FooterStandard />
