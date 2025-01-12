@@ -1,18 +1,37 @@
 /* 
-** LAYOUT COMPONENT SPACING
+** PRIMARY SECTION SPACING
 */
 
 .cu-main > .cu-section--primary {
   @apply my-6 md:my-10;
 }
 
-/* Consecutive Sections */
-.cu-section + .cu-section {
+/* 
+** LAYOUT COMPONENT SPACING
+*/
+
+/* Column */
+.cu-column + .cu-column,
+:not(.cu-column) + .cu-column,
+.cu-column + :not(.cu-column),
+.cu-section + .cu-column,
+.cu-column + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
-/* Consecutive Column */
-.cu-column + .cu-column {
+/* Section */
+.cu-section + .cu-section,
+:not(.cu-section) + .cu-section,
+.cu-section + :not(.cu-section) {
+  @apply mt-6 md:mt-10;
+}
+
+/* Stacked List */
+.cu-stackedlist + .cu-stackedlist,
+:not(.cu-stackedlist) + .cu-stackedlist,
+.cu-stackedlist + :not(.cu-stackedlist),
+.cu-section + .cu-stackedlist,
+.cu-stackedlist + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
@@ -26,16 +45,16 @@
   @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
 }
 
+/* 
+** COMPONENT SPACING
+*/
+
 /* // TODO GLOBAL: margin-t */
 /* .cu-component-updated + .cu-component-updated,
 :not(.cu-component-updated) + .cu-component-updated,
 .cu-component-updated + :not(.cu-component-updated) {
   @apply mt-6 md:mt-10;
 } */
-
-/* 
-** SINGLE COMPONENT SPACING
-*/
 
 /* Alert */
 .cu-alert + .cu-alert,
@@ -132,12 +151,6 @@
 .cu-pageheader + :not(.cu-pageheader),
 .cu-section + .cu-pageheader,
 .cu-pageheader + .cu-section {
-  @apply mt-6 md:mt-10;
-}
-
-/* Section */
-:not(.cu-section) + .cu-section,
-.cu-section + :not(.cu-section) {
   @apply mt-6 md:mt-10;
 }
 
