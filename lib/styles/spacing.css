@@ -1,9 +1,18 @@
+/* 
+** LAYOUT COMPONENT SPACING
+*/
+
 .cu-main > .cu-section--primary {
   @apply my-6 md:my-10;
 }
 
 /* Consecutive Sections */
 .cu-section + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Consecutive Column */
+.cu-column + .cu-column {
   @apply mt-6 md:mt-10;
 }
 
@@ -17,17 +26,16 @@
   @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
 }
 
-/* Consecutive Column */
-.cu-column + .cu-column {
-  @apply mt-6 md:mt-10;
-}
-
 /* // TODO GLOBAL: margin-t */
 /* .cu-component-updated + .cu-component-updated,
 :not(.cu-component-updated) + .cu-component-updated,
 .cu-component-updated + :not(.cu-component-updated) {
   @apply mt-6 md:mt-10;
 } */
+
+/* 
+** SINGLE COMPONENT SPACING
+*/
 
 /* Alert */
 .cu-alert + .cu-alert,
@@ -44,6 +52,15 @@
 .cu-calendar + :not(.cu-calendar),
 .cu-section + .cu-calendar,
 .cu-calendar + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Call Out */
+.cu-callout + .cu-callout,
+:not(.cu-callout) + .cu-callout,
+.cu-callout + :not(.cu-callout),
+.cu-section + .cu-callout,
+.cu-callout + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
