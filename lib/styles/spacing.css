@@ -162,6 +162,24 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Quote */
+.cu-quote + .cu-quote,
+:not(.cu-quote) + .cu-quote,
+.cu-quote + :not(.cu-quote),
+.cu-section + .cu-quote,
+.cu-quote + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Table */
+.cu-table + .cu-table,
+:not(.cu-table) + .cu-table,
+.cu-table + :not(.cu-table),
+.cu-section + .cu-table,
+.cu-table + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Wide Wave */
 .cu-widewave + .cu-widewave,
 :not(.cu-widewave) + .cu-widewave,

@@ -3,7 +3,7 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
@@ -106,9 +106,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Table {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -125,9 +125,9 @@ export const CustomColumnsWidth: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Table {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -143,9 +143,9 @@ export const ReactNodeInColumn: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Table {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -161,9 +161,9 @@ export const RowHeader: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Table {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -179,9 +179,9 @@ export const HasStripes: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Table {...args} />
-      </Section>
+      </Main>
     )
   },
 }
