@@ -33,7 +33,7 @@ export const Primary: Story = {
     )
 
     return (
-      <Main maxWidth="4xl">
+      <Main maxWidth="5xl">
         <Calendar events={args.events} callback={callbackcal} />
       </Main>
     )

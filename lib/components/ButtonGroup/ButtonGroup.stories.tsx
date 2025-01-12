@@ -5,7 +5,7 @@ import { Button } from '../Button/Button'
 import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof ButtonGroup> = {
-  title: 'Components/ButtonGroup',
+  title: 'Components/Button Group',
   component: ButtonGroup,
   tags: ['autodocs'],
   argTypes: {},
@@ -26,7 +26,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="4xl">
+      <Main maxWidth="5xl">
         <ButtonGroup {...args}>
           <Button
             onClick={() => {

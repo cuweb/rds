@@ -28,7 +28,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="4xl">
+      <Main maxWidth="5xl">
         <Figure {...args}>
           <img
             src="https://picsum.photos/id/15/1600/900"
@@ -70,7 +70,7 @@ export const WithCaption: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="4xl">
+      <Main maxWidth="5xl">
         <Figure {...args}>
           <img
             src="https://picsum.photos/id/15/1600/900"

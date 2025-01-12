@@ -29,7 +29,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="4xl">
+      <Main maxWidth="5xl">
         <BadgeGroup {...args}>
           <Badge text="Grey Badge" color="grey" />
           <Badge text="Green Badge" color="green" />

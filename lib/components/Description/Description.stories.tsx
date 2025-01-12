@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Description>
 
 export const Primary: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Description {...args}>
         <Description.Meta term={descMeta[0].term}>{descMeta[0].details}</Description.Meta>
       </Description>
@@ -32,7 +32,7 @@ export const Primary: Story = {
 
 export const Columns: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Description {...args}>
         <Description.Meta term={descMeta[0].term} useColumns>
           {descMeta[0].details}
@@ -44,7 +44,7 @@ export const Columns: Story = {
 
 export const Accordion: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Description {...args}>
         <Description.Accordion term={descMeta[0].term}>{descMeta[0].details}</Description.Accordion>
       </Description>
@@ -54,7 +54,7 @@ export const Accordion: Story = {
 
 export const MultipleStacked: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <PageHeader as="h2" header="Description header" size="md" />
       <Description {...args}>
         {descMeta.map((item) => (
@@ -69,7 +69,7 @@ export const MultipleStacked: Story = {
 
 export const MultipleColumns: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <PageHeader as="h2" header="Description header" size="md" />
       <Description {...args}>
         {descMeta.map((item) => (
@@ -84,7 +84,7 @@ export const MultipleColumns: Story = {
 
 export const MultipleAccordions: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <PageHeader as="h2" header="Description header" size="md" />
       <Description {...args}>
         {descMeta.map((item) => (

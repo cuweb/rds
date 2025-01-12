@@ -5,9 +5,11 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
+import { ButtonGroup } from './ButtonGroup'
+import { Button } from '../Button/Button'
 
 const meta: Meta = {
-  title: 'Components/Filter/Examples',
+  title: 'Components/Button Group/Examples',
   parameters: {
     layout: 'fullscreen',
   },
@@ -40,55 +42,40 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <Section maxWidth="7xl">
-          <p>COMPONENT</p>
-        </Section>
-
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
-        <p>COMPONENT</p>
+        <ButtonGroup align="start" gap="5">
+          <Button title="Primary Red" />
+          <Button color="dark-grey" title="Dark Grey" />
+          <Button color="grey" title="Light Grey" />
+        </ButtonGroup>
 
-        <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <ButtonGroup align="start" gap="5">
+          <Button title="Primary Red" />
+          <Button color="dark-grey" title="Dark Grey" />
+          <Button color="grey" title="Light Grey" />
+        </ButtonGroup>
+
+        <ButtonGroup align="start" gap="5">
+          <Button title="Primary Red" />
+          <Button color="dark-grey" title="Dark Grey" />
+          <Button color="grey" title="Light Grey" />
+        </ButtonGroup>
+
+        <SinglePara />
+        <SinglePara />
 
         <Section maxWidth="7xl" isGrey>
-          <p>COMPONENT</p>
-        </Section>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <p>COMPONENT</p>
-
-        <Section maxWidth="7xl">
-          <p>COMPONENT</p>
-        </Section>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <Section maxWidth="full" isGrey>
-          <p>COMPONENT</p>
+          <ButtonGroup align="center" gap="5">
+            <Button title="Primary Red" />
+            <Button color="dark-grey" title="Dark Grey" />
+            <Button color="white" title="Light Grey" />
+          </ButtonGroup>
         </Section>
       </Main>
 

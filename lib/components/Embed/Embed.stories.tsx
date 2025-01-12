@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Embed>
 
 export const Youtube: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Embed {...args}>
         <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=Fbb1gdTcH-A" />
       </Embed>
@@ -29,7 +29,7 @@ export const Youtube: Story = {
 
 export const Vimeo: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Embed {...args}>
         <Embed.Vimeo title="test" url="https://vimeo.com/106595658" />
       </Embed>
@@ -39,7 +39,7 @@ export const Vimeo: Story = {
 
 export const Kaltura: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Embed {...args}>
         <Embed.Kaltura
           title="test"
@@ -52,7 +52,7 @@ export const Kaltura: Story = {
 
 export const Powerbi: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Embed {...args}>
         <Embed.PowerBi
           title="test"
@@ -65,7 +65,7 @@ export const Powerbi: Story = {
 
 export const TED: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Embed {...args}>
         <Embed.TED
           title="test"
@@ -78,7 +78,7 @@ export const TED: Story = {
 
 export const Soundcloud: Story = {
   render: (args) => (
-    <Main maxWidth="4xl">
+    <Main maxWidth="5xl">
       <Embed {...args}>
         <Embed.SoundCloud
           title="test"
