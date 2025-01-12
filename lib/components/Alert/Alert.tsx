@@ -37,7 +37,7 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
   }
 
   return (
-    <div className={`cu-alert cu-alert--${type} cu-component-updated not-prose flex rounded-md p-4`}>
+    <div className={`cu-alert cu-alert--${type} not-prose flex rounded-md p-4`}>
       {React.createElement(AlertTypes[type], {
         className: `${AlertSizes[size].alertIconSize}`,
         'aria-hidden': 'true',

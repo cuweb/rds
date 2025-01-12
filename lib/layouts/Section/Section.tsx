@@ -25,7 +25,11 @@ export const Section = ({ children, as = 'section', isGrey, maxWidth = '5xl' }: 
   return (
     <>
       <SectionComponent className={`cu-section ${sectionClass} ${$breakoutMaxWidth} ${$primarySpacing}`}>
-        <div className={`cu-max-w-child-${maxWidth} ${bgStyles} ${greySpacing} cu-prose-first-last`}>{children}</div>
+        <div
+          className={`cu-max-w-child-${maxWidth} space-y-6 md:space-y-10 ${bgStyles} ${greySpacing} cu-prose-first-last`}
+        >
+          {children}
+        </div>
       </SectionComponent>
     </>
   )

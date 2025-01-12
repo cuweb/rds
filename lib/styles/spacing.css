@@ -2,20 +2,52 @@
   @apply my-6 md:my-10;
 }
 
-.cu-section + .cu-section,
+/* Consecutive Sections */
+.cu-section + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Consecutive Grey Backgrounds */
+.cu-section--grey + .cu-section--grey {
+  @apply mt-0 md:mt-0;
+}
+
+/* TODO: primary spacing countered with negative margin --> px-4 md:px-6 lg:px-12 */
+.cu-section--grey + .cu-section--grey > .bg-cu-black-50 {
+  @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
+}
+
+/* Consecutive Column */
 .cu-column + .cu-column {
   @apply mt-6 md:mt-10;
 }
 
-.cu-component-updated + .cu-component-updated {
+/* // TODO GLOBAL: margin-t */
+/* .cu-component-updated + .cu-component-updated,
+:not(.cu-component-updated) + .cu-component-updated,
+.cu-component-updated + :not(.cu-component-updated) {
+  @apply mt-6 md:mt-10;
+} */
+
+/* Alert */
+.cu-alert + .cu-alert,
+:not(.cu-alert) + .cu-alert,
+.cu-alert + :not(.cu-alert),
+.cu-section + .cu-alert,
+.cu-alert + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
-:not(.cu-section) + .cu-section,
-.cu-section + :not(.cu-section) {
+/* Calendar */
+.cu-calendar + .cu-calendar,
+:not(.cu-calendar) + .cu-calendar,
+.cu-calendar + :not(.cu-calendar),
+.cu-section + .cu-calendar,
+.cu-calendar + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
+/* Full Banner */
 :not(.cu-fullbanner) + .cu-fullbanner,
 .cu-fullbanner + :not(.cu-fullbanner),
 .cu-section + .cu-fullbanner,
@@ -23,6 +55,7 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Image Cover */
 .cu-imagecover + .cu-imagecover,
 :not(.cu-imagecover) + .cu-imagecover,
 .cu-imagecover + :not(.cu-imagecover),
@@ -31,21 +64,17 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Section */
+:not(.cu-section) + .cu-section,
+.cu-section + :not(.cu-section) {
+  @apply mt-6 md:mt-10;
+}
+
+/* Wide Wave */
 .cu-widewave + .cu-widewave,
 :not(.cu-widewave) + .cu-widewave,
 .cu-widewave + :not(.cu-widewave),
 .cu-section + .cu-widewave,
 .cu-widewave + .cu-section {
   @apply mt-6 md:mt-10;
-}
-
-/* Consecutive grey backgrounds */
-
-.cu-section--grey + .cu-section--grey {
-  @apply mt-0 md:mt-0;
-}
-
-/* TODO: primary spacing countered with negative margin --> px-4 md:px-6 lg:px-12 */
-.cu-section--grey + .cu-section--grey > .bg-cu-black-50 {
-  @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
 }

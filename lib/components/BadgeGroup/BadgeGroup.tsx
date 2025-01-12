@@ -46,7 +46,7 @@ export const BadgeGroup = ({
 
   return (
     <div
-      className={`cu-badgegroup cu-component flex flex-wrap md:flex-1 ${position} ${gridGapClasses[gap]}`}
+      className={`cu-badgegroup cu-component-updated flex flex-wrap md:flex-1 ${position} ${gridGapClasses[gap]}`}
       style={positionStyles}
     >
       {children}
