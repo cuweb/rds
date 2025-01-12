@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Forbidden403 } from './Forbidden403'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../../layouts/Main/Main'
 
 const meta: Meta<typeof Forbidden403> = {
   title: 'Components/Error Messages/403 Forbidden',
@@ -24,9 +24,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main maxWidth="5xl">
         <Forbidden403 {...args} />
-      </Section>
+      </Main>
     )
   },
 }

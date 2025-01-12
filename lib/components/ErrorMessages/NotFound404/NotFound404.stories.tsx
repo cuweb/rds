@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { NotFound404 } from './NotFound404'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../../layouts/Main/Main'
 
 const meta: Meta<typeof NotFound404> = {
   title: 'Components/Error Messages/NotFound404',
@@ -24,9 +24,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main maxWidth="5xl">
         <NotFound404 {...args} />
-      </Section>
+      </Main>
     )
   },
 }

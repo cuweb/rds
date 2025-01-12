@@ -36,7 +36,7 @@ export const LayoutExamples: Story = {
     <>
       <Nav>
         <Nav.Primary>
-          <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+          <Nav.Logo title="Raven Design System" link="/" />
           {/* <Nav.Menu menu={NavDataSingle} /> */}
           <Nav.Aside menu={NavAsideData} />
         </Nav.Primary>

@@ -1,6 +1,6 @@
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { PageHeader } from '../PageHeader/PageHeader'
-import { useLinkContext } from '../../components/LinkProvider/useLinkContext'
+import { ButtonGroup } from '../../ButtonGroup/ButtonGroup'
+import { PageHeader } from '../../PageHeader/PageHeader'
+import { useLinkContext } from '../../../components/LinkProvider/useLinkContext'
 
 export interface Forbidden403Props {
   isCenter?: boolean

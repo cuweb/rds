@@ -118,7 +118,7 @@ export const BasicMarkup: Story = {
     <>
       <Nav>
         <Nav.Primary>
-          <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+          <Nav.Logo title="Raven Design System" link="/" />
           <Nav.Aside menu={NavAsideData} />
         </Nav.Primary>
       </Nav>

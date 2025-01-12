@@ -1,6 +1,6 @@
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { useLinkContext } from '../LinkProvider/useLinkContext'
-import { PageHeader } from '../PageHeader/PageHeader'
+import { ButtonGroup } from '../../ButtonGroup/ButtonGroup'
+import { useLinkContext } from '../../LinkProvider/useLinkContext'
+import { PageHeader } from '../../PageHeader/PageHeader'
 
 export interface NotFound404Props {
   isCenter?: boolean

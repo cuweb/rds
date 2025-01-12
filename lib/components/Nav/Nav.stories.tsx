@@ -219,7 +219,7 @@ export const LoggedOutWithHref: Story = () => {
   return (
     <>
       <Nav navType="primary">
-        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Logo title="Raven Design System" link="/" />
         <Nav.Primary>
           <Nav.Menu menu={NavDataSingle} />
           <Nav.Aside menu={NavAsideData} LoggedOutUser={true} LoggedInLink="/login">
@@ -272,7 +272,7 @@ export const LoggedOutWithOnClick: Story = () => {
   return (
     <>
       <Nav navType="primary">
-        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Logo title="Raven Design System" link="/" />
         <Nav.Primary>
           <Nav.Menu menu={NavDataSingle} />
           <Nav.Aside menu={NavAsideData} LoggedOutUser={true} onClickHandler={() => alert('Sign in clicked')}>
@@ -330,7 +330,7 @@ export const LoggedInWithHref: Story = () => {
   return (
     <>
       <Nav navType="secondary">
-        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Logo title="Raven Design System" link="/" />
         <Nav.Aside
           menu={NavAsideData}
           LoggedInUser={true}
@@ -398,7 +398,7 @@ export const LoggedInWithOnClick: Story = () => {
   return (
     <>
       <Nav navType="secondary">
-        <Nav.Logo title="Web Services" link="https://carleton.ca/webservices" />
+        <Nav.Logo title="Raven Design System" link="/" />
         <Nav.Aside
           menu={NavAsideData}
           LoggedInUser={true}
