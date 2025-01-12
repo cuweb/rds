@@ -5,6 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
+import { Embed } from './Embed'
 
 const meta: Meta = {
   title: 'Components/Embed/Examples',
@@ -40,25 +41,35 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+        <Section maxWidth="max">
+          <Embed>
+            <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+          </Embed>
         </Section>
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
-        <p>COMPONENT</p>
+        <Embed>
+          <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+        </Embed>
+        <Embed>
+          <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+        </Embed>
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <Embed>
+          <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+        </Embed>
 
         <Section maxWidth="7xl" isGrey>
-          <p>COMPONENT</p>
+          <Embed>
+            <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+          </Embed>
         </Section>
 
         <Section>
@@ -71,10 +82,14 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <Embed>
+          <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+        </Embed>
 
         <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+          <Embed>
+            <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+          </Embed>
         </Section>
 
         <Section>
@@ -87,8 +102,10 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Section maxWidth="full" isGrey>
-          <p>COMPONENT</p>
+        <Section maxWidth="full">
+          <Embed>
+            <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+          </Embed>
         </Section>
       </Main>
 
