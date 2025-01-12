@@ -21,7 +21,7 @@ export const Youtube: Story = {
   render: (args) => (
     <Main maxWidth="4xl">
       <Embed {...args}>
-        <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=seBWI1EkEfw" />
+        <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=Fbb1gdTcH-A" />
       </Embed>
     </Main>
   ),
