@@ -7,6 +7,10 @@
   @apply mt-6 md:mt-10;
 }
 
+.cu-component-updated + .cu-component-updated {
+  @apply mt-6 md:mt-10;
+}
+
 :not(.cu-section) + .cu-section,
 .cu-section + :not(.cu-section) {
   @apply mt-6 md:mt-10;

@@ -5,6 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
+import { Alert } from './Alert'
 
 const meta: Meta = {
   title: 'Components/Alert/Examples',
@@ -41,55 +42,32 @@ export const LayoutExamples: Story = {
 
       <Main maxWidth="5xl">
         <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+          <Alert content="Records have been updated." size="lg" title="Alert title" type="success" />
         </Section>
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
-        <p>COMPONENT</p>
+        <Alert content="Records may not have been updated." size="md" title="Alert title" type="warning" />
+        <Alert content="Records have not been updated." size="md" title="Alert title" type="error" />
 
+        <SinglePara />
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
-
-        <Section maxWidth="7xl" isGrey>
-          <p>COMPONENT</p>
-        </Section>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <p>COMPONENT</p>
+        <Alert content="Records may not have been updated." size="sm" title="Alert title" type="warning" />
 
         <Section maxWidth="7xl">
-          <p>COMPONENT</p>
-        </Section>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
+          <Alert content="Records have been updated." size="lg" title="Alert title" type="success" />
         </Section>
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <Section maxWidth="full" isGrey>
-          <p>COMPONENT</p>
-        </Section>
+        <Alert content="Records can be updated." size="lg" title="Alert title" type="info" />
       </Main>
 
       <FooterStandard />

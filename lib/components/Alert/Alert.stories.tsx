@@ -26,7 +26,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Section maxWidth="4xl">
         <Alert {...args} />
       </Section>
     )
@@ -40,7 +40,7 @@ export const TwoColumns: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Section maxWidth="4xl">
         <Alert {...args} />
       </Section>
     )
