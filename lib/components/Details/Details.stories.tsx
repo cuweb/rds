@@ -21,16 +21,24 @@ type Story = StoryObj<typeof Details>
 export const Primary: Story = {
   args: {
     as: 'ul',
-    divider: false,
+    hasDividers: false,
+    children: (
+      <>
+        <Details.Item isBold>Hybrid Event</Details.Item>
+        <Details.Item>Raven's Nest, 1125 Colonel By Drive</Details.Item>
+        <Details.Item>
+          <a href="/">Teams meeting link</a>
+        </Details.Item>
+        <Details.Item>
+          <strong>Cost:</strong> $20 per adult, $15 for youth/senior
+        </Details.Item>
+      </>
+    ),
   },
   render: (args) => {
     return (
       <Main>
-        <Details {...args}>
-          <Details.Item>Item</Details.Item>
-          <Details.Item>Item</Details.Item>
-          <Details.Item>Item</Details.Item>
-        </Details>
+        <Details {...args} />
       </Main>
     )
   },
