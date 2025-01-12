@@ -46,6 +46,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Button Group */
+.cu-buttongroup + .cu-buttongroup,
+:not(.cu-buttongroup) + .cu-buttongroup,
+.cu-buttongroup + :not(.cu-buttongroup),
+.cu-section + .cu-buttongroup,
+.cu-buttongroup + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Calendar */
 .cu-calendar + .cu-calendar,
 :not(.cu-calendar) + .cu-calendar,
