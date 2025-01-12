@@ -5,16 +5,24 @@ import { EmbedSoundCloud } from './Embed.SoundCloud'
 import { EmbedYouTube } from './Embed.YouTube'
 import { EmbedVimeo } from './Embed.Vimeo'
 import { EmbedTED } from './Embed.TED'
+import { Figure } from '../Figure/Figure'
 
 export interface EmbedProps {
   children: React.ReactNode
+  isRounded?: boolean
 }
 
-export const EmbedWrapper = ({ children }: EmbedProps) => {
+export const EmbedWrapper = ({ children, isRounded = false }: EmbedProps) => {
+  const rounded = isRounded ? 'rounded-xl' : 'none'
+
   return (
-    <figure className="cu-embed cu-component-updated">
-      <div className="relative w-full pb-[56.25%] overflow-hidden border border-cu-black-100">{children}</div>
-    </figure>
+    <>
+      <Figure rounded={isRounded ? 'xl' : 'none'}>
+        <div className={`relative ${rounded} overflow-hidden w-full pb-[56.25%] border border-cu-black-100`}>
+          {children}
+        </div>
+      </Figure>
+    </>
   )
 }
 

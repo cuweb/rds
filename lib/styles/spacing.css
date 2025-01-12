@@ -91,6 +91,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Figure */
+.cu-figure + .cu-figure,
+:not(.cu-figure) + .cu-figure,
+.cu-figure + :not(.cu-figure),
+.cu-section + .cu-figure,
+.cu-figure + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Full Banner */
 :not(.cu-fullbanner) + .cu-fullbanner,
 .cu-fullbanner + :not(.cu-fullbanner),

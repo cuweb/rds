@@ -41,8 +41,8 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <Section maxWidth="max">
-          <Embed>
+        <Section maxWidth="7xl">
+          <Embed isRounded>
             <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=Fbb1gdTcH-A" />
           </Embed>
         </Section>
@@ -51,7 +51,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Embed>
+        <Embed isRounded>
           <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=Fbb1gdTcH-A" />
         </Embed>
         <Embed>

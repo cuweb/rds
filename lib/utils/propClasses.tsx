@@ -93,10 +93,10 @@ export const alignItemsClasses = {
 }
 
 export const figureSizeClasses = {
-  xs: `max-w-[320px]`,
-  sm: `max-w-[440px]`,
-  md: `max-w-[512px]`,
-  lg: `max-w-3xl`,
+  xs: `lg:max-w-[320px]`,
+  sm: `lg:max-w-[440px]`,
+  md: `lg:max-w-[512px]`,
+  lg: `lg:max-w-3xl`,
   full: `max-w-full`,
 }
 
@@ -126,6 +126,8 @@ export const borderRadiusClasses = {
   md: 'rounded-md',
   lg: 'rounded-lg',
   xl: 'rounded-xl',
+  '2xl': 'rounded-2xl',
+  '3xl': 'rounded-3xl',
   full: 'rounded-full',
 }
 
