@@ -4,7 +4,9 @@ import { LocationPicker } from './LocationPicker'
 import { Column } from '../../layouts/Column/Column'
 import React from 'react'
 import { LoadScript } from '@react-google-maps/api'
+import { Figure } from '../Figure/Figure'
 import { Location } from '../Location/Location'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof LocationPicker> = {
   title: 'Components/Location Picker',
@@ -47,14 +49,14 @@ export const Default: Story = () => {
     [setCoordinates],
   )
   return (
-    <Column maxWidth="5xl">
+    <Main>
       <LocationPicker singleMarker singleMarkerCallback={markerCallback} />{' '}
       <Location
         lat={coordinates?.coordinates?.lat?.toString()}
         lng={coordinates?.coordinates?.lng?.toString()}
         location={coordinates?.address}
       />
-    </Column>
+    </Main>
   )
 }
 

@@ -35,16 +35,6 @@
   @apply mt-6 md:mt-10;
 }
 
-/* Consecutive Grey Backgrounds */
-.cu-section--grey + .cu-section--grey {
-  @apply mt-0 md:mt-0;
-}
-
-/* TODO: primary spacing countered with negative margin --> px-4 md:px-6 lg:px-12 */
-.cu-section--grey + .cu-section--grey > .bg-cu-black-50 {
-  @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
-}
-
 /* 
 ** COMPONENT SPACING
 */
@@ -161,4 +151,27 @@
 .cu-section + .cu-widewave,
 .cu-widewave + .cu-section {
   @apply mt-6 md:mt-10;
+}
+
+/* 
+** COMPONENT SPACING ZERO
+*/
+
+/* Consecutive Grey Backgrounds */
+.cu-section--grey + .cu-section--grey {
+  @apply mt-0 md:mt-0;
+}
+
+/* Consecutive Grey Backgrounds */
+.cu-locationpicker + .cu-location {
+  @apply mt-0 md:mt-0;
+}
+
+/* 
+** COMPONENT SPACING OTHERS
+*/
+
+/* TODO: primary spacing countered with negative margin --> px-4 md:px-6 lg:px-12 */
+.cu-section--grey + .cu-section--grey > .bg-cu-black-50 {
+  @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
 }
