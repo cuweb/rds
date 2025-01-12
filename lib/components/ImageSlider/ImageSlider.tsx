@@ -25,7 +25,7 @@ export const ImageSliderWrapper = ({
 
   return (
     <div
-      className="cu-slider cu-component overflow-hidden -mr-4"
+      className="cu-slider cu-component-updated overflow-hidden -mr-4"
       data-slides-desktop={slidesPerViewDesktop}
       data-slides-tablet={slidesPerViewTablet}
       data-slides-mobile={slidesPerViewMobile}

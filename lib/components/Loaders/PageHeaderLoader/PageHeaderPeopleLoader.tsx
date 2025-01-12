@@ -1,7 +1,7 @@
 export const PageHeaderPeopleLoader = () => {
   return (
     <>
-      <div className="cu-loader-pageheaders cu-component animate-pulse gap-10 max-w-5xl mx-auto">
+      <div className="cu-loader cu-loader--pageheaders cu-component-updated animate-pulse gap-10 max-w-5xl mx-auto">
         <div className="flex w-full md:w-1/3 md:float-right  max-w-[400px]">
           <div className="mt-4 mb-6 bg-cu-black-100 rounded-lg w-72 h-72"></div>
         </div>

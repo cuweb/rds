@@ -88,8 +88,7 @@ export const WideImageWrapper = ({
   return (
     <div
       style={isType === 'image' ? inlineStyle : undefined}
-      className={`cu-wideimage relative flex items-center justify-center mx-auto px-8 overflow-hidden md:px-16 rounded-xl not-contained not-prose ${$componentMarginY} ${hasImageStyles} ${paddingY}`}
-      // className={`cu-wideimage relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${hasImageStyles} ${paddingY}`}
+      className={`cu-wideimage relative flex items-center justify-center mx-auto px-8 overflow-hidden md:px-16 rounded-xl not-prose ${$componentMarginY} ${hasImageStyles} ${paddingY}`}
     >
       {hasWave && (
         <svg

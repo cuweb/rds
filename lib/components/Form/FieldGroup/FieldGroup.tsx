@@ -17,7 +17,7 @@ export const FieldGroup = ({ children, cols, alignment }: FieldGroupProps) => {
     alignmentClass = 'items-center'
   }
   return (
-    <div className={`grid ${gridSpacing} ${alignmentClass} gap-5 items-start cu-field-wrapper cu-component`}>
+    <div className={`grid ${gridSpacing} ${alignmentClass} gap-5 items-start cu-field-wrapper cu-component-updated`}>
       {children}
     </div>
   )

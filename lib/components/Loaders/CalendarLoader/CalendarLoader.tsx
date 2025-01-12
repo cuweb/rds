@@ -30,7 +30,7 @@ export const CalendarLoader = ({ showClearButton }: CalendarLoaderProps) => {
   return (
     <>
       <div className="animate-pulse">
-        <div className="cu-calendar cu-component not-prose">
+        <div className="cu-calendar cu-component-updated not-prose">
           <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
             <button type="button" className={`${styles.prevNextArrows}`}>
               <span className="text-base sr-only">Previous month</span>

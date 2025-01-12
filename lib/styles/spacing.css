@@ -135,6 +135,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Loaders */
+.cu-loader + .cu-loader,
+:not(.cu-loader) + .cu-loader,
+.cu-loader + :not(.cu-loader),
+.cu-section + .cu-loader,
+.cu-loader + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Login */
 .cu-login + .cu-login,
 :not(.cu-login) + .cu-login,

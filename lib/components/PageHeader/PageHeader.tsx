@@ -80,7 +80,7 @@ export const PageHeaderWrapper = ({
 
   return (
     <header
-      className={`cu-pageheader cu-component ${centerText} ${children ? `mb-6 md:mb-12` : `cu-prose-first-last`} `}
+      className={`cu-pageheader cu-component-updated ${centerText} ${children ? `mb-6 md:mb-12` : `cu-prose-first-last`} `}
     >
       <HeaderComponent
         className={`cu-prose-first-last font-semibold !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
