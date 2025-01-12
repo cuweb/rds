@@ -132,12 +132,13 @@ export const LayoutExamples: Story = {
             colSpan="3"
             content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
             imageUrl="https://picsum.photos/id/531/600/400"
-            rowSpan="2"
+            rowSpan="3"
             title="Overlay Image Title"
           />
           <ImageGrid.Image imageUrl="https://picsum.photos/id/626/600/400" />
           <ImageGrid.Image imageUrl="https://picsum.photos/id/381/600/400" />
           <ImageGrid.Image imageUrl="https://picsum.photos/id/691/600/400" />
+          <ImageGrid.Image imageUrl="https://picsum.photos/id/289/600/400" />
           <ImageGrid.Image imageUrl="https://picsum.photos/id/163/600/400" />
           <ImageGrid.Image imageUrl="https://picsum.photos/id/482/600/400" />
         </ImageGrid>
@@ -148,10 +149,11 @@ export const LayoutExamples: Story = {
               colSpan="3"
               content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!"
               imageUrl="https://picsum.photos/id/531/600/400"
-              rowSpan="2"
+              rowSpan="3"
               title="Overlay Image Title"
             />
             <ImageGrid.Image imageUrl="https://picsum.photos/id/531/600/400" />
+            <ImageGrid.Image imageUrl="https://picsum.photos/id/516/600/400" />
             <ImageGrid.Image imageUrl="https://picsum.photos/id/626/600/400" />
             <ImageGrid.Image imageUrl="https://picsum.photos/id/381/600/400" />
             <ImageGrid.Image imageUrl="https://picsum.photos/id/691/600/400" />
