@@ -5,6 +5,8 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
+import { MultiDayCalendar } from './MultiDayCalendar'
+import { CalendarData } from '../../data/CalendarData'
 
 const meta: Meta = {
   title: 'Components/Multi-day Calendar/Examples',
@@ -28,6 +30,8 @@ const SinglePara = () => {
   )
 }
 
+const eventData = [...CalendarData.events]
+
 export const LayoutExamples: Story = {
   render: () => (
     <>
@@ -41,24 +45,24 @@ export const LayoutExamples: Story = {
 
       <Main maxWidth="5xl">
         <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+          <MultiDayCalendar callback={() => {}} events={eventData} />
         </Section>
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
-        <p>COMPONENT</p>
+        <MultiDayCalendar callback={() => {}} events={eventData} />
+        <MultiDayCalendar callback={() => {}} events={eventData} />
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <MultiDayCalendar callback={() => {}} events={eventData} />
 
         <Section maxWidth="7xl" isGrey>
-          <p>COMPONENT</p>
+          <MultiDayCalendar callback={() => {}} events={eventData} />
         </Section>
 
         <Section>
@@ -71,10 +75,10 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <MultiDayCalendar callback={() => {}} events={eventData} />
 
-        <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+        <Section maxWidth="3xl">
+          <MultiDayCalendar callback={() => {}} events={eventData} />
         </Section>
 
         <Section>
@@ -87,9 +91,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Section maxWidth="full" isGrey>
-          <p>COMPONENT</p>
-        </Section>
+        <MultiDayCalendar callback={() => {}} events={eventData} />
       </Main>
 
       <FooterStandard />
