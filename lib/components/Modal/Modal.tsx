@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { maxWidthClasses } from '../../utils/propClasses'
 import { sanitizeContent } from '../../helpers/functions'
-import { Section } from '../../layouts/Section/Section'
 
 type maxWidthKeys = keyof typeof maxWidthClasses
 
@@ -21,7 +20,7 @@ export const Modal = ({
   children,
   content,
   isOpen,
-  maxWidth = '5xl',
+  maxWidth = '4xl',
   noProse = false,
   alignTop = false,
   ariaLabel,
@@ -29,7 +28,7 @@ export const Modal = ({
   setIsOpen,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
-  const useProse = noProse ? '' : 'cu-prose cu-prose-dark'
+  const useProse = noProse ? '' : 'cu-prose cu-prose-dark cu-prose-first-last'
 
   useEffect(() => {
     if (modalRef.current?.open && !isOpen) {
@@ -81,13 +80,13 @@ export const Modal = ({
       aria-describedby={ariaDescription}
     >
       <button
-        className="absolute top-0 right-0 z-50 p-0.5 rounded-bl-md bg-cu-black-50 text-cu-black-500 hover:bg-cu-red hover:text-white"
+        className="absolute top-0 right-0 z-50 p-1 rounded-bl bg-cu-black-200 text-cu-black-700 hover:bg-cu-red hover:text-white"
         onClick={() => setIsOpen(false)}
       >
         <span className="sr-only">Close</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-3.5 h-3.5"
+          className="w-5 h-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -99,9 +98,7 @@ export const Modal = ({
       {content ? (
         <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
       ) : (
-        <div className={useProse}>
-          <Section>{children}</Section>
-        </div>
+        <div className={useProse}>{children}</div>
       )}
     </dialog>
   )
