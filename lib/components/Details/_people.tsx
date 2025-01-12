@@ -1,5 +1,5 @@
 import { useLinkContext } from '../LinkProvider/useLinkContext'
-import { listStyles, socialStyles } from './PageHeader.Styles'
+import { listStyles, socialStyles } from './_styles'
 
 export interface PageHeaderPeopleProps {
   jobTitle?: string

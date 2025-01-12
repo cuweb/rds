@@ -53,7 +53,7 @@ const config: Config = {
             '--tw-prose-headings': theme('colors.cu-black[700]'),
             '--tw-prose-links': theme('colors.cu-red[DEFAULT]'),
             '--tw-prose-bold': theme('colors.cu-black[900]'),
-            '--tw-prose-bullets': theme('colors.cu-black[500]'),
+            '--tw-prose-bullets': theme('colors.cu-black[600]'),
             '--tw-prose-quotes': theme('colors.cu-red[100]'),
             '--tw-prose-quote-borders': theme('colors.cu-red[DEFAULT]'),
           },

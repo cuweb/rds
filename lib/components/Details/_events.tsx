@@ -1,6 +1,6 @@
 import { format, isSameDay, parseISO } from 'date-fns'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
-import { listStyles } from './PageHeader.Styles'
+import { listStyles } from './_styles'
 
 export interface PageHeaderEventProps {
   children?: React.ReactNode

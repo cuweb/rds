@@ -1,6 +1,4 @@
 import React from 'react'
-import { PageHeaderPeople } from './PageHeaderPeople'
-import { PageHeaderEvent } from './PageHeaderEvent'
 import { headerSizeClasses } from '../../utils/propClasses'
 
 type headerSizeKeys = keyof typeof headerSizeClasses
@@ -17,7 +15,7 @@ export interface PageHeaderProps {
   noUnderline?: boolean
 }
 
-export const PageHeaderWrapper = ({
+export const PageHeader = ({
   children,
   as = 'h1',
   header,
@@ -93,10 +91,3 @@ export const PageHeaderWrapper = ({
     </header>
   )
 }
-
-export const PageHeader = Object.assign(PageHeaderWrapper, {
-  People: PageHeaderPeople,
-  Event: PageHeaderEvent,
-})
-
-PageHeaderWrapper.displayName = 'PageHeader'
