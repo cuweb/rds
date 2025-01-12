@@ -180,6 +180,24 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Testimonial */
+.cu-testimonial + .cu-testimonial,
+:not(.cu-testimonial) + .cu-testimonial,
+.cu-testimonial + :not(.cu-testimonial),
+.cu-section + .cu-testimonial,
+.cu-testimonial + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Timeline */
+.cu-timeline + .cu-timeline,
+:not(.cu-timeline) + .cu-timeline,
+.cu-timeline + :not(.cu-timeline),
+.cu-section + .cu-timeline,
+.cu-timeline + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Wide Wave */
 .cu-widewave + .cu-widewave,
 :not(.cu-widewave) + .cu-widewave,

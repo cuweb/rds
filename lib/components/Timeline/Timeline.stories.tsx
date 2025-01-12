@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { Timeline } from './Timeline'
 import { TimelineData } from '../../data/TimelineData'
 
@@ -23,7 +23,7 @@ const sampleEvents = TimelineData
 
 export const Primary: Story = {
   render: () => (
-    <Section>
+    <Main>
       <Timeline>
         {sampleEvents.map((event, index) => (
           <Timeline.Item key={index} aside={event.aside} title={event.title}>
@@ -41,6 +41,6 @@ export const Primary: Story = {
           </Timeline.Item>
         ))}
       </Timeline>
-    </Section>
+    </Main>
   ),
 }
