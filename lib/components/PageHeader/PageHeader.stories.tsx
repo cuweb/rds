@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { PageHeader } from './PageHeader'
 import { Figure } from '../Figure/Figure'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { EventDataSingle as eventData } from '../../data/EventData'
 
 const meta: Meta<typeof PageHeader> = {
-  title: 'Components/PageHeader',
+  title: 'Components/Page Header',
   component: PageHeader,
   tags: ['autodocs'],
   parameters: {
@@ -33,16 +33,16 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <PageHeader {...args} />
-      </Section>
+      </Main>
     )
   },
 }
 
 export const EventHeader: Story = {
   render: (args) => (
-    <Section>
+    <Main>
       <PageHeader {...args}>
         <Figure size="sm" align="right" rounded="lg" noMobile>
           <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
@@ -69,7 +69,7 @@ export const EventHeader: Story = {
           </ButtonGroup>
         </PageHeader.Event>
       </PageHeader>
-    </Section>
+    </Main>
   ),
 }
 EventHeader.args = {
@@ -78,7 +78,7 @@ EventHeader.args = {
 
 export const EventHeaderMultiday: Story = {
   render: (args) => (
-    <Section>
+    <Main>
       <PageHeader {...args}>
         <Figure size="sm" align="right" noMobile>
           <img src={eventData.image} alt={eventData.alt} width="200" height="133" />
@@ -105,7 +105,7 @@ export const EventHeaderMultiday: Story = {
           </ButtonGroup>
         </PageHeader.Event>
       </PageHeader>
-    </Section>
+    </Main>
   ),
 }
 EventHeaderMultiday.args = {
@@ -114,7 +114,7 @@ EventHeaderMultiday.args = {
 
 export const PeopleHeader: Story = {
   render: (args) => (
-    <Section>
+    <Main>
       <PageHeader {...args}>
         <Figure size="sm" align="right">
           <img
@@ -141,7 +141,7 @@ export const PeopleHeader: Story = {
           instagram="#instagram"
         />
       </PageHeader>
-    </Section>
+    </Main>
   ),
 }
 PeopleHeader.args = {
