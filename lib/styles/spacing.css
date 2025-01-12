@@ -117,6 +117,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Image Grid */
+.cu-imagegrid + .cu-imagegrid,
+:not(.cu-imagegrid) + .cu-imagegrid,
+.cu-imagegrid + :not(.cu-imagegrid),
+.cu-section + .cu-imagegrid,
+.cu-imagegrid + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Image Cover */
 .cu-pageheader + .cu-pageheader,
 :not(.cu-pageheader) + .cu-pageheader,
