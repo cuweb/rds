@@ -5,6 +5,8 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
+import { Placeholder } from './Placeholder'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {
   title: 'Components/Placeholder/Examples',
@@ -41,24 +43,30 @@ export const LayoutExamples: Story = {
 
       <Main maxWidth="5xl">
         <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+          <PageHeader
+            as="h1"
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
+            header="Placeholder Examples"
+            size="lg"
+          />
+          <Placeholder name="Placeholder name" />
         </Section>
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
-        <p>COMPONENT</p>
+        <Placeholder name="Placeholder name" />
+        <Placeholder name="Placeholder name" />
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <Placeholder name="Placeholder name" />
 
         <Section maxWidth="7xl" isGrey>
-          <p>COMPONENT</p>
+          <Placeholder name="Placeholder name" />
         </Section>
 
         <Section>
@@ -71,10 +79,10 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <p>COMPONENT</p>
+        <Placeholder name="Placeholder name" />
 
         <Section maxWidth="7xl">
-          <p>COMPONENT</p>
+          <Placeholder name="Placeholder name" />
         </Section>
 
         <Section>
@@ -87,8 +95,8 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Section maxWidth="full" isGrey>
-          <p>COMPONENT</p>
+        <Section maxWidth="max">
+          <Placeholder name="Placeholder name" />
         </Section>
       </Main>
 

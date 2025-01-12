@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Placeholder } from './Placeholder'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Placeholder> = {
   title: 'Components/Placeholder',
@@ -24,9 +24,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Placeholder {...args} />
-      </Section>
+      </Main>
     )
   },
 }

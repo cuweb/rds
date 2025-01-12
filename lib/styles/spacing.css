@@ -153,6 +153,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Placeholder */
+.cu-placeholder + .cu-placeholder,
+:not(.cu-placeholder) + .cu-placeholder,
+.cu-placeholder + :not(.cu-placeholder),
+.cu-section + .cu-placeholder,
+.cu-placeholder + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Wide Wave */
 .cu-widewave + .cu-widewave,
 :not(.cu-widewave) + .cu-widewave,

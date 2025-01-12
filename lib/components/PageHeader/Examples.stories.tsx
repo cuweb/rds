@@ -47,7 +47,7 @@ export const LayoutExamples: Story = {
           <PageHeader
             as="h1"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
-            header="Page Header"
+            header="Page Header Examples"
             size="lg"
           >
             <ButtonGroup align="start" gap="5">
