@@ -64,6 +64,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Description */
+.cu-description + .cu-description,
+:not(.cu-description) + .cu-description,
+.cu-description + :not(.cu-description),
+.cu-section + .cu-description,
+.cu-description + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Full Banner */
 :not(.cu-fullbanner) + .cu-fullbanner,
 .cu-fullbanner + :not(.cu-fullbanner),

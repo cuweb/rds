@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { PageHeader } from '../PageHeader/PageHeader'
 import { Description } from './Description'
 import { DescriptionData as descMeta } from '../../data/DescriptionData'
@@ -22,39 +22,39 @@ type Story = StoryObj<typeof Description>
 
 export const Primary: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="4xl">
       <Description {...args}>
         <Description.Meta term={descMeta[0].term}>{descMeta[0].details}</Description.Meta>
       </Description>
-    </Section>
+    </Main>
   ),
 }
 
 export const Columns: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="4xl">
       <Description {...args}>
         <Description.Meta term={descMeta[0].term} useColumns>
           {descMeta[0].details}
         </Description.Meta>
       </Description>
-    </Section>
+    </Main>
   ),
 }
 
 export const Accordion: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="4xl">
       <Description {...args}>
         <Description.Accordion term={descMeta[0].term}>{descMeta[0].details}</Description.Accordion>
       </Description>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultipleStacked: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="4xl">
       <PageHeader as="h2" header="Description header" size="md" />
       <Description {...args}>
         {descMeta.map((item) => (
@@ -63,13 +63,13 @@ export const MultipleStacked: Story = {
           </Description.Meta>
         ))}
       </Description>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultipleColumns: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="4xl">
       <PageHeader as="h2" header="Description header" size="md" />
       <Description {...args}>
         {descMeta.map((item) => (
@@ -78,13 +78,13 @@ export const MultipleColumns: Story = {
           </Description.Meta>
         ))}
       </Description>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultipleAccordions: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="4xl">
       <PageHeader as="h2" header="Description header" size="md" />
       <Description {...args}>
         {descMeta.map((item) => (
@@ -93,6 +93,6 @@ export const MultipleAccordions: Story = {
           </Description.Accordion>
         ))}
       </Description>
-    </Section>
+    </Main>
   ),
 }
