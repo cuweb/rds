@@ -25,7 +25,7 @@ export const Primary: Story = {
     sortOptions: FilterData.sortOptions,
   },
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Filter {...args} />
     </Main>
   ),

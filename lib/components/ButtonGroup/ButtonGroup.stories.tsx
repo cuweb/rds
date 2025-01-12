@@ -26,7 +26,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="5xl">
+      <Main>
         <ButtonGroup {...args}>
           <Button
             onClick={() => {

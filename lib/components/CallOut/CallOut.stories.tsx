@@ -27,7 +27,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="5xl">
+      <Main>
         <CallOut {...args}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam

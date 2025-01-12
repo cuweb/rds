@@ -46,7 +46,7 @@ export const Primary: Story = {
 export const NewsCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {NewsData.slice(0, 2).map(({ id, link, title, image, alt, date }) => (
           <Card key={id} {...args}>
@@ -72,7 +72,7 @@ export const NewsCard: Story = {
 export const EventCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {EventData.slice(0, 2).map(
           ({
@@ -120,7 +120,7 @@ export const EventCard: Story = {
 export const FeaturedCards: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {NewsData.slice(0, 2).map(({ id, link, title, image, alt }) => (
           <Card key={id} {...args} noHover>
@@ -146,7 +146,7 @@ export const FeaturedCards: Story = {
 export const IconCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {IconData.slice(0, 2).map(({ id, link, title, icon }) => (
           <Card key={id} {...args}>
@@ -170,7 +170,7 @@ export const IconCard: Story = {
 export const PageCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {NewsData.slice(0, 2).map(({ id, link, title, date }) => (
           <Card key={id} {...args}>
@@ -193,7 +193,7 @@ export const PageCard: Story = {
 export const PeopleCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {PeopleData.slice(0, 2).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
           <Card key={id} {...args} isCenter>
@@ -221,7 +221,7 @@ export const PeopleCard: Story = {
 export const StatCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {StatData.slice(0, 2).map(({ id, stat, desc }) => (
           <Card key={id} {...args} leftBorder noHover>
@@ -236,7 +236,7 @@ export const StatCard: Story = {
 export const VideoCard: Story = {
   args: {},
   render: (args) => (
-    <Main maxWidth="5xl">
+    <Main>
       <Column cols="2">
         {VideoData.slice(0, 2).map(({ id, source, title }) => (
           <Card key={id} {...args} noHover>

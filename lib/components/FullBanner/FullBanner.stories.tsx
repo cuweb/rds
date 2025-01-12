@@ -19,9 +19,7 @@ export default meta
 type Story = StoryObj<typeof FullBanner>
 
 export const Primary: Story = {
-  args: {
-    as: 'section',
-  },
+  args: {},
   render: (args) => {
     return (
       <FullBanner {...args}>

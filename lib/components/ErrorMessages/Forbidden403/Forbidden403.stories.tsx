@@ -24,7 +24,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Main maxWidth="5xl">
+      <Main>
         <Forbidden403 {...args} />
       </Main>
     )
