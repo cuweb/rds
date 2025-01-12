@@ -81,6 +81,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Image Cover */
+.cu-pageheader + .cu-pageheader,
+:not(.cu-pageheader) + .cu-pageheader,
+.cu-pageheader + :not(.cu-pageheader),
+.cu-section + .cu-pageheader,
+.cu-pageheader + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Section */
 :not(.cu-section) + .cu-section,
 .cu-section + :not(.cu-section) {

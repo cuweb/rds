@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Column } from '../../layouts/Column/Column'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { Card } from './Card'
 
 import { NewsData } from '../../data/NewsData'
@@ -27,7 +27,7 @@ type Story = StoryObj<typeof Card>
 
 export const Primary: Story = {
   render: (args) => (
-    <Section>
+    <Main maxWidth="3xl">
       <Card {...args}>
         <Card.Header title="How to Write for the Web" />
         <Card.Body>
@@ -39,16 +39,16 @@ export const Primary: Story = {
           </a>
         </Card.Footer>
       </Card>
-    </Section>
+    </Main>
   ),
 }
 
 export const NewsCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {NewsData.slice(0, 3).map(({ id, link, title, image, alt, date }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {NewsData.slice(0, 2).map(({ id, link, title, image, alt, date }) => (
           <Card key={id} {...args}>
             <Card.Figure>
               <img src={image} alt={alt} width="400" height="300" />
@@ -65,16 +65,16 @@ export const NewsCard: Story = {
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const EventCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {EventData.slice(0, 3).map(
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {EventData.slice(0, 2).map(
           ({
             id,
             title,
@@ -113,16 +113,16 @@ export const EventCard: Story = {
           ),
         )}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const FeaturedCards: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {NewsData.slice(0, 3).map(({ id, link, title, image, alt }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {NewsData.slice(0, 2).map(({ id, link, title, image, alt }) => (
           <Card key={id} {...args} noHover>
             <Card.ImageThumb>
               <img src={image} alt={alt} width="200" height="133" />
@@ -139,16 +139,16 @@ export const FeaturedCards: Story = {
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const IconCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {IconData.slice(0, 3).map(({ id, link, title, icon }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {IconData.slice(0, 2).map(({ id, link, title, icon }) => (
           <Card key={id} {...args}>
             <Card.IconThumb icon={icon} />
             <Card.Header title={title} />
@@ -163,16 +163,16 @@ export const IconCard: Story = {
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const PageCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {NewsData.slice(0, 3).map(({ id, link, title, date }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {NewsData.slice(0, 2).map(({ id, link, title, date }) => (
           <Card key={id} {...args}>
             <Card.Header title={title} date={date} datePrefix="Modified on " datePosition="bottom" />
             <Card.Body>
@@ -186,16 +186,16 @@ export const PageCard: Story = {
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const PeopleCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {PeopleData.slice(0, 3).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {PeopleData.slice(0, 2).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
           <Card key={id} {...args} isCenter>
             <Card.Figure isRound>
               <img src={image} alt={alt} width={280} height={280} />
@@ -214,37 +214,37 @@ export const PeopleCard: Story = {
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const StatCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {StatData.slice(0, 3).map(({ id, stat, desc }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {StatData.slice(0, 2).map(({ id, stat, desc }) => (
           <Card key={id} {...args} leftBorder noHover>
             <Card.Stats stat={stat} desc={desc} />
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
 
 export const VideoCard: Story = {
   args: {},
   render: (args) => (
-    <Section>
-      <Column cols="3">
-        {VideoData.slice(0, 3).map(({ id, source, title }) => (
+    <Main maxWidth="4xl">
+      <Column cols="2">
+        {VideoData.slice(0, 2).map(({ id, source, title }) => (
           <Card key={id} {...args} noHover>
             <Card.Video source={source} />
             <Card.Header title={title} />
           </Card>
         ))}
       </Column>
-    </Section>
+    </Main>
   ),
 }
