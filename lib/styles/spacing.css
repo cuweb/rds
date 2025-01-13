@@ -40,9 +40,9 @@
 */
 
 /* // TODO GLOBAL: margin-t */
-/* .cu-component-updated + .cu-component-updated,
-:not(.cu-component-updated) + .cu-component-updated,
-.cu-component-updated + :not(.cu-component-updated) {
+/* .cu-component-spacing + .cu-component-spacing,
+:not(.cu-component-spacing) + .cu-component-spacing,
+.cu-component-spacing + :not(.cu-component-spacing) {
   @apply mt-6 md:mt-10;
 } */
 
@@ -115,6 +115,15 @@
 .cu-figure + :not(.cu-figure),
 .cu-section + .cu-figure,
 .cu-figure + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Form */
+.cu-form + .cu-form,
+:not(.cu-form) + .cu-form,
+.cu-form + :not(.cu-form),
+.cu-section + .cu-form,
+.cu-form + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
@@ -233,6 +242,15 @@
 .cu-widewave + :not(.cu-widewave),
 .cu-section + .cu-widewave,
 .cu-widewave + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* 
+** COMPONENT SPACING ISOLATED
+*/
+
+/* Form Field Group */
+.cu-field-wrapper + .cu-field-wrapper {
   @apply mt-6 md:mt-10;
 }
 
