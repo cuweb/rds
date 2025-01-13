@@ -5,12 +5,12 @@
   /* @apply prose prose-dark max-w-none prose-lg md:prose-xl prose-h4:text-xl md:prose-h4:text-2xl prose-img:w-full prose-img:rounded-lg prose-blockquote:font-normal prose-blockquote:rounded-md prose-blockquote:border-l-4; */
 }
 
-.cu-prose-dark {
+/* .cu-prose-dark {
   @apply prose-dark;
-}
+} */
 
 .cu-prose-light {
-  @apply prose-light;
+  @apply prose-light text-white;
 }
 
 .cu-prose-light input::placeholder,

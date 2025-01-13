@@ -8,56 +8,55 @@ const config: Config = {
     extend: {
       typography: ({ theme }) => ({
         DEFAULT: {
-          css: [
-            {
-              '--tw-prose-body': theme('colors.cu-black[800]'),
-              '--tw-prose-headings': theme('colors.cu-black[700]'),
-              '--tw-prose-links': theme('colors.cu-red[DEFAULT]'),
-              '--tw-prose-bold': theme('colors.cu-black[900]'),
-              '--tw-prose-bullets': theme('colors.cu-black[600]'),
-              '--tw-prose-quotes': theme('colors.cu-red[100]'),
-              '--tw-prose-quote-borders': theme('colors.cu-red[DEFAULT]'),
+          css: {
+            'h1, h2, h3, h4': {
+              'font-weight': '600',
             },
-            {
-              a: {
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': {
-                  textDecoration: 'underline',
-                },
-              },
-              h1: {
-                fontWeight: '600',
-              },
-              h2: {
-                fontWeight: '600',
-                marginBottom: '1rem',
-              },
-              h3: {
-                fontWeight: '600',
-                marginBottom: '0.75rem',
-              },
-              h4: {
-                fontWeight: '600',
-                marginBottom: '0.5rem',
-              },
-              'h5, h6': {
-                fontWeight: '600',
-              },
-              'ul, ol': {
-                'margin-left': '2rem',
-              },
-              'ul ul, ol ol': {
-                'margin-left': '0',
-              },
-              'ol li li': {
-                'list-style-type': 'lower-alpha',
-              },
-              'ol li li li': {
-                'list-style-type': 'lower-roman',
+            a: {
+              'font-weight': 'semibold',
+              'text-decoration': 'none',
+              '&:hover': {
+                'text-decoration': 'underline',
               },
             },
-          ],
+            'ol li li': {
+              'list-style-type': 'lower-alpha',
+            },
+            'ol li li li': {
+              'list-style-type': 'lower-roman',
+            },
+          },
+        },
+        lg: {
+          css: {
+            h1: {
+              'font-size': '2em',
+            },
+          },
+        },
+        xl: {
+          css: {
+            h2: {
+              'font-size': '1.75em',
+            },
+            h3: {
+              'font-size': '1.35em',
+            },
+            h4: {
+              'font-size': '1.1em',
+            },
+          },
+        },
+        dark: {
+          css: {
+            '--tw-prose-body': theme('colors.cu-black[800]'),
+            '--tw-prose-headings': theme('colors.cu-black[700]'),
+            '--tw-prose-links': theme('colors.cu-red[DEFAULT]'),
+            '--tw-prose-bold': theme('colors.cu-black[900]'),
+            '--tw-prose-bullets': theme('colors.cu-black[600]'),
+            '--tw-prose-quotes': theme('colors.cu-red[100]'),
+            '--tw-prose-quote-borders': theme('colors.cu-red[DEFAULT]'),
+          },
         },
         light: {
           css: {
