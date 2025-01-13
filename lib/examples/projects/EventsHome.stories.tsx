@@ -47,12 +47,11 @@ export const EventsHome: Story = {
       </Nav>
 
       <Main>
-        <Section maxWidth="7xl">
+        <Section maxWidth="max">
           <WideImage
             title="True Leaders Challenge What's Possible"
             headerType="h1"
             isType="image"
-            maxWidth="max"
             image="https://picsum.photos/1600/700"
             hasWave
           >

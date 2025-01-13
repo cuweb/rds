@@ -145,9 +145,11 @@ export const BasicMarkup: Story = {
             dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor.
           </p>
 
-          <StackedList header="Table of Contents" as="div" cols="1" listType="toc" offset="right" hasShadow>
-            <ToC />
-          </StackedList>
+          <Section maxWidth="2xl">
+            <StackedList header="Table of Contents" as="div" cols="1" listType="toc">
+              <ToC />
+            </StackedList>
+          </Section>
 
           <SinglePara />
 
