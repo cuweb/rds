@@ -4,7 +4,7 @@
 }
 
 /* TODO GLOBAL: negative bottom based on primary spacing */
-.cu-main > .cu-section > .cu-fullbanner:last-of-type {
+.cu-main > .cu-section--primary > .cu-fullbanner:last-child {
   @apply -mb-4 md:-mb-6 lg:-mb-12;
 }
 

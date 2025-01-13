@@ -122,7 +122,9 @@
 :not(.cu-fullbanner) + .cu-fullbanner,
 .cu-fullbanner + :not(.cu-fullbanner),
 .cu-section + .cu-fullbanner,
-.cu-fullbanner + .cu-section {
+.cu-fullbanner + .cu-section,
+.cu-column + .cu-fullbanner,
+.cu-fullbanner + .cu-column {
   @apply mt-6 md:mt-10;
 }
 
@@ -245,6 +247,13 @@
 
 /* Consecutive Grey Backgrounds */
 .cu-locationpicker + .cu-location {
+  @apply mt-0 md:mt-0;
+}
+
+/* Full Width Components */
+.cu-fullbanner + .cu-imagecover,
+.cu-widewave + .cu-imagecover,
+.cu-widewave + .cu-fullbanner {
   @apply mt-0 md:mt-0;
 }
 
