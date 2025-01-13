@@ -4,12 +4,13 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavAsideData } from '../../data/NavData'
-import { Details } from './Details'
+import { Details } from '../Details/Details'
+import { SocialIcons } from './SocialIcons'
 import { Figure } from '../Figure/Figure'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {
-  title: 'Components/Details/Examples',
+  title: 'Components/Social Icons/Examples',
   parameters: {
     layout: 'fullscreen',
   },
@@ -61,6 +62,15 @@ export const PeopleBanner: Story = {
           </Details.Item>
           <Details.Item>613-520-2600 x1234</Details.Item>
         </Details>
+
+        <SocialIcons>
+          <SocialIcons.Item socialService="linkedin" socialLink="#" />
+          <SocialIcons.Item socialService="x" socialLink="#" />
+          <SocialIcons.Item socialService="facebook" socialLink="#" />
+          <SocialIcons.Item socialService="instagram" socialLink="#" />
+          <SocialIcons.Item socialService="orcidid" socialLink="#" />
+          <SocialIcons.Item socialService="personal" socialLink="#" />
+        </SocialIcons>
 
         <h2>Header Two</h2>
         <SinglePara />

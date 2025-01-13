@@ -189,6 +189,15 @@
   @apply mt-6 md:mt-10;
 }
 
+/* Social Icons */
+.cu-social + .cu-social,
+:not(.cu-social) + .cu-social,
+.cu-social + :not(.cu-social),
+.cu-section + .cu-social,
+.cu-social + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
 /* Table */
 .cu-table + .cu-table,
 :not(.cu-table) + .cu-table,
