@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useMemo, useState } from 'react'
+import React, { MouseEventHandler, useMemo, useState, useRef, useEffect } from 'react'
 import { type Meta, type StoryObj } from '@storybook/react'
 import { useFormik } from 'formik'
 import { FormikHelpers } from 'formik'
@@ -25,6 +25,10 @@ const meta: Meta<typeof Form> = {
 export default meta
 
 type Story = StoryObj<typeof Form>
+
+const sleep = (seconds: number) => {
+  return new Promise((resolve) => setTimeout(resolve, seconds))
+}
 
 export const Input: Story = () => {
   type IInput = {
@@ -56,6 +60,24 @@ export const Input: Story = () => {
     onSubmit,
   })
 
+  const [inputDisabled, setInputDisabled] = useState(false)
+
+  const input = useRef<HTMLInputElement>(null)
+
+  const handleChange = async (e) => {
+    console.log(e.currentTarget.value)
+    formikProps.setFieldValue('inputText', e.currentTarget.value)
+    setInputDisabled(true)
+    await sleep(1000)
+    setInputDisabled(false)
+  }
+
+  useEffect(() => {
+    if (!inputDisabled) {
+      input?.current?.focus()
+    }
+  }, [inputDisabled])
+
   return (
     <Form formikProps={formikProps}>
       <Form.FieldGroup>
@@ -66,7 +88,9 @@ export const Input: Story = () => {
           required
           helper="Helper Text"
           helperpostop
-          disabled={formikProps.isSubmitting}
+          disabled={formikProps.isSubmitting || inputDisabled}
+          ref={input}
+          onChange={handleChange}
         />
       </Form.FieldGroup>
       <ButtonGroup>

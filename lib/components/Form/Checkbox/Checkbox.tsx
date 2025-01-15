@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { Field } from 'formik'
 import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../form.Styles'
@@ -13,7 +14,7 @@ export interface CheckboxProps extends FieldSetComponentProps {
   refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
-export const Checkbox = ({ ...props }: CheckboxProps) => {
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ ...props }, ref) => {
   const { name, options, checkBoxRight, ...rest } = props
   const errorClass = useErrorClass(name)
 
@@ -27,6 +28,7 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
               name={name}
               value={option.value}
               className={`${fieldStyles.disabled} ${errorClass}`}
+              innerRef={ref}
               {...rest}
             />
             {option.label}
@@ -34,4 +36,4 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
         ))}
     </>
   )
-}
+})
