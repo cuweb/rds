@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import { fieldStyles } from '../form.Styles'
 import { FieldComponentProps } from '../FormField/FormField'
 import useErrorClass from '../UseError'
@@ -12,7 +12,7 @@ export interface FileUploadProps extends FieldComponentProps {
   handleOnDelete?: () => void
 }
 
-export const FileUpload = ({ ...props }: FileUploadProps) => {
+export const FileUpload = forwardRef<HTMLInputElement, FileUploadProps>(({ ...props }, ref) => {
   const { name, onChange, displayPreview = true, setFieldValue = true, preview, handleOnDelete, ...rest } = props
   const errorClass = useErrorClass(name)
 
@@ -82,6 +82,7 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
         name={name}
         className={fieldStyles.uploads + ' ' + fieldStyles.disabled + errorClass}
         onChange={handleMediaChange}
+        ref={ref}
         {...rest}
       />
       {displayPreview && previews && previews.length > 0 && (
@@ -109,4 +110,4 @@ export const FileUpload = ({ ...props }: FileUploadProps) => {
       )}
     </div>
   )
-}
+})
