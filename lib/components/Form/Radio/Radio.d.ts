@@ -7,4 +7,4 @@ export interface RadioProps extends FieldSetComponentProps {
     }[];
     refs?: Ref<HTMLInputElement | HTMLSelectElement>;
 }
-export declare const Radio: ({ ...props }: RadioProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Radio: import('../../../../node_modules/react').ForwardRefExoticComponent<RadioProps & import('../../../../node_modules/react').RefAttributes<HTMLInputElement>>;

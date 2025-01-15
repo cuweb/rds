@@ -8,4 +8,5 @@ export interface FieldControlSetProps extends FieldSetProps {
     control: 'checkbox' | 'radio';
     [key: string]: any;
 }
-export declare const FieldControl: ({ ...props }: FieldControlProps | FieldControlSetProps) => import("react/jsx-runtime").JSX.Element | null;
+export declare const FieldControl: import('../../../../node_modules/react').ForwardRefExoticComponent<Omit<FieldControlProps, "ref"> & import('../../../../node_modules/react').RefAttributes<HTMLInputElement>>;
+export default FieldControl;

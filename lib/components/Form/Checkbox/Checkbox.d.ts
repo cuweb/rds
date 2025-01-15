@@ -8,4 +8,4 @@ export interface CheckboxProps extends FieldSetComponentProps {
     }[];
     refs?: Ref<HTMLInputElement | HTMLSelectElement>;
 }
-export declare const Checkbox: ({ ...props }: CheckboxProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Checkbox: import('../../../../node_modules/react').ForwardRefExoticComponent<CheckboxProps & import('../../../../node_modules/react').RefAttributes<HTMLInputElement>>;

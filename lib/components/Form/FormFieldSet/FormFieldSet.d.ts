@@ -3,6 +3,7 @@ type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface FieldSetComponentProps {
     name: string;
     required?: boolean;
+    innerRef?: React.Ref<HTMLInputElement>;
 }
 export interface FieldSetProps extends FieldSetComponentProps {
     label: string;
