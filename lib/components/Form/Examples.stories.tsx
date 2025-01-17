@@ -39,175 +39,21 @@ export const LayoutExamples: Story = {
   render: () => {
     type IInput = {
       inputText: string
+      faculty: string
+      department: string
+      position: string
+      startDate: string
+      endDate: string
+      program: string
+      account: string
+      radio: string
+      checkbox: string[]
+      bannerIds: { employeeID: string; firstName: string; lastName: string }[]
     }
 
     const InputInitialValues = {
       inputText: '',
-    }
-
-    const InputValidationSchema = Yup.object().shape({
-      inputText: Yup.string().required('The field is required'),
-    })
-
-    const selectOptions = [
-      {
-        label: 'Option 1',
-        value: 'option1',
-      },
-      {
-        label: 'Option 2',
-        value: 'option2',
-      },
-      {
-        label: 'Option 3',
-        value: 'option3',
-      },
-    ]
-
-    const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
-      actions.setSubmitting(true)
-      alert(JSON.stringify(values, null, 2))
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      actions.setSubmitting(false)
-    }
-
-    const onReset: MouseEventHandler<HTMLButtonElement> = () => {
-      formikProps.resetForm()
-    }
-
-    const formikProps = useFormik({
-      initialValues: InputInitialValues,
-      validationSchema: InputValidationSchema,
-      onSubmit,
-    })
-
-    return (
-      <>
-        <Nav>
-          <Nav.Primary>
-            <Nav.Logo title="Raven Design System" link="/" />
-            {/* <Nav.Menu menu={NavDataSingle} /> */}
-            <Nav.Aside menu={NavAsideData} />
-          </Nav.Primary>
-        </Nav>
-
-        <Main maxWidth="5xl">
-          <PageHeader
-            as="h1"
-            header="Form Example Layout"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
-            size="lg"
-          />
-
-          <Form formikProps={formikProps}>
-            <Section>
-              <PageHeader
-                header="Section Heading"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
-                size="md"
-              />
-              <Form.FieldGroup cols={2}>
-                <Form.FieldControl
-                  control="text"
-                  label="Label"
-                  name="inputText"
-                  required
-                  helper="Helper Text"
-                  helperpostop
-                  disabled={formikProps.isSubmitting}
-                />
-                <Form.FieldControl
-                  control="text"
-                  label="Label"
-                  name="inputText"
-                  required
-                  helper="Helper Text"
-                  helperpostop
-                  disabled={formikProps.isSubmitting}
-                />
-              </Form.FieldGroup>
-
-              <Form.FieldGroup>
-                <Form.FieldControl
-                  control="text"
-                  label="Label"
-                  name="inputText"
-                  required
-                  helper="Helper Text"
-                  helperpostop
-                  disabled={formikProps.isSubmitting}
-                />
-                <Form.FieldControl
-                  control="textarea"
-                  label="Label"
-                  name="textareainput"
-                  required
-                  helper="Helper Text"
-                  rows={8}
-                  disabled={formikProps.isSubmitting}
-                />
-              </Form.FieldGroup>
-            </Section>
-
-            <Section>
-              <PageHeader
-                header="Section Heading"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
-                size="md"
-              />
-              <Form.FieldGroup>
-                <Form.FieldControl
-                  control="radio"
-                  label="Label"
-                  name="radio"
-                  options={selectOptions}
-                  isInline
-                  required
-                  disabled={formikProps.isSubmitting}
-                  helper="Helper Text"
-                />
-                <Form.FieldControl
-                  control="checkbox"
-                  name="checkbox"
-                  label="I acknowledge the statements above."
-                  options={[
-                    {
-                      label: 'Yes',
-                      value: 'yes',
-                    },
-                    {
-                      label: 'No',
-                      value: 'no',
-                    },
-                  ]}
-                  required
-                  isInline
-                  disabled={formikProps.isSubmitting}
-                />
-              </Form.FieldGroup>
-            </Section>
-
-            <ButtonGroup>
-              <Button title="Submit" type="submit" />
-              <Button title="Reset" type="reset" color="grey" onClick={onReset} />
-            </ButtonGroup>
-          </Form>
-        </Main>
-
-        <FooterStandard />
-      </>
-    )
-  },
-}
-
-export const StoryExamples: Story = {
-  render: () => {
-    type IInput = {
-      inputText: string
-    }
-
-    const InputInitialValues = {
-      inputText: '',
+      faculty: '',
       department: '',
       position: '',
       startDate: '',
@@ -221,6 +67,7 @@ export const StoryExamples: Story = {
 
     const InputValidationSchema = Yup.object().shape({
       inputText: Yup.string().required('The field is required'),
+      faculty: Yup.string().required('Please select a faculty'),
       department: Yup.string().required('Please select a department'),
       position: Yup.string().required('Please select a position'),
       startDate: Yup.date().required('Start date is required'),
@@ -254,10 +101,16 @@ export const StoryExamples: Story = {
       },
     ]
 
+    const dataFacultyList = [
+      { value: 'Science', label: 'Faculty of Science' },
+      { value: 'Engineering', label: 'Faculty of Engineering' },
+      { value: 'Arts', label: 'Faculty of Arts' },
+    ]
+
     const dataDepartmentList = [
-      { value: 'Human Resources', label: 'Human Resources' },
-      { value: 'Engineering', label: 'Engineering' },
-      { value: 'Marketing', label: 'Marketing' },
+      { value: 'History', label: 'History' },
+      { value: 'Philosophy', label: 'Philosophy' },
+      { value: 'Literature', label: 'Literature' },
     ]
 
     const dataPositionList = [
@@ -271,8 +124,6 @@ export const StoryExamples: Story = {
       { value: '2002', label: 'Research Fund - 2002' },
       { value: '3003', label: 'Development Fund - 3003' },
     ]
-
-    //const { setFieldValue, setFieldTouched } = useFormikContext()
 
     const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
       actions.setSubmitting(true)
@@ -312,7 +163,8 @@ export const StoryExamples: Story = {
           <Form formikProps={formikProps}>
             <Main>
               <PageHeader header="Drop Down" content="Drop down example" size="md" />
-              <Form.FieldGroup cols={2}>
+              <Form.FieldGroup cols={3}>
+                <Form.FieldControl control="select" label="Faculty" name="faculty" options={dataFacultyList} required />
                 <Form.FieldControl
                   control="select"
                   label="Department"
@@ -326,39 +178,6 @@ export const StoryExamples: Story = {
                   name="position"
                   options={dataPositionList}
                   required
-                />
-              </Form.FieldGroup>
-            </Main>
-
-            <Main>
-              <PageHeader header="Date Selection" content="Date selection example" size="md" />
-              <Form.FieldGroup cols={2}>
-                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
-
-                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
-              </Form.FieldGroup>
-            </Main>
-
-            <Main>
-              <PageHeader header="Text" content="Text example" size="md" />
-              <Form.FieldGroup>
-                <Form.FieldControl
-                  control="text"
-                  label="Label"
-                  name="inputText"
-                  required
-                  helper="Helper Text"
-                  helperpostop
-                  disabled={formikProps.isSubmitting}
-                />
-                <Form.FieldControl
-                  control="textarea"
-                  label="Label"
-                  name="textareainput"
-                  required
-                  helper="Helper Text"
-                  rows={8}
-                  disabled={formikProps.isSubmitting}
                 />
               </Form.FieldGroup>
             </Main>
@@ -393,34 +212,33 @@ export const StoryExamples: Story = {
             </Main>
 
             <Main>
-              <PageHeader header="Selection" content="Radio and Checkbox" size="md" />
+              <PageHeader header="Date Selection" content="Date selection example" size="md" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
+
+                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
+              </Form.FieldGroup>
+            </Main>
+
+            <Main>
+              <PageHeader header="Text" content="Text example" size="md" />
               <Form.FieldGroup>
                 <Form.FieldControl
-                  control="radio"
+                  control="text"
                   label="Label"
-                  name="radio"
-                  options={selectOptions}
-                  isInline
+                  name="inputText"
                   required
-                  disabled={formikProps.isSubmitting}
                   helper="Helper Text"
+                  helperpostop
+                  disabled={formikProps.isSubmitting}
                 />
                 <Form.FieldControl
-                  control="checkbox"
-                  name="checkbox"
-                  label="I acknowledge the statements above."
-                  options={[
-                    {
-                      label: 'Yes',
-                      value: 'yes',
-                    },
-                    {
-                      label: 'No',
-                      value: 'no',
-                    },
-                  ]}
+                  control="textarea"
+                  label="Label"
+                  name="textareainput"
                   required
-                  isInline
+                  helper="Helper Text"
+                  rows={8}
                   disabled={formikProps.isSubmitting}
                 />
               </Form.FieldGroup>
@@ -482,6 +300,40 @@ export const StoryExamples: Story = {
                   </>
                 )}
               />
+            </Main>
+
+            <Main>
+              <PageHeader header="Selection" content="Radio and Checkbox" size="md" />
+              <Form.FieldGroup>
+                <Form.FieldControl
+                  control="radio"
+                  label="Label"
+                  name="radio"
+                  options={selectOptions}
+                  isInline
+                  required
+                  disabled={formikProps.isSubmitting}
+                  helper="Helper Text"
+                />
+                <Form.FieldControl
+                  control="checkbox"
+                  name="checkbox"
+                  label="I acknowledge the statements above."
+                  options={[
+                    {
+                      label: 'Yes',
+                      value: 'yes',
+                    },
+                    {
+                      label: 'No',
+                      value: 'no',
+                    },
+                  ]}
+                  required
+                  isInline
+                  disabled={formikProps.isSubmitting}
+                />
+              </Form.FieldGroup>
             </Main>
 
             <ButtonGroup>
