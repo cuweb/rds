@@ -1,7 +1,6 @@
 import React, { MouseEventHandler } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useFormik, FormikHelpers } from 'formik'
-import { FieldArray, ErrorMessage } from 'formik'
+import { useFormik, FormikHelpers, FieldArray, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
