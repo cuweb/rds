@@ -183,32 +183,34 @@ export const LayoutExamples: Story = {
             </Main>
 
             <Main>
-              <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
-              <Form.FieldGroup cols={2}>
-                <Form.FieldControl
-                  control="autosuggest"
-                  label="Account"
-                  name="account"
-                  options={FOAPAccountData}
-                  onChange={(selectedOption) => {
-                    const accountValue = selectedOption?.value || selectedOption
-                    formikProps.setFieldValue('account', accountValue)
+              <Form.FieldArrayContainer>
+                <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
+                <Form.FieldGroup cols={2}>
+                  <Form.FieldControl
+                    control="autosuggest"
+                    label="Account"
+                    name="account"
+                    options={FOAPAccountData}
+                    onChange={(selectedOption) => {
+                      const accountValue = selectedOption?.value || selectedOption
+                      formikProps.setFieldValue('account', accountValue)
 
-                    const selectedAccount = FOAPAccountData.find((acc) => acc.value === accountValue)
-                    formikProps.setFieldValue('program', selectedAccount ? selectedAccount.value : '')
-                  }}
-                />
+                      const selectedAccount = FOAPAccountData.find((acc) => acc.value === accountValue)
+                      formikProps.setFieldValue('program', selectedAccount ? selectedAccount.value : '')
+                    }}
+                  />
 
-                <Form.FieldControl
-                  control="text"
-                  label="Program"
-                  name="program"
-                  type="text"
-                  placeholder="code"
-                  disabled
-                  value={formikProps.values.program}
-                />
-              </Form.FieldGroup>
+                  <Form.FieldControl
+                    control="text"
+                    label="Program"
+                    name="program"
+                    type="text"
+                    placeholder="code"
+                    disabled
+                    value={formikProps.values.program}
+                  />
+                </Form.FieldGroup>
+              </Form.FieldArrayContainer>
             </Main>
 
             <Main>
