@@ -1,3 +1,4 @@
+import React, { forwardRef } from 'react'
 import { Field } from 'formik'
 import { fieldStyles } from '../form.Styles'
 import { FieldComponentProps } from '../FormField/FormField'
@@ -9,7 +10,7 @@ export interface InputProps extends FieldComponentProps {
   disabled?: boolean
 }
 
-export const Input = ({ ...props }: InputProps) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
   const { name, hasPrefix, hasSuffix, disabled, ...rest } = props
 
   const errorClass = useErrorClass(name)
@@ -23,9 +24,10 @@ export const Input = ({ ...props }: InputProps) => {
         name={name}
         disabled={disabled}
         className={`border-none w-full ${errorClass} ${disabled ? fieldStyles.disabled : ''} `}
+        innerRef={ref}
         {...rest}
       />
       {hasSuffix && hasSuffix}
     </div>
   )
-}
+})
