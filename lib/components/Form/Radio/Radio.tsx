@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { Field } from 'formik'
 import { FieldSetComponentProps } from '../FormFieldSet/FormFieldSet'
 import { fieldStyles } from '../form.Styles'
@@ -12,7 +13,7 @@ export interface RadioProps extends FieldSetComponentProps {
   refs?: Ref<HTMLInputElement | HTMLSelectElement>
 }
 
-export const Radio = ({ ...props }: RadioProps) => {
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(({ ...props }, ref) => {
   const { name, options, ...rest } = props
 
   const errorClass = useErrorClass(name)
@@ -27,6 +28,7 @@ export const Radio = ({ ...props }: RadioProps) => {
               name={name}
               className={`${fieldStyles.disabled} ${errorClass}`}
               value={option.value}
+              innerRef={ref}
               {...rest}
             />
             {option.label}
@@ -34,4 +36,4 @@ export const Radio = ({ ...props }: RadioProps) => {
         ))}
     </>
   )
-}
+})

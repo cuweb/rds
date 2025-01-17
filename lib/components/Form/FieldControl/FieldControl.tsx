@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { forwardRef } from 'react'
 import { Input } from '../Input/Input'
 import { TextArea } from '../TextArea/TextArea'
 import { Select } from '../Select/Select'
@@ -21,7 +22,7 @@ export interface FieldControlSetProps extends FieldSetProps {
   [key: string]: any
 }
 
-export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetProps) => {
+export const FieldControl = forwardRef<HTMLInputElement, FieldControlProps>(({ ...props }, ref) => {
   const {
     control,
     name,
@@ -71,7 +72,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           displayError={displayError}
           hiddenLabel={hiddenLabel}
         >
-          {Component && <Component name={name} {...rest} />}
+          {Component && <Component name={name} innerRef={ref} {...rest} />}
         </FormField>
       )
     }
@@ -93,7 +94,7 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
           hiddenLabel={hiddenLabel}
           {...rest}
         >
-          <Component name={name} {...rest} />
+          <Component name={name} innerRef={ref} {...rest} />
         </FormFieldSet>
       )
     }
@@ -101,4 +102,5 @@ export const FieldControl = ({ ...props }: FieldControlProps | FieldControlSetPr
     default:
       return null
   }
-}
+})
+export default FieldControl

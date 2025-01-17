@@ -286,6 +286,15 @@ export const LayoutExamples: Story = {
             <Main>
               <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
               <Form.FieldGroup cols={2}>
+                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
+
+                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
+              </Form.FieldGroup>
+            </Main>
+
+            <Main>
+              <PageHeader header="Text" content="Text example" size="md" />
+              <Form.FieldGroup>
                 <Form.FieldControl
                   control="autosuggest"
                   label="Account"
@@ -309,6 +318,22 @@ export const LayoutExamples: Story = {
                   disabled
                   value={formikProps.values.program}
                 />
+                <Form.FieldControl
+                  control="select"
+                  label="Position"
+                  name="position"
+                  options={dataPositionList}
+                  required
+                />
+              </Form.FieldGroup>
+            </Main>
+
+            <Main>
+              <PageHeader header="Date Selection" content="Date selection example" size="md" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
+
+                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
               </Form.FieldGroup>
             </Main>
 
