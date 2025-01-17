@@ -48,6 +48,11 @@ export const LayoutExamples: Story = {
       account: string
       radio: string
       checkbox: string[]
+      facultyDepartments: {
+        faculty: string
+        department: string
+        position: string
+      }[]
       bannerIds: { employeeID: string; firstName: string; lastName: string }[]
     }
 
@@ -63,13 +68,20 @@ export const LayoutExamples: Story = {
       radio: '',
       checkbox: [],
       bannerIds: [],
+      facultyDepartments: [{ faculty: '', department: '', position: '' }],
     }
 
     const InputValidationSchema = Yup.object().shape({
       inputText: Yup.string().required('The field is required'),
-      faculty: Yup.string().required('Please select a faculty'),
-      department: Yup.string().required('Please select a department'),
-      position: Yup.string().required('Please select a position'),
+      facultyDepartments: Yup.array()
+        .of(
+          Yup.object().shape({
+            faculty: Yup.string().required('Please select a faculty'),
+            department: Yup.string().required('Please select a department'),
+            position: Yup.string().required('Please select a position'),
+          }),
+        )
+        .min(1, 'At least one Faculty-Department-Position group is required'),
       startDate: Yup.date().required('Start date is required'),
       endDate: Yup.date()
         .required('End date is required')
@@ -126,6 +138,7 @@ export const LayoutExamples: Story = {
     ]
 
     const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
+      console.log('Form Submitted:', values)
       actions.setSubmitting(true)
       alert(JSON.stringify(values, null, 2))
       await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -162,88 +175,55 @@ export const LayoutExamples: Story = {
 
           <Form formikProps={formikProps}>
             <Main>
-              <PageHeader header="Drop Down" content="Drop down example" size="md" />
-              <Form.FieldGroup cols={3}>
-                <Form.FieldControl control="select" label="Faculty" name="faculty" options={dataFacultyList} required />
-                <Form.FieldControl
-                  control="select"
-                  label="Department"
-                  name="department"
-                  options={dataDepartmentList}
-                  required
-                />
-                <Form.FieldControl
-                  control="select"
-                  label="Position"
-                  name="position"
-                  options={dataPositionList}
-                  required
-                />
-              </Form.FieldGroup>
-            </Main>
+              <PageHeader header="Drop Down" content="Dynamic dropdown example" size="md" />
 
-            <Main>
-              <Form.FieldArrayContainer>
-                <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
-                <Form.FieldGroup cols={2}>
-                  <Form.FieldControl
-                    control="autosuggest"
-                    label="Account"
-                    name="account"
-                    options={FOAPAccountData}
-                    onChange={(selectedOption) => {
-                      const accountValue = selectedOption?.value || selectedOption
-                      formikProps.setFieldValue('account', accountValue)
+              <FieldArray
+                name="facultyDepartments"
+                render={({ push, remove }) => (
+                  <>
+                    {formikProps.values.facultyDepartments.map((_, index) => (
+                      <Form.FieldArrayContainer key={index}>
+                        <Form.FieldGroup cols={3}>
+                          <Form.FieldControl
+                            control="select"
+                            label="Faculty"
+                            name={`facultyDepartments.${index}.faculty`}
+                            options={dataFacultyList}
+                            required
+                          />
 
-                      const selectedAccount = FOAPAccountData.find((acc) => acc.value === accountValue)
-                      formikProps.setFieldValue('program', selectedAccount ? selectedAccount.value : '')
-                    }}
-                  />
+                          <Form.FieldControl
+                            control="select"
+                            label="Department"
+                            name={`facultyDepartments.${index}.department`}
+                            options={dataDepartmentList}
+                            required
+                          />
 
-                  <Form.FieldControl
-                    control="text"
-                    label="Program"
-                    name="program"
-                    type="text"
-                    placeholder="code"
-                    disabled
-                    value={formikProps.values.program}
-                  />
-                </Form.FieldGroup>
-              </Form.FieldArrayContainer>
-            </Main>
+                          <Form.FieldControl
+                            control="select"
+                            label="Position"
+                            name={`facultyDepartments.${index}.position`}
+                            options={dataPositionList}
+                            required
+                          />
+                        </Form.FieldGroup>
 
-            <Main>
-              <PageHeader header="Date Selection" content="Date selection example" size="md" />
-              <Form.FieldGroup cols={2}>
-                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
-
-                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
-              </Form.FieldGroup>
-            </Main>
-
-            <Main>
-              <PageHeader header="Text" content="Text example" size="md" />
-              <Form.FieldGroup>
-                <Form.FieldControl
-                  control="text"
-                  label="Label"
-                  name="inputText"
-                  required
-                  helper="Helper Text"
-                  helperpostop
-                  disabled={formikProps.isSubmitting}
-                />
-                <Form.FieldControl
-                  control="textarea"
-                  label="Label"
-                  name="textareainput"
-                  required
-                  helper="Helper Text"
-                  rows={8}
-                  disabled={formikProps.isSubmitting}
-                />
-              </Form.FieldGroup>
+                        <ButtonGroup>
+                          {formikProps.values.facultyDepartments.length > 1 && (
+                            <Button title="Remove" type="button" onClick={() => remove(index)} color="red" />
+                          )}
+                          <Button
+                            title="Add Another"
+                            type="button"
+                            onClick={() => push({ faculty: '', department: '', position: '' })}
+                          />
+                        </ButtonGroup>
+                      </Form.FieldArrayContainer>
+                    ))}
+                  </>
+                )}
+              />
             </Main>
 
             <Main>
@@ -302,6 +282,68 @@ export const LayoutExamples: Story = {
                   </>
                 )}
               />
+            </Main>
+
+            <Main>
+              <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl
+                  control="autosuggest"
+                  label="Account"
+                  name="account"
+                  options={FOAPAccountData}
+                  onChange={(selectedOption) => {
+                    const accountValue = selectedOption?.value || selectedOption
+                    formikProps.setFieldValue('account', accountValue)
+
+                    const selectedAccount = FOAPAccountData.find((acc) => acc.value === accountValue)
+                    formikProps.setFieldValue('program', selectedAccount ? selectedAccount.value : '')
+                  }}
+                />
+
+                <Form.FieldControl
+                  control="text"
+                  label="Program"
+                  name="program"
+                  type="text"
+                  placeholder="code"
+                  disabled
+                  value={formikProps.values.program}
+                />
+              </Form.FieldGroup>
+            </Main>
+
+            <Main>
+              <PageHeader header="Date Selection" content="Date selection example" size="md" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
+
+                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
+              </Form.FieldGroup>
+            </Main>
+
+            <Main>
+              <PageHeader header="Text" content="Text example" size="md" />
+              <Form.FieldGroup>
+                <Form.FieldControl
+                  control="text"
+                  label="Label"
+                  name="inputText"
+                  required
+                  helper="Helper Text"
+                  helperpostop
+                  disabled={formikProps.isSubmitting}
+                />
+                <Form.FieldControl
+                  control="textarea"
+                  label="Label"
+                  name="textareainput"
+                  required
+                  helper="Helper Text"
+                  rows={8}
+                  disabled={formikProps.isSubmitting}
+                />
+              </Form.FieldGroup>
             </Main>
 
             <Main>
