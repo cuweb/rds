@@ -1,6 +1,7 @@
 import React, { MouseEventHandler } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useFormik, FormikHelpers } from 'formik'
+import { FieldArray, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
@@ -10,6 +11,7 @@ import { NavAsideData } from '../../data/NavData'
 import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
+import { Table } from '../Table/Table'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {
@@ -207,6 +209,15 @@ export const StoryExamples: Story = {
 
     const InputInitialValues = {
       inputText: '',
+      department: '',
+      position: '',
+      startDate: '',
+      endDate: '',
+      program: '',
+      account: '',
+      radio: '',
+      checkbox: [],
+      bannerIds: [],
     }
 
     const InputValidationSchema = Yup.object().shape({
@@ -219,6 +230,9 @@ export const StoryExamples: Story = {
         .min(Yup.ref('startDate'), 'End date must be after start date'),
       program: Yup.string(),
       account: Yup.string().required('Please select an Account'),
+      employeeSearch: Yup.string()
+        .matches(/^[0-9]{9}$/, 'Employee Id  must be exactly 9 digits')
+        .nullable(),
       radio: Yup.string().required('Please select the Label'),
       checkbox: Yup.array()
         .of(Yup.string())
@@ -258,6 +272,8 @@ export const StoryExamples: Story = {
       { value: '2002', label: 'Research Fund - 2002' },
       { value: '3003', label: 'Development Fund - 3003' },
     ]
+
+    //const { setFieldValue, setFieldTouched } = useFormikContext()
 
     const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
       actions.setSubmitting(true)
@@ -349,21 +365,20 @@ export const StoryExamples: Story = {
             </Main>
 
             <Main>
-              <PageHeader
-                header="Auto Suggest and Disabled Field"
-                content="Auto Suggest and Disabled Field example"
-                size="md"
-              />
+              <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
               <Form.FieldGroup cols={2}>
                 <Form.FieldControl
                   control="autosuggest"
                   label="Account"
-                  classNamePrefix="select"
-                  className="basic-single"
-                  required
-                  isSearchable
                   name="account"
                   options={FOAPAccountData}
+                  onChange={(selectedOption) => {
+                    const accountValue = selectedOption?.value || selectedOption
+                    formikProps.setFieldValue('account', accountValue)
+
+                    const selectedAccount = FOAPAccountData.find((acc) => acc.value === accountValue)
+                    formikProps.setFieldValue('program', selectedAccount ? selectedAccount.value : '')
+                  }}
                 />
 
                 <Form.FieldControl
@@ -373,6 +388,7 @@ export const StoryExamples: Story = {
                   type="text"
                   placeholder="code"
                   disabled
+                  value={formikProps.values.program}
                 />
               </Form.FieldGroup>
             </Main>
@@ -409,6 +425,64 @@ export const StoryExamples: Story = {
                   disabled={formikProps.isSubmitting}
                 />
               </Form.FieldGroup>
+            </Main>
+
+            <Main>
+              <PageHeader header="Employee Info" content="Manage employee information" size="md" />
+
+              <FieldArray
+                name="bannerIds"
+                render={({ push, remove }) => (
+                  <>
+                    <Form.FieldGroup cols={2}>
+                      <Form.FieldControl
+                        control="text"
+                        name="employeeSearch"
+                        label="Employee ID"
+                        placeholder="Enter Employee ID"
+                        disabled={formikProps.isSubmitting}
+                      />
+                      <ButtonGroup>
+                        <Button
+                          title="+ Add Employee"
+                          type="button"
+                          onClick={() => {
+                            const mockEmployeeData = [
+                              { employeeID: '123456789', firstName: 'John', lastName: 'Doe' },
+                              { employeeID: '987654321', firstName: 'Jane', lastName: 'Smith' },
+                            ]
+
+                            const randomEmployee = mockEmployeeData[Math.floor(Math.random() * mockEmployeeData.length)]
+                            push(randomEmployee)
+                          }}
+                          disabled={formikProps.isSubmitting}
+                        />
+                      </ButtonGroup>
+                    </Form.FieldGroup>
+
+                    <ErrorMessage name="employeeSearch">{(error) => <Form.Error>{error}</Form.Error>}</ErrorMessage>
+
+                    {formikProps.values.bannerIds.length > 0 && (
+                      <Form.FieldGroup>
+                        <Table
+                          columns={[
+                            { header: 'Employee ID', key: 'employeeID' },
+                            { header: 'First Name', key: 'firstName' },
+                            { header: 'Last Name', key: 'lastName' },
+                            { header: 'Action', key: 'remove' },
+                          ]}
+                          data={formikProps.values.bannerIds.map((emp, index) => ({
+                            ...emp,
+                            remove: <Button title="Remove" type="button" color="red" onClick={() => remove(index)} />,
+                          }))}
+                          hasShadow
+                          hasStripes
+                        />
+                      </Form.FieldGroup>
+                    )}
+                  </>
+                )}
+              />
             </Main>
 
             <ButtonGroup>
