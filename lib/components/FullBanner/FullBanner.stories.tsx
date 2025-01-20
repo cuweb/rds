@@ -43,25 +43,25 @@ export const Primary: Story = {
   },
 }
 
-// export const Video: Story = {
-//   args: {
-//     as: 'section',
-//   },
-//   render: (args) => {
-//     return (
-//       <FullBanner {...args}>
-//         <FullBanner.Video videoName="timelapse-quad" />
-//         <FullBanner.Content title="The nostalgia is real." headerType="h1">
-//           <p>
-//             The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
-//             revolutionized how the world consumes music on the move!
-//           </p>
-//           <ButtonGroup>
-//             <Button title="Apply Now" />
-//             <Button color="grey" title="Request Information" />
-//           </ButtonGroup>
-//         </FullBanner.Content>
-//       </FullBanner>
-//     )
-//   },
-// }
+export const Video: Story = {
+  args: {
+    as: 'section',
+  },
+  render: (args) => {
+    return (
+      <FullBanner {...args}>
+        <FullBanner.Video videoName="timelapse-quad" />
+        <FullBanner.Content title="The nostalgia is real." headerType="h1">
+          <p>
+            The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
+            revolutionized how the world consumes music on the move!
+          </p>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="grey" title="Request Information" />
+          </ButtonGroup>
+        </FullBanner.Content>
+      </FullBanner>
+    )
+  },
+}
