@@ -36,7 +36,7 @@ export const FullBannerVideo = ({ videoName = 'cu-flyby' }: FullBannerVideoProps
       </video>
 
       <button
-        className="p-3 rounded-lg absolute right-4 lg:right-10 -translate-x-4 lg:-translate-x-10 bottom-4 lg:bottom-8 z-10 w-14 h-14 fill-white hover:fill-black bg-black/70 hover:bg-white/70 transition-all"
+        className="p-1.5 md:p-3 rounded-lg absolute right-0 -translate-x-4 lg:-translate-x-10 bottom-4 lg:bottom-8 z-10 w-8 h-8 md:w-14 md:h-14 fill-white bg-black/70 hover:bg-cu-red-700 transition-all"
         aria-label="Pause video"
         title="Pause video"
         id="video_controls_button"
