@@ -2,6 +2,7 @@ import React, { MouseEventHandler } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useFormik, FormikHelpers, FieldArray, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
@@ -173,7 +174,7 @@ export const LayoutExamples: Story = {
           />
 
           <Form formikProps={formikProps}>
-            <Main>
+            <Section>
               <PageHeader header="Drop Down" content="Dynamic dropdown example" size="md" />
 
               <FieldArray
@@ -223,9 +224,9 @@ export const LayoutExamples: Story = {
                   </>
                 )}
               />
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="Employee Info" content="Manage employee information" size="md" />
 
               <FieldArray
@@ -281,18 +282,18 @@ export const LayoutExamples: Story = {
                   </>
                 )}
               />
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
               <Form.FieldGroup cols={2}>
                 <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
 
                 <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
               </Form.FieldGroup>
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="Text" content="Text example" size="md" />
               <Form.FieldGroup>
                 <Form.FieldControl
@@ -326,27 +327,27 @@ export const LayoutExamples: Story = {
                   required
                 />
               </Form.FieldGroup>
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="Date Selection" content="Date selection example" size="md" />
               <Form.FieldGroup cols={2}>
                 <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
 
                 <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
               </Form.FieldGroup>
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="Date Selection" content="Date selection example" size="md" />
               <Form.FieldGroup cols={2}>
                 <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
 
                 <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
               </Form.FieldGroup>
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="Text" content="Text example" size="md" />
               <Form.FieldGroup>
                 <Form.FieldControl
@@ -368,9 +369,9 @@ export const LayoutExamples: Story = {
                   disabled={formikProps.isSubmitting}
                 />
               </Form.FieldGroup>
-            </Main>
+            </Section>
 
-            <Main>
+            <Section>
               <PageHeader header="Selection" content="Radio and Checkbox" size="md" />
               <Form.FieldGroup>
                 <Form.FieldControl
@@ -402,7 +403,7 @@ export const LayoutExamples: Story = {
                   disabled={formikProps.isSubmitting}
                 />
               </Form.FieldGroup>
-            </Main>
+            </Section>
 
             <ButtonGroup>
               <Button title="Submit" type="submit" />
