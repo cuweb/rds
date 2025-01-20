@@ -26,6 +26,10 @@
   @apply cursor-default border-slate-300 bg-slate-300 text-cu-black-600;
 }
 
+.cu-button--icon-disabled svg {
+  @apply cursor-default fill-slate-300;
+}
+
 .cu-button--full {
   @apply w-full;
 }
