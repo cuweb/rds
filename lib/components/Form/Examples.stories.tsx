@@ -12,6 +12,7 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 import { Table } from '../Table/Table'
 import { PageHeader } from '../PageHeader/PageHeader'
+import InputAddon from './InputAddon/InputAddon'
 
 const meta: Meta = {
   title: 'Components/Form/Examples',
@@ -46,6 +47,7 @@ export const LayoutExamples: Story = {
 
     const InputInitialValues = {
       inputText: '',
+      totalAmountDue: '',
       faculty: '',
       department: '',
       position: '',
@@ -55,12 +57,14 @@ export const LayoutExamples: Story = {
       account: '',
       radio: '',
       checkbox: [],
-      bannerIds: [],
+      bannerIds: [{ employeeID: '123456789', firstName: 'Test', lastName: 'Lastname' }],
+      bannerIds1: [],
       facultyDepartments: [{ faculty: '', department: '', position: '' }],
     }
 
     const InputValidationSchema = Yup.object().shape({
       inputText: Yup.string().required('The field is required'),
+      totalAmountDue: Yup.string().required('The field is required'),
       facultyDepartments: Yup.array()
         .of(
           Yup.object().shape({
@@ -162,247 +166,245 @@ export const LayoutExamples: Story = {
           />
 
           <Form formikProps={formikProps}>
-            <PageHeader header="Drop Down" content="Dynamic dropdown example" size="md" />
+            <Section as="div">
+              <PageHeader header="Text" size="xs" as="h2" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl
+                  control="text"
+                  label="Text Input"
+                  name="inputText"
+                  required
+                  helper="Helper Text"
+                  helperpostop
+                  disabled={formikProps.isSubmitting}
+                />
 
-            <Form.FieldGroup cols={3}>
-              <Form.FieldControl control="select" label="Faculty" name={`faculty`} options={dataFacultyList} required />
+                <Form.FieldControl
+                  control="text"
+                  label="Disabled Text Input with helper text in bottom"
+                  name="inputText1"
+                  required
+                  helper="Helper Text"
+                  disabled={true}
+                />
 
-              <Form.FieldControl
-                control="select"
-                label="Department"
-                name={`department`}
-                options={dataDepartmentList}
-                required
+                <Form.FieldControl
+                  control="text"
+                  name="totalAmountDue"
+                  label="Number With Prefix and Suffix"
+                  type="number"
+                  placeholder="Total Amount Due"
+                  disabled={formikProps.isSubmitting}
+                  required
+                  hasPrefix={<InputAddon border="right">$</InputAddon>}
+                  hasSuffix={<InputAddon border="left">CAD</InputAddon>}
+                />
+              </Form.FieldGroup>
+
+              <Form.FieldGroup>
+                <Form.FieldControl
+                  control="textarea"
+                  label="TextArea"
+                  name="textareainput"
+                  required
+                  helper="Helper Text"
+                  rows={8}
+                  disabled={formikProps.isSubmitting}
+                />
+              </Form.FieldGroup>
+            </Section>
+
+            <Section as="div">
+              <PageHeader header="Autosuggest" size="xs" as="h2" />
+              <Form.FieldGroup>
+                <Form.FieldControl
+                  control="autosuggest"
+                  label="Account"
+                  name="account"
+                  options={FOAPAccountData}
+                  onChange={(selectedOption) => {
+                    const accountValue = selectedOption?.value || selectedOption
+                    formikProps.setFieldValue('account', accountValue)
+                  }}
+                />
+              </Form.FieldGroup>
+            </Section>
+
+            <Section as="div">
+              <PageHeader header="Selection" content="Radio and Checkbox" size="xs" as="h2" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl
+                  control="radio"
+                  label="Label"
+                  name="radio"
+                  options={selectOptions}
+                  isInline
+                  required
+                  disabled={formikProps.isSubmitting}
+                  helper="Helper Text"
+                />
+
+                <Form.FieldControl
+                  control="checkbox"
+                  name="checkbox"
+                  label="I acknowledge the statements above."
+                  options={[
+                    {
+                      label: 'Yes',
+                      value: 'yes',
+                    },
+                    {
+                      label: 'No',
+                      value: 'no',
+                    },
+                  ]}
+                  required
+                  isInline
+                  disabled={formikProps.isSubmitting}
+                />
+              </Form.FieldGroup>
+            </Section>
+
+            <Section as="div">
+              <PageHeader
+                header="Drop Down with 3 Columns"
+                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
+                size="xs"
+                as="h2"
               />
 
-              <Form.FieldControl
-                control="select"
-                label="Position"
-                name={`position`}
-                options={dataPositionList}
-                required
-              />
-            </Form.FieldGroup>
+              <Form.FieldGroup cols={3}>
+                <Form.FieldControl
+                  control="select"
+                  label="Faculty"
+                  name={`faculty`}
+                  options={dataFacultyList}
+                  required
+                />
 
-            <PageHeader header="With Field Label" content="Manage employee information" size="md" />
+                <Form.FieldControl
+                  control="select"
+                  label="Department"
+                  name={`department`}
+                  options={dataDepartmentList}
+                  required
+                />
 
-            <FieldArray
-              name="bannerIds"
-              render={({ push, remove }) => (
-                <>
-                  <Form.FieldGroup cols={2}>
-                    <Form.FieldControl
-                      control="text"
-                      name="employeeSearch"
-                      label="Employee ID"
-                      placeholder="Enter Employee ID"
-                      disabled={formikProps.isSubmitting}
-                    />
-                    <ButtonGroup>
-                      <Button
-                        title="+ Add Employee"
-                        type="button"
-                        onClick={() => {
-                          const mockEmployeeData = [
-                            { employeeID: '123456789', firstName: 'John', lastName: 'Doe' },
-                            { employeeID: '987654321', firstName: 'Jane', lastName: 'Smith' },
-                          ]
+                <Form.FieldControl
+                  control="select"
+                  label="Position"
+                  name={`position`}
+                  options={dataPositionList}
+                  required
+                />
+              </Form.FieldGroup>
+            </Section>
 
-                          const randomEmployee = mockEmployeeData[Math.floor(Math.random() * mockEmployeeData.length)]
-                          push(randomEmployee)
-                        }}
+            <Section as="div">
+              <PageHeader header="Date Selection" size="xs" as="h2" />
+              <Form.FieldGroup cols={2}>
+                <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
+                <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
+              </Form.FieldGroup>
+            </Section>
+
+            <Section as="div">
+              <PageHeader header="FieldArray with Button and Field Label in 2 columns" size="xs" as="h2" />
+
+              <FieldArray
+                name="bannerIds"
+                render={({ push, remove }) => (
+                  <>
+                    <Form.FieldGroup cols={2}>
+                      <Form.FieldControl
+                        control="text"
+                        name="employeeSearch"
+                        label="Employee ID"
+                        placeholder="Enter Employee ID"
                         disabled={formikProps.isSubmitting}
                       />
-                    </ButtonGroup>
-                  </Form.FieldGroup>
+                      <ButtonGroup>
+                        <Button
+                          title="+ Add Employee"
+                          type="button"
+                          onClick={() => {
+                            const mockEmployeeData = [
+                              { employeeID: '123456789', firstName: 'John', lastName: 'Doe' },
+                              { employeeID: '987654321', firstName: 'Jane', lastName: 'Smith' },
+                            ]
 
-                  <ErrorMessage name="employeeSearch">{(error) => <Form.Error>{error}</Form.Error>}</ErrorMessage>
-
-                  {formikProps.values.bannerIds.length > 0 && (
-                    <Form.FieldGroup>
-                      <Table
-                        columns={[
-                          { header: 'Employee ID', key: 'employeeID' },
-                          { header: 'First Name', key: 'firstName' },
-                          { header: 'Last Name', key: 'lastName' },
-                          { header: 'Action', key: 'remove' },
-                        ]}
-                        data={formikProps.values.bannerIds.map((emp, index) => ({
-                          ...emp,
-                          remove: <Button title="Remove" type="button" color="red" onClick={() => remove(index)} />,
-                        }))}
-                        hasStripes
-                      />
+                            const randomEmployee = mockEmployeeData[Math.floor(Math.random() * mockEmployeeData.length)]
+                            push(randomEmployee)
+                          }}
+                          disabled={formikProps.isSubmitting}
+                        />
+                      </ButtonGroup>
                     </Form.FieldGroup>
-                  )}
-                </>
-              )}
-            />
 
-            <PageHeader header="Without Field Label" content="Manage employee information" size="md" />
+                    {/* <ErrorMessage name="employeeSearch">{(error) => <Form.Error>{error}</Form.Error>}</ErrorMessage> */}
 
-            <FieldArray
-              name="bannerIds"
-              render={({ push, remove }) => (
-                <>
-                  <Form.FieldGroup cols={2} alignment="top">
-                    <Form.FieldControl
-                      control="text"
-                      name="employeeSearch"
-                      label="Employee ID"
-                      hiddenLabel={true}
-                      placeholder="Enter Employee ID"
-                      disabled={formikProps.isSubmitting}
-                    />
-                    <ButtonGroup>
-                      <Button
-                        title="+ Add Employee"
-                        type="button"
-                        isSmall
-                        onClick={() => {
-                          const mockEmployeeData = [
-                            { employeeID: '123456789', firstName: 'John', lastName: 'Doe' },
-                            { employeeID: '987654321', firstName: 'Jane', lastName: 'Smith' },
-                          ]
+                    {formikProps.values.bannerIds.length > 0 && (
+                      <Form.FieldGroup>
+                        <Table
+                          columns={[
+                            { header: 'Employee ID', key: 'employeeID' },
+                            { header: 'First Name', key: 'firstName' },
+                            { header: 'Last Name', key: 'lastName' },
+                            { header: 'Action', key: 'remove' },
+                          ]}
+                          data={formikProps.values.bannerIds.map((emp, index) => ({
+                            ...emp,
+                            remove: (
+                              <Button title="Remove" type="button" color="red" onClick={() => remove(index)} isSmall />
+                            ),
+                          }))}
+                          hasStripes
+                        />
+                      </Form.FieldGroup>
+                    )}
+                  </>
+                )}
+              />
 
-                          const randomEmployee = mockEmployeeData[Math.floor(Math.random() * mockEmployeeData.length)]
-                          push(randomEmployee)
-                        }}
+              <PageHeader header="FieldArray with Button and without Field Label in 2 columns" size="xs" as="h2" />
+
+              <FieldArray
+                name="bannerIds1"
+                render={({ push, remove }) => (
+                  <>
+                    <Form.FieldGroup cols={2} alignment="top">
+                      <Form.FieldControl
+                        control="text"
+                        name="employeeSearch1"
+                        label="Employee ID"
+                        hiddenLabel={true}
+                        placeholder="Enter Employee ID"
                         disabled={formikProps.isSubmitting}
                       />
-                    </ButtonGroup>
-                  </Form.FieldGroup>
+                      <ButtonGroup>
+                        <Button
+                          title="+ Add Employee"
+                          type="button"
+                          isSmall
+                          onClick={() => {
+                            const mockEmployeeData = [
+                              { employeeID: '123456789', firstName: 'John', lastName: 'Doe' },
+                              { employeeID: '987654321', firstName: 'Jane', lastName: 'Smith' },
+                            ]
 
-                  <ErrorMessage name="employeeSearch">{(error) => <Form.Error>{error}</Form.Error>}</ErrorMessage>
-
-                  {formikProps.values.bannerIds.length > 0 && (
-                    <Form.FieldGroup>
-                      <Table
-                        columns={[
-                          { header: 'Employee ID', key: 'employeeID' },
-                          { header: 'First Name', key: 'firstName' },
-                          { header: 'Last Name', key: 'lastName' },
-                          { header: 'Action', key: 'remove' },
-                        ]}
-                        data={formikProps.values.bannerIds.map((emp, index) => ({
-                          ...emp,
-                          remove: <Button title="Remove" type="button" color="red" onClick={() => remove(index)} />,
-                        }))}
-                        hasStripes
-                      />
+                            const randomEmployee = mockEmployeeData[Math.floor(Math.random() * mockEmployeeData.length)]
+                            push(randomEmployee)
+                          }}
+                          disabled={formikProps.isSubmitting}
+                        />
+                      </ButtonGroup>
                     </Form.FieldGroup>
-                  )}
-                </>
-              )}
-            />
 
-            <PageHeader header="FOAP sample field" content="Auto Suggest and Disabled Field example" size="md" />
-            <Form.FieldGroup cols={2}>
-              <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
-              <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
-            </Form.FieldGroup>
-
-            <PageHeader header="Text" content="Text example" size="md" />
-            <Form.FieldGroup>
-              <Form.FieldControl
-                control="autosuggest"
-                label="Account"
-                name="account"
-                options={FOAPAccountData}
-                onChange={(selectedOption) => {
-                  const accountValue = selectedOption?.value || selectedOption
-                  formikProps.setFieldValue('account', accountValue)
-
-                  const selectedAccount = FOAPAccountData.find((acc) => acc.value === accountValue)
-                  formikProps.setFieldValue('program', selectedAccount ? selectedAccount.value : '')
-                }}
+                    <Form.Error>Custom Test Error from the Form.Error component </Form.Error>
+                  </>
+                )}
               />
-
-              <Form.FieldControl
-                control="text"
-                label="Program"
-                name="program"
-                type="text"
-                placeholder="code"
-                disabled
-                value={formikProps.values.program}
-              />
-              <Form.FieldControl
-                control="select"
-                label="Position"
-                name="position"
-                options={dataPositionList}
-                required
-              />
-            </Form.FieldGroup>
-
-            <PageHeader header="Date Selection" content="Date selection example" size="md" />
-            <Form.FieldGroup cols={2}>
-              <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
-
-              <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
-            </Form.FieldGroup>
-
-            <PageHeader header="Date Selection" content="Date selection example" size="md" />
-            <Form.FieldGroup cols={2}>
-              <Form.FieldControl control="datetime" label="Start Date" name="startDate" required />
-
-              <Form.FieldControl control="datetime" label="End Date" name="endDate" required />
-            </Form.FieldGroup>
-
-            <PageHeader header="Text" content="Text example" size="md" />
-            <Form.FieldGroup>
-              <Form.FieldControl
-                control="text"
-                label="Label"
-                name="inputText"
-                required
-                helper="Helper Text"
-                helperpostop
-                disabled={formikProps.isSubmitting}
-              />
-              <Form.FieldControl
-                control="textarea"
-                label="Label"
-                name="textareainput"
-                required
-                helper="Helper Text"
-                rows={8}
-                disabled={formikProps.isSubmitting}
-              />
-            </Form.FieldGroup>
-
-            <PageHeader header="Selection" content="Radio and Checkbox" size="md" />
-            <Form.FieldGroup>
-              <Form.FieldControl
-                control="radio"
-                label="Label"
-                name="radio"
-                options={selectOptions}
-                isInline
-                required
-                disabled={formikProps.isSubmitting}
-                helper="Helper Text"
-              />
-              <Form.FieldControl
-                control="checkbox"
-                name="checkbox"
-                label="I acknowledge the statements above."
-                options={[
-                  {
-                    label: 'Yes',
-                    value: 'yes',
-                  },
-                  {
-                    label: 'No',
-                    value: 'no',
-                  },
-                ]}
-                required
-                isInline
-                disabled={formikProps.isSubmitting}
-              />
-            </Form.FieldGroup>
+            </Section>
 
             <ButtonGroup>
               <Button title="Submit" type="submit" />
