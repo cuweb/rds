@@ -227,7 +227,7 @@ export const LayoutExamples: Story = {
             </Section>
 
             <Section>
-              <PageHeader header="Employee Info" content="Manage employee information" size="md" />
+              <PageHeader header="With Field Label" content="Manage employee information" size="md" />
 
               <FieldArray
                 name="bannerIds"
@@ -274,7 +274,65 @@ export const LayoutExamples: Story = {
                             ...emp,
                             remove: <Button title="Remove" type="button" color="red" onClick={() => remove(index)} />,
                           }))}
-                          hasShadow
+                          hasStripes
+                        />
+                      </Form.FieldGroup>
+                    )}
+                  </>
+                )}
+              />
+            </Section>
+
+            <Section>
+              <PageHeader header="Without Field Label" content="Manage employee information" size="md" />
+
+              <FieldArray
+                name="bannerIds"
+                render={({ push, remove }) => (
+                  <>
+                    <Form.FieldGroup cols={2} alignment="top">
+                      <Form.FieldControl
+                        control="text"
+                        name="employeeSearch"
+                        label="Employee ID"
+                        hiddenLabel={true}
+                        placeholder="Enter Employee ID"
+                        disabled={formikProps.isSubmitting}
+                      />
+                      <ButtonGroup>
+                        <Button
+                          title="+ Add Employee"
+                          type="button"
+                          isSmall
+                          onClick={() => {
+                            const mockEmployeeData = [
+                              { employeeID: '123456789', firstName: 'John', lastName: 'Doe' },
+                              { employeeID: '987654321', firstName: 'Jane', lastName: 'Smith' },
+                            ]
+
+                            const randomEmployee = mockEmployeeData[Math.floor(Math.random() * mockEmployeeData.length)]
+                            push(randomEmployee)
+                          }}
+                          disabled={formikProps.isSubmitting}
+                        />
+                      </ButtonGroup>
+                    </Form.FieldGroup>
+
+                    <ErrorMessage name="employeeSearch">{(error) => <Form.Error>{error}</Form.Error>}</ErrorMessage>
+
+                    {formikProps.values.bannerIds.length > 0 && (
+                      <Form.FieldGroup>
+                        <Table
+                          columns={[
+                            { header: 'Employee ID', key: 'employeeID' },
+                            { header: 'First Name', key: 'firstName' },
+                            { header: 'Last Name', key: 'lastName' },
+                            { header: 'Action', key: 'remove' },
+                          ]}
+                          data={formikProps.values.bannerIds.map((emp, index) => ({
+                            ...emp,
+                            remove: <Button title="Remove" type="button" color="red" onClick={() => remove(index)} />,
+                          }))}
                           hasStripes
                         />
                       </Form.FieldGroup>
