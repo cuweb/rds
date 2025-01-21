@@ -57,11 +57,13 @@ export const Top: Story = {
     return (
       <>
         <Nav>
-          <Nav.Logo />
-          <Nav.Top>
-            <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside menu={NavAsideData} isSearch onClickSearch={() => setModalOpen(true)} />
-          </Nav.Top>
+          <Nav.MainHeader>
+            <Nav.Logo />
+            <Nav.Top>
+              <Nav.Menu menu={NavDataSingle} />
+              <Nav.Aside menu={NavAsideData} isSearch onClickSearch={() => setModalOpen(true)} />
+            </Nav.Top>
+          </Nav.MainHeader>
         </Nav>
         <Modal
           ariaLabel="Open Search"
@@ -110,14 +112,16 @@ export const WithTitle: Story = {
     return (
       <>
         <Nav>
-          <Nav.Logo
-            title="Max and Tessie Zelikovitz Centre for Jewish Studies"
-            link="https://carleton.ca/webservices"
-          />
-          <Nav.Top>
-            <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside menu={NavAsideData}></Nav.Aside>
-          </Nav.Top>
+          <Nav.MainHeader>
+            <Nav.Logo
+              title="Max and Tessie Zelikovitz Centre for Jewish Studies"
+              link="https://carleton.ca/webservices"
+            />
+            <Nav.Top>
+              <Nav.Menu menu={NavDataSingle} />
+              <Nav.Aside menu={NavAsideData}></Nav.Aside>
+            </Nav.Top>
+          </Nav.MainHeader>
         </Nav>
         <Modal
           ariaLabel="Open Search"
@@ -225,17 +229,19 @@ export const LoggedOutWithHref: Story = {
     return (
       <>
         <Nav>
-          <Nav.Logo title="Raven Design System" link="/" />
-          <Nav.Top>
-            <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside
-              menu={NavAsideData}
-              LoggedOutUser={true}
-              LoggedInLink="/login"
-              isSearch
-              onClickSearch={() => setModalOpen(true)}
-            />
-          </Nav.Top>
+          <Nav.MainHeader>
+            <Nav.Logo title="Raven Design System" link="/" />
+            <Nav.Top>
+              <Nav.Menu menu={NavDataSingle} />
+              <Nav.Aside
+                menu={NavAsideData}
+                LoggedOutUser={true}
+                LoggedInLink="/login"
+                isSearch
+                onClickSearch={() => setModalOpen(true)}
+              />
+            </Nav.Top>
+          </Nav.MainHeader>
         </Nav>
         <Modal
           ariaLabel="Open Search"
@@ -284,17 +290,19 @@ export const LoggedOutWithOnClick: Story = {
     return (
       <>
         <Nav>
-          <Nav.Logo title="Raven Design System" link="/" />
-          <Nav.Top>
-            <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside
-              menu={NavAsideData}
-              LoggedOutUser={true}
-              onClickHandler={() => alert('Sign in clicked')}
-              isSearch
-              onClickSearch={() => setModalOpen(true)}
-            />
-          </Nav.Top>
+          <Nav.MainHeader>
+            <Nav.Logo title="Raven Design System" link="/" />
+            <Nav.Top>
+              <Nav.Menu menu={NavDataSingle} />
+              <Nav.Aside
+                menu={NavAsideData}
+                LoggedOutUser={true}
+                onClickHandler={() => alert('Sign in clicked')}
+                isSearch
+                onClickSearch={() => setModalOpen(true)}
+              />
+            </Nav.Top>
+          </Nav.MainHeader>
         </Nav>
         <Modal
           ariaLabel="Open Search"
