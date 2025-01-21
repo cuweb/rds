@@ -64,6 +64,11 @@
   @apply mt-6 md:mt-10;
 }
 
+/* When button is used directly inside grid layouts */
+.grid > .cu-buttongroup {
+  @apply mt-0;
+}
+
 /* Calendar */
 .cu-calendar + .cu-calendar,
 :not(.cu-calendar) + .cu-calendar,
