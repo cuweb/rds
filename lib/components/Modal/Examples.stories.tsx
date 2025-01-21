@@ -43,7 +43,9 @@ export const LayoutExamples: Story = {
           <Nav.Top>
             <Nav.Logo title="Raven Design System" link="/" />
             {/* <Nav.Menu menu={NavDataSingle} /> */}
-            <Nav.Buttons menu={NavButtonsData} />
+            <Nav.Aside>
+              <Nav.Buttons menu={NavButtonsData} />
+            </Nav.Aside>
           </Nav.Top>
         </Nav>
 
