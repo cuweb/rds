@@ -11,7 +11,6 @@ import {
 import { SearchDatabase } from '../../data/SearchData'
 import { SearchInput } from '../SearchInput/SearchInput'
 import { Modal } from '../Modal/Modal'
-import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 
 const meta: Meta<typeof Nav> = {
   title: 'Components/Nav',
@@ -27,10 +26,12 @@ const meta: Meta<typeof Nav> = {
 export default meta
 type Story = StoryObj<typeof Nav>
 
-export const Default: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+export const Primary: Story = () => {
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -58,11 +59,7 @@ export const Default: Story = () => {
         <Nav.Logo />
         <Nav.Primary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData}>
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+          <Nav.Aside menu={NavAsideData} search onClickSearch={() => setModalOpen(true)} />
         </Nav.Primary>
       </Nav>
       <Modal
@@ -82,9 +79,11 @@ export const Default: Story = () => {
 }
 
 export const WithTitle: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -111,11 +110,7 @@ export const WithTitle: Story = () => {
         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
         <Nav.Primary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData}>
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+          <Nav.Aside menu={NavAsideData}></Nav.Aside>
         </Nav.Primary>
       </Nav>
       <Modal
@@ -135,9 +130,11 @@ export const WithTitle: Story = () => {
 }
 
 export const TitleWithSecondary: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -162,18 +159,10 @@ export const TitleWithSecondary: Story = () => {
     <>
       <Nav navType="secondary">
         <Nav.Logo title="Max and Tessie Zelikovitz Centre for Jewish Studies" link="https://carleton.ca/webservices" />
-        <Nav.Aside menu={NavAsideData}>
-          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-          </button>
-        </Nav.Aside>
+        <Nav.Aside menu={NavAsideData} search onClickSearch={() => setModalOpen(true)} />
         <Nav.Secondary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData}>
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+          <Nav.Aside menu={NavAsideData} search onClickSearch={() => setModalOpen(true)} />
         </Nav.Secondary>
       </Nav>
       <Modal
@@ -193,9 +182,11 @@ export const TitleWithSecondary: Story = () => {
 }
 
 export const LoggedOutWithHref: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -222,11 +213,13 @@ export const LoggedOutWithHref: Story = () => {
         <Nav.Logo title="Raven Design System" link="/" />
         <Nav.Primary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData} LoggedOutUser={true} LoggedInLink="/login">
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+          <Nav.Aside
+            menu={NavAsideData}
+            LoggedOutUser={true}
+            LoggedInLink="/login"
+            search
+            onClickSearch={() => setModalOpen(true)}
+          />
         </Nav.Primary>
       </Nav>
       <Modal
@@ -246,9 +239,11 @@ export const LoggedOutWithHref: Story = () => {
 }
 
 export const LoggedOutWithOnClick: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -275,11 +270,13 @@ export const LoggedOutWithOnClick: Story = () => {
         <Nav.Logo title="Raven Design System" link="/" />
         <Nav.Primary>
           <Nav.Menu menu={NavDataSingle} />
-          <Nav.Aside menu={NavAsideData} LoggedOutUser={true} onClickHandler={() => alert('Sign in clicked')}>
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+          <Nav.Aside
+            menu={NavAsideData}
+            LoggedOutUser={true}
+            onClickHandler={() => alert('Sign in clicked')}
+            search
+            onClickSearch={() => setModalOpen(true)}
+          />
         </Nav.Primary>
       </Nav>
       <Modal
@@ -304,9 +301,11 @@ const userNoImage = {
 }
 
 export const LoggedInWithHref: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -336,11 +335,10 @@ export const LoggedInWithHref: Story = () => {
           LoggedInUser={true}
           LoggedMenu={NavAsideLoggedInOptionsHref}
           userNoImage={userNoImage}
-        >
-          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-          </button>
-        </Nav.Aside>
+          search
+          onClickSearch={() => setModalOpen(true)}
+        />
+
         <Nav.Secondary>
           <Nav.Menu menu={NavDataSingle} />
           <Nav.Aside
@@ -348,11 +346,9 @@ export const LoggedInWithHref: Story = () => {
             LoggedInUser={true}
             LoggedMenu={NavAsideLoggedInOptionsHref}
             userNoImage={userNoImage}
-          >
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+            search
+            onClickSearch={() => setModalOpen(true)}
+          />
         </Nav.Secondary>
       </Nav>
       <Modal
@@ -372,9 +368,11 @@ export const LoggedInWithHref: Story = () => {
 }
 
 export const LoggedInWithOnClick: Story = () => {
-  const [, setMessage] = useState('')
-  const [searchString, setSearchString] = useState('')
-  const [filteredResults, setFilteredResults] = useState()
+  const [, setMessage] = useState<string>('')
+  const [searchString, setSearchString] = useState<string>('')
+  const [filteredResults, setFilteredResults] = useState<
+    { id: number; title: string; description: string; url: string }[]
+  >([])
   const [modalOpen, setModalOpen] = useState(false)
   const searchOn = 'title'
 
@@ -404,11 +402,9 @@ export const LoggedInWithOnClick: Story = () => {
           LoggedInUser={true}
           LoggedMenu={NavAsideLoggedInOptionsOnClick}
           userNoImage={userNoImage}
-        >
-          <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-          </button>
-        </Nav.Aside>
+          search
+          onClickSearch={() => setModalOpen(true)}
+        />
         <Nav.Secondary>
           <Nav.Menu menu={NavDataSingle} />
           <Nav.Aside
@@ -416,11 +412,9 @@ export const LoggedInWithOnClick: Story = () => {
             LoggedInUser={true}
             LoggedMenu={NavAsideLoggedInOptionsOnClick}
             userNoImage={userNoImage}
-          >
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
+            search
+            onClickSearch={() => setModalOpen(true)}
+          />
         </Nav.Secondary>
       </Nav>
       <Modal
@@ -438,11 +432,3 @@ export const LoggedInWithOnClick: Story = () => {
     </>
   )
 }
-
-Default.storyName = 'Default Nav'
-WithTitle.storyName = 'With Title'
-TitleWithSecondary.storyName = 'Title With Secondary'
-LoggedOutWithHref.storyName = 'Logged Out with href'
-LoggedOutWithOnClick.storyName = 'Logged out with onClick'
-LoggedInWithHref.storyName = 'Logged In with href'
-LoggedInWithOnClick.storyName = 'Logged In with onClick'
