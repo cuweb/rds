@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
 import {
   NavDataSingle,
-  NavAsideData,
+  NavButtonsData,
   NavAsideLoggedInOptionsHref,
   NavAsideLoggedInOptionsOnClick,
 } from '../../data/NavData'
@@ -61,7 +61,7 @@ export const Top: Story = {
             <Nav.Logo />
             <Nav.Top>
               <Nav.Menu menu={NavDataSingle} />
-              <Nav.Aside menu={NavAsideData} isSearch onClickSearch={() => setModalOpen(true)} />
+              <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => setModalOpen(true)} />
             </Nav.Top>
           </Nav.MainHeader>
         </Nav>
@@ -119,7 +119,7 @@ export const WithTitle: Story = {
             />
             <Nav.Top>
               <Nav.Menu menu={NavDataSingle} />
-              <Nav.Aside menu={NavAsideData}></Nav.Aside>
+              <Nav.Buttons menu={NavButtonsData}></Nav.Buttons>
             </Nav.Top>
           </Nav.MainHeader>
         </Nav>
@@ -175,11 +175,11 @@ export const TitleWithBottom: Story = {
               title="Max and Tessie Zelikovitz Centre for Jewish Studies"
               link="https://carleton.ca/webservices"
             />
-            <Nav.Aside menu={NavAsideData} isSearch onClickSearch={() => setModalOpen(true)} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => setModalOpen(true)} />
           </Nav.MainHeader>
           <Nav.Bottom>
             <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside menu={NavAsideData} isSearch onClickSearch={() => setModalOpen(true)} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => setModalOpen(true)} />
           </Nav.Bottom>
         </Nav>
         <Modal
@@ -233,8 +233,8 @@ export const LoggedOutWithHref: Story = {
             <Nav.Logo title="Raven Design System" link="/" />
             <Nav.Top>
               <Nav.Menu menu={NavDataSingle} />
-              <Nav.Aside
-                menu={NavAsideData}
+              <Nav.Buttons
+                menu={NavButtonsData}
                 LoggedOutUser={true}
                 LoggedInLink="/login"
                 isSearch
@@ -294,8 +294,8 @@ export const LoggedOutWithOnClick: Story = {
             <Nav.Logo title="Raven Design System" link="/" />
             <Nav.Top>
               <Nav.Menu menu={NavDataSingle} />
-              <Nav.Aside
-                menu={NavAsideData}
+              <Nav.Buttons
+                menu={NavButtonsData}
                 LoggedOutUser={true}
                 onClickHandler={() => alert('Sign in clicked')}
                 isSearch
@@ -358,8 +358,8 @@ export const LoggedInWithHref: Story = {
         <Nav>
           <Nav.MainHeader>
             <Nav.Logo title="Raven Design System" link="/" />
-            <Nav.Aside
-              menu={NavAsideData}
+            <Nav.Buttons
+              menu={NavButtonsData}
               LoggedInUser={true}
               LoggedMenu={NavAsideLoggedInOptionsHref}
               userNoImage={userNoImage}
@@ -370,8 +370,8 @@ export const LoggedInWithHref: Story = {
 
           <Nav.Bottom>
             <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside
-              menu={NavAsideData}
+            <Nav.Buttons
+              menu={NavButtonsData}
               LoggedInUser={true}
               LoggedMenu={NavAsideLoggedInOptionsHref}
               userNoImage={userNoImage}
@@ -429,8 +429,8 @@ export const LoggedInWithOnClick: Story = {
         <Nav>
           <Nav.MainHeader>
             <Nav.Logo title="Raven Design System" link="/" />
-            <Nav.Aside
-              menu={NavAsideData}
+            <Nav.Buttons
+              menu={NavButtonsData}
               LoggedInUser={true}
               LoggedMenu={NavAsideLoggedInOptionsOnClick}
               userNoImage={userNoImage}
@@ -440,8 +440,8 @@ export const LoggedInWithOnClick: Story = {
           </Nav.MainHeader>
           <Nav.Bottom>
             <Nav.Menu menu={NavDataSingle} />
-            <Nav.Aside
-              menu={NavAsideData}
+            <Nav.Buttons
+              menu={NavButtonsData}
               LoggedInUser={true}
               LoggedMenu={NavAsideLoggedInOptionsOnClick}
               userNoImage={userNoImage}

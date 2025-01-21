@@ -1,7 +1,7 @@
 import { useEffect, ReactNode, Children, isValidElement } from 'react'
 import { NavMainHeader } from './NavMainHeader'
 import { NavLogo } from './NavLogo'
-import { NavAside } from './NavAside'
+import { NavButtons } from './NavButtons'
 import { NavTop } from './NavTop'
 import { NavBottom } from './NavBottom'
 import { NavMenu } from './NavMenu'
@@ -43,7 +43,7 @@ export const NavWrapper = ({ children }: NavWrapperProps) => {
 export const Nav = Object.assign(NavWrapper, {
   MainHeader: NavMainHeader,
   Logo: NavLogo,
-  Aside: NavAside,
+  Buttons: NavButtons,
   Top: NavTop,
   Bottom: NavBottom,
   Menu: NavMenu,

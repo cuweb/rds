@@ -1,5 +1,5 @@
 import { NavMenuItemWrapperStyles, navMenuItemStyles } from './Nav.Styles'
-import { Avatar, UserInfoType } from './../Avatar/Avatar'
+import { Avatar, UserInfoType } from '../Avatar/Avatar'
 import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
@@ -10,12 +10,12 @@ export const styles = {
   listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red-700 cursor-pointer`,
 }
 
-export interface NavAsideGenericProps {
+export interface NavButtonsGenericProps {
   menu?: ImenuItem[]
   isSearch?: boolean
   onClickSearch?: React.MouseEventHandler<HTMLButtonElement>
 }
-export interface NavAsideProps extends NavAsideGenericProps {
+export interface NavButtonsProps extends NavButtonsGenericProps {
   LoggedInUser?: false
   LoggedOutUser?: false
   LoggedMenu?: null
@@ -24,7 +24,7 @@ export interface NavAsideProps extends NavAsideGenericProps {
   onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
-export interface NavAsideLoggedInProps extends NavAsideGenericProps {
+export interface NavButtonsLoggedInProps extends NavButtonsGenericProps {
   LoggedInUser?: false
   LoggedOutUser: true
   LoggedMenu?: null
@@ -33,7 +33,7 @@ export interface NavAsideLoggedInProps extends NavAsideGenericProps {
   onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
-export interface NavAsideLoggedOutProps extends NavAsideGenericProps {
+export interface NavButtonsLoggedOutProps extends NavButtonsGenericProps {
   LoggedInUser: true
   LoggedOutUser?: false
   LoggedMenu: ImenuItem[]
@@ -42,7 +42,7 @@ export interface NavAsideLoggedOutProps extends NavAsideGenericProps {
   onClickHandler?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
-export const NavAside = ({
+export const NavButtons = ({
   menu,
   isSearch,
   onClickSearch,
@@ -52,11 +52,11 @@ export const NavAside = ({
   userNoImage,
   LoggedInLink,
   onClickHandler,
-}: NavAsideProps | NavAsideLoggedInProps | NavAsideLoggedOutProps) => {
+}: NavButtonsProps | NavButtonsLoggedInProps | NavButtonsLoggedOutProps) => {
   const LinkComponent = useLinkContext()
 
   return (
-    <div className="cu-nav__aside flex items-center gap-5 ml-auto sm:gap-6">
+    <div className="cu-nav__buttons flex items-center gap-5 ml-auto sm:gap-6">
       <ButtonGroup>
         {isSearch && (
           <button onClick={onClickSearch} aria-label="search" className="not-prose">
@@ -131,4 +131,4 @@ export const NavAside = ({
   )
 }
 
-NavAside.displayName = 'Nav.Aside'
+NavButtons.displayName = 'Nav.Buttons'
