@@ -27,11 +27,11 @@
 
 /* Sub menu position */
 
-.cu-nav__primary .cu-nav__submenu {
+.cu-nav__top .cu-nav__submenu {
   @apply top-[42px];
 }
 
-.cu-nav__secondary .cu-nav__submenu {
+.cu-nav__bottom .cu-nav__submenu {
   @apply top-[34px];
 }
 
@@ -40,11 +40,11 @@
 }
 
 /* Aside */
-.cu-nav--secondary > .cu-nav__aside {
+.cu-nav--bottom > .cu-nav__mainheader > .cu-nav__aside {
   @apply max-sm:hidden;
 }
 
-.cu-nav__secondary .cu-nav__aside {
+.cu-nav__bottom .cu-nav__aside {
   @apply sm:hidden;
 }
 
@@ -75,7 +75,7 @@
     @apply w-full;
   }
 
-  .cu-nav__secondary .p-plus__overflow {
+  .cu-nav__bottom .p-plus__overflow {
     @apply h-screen;
   }
 

@@ -12,7 +12,7 @@ export const styles = {
 
 export interface NavAsideGenericProps {
   menu?: ImenuItem[]
-  search?: boolean
+  isSearch?: boolean
   onClickSearch?: React.MouseEventHandler<HTMLButtonElement>
 }
 export interface NavAsideProps extends NavAsideGenericProps {
@@ -44,7 +44,7 @@ export interface NavAsideLoggedOutProps extends NavAsideGenericProps {
 
 export const NavAside = ({
   menu,
-  search,
+  isSearch,
   onClickSearch,
   LoggedInUser,
   LoggedOutUser,
@@ -56,10 +56,9 @@ export const NavAside = ({
   const LinkComponent = useLinkContext()
 
   return (
-    <div className="flex items-center gap-5 ml-auto cu-nav__aside sm:gap-6">
+    <div className="cu-nav__aside flex items-center gap-5 ml-auto sm:gap-6">
       <ButtonGroup>
-        {/* {search && <Button onClick={onClickSearch} ariaLabel="search" icon={MagnifyingGlassIcon} />} */}
-        {search && (
+        {isSearch && (
           <button onClick={onClickSearch} aria-label="search" className="not-prose">
             <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
           </button>
@@ -80,7 +79,7 @@ export const NavAside = ({
             className={
               `flex items-center gap-5 py-1 pl-5 sm:gap-6 sm:pl-6 mt-0` +
               ' ' +
-              (search ? `border-l border-solid border-cu-black-100` : ``)
+              (isSearch || menu ? `border-l border-solid border-cu-black-100` : ``)
             }
           >
             {LoggedOutUser && (

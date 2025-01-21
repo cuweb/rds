@@ -1,34 +1,37 @@
-import { useEffect, ReactNode } from 'react'
+import { useEffect, ReactNode, Children, isValidElement } from 'react'
+import { NavMainHeader } from './NavMainHeader'
 import { NavLogo } from './NavLogo'
 import { NavAside } from './NavAside'
-import { NavPrimary } from './NavPrimary'
-import { NavSecondary } from './NavSecondary'
+import { NavTop } from './NavTop'
+import { NavBottom } from './NavBottom'
 import { NavMenu } from './NavMenu'
 import setupMenuToggle from './navToggles'
 import scrollingNav from './scrollingNav'
 import menuPriority from './priorityPlus'
 
 export interface NavWrapperProps {
-  navType?: 'primary' | 'secondary'
   children: ReactNode
 }
 
-export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
+export const NavWrapper = ({ children }: NavWrapperProps) => {
   useEffect(() => {
     menuPriority()
     setupMenuToggle()
     scrollingNav()
   }, [])
 
+  const navType = Children.toArray(children).some((child) => isValidElement(child) && child.type === NavBottom)
+    ? 'bottom'
+    : 'top'
   return (
     <header
       className={`cu-header border-t-2 border-t-cu-red px-5 sm:px-8 sticky top-0 z-40 duration-300 ease-in-out bg-white transition-top ${
-        navType != 'secondary' ? 'border-b border-b-cu-black-100' : ''
+        navType !== 'bottom' ? 'border-b border-b-cu-black-100' : ''
       }`}
     >
       <nav
-        className={`cu-nav--${navType} cu-nav max-w-screen-2xl mx-auto flex flex-wrap items-center gap-x-8 ${
-          navType != 'secondary' ? 'sm:flex-nowrap' : ''
+        className={`cu-nav cu-nav--${navType} flex flex-wrap items-center gap-x-8 ${
+          navType !== 'bottom' ? 'sm:flex-nowrap' : ''
         }`}
       >
         {children}
@@ -38,9 +41,10 @@ export const NavWrapper = ({ navType, children }: NavWrapperProps) => {
 }
 
 export const Nav = Object.assign(NavWrapper, {
+  MainHeader: NavMainHeader,
   Logo: NavLogo,
   Aside: NavAside,
-  Primary: NavPrimary,
-  Secondary: NavSecondary,
+  Top: NavTop,
+  Bottom: NavBottom,
   Menu: NavMenu,
 })
