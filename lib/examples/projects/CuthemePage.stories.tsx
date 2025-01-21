@@ -121,17 +121,15 @@ export const CuthemePage: Story = {
     return (
       <>
         <Nav navType="secondary">
-          <div className="w-full max-w-screen-2xl mx-auto">
-            <Nav.Logo
-              title="Max and Tessie Zelikovitz Centre for Jewish Studies"
-              link="https://carleton.ca/webservices"
-            />
-            <Nav.Aside menu={NavAsideData}>
-              <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-                <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-              </button>
-            </Nav.Aside>
-          </div>
+          <Nav.Logo
+            title="Max and Tessie Zelikovitz Centre for Jewish Studies"
+            link="https://carleton.ca/webservices"
+          />
+          <Nav.Aside menu={NavAsideData}>
+            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
+              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
+            </button>
+          </Nav.Aside>
           <Nav.Secondary>
             <Nav.Menu menu={NavAsideData} />
             <Nav.Aside menu={NavAsideData}>
