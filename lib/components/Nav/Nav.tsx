@@ -1,5 +1,5 @@
 import { useEffect, ReactNode, Children, isValidElement } from 'react'
-import { NavMainHeader } from './NavMainHeader'
+import { NavTop } from './NavTop'
 import { NavLogo } from './NavLogo'
 import { NavButtons } from './NavButtons'
 import { NavAside } from './NavAside'
@@ -41,7 +41,7 @@ export const NavWrapper = ({ children }: NavWrapperProps) => {
 }
 
 export const Nav = Object.assign(NavWrapper, {
-  MainHeader: NavMainHeader,
+  Top: NavTop,
   Logo: NavLogo,
   Buttons: NavButtons,
   Aside: NavAside,
