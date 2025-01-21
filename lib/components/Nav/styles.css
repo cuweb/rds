@@ -27,7 +27,7 @@
 
 /* Sub menu position */
 
-.cu-nav__top .cu-nav__submenu {
+.cu-nav__aside .cu-nav__submenu {
   @apply top-[42px];
 }
 

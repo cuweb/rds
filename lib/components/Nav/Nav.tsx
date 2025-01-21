@@ -2,7 +2,7 @@ import { useEffect, ReactNode, Children, isValidElement } from 'react'
 import { NavMainHeader } from './NavMainHeader'
 import { NavLogo } from './NavLogo'
 import { NavButtons } from './NavButtons'
-import { NavTop } from './NavTop'
+import { NavAside } from './NavAside'
 import { NavBottom } from './NavBottom'
 import { NavMenu } from './NavMenu'
 import setupMenuToggle from './navToggles'
@@ -44,7 +44,7 @@ export const Nav = Object.assign(NavWrapper, {
   MainHeader: NavMainHeader,
   Logo: NavLogo,
   Buttons: NavButtons,
-  Top: NavTop,
+  Aside: NavAside,
   Bottom: NavBottom,
   Menu: NavMenu,
 })
