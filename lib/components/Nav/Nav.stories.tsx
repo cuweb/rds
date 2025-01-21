@@ -59,10 +59,10 @@ export const Top: Story = {
         <Nav>
           <Nav.Top>
             <Nav.Logo />
-            <Nav.Aside>
+            <Nav.Buttons>
               <Nav.Menu menu={NavDataSingle} />
               <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => setModalOpen(true)} />
-            </Nav.Aside>
+            </Nav.Buttons>
           </Nav.Top>
         </Nav>
         <Modal
@@ -117,10 +117,10 @@ export const WithTitle: Story = {
               title="Max and Tessie Zelikovitz Centre for Jewish Studies"
               link="https://carleton.ca/webservices"
             />
-            <Nav.Aside>
+            <Nav.Buttons>
               <Nav.Menu menu={NavDataSingle} />
               <Nav.Buttons menu={NavButtonsData}></Nav.Buttons>
-            </Nav.Aside>
+            </Nav.Buttons>
           </Nav.Top>
         </Nav>
         <Modal
@@ -231,7 +231,7 @@ export const LoggedOutWithHref: Story = {
         <Nav>
           <Nav.Top>
             <Nav.Logo title="Raven Design System" link="/" />
-            <Nav.Aside>
+            <Nav.Buttons>
               <Nav.Menu menu={NavDataSingle} />
               <Nav.Buttons
                 menu={NavButtonsData}
@@ -240,7 +240,7 @@ export const LoggedOutWithHref: Story = {
                 isSearch
                 onClickSearch={() => setModalOpen(true)}
               />
-            </Nav.Aside>
+            </Nav.Buttons>
           </Nav.Top>
         </Nav>
         <Modal
@@ -292,7 +292,7 @@ export const LoggedOutWithOnClick: Story = {
         <Nav>
           <Nav.Top>
             <Nav.Logo title="Raven Design System" link="/" />
-            <Nav.Aside>
+            <Nav.Buttons>
               <Nav.Menu menu={NavDataSingle} />
               <Nav.Buttons
                 menu={NavButtonsData}
@@ -301,7 +301,7 @@ export const LoggedOutWithOnClick: Story = {
                 isSearch
                 onClickSearch={() => setModalOpen(true)}
               />
-            </Nav.Aside>
+            </Nav.Buttons>
           </Nav.Top>
         </Nav>
         <Modal

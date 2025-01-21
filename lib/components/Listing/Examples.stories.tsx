@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { Listing } from './Listing'
 import { NewsData } from '../../data/NewsData'
 import { EventData } from '../../data/EventData'
@@ -39,11 +39,11 @@ export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
           {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+          <Nav.Buttons menu={NavButtonsData} />
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">

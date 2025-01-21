@@ -8,7 +8,7 @@ import { Nav } from '../Nav/Nav'
 import { WideImage } from './WideImage'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Components/Wide Image/Examples',
@@ -36,11 +36,11 @@ export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
           {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+          <Nav.Buttons menu={NavButtonsData} />
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">

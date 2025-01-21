@@ -8,4 +8,4 @@ export const NavAside = ({ children }: PropsWithChildren) => {
   )
 }
 
-NavAside.displayName = 'Nav.Aside'
+NavAside.displayName = 'Nav.Buttons'

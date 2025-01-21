@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { Details } from '../Details/Details'
 import { SocialIcons } from './SocialIcons'
 import { Figure } from '../Figure/Figure'
@@ -35,11 +35,11 @@ export const PeopleBanner: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
           {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+          <Nav.Buttons menu={NavButtonsData} />
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">
