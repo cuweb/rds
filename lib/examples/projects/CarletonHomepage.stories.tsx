@@ -19,10 +19,9 @@ import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
 import { Card } from '../../components/Card/Card'
 import { TextMedia } from '../../components/TextMedia/TextMedia'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { NewsData } from '../../data/NewsData'
 import { EventData } from '../../data/EventData'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta = {
   title: 'Prototypes/Projects',
@@ -37,16 +36,12 @@ type Story = StoryObj
 export const CarletonHomepage: Story = {
   render: () => (
     <>
-      <Nav>
-        <Nav.Primary>
-          <Nav.Logo link="https://events.carleton.ca" />
-          <Nav.Aside menu={NavAsideData}>
-            <button aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
-        </Nav.Primary>
-      </Nav>
+      <Nav.Top>
+        <Nav.Logo title="Raven Design System" link="/" />
+        <Nav.Aside>
+          <Nav.Buttons menu={NavButtonsData} />
+        </Nav.Aside>
+      </Nav.Top>
 
       <Main>
         <FullBanner>
@@ -127,7 +122,7 @@ export const CarletonHomepage: Story = {
         <ImageCover focalPointX="50" focalPointY="50" image="tory" imageZoom={0} maxWidth="7xl" opacity={85}>
           <PageHeader header="Attend Carleton" size="md" />
           <Column cols="4">
-            {NewsData.slice(0, 4).map(({ id, link, title, image, alt, date }) => (
+            {NewsData.slice(0, 4).map(({ id, link, title, image, alt }) => (
               <Card key={id}>
                 <Card.Figure>
                   <BadgeGroup gap="2" isAbsolute top={10} left={10}>

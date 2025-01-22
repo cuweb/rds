@@ -2,7 +2,6 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Details } from './Details'
 import { Main } from '../../layouts/Main/Main'
-import { EventDataSingle as eventData } from '../../data/EventData'
 
 const meta: Meta<typeof Details> = {
   title: 'Components/Details',

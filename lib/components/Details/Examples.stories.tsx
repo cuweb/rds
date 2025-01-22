@@ -6,8 +6,6 @@ import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavButtonsData } from '../../data/NavData'
 import { Details } from './Details'
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { Figure } from '../Figure/Figure'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {

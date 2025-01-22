@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useFormik, FormikHelpers, FieldArray, ErrorMessage } from 'formik'
+import { useFormik, FormikHelpers, FieldArray } from 'formik'
 import * as Yup from 'yup'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
@@ -372,7 +372,7 @@ export const LayoutExamples: Story = {
 
               <FieldArray
                 name="bannerIds1"
-                render={({ push, remove }) => (
+                render={({ push }) => (
                   <>
                     <Form.FieldGroup cols={2} alignment="top">
                       <Form.FieldControl

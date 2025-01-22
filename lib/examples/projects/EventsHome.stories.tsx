@@ -16,11 +16,9 @@ import { Listing } from '../../components/Listing/Listing'
 import { Filter } from '../../components/Filter/Filter'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { MultiDayCalendar } from '../../components/MultiDayCalendar/MultiDayCalendar'
-
 import { FilterData } from '../../data/FilterData'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { EventData } from '../../data/EventData'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta = {
   title: 'Prototypes/Projects',
@@ -35,16 +33,12 @@ type Story = StoryObj
 export const EventsHome: Story = {
   render: () => (
     <>
-      <Nav>
-        <Nav.Primary>
-          <Nav.Logo title="Events Calendar" link="https://events.carleton.ca" />
-          <Nav.Aside menu={NavAsideData}>
-            <button aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
-        </Nav.Primary>
-      </Nav>
+      <Nav.Top>
+        <Nav.Logo title="Raven Design System" link="/" />
+        <Nav.Aside>
+          <Nav.Buttons menu={NavButtonsData} />
+        </Nav.Aside>
+      </Nav.Top>
 
       <Main>
         <Section maxWidth="max">
@@ -68,7 +62,7 @@ export const EventsHome: Story = {
 
         <Section maxWidth="7xl">
           <PageHeader as="h2" header="Featured Events" size="md" />
-          <Column cols="4" maxWidth="7xl">
+          <Column cols="4">
             {EventData.slice(0, 4).map(
               ({
                 id,
@@ -113,7 +107,7 @@ export const EventsHome: Story = {
         <Section maxWidth="7xl" isGrey>
           <PageHeader as="h2" header="Upcoming Events" size="md" />
           <Filter filters={FilterData.filters} callback={() => undefined} />
-          <Column cols="2/3" maxWidth="7xl">
+          <Column cols="2/3">
             <Column.Content>
               <StackedList>
                 {EventData.slice(0, 6).map(

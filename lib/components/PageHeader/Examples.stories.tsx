@@ -7,7 +7,6 @@ import { Nav } from '../Nav/Nav'
 import { NavButtonsData } from '../../data/NavData'
 import { PageHeader } from './PageHeader'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { Figure } from '../Figure/Figure'
 
 const meta: Meta = {
   title: 'Components/Page Header/Examples',

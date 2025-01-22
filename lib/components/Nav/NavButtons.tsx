@@ -6,10 +6,6 @@ import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
 
-export const styles = {
-  listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red-700 cursor-pointer`,
-}
-
 export interface NavButtonsGenericProps {
   menu?: ImenuItem[]
   isSearch?: boolean
@@ -54,6 +50,10 @@ export const NavButtons = ({
   onClickHandler,
 }: NavButtonsProps | NavButtonsLoggedInProps | NavButtonsLoggedOutProps) => {
   const LinkComponent = useLinkContext()
+
+  const styles = {
+    listItemLink: `text-[15px] md:text-base font-medium text-cu-black-600 hover:text-cu-red-700 cursor-pointer`,
+  }
 
   return (
     <div className="cu-nav__buttons flex items-center gap-5 ml-auto sm:gap-6">
