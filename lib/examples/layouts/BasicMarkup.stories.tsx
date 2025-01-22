@@ -10,7 +10,7 @@ import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Layouts',
@@ -117,10 +117,12 @@ export const BasicMarkup: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
       </Nav>
 
       <Main>

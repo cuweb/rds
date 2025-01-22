@@ -5,7 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { NavAsideData } from '../../components/../data/NavData'
+import { NavButtonsData } from '../../components/../data/NavData'
 
 const meta: Meta = {
   title: 'Layouts/Column/Examples',
@@ -36,7 +36,7 @@ export const LayoutExamples: Story = {
         <Nav.Primary>
           <Nav.Logo title="Raven Design System" link="/" />
           {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
+          <Nav.Aside menu={NavButtonsData} />
         </Nav.Primary>
       </Nav>
 

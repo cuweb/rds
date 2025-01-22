@@ -7,7 +7,7 @@ import { Nav } from '../../components/Nav/Nav'
 import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { ImageCover } from './ImageCover'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
 
@@ -37,11 +37,12 @@ export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
-          {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">
