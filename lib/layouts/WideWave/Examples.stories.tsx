@@ -7,7 +7,7 @@ import { Nav } from '../../components/Nav/Nav'
 import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
-import { NavAsideData } from '../../data/NavData'
+import { NavDataSingle, NavButtonsData } from '../../data/NavData'
 import { WideWave } from './WideWave'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
 
@@ -37,11 +37,13 @@ export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
-          <Nav.Logo title="Raven Design System" link="/" />
-          {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+        <Nav.Top>
+          <Nav.Logo />
+          <Nav.Aside>
+            <Nav.Menu menu={NavDataSingle} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Aside>
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">
