@@ -1,5 +1,5 @@
 /* TODO GLOBAL: negative top based on primary spacing */
-.cu-main > .cu-section > .cu-imagecover:first-of-type {
+.cu-main > .cu-section > .cu-imagecover:first-child {
   @apply -mt-4 md:-mt-6 lg:-mt-12;
 }
 
