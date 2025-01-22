@@ -1,26 +1,10 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { WideImage } from '../../components/WideImage/WideImage'
 import { Nav } from '../../components/Nav/Nav'
-import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
-import { Button } from '../../components/Button/Button'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
-import { Column } from '../../layouts/Column/Column'
-import { StackedList } from '../../layouts/StackedList/StackedList'
-import { Aside } from '../../layouts/Aside/Aside'
-import { Card } from '../../components/Card/Card'
-import { Listing } from '../../components/Listing/Listing'
-import { Filter } from '../../components/Filter/Filter'
-import { Pagination } from '../../components/Pagination/Pagination'
-import { MultiDayCalendar } from '../../components/MultiDayCalendar/MultiDayCalendar'
-
-import { FilterData } from '../../data/FilterData'
-import { NavAsideData } from '../../data/NavData'
-import { EventData } from '../../data/EventData'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { NavButtonsData } from '../../data/NavData'
 import { Details } from '../../components/Details/Details'
 import { Figure } from '../../components/Figure/Figure'
 
@@ -51,16 +35,12 @@ const SinglePara = () => {
 export const EventsSingle: Story = {
   render: () => (
     <>
-      <Nav>
-        <Nav.Primary>
-          <Nav.Logo title="Events Calendar" link="https://events.carleton.ca" />
-          <Nav.Aside menu={NavAsideData}>
-            <button aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
-          </Nav.Aside>
-        </Nav.Primary>
-      </Nav>
+      <Nav.Top>
+        <Nav.Logo title="Raven Design System" link="/" />
+        <Nav.Aside>
+          <Nav.Buttons menu={NavButtonsData} />
+        </Nav.Aside>
+      </Nav.Top>
 
       <Main>
         <PageHeader

@@ -1,4 +1,3 @@
-/* eslint-disable */
 // @ts-nocheck
 
 // Wrapper around library which exposes `priorityPlus` as a global

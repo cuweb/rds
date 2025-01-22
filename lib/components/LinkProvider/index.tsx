@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { createContext, FC } from 'react'
-
-const DefaultLinkComponent = 'a'
-
-export const LinkContext = createContext(DefaultLinkComponent)
+import React, { FC } from 'react'
+import { LinkContext } from './LinkContext'
 
 export interface ILinkProvider {
   type: any

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
 import { Button } from '../Button/Button'
-import { Section } from '../../layouts/Section/Section'
 import { ArticleData as contentData } from '../../data/ArticleData'
 
 const meta: Meta<typeof Modal> = {

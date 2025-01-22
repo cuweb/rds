@@ -5,7 +5,7 @@ import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { PageHeader } from '../PageHeader/PageHeader'
 import { Dialog } from './Dialog'
 import { Nav } from '../Nav/Nav'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
@@ -39,11 +39,13 @@ export const LayoutExamples: Story = {
     return (
       <>
         <Nav>
-          <Nav.Primary>
+          <Nav.Top>
             <Nav.Logo title="Raven Design System" link="/" />
             {/* <Nav.Menu menu={NavDataSingle} /> */}
-            <Nav.Aside menu={NavAsideData} />
-          </Nav.Primary>
+            <Nav.Aside>
+              <Nav.Buttons menu={NavButtonsData} />
+            </Nav.Aside>
+          </Nav.Top>
         </Nav>
 
         <Main maxWidth="5xl">

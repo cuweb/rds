@@ -7,7 +7,7 @@ import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../Nav/Nav'
 import { TextMedia } from './TextMedia'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Components/Text & Media/Examples',
@@ -35,11 +35,13 @@ export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
           {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavAsideData} />
-        </Nav.Primary>
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">

@@ -56,6 +56,11 @@ Prefix the change with one of these keywords:
   - add: class for breakout width
   - change: imported `styles.css`
   - deprecate: `as` prop
+- Refactor `Nav` component:
+  - deprecate: `navType` prop,
+  - added: `Nav.Top`
+  - renamed: `Nav.Aside` to `Nav.Buttons`
+  - renamed: `Nav.Secondary` to `Nav.Bottom`
 - Refactor `Placeholder` component:
   - deprecate: `maxWidth` prop
 - Refactor `PageHeader` component:
@@ -98,6 +103,7 @@ Prefix the change with one of these keywords:
 
 ### Fixed
 
+- `Form`: style of all inputs and `InputAddon`
 - `Nav`: navigation and priority plus work properly with any LinkProvider
 - `StackedList`: Removed gap in dividing lines in listings
 

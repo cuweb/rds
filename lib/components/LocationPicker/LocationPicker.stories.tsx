@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useCallback, useState } from 'react'
 import { LocationPicker } from './LocationPicker'
-import { Column } from '../../layouts/Column/Column'
 import React from 'react'
 import { LoadScript } from '@react-google-maps/api'
-import { Figure } from '../Figure/Figure'
 import { Location } from '../Location/Location'
 import { Main } from '../../layouts/Main/Main'
 

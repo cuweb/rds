@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* global google */
 import React, { useState } from 'react'
 import { GoogleMap, MarkerF, InfoWindowF } from '@react-google-maps/api'
 import { Figure } from '../Figure/Figure'

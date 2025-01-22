@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
@@ -10,8 +10,7 @@ import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
-import { NavAsideData } from '../../data/NavData'
-import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
+import { NavButtonsData } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Projects',
@@ -116,29 +115,14 @@ const ToC = () => {
 
 export const CuthemePage: Story = {
   render: () => {
-    const [modalOpen, setModalOpen] = useState(false)
-
     return (
       <>
-        <Nav navType="secondary">
-          <Nav.Logo
-            title="Max and Tessie Zelikovitz Centre for Jewish Studies"
-            link="https://carleton.ca/webservices"
-          />
-          <Nav.Aside menu={NavAsideData}>
-            <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-              <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-            </button>
+        <Nav.Top>
+          <Nav.Logo title="Raven Design System" link="/" />
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
           </Nav.Aside>
-          <Nav.Secondary>
-            <Nav.Menu menu={NavAsideData} />
-            <Nav.Aside menu={NavAsideData}>
-              <button onClick={() => setModalOpen(true)} aria-label="search" className="not-prose">
-                <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
-              </button>
-            </Nav.Aside>
-          </Nav.Secondary>
-        </Nav>
+        </Nav.Top>
 
         <Main>
           <TextImage>
@@ -177,7 +161,7 @@ export const CuthemePage: Story = {
           <h4>Heading Four</h4>
           <DoublePara />
 
-          <Column cols="2" gridGap="10">
+          <Column cols="2">
             <Column.Content>
               <SinglePara />
               <h2>Header Two</h2>

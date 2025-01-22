@@ -1,12 +1,12 @@
 import React, { MouseEventHandler } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useFormik, FormikHelpers, FieldArray, ErrorMessage } from 'formik'
+import { useFormik, FormikHelpers, FieldArray } from 'formik'
 import * as Yup from 'yup'
 import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
-import { NavAsideData } from '../../data/NavData'
+import { NavButtonsData } from '../../data/NavData'
 import { Form } from './Form'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
@@ -150,11 +150,13 @@ export const LayoutExamples: Story = {
     return (
       <>
         <Nav>
-          <Nav.Primary>
+          <Nav.Top>
             <Nav.Logo title="Raven Design System" link="/" />
             {/* <Nav.Menu menu={NavDataSingle} /> */}
-            <Nav.Aside menu={NavAsideData} />
-          </Nav.Primary>
+            <Nav.Aside>
+              <Nav.Buttons menu={NavButtonsData} />
+            </Nav.Aside>
+          </Nav.Top>
         </Nav>
 
         <Main maxWidth="5xl">
@@ -370,7 +372,7 @@ export const LayoutExamples: Story = {
 
               <FieldArray
                 name="bannerIds1"
-                render={({ push, remove }) => (
+                render={({ push }) => (
                   <>
                     <Form.FieldGroup cols={2} alignment="top">
                       <Form.FieldControl
