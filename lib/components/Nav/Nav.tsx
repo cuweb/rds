@@ -25,9 +25,7 @@ export const NavWrapper = ({ children }: NavWrapperProps) => {
     : 'top'
   return (
     <header
-      className={`cu-header border-t-2 border-t-cu-red px-5 sm:px-8 sticky top-0 z-40 duration-300 ease-in-out bg-white transition-top ${
-        navType !== 'bottom' ? 'border-b border-b-cu-black-100' : ''
-      }`}
+      className={`cu-header border-t-2 border-t-cu-red px-5 sm:px-8 sticky top-0 z-40 duration-300 ease-in-out bg-white transition-top  border-b border-b-cu-black-100`}
     >
       <nav
         className={`cu-nav cu-nav--${navType} flex flex-wrap items-center gap-x-8 ${
