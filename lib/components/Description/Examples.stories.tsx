@@ -65,6 +65,31 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
+        <Section maxWidth="7xl">
+          <Description>
+            <Description.Meta term="Donec lorem nulla, porttitor eleifend lorem ornare" useColumns>
+              <p>
+                Nulla varius nisl nec ex vestibulum hendrerit. Aliquam blandit lacus diam, vitae varius eros dapibus ut.
+                Sed placerat lorem nulla, blandit interdum ligula tempor.
+              </p>
+              <ul>
+                <li>
+                  Donec lacinia volutpat fringilla. Fusce eget eros finibus lacus placerat lacinia non quis mauris.
+                </li>
+                <li>Praesent commodo sem ac diam lobortis, et aliquet ipsum gravida.</li>
+                <li>Suspendisse eros ex, congue vel finibus at, sollicitudin ut eros.</li>
+                <li>Nunc finibus dapibus ex vehicula finibus. Aenean at sem mi.</li>
+                <li>Sed faucibus felis est, non tincidunt ex auctor eu.</li>
+                <li>Nunc volutpat ligula et erat iaculis cursus.</li>
+              </ul>
+              <p>
+                Etiam eget diam ac ex vehicula mollis pulvinar vitae nibh. Quisque cursus ligula nec condimentum
+                ullamcorper.
+              </p>
+            </Description.Meta>
+          </Description>
+        </Section>
+
         <Description>
           {descMeta.map((item) => (
             <Description.Meta key={item?.id} term={item?.term}>
