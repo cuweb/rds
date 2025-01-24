@@ -3,6 +3,10 @@
   @apply -mt-4 md:-mt-6 lg:-mt-12;
 }
 
+.cu-imagecover > .cu-imagecover-content > .cu-section {
+  @apply px-0;
+}
+
 /* .cu-imagecover .cu-section.bg-white {
   @apply bg-transparent;
 }

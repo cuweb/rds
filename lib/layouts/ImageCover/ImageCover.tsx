@@ -50,7 +50,7 @@ export const ImageCover = ({
     <section className={`cu-imagecover ${$breakoutMaxWidth} bg-no-repeat bg-cover`} style={mainBgImage}>
       <div className={`absolute bottom-0 h-full w-full -mb-1 ${bgImgClass}`} />
       <div
-        className={`cu-max-w-child-${maxWidth} ${$primarySpacing} pt-4 md:pt-6 lg:pt-8 xl:pt-16 pb-32 md:pb-44 xl:pb-52`}
+        className={`cu-imagecover-content cu-max-w-child-${maxWidth} ${$primarySpacing} pt-4 md:pt-6 lg:pt-8 xl:pt-16 pb-32 md:pb-44 xl:pb-52`}
         style={overlayBg}
       >
         {children}

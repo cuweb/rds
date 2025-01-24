@@ -8,6 +8,7 @@ import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
 import { NavButtonsData } from '../../data/NavData'
+import { Section } from '../Section/Section'
 import { ImageCover } from './ImageCover'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
 
@@ -46,7 +47,7 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <ImageCover maxWidth="7xl" opacity={85}>
+        <ImageCover maxWidth="5xl" opacity={85}>
           <PageHeader
             as="h1"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
@@ -60,7 +61,36 @@ export const LayoutExamples: Story = {
         <SinglePara />
 
         <ImageCover maxWidth="5xl" opacity={85}>
-          <SinglePara />
+          <Section>
+            <SinglePara />
+            <Column cols="2">
+              <Column.Content>
+                <p>
+                  Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                  viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                  malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+                </p>
+                <p>
+                  Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                  laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                  gravida tempus. Phasellus in egestas sapien ac libero.
+                </p>
+              </Column.Content>
+              <Column.Content>
+                <p>
+                  Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                  viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                  malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+                </p>
+                <p>
+                  Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                  laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                  gravida tempus. Phasellus in egestas sapien ac libero.
+                </p>
+              </Column.Content>
+            </Column>
+            <SinglePara />
+          </Section>
         </ImageCover>
 
         <ImageCover maxWidth="5xl" opacity={85}>

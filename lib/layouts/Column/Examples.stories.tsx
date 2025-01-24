@@ -5,6 +5,7 @@ import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../../layouts/Column/Column'
 import { Nav } from '../../components/Nav/Nav'
+import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { NavButtonsData } from '../../components/../data/NavData'
 
 const meta: Meta = {
@@ -33,14 +34,22 @@ export const LayoutExamples: Story = {
   render: () => (
     <>
       <Nav>
-        <Nav.Primary>
+        <Nav.Top>
           <Nav.Logo title="Raven Design System" link="/" />
-          {/* <Nav.Menu menu={NavDataSingle} /> */}
-          <Nav.Aside menu={NavButtonsData} />
-        </Nav.Primary>
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
       </Nav>
 
       <Main maxWidth="5xl">
+        <PageHeader
+          as="h1"
+          header="Column Examples"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
+          size="lg"
+        />
+
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
