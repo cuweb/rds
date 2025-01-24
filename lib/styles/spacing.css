@@ -161,8 +161,8 @@
 }
 
 /* Loaders */
-.cu-loader + .cu-loader,
-:not(.cu-loader) + .cu-loader,
+.cu-loader + .cu-loader:not(.cu-loader--nomargin),
+:not(.cu-loader) + .cu-loader:not(.cu-loader--nomargin),
 .cu-loader + :not(.cu-loader),
 .cu-section + .cu-loader,
 .cu-loader + .cu-section {
