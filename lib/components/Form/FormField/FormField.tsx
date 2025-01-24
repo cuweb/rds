@@ -1,5 +1,5 @@
 import { ErrorMessage } from 'formik'
-import { primaryStyles, textStyles } from '../form.Styles'
+import { fieldStyles, primaryStyles, textStyles } from '../form.Styles'
 import { maxWidthClasses } from '../../../helpers/optionClasses' // TODO: convert to main propClasses
 import Error from '../Error/Error'
 
@@ -18,6 +18,8 @@ export interface FieldProps extends FieldComponentProps {
   helper?: string
   helperpostop?: boolean
   displayError?: boolean
+  isLoading?: boolean
+  isError?: string
 }
 
 export interface FormFieldProps extends FieldProps {
@@ -34,8 +36,27 @@ export const FormField = ({
   helperpostop = false,
   required = false,
   displayError = true,
+  isLoading,
+  isError,
 }: FormFieldProps) => {
   const fieldmaxWidth = maxWidth ? maxWidthClasses[maxWidth] : ''
+
+  const renderContent = () => {
+    if (isError) {
+      return <div className={fieldStyles.errorField}>{isError}</div>
+    } else if (isLoading) {
+      return <div className={fieldStyles.loadingField}>Loading</div>
+    } else {
+      return (
+        <>
+          {helper && helperpostop && <div className={textStyles.helper}>{helper}</div>}
+          {children}
+          {helper && !helperpostop && <div className={textStyles.helper}>{helper}</div>}
+          {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
+        </>
+      )
+    }
+  }
 
   return (
     <div className={`${primaryStyles.wrapper} ${fieldmaxWidth} form-control`}>
@@ -43,13 +64,7 @@ export const FormField = ({
         {label} {required && <span className={textStyles.required}>*</span>}
       </label>
 
-      {helper && helperpostop && <div className={textStyles.helper}>{helper}</div>}
-
-      {children}
-
-      {helper && !helperpostop && <div className={textStyles.helper}>{helper}</div>}
-
-      {displayError && <ErrorMessage name={name}>{(error) => <Error>{error}</Error>}</ErrorMessage>}
+      {renderContent()}
     </div>
   )
 }
