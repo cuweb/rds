@@ -67,6 +67,7 @@ export const PeopleBanner: Story = {
 
         <SocialIcons>
           <SocialIcons.Item socialService="linkedin" socialLink="#" />
+          <SocialIcons.Item socialService="bluesky" socialLink="#" />
           <SocialIcons.Item socialService="x" socialLink="#" />
           <SocialIcons.Item socialService="facebook" socialLink="#" />
           <SocialIcons.Item socialService="instagram" socialLink="#" />
