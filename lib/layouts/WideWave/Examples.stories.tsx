@@ -4,9 +4,11 @@ import { Main } from '../Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../Column/Column'
 import { Nav } from '../../components/Nav/Nav'
+import { TextMedia } from '../../components/TextMedia/TextMedia'
 import { WideImage } from '../../components/WideImage/WideImage'
 import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
+import { Section } from '../Section/Section'
 import { NavButtonsData } from '../../data/NavData'
 import { WideWave } from './WideWave'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
@@ -59,8 +61,54 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
+        <WideWave>
+          <Section maxWidth="7xl">
+            <TextMedia>
+              <TextMedia.Content hasUnderline title="Website and Application Development" width={50}>
+                <p>
+                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                  accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+                </p>
+                <ButtonGroup>
+                  <a
+                    className="cu-button cu-button--red"
+                    href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/"
+                  >
+                    Read more
+                  </a>
+                </ButtonGroup>
+              </TextMedia.Content>
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
+            </TextMedia>
+          </Section>
+        </WideWave>
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
         <WideWave wave="black">
-          <SinglePara />
+          <Section maxWidth="7xl">
+            <TextMedia>
+              <TextMedia.Content hasUnderline title="Website and Application Development" width={50}>
+                <p>
+                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                  accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+                </p>
+                <ButtonGroup>
+                  <a
+                    className="cu-button cu-button--red"
+                    href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/"
+                  >
+                    Read more
+                  </a>
+                </ButtonGroup>
+              </TextMedia.Content>
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
+            </TextMedia>
+          </Section>
         </WideWave>
 
         <WideWave wave="red">

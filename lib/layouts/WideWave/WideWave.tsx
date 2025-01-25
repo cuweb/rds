@@ -21,13 +21,11 @@ export const WideWave = ({ children, wave = 'red' }: WideWaveProps) => {
   const $primarySpacing = `px-4 md:px-6 lg:px-12`
 
   return (
-    <>
-      <section
-        className={`cu-widewave relative overflow-x-hidden ${$breakoutMaxWidth} ${$primarySpacing} cu-max-w-child-5xl ${waveBgType} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
-        style={waveBgPosition}
-      >
-        <div className={`cu-widewaves-content cu-prose-light relative z-20`}>{children}</div>
-      </section>
-    </>
+    <section
+      className={`cu-widewave relative overflow-x-hidden ${$breakoutMaxWidth} ${$primarySpacing} cu-max-w-child-5xl ${waveBgType} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
+      style={waveBgPosition}
+    >
+      <div className={`cu-widewaves-content cu-prose-light relative z-20`}>{children}</div>
+    </section>
   )
 }

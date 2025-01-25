@@ -48,7 +48,6 @@ export const LayoutExamples: Story = {
       <Main maxWidth="5xl">
         <Section maxWidth="max">
           <WideImage
-            as="section"
             headerType="h1"
             image="https://picsum.photos/id/381/600/400"
             isType="image"
@@ -71,14 +70,14 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <WideImage as="section" isType="light" title="Wide Image" />
-        <WideImage as="section" isType="light" title="Wide Image" />
+        <WideImage isType="light" title="Wide Image" />
+        <WideImage isType="light" title="Wide Image" />
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <WideImage as="section" isType="light" title="Wide Image">
+        <WideImage isType="light" title="Wide Image">
           <ButtonGroup>
             <Button title="Apply Now" />
             <Button color="dark-grey" title="Request Information" />
@@ -95,13 +94,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <WideImage
-          as="section"
-          image="https://picsum.photos/id/381/600/400"
-          isType="light"
-          opacity={30}
-          title="Wide Image"
-        >
+        <WideImage image="https://picsum.photos/id/381/600/400" isType="light" opacity={30} title="Wide Image">
           <p>
             Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
             reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non.
@@ -114,7 +107,6 @@ export const LayoutExamples: Story = {
 
         <Section maxWidth="7xl">
           <WideImage
-            as="section"
             focalPointX={0}
             focalPointY={0}
             image="https://picsum.photos/id/381/600/400"
@@ -139,21 +131,21 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <WideImage as="section" isType="light" title="Wide Image">
+        <WideImage isType="light" title="Wide Image">
           <WideImage.Signup />
         </WideImage>
 
-        <WideImage as="section" isType="dark" title="Wide Image">
+        <WideImage isType="dark" title="Wide Image">
           <WideImage.Signup />
         </WideImage>
 
         <Section maxWidth="7xl">
-          <WideImage as="section" title="Wide Image" image="https://picsum.photos/id/381/600/400" isType="image">
+          <WideImage title="Wide Image" image="https://picsum.photos/id/381/600/400" isType="image">
             <WideImage.Signup />
           </WideImage>
         </Section>
 
-        <Column cols="2" gridGap="10" maxWidth="5xl">
+        <Column cols="2" maxWidth="5xl">
           <Column.Content>
             <p>
               Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
@@ -171,12 +163,7 @@ export const LayoutExamples: Story = {
         </Column>
 
         <Section maxWidth="full">
-          <WideImage
-            as="section"
-            image="https://picsum.photos/id/381/600/400"
-            isType="image"
-            title="Wide Image Examples"
-          >
+          <WideImage image="https://picsum.photos/id/381/600/400" isType="image" title="Wide Image Examples">
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
               reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
