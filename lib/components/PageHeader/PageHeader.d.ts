@@ -20,12 +20,8 @@ export declare const PageHeader: {
     ({ children, as, header, content, size, isWhite, isCenter, noUnderline, pronoun, }: PageHeaderProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
-    People: {
-        ({ jobTitle, ...restProps }: import('./PageHeaderPeople').PageHeaderPeopleProps & import('./PageHeaderPeople').PageHeaderSocialProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
     Event: {
-        ({ children, startDate, endDate, eventType, location, virtualType, virtualUrl, cost, contactName, contactPhone, contactEmail, }: import('./PageHeaderEvent').PageHeaderEventProps): import("react/jsx-runtime").JSX.Element;
+        ({ startDate, endDate }: import('./PageHeaderEvent').PageHeaderEventProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };

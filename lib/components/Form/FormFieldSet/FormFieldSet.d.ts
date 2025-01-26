@@ -13,6 +13,8 @@ export interface FieldSetProps extends FieldSetComponentProps {
     helperpostop?: boolean;
     isInline?: boolean;
     displayError?: boolean;
+    isLoading?: boolean;
+    isError?: string;
 }
 export interface FormFieldSetProps extends FieldSetProps {
     children: React.ReactNode;

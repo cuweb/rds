@@ -18,7 +18,7 @@ export declare const NavDataSingle: ({
         submenu?: undefined;
     })[];
 })[];
-export declare const NavAsideData: {
+export declare const NavButtonsData: {
     href: string;
     title: string;
     buttonColor: string;

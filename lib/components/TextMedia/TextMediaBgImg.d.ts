@@ -1,14 +1,11 @@
-import { borderWidthClasses } from '../../utils/propClasses';
-type borderWidthKeys = keyof typeof borderWidthClasses;
 export interface TextMediaBgImgProps {
     imageUrl: string;
     imageZoom?: number;
     focalPointX?: number;
     focalPointY?: number;
-    border?: borderWidthKeys;
+    hasBorder?: boolean;
 }
 export declare const TextMediaBgImg: {
-    ({ imageUrl, imageZoom, focalPointX, focalPointY, border, }: TextMediaBgImgProps): import("react/jsx-runtime").JSX.Element;
+    ({ imageUrl, imageZoom, focalPointX, focalPointY, hasBorder, }: TextMediaBgImgProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
-export {};

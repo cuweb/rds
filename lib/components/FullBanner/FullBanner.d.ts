@@ -1,13 +1,12 @@
 export interface FullBannerProps {
     children?: React.ReactNode;
-    as?: 'section' | 'div';
 }
 export declare const FullBannerWrapper: {
-    ({ children, as }: FullBannerProps): import("react/jsx-runtime").JSX.Element;
+    ({ children }: FullBannerProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const FullBanner: {
-    ({ children, as }: FullBannerProps): import("react/jsx-runtime").JSX.Element;
+    ({ children }: FullBannerProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Content: {

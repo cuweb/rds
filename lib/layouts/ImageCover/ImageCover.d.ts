@@ -4,13 +4,12 @@ type maxWidthKeys = keyof typeof maxWidthClasses;
 declare const opacityValues: number[];
 export interface ImageCoverProps {
     children?: React.ReactNode;
-    as?: 'section' | 'div';
     maxWidth?: maxWidthKeys;
-    image: string;
+    image?: string;
     imageZoom?: number;
     opacity?: (typeof opacityValues)[number];
     focalPointX?: string;
     focalPointY?: string;
 }
-export declare const ImageCover: ({ children, as, maxWidth, image, imageZoom, opacity, focalPointX, focalPointY, }: ImageCoverProps) => import("react/jsx-runtime").JSX.Element;
+export declare const ImageCover: ({ children, maxWidth, image, imageZoom, opacity, focalPointX, focalPointY, }: ImageCoverProps) => import("react/jsx-runtime").JSX.Element;
 export {};

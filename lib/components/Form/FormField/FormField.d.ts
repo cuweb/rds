@@ -12,9 +12,11 @@ export interface FieldProps extends FieldComponentProps {
     helper?: string;
     helperpostop?: boolean;
     displayError?: boolean;
+    isLoading?: boolean;
+    isError?: string;
 }
 export interface FormFieldProps extends FieldProps {
     children: React.ReactNode;
 }
-export declare const FormField: ({ children, label, hiddenLabel, name, maxWidth, helper, helperpostop, required, displayError, }: FormFieldProps) => import("react/jsx-runtime").JSX.Element;
+export declare const FormField: ({ children, label, hiddenLabel, name, maxWidth, helper, helperpostop, required, displayError, isLoading, isError, }: FormFieldProps) => import("react/jsx-runtime").JSX.Element;
 export default FormField;

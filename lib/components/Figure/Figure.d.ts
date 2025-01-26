@@ -11,17 +11,5 @@ export interface FigureProps {
     rounded?: borderRadiusKeys;
     noMobile?: boolean;
 }
-export declare const FigureWrapper: {
-    ({ children, caption, noMobile, size, align, rounded, }: FigureProps): import("react/jsx-runtime").JSX.Element;
-    displayName: string;
-};
-export declare const Figure: {
-    ({ children, caption, noMobile, size, align, rounded, }: FigureProps): import("react/jsx-runtime").JSX.Element;
-    displayName: string;
-} & {
-    Video: {
-        ({ source }: import('./Figure.Video').FigureVideoProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
-};
+export declare const Figure: ({ children, caption, size, align, rounded }: FigureProps) => import("react/jsx-runtime").JSX.Element;
 export {};

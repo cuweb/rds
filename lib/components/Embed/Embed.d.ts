@@ -1,16 +1,14 @@
 import { default as React } from '../../../node_modules/react';
-import { maxWidthClasses } from '../../utils/propClasses';
-type maxWidthKeys = keyof typeof maxWidthClasses;
 export interface EmbedProps {
     children: React.ReactNode;
-    maxWidth?: maxWidthKeys;
+    isRounded?: boolean;
 }
 export declare const EmbedWrapper: {
-    ({ children, maxWidth }: EmbedProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isRounded }: EmbedProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Embed: {
-    ({ children, maxWidth }: EmbedProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isRounded }: EmbedProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     PowerBi: {
@@ -38,4 +36,3 @@ export declare const Embed: {
         displayName: string;
     };
 };
-export {};

@@ -1,23 +1,26 @@
 import { ReactNode } from '../../../node_modules/react';
 export interface NavWrapperProps {
-    navType?: 'primary' | 'secondary';
     children: ReactNode;
 }
-export declare const NavWrapper: ({ navType, children }: NavWrapperProps) => import("react/jsx-runtime").JSX.Element;
-export declare const Nav: (({ navType, children }: NavWrapperProps) => import("react/jsx-runtime").JSX.Element) & {
+export declare const NavWrapper: ({ children }: NavWrapperProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Nav: (({ children }: NavWrapperProps) => import("react/jsx-runtime").JSX.Element) & {
+    Top: {
+        ({ children }: import('../../../node_modules/react').PropsWithChildren): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
     Logo: {
         ({ title, link }: import('./NavLogo').NavLogoProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Aside: {
-        ({ menu, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, children, LoggedInLink, onClickHandler, }: import('./NavAside').NavAsideProps | import('./NavAside').NavAsideLoggedInProps | import('./NavAside').NavAsideLoggedOutProps): import("react/jsx-runtime").JSX.Element;
+    Buttons: {
+        ({ menu, isSearch, onClickSearch, LoggedInUser, LoggedOutUser, LoggedMenu, userNoImage, LoggedInLink, onClickHandler, }: import('./NavButtons').NavButtonsProps | import('./NavButtons').NavButtonsLoggedInProps | import('./NavButtons').NavButtonsLoggedOutProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Primary: {
+    Aside: {
         ({ children }: import('../../../node_modules/react').PropsWithChildren): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Secondary: {
+    Bottom: {
         ({ children }: import('../../../node_modules/react').PropsWithChildren): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
