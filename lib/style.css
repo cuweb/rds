@@ -4,8 +4,10 @@
 @import 'tailwindcss/utilities';
 
 /* Global Styles */
-@import './styles/utilities.css';
+@import './styles/max-width.css';
+@import './styles/max-width-child.css';
 @import './styles/spacing.css';
+@import './styles/utilities.css';
 
 /* Components */
 @import './components/Alert/styles.css';
@@ -13,10 +15,13 @@
 @import './components/Button/styles.css';
 @import './components/CallOut/styles.css';
 @import './components/Card/styles.css';
+@import './components/Details/styles.css';
 @import './components/Dialog/styles.css';
 @import './components/Description/styles.css';
 @import './components/Embed/styles.css';
+@import './components/Figure/styles.css';
 @import './components/FullBanner/styles.css';
+@import './components/Form/styles.css';
 @import './components/Form/AutoSuggest/styles.css';
 @import './components/Form/DateTime/styles.css';
 @import './components/ImageGrid/styles.css';
@@ -26,8 +31,8 @@
 @import './components/Login/styles.css';
 @import './components/Nav/styles.css';
 @import './components/PageHeader/styles.css';
+@import './components/SocialIcons/styles.css';
 @import './components/TextImage/styles.css';
-@import './components/TextMedia/styles.css';
 @import './components/Timeline/styles.css';
 @import './components/WideImage/styles.css';
 

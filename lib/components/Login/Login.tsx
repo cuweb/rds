@@ -22,10 +22,10 @@ export const Login = ({
 }: LoginProps) => {
   return (
     <div
-      className={`cu-login not-prose p-6 pt-0 border border-cu-black-100 cu-component not-contained ${maxWidthClasses[maxWidth]} shadow-md rounded-md bg-white`}
+      className={`cu-login not-prose p-6 pt-0 border border-cu-black-100 cu-component-updated ${maxWidthClasses[maxWidth]} shadow-md rounded-md bg-white`}
     >
       <img
-        className="w-auto h-20 mx-auto -mt-8 bg-white border-x-[16px] border-y-[12px] border-white rounded-md"
+        className="w-auto h-20 mx-auto mt-4 bg-white border-x-[16px] border-y-[12px] border-white rounded-md"
         src="https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg"
         alt="Logo of Carleton University"
       />

@@ -18,5 +18,7 @@ export const TableLoader: React.FC<TableLoaderProps> = ({ numRow = 5, numCol = 5
     </div>
   ))
 
-  return <div className="cu-loader-table cu-component rounded-md overflow-hidden grid gap-1">{rows}</div>
+  return (
+    <div className="cu-loader cu-loader--table cu-component-updated rounded-md overflow-hidden grid gap-1">{rows}</div>
+  )
 }

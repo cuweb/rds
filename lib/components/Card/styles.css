@@ -24,8 +24,8 @@
   @apply object-cover w-full h-full;
 }
 
-.cu-figure img,
-.cu-figure svg {
+.cu-card .cu-figure img,
+.cu-card .cu-figure svg {
   @apply w-full;
 }
 

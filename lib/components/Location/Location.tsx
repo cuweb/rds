@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* global google */
 import React, { useState } from 'react'
 import { GoogleMap, MarkerF, InfoWindowF } from '@react-google-maps/api'
+import { Figure } from '../Figure/Figure'
 
 export interface LocationProps {
   lat?: string
@@ -10,23 +12,27 @@ export interface LocationProps {
   markers?: any
   center?: any
   singleMarker?: boolean
+  isRounded?: boolean
 }
-export const Location = ({ markers, location, lat, lng, zoom = 15, center }: LocationProps) => {
+export const Location = ({ markers, location, lat, lng, zoom = 15, center, isRounded = true }: LocationProps) => {
   const [showInfo, setShowInfo] = React.useState(false)
 
   const mapRef = React.useRef()
 
   const [activeMarker, setActiveMarker] = useState(null)
 
-  const onMapLoad = React.useCallback((map: any) => {
-    const bounds = new google.maps.LatLngBounds()
-    if (markers && markers?.length !== 0) {
-      markers?.forEach(({ position }: any) => bounds.extend(position))
-      map.fitBounds(bounds)
-    } else {
-      mapRef.current = map
-    }
-  }, [])
+  const onMapLoad = React.useCallback(
+    (map: any) => {
+      const bounds = new google.maps.LatLngBounds()
+      if (markers && markers?.length !== 0) {
+        markers?.forEach(({ position }: any) => bounds.extend(position))
+        map.fitBounds(bounds)
+      } else {
+        mapRef.current = map
+      }
+    },
+    [markers],
+  )
 
   const handleActiveMarker = (marker: any) => {
     if (marker === activeMarker) {
@@ -44,7 +50,7 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
   }
 
   return (
-    <div className="cu-location cu-component not-prose not-contained">
+    <Figure rounded={isRounded ? 'lg' : 'none'}>
       <GoogleMap
         mapContainerClassName="w-full h-96"
         zoom={markers && markers?.length !== 0 ? 10 : zoom}
@@ -94,6 +100,6 @@ export const Location = ({ markers, location, lat, lng, zoom = 15, center }: Loc
           </InfoWindowF>
         )}
       </GoogleMap>
-    </div>
+    </Figure>
   )
 }

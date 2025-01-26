@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Login } from './Login'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Login> = {
   title: 'Components/Login',
@@ -23,9 +23,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Login {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -56,9 +56,9 @@ export const SocialLogins: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Login {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -69,9 +69,9 @@ export const LoginErrorShort: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Login {...args} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -83,9 +83,9 @@ export const LoginErrorDescription: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Login {...args} />
-      </Section>
+      </Main>
     )
   },
 }

@@ -29,19 +29,18 @@ export const StackedList = ({
   header,
 }: StackedListProps) => {
   const ListComponent = as
-  const gridColumns = cols === '1' ? 'grid md:grid-cols-1' : 'grid md:grid-cols-2'
   const offsetStyle = offset ? `${styles[offset]} ${styles.offset} md:max-w-sm lg:max-w-md` : maxWidthClasses[maxWidth]
 
   return (
     <div
-      className={`cu-stackedlist cu-component not-contained not-prose mx-auto overflow-hidden rounded-lg bg-white w-full shadow-lg ${offsetStyle}`}
+      className={`cu-stackedlist cu-component-updated not-prose mx-auto overflow-hidden rounded-lg bg-white w-full shadow-lg ${offsetStyle}`}
     >
       {header && (
         <h2 className="px-6 py-4 text-base font-semibold border-b rounded-t-lg md:text-xl bg-gray-50 text-cu-black-800">
           {header}
         </h2>
       )}
-      <ListComponent className={`cu-stackedlist--${listType} cu-stackedlist--${cols} ${gridColumns}`}>
+      <ListComponent className={`cu-stackedlist--${listType} cu-stackedlist--${cols} grid md:grid-cols-${cols}`}>
         {children}
       </ListComponent>
     </div>

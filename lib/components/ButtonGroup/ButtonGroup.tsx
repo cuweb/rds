@@ -13,7 +13,7 @@ export interface ButtonGroupProps {
 export const ButtonGroup = ({ children, gap = '5', align = 'start' }: ButtonGroupProps) => {
   return (
     <div
-      className={`cu-buttongroup cu-component flex flex-wrap md:flex-1 ${gridGapClasses[gap]} ${justifyContentClasses[align]}`}
+      className={`cu-buttongroup cu-component-updated flex flex-wrap md:flex-1 ${gridGapClasses[gap]} ${justifyContentClasses[align]}`}
     >
       {children}
     </div>

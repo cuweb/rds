@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Filter } from './Filter'
 import { FilterData } from '../../data/FilterData'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Filter> = {
   title: 'Components/Filter',
@@ -25,8 +25,8 @@ export const Primary: Story = {
     sortOptions: FilterData.sortOptions,
   },
   render: (args) => (
-    <Section>
+    <Main>
       <Filter {...args} />
-    </Section>
+    </Main>
   ),
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Testimonial } from './Testimonial'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { Quote } from '../Quote/Quote'
 
 const meta: Meta<typeof Testimonial> = {
@@ -27,7 +27,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section maxWidth="7xl">
+      <Main>
         <Testimonial {...args}>
           <Quote cite="Jane Doe" graphic="quote">
             <p>
@@ -36,7 +36,7 @@ export const Primary: Story = {
             </p>
           </Quote>
         </Testimonial>
-      </Section>
+      </Main>
     )
   },
 }

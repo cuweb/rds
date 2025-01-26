@@ -15,7 +15,7 @@ export interface FormWrapperProps {
 export const FormWrapper = ({ children, formikProps }: FormWrapperProps) => {
   return (
     <FormikProvider value={formikProps}>
-      <form onSubmit={formikProps.handleSubmit} className={`cu-form cu-component ${primaryStyles.form}`}>
+      <form onSubmit={formikProps.handleSubmit} className={`cu-form cu-component-updated ${primaryStyles.form}`}>
         {children}
       </form>
     </FormikProvider>

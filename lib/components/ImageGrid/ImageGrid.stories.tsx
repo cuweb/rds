@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ImageGrid, ImageGridProps } from './ImageGrid'
 import { imageData } from '../../data/ImageData'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof ImageGrid> = {
   title: 'Components/Image Grid',
@@ -30,13 +30,13 @@ export const Primary: Story = {
     const setCols = cols !== '1/3' && cols !== '2/3' ? Number(cols) : 1
 
     return (
-      <Section>
+      <Main>
         <ImageGrid {...args}>
           {imageData.slice(0, setCols).map(({ id, image }) => (
             <ImageGrid.Image key={id} imageUrl={image} />
           ))}
         </ImageGrid>
-      </Section>
+      </Main>
     )
   },
 }
@@ -47,7 +47,7 @@ export const ColSpan2: Story = {
     cols: '4',
   },
   render: (args) => (
-    <Section>
+    <Main>
       <ImageGrid {...args}>
         {imageData.slice(0, 1).map(({ id, image }) => (
           <ImageGrid.Image key={id} imageUrl={image} />
@@ -64,7 +64,7 @@ export const ColSpan2: Story = {
           <ImageGrid.Image key={id} imageUrl={image} />
         ))}
       </ImageGrid>
-    </Section>
+    </Main>
   ),
 }
 
@@ -73,7 +73,7 @@ export const ColSpan3: Story = {
     cols: '4',
   } as ImageGridProps,
   render: (args) => (
-    <Section>
+    <Main>
       <ImageGrid {...args}>
         {imageData.slice(0, 1).map(({ id, image }) => (
           <ImageGrid.Image key={id} imageUrl={image} />
@@ -89,7 +89,7 @@ export const ColSpan3: Story = {
           <ImageGrid.Image key={id} imageUrl={image} />
         ))}
       </ImageGrid>
-    </Section>
+    </Main>
   ),
 }
 
@@ -98,7 +98,7 @@ export const StackedTwoFour: Story = {
     cols: '4',
   } as ImageGridProps,
   render: (args) => (
-    <Section>
+    <Main>
       <ImageGrid {...args}>
         <ImageGrid.Image
           imageUrl={imageData[0].image}
@@ -120,6 +120,6 @@ export const StackedTwoFour: Story = {
           <ImageGrid.Image key={id} imageUrl={image} />
         ))}
       </ImageGrid>
-    </Section>
+    </Main>
   ),
 }

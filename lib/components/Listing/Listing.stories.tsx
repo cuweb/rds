@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { StackedList } from '../../layouts/StackedList/StackedList'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { Listing } from './Listing'
 
 import { NewsData } from '../../data/NewsData'
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof Listing>
 
 export const Default: Story = {
   render: (args) => (
-    <Section>
+    <Main>
       <Listing {...args}>
         <Listing.Body>
           <Listing.Header title="How to Write for the Web" />
@@ -37,14 +37,14 @@ export const Default: Story = {
           </Listing.Footer>
         </Listing.Body>
       </Listing>
-    </Section>
+    </Main>
   ),
 }
 
 export const SingleNewsListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="1">
         {NewsData.slice(0, 1).map(({ id, link, title, image, alt, date }) => (
           <Listing key={id} {...args}>
@@ -63,14 +63,14 @@ export const SingleNewsListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultipleNewsListings: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="2">
         {NewsData.slice(1, 5).map(({ id, link, title, image, alt, date }) => (
           <Listing key={id} {...args}>
@@ -89,14 +89,14 @@ export const MultipleNewsListings: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const SingleEventListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="1">
         {EventData.slice(0, 1).map(
           ({
@@ -132,14 +132,14 @@ export const SingleEventListing: Story = {
           ),
         )}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultipleEventListings: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="2">
         {EventData.slice(1, 5).map(
           ({
@@ -175,14 +175,14 @@ export const MultipleEventListings: Story = {
           ),
         )}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const SingleIconListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="1">
         {IconData.slice(0, 1).map(({ id, link, title, icon }) => (
           <Listing key={id} {...args}>
@@ -199,14 +199,14 @@ export const SingleIconListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultipleIconListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="2">
         {IconData.slice(1, 5).map(({ id, link, title, icon }) => (
           <Listing key={id} {...args}>
@@ -223,14 +223,14 @@ export const MultipleIconListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const SinglePageListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="1">
         {NewsData.slice(0, 1).map(({ id, link, title, date }) => (
           <Listing key={id} {...args}>
@@ -246,14 +246,14 @@ export const SinglePageListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultiplePageListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="2">
         {NewsData.slice(1, 5).map(({ id, link, title, date }) => (
           <Listing key={id} {...args}>
@@ -269,14 +269,14 @@ export const MultiplePageListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const SinglePeopleListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="1">
         {PeopleData.slice(0, 1).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
           <Listing key={id} {...args}>
@@ -297,14 +297,14 @@ export const SinglePeopleListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }
 
 export const MultiplePeopleListing: Story = {
   args: {},
   render: (args) => (
-    <Section>
+    <Main>
       <StackedList cols="2">
         {PeopleData.slice(1, 5).map(({ id, link, image, alt, firstName, lastName, jobTitle, email, phone }) => (
           <Listing key={id} {...args}>
@@ -325,6 +325,6 @@ export const MultiplePeopleListing: Story = {
           </Listing>
         ))}
       </StackedList>
-    </Section>
+    </Main>
   ),
 }

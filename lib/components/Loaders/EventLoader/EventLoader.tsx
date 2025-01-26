@@ -11,7 +11,7 @@ export interface EventLoaderProps {
 export const EventLoader = ({ pageCount = 5, showClearButton = false }: EventLoaderProps) => {
   return (
     <>
-      <Column cols="2/3" maxWidth="7xl">
+      <Column cols="2/3">
         <Column.Content>
           <StackedList cols="2">
             <ListingNewsLoader />

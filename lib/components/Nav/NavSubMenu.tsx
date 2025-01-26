@@ -22,7 +22,7 @@ export const NavSubMenu = ({ submenu, isSubMenu, isInnerSubMenu, id }: menuItemP
       className={
         isInnerSubMenu
           ? 'cu-nav__inner-submenu hidden w-full overflow-hidden bg-cu-black-50/35'
-          : 'cu-nav__submenu hidden absolute left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100'
+          : 'cu-nav__submenu hidden absolute left-0 max-w-xs w-64 overflow-hidden bg-white border rounded shadow-lg border-cu-black-100 z-10'
       }
     >
       {submenu.map((menuItem: ImenuItem, index: number) => (

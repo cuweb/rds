@@ -53,7 +53,7 @@ export const LocationPicker = ({
 
   useEffect(() => {
     if (singleMarker && singleMarkerCallback) singleMarkerCallback({ coordinates, address: address })
-  }, [coordinates, singleMarkerCallback, singleMarker])
+  }, [coordinates, address, singleMarkerCallback, singleMarker])
 
   return (
     <div className="cu-locationpicker not-prose">

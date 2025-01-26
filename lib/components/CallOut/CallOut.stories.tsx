@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { CallOut } from './CallOut'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 
@@ -27,7 +27,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <CallOut {...args}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
@@ -38,7 +38,7 @@ export const Primary: Story = {
             <Button color="grey" title="Request Information" />
           </ButtonGroup>
         </CallOut>
-      </Section>
+      </Main>
     )
   },
 }

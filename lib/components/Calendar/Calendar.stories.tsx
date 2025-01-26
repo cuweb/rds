@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Calendar } from './Calendar'
 import { CalendarData } from '../../data/CalendarData'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Calendar> = {
   title: 'Components/Calendar',
@@ -33,9 +33,9 @@ export const Primary: Story = {
     )
 
     return (
-      <Section>
+      <Main>
         <Calendar events={args.events} callback={callbackcal} />
-      </Section>
+      </Main>
     )
   },
 }
