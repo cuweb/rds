@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { Alert } from './Alert'
 
 const meta: Meta<typeof Alert> = {
@@ -26,23 +26,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Alert {...args} />
-      </Section>
-    )
-  },
-}
-
-export const TwoColumns: Story = {
-  args: {
-    ...Primary.args,
-    size: 'lg',
-  },
-  render: (args) => {
-    return (
-      <Section>
-        <Alert {...args} />
-      </Section>
+      </Main>
     )
   },
 }

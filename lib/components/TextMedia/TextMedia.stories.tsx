@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { TextMedia } from './TextMedia'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 
@@ -19,13 +19,11 @@ type Story = StoryObj<typeof TextMedia>
 
 export const Primary: Story = {
   args: {
-    maxWidth: '5xl',
-    gridGap: '10',
     reverse: false,
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <TextMedia {...args}>
           <TextMedia.Content title="Website and Application Development" width={50} hasUnderline>
             <p>
@@ -44,7 +42,7 @@ export const Primary: Story = {
           </TextMedia.Content>
           <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
         </TextMedia>
-      </Section>
+      </Main>
     )
   },
 }
@@ -55,7 +53,7 @@ export const ImageInColumn: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <TextMedia {...args}>
           <TextMedia.Content title="Website and Application Development" width={50} hasUnderline>
             <p>
@@ -86,7 +84,7 @@ export const ImageInColumn: Story = {
             <img src="https://picsum.photos/id/431/600/460" alt="Presentation only" width="600" height="460" />
           </TextMedia.Aside>
         </TextMedia>
-      </Section>
+      </Main>
     )
   },
 }
@@ -94,11 +92,10 @@ export const ImageInColumn: Story = {
 export const HeaderOne: Story = {
   args: {
     ...Primary.args,
-    maxWidth: '7xl',
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <TextMedia {...args}>
           <TextMedia.Content title="Website and Application Development" headerType="h1" width={50} hasUnderline>
             <p>
@@ -117,7 +114,7 @@ export const HeaderOne: Story = {
           </TextMedia.Content>
           <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
         </TextMedia>
-      </Section>
+      </Main>
     )
   },
 }

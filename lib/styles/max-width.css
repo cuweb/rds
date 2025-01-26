@@ -1,0 +1,31 @@
+.cu-max-w-2xl {
+  @apply max-w-2xl mx-auto;
+}
+
+.cu-max-w-3xl {
+  @apply max-w-3xl mx-auto;
+}
+
+.cu-max-w-4xl {
+  @apply max-w-4xl mx-auto;
+}
+
+.cu-max-w-5xl {
+  @apply max-w-5xl mx-auto;
+}
+
+.cu-max-w-6xl {
+  @apply max-w-6xl mx-auto;
+}
+
+.cu-max-w-7xl {
+  @apply mx-auto max-w-7xl;
+}
+
+.cu-max-w-max {
+  @apply mx-auto max-w-max;
+}
+
+.cu-max-w-full {
+  @apply max-w-full mx-auto;
+}

@@ -48,8 +48,8 @@ export const Table = ({
   }, [columns, setTableData])
 
   return (
-    <div className={`cu-table cu-component not-prose overflow-x-auto overflow-y-hidden rounded-lg shadow-lg`}>
-      <table className={`min-w-full cu-table ${colgroup ? `table-fixed lg:w-full` : `table-auto`}`}>
+    <div className={`cu-table cu-component-updated not-prose overflow-x-auto overflow-y-hidden rounded-lg shadow-lg`}>
+      <table className={`min-w-full ${colgroup ? `table-fixed lg:w-full` : `table-auto`}`}>
         {colgroup && (
           <colgroup>
             {colgroup.map((width, index) => (

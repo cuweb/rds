@@ -1,5 +1,5 @@
 import { aspectRatioClasses } from '../../utils/propClasses'
-import { useLinkContext } from '../LinkProvider/useLinkContext'
+import { ImageCaptionOverlay } from '../ImageCaptionOverlay/ImageCaptionOverlay'
 
 type aspectRatioKeys = keyof typeof aspectRatioClasses
 
@@ -20,7 +20,6 @@ export const ImageSliderItem = ({
   link,
   aspectRatio = 'landscape',
 }: ImageSliderItemProps) => {
-  const LinkComponent = useLinkContext()
   const inlineImageStyles = {
     backgroundImage: `url(${imageUrl})`,
     backgroundPosition: `${focalPointX}% ${focalPointY}%`,
@@ -29,22 +28,10 @@ export const ImageSliderItem = ({
   return (
     <div className="cu-slider--item pr-4">
       <div
-        className={`relative ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full transition ease-in-out duration-[5000]`}
+        className={`relative overflow-hidden ${aspectRatioClasses[aspectRatio]} bg-cover bg-center rounded-lg bg-black w-full h-full transition ease-in-out duration-[5000]`}
         style={inlineImageStyles}
       >
-        {title && (
-          <div
-            className={`bg-black/75 text-white absolute bottom-2 left-2 right-2 px-4 py-2.5 rounded-md ${link ? 'hover:bg-cu-red/85' : ''}`}
-          >
-            {link ? (
-              <LinkComponent href={link} className="cursor-pointer block hover-bg-cu-red">
-                <p className="text-sm md:text-base font-semibold line-clamp-2">{title}</p>
-              </LinkComponent>
-            ) : (
-              <p className="text-sm md:text-base font-semibold line-clamp-2">{title}</p>
-            )}
-          </div>
-        )}
+        {title && <ImageCaptionOverlay title={title} link={link} />}
       </div>
     </div>
   )

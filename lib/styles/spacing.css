@@ -1,105 +1,290 @@
 /* 
-* Section children max width
+** PRIMARY SECTION SPACING
 */
 
-.cu-section-2xl > :not(.not-contained) {
-  @apply max-w-2xl mx-auto;
-}
-
-.cu-section-3xl > :not(.not-contained) {
-  @apply max-w-3xl mx-auto;
-}
-
-.cu-section-4xl > :not(.not-contained) {
-  @apply mx-auto max-w-4xl;
-}
-
-.cu-section-5xl > :not(.not-contained) {
-  @apply max-w-5xl mx-auto;
-}
-
-.cu-section-7xl > :not(.not-contained) {
-  @apply mx-auto max-w-7xl;
-}
-
-.cu-section-max > :not(.not-contained) {
-  @apply mx-auto max-w-screen-2xl;
-}
-
-.cu-section-full > :not(.not-contained) {
-  @apply max-w-full mx-auto;
+.cu-main > .cu-section--primary {
+  @apply my-6 md:my-10;
 }
 
 /* 
-* Section and non-section spacing
+** LAYOUT COMPONENT SPACING
 */
 
-:not(.cu-section) + .cu-section {
+/* Column */
+.cu-column + .cu-column,
+:not(.cu-column) + .cu-column,
+.cu-column + :not(.cu-column),
+.cu-section + .cu-column,
+.cu-column + .cu-section {
   @apply mt-6 md:mt-10;
 }
 
+/* Section */
+.cu-section + .cu-section,
+:not(.cu-section) + .cu-section,
 .cu-section + :not(.cu-section) {
   @apply mt-6 md:mt-10;
 }
 
-/* 
-* Consecutive component spacing
-*/
-
-.cu-section + .cu-section,
-.cu-section + .cu-column,
-:not(.cu-section) + .cu-section,
-.cu-section + :not(.cu-section),
-:not(.cu-fullbanner) + .cu-fullbanner,
-.cu-fullbanner + :not(.cu-fullbanner) {
-  @apply mt-5 md:mt-6 lg:mt-12;
-}
-
-.cu-component + .cu-component,
-:not(.cu-component) + .cu-component:not(.cu-buttongroup),
-.cu-component + :not(.cu-component) {
-  @apply mt-3 md:mt-5 lg:mt-10;
-}
-
-/* Add margin 0 if the element is empty */
-.cu-component:empty,
-:not(.cu-component):empty + .cu-component,
-.cu-component + :empty {
-  @apply m-0;
-}
-
-.cu-section + .cu-widewaves,
-.cu-widewaves + .cu-widewaves {
-  @apply mt-8 md:mt-10 lg:mt-20;
-}
-
-.cu-section.bg-white + .cu-column {
-  @apply mt-6 md:mt-6;
-}
-
-.cu-section.bg-cu-black-50:not(.cu-wideimage) {
-  @apply max-w-screen-2xl;
-}
-
-:not(.cu-wideimage).cu-section.bg-cu-black-50 + :not(.cu-wideimage).cu-section.bg-cu-black-50 {
-  @apply pt-2 -mt-2 rounded-t-none;
+/* Stacked List */
+.cu-stackedlist + .cu-stackedlist,
+:not(.cu-stackedlist) + .cu-stackedlist,
+.cu-stackedlist + :not(.cu-stackedlist),
+.cu-section + .cu-stackedlist,
+.cu-stackedlist + .cu-section {
+  @apply mt-6 md:mt-10;
 }
 
 /* 
-* First and last child inside sections
+** COMPONENT SPACING
 */
 
-.cu-section > *:first-child:not(.cu-fullbanner),
-.cu-section > *:first-child:not(.cu-imagecover),
-.cu-article > *:first-child,
-.cu-aside > *:first-child,
-.cu-aside .sticky > *:first-child {
+/* // TODO GLOBAL: margin-t */
+/* .cu-component-spacing + .cu-component-spacing,
+:not(.cu-component-spacing) + .cu-component-spacing,
+.cu-component-spacing + :not(.cu-component-spacing) {
+  @apply mt-6 md:mt-10;
+} */
+
+/* Alert */
+.cu-alert + .cu-alert,
+:not(.cu-alert) + .cu-alert,
+.cu-alert + :not(.cu-alert),
+.cu-section + .cu-alert,
+.cu-alert + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Button Group */
+.cu-buttongroup + .cu-buttongroup,
+:not(.cu-buttongroup) + .cu-buttongroup,
+.cu-buttongroup + :not(.cu-buttongroup),
+.cu-section + .cu-buttongroup,
+.cu-buttongroup + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* When button is used directly inside grid layouts */
+.grid > .cu-buttongroup {
   @apply mt-0;
 }
 
-.cu-section > *:last-child,
-.cu-article > *:last-child,
-.cu-aside > *:last-child,
-.cu-aside .sticky > *:last-child {
-  @apply mb-0;
+/* Calendar */
+.cu-calendar + .cu-calendar,
+:not(.cu-calendar) + .cu-calendar,
+.cu-calendar + :not(.cu-calendar),
+.cu-section + .cu-calendar,
+.cu-calendar + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Call Out */
+.cu-callout + .cu-callout,
+:not(.cu-callout) + .cu-callout,
+.cu-callout + :not(.cu-callout),
+.cu-section + .cu-callout,
+.cu-callout + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Description */
+.cu-description + .cu-description,
+:not(.cu-description) + .cu-description,
+.cu-description + :not(.cu-description),
+.cu-section + .cu-description,
+.cu-description + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Details */
+.cu-details + .cu-details,
+:not(.cu-details) + .cu-details,
+.cu-details + :not(.cu-details),
+.cu-section + .cu-details,
+.cu-details + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Embed */
+.cu-embed + .cu-embed,
+:not(.cu-embed) + .cu-embed,
+.cu-embed + :not(.cu-embed),
+.cu-section + .cu-embed,
+.cu-embed + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Figure */
+.cu-figure + .cu-figure,
+:not(.cu-figure) + .cu-figure,
+.cu-figure + :not(.cu-figure),
+.cu-section + .cu-figure,
+.cu-figure + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Form */
+.cu-form + .cu-form,
+:not(.cu-form) + .cu-form,
+.cu-form + :not(.cu-form),
+.cu-section + .cu-form,
+.cu-form + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Full Banner */
+:not(.cu-fullbanner) + .cu-fullbanner,
+.cu-fullbanner + :not(.cu-fullbanner),
+.cu-section + .cu-fullbanner,
+.cu-fullbanner + .cu-section,
+.cu-column + .cu-fullbanner,
+.cu-fullbanner + .cu-column {
+  @apply mt-6 md:mt-10;
+}
+
+/* Image Cover */
+.cu-imagecover + .cu-imagecover,
+:not(.cu-imagecover) + .cu-imagecover,
+.cu-imagecover + :not(.cu-imagecover),
+.cu-section + .cu-imagecover,
+.cu-imagecover + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Image Grid */
+.cu-imagegrid + .cu-imagegrid,
+:not(.cu-imagegrid) + .cu-imagegrid,
+.cu-imagegrid + :not(.cu-imagegrid),
+.cu-section + .cu-imagegrid,
+.cu-imagegrid + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Loaders */
+.cu-loader + .cu-loader:not(.cu-loader--nomargin),
+:not(.cu-loader) + .cu-loader:not(.cu-loader--nomargin),
+.cu-loader + :not(.cu-loader),
+.cu-section + .cu-loader,
+.cu-loader + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Login */
+.cu-login + .cu-login,
+:not(.cu-login) + .cu-login,
+.cu-login + :not(.cu-login),
+.cu-section + .cu-login,
+.cu-login + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Page Header */
+.cu-pageheader + .cu-pageheader,
+:not(.cu-pageheader) + .cu-pageheader,
+.cu-pageheader + :not(.cu-pageheader),
+.cu-section + .cu-pageheader,
+.cu-pageheader + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Placeholder */
+.cu-placeholder + .cu-placeholder,
+:not(.cu-placeholder) + .cu-placeholder,
+.cu-placeholder + :not(.cu-placeholder),
+.cu-section + .cu-placeholder,
+.cu-placeholder + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Quote */
+.cu-quote + .cu-quote,
+:not(.cu-quote) + .cu-quote,
+.cu-quote + :not(.cu-quote),
+.cu-section + .cu-quote,
+.cu-quote + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Social Icons */
+.cu-social + .cu-social,
+:not(.cu-social) + .cu-social,
+.cu-social + :not(.cu-social),
+.cu-section + .cu-social,
+.cu-social + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Table */
+.cu-table + .cu-table,
+:not(.cu-table) + .cu-table,
+.cu-table + :not(.cu-table),
+.cu-section + .cu-table,
+.cu-table + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Testimonial */
+.cu-testimonial + .cu-testimonial,
+:not(.cu-testimonial) + .cu-testimonial,
+.cu-testimonial + :not(.cu-testimonial),
+.cu-section + .cu-testimonial,
+.cu-testimonial + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Timeline */
+.cu-timeline + .cu-timeline,
+:not(.cu-timeline) + .cu-timeline,
+.cu-timeline + :not(.cu-timeline),
+.cu-section + .cu-timeline,
+.cu-timeline + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* Wide Wave */
+.cu-widewave + .cu-widewave,
+:not(.cu-widewave) + .cu-widewave,
+.cu-widewave + :not(.cu-widewave),
+.cu-section + .cu-widewave,
+.cu-widewave + .cu-section {
+  @apply mt-6 md:mt-10;
+}
+
+/* 
+** COMPONENT SPACING ISOLATED
+*/
+
+/* Form Field Group */
+.cu-field-wrapper + .cu-field-wrapper {
+  @apply mt-6 md:mt-10;
+}
+
+/* 
+** COMPONENT SPACING ZERO
+*/
+
+/* Consecutive Grey Backgrounds */
+.cu-section--grey + .cu-section--grey {
+  @apply mt-0 md:mt-0;
+}
+
+/* Consecutive Grey Backgrounds */
+.cu-locationpicker + .cu-location {
+  @apply mt-0 md:mt-0;
+}
+
+/* Full Width Components */
+.cu-fullbanner + .cu-imagecover,
+.cu-widewave + .cu-imagecover,
+.cu-widewave + .cu-fullbanner {
+  @apply mt-0 md:mt-0;
+}
+
+/* 
+** COMPONENT SPACING OTHERS
+*/
+
+/* TODO: primary spacing countered with negative margin --> px-4 md:px-6 lg:px-12 */
+.cu-section--grey + .cu-section--grey > .bg-cu-black-50 {
+  @apply -mt-4 md:-mt-6 lg:-mt-12 rounded-t-none;
 }

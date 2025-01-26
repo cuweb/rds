@@ -2,10 +2,10 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ButtonGroup } from './ButtonGroup'
 import { Button } from '../Button/Button'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof ButtonGroup> = {
-  title: 'Components/ButtonGroup',
+  title: 'Components/Button Group',
   component: ButtonGroup,
   tags: ['autodocs'],
   argTypes: {},
@@ -21,12 +21,12 @@ type Story = StoryObj<typeof ButtonGroup>
 
 export const Primary: Story = {
   args: {
-    gap: '2',
+    gap: '5',
     align: 'start',
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <ButtonGroup {...args}>
           <Button
             onClick={() => {
@@ -49,7 +49,7 @@ export const Primary: Story = {
             color="grey"
           />
         </ButtonGroup>
-      </Section>
+      </Main>
     )
   },
 }

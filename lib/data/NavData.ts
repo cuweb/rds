@@ -111,7 +111,7 @@ export const NavDataSingle = [
   },
 ]
 
-export const NavAsideData = [
+export const NavButtonsData = [
   {
     href: 'https://admissions.carleton.ca/apply/',
     title: 'Apply',

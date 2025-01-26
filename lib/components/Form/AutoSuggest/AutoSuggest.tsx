@@ -8,6 +8,7 @@ import { CSSObject } from '@emotion/react'
 interface Option {
   value: string
   label: string
+  [key: string]: string | number | boolean
 }
 
 export interface AutoSuggestProps extends FieldComponentProps {
@@ -25,7 +26,7 @@ export const AutoSuggest = ({ ...props }: AutoSuggestProps) => {
 
   const [selectedOption, setSelectedOption] = useState<Option | null>(null)
 
-  const optionValue = options?.find((option) => option.value === meta?.value)
+  const optionValue = options?.find((option: Option) => option.value === meta?.value)
 
   useEffect(() => {
     setSelectedOption(optionValue || null)

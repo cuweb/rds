@@ -9,7 +9,7 @@ export const NavLogo = ({ title, link }: NavLogoProps) => {
   const LinkComponent = useLinkContext()
 
   return (
-    <div className="cu-nav__top flex items-center py-3.5 gap-5 md:gap-8 shrink-1 md:shrink-0 max-sm:grow">
+    <div className="cu-nav__logo flex items-center py-3.5 gap-5 md:gap-8 ms-0 me-auto">
       <a href="https://carleton.ca" className="shrink-0">
         <img
           className={`w-[148px] h-[40px] shrink-0 ${title ? 'hidden md:block' : 'block'}`}

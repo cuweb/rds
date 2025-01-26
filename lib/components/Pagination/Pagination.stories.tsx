@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Pagination } from './Pagination'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Pagination> = {
   title: 'Components/Pagination',
@@ -29,9 +29,9 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <Pagination {...args} />
-      </Section>
+      </Main>
     )
   },
 }

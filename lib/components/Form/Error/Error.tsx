@@ -7,7 +7,7 @@ export interface ErrorProps {
 }
 
 export const Error = ({ ...props }: ErrorProps) => {
-  return <div className={`${fieldStyles.error} ${props.className ? props.className : ''} `}>{props.children}</div>
+  return <div className={`${fieldStyles.errorFormik} ${props.className ? props.className : ''} `}>{props.children}</div>
 }
 
 export default Error

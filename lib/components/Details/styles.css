@@ -1,0 +1,11 @@
+.cu-details--dividers {
+  @apply divide-y divide-cu-black-100;
+}
+
+.cu-details--dividers li {
+  @apply py-2 md:py-3.5 my-0;
+}
+
+.cu-details--dividers li a {
+  @apply font-medium text-cu-red;
+}

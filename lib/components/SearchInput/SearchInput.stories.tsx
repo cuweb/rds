@@ -4,7 +4,7 @@ import { SearchInput } from './SearchInput'
 import { SearchDatabase } from '../../data/SearchData'
 import { Modal } from '../Modal/Modal'
 import { Button } from '../Button/Button'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 // Define the type for your search data
 interface SearchData {
@@ -42,9 +42,9 @@ export const Primary: Story = {
     )
 
     return (
-      <Section>
+      <Main>
         <SearchInput callback={callback} placeholder={args.placeholder} />
-      </Section>
+      </Main>
     )
   },
 }
@@ -78,11 +78,11 @@ export const AutoSuggest: Story = {
     }, [searchString])
 
     return (
-      <Section>
+      <Main>
         <SearchInput callback={callback} placeholder={args.placeholder}>
           <SearchInput.Results resultsData={filteredResults} />
         </SearchInput>
-      </Section>
+      </Main>
     )
   },
 }

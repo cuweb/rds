@@ -2,9 +2,9 @@ const scrollingNav = () => {
   const header = document.querySelector('.cu-header') as HTMLElement
 
   if (header) {
-    const navPrimary = document.querySelector('.cu-nav--primary') as HTMLElement,
-      navSecondary = document.querySelector('.cu-nav--secondary') as HTMLElement,
-      navTop = document.querySelector('.cu-nav__top') as HTMLElement,
+    const navTop = document.querySelector('.cu-nav--top') as HTMLElement,
+      navBottom = document.querySelector('.cu-nav--bottom') as HTMLElement,
+      navLogo = document.querySelector('.cu-nav__logo') as HTMLElement,
       headerBottom = header.offsetHeight
 
     let lastScrollTop = 0
@@ -16,10 +16,10 @@ const scrollingNav = () => {
 
       const raised = newScrollTop > lastScrollTop && newScrollTop > headerBottom
 
-      if (navTop) {
-        const navTopHeight = navTop.offsetHeight
+      if (navLogo) {
+        const navTopHeight = navLogo.offsetHeight
 
-        if (navSecondary || (windowWidth <= 640 && navPrimary)) {
+        if (navBottom || (windowWidth <= 640 && navTop)) {
           if (raised) {
             header.style.top = '-' + navTopHeight + 'px'
           } else {

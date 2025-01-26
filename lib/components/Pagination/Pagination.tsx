@@ -72,7 +72,7 @@ export const Pagination = ({
 
   return (
     <div
-      className={`cu-pagination cu-component not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
+      className={`cu-pagination cu-component-updated not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
     >
       <div className="flex justify-between flex-1 sm:hidden">
         <button onClick={onPrevious} className={`${styles.mobileButtons}`}>
@@ -92,7 +92,7 @@ export const Pagination = ({
 
         <nav aria-label="Pagination">
           <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onPrevious}>
+            <li className={`${styles.pageListNumbers} ${styles.pageListArrows} !my-0`} onClick={onPrevious}>
               <span className="sr-only">Previous</span>
               <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
             </li>
@@ -101,7 +101,7 @@ export const Pagination = ({
               paginationRange.map((pageNumber, index) => {
                 if (pageNumber === DOTS) {
                   return (
-                    <li key={index} className={`${styles.pageListNumbers}`}>
+                    <li key={index} className={`${styles.pageListNumbers} !my-0`}>
                       &#8230;
                     </li>
                   )
@@ -111,14 +111,14 @@ export const Pagination = ({
                     key={index}
                     className={`${styles.pageListNumbers} ${
                       Number(pageNumber) === currentPage ? 'font-bold text-cu-red' : ''
-                    }`}
+                    } !my-0`}
                     onClick={() => onCurrent(Number(pageNumber))}
                   >
                     {pageNumber}
                   </li>
                 )
               })}
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
+            <li className={`${styles.pageListNumbers} ${styles.pageListArrows} !my-0`} onClick={onNext}>
               <span className="sr-only">Next</span>
               <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
             </li>

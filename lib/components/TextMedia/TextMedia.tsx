@@ -2,25 +2,22 @@ import React from 'react'
 import { TextMediaContent } from './TextMediaContent'
 import { TextMediaBgImg } from './TextMediaBgImg'
 import { TextMediaAside } from './TextMediaAside'
-import { gridGapClasses, maxWidthClasses } from '../../utils/propClasses'
-
-type maxWidthKeys = keyof typeof maxWidthClasses
-type gridGapKeys = keyof typeof gridGapClasses
 
 export interface TextMediaProps {
   children?: React.ReactNode
-  maxWidth?: maxWidthKeys
-  gridGap?: gridGapKeys
   reverse?: boolean
 }
 
-export const TextMediaWrapper = ({ children, maxWidth = '5xl', gridGap = '10', reverse }: TextMediaProps) => {
+export const TextMediaWrapper = ({ children, reverse }: TextMediaProps) => {
   const reverseLayout = reverse ? 'lg:flex-row-reverse' : ''
+
+  // TODO: margin-y
+  const $componentMarginY = `my-6 md:my-12 first:mt-0`
 
   return (
     <>
       <div
-        className={`cu-textmedia cu-component not-contained flex flex-col lg:flex-row mx-auto ${gridGapClasses[gridGap]} ${maxWidthClasses[maxWidth]} ${reverseLayout}`}
+        className={`cu-textmedia flex flex-col lg:flex-row mx-auto gap-6 md:gap-10 ${$componentMarginY} ${reverseLayout}`}
       >
         {children}
       </div>

@@ -1,15 +1,16 @@
-.cu-widewaves > * {
-  @apply px-6 md:px-8 lg:px-10;
+/* TODO GLOBAL: negative top based on primary spacing */
+.cu-main > .cu-section > .cu-widewave:last-child {
+  @apply -mb-4 md:-mb-6 lg:-mb-12;
 }
 
-.cu-widewaves-content > :not(.not-contained) {
-  @apply max-w-5xl mx-auto;
+.cu-widewave .cu-pageheader h2:after {
+  @apply bg-white;
 }
 
-.cu-textmedia-aside > *:first-child {
-  @apply mt-0;
-}
-
-.cu-textmedia-aside > *:last-child {
-  @apply mb-0;
+.cu-widewave h2,
+.cu-widewave h3,
+.cu-widewave h4,
+.cu-widewave h5,
+.cu-widewave h6 {
+  @apply text-white;
 }

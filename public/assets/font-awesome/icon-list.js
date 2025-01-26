@@ -10,6 +10,8 @@ export const iconNames = [
   { value: 'baseball', label: 'Baseball' },
   { value: 'basketball-hoop', label: 'Basketball hoop' },
   { value: 'bee', label: 'Bee' },
+  { value: 'bluesky-square', label: 'Bluesky square' },
+  { value: 'bluesky', label: 'Bluesky' },
   { value: 'bolt-lightning', label: 'Bolt lightning' },
   { value: 'book-atlas', label: 'Book atlas' },
   { value: 'book', label: 'Book' },

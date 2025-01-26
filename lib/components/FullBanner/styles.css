@@ -1,40 +1,17 @@
-.cu-fullbanner--content > * {
-  @apply z-50 relative;
+/* TODO GLOBAL: negative top based on primary spacing */
+.cu-main > .cu-section > .cu-fullbanner:first-of-type {
+  @apply -mt-4 md:-mt-6 lg:-mt-12;
 }
 
-.cu-fullbanner img {
-  @apply rounded-none w-full h-auto;
-}
-
-/* Top spacing when first block */
-
-main.cu-main > .cu-fullbanner:first-of-type,
-section.cu-section > .cu-fullbanner:first-of-type {
-  @apply -mt-6 md:-mt-10 lg:-mt-12;
+/* TODO GLOBAL: negative bottom based on primary spacing */
+.cu-main > .cu-section--primary > .cu-fullbanner:last-child {
+  @apply -mb-4 md:-mb-6 lg:-mb-12;
 }
 
 .cu-fullbanner .cu-pageheader {
   @apply mb-0;
 }
 
-/* Image */
-
 .cu-fullbanner img {
-  @apply rounded-none w-full h-auto;
-}
-
-/* Font Styles */
-
-.cu-fullbanner .cu-pageheader h1 {
-  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
-}
-
-.cu-fullbanner .cu-pageheader p {
-  @apply md:text-xl;
-}
-
-/* Justification */
-
-.cu-fullbanner .justify-center {
-  @apply text-center;
+  @apply rounded-none m-0;
 }

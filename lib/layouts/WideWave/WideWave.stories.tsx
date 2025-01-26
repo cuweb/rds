@@ -23,9 +23,7 @@ export const Primary: Story = {}
 
 Primary.args = {
   children: '',
-  as: 'section',
   wave: 'red',
-  hasRaven: false,
 }
 
 export const WithChildren: Story = {
@@ -35,7 +33,7 @@ export const WithChildren: Story = {
   render: (args) => (
     <Main>
       <WideWave {...args}>
-        <TextMedia maxWidth="7xl">
+        <TextMedia>
           <TextMedia.Content title="Red Wave with Text & Media" width={60} hasUnderline isWhite>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non placerat massa. Morbi ornare maximus
@@ -63,7 +61,6 @@ export const BlackWave: Story = {
   args: {
     ...Primary.args,
     wave: 'black',
-    hasRaven: true,
   },
   render: (args) => (
     <Main>
@@ -75,7 +72,7 @@ export const BlackWave: Story = {
           tristique vitae, auctor a justo. Fusce molestie, justo fermentum vehicula efficitur, leo ligula eleifend ante,
           in commodo diam turpis in ante.
         </p>
-        <TextMedia maxWidth="7xl" reverse>
+        <TextMedia reverse>
           <TextMedia.Content title="Red Wave with Text & Media" width={60} hasUnderline isWhite>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non placerat massa. Morbi ornare maximus
@@ -90,7 +87,7 @@ export const BlackWave: Story = {
               </a>
             </ButtonGroup>
           </TextMedia.Content>
-          <TextMedia.Aside align="center" border="sm" borderColor="white">
+          <TextMedia.Aside align="center">
             <img src="https://picsum.photos/id/431/600/460" alt="Presentation only" width="600" height="460" />
           </TextMedia.Aside>
         </TextMedia>

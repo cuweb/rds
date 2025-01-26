@@ -1,19 +1,16 @@
 import React from 'react'
-import { maxWidthClasses } from '../../utils/propClasses'
 import { WideImageSignup } from './WideImageSignup'
 import { PageHeader } from '../PageHeader/PageHeader'
 
-type maxWidthKeys = keyof typeof maxWidthClasses
+// TODO: Discussion --> removing the hasScroll option
 
 const opacityValues = Array.from({ length: 21 }, (_, index) => 60 + index)
 
 export interface WideImageProps {
   children?: React.ReactNode
-  as?: 'section' | 'div'
   title: string
   image?: string
   headerType?: 'h1' | 'h2'
-  maxWidth?: maxWidthKeys
   opacity?: (typeof opacityValues)[number]
   focalPointX?: number
   focalPointY?: number
@@ -46,11 +43,9 @@ const getImageStyles = (isType: string, image: string | undefined) => {
 
 export const WideImageWrapper = ({
   children,
-  as = 'div',
   title,
   image,
   headerType = 'h2',
-  maxWidth = 'max',
   opacity = 70,
   focalPointX = 50,
   focalPointY = 50,
@@ -62,36 +57,38 @@ export const WideImageWrapper = ({
     console.warn(`Invalid opacity value: ${opacity}. It should be one of ${opacityValues.join(', ')}.`)
   }
 
-  const WideImageComponent = as
   const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
   const opacityStyle = getOpacityStyle(opacity)
   const hasImageStyles = getImageStyles(isType, image)
 
-  let topBottomSpace
+  let paddingY
 
   switch (isType) {
     case 'light':
     case 'dark':
-      topBottomSpace = headerType === 'h1' ? 'pt-10 pb-12' : 'pt-10 pb-12'
+      paddingY = headerType === 'h1' ? 'pt-10 pb-12' : 'pt-10 pb-12'
       break
     case 'image':
-      topBottomSpace = 'py-24 md:py-28 lg:py-36 xl:py-48'
+      paddingY = 'py-24 md:py-28 lg:py-36 xl:py-48'
       break
     default:
-      topBottomSpace = 'py-10 pb-12'
+      paddingY = 'py-10 pb-12'
       break
   }
 
   if (hasWave && isType === 'image' && image) {
-    topBottomSpace = 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-72'
+    paddingY = 'pt-24 pb-32 md:pt-28 md:pb-44 lg:pt-36 lg:pb-60 xl:pt-48 xl:pb-72'
   } else if (hasWave) {
-    topBottomSpace = 'pt-20 pb-24 md:pb-32 lg:pb-40 xl:pb-48'
+    paddingY = 'pt-20 pb-24 md:pb-32 lg:pb-40 xl:pb-48'
   }
 
+  // TODO: margin-y
+  const $componentMarginY = `my-6 md:my-12 first:mt-0`
+
   return (
-    <WideImageComponent
+    <div
       style={isType === 'image' ? inlineStyle : undefined}
-      className={`cu-wideimage cu-section relative flex items-center justify-center mx-auto px-8 mb-6 overflow-hidden md:px-16 md:mb-12 rounded-xl not-contained not-prose ${maxWidthClasses[maxWidth]} ${hasImageStyles} ${topBottomSpace}`}
+      className={`cu-wideimage relative flex items-center justify-center mx-auto px-8 overflow-hidden md:px-16 rounded-xl not-prose ${$componentMarginY} ${hasImageStyles} ${paddingY}`}
     >
       {hasWave && (
         <svg
@@ -167,7 +164,7 @@ export const WideImageWrapper = ({
           </defs>
         </svg>
       )}
-    </WideImageComponent>
+    </div>
   )
 }
 

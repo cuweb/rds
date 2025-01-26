@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useCallback, useState } from 'react'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 import { MultiDayCalendar } from './MultiDayCalendar'
 import { CalendarData } from '../../data/CalendarData'
 
@@ -33,9 +33,9 @@ export const Primary: Story = {
     )
 
     return (
-      <Section>
+      <Main>
         <MultiDayCalendar events={args.events} callback={callbackcal} />
-      </Section>
+      </Main>
     )
   },
 }

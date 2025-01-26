@@ -17,6 +17,100 @@ Prefix the change with one of these keywords:
 
 ## [Unreleased]
 
+### Breaking
+
+#### Layout components
+
+- Refactor `Column` layout component:
+  - add: class for component margin-y-sm
+  - deprecate: `maxWidth` prop
+  - deprecate: `gridGap` prop
+  - deprecate: `reverse` prop
+- Refactor `ImageCover` layout component:
+  - add: class for breakout width
+  - add: class for primary spacing
+  - change: imported `styles.css`
+  - deprecate: `as` prop
+- Refactor `Main` layout component:
+  - add: `maxWidth` prop
+  - add: `noProse` prop
+  - add: class for primary spacing
+  - add: section markup to return to manage children width
+- Refactor `Section` layout component:
+  - add: class for breakout width
+  - add: class for primary spacing
+  - add: classes for sub component spacing-y
+  - deprecated: `proseType` prop
+- Refactor `WideWave` layout component:
+  - add: class for breakout width
+  - add: class for primary spacing
+  - change: imported `styles.css`
+  - deprecate: `as` prop
+  - deprecate: `hasRaven` prop
+
+#### Content components
+
+- Refactor `Embed` component:
+  - deprecate: `maxWidth` prop
+- Refactor `FullBanner` component:
+  - add: class for breakout width
+  - change: imported `styles.css`
+  - deprecate: `as` prop
+- Refactor `Nav` component:
+  - deprecate: `navType` prop,
+  - added: `Nav.Top`
+  - renamed: `Nav.Aside` to `Nav.Buttons`
+  - renamed: `Nav.Secondary` to `Nav.Bottom`
+- Refactor `Placeholder` component:
+  - deprecate: `maxWidth` prop
+- Refactor `PageHeader` component:
+  - deprecate: `Events` sub component
+  - deprecate: `People` sub component
+- Refactor `TextMedia` component:
+  - add: class for component margin-y
+  - deprecate: `maxWidth` prop
+  - deprecate: `gridGap` prop
+  - deprecate: imported `styles.css`
+- Refactor `TextMedia.Content` component:
+  - add: first-last margin class
+- Refactor `TextMedia.Aside` component:
+  - add: `hasBorder` prop
+  - deprecate: `border` prop
+  - deprecate: `borderColor` prop
+- Refactor `TextMedia.BgImg` component:
+  - add: `hasBorder` prop
+  - deprecate: `border` prop
+- Refactor `WideImage` component:
+  - deprecate: `as` prop
+  - deprecate: `maxWidth` prop
+
+### Added
+
+- `Details`: new component to list details for people, events and more
+- `Embed`: `isRound` prop that adds rounded-xl class
+- `ImageCaptionOverlay`: reusable caption for `ImageGrid` and `ImageSlider`
+- `Pagination`: added margin-y-0 on li elements
+- `SocialIcons`: new component to display social icons
+- `Form.FieldControl`: isLoading and isError props to manage field states
+- `FormLoader`: noMargin prop to remove spacing
+- `Video Banner`: manual controls
+
+### Changed
+
+- `Alert`: reduced lg text prop size
+- `Figure`: alignment and width prop classes
+- `Figure`: replaced primary div wrapper with `Figure` component
+- `Login`: change top margin to fit logo inside container
+- `Modal`: removed section wrapper, updated close button styles
+- `Table`: remove duplicate `cu-table` class
+
+### Fixed
+
+- `Form`: style of all inputs and `InputAddon`
+- `Nav`: navigation and priority plus work properly with any LinkProvider
+- `StackedList`: Removed gap in dividing lines in listings
+- `Form.Autosuggest`: Option's type to accept any key value pair
+
 ### Added
 
 - Manual control to video banner
