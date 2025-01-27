@@ -109,6 +109,12 @@ export const LayoutExamples: Story = {
             <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=Fbb1gdTcH-A" />
           </Embed>
         </Section>
+
+        <Section maxWidth="full">
+          <Embed>
+            <Embed.HubSpot title="HubSpot Example" url="https://your-hubspot-embed-url" />
+          </Embed>
+        </Section>
       </Main>
 
       <FooterStandard />
