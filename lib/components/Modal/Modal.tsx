@@ -14,6 +14,7 @@ export interface ModalProps {
   isOpen: boolean
   alignTop?: boolean
   setIsOpen: (k: boolean) => void
+  onCloseOutsideClick?: () => void // New prop for additional conditions or function
 }
 
 export const Modal = ({
@@ -26,6 +27,7 @@ export const Modal = ({
   ariaLabel,
   ariaDescription,
   setIsOpen,
+  onCloseOutsideClick,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
   const useProse = noProse ? '' : 'cu-prose cu-prose-dark cu-prose-first-last'
@@ -53,6 +55,9 @@ export const Modal = ({
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setIsOpen(false)
+        if (onCloseOutsideClick) {
+          onCloseOutsideClick()
+        }
       }
     }
     if (isOpen) {
@@ -61,11 +66,15 @@ export const Modal = ({
     return () => {
       document.removeEventListener('keydown', handleEscape)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, setIsOpen])
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (event.target === modalRef.current) {
       setIsOpen(false)
+      if (onCloseOutsideClick) {
+        onCloseOutsideClick()
+      }
     }
   }
 
@@ -80,8 +89,13 @@ export const Modal = ({
       aria-describedby={ariaDescription}
     >
       <button
-        className="absolute top-0 right-0 z-50 p-1 rounded-bl bg-cu-black-200 text-cu-black-700 hover:bg-cu-red hover:text-white"
-        onClick={() => setIsOpen(false)}
+        className="absolute top-0 right-0 z-50 p-0.5 rounded-bl-md bg-cu-black-50 text-cu-black-500 hover:bg-cu-red hover:text-white"
+        onClick={() => {
+          setIsOpen(false)
+          if (onCloseOutsideClick) {
+            onCloseOutsideClick()
+          }
+        }}
       >
         <span className="sr-only">Close</span>
         <svg

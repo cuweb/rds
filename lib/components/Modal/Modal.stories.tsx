@@ -30,6 +30,9 @@ export const Default: Story = () => {
         setIsOpen={setModalOpen}
         ariaLabel="H2 Heading"
         ariaDescription=" Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem."
+        onCloseOutsideClick={() => {
+          console.log('Modal closed oustide using onCloseOutsideClick')
+        }}
       >
         <h2>H2 Heading</h2>
         <p>
