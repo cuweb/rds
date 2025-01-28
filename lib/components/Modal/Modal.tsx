@@ -14,6 +14,9 @@ export interface ModalProps {
   isOpen: boolean
   alignTop?: boolean
   setIsOpen: (k: boolean) => void
+  hideCloseButton?: boolean
+  preventOutsideClick?: boolean
+  onCloseOutsideClick?: () => void
 }
 
 export const Modal = ({
@@ -26,15 +29,20 @@ export const Modal = ({
   ariaLabel,
   ariaDescription,
   setIsOpen,
+  hideCloseButton = false,
+  preventOutsideClick = false,
+  onCloseOutsideClick,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
   const useProse = noProse ? '' : 'cu-prose cu-prose-dark cu-prose-first-last'
 
   useEffect(() => {
-    if (modalRef.current?.open && !isOpen) {
-      modalRef.current?.close()
-    } else if (!modalRef.current?.open && isOpen) {
-      modalRef.current?.showModal()
+    if (modalRef.current) {
+      if (isOpen && !modalRef.current.open) {
+        modalRef.current.showModal()
+      } else if (!isOpen && modalRef.current.open) {
+        modalRef.current.close()
+      }
     }
   }, [isOpen])
 
@@ -49,23 +57,57 @@ export const Modal = ({
     }
   }, [isOpen])
 
+  // Prevent native Escape behavior
   useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false)
+    const dialog = modalRef.current
+    if (dialog) {
+      const handleCancel = (event: Event) => {
+        if (preventOutsideClick) {
+          event.preventDefault()
+        }
+      }
+
+      dialog.addEventListener('cancel', handleCancel)
+
+      const handleEscapeKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape' && preventOutsideClick) {
+          event.preventDefault()
+        }
+      }
+      dialog.addEventListener('keydown', handleEscapeKeyDown)
+
+      return () => {
+        dialog.removeEventListener('cancel', handleCancel)
+        dialog.removeEventListener('keydown', handleEscapeKeyDown)
       }
     }
+  }, [preventOutsideClick])
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !preventOutsideClick) {
+        setIsOpen(false)
+        if (onCloseOutsideClick) {
+          onCloseOutsideClick()
+        }
+      }
+    }
+
     if (isOpen) {
       document.addEventListener('keydown', handleEscape)
     }
+
     return () => {
       document.removeEventListener('keydown', handleEscape)
     }
-  }, [isOpen, setIsOpen])
+  }, [isOpen, setIsOpen, preventOutsideClick, onCloseOutsideClick])
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    if (event.target === modalRef.current) {
+  const handleClickOutside = (event: React.MouseEvent<HTMLElement>) => {
+    if (event.target === modalRef.current && !preventOutsideClick) {
       setIsOpen(false)
+      if (onCloseOutsideClick) {
+        onCloseOutsideClick()
+      }
     }
   }
 
@@ -75,26 +117,31 @@ export const Modal = ({
     <dialog
       ref={modalRef}
       className={`cu-dialog relative ${positionTop} p-6 md:p-10 z-10 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md`}
-      onClick={handleClick}
+      onClick={handleClickOutside}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
     >
-      <button
-        className="absolute top-0 right-0 z-50 p-1 rounded-bl bg-cu-black-200 text-cu-black-700 hover:bg-cu-red hover:text-white"
-        onClick={() => setIsOpen(false)}
-      >
-        <span className="sr-only">Close</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
+      {!hideCloseButton && (
+        <button
+          className="absolute top-0 right-0 z-50 p-1 rounded-bl bg-cu-black-200 text-cu-black-700 hover:bg-cu-red hover:text-white"
+          onClick={() => {
+            setIsOpen(false)
+            onCloseOutsideClick && onCloseOutsideClick()
+          }}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
+          <span className="sr-only">Close</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      )}
       {content ? (
         <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
       ) : (
