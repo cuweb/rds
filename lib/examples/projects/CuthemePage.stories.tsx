@@ -1,11 +1,11 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../components/Nav/Nav'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
+import { Section } from '../../layouts/Section/Section'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
@@ -134,17 +134,39 @@ export const CuthemePage: Story = {
         <Main>
           <TextImage>
             <TextImage.Content headerType="h1" title="Basic Markup">
-              <p>
+              {/* <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
                 accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-              </p>
+              </p> */}
             </TextImage.Content>
           </TextImage>
 
-          <h2>Heading Two</h2>
+          <SinglePara />
+
+          <Section>
+            <Column cols="2">
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+            </Column>
+          </Section>
 
           <SinglePara />
+
+          <Section isGrey>
+            <Column cols="2">
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+            </Column>
+          </Section>
 
           <p>
             Nobis voluptatem dolorum et eum <code>doloremque cupiditate</code> velit. Praesentium architecto a
