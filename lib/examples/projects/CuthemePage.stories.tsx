@@ -10,7 +10,7 @@ import { StackedList } from '../../layouts/StackedList/StackedList'
 import { TextImage } from '../../components/TextImage/TextImage'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
-import { NavButtonsData } from '../../data/NavData'
+import { NavButtonsData, NavDataSingle } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Projects',
@@ -117,12 +117,19 @@ export const CuthemePage: Story = {
   render: () => {
     return (
       <>
-        <Nav.Top>
-          <Nav.Logo title="Raven Design System" link="/" />
-          <Nav.Aside>
-            <Nav.Buttons menu={NavButtonsData} />
-          </Nav.Aside>
-        </Nav.Top>
+        <Nav>
+          <Nav.Top>
+            <Nav.Logo
+              title="Max and Tessie Zelikovitz Centre for Jewish Studies"
+              link="https://carleton.ca/webservices"
+            />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Top>
+          <Nav.Bottom>
+            <Nav.Menu menu={NavDataSingle} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Bottom>
+        </Nav>
 
         <Main>
           <TextImage>
