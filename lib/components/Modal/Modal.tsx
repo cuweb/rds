@@ -63,12 +63,22 @@ export const Modal = ({
     if (dialog) {
       const handleCancel = (event: Event) => {
         if (preventOutsideClick) {
-          event.preventDefault() // Prevent native close on Escape
+          event.preventDefault()
         }
       }
+
       dialog.addEventListener('cancel', handleCancel)
+
+      const handleEscapeKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape' && preventOutsideClick) {
+          event.preventDefault()
+        }
+      }
+      dialog.addEventListener('keydown', handleEscapeKeyDown)
+
       return () => {
         dialog.removeEventListener('cancel', handleCancel)
+        dialog.removeEventListener('keydown', handleEscapeKeyDown)
       }
     }
   }, [preventOutsideClick])
