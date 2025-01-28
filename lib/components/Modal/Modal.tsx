@@ -124,7 +124,10 @@ export const Modal = ({
       {!hideCloseButton && (
         <button
           className="absolute top-0 right-0 z-50 p-1 rounded-bl bg-cu-black-200 text-cu-black-700 hover:bg-cu-red hover:text-white"
-          onClick={() => setIsOpen(false)}
+          onClick={() => {
+            setIsOpen(false)
+            onCloseOutsideClick && onCloseOutsideClick()
+          }}
         >
           <span className="sr-only">Close</span>
           <svg
