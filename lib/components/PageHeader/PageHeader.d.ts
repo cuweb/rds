@@ -7,17 +7,18 @@ export interface PageHeaderProps {
     header: string;
     content?: string;
     size?: headerSizeKeys;
+    isLight?: boolean;
     isWhite?: boolean;
     isCenter?: boolean;
     pronoun?: string;
     noUnderline?: boolean;
 }
 export declare const PageHeaderWrapper: {
-    ({ children, as, header, content, size, isWhite, isCenter, noUnderline, pronoun, }: PageHeaderProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, as, header, content, size, isLight, isWhite, isCenter, noUnderline, pronoun, }: PageHeaderProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const PageHeader: {
-    ({ children, as, header, content, size, isWhite, isCenter, noUnderline, pronoun, }: PageHeaderProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, as, header, content, size, isLight, isWhite, isCenter, noUnderline, pronoun, }: PageHeaderProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Event: {

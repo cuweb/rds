@@ -8,10 +8,11 @@ export interface TextMediaContentProps {
     width?: number;
     align?: justifyContentKeys;
     hasUnderline?: boolean;
+    isLight?: boolean;
     isWhite?: boolean;
 }
 export declare const TextMediaContent: {
-    ({ children, title, headerType, width, align, hasUnderline, isWhite, }: TextMediaContentProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, headerType, width, align, hasUnderline, isLight, isWhite, }: TextMediaContentProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export {};
