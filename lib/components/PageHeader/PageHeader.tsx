@@ -82,7 +82,7 @@ export const PageHeaderWrapper = ({
       className={`cu-pageheader cu-component-updated ${centerText} ${children ? `mb-6 md:mb-12` : `cu-prose-first-last`} `}
     >
       <HeaderComponent
-        className={`cu-prose-first-last font-semibold !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
+        className={`cu-prose-first-last not-prose font-semibold !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
       >
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
