@@ -1,16 +1,16 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../components/Nav/Nav'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
+import { Section } from '../../layouts/Section/Section'
 import { StackedList } from '../../layouts/StackedList/StackedList'
-import { TextImage } from '../../components/TextImage/TextImage'
+import { TextMedia } from '../../components/TextMedia/TextMedia'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
-import { NavButtonsData } from '../../data/NavData'
+import { NavButtonsData, NavDataSingle } from '../../data/NavData'
 
 const meta: Meta = {
   title: 'Prototypes/Projects',
@@ -117,27 +117,56 @@ export const CuthemePage: Story = {
   render: () => {
     return (
       <>
-        <Nav.Top>
-          <Nav.Logo title="Raven Design System" link="/" />
-          <Nav.Aside>
-            <Nav.Buttons menu={NavButtonsData} />
-          </Nav.Aside>
-        </Nav.Top>
+        <Nav>
+          <Nav.Top>
+            <Nav.Logo
+              title="Max and Tessie Zelikovitz Centre for Jewish Studies"
+              link="https://carleton.ca/webservices"
+            />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Top>
+          <Nav.Bottom>
+            <Nav.Menu menu={NavDataSingle} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Bottom>
+        </Nav>
 
         <Main>
-          <TextImage>
-            <TextImage.Content headerType="h1" title="Basic Markup">
+          <TextMedia>
+            <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
               <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
                 accusamus in. Praesent quis ligula quis nulla malesuada tempor.
               </p>
-            </TextImage.Content>
-          </TextImage>
-
-          <h2>Heading Two</h2>
+            </TextMedia.Content>
+          </TextMedia>
 
           <SinglePara />
+
+          <Section>
+            <Column cols="2">
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+            </Column>
+          </Section>
+
+          <SinglePara />
+
+          <Section isGrey>
+            <Column cols="2">
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+              <Column.Content>
+                <SinglePara />
+              </Column.Content>
+            </Column>
+          </Section>
 
           <p>
             Nobis voluptatem dolorum et eum <code>doloremque cupiditate</code> velit. Praesentium architecto a
