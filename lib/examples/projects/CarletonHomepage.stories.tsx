@@ -98,7 +98,7 @@ export const CarletonHomepage: Story = {
           </Column>
         </Section>
 
-        <WideWave wave="red">
+        <WideWave>
           <Section maxWidth="7xl">
             <TextMedia>
               <TextMedia.Content hasUnderline title="Safeguarding Newborn Health" width={50}>
@@ -117,7 +117,7 @@ export const CarletonHomepage: Story = {
                   </a>
                 </ButtonGroup>
               </TextMedia.Content>
-              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" hasBorder />
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
             </TextMedia>
           </Section>
         </WideWave>
@@ -186,7 +186,7 @@ export const CarletonHomepage: Story = {
                   </a>
                 </ButtonGroup>
               </TextMedia.Content>
-              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" hasBorder />
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
             </TextMedia>
           </Section>
         </WideWave>

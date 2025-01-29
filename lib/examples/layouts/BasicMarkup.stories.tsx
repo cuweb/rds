@@ -7,7 +7,7 @@ import { Nav } from '../../components/Nav/Nav'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { StackedList } from '../../layouts/StackedList/StackedList'
-import { TextImage } from '../../components/TextImage/TextImage'
+import { TextMedia } from '../../components/TextMedia/TextMedia'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
 import { NavButtonsData } from '../../data/NavData'
@@ -126,15 +126,15 @@ export const BasicMarkup: Story = {
       </Nav>
 
       <Main>
-        <TextImage>
-          <TextImage.Content headerType="h1" title="Basic Markup">
+        <TextMedia>
+          <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
               reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
               accusamus in. Praesent quis ligula quis nulla malesuada tempor.
             </p>
-          </TextImage.Content>
-        </TextImage>
+          </TextMedia.Content>
+        </TextMedia>
 
         <h2>Heading Two</h2>
 
@@ -162,7 +162,7 @@ export const BasicMarkup: Story = {
         <h4>Heading Four</h4>
         <DoublePara />
 
-        <Column maxWidth="5xl" cols="2" gridGap="10">
+        <Column cols="2" gridGap="10">
           <Column.Content>
             <SinglePara />
             <h2>Header Two</h2>

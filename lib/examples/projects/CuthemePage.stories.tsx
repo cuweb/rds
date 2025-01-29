@@ -7,7 +7,7 @@ import { FooterStandard } from '../../components/Footer/FooterStandard/FooterSta
 import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
 import { Section } from '../../layouts/Section/Section'
 import { StackedList } from '../../layouts/StackedList/StackedList'
-import { TextImage } from '../../components/TextImage/TextImage'
+import { TextMedia } from '../../components/TextMedia/TextMedia'
 import { Quote } from '../../components/Quote/Quote'
 import { Column } from '../../layouts/Column/Column'
 import { NavButtonsData, NavDataSingle } from '../../data/NavData'
@@ -132,15 +132,15 @@ export const CuthemePage: Story = {
         </Nav>
 
         <Main>
-          <TextImage>
-            <TextImage.Content headerType="h1" title="Basic Markup">
-              {/* <p>
+          <TextMedia>
+            <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
+              <p>
                 Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
                 reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
                 accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-              </p> */}
-            </TextImage.Content>
-          </TextImage>
+              </p>
+            </TextMedia.Content>
+          </TextMedia>
 
           <SinglePara />
 
