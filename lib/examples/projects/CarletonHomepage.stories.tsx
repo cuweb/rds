@@ -19,7 +19,7 @@ import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../components/Button/Button'
 import { Card } from '../../components/Card/Card'
 import { TextMedia } from '../../components/TextMedia/TextMedia'
-import { NavButtonsData } from '../../data/NavData'
+import { NavButtonsData, NavDataSingle } from '../../data/NavData'
 import { NewsData } from '../../data/NewsData'
 import { EventData } from '../../data/EventData'
 
@@ -36,12 +36,15 @@ type Story = StoryObj
 export const CarletonHomepage: Story = {
   render: () => (
     <>
-      <Nav.Top>
-        <Nav.Logo title="Raven Design System" link="/" />
-        <Nav.Aside>
-          <Nav.Buttons menu={NavButtonsData} />
-        </Nav.Aside>
-      </Nav.Top>
+      <Nav>
+        <Nav.Top>
+          <Nav.Logo />
+          <Nav.Aside>
+            <Nav.Menu menu={NavDataSingle} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Aside>
+        </Nav.Top>
+      </Nav>
 
       <Main>
         <FullBanner>
@@ -95,7 +98,7 @@ export const CarletonHomepage: Story = {
           </Column>
         </Section>
 
-        <WideWave wave="red">
+        <WideWave>
           <Section maxWidth="7xl">
             <TextMedia>
               <TextMedia.Content hasUnderline title="Safeguarding Newborn Health" width={50}>
@@ -114,7 +117,7 @@ export const CarletonHomepage: Story = {
                   </a>
                 </ButtonGroup>
               </TextMedia.Content>
-              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" hasBorder />
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
             </TextMedia>
           </Section>
         </WideWave>
@@ -183,7 +186,7 @@ export const CarletonHomepage: Story = {
                   </a>
                 </ButtonGroup>
               </TextMedia.Content>
-              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" hasBorder />
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
             </TextMedia>
           </Section>
         </WideWave>

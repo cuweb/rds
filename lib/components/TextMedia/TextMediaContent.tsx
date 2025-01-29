@@ -11,6 +11,7 @@ export interface TextMediaContentProps {
   width?: number
   align?: justifyContentKeys
   hasUnderline?: boolean
+  isLight?: boolean
   isWhite?: boolean
 }
 
@@ -21,6 +22,7 @@ export const TextMediaContent = ({
   width = 60,
   align = 'start',
   hasUnderline = true,
+  isLight,
   isWhite = false,
 }: TextMediaContentProps) => {
   const inlineContentStyles = {
@@ -36,10 +38,12 @@ export const TextMediaContent = ({
         as={headerType}
         header={title}
         size={headerType === 'h2' ? 'md' : 'lg'}
-        noUnderline={hasUnderline ? false : true}
-        isWhite={isWhite ? true : false}
-      />
-      {children}
+        noUnderline={!hasUnderline}
+        isLight={isLight}
+        isWhite={isWhite}
+      >
+        {children}
+      </PageHeader>
     </div>
   )
 }
