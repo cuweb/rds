@@ -55,6 +55,7 @@ export const LayoutExamples: Story = {
             header="Page Header"
             size="lg"
           />
+          <SinglePara />
         </WideWave>
 
         <h2>Header Two</h2>
