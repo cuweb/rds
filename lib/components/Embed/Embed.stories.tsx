@@ -88,3 +88,13 @@ export const Soundcloud: Story = {
     </Main>
   ),
 }
+
+export const HubSpot: Story = {
+  render: (args) => (
+    <Main>
+      <Embed {...args}>
+        <Embed.HubSpot title="HubSpot Form" url="https://your-hubspot-embed-url" />
+      </Embed>
+    </Main>
+  ),
+}
