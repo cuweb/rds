@@ -47,20 +47,51 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <ImageCover maxWidth="5xl" opacity={85}>
+        {/* <ImageCover maxWidth="5xl" opacity={85}>
           <PageHeader
             as="h1"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
             header="Page Header"
             size="lg"
           />
-        </ImageCover>
+        </ImageCover> */}
 
         <h2>Header Two</h2>
         <SinglePara />
-        <SinglePara />
+        {/* <SinglePara /> */}
+
+        <Section>
+          <Column cols="2">
+            <Column.Content>
+              <p>
+                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+            </Column.Content>
+            <Column.Content>
+              <p>
+                Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+              </p>
+              <p>
+                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                gravida tempus. Phasellus in egestas sapien ac libero.
+              </p>
+            </Column.Content>
+          </Column>
+          <SinglePara />
+        </Section>
 
         <ImageCover maxWidth="5xl" opacity={85}>
+          <SinglePara />
           <Section>
             <SinglePara />
             <Column cols="2">

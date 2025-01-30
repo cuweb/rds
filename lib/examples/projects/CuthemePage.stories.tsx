@@ -132,15 +132,17 @@ export const CuthemePage: Story = {
         </Nav>
 
         <Main>
-          <TextMedia>
-            <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
-              <p>
-                Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-                reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-                accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-              </p>
-            </TextMedia.Content>
-          </TextMedia>
+          <Section>
+            <TextMedia>
+              <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
+                <p>
+                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                  accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+                </p>
+              </TextMedia.Content>
+            </TextMedia>
+          </Section>
 
           <SinglePara />
 
