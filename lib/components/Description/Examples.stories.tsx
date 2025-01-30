@@ -45,7 +45,7 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        <Section maxWidth="7xl">
+        <Section>
           <PageHeader
             as="h1"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
@@ -65,7 +65,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Section maxWidth="7xl">
+        <Section>
           <Description>
             <Description.Meta term="Donec lorem nulla, porttitor eleifend lorem ornare" useColumns>
               <p>
@@ -118,7 +118,7 @@ export const LayoutExamples: Story = {
           ))}
         </Description>
 
-        <Section maxWidth="7xl" isGrey>
+        <Section isGrey>
           <Description>
             {descMeta.map((item) => (
               <Description.Meta key={item?.id} term={item?.term} useColumns>
@@ -146,7 +146,7 @@ export const LayoutExamples: Story = {
           ))}
         </Description>
 
-        <Section maxWidth="7xl">
+        <Section>
           <Description>
             {descMeta.map((item) => (
               <Description.Meta key={item?.id} term={item?.term} useColumns>
