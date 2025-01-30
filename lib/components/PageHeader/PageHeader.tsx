@@ -45,6 +45,9 @@ export const PageHeaderWrapper = ({
   // Truncate content if it's longer than 320 characters
   const truncatedContent = content && content.length > 320 ? `${content.substring(0, 320)}...` : content
 
+  // Header Color
+  const textColor = isWhite ? 'text-white' : 'text-cu-black-700'
+
   // Determine underline styles
   let hasUnderline = ''
   if (!noUnderline) {
@@ -61,7 +64,7 @@ export const PageHeaderWrapper = ({
       className={`cu-pageheader ${isLight ? contentStyle : ''} cu-component-updated ${centerText} ${children ? 'mb-6 md:mb-12' : 'cu-prose-first-last'}`}
     >
       <HeaderComponent
-        className={`font-semibold not-prose text-cu-black-700 !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
+        className={`font-semibold not-prose ${textColor} !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
       >
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
