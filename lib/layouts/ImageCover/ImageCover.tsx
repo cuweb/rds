@@ -54,7 +54,7 @@ export const ImageCover = ({
         className={`cu-max-w-child-5xl ${$primarySpacing} pt-4 md:pt-6 lg:pt-8 xl:pt-16 pb-32 md:pb-44 xl:pb-52`}
         style={overlayBg}
       >
-        <div className={`cu-imagecover-content relative z-20`}>{children}</div>
+        <div className={`cu-imagecover-content relative z-20 cu-prose-first-last`}>{children}</div>
       </div>
     </section>
   )
