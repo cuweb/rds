@@ -26,7 +26,7 @@ export const WideWave = ({ children, wave = 'red' }: WideWaveProps) => {
       className={`cu-widewave relative overflow-x-hidden ${$breakoutMaxWidth} ${$primarySpacing} cu-max-w-child-5xl ${waveBgType} bg-repeat-x xl:bg-[length:1200px_156px] pb-5 md:pb-12 ${topPadding}`}
       style={waveBgPosition}
     >
-      <div className={`cu-widewaves-content cu-prose-light relative z-20`}>{children}</div>
+      <div className={`cu-widewaves-content cu-prose-light cu-prose-first-last relative z-20`}>{children}</div>
 
       {/* <div className="cu-max-w-child-5xl">{children}</div> */}
     </section>
