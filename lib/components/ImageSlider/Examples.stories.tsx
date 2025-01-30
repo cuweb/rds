@@ -51,7 +51,7 @@ export const LayoutExample: Story = {
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
             size="lg"
           />
-          <ImageSlider slidesPerViewDesktop={3} slidesPerViewMobile={1} slidesPerViewTablet={2}>
+          <ImageSlider slidesPerViewDesktop={4} slidesPerViewMobile={1} slidesPerViewTablet={2}>
             <ImageSlider.Item
               focalPointX={0}
               focalPointY={10}

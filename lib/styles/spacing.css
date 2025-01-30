@@ -3,7 +3,7 @@
 */
 
 .cu-main > .cu-section--primary {
-  @apply my-6 md:my-10;
+  @apply my-6 lg:my-10;
 }
 
 /* 

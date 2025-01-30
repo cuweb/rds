@@ -17,7 +17,7 @@ export const Main = ({ children, maxWidth = '5xl', noProse }: MainProps) => {
 
   return (
     <>
-      <main className={`cu-main flex justify-center ${$primarySpacing} ${proseClass}`}>
+      <main className={`cu-main flex overflow-x-hidden justify-center ${$primarySpacing} ${proseClass}`}>
         <section className={`cu-section cu-section--primary cu-max-w-${maxWidth} box-border relative w-full`}>
           {children}
         </section>

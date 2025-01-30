@@ -1,6 +1,6 @@
 /* TODO GLOBAL: negative top based on primary spacing */
 .cu-main > .cu-section > .cu-fullbanner:first-of-type {
-  @apply -mt-4 md:-mt-6 lg:-mt-12;
+  @apply -mt-6 lg:-mt-12;
 }
 
 /* TODO GLOBAL: negative bottom based on primary spacing */
@@ -14,4 +14,13 @@
 
 .cu-fullbanner img {
   @apply rounded-none m-0;
+}
+
+.cu-fullbanner h1,
+.cu-fullbanner h2,
+.cu-fullbanner h3,
+.cu-fullbanner h4,
+.cu-fullbanner h5,
+.cu-fullbanner h6 {
+  @apply text-white;
 }

@@ -10,6 +10,7 @@ export interface PageHeaderProps {
   header: string
   content?: string
   size?: headerSizeKeys
+  isLight?: boolean
   isWhite?: boolean
   isCenter?: boolean
   pronoun?: string
@@ -22,6 +23,7 @@ export const PageHeaderWrapper = ({
   header,
   content,
   size = 'lg',
+  isLight,
   isWhite,
   isCenter,
   noUnderline = false,
@@ -30,47 +32,24 @@ export const PageHeaderWrapper = ({
   const HeaderComponent = as
 
   // Set spacing for header with underline
-  let headerPadding
-  let contentStyle
-
-  switch (size) {
-    case 'xs':
-      headerPadding = 'pb-3 after:w-6'
-      contentStyle = 'prose-md md:prose-lg font-light'
-      break
-    case 'sm':
-      headerPadding = 'pb-3.5 after:w-7'
-      contentStyle = 'prose-lg md:prose-xl font-light'
-      break
-    case 'md':
-      headerPadding = 'pb-4 after:w-8'
-      contentStyle = 'prose-xl md:prose-xl font-light'
-      break
-    case 'lg':
-      headerPadding = 'pb-5 after:w-10'
-      contentStyle = 'prose-lg md:prose-2xl font-light'
-      break
-    default:
-      headerPadding = 'pb-6 after:w-10'
-      contentStyle = 'prose-lg md:prose-2xl font-light'
-      break
+  const sizeConfig = {
+    xs: { headerPadding: 'pb-3 after:w-6', contentStyle: 'prose-md md:prose-lg font-light' },
+    sm: { headerPadding: 'pb-3.5 after:w-7', contentStyle: 'prose-lg md:prose-xl font-light' },
+    md: { headerPadding: 'pb-4 after:w-8', contentStyle: 'prose-xl md:prose-xl font-light' },
+    lg: { headerPadding: 'pb-5 after:w-10', contentStyle: 'prose-xl md:prose-2xl font-light' },
+    default: { headerPadding: 'pb-6 after:w-10', contentStyle: 'prose-lg md:prose-2xl font-light' },
   }
+
+  const { headerPadding, contentStyle } = sizeConfig[size] || sizeConfig.default
 
   // Truncate content if it's longer than 320 characters
   const truncatedContent = content && content.length > 320 ? `${content.substring(0, 320)}...` : content
 
-  let hasUnderline
-  switch (noUnderline) {
-    case false:
-      hasUnderline = `relative after:absolute after:h-px after:bottom-0 ${headerPadding}`
-      if (isWhite) {
-        hasUnderline = `${hasUnderline} after:bg-white`
-      } else {
-        hasUnderline = `${hasUnderline} after:bg-cu-red`
-      }
-      break
-    default:
-      hasUnderline = ''
+  // Determine underline styles
+  let hasUnderline = ''
+  if (!noUnderline) {
+    hasUnderline = `relative after:absolute after:h-px after:bottom-0 ${headerPadding}`
+    hasUnderline += isWhite ? ' after:bg-white' : ' after:bg-cu-red'
   }
 
   const centerText = isCenter ? 'cu-pageheader--center text-center mx-auto' : ''
@@ -79,15 +58,15 @@ export const PageHeaderWrapper = ({
 
   return (
     <header
-      className={`cu-pageheader cu-component-updated ${centerText} ${children ? `mb-6 md:mb-12` : `cu-prose-first-last`} `}
+      className={`cu-pageheader ${isLight ? contentStyle : ''} cu-component-updated ${centerText} ${children ? 'mb-6 md:mb-12' : 'cu-prose-first-last'}`}
     >
       <HeaderComponent
-        className={`cu-prose-first-last font-semibold !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
+        className={`font-semibold not-prose text-cu-black-700 !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
       >
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
-      {truncatedContent && <p className={`max-w-5xl ${contentStyle} ${centerText}`}>{truncatedContent}</p>}
+      {truncatedContent && <p className={`max-w-5xl ${centerText}`}>{truncatedContent}</p>}
       {children}
     </header>
   )
