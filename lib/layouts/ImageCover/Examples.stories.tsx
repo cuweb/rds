@@ -4,9 +4,6 @@ import { Main } from '../Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
 import { Column } from '../Column/Column'
 import { Nav } from '../../components/Nav/Nav'
-import { WideImage } from '../../components/WideImage/WideImage'
-import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
-import { Button } from '../../components/Button/Button'
 import { NavButtonsData } from '../../data/NavData'
 import { Section } from '../Section/Section'
 import { ImageCover } from './ImageCover'
@@ -47,53 +44,23 @@ export const LayoutExamples: Story = {
       </Nav>
 
       <Main maxWidth="5xl">
-        {/* <ImageCover maxWidth="5xl" opacity={85}>
+        <ImageCover maxWidth="5xl" opacity={85}>
           <PageHeader
             as="h1"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
             header="Page Header"
             size="lg"
           />
-        </ImageCover> */}
+        </ImageCover>
 
         <h2>Header Two</h2>
         <SinglePara />
-        {/* <SinglePara /> */}
+        <SinglePara />
 
-        <Section>
-          <Column cols="2">
-            <Column.Content>
-              <p>
-                Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
-                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
-                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
-              </p>
-              <p>
-                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
-                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
-                gravida tempus. Phasellus in egestas sapien ac libero.
-              </p>
-            </Column.Content>
-            <Column.Content>
-              <p>
-                Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
-                viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
-                malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
-              </p>
-              <p>
-                Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
-                laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
-                gravida tempus. Phasellus in egestas sapien ac libero.
-              </p>
-            </Column.Content>
-          </Column>
+        <ImageCover maxWidth="5xl">
           <SinglePara />
-        </Section>
-
-        <ImageCover maxWidth="5xl" opacity={85}>
           <SinglePara />
           <Section>
-            <SinglePara />
             <Column cols="2">
               <Column.Content>
                 <p>
@@ -120,8 +87,48 @@ export const LayoutExamples: Story = {
                 </p>
               </Column.Content>
             </Column>
-            <SinglePara />
           </Section>
+          <Section maxWidth="7xl">
+            <Column cols="3">
+              <Column.Content>
+                <p>
+                  Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                  viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                  malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+                </p>
+                <p>
+                  Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                  laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                  gravida tempus. Phasellus in egestas sapien ac libero.
+                </p>
+              </Column.Content>
+              <Column.Content>
+                <p>
+                  Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                  viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                  malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+                </p>
+                <p>
+                  Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                  laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                  gravida tempus. Phasellus in egestas sapien ac libero.
+                </p>
+              </Column.Content>
+              <Column.Content>
+                <p>
+                  Right. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae
+                  viverra in, egestas vitae nulla. Quisque auctor ultrices mauris, et semper urna aliquam quis. Duis sed
+                  malesuada metus, et tristique dolor. Suspendisse vestibulum hendrerit.
+                </p>
+                <p>
+                  Aliquam blandit tellus odio, nec commodo est efficitur sit amet. Proin molestie, risus in mollis
+                  laoreet, lectus dui egestas augue, eu maximus velit dui sed quam. Pellentesque iaculis suscipit libero
+                  gravida tempus. Phasellus in egestas sapien ac libero.
+                </p>
+              </Column.Content>
+            </Column>
+          </Section>
+          <SinglePara />
         </ImageCover>
 
         <ImageCover maxWidth="5xl" opacity={85}>
@@ -192,16 +199,6 @@ export const LayoutExamples: Story = {
           />
           <h2>White Background</h2>
           <SinglePara />
-          <WideImage image="https://picsum.photos/id/381/600/400" isType="dark" opacity={30} title="Wide Image">
-            <p>
-              Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non.
-            </p>
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="dark-grey" title="Request Information" />
-            </ButtonGroup>
-          </WideImage>
           <SinglePara />
         </ImageCover>
       </Main>
