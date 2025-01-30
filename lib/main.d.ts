@@ -84,4 +84,5 @@ export { StackedList } from './layouts/StackedList/StackedList';
 export { WideWave } from './layouts/WideWave/WideWave';
 export { iconNames } from '../public/assets/font-awesome/icon-list.js';
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js';
+export { videos } from './components/FullBanner/video-names-list.js';
 export * as utils from './utils/propClasses';
