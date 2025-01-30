@@ -18,7 +18,8 @@ export const WideWave = ({ children, wave = 'red' }: WideWaveProps) => {
   const $breakoutMaxWidth = `w-screen ml-offset-center`
 
   // TODO GLOBAL:
-  const $primarySpacing = `px-4 md:px-6 lg:px-12`
+  // const $primarySpacing = `px-4 md:px-6 lg:px-12`
+  const $primarySpacing = `px-6 md:px-8 lg:px-14`
 
   return (
     <section
@@ -26,6 +27,8 @@ export const WideWave = ({ children, wave = 'red' }: WideWaveProps) => {
       style={waveBgPosition}
     >
       <div className={`cu-widewaves-content cu-prose-light relative z-20`}>{children}</div>
+
+      {/* <div className="cu-max-w-child-5xl">{children}</div> */}
     </section>
   )
 }
