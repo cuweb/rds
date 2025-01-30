@@ -1,7 +1,4 @@
-const videos = [
-  { name: 'cu-flyby', description: 'A flyby video of campus with scenic views of buildings and greenery.' },
-  { name: 'timelapse-quad', description: 'A timelapse of the main quad showing students and campus life.' },
-] as const
+import { videos } from './video-names-list'
 
 type VideoNameKeys = (typeof videos)[number]['name']
 import { useEffect } from 'react'
@@ -12,6 +9,7 @@ export interface FullBannerVideoProps {
 }
 
 export const FullBannerVideo = ({ videoName = 'cu-flyby' }: FullBannerVideoProps) => {
+  console.log('FullBannerVideo', videos)
   useEffect(() => {
     VideoControls()
   }, [])
