@@ -1,4 +1,4 @@
-import { videos } from '../../../public/assets/banners/video-names-list'
+import { videos } from './video-names-list'
 
 type VideoNameKeys = (typeof videos)[number]['name']
 import { useEffect } from 'react'
