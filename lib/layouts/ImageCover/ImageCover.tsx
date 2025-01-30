@@ -16,10 +16,9 @@ export interface ImageCoverProps {
 
 export const ImageCover = ({
   children,
-  maxWidth = '5xl',
   image = 'nicol',
   imageZoom = 0,
-  opacity = 85,
+  opacity = 90,
   focalPointX = '50',
   focalPointY = '50',
 }: ImageCoverProps) => {
@@ -48,13 +47,14 @@ export const ImageCover = ({
   const $primarySpacing = `px-6 md:px-8 lg:px-14`
 
   return (
-    <section className={`cu-imagecover ${$breakoutMaxWidth} bg-no-repeat bg-cover`} style={mainBgImage}>
-      <div className={`absolute bottom-0 h-full w-full -mb-1 ${bgImgClass}`} />
+    <section className={`cu-imagecover relative ${$breakoutMaxWidth} bg-no-repeat bg-cover`} style={mainBgImage}>
+      <div className={`absolute right-0 bottom-0 left-0 h-full w-full -mb-1 ${bgImgClass}`} />
+
       <div
-        className={`cu-imagecover-content cu-max-w-child-${maxWidth} ${$primarySpacing} pt-4 md:pt-6 lg:pt-8 xl:pt-16 pb-32 md:pb-44 xl:pb-52`}
+        className={`cu-max-w-child-5xl ${$primarySpacing} pt-4 md:pt-6 lg:pt-8 xl:pt-16 pb-32 md:pb-44 xl:pb-52`}
         style={overlayBg}
       >
-        {children}
+        <div className={`cu-imagecover-content relative z-20`}>{children}</div>
       </div>
     </section>
   )
