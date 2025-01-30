@@ -11,5 +11,5 @@ export interface ImageCoverProps {
     focalPointX?: string;
     focalPointY?: string;
 }
-export declare const ImageCover: ({ children, maxWidth, image, imageZoom, opacity, focalPointX, focalPointY, }: ImageCoverProps) => import("react/jsx-runtime").JSX.Element;
+export declare const ImageCover: ({ children, image, imageZoom, opacity, focalPointX, focalPointY, }: ImageCoverProps) => import("react/jsx-runtime").JSX.Element;
 export {};
