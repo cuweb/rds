@@ -1,6 +1,6 @@
 /* TODO GLOBAL: negative top based on primary spacing */
 .cu-main > .cu-section > .cu-widewave:last-child {
-  @apply -mb-4 md:-mb-6 lg:-mb-12;
+  @apply -mb-6 lg:-mb-10;
 }
 
 .cu-widewave .cu-pageheader h2:after {
