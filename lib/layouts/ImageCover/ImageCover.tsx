@@ -44,7 +44,8 @@ export const ImageCover = ({
   const $breakoutMaxWidth = `w-screen ml-offset-center`
 
   // TODO GLOBAL:
-  const $primarySpacing = `px-4 md:px-6 lg:px-12`
+  // const $primarySpacing = `px-4 md:px-6 lg:px-12`
+  const $primarySpacing = `px-6 md:px-8 lg:px-14`
 
   return (
     <section className={`cu-imagecover ${$breakoutMaxWidth} bg-no-repeat bg-cover`} style={mainBgImage}>
