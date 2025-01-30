@@ -1,6 +1,6 @@
 /* TODO GLOBAL: negative top based on primary spacing */
 .cu-main > .cu-section > .cu-imagecover:first-child {
-  @apply -mt-4 md:-mt-6 lg:-mt-12;
+  @apply -mt-6 lg:-mt-12;
 }
 
 .cu-imagecover > .cu-imagecover-content > .cu-section {
