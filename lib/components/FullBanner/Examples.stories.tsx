@@ -46,9 +46,10 @@ export const LayoutExamples: Story = {
 
       <Main maxWidth="5xl">
         <FullBanner>
-          <FullBanner.Image>
+          {/* <FullBanner.Image>
             <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-          </FullBanner.Image>
+          </FullBanner.Image> */}
+          <FullBanner.Video videoName="timelapse-quad" />
           <FullBanner.Content headerType="h1" title="The nostalgia is real.">
             <p>
               The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
