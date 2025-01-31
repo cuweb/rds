@@ -1,8 +1,8 @@
 import { videos } from './video-names-list'
-import { useEffect } from 'react'
-import VideoControls from './script'
 
 type VideoNameKeys = (typeof videos)[number]['name']
+import { useEffect } from 'react'
+import VideoControls from './script'
 
 export interface FullBannerVideoProps {
   videoName?: VideoNameKeys
@@ -10,17 +10,15 @@ export interface FullBannerVideoProps {
 
 export const FullBannerVideo = ({ videoName = 'cu-flyby' }: FullBannerVideoProps) => {
   console.log('FullBannerVideo', videos)
-
   useEffect(() => {
     VideoControls()
-  }, [videoName])
+  }, [])
 
   const video = videos.find((v) => v.name === videoName)
 
   return (
     <div className="relative">
       <video
-        key={videoName}
         className="rounded-none w-full h-auto bg-black"
         autoPlay
         muted
