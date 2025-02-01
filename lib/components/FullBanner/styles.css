@@ -1,11 +1,15 @@
 /* TODO GLOBAL: negative top based on primary spacing */
 .cu-main > .cu-section > .cu-fullbanner:first-of-type {
-  @apply -mt-6 lg:-mt-12;
+  @apply -mt-6 lg:-mt-10;
+}
+
+.cu-main > .cu-section > .cu-fullbanner:first-of-type video {
+  @apply mt-0;
 }
 
 /* TODO GLOBAL: negative bottom based on primary spacing */
 .cu-main > .cu-section--primary > .cu-fullbanner:last-child {
-  @apply -mb-4 md:-mb-6 lg:-mb-12;
+  @apply -mb-6 lg:-mb-10;
 }
 
 .cu-fullbanner .cu-pageheader {

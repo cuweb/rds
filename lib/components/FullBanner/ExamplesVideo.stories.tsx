@@ -1,6 +1,5 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
 import { Main } from '../../layouts/Main/Main'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
@@ -31,7 +30,7 @@ const SinglePara = () => {
   )
 }
 
-export const LayoutExamples: Story = {
+export const VideoExamples: Story = {
   render: () => (
     <>
       <Nav>
@@ -46,9 +45,6 @@ export const LayoutExamples: Story = {
 
       <Main maxWidth="5xl">
         <FullBanner>
-          {/* <FullBanner.Image>
-            <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-          </FullBanner.Image> */}
           <FullBanner.Video videoName="timelapse-quad" />
           <FullBanner.Content headerType="h1" title="The nostalgia is real.">
             <p>
@@ -67,25 +63,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
 
         <FullBanner>
-          <FullBanner.Image>
-            <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-          </FullBanner.Image>
-          <FullBanner.Content headerType="h1" title="The nostalgia is real.">
-            <p>
-              The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
-              revolutionized how the world consumes music on the move!
-            </p>
-            <ButtonGroup>
-              <Button title="Apply Now" />
-              <Button color="grey" title="Request Information" />
-            </ButtonGroup>
-          </FullBanner.Content>
-        </FullBanner>
-
-        <FullBanner>
-          <FullBanner.Image>
-            <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-          </FullBanner.Image>
+          <FullBanner.Video videoName="discover" />
           <FullBanner.Content headerType="h1" title="The nostalgia is real.">
             <p>
               The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
@@ -101,35 +79,6 @@ export const LayoutExamples: Story = {
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
-
-        <FullBanner>
-          <FullBanner.Image>
-            <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-          </FullBanner.Image>
-          <FullBanner.Content headerType="h1" title="The nostalgia is real.">
-            <p>
-              The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
-              revolutionized how the world consumes music on the move!
-            </p>
-          </FullBanner.Content>
-        </FullBanner>
-
-        <Section>
-          <h2>White Background</h2>
-          <SinglePara />
-          <SinglePara />
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <FullBanner>
-          <FullBanner.Image>
-            <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
-          </FullBanner.Image>
-          <FullBanner.Content headerType="h1" title="The nostalgia is real." />
-        </FullBanner>
       </Main>
 
       <FooterStandard />
