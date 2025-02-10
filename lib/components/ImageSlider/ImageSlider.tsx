@@ -20,7 +20,7 @@ export const ImageSliderWrapper = ({
     SliderScript()
   })
 
-  const arrowButtons = `bg-cu-black-50 text-cu-black-800 hover:bg-cu-red hover:text-white hover:bg-cu-red relative flex items-center justify-center rounded-md h-8 w-8 z-50`
+  const arrowButtons = `bg-cu-black-50 text-cu-black-800 hover:bg-cu-red hover:text-white hover:bg-cu-red relative flex items-center justify-center rounded-md h-8 w-8 z-50 disabled:opacity-50 disabled:cursor-not-allowed`
   const arrowIcons = `w-5 h-5 [&>path]:stroke-[2]`
 
   return (
