@@ -35,8 +35,4 @@ export declare const Embed: {
         ({ title, url }: import('./Embed.Vimeo').EmbedVimeoProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    HubSpot: {
-        ({ title, url }: import('./Embed.HubSpot').EmbedHubSpotProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
 };
