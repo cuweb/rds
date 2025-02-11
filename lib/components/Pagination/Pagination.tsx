@@ -16,6 +16,7 @@ export interface PaginationProps {
   pageSize: number
   callback: (k: [number?, number?]) => void
   callbackPage: (page: number) => void
+  currentPageNumber?: number
 }
 
 export const Pagination = ({
@@ -26,8 +27,9 @@ export const Pagination = ({
   pageSize,
   callback,
   callbackPage,
+  currentPageNumber,
 }: PaginationProps) => {
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(currentPageNumber || 1)
 
   const paginationRange = usePagination(totalCount, pageSize, siblingCount, currentPage)
   const onNext = () => {
