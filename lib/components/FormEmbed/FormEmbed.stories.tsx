@@ -15,7 +15,7 @@ type Story = StoryObj<typeof EmbedHubSpot>
 export const HubSpot: Story = {
   render: () => (
     <Main>
-      <EmbedHubSpot title="HubSpot Form" url="" />
+      <EmbedHubSpot title="Contact Us" formId="form_id" portalId="portalId" />
     </Main>
   ),
 }
