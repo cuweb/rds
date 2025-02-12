@@ -26,6 +26,7 @@ export const Primary: Story = {
     callbackPage: () => undefined,
     hasBorder: false,
     hasSpacing: false,
+    currentPageNumber: 4,
   },
   render: (args) => {
     return (
