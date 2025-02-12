@@ -34,6 +34,19 @@ const SliderScript = () => {
     }
   }
 
+  const checkTotalSlides = (width: number, message: string) => {
+    if (window.innerWidth > width && totalSlides <= slidesPerView) {
+      sliderWrap.style.justifyContent = 'center'
+      previousArrow.setAttribute('disabled', 'disabled')
+      nextArrow.setAttribute('disabled', 'disabled')
+      /* eslint-disable no-console */
+      console.warn(message)
+      /* eslint-enable no-console */
+      return true
+    }
+    return false
+  }
+
   // Adjust slide widths dynamically
   const adjustSlidesWidth = () => {
     updatePerView()
@@ -46,6 +59,23 @@ const SliderScript = () => {
       slideElement.style.flex = `0 0 ${slideWidth}px`
       slideElement.style.maxWidth = `${slideWidth}px`
     })
+
+    if (
+      checkTotalSlides(1024, `Number of images in the slider is less than ${slidesPerViewDesktop} for desktop view`) ||
+      checkTotalSlides(768, `Number of images in the slider is less than ${slidesPerViewTablet} for tablet view`) ||
+      checkTotalSlides(0, `Number of images in the slider is less than ${slidesPerViewMobile} for mobile view`)
+    ) {
+      return
+    }
+
+    // Remove any existing styles
+    sliderWrap.style.justifyContent = 'flex-start'
+    previousArrow.removeAttribute('disabled')
+    nextArrow.removeAttribute('disabled')
+
+    // Add event listeners for navigation
+    previousArrow.addEventListener('click', previousSlide)
+    nextArrow.addEventListener('click', nextSlide)
 
     sliderWrap.style.transition = 'transform 0.5s ease'
     sliderWrap.style.transform = `translateX(0%)`
@@ -88,10 +118,6 @@ const SliderScript = () => {
 
   // Initialize the slider
   const initializeSlider = () => {
-    // Add event listeners for navigation
-    previousArrow.addEventListener('click', previousSlide)
-    nextArrow.addEventListener('click', nextSlide)
-
     // Adjust slides on load and resize
     adjustSlidesWidth()
   }
