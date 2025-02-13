@@ -4,7 +4,7 @@ import { EmbedHubSpot } from './EmbedHubSpot'
 import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof EmbedHubSpot> = {
-  title: 'Components/FormEmbed',
+  title: 'Components/HubSpotEmbed',
   component: EmbedHubSpot,
   tags: ['autodocs'],
 }
