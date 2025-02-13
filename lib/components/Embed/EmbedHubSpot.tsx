@@ -2,12 +2,11 @@
 import { useEffect, useRef } from 'react'
 
 export interface EmbedHubSpotProps {
-  title: string
-  formId: string // HubSpot Form ID
-  portalId: string // HubSpot Portal ID
+  formId: string
+  portalId: string
 }
 
-export const EmbedHubSpot = ({ title, formId, portalId }: EmbedHubSpotProps) => {
+export const EmbedHubSpot = ({ formId, portalId }: EmbedHubSpotProps) => {
   const formContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -41,17 +40,14 @@ export const EmbedHubSpot = ({ title, formId, portalId }: EmbedHubSpotProps) => 
   }, [formId, portalId])
 
   return (
-    <div>
-      <h2>{title}</h2>
-      <div
-        id={`hs-form-container-${formId}`}
-        ref={formContainerRef}
-        style={{
-          width: '100%',
-          transition: 'height 0.3s ease-in-out', // Smooth transition
-        }}
-      />
-    </div>
+    <div
+      id={`hs-form-container-${formId}`}
+      ref={formContainerRef}
+      style={{
+        width: '100%',
+        transition: 'height 0.3s ease-in-out', // Smooth transition
+      }}
+    />
   )
 }
 

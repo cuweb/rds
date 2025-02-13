@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Embed } from './Embed'
+import { EmbedHubSpot } from './EmbedHubSpot'
 import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof Embed> = {
@@ -85,6 +86,14 @@ export const Soundcloud: Story = {
           url="https://soundcloud.com/user-361886339/agnus-dei?in=user-361886339/sets/requiem-for-piece-carleton-university-choir-chamber-singers&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
         />
       </Embed>
+    </Main>
+  ),
+}
+
+export const HubSpot: Story = {
+  render: () => (
+    <Main>
+      <EmbedHubSpot title="Contact Us" formId="form_id" portalId="portalId" />
     </Main>
   ),
 }
