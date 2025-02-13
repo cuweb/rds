@@ -55,4 +55,4 @@ export const EmbedHubSpot = ({ title, formId, portalId }: EmbedHubSpotProps) => 
   )
 }
 
-EmbedHubSpot.displayName = 'HubSpotEmbed.HubSpot'
+EmbedHubSpot.displayName = 'EmbedHubSpot.HubSpot'
