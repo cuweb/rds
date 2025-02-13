@@ -93,7 +93,8 @@ export const Soundcloud: Story = {
 export const HubSpot: Story = {
   render: () => (
     <Main>
-      <EmbedHubSpot title="Contact Us" formId="form_id" portalId="portalId" />
+      {/* <EmbedHubSpot formId="form_id" portalId="portalId" /> */}
+      <EmbedHubSpot formId="c732c9c8-2418-4f8e-a223-bfaa6ad30742" portalId="49211769" />
     </Main>
   ),
 }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react'
 
 export interface EmbedHubSpotProps {
@@ -6,36 +5,60 @@ export interface EmbedHubSpotProps {
   portalId: string
 }
 
+interface HubSpotForms {
+  create: (options: { portalId: string; formId: string; target: string }) => void
+}
+
+declare global {
+  interface Window {
+    hbspt?: {
+      forms: HubSpotForms
+    }
+  }
+}
+
 export const EmbedHubSpot = ({ formId, portalId }: EmbedHubSpotProps) => {
   const formContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://js.hsforms.net/forms/embed/v2.js'
-    script.async = true
-    document.body.appendChild(script)
+    // Check if the HubSpot script is already loaded
+    const existingScript = document.querySelector('script[src="https://js.hsforms.net/forms/embed/v2.js"]')
 
-    script.onload = () => {
-      if ((window as any).hbspt) {
-        ;(window as any).hbspt.forms.create({
+    if (!existingScript) {
+      const script = document.createElement('script')
+      script.src = 'https://js.hsforms.net/forms/embed/v2.js'
+      script.async = true
+      document.body.appendChild(script)
+
+      script.onload = () => {
+        if (window.hbspt) {
+          window.hbspt.forms.create({
+            portalId,
+            formId,
+            target: `#hs-form-container-${formId}`,
+          })
+        }
+      }
+
+      script.onerror = () => {
+        console.error('Failed to load HubSpot forms script.')
+      }
+
+      // Cleanup: Optionally remove the script on unmount if it was added here.
+      return () => {
+        if (document.body.contains(script)) {
+          document.body.removeChild(script)
+        }
+      }
+    } else {
+      // If the script is already available, create the form immediately.
+      if (window.hbspt) {
+        window.hbspt.forms.create({
           portalId,
           formId,
           target: `#hs-form-container-${formId}`,
-          onFormReady: () => {
-            // Adjust form container height dynamically
-            if (formContainerRef.current) {
-              const observer = new MutationObserver(() => {
-                formContainerRef.current!.style.height = `${formContainerRef.current!.scrollHeight}px`
-              })
-              observer.observe(formContainerRef.current, { childList: true, subtree: true })
-            }
-          },
         })
       }
-    }
-
-    return () => {
-      document.body.removeChild(script)
     }
   }, [formId, portalId])
 
@@ -45,10 +68,9 @@ export const EmbedHubSpot = ({ formId, portalId }: EmbedHubSpotProps) => {
       ref={formContainerRef}
       style={{
         width: '100%',
-        transition: 'height 0.3s ease-in-out', // Smooth transition
       }}
     />
   )
 }
 
-EmbedHubSpot.displayName = 'EmbedHubSpot.HubSpot'
+EmbedHubSpot.displayName = 'EmbedHubSpot'
