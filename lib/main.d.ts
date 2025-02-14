@@ -17,6 +17,7 @@ export { FooterCookie } from './components/Footer/FooterCookie/FooterCookie';
 export { FooterLogoLinks } from './components/Footer/FooterLogoLinks/FooterLogoLinks';
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard';
 export { Forbidden403 } from './components/ErrorMessages/Forbidden403/Forbidden403';
+export { EmbedHubSpot } from './components/Embed/EmbedHubSpot.js';
 export { FullBanner } from './components/FullBanner/FullBanner';
 export { Figure } from './components/Figure/Figure';
 export { Icon } from './components/Icon/Icon';
