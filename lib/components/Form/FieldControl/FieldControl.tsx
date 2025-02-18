@@ -77,8 +77,14 @@ export const FieldControl = forwardRef<HTMLInputElement, FieldControlProps | Fie
             isLoading={isLoading}
             isError={isError}
           >
-            {Component && control === 'fileUpload' && <Component name={name} ref={ref} {...rest} />}
-            {Component && control !== 'fileUpload' && <Component name={name} innerRef={ref} {...rest} />}
+            {Component &&
+              (control === 'fileUpload' ? (
+                <Component name={name} ref={ref} {...rest} />
+              ) : control === 'autosuggest' || control === 'datetime' || control === 'placesAutoComplete' ? (
+                <Component name={name} {...rest} />
+              ) : (
+                <Component name={name} innerRef={ref} {...rest} />
+              ))}
           </FormField>
         )
       }
