@@ -77,7 +77,8 @@ export const FieldControl = forwardRef<HTMLInputElement, FieldControlProps | Fie
             isLoading={isLoading}
             isError={isError}
           >
-            {Component && <Component name={name} innerRef={ref} {...rest} />}
+            {Component && control === 'fileUpload' && <Component name={name} ref={ref} {...rest} />}
+            {Component && control !== 'fileUpload' && <Component name={name} innerRef={ref} {...rest} />}
           </FormField>
         )
       }
