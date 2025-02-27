@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test'
 
 /**
  * Read environment variables from file.
@@ -25,10 +25,10 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'http://localhost:6006',  // 🔹 Storybook or app URL
-    headless: true,  // 🔹 Run tests headless
+    baseURL: 'http://localhost:6006', // 🔹 Storybook or app URL
+    headless: true, // 🔹 Run tests headless
     viewport: { width: 1280, height: 720 },
-    trace: 'on-first-retry',  // 🔹 Enables tracing for debugging
+    trace: 'on-first-retry', // 🔹 Enables tracing for debugging
   },
 
   /* Configure projects for major browsers */
@@ -75,4 +75,4 @@ export default defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
+})
