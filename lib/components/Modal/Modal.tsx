@@ -16,9 +16,27 @@ export interface ModalProps {
   setIsOpen: (k: boolean) => void
   hideCloseButton?: boolean
   preventOutsideClick?: boolean
-  onCloseOutsideClick?: () => void
+  onClose?: () => void
 }
 
+/**
+ * Modal component that renders a dialog element with various customizable options.
+ *
+ * @param {React.ReactNode} children - The content to be displayed inside the modal.
+ * @param {string} content - The HTML content to be displayed inside the modal.
+ * @param {boolean} isOpen - Determines whether the modal is open or closed.
+ * @param {string} [maxWidth='4xl'] - The maximum width of the modal.
+ * @param {boolean} [noProse=false] - If true, disables the default prose styling.
+ * @param {boolean} [alignTop=false] - If true, aligns the modal to the top of the screen.
+ * @param {string} ariaLabel - The aria-label attribute for accessibility.
+ * @param {string} ariaDescription - The aria-describedby attribute for accessibility.
+ * @param {Function} setIsOpen - Function to set the open state of the modal.
+ * @param {boolean} [hideCloseButton=false] - If true, hides the close button.
+ * @param {boolean} [preventOutsideClick=false] - If true, prevents closing the modal by clicking outside of it.
+ * @param {Function} onClose - Callback function to be called when the modal is closed.
+ *
+ * @returns {JSX.Element} The rendered modal component.
+ */
 export const Modal = ({
   children,
   content,
@@ -31,28 +49,31 @@ export const Modal = ({
   setIsOpen,
   hideCloseButton = false,
   preventOutsideClick = false,
-  onCloseOutsideClick,
+  onClose,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
-  const useProse = noProse ? '' : 'cu-prose cu-prose-dark cu-prose-first-last'
 
+  // If onClose is passed, call it here
+  const initialRender = useRef(true)
   useEffect(() => {
-    if (modalRef.current) {
-      if (isOpen && !modalRef.current.open) {
-        modalRef.current.showModal()
-      } else if (!isOpen && modalRef.current.open) {
-        modalRef.current.close()
-      }
+    // Prevent initial render from calling onClose
+    if (initialRender.current) {
+      initialRender.current = false
+      return
     }
-  }, [isOpen])
 
+    if (!isOpen && onClose && modalRef.current) {
+      onClose()
+    }
+  }, [isOpen, onClose])
+
+  // Add classes to the body to prevent scrolling and backdrop
   useEffect(() => {
     if (isOpen) {
+      document.body.classList.add('cu-dialog-open')
       document.body.classList.add('cu-no-body-scroll')
     } else {
-      document.body.classList.remove('cu-no-body-scroll')
-    }
-    return () => {
+      document.body.classList.remove('cu-dialog-open')
       document.body.classList.remove('cu-no-body-scroll')
     }
   }, [isOpen])
@@ -87,9 +108,6 @@ export const Modal = ({
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && !preventOutsideClick) {
         setIsOpen(false)
-        if (onCloseOutsideClick) {
-          onCloseOutsideClick()
-        }
       }
     }
 
@@ -100,24 +118,33 @@ export const Modal = ({
     return () => {
       document.removeEventListener('keydown', handleEscape)
     }
-  }, [isOpen, setIsOpen, preventOutsideClick, onCloseOutsideClick])
+  }, [isOpen, setIsOpen, preventOutsideClick])
 
-  const handleClickOutside = (event: React.MouseEvent<HTMLElement>) => {
-    if (event.target === modalRef.current && !preventOutsideClick) {
-      setIsOpen(false)
-      if (onCloseOutsideClick) {
-        onCloseOutsideClick()
+  //Add function to call when click outside modal to close the modal
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        console.log('click outside')
+        setIsOpen(false)
       }
     }
-  }
 
-  const positionTop = alignTop ? 'mt-12' : ''
+    if (isOpen && !preventOutsideClick) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen, onClose, preventOutsideClick])
+
+  const innerContentClass =
+    'overflow-scroll h-full max-h-[80vh] px-6 md:px-10' + (noProse ? '' : ' cu-prose cu-prose-dark cu-prose-first-last')
 
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog relative ${positionTop} p-6 md:p-10 z-10 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md`}
-      onClick={handleClickOutside}
+      className={`cu-dialog ${isOpen ? `block` : `hidden`} absolute ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] z-50 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md py-6 md:py-10 h-auto max-h-[90vh] overflow-hidden`}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
     >
@@ -126,7 +153,6 @@ export const Modal = ({
           className="absolute top-0 right-0 z-50 p-1 rounded-bl bg-cu-black-200 text-cu-black-700 hover:bg-cu-red hover:text-white"
           onClick={() => {
             setIsOpen(false)
-            onCloseOutsideClick && onCloseOutsideClick()
           }}
         >
           <span className="sr-only">Close</span>
@@ -142,10 +168,11 @@ export const Modal = ({
           </svg>
         </button>
       )}
+
       {content ? (
-        <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
+        <div className={innerContentClass} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
       ) : (
-        <div className={useProse}>{children}</div>
+        <div className={innerContentClass}>{children}</div>
       )}
     </dialog>
   )

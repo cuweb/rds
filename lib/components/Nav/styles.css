@@ -1,6 +1,7 @@
 #storybook-root {
-  height: 2000px;
   background-color: white;
+  height: 100vh;
+  position: relative;
 }
 
 .p-plus__primary .cu-nav__submenu {
