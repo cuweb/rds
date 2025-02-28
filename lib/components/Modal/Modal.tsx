@@ -52,7 +52,6 @@ export const Modal = ({
   onClose,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null)
-  const useProse = noProse ? '' : 'cu-prose cu-prose-dark cu-prose-first-last'
 
   // If onClose is passed, call it here
   const initialRender = useRef(true)
@@ -121,12 +120,6 @@ export const Modal = ({
     }
   }, [isOpen, setIsOpen, preventOutsideClick])
 
-  const handleClickInModal = (event: React.MouseEvent<HTMLElement>) => {
-    if (event.target === modalRef.current && !preventOutsideClick) {
-      setIsOpen(false)
-    }
-  }
-
   //Add function to call when click outside modal to close the modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -145,11 +138,13 @@ export const Modal = ({
     }
   }, [isOpen, onClose, preventOutsideClick])
 
+  const innerContentClass =
+    'overflow-scroll h-full max-h-[80vh] px-6 md:px-10' + (noProse ? '' : ' cu-prose cu-prose-dark cu-prose-first-last')
+
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog ${isOpen ? `block` : `hidden`} absolute ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] p-6 md:p-10 z-50 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md`}
-      onClick={handleClickInModal}
+      className={`cu-dialog ${isOpen ? `block` : `hidden`} absolute ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] z-50 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md py-6 md:py-10 h-auto max-h-[90vh] overflow-hidden`}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
     >
@@ -173,10 +168,11 @@ export const Modal = ({
           </svg>
         </button>
       )}
+
       {content ? (
-        <div className={useProse} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
+        <div className={innerContentClass} dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
       ) : (
-        <div className={useProse}>{children}</div>
+        <div className={innerContentClass}>{children}</div>
       )}
     </dialog>
   )
