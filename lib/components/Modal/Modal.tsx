@@ -78,40 +78,15 @@ export const Modal = ({
     }
   }, [isOpen])
 
-  // Prevent native Escape behavior
-  useEffect(() => {
-    const dialog = modalRef.current
-    if (dialog) {
-      const handleCancel = (event: Event) => {
-        if (preventOutsideClick) {
-          event.preventDefault()
-        }
-      }
-
-      dialog.addEventListener('cancel', handleCancel)
-
-      const handleEscapeKeyDown = (event: KeyboardEvent) => {
-        if (event.key === 'Escape' && preventOutsideClick) {
-          event.preventDefault()
-        }
-      }
-      dialog.addEventListener('keydown', handleEscapeKeyDown)
-
-      return () => {
-        dialog.removeEventListener('cancel', handleCancel)
-        dialog.removeEventListener('keydown', handleEscapeKeyDown)
-      }
-    }
-  }, [preventOutsideClick])
-
+  // Close button on Escape key
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && !preventOutsideClick) {
+      if (event.key === 'Escape') {
         setIsOpen(false)
       }
     }
 
-    if (isOpen) {
+    if (isOpen && !preventOutsideClick) {
       document.addEventListener('keydown', handleEscape)
     }
 
@@ -124,7 +99,6 @@ export const Modal = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        console.log('click outside')
         setIsOpen(false)
       }
     }
@@ -144,7 +118,7 @@ export const Modal = ({
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog ${isOpen ? `block` : `hidden`} absolute ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] z-50 w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md py-6 md:py-10 h-auto max-h-[90vh] overflow-hidden`}
+      className={`cu-dialog ${isOpen ? `block` : `hidden`} fixed ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] z-[51] w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md py-6 md:py-10 h-auto max-h-[90vh] overflow-hidden`}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
     >
