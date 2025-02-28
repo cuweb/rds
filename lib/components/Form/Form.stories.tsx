@@ -4,6 +4,8 @@ import { useFormik } from 'formik'
 import { FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 import { Form } from './Form'
+import { PageHeader } from '../PageHeader/PageHeader'
+import { Modal } from '../Modal/Modal'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 import { AutoSuggestData } from './../../data/AutoSuggestData'
@@ -106,6 +108,8 @@ export const InputAddonStory: Story = () => {
     inputText: string
   }
 
+  const [submitModalOpen, setSubmitModalOpen] = useState(false)
+
   const InputInitialValues = {
     inputText: '',
   }
@@ -116,7 +120,7 @@ export const InputAddonStory: Story = () => {
 
   const onSubmit = async (values: IInput, actions: FormikHelpers<IInput>) => {
     actions.setSubmitting(true)
-    alert(JSON.stringify(values, null, 2))
+    setSubmitModalOpen(true)
     await sleep(1000)
     actions.setSubmitting(false)
   }
@@ -132,33 +136,43 @@ export const InputAddonStory: Story = () => {
   })
 
   return (
-    <Form formikProps={formikProps}>
-      <Form.FieldGroup>
-        <Form.FieldControl
-          control="text"
-          label="Label"
-          name="inputText"
-          required
-          helper="Helper Text"
-          hasPrefix={
-            <InputAddon border="right" isGrey>
-              $
-            </InputAddon>
-          }
-          hasSuffix={
-            <InputAddon border="left" isGrey>
-              USD
-            </InputAddon>
-          }
-          helperpostop
-          disabled={formikProps.isSubmitting}
-        />
-      </Form.FieldGroup>
-      <ButtonGroup>
-        <Button title="Submit" type="submit" />
-        <Button title="Reset" type="reset" color="grey" onClick={onReset} />
-      </ButtonGroup>
-    </Form>
+    <>
+      <Form formikProps={formikProps}>
+        <Form.FieldGroup>
+          <Form.FieldControl
+            control="text"
+            label="Label"
+            name="inputText"
+            required
+            helper="Helper Text"
+            hasPrefix={
+              <InputAddon border="right" isGrey>
+                $
+              </InputAddon>
+            }
+            hasSuffix={
+              <InputAddon border="left" isGrey>
+                USD
+              </InputAddon>
+            }
+            helperpostop
+            disabled={formikProps.isSubmitting}
+          />
+        </Form.FieldGroup>
+        <ButtonGroup>
+          <Button title="Submit" type="submit" />
+          <Button title="Reset" type="reset" color="grey" onClick={onReset} />
+        </ButtonGroup>
+      </Form>
+      <Modal
+        isOpen={submitModalOpen}
+        setIsOpen={setSubmitModalOpen}
+        ariaLabel={`Modal label`}
+        ariaDescription={`The modal description`}
+      >
+        <PageHeader as="h2" header={`Modal content`} size="sm" isCenter />
+      </Modal>
+    </>
   )
 }
 

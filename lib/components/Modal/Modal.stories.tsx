@@ -65,8 +65,11 @@ export const PreventModalClose: Story = () => {
         setIsOpen={setModalOpen}
         ariaLabel="H2 Heading"
         ariaDescription=" Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem."
-        preventOutsideClick
-        hideCloseButton
+        // preventOutsideClick
+        // hideCloseButton
+        onClose={() => {
+          console.log('Modal closed')
+        }}
       >
         <h2>H2 Heading</h2>
         <p>
