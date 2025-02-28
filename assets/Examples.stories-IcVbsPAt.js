@@ -1,0 +1,23 @@
+import{j as e}from"./jsx-runtime-Cf8x2fCZ.js";import{M as i}from"./Main-BqxOGoMS.js";import{F as m}from"./FooterStandard-Did9kEDy.js";import{N as t}from"./Nav-D9xZ8HkV.js";import{N as l}from"./NavData-EgWmcfkt.js";import{N as u}from"./NotFound404-D7D6eoCL.js";import"./index-yBjzXJbu.js";import"./FooterLogoLinks-tMRqyGnd.js";import"./useLinkContext-NG2HLdE9.js";import"./index-7sdMIo0z.js";import"./_commonjsHelpers-BosuxZz1.js";import"./Avatar-R8Sfo5dY.js";import"./ButtonGroup-CVkrxlV-.js";import"./propClasses-BYrQ2lXe.js";import"./PageHeader-dKVTA0_m.js";import"./parseISO-53XxuXUY.js";import"./format-CoDaAjhx.js";import"./isSameDay-D4TUG8v2.js";const q={title:"Components/Error Messages/NotFound404/Examples",parameters:{layout:"fullscreen"}},r=()=>e.jsx(e.Fragment,{children:e.jsx("p",{children:"Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor."})}),a={render:()=>e.jsxs(e.Fragment,{children:[e.jsx(t,{children:e.jsxs(t.Top,{children:[e.jsx(t.Logo,{title:"Raven Design System",link:"/"}),e.jsx(t.Aside,{children:e.jsx(t.Buttons,{menu:l})})]})}),e.jsxs(i,{maxWidth:"5xl",children:[e.jsx(u,{}),e.jsx("h2",{children:"Header Two"}),e.jsx(r,{}),e.jsx(r,{})]}),e.jsx(m,{})]})};var n,o,s;a.parameters={...a.parameters,docs:{...(n=a.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: () => <>
+      <Nav>
+        <Nav.Top>
+          <Nav.Logo title="Raven Design System" link="/" />
+          {/* <Nav.Menu menu={NavDataSingle} /> */}
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
+      </Nav>
+
+      <Main maxWidth="5xl">
+        <NotFound404 />
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+      </Main>
+
+      <FooterStandard />
+    </>
+}`,...(s=(o=a.parameters)==null?void 0:o.docs)==null?void 0:s.source}}};const B=["LayoutExamples"];export{a as LayoutExamples,B as __namedExportsOrder,q as default};
