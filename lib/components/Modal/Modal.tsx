@@ -62,7 +62,7 @@ export const Modal = ({
       initialRender.current = false
       return
     }
-    console.log(modalRef.current?.close, 'modalRef.current?.close')
+
     if (!isOpen && onClose && modalRef.current) {
       onClose()
     }
@@ -128,6 +128,22 @@ export const Modal = ({
   }
 
   //Add function to call when click outside modal to close the modal
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        console.log('click outside')
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen && !preventOutsideClick) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen, onClose, preventOutsideClick])
 
   return (
     <dialog
