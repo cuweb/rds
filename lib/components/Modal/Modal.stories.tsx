@@ -30,8 +30,8 @@ export const Default: Story = () => {
         setIsOpen={setModalOpen}
         ariaLabel="H2 Heading"
         ariaDescription=" Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem."
-        onCloseOutsideClick={() => {
-          console.log('Modal closed oustide using onCloseOutsideClick')
+        onClose={() => {
+          console.log('Modal closed outside using onCloseOutsideClick')
         }}
       >
         <h2>H2 Heading</h2>
@@ -67,6 +67,9 @@ export const PreventModalClose: Story = () => {
         ariaDescription=" Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem."
         preventOutsideClick
         hideCloseButton
+        onClose={() => {
+          console.log('Modal closed')
+        }}
       >
         <h2>H2 Heading</h2>
         <p>
@@ -94,10 +97,10 @@ export const ContentProp: Story = () => {
       <Button title="Click to Open Modal" onClick={() => setModalOpen(true)} />
       <Modal
         isOpen={modalOpen}
-        content={contentData}
         setIsOpen={setModalOpen}
         ariaLabel="H2 Heading"
         ariaDescription=" Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem."
+        content={contentData}
       />
     </>
   )
