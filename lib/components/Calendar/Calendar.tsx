@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import { Button } from '../Button/Button'
-
 import {
   add,
   eachDayOfInterval,
@@ -16,6 +15,7 @@ import {
   parse,
   parseISO,
   startOfToday,
+  isWithinInterval,
 } from 'date-fns'
 
 export interface CalendarProps {
@@ -95,50 +95,57 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
       <div
         className={`${styles.calendarGrid} isolate overflow-hidden rounded-lg border border-cu-black-100 bg-cu-black-50 text-sm`}
       >
-        {days.map((day, dayIdx) => (
-          <div
-            key={day.toString()}
-            className={classNames(dayIdx === 0 && colStartClasses[getDay(day)], 'bg-white py-2')}
-          >
-            <button
-              type="button"
-              disabled={isBefore(day, today)}
-              onClick={() => {
-                setSelectedDay(day)
-                setShowClear(true)
-              }}
-              className={classNames(
-                isEqual(day, selectedDay) && 'text-white',
-                isSameDay(day, selectedDay) && 'text-white',
-                !isEqual(day, selectedDay) && isToday(day) && 'text-cu-red',
-                !isEqual(day, selectedDay) &&
-                  !isToday(day) &&
-                  isSameMonth(day, firstDayCurrentMonth) &&
-                  'text-cu-black-900',
-                !isEqual(day, selectedDay) &&
-                  !isToday(day) &&
-                  !isSameMonth(day, firstDayCurrentMonth) &&
-                  'text-cu-black-400',
-                isEqual(day, selectedDay) && isToday(day) && 'bg-cu-red',
-                isEqual(day, selectedDay) && !isToday(day) && 'bg-cu-red',
-                isSameDay(day, selectedDay) && isToday(day) && 'bg-cu-red',
-                isSameDay(day, selectedDay) && !isToday(day) && 'bg-cu-red',
-                !isEqual(day, selectedDay) && 'hover:bg-cu-red hover:text-white',
-                (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',
-                'mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:bg-cu-black-50 disabled:text-cu-black-900',
-              )}
-            >
-              <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>
-            </button>
+        {days.map((day, dayIdx) => {
+          // Check if there is an event on this day or if it falls within a multi-day event
+          const hasEvent = events?.some((event) => {
+            const start = parseISO(event.startDatetime)
+            const end = parseISO(event.endDatetime)
+            return isSameDay(start, day) || isSameDay(end, day) || isWithinInterval(day, { start, end })
+          })
 
-            <div className="w-1 h-1 mx-auto mt-1">
-              {events?.some((event) => isSameDay(parseISO(event.startDatetime), day)) && (
-                <div className="w-1 h-1 rounded-full bg-sky-500"></div>
-              )}
+          return (
+            <div
+              key={day.toString()}
+              className={classNames(dayIdx === 0 && colStartClasses[getDay(day)], 'bg-white py-2')}
+            >
+              <button
+                type="button"
+                disabled={isBefore(day, today)}
+                onClick={() => {
+                  setSelectedDay(day)
+                  setShowClear(true)
+                }}
+                className={classNames(
+                  isEqual(day, selectedDay) && 'text-white',
+                  isSameDay(day, selectedDay) && 'text-white',
+                  !isEqual(day, selectedDay) && isToday(day) && 'text-cu-red',
+                  !isEqual(day, selectedDay) &&
+                    !isToday(day) &&
+                    isSameMonth(day, firstDayCurrentMonth) &&
+                    'text-cu-black-900',
+                  !isEqual(day, selectedDay) &&
+                    !isToday(day) &&
+                    !isSameMonth(day, firstDayCurrentMonth) &&
+                    'text-cu-black-400',
+                  isEqual(day, selectedDay) && isToday(day) && 'bg-cu-red',
+                  isEqual(day, selectedDay) && !isToday(day) && 'bg-cu-red',
+                  isSameDay(day, selectedDay) && isToday(day) && 'bg-cu-red',
+                  isSameDay(day, selectedDay) && !isToday(day) && 'bg-cu-red',
+                  !isEqual(day, selectedDay) && 'hover:bg-cu-red hover:text-white',
+                  (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',
+                  'mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:bg-cu-black-50 disabled:text-cu-black-900',
+                )}
+              >
+                <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>
+              </button>
+
+              {/* Red dot under the date if there's an event */}
+              {hasEvent && <div className="w-1.5 h-1.5 mx-auto mt-1 rounded-full bg-cu-red"></div>}
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
+
       {showClear && (
         <div className="mt-4">
           <Button
