@@ -6,7 +6,11 @@ import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
 import { NavButtonsData } from '../../data/NavData'
 import { Calendar } from './Calendar'
+import { StackedList } from '../../layouts/StackedList/StackedList'
+import { Listing } from '../Listing/Listing'
+import { Column } from '../../layouts/Column/Column'
 import { CalendarData } from '../../data/CalendarData'
+import { EventData } from '../../data/EventData'
 
 const meta: Meta = {
   title: 'Components/Calendar/Examples',
@@ -31,7 +35,7 @@ const SinglePara = () => {
 }
 
 const eventData = [...CalendarData.events]
-
+const listingEventData = [...EventData]
 export const LayoutExamples: Story = {
   render: () => (
     <>
@@ -94,6 +98,60 @@ export const LayoutExamples: Story = {
         <SinglePara />
 
         <Calendar callback={() => {}} events={eventData} />
+
+        {/* ADDED: StackedList for event listings */}
+        <h2>Event Listings Layout 1</h2>
+        <Column cols="1/3" maxWidth="7xl">
+          <StackedList cols="1">
+            {listingEventData.map(({ id, title, startDate, endDate, event_address, link }) => (
+              <Listing key={id}>
+                <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                <Listing.Body>
+                  <Listing.Header title={title} />
+                  <Listing.EventMeta
+                    startDateTime={startDate}
+                    endDateTime={endDate}
+                    eventAddress={event_address}
+                    onCampus={false}
+                  />
+                  <Listing.Footer>
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
+                      Event details
+                    </a>
+                  </Listing.Footer>
+                </Listing.Body>
+              </Listing>
+            ))}
+          </StackedList>
+          <Calendar callback={() => {}} events={eventData} />
+        </Column>
+
+        {/* ADDED: StackedList for event listings */}
+        <h2>Event Listings Layout 2</h2>
+        <Column cols="2/3" maxWidth="7xl">
+          <Calendar callback={() => {}} events={eventData} />
+          <StackedList cols="1">
+            {listingEventData.map(({ id, title, startDate, endDate, event_address, link }) => (
+              <Listing key={id}>
+                <Listing.DateThumb startDate={startDate} endDate={endDate} />
+                <Listing.Body>
+                  <Listing.Header title={title} />
+                  <Listing.EventMeta
+                    startDateTime={startDate}
+                    endDateTime={endDate}
+                    eventAddress={event_address}
+                    onCampus={false}
+                  />
+                  <Listing.Footer>
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
+                      Event details
+                    </a>
+                  </Listing.Footer>
+                </Listing.Body>
+              </Listing>
+            ))}
+          </StackedList>
+        </Column>
       </Main>
 
       <FooterStandard />
