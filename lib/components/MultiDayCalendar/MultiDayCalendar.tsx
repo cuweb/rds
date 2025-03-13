@@ -151,7 +151,7 @@ export const MultiDayCalendar = ({ events, callback, defaultDate }: MultiDayCale
 
             <div className="w-1 h-1 mx-auto mt-1">
               {events?.some((event) => isSameDay(parseISO(event.startDatetime), day)) && (
-                <div className="w-1 h-1 rounded-full bg-sky-500"></div>
+                <div className="w-1 h-1 rounded-full bg-cu-red"></div>
               )}
             </div>
           </div>
