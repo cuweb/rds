@@ -22,15 +22,13 @@ export const Dialog = ({ children, title, description, isOpen, setIsOpen }: Dial
     }
   }, [isOpen])
 
-  // Add no scroll class to prevent background scroll when dialog is open
+  // Add classes to the body to prevent scrolling and add the backdrop
   useEffect(() => {
     if (isOpen) {
+      document.body.classList.add('cu-dialog-open')
       document.body.classList.add('cu-no-body-scroll')
     } else {
-      document.body.classList.remove('cu-no-body-scroll')
-    }
-    // Cleanup function to remove the class when the component unmounts
-    return () => {
+      document.body.classList.remove('cu-dialog-open')
       document.body.classList.remove('cu-no-body-scroll')
     }
   }, [isOpen])
@@ -61,7 +59,7 @@ export const Dialog = ({ children, title, description, isOpen, setIsOpen }: Dial
   return (
     <dialog
       ref={dialogRef}
-      className="cu-dialog z-10 not-prose w-11/12 md:w-full md:min-w-96 md:max-w-md shadow-md rounded-md p-3.5 m-auto"
+      className="cu-dialog fixed top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] z-[51] not-prose w-11/12 md:w-full md:min-w-96 md:max-w-md shadow-md rounded-md p-3.5 m-0"
       onClick={handleClick}
       aria-labelledby={title}
       aria-describedby={description}
