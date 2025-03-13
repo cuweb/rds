@@ -101,7 +101,7 @@ export const LayoutExamples: Story = {
 
         {/* ADDED: StackedList for event listings */}
         <h2>Event Listings Layout 1</h2>
-        <Column cols="1/3" maxWidth="7xl">
+        <Column cols="1/3" maxWidth="7xl" reverse={false}>
           <StackedList cols="1">
             {listingEventData.map(({ id, title, startDate, endDate, event_address, link }) => (
               <Listing key={id}>
@@ -128,8 +128,7 @@ export const LayoutExamples: Story = {
 
         {/* ADDED: StackedList for event listings */}
         <h2>Event Listings Layout 2</h2>
-        <Column cols="2/3" maxWidth="7xl">
-          <Calendar callback={() => {}} events={eventData} />
+        <Column cols="1/3" maxWidth="7xl" reverse={true}>
           <StackedList cols="1">
             {listingEventData.map(({ id, title, startDate, endDate, event_address, link }) => (
               <Listing key={id}>
@@ -151,6 +150,7 @@ export const LayoutExamples: Story = {
               </Listing>
             ))}
           </StackedList>
+          <Calendar callback={() => {}} events={eventData} />
         </Column>
       </Main>
 
