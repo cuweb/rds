@@ -67,7 +67,7 @@ export const Modal = ({
     }
   }, [isOpen, onClose])
 
-  // Add classes to the body to prevent scrolling and backdrop
+  // Add classes to the body to prevent scrolling and add the backdrop
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('cu-dialog-open')
@@ -118,7 +118,7 @@ export const Modal = ({
   return (
     <dialog
       ref={modalRef}
-      className={`cu-dialog ${isOpen ? `block` : `hidden`} fixed ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] z-[51] w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md py-6 md:py-10 h-auto max-h-[90vh] overflow-hidden`}
+      className={`cu-dialog ${isOpen ? `block` : `hidden`} fixed ${!alignTop ? `top-[50%] -translate-y-[50%]` : `top-20`} left-[50%] -translate-x-[50%] z-[51] w-11/12 ${maxWidthClasses[maxWidth]} shadow-md rounded-md py-6 md:py-10 h-auto max-h-[90vh] overflow-hidden mt-0`}
       aria-labelledby={ariaLabel}
       aria-describedby={ariaDescription}
     >
