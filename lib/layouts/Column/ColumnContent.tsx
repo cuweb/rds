@@ -6,7 +6,9 @@ export interface ColumnContentProps {
 }
 
 export const ColumnContent = ({ children, reverse = false }: ColumnContentProps) => {
-  return <div className={`cu-column-content ${reverse ? 'order-1' : 'order-none'}`}>{children}</div>
+  const columnOrder = reverse ? 'order-1' : 'order-none'
+
+  return <div className={`cu-column-content ${columnOrder}`}>{children}</div>
 }
 
 ColumnContent.displayName = 'Column.Content'

@@ -100,58 +100,62 @@ export const LayoutExamples: Story = {
         <Calendar callback={() => {}} events={eventData} />
 
         {/* ADDED: StackedList for event listings */}
-        <h2>Event Listings Layout 1</h2>
-        <Column cols="1/3" maxWidth="7xl" reverse={false}>
-          <StackedList cols="1">
-            {listingEventData.map(({ id, title, startDate, endDate, event_address, link }) => (
-              <Listing key={id}>
-                <Listing.DateThumb startDate={startDate} endDate={endDate} />
-                <Listing.Body>
-                  <Listing.Header title={title} />
-                  <Listing.EventMeta
-                    startDateTime={startDate}
-                    endDateTime={endDate}
-                    eventAddress={event_address}
-                    onCampus={false}
-                  />
-                  <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red cu-button--small">
-                      Event details
-                    </a>
-                  </Listing.Footer>
-                </Listing.Body>
-              </Listing>
-            ))}
-          </StackedList>
-          <Calendar callback={() => {}} events={eventData} />
-        </Column>
+        <Section maxWidth="7xl">
+          <h2>Event Listings Layout 1</h2>
+          <Column cols="1/3" reverse={false}>
+            <StackedList cols="1">
+              {listingEventData.slice(0, 2).map(({ id, title, startDate, endDate, event_address, link }) => (
+                <Listing key={id}>
+                  {/* <Listing.DateThumb startDate={startDate} endDate={endDate} /> */}
+                  <Listing.Body>
+                    <Listing.Header title={title} />
+                    <Listing.EventMeta
+                      startDateTime={startDate}
+                      endDateTime={endDate}
+                      eventAddress={event_address}
+                      onCampus={false}
+                    />
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red cu-button--small">
+                        Event details
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+            <Calendar callback={() => {}} events={eventData} />
+          </Column>
+        </Section>
 
         {/* ADDED: StackedList for event listings */}
-        <h2>Event Listings Layout 2</h2>
-        <Column cols="1/3" maxWidth="7xl" reverse={true}>
-          <StackedList cols="1">
-            {listingEventData.map(({ id, title, startDate, endDate, event_address, link }) => (
-              <Listing key={id}>
-                <Listing.DateThumb startDate={startDate} endDate={endDate} />
-                <Listing.Body>
-                  <Listing.Header title={title} />
-                  <Listing.EventMeta
-                    startDateTime={startDate}
-                    endDateTime={endDate}
-                    eventAddress={event_address}
-                    onCampus={false}
-                  />
-                  <Listing.Footer>
-                    <a href={link} className="cu-button cu-button--red cu-button--small">
-                      Event details
-                    </a>
-                  </Listing.Footer>
-                </Listing.Body>
-              </Listing>
-            ))}
-          </StackedList>
-          <Calendar callback={() => {}} events={eventData} />
-        </Column>
+        <Section maxWidth="7xl">
+          <h2>Event Listings Layout 2</h2>
+          <Column cols="1/3" reverse={true}>
+            <StackedList cols="1">
+              {listingEventData.slice(0, 2).map(({ id, title, startDate, endDate, event_address, link }) => (
+                <Listing key={id}>
+                  {/* <Listing.DateThumb startDate={startDate} endDate={endDate} /> */}
+                  <Listing.Body>
+                    <Listing.Header title={title} />
+                    <Listing.EventMeta
+                      startDateTime={startDate}
+                      endDateTime={endDate}
+                      eventAddress={event_address}
+                      onCampus={false}
+                    />
+                    <Listing.Footer>
+                      <a href={link} className="cu-button cu-button--red cu-button--small">
+                        Event details
+                      </a>
+                    </Listing.Footer>
+                  </Listing.Body>
+                </Listing>
+              ))}
+            </StackedList>
+            <Calendar callback={() => {}} events={eventData} />
+          </Column>
+        </Section>
       </Main>
 
       <FooterStandard />
