@@ -4,14 +4,13 @@ type gridColumnKeys = keyof typeof gridColumnClasses;
 export interface ColumnProps {
     children: React.ReactNode;
     cols?: gridColumnKeys;
-    reverse?: boolean;
 }
 export declare const ColumnWrapper: {
-    ({ children, cols, reverse }: ColumnProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, cols }: ColumnProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Column: {
-    ({ children, cols, reverse }: ColumnProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, cols }: ColumnProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Content: {
