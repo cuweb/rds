@@ -45,7 +45,7 @@ export const VideoExamples: Story = {
 
       <Main maxWidth="5xl">
         <FullBanner>
-          <FullBanner.Video videoName="timelapse-quad" />
+          <FullBanner.Video videoName="campus-2025" />
           <FullBanner.Content headerType="h1" title="The nostalgia is real.">
             <p>
               The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
