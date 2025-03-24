@@ -113,7 +113,8 @@ export const Modal = ({
   }, [isOpen, onClose, preventOutsideClick])
 
   const innerContentClass =
-    'overflow-scroll h-full max-h-[80vh] px-6 md:px-10' + (noProse ? '' : ' cu-prose cu-prose-dark cu-prose-first-last')
+    'overflow-x-hidden overflow-y-auto h-full max-h-[80vh] px-6 md:px-10' +
+    (noProse ? '' : ' cu-prose cu-prose-dark cu-prose-first-last')
 
   return (
     <dialog
