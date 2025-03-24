@@ -9,7 +9,6 @@ export interface FullBannerVideoProps {
 }
 
 export const FullBannerVideo = ({ videoName = 'cu-flyby' }: FullBannerVideoProps) => {
-  console.log('FullBannerVideo', videos)
   useEffect(() => {
     VideoControls()
   }, [])
