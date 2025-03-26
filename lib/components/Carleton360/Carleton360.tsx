@@ -27,7 +27,7 @@ export const Carleton360Wrapper = ({ children, headerType = 'h2' }: Carleton360P
           alt={'test'}
         />
         <p className="text-md text-gray-600 text-center mb-6 mx-auto ">
-          Get started in Carleton 360 to receive tailored information on our programs,student services and community.
+          Get started in Carleton 360 to receive tailored information on our programs, student services and community.
         </p>
         {children}
       </PageHeader>
