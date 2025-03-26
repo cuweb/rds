@@ -1,28 +1,48 @@
 const VideoControls = (): void => {
-  const video = document.getElementById('video-banner') as HTMLVideoElement | null
-  const playPauseButton = document.getElementById('video_controls_button') as HTMLButtonElement | null
+  const videos = Array.from(document.getElementsByClassName('cu-video')) as HTMLVideoElement[]
 
-  if (!video || !playPauseButton) {
-    console.warn('Video, Play/Pause button not found')
+  if (!videos.length) {
+    console.warn('No videos found')
     return
   }
 
-  const toggleButtonState = (isPlaying: boolean) => {
-    playPauseButton.setAttribute('aria-label', isPlaying ? 'Pause video' : 'Play video')
-    playPauseButton.setAttribute('title', isPlaying ? 'Pause video' : 'Play video')
-  }
+  videos.forEach((video) => {
+    video.load()
 
-  const handlePlay = () => {
-    if (video.paused) {
-      video.play()
-      toggleButtonState(true)
-    } else {
-      video.pause()
-      toggleButtonState(false)
+    // Check if the video has already been initialized
+    if (video.dataset.initialized === 'true') {
+      return
     }
-  }
 
-  playPauseButton.addEventListener('click', handlePlay)
+    const playPauseButton = video.parentElement?.getElementsByClassName(
+      'cu-video-controls',
+    )[0] as HTMLButtonElement | null
+
+    if (!playPauseButton) {
+      console.warn('Play/Pause button not found for video')
+      return
+    }
+
+    const toggleButtonState = (isPlaying: boolean) => {
+      playPauseButton.setAttribute('aria-label', isPlaying ? 'Pause video' : 'Play video')
+      playPauseButton.setAttribute('title', isPlaying ? 'Pause video' : 'Play video')
+    }
+
+    const handlePlay = () => {
+      if (video.paused) {
+        video.play()
+        toggleButtonState(true)
+      } else {
+        video.pause()
+        toggleButtonState(false)
+      }
+    }
+
+    playPauseButton.addEventListener('click', handlePlay)
+
+    // Mark the video as initialized
+    video.dataset.initialized = 'true'
+  })
 }
 
 export default VideoControls

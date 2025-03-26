@@ -2,7 +2,7 @@
   @apply mb-6;
 }
 
-.cu-card > *:not(a):not(figure):last-child:not(.cu-card-stats) {
+.cu-card > *:not(a):not(figure):last-child:not(.cu-card-stats):not(svg) {
   @apply pb-7;
 }
 

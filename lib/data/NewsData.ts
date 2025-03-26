@@ -45,7 +45,7 @@ export const NewsData = [
     title: 'New Scholarship Program for Underrepresented Students',
     link: '#',
     image: 'https://picsum.photos/id/102/600/400',
-    icon: 'scholarship',
+    icon: 'earth-americas',
     alt: 'Scholarship Program',
     excerpt:
       'Carleton University has introduced a new scholarship program aimed at supporting underrepresented students. The program will provide financial assistance and mentorship opportunities to help students succeed.',
@@ -65,7 +65,7 @@ export const NewsData = [
     title: 'Groundbreaking Research on Climate Change',
     link: '#',
     image: 'https://picsum.photos/id/103/600/400',
-    icon: 'climate-change',
+    icon: 'head-side-gear',
     alt: 'Climate Change Research',
     excerpt:
       'Researchers at Carleton University have published groundbreaking findings on the impact of climate change on Arctic ecosystems. The study highlights the urgent need for action to mitigate climate change effects.',
