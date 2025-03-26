@@ -1,50 +1,18 @@
-.cu-Carleton360 .cu-pageheader > *:last-child {
+.cu-carleton360 .cu-pageheader > *:last-child {
   @apply mb-4;
 }
 
-.cu-Carleton360 .cu-pageheader > h1:last-child,
-.cu-Carleton360 .cu-pageheader > h2:last-child {
+.cu-carleton360 .cu-pageheader > h1:last-child,
+.cu-carleton360 .cu-pageheader > h2:last-child {
   @apply mb-2;
 }
 
-.cu-Carleton360-dark,
-.cu-Carleton360-image,
-.cu-Carleton360-wave {
+.cu-carleton360-dark,
+.cu-carleton360-image,
+.cu-carleton360-wave {
   @apply text-white;
 }
 
-.cu-Carleton360 {
+.cu-carleton360 {
   @apply text-center;
-}
-
-.cu-Carleton360 .cu-buttongroup,
-.cu-Carleton360 .cu-Carleton360-signup {
-  @apply mt-3 md:mt-6;
-}
-
-/* Signup form input styles */
-.cu-Carleton360-light input:first-of-type {
-  @apply text-cu-black-700 ring-cu-black-600 focus:ring-cu-black-600 border-cu-black-200 bg-white/40 focus:bg-white;
-}
-
-.cu-Carleton360-light input::placeholder {
-  @apply text-cu-black-700;
-}
-
-.cu-Carleton360-dark input:first-of-type {
-  @apply text-white bg-transparent ring-white focus:ring-white/40 border-cu-black-600 focus:bg-white/10;
-}
-
-.cu-Carleton360-dark input::placeholder {
-  @apply text-cu-black-200;
-}
-
-.cu-Carleton360-image input:first-of-type,
-.cu-Carleton360-wave input:first-of-type {
-  @apply text-white ring-white focus:ring-white/50 border-white/40 bg-cu-black-800/90 focus:bg-cu-black-900/40;
-}
-
-.cu-Carleton360-image input::placeholder,
-.cu-Carleton360-wave input::placeholder {
-  @apply text-cu-black-200;
 }
