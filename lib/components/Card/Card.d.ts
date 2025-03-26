@@ -1,16 +1,18 @@
 import { default as React } from '../../../node_modules/react';
 export interface CardProps {
     children: React.ReactNode;
+    isGrey?: boolean;
+    hasWave?: boolean;
     isCenter?: boolean;
     noHover?: boolean;
     leftBorder?: boolean;
 }
 export declare const CardWrapper: {
-    ({ children, isCenter, noHover, leftBorder }: CardProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isGrey, hasWave, isCenter, noHover, leftBorder }: CardProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Card: {
-    ({ children, isCenter, noHover, leftBorder }: CardProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isGrey, hasWave, isCenter, noHover, leftBorder }: CardProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Figure: {
