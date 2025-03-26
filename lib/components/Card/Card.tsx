@@ -23,7 +23,7 @@ export interface CardProps {
 }
 
 export const CardWrapper = ({ children, isGrey, hasWave, isCenter, noHover, leftBorder }: CardProps) => {
-  const waveBg = hasWave ? 'pb-44 md:pb-20' : ''
+  const waveBg = hasWave ? 'pb-28 sm:pb-44 md:pb-20' : ''
   const bgStyles = isGrey ? `bg-cu-black-50 ${waveBg}` : 'bg-white shadow-lg shadow-cu-black-100'
   const centerText = isCenter ? 'text-center' : ''
   const hoverStyles = noHover ? '' : 'group duration-300 ease-in hover:scale-[1.02] hover:shadow-cu-black-200'
