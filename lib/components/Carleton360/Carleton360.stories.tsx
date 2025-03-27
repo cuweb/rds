@@ -21,13 +21,10 @@ export default meta
 type Story = StoryObj<typeof Carleton360>
 
 export const Primary: Story = {
-  args: {
-    headerType: 'h2',
-  },
-  render: (args) => {
+  render: () => {
     return (
       <Main>
-        <Carleton360 {...args}>
+        <Carleton360>
           <ButtonGroup>
             <Button icon={CheckCircleIcon} title="Sign up for 360" />
             <Button icon={LockClosedIcon} title="Login to 360" color="dark-grey" />

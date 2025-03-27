@@ -1,18 +1,3 @@
 .cu-carleton360 .cu-pageheader > *:last-child {
   @apply mb-4;
 }
-
-.cu-carleton360 .cu-pageheader > h1:last-child,
-.cu-carleton360 .cu-pageheader > h2:last-child {
-  @apply mb-2;
-}
-
-.cu-carleton360-dark,
-.cu-carleton360-image,
-.cu-carleton360-wave {
-  @apply text-white;
-}
-
-.cu-carleton360 {
-  @apply text-center;
-}
