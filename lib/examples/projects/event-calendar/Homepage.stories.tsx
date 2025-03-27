@@ -1,27 +1,27 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
-import { Main } from '../../layouts/Main/Main'
-import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { WideImage } from '../../components/WideImage/WideImage'
-import { Nav } from '../../components/Nav/Nav'
-import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
-import { Button } from '../../components/Button/Button'
-import { PageHeader } from '../../components/PageHeader/PageHeader'
-import { Column } from '../../layouts/Column/Column'
-import { StackedList } from '../../layouts/StackedList/StackedList'
-import { Aside } from '../../layouts/Aside/Aside'
-import { Card } from '../../components/Card/Card'
-import { Listing } from '../../components/Listing/Listing'
-import { Filter } from '../../components/Filter/Filter'
-import { Pagination } from '../../components/Pagination/Pagination'
-import { MultiDayCalendar } from '../../components/MultiDayCalendar/MultiDayCalendar'
-import { FilterData } from '../../data/FilterData'
-import { NavButtonsData } from '../../data/NavData'
-import { EventData } from '../../data/EventData'
+import { Section } from '../../../layouts/Section/Section'
+import { Main } from '../../../layouts/Main/Main'
+import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
+import { WideImage } from '../../../components/WideImage/WideImage'
+import { Nav } from '../../../components/Nav/Nav'
+import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
+import { Button } from '../../../components/Button/Button'
+import { PageHeader } from '../../../components/PageHeader/PageHeader'
+import { Column } from '../../../layouts/Column/Column'
+import { StackedList } from '../../../layouts/StackedList/StackedList'
+import { Aside } from '../../../layouts/Aside/Aside'
+import { Card } from '../../../components/Card/Card'
+import { Listing } from '../../../components/Listing/Listing'
+import { Filter } from '../../../components/Filter/Filter'
+import { Pagination } from '../../../components/Pagination/Pagination'
+import { MultiDayCalendar } from '../../../components/MultiDayCalendar/MultiDayCalendar'
+import { FilterData } from '../../../data/FilterData'
+import { NavButtonsData } from '../../../data/NavData'
+import { EventData } from '../../../data/EventData'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects',
+  title: 'Prototypes/Projects/Event Calendar',
   parameters: {
     layout: 'fullscreen',
   },
@@ -30,7 +30,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const EventsHome: Story = {
+export const Homepage: Story = {
   render: () => (
     <>
       <Nav.Top>

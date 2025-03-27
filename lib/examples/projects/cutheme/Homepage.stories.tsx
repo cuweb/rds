@@ -1,30 +1,30 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../layouts/Main/Main'
-import { Section } from '../../layouts/Section/Section'
-import { Column } from '../../layouts/Column/Column'
-import { ImageCover } from '../../layouts/ImageCover/ImageCover'
-import { WideWave } from '../../layouts/WideWave/WideWave'
-import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { FullBanner } from '../../components/FullBanner/FullBanner'
-import { Testimonial } from '../../components/Testimonial/Testimonial'
-import { Quote } from '../../components/Quote/Quote'
-import { PageHeader } from '../../components/PageHeader/PageHeader'
-import { Embed } from '../../components/Embed/Embed'
-import { ImageGrid } from '../../components/ImageGrid/ImageGrid'
-import { Nav } from '../../components/Nav/Nav'
-import { BadgeGroup } from '../../components/BadgeGroup/BadgeGroup'
-import { Badge } from '../../components/Badge/Badge'
-import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
-import { Button } from '../../components/Button/Button'
-import { Card } from '../../components/Card/Card'
-import { TextMedia } from '../../components/TextMedia/TextMedia'
-import { NavButtonsData, NavDataSingle } from '../../data/NavData'
-import { NewsData } from '../../data/NewsData'
-import { EventData } from '../../data/EventData'
+import { Main } from '../../../layouts/Main/Main'
+import { Section } from '../../../layouts/Section/Section'
+import { Column } from '../../../layouts/Column/Column'
+import { ImageCover } from '../../../layouts/ImageCover/ImageCover'
+import { WideWave } from '../../../layouts/WideWave/WideWave'
+import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
+import { FullBanner } from '../../../components/FullBanner/FullBanner'
+import { Testimonial } from '../../../components/Testimonial/Testimonial'
+import { Quote } from '../../../components/Quote/Quote'
+import { PageHeader } from '../../../components/PageHeader/PageHeader'
+import { Embed } from '../../../components/Embed/Embed'
+import { ImageGrid } from '../../../components/ImageGrid/ImageGrid'
+import { Nav } from '../../../components/Nav/Nav'
+import { BadgeGroup } from '../../../components/BadgeGroup/BadgeGroup'
+import { Badge } from '../../../components/Badge/Badge'
+import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
+import { Button } from '../../../components/Button/Button'
+import { Card } from '../../../components/Card/Card'
+import { TextMedia } from '../../../components/TextMedia/TextMedia'
+import { NavButtonsData, NavDataSingle } from '../../../data/NavData'
+import { NewsData } from '../../../data/NewsData'
+import { EventData } from '../../../data/EventData'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects',
+  title: 'Prototypes/Projects/cutheme',
   parameters: {
     layout: 'fullscreen',
   },
@@ -33,7 +33,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const CarletonHomepage: Story = {
+export const Homepage: Story = {
   render: () => (
     <>
       <Nav>
