@@ -8,5 +8,7 @@ export interface DateTimeProps extends FieldComponentProps {
     placeholder?: string;
     isClearable?: boolean;
     onChange?: (date: Date | null) => void;
+    hasPrefix?: React.ReactNode;
+    hasSuffix?: React.ReactNode;
 }
 export declare const DateTime: ({ ...props }: DateTimeProps) => import("react/jsx-runtime").JSX.Element;
