@@ -14,10 +14,23 @@ export interface DateTimeProps extends FieldComponentProps {
   placeholder?: string
   isClearable?: boolean
   onChange?: (date: Date | null) => void
+  hasPrefix?: React.ReactNode
+  hasSuffix?: React.ReactNode
 }
 
 export const DateTime = ({ ...props }: DateTimeProps) => {
-  const { name, placeholder, dateFormat = 'MMMM d, yyyy', showTime, timeFormat, onChange, isClearable, ...rest } = props
+  const {
+    name,
+    placeholder,
+    dateFormat = 'MMMM d, yyyy',
+    showTime,
+    timeFormat,
+    onChange,
+    isClearable,
+    hasPrefix,
+    hasSuffix,
+    ...rest
+  } = props
 
   const [field, , helpers] = useField(name)
 
@@ -34,24 +47,28 @@ export const DateTime = ({ ...props }: DateTimeProps) => {
   const errorClass = useErrorClass(name)
 
   return (
-    <DatePicker
-      isClearable={isClearable}
-      name={name}
-      id={name}
-      autoComplete="on"
-      selected={field.value ? field.value : null}
-      timeFormat={timeFormat}
-      dateFormat={dateFormat}
-      placeholderText={placeholder ? placeholder : dateFormat}
-      showTimeSelect={showTime}
-      onBlur={() => {
-        setTouched(true, true)
-      }}
-      onChange={(date: Date | null) => {
-        handleDateChange(date)
-      }}
-      className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full rounded-md`}
-      {...rest}
-    />
+    <div className={`${fieldStyles.input} flex items-stretch`}>
+      {hasPrefix && hasPrefix}
+      <DatePicker
+        isClearable={isClearable}
+        name={name}
+        id={name}
+        autoComplete="on"
+        selected={field.value ? field.value : null}
+        timeFormat={timeFormat}
+        dateFormat={dateFormat}
+        placeholderText={placeholder ? placeholder : dateFormat}
+        showTimeSelect={showTime}
+        onBlur={() => {
+          setTouched(true, true)
+        }}
+        onChange={(date: Date | null) => {
+          handleDateChange(date)
+        }}
+        className={`${fieldStyles.input} ${fieldStyles.disabled} ${errorClass} w-full rounded-none border-none`}
+        {...rest}
+      />
+      {hasSuffix && hasSuffix}
+    </div>
   )
 }

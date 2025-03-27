@@ -435,6 +435,11 @@ export const SimpleDate: Story = () => {
           maxDate={formikProps.values.endDate}
           disabled={formikProps.isSubmitting}
           isClearable
+          hasSuffix={
+            <InputAddon border="left" isGrey>
+              {`>=`}
+            </InputAddon>
+          }
         />
         <Form.FieldControl
           required
@@ -443,6 +448,12 @@ export const SimpleDate: Story = () => {
           name="endDate"
           minDate={formikProps.values.startDate}
           disabled={formikProps.isSubmitting}
+          isClearable
+          hasPrefix={
+            <InputAddon border="right" isGrey>
+              {`<=`}
+            </InputAddon>
+          }
         />
       </Form.FieldGroup>
       <ButtonGroup>

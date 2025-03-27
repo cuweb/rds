@@ -7,6 +7,8 @@ const VideoControls = (): void => {
   }
 
   videos.forEach((video) => {
+    video.load()
+
     // Check if the video has already been initialized
     if (video.dataset.initialized === 'true') {
       return

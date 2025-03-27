@@ -1,3 +1,7 @@
+.react-datepicker-wrapper {
+  @apply w-full;
+}
+
 .react-datepicker__input-container .react-datepicker__close-icon:after {
   @apply content-[''] bg-[url('https://cdn.carleton.ca/rds/assets/icons/x-solid.svg')] bg-no-repeat rounded-none bg-white text-cu-black-800 p-0 w-3 h-3;
 }
