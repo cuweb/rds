@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' // Required for JSX syntax
 import { WideImageSignup } from './WideImageSignup'
 import { PageHeader } from '../PageHeader/PageHeader'
 
