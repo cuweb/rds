@@ -59,3 +59,35 @@ export const Default: Story = () => {
 }
 
 Default.storyName = 'Single Marker'
+
+export const EventAddress: Story = () => {
+  interface SingleMarkerInterface {
+    coordinates: { lat: number; lng: number }
+    address: string
+  }
+  const [coordinates, setCoordinates] = useState<{ coordinates: { lat: number; lng: number }; address: string }>({
+    coordinates: {
+      lat: 40.712776,
+      lng: -74.005974,
+    },
+    address: 'New York City, NY',
+  })
+  const markerCallback = useCallback(
+    (coord: SingleMarkerInterface) => {
+      setCoordinates(coord)
+    },
+    [setCoordinates],
+  )
+  return (
+    <Main>
+      <LocationPicker singleMarker eventAddress="New York City, NY" singleMarkerCallback={markerCallback} />
+      <Location
+        lat={coordinates?.coordinates?.lat?.toString()}
+        lng={coordinates?.coordinates?.lng?.toString()}
+        location={coordinates?.address}
+      />
+    </Main>
+  )
+}
+
+EventAddress.storyName = 'Location Address'
