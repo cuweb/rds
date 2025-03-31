@@ -90,4 +90,4 @@ export const EventAddress: Story = () => {
   )
 }
 
-EventAddress.storyName = 'Event Address'
+EventAddress.storyName = 'Location Address'
