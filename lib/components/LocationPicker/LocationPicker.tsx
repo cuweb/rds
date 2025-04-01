@@ -90,6 +90,7 @@ export const LocationPicker = ({
                           className={`p-4 text-cu-black-600 hover:cursor-pointer ${
                             active ? 'bg-cu-black-50 text-cu-black-900' : 'bg-white'
                           }`}
+                          key={suggestion.index}
                         >
                           {suggestion.description}
                         </li>
