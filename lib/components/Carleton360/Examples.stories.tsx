@@ -9,7 +9,7 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
 import { NavButtonsData } from '../../data/NavData'
 import { Carleton360 } from './Carleton360'
-import { TextImage } from '../TextImage/TextImage'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {
   title: 'Components/Carleton360/Examples',
@@ -40,7 +40,7 @@ export const LayoutExamples: Story = {
     flipX: false,
     flipYsm: false,
   },
-  render: (args) => {
+  render: () => {
     return (
       <>
         <Nav>
@@ -55,29 +55,15 @@ export const LayoutExamples: Story = {
 
         <Main maxWidth="5xl">
           <Section>
-            <TextImage {...args}>
-              <TextImage.Content title="Website and Application Development" imageUrl="https://picsum.photos/400/266">
-                <p>
-                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-                  accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-                </p>
-                <ButtonGroup>
-                  <Button title="Primary" />
-                  <Button title="Secondary" color="grey" />
-                </ButtonGroup>
-              </TextImage.Content>
-            </TextImage>
+            <PageHeader
+              as="h1"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
+              header="Page Header"
+              size="lg"
+            />
           </Section>
-          <h2>Header Two</h2>
-          <SinglePara />
-          <SinglePara />
-
-          <Carleton360 />
-          <Carleton360 />
 
           <h2>Header Two</h2>
-          <SinglePara />
           <SinglePara />
 
           <Carleton360>
@@ -86,6 +72,13 @@ export const LayoutExamples: Story = {
               <Button color="dark-grey" title="Request Information" />
             </ButtonGroup>
           </Carleton360>
+
+          <Carleton360 />
+          <Carleton360 />
+
+          <h2>Header Two</h2>
+          <SinglePara />
+          <SinglePara />
 
           <Section>
             <h2>White Background</h2>

@@ -1,3 +1,3 @@
-.cu-carleton360 .cu-pageheader > *:last-child {
-  @apply mb-4;
+.cu-carleton360 > .cu-buttongroup {
+  @apply !mt-0;
 }
