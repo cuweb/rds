@@ -7,10 +7,10 @@ export interface DetailsItemProps {
 }
 
 export const DetailsItem = ({ children, as = 'li', isBold = false }: DetailsItemProps) => {
-  const DeatilsItemComponent = as
+  const DetailsItemComponent = as
   const boldStyle = isBold ? 'font-bold' : ''
 
-  return <DeatilsItemComponent className={`${boldStyle}`}>{children}</DeatilsItemComponent>
+  return <DetailsItemComponent className={`${boldStyle}`}>{children}</DetailsItemComponent>
 }
 
 DetailsItem.displayName = 'Details.Item'
