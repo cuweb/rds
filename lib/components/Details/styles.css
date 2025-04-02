@@ -1,5 +1,5 @@
 .cu-details--dividers {
-  @apply divide-y divide-cu-black-100;
+  @apply divide-y divide-cu-red;
 }
 
 .cu-details--dividers li {
