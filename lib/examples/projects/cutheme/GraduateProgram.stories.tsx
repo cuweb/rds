@@ -141,7 +141,12 @@ export const GraduateProgram: Story = {
           <h2>Heading Three</h2>
           <DoublePara />
 
-          <Carleton360 />
+          <Carleton360>
+            <ButtonGroup>
+              <Button title="Sign up for 360" />
+              <Button title="Login to 360" color="dark-grey" />
+            </ButtonGroup>
+          </Carleton360>
 
           <h2>Heading Three</h2>
           <SinglePara />
