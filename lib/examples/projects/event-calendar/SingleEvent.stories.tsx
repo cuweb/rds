@@ -1,15 +1,15 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Main } from '../../layouts/Main/Main'
-import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { Nav } from '../../components/Nav/Nav'
-import { PageHeader } from '../../components/PageHeader/PageHeader'
-import { NavButtonsData } from '../../data/NavData'
-import { Details } from '../../components/Details/Details'
-import { Figure } from '../../components/Figure/Figure'
+import { Main } from '../../../layouts/Main/Main'
+import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
+import { Nav } from '../../../components/Nav/Nav'
+import { PageHeader } from '../../../components/PageHeader/PageHeader'
+import { NavButtonsData } from '../../../data/NavData'
+import { Details } from '../../../components/Details/Details'
+import { Figure } from '../../../components/Figure/Figure'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects',
+  title: 'Prototypes/Projects/Event Calendar',
   parameters: {
     layout: 'fullscreen',
   },
@@ -32,7 +32,7 @@ const SinglePara = () => {
   )
 }
 
-export const EventsSingle: Story = {
+export const SingleEvent: Story = {
   render: () => (
     <>
       <Nav.Top>

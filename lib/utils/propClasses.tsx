@@ -9,6 +9,14 @@ export const maxWidthClasses = {
   full: 'max-w-full',
 }
 
+export const smallWidthClasses = {
+  xs: 'lg:max-w-xs',
+  sm: 'lg:max-w-sm',
+  md: 'lg:max-w-md',
+  lg: 'lg:max-w-lg',
+  xl: 'lg:max-w-xl',
+}
+
 export const gridColumnClasses = {
   '1': '',
   '2': 'md:grid-cols-2',
