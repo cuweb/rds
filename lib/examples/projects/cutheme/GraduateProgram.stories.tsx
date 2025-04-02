@@ -91,19 +91,19 @@ export const GraduateProgram: Story = {
 
           <FloatBox>
             <Details as="ul" isGrey>
-              <Details.Item>
+              <Details.Item iconName="calendar-lines-pen">
                 <strong>Application Deadline:</strong> February 25th, 2025
               </Details.Item>
-              <Details.Item>
+              <Details.Item iconName="alarm-clock">
                 <strong>Length:</strong> 1 - 2 years (MEng), 2 years (MASc)
               </Details.Item>
-              <Details.Item>
+              <Details.Item iconName="graduation-cap">
                 <strong>Degrees:</strong> Master of Applied Science, Master of Engineering
               </Details.Item>
-              <Details.Item>
+              <Details.Item iconName="compass">
                 <strong>Pathways:</strong> Coursework, Research Project, Thesis
               </Details.Item>
-              <Details.Item>
+              <Details.Item iconName="briefcase">
                 <strong>Experiential Learning:</strong> Co-op
               </Details.Item>
             </Details>

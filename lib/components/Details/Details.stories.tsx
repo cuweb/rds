@@ -31,7 +31,7 @@ export const Primary: Story = {
           <Details.Item>
             <a href="/">Teams meeting link</a>
           </Details.Item>
-          <Details.Item>
+          <Details.Item iconName="cat">
             <strong>Cost:</strong> $20 per adult, $15 for youth/senior
           </Details.Item>
         </Details>
