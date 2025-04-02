@@ -79,6 +79,7 @@ export { Article } from './layouts/Article/Article';
 export { Aside } from './layouts/Aside/Aside';
 export { Body } from './layouts/Body/Body';
 export { Column } from './layouts/Column/Column';
+export { FloatBox } from './layouts/FloatBox/FloatBox';
 export { ImageCover } from './layouts/ImageCover/ImageCover';
 export { Main } from './layouts/Main/Main';
 export { Section } from './layouts/Section/Section.js';

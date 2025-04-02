@@ -8,6 +8,13 @@ export declare const maxWidthClasses: {
     max: string;
     full: string;
 };
+export declare const smallWidthClasses: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+};
 export declare const gridColumnClasses: {
     '1': string;
     '2': string;
