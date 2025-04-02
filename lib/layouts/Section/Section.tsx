@@ -24,14 +24,12 @@ export const Section = ({ children, as = 'section', isGrey, maxWidth = '5xl' }: 
   const $primarySpacing = `px-6 md:px-8 lg:px-14`
 
   return (
-    <>
-      <SectionComponent className={`cu-section ${sectionClass} ${$breakoutMaxWidth} ${$primarySpacing}`}>
-        <div
-          className={`cu-max-w-child-${maxWidth} space-y-6 md:space-y-10 ${bgStyles} ${greySpacing} cu-prose-first-last`}
-        >
-          {children}
-        </div>
-      </SectionComponent>
-    </>
+    <SectionComponent className={`cu-section ${sectionClass} ${$breakoutMaxWidth} ${$primarySpacing}`}>
+      <div
+        className={`cu-max-w-child-${maxWidth} space-y-6 md:space-y-10 ${bgStyles} ${greySpacing} cu-prose-first-last`}
+      >
+        {children}
+      </div>
+    </SectionComponent>
   )
 }

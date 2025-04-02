@@ -1,14 +1,18 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Main } from '../../../layouts/Main/Main'
+import { FloatBox } from '../../../layouts/FloatBox/FloatBox'
 import { FooterDept } from '../../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../../components/Nav/Nav'
+import { PageHeader } from '../../../components/PageHeader/PageHeader'
+import { Column } from '../../../layouts/Column/Column'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../../components/Footer/FooterCookie/FooterCookie'
 import { Section } from '../../../layouts/Section/Section'
-import { TextMedia } from '../../../components/TextMedia/TextMedia'
-import { Quote } from '../../../components/Quote/Quote'
-import { Column } from '../../../layouts/Column/Column'
+import { WideImage } from '../../../components/WideImage/WideImage'
+import { Details } from '../../../components/Details/Details'
+import { Card } from '../../../components/Card/Card'
+import { NewsData } from '../../../data/NewsData'
 import { NavButtonsData, NavDataSingle } from '../../../data/NavData'
 
 const meta: Meta = {
@@ -26,11 +30,13 @@ const SinglePara = () => {
     <>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies,{' '}
-        <a href="https://carleton.ca">sed tempus diam dignissim</a>. Suspendisse condimentum magna vel orci vulputate,
-        eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in
-        vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget
-        suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim. Suspendisse
+        condimentum magna vel orci vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida
+        volutpat, tortor risus vehicula nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et
+        malesuada lectus. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus
+        sapien in urna. Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien
+        in urna. Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctioaut
+        reprehenderit ducimus. Praesent quis ligula quis nulla malesuada tempor. Etiam quis interdum malesuada lectus.
       </p>
     </>
   )
@@ -61,10 +67,7 @@ export const GraduateProgram: Story = {
       <>
         <Nav>
           <Nav.Top>
-            <Nav.Logo
-              title="Max and Tessie Zelikovitz Centre for Jewish Studies"
-              link="https://carleton.ca/webservices"
-            />
+            <Nav.Logo title="Graduate Programs" link="https://graduate.carleton.ca" />
             <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
           </Nav.Top>
           <Nav.Bottom>
@@ -74,177 +77,60 @@ export const GraduateProgram: Story = {
         </Nav>
 
         <Main>
-          <Section>
-            <TextMedia>
-              <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
-                <p>
-                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-                  accusamus in. Praesent quis ligula quis nulla malesuada tempor.
-                </p>
-              </TextMedia.Content>
-            </TextMedia>
+          <Section maxWidth="max">
+            <WideImage
+              focalPointX={50}
+              focalPointY={50}
+              headerType="h1"
+              image="https://picsum.photos/id/381/600/400"
+              isType="image"
+              opacity={60}
+              title="Program Title"
+            />
           </Section>
 
-          <SinglePara />
+          <FloatBox>
+            <Details as="ul" isGrey>
+              <Details.Item isBold>Hybrid Event</Details.Item>
+              <Details.Item>Raven's Nest, 1125 Colonel By Drive</Details.Item>
+              <Details.Item>
+                <a href="/">Teams meeting link</a>
+              </Details.Item>
+              <Details.Item>
+                <strong>Cost:</strong> $20 per adult, $15 for youth/senior
+              </Details.Item>
+            </Details>
+          </FloatBox>
+
+          <DoublePara />
 
           <Section>
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
+            <PageHeader as="h2" header="Program Feature Cards" size="md" />
+            <Column cols="3">
+              {NewsData.slice(0, 3).map(({ id, title, image, alt }) => (
+                <Card key={id} isGrey hasWave>
+                  <Card.ImageThumb>
+                    <img src={image} alt={alt} width="200" height="133" />
+                  </Card.ImageThumb>
+                  <Card.Header title={title} />
+                  <Card.Body>
+                    <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                  </Card.Body>
+                </Card>
+              ))}
             </Column>
           </Section>
 
           <SinglePara />
 
-          <Section isGrey>
-            <Column cols="2">
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-              <Column.Content>
-                <SinglePara />
-              </Column.Content>
-            </Column>
-          </Section>
+          <h2>Heading Three</h2>
+          <DoublePara />
 
-          <SinglePara />
+          <h2>Heading Three</h2>
           <SinglePara />
 
-          <h3>Heading Three</h3>
+          <h2>Heading Three</h2>
           <SinglePara />
-
-          <h4>Heading Four</h4>
-          <DoublePara />
-
-          <Column cols="2">
-            <Column.Content>
-              <SinglePara />
-              <h2>Header Two</h2>
-              <SinglePara />
-              <h3>Header Three</h3>
-              <SinglePara />
-              <h4>Header Four</h4>
-              <SinglePara />
-            </Column.Content>
-            <Column.Content>
-              <SinglePara />
-              <h2>Header Two</h2>
-              <SinglePara />
-              <h3>Header Three</h3>
-              <SinglePara />
-              <h4>Header Four</h4>
-              <SinglePara />
-            </Column.Content>
-          </Column>
-
-          <DoublePara />
-
-          <ul>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere
-              tellus vitae, sagittis justo.
-            </li>
-            <li>
-              Suspendisse <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> vel orci vulputate,
-              eget vulputate neque porttitor.
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <ul>
-                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                <li>
-                  Aenean sit amet tortor <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> vitae,
-                  sagittis justo.
-                  <ul>
-                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                  </ul>
-                </li>
-                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-              </ul>
-            </li>
-            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-            <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
-            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-          </ul>
-
-          <DoublePara />
-
-          <ol>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere
-              tellus vitae, sagittis justo.
-            </li>
-            <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <ol>
-                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                <li>
-                  Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.
-                  <ol>
-                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                    <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                    <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                  </ol>
-                </li>
-                <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-              </ol>
-            </li>
-            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-            <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
-            <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-          </ol>
-
-          <DoublePara />
-
-          <Quote cite="John Doe">
-            <p>
-              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus.
-            </p>
-          </Quote>
-
-          <DoublePara />
-
-          <Quote cite="John Doe" graphic="quote">
-            <p>
-              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus.
-            </p>
-          </Quote>
-
-          <DoublePara />
-
-          <Quote cite="John Doe" isCenter>
-            <p>
-              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus.
-            </p>
-          </Quote>
-
-          <DoublePara />
-
-          <Quote cite="John Doe" graphic="quote" isCenter>
-            <p>
-              Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus.
-            </p>
-          </Quote>
-
-          <DoublePara />
         </Main>
 
         <FooterDept

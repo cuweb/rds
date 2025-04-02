@@ -22,7 +22,8 @@
 /* Section */
 .cu-section + .cu-section,
 :not(.cu-section) + .cu-section,
-.cu-section + :not(.cu-section) {
+.cu-section + :not(.cu-section),
+.cu-floatbox + :not(.cu-section) {
   @apply mt-6 md:mt-10;
 }
 
