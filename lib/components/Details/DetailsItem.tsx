@@ -13,13 +13,13 @@ export const DetailsItem = ({ children, as = 'li', isBold = false, iconName }: D
   const iconPath = `https://cdn.carleton.ca/rds/assets/font-awesome/${iconName}.svg`
 
   return (
-    <DetailsItemComponent className={`${boldStyle} ${iconName ? 'flex items-center' : ''}`}>
+    <DetailsItemComponent className={`${boldStyle} ${iconName ? 'flex align-top' : ''}`}>
       {iconName ? (
         <>
-          <span className="pr-2.5">
-            <img src={iconPath} alt={`${iconName} icon`} className="w-6 h-6 inline-block" />
+          <span className="block w-6 flex-none mr-4">
+            <img src={iconPath} alt={`${iconName} icon`} className="w-6 h-6 mt-1.5" />
           </span>
-          <p className="flex items-center">{children}</p>
+          <p>{children}</p>
         </>
       ) : (
         children

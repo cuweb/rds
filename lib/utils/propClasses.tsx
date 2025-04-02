@@ -10,11 +10,11 @@ export const maxWidthClasses = {
 }
 
 export const smallWidthClasses = {
-  xs: 'max-w-xs',
-  sm: 'max-w-sm',
-  md: 'max-w-md',
-  lg: 'max-w-lg',
-  xl: 'max-w-xl',
+  xs: 'lg:max-w-xs',
+  sm: 'lg:max-w-sm',
+  md: 'lg:max-w-md',
+  lg: 'lg:max-w-lg',
+  xl: 'lg:max-w-xl',
 }
 
 export const gridColumnClasses = {

@@ -10,7 +10,7 @@ export interface DetailsProps {
 
 export const DetailsWrapper = ({ children, as = 'ul', hasDividers = false, isGrey = false }: DetailsProps) => {
   const DetailsComponent = as
-  const bgStyles = isGrey ? 'bg-cu-black-50 rounded-xl py-6 px-10' : ''
+  const bgStyles = isGrey ? 'bg-cu-black-50 rounded-xl py-5 px-8' : ''
 
   const dividerStyle = hasDividers ? 'cu-details--dividers' : ''
 
