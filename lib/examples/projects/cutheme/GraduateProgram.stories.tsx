@@ -91,13 +91,20 @@ export const GraduateProgram: Story = {
 
           <FloatBox>
             <Details as="ul" isGrey>
-              <Details.Item isBold>Hybrid Event</Details.Item>
-              <Details.Item>Raven's Nest, 1125 Colonel By Drive</Details.Item>
               <Details.Item>
-                <a href="/">Teams meeting link</a>
+                <strong>Application Deadline:</strong> February 25th, 2025
               </Details.Item>
               <Details.Item>
-                <strong>Cost:</strong> $20 per adult, $15 for youth/senior
+                <strong>Length:</strong> 1 - 2 years (MEng), 2 years (MASc)
+              </Details.Item>
+              <Details.Item>
+                <strong>Degrees:</strong> Master of Applied Science, Master of Engineering
+              </Details.Item>
+              <Details.Item>
+                <strong>Pathways:</strong> Coursework, Research Project, Thesis
+              </Details.Item>
+              <Details.Item>
+                <strong>Experiential Learning:</strong> Co-op
               </Details.Item>
             </Details>
           </FloatBox>
