@@ -33,5 +33,5 @@ export interface ModalProps {
  *
  * @returns {JSX.Element} The rendered modal component.
  */
-export declare const Modal: ({ children, content, isOpen, maxWidth, noProse, alignTop, ariaLabel, ariaDescription, setIsOpen, hideCloseButton, preventOutsideClick, onClose, }: ModalProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Modal: ({ children, content, isOpen, maxWidth, noProse, alignTop, ariaLabel, ariaDescription, setIsOpen, hideCloseButton, preventOutsideClick, onClose, }: ModalProps) => import("react/jsx-runtime").JSX.Element | null;
 export {};
