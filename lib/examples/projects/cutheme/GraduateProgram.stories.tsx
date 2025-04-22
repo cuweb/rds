@@ -5,6 +5,9 @@ import { FloatBox } from '../../../layouts/FloatBox/FloatBox'
 import { FooterDept } from '../../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../../components/Nav/Nav'
 import { PageHeader } from '../../../components/PageHeader/PageHeader'
+import { Carleton360 } from '../../../components/Carleton360/Carleton360'
+import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
+import { Button } from '../../../components/Button/Button'
 import { Column } from '../../../layouts/Column/Column'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../../components/Footer/FooterCookie/FooterCookie'
@@ -85,8 +88,13 @@ export const GraduateProgram: Story = {
               image="https://picsum.photos/id/381/600/400"
               isType="image"
               opacity={60}
-              title="Program Title"
-            />
+              title="Information Technology (Digital Media, Networking Technology)"
+            >
+              <ButtonGroup>
+                <Button title="Apply Now" />
+                <Button color="dark-grey" title="Request Information" />
+              </ButtonGroup>
+            </WideImage>
           </Section>
 
           <FloatBox>
@@ -132,6 +140,13 @@ export const GraduateProgram: Story = {
 
           <h2>Heading Three</h2>
           <DoublePara />
+
+          <Carleton360>
+            <ButtonGroup>
+              <Button title="Sign up for 360" />
+              <Button title="Login to 360" color="dark-grey" />
+            </ButtonGroup>
+          </Carleton360>
 
           <h2>Heading Three</h2>
           <SinglePara />
