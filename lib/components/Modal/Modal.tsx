@@ -76,6 +76,11 @@ export const Modal = ({
       document.body.classList.remove('cu-dialog-open')
       document.body.classList.remove('cu-no-body-scroll')
     }
+
+    return () => {
+      document.body.classList.remove('cu-dialog-open')
+      document.body.classList.remove('cu-no-body-scroll')
+    }
   }, [isOpen])
 
   // Close button on Escape key
@@ -115,6 +120,8 @@ export const Modal = ({
   const innerContentClass =
     'overflow-x-hidden overflow-y-auto h-full max-h-[75vh] px-6 md:px-10' +
     (noProse ? '' : ' cu-prose cu-prose-dark cu-prose-first-last')
+
+  if (!isOpen) return null
 
   return (
     <dialog
