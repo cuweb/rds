@@ -33,6 +33,7 @@ class Filter {
    */
   dropdownsClickHandler(dropdown: HTMLElement) {
     const toggleButton = dropdown.querySelector('.cu-filter__dropdown-toggle')
+    const buttonArrow = dropdown.querySelector('.cu-filter__dropdown-arrow')
     const menu = dropdown.querySelector('.cu-filter__dropdown-menu')
 
     if (toggleButton && menu) {
@@ -40,9 +41,16 @@ class Filter {
       toggleButton.addEventListener('click', (event) => {
         event.stopPropagation()
 
+        // Close all other dropdowns
+        this.closeAllDropdowns()
+
         // Toggle the menu visibility
         const isHidden = menu.classList.contains('hidden')
         menu.classList.toggle('hidden', !isHidden)
+
+        if (buttonArrow) {
+          buttonArrow.classList.toggle('rotate-180', isHidden)
+        }
 
         // Update the aria-expanded attribute to indicate whether the menu is open or closed
         const ariaExpanded = toggleButton.attributes.getNamedItem('aria-expanded')
@@ -61,6 +69,10 @@ class Filter {
       document.addEventListener('click', (event) => {
         if (!dropdown.contains(event.target as Node)) {
           menu.classList.add('hidden')
+
+          if (buttonArrow) {
+            buttonArrow.classList.remove('rotate-180')
+          }
         }
       })
 
@@ -70,18 +82,57 @@ class Filter {
       })
     }
   }
+
+  /**
+   * Closes all dropdown menus within the component by iterating through the list of dropdown elements.
+   *
+   * - Hides the dropdown menu by adding the `hidden` class to its element.
+   * - Resets the dropdown arrow button by removing the `rotate-180` class.
+   *
+   * This method ensures that all dropdowns are in their closed state.
+   */
+  closeAllDropdowns() {
+    this.dropdowns.forEach((dropdown) => {
+      const menu = dropdown.querySelector('.cu-filter__dropdown-menu')
+      const buttonArrow = dropdown.querySelector('.cu-filter__dropdown-arrow')
+
+      if (menu) {
+        menu.classList.add('hidden')
+      }
+
+      if (buttonArrow) {
+        buttonArrow.classList.remove('rotate-180')
+      }
+    })
+  }
+
+  /**
+   * Cleans up resources and performs necessary teardown operations for the filter panel.
+   * Specifically, it ensures that all dropdowns associated with the filter panel are closed.
+   */
+  destroy() {
+    this.closeAllDropdowns()
+  }
 }
 
-const filter = () => {
+const FilterActions = () => {
   const filterElements = document.querySelectorAll('.cu-filter')
 
   if (!filterElements) {
     return
   }
 
+  const instances: Filter[] = []
+
   filterElements.forEach((filterElement) => {
-    new Filter(filterElement as HTMLElement)
+    instances.push(new Filter(filterElement as HTMLElement))
   })
+
+  return {
+    destroy: () => {
+      instances.forEach((instance) => instance.destroy())
+    },
+  }
 }
 
-export default filter
+export default FilterActions

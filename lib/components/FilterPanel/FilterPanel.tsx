@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import filter from './filter'
+import FilterActions from './filter'
 import Top from './FilterPanelTop'
 import Bottom from './FilterPanelBottom'
 
@@ -9,7 +9,13 @@ export interface IFilterPanelWrapperProp {
 
 export const FilterPanelWrapper = ({ children }: IFilterPanelWrapperProp) => {
   useEffect(() => {
-    filter()
+    const filterInstance = FilterActions()
+
+    return () => {
+      if (filterInstance && typeof filterInstance.destroy === 'function') {
+        filterInstance.destroy()
+      }
+    }
   }, [])
 
   return <div className="cu-filter text-sm font-medium">{children}</div>
