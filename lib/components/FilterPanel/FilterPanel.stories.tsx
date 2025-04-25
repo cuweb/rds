@@ -17,49 +17,52 @@ const meta: Meta<typeof FilterPanel> = {
 export default meta
 type Story = StoryObj<typeof FilterPanel>
 
-export const Primary: Story = {
-  args: {
-    sortOptions: [
-      { label: 'Newest to oldest', value: 'newest', selected: true },
-      { label: 'Oldest to newest', value: 'oldest' },
-      { label: 'Most popular', value: 'popular' },
-    ],
-    filterOptions: [
+const sortOptions = [
+  { label: 'Newest to oldest', value: 'newest', selected: true },
+  { label: 'Oldest to newest', value: 'oldest' },
+  { label: 'Most popular', value: 'popular' },
+]
+
+const filterOptions = [
+  {
+    id: 'audience',
+    name: 'Audience',
+    options: [
+      { value: 'staff', label: 'Staff', checked: false },
       {
-        id: 'audience',
-        name: 'Audience',
-        options: [
-          { value: 'staff', label: 'Staff', checked: false },
-          {
-            value: 'student',
-            label: 'Student',
-            checked: false,
-          },
-        ],
-      },
-      {
-        id: 'tags',
-        name: 'Tags',
-        options: [
-          { value: 'general', label: 'General', checked: false },
-          {
-            value: 'online/virtual',
-            label: 'Online/Virtual',
-            checked: true,
-          },
-          { value: 'finances', label: 'Finances', checked: false },
-          {
-            value: 'healthyworkplace',
-            label: 'Healthy Workplace',
-            checked: false,
-          },
-        ],
+        value: 'student',
+        label: 'Student',
+        checked: false,
       },
     ],
   },
-  render: (args) => (
+  {
+    id: 'tags',
+    name: 'Tags',
+    options: [
+      { value: 'general', label: 'General', checked: false },
+      {
+        value: 'online/virtual',
+        label: 'Online/Virtual',
+        checked: true,
+      },
+      { value: 'finances', label: 'Finances', checked: false },
+      {
+        value: 'healthyworkplace',
+        label: 'Healthy Workplace',
+        checked: false,
+      },
+    ],
+  },
+]
+
+export const Primary: Story = {
+  render: () => (
     <Main>
-      <FilterPanel {...args} />
+      <FilterPanel>
+        <FilterPanel.Top sortOptions={sortOptions} filterOptions={filterOptions} />
+        <FilterPanel.Bottom />
+      </FilterPanel>
     </Main>
   ),
 }
