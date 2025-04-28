@@ -2,21 +2,44 @@ class Filter {
   private filter: HTMLElement
   // eslint-disable-next-line no-undef
   private dropdowns: NodeListOf<HTMLElement>
+  // eslint-disable-next-line no-undef
+  private dropdownMenuItems: NodeListOf<HTMLElement>
+
+  public _activeFilterItems: string[]
 
   constructor(filterElement: HTMLElement) {
     this.filter = filterElement as HTMLElement
     this.dropdowns = this.filter.querySelectorAll('.cu-filter__dropdown')
 
+    this.dropdownMenuItems = this.filter.querySelectorAll('.cu-filter__dropdown-menu-item')
+
+    this._activeFilterItems = []
     this.init()
   }
 
   init() {
     this.dropdownsClick()
+    this.dropdownItemClick()
   }
 
   dropdownsClick() {
     this.dropdowns.forEach((dropdown) => {
       this.dropdownsClickHandler(dropdown)
+    })
+  }
+
+  dropdownItemClick() {
+    if (!this.dropdownMenuItems) {
+      return
+    }
+
+    this.dropdownMenuItems.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        event.stopPropagation()
+
+        const target = event.target as HTMLInputElement
+        this.dropdownItemClickHandler(target)
+      })
     })
   }
 
@@ -137,6 +160,39 @@ class Filter {
   }
 
   /**
+   * Handles the click event for a dropdown item in the filter panel.
+   * Toggles the selection state of the clicked item and updates the active filter items accordingly.
+   *
+   * @param item - The HTML element representing the dropdown item that was clicked.
+   *                It is expected to have a `data-value` attribute containing its value.
+   *
+   * Behavior:
+   * - If the item is already selected (has the `selected` class):
+   *   - Removes the `selected` class from the item.
+   *   - Removes the item's value from the `_activeFilterItems` array.
+   * - If the item is not selected:
+   *   - Adds the `selected` class to the item.
+   *   - Adds the item's value to the `_activeFilterItems` array.
+   */
+  dropdownItemClickHandler(item: HTMLInputElement) {
+    const value = item.getAttribute('data-label')
+
+    if (value) {
+      if (!item.checked) {
+        this._activeFilterItems = this._activeFilterItems.filter((item) => item !== value)
+      } else {
+        this._activeFilterItems.push(value)
+      }
+    }
+
+    console.log('activeFilterItems', this._activeFilterItems)
+  }
+
+  get activeFilterItems() {
+    return this._activeFilterItems
+  }
+
+  /**
    * Cleans up resources and performs necessary teardown operations for the filter panel.
    * Specifically, it ensures that all dropdowns associated with the filter panel are closed.
    */
@@ -155,7 +211,12 @@ const FilterActions = () => {
   const instances: Filter[] = []
 
   filterElements.forEach((filterElement) => {
-    instances.push(new Filter(filterElement as HTMLElement))
+    const filter = new Filter(filterElement as HTMLElement)
+
+    const activeFilterItem = (filter as Filter).activeFilterItems
+
+    console.log('activeFilterItem', activeFilterItem)
+    instances.push(filter)
   })
 
   return {

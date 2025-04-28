@@ -114,8 +114,9 @@ export const Top = ({ sortOptions, filterOptions }: IFilterTopProp) => {
                             name={`${filterOption.id}[]`}
                             type="checkbox"
                             defaultChecked={option.checked}
-                            className="w-4 h-4 rounded border-cu-black-200 text-cu-red focus:ring-cu-red-100"
+                            className="cu-filter__dropdown-menu-item w-4 h-4 rounded border-cu-black-200 text-cu-red focus:ring-cu-red-100"
                             value={option.value}
+                            data-label={option.label}
                           />
                           <label
                             htmlFor={`filter-${option.value}-${index}`}
