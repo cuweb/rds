@@ -371,7 +371,8 @@ const FilterActions = () => {
 
     const activeFilterItem = (filter as Filter).activeFilterItems
 
-    console.log('activeFilterItem', activeFilterItem)
+    console.log('Keep for the reference and future use in API', activeFilterItem)
+
     instances.push(filter)
   })
 
