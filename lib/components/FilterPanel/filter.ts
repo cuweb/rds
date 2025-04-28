@@ -4,7 +4,7 @@ class Filter {
   private dropdowns: NodeListOf<HTMLElement>
 
   constructor(filterElement: HTMLElement) {
-    this.filter = filterElement
+    this.filter = filterElement as HTMLElement
     this.dropdowns = this.filter.querySelectorAll('.cu-filter__dropdown')
 
     this.init()
@@ -34,7 +34,7 @@ class Filter {
   dropdownsClickHandler(dropdown: HTMLElement) {
     const toggleButton = dropdown.querySelector('.cu-filter__dropdown-toggle')
     const buttonArrow = dropdown.querySelector('.cu-filter__dropdown-arrow')
-    const menu = dropdown.querySelector('.cu-filter__dropdown-menu')
+    const menu = dropdown.querySelector('.cu-filter__dropdown-menu') as HTMLElement
 
     if (toggleButton && menu) {
       // Show/hide the menu when clicking the toggle button
@@ -47,6 +47,13 @@ class Filter {
         // Toggle the menu visibility
         const isHidden = menu.classList.contains('hidden')
         menu.classList.toggle('hidden', !isHidden)
+
+        if (isHidden) {
+          this.alignDropdowns(menu)
+        } else {
+          menu.style.left = ''
+          menu.style.right = ''
+        }
 
         if (buttonArrow) {
           buttonArrow.classList.toggle('rotate-180', isHidden)
@@ -80,6 +87,29 @@ class Filter {
       menu.addEventListener('click', (event) => {
         event.stopPropagation()
       })
+    }
+  }
+
+  /**
+   * Adjusts the alignment of a dropdown menu to ensure it stays within the viewport boundaries.
+   *
+   * This method checks the position of the dropdown menu relative to the viewport and adjusts
+   * its `left` and `right` styles to prevent it from overflowing beyond the edges of the container.
+   *
+   * @param menu - The HTML element representing the dropdown menu to be aligned.
+   */
+  alignDropdowns(menu: HTMLElement) {
+    const { right, left } = menu.getBoundingClientRect()
+    const viewportWidth = this.filter.offsetWidth
+
+    // Adjust alignment if the dropdown touches the right edge
+    if (right > viewportWidth) {
+      Object.assign(menu.style, { right: '-16px', left: 'auto' })
+    }
+
+    // Adjust alignment if the dropdown touches the left edge
+    if (left < 0) {
+      Object.assign(menu.style, { left: '-16px', right: 'auto' })
     }
   }
 

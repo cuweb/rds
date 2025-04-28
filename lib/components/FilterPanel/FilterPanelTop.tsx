@@ -1,3 +1,4 @@
+import React from 'react'
 export interface SortOptions {
   label: string
   value: string
@@ -46,8 +47,8 @@ export const Top = ({ sortOptions, filterOptions }: IFilterTopProp) => {
   const DropDownToggleClasses = `cu-filter__dropdown-toggle inline-flex justify-center text-sm font-medium text-cu-black-800 group hover:text-cu-red`
 
   return (
-    <div className="border rounded-tl-lg rounded-tr-lg border-cu-black-100 bg-gray-50 px-4 py-4 sm:px-6 sm:py-5">
-      <div className="flex items-center justify-between gap-4">
+    <div className="border rounded-tl-lg rounded-tr-lg border-cu-black-100 bg-gray-50 px-4 py-4 sm:px-6">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         {/* Left Side Sort option */}
         {sortOptions && (
           <div className={DropDownClasses}>
@@ -84,47 +85,52 @@ export const Top = ({ sortOptions, filterOptions }: IFilterTopProp) => {
         {/* Right Side Sort option */}
         {filterOptions && (
           <div className="ms-auto">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               {filterOptions.map((filterOption, index) => (
-                <div key={index} className={DropDownClasses}>
-                  <button
-                    className={DropDownToggleClasses}
-                    type="button"
-                    id={`${filterOption.id}MenuButton`}
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    {filterOption.name}
-                    <DropDownSVG />
-                  </button>
-                  <ul
-                    className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 w-40 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-4"
-                    aria-labelledby={`${filterOption.id}MenuButton`}
-                  >
-                    {filterOption.options.map((option, optionIndex) => (
-                      <li
-                        className={`flex items-center ${optionIndex !== filterOption.options.length - 1 ? 'mb-4' : ''}`}
-                        key={optionIndex}
-                      >
-                        <input
-                          id={`filter-${option.value}-${index}`}
-                          name={`${filterOption.id}[]`}
-                          type="checkbox"
-                          defaultChecked={option.checked}
-                          className="w-4 h-4 rounded border-cu-black-200 text-cu-red focus:ring-cu-red-100"
-                          value={option.value}
-                        />
-                        <label
-                          htmlFor={`filter-${option.value}-${index}`}
-                          className="pr-6 ml-3 text-sm whitespace-nowrap text-cu-black-600"
+                <React.Fragment key={index}>
+                  <div className={DropDownClasses}>
+                    <button
+                      className={DropDownToggleClasses}
+                      type="button"
+                      id={`${filterOption.id}MenuButton`}
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {filterOption.name}
+                      <DropDownSVG />
+                    </button>
+                    <ul
+                      className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-3 sm:p-4 w-32 sm:w-40"
+                      aria-labelledby={`${filterOption.id}MenuButton`}
+                    >
+                      {filterOption.options.map((option, optionIndex) => (
+                        <li
+                          className={`flex items-center ${optionIndex !== filterOption.options.length - 1 ? 'mb-4' : ''}`}
+                          key={optionIndex}
                         >
-                          {option.label}
-                        </label>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                          <input
+                            id={`filter-${option.value}-${index}`}
+                            name={`${filterOption.id}[]`}
+                            type="checkbox"
+                            defaultChecked={option.checked}
+                            className="w-4 h-4 rounded border-cu-black-200 text-cu-red focus:ring-cu-red-100"
+                            value={option.value}
+                          />
+                          <label
+                            htmlFor={`filter-${option.value}-${index}`}
+                            className="pr-6 ml-3 text-sm text-cu-black-600"
+                          >
+                            {option.label}
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {index < filterOptions.length - 1 && (
+                    <span className="border-l border-cu-black-100 h-8 w-[1px]"></span>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </div>
