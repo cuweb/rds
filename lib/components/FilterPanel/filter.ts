@@ -5,15 +5,19 @@ class Filter {
   // eslint-disable-next-line no-undef
   private dropdownMenuItems: NodeListOf<HTMLElement>
 
-  public _activeFilterItems: string[]
+  private activeFilterPanel: HTMLElement | null
+  // eslint-disable-next-line no-undef
+  private activeFilterRemoveBtns: NodeListOf<HTMLElement>
+
+  public _activeFilterItems: string[] = []
 
   constructor(filterElement: HTMLElement) {
     this.filter = filterElement as HTMLElement
     this.dropdowns = this.filter.querySelectorAll('.cu-filter__dropdown')
-
     this.dropdownMenuItems = this.filter.querySelectorAll('.cu-filter__dropdown-menu-item')
+    this.activeFilterPanel = this.filter.querySelector('.cu-filter__active-filter-panel')
+    this.activeFilterRemoveBtns = this.filter.querySelectorAll('.cu-filter__active-filter-remove')
 
-    this._activeFilterItems = []
     this.init()
   }
 
@@ -39,6 +43,29 @@ class Filter {
 
         const target = event.target as HTMLInputElement
         this.dropdownItemClickHandler(target)
+      })
+    })
+  }
+
+  activeFilterRemoveBtnsClick() {
+    if (!this.activeFilterRemoveBtns) {
+      return
+    }
+
+    this.activeFilterRemoveBtns.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        event.stopPropagation()
+
+        const target = event.currentTarget as HTMLInputElement
+
+        const value = target.getAttribute('data-label')
+
+        if (!value) {
+          return
+        }
+
+        this._activeFilterItems = this._activeFilterItems.filter((item) => item !== value)
+        this.removeFromActiveFilterPanel(value)
       })
     })
   }
@@ -164,14 +191,12 @@ class Filter {
    * Toggles the selection state of the clicked item and updates the active filter items accordingly.
    *
    * @param item - The HTML element representing the dropdown item that was clicked.
-   *                It is expected to have a `data-value` attribute containing its value.
+   *                It is expected to have a `data-label` attribute containing its value.
    *
    * Behavior:
-   * - If the item is already selected (has the `selected` class):
-   *   - Removes the `selected` class from the item.
+   * - If the item is already selected:
    *   - Removes the item's value from the `_activeFilterItems` array.
    * - If the item is not selected:
-   *   - Adds the `selected` class to the item.
    *   - Adds the item's value to the `_activeFilterItems` array.
    */
   dropdownItemClickHandler(item: HTMLInputElement) {
@@ -180,12 +205,49 @@ class Filter {
     if (value) {
       if (!item.checked) {
         this._activeFilterItems = this._activeFilterItems.filter((item) => item !== value)
+        this.removeFromActiveFilterPanel(value)
       } else {
         this._activeFilterItems.push(value)
+        this.addToActiveFilterPanel(value)
       }
     }
+  }
 
-    console.log('activeFilterItems', this._activeFilterItems)
+  addToActiveFilterPanel(item: string) {
+    if (!this.activeFilterPanel || !item) {
+      return
+    }
+
+    const filterItem = `<div class="flex items-center gap-0.5 pl-3 pe-2 py-1 border rounded-lg border-cu-black-100">
+          <span>${item}</span>
+          <button
+            type="button"
+            class="cu-filter__active-filter-remove flex flex-shrink-0 w-4 h-4 p-1 ml-1 rounded-full text-cu-black-400 hover:bg-cu-red hover:text-white"
+            data-label="${item}"
+          >
+            <span class="sr-only">Remove filter for ${item}</span>
+            <svg class="w-2 h-2" stroke="currentColor" fill="none" viewBox="0 0 8 8">
+              <path strokeLinecap="round" strokeWidth="1.5" d="M1 1l6 6m0-6L1 7"></path>
+            </svg>
+          </button>
+        </div>`
+
+    this.activeFilterPanel.insertAdjacentHTML('beforeend', filterItem)
+
+    // Add event listener to the newly added remove button
+    this.activeFilterRemoveBtns = this.filter.querySelectorAll('.cu-filter__active-filter-remove')
+    this.activeFilterRemoveBtnsClick()
+  }
+
+  removeFromActiveFilterPanel(item: string) {
+    if (!this.activeFilterPanel || !item) {
+      return
+    }
+
+    const filterItem = this.activeFilterPanel.querySelector(`[data-label="${item}"]`)
+    if (filterItem) {
+      filterItem.parentElement?.remove()
+    }
   }
 
   get activeFilterItems() {
