@@ -25,6 +25,7 @@ class Filter {
     this.dropdownsClick()
     this.activeFilterItemLoad()
     this.dropdownItemClick()
+    this.activeFilterRemoveBtnsClick()
   }
 
   dropdownsClick() {
@@ -47,28 +48,6 @@ class Filter {
     this.dropdownMenuItems.forEach((item) => {
       this.dropdownItemClickHandler(item as HTMLInputElement)
     })
-  }
-
-  /**
-   * Removes the checked dropdown items and remove the active filter panel.
-   */
-  unselectAllDropDownMenuItems() {
-    if (!this.dropdownMenuItems) {
-      return
-    }
-
-    this.dropdownMenuItems.forEach((item) => {
-      const input = item.querySelector('input[type="checkbox"]') as HTMLInputElement
-      if (input) {
-        const value = input.getAttribute('data-label')
-        input.checked = false
-
-        if (value) {
-          this.removeFromActiveFilterPanel(value)
-        }
-      }
-    })
-    this._activeFilterItems = []
   }
 
   dropdownItemClick() {
@@ -104,6 +83,7 @@ class Filter {
         }
 
         this._activeFilterItems = this._activeFilterItems.filter((item) => item !== value)
+        this.unselectDropDownItem(value)
         this.removeFromActiveFilterPanel(value)
       })
     })
@@ -203,29 +183,6 @@ class Filter {
   }
 
   /**
-   * Closes all dropdown menus within the component by iterating through the list of dropdown elements.
-   *
-   * - Hides the dropdown menu by adding the `hidden` class to its element.
-   * - Resets the dropdown arrow button by removing the `rotate-180` class.
-   *
-   * This method ensures that all dropdowns are in their closed state.
-   */
-  closeAllDropdowns() {
-    this.dropdowns.forEach((dropdown) => {
-      const menu = dropdown.querySelector('.cu-filter__dropdown-menu')
-      const buttonArrow = dropdown.querySelector('.cu-filter__dropdown-arrow')
-
-      if (menu) {
-        menu.classList.add('hidden')
-      }
-
-      if (buttonArrow) {
-        buttonArrow.classList.remove('rotate-180')
-      }
-    })
-  }
-
-  /**
    * Handles the click event for a dropdown item in the filter panel.
    * Toggles the selection state of the clicked item and updates the active filter items accordingly.
    *
@@ -252,6 +209,14 @@ class Filter {
     }
   }
 
+  /**
+   * Adds a filter item to the active filter panel and sets up the necessary event listeners
+   * for the remove button associated with the newly added filter item.
+   *
+   * @param item - The filter item to be added to the active filter panel. If the item is an
+   * empty string or the `activeFilterPanel` is not defined, the function will return early.
+   *
+   */
   addToActiveFilterPanel(item: string) {
     if (!this.activeFilterPanel || !item) {
       return
@@ -278,6 +243,17 @@ class Filter {
     this.activeFilterRemoveBtnsClick()
   }
 
+  /**
+   * Removes an item from the active filter panel if it exists.
+   *
+   * @param item - The label of the item to be removed from the active filter panel.
+   *                If the item is not provided or the active filter panel is not set,
+   *                the method will return without performing any action.
+   *
+   * This method searches for an element within the active filter panel that matches
+   * the provided `item` label using a `data-label` attribute. If such an element is found,
+   * it removes the element's parent from the DOM.
+   */
   removeFromActiveFilterPanel(item: string) {
     if (!this.activeFilterPanel || !item) {
       return
@@ -286,11 +262,89 @@ class Filter {
     const filterItem = this.activeFilterPanel.querySelector(`[data-label="${item}"]`)
     if (filterItem) {
       filterItem.parentElement?.remove()
+
+      const item = filterItem.getAttribute('data-label')
+      if (!item) {
+        return
+      }
+      this.unselectDropDownItem(item)
     }
   }
 
+  /**
+   * Retrieves the currently active filter items.
+   *
+   * @return An array or collection of active filter items.
+   */
   get activeFilterItems() {
     return this._activeFilterItems
+  }
+
+  /**
+   * Closes all dropdown menus within the component by iterating through the list of dropdown elements.
+   *
+   * - Hides the dropdown menu by adding the `hidden` class to its element.
+   * - Resets the dropdown arrow button by removing the `rotate-180` class.
+   *
+   * This method ensures that all dropdowns are in their closed state.
+   */
+  closeAllDropdowns() {
+    this.dropdowns.forEach((dropdown) => {
+      const menu = dropdown.querySelector('.cu-filter__dropdown-menu')
+      const buttonArrow = dropdown.querySelector('.cu-filter__dropdown-arrow')
+
+      if (menu) {
+        menu.classList.add('hidden')
+      }
+
+      if (buttonArrow) {
+        buttonArrow.classList.remove('rotate-180')
+      }
+    })
+  }
+
+  /**
+   * Unselects a dropdown item by its label.
+   *
+   * This method iterates through the dropdown menu items and finds the checkbox
+   * input element that matches the provided label. If a matching checkbox is found,
+   * it is unchecked.
+   *
+   * @param item - The label of the dropdown item to unselect. If the label is not provided
+   *               or is falsy, the method will return without performing any action.
+   */
+  unselectDropDownItem(item: string) {
+    if (!item) {
+      return
+    }
+
+    this.dropdownMenuItems.forEach((dropdownItem) => {
+      if (dropdownItem && dropdownItem.getAttribute('data-label') == item) {
+        ;(dropdownItem as HTMLInputElement).checked = false
+      }
+    })
+  }
+
+  /**
+   * Removes the checked dropdown items and remove the active filter panel.
+   */
+  unselectAllDropDownMenuItems() {
+    if (!this.dropdownMenuItems) {
+      return
+    }
+
+    this.dropdownMenuItems.forEach((item) => {
+      const input = item.querySelector('input[type="checkbox"]') as HTMLInputElement
+      if (input) {
+        const value = input.getAttribute('data-label')
+        input.checked = false
+
+        if (value) {
+          this.removeFromActiveFilterPanel(value)
+        }
+      }
+    })
+    this._activeFilterItems = []
   }
 
   /**
