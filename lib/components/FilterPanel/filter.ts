@@ -49,6 +49,28 @@ class Filter {
     })
   }
 
+  /**
+   * Removes the checked dropdown items and remove the active filter panel.
+   */
+  unselectAllDropDownMenuItems() {
+    if (!this.dropdownMenuItems) {
+      return
+    }
+
+    this.dropdownMenuItems.forEach((item) => {
+      const input = item.querySelector('input[type="checkbox"]') as HTMLInputElement
+      if (input) {
+        const value = input.getAttribute('data-label')
+        input.checked = false
+
+        if (value) {
+          this.removeFromActiveFilterPanel(value)
+        }
+      }
+    })
+    this._activeFilterItems = []
+  }
+
   dropdownItemClick() {
     if (!this.dropdownMenuItems) {
       return
@@ -277,6 +299,7 @@ class Filter {
    */
   destroy() {
     this.closeAllDropdowns()
+    this.unselectAllDropDownMenuItems()
   }
 }
 
