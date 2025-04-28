@@ -23,12 +23,29 @@ class Filter {
 
   init() {
     this.dropdownsClick()
+    this.activeFilterItemLoad()
     this.dropdownItemClick()
   }
 
   dropdownsClick() {
+    if (!this.dropdowns) {
+      return
+    }
+
     this.dropdowns.forEach((dropdown) => {
       this.dropdownsClickHandler(dropdown)
+    })
+  }
+
+  /**
+   * Load the active filter items when there is already a selected filter item.
+   */
+  activeFilterItemLoad() {
+    if (!this.dropdownMenuItems) {
+      return
+    }
+    this.dropdownMenuItems.forEach((item) => {
+      this.dropdownItemClickHandler(item as HTMLInputElement)
     })
   }
 
