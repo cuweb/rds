@@ -47,6 +47,7 @@ export const iconNames = [
   { value: 'circle-xmark', label: 'Circle xmark' },
   { value: 'clapperboard-play', label: 'Clapperboard play' },
   { value: 'clone', label: 'Clone' },
+  { value: 'cloud-sun', label: 'Cloud sun' },
   { value: 'code', label: 'Code' },
   { value: 'comment-dollar', label: 'Comment dollar' },
   { value: 'comment-dots', label: 'Comment dots' },

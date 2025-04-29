@@ -9,6 +9,7 @@ export interface StackedListProps {
     maxWidth?: maxWidthKeys;
     offset?: 'left' | 'right';
     header?: string;
+    noShadow?: boolean;
 }
-export declare const StackedList: ({ children, as, cols, listType, maxWidth, offset, header, }: StackedListProps) => import("react/jsx-runtime").JSX.Element;
+export declare const StackedList: ({ children, as, cols, listType, maxWidth, offset, header, noShadow, }: StackedListProps) => import("react/jsx-runtime").JSX.Element;
 export {};

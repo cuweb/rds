@@ -11,7 +11,7 @@ export declare const Listing: {
     displayName: string;
 } & {
     Figure: {
-        ({ children, isSquare }: import('./ListingFigure').ListingFigureProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, isSquare, isSmall, hideMobile }: import('./ListingFigure').ListingFigureProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Body: {
@@ -24,6 +24,10 @@ export declare const Listing: {
     };
     Excerpt: {
         ({ text, hasMore }: import('./ListingExcerpt').ListingExcerptProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
+    Content: {
+        ({ children }: import('./ListingContent').ListingContentProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     DateThumb: {
