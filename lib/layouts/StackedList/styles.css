@@ -1,4 +1,4 @@
-/*
+Programs/*
 StackedList for posts
 */
 
@@ -26,6 +26,14 @@ StackedList for posts
 .cu-stackedlist--posts.cu-stackedlist--2 > li:nth-child(even):last-child,
 .cu-stackedlist--posts.cu-stackedlist--2 > li:nth-child(odd):nth-last-child(2) {
   @apply md:border-b-0;
+}
+
+/*
+No Shadow, tighter spacing
+*/
+
+.cu-stackedlist--no-shadow ul li {
+  @apply px-0 md:p-8 odd:md:pl-0 even:md:pr-0;
 }
 
 /*
