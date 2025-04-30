@@ -2,12 +2,14 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { Main } from '../../layouts/Main/Main'
+import { ButtonGroup } from '../../components/ButtonGroup/ButtonGroup'
 import { Listing } from './Listing'
 
 import { NewsData } from '../../data/NewsData'
 import { EventData } from '../../data/EventData'
 import { IconData } from '../../data/IconData'
 import { PeopleData } from '../../data/PeopleData'
+import { ProgramsData } from '../../data/ProgramsData'
 
 const meta: Meta<typeof Listing> = {
   title: 'Components/Listing',
@@ -320,6 +322,76 @@ export const MultiplePeopleListing: Story = {
                 <a href={link} className="cu-button cu-button--red cu-button--small">
                   View profile
                 </a>
+              </Listing.Footer>
+            </Listing.Body>
+          </Listing>
+        ))}
+      </StackedList>
+    </Main>
+  ),
+}
+
+export const SingleProgramListing: Story = {
+  args: {},
+  render: (args) => (
+    <Main>
+      <StackedList cols="1" noShadow>
+        {ProgramsData.slice(0, 1).map(({ id, link, title, image, alt, degree }) => (
+          <Listing key={id} {...args}>
+            <Listing.Figure isSmall hideMobile>
+              <img src={image} alt={alt} width="400" height="300" />
+            </Listing.Figure>
+            <Listing.Body>
+              <Listing.Header title={title} />
+              <Listing.Content>
+                <p>
+                  <em>{degree}</em>
+                </p>
+              </Listing.Content>
+              <Listing.Footer>
+                <ButtonGroup>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    Apply Now
+                  </a>
+                  <a href={link} className="cu-button cu-button--grey cu-button--small">
+                    More Info
+                  </a>
+                </ButtonGroup>
+              </Listing.Footer>
+            </Listing.Body>
+          </Listing>
+        ))}
+      </StackedList>
+    </Main>
+  ),
+}
+
+export const MultipleProgramListing: Story = {
+  args: {},
+  render: (args) => (
+    <Main>
+      <StackedList cols="2" noShadow>
+        {ProgramsData.slice(0, 12).map(({ id, link, title, image, alt, degree }) => (
+          <Listing key={id} {...args}>
+            <Listing.Figure isSmall hideMobile>
+              <img src={image} alt={alt} width="400" height="300" />
+            </Listing.Figure>
+            <Listing.Body>
+              <Listing.Header title={title} />
+              <Listing.Content>
+                <p>
+                  <em>{degree}</em>
+                </p>
+              </Listing.Content>
+              <Listing.Footer>
+                <ButtonGroup>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    Apply Now
+                  </a>
+                  <a href={link} className="cu-button cu-button--grey cu-button--small">
+                    More Info
+                  </a>
+                </ButtonGroup>
               </Listing.Footer>
             </Listing.Body>
           </Listing>

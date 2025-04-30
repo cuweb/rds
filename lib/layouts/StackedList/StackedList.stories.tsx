@@ -26,6 +26,7 @@ Primary.args = {
   cols: '2',
   listType: 'posts',
   maxWidth: '5xl',
+  noShadow: false,
 }
 
 export const WithListItems: Story = {
@@ -37,9 +38,29 @@ export const WithListItems: Story = {
       <Main>
         <Section>
           <StackedList {...args}>
-            <li className="p-6">This is a list item</li>
-            <li className="p-6">This is a list item</li>
-            <li className="p-6">This is a list item</li>
+            <li className="not-prose p-6 md:p-8 !my-0">This is a list item</li>
+            <li className="not-prose p-6 md:p-8 !my-0">This is a list item</li>
+            <li className="not-prose p-6 md:p-8 !my-0">This is a list item</li>
+          </StackedList>
+        </Section>
+      </Main>
+    )
+  },
+}
+
+export const NoShadow: Story = {
+  args: {
+    ...Primary.args,
+    noShadow: true,
+  },
+  render: (args) => {
+    return (
+      <Main>
+        <Section>
+          <StackedList {...args}>
+            <li className="not-prose p-6 md:p-8 !my-0">This is a list item</li>
+            <li className="not-prose p-6 md:p-8 !my-0">This is a list item</li>
+            <li className="not-prose p-6 md:p-8 !my-0">This is a list item</li>
           </StackedList>
         </Section>
       </Main>
