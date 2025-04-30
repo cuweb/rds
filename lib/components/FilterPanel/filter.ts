@@ -37,8 +37,9 @@ class Filter extends Dropdown {
   }
 
   init() {
-    this.activeFilterItemLoad()
     this.activeSortItemLoad()
+    this.sortItemClick()
+    this.activeFilterItemLoad()
     this.filterItemClick()
     this.activeFilterRemoveBtnsClick()
   }
@@ -55,10 +56,35 @@ class Filter extends Dropdown {
     })
   }
 
+  /**
+   * Load the active sort item when there is already a selected sort item.
+   */
   activeSortItemLoad() {
     if (!this.sortingItems) {
       return
     }
+
+    this.sortingItems.forEach((item) => {
+      const isSelected = item.getAttribute('data-selected')
+      if (isSelected === 'true') {
+        this._activeFilterItems.sortBy = item.getAttribute('data-sort') || ''
+      }
+    })
+  }
+
+  sortItemClick() {
+    if (!this.sortingItems) {
+      return
+    }
+
+    this.sortingItems.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const target = event.currentTarget as HTMLInputElement
+
+        this.sortItemClickHandler(target as HTMLInputElement)
+      })
+    })
   }
 
   filterItemClick() {
@@ -97,6 +123,54 @@ class Filter extends Dropdown {
         this.unselectFilterItem(value)
         this.removeFromActiveFilterPanel(value)
       })
+    })
+  }
+
+  /**
+   * Handles the click event for a sort item in the filter panel.
+   *
+   * This method performs the following actions:
+   * 1. Unselects any previously selected sort item.
+   * 2. Retrieves the sort value from the clicked item's `data-sort` attribute.
+   * 3. Marks the clicked item as selected by setting its `data-selected` attribute
+   *    to "true" and adding a CSS class for visual indication.
+   * 4. Updates the active filter's `sortBy` property with the retrieved value.
+   * 5. Closes all dropdown menus in the filter panel.
+   *
+   * @param item - The HTML input element representing the clicked sort item.
+   */
+  sortItemClickHandler(item: HTMLInputElement) {
+    this.unselectSortItem()
+
+    const value = item.getAttribute('data-sort')
+
+    item.setAttribute('data-selected', 'true')
+    item.classList.add('bg-gray-100')
+    this._activeFilterItems.sortBy = value || ''
+
+    this.closeAllDropdowns()
+  }
+
+  /**
+   * Unselects all sorting items by updating their attributes and classes.
+   *
+   * This method iterates through the `sortingItems` array and performs the following actions
+   * for each item:
+   * - Sets the `data-selected` attribute to `'false'`.
+   * - Removes the `bg-gray-100` CSS class.
+   *
+   * If `sortingItems` is not defined, the method exits early without performing any actions.
+   */
+  unselectSortItem() {
+    if (!this.sortingItems) {
+      return
+    }
+
+    this.sortingItems.forEach((item) => {
+      if (item) {
+        item.setAttribute('data-selected', 'false')
+        item.classList.remove('bg-gray-100')
+      }
     })
   }
 
