@@ -42,11 +42,17 @@ class Dropdown {
       toggleButton.addEventListener('click', (event) => {
         event.stopPropagation()
 
+        // Toggle the menu visibility
+        const isHidden = menu.classList.contains('hidden')
+
+        if (!isHidden) {
+          this.closeAllDropdowns()
+          return
+        }
+
         // Close all other dropdowns
         this.closeAllDropdowns()
 
-        // Toggle the menu visibility
-        const isHidden = menu.classList.contains('hidden')
         menu.classList.toggle('hidden', !isHidden)
 
         if (isHidden) {
