@@ -69,13 +69,14 @@ export const Top = ({ sortOptions, filterOptions }: IFilterTopProp) => {
             >
               {sortOptions.map((option, index) => (
                 <li key={index} className="!my-0">
-                  <a
-                    href="#"
+                  <button
+                    type="button"
+                    data-selected={option.selected}
                     data-sort={option.value}
-                    className={`text-cu-black-600 block px-4 py-2 hover:bg-gray-200 ${option.selected ? 'bg-gray-100' : ''}`}
+                    className={`text-cu-black-600 block px-4 py-2 hover:bg-gray-200 w-full text-start ${option.selected ? 'bg-gray-100' : ''}`}
                   >
                     {option.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
