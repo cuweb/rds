@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import FilterActions from './filter'
-import Top from './FilterPanelTop'
-import Bottom from './FilterPanelBottom'
+import { FilterPanelTop } from './FilterPanelTop'
+import { FilterPanelBottom } from './FilterPanelBottom'
 
 export interface IFilterPanelWrapperProp {
   children?: React.ReactNode
@@ -22,6 +22,6 @@ export const FilterPanelWrapper = ({ children }: IFilterPanelWrapperProp) => {
 }
 
 export const FilterPanel = Object.assign(FilterPanelWrapper, {
-  Top: Top,
-  Bottom: Bottom,
+  Top: FilterPanelTop,
+  Bottom: FilterPanelBottom,
 })

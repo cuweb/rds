@@ -42,7 +42,7 @@ export const DropDownSVG = () => {
   )
 }
 
-export const Top = ({ sortOptions, filterOptions }: IFilterTopProp) => {
+export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) => {
   const DropDownClasses = `cu-filter__dropdown relative`
   const DropDownToggleClasses = `cu-filter__dropdown-toggle inline-flex justify-center text-sm font-medium text-cu-black-800 group hover:text-cu-red`
 
@@ -142,4 +142,4 @@ export const Top = ({ sortOptions, filterOptions }: IFilterTopProp) => {
   )
 }
 
-export default Top
+FilterPanelTop.displayName = 'FilterPanel.Top'
