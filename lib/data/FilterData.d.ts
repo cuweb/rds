@@ -16,3 +16,23 @@ export declare const FilterData: {
         }[];
     }[];
 };
+export declare const FilterPanelData: {
+    sortOptions: ({
+        label: string;
+        value: string;
+        selected: boolean;
+    } | {
+        label: string;
+        value: string;
+        selected?: undefined;
+    })[];
+    filters: {
+        id: string;
+        name: string;
+        options: {
+            value: string;
+            label: string;
+            checked: boolean;
+        }[];
+    }[];
+};
