@@ -11,6 +11,7 @@ export interface StackedListProps {
   maxWidth?: maxWidthKeys
   offset?: 'left' | 'right'
   header?: string
+  noShadow?: boolean
 }
 
 const styles = {
@@ -27,13 +28,15 @@ export const StackedList = ({
   maxWidth = '5xl',
   offset,
   header,
+  noShadow = false,
 }: StackedListProps) => {
   const ListComponent = as
   const offsetStyle = offset ? `${styles[offset]} ${styles.offset} md:max-w-sm lg:max-w-md` : maxWidthClasses[maxWidth]
+  const shadowStyle = noShadow ? 'cu-stackedlist--no-shadow' : 'shadow-lg'
 
   return (
     <div
-      className={`cu-stackedlist cu-component-updated not-prose mx-auto overflow-hidden rounded-lg bg-white w-full shadow-lg ${offsetStyle}`}
+      className={`cu-stackedlist cu-component-updated not-prose mx-auto overflow-hidden rounded-lg bg-white w-full ${shadowStyle} ${offsetStyle}`}
     >
       {header && (
         <h2 className="px-6 py-4 text-base font-semibold border-b rounded-t-lg md:text-xl bg-gray-50 text-cu-black-800">

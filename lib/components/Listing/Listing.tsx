@@ -3,6 +3,7 @@ import { ListingFigure } from './ListingFigure'
 import { ListingBody } from './ListingBody'
 import { ListingHeader } from './ListingHeader'
 import { ListingExcerpt } from './ListingExcerpt'
+import { ListingContent } from './ListingContent'
 import { ListingDateThumb } from './ListingDateThumb'
 import { ListingIconThumb } from './ListingIconThumb'
 import { ListingInitials } from './ListingInitials'
@@ -27,6 +28,7 @@ export const Listing = Object.assign(ListingWrapper, {
   Body: ListingBody,
   Header: ListingHeader,
   Excerpt: ListingExcerpt,
+  Content: ListingContent,
   DateThumb: ListingDateThumb,
   IconThumb: ListingIconThumb,
   Initials: ListingInitials,

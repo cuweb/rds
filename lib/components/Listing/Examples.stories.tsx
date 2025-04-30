@@ -5,12 +5,14 @@ import { Main } from '../../layouts/Main/Main'
 import { StackedList } from '../../layouts/StackedList/StackedList'
 import { FooterStandard } from '../Footer/FooterStandard/FooterStandard'
 import { Nav } from '../Nav/Nav'
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { NavButtonsData } from '../../data/NavData'
 import { Listing } from './Listing'
 import { NewsData } from '../../data/NewsData'
 import { EventData } from '../../data/EventData'
 import { IconData } from '../../data/IconData'
 import { PeopleData } from '../../data/PeopleData'
+import { ProgramsData } from '../../data/ProgramsData'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 const meta: Meta = {
@@ -52,7 +54,7 @@ export const LayoutExamples: Story = {
         <Section>
           <PageHeader
             as="h1"
-            header="Image Grid Layouts"
+            header="Listing Layouts"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
             size="lg"
           />
@@ -174,6 +176,38 @@ export const LayoutExamples: Story = {
                   <a href={link} className="cu-button cu-button--red cu-button--small">
                     View profile
                   </a>
+                </Listing.Footer>
+              </Listing.Body>
+            </Listing>
+          ))}
+        </StackedList>
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
+        <StackedList cols="2" noShadow>
+          {ProgramsData.slice(0, 12).map(({ id, link, title, image, alt, degree }) => (
+            <Listing key={id}>
+              <Listing.Figure isSmall hideMobile>
+                <img src={image} alt={alt} width="400" height="300" />
+              </Listing.Figure>
+              <Listing.Body>
+                <Listing.Header title={title} />
+                <Listing.Content>
+                  <p>
+                    <em>{degree}</em>
+                  </p>
+                </Listing.Content>
+                <Listing.Footer>
+                  <ButtonGroup>
+                    <a href={link} className="cu-button cu-button--red cu-button--small">
+                      Apply Now
+                    </a>
+                    <a href={link} className="cu-button cu-button--grey cu-button--small">
+                      More Info
+                    </a>
+                  </ButtonGroup>
                 </Listing.Footer>
               </Listing.Body>
             </Listing>
