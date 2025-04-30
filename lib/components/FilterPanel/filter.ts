@@ -4,7 +4,10 @@ class Filter extends Dropdown {
   private filter: HTMLElement
 
   // eslint-disable-next-line no-undef
-  private dropdownMenuItems: NodeListOf<HTMLElement>
+  private sortingItems: NodeListOf<HTMLElement>
+
+  // eslint-disable-next-line no-undef
+  private filteringItems: NodeListOf<HTMLElement>
 
   private activeFilterPanel: HTMLElement | null
   // eslint-disable-next-line no-undef
@@ -22,7 +25,11 @@ class Filter extends Dropdown {
     super(filterElement)
 
     this.filter = filterElement as HTMLElement
-    this.dropdownMenuItems = this.filter.querySelectorAll('.cu-filter__dropdown-menu-item')
+
+    this.sortingItems = this.filter.querySelectorAll('.cu-filter__sorting-item')
+
+    this.filteringItems = this.filter.querySelectorAll('.cu-filter__filtering-item')
+
     this.activeFilterPanel = this.filter.querySelector('.cu-filter__active-filter-panel')
     this.activeFilterRemoveBtns = this.filter.querySelectorAll('.cu-filter__active-filter-remove')
 
@@ -31,7 +38,8 @@ class Filter extends Dropdown {
 
   init() {
     this.activeFilterItemLoad()
-    this.dropdownItemClick()
+    this.activeSortItemLoad()
+    this.filterItemClick()
     this.activeFilterRemoveBtnsClick()
   }
 
@@ -39,25 +47,31 @@ class Filter extends Dropdown {
    * Load the active filter items when there is already a selected filter item.
    */
   activeFilterItemLoad() {
-    if (!this.dropdownMenuItems) {
+    if (!this.filteringItems) {
       return
     }
-    this.dropdownMenuItems.forEach((item) => {
-      this.dropdownItemClickHandler(item as HTMLInputElement)
+    this.filteringItems.forEach((item) => {
+      this.filterItemClickHandler(item as HTMLInputElement)
     })
   }
 
-  dropdownItemClick() {
-    if (!this.dropdownMenuItems) {
+  activeSortItemLoad() {
+    if (!this.sortingItems) {
+      return
+    }
+  }
+
+  filterItemClick() {
+    if (!this.filteringItems) {
       return
     }
 
-    this.dropdownMenuItems.forEach((item) => {
+    this.filteringItems.forEach((item) => {
       item.addEventListener('click', (event) => {
         event.stopPropagation()
 
         const target = event.target as HTMLInputElement
-        this.dropdownItemClickHandler(target)
+        this.filterItemClickHandler(target)
       })
     })
   }
@@ -80,17 +94,17 @@ class Filter extends Dropdown {
         }
 
         this._activeFilterItems.filterBy = this._activeFilterItems.filterBy.filter((item) => item !== value)
-        this.unselectDropDownItem(value)
+        this.unselectFilterItem(value)
         this.removeFromActiveFilterPanel(value)
       })
     })
   }
 
   /**
-   * Handles the click event for a dropdown item in the filter panel.
+   * Handles the click event for a filter item in the filter panel.
    * Toggles the selection state of the clicked item and updates the active filter items accordingly.
    *
-   * @param item - The HTML element representing the dropdown item that was clicked.
+   * @param item - The HTML element representing the filter item that was clicked.
    *                It is expected to have a `data-label` attribute containing its value.
    *
    * Behavior:
@@ -99,7 +113,7 @@ class Filter extends Dropdown {
    * - If the item is not selected:
    *   - Adds the item's value to the `_activeFilterItems` array.
    */
-  dropdownItemClickHandler(item: HTMLInputElement) {
+  filterItemClickHandler(item: HTMLInputElement) {
     const value = item.getAttribute('data-label')
 
     if (value) {
@@ -171,7 +185,7 @@ class Filter extends Dropdown {
       if (!item) {
         return
       }
-      this.unselectDropDownItem(item)
+      this.unselectFilterItem(item)
     }
   }
 
@@ -194,12 +208,12 @@ class Filter extends Dropdown {
    * @param item - The label of the dropdown item to unselect. If the label is not provided
    *               or is falsy, the method will return without performing any action.
    */
-  unselectDropDownItem(item: string) {
+  unselectFilterItem(item: string) {
     if (!item) {
       return
     }
 
-    this.dropdownMenuItems.forEach((dropdownItem) => {
+    this.filteringItems.forEach((dropdownItem) => {
       if (dropdownItem && dropdownItem.getAttribute('data-label') == item) {
         ;(dropdownItem as HTMLInputElement).checked = false
       }
@@ -209,12 +223,12 @@ class Filter extends Dropdown {
   /**
    * Removes the checked dropdown items and remove the active filter panel.
    */
-  unselectAllDropDownMenuItems() {
-    if (!this.dropdownMenuItems) {
+  unselectAllFilterMenuItems() {
+    if (!this.filteringItems) {
       return
     }
 
-    this.dropdownMenuItems.forEach((item) => {
+    this.filteringItems.forEach((item) => {
       const input = item.querySelector('input[type="checkbox"]') as HTMLInputElement
       if (input) {
         const value = input.getAttribute('data-label')
@@ -233,7 +247,7 @@ class Filter extends Dropdown {
    * Specifically, it ensures that all dropdowns associated with the filter panel are closed.
    */
   destroy() {
-    this.unselectAllDropDownMenuItems()
+    this.unselectAllFilterMenuItems()
   }
 }
 
