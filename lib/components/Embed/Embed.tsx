@@ -5,6 +5,7 @@ import { EmbedSoundCloud } from './Embed.SoundCloud'
 import { EmbedYouTube } from './Embed.YouTube'
 import { EmbedVimeo } from './Embed.Vimeo'
 import { EmbedTED } from './Embed.TED'
+import { EmbedAudioboom } from './Embed.Audioboom'
 import { Figure } from '../Figure/Figure'
 
 export interface EmbedProps {
@@ -33,6 +34,7 @@ export const Embed = Object.assign(EmbedWrapper, {
   YouTube: EmbedYouTube,
   TED: EmbedTED,
   Vimeo: EmbedVimeo,
+  Audioboom: EmbedAudioboom,
 })
 
 EmbedWrapper.displayName = 'Embed'
