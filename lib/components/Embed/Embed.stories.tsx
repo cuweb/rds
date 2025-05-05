@@ -98,3 +98,13 @@ export const HubSpot: Story = {
     </Main>
   ),
 }
+
+export const Audioboom: Story = {
+  render: (args) => (
+    <Main>
+      <Embed {...args}>
+        <Embed.Audioboom title="test" url="https://audioboom.com/posts/7959102" />
+      </Embed>
+    </Main>
+  ),
+}
