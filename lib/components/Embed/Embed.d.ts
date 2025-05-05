@@ -35,4 +35,8 @@ export declare const Embed: {
         ({ title, url }: import('./Embed.Vimeo').EmbedVimeoProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    Audioboom: {
+        ({ title, url }: import('./Embed.Audioboom').EmbedAudioboomProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
 };
