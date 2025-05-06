@@ -171,7 +171,7 @@ class Filter extends Dropdown {
 
         if (filterType && this._activeFilterItems.filterBy[filterType]) {
           this._activeFilterItems.filterBy[filterType] = this._activeFilterItems.filterBy[filterType].filter(
-            (item: string) => item !== value,
+            (filterType: string) => filterType !== value,
           )
         }
         this.unselectFilterItem(value)
@@ -234,14 +234,14 @@ class Filter extends Dropdown {
    * Handles the click event for a filter item in the filter panel.
    * Toggles the selection state of the clicked item and updates the active filter items accordingly.
    *
-   * @param item - The HTML element representing the filter item that was clicked.
-   *                It is expected to have a `data-label` attribute containing its value.
+   * @param {HTMLElement} item - The HTML element representing the filter item that was clicked.
+   *                           It is expected to have a `data-label` attribute containing its value.
    *
-   * Behavior:
-   * - If the item is already selected:
-   *   - Removes the item's value from the `_activeFilterItems` array.
-   * - If the item is not selected:
-   *   - Adds the item's value to the `_activeFilterItems` array.
+   *                           Behavior:
+   *                           - If the item is already selected:
+   *                           - Removes the item's value from the `_activeFilterItems` array.
+   *                           - If the item is not selected:
+   *                           - Adds the item's value to the `_activeFilterItems` array.
    */
   filterItemClickHandler(item: HTMLInputElement) {
     const value = item.getAttribute('data-label')
@@ -262,12 +262,12 @@ class Filter extends Dropdown {
   }
 
   /**
-   * Adds a filter item to the active filter panel and sets up the necessary event listeners
-   * for the remove button associated with the newly added filter item.
+   * Adds a filter item to the active filter panel and attaches an event listener
+   * to the remove button of the newly added filter item.
    *
-   * @param item - The filter item to be added to the active filter panel. If the item is an
-   * empty string or the `activeFilterPanel` is not defined, the function will return early.
-   *
+   * @param {string} item       - The label of the filter item to be added.
+   * @param {string} filterType - The type/category of the filter item.
+   * @return {void} This function does not return a value.
    */
   addToActiveFilterPanel(item: string, filterType: string) {
     if (!this.activeFilterPanel || !item || !filterType) {
@@ -299,13 +299,13 @@ class Filter extends Dropdown {
   /**
    * Removes an item from the active filter panel if it exists.
    *
-   * @param item - The label of the item to be removed from the active filter panel.
-   *                If the item is not provided or the active filter panel is not set,
-   *                the method will return without performing any action.
+   * @param {string} item - The label of the item to be removed from the active filter panel.
+   *                      If the item is not provided or the active filter panel is not set,
+   *                      the method will return without performing any action.
    *
-   * This method searches for an element within the active filter panel that matches
-   * the provided `item` label using a `data-label` attribute. If such an element is found,
-   * it removes the element's parent from the DOM.
+   *                      This method searches for an element within the active filter panel that matches
+   *                      the provided `item` label using a `data-label` attribute. If such an element is found,
+   *                      it removes the element's parent from the DOM.
    */
   removeFromActiveFilterPanel(item: string) {
     if (!this.activeFilterPanel || !item) {
@@ -327,7 +327,7 @@ class Filter extends Dropdown {
   /**
    * Retrieves the currently active filter items.
    *
-   * @return An array or collection of active filter items.
+   * @return {{ sortBy: string, filterBy: Record<string, string[]> }} The currently active filter items.
    */
   get activeFilterItems() {
     return this._activeFilterItems
