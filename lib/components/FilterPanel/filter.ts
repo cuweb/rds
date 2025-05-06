@@ -13,12 +13,15 @@ class Filter extends Dropdown {
   // eslint-disable-next-line no-undef
   private activeFilterRemoveBtns: NodeListOf<HTMLElement>
 
+  // eslint-disable-next-line no-undef
+  private dropdownItems: NodeListOf<HTMLElement>
+
   public _activeFilterItems: {
-    sortBy: string
-    filterBy: string[]
+    sortBy?: string
+    filterBy: { [key: string]: string[] }
   } = {
     sortBy: '',
-    filterBy: [],
+    filterBy: {},
   }
 
   constructor(filterElement: HTMLElement) {
@@ -33,15 +36,58 @@ class Filter extends Dropdown {
     this.activeFilterPanel = this.filter.querySelector('.cu-filter__active-filter-panel')
     this.activeFilterRemoveBtns = this.filter.querySelectorAll('.cu-filter__active-filter-remove')
 
+    this.dropdownItems = this.filter.querySelectorAll('.cu-filter__dropdown-toggle')
+
     this.init()
   }
 
   init() {
     this.activeSortItemLoad()
     this.sortItemClick()
+    this.setActiveFilterItems()
     this.activeFilterItemLoad()
     this.filterItemClick()
     this.activeFilterRemoveBtnsClick()
+  }
+
+  /**
+   * Emits a custom event named 'filterChange' with the currently active filter items as its detail.
+   * If the filter element is not defined, logs an error to the console and exits the function.
+   *
+   * @throws {Error} Logs an error to the console if the filter element is not defined.
+   */
+  emitActiveFilterChange() {
+    if (!this.filter) {
+      console.error('Filter element is not defined.')
+      return
+    }
+
+    const event = new CustomEvent('filterChange', { detail: this._activeFilterItems })
+
+    this.filter.dispatchEvent(event)
+  }
+
+  /**
+   * Updates the active filter items based on the dropdown elements.
+   *
+   * This method iterates through the `dropdownItems` collection and determines
+   * the type of filter for each dropdown using the `data-filter-type` attribute.
+   * If the filter type is 'sort', it resets the `sortBy` property of `_activeFilterItems` to an empty string.
+   * For other filter types, it resets the corresponding property in `_activeFilterItems` to an empty array.
+   *
+   * If `dropdownItems` is not defined, the method exits early without making any changes.
+   */
+  setActiveFilterItems() {
+    if (!this.dropdownItems) {
+      return
+    }
+
+    this.dropdownItems.forEach((dropdown) => {
+      const filterType = dropdown.getAttribute('data-filter-type')
+      if (filterType) {
+        this._activeFilterItems.filterBy[filterType] = []
+      }
+    })
   }
 
   /**
@@ -98,6 +144,8 @@ class Filter extends Dropdown {
 
         const target = event.target as HTMLInputElement
         this.filterItemClickHandler(target)
+
+        this.emitActiveFilterChange()
       })
     })
   }
@@ -119,9 +167,17 @@ class Filter extends Dropdown {
           return
         }
 
-        this._activeFilterItems.filterBy = this._activeFilterItems.filterBy.filter((item) => item !== value)
+        const filterType = target.getAttribute('data-filter-type')
+
+        if (filterType && this._activeFilterItems.filterBy[filterType]) {
+          this._activeFilterItems.filterBy[filterType] = this._activeFilterItems.filterBy[filterType].filter(
+            (item: string) => item !== value,
+          )
+        }
         this.unselectFilterItem(value)
         this.removeFromActiveFilterPanel(value)
+
+        this.emitActiveFilterChange()
       })
     })
   }
@@ -189,14 +245,18 @@ class Filter extends Dropdown {
    */
   filterItemClickHandler(item: HTMLInputElement) {
     const value = item.getAttribute('data-label')
+    const filterType = item.getAttribute('data-filter-type')
 
-    if (value) {
+    if (value && filterType) {
       if (!item.checked) {
-        this._activeFilterItems.filterBy = this._activeFilterItems.filterBy.filter((item) => item !== value)
+        const index = this._activeFilterItems.filterBy[filterType]?.indexOf(value)
+        if (index !== undefined && index > -1) {
+          this._activeFilterItems.filterBy[filterType].splice(index, 1)
+        }
         this.removeFromActiveFilterPanel(value)
       } else {
-        this._activeFilterItems.filterBy.push(value)
-        this.addToActiveFilterPanel(value)
+        this._activeFilterItems.filterBy[filterType].push(value)
+        this.addToActiveFilterPanel(value, filterType)
       }
     }
   }
@@ -209,8 +269,8 @@ class Filter extends Dropdown {
    * empty string or the `activeFilterPanel` is not defined, the function will return early.
    *
    */
-  addToActiveFilterPanel(item: string) {
-    if (!this.activeFilterPanel || !item) {
+  addToActiveFilterPanel(item: string, filterType: string) {
+    if (!this.activeFilterPanel || !item || !filterType) {
       return
     }
 
@@ -220,6 +280,7 @@ class Filter extends Dropdown {
             type="button"
             class="cu-filter__active-filter-remove flex flex-shrink-0 w-4 h-4 p-1 ml-1 rounded-full text-cu-black-400 hover:bg-cu-red hover:text-white"
             data-label="${item}"
+            data-filter-type="${filterType}"
           >
             <span class="sr-only">Remove filter for ${item}</span>
             <svg class="w-2 h-2" stroke="currentColor" fill="none" viewBox="0 0 8 8">
@@ -313,7 +374,9 @@ class Filter extends Dropdown {
         }
       }
     })
-    this._activeFilterItems.filterBy = []
+
+    this._activeFilterItems.filterBy = {}
+    this._activeFilterItems.sortBy = ''
   }
 
   /**
@@ -336,10 +399,6 @@ const FilterActions = () => {
 
   filterElements.forEach((filterElement) => {
     const filter = new Filter(filterElement as HTMLElement)
-
-    const activeFilterItem = (filter as Filter).activeFilterItems
-
-    console.log('Keep for the reference and future use in API', activeFilterItem)
 
     instances.push(filter)
   })

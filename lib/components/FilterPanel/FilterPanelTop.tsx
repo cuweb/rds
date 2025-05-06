@@ -97,6 +97,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      data-filter-type={filterOption.id}
                     >
                       {filterOption.name}
                       <DropDownSVG />
@@ -118,6 +119,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                             className="cu-filter__filtering-item w-4 h-4 rounded border-cu-black-200 text-cu-red focus:ring-cu-red-100"
                             value={option.value}
                             data-label={option.label}
+                            data-filter-type={filterOption.id}
                           />
                           <label
                             htmlFor={`filter-${option.value}-${index}`}
