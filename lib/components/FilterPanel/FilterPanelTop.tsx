@@ -64,7 +64,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
               <DropDownSVG />
             </button>
             <ul
-              className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 w-40 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-32 sm:w-60"
               aria-labelledby="sortMenuButton"
             >
               {sortOptions.map((option, index) => (
@@ -103,7 +103,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                       <DropDownSVG />
                     </button>
                     <ul
-                      className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-3 sm:p-4 w-32 sm:w-40"
+                      className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-3 sm:p-4 w-32 sm:w-60"
                       aria-labelledby={`${filterOption.id}MenuButton`}
                     >
                       {filterOption.options.map((option, optionIndex) => (
