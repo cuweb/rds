@@ -177,6 +177,9 @@ class Filter extends Dropdown {
         this.unselectFilterItem(value)
         this.removeFromActiveFilterPanel(value)
 
+        // Close all dropdowns
+        super.closeAllDropdowns()
+
         this.emitActiveFilterChange()
       })
     })
@@ -244,10 +247,11 @@ class Filter extends Dropdown {
    *                           - Adds the item's value to the `_activeFilterItems` array.
    */
   filterItemClickHandler(item: HTMLInputElement) {
-    const value = item.getAttribute('data-label')
+    const label = item.getAttribute('data-label')
+    const value = item.getAttribute('value')
     const filterType = item.getAttribute('data-filter-type')
 
-    if (value && filterType) {
+    if (label && value && filterType) {
       if (!item.checked) {
         const index = this._activeFilterItems.filterBy[filterType]?.indexOf(value)
         if (index !== undefined && index > -1) {
@@ -256,7 +260,7 @@ class Filter extends Dropdown {
         this.removeFromActiveFilterPanel(value)
       } else {
         this._activeFilterItems.filterBy[filterType].push(value)
-        this.addToActiveFilterPanel(value, filterType)
+        this.addToActiveFilterPanel(label, value, filterType)
       }
     }
   }
@@ -266,11 +270,12 @@ class Filter extends Dropdown {
    * to the remove button of the newly added filter item.
    *
    * @param {string} item       - The label of the filter item to be added.
+   * @param {string} value      - The value of the filter item to be added.
    * @param {string} filterType - The type/category of the filter item.
    * @return {void} This function does not return a value.
    */
-  addToActiveFilterPanel(item: string, filterType: string) {
-    if (!this.activeFilterPanel || !item || !filterType) {
+  addToActiveFilterPanel(item: string, value: string, filterType: string) {
+    if (!this.activeFilterPanel || !item || !filterType || !value) {
       return
     }
 
@@ -279,7 +284,7 @@ class Filter extends Dropdown {
           <button
             type="button"
             class="cu-filter__active-filter-remove flex flex-shrink-0 w-4 h-4 p-1 ml-1 rounded-full text-cu-black-400 hover:bg-cu-red hover:text-white"
-            data-label="${item}"
+            data-label="${value}"
             data-filter-type="${filterType}"
           >
             <span class="sr-only">Remove filter for ${item}</span>
@@ -316,11 +321,11 @@ class Filter extends Dropdown {
     if (filterItem) {
       filterItem.parentElement?.remove()
 
-      const item = filterItem.getAttribute('data-label')
-      if (!item) {
+      const label = filterItem.getAttribute('data-label')
+      if (!label) {
         return
       }
-      this.unselectFilterItem(item)
+      this.unselectFilterItem(label)
     }
   }
 
