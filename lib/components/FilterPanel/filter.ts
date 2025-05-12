@@ -171,7 +171,7 @@ class Filter extends Dropdown {
 
         if (filterType && this._activeFilterItems.filterBy[filterType]) {
           this._activeFilterItems.filterBy[filterType] = this._activeFilterItems.filterBy[filterType].filter(
-            (filterType: string) => filterType !== value,
+            (filteredItem: string) => filteredItem !== value,
           )
         }
         this.unselectFilterItem(value)
@@ -196,7 +196,7 @@ class Filter extends Dropdown {
    * 4. Updates the active filter's `sortBy` property with the retrieved value.
    * 5. Closes all dropdown menus in the filter panel.
    *
-   * @param item - The HTML input element representing the clicked sort item.
+   * @param {HTMLInputElement} item - The HTML input element representing the clicked sort item.
    */
   sortItemClickHandler(item: HTMLInputElement) {
     this.unselectSortItem()
@@ -280,19 +280,19 @@ class Filter extends Dropdown {
     }
 
     const filterItem = `<div class="flex items-center gap-0.5 pl-3 pe-2 py-1 border rounded-lg border-cu-black-100">
-          <span>${item}</span>
-          <button
-            type="button"
-            class="cu-filter__active-filter-remove flex flex-shrink-0 w-4 h-4 p-1 ml-1 rounded-full text-cu-black-400 hover:bg-cu-red hover:text-white"
-            data-label="${value}"
-            data-filter-type="${filterType}"
-          >
-            <span class="sr-only">Remove filter for ${item}</span>
-            <svg class="w-2 h-2" stroke="currentColor" fill="none" viewBox="0 0 8 8">
-              <path strokeLinecap="round" strokeWidth="1.5" d="M1 1l6 6m0-6L1 7"></path>
-            </svg>
-          </button>
-        </div>`
+            <span>${item}</span>
+            <button
+              type="button"
+              class="cu-filter__active-filter-remove flex flex-shrink-0 w-4 h-4 p-1 ml-1 rounded-full text-cu-black-400 hover:bg-cu-red hover:text-white"
+              data-label="${value}"
+              data-filter-type="${filterType}"
+            >
+              <span class="sr-only">Remove filter for ${item}</span>
+              <svg class="w-2 h-2" stroke="currentColor" fill="none" viewBox="0 0 8 8">
+                <path strokeLinecap="round" strokeWidth="1.5" d="M1 1l6 6m0-6L1 7"></path>
+              </svg>
+            </button>
+          </div>`
 
     this.activeFilterPanel.insertAdjacentHTML('beforeend', filterItem)
 
@@ -345,8 +345,8 @@ class Filter extends Dropdown {
    * input element that matches the provided label. If a matching checkbox is found,
    * it is unchecked.
    *
-   * @param item - The label of the dropdown item to unselect. If the label is not provided
-   *               or is falsy, the method will return without performing any action.
+   * @param {string} item - The label of the dropdown item to unselect. If the label is not provided
+   *                      or is falsy, the method will return without performing any action.
    */
   unselectFilterItem(item: string) {
     if (!item) {
@@ -354,7 +354,7 @@ class Filter extends Dropdown {
     }
 
     this.filteringItems.forEach((dropdownItem) => {
-      if (dropdownItem && dropdownItem.getAttribute('data-label') == item) {
+      if (dropdownItem && (dropdownItem as HTMLInputElement).value === item) {
         ;(dropdownItem as HTMLInputElement).checked = false
       }
     })

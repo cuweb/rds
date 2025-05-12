@@ -112,7 +112,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                           key={optionIndex}
                         >
                           <input
-                            id={`filter-${option.value}-${index}`}
+                            id={`filter-${option.value}`}
                             name={`${filterOption.id}[]`}
                             type="checkbox"
                             defaultChecked={option.checked}
@@ -121,10 +121,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                             data-label={option.label}
                             data-filter-type={filterOption.id}
                           />
-                          <label
-                            htmlFor={`filter-${option.value}-${index}`}
-                            className="pr-6 ml-3 text-sm text-cu-black-600"
-                          >
+                          <label htmlFor={`filter-${option.value}`} className="pr-6 ml-3 text-sm text-cu-black-600">
                             {option.label}
                           </label>
                         </li>
