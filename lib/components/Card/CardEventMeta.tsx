@@ -1,7 +1,7 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDays, faClock, faMapPin } from '@fortawesome/free-solid-svg-icons'
-
+import CalendarDaysIcon from '../Icons/CalendarDaysIcon'
+import ClockIcon from '../Icons/ClockIcon'
+import MapPinIcon from '../Icons/MapPinIcon'
 export interface CardEventMetaProps {
   startDateTime: string
   endDateTime: string
@@ -46,14 +46,14 @@ export const CardEventMeta = ({
     if (!isEventSameDay) {
       return (
         <>
-          <FontAwesomeIcon icon={faCalendarDays} className={styles.redIcon} />
+          <CalendarDaysIcon className={styles.redIcon} />
           {`${startMonth} ${startDay} — ${endMonth} ${endDay}`}
         </>
       )
     } else {
       return (
         <>
-          <FontAwesomeIcon icon={faClock} className={styles.redIcon} />
+          <ClockIcon className={styles.redIcon} />
           {`${startTime} — ${endTime}`}
         </>
       )
@@ -64,7 +64,7 @@ export const CardEventMeta = ({
     <ul className="space-y-2 text-sm text-cu-black-600 @sm:md:text-base">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
-        <FontAwesomeIcon icon={faMapPin} className={styles.redIcon} />
+        <MapPinIcon className={styles.redIcon} />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>
