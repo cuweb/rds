@@ -1,4 +1,5 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
 
 const styles = {
@@ -17,35 +18,33 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
   const borderStyles = hasBorder ? 'py-5 border-t border-cu-black-100' : ''
 
   return (
-    <>
-      <div
-        className={`animate-pulse cu-pagination cu-component-updated not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} `}
-      >
-        <div className="flex justify-between flex-1 sm:hidden">
-          <ButtonLoader number={2} isSmall={true} />
-        </div>
-
-        <div className=" hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-          <span className="block h-4 w-48 rounded-md bg-cu-black-200"></span>
-
-          <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
-              <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
-            </li>
-            <div className="flex justify-between space-x-2 gap-2 ">
-              {Array.from({ length: pageCount }).map((_, index) => (
-                <li key={index} className={`${styles.pageListNumbers} `}>
-                  <div className={styles.pulseElement}></div>
-                </li>
-              ))}
-            </div>
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
-              <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-            </li>
-          </ul>
-        </div>
-        <span className="sr-only">Loading...</span>
+    <div
+      className={`animate-pulse cu-pagination cu-component-updated not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles}`}
+    >
+      <div className="flex justify-between flex-1 sm:hidden">
+        <ButtonLoader number={2} isSmall={true} />
       </div>
-    </>
+
+      <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <span className="block h-4 w-48 rounded-md bg-cu-black-200"></span>
+
+        <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
+          <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
+            <FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5" />
+          </li>
+          <div className="flex justify-between space-x-2 gap-2">
+            {Array.from({ length: pageCount }).map((_, index) => (
+              <li key={index} className={styles.pageListNumbers}>
+                <div className={styles.pulseElement}></div>
+              </li>
+            ))}
+          </div>
+          <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
+            <FontAwesomeIcon icon={faChevronRight} className="w-5 h-5" />
+          </li>
+        </ul>
+      </div>
+      <span className="sr-only">Loading...</span>
+    </div>
   )
 }

@@ -1,7 +1,7 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -17,37 +17,35 @@ const meta: Meta<typeof Icon> = {
 export default meta
 type Story = StoryObj<typeof Icon>
 
+const faIcon = <FontAwesomeIcon icon={faCircleCheck} className="w-6 h-6" />
+
 export const Default: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
-}
-
-Default.args = {
-  icon: CheckCircleIcon,
+  args: {
+    icon: faIcon,
+  },
 }
 
 export const Red: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
-}
-
-Red.args = {
-  icon: CheckCircleIcon,
-  color: 'red',
+  args: {
+    icon: faIcon,
+    color: 'red',
+  },
 }
 
 export const Grey: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
-}
-
-Grey.args = {
-  icon: CheckCircleIcon,
-  color: 'grey',
+  args: {
+    icon: faIcon,
+    color: 'grey',
+  },
 }
 
 export const White: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
-}
-
-White.args = {
-  icon: CheckCircleIcon,
-  color: 'white',
+  args: {
+    icon: faIcon,
+    color: 'white',
+  },
 }

@@ -1,12 +1,13 @@
-import React, { Fragment, PropsWithChildren, useState } from 'react'
+import { Fragment, PropsWithChildren, useState } from 'react'
 import { Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/20/solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  InformationCircleIcon,
-  ShieldExclamationIcon,
-} from '@heroicons/react/24/outline'
+  faCircleCheck,
+  faCircleExclamation,
+  faCircleInfo,
+  faShieldHalved,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 
 export interface ToastBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
@@ -36,20 +37,16 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
 
   const toastTypes = {
     success: {
-      icon: CheckCircleIcon,
-      color: 'text-green-400',
+      icon: <FontAwesomeIcon icon={faCircleCheck} className="w-6 h-6 text-green-400" />,
     },
     warning: {
-      icon: ShieldExclamationIcon,
-      color: 'text-yellow-400',
+      icon: <FontAwesomeIcon icon={faShieldHalved} className="w-6 h-6 text-yellow-400" />,
     },
     error: {
-      icon: ExclamationCircleIcon,
-      color: 'text-cu-red',
+      icon: <FontAwesomeIcon icon={faCircleExclamation} className="w-6 h-6 text-cu-red" />,
     },
     info: {
-      icon: InformationCircleIcon,
-      color: 'text-blue-600',
+      icon: <FontAwesomeIcon icon={faCircleInfo} className="w-6 h-6 text-blue-600" />,
     },
   }
 
@@ -67,12 +64,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
       <div className="cu-toast pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
         <div className="p-4">
           <div className="flex items-start">
-            <div className="flex-shrink-0">
-              {React.createElement(toastTypes[type].icon, {
-                className: `w-6 h-6 ${toastTypes[type].color}`,
-                'aria-hidden': 'true',
-              })}
-            </div>
+            <div className="flex-shrink-0">{toastTypes[type].icon}</div>
             <div className="ml-3 w-0 flex-1 pt-0.5">{children}</div>
             <div className="ml-4 flex flex-shrink-0">
               <button
@@ -83,7 +75,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
                 }}
               >
                 <span className="sr-only">Close</span>
-                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                <FontAwesomeIcon icon={faXmark} className="h-5 w-5" />
               </button>
             </div>
           </div>

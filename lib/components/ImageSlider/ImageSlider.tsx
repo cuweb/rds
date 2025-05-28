@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { ImageSliderItem } from './ImageSliderItem'
 import SliderScript from './script.ts'
 
@@ -18,7 +19,7 @@ export const ImageSliderWrapper = ({
 }: ImageSliderProp) => {
   useEffect(() => {
     SliderScript()
-  })
+  }, [])
 
   const arrowButtons = `bg-cu-black-50 text-cu-black-800 hover:bg-cu-red hover:text-white hover:bg-cu-red relative flex items-center justify-center rounded-md h-8 w-8 z-50 disabled:opacity-50 disabled:cursor-not-allowed`
   const arrowIcons = `w-5 h-5 [&>path]:stroke-[2]`
@@ -37,12 +38,12 @@ export const ImageSliderWrapper = ({
       <div className="flex align-items-center gap-3 justify-center mt-4">
         <button className={`cu-slider--arrow cu-slider--arrow-prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
-          <ChevronLeftIcon className={arrowIcons} aria-hidden="true" />
+          <FontAwesomeIcon icon={faChevronLeft} className={arrowIcons} />
         </button>
 
         <button className={`cu-slider--arrow cu-slider--arrow-next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
-          <ChevronRightIcon className={arrowIcons} aria-hidden="true" />
+          <FontAwesomeIcon icon={faChevronRight} className={arrowIcons} />
         </button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
-import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleDown } from '@fortawesome/free-solid-svg-icons'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -35,8 +36,9 @@ Primary.args = {
 
 export const WithIcon: Story = {
   args: {
-    ...Primary.args,
+    title: 'Download',
+    icon: <FontAwesomeIcon icon={faCircleDown} className="w-5 h-5" />,
     color: 'dark-grey',
-    icon: ArrowDownCircleIcon,
+    ariaLabel: 'Download file',
   },
 }

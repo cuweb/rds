@@ -1,5 +1,4 @@
 import React from 'react'
-import { Icon } from '../Icon/Icon'
 
 export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
   color?: 'red' | 'grey' | 'dark-grey' | 'black' | 'white'
@@ -10,12 +9,13 @@ export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
 }
 export interface ButtonTitleProps extends ButtonProp {
   title: string
-  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  icon?: React.ReactNode
   ariaLabel?: string
 }
+
 export interface ButtonNoTitleProps extends ButtonProp {
   title?: string
-  icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  icon: React.ReactNode
   ariaLabel: string
 }
 
@@ -33,7 +33,6 @@ export const Button = ({
   const disabledButton = isDisabled ? 'cu-button--disabled' : `cu-button--${color}`
   const fullStyles = isFull ? 'cu-button--full' : ''
   const buttonSmall = isSmall ? 'cu-button--small' : ''
-  const iconSize = isSmall ? 4 : 6
 
   return (
     <button
@@ -43,11 +42,7 @@ export const Button = ({
       disabled={isDisabled ? true : false}
       {...rest}
     >
-      {icon && (
-        <span className={title ? 'mr-0.5 -ml-1' : ''}>
-          <Icon icon={icon} size={iconSize} />
-        </span>
-      )}
+      {icon && <span className={title ? 'mr-0.5 -ml-1' : ''}>{icon}</span>}
       {title}
     </button>
   )

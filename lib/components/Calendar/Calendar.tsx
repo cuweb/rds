@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { Button } from '../Button/Button'
 import {
   add,
@@ -71,14 +72,14 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
       <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Previous month</span>
-          <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+          <FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5" />
         </button>
         <h2 className="flex-auto text-base font-semibold text-center text-cu-black-900">
           {format(firstDayCurrentMonth, 'MMMM yyyy')}
         </h2>
         <button onClick={nextMonth} type="button" className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Next month</span>
-          <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+          <FontAwesomeIcon icon={faChevronRight} className="w-5 h-5" />
         </button>
       </div>
 

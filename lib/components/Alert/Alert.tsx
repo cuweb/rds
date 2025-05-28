@@ -1,10 +1,6 @@
 import React, { PropsWithChildren } from 'react'
-import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  InformationCircleIcon,
-  ShieldExclamationIcon,
-} from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faCircleExclamation, faCircleInfo, faShieldHalved } from '@fortawesome/free-solid-svg-icons'
 
 export interface AlertProps {
   title: string
@@ -30,18 +26,19 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
   }
 
   const AlertTypes = {
-    success: CheckCircleIcon,
-    warning: ShieldExclamationIcon,
-    error: ExclamationCircleIcon,
-    info: InformationCircleIcon,
+    success: faCircleCheck,
+    warning: faCircleExclamation,
+    error: faCircleInfo,
+    info: faShieldHalved,
   }
 
   return (
     <div className={`cu-alert cu-alert--${type} not-prose flex rounded-md p-4`}>
-      {React.createElement(AlertTypes[type], {
-        className: `${AlertSizes[size].alertIconSize}`,
-        'aria-hidden': 'true',
-      })}
+      <FontAwesomeIcon
+        icon={AlertTypes[type]}
+        className={`${AlertSizes[size].alertIconSize} flex-shrink-0 mt-0.5`}
+        aria-hidden="true"
+      />
       <div className="ml-3 w-full">
         <p className={`${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
         {content && <p className="text-sm md:text-base text-cu-black-900">{content}</p>}

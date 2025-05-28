@@ -1,6 +1,7 @@
 import { styles } from './Description.Styles'
-import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { toggleAccordion } from './script'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 export interface DescriptionAccordionProps {
   term: string
@@ -21,7 +22,10 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
           onClick={toggleAccordion}
         >
           {term}
-          <ChevronRightIcon className="w-5 h-5 ml-auto transition-transform rotate-0 accordion__icon text-cu-black-500" />
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            className="w-5 h-5 ml-auto transition-transform rotate-0 accordion__icon text-cu-black-500"
+          />
         </div>
       </dt>
 

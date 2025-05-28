@@ -34,6 +34,8 @@ export default defineConfig({
           'date-fns': 'dateFns',
           'react-player': 'ReactPlayer',
           '@headlessui/react': 'HeadlessUI',
+          '@fortawesome/react-fontawesome': 'reactFontawesome',
+          '@fortawesome/free-solid-svg-icons': 'freeSolidSvgIcons',
           '@react-google-maps/api': 'ReactGoogleMapsAPI',
           formik: 'Formik',
           yup: 'Yup',
