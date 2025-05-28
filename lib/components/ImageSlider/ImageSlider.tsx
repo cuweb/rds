@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import ChevronLeftIcon from '../Icons/ChevronLeftIcon'
+import ChevronRightIcon from '../Icons/ChevronRightIcon'
 import { ImageSliderItem } from './ImageSliderItem'
 import SliderScript from './script.ts'
 
@@ -38,12 +38,12 @@ export const ImageSliderWrapper = ({
       <div className="flex align-items-center gap-3 justify-center mt-4">
         <button className={`cu-slider--arrow cu-slider--arrow-prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
-          <FontAwesomeIcon icon={faChevronLeft} className={arrowIcons} />
+          <ChevronLeftIcon className={arrowIcons} />
         </button>
 
         <button className={`cu-slider--arrow cu-slider--arrow-next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
-          <FontAwesomeIcon icon={faChevronRight} className={arrowIcons} />
+          <ChevronRightIcon className={arrowIcons} />
         </button>
       </div>
     </div>

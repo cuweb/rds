@@ -1,13 +1,10 @@
 import { Fragment, PropsWithChildren, useState } from 'react'
 import { Transition } from '@headlessui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faCircleCheck,
-  faCircleExclamation,
-  faCircleInfo,
-  faShieldHalved,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons'
+import CircleCheckIcon from '../Icons/CircleCheckIcon'
+import CircleExclamationIcon from '../Icons/CircleExclamationIcon'
+import CircleInfoIcon from '../Icons/CircleInfoIcon'
+import ShieldHalvedIcon from '../Icons/ShieldHalvedIcon'
+import XmarkIcon from '../Icons/XmarkIcon'
 
 export interface ToastBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
@@ -37,16 +34,16 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
 
   const toastTypes = {
     success: {
-      icon: <FontAwesomeIcon icon={faCircleCheck} className="w-6 h-6 text-green-400" />,
+      icon: <CircleCheckIcon className="w-6 h-6 text-green-400" />,
     },
     warning: {
-      icon: <FontAwesomeIcon icon={faShieldHalved} className="w-6 h-6 text-yellow-400" />,
+      icon: <ShieldHalvedIcon className="w-6 h-6 text-yellow-400" />,
     },
     error: {
-      icon: <FontAwesomeIcon icon={faCircleExclamation} className="w-6 h-6 text-cu-red" />,
+      icon: <CircleExclamationIcon className="w-6 h-6 text-cu-red" />,
     },
     info: {
-      icon: <FontAwesomeIcon icon={faCircleInfo} className="w-6 h-6 text-blue-600" />,
+      icon: <CircleInfoIcon className="w-6 h-6 text-blue-600" />,
     },
   }
 
@@ -75,7 +72,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
                 }}
               >
                 <span className="sr-only">Close</span>
-                <FontAwesomeIcon icon={faXmark} className="h-5 w-5" />
+                <XmarkIcon className="h-5 w-5" />
               </button>
             </div>
           </div>

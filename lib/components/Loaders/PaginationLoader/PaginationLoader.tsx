@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import ChevronLeftIcon from '../../Icons/ChevronLeftIcon'
+import ChevronRightIcon from '../../Icons/ChevronRightIcon'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
 
 const styles = {
@@ -30,7 +30,7 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
 
         <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
           <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
-            <FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5" />
+            <ChevronLeftIcon className="w-5 h-5" />
           </li>
           <div className="flex justify-between space-x-2 gap-2">
             {Array.from({ length: pageCount }).map((_, index) => (
@@ -40,7 +40,7 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
             ))}
           </div>
           <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
-            <FontAwesomeIcon icon={faChevronRight} className="w-5 h-5" />
+            <ChevronRightIcon className="w-5 h-5" />
           </li>
         </ul>
       </div>

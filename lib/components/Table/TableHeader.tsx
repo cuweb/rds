@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faChevronDown, faSort } from '@fortawesome/free-solid-svg-icons'
+import ChevronUpIcon from '../Icons/ChevronUpIcon'
+import ChevronDownIcon from '../Icons/ChevronDownIcon'
+import SortIcon from '../Icons/SortIcon'
 import { ColumnDefinitionType } from './Table'
 import { styles } from './Table.Styles'
 
@@ -66,21 +67,21 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by ascending order' : undefined}
               >
-                <FontAwesomeIcon icon={faChevronDown} className="inline-block" />
+                <ChevronDownIcon className="inline-block" />
               </button>
             ) : column.key === active && !ascending ? (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by descending order' : undefined}
               >
-                <FontAwesomeIcon icon={faChevronUp} className="inline-block" />
+                <ChevronUpIcon className="inline-block" />
               </button>
             ) : (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
               >
-                <FontAwesomeIcon icon={faSort} className="inline-block" />
+                <SortIcon className="inline-block" />
               </button>
             )}
           </div>

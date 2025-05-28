@@ -5,6 +5,6 @@
   },
   {
     "path": "dist/rds.umd.js",
-    "limit": "400 kB"
+    "limit": "200 kB"
   }
 ]

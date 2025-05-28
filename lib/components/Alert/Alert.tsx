@@ -1,6 +1,8 @@
 import React, { PropsWithChildren } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck, faCircleExclamation, faCircleInfo, faShieldHalved } from '@fortawesome/free-solid-svg-icons'
+import CircleCheckIcon from '../Icons/CircleCheckIcon'
+import CircleExclamationIcon from '../Icons/CircleExclamationIcon'
+import CircleInfoIcon from '../Icons/CircleInfoIcon'
+import ShieldHalvedIcon from '../Icons/ShieldHalvedIcon'
 
 export interface AlertProps {
   title: string
@@ -25,20 +27,18 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
     },
   }
 
-  const AlertTypes = {
-    success: faCircleCheck,
-    warning: faCircleExclamation,
-    error: faCircleInfo,
-    info: faShieldHalved,
+  const AlertIcons = {
+    success: CircleCheckIcon,
+    warning: CircleExclamationIcon,
+    error: CircleInfoIcon,
+    info: ShieldHalvedIcon,
   }
+
+  const Icon = AlertIcons[type]
 
   return (
     <div className={`cu-alert cu-alert--${type} not-prose flex rounded-md p-4`}>
-      <FontAwesomeIcon
-        icon={AlertTypes[type]}
-        className={`${AlertSizes[size].alertIconSize} flex-shrink-0 mt-0.5`}
-        aria-hidden="true"
-      />
+      <Icon className={`${AlertSizes[size].alertIconSize} flex-shrink-0 mt-0.5`} aria-hidden="true" />
       <div className="ml-3 w-full">
         <p className={`${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
         {content && <p className="text-sm md:text-base text-cu-black-900">{content}</p>}

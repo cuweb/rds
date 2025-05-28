@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import ChevronLeftIcon from '../Icons/ChevronLeftIcon'
+import ChevronRightIcon from '../Icons/ChevronRightIcon'
 
 import usePagination, { DOTS } from '../../hooks/usePagination'
 
@@ -100,7 +100,7 @@ export const Pagination = ({
             <li className={`${styles.pageListWrapper} !my-0`} onClick={onPrevious}>
               <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
                 <span className="sr-only">Previous</span>
-                <FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5" />
+                <ChevronLeftIcon className="w-5 h-5" />
               </button>
             </li>
 
@@ -129,7 +129,7 @@ export const Pagination = ({
             <li className={`${styles.pageListWrapper} !my-0`}>
               <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
                 <span className="sr-only">Next</span>
-                <FontAwesomeIcon icon={faChevronRight} className="w-5 h-5" />
+                <ChevronRightIcon className="w-5 h-5" />
               </button>
             </li>
           </ul>

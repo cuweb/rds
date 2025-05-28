@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import CircleCheckIcon from '../Icons/CircleCheckIcon'
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -17,7 +16,7 @@ const meta: Meta<typeof Icon> = {
 export default meta
 type Story = StoryObj<typeof Icon>
 
-const faIcon = <FontAwesomeIcon icon={faCircleCheck} className="w-6 h-6" />
+const faIcon = <CircleCheckIcon className="w-6 h-6" />
 
 export const Default: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,

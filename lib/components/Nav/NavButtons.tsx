@@ -4,8 +4,7 @@ import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import MagnifyingGlassIcon from '../Icons/MagnifyingGlassIcon'
 
 export interface NavButtonsGenericProps {
   menu?: ImenuItem[]
@@ -61,7 +60,7 @@ export const NavButtons = ({
       <ButtonGroup>
         {isSearch && (
           <button onClick={onClickSearch} aria-label="search" className="not-prose">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" />
+            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" />
           </button>
         )}
         {menu &&

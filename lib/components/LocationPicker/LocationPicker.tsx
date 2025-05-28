@@ -1,7 +1,7 @@
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
 import { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons'
+import MagnifyingGlassIcon from '../Icons/MagnifyingGlassIcon'
+import XmarkIcon from '../Icons/XmarkIcon'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
 export interface LocationPickerProps {
@@ -62,17 +62,13 @@ export const LocationPicker = ({
         {({ getInputProps, suggestions, getSuggestionItemProps }) => (
           <Combobox value={address} onChange={handleSelect}>
             <div className="relative">
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="pointer-events-none absolute left-3.5 top-3.5 h-5 w-5 text-cu-black-400"
-              />
+              <MagnifyingGlassIcon className="pointer-events-none absolute left-3.5 top-3.5 h-5 w-5 text-cu-black-400" />
               <ComboboxInput
                 className="w-full h-12 pl-10 pr-4 bg-white border rounded-lg border-cu-black-200 text-cu-black-800 placeholder-cu-black-400 focus:border-cu-black-400 focus:outline-none focus:ring-0 sm:text-sm"
                 {...getInputProps({ placeholder: 'Type address' })}
               />
               {address && (
-                <FontAwesomeIcon
-                  icon={faXmark}
+                <XmarkIcon
                   className="absolute right-3.5 top-3.5 h-5 w-5 text-cu-black-400 cursor-pointer"
                   onClick={() => setAddress('')}
                 />
