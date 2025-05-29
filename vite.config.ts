@@ -2,16 +2,10 @@ import { defineConfig } from 'vite'
 import path from 'node:path'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
-import tailwindcss from 'tailwindcss'
 import * as packageJson from './package.json'
 
 export default defineConfig({
   plugins: [react(), dts({ include: ['lib'], insertTypesEntry: true })],
-  css: {
-    postcss: {
-      plugins: [tailwindcss],
-    },
-  },
   optimizeDeps: {
     esbuildOptions: {
       target: 'esnext',
