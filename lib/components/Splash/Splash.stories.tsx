@@ -60,7 +60,7 @@ export const ImageWithCards: Story = {
             </Card.Footer>
           </Card>
           <Card isCenter isDark>
-            <Card.Header title="Varsity" />
+            <Card.Header title="Community" />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
             </Card.Body>
@@ -71,7 +71,7 @@ export const ImageWithCards: Story = {
             </Card.Footer>
           </Card>
           <Card isCenter isDark>
-            <Card.Header title="Varsity" />
+            <Card.Header title="Students" />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
             </Card.Body>
