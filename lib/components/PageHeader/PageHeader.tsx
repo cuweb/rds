@@ -7,6 +7,7 @@ type headerSizeKeys = keyof typeof headerSizeClasses
 export interface PageHeaderProps {
   children?: React.ReactNode
   as?: 'h1' | 'h2' | 'h3'
+  eyebrow?: string
   header: string
   content?: string
   size?: headerSizeKeys
@@ -20,6 +21,7 @@ export interface PageHeaderProps {
 export const PageHeaderWrapper = ({
   children,
   as = 'h1',
+  eyebrow,
   header,
   content,
   size = 'lg',
@@ -66,6 +68,7 @@ export const PageHeaderWrapper = ({
       <HeaderComponent
         className={`font-semibold not-prose ${textColor} !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
       >
+        {eyebrow ? <span className="text-xl block font-normal">{eyebrow}</span> : ''}
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
