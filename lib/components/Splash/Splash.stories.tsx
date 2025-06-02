@@ -23,11 +23,12 @@ export const Primary: Story = {
     image: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     eyebrow: 'Welcome to',
     header: 'Carleton Athletics',
+    contentType: 'button',
   },
   render: (args) => {
     return (
       <Splash {...args}>
-        <ButtonGroup>
+        <ButtonGroup align="center">
           <Button type="button" title="Varsity" />
           <Button type="button" title="Community" />
           <Button type="button" title="Students" />
@@ -46,8 +47,8 @@ export const ImageWithCards: Story = {
   render: (args) => {
     return (
       <Splash {...args}>
-        <Column cols="2">
-          <Card isCenter isDark={false}>
+        <Column cols="3">
+          <Card isCenter isDark>
             <Card.Header title="Varsity" />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />

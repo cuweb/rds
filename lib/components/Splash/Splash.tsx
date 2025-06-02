@@ -12,6 +12,7 @@ export interface SplashProps {
   video?: string
   eyebrow?: string
   header: string
+  contentType?: 'button' | 'cards'
   children?: React.ReactNode
 }
 
@@ -22,6 +23,7 @@ export const SplashWrapper = ({
   focalPointY = 50,
   eyebrow,
   header,
+  contentType,
   children,
 }: SplashProps) => {
   const LinkComponent = useLinkContext()
@@ -32,22 +34,25 @@ export const SplashWrapper = ({
 
   const inlineStyle = image ? getInlineStyle(image, focalPointX, focalPointY) : undefined
 
+  const paddingX = 'px-4 sm:px-24'
+  const paddingY = 'py-10 sm:pt-20 sm:pb-5'
+
   return (
     <section
-      className={`cu-splash w-screen ml-offset-center bg-cu-black-900 text-white relative pt-10 px-5 pb-60 bg-cover bg-no-repeat bg-center`}
+      className={`cu-splash w-screen ml-offset-center bg-cu-black-900 text-white relative bg-cover bg-no-repeat bg-center ${paddingX} ${paddingY}`}
       style={image ? inlineStyle : undefined}
     >
-      <div className={`relative z-20 flex flex-col items-center gap-20`}>
-        <LinkComponent href="https://goravens.carleton.ca" className="inline-block mt-8">
+      <div className={`relative z-20 flex flex-col items-center gap-12 sm:gap-20`}>
+        <LinkComponent href="https://goravens.carleton.ca" className="inline-block">
           <img
             className="w-24 h-auto"
             src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logos/ravens-logo-wordmark.svg"
             alt="Carleton"
           />
         </LinkComponent>
-        <div className="w-full [flex flex-col items-center]">
+        <div className="flex flex-col items-center w-full gap-4">
           <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>
-          {children}
+          <div className={`w-full ${contentType !== 'button' ? 'sm:!mt-52' : 'sm:mb-60'} mb-0`}>{children}</div>
         </div>
       </div>
       <div
