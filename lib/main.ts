@@ -50,6 +50,7 @@ export { TextMedia } from './components/TextMedia/TextMedia'
 export { Timeline } from './components/Timeline/Timeline'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
+export { Splash } from './components/Splash/Splash'
 
 // Forms
 export { Form } from './components/Form/Form'
