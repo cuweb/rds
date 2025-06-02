@@ -34,7 +34,7 @@ export const SplashWrapper = ({
 
   return (
     <section
-      className={`cu-splash w-screen ml-offset-center bg-cu-black-900 text-white relative pt-10 px-5 pb-60`}
+      className={`cu-splash w-screen ml-offset-center bg-cu-black-900 text-white relative pt-10 px-5 pb-60 bg-cover bg-no-repeat bg-center`}
       style={image ? inlineStyle : undefined}
     >
       <div className={`relative z-20 flex flex-col items-center gap-20`}>
@@ -45,7 +45,7 @@ export const SplashWrapper = ({
             alt="Carleton"
           />
         </LinkComponent>
-        <div className="flex flex-col items-center">
+        <div className="w-full [flex flex-col items-center]">
           <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>
           {children}
         </div>

@@ -43,6 +43,27 @@ export const Primary: Story = {
   ),
 }
 
+export const Dark: Story = {
+  args: {
+    isDark: true,
+  },
+  render: (args) => (
+    <Main maxWidth="3xl">
+      <Card {...args}>
+        <Card.Header title="How to Write for the Web" />
+        <Card.Body>
+          <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+        </Card.Body>
+        <Card.Footer>
+          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
+            More info
+          </a>
+        </Card.Footer>
+      </Card>
+    </Main>
+  ),
+}
+
 export const NewsCard: Story = {
   args: {},
   render: (args) => (

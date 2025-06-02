@@ -5,7 +5,7 @@ export interface CardExcerptProps {
 
 export const CardExcerpt = ({ text, hasMore }: CardExcerptProps) => {
   return (
-    <p className="text-base text-cu-black-700">
+    <p className="text-base text-cu-black-700 dark:text-white">
       {text && text.length > 170 ? `${text.substring(0, 150)}...` : text}
       {hasMore && <span className="font-semibold"> More</span>}
     </p>
