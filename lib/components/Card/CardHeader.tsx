@@ -25,7 +25,7 @@ export const CardHeader = ({
   return (
     <header className="px-6 first:mt-6">
       {date && datePosition === 'top' && (
-        <time className="block mb-2 italic text-sm text-cu-black-600 @sm:md:text-base">
+        <time className="block mb-2 italic text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
           {datePrefix && `${datePrefix} `}
           {formattedDate}
         </time>
