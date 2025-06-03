@@ -10,6 +10,7 @@ const meta: Meta<typeof Splash> = {
   component: Splash,
   tags: ['autodocs'],
   parameters: {
+    layout: 'fullscreen',
     controls: {
       sort: 'requiredFirst',
     },
