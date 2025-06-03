@@ -15,7 +15,7 @@ export const SplashContent = ({ eyebrow, header, contentType, children }: Splash
   const paddingY = 'py-10 sm:pt-20 sm:pb-5'
 
   return (
-    <div className={`relative z-20 flex flex-col items-center gap-12 sm:gap-20 ${paddingX} ${paddingY}`}>
+    <div className={`relative z-20 h-full flex flex-col items-center gap-12 sm:gap-20 ${paddingX} ${paddingY}`}>
       <LinkComponent href="https://goravens.carleton.ca" className="inline-block">
         <img
           className="w-24 h-auto"
@@ -23,14 +23,12 @@ export const SplashContent = ({ eyebrow, header, contentType, children }: Splash
           alt="Carleton"
         />
       </LinkComponent>
-      <div className="flex flex-col items-center w-full gap-4">
+      <div className={`w-full h-full flex flex-col gap-4 items-center justify-between`}>
         {header && <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>}
-        <div className={`w-full mt-48 sm:mt-0 mb-0 ${contentType !== 'button' ? 'sm:!mt-52' : 'sm:mb-60'}`}>
-          {children}
-        </div>
+        <div className={`w-full ${contentType === 'cards' ? 'sm:!mt-56' : ''}`}>{children}</div>
       </div>
     </div>
   )
 }
 
-SplashContent.displayName = 'Splash.Video'
+SplashContent.displayName = 'Splash.Content'

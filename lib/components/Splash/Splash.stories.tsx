@@ -49,7 +49,7 @@ export const ImageWithCards: Story = {
           type="image"
           src="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics">
+        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" contentType="cards">
           <Column cols="3">
             <Card isCenter isDark>
               <Card.Header title="Varsity" />
@@ -115,7 +115,7 @@ export const WithVideoAndCards: Story = {
     return (
       <Splash {...args}>
         <Splash.Background type="video" videoName="discover" />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics">
+        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" contentType="cards">
           <Column cols="3">
             <Card isCenter isDark>
               <Card.Header title="Varsity" />
