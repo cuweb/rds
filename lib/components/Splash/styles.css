@@ -3,5 +3,5 @@
 }
 
 .cu-splash .cu-buttongroup {
-  @apply flex-col sm:flex-row;
+  @apply flex-col items-center sm:flex-row;
 }
