@@ -5,8 +5,8 @@ export interface SplashVideoProps {
   videoName?: (typeof videos)[number]['name']
 }
 
-export const SplashVideo = (props: SplashVideoProps) => {
-  return <BannerVideo {...props} />
+export const SplashVideo = ({ videoName }: SplashVideoProps) => {
+  return <BannerVideo videoName={videoName} PlayPause={false} />
 }
 
 SplashVideo.displayName = 'Splash.Video'

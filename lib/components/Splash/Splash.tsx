@@ -16,7 +16,7 @@ export const SplashWrapper = ({ eyebrow, header, buttons, children, ...bgProps }
       className={`cu-splash relative w-screen h-screen min-h-screen ml-offset-center bg-cu-black-900 text-white`}
     >
       <SplashBackground {...bgProps} />
-      <SplashContent eyebrow={eyebrow} header={header} buttons={buttons}>
+      <SplashContent eyebrow={eyebrow} header={header} buttons={buttons} type={bgProps.type}>
         {children}
       </SplashContent>
     </section>

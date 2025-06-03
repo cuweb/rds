@@ -1,3 +1,4 @@
+import { PlayPauseButton } from '../../hooks/video/PlayPauseButton'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { PageHeader } from '../PageHeader/PageHeader'
@@ -6,10 +7,11 @@ export interface SplashContentProps {
   eyebrow?: string
   header?: string
   buttons?: { title: string; href: string; isExternal?: boolean }[]
+  type: 'video' | 'image'
   children?: React.ReactNode
 }
 
-export const SplashContent = ({ eyebrow, header, buttons, children }: SplashContentProps) => {
+export const SplashContent = ({ eyebrow, header, buttons, type, children }: SplashContentProps) => {
   const LinkComponent = useLinkContext()
 
   const paddingX = 'px-4 sm:px-24'
@@ -42,7 +44,12 @@ export const SplashContent = ({ eyebrow, header, buttons, children }: SplashCont
             </ButtonGroup>
           </div>
         )}
-        {children && <div className={`hidden sm:flex sm:w-full sm:!mt-56`}>{children}</div>}
+        {type === 'video' && (
+          <div className="mt-auto ms-auto mr-0">
+            <PlayPauseButton />
+          </div>
+        )}
+        {children && <div className={`hidden sm:flex sm:w-full`}>{children}</div>}
       </div>
     </div>
   )
