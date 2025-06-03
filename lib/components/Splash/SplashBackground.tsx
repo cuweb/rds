@@ -1,17 +1,11 @@
 import { SplashImage } from './SplashImage'
 import { SplashVideo } from './SplashVideo'
 
-export interface SplashBackgroundWithImageProps {
-  type: 'image'
-  src: string
-}
+export type SplashBackgroundProps =
+  | { type: 'image'; src: string; videoName?: never }
+  | { type: 'video'; videoName: string; src?: never }
 
-export interface SplashBackgroundWithVideoProps {
-  type: 'video'
-  videoName: string
-}
-
-export const SplashBackground = (props: SplashBackgroundWithImageProps | SplashBackgroundWithVideoProps) => {
+export const SplashBackground = (props: SplashBackgroundProps) => {
   return (
     <div className="absolute w-full h-full top-0 left-0">
       {props.type === 'video' ? (

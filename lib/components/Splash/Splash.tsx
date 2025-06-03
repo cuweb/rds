@@ -1,23 +1,28 @@
-import { SplashBackground } from './SplashBackground'
+import { SplashBackground, SplashBackgroundProps } from './SplashBackground'
 import { SplashContent } from './SplashContent'
 
-export interface SplashProps {
+export interface SplashBaseProps {
+  eyebrow?: string
+  header?: string
+  buttons?: { title: string; href: string; isExternal?: boolean }[]
   children?: React.ReactNode
 }
 
-export const SplashWrapper = ({ children }: SplashProps) => {
+type SplashProps = SplashBackgroundProps & SplashBaseProps
+
+export const SplashWrapper = ({ eyebrow, header, buttons, children, ...bgProps }: SplashProps) => {
   return (
     <section
       className={`cu-splash relative w-screen h-screen min-h-screen ml-offset-center bg-cu-black-900 text-white`}
     >
-      {children}
+      <SplashBackground {...bgProps} />
+      <SplashContent eyebrow={eyebrow} header={header} buttons={buttons}>
+        {children}
+      </SplashContent>
     </section>
   )
 }
 
-export const Splash = Object.assign(SplashWrapper, {
-  Background: SplashBackground,
-  Content: SplashContent,
-})
+export const Splash = Object.assign(SplashWrapper)
 
 SplashWrapper.displayName = 'Splash'

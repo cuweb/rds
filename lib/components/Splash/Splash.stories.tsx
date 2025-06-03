@@ -33,126 +33,128 @@ export const SplashButtons = [
 ]
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    type: 'image',
+    src: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
+    eyebrow: 'Welcome to',
+    header: 'Carleton Athletics',
+    buttons: SplashButtons,
+  },
   render: (args) => {
-    return (
-      <Splash {...args}>
-        <Splash.Background
-          type="image"
-          src="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
-        />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}></Splash.Content>
-      </Splash>
-    )
+    return <Splash {...args} />
   },
 }
 
 export const ImageWithCards: Story = {
-  args: {},
+  args: {
+    type: 'image',
+    src: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
+    eyebrow: 'Welcome to',
+    header: 'Carleton Athletics',
+    buttons: SplashButtons,
+  },
   render: (args) => {
     return (
       <Splash {...args}>
-        <Splash.Background
-          type="image"
-          src="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
-        />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}>
-          <Column cols="3">
-            <Card isCenter isDark>
-              <Card.Header title="Varsity" />
-              <Card.Body>
-                <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
-              </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Visit Go Ravens
-                </a>
-              </Card.Footer>
-            </Card>
-            <Card isCenter isDark>
-              <Card.Header title="Community" />
-              <Card.Body>
-                <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
-              </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  View Programs
-                </a>
-              </Card.Footer>
-            </Card>
-            <Card isCenter isDark>
-              <Card.Header title="Students" />
-              <Card.Body>
-                <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
-              </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Campus Facilities
-                </a>
-              </Card.Footer>
-            </Card>
-          </Column>
-        </Splash.Content>
+        <Column cols="3">
+          <Card isCenter isDark>
+            <Card.Header title="Varsity" />
+            <Card.Body>
+              <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
+            </Card.Body>
+            <Card.Footer>
+              <a href="#" className="cu-button cu-button--red cu-button--small">
+                Visit Go Ravens
+              </a>
+            </Card.Footer>
+          </Card>
+          <Card isCenter isDark>
+            <Card.Header title="Community" />
+            <Card.Body>
+              <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
+            </Card.Body>
+            <Card.Footer>
+              <a href="#" className="cu-button cu-button--red cu-button--small">
+                View Programs
+              </a>
+            </Card.Footer>
+          </Card>
+          <Card isCenter isDark>
+            <Card.Header title="Students" />
+            <Card.Body>
+              <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
+            </Card.Body>
+            <Card.Footer>
+              <a href="#" className="cu-button cu-button--red cu-button--small">
+                Campus Facilities
+              </a>
+            </Card.Footer>
+          </Card>
+        </Column>
       </Splash>
     )
   },
 }
 
 export const WithVideo: Story = {
-  args: {},
+  args: {
+    type: 'video',
+    videoName: 'discover',
+    eyebrow: 'Welcome to',
+    header: 'Carleton Athletics',
+    buttons: SplashButtons,
+  },
   render: (args) => {
-    return (
-      <Splash {...args}>
-        <Splash.Background type="video" videoName="discover" />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}></Splash.Content>
-      </Splash>
-    )
+    return <Splash {...args} />
   },
 }
 
 export const WithVideoAndCards: Story = {
-  args: {},
+  args: {
+    type: 'video',
+    videoName: 'discover',
+    eyebrow: 'Welcome to',
+    header: 'Carleton Athletics',
+    buttons: SplashButtons,
+  },
   render: (args) => {
     return (
       <Splash {...args}>
-        <Splash.Background type="video" videoName="discover" />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}>
-          <Column cols="3">
-            <Card isCenter isDark>
-              <Card.Header title="Varsity" />
-              <Card.Body>
-                <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
-              </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Visit Go Ravens
-                </a>
-              </Card.Footer>
-            </Card>
-            <Card isCenter isDark>
-              <Card.Header title="Community" />
-              <Card.Body>
-                <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
-              </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  View Programs
-                </a>
-              </Card.Footer>
-            </Card>
-            <Card isCenter isDark>
-              <Card.Header title="Students" />
-              <Card.Body>
-                <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
-              </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Campus Facilities
-                </a>
-              </Card.Footer>
-            </Card>
-          </Column>
-        </Splash.Content>
+        <Column cols="3">
+          <Card isCenter isDark>
+            <Card.Header title="Varsity" />
+            <Card.Body>
+              <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
+            </Card.Body>
+            <Card.Footer>
+              <a href="#" className="cu-button cu-button--red cu-button--small">
+                Visit Go Ravens
+              </a>
+            </Card.Footer>
+          </Card>
+          <Card isCenter isDark>
+            <Card.Header title="Community" />
+            <Card.Body>
+              <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
+            </Card.Body>
+            <Card.Footer>
+              <a href="#" className="cu-button cu-button--red cu-button--small">
+                View Programs
+              </a>
+            </Card.Footer>
+          </Card>
+          <Card isCenter isDark>
+            <Card.Header title="Students" />
+            <Card.Body>
+              <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum dolor." />
+            </Card.Body>
+            <Card.Footer>
+              <a href="#" className="cu-button cu-button--red cu-button--small">
+                Campus Facilities
+              </a>
+            </Card.Footer>
+          </Card>
+        </Column>
       </Splash>
     )
   },
