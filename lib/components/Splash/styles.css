@@ -1,3 +1,7 @@
 .cu-splash video {
   @apply w-full h-full absolute object-cover;
 }
+
+.cu-splash .cu-buttongroup {
+  @apply flex-col sm:flex-row;
+}

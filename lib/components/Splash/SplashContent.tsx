@@ -1,14 +1,15 @@
+import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 export interface SplashContentProps {
   eyebrow?: string
   header?: string
-  contentType?: 'button' | 'cards'
+  buttons?: { title: string; href: string; isExternal?: boolean }[]
   children?: React.ReactNode
 }
 
-export const SplashContent = ({ eyebrow, header, contentType, children }: SplashContentProps) => {
+export const SplashContent = ({ eyebrow, header, buttons, children }: SplashContentProps) => {
   const LinkComponent = useLinkContext()
 
   const paddingX = 'px-4 sm:px-24'
@@ -25,7 +26,23 @@ export const SplashContent = ({ eyebrow, header, contentType, children }: Splash
       </LinkComponent>
       <div className={`w-full h-full flex flex-col gap-4 items-center justify-between`}>
         {header && <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>}
-        <div className={`w-full ${contentType === 'cards' ? 'sm:!mt-56' : ''}`}>{children}</div>
+        {buttons && (
+          <div className={`flex flex-col mt-auto mb-0 ${children ? 'sm:hidden' : ''}`}>
+            <ButtonGroup align="center">
+              {buttons.map((button, index) => (
+                <LinkComponent
+                  key={index}
+                  href={button.href}
+                  className="cu-button cu-button--red"
+                  {...(button.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {button.title}
+                </LinkComponent>
+              ))}
+            </ButtonGroup>
+          </div>
+        )}
+        {children && <div className={`hidden sm:flex sm:w-full sm:!mt-56`}>{children}</div>}
       </div>
     </div>
   )

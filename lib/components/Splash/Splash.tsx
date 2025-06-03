@@ -7,7 +7,9 @@ export interface SplashProps {
 
 export const SplashWrapper = ({ children }: SplashProps) => {
   return (
-    <section className={`cu-splash relative w-screen h-auto min-h-screen ml-offset-center bg-cu-black-900 text-white`}>
+    <section
+      className={`cu-splash relative w-screen h-screen min-h-screen ml-offset-center bg-cu-black-900 text-white`}
+    >
       {children}
     </section>
   )

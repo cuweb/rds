@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Splash } from './Splash'
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { Button } from '../Button/Button'
 import { Card } from '../Card/Card'
 import { Column } from '../../layouts/Column/Column'
 
@@ -19,6 +17,21 @@ const meta: Meta<typeof Splash> = {
 export default meta
 type Story = StoryObj<typeof Splash>
 
+export const SplashButtons = [
+  {
+    title: 'Visit Go Ravens',
+    href: '#',
+  },
+  {
+    title: 'View Programs',
+    href: '#',
+  },
+  {
+    title: 'Campus Facilities',
+    href: '#',
+  },
+]
+
 export const Primary: Story = {
   args: {},
   render: (args) => {
@@ -28,13 +41,7 @@ export const Primary: Story = {
           type="image"
           src="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" contentType="button">
-          <ButtonGroup align="center">
-            <Button type="button" title="Visit Go Ravens" />
-            <Button type="button" title="View Programs" />
-            <Button type="button" title="Campus Facilities" />
-          </ButtonGroup>
-        </Splash.Content>
+        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}></Splash.Content>
       </Splash>
     )
   },
@@ -49,7 +56,7 @@ export const ImageWithCards: Story = {
           type="image"
           src="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" contentType="cards">
+        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}>
           <Column cols="3">
             <Card isCenter isDark>
               <Card.Header title="Varsity" />
@@ -97,13 +104,7 @@ export const WithVideo: Story = {
     return (
       <Splash {...args}>
         <Splash.Background type="video" videoName="discover" />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" contentType="button">
-          <ButtonGroup align="center">
-            <Button type="button" title="Visit Go Ravens" />
-            <Button type="button" title="View Programs" />
-            <Button type="button" title="Campus Facilities" />
-          </ButtonGroup>
-        </Splash.Content>
+        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}></Splash.Content>
       </Splash>
     )
   },
@@ -115,7 +116,7 @@ export const WithVideoAndCards: Story = {
     return (
       <Splash {...args}>
         <Splash.Background type="video" videoName="discover" />
-        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" contentType="cards">
+        <Splash.Content eyebrow="Welcome to" header="Carleton Athletics" buttons={SplashButtons}>
           <Column cols="3">
             <Card isCenter isDark>
               <Card.Header title="Varsity" />
