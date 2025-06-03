@@ -99,7 +99,7 @@ export { WideWave } from './layouts/WideWave/WideWave'
 // Javascript Files
 export { iconNames } from '../public/assets/font-awesome/icon-list.js'
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js'
-export { videos } from './components/FullBanner/video-names-list.js'
+export { videos } from './hooks/video/video-names-list.js'
 
 // Utils
 export * as utils from './utils/propClasses'
