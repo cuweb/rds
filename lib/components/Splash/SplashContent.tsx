@@ -29,7 +29,7 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
       <div className={`w-full h-full flex flex-col gap-4 items-center justify-between sm:justify-start`}>
         {header && <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>}
         {buttons && (
-          <div className={`flex flex-col mt-auto mb-0 ${children ? 'sm:hidden' : ''}`}>
+          <div className={`flex flex-col mt-auto mb-0 order-2 sm:order-1 ${children ? 'sm:hidden' : ''}`}>
             <ButtonGroup align="center">
               {buttons.map((button, index) => (
                 <LinkComponent
@@ -44,12 +44,16 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
             </ButtonGroup>
           </div>
         )}
-        {type === 'video' && (
-          <div className="mt-auto ms-auto mr-0">
-            <PlayPauseButton />
+        {(type === 'video' || children) && (
+          <div className="mt-auto w-full order-1 sm:order-3">
+            {type === 'video' && (
+              <div className="flex justify-center sm:justify-end ms-auto sm:mr-0 mb-4 sm:mb-10">
+                <PlayPauseButton />
+              </div>
+            )}
+            {children && <div className={`hidden sm:flex sm:w-full `}>{children}</div>}
           </div>
         )}
-        {children && <div className={`hidden sm:flex sm:w-full`}>{children}</div>}
       </div>
     </div>
   )
