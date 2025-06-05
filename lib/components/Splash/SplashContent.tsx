@@ -26,7 +26,9 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
           alt="Carleton"
         />
       </LinkComponent>
-      <div className={`w-full h-full flex flex-1 flex-col gap-4 items-center justify-between sm:justify-start`}>
+      <div
+        className={`w-full h-full flex flex-1 flex-col gap-4 items-center justify-between ${children ? 'sm:justify-between' : 'sm:justify-start'}`}
+      >
         {header && <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>}
         {buttons && (
           <div className={`flex flex-col mt-auto mb-0 order-2 sm:order-1 ${children ? 'sm:hidden' : ''}`}>
@@ -44,8 +46,9 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
             </ButtonGroup>
           </div>
         )}
+
         {(type === 'video' || children) && (
-          <div className="mt-auto w-full order-1 sm:order-3">
+          <div className="mt-auto sm:mt-20 w-full order-1 sm:order-3">
             {type === 'video' && (
               <div className="flex justify-center sm:justify-end ms-auto sm:mr-0 mb-4 sm:mb-10">
                 <PlayPauseButton />
