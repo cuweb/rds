@@ -45,7 +45,6 @@
     "@headlessui/react": "2.2.4",
     "@heroicons/react": "2.2.0",
     "@react-google-maps/api": "2.20.6",
-    "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-themes": "^8.6.14",
     "@storybook/test": "^8.6.14",
     "@tailwindcss/aspect-ratio": "0.4.2",
