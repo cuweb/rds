@@ -18,7 +18,7 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
   const paddingY = 'py-14 sm:pt-20 sm:pb-5'
 
   return (
-    <div className={`relative z-20 h-full flex flex-col items-center gap-12 sm:gap-20 ${paddingX} ${paddingY}`}>
+    <div className={`relative min-h-screen z-20 flex flex-col items-center gap-12 sm:gap-20 ${paddingX} ${paddingY}`}>
       <LinkComponent href="https://goravens.carleton.ca" className="inline-block">
         <img
           className="h-auto w-24 sm:w-auto"
@@ -26,7 +26,7 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
           alt="Carleton"
         />
       </LinkComponent>
-      <div className={`w-full h-full flex flex-col gap-4 items-center justify-between sm:justify-start`}>
+      <div className={`w-full h-full flex flex-1 flex-col gap-4 items-center justify-between sm:justify-start`}>
         {header && <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>}
         {buttons && (
           <div className={`flex flex-col mt-auto mb-0 order-2 sm:order-1 ${children ? 'sm:hidden' : ''}`}>

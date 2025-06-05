@@ -17,7 +17,7 @@ const meta: Meta<typeof Splash> = {
 export default meta
 type Story = StoryObj<typeof Splash>
 
-export const SplashButtons = [
+const SplashButtons = [
   {
     title: 'Visit Go Ravens',
     href: '#',
