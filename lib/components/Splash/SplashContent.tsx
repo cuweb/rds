@@ -1,17 +1,15 @@
 import { PlayPauseButton } from '../../hooks/video/PlayPauseButton'
-import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 export interface SplashContentProps {
   eyebrow?: string
   header?: string
-  buttons?: { title: string; href: string; isExternal?: boolean }[]
   type: 'video' | 'image'
   children?: React.ReactNode
 }
 
-export const SplashContent = ({ eyebrow, header, buttons, type, children }: SplashContentProps) => {
+export const SplashContent = ({ eyebrow, header, type, children }: SplashContentProps) => {
   const LinkComponent = useLinkContext()
 
   const paddingX = 'px-4 sm:px-24'
@@ -26,37 +24,18 @@ export const SplashContent = ({ eyebrow, header, buttons, type, children }: Spla
           alt="Carleton"
         />
       </LinkComponent>
-      <div
-        className={`w-full h-full flex flex-1 flex-col gap-4 items-center justify-between ${children ? 'sm:justify-between' : 'sm:justify-start'}`}
-      >
+      <div className={`w-full h-full flex flex-col grow gap-4 items-center justify-between sm:justify-between}`}>
         {header && <PageHeader eyebrow={eyebrow} header={header} isWhite isCenter noUnderline></PageHeader>}
-        {buttons && (
-          <div className={`flex flex-col mt-auto mb-0 order-2 sm:order-1 ${children ? 'sm:hidden' : ''}`}>
-            <ButtonGroup align="center">
-              {buttons.map((button, index) => (
-                <LinkComponent
-                  key={index}
-                  href={button.href}
-                  className="cu-button cu-button--red"
-                  {...(button.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                >
-                  {button.title}
-                </LinkComponent>
-              ))}
-            </ButtonGroup>
-          </div>
-        )}
-
-        {(type === 'video' || children) && (
-          <div className="mt-auto sm:mt-20 w-full order-1 sm:order-3">
-            {type === 'video' && (
-              <div className="flex justify-center sm:justify-end ms-auto sm:mr-0 mb-4 sm:mb-10">
-                <PlayPauseButton />
-              </div>
-            )}
-            {children && <div className={`hidden sm:flex sm:w-full `}>{children}</div>}
-          </div>
-        )}
+        <div className="w-full flex flex-col grow h-full">
+          {type === 'video' && (
+            <div
+              className={`splash__video-button flex justify-center sm:justify-end mx-auto sm:ms-auto sm:mr-0 mb-4 sm:mb-10`}
+            >
+              <PlayPauseButton />
+            </div>
+          )}
+          <div className={`${type !== 'video' ? 'mt-auto' : ''} sm:mt-0`}>{children}</div>
+        </div>
       </div>
     </div>
   )
