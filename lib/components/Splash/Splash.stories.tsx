@@ -38,7 +38,7 @@ export const Primary: Story = {
   args: {
     type: 'image',
     src: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
-    eyebrow: 'Welcome to',
+    preHeader: 'Welcome to',
     header: 'Carleton Athletics',
     buttons: SplashButtons,
   },
@@ -59,7 +59,7 @@ export const ImageWithCards: Story = {
   args: {
     type: 'image',
     src: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
-    eyebrow: 'Welcome to',
+    preHeader: 'Welcome to',
     header: 'Carleton Athletics',
     buttons: SplashButtons,
   },
@@ -119,7 +119,7 @@ export const WithVideo: Story = {
   args: {
     type: 'video',
     videoName: 'discover',
-    eyebrow: 'Welcome to',
+    preHeader: 'Welcome to',
     header: 'Carleton Athletics',
     buttons: SplashButtons,
   },
@@ -140,7 +140,7 @@ export const WithVideoAndCards: Story = {
   args: {
     type: 'video',
     videoName: 'discover',
-    eyebrow: 'Welcome to',
+    preHeader: 'Welcome to',
     header: 'Carleton Athletics',
     buttons: SplashButtons,
   },
