@@ -1,8 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import CircleCheckIcon from '../Icons/CircleCheckIcon'
-import CircleExclamationIcon from '../Icons/CircleExclamationIcon'
-import CircleInfoIcon from '../Icons/CircleInfoIcon'
-import ShieldHalvedIcon from '../Icons/ShieldHalvedIcon'
+import { Icon } from '../Icon/Icon'
 
 export interface AlertProps {
   title: string
@@ -28,17 +25,17 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
   }
 
   const AlertIcons = {
-    success: CircleCheckIcon,
-    warning: CircleExclamationIcon,
-    error: CircleInfoIcon,
-    info: ShieldHalvedIcon,
-  }
+    success: 'circle-check',
+    warning: 'circle-exclamation',
+    error: 'circle-info',
+    info: 'shield-halved',
+  } as const
 
-  const Icon = AlertIcons[type]
+  const iconName = AlertIcons[type]
 
   return (
     <div className={`cu-alert cu-alert--${type} not-prose flex rounded-md p-4`}>
-      <Icon className={`${AlertSizes[size].alertIconSize} flex-shrink-0 mt-0.5`} aria-hidden="true" />
+      <Icon name={iconName} className={`${AlertSizes[size].alertIconSize} flex-shrink-0 mt-0.5`} aria-hidden="true" />
       <div className="ml-3 w-full">
         <p className={`${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
         {content && <p className="text-sm md:text-base text-cu-black-900">{content}</p>}

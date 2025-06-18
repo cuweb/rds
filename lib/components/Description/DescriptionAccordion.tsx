@@ -1,6 +1,6 @@
 import { styles } from './Description.Styles'
 import { toggleAccordion } from './script'
-import ChevronRightIcon from '../Icons/ChevronRightIcon'
+import { Icon } from '../Icon/Icon'
 
 export interface DescriptionAccordionProps {
   term: string
@@ -21,7 +21,10 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
           onClick={toggleAccordion}
         >
           {term}
-          <ChevronRightIcon className="w-5 h-5 ml-auto transition-transform rotate-0 accordion__icon text-cu-black-500" />
+          <Icon
+            name="chevron-right"
+            className="w-5 h-5 ml-auto transition-transform rotate-0 accordion__icon text-cu-black-500"
+          />
         </div>
       </dt>
 

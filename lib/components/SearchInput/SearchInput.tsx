@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MagnifyingGlassIcon from '../Icons/MagnifyingGlassIcon'
+import { Icon } from '../Icon/Icon'
 import { SearchInputResults } from './SearchInputResults'
 
 export interface SearchInputProps {
@@ -21,7 +21,7 @@ export const SearchInputWrapper = ({ callback, placeholder = 'Search', children 
 
   return (
     <div className="cu-search cu-component-updated relative items-center not-prose">
-      <MagnifyingGlassIcon className="absolute top-3 w-5 h-5 left-4 text-cu-black-300" />
+      <Icon name="magnifying-glass" className="absolute top-3 w-5 h-5 left-4 text-cu-black-300" />
       <input
         className="w-full h-12 pr-4 text-sm bg-transparent border rounded-lg border-cu-black-100 pl-11 text-cu-black-800 placeholder-cu-black-300 focus:border-cu-black-300 focus:ring-0"
         id="search__input"

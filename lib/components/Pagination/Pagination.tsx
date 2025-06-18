@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import ChevronLeftIcon from '../Icons/ChevronLeftIcon'
-import ChevronRightIcon from '../Icons/ChevronRightIcon'
+import { Icon } from '../Icon/Icon'
 
 import usePagination, { DOTS } from '../../hooks/usePagination'
 
@@ -100,7 +99,7 @@ export const Pagination = ({
             <li className={`${styles.pageListWrapper} !my-0`} onClick={onPrevious}>
               <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
                 <span className="sr-only">Previous</span>
-                <ChevronLeftIcon className="w-5 h-5" />
+                <Icon name="chevron-left" className="w-5 h-5" />
               </button>
             </li>
 
@@ -129,7 +128,7 @@ export const Pagination = ({
             <li className={`${styles.pageListWrapper} !my-0`}>
               <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
                 <span className="sr-only">Next</span>
-                <ChevronRightIcon className="w-5 h-5" />
+                <Icon name="chevron-right" className="w-5 h-5" />
               </button>
             </li>
           </ul>

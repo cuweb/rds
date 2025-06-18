@@ -4,7 +4,7 @@ import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import MagnifyingGlassIcon from '../Icons/MagnifyingGlassIcon'
+import { Icon } from '../Icon/Icon'
 
 export interface NavButtonsGenericProps {
   menu?: ImenuItem[]
@@ -60,7 +60,7 @@ export const NavButtons = ({
       <ButtonGroup>
         {isSearch && (
           <button onClick={onClickSearch} aria-label="search" className="not-prose">
-            <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" />
+            <Icon name="magnifying-glass" className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" />
           </button>
         )}
         {menu &&

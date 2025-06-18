@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
-import CircleDownIcon from '../Icons/CircleDownIcon'
+import { Icon } from '../Icon/Icon'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -36,7 +36,7 @@ Primary.args = {
 export const WithIcon: Story = {
   args: {
     title: 'Download',
-    icon: <CircleDownIcon className="w-5 h-5" />,
+    icon: <Icon name="circle-down" className="w-5 h-5" />,
     color: 'dark-grey',
     ariaLabel: 'Download file',
   },

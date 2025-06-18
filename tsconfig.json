@@ -24,7 +24,7 @@
     /*cypress*/
     "types": ["cypress"]
   },
-  "include": ["lib", "cypress", "env.d.ts"],
+  "include": ["lib", "cypress", "env.d.ts", "vite-svg.d.ts"],
   "exclude": ["./lib/**/*.stories.*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

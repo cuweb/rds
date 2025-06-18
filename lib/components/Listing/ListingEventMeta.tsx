@@ -1,7 +1,5 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
-import CalendarDaysIcon from '../Icons/CalendarDaysIcon'
-import ClockIcon from '../Icons/ClockIcon'
-import MapPinIcon from '../Icons/MapPinIcon'
+import { Icon } from '../Icon/Icon'
 
 export interface ListingEventMetaProps {
   startDateTime: string
@@ -47,14 +45,14 @@ export const ListingEventMeta = ({
     if (!isEventSameDay) {
       return (
         <>
-          <CalendarDaysIcon className={styles.redIcon} />
+          <Icon name="calendar-days" className={styles.redIcon} />
           {`${startMonth} ${startDay} — ${endMonth} ${endDay}`}
         </>
       )
     } else {
       return (
         <>
-          <ClockIcon className={styles.redIcon} />
+          <Icon name="clock" className={styles.redIcon} />
           {`${startTime} — ${endTime}`}
         </>
       )
@@ -65,7 +63,7 @@ export const ListingEventMeta = ({
     <ul className="space-y-3 text-sm text-cu-black-600 @sm:md:text-base list-none">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
-        <MapPinIcon className={styles.redIcon} />
+        <Icon name="map-pin" className={styles.redIcon} />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>

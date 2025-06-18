@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import ChevronLeftIcon from '../Icons/ChevronLeftIcon'
-import ChevronRightIcon from '../Icons/ChevronRightIcon'
+import { Icon } from '../Icon/Icon'
 import { ImageSliderItem } from './ImageSliderItem'
 import SliderScript from './script.ts'
 
@@ -38,12 +37,12 @@ export const ImageSliderWrapper = ({
       <div className="flex align-items-center gap-3 justify-center mt-4">
         <button className={`cu-slider--arrow cu-slider--arrow-prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
-          <ChevronLeftIcon className={arrowIcons} />
+          <Icon name="chevron-left" className={arrowIcons} />
         </button>
 
         <button className={`cu-slider--arrow cu-slider--arrow-next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
-          <ChevronRightIcon className={arrowIcons} />
+          <Icon name="chevron-right" className={arrowIcons} />
         </button>
       </div>
     </div>

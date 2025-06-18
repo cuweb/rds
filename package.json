@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@headlessui/react": "2.2.0",
-    "@react-google-maps/api": "2.20.6",
+    "@react-google-maps/api": "2.20.5",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/container-queries": "0.1.1",
     "@tailwindcss/forms": "0.5.10",
@@ -60,6 +60,7 @@
     "react-dom": "18.3.1",
     "react-places-autocomplete": "7.3.0",
     "react-player": "2.16.0",
+    "vite-plugin-svgr": "^4.3.0",
     "yup": "1.6.1"
   },
   "peerDependencies": {

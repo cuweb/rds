@@ -1,10 +1,6 @@
 import { Fragment, PropsWithChildren, useState } from 'react'
 import { Transition } from '@headlessui/react'
-import CircleCheckIcon from '../Icons/CircleCheckIcon'
-import CircleExclamationIcon from '../Icons/CircleExclamationIcon'
-import CircleInfoIcon from '../Icons/CircleInfoIcon'
-import ShieldHalvedIcon from '../Icons/ShieldHalvedIcon'
-import XmarkIcon from '../Icons/XmarkIcon'
+import { Icon } from '../Icon/Icon'
 
 export interface ToastBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
@@ -34,16 +30,16 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
 
   const toastTypes = {
     success: {
-      icon: <CircleCheckIcon className="w-6 h-6 text-green-400" />,
+      icon: <Icon name="circle-check" className="w-6 h-6 text-green-400" />,
     },
     warning: {
-      icon: <ShieldHalvedIcon className="w-6 h-6 text-yellow-400" />,
+      icon: <Icon name="shield-halved" className="w-6 h-6 text-yellow-400" />,
     },
     error: {
-      icon: <CircleExclamationIcon className="w-6 h-6 text-cu-red" />,
+      icon: <Icon name="circle-exclamation" className="w-6 h-6 text-cu-red" />,
     },
     info: {
-      icon: <CircleInfoIcon className="w-6 h-6 text-blue-600" />,
+      icon: <Icon name="shield-halved" className="w-6 h-6 text-blue-600" />,
     },
   }
 
@@ -72,7 +68,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
                 }}
               >
                 <span className="sr-only">Close</span>
-                <XmarkIcon className="h-5 w-5" />
+                <Icon name="xmark" className="h-5 w-5" />
               </button>
             </div>
           </div>

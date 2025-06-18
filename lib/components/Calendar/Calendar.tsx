@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Button } from '../Button/Button'
-import ChevronLeftIcon from '../Icons/ChevronLeftIcon'
-import ChevronRightIcon from '../Icons/ChevronRightIcon'
+import { Icon } from '../Icon/Icon'
 import {
   add,
   eachDayOfInterval,
@@ -72,14 +71,14 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
       <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
         <button type="button" onClick={previousMonth} className={styles.prevNextArrows}>
           <span className="sr-only">Previous month</span>
-          <ChevronLeftIcon className="w-5 h-5 text-cu-black-900" />
+          <Icon name="chevron-left" className="w-5 h-5 text-cu-black-900" />
         </button>
         <h2 className="flex-auto text-base font-semibold text-center text-cu-black-900">
           {format(firstDayCurrentMonth, 'MMMM yyyy')}
         </h2>
         <button type="button" onClick={nextMonth} className={styles.prevNextArrows}>
           <span className="sr-only">Next month</span>
-          <ChevronRightIcon className="w-5 h-5 text-cu-black-900" />
+          <Icon name="chevron-right" className="w-5 h-5 text-cu-black-900" />
         </button>
       </div>
 

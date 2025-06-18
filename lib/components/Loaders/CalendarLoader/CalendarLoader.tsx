@@ -1,8 +1,7 @@
 import { format, getDay, isBefore, startOfToday, eachDayOfInterval, endOfMonth, parse } from 'date-fns'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
 import { useState } from 'react'
-import ChevronLeftIcon from '../../Icons/ChevronLeftIcon'
-import ChevronRightIcon from '../../Icons/ChevronRightIcon'
+import { Icon } from '../../Icon/Icon'
 
 const styles = {
   prevNextArrows: `flex items-center justify-center flex-none p-2 text-cu-black-800 hover:text-cu-red`,
@@ -34,14 +33,14 @@ export const CalendarLoader = ({ showClearButton }: CalendarLoaderProps) => {
         <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
           <button type="button" className={`${styles.prevNextArrows}`}>
             <span className="text-base sr-only">Previous month</span>
-            <ChevronLeftIcon className="w-5 h-5" />
+            <Icon name="chevron-left" className="w-5 h-5" />
           </button>
           <div className="flex items-center justify-center mx-auto">
             <span className="block h-6 w-48 rounded-md bg-cu-black-200"></span>
           </div>
           <button type="button" className={`${styles.prevNextArrows}`}>
             <span className="text-base sr-only">Next month</span>
-            <ChevronRightIcon className="w-5 h-5" />
+            <Icon name="chevron-right" className="w-5 h-5" />
           </button>
         </div>
 

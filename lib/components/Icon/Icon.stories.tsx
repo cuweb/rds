@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
-import CircleCheckIcon from '../Icons/CircleCheckIcon'
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -16,19 +15,17 @@ const meta: Meta<typeof Icon> = {
 export default meta
 type Story = StoryObj<typeof Icon>
 
-const faIcon = <CircleCheckIcon className="w-6 h-6" />
-
 export const Default: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
   args: {
-    icon: faIcon,
+    name: 'circle-check', // must match your SVG filename in font-awesome folder
   },
 }
 
 export const Red: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
   args: {
-    icon: faIcon,
+    name: 'circle-check',
     color: 'red',
   },
 }
@@ -36,7 +33,7 @@ export const Red: Story = {
 export const Grey: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
   args: {
-    icon: faIcon,
+    name: 'circle-check',
     color: 'grey',
   },
 }
@@ -44,7 +41,7 @@ export const Grey: Story = {
 export const White: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
   args: {
-    icon: faIcon,
+    name: 'circle-check',
     color: 'white',
   },
 }

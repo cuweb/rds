@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import ChevronUpIcon from '../Icons/ChevronUpIcon'
-import ChevronDownIcon from '../Icons/ChevronDownIcon'
-import SortIcon from '../Icons/SortIcon'
+import { Icon } from '../Icon/Icon'
 import { ColumnDefinitionType } from './Table'
 import { styles } from './Table.Styles'
 
@@ -67,21 +65,21 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by ascending order' : undefined}
               >
-                <ChevronDownIcon className="inline-block" />
+                <Icon name="chevron-down" className="inline-block" />
               </button>
             ) : column.key === active && !ascending ? (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by descending order' : undefined}
               >
-                <ChevronUpIcon className="inline-block" />
+                <Icon name="chevron-up" className="inline-block" />
               </button>
             ) : (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
               >
-                <SortIcon className="inline-block" />
+                <Icon name="sort" className="inline-block" />
               </button>
             )}
           </div>
