@@ -2,8 +2,8 @@ import { SplashImage } from './SplashImage'
 import { SplashVideo } from './SplashVideo'
 
 export type SplashBackgroundProps =
-  | { backgroundType: 'image'; backgroundImage: string; backgroundVideoName?: never }
-  | { backgroundType: 'video'; backgroundImage: never; backgroundVideoName: string; mobileBackgroundImage: string }
+  | { backgroundType: 'image'; backgroundImage: string }
+  | { backgroundType: 'video'; backgroundVideoName: string; mobileBackgroundImage: string }
 
 export const SplashBackground = (props: SplashBackgroundProps) => {
   return (
