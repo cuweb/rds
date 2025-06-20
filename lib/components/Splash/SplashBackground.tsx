@@ -7,7 +7,7 @@ export type SplashBackgroundProps =
 
 export const SplashBackground = (props: SplashBackgroundProps) => {
   return (
-    <div className="absolute w-full h-full top-0 left-0">
+    <div className="absolute w-full h-full top-0 left-0 no-prose">
       {props.backgroundType === 'video' ? (
         <>
           <div className="hidden sm:block relative w-full h-full">

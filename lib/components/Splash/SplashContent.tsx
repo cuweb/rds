@@ -1,4 +1,3 @@
-import { PlayPauseButton } from '../../hooks/video/PlayPauseButton'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 export interface SplashContentProps {
@@ -34,13 +33,6 @@ export const SplashContent = ({ logo, preHeader, header, backgroundType, childre
       <div className={`w-full h-full flex flex-col grow gap-4 items-center justify-between sm:justify-between}`}>
         {header && <PageHeader preHeader={preHeader} header={header} isWhite isCenter noUnderline></PageHeader>}
         <div className="w-full flex flex-col grow h-full">
-          {backgroundType === 'video' && (
-            <div
-              className={`splash__video-button flex justify-center sm:justify-end mx-auto sm:ms-auto sm:mr-0 mb-4 sm:mb-10`}
-            >
-              <PlayPauseButton />
-            </div>
-          )}
           <div className={`${backgroundType !== 'video' ? 'mt-auto' : ''} sm:mt-0`}>{children}</div>
         </div>
       </div>

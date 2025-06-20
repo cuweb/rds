@@ -6,7 +6,7 @@ export interface SplashVideoProps {
 }
 
 export const SplashVideo = ({ backgroundVideoName }: SplashVideoProps) => {
-  return <BannerVideo videoName={backgroundVideoName} PlayPause={false} />
+  return <BannerVideo videoName={backgroundVideoName} />
 }
 
 SplashVideo.displayName = 'Splash.Video'
