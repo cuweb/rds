@@ -1,9 +1,9 @@
 export interface SplashImageProps {
-  src: string
+  backgroundImage: string
 }
 
-export const SplashImage = ({ src }: SplashImageProps) => {
-  return <img src={src} className="absolute inset-0 w-full h-full object-cover" />
+export const SplashImage = ({ backgroundImage }: SplashImageProps) => {
+  return <img src={backgroundImage} className="absolute inset-0 w-full !h-full object-cover not-prose" />
 }
 
 SplashImage.displayName = 'Splash.Image'

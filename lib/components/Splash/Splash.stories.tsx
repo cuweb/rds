@@ -19,29 +19,13 @@ const meta: Meta<typeof Splash> = {
 export default meta
 type Story = StoryObj<typeof Splash>
 
-const SplashButtons = [
-  {
-    title: 'Visit Go Ravens',
-    href: '#',
-  },
-  {
-    title: 'View Programs',
-    href: '#',
-  },
-  {
-    title: 'Campus Facilities',
-    href: '#',
-  },
-]
-
 export const Primary: Story = {
   args: {
-    type: 'image',
-    src: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
+    backgroundType: 'image',
+    backgroundImage: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     logo: 'athletics',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
-    buttons: SplashButtons,
   },
   render: (args) => {
     return (
@@ -58,12 +42,11 @@ export const Primary: Story = {
 
 export const ImageWithCards: Story = {
   args: {
-    type: 'image',
-    src: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
+    backgroundType: 'image',
+    backgroundImage: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     logo: 'athletics',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
-    buttons: SplashButtons,
   },
   render: (args) => {
     return (
@@ -119,12 +102,11 @@ export const ImageWithCards: Story = {
 
 export const WithVideo: Story = {
   args: {
-    type: 'video',
-    videoName: 'discover',
-    mobileBackground: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
+    backgroundType: 'video',
+    backgroundVideoName: 'discover',
+    mobileBackgroundImage: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
-    buttons: SplashButtons,
   },
   render: (args) => {
     return (
@@ -141,12 +123,11 @@ export const WithVideo: Story = {
 
 export const WithVideoAndCards: Story = {
   args: {
-    type: 'video',
-    videoName: 'discover',
+    backgroundType: 'video',
+    backgroundVideoName: 'discover',
     mobileBackground: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
-    buttons: SplashButtons,
   },
   render: (args) => {
     return (

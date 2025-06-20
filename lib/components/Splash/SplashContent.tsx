@@ -5,17 +5,17 @@ export interface SplashContentProps {
   logo?: 'default' | 'athletics'
   preHeader?: string
   header?: string
-  type: 'video' | 'image'
+  backgroundType: 'video' | 'image'
   children?: React.ReactNode
 }
 
-export const SplashContent = ({ logo, preHeader, header, type, children }: SplashContentProps) => {
+export const SplashContent = ({ logo, preHeader, header, backgroundType, children }: SplashContentProps) => {
   const paddingX = 'px-4 sm:px-24'
   const paddingY = 'py-14 sm:pt-20 sm:pb-5'
 
   return (
     <div
-      className={`relative min-h-screen z-20 flex flex-col items-center gap6 md:gap-12 sm:gap-20 ${paddingX} ${paddingY}`}
+      className={`cu-max-w-child-5xl cu-prose-light cu-prose-first-last relative z-20 min-h-screen flex flex-col items-center gap6 md:gap-12 sm:gap-20 ${paddingX} ${paddingY}`}
     >
       {logo === 'athletics' ? (
         <img
@@ -34,14 +34,14 @@ export const SplashContent = ({ logo, preHeader, header, type, children }: Splas
       <div className={`w-full h-full flex flex-col grow gap-4 items-center justify-between sm:justify-between}`}>
         {header && <PageHeader preHeader={preHeader} header={header} isWhite isCenter noUnderline></PageHeader>}
         <div className="w-full flex flex-col grow h-full">
-          {type === 'video' && (
+          {backgroundType === 'video' && (
             <div
               className={`splash__video-button flex justify-center sm:justify-end mx-auto sm:ms-auto sm:mr-0 mb-4 sm:mb-10`}
             >
               <PlayPauseButton />
             </div>
           )}
-          <div className={`${type !== 'video' ? 'mt-auto' : ''} sm:mt-0`}>{children}</div>
+          <div className={`${backgroundType !== 'video' ? 'mt-auto' : ''} sm:mt-0`}>{children}</div>
         </div>
       </div>
     </div>

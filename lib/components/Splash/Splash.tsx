@@ -12,9 +12,9 @@ type SplashProps = SplashBackgroundProps & SplashBaseProps
 
 export const SplashWrapper = ({ logo, preHeader, header, children, ...bgProps }: SplashProps) => {
   return (
-    <section className={`cu-splash relative w-screen min-h-screen ml-offset-center bg-cu-black-900 text-white`}>
+    <section className={`cu-splash relative w-screen min-h-screen bg-cu-black-900 text-white`}>
       <SplashBackground {...bgProps} />
-      <SplashContent logo={logo} preHeader={preHeader} header={header} type={bgProps.type}>
+      <SplashContent logo={logo} preHeader={preHeader} header={header} backgroundType={bgProps.backgroundType}>
         {children}
       </SplashContent>
     </section>

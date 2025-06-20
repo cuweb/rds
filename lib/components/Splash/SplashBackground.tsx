@@ -2,23 +2,23 @@ import { SplashImage } from './SplashImage'
 import { SplashVideo } from './SplashVideo'
 
 export type SplashBackgroundProps =
-  | { type: 'image'; src: string; videoName?: never }
-  | { type: 'video'; videoName: string; mobileBackground: string }
+  | { backgroundType: 'image'; backgroundImage: string; backgroundVideoName?: never }
+  | { backgroundType: 'video'; backgroundImage: never; backgroundVideoName: string; mobileBackgroundImage: string }
 
 export const SplashBackground = (props: SplashBackgroundProps) => {
   return (
     <div className="absolute w-full h-full top-0 left-0">
-      {props.type === 'video' ? (
+      {props.backgroundType === 'video' ? (
         <>
           <div className="hidden sm:block relative w-full h-full">
-            <SplashVideo videoName={props.videoName} />
+            <SplashVideo backgroundVideoName={props.backgroundVideoName} />
           </div>
           <div className="block sm:hidden">
-            <SplashImage src={props.mobileBackground} />
+            <SplashImage backgroundImage={props.mobileBackgroundImage} />
           </div>
         </>
       ) : (
-        <SplashImage src={props.src} />
+        <SplashImage backgroundImage={props.backgroundImage} />
       )}
       <div
         className={`absolute z-[9] inset-0 w-full h-full bg-gradient-to-t from-cu-black-900 from-15% to-cu-black/0`}
