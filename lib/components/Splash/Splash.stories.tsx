@@ -125,7 +125,7 @@ export const WithVideoAndCards: Story = {
   args: {
     backgroundType: 'video',
     backgroundVideoName: 'discover',
-    mobileBackground: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
+    mobileBackgroundImage: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
   },
