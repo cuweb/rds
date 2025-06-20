@@ -1,3 +1,4 @@
+import PlayPauseButton from '../../hooks/video/PlayPauseButton'
 import { PageHeader } from '../PageHeader/PageHeader'
 
 export interface SplashContentProps {
@@ -8,13 +9,17 @@ export interface SplashContentProps {
   contentType?: 'buttons' | 'cards'
 }
 
-export const SplashContent = ({ logo, preHeader, header, contentType, children }: SplashContentProps) => {
+export interface SplashBaseProps extends SplashContentProps {
+  backgroundType?: 'image' | 'video'
+}
+
+export const SplashContent = ({ logo, preHeader, header, contentType, backgroundType, children }: SplashBaseProps) => {
   const paddingX = 'px-4 sm:px-24'
   const paddingY = 'py-14 sm:pt-20 sm:pb-5'
 
   return (
     <div
-      className={`cu-max-w-child-5xl cu-prose-light relative z-20 min-h-screen flex flex-col items-center gap6 md:gap-12 sm:gap-20 ${paddingX} ${paddingY}`}
+      className={`cu-max-w-child-5xl cu-prose-light relative z-20 min-h-screen flex flex-col items-center gap-6 md:gap-12 sm:gap-20 ${paddingX} ${paddingY}`}
     >
       {logo === 'athletics' ? (
         <img
@@ -30,11 +35,20 @@ export const SplashContent = ({ logo, preHeader, header, contentType, children }
         />
       )}
 
-      <div className={`w-full h-full flex flex-col grow gap-4 items-center justify-between sm:justify-between}`}>
+      <div
+        className={`w-full h-full flex flex-col grow ${contentType === 'buttons' ? 'sm:grow-0' : ''} gap-12 items-center justify-between sm:justify-start`}
+      >
         {header && <PageHeader preHeader={preHeader} header={header} isWhite isCenter noUnderline></PageHeader>}
-        <div className="w-full flex flex-col grow h-full">
-          <div className={`${contentType !== 'cards' ? 'mt-auto' : ''} sm:mt-0`}>{children}</div>
+        <div
+          className={`w-full flex flex-col-reverse ${contentType === 'buttons' ? 'sm:flex-col' : 'grow'} h-full mt-auto mb-0`}
+        >
+          {children}
         </div>
+        {backgroundType === 'video' && (
+          <div className="hidden sm:block">
+            <PlayPauseButton />
+          </div>
+        )}
       </div>
     </div>
   )

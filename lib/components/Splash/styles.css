@@ -1,11 +1,6 @@
 .cu-splash video {
   @apply w-full h-full absolute object-cover;
 }
-
 .cu-splash .cu-buttongroup {
-  @apply flex-col items-center sm:flex-row sm:m-0 sm:order-1 sm:items-start;
-}
-
-.cu-splash:has(.cu-buttongroup) .splash__video-button {
-  @apply mt-auto sm:order-2;
+  @apply flex-col items-center sm:flex-row;
 }
