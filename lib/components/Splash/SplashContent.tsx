@@ -19,7 +19,7 @@ export const SplashContent = ({ logo, preHeader, header, contentType, background
 
   return (
     <div
-      className={`cu-max-w-child-5xl cu-prose-light relative z-20 min-h-screen flex flex-col items-center gap-6 md:gap-12 sm:gap-20 ${paddingX} ${paddingY}`}
+      className={`cu-prose-light relative z-20 cu-max-w-child-5xl min-h-screen flex flex-col items-center gap-6 md:gap-12 sm:gap-20 ${paddingX} ${paddingY}`}
     >
       {logo === 'athletics' ? (
         <img
@@ -35,15 +35,9 @@ export const SplashContent = ({ logo, preHeader, header, contentType, background
         />
       )}
 
-      <div
-        className={`w-full h-full flex flex-col grow ${contentType === 'buttons' ? 'sm:grow-0' : ''} gap-12 items-center justify-between sm:justify-start`}
-      >
+      <div className={`w-full h-full flex flex-col gap-12 grow ${contentType === 'buttons' ? 'sm:grow-0' : ''}`}>
         {header && <PageHeader preHeader={preHeader} header={header} isWhite isCenter noUnderline></PageHeader>}
-        <div
-          className={`w-full flex flex-col-reverse ${contentType === 'buttons' ? 'sm:flex-col' : 'grow'} h-full mt-auto mb-0`}
-        >
-          {children}
-        </div>
+        <div className={`w-full h-full flex flex-col-reverse grow`}>{children}</div>
         {backgroundType === 'video' && (
           <div className="hidden sm:block">
             <PlayPauseButton />
