@@ -7,10 +7,10 @@ export type SplashBackgroundProps =
 
 export const SplashBackground = (props: SplashBackgroundProps) => {
   return (
-    <div className="absolute w-full h-full top-0 left-0 no-prose">
+    <div className="absolute z-[9] inset-0 w-full h-full no-prose">
       {props.backgroundType === 'video' ? (
         <>
-          <div className="hidden sm:block relative w-full h-full">
+          <div className="hidden sm:block w-full h-full">
             <SplashVideo backgroundVideoName={props.backgroundVideoName} />
           </div>
           <div className="block sm:hidden">
@@ -20,9 +20,7 @@ export const SplashBackground = (props: SplashBackgroundProps) => {
       ) : (
         <SplashImage backgroundImage={props.backgroundImage} />
       )}
-      <div
-        className={`absolute z-[9] inset-0 w-full h-full bg-gradient-to-t from-cu-black-900 from-15% to-cu-black/0`}
-      ></div>
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-cu-black-900 from-15% to-cu-black/0" />
     </div>
   )
 }
