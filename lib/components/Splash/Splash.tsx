@@ -1,20 +1,14 @@
 import { SplashBackground, SplashBackgroundProps } from './SplashBackground'
 import { SplashContent } from './SplashContent'
+import { SplashContentProps } from './SplashContent'
 
-export interface SplashBaseProps {
-  logo?: 'default' | 'athletics'
-  preHeader?: string
-  header?: string
-  children?: React.ReactNode
-}
+type SplashProps = SplashBackgroundProps & SplashContentProps
 
-type SplashProps = SplashBackgroundProps & SplashBaseProps
-
-export const SplashWrapper = ({ logo, preHeader, header, children, ...bgProps }: SplashProps) => {
+export const SplashWrapper = ({ logo, preHeader, header, children, contentType, ...bgProps }: SplashProps) => {
   return (
     <section className={`cu-splash relative w-screen min-h-screen bg-cu-black-900 text-white`}>
       <SplashBackground {...bgProps} />
-      <SplashContent logo={logo} preHeader={preHeader} header={header} backgroundType={bgProps.backgroundType}>
+      <SplashContent logo={logo} preHeader={preHeader} header={header} contentType={contentType}>
         {children}
       </SplashContent>
     </section>

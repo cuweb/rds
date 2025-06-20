@@ -26,6 +26,7 @@ export const Primary: Story = {
     logo: 'athletics',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
+    contentType: 'button',
   },
   render: (args) => {
     return (
@@ -47,6 +48,7 @@ export const ImageWithCards: Story = {
     logo: 'athletics',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
+    contentType: 'cards',
   },
   render: (args) => {
     return (
@@ -107,6 +109,7 @@ export const WithVideo: Story = {
     mobileBackgroundImage: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
+    contentType: 'button',
   },
   render: (args) => {
     return (
@@ -128,6 +131,7 @@ export const WithVideoAndCards: Story = {
     mobileBackgroundImage: 'https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png',
     preHeader: 'Welcome to',
     header: 'Carleton Athletics',
+    contentType: 'cards',
   },
   render: (args) => {
     return (
