@@ -68,7 +68,7 @@ export const PageHeaderWrapper = ({
       <HeaderComponent
         className={`font-semibold not-prose ${textColor} !mt-2 mb-4 md:mb-6 ${headerSizeClasses[size]} ${centerText} ${centerUnderline}`}
       >
-        {preHeader ? <span className="text-xl block font-normal">{preHeader}</span> : ''}
+        {preHeader ? <span className="text-xl block font-normal">{preHeader}</span> : null}
         {header}{' '}
         {pronoun && <span className="text-xl font-light lowercase lg:text-3xl text-cu-black-500">({pronoun})</span>}
       </HeaderComponent>
