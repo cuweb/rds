@@ -46,7 +46,6 @@ export const CardWrapper = ({
   return (
     <div
       className={`not-prose cu-card relative rounded-lg @container md:max-w-xl flex flex-col gap-3 ${bgStyles} ${centerText} ${centerTextDesktop} ${addRedBorder} ${hoverStyles} ${isDark ? 'dark' : ''} dark:text-white dark:bg-cu-black`}
-      
     >
       {children}
 
