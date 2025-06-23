@@ -1,21 +1,29 @@
-import { videos } from './video/video-names-list'
+import { bannerVideos, splashVideos } from './video/video-names-list'
 import { useEffect } from 'react'
 import VideoControls from './video/VideoControls'
 import PlayPauseButton from './video/PlayPauseButton'
 
-type VideoNameKeys = (typeof videos)[number]['name']
+type VideoNameKeys = (typeof bannerVideos)[number]['name'] | (typeof splashVideos)[number]['name']
 
-export interface FullBannerVideoProps {
+export interface VideoBannerProps {
   videoName?: VideoNameKeys
+  videoType?: 'banner' | 'splash'
   showPlayPauseButton?: boolean
 }
 
-export const VideoBanner = ({ videoName = 'cu-flyby', showPlayPauseButton = true }: FullBannerVideoProps) => {
+export const VideoBanner = ({
+  videoName = 'cu-flyby',
+  videoType = 'banner',
+  showPlayPauseButton = true,
+}: VideoBannerProps) => {
   useEffect(() => {
     VideoControls()
   }, [videoName])
 
-  const video = videos.find((v) => v.name === videoName)
+  const video =
+    videoType === 'banner'
+      ? bannerVideos.find((v) => v.name === videoName)
+      : splashVideos.find((v) => v.name === videoName)
 
   return (
     <>
