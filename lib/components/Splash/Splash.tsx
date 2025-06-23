@@ -6,7 +6,11 @@ export type SplashWrapperProps = {
 }
 
 export const SplashWrapper = ({ children }: SplashWrapperProps) => {
-  return <section className={`cu-splash relative w-screen min-h-screen bg-cu-black-900 text-white`}>{children}</section>
+  return (
+    <section className={`cu-splash relative w-screen min-h-screen ml-offset-center bg-cu-black-900 text-white`}>
+      {children}
+    </section>
+  )
 }
 
 export const Splash = Object.assign(SplashWrapper, {
