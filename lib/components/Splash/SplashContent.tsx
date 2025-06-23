@@ -23,13 +23,13 @@ export const SplashContent = ({ logo, preHeader, header, contentType, background
     >
       {logo === 'athletics' ? (
         <img
-          className="h-auto w-16 md:w-24 sm:w-auto"
+          className="h-auto w-16 md:w-24 sm:w-auto cu-no-max-w-children not-prose"
           src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logos/ravens-logo-wordmark.svg"
           alt="Logo of Carleton Athletics"
         />
       ) : (
         <img
-          className="h-auto w-24 sm:w-auto"
+          className="h-auto w-16 md:w-24 sm:w-auto cu-no-max-w-children not-prose"
           src="https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-vertical-outlined.svg"
           alt="Logo of Carleton University"
         />
