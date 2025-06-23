@@ -20,7 +20,7 @@ export const VideoBanner = ({ videoName = 'cu-flyby', showPlayPauseButton = true
   return (
     <>
       <video
-        className="cu-video rounded-none w-full h-auto bg-black"
+        className="cu-video rounded-none w-full h-auto bg-black not-prose"
         autoPlay
         muted
         loop
