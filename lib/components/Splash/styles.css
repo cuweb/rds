@@ -1,6 +1,11 @@
+.cu-splash .cu-column {
+  @apply mb-0;
+}
+
 .cu-splash video {
   @apply w-full h-full absolute object-cover;
 }
+
 .cu-splash .cu-buttongroup {
   @apply flex-col items-center sm:flex-row;
 }
