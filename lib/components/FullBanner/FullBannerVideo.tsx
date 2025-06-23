@@ -1,7 +1,7 @@
-import { bannerVideos } from './../../hooks/video/video-names-list'
+import { videos } from './../../hooks/video/video-names-list'
 import { VideoBanner } from '../../hooks/useVideoBanner'
 
-type VideoNameKeys = (typeof bannerVideos)[number]['name']
+type VideoNameKeys = (typeof videos)[number]['name']
 
 export interface FullBannerVideoProps {
   videoName?: VideoNameKeys

@@ -1,9 +1,9 @@
-import { bannerVideos, splashVideos } from './video/video-names-list'
+import { videos, splashVideos } from './video/video-names-list'
 import { useEffect } from 'react'
 import VideoControls from './video/VideoControls'
 import PlayPauseButton from './video/PlayPauseButton'
 
-type VideoNameKeys = (typeof bannerVideos)[number]['name'] | (typeof splashVideos)[number]['name']
+type VideoNameKeys = (typeof videos)[number]['name'] | (typeof splashVideos)[number]['name']
 
 export interface VideoBannerProps {
   videoName?: VideoNameKeys
@@ -21,9 +21,7 @@ export const VideoBanner = ({
   }, [videoName])
 
   const video =
-    videoType === 'banner'
-      ? bannerVideos.find((v) => v.name === videoName)
-      : splashVideos.find((v) => v.name === videoName)
+    videoType === 'banner' ? videos.find((v) => v.name === videoName) : splashVideos.find((v) => v.name === videoName)
 
   return (
     <>

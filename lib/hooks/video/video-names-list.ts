@@ -1,4 +1,4 @@
-export const bannerVideos = [
+export const videos = [
   { title: 'Discover Carleton', name: 'discover', description: 'Discover Carleton and the beautiful city of Ottawa' },
   {
     title: '2025 Carleton University Campus',
