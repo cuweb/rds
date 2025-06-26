@@ -39,9 +39,9 @@ const SliderScript = () => {
       sliderWrap.style.justifyContent = 'center'
       previousArrow.setAttribute('disabled', 'disabled')
       nextArrow.setAttribute('disabled', 'disabled')
-
+      /* eslint-disable no-console */
       console.warn(message)
-
+      /* eslint-enable no-console */
       return true
     }
     return false
