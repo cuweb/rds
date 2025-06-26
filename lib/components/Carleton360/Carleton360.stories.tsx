@@ -4,7 +4,8 @@ import { Carleton360 } from './Carleton360'
 import { Main } from '../../layouts/Main/Main'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'
-import { LockClosedIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
+import { ReactComponent as LockClosedIcon } from '../../assets/font-awesome/lock.svg'
+import { ReactComponent as CheckCircleIcon } from '../../assets/font-awesome/circle-check.svg'
 import { Section } from '../../layouts/Section/Section'
 
 const meta: Meta<typeof Carleton360> = {

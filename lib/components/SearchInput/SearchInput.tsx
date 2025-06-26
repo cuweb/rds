@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { ReactComponent as MagnifyingGlassIcon } from '../../assets/font-awesome/magnifying-glass.svg'
 import { SearchInputResults } from './SearchInputResults'
 
 export interface SearchInputProps {

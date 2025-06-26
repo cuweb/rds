@@ -4,7 +4,7 @@ import { NavSubMenu } from './NavSubMenu'
 import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
+import { ReactComponent as MagnifyingGlassIcon } from '../../assets/font-awesome/magnifying-glass.svg'
 
 export interface NavButtonsGenericProps {
   menu?: ImenuItem[]

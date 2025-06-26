@@ -1,5 +1,5 @@
 import { styles } from './Description.Styles'
-import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import { ReactComponent as ChevronRightIcon } from '../../assets/font-awesome/chevron-right.svg'
 import { toggleAccordion } from './script'
 
 export interface DescriptionAccordionProps {

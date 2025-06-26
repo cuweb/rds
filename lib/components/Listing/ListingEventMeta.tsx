@@ -1,5 +1,7 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
-import { CalendarDaysIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { ReactComponent as CalendarDaysIcon } from '../../assets/font-awesome/calendar-days.svg'
+import { ReactComponent as ClockIcon } from '../../assets/font-awesome/clock.svg'
+import { ReactComponent as MapPinIcon } from '../../assets/font-awesome/map-pin.svg'
 
 export interface ListingEventMetaProps {
   startDateTime: string

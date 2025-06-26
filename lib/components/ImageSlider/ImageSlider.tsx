@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import { ReactComponent as ChevronLeftIcon } from '../../assets/font-awesome/chevron-left.svg'
+import { ReactComponent as ChevronRightIcon } from '../../assets/font-awesome/chevron-right.svg'
 import { ImageSliderItem } from './ImageSliderItem'
 import SliderScript from './script.ts'
 

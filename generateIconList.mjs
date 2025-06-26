@@ -1,8 +1,8 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-const directoryPath = './public/assets/font-awesome'
-const outputJsPath = './public/assets/font-awesome/icon-list.js'
+const directoryPath = './lib/assets/font-awesome'
+const outputJsPath = './lib/assets/font-awesome/icon-list.js'
 
 function formatLabel(name) {
   return name.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase())

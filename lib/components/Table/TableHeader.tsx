@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
+import { ReactComponent as ChevronUpDownIcon } from '../../assets/font-awesome/chevron-up-down.svg'
+import { ReactComponent as ChevronDownIcon } from '../../assets/font-awesome/chevron-down.svg'
+import { ReactComponent as ChevronUpIcon } from '../../assets/font-awesome/chevron-up.svg'
 import { ColumnDefinitionType } from './Table'
 import { styles } from './Table.Styles'
 
