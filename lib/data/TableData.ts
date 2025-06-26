@@ -1,5 +1,5 @@
 export interface TableDataProps {
-  [k: string]: string | number | React.ReactElement
+  [k: string]: string | number | JSX.Element
 }
 
 export const TableData: TableDataProps[] = [
