@@ -17,8 +17,5 @@ export declare const FullBanner: {
         ({ children }: import('./FullBannerImage').FullBannerImageProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
-    Video: {
-        ({ videoName }: import('./FullBannerVideo').FullBannerVideoProps): import("react/jsx-runtime").JSX.Element;
-        displayName: string;
-    };
+    Video: import('../../../node_modules/react').FC<import('./FullBannerVideo').FullBannerVideoProps>;
 };

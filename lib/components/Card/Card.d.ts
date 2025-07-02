@@ -4,15 +4,17 @@ export interface CardProps {
     isGrey?: boolean;
     hasWave?: boolean;
     isCenter?: boolean;
+    isCenterDesktop?: boolean;
     noHover?: boolean;
     leftBorder?: boolean;
+    isDark?: boolean;
 }
 export declare const CardWrapper: {
-    ({ children, isGrey, hasWave, isCenter, noHover, leftBorder }: CardProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isGrey, hasWave, isCenterDesktop, isCenter, noHover, leftBorder, isDark, }: CardProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Card: {
-    ({ children, isGrey, hasWave, isCenter, noHover, leftBorder }: CardProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isGrey, hasWave, isCenterDesktop, isCenter, noHover, leftBorder, isDark, }: CardProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Figure: {
@@ -52,7 +54,7 @@ export declare const Card: {
         displayName: string;
     };
     Excerpt: {
-        ({ text, hasMore }: import('./CardExcerpt').CardExcerptProps): import("react/jsx-runtime").JSX.Element;
+        ({ text, hasMore, truncateOnMobile }: import('./CardExcerpt').CardExcerptProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     EventMeta: {

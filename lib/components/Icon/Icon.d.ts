@@ -1,14 +1,13 @@
 import { iconSizeClasses, textColorClasses } from '../../utils/propClasses';
-import { iconMap } from './iconMap';
 type textColorKeys = keyof typeof textColorClasses;
 type iconSizeKeys = keyof typeof iconSizeClasses;
-type IconName = keyof typeof iconMap;
 export interface IconProps {
-    icon?: React.ReactNode;
-    name?: IconName;
+    icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
     color?: textColorKeys;
     size?: iconSizeKeys;
-    className?: string;
 }
-export declare const Icon: ({ icon, name, color, size, className }: IconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Icon: {
+    ({ icon, color, size }: IconProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+};
 export {};
