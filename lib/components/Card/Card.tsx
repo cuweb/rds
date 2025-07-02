@@ -18,20 +18,34 @@ export interface CardProps {
   isGrey?: boolean
   hasWave?: boolean
   isCenter?: boolean
+  isCenterDesktop?: boolean
   noHover?: boolean
   leftBorder?: boolean
+  isDark?: boolean
 }
 
-export const CardWrapper = ({ children, isGrey, hasWave, isCenter, noHover, leftBorder }: CardProps) => {
+export const CardWrapper = ({
+  children,
+  isGrey,
+  hasWave,
+  isCenterDesktop,
+  isCenter,
+  noHover,
+  leftBorder,
+  isDark,
+}: CardProps) => {
   const waveBg = hasWave ? 'pb-28 sm:pb-44 md:pb-20' : ''
-  const bgStyles = isGrey ? `bg-cu-black-50 ${waveBg}` : 'bg-white shadow-lg shadow-cu-black-100'
+  const bgStyles = isGrey ? `bg-cu-black-50 ${waveBg}` : 'bg-white shadow-lg shadow-cu-black-100 dark:shadow-none'
   const centerText = isCenter ? 'text-center' : ''
-  const hoverStyles = noHover ? '' : 'group duration-300 ease-in hover:scale-[1.02] hover:shadow-cu-black-200'
+  const centerTextDesktop = isCenterDesktop ? 'md:text-center' : ''
+  const hoverStyles = noHover
+    ? ''
+    : 'group duration-300 ease-in hover:scale-[1.02] hover:shadow-cu-black-200 dark:hover:shadow-none'
   const addRedBorder = leftBorder ? 'border-l-8 border-l-cu-red' : ''
 
   return (
     <div
-      className={`not-prose cu-card relative rounded-lg @container md:max-w-xl flex flex-col gap-3 ${bgStyles} ${centerText} ${addRedBorder} ${hoverStyles}`}
+      className={`not-prose cu-card relative rounded-lg @container md:max-w-xl flex flex-col gap-3 ${bgStyles} ${centerText} ${centerTextDesktop} ${addRedBorder} ${hoverStyles} ${isDark ? 'dark' : ''} dark:text-white dark:bg-cu-black`}
     >
       {children}
 
