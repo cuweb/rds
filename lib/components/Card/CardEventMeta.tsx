@@ -66,7 +66,7 @@ export const CardEventMeta = ({
   }
 
   return (
-    <ul className="space-y-2 text-sm text-cu-black-600 @sm:md:text-base">
+    <ul className="space-y-2 text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
         <MapPinIcon className={styles.redIcon} aria-hidden="true" />

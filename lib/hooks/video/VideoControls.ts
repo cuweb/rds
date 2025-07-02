@@ -14,9 +14,10 @@ const VideoControls = (): void => {
       return
     }
 
-    const playPauseButton = video.parentElement?.getElementsByClassName(
-      'cu-video-controls',
-    )[0] as HTMLButtonElement | null
+    // Find the parent section element
+    const parentSection = video.closest('section')
+
+    const playPauseButton = parentSection?.getElementsByClassName('cu-video-controls')[0] as HTMLButtonElement | null
 
     if (!playPauseButton) {
       console.warn('Play/Pause button not found for video')
