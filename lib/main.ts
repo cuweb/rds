@@ -15,7 +15,6 @@ export { Description } from './components/Description/Description'
 export { Details } from './components/Details/Details'
 export { Dialog } from './components/Dialog/Dialog'
 export { Embed } from './components/Embed/Embed'
-export { Filter } from './components/Filter/Filter'
 export { FilterPanel } from './components/FilterPanel/FilterPanel'
 export { FooterBasic } from './components/Footer/FooterBasic/FooterBasic'
 export { FooterCookie } from './components/Footer/FooterCookie/FooterCookie'
@@ -51,6 +50,7 @@ export { TextMedia } from './components/TextMedia/TextMedia'
 export { Timeline } from './components/Timeline/Timeline'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
+export { Splash } from './components/Splash/Splash'
 
 // Forms
 export { Form } from './components/Form/Form'
@@ -99,7 +99,7 @@ export { WideWave } from './layouts/WideWave/WideWave'
 // Javascript Files
 export { iconNames } from '../public/assets/font-awesome/icon-list.js'
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js'
-export { videos } from './components/FullBanner/video-names-list.js'
+export { videos, splashVideos } from './hooks/video/video-names-list.js'
 
 // Utils
 export * as utils from './utils/propClasses'

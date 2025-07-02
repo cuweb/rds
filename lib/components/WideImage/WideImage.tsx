@@ -1,6 +1,7 @@
 import React from 'react' // Required for JSX syntax
 import { WideImageSignup } from './WideImageSignup'
 import { PageHeader } from '../PageHeader/PageHeader'
+import { getImageStyles, getInlineStyle, getOpacityStyle } from '../../utils/inlineImage'
 
 // TODO: Discussion --> removing the hasScroll option
 
@@ -19,26 +20,12 @@ export interface WideImageProps {
   hasScroll?: boolean
 }
 
-const getInlineStyle = (image: string = '', focalPointX: number, focalPointY: number) => ({
-  backgroundImage: `url(${image})`,
-  backgroundPosition: `${focalPointX}% ${focalPointY}%`,
-})
-
-const getOpacityStyle = (opacity: number) => ({
-  opacity: `0.${opacity}`,
-})
-
 const handleScroll = () => {
   window.scroll({
     top: document.body.offsetHeight,
     left: 0,
     behavior: 'smooth',
   })
-}
-
-const getImageStyles = (isType: string, image: string | undefined) => {
-  if (image && isType === 'image') return 'relative bg-opacity-50 bg-cover bg-cu-black-50'
-  return isType === 'dark' ? 'bg-cu-black-900' : 'bg-cu-black-50'
 }
 
 export const WideImageWrapper = ({
@@ -57,7 +44,7 @@ export const WideImageWrapper = ({
     console.warn(`Invalid opacity value: ${opacity}. It should be one of ${opacityValues.join(', ')}.`)
   }
 
-  const inlineStyle = getInlineStyle(image, focalPointX, focalPointY)
+  const inlineStyle = image ? getInlineStyle(image, focalPointX, focalPointY) : undefined
   const opacityStyle = getOpacityStyle(opacity)
   const hasImageStyles = getImageStyles(isType, image)
 

@@ -64,7 +64,7 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
               <DropDownSVG />
             </button>
             <ul
-              className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 w-40 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-32 sm:w-60"
               aria-labelledby="sortMenuButton"
             >
               {sortOptions.map((option, index) => (
@@ -97,12 +97,13 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      data-filter-type={filterOption.id}
                     >
                       {filterOption.name}
                       <DropDownSVG />
                     </button>
                     <ul
-                      className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-3 sm:p-4 w-32 sm:w-40"
+                      className="cu-filter__dropdown-menu hidden not-prose list-none absolute z-10 left-0 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-3 sm:p-4 w-32 sm:w-60"
                       aria-labelledby={`${filterOption.id}MenuButton`}
                     >
                       {filterOption.options.map((option, optionIndex) => (
@@ -111,18 +112,16 @@ export const FilterPanelTop = ({ sortOptions, filterOptions }: IFilterTopProp) =
                           key={optionIndex}
                         >
                           <input
-                            id={`filter-${option.value}-${index}`}
+                            id={`filter-${option.value}`}
                             name={`${filterOption.id}[]`}
                             type="checkbox"
                             defaultChecked={option.checked}
                             className="cu-filter__filtering-item w-4 h-4 rounded border-cu-black-200 text-cu-red focus:ring-cu-red-100"
                             value={option.value}
                             data-label={option.label}
+                            data-filter-type={filterOption.id}
                           />
-                          <label
-                            htmlFor={`filter-${option.value}-${index}`}
-                            className="pr-6 ml-3 text-sm text-cu-black-600"
-                          >
+                          <label htmlFor={`filter-${option.value}`} className="pr-6 ml-3 text-sm text-cu-black-600">
                             {option.label}
                           </label>
                         </li>

@@ -13,10 +13,10 @@ import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { Aside } from '../../../layouts/Aside/Aside'
 import { Card } from '../../../components/Card/Card'
 import { Listing } from '../../../components/Listing/Listing'
-import { Filter } from '../../../components/Filter/Filter'
+import { FilterPanel } from '../../../components/FilterPanel/FilterPanel'
 import { Pagination } from '../../../components/Pagination/Pagination'
 import { MultiDayCalendar } from '../../../components/MultiDayCalendar/MultiDayCalendar'
-import { FilterData } from '../../../data/FilterData'
+import { FilterPanelData } from '../../../data/FilterData'
 import { NavButtonsData } from '../../../data/NavData'
 import { EventData } from '../../../data/EventData'
 
@@ -106,7 +106,10 @@ export const Homepage: Story = {
 
         <Section maxWidth="7xl" isGrey>
           <PageHeader as="h2" header="Upcoming Events" size="md" />
-          <Filter filters={FilterData.filters} callback={() => undefined} />
+          <FilterPanel>
+            <FilterPanel.Top sortOptions={FilterPanelData.sortOptions} filterOptions={FilterPanelData.filters} />
+            <FilterPanel.Bottom />
+          </FilterPanel>
           <Column cols="2/3">
             <Column.Content>
               <StackedList>

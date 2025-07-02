@@ -2,12 +2,6 @@ import { useEffect, useState } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import usePagination, { DOTS } from '../../hooks/usePagination'
 
-const styles = {
-  mobileButtons: `relative inline-flex items-center px-4 py-2 text-sm font-medium text-cu-black-600 bg-white border border-cu-black-200 rounded-md hover:bg-cu-black-50`,
-  pageListNumbers: `flex items-center bg-white py-2 px-4 text-sm text-cu-black-600 border-r border-cu-black-100 last:border-0 cursor-pointer hover:bg-cu-black-50`,
-  pageListArrows: `text-cu-black-400 px-2.5`,
-}
-
 export interface PaginationProps {
   hasBorder?: boolean
   hasSpacing?: boolean
@@ -72,6 +66,13 @@ export const Pagination = ({
     return null
   }
 
+  const styles = {
+    mobileButtons: `relative inline-flex items-center px-4 py-2 text-sm font-medium text-cu-black-600 bg-white border border-cu-black-200 rounded-md hover:bg-cu-black-50`,
+    pageListWrapper: `flex items-center bg-white text-cu-black-600 border-r border-cu-black-100 last:border-0`,
+    pageListNumbers: `text-sm py-2 px-4 cursor-pointer hover:bg-cu-black-50`,
+    pageListArrows: `text-cu-black-400 px-2.5`,
+  }
+
   return (
     <div
       className={`cu-pagination cu-component-updated not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} ${spacingStyles}`}
@@ -94,35 +95,40 @@ export const Pagination = ({
 
         <nav aria-label="Pagination">
           <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows} !my-0`} onClick={onPrevious}>
-              <span className="sr-only">Previous</span>
-              <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+            <li className={`${styles.pageListWrapper} !my-0`} onClick={onPrevious}>
+              <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
+                <span className="sr-only">Previous</span>
+                <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+              </button>
             </li>
 
             {paginationRange !== undefined &&
               paginationRange.map((pageNumber, index) => {
                 if (pageNumber === DOTS) {
                   return (
-                    <li key={index} className={`${styles.pageListNumbers} !my-0`}>
+                    <li key={index} className={`${styles.pageListWrapper} ${styles.pageListNumbers} !my-0`}>
                       &#8230;
                     </li>
                   )
                 }
                 return (
-                  <li
-                    key={index}
-                    className={`${styles.pageListNumbers} ${
-                      Number(pageNumber) === currentPage ? 'font-bold text-cu-red' : ''
-                    } !my-0`}
-                    onClick={() => onCurrent(Number(pageNumber))}
-                  >
-                    {pageNumber}
+                  <li key={index} className={`${styles.pageListWrapper} !my-0`}>
+                    <button
+                      className={`${styles.pageListNumbers} ${
+                        Number(pageNumber) === currentPage ? 'font-bold text-cu-red' : ''
+                      }`}
+                      onClick={() => onCurrent(Number(pageNumber))}
+                    >
+                      {pageNumber}
+                    </button>
                   </li>
                 )
               })}
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows} !my-0`} onClick={onNext}>
-              <span className="sr-only">Next</span>
-              <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+            <li className={`${styles.pageListWrapper} !my-0`}>
+              <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
+                <span className="sr-only">Next</span>
+                <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+              </button>
             </li>
           </ul>
         </nav>
