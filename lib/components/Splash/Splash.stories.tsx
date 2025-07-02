@@ -116,7 +116,7 @@ export const WithVideo: Story = {
       <Splash {...args}>
         <Splash.Background
           backgroundType="video"
-          backgroundVideoName="discover"
+          backgroundVideoName="campus-2025"
           mobileBackgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
         <Splash.Content
@@ -143,7 +143,7 @@ export const WithVideoAndCards: Story = {
       <Splash {...args}>
         <Splash.Background
           backgroundType="video"
-          backgroundVideoName="discover"
+          backgroundVideoName="campus-2025"
           mobileBackgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
         <Splash.Content

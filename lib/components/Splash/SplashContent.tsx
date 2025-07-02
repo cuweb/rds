@@ -32,7 +32,7 @@ export const SplashContent = ({ logo, preHeader, header, contentType, background
         />
       )}
 
-      <div className={`w-full h-full flex flex-col gap-12 grow ${contentType === 'buttons' ? 'sm:grow-0' : ''}`}>
+      <div className={`w-full h-full flex flex-col gap-4 grow ${contentType === 'buttons' ? 'sm:grow-0' : ''}`}>
         {header && <PageHeader preHeader={preHeader} header={header} isWhite isCenter noUnderline></PageHeader>}
         <div className={`w-full h-full flex flex-col-reverse grow`}>{children}</div>
         {backgroundType === 'video' && (
