@@ -5,7 +5,7 @@ export interface CardBodyProps {
 }
 
 export const CardBody = ({ children }: CardBodyProps) => {
-  return <div className="flex flex-col px-6">{children}</div>
+  return <div className="flex flex-col px-6 dark:text-white">{children}</div>
 }
 
 CardBody.displayName = 'Card.Body'

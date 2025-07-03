@@ -50,6 +50,7 @@ export { TextMedia } from './components/TextMedia/TextMedia'
 export { Timeline } from './components/Timeline/Timeline'
 export { Toast } from './components/Toast/Toast'
 export { WideImage } from './components/WideImage/WideImage'
+export { Splash } from './components/Splash/Splash'
 
 // Forms
 export { Form } from './components/Form/Form'
@@ -98,7 +99,7 @@ export { WideWave } from './layouts/WideWave/WideWave'
 // Javascript Files
 export { iconNames } from './assets/font-awesome/icon-list.js'
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js'
-export { videos } from './components/FullBanner/video-names-list.js'
+export { videos, splashVideos } from './hooks/video/video-names-list.js'
 
 // Utils
 export * as utils from './utils/propClasses'
