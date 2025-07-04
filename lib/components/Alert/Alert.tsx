@@ -1,11 +1,8 @@
 import React, { PropsWithChildren } from 'react'
-import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  InformationCircleIcon,
-  ShieldExclamationIcon,
-} from '@heroicons/react/24/outline'
-
+import { ReactComponent as CheckCircleIcon } from '../../assets/font-awesome/circle-check.svg'
+import { ReactComponent as ExclamationCircleIcon } from '../../assets/font-awesome/circle-exclamation.svg'
+import { ReactComponent as InformationCircleIcon } from '../../assets/font-awesome/circle-info.svg'
+import { ReactComponent as ShieldExclamationIcon } from '../../assets/font-awesome/shield-halved.svg'
 export interface AlertProps {
   title: string
   content?: React.ReactNode | string

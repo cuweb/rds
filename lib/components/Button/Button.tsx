@@ -10,12 +10,12 @@ export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
 }
 export interface ButtonTitleProps extends ButtonProp {
   title: string
-  icon?: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>
   ariaLabel?: string
 }
 export interface ButtonNoTitleProps extends ButtonProp {
   title?: string
-  icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   ariaLabel: string
 }
 
