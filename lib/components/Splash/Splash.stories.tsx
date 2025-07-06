@@ -26,6 +26,7 @@ export const Primary: Story = {
         <Splash.Background
           backgroundType="image"
           backgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
+          opacity={80}
         />
         <Splash.Content
           logo="athletics"
