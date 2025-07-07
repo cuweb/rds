@@ -26,6 +26,7 @@ export const Primary: Story = {
         <Splash.Background
           backgroundType="image"
           backgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
+          opacity={80}
         />
         <Splash.Content
           logo="athletics"
@@ -118,6 +119,7 @@ export const WithVideo: Story = {
           backgroundType="video"
           backgroundVideoName="campus-2025"
           mobileBackgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
+          opacity={90}
         />
         <Splash.Content
           logo="athletics"
