@@ -1,8 +1,8 @@
 import { SplashImage } from './SplashImage'
 import { SplashVideo } from './SplashVideo'
-import { gradientOpacityClasses } from './gradients'
+import { bgOpacityClasses } from '../../utils/propClasses'
 
-type bgOpacityKeys = keyof typeof gradientOpacityClasses
+type bgOpacityKeys = keyof typeof bgOpacityClasses
 
 export type SplashBackgroundProps =
   | { backgroundType: 'image'; backgroundImage: string; opacity?: bgOpacityKeys }
@@ -25,7 +25,7 @@ export const SplashBackground = (props: SplashBackgroundProps) => {
       ) : (
         <SplashImage backgroundImage={props.backgroundImage} />
       )}
-      <div className={`absolute inset-0 w-full h-full ${gradientOpacityClasses[opacity]}`} />
+      <div className={`absolute inset-0 w-full h-full bg-cu-black-900 ${bgOpacityClasses[opacity]}`} />
     </div>
   )
 }
