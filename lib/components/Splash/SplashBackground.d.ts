@@ -1,5 +1,5 @@
-import { gradientOpacityClasses } from './gradients';
-type bgOpacityKeys = keyof typeof gradientOpacityClasses;
+import { bgOpacityClasses } from '../../utils/propClasses';
+type bgOpacityKeys = keyof typeof bgOpacityClasses;
 export type SplashBackgroundProps = {
     backgroundType: 'image';
     backgroundImage: string;
