@@ -4,7 +4,7 @@ import { ReactComponent as XMarkIcon } from '../../assets/font-awesome/xmark.svg
 import { ReactComponent as CheckCircleIcon } from '../../assets/font-awesome/circle-check.svg'
 import { ReactComponent as ExclamationCircleIcon } from '../../assets/font-awesome/circle-exclamation.svg'
 import { ReactComponent as InformationCircleIcon } from '../../assets/font-awesome/circle-info.svg'
-import { ReactComponent as ShieldExclamationIcon } from '../../assets/font-awesome/shield-halved.svg'
+import { ReactComponent as ShieldExclamationIcon } from '../../assets/font-awesome/shield-exclamation.svg'
 export interface ToastBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
 }

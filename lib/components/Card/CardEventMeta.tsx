@@ -1,7 +1,7 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
 import { ReactComponent as CalendarDaysIcon } from '../../assets/font-awesome/calendar-days.svg'
 import { ReactComponent as ClockIcon } from '../../assets/font-awesome/clock.svg'
-import { ReactComponent as MapPinIcon } from '../../assets/font-awesome/map-pin.svg'
+import { ReactComponent as LocationDot } from '../../assets/font-awesome/location-dot.svg'
 
 // import { styles } from './Card.Styles'
 
@@ -72,7 +72,7 @@ export const CardEventMeta = ({
     <ul className="space-y-2 text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
-        <MapPinIcon className={styles.redIcon} aria-hidden="true" />
+        <LocationDot className={styles.redIcon} aria-hidden="true" />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>

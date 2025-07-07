@@ -1,7 +1,7 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
 import { ReactComponent as CalendarDaysIcon } from '../../assets/font-awesome/calendar-days.svg'
 import { ReactComponent as ClockIcon } from '../../assets/font-awesome/clock.svg'
-import { ReactComponent as MapPinIcon } from '../../assets/font-awesome/map-pin.svg'
+import { ReactComponent as LocationDot } from '../../assets/font-awesome/location-dot.svg'
 
 export interface ListingEventMetaProps {
   startDateTime: string
@@ -70,7 +70,7 @@ export const ListingEventMeta = ({
     <ul className="space-y-3 text-sm text-cu-black-600 @sm:md:text-base list-none">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
-        <MapPinIcon className={styles.redIcon} aria-hidden="true" />
+        <LocationDot className={styles.redIcon} aria-hidden="true" />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>
