@@ -14,7 +14,7 @@ export declare const Splash: {
         displayName: string;
     };
     Content: {
-        ({ logo, preHeader, header, contentType, backgroundType, children }: import('./SplashContent').SplashBaseProps): import("react/jsx-runtime").JSX.Element;
+        ({ logo, preHeader, header, backgroundType, children }: import('./SplashContent').SplashBaseProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
 };
