@@ -4,7 +4,7 @@ type textColorKeys = keyof typeof textColorClasses
 type iconSizeKeys = keyof typeof iconSizeClasses
 
 export interface IconProps {
-  icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   color?: textColorKeys
   size?: iconSizeKeys
 }

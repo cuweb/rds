@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { ReactComponent as CheckCircleIcon } from '../../assets/font-awesome/circle-check.svg'
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',

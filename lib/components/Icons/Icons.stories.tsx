@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { iconNames } from '../../../public/assets/font-awesome/icon-list.js'
+import { iconNames } from '../../assets/font-awesome/icon-list.js'
 
 const meta: Meta = {
   title: 'Resources/Icons',

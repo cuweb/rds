@@ -1,6 +1,7 @@
 import { format, getDay, isBefore, startOfToday, eachDayOfInterval, endOfMonth, parse } from 'date-fns'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { ReactComponent as ChevronLeftIcon } from '../../../assets/font-awesome/chevron-left.svg'
+import { ReactComponent as ChevronRightIcon } from '../../../assets/font-awesome/chevron-right.svg'
 import { useState } from 'react'
 
 const styles = {
