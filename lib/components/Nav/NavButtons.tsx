@@ -5,6 +5,7 @@ import ImenuItem from './NavInterface'
 import { useLinkContext } from '../LinkProvider/useLinkContext'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'
+import convertToSlug from './convertToSlug'
 
 export interface NavButtonsGenericProps {
   menu?: ImenuItem[]
@@ -63,16 +64,57 @@ export const NavButtons = ({
             <MagnifyingGlassIcon className="w-5 h-5 cursor-pointer text-cu-black-300 left-4" aria-hidden="true" />
           </button>
         )}
-        {menu &&
-          menu.map((menuItem: ImenuItem, index: number) => (
-            <LinkComponent
-              key={index}
-              href={menuItem.href}
-              className={`cu-button ${menuItem.buttonColor ? `cu-button--${menuItem.buttonColor}` : `cu-button-red`} cu-button--small`}
-            >
-              {menuItem.title}
-            </LinkComponent>
-          ))}
+        {menu && (
+          <ul className="flex items-center gap-4 flex-1 list-none p-0 m-0">
+            {menu.map((menuItem: ImenuItem, index: number) => (
+              <li className="relative" key={index}>
+                <span
+                  className={navMenuItemStyles.navItemWrapper}
+                  role="navigation"
+                  data-menu-item={convertToSlug(menuItem.title)}
+                  aria-expanded="false"
+                  key={index}
+                >
+                  <LinkComponent
+                    key={index}
+                    href={menuItem.href}
+                    className={`cu-button ${menuItem.buttonColor ? `cu-button--${menuItem.buttonColor}` : `cu-button-red`} cu-button--small  
+              ${
+                menuItem.submenu
+                  ? navMenuItemStyles.navParentItem +
+                    ' ' +
+                    navMenuItemStyles.navArrow +
+                    ' ' +
+                    navMenuItemStyles.navParentArrow
+                  : ''
+              }`}
+                  >
+                    {menuItem.title}
+
+                    {menuItem.submenu ? (
+                      <button
+                        className={`hidden ` + navMenuItemStyles.innerSubNavToggler + ' ' + navMenuItemStyles.navArrow}
+                      >
+                        <span className="sr-only">Click to open inner submenu</span>
+                      </button>
+                    ) : (
+                      <></>
+                    )}
+                  </LinkComponent>
+                </span>
+                {menuItem.submenu && (
+                  <NavSubMenu
+                    submenu={menuItem.submenu}
+                    isSubMenu={true}
+                    isInnerSubMenu={false}
+                    id={menuItem.title}
+                    key={`submenu` + index}
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
 
         {(LoggedOutUser || LoggedInUser) && (
           <ul
