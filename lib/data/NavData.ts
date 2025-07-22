@@ -116,6 +116,20 @@ export const NavButtonsData = [
     href: 'https://admissions.carleton.ca/apply/',
     title: 'Apply',
     buttonColor: 'red',
+    submenu: [
+      {
+        href: 'https://carleton.ca/fass/programs/undergraduate-programs/',
+        title: 'Undergraduate Programs',
+      },
+      {
+        href: 'https://graduate.carleton.ca/programs/',
+        title: 'Graduate Programs',
+      },
+      {
+        href: 'https://admissions.carleton.ca/programs-of-study/how-to-choose-a-major/professional-degrees/',
+        title: 'Professional Programs',
+      },
+    ],
   },
   {
     href: 'https://futurefunder.carleton.ca/',
