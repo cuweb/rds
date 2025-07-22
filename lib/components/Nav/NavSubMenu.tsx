@@ -1,18 +1,12 @@
 import { NavMenuItemWrapper } from './NavMenuItemWrapper'
 import ImenuItem from './NavInterface'
+import convertToSlug from './convertToSlug'
 
 export interface menuItemProps {
   submenu: ImenuItem[]
   isSubMenu: boolean
   isInnerSubMenu: boolean
   id: string
-}
-
-const convertToSlug = (text: string) => {
-  return text
-    .toLowerCase()
-    .replace(/[^\w ]+/g, '')
-    .replace(/ +/g, '-')
 }
 
 export const NavSubMenu = ({ submenu, isSubMenu, isInnerSubMenu, id }: menuItemProps) => {
