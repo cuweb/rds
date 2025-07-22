@@ -18,11 +18,20 @@ export declare const NavDataSingle: ({
         submenu?: undefined;
     })[];
 })[];
-export declare const NavButtonsData: {
+export declare const NavButtonsData: ({
     href: string;
     title: string;
     buttonColor: string;
-}[];
+    submenu: {
+        href: string;
+        title: string;
+    }[];
+} | {
+    href: string;
+    title: string;
+    buttonColor: string;
+    submenu?: undefined;
+})[];
 export declare const NavAsideEventCal: {
     href: string;
     title: string;
