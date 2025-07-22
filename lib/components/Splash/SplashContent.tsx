@@ -6,14 +6,13 @@ export interface SplashContentProps {
   preHeader?: string
   header?: string
   children?: React.ReactNode
-  contentType?: 'buttons' | 'cards'
 }
 
 export interface SplashBaseProps extends SplashContentProps {
   backgroundType?: 'image' | 'video'
 }
 
-export const SplashContent = ({ logo, preHeader, header, contentType, backgroundType, children }: SplashBaseProps) => {
+export const SplashContent = ({ logo, preHeader, header, backgroundType, children }: SplashBaseProps) => {
   return (
     <div
       className={`cu-prose-light relative z-20 cu-max-w-child-7xl min-h-screen flex flex-col items-center gap-6 md:gap-12 p-4 md:p-6 lg:p-12`}
@@ -32,7 +31,7 @@ export const SplashContent = ({ logo, preHeader, header, contentType, background
         />
       )}
 
-      <div className={`w-full h-full flex flex-col gap-4 grow ${contentType === 'buttons' ? 'sm:grow-0' : ''}`}>
+      <div className={`w-full h-full flex flex-col gap-4`}>
         {header && <PageHeader preHeader={preHeader} header={header} isWhite isCenter noUnderline></PageHeader>}
         <div className={`w-full h-full flex flex-col-reverse grow`}>{children}</div>
         {backgroundType === 'video' && (

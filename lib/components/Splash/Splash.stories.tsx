@@ -28,13 +28,7 @@ export const Primary: Story = {
           backgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
           opacity={80}
         />
-        <Splash.Content
-          logo="athletics"
-          preHeader="Welcome to"
-          header="Carleton Athletics"
-          contentType="buttons"
-          backgroundType="image"
-        >
+        <Splash.Content logo="athletics" preHeader="Welcome to" header="Carleton Athletics" backgroundType="image">
           <ButtonGroup align="center">
             <Button type="button" title="Visit Go Ravens" />
             <Button type="button" title="View Programs" />
@@ -54,13 +48,7 @@ export const ImageWithCards: Story = {
           backgroundType="image"
           backgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
-        <Splash.Content
-          logo="athletics"
-          preHeader="Welcome to"
-          header="Carleton Athletics"
-          contentType="cards"
-          backgroundType="image"
-        >
+        <Splash.Content logo="athletics" preHeader="Welcome to" header="Carleton Athletics" backgroundType="image">
           <Column cols="3">
             <Card isCenterDesktop isDark>
               <Card.Header title="Varsity" />
@@ -121,13 +109,7 @@ export const WithVideo: Story = {
           mobileBackgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
           opacity={90}
         />
-        <Splash.Content
-          logo="athletics"
-          preHeader="Welcome to"
-          header="Carleton Athletics"
-          contentType="buttons"
-          backgroundType="video"
-        >
+        <Splash.Content logo="athletics" preHeader="Welcome to" header="Carleton Athletics" backgroundType="video">
           <ButtonGroup align="center">
             <Button type="button" title="Visit Go Ravens" />
             <Button type="button" title="View Programs" />
@@ -148,13 +130,7 @@ export const WithVideoAndCards: Story = {
           backgroundVideoName="campus-2025"
           mobileBackgroundImage="https://cu-production.s3.us-east-1.amazonaws.com/rds/assets/bg-images/splash-athletics.png"
         />
-        <Splash.Content
-          logo="athletics"
-          preHeader="Welcome to"
-          header="Carleton Athletics"
-          contentType="cards"
-          backgroundType="video"
-        >
+        <Splash.Content logo="athletics" preHeader="Welcome to" header="Carleton Athletics" backgroundType="video">
           <Column cols="3">
             <Card isCenterDesktop isDark>
               <Card.Header title="Varsity" />
