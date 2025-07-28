@@ -47,13 +47,7 @@ export const LayoutExamples: Story = {
 
       <Main maxWidth="5xl">
         <Section maxWidth="max">
-          <WideBanner
-            headerType="h1"
-            image="https://picsum.photos/id/381/600/400"
-            isType="image"
-            title="Wide Image Examples"
-            hasWave
-          >
+          <WideBanner title="Wide Banner Example" image="https://picsum.photos/id/20/1920/840">
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
               reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
@@ -61,7 +55,7 @@ export const LayoutExamples: Story = {
             </p>
             <ButtonGroup>
               <Button title="Apply Now" />
-              <Button color="dark-grey" title="Request Information" />
+              <Button color="grey" title="Request Information" />
             </ButtonGroup>
           </WideBanner>
         </Section>
@@ -70,14 +64,14 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <WideBanner isType="light" title="Wide Image" />
-        <WideBanner isType="light" title="Wide Image" />
+        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840" />
+        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840" />
 
         <h2>Header Two</h2>
         <SinglePara />
         <SinglePara />
 
-        <WideBanner isType="light" title="Wide Image">
+        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840">
           <ButtonGroup>
             <Button title="Apply Now" />
             <Button color="dark-grey" title="Request Information" />
