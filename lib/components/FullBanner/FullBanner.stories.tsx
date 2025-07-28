@@ -62,7 +62,7 @@ export const Video: Story = {
   },
 }
 
-export const Content: Story = {
+export const Contained: Story = {
   args: {
     contained: true,
   },
