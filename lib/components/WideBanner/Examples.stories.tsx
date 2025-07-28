@@ -88,7 +88,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <WideBanner image="https://picsum.photos/id/381/600/400" isType="light" opacity={30} title="Wide Image">
+        <WideBanner image="https://picsum.photos/id/381/1920/840" title="Wide Image">
           <p>
             Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
             reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non.
@@ -100,14 +100,7 @@ export const LayoutExamples: Story = {
         </WideBanner>
 
         <Section maxWidth="7xl">
-          <WideBanner
-            focalPointX={0}
-            focalPointY={0}
-            image="https://picsum.photos/id/381/600/400"
-            isType="image"
-            opacity={80}
-            title="Wide Image"
-          >
+          <WideBanner image="https://picsum.photos/id/381/1920/840" title="Wide Image">
             <ButtonGroup>
               <Button title="Apply Now" />
               <Button color="dark-grey" title="Request Information" />
@@ -125,7 +118,7 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Column cols="2" maxWidth="5xl">
+        <Column cols="2">
           <Column.Content>
             <p>
               Left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam augue turpis, feugiat vitae viverra
@@ -143,7 +136,7 @@ export const LayoutExamples: Story = {
         </Column>
 
         <Section maxWidth="full">
-          <WideBanner image="https://picsum.photos/id/381/600/400" isType="image" title="Wide Image Examples">
+          <WideBanner image="https://picsum.photos/id/381/1920/840" title="Wide Image Examples">
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
               reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores

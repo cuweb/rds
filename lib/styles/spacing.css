@@ -139,7 +139,8 @@
 .cu-section + .cu-fullbanner,
 .cu-fullbanner + .cu-section,
 .cu-column + .cu-fullbanner,
-.cu-fullbanner + .cu-column {
+.cu-fullbanner + .cu-column,
+.cu-widebanner + .cu-widebanner {
   @apply mt-6 md:mt-10;
 }
 
