@@ -8,12 +8,11 @@ export interface FullBannerProps {
 }
 
 export const FullBannerWrapper = ({ children, contained = false }: FullBannerProps) => {
-  // TODO GLOBAL: break out of main width
-  const $breakoutMaxWidth = contained
-    ? `max-w-screen-lg mx-auto rounded-xl overflow-hidden`
-    : `w-screen ml-offset-center`
+  const CONTAINED_STYLES = `max-w-screen-lg mx-auto rounded-xl overflow-hidden`
+  const NON_CONTAINED_STYLES = `w-screen ml-offset-center`
+  const sectionClasses = contained ? CONTAINED_STYLES : NON_CONTAINED_STYLES
 
-  return <section className={`cu-fullbanner bg-cu-black-900 relative ${$breakoutMaxWidth}`}>{children}</section>
+  return <section className={`cu-fullbanner bg-cu-black-900 relative ${sectionClasses}`}>{children}</section>
 }
 
 export const FullBanner = Object.assign(FullBannerWrapper, {
