@@ -9,6 +9,7 @@ export interface WideBannerProps {
     justify?: justifyContentKeys;
     opacity?: bgOpacityKeys;
     image?: string;
+    imageAlt?: string;
 }
-export declare const WideBanner: ({ children, title, headerType, opacity, justify, image, }: WideBannerProps) => import("react/jsx-runtime").JSX.Element;
+export declare const WideBanner: ({ children, title, headerType, opacity, justify, image, imageAlt, }: WideBannerProps) => import("react/jsx-runtime").JSX.Element;
 export {};
