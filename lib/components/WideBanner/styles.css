@@ -1,0 +1,7 @@
+.cu-widebanner .cu-pageheader {
+  @apply mb-0;
+}
+
+.cu-widebanner img {
+  @apply w-full;
+}

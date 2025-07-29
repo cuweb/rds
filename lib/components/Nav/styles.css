@@ -37,7 +37,7 @@
 }
 
 .cu-nav__buttons .cu-nav__submenu {
-  @apply top-[36px];
+  @apply top-[42px];
 }
 
 /* Aside */

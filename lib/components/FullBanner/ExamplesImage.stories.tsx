@@ -70,10 +70,7 @@ export const ImageExamples: Story = {
             <img alt="Top down view of a desk" src="https://picsum.photos/id/20/1920/840" />
           </FullBanner.Image>
           <FullBanner.Content headerType="h1" title="The nostalgia is real.">
-            <p>
-              The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
-              revolutionized how the world consumes music on the move!
-            </p>
+            <p>The launch of the iPod revolutionized how the world.</p>
             <ButtonGroup>
               <Button title="Apply Now" />
               <Button color="grey" title="Request Information" />
