@@ -50,8 +50,7 @@ export const LayoutExamples: Story = {
           <WideBanner title="Wide Banner Example" image="https://picsum.photos/id/20/1920/840">
             <p>
               Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-              accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              reprehenderit ducimus.
             </p>
             <ButtonGroup>
               <Button title="Apply Now" />
@@ -65,11 +64,6 @@ export const LayoutExamples: Story = {
         <SinglePara />
 
         <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840" />
-        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840" />
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
 
         <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840">
           <ButtonGroup>
@@ -77,6 +71,31 @@ export const LayoutExamples: Story = {
             <Button color="dark-grey" title="Request Information" />
           </ButtonGroup>
         </WideBanner>
+
+        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840">
+          <p>Nobis voluptatem dolorum velit architecto a distinctio.</p>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="dark-grey" title="Request Information" />
+          </ButtonGroup>
+        </WideBanner>
+
+        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840">
+          <p>
+            Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+            reprehenderit ducimus.
+          </p>
+          <ButtonGroup>
+            <Button title="Apply Now" />
+            <Button color="dark-grey" title="Request Information" />
+          </ButtonGroup>
+        </WideBanner>
+
+        <h2>Header Two</h2>
+        <SinglePara />
+        <SinglePara />
+
+        <WideBanner title="Wide Image" image="https://picsum.photos/id/20/1920/840" />
 
         <Section>
           <h2>White Background</h2>

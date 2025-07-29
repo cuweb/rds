@@ -33,7 +33,7 @@ export const WideBanner = ({
       <div className="cu-prose-light lg:absolute lg:bottom-8 w-full px-6 lg:px-10">
         <div className={`max-w-screen-2xl mx-auto flex ${justifyContentClasses[justify]}`}>
           <div
-            className={`w-full lg:max-w-4xl bg-cu-black-900 ${bgOpacityClasses[opacity]} lg:px-8 pt-3 pb-5 lg:pt-6 lg:pb-8 rounded-lg text-white`}
+            className={`lg:max-w-3xl bg-cu-black-900 ${bgOpacityClasses[opacity]} lg:px-8 pt-3 pb-5 lg:pt-6 lg:pb-8 rounded-lg text-white`}
           >
             <PageHeader header={title} as={headerType} size={headerType === 'h1' ? 'md' : 'sm'} noUnderline isWhite>
               {children}
