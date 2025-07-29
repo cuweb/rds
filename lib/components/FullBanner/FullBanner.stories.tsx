@@ -42,9 +42,7 @@ export const Primary: Story = {
 }
 
 export const Video: Story = {
-  args: {
-    as: 'section',
-  },
+  args: {},
   render: (args) => {
     return (
       <FullBanner {...args}>
