@@ -46,6 +46,7 @@ export { TextImage } from './components/TextImage/TextImage';
 export { TextMedia } from './components/TextMedia/TextMedia';
 export { Timeline } from './components/Timeline/Timeline';
 export { Toast } from './components/Toast/Toast';
+export { WideBanner } from './components/WideBanner/WideBanner';
 export { WideImage } from './components/WideImage/WideImage';
 export { Splash } from './components/Splash/Splash';
 export { Form } from './components/Form/Form';

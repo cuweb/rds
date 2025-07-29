@@ -1,0 +1,1 @@
+const e=(a,t,c)=>({backgroundImage:`url(${a})`,backgroundPosition:`${t}% ${c}%`}),g=a=>({opacity:`0.${a}`}),b=(a,t)=>t&&a==="image"?"relative bg-opacity-50 bg-cover bg-cu-black-50":a==="dark"?"bg-cu-black-900":"bg-cu-black-50";export{e as a,g as b,b as g};
