@@ -12,6 +12,7 @@ export interface WideBannerProps {
   justify?: justifyContentKeys
   opacity?: bgOpacityKeys
   image?: string
+  imageAlt?: string
 }
 
 export const WideBanner = ({
@@ -21,13 +22,14 @@ export const WideBanner = ({
   opacity = 70,
   justify = 'start',
   image,
+  imageAlt,
 }: WideBannerProps) => {
   return (
     <div
       className={`cu-widebanner relative flex flex-col lg:flex-row items-center justify-center mx-auto overflow-hidden rounded-xl not-prose bg-cu-black-900`}
     >
       <div className="relative w-full">
-        <img alt="Top down view of a desk" src={image} />
+        <img alt={imageAlt} src={image} />
       </div>
 
       <div className="cu-prose-light lg:absolute lg:bottom-8 w-full px-6 lg:px-10">
