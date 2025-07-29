@@ -26,7 +26,7 @@ export const WideBanner = ({
     <div
       className={`cu-widebanner relative flex flex-col lg:flex-row items-center justify-center mx-auto overflow-hidden rounded-xl not-prose bg-cu-black-900`}
     >
-      <div className="relative">
+      <div className="relative w-full">
         <img alt="Top down view of a desk" src={image} />
       </div>
 
