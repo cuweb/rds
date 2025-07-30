@@ -7,10 +7,7 @@ export interface FullBannerProps {
 }
 
 export const FullBannerWrapper = ({ children }: FullBannerProps) => {
-  // TODO GLOBAL: break out of main width
-  const $breakoutMaxWidth = `w-screen ml-offset-center`
-
-  return <section className={`cu-fullbanner bg-cu-black-900 relative ${$breakoutMaxWidth}`}>{children}</section>
+  return <section className={`cu-fullbanner bg-cu-black-900 relative w-screen ml-offset-center`}>{children}</section>
 }
 
 export const FullBanner = Object.assign(FullBannerWrapper, {
