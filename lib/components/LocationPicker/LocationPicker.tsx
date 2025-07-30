@@ -1,5 +1,6 @@
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
-import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ReactComponent as MagnifyingGlassIcon } from '../../assets/font-awesome/magnifying-glass.svg'
+import { ReactComponent as XMarkIcon } from '../../assets/font-awesome/xmark.svg'
 import { useEffect, useState } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 

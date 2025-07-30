@@ -3,10 +3,11 @@ import path from 'node:path'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import tailwindcss from 'tailwindcss'
+import svgr from '@svgr/rollup'
 import * as packageJson from './package.json'
 
 export default defineConfig({
-  plugins: [react(), dts({ include: ['lib'], insertTypesEntry: true })],
+  plugins: [react(), dts({ include: ['lib'], insertTypesEntry: true }), svgr()],
   css: {
     postcss: {
       plugins: [tailwindcss],
