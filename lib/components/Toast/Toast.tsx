@@ -1,10 +1,6 @@
-import React, { Fragment, PropsWithChildren, useState } from 'react'
+import { Fragment, PropsWithChildren, useState } from 'react'
 import { Transition } from '@headlessui/react'
-import { ReactComponent as XMarkIcon } from '../../assets/font-awesome/xmark.svg'
-import { ReactComponent as CheckCircleIcon } from '../../assets/font-awesome/circle-check.svg'
-import { ReactComponent as ExclamationCircleIcon } from '../../assets/font-awesome/circle-exclamation.svg'
-import { ReactComponent as InformationCircleIcon } from '../../assets/font-awesome/circle-info.svg'
-import { ReactComponent as ShieldExclamationIcon } from '../../assets/font-awesome/shield-exclamation.svg'
+import { Icon } from '../Icon/Icon'
 export interface ToastBaseProps {
   type: 'success' | 'error' | 'warning' | 'info'
 }
@@ -33,20 +29,16 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
 
   const toastTypes = {
     success: {
-      icon: CheckCircleIcon,
-      color: 'text-green-400',
+      icon: <Icon name="circle-check" size={24} color="#4ade80" aria-hidden="true" />,
     },
     warning: {
-      icon: ShieldExclamationIcon,
-      color: 'text-yellow-400',
+      icon: <Icon name="shield-exclamation" size={24} color="#facc15" aria-hidden="true" />,
     },
     error: {
-      icon: ExclamationCircleIcon,
-      color: 'text-cu-red',
+      icon: <Icon name="circle-exclamation" size={24} color="#e91c24" aria-hidden="true" />,
     },
     info: {
-      icon: InformationCircleIcon,
-      color: 'text-blue-600',
+      icon: <Icon name="circle-info" size={24} color="#2563eb" aria-hidden="true" />,
     },
   }
 
@@ -64,12 +56,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
       <div className="cu-toast pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
         <div className="p-4">
           <div className="flex items-start">
-            <div className="flex-shrink-0">
-              {React.createElement(toastTypes[type].icon, {
-                className: `w-6 h-6 ${toastTypes[type].color}`,
-                'aria-hidden': 'true',
-              })}
-            </div>
+            <div className="flex-shrink-0">{toastTypes[type].icon}</div>
             <div className="ml-3 w-0 flex-1 pt-0.5">{children}</div>
             <div className="ml-4 flex flex-shrink-0">
               <button
@@ -80,7 +67,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
                 }}
               >
                 <span className="sr-only">Close</span>
-                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                <Icon name="xmark" size={20} className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>
