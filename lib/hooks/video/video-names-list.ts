@@ -7,6 +7,12 @@ export const videos = [
       "Aerial and ground-level footage of Carleton University's campus, featuring students walking, green spaces, academic buildings, and seasonal scenery that showcases the vibrant and welcoming atmosphere.",
   },
   {
+    title: 'President Banner',
+    name: 'president-banner',
+    description:
+      "A video of Carleton's 17th President, Wisdom Tettey, exploring campus and sharing joyful moments with the Carleton University community.",
+  },
+  {
     title: 'Quad Timelapse',
     name: 'timelapse-quad',
     description: 'A timelapse of the main quad showing students and campus life.',
