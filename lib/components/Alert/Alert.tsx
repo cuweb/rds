@@ -1,8 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import { ReactComponent as CheckCircleIcon } from '../../assets/font-awesome/circle-check.svg'
-import { ReactComponent as ExclamationCircleIcon } from '../../assets/font-awesome/circle-exclamation.svg'
-import { ReactComponent as InformationCircleIcon } from '../../assets/font-awesome/circle-info.svg'
-import { ReactComponent as ShieldExclamationIcon } from '../../assets/font-awesome/shield-exclamation.svg'
+import { Icon } from '../Icon'
 export interface AlertProps {
   title: string
   content?: React.ReactNode | string
@@ -12,33 +9,25 @@ export interface AlertProps {
 
 export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWithChildren<AlertProps>) => {
   const AlertSizes = {
-    sm: {
-      alertTitleSize: 'text-sm md:text-base',
-      alertIconSize: 'w-6 h-6',
-    },
-    md: {
-      alertTitleSize: 'text-base md:text-lg mt-0.5',
-      alertIconSize: 'w-8 h-8',
-    },
-    lg: {
-      alertTitleSize: 'text-base md:text-xl mt-1',
-      alertIconSize: 'w-10 h-10',
-    },
+    sm: { alertTitleSize: 'text-sm md:text-base', alertIconSize: 24 },
+    md: { alertTitleSize: 'text-base md:text-lg mt-0.5', alertIconSize: 32 },
+    lg: { alertTitleSize: 'text-base md:text-xl mt-1', alertIconSize: 40 },
   }
 
   const AlertTypes = {
-    success: CheckCircleIcon,
-    warning: ShieldExclamationIcon,
-    error: ExclamationCircleIcon,
-    info: InformationCircleIcon,
+    success: 'circle-check',
+    warning: 'shield-exclamation',
+    error: 'circle-exclamation',
+    info: 'circle-info',
   }
 
   return (
     <div className={`cu-alert cu-alert--${type} not-prose flex rounded-md p-4`}>
-      {React.createElement(AlertTypes[type], {
-        className: `${AlertSizes[size].alertIconSize}`,
-        'aria-hidden': 'true',
-      })}
+      <Icon
+        name={AlertTypes[type]}
+        size={AlertSizes[size].alertIconSize}
+        color={type === 'error' ? '#d32f2f' : type === 'warning' ? '#fbc02d' : type === 'info' ? '#1976d2' : '#388e3c'}
+      />
       <div className="ml-3 w-full">
         <p className={`${AlertSizes[size].alertTitleSize} font-semibold`}>{title}</p>
         {content && <p className="text-sm md:text-base text-cu-black-900">{content}</p>}

@@ -59,3 +59,10 @@ Replace Heroicons and any external icon dependencies with inline SVGs from our l
 - Add fallback/error handling for missing icons.
 
 ---
+
+Alert – uses status icons (e.g., CheckCircleIcon, ExclamationCircleIcon).
+Button – uses an icon prop for displaying icons.
+Card (and subcomponents like CardIconThumb) – displays icons, sometimes loads SVGs.
+Listing (e.g., ListingIconThumb) – similar to Card, uses SVG icons.
+Loaders (e.g., PaginationLoader, CalendarLoader, CardIconLoader, ListingIconLoader) – use SVG icons for loading states.
+Other components with inline SVGs or icon imports (e.g., WideImage, NavLogo, SocialIcons, etc.).

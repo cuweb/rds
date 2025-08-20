@@ -1,19 +1,47 @@
-import { iconSizeClasses, textColorClasses } from '../../utils/propClasses'
-
-type textColorKeys = keyof typeof textColorClasses
-type iconSizeKeys = keyof typeof iconSizeClasses
+import React, { useEffect, useState } from 'react'
 
 export interface IconProps {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  color?: textColorKeys
-  size?: iconSizeKeys
+  name: string
+  size?: number | string
+  color?: string
+  className?: string
 }
 
-export const Icon = ({ icon, color, size = 8 }: IconProps) => {
-  const Iconic = icon
-  const iconColor = color ? textColorClasses[color] : ''
+export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentColor', className }) => {
+  const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
-  return <Iconic className={`cu-icon ${iconColor} ${iconSizeClasses[size]}`} aria-hidden={true} />
+  useEffect(() => {
+    let isMounted = true
+    const fetchSvg = async () => {
+      try {
+        const res = await fetch(`/lib/assets/font-awesome/${name}.svg`)
+        if (!res.ok) throw new Error('SVG not found')
+        let svg = await res.text()
+        // Replace color
+        svg = svg.replace(/currentColor|#000|#000000/g, color || 'currentColor')
+        if (isMounted) setSvgMarkup(svg)
+      } catch {
+        if (isMounted) setSvgMarkup(null)
+      }
+    }
+    fetchSvg()
+    return () => {
+      isMounted = false
+    }
+  }, [name, color])
+
+  if (!svgMarkup) {
+    return <span className={className} style={{ width: size, height: size }} />
+  }
+
+  return (
+    <span
+      className={className}
+      style={{ display: 'inline-block', width: size, height: size, color }}
+      aria-hidden="true"
+      dangerouslySetInnerHTML={{ __html: svgMarkup }}
+    />
+  )
 }
 
 Icon.displayName = 'Icon'
