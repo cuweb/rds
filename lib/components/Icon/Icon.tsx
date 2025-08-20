@@ -19,6 +19,8 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
         let svg = await res.text()
         // Replace color
         svg = svg.replace(/currentColor|#000|#000000/g, color || 'currentColor')
+        // Inject width and height attributes into the SVG tag
+        svg = svg.replace(/<svg([^>]*)/, `<svg$1 width="${size}" height="${size}"`)
         if (isMounted) setSvgMarkup(svg)
       } catch {
         if (isMounted) setSvgMarkup(null)
@@ -28,7 +30,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
     return () => {
       isMounted = false
     }
-  }, [name, color])
+  }, [name, color, size])
 
   if (!svgMarkup) {
     return <span className={className} style={{ width: size, height: size }} />
@@ -37,7 +39,13 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
   return (
     <span
       className={`cu-icon ${className}`}
-      style={{ display: 'inline-block', width: size, height: size, color }}
+      style={{
+        display: 'inline-block',
+        width: size,
+        height: size,
+        color,
+        overflow: 'hidden',
+      }}
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: svgMarkup }}
     />
