@@ -36,7 +36,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
 
   return (
     <span
-      className={className}
+      className={`cu-icon ${className}`}
       style={{ display: 'inline-block', width: size, height: size, color }}
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: svgMarkup }}

@@ -10,12 +10,12 @@ export interface ButtonProp extends React.ComponentPropsWithoutRef<'button'> {
 }
 export interface ButtonTitleProps extends ButtonProp {
   title: string
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  icon?: string // icon name
   ariaLabel?: string
 }
 export interface ButtonNoTitleProps extends ButtonProp {
   title?: string
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  icon: string // icon name
   ariaLabel: string
 }
 
@@ -33,7 +33,7 @@ export const Button = ({
   const disabledButton = isDisabled ? 'cu-button--disabled' : `cu-button--${color}`
   const fullStyles = isFull ? 'cu-button--full' : ''
   const buttonSmall = isSmall ? 'cu-button--small' : ''
-  const iconSize = isSmall ? 4 : 6
+  const iconSize = isSmall ? 4 : 5
 
   return (
     <button
@@ -43,11 +43,7 @@ export const Button = ({
       disabled={isDisabled ? true : false}
       {...rest}
     >
-      {icon && (
-        <span className={title ? 'mr-0.5 -ml-1' : ''}>
-          <Icon icon={icon} size={iconSize} />
-        </span>
-      )}
+      {icon && <Icon name={icon} size={iconSize * 4} />}
       {title}
     </button>
   )
