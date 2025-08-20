@@ -1,6 +1,5 @@
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
-import { ReactComponent as MagnifyingGlassIcon } from '../../assets/font-awesome/magnifying-glass.svg'
-import { ReactComponent as XMarkIcon } from '../../assets/font-awesome/xmark.svg'
+import { Icon } from '../Icon/Icon'
 import { useEffect, useState } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
@@ -62,22 +61,27 @@ export const LocationPicker = ({
         {({ getInputProps, suggestions, getSuggestionItemProps }) => (
           <Combobox value={address} onChange={handleSelect}>
             <div className="relative">
-              <MagnifyingGlassIcon
-                className="pointer-events-none absolute left-3.5 top-3.5 h-5 w-5 text-cu-black-400"
-                aria-hidden="true"
+              <Icon
+                name="magnifying-glass"
+                size={20}
+                className="pointer-events-none absolute left-3.5 top-3.5"
+                color="#9CA3AF"
               />
               <ComboboxInput
                 className="w-full h-12 pl-10 pr-4 bg-white border rounded-lg border-cu-black-200 text-cu-black-800 placeholder-cu-black-400 focus:border-cu-black-400 focus:outline-none focus:ring-0 sm:text-sm"
                 {...getInputProps({ placeholder: 'Type address' })}
               />
               {address && (
-                <XMarkIcon
-                  className="absolute right-3.5 top-3.5 h-5 w-5 text-cu-black-400"
-                  aria-hidden="true"
-                  onClick={() => {
-                    setAddress('')
-                  }}
-                />
+                <span
+                  className="absolute right-3.5 top-2.5 cursor-pointer text-2xl select-none"
+                  style={{ lineHeight: '1', color: '#9CA3AF' }}
+                  onClick={() => setAddress('')}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Clear address"
+                >
+                  ×
+                </span>
               )}
             </div>
             <ComboboxOptions className="mt-3 max-h-80 divide-y divide-cu-black-100 overflow-y-auto bg-white px-1.5 text-sm text-cu-black-800">

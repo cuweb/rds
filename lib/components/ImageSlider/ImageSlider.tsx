@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { ReactComponent as ChevronLeftIcon } from '../../assets/font-awesome/chevron-left.svg'
-import { ReactComponent as ChevronRightIcon } from '../../assets/font-awesome/chevron-right.svg'
+import { Icon } from '../Icon/Icon'
 import { ImageSliderItem } from './ImageSliderItem'
 import SliderScript from './script.ts'
 
@@ -22,7 +21,7 @@ export const ImageSliderWrapper = ({
   })
 
   const arrowButtons = `bg-cu-black-50 text-cu-black-800 hover:bg-cu-red hover:text-white hover:bg-cu-red relative flex items-center justify-center rounded-md h-8 w-8 z-50 disabled:opacity-50 disabled:cursor-not-allowed`
-  const arrowIcons = `w-5 h-5 [&>path]:stroke-[2]`
+  const arrowIcons = `w-5 h-5`
 
   return (
     <div
@@ -38,12 +37,12 @@ export const ImageSliderWrapper = ({
       <div className="flex align-items-center gap-3 justify-center mt-4">
         <button className={`cu-slider--arrow cu-slider--arrow-prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
-          <ChevronLeftIcon className={arrowIcons} aria-hidden="true" />
+          <Icon name="chevron-left" size={20} className={arrowIcons} />
         </button>
 
         <button className={`cu-slider--arrow cu-slider--arrow-next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
-          <ChevronRightIcon className={arrowIcons} aria-hidden="true" />
+          <Icon name="chevron-right" size={20} className={arrowIcons} />
         </button>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { styles } from './Description.Styles'
-import { ReactComponent as ChevronRightIcon } from '../../assets/font-awesome/chevron-right.svg'
+import { Icon } from '../Icon/Icon'
 import { toggleAccordion } from './script'
 
 export interface DescriptionAccordionProps {
@@ -21,7 +21,12 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
           onClick={toggleAccordion}
         >
           {term}
-          <ChevronRightIcon className="w-5 h-5 ml-auto transition-transform rotate-0 accordion__icon text-cu-black-500" />
+          <Icon
+            name="chevron-right"
+            size={20}
+            className="ml-auto transition-transform rotate-0 accordion__icon"
+            color="#808080"
+          />
         </div>
       </dt>
 
