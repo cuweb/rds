@@ -1,7 +1,5 @@
 import { isSameDay, parse, format, getDate } from 'date-fns'
-import { ReactComponent as CalendarDaysIcon } from '../../assets/font-awesome/calendar-days.svg'
-import { ReactComponent as ClockIcon } from '../../assets/font-awesome/clock.svg'
-import { ReactComponent as LocationDot } from '../../assets/font-awesome/location-dot.svg'
+import { Icon } from '../Icon'
 
 // import { styles } from './Card.Styles'
 
@@ -46,7 +44,9 @@ export const CardEventMeta = ({
   const isEventSameDay = isSameDay(startDate, endDate)
 
   const styles = {
-    redIcon: `flex-shrink-0 w-5 h-5 @sm:md:w-6 @sm:md:h-6 mr-2 text-cu-red-300`,
+    redIcon: 'flex-shrink-0 mr-2',
+    iconSize: 20,
+    iconColor: '#f48c90',
   }
 
   // Check if multiday
@@ -54,14 +54,14 @@ export const CardEventMeta = ({
     if (!isEventSameDay) {
       return (
         <>
-          <CalendarDaysIcon className={styles.redIcon} aria-hidden="true" />
+          <Icon name="calendar-days" size={styles.iconSize} color={styles.iconColor} className={styles.redIcon} />
           {`${startMonth} ${startDay} — ${endMonth} ${endDay}`}
         </>
       )
     } else {
       return (
         <>
-          <ClockIcon className={styles.redIcon} aria-hidden="true" />
+          <Icon name="clock" size={styles.iconSize} color={styles.iconColor} className={styles.redIcon} />
           {`${startTime} — ${endTime}`}
         </>
       )
@@ -72,7 +72,7 @@ export const CardEventMeta = ({
     <ul className="space-y-2 text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
-        <LocationDot className={styles.redIcon} aria-hidden="true" />
+        <Icon name="location-dot" size={styles.iconSize} color={styles.iconColor} className={styles.redIcon} />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>
