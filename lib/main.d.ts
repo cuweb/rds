@@ -87,7 +87,7 @@ export { Main } from './layouts/Main/Main';
 export { Section } from './layouts/Section/Section.js';
 export { StackedList } from './layouts/StackedList/StackedList';
 export { WideWave } from './layouts/WideWave/WideWave';
-export { iconNames } from '../public/assets/font-awesome/icon-list.js';
+export { iconNames } from './assets/font-awesome/icon-list.js';
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js';
 export { videos, splashVideos } from './hooks/video/video-names-list.js';
 export * as utils from './utils/propClasses';
