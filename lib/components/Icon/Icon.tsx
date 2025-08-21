@@ -5,21 +5,31 @@ export interface IconProps {
   size?: number | string
   color?: string
   className?: string
+  basePath?: string
 }
 
-export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentColor', className }) => {
+export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentColor', className, basePath }) => {
   const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
   useEffect(() => {
     let isMounted = true
+
+    // Fetches the SVG file from the correct path, uses basePath prop if provided, defaults to local path in development, CDN in production
     const fetchSvg = async () => {
       try {
-        const res = await fetch(`/lib/assets/font-awesome/${name}.svg`)
+        let resolvedBasePath = basePath
+        if (!resolvedBasePath) {
+          const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+          resolvedBasePath = isLocal
+            ? './assets/font-awesome/'
+            : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+        }
+
+        const res = await fetch(`${resolvedBasePath}${name}.svg`)
         if (!res.ok) throw new Error('SVG not found')
         let svg = await res.text()
-        // Replace color
-        svg = svg.replace(/currentColor|#000|#000000/g, color || 'currentColor')
-        // Inject width and height attributes into the SVG tag
+
+        // Inject width and height attributes into the SVG tag for sizing
         svg = svg.replace(/<svg([^>]*)/, `<svg$1 width="${size}" height="${size}"`)
         if (isMounted) setSvgMarkup(svg)
       } catch {
@@ -30,8 +40,9 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
     return () => {
       isMounted = false
     }
-  }, [name, color, size])
+  }, [name, color, size, basePath])
 
+  // Render fallback span if SVG is not loaded
   if (!svgMarkup) {
     return <span className={className} style={{ width: size, height: size }} />
   }
