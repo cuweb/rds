@@ -8,7 +8,7 @@ export interface IconProps {
   basePath?: string
 }
 
-export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentColor', className, basePath }) => {
+export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', className, basePath }) => {
   const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
   useEffect(() => {
@@ -20,9 +20,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
         let resolvedBasePath = basePath
         if (!resolvedBasePath) {
           const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-          resolvedBasePath = isLocal
-            ? './assets/font-awesome/'
-            : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+          resolvedBasePath = isLocal ? './assets/font-awesome/' : 'https://cdn.carleton.ca/rds/assets/font-awesome/'
         }
 
         const res = await fetch(`${resolvedBasePath}${name}.svg`)
@@ -30,7 +28,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
         let svg = await res.text()
 
         // Inject width and height attributes into the SVG tag for sizing
-        svg = svg.replace(/<svg([^>]*)/, `<svg$1 width="${size}" height="${size}"`)
+        svg = svg.replace(/<svg([^>]*)/, `<svg$1 fill="${color}" width="${size}" height="${size}"`)
         if (isMounted) setSvgMarkup(svg)
       } catch {
         if (isMounted) setSvgMarkup(null)
@@ -49,12 +47,11 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentCol
 
   return (
     <span
-      className={`cu-icon ${className}`}
+      className={`cu-icon ${className ? className : ''}`}
       style={{
         display: 'inline-block',
         width: size,
         height: size,
-        color,
         overflow: 'hidden',
       }}
       aria-hidden="true"
