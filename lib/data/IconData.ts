@@ -10,13 +10,13 @@ export const IconData = [
     id: 1,
     title: 'End-of-Year Reflections and Resolutions for Our Web Services Team',
     link: '#',
-    icon: 'book-atlas',
+    icon: 'book',
   },
   {
     id: 2,
     title: 'How to Write for the Web',
     link: '#',
-    icon: 'headphones',
+    icon: 'abacus',
   },
   {
     id: 3,
