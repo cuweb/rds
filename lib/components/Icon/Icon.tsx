@@ -52,7 +52,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', 
         display: 'inline-block',
         width: size,
         height: size,
-        overflow: 'hidden',
+        // overflow: 'hidden',
       }}
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: svgMarkup }}
