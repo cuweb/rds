@@ -18,9 +18,12 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', 
     const fetchSvg = async () => {
       try {
         let resolvedBasePath = basePath
+
         if (!resolvedBasePath) {
           const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-          resolvedBasePath = isLocal ? './assets/font-awesome/' : 'https://cdn.carleton.ca/rds/assets/font-awesome/'
+          resolvedBasePath = isLocal
+            ? './assets/font-awesome/'
+            : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
         }
 
         const res = await fetch(`${resolvedBasePath}${name}.svg`)
@@ -44,6 +47,8 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', 
   if (!svgMarkup) {
     return <span className={className} style={{ width: size, height: size }} />
   }
+
+  console.log('svgMarkup:', svgMarkup)
 
   return (
     <span
