@@ -24,7 +24,7 @@
     /*cypress*/
     "types": ["cypress"]
   },
-  "include": ["lib", "cypress", "env.d.ts"],
+  "include": ["lib", "lib/declarations.d.ts", "cypress", "env.d.ts"],
   "exclude": ["./lib/**/*.stories.*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

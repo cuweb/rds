@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronUpDownIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
+import { Icon } from '../Icon/Icon'
 import { ColumnDefinitionType } from './Table'
 import { styles } from './Table.Styles'
 
@@ -65,21 +65,21 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by ascending order' : undefined}
               >
-                <ChevronDownIcon className="inline-block" />
+                <Icon name="chevron-down" size={16} color="#808080" className="inline-block" aria-hidden="true" />
               </button>
             ) : column.key === active && !ascending ? (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by descending order' : undefined}
               >
-                <ChevronUpIcon className="inline-block" />
+                <Icon name="chevron-up" size={16} color="#808080" className="inline-block" aria-hidden="true" />
               </button>
             ) : (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
               >
-                <ChevronUpDownIcon className="inline-block" />
+                <Icon name="chevron-up-down" size={16} color="#808080" className="inline-block" aria-hidden="true" />
               </button>
             )}
           </div>

@@ -1,7 +1,5 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -22,7 +20,9 @@ export const Default: Story = {
 }
 
 Default.args = {
-  icon: CheckCircleIcon,
+  name: 'circle-check',
+  size: 32,
+  color: 'currentColor',
 }
 
 export const Red: Story = {
@@ -30,7 +30,8 @@ export const Red: Story = {
 }
 
 Red.args = {
-  icon: CheckCircleIcon,
+  name: 'circle-check',
+  size: 32,
   color: 'red',
 }
 
@@ -39,7 +40,8 @@ export const Grey: Story = {
 }
 
 Grey.args = {
-  icon: CheckCircleIcon,
+  name: 'circle-check',
+  size: 32,
   color: 'grey',
 }
 
@@ -48,6 +50,7 @@ export const White: Story = {
 }
 
 White.args = {
-  icon: CheckCircleIcon,
+  name: 'circle-check',
+  size: 32,
   color: 'white',
 }

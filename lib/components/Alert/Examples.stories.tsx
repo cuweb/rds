@@ -59,10 +59,8 @@ export const LayoutExamples: Story = {
         <SinglePara />
 
         <Alert content="Records may not have been updated." size="sm" title="Alert title" type="warning" />
-
-        <Section maxWidth="7xl">
-          <Alert content="Records have been updated." size="lg" title="Alert title" type="success" />
-        </Section>
+        <Alert content="Records may not have been updated." size="md" title="Alert title" type="warning" />
+        <Alert content="Records may not have been updated." size="lg" title="Alert title" type="warning" />
 
         <h2>Header Two</h2>
         <SinglePara />
