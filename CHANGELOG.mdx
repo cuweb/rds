@@ -17,6 +17,38 @@ Prefix the change with one of these keywords:
 
 ## [Unreleased]
 
+## [0.23.0]
+
+### Added
+
+- Add Font Awesome Icon
+
+### Changed
+
+- Refactored Icon component to support dynamic SVG loading from CDN or local path
+- Added `basePath` prop to Icon for flexible asset location
+- Removed color replacement logic for SVGs; now requires SVGs to use `currentColor`
+- Improved sizing logic for icons
+- Updated all components to use the new Icon API:
+  - Alert
+  - Button
+  - CardEventMeta
+  - CardIconThumb
+  - Calendar
+  - Carleton360
+  - DescriptionAccordion
+  - ImageSlider
+  - ListingEventMeta
+  - LocationPicker
+  - MultiDayCalendar
+  - NavButtons
+  - Pagination
+  - SearchInput
+  - TableHeader
+  - Toast
+- Updated Storybook icon gallery to use Icon component for rendering
+- Added comments and documentation to Icon component for maintainability
+
 ## [0.22.2]
 
 ### Added
@@ -73,7 +105,7 @@ Prefix the change with one of these keywords:
 
 ## [0.21.2]
 
-### Added
+## [0.21.2]
 
 - `Splash` component
 

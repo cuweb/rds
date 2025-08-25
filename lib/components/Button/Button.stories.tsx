@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
-import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -25,7 +24,7 @@ Primary.args = {
   title: 'Primary Red',
   color: 'red',
   type: 'button',
-  isSmall: false,
+
   isFull: false,
   isDisabled: false,
   onClick: () => {
@@ -37,6 +36,15 @@ export const WithIcon: Story = {
   args: {
     ...Primary.args,
     color: 'dark-grey',
-    icon: ArrowDownCircleIcon,
+    icon: 'circle-down',
+  },
+}
+
+export const SmallWithIcon: Story = {
+  args: {
+    ...Primary.args,
+    color: 'dark-grey',
+    icon: 'circle-down',
+    isSmall: true,
   },
 }

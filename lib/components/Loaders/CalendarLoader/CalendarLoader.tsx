@@ -1,6 +1,5 @@
 import { format, getDay, isBefore, startOfToday, eachDayOfInterval, endOfMonth, parse } from 'date-fns'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 
 const styles = {
@@ -34,7 +33,6 @@ export const CalendarLoader = ({ showClearButton }: CalendarLoaderProps) => {
           <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
             <button type="button" className={`${styles.prevNextArrows}`}>
               <span className="text-base sr-only">Previous month</span>
-              <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
             </button>
             <div className="flex items-center justify-center   mx-auto">
               {/* {format(firstDayCurrentMonth, 'MMMM yyyy')} */}
@@ -42,7 +40,6 @@ export const CalendarLoader = ({ showClearButton }: CalendarLoaderProps) => {
             </div>
             <button type="button" className={`${styles.prevNextArrows}`}>
               <span className="text-base sr-only">Next month</span>
-              <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
 

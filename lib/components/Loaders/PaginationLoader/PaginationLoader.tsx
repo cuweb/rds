@@ -1,4 +1,3 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { ButtonLoader } from '../ButtonLoader/ButtonLoader'
 
 const styles = {
@@ -29,9 +28,6 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
           <span className="block h-4 w-48 rounded-md bg-cu-black-200"></span>
 
           <ul className="inline-flex overflow-hidden border rounded-md border-cu-black-100">
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
-              <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
-            </li>
             <div className="flex justify-between space-x-2 gap-2 ">
               {Array.from({ length: pageCount }).map((_, index) => (
                 <li key={index} className={`${styles.pageListNumbers} `}>
@@ -39,9 +35,6 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
                 </li>
               ))}
             </div>
-            <li className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
-              <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-            </li>
           </ul>
         </div>
         <span className="sr-only">Loading...</span>

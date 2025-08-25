@@ -2,6 +2,14 @@
   @apply inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap text-nowrap hover:no-underline md:px-6 md:py-3 md:text-base;
 }
 
+.cu-button .cu-icon {
+  @apply -ml-1 mr-1;
+}
+
+.cu-button.cu-button--small .cu-icon {
+  @apply -ml-0.5;
+}
+
 .cu-button--red {
   @apply text-white bg-cu-red hover:bg-cu-black-600;
 }
