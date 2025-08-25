@@ -1,13 +1,9 @@
-import { iconSizeClasses, textColorClasses } from '../../utils/propClasses';
-type textColorKeys = keyof typeof textColorClasses;
-type iconSizeKeys = keyof typeof iconSizeClasses;
+import { default as React } from '../../../node_modules/react';
 export interface IconProps {
-    icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>;
-    color?: textColorKeys;
-    size?: iconSizeKeys;
+    name: string;
+    size?: number | string;
+    color?: string;
+    className?: string;
+    basePath?: string;
 }
-export declare const Icon: {
-    ({ icon, color, size }: IconProps): import("react/jsx-runtime").JSX.Element;
-    displayName: string;
-};
-export {};
+export declare const Icon: React.FC<IconProps>;
