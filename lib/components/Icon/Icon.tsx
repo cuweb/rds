@@ -21,9 +21,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', 
 
         if (!resolvedBasePath) {
           const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-          resolvedBasePath = isLocal
-            ? './assets/font-awesome/'
-            : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+          resolvedBasePath = isLocal ? './assets/font-awesome/' : 'https://cdn.carleton.ca/rds/assets/font-awesome/'
         }
 
         const res = await fetch(`${resolvedBasePath}${name}.svg`)
