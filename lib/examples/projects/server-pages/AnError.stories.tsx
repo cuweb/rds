@@ -5,7 +5,7 @@ import { Section } from '../../../layouts/Section/Section'
 import { TextMedia } from '../../../components/TextMedia/TextMedia'
 
 const meta: Meta = {
-  title: 'Prototypes/Generic',
+  title: 'Prototypes/Server Pages',
   parameters: {
     layout: 'fullscreen',
   },
@@ -14,7 +14,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const PROXYERROR: Story = {
+export const AnError: Story = {
   render: () => {
     return (
       <>
@@ -27,10 +27,10 @@ export const PROXYERROR: Story = {
         <Main>
           <Section>
             <TextMedia>
-              <TextMedia.Content headerType="h1" title="We are experiencing problems" width={100} isLight>
+              <TextMedia.Content headerType="h1" title="Invalid request " width={100} isLight>
                 <p>
-                  We are currently experiencing problems with our web server infrastructure. The problem should be fixed
-                  momentarily.
+                  The request was invalid. If you have concerns, please contact ITS at{' '}
+                  <a href="https://carleton.ca/its">https://carleton.ca/its</a>
                 </p>
               </TextMedia.Content>
             </TextMedia>

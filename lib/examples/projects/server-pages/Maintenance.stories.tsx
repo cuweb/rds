@@ -5,7 +5,7 @@ import { Section } from '../../../layouts/Section/Section'
 import { TextMedia } from '../../../components/TextMedia/TextMedia'
 
 const meta: Meta = {
-  title: 'Prototypes/Generic',
+  title: 'Prototypes/Server Pages',
   parameters: {
     layout: 'fullscreen',
   },
@@ -14,7 +14,7 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj
 
-export const MAINTENANCE: Story = {
+export const Maintenance: Story = {
   render: () => {
     return (
       <>
