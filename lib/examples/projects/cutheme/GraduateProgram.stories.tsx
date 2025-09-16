@@ -19,7 +19,7 @@ import { NewsData } from '../../../data/NewsData'
 import { NavButtonsData, NavDataSingle } from '../../../data/NavData'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects/cutheme',
+  title: 'Projects/cutheme',
   parameters: {
     layout: 'fullscreen',
   },

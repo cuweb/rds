@@ -16,6 +16,9 @@ const preview: Preview = {
         order: [
           'Get Started',
           ['Introduction', 'Changelog'],
+          'Projects',
+          ['cutheme'],
+          ['Event Calendar'],
           'Prototypes',
           ['Layouts'],
           'Components',

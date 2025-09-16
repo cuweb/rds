@@ -1,14 +1,14 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
-import { Main } from '../../layouts/Main/Main'
-import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { Column } from '../../layouts/Column/Column'
-import { Nav } from '../../components/Nav/Nav'
-import { NavButtonsData } from '../../data/NavData'
+import { Section } from '../../../layouts/Section/Section'
+import { Main } from '../../../layouts/Main/Main'
+import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
+import { Column } from '../../../layouts/Column/Column'
+import { Nav } from '../../../components/Nav/Nav'
+import { NavButtonsData } from '../../../data/NavData'
 
 const meta: Meta = {
-  title: 'Prototypes/Layouts',
+  title: 'Prototypes/Layout Tests',
   parameters: {
     layout: 'fullscreen',
   },
