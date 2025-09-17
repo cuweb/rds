@@ -59,47 +59,12 @@ export const LayoutExamples: Story = {
             size="lg"
           />
           <Column cols="3">
-            {NewsData.slice(0, 3).map(({ id, title, image, alt }) => (
-              <Card key={id} isGrey hasWave>
-                <Card.ImageThumb>
-                  <img src={image} alt={alt} width="200" height="133" />
-                </Card.ImageThumb>
-                <Card.Header title={title} />
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-              </Card>
-            ))}
-            {NewsData.slice(0, 3).map(({ id, title, icon }) => (
-              <Card key={id} isGrey hasWave>
-                <Card.IconThumb icon={icon} />
-                <Card.Header title={title} />
-                <Card.Body>
-                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-                </Card.Body>
-              </Card>
-            ))}
-          </Column>
-        </Section>
-
-        <h2>Header Two</h2>
-        <SinglePara />
-        <SinglePara />
-
-        <Section>
-          <PageHeader
-            as="h1"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius feugiat euismod. Ut ut diam dapibus nisi ullamcorper sollicitudin id vitae turpis."
-            header="Card Grid Layouts"
-            size="lg"
-          />
-          <Column cols="3">
             {NewsData.slice(0, 3).map(({ id, link, title, image, alt, date }) => (
               <Card key={id}>
                 <Card.Figure>
                   <img src={image} alt={alt} width="400" height="300" />
                 </Card.Figure>
-                <Card.Header title={title} date={date} />
+                <Card.Header title={title} date={date} readTime="7" />
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                 </Card.Body>

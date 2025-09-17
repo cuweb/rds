@@ -9,7 +9,7 @@ export const EventDataSingle = {
   on_campus: true,
   on_campus_building: 'Robertson Hall',
   on_campus_room_number: '420',
-  image: 'https://picsum.photos/id/84/600/400',
+  image: 'https://picsum.photos/id/101/600/400',
   alt: `Images need alt text`,
   tags: {
     category: [
@@ -51,7 +51,7 @@ export const EventData = [
     on_campus: true,
     on_campus_building: 'Robertson Hall',
     on_campus_room_number: '420',
-    image: 'https://picsum.photos/id/88/600/400',
+    image: 'https://picsum.photos/id/101/600/400',
     alt: `Images need alt text`,
     tags: {
       category: [
