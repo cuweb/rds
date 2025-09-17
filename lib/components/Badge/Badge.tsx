@@ -17,10 +17,10 @@ export const Badge = ({ text, link, rounded = 'full', color = 'grey', noWordBrea
 
   return (
     <p
-      className={`inline-flex cu-badge cu-badge--${color} not-prose ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
+      className={`inline-flex cu-badge cu-badge--${color} not-prose overflow-hidden ${borderRadiusClasses[rounded]} ${wordBreakClass}`}
     >
       {link ? (
-        <LinkComponent href={link} className="cursor-pointer block">
+        <LinkComponent href={link} className="cursor-pointer block hover:bg-cu-red hover:text-white">
           <span className="px-3.5 py-1.5 text-xs font-semibold block">{text}</span>
         </LinkComponent>
       ) : (

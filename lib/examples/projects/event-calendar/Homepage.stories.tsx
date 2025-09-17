@@ -21,7 +21,7 @@ import { NavButtonsData } from '../../../data/NavData'
 import { EventData } from '../../../data/EventData'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects/Event Calendar',
+  title: 'Projects/Event Calendar',
   parameters: {
     layout: 'fullscreen',
   },

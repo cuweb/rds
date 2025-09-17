@@ -9,7 +9,7 @@ import { Details } from '../../../components/Details/Details'
 import { Figure } from '../../../components/Figure/Figure'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects/Event Calendar',
+  title: 'Projects/Event Calendar',
   parameters: {
     layout: 'fullscreen',
   },
