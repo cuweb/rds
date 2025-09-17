@@ -5,6 +5,7 @@ export interface TextMediaContentProps {
     children?: React.ReactNode;
     title: string;
     headerType?: 'h1' | 'h2';
+    metaData?: React.ReactNode;
     width?: number;
     align?: justifyContentKeys;
     hasUnderline?: boolean;
@@ -12,7 +13,7 @@ export interface TextMediaContentProps {
     isWhite?: boolean;
 }
 export declare const TextMediaContent: {
-    ({ children, title, headerType, width, align, hasUnderline, isLight, isWhite, }: TextMediaContentProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, headerType, metaData, width, align, hasUnderline, isLight, isWhite, }: TextMediaContentProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export {};

@@ -42,7 +42,7 @@ export declare const Card: {
         displayName: string;
     };
     Header: {
-        ({ title, as, date, datePrefix, datePosition, }: import('./CardHeader').CardHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ title, as, date, datePrefix, readTime, datePosition, }: import('./CardHeader').CardHeaderProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Body: {

@@ -12,7 +12,7 @@ export declare const TextMedia: {
     displayName: string;
 } & {
     Content: {
-        ({ children, title, headerType, width, align, hasUnderline, isLight, isWhite, }: import('./TextMediaContent').TextMediaContentProps): import("react/jsx-runtime").JSX.Element;
+        ({ children, title, headerType, metaData, width, align, hasUnderline, isLight, isWhite, }: import('./TextMediaContent').TextMediaContentProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     BgImage: {
