@@ -11,18 +11,10 @@
   @apply m-0 p-0;
 }
 
-/* .cu-pageheader-light-xs {
-  @apply prose-md md:prose-lg font-light;
+.cu-pageheader__meta {
+  @apply flex flex-col gap-4 md:gap-6;
 }
 
-.cu-pageheader-light-sm {
-  @apply prose-lg md:prose-xl font-light;
+.cu-pageheader__meta p {
+  @apply text-xl m-0;
 }
-
-.cu-pageheader-light-md {
-  @apply prose-xl md:prose-xl font-light;
-}
-
-.cu-pageheader-light-xl {
-  @apply prose-lg md:prose-2xl font-light;
-} */

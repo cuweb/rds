@@ -6,8 +6,10 @@ import { Nav } from '../../../components/Nav/Nav'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../../components/Footer/FooterCookie/FooterCookie'
 import { TextMedia } from '../../../components/TextMedia/TextMedia'
+import { BadgeGroup } from '../../../components/BadgeGroup/BadgeGroup'
+import { Badge } from '../../../components/Badge/Badge'
 import { Quote } from '../../../components/Quote/Quote'
-import { Column } from '../../../layouts/Column/Column'
+import { Icon } from '../../../components/Icon/Icon'
 import { NavButtonsData } from '../../../data/NavData'
 
 const meta: Meta = {
@@ -19,40 +21,6 @@ const meta: Meta = {
 
 export default meta
 type Story = StoryObj
-
-const SinglePara = () => {
-  return (
-    <>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-        vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies,{' '}
-        <a href="https://carleton.ca">sed tempus diam dignissim</a>. Suspendisse condimentum magna vel orci vulputate,
-        eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula nisl, in
-        vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget
-        suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-      </p>
-    </>
-  )
-}
-
-const DoublePara = () => {
-  return (
-    <>
-      <p>
-        Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna. Nobis
-        voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit
-        ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis
-        ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget
-        suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-      </p>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
-        Praesent quis ligula quis nulla malesuada tempor.
-      </p>
-    </>
-  )
-}
 
 export const PostLayout: Story = {
   render: () => (
@@ -68,159 +36,78 @@ export const PostLayout: Story = {
 
       <Main>
         <TextMedia>
-          <TextMedia.Content headerType="h1" title="Basic Markup" width={100} isLight>
+          <TextMedia.Content
+            headerType="h1"
+            title="Basic Markup"
+            metaData={
+              <>
+                <div className="flex flex-row gap-4 md:gap-8 w-full">
+                  <p className="flex flex-row items-center">
+                    <Icon name="calendar-lines-pen" size={26} color="#f48c90" className="flex-shrink-0 mr-2" />
+                    Published on September 3, 2025
+                  </p>
+
+                  <p className="flex flex-row items-center">
+                    <Icon name="clock" size={22} color="#f48c90" className="flex-shrink-0 mr-2" /> Time to read: 5
+                    minutes
+                  </p>
+                </div>
+
+                <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
+                  <Badge color="grey" rounded="lg" link="#" text="Design" />
+                  <Badge color="grey" rounded="lg" link="#" text="Component Library" />
+                  <Badge color="grey" rounded="lg" link="#" text="React" />
+                </BadgeGroup>
+              </>
+            }
+            width={100}
+            isLight
+          >
             <p>
-              Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-              reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-              accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt lacus consectetur, molestie urna
+              at, posuere erat. Nullam quis lobortis lorem. Donec semper turpis eros, sit amet tempus ligula rutrum
+              vitae. Quisque tincidunt, enim a porta ultricies, nisl libero mattis augue, vitae auctor turpis libero sit
+              amet augue. Vestibulum elementum enim sed ante mollis dictum.
             </p>
           </TextMedia.Content>
         </TextMedia>
-
         <h2>Heading Two</h2>
-
-        <SinglePara />
-
         <p>
-          Nobis voluptatem dolorum et eum <code>doloremque cupiditate</code> velit. Praesentium architecto a distinctio
-          aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
-          accusamus in. Praesent quis ligula quis nulla malesuada tempor.
+          Ut iaculis non orci maximus luctus. Maecenas tincidunt condimentum dui vitae tempor. Sed ultricies velit sed
+          tellus varius faucibus. Duis volutpat luctus felis a dictum. Integer tempus diam at condimentum blandit.
+          Curabitur ornare arcu tempor, scelerisque purus vitae, blandit lacus. Duis ligula magna, euismod a quam et,
+          gravida rhoncus felis.
         </p>
-
-        <SinglePara />
-
-        <SinglePara />
-
-        <h3>Heading Three</h3>
-        <SinglePara />
-
-        <h4>Heading Four</h4>
-        <DoublePara />
-
-        <Column cols="2" gridGap="10">
-          <Column.Content>
-            <SinglePara />
-            <h2>Header Two</h2>
-            <SinglePara />
-            <h3>Header Three</h3>
-            <SinglePara />
-            <h4>Header Four</h4>
-            <SinglePara />
-          </Column.Content>
-          <Column.Content>
-            <SinglePara />
-            <h2>Header Two</h2>
-            <SinglePara />
-            <h3>Header Three</h3>
-            <SinglePara />
-            <h4>Header Four</h4>
-            <SinglePara />
-          </Column.Content>
-        </Column>
-
-        <DoublePara />
-
-        <ul>
-          <li>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-            vitae, sagittis justo.
-          </li>
-          <li>
-            Suspendisse <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> vel orci vulputate,
-            eget vulputate neque porttitor.
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <ul>
-              <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-              <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-              <li>
-                Aenean sit amet tortor <a href="https://cuweb.github.io/rds/">velit eget suscipit tincidunt</a> vitae,
-                sagittis justo.
-                <ul>
-                  <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                  <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                  <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                  <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                </ul>
-              </li>
-              <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-              <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-            </ul>
-          </li>
-          <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-          <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
-          <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-        </ul>
-
-        <DoublePara />
-
-        <ol>
-          <li>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet tortor pellentesque, posuere tellus
-            vitae, sagittis justo.
-          </li>
-          <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
-          <li>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <ol>
-              <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-              <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-              <li>
-                Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.
-                <ol>
-                  <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                  <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                  <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-                  <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-                </ol>
-              </li>
-              <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-              <li>Aenean sit amet tortor pellentesque, posuere tellus vitae, sagittis justo.</li>
-            </ol>
-          </li>
-          <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-          <li>Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.</li>
-          <li>Vivamus imperdiet turpis nec elit ultricies, sed tempus diam dignissim.</li>
-        </ol>
-
-        <DoublePara />
-
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt lacus consectetur, molestie urna at,
+          posuere erat. Nullam quis lobortis lorem. Donec semper turpis eros, sit amet tempus ligula rutrum vitae.
+          Quisque tincidunt, enim a porta ultricies, nisl libero mattis augue, vitae auctor turpis libero sit amet
+          augue. Vestibulum elementum enim sed ante mollis dictum. Fusce at lectus vitae orci sodales finibus. Quisque
+          congue odio lectus, sit amet fringilla mi hendrerit accumsan. Cras semper arcu eu mi tincidunt fermentum. In
+          vitae leo quis dui malesuada tincidunt sit amet eget velit. Aliquam in urna nec diam mattis maximus
+          ullamcorper venenatis eros.
+        </p>
+        <p>
+          Sed erat eros, convallis in nulla mattis, feugiat iaculis est. Integer condimentum mauris at felis scelerisque
+          iaculis. Donec sit amet arcu auctor, lobortis urna eu, hendrerit dolor. Pellentesque eu ante mi. Cras dictum
+          dolor a fringilla gravida. Maecenas nec tellus commodo, placerat elit sed, accumsan ante. Quisque in sem urna.
+          Sed nibh mi, congue nec lacinia ut, ullamcorper sed eros.
+        </p>
         <Quote cite="John Doe">
           <p>
             Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
             reprehenderit ducimus.
           </p>
         </Quote>
-
-        <DoublePara />
-
-        <Quote cite="John Doe" graphic="quote">
-          <p>
-            Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus.
-          </p>
-        </Quote>
-
-        <DoublePara />
-
-        <Quote cite="John Doe" isCenter>
-          <p>
-            Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus.
-          </p>
-        </Quote>
-
-        <DoublePara />
-
-        <Quote cite="John Doe" graphic="quote" isCenter>
-          <p>
-            Obis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-            reprehenderit ducimus.
-          </p>
-        </Quote>
-
-        <DoublePara />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt lacus consectetur, molestie urna at,
+          posuere erat. Nullam quis lobortis lorem. Donec semper turpis eros, sit amet tempus ligula rutrum vitae.
+          Quisque tincidunt, enim a porta ultricies, nisl libero mattis augue, vitae auctor turpis libero sit amet
+          augue. Vestibulum elementum enim sed ante mollis dictum. Fusce at lectus vitae orci sodales finibus. Quisque
+          congue odio lectus, sit amet fringilla mi hendrerit accumsan. Cras semper arcu eu mi tincidunt fermentum. In
+          vitae leo quis dui malesuada tincidunt sit amet eget velit. Aliquam in urna nec diam mattis maximus
+          ullamcorper venenatis eros.
+        </p>
       </Main>
 
       <FooterDept
