@@ -1,19 +1,17 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from '../../layouts/Section/Section'
-import { Main } from '../../layouts/Main/Main'
-import { FooterDept } from '../../components/Footer/FooterDept/FooterDept'
-import { Nav } from '../../components/Nav/Nav'
-import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'
-import { FooterCookie } from '../../components/Footer/FooterCookie/FooterCookie'
-import { StackedList } from '../../layouts/StackedList/StackedList'
-import { TextMedia } from '../../components/TextMedia/TextMedia'
-import { Quote } from '../../components/Quote/Quote'
-import { Column } from '../../layouts/Column/Column'
-import { NavButtonsData } from '../../data/NavData'
+import { Main } from '../../../layouts/Main/Main'
+import { FooterDept } from '../../../components/Footer/FooterDept/FooterDept'
+import { Nav } from '../../../components/Nav/Nav'
+import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
+import { FooterCookie } from '../../../components/Footer/FooterCookie/FooterCookie'
+import { TextMedia } from '../../../components/TextMedia/TextMedia'
+import { Quote } from '../../../components/Quote/Quote'
+import { Column } from '../../../layouts/Column/Column'
+import { NavButtonsData } from '../../../data/NavData'
 
 const meta: Meta = {
-  title: 'Prototypes/Layouts',
+  title: 'Projects/cutheme',
   parameters: {
     layout: 'fullscreen',
   },
@@ -56,64 +54,7 @@ const DoublePara = () => {
   )
 }
 
-const ToC = () => {
-  return (
-    <>
-      <ul>
-        <li>
-          <a href="http://carleton.ca">Lorem ipsum dolor</a>
-        </li>
-        <li>
-          <a href="http://carleton.ca">Nunc viverra lorem arcu</a>
-        </li>
-        <li>
-          <a href="http://carleton.ca">Consectetur elit</a>
-          <ul>
-            <li>
-              <a href="http://carleton.ca">Suspendisse risus.</a>
-            </li>
-            <li>
-              <a href="http://carleton.ca">Nullam ut nunc</a>
-            </li>
-            <li>
-              <a href="http://carleton.ca">Integer mattis</a>
-              <ul>
-                <li>
-                  <a href="http://carleton.ca">Phasellus porttitor</a>
-                </li>
-                <li>
-                  <a href="http://carleton.ca">Praesent ante massa</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="http://carleton.ca">Etiam non convallis</a>
-            </li>
-            <li>
-              <a href="http://carleton.ca">Vestibulum</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="http://carleton.ca">Turpis placerat</a>
-        </li>
-        <li>
-          <a href="http://carleton.ca">Consectetur elit</a>
-          <ul>
-            <li>
-              <a href="http://carleton.ca">Mauris feugiat interdum</a>
-            </li>
-            <li>
-              <a href="http://carleton.ca">Etiam non convallis</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </>
-  )
-}
-
-export const BasicMarkup: Story = {
+export const PageLayout: Story = {
   render: () => (
     <>
       <Nav>
@@ -145,12 +86,6 @@ export const BasicMarkup: Story = {
           aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
           accusamus in. Praesent quis ligula quis nulla malesuada tempor.
         </p>
-
-        <Section maxWidth="2xl">
-          <StackedList header="Table of Contents" as="div" cols="1" listType="toc">
-            <ToC />
-          </StackedList>
-        </Section>
 
         <SinglePara />
 

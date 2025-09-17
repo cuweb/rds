@@ -7,7 +7,7 @@ export const NewsDataSingle = {
   alt: 'AI Research Lab',
   excerpt:
     'Carleton University has launched a new AI research lab to advance the field of artificial intelligence and machine learning. The lab will focus on cutting-edge research and collaboration with industry partners.',
-  date: '2023-01-15 09:00:00',
+  date: '2023-09-15 09:00:00',
   tags: {
     category: [
       {
@@ -29,7 +29,7 @@ export const NewsData = [
     alt: 'AI Research Lab',
     excerpt:
       'Carleton University has launched a new AI research lab to advance the field of artificial intelligence and machine learning. The lab will focus on cutting-edge research and collaboration with industry partners.',
-    date: '2023-01-15 09:00:00',
+    date: '2023-09-15 09:00:00',
     tags: {
       category: [
         {
@@ -49,7 +49,7 @@ export const NewsData = [
     alt: 'Scholarship Program',
     excerpt:
       'Carleton University has introduced a new scholarship program aimed at supporting underrepresented students. The program will provide financial assistance and mentorship opportunities to help students succeed.',
-    date: '2023-01-10 10:00:00',
+    date: '2023-09-10 10:00:00',
     tags: {
       category: [
         {
@@ -69,7 +69,7 @@ export const NewsData = [
     alt: 'Climate Change Research',
     excerpt:
       'Researchers at Carleton University have published groundbreaking findings on the impact of climate change on Arctic ecosystems. The study highlights the urgent need for action to mitigate climate change effects.',
-    date: '2023-01-05 11:00:00',
+    date: '2023-09-05 11:00:00',
     tags: {
       category: [
         {
@@ -89,7 +89,7 @@ export const NewsData = [
     alt: 'Graduation Celebration',
     excerpt:
       'Carleton University is proud to announce record graduation rates for the 2022 academic year. The university continues to support student success through innovative programs and dedicated faculty.',
-    date: '2023-01-01 12:00:00',
+    date: '2023-09-09 12:00:00',
     tags: {
       category: [
         {
@@ -209,7 +209,7 @@ export const NewsData = [
     alt: 'Mental Health Initiative',
     excerpt:
       'Carleton University has launched a new mental health initiative to support students, faculty, and staff. The program includes counseling services, workshops, and resources to promote mental well-being.',
-    date: '2022-12-01 18:00:00',
+    date: '2022-12-09 18:00:00',
     tags: {
       category: [
         {
@@ -329,7 +329,7 @@ export const NewsData = [
     alt: 'Sustainability Award',
     excerpt:
       'Carleton University has been recognized for its sustainability efforts with a prestigious award. The university continues to implement green initiatives and promote environmental responsibility.',
-    date: '2022-11-01 08:00:00',
+    date: '2022-11-09 08:00:00',
     tags: {
       category: [
         {

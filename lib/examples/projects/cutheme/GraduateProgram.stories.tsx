@@ -12,14 +12,14 @@ import { Column } from '../../../layouts/Column/Column'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../../components/Footer/FooterCookie/FooterCookie'
 import { Section } from '../../../layouts/Section/Section'
-import { WideImage } from '../../../components/WideImage/WideImage'
+import { WideBanner } from '../../../components/WideBanner/WideBanner'
 import { Details } from '../../../components/Details/Details'
 import { Card } from '../../../components/Card/Card'
 import { NewsData } from '../../../data/NewsData'
 import { NavButtonsData, NavDataSingle } from '../../../data/NavData'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects/cutheme',
+  title: 'Projects/cutheme',
   parameters: {
     layout: 'fullscreen',
   },
@@ -45,25 +45,6 @@ const SinglePara = () => {
   )
 }
 
-const DoublePara = () => {
-  return (
-    <>
-      <p>
-        Aliquam luctus, velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna. Nobis
-        voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit
-        ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis
-        ligula quis nulla malesuada tempor. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus, velit eget
-        suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
-      </p>
-      <p>
-        Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
-        reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in.
-        Praesent quis ligula quis nulla malesuada tempor.
-      </p>
-    </>
-  )
-}
-
 export const GraduateProgram: Story = {
   render: () => {
     return (
@@ -81,20 +62,17 @@ export const GraduateProgram: Story = {
 
         <Main>
           <Section maxWidth="max">
-            <WideImage
-              focalPointX={50}
-              focalPointY={50}
+            <WideBanner
               headerType="h1"
-              image="https://picsum.photos/id/381/600/400"
-              isType="image"
-              opacity={60}
-              title="Information Technology (Digital Media, Networking Technology)"
+              image="https://picsum.photos/id/270/1920/840"
+              opacity={80}
+              title="Graduate Program Information"
             >
               <ButtonGroup>
                 <Button title="Apply Now" />
                 <Button color="dark-grey" title="Request Information" />
               </ButtonGroup>
-            </WideImage>
+            </WideBanner>
           </Section>
 
           <FloatBox>
@@ -117,7 +95,7 @@ export const GraduateProgram: Story = {
             </Details>
           </FloatBox>
 
-          <DoublePara />
+          <SinglePara />
 
           <Section>
             <PageHeader as="h2" header="Program Feature Cards" size="md" />
@@ -139,7 +117,7 @@ export const GraduateProgram: Story = {
           <SinglePara />
 
           <h2>Heading Three</h2>
-          <DoublePara />
+          <SinglePara />
 
           <Carleton360>
             <ButtonGroup>

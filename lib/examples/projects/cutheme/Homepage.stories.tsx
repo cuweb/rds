@@ -24,7 +24,7 @@ import { NewsData } from '../../../data/NewsData'
 import { EventData } from '../../../data/EventData'
 
 const meta: Meta = {
-  title: 'Prototypes/Projects/cutheme',
+  title: 'Projects/cutheme',
   parameters: {
     layout: 'fullscreen',
   },
