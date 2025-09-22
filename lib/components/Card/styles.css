@@ -79,3 +79,20 @@
 .cu-icon-red svg {
   @apply fill-cu-red w-auto h-full;
 }
+
+/* Card Dots */
+
+.cu-card-lights {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.cu-card-lights--green {
+  background-color: #00db00;
+}
+
+.cu-card-lights--red {
+  background-color: #db0606;
+}
