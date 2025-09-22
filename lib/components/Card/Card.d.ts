@@ -49,6 +49,10 @@ export declare const Card: {
         ({ children }: import('./CardBody').CardBodyProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    Content: {
+        ({ children }: import('./CardContent').CardContentProps): import("react/jsx-runtime").JSX.Element;
+        displayName: string;
+    };
     Footer: {
         ({ children }: import('./CardFooter').CardFooterProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
