@@ -41,3 +41,51 @@ export const FooterStandardLinks = {
     { name: 'GoRavens Varsity', href: 'https://goravens.ca/' },
   ],
 }
+
+export const FooterAthleticsLinks = {
+  Camps: [
+    { name: 'Summer Camps', href: 'URL' },
+    { name: 'Holiday Camps', href: 'URL' },
+    { name: 'March Break Camps', href: 'URL' },
+    { name: 'Lifesaving Camps', href: 'URL' },
+    { name: 'Junior Ravens', href: 'URL' },
+  ],
+  Aquatics: [
+    { name: 'Pool Information', href: 'URL' },
+    { name: 'Pool Schedule', href: 'URL' },
+    { name: "Children's Aquatics", href: 'URL' },
+    { name: 'Adult Programs', href: 'URL' },
+    { name: 'Lifesaving & Leadership', href: 'URL' },
+    { name: 'First Aid & CPR', href: 'URL' },
+  ],
+  Fitness: [
+    { name: 'Fitness Centre', href: 'URL' },
+    { name: 'Group Fitness Programs', href: 'URL' },
+    { name: 'Drop-in Group Fitness', href: 'URL' },
+    { name: 'Instructional Programs', href: 'URL' },
+    { name: 'Pilates', href: 'URL' },
+    { name: 'Senior Ravens', href: 'URL' },
+    { name: 'Personal Training', href: 'URL' },
+  ],
+  'Adult Leagues': [
+    { name: 'Browse All Leagues', href: 'URL' },
+    { name: 'Standings, Schedules and Registration', href: 'URL' },
+  ],
+  Students: [
+    { name: 'Your Student Membership', href: 'URL' },
+    { name: 'Drop-in (Campus Rec)', href: 'URL' },
+    { name: 'Intramurals', href: 'URL' },
+  ],
+  Facilities: [
+    { name: 'Discover Our Facilities', href: 'URL' },
+    { name: 'Facility Rentals', href: 'URL' },
+    { name: 'Policies & Procedures', href: 'URL' },
+  ],
+  'About Us': [
+    { name: 'Memberships', href: 'URL' },
+    { name: 'Inclusive Programs', href: 'URL' },
+    { name: 'Hours of Operation', href: 'URL' },
+    { name: 'Job Opportunities', href: 'URL' },
+    { name: 'Contact Us', href: 'URL' },
+  ],
+}
