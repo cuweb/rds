@@ -1,5 +1,6 @@
 import React from 'react'
 import { CardBody } from './CardBody'
+import { CardContent } from './CardContent'
 import { CardDateThumb } from './CardDateThumb'
 import { CardExcerpt } from './CardExcerpt'
 import { CardEventMeta } from './CardEventMeta'
@@ -76,6 +77,7 @@ export const Card = Object.assign(CardWrapper, {
   Video: CardVideo,
   Header: CardHeader,
   Body: CardBody,
+  Content: CardContent,
   Footer: CardFooter,
   Excerpt: CardExcerpt,
   EventMeta: CardEventMeta,
