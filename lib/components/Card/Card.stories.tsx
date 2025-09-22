@@ -218,6 +218,76 @@ export const PeopleCard: Story = {
   ),
 }
 
+export const HoursCard: Story = {
+  args: {},
+  render: (args) => (
+    <Main>
+      <Column cols="3">
+        {NewsData.slice(0, 1).map(({ id, link, title, image, alt }) => (
+          <Card key={id} {...args}>
+            <Card.Figure>
+              <img src={image} alt={alt} width="400" height="300" />
+            </Card.Figure>
+            <Card.Header title={title} />
+            <Card.Body>
+              <Card.Content>
+                <p className="flex items-center gap-2">
+                  <span className="cu-card-lights cu-card-lights--green"></span>Open today until 8:00 PM
+                </p>
+              </Card.Content>
+            </Card.Body>
+            <Card.Footer>
+              <a href={link} className="cu-button cu-button--red cu-button--small">
+                Read more
+              </a>
+            </Card.Footer>
+          </Card>
+        ))}
+        {NewsData.slice(1, 2).map(({ id, link, title, image, alt }) => (
+          <Card key={id} {...args}>
+            <Card.Figure>
+              <img src={image} alt={alt} width="400" height="300" />
+            </Card.Figure>
+            <Card.Header title={title} />
+            <Card.Body>
+              <Card.Content>
+                <p className="flex items-center gap-2">
+                  <span className="cu-card-lights cu-card-lights--red"></span>Opens today at 8:00 AM
+                </p>
+              </Card.Content>
+            </Card.Body>
+            <Card.Footer>
+              <a href={link} className="cu-button cu-button--red cu-button--small">
+                Read more
+              </a>
+            </Card.Footer>
+          </Card>
+        ))}
+        {NewsData.slice(1, 2).map(({ id, link, title, image, alt }) => (
+          <Card key={id} {...args}>
+            <Card.Figure>
+              <img src={image} alt={alt} width="400" height="300" />
+            </Card.Figure>
+            <Card.Header title={title} />
+            <Card.Body>
+              <Card.Content>
+                <p className="flex items-center gap-2">
+                  <span className="cu-card-lights cu-card-lights--red"></span>Closed until tomorrow
+                </p>
+              </Card.Content>
+            </Card.Body>
+            <Card.Footer>
+              <a href={link} className="cu-button cu-button--red cu-button--small">
+                Read more
+              </a>
+            </Card.Footer>
+          </Card>
+        ))}
+      </Column>
+    </Main>
+  ),
+}
+
 export const StatCard: Story = {
   args: {},
   render: (args) => (
