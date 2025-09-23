@@ -24,12 +24,37 @@ export const Primary: Story = {
     imageZoom: 0,
     focalPointX: 50,
     focalPointY: 50,
+    imagePositionRight: false,
   },
   render: (args) => {
     return (
       <Main>
         <Testimonial {...args}>
           <Quote cite="Jane Doe" graphic="quote">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
+              mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor.
+            </p>
+          </Quote>
+        </Testimonial>
+      </Main>
+    )
+  },
+}
+
+export const ImageRight: Story = {
+  args: {
+    imageUrl: 'https://picsum.photos/id/342/600/400',
+    imageZoom: 0,
+    focalPointX: 50,
+    focalPointY: 50,
+    imagePositionRight: true,
+  },
+  render: (args) => {
+    return (
+      <Main>
+        <Testimonial {...args}>
+          <Quote cite="John Smith" graphic="quote">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
               mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor.
