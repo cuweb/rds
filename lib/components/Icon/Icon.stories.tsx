@@ -19,14 +19,10 @@ export const Default: Story = {
   render: (args) => <Icon {...args} aria-hidden={true} />,
 }
 
-const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-const setPath = isLocal ? './assets/font-awesome/' : 'https://cuweb.github.io/rds/assets/font-awesome/'
-
 Default.args = {
   name: 'circle-check',
   size: 32,
   color: 'currentColor',
-  iconPath: setPath,
 }
 
 export const Red: Story = {
