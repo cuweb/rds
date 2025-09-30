@@ -1,9 +1,0 @@
-import{j as t}from"./jsx-runtime-Cf8x2fCZ.js";import{I as c}from"./Icon-CmMPwVB4.js";import"./index-yBjzXJbu.js";import"./index-DDmFEvuO.js";import"./_commonjsHelpers-D6-XlEtG.js";const R={title:"Components/Icon",component:c,tags:["autodocs"],parameters:{controls:{sort:"requiredFirst"}}},e={render:r=>t.jsx(c,{...r,"aria-hidden":!0})};e.args={name:"circle-check",size:32,color:"currentColor",iconPath:"./assets/font-awesome/"};const a={render:r=>t.jsx(c,{...r,"aria-hidden":!0})};a.args={name:"circle-check",size:32,color:"red"};const s={render:r=>t.jsx(c,{...r,"aria-hidden":!0})};s.args={name:"circle-check",size:32,color:"grey"};const o={render:r=>t.jsx(c,{...r,"aria-hidden":!0})};o.args={name:"circle-check",size:32,color:"white"};var n,i,d;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
-  render: args => <Icon {...args} aria-hidden={true} />
-}`,...(d=(i=e.parameters)==null?void 0:i.docs)==null?void 0:d.source}}};var m,p,u;a.parameters={...a.parameters,docs:{...(m=a.parameters)==null?void 0:m.docs,source:{originalSource:`{
-  render: args => <Icon {...args} aria-hidden={true} />
-}`,...(u=(p=a.parameters)==null?void 0:p.docs)==null?void 0:u.source}}};var g,l,h;s.parameters={...s.parameters,docs:{...(g=s.parameters)==null?void 0:g.docs,source:{originalSource:`{
-  render: args => <Icon {...args} aria-hidden={true} />
-}`,...(h=(l=s.parameters)==null?void 0:l.docs)==null?void 0:h.source}}};var x,I,f;o.parameters={...o.parameters,docs:{...(x=o.parameters)==null?void 0:x.docs,source:{originalSource:`{
-  render: args => <Icon {...args} aria-hidden={true} />
-}`,...(f=(I=o.parameters)==null?void 0:I.docs)==null?void 0:f.source}}};const w=["Default","Red","Grey","White"];export{e as Default,s as Grey,a as Red,o as White,w as __namedExportsOrder,R as default};
