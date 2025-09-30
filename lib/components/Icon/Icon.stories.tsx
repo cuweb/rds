@@ -23,6 +23,7 @@ Default.args = {
   name: 'circle-check',
   size: 32,
   color: 'currentColor',
+  iconPath: './assets/font-awesome/',
 }
 
 export const Red: Story = {

@@ -43,13 +43,25 @@ export const PostLayout: Story = {
               <>
                 <div className="flex flex-row gap-4 md:gap-8 w-full">
                   <p className="flex flex-row items-center">
-                    <Icon name="calendar-lines-pen" size={26} color="#f48c90" className="flex-shrink-0 mr-2" />
+                    <Icon
+                      iconPath="/assets/font-awesome/"
+                      name="calendar-lines-pen"
+                      size={26}
+                      color="#f48c90"
+                      className="flex-shrink-0 mr-2"
+                    />
                     Published on September 3, 2025
                   </p>
 
                   <p className="flex flex-row items-center">
-                    <Icon name="clock" size={22} color="#f48c90" className="flex-shrink-0 mr-2" /> Time to read: 5
-                    minutes
+                    <Icon
+                      iconPath="/assets/font-awesome/"
+                      name="clock"
+                      size={22}
+                      color="#f48c90"
+                      className="flex-shrink-0 mr-2"
+                    />{' '}
+                    Time to read: 5 minutes
                   </p>
                 </div>
 

@@ -71,14 +71,14 @@ export const Calendar = ({ events, callback, defaultDate }: CalendarProps) => {
       <div className="flex items-center py-2 mb-6 bg-white border rounded-lg border-cu-black-100">
         <button type="button" onClick={previousMonth} className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Previous month</span>
-          <Icon name="chevron-left" size={20} />
+          <Icon iconPath="/assets/font-awesome/" name="chevron-left" size={20} />
         </button>
         <h2 className="flex-auto text-base font-semibold text-center text-cu-black-900">
           {format(firstDayCurrentMonth, 'MMMM yyyy')}
         </h2>
         <button onClick={nextMonth} type="button" className={`${styles.prevNextArrows}`}>
           <span className="text-base sr-only">Next month</span>
-          <Icon name="chevron-right" size={20} />
+          <Icon iconPath="/assets/font-awesome/" name="chevron-right" size={20} />
         </button>
       </div>
 

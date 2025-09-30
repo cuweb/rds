@@ -37,12 +37,12 @@ export const ImageSliderWrapper = ({
       <div className="flex align-items-center gap-3 justify-center mt-4">
         <button className={`cu-slider--arrow cu-slider--arrow-prev ${arrowButtons}`}>
           <span className="sr-only">Go to Previous Slide</span>
-          <Icon name="chevron-left" size={20} className={arrowIcons} />
+          <Icon iconPath="/assets/font-awesome/" name="chevron-left" size={20} className={arrowIcons} />
         </button>
 
         <button className={`cu-slider--arrow cu-slider--arrow-next ${arrowButtons}`}>
           <span className="sr-only">Go to Next Slide</span>
-          <Icon name="chevron-right" size={20} className={arrowIcons} />
+          <Icon iconPath="/assets/font-awesome/" name="chevron-right" size={20} className={arrowIcons} />
         </button>
       </div>
     </div>
