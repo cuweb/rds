@@ -62,7 +62,6 @@ export const LocationPicker = ({
           <Combobox value={address} onChange={handleSelect}>
             <div className="relative">
               <Icon
-                iconPath="/assets/font-awesome/"
                 name="magnifying-glass"
                 size={20}
                 className="pointer-events-none absolute left-3.5 top-3.5"

@@ -22,7 +22,6 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
         >
           {term}
           <Icon
-            iconPath="/assets/font-awesome/"
             name="chevron-right"
             size={20}
             className="ml-auto transition-transform rotate-0 accordion__icon"

@@ -43,7 +43,7 @@ export const Button = ({
       disabled={isDisabled ? true : false}
       {...rest}
     >
-      {icon && <Icon name={icon} iconPath="/assets/font-awesome/" size={iconSize * 4} />}
+      {icon && <Icon name={icon} size={iconSize * 4} />}
       {title}
     </button>
   )

@@ -62,7 +62,6 @@ export const NavButtons = ({
         {isSearch && (
           <button onClick={onClickSearch} aria-label="search" className="not-prose">
             <Icon
-              iconPath="/assets/font-awesome/"
               name="magnifying-glass"
               size={20}
               color="#b3b3b3"

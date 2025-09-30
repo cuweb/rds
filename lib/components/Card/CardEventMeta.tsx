@@ -54,26 +54,14 @@ export const CardEventMeta = ({
     if (!isEventSameDay) {
       return (
         <>
-          <Icon
-            iconPath="/assets/font-awesome/"
-            name="calendar-days"
-            size={styles.iconSize}
-            color={styles.iconColor}
-            className={styles.redIcon}
-          />
+          <Icon name="calendar-days" size={styles.iconSize} color={styles.iconColor} className={styles.redIcon} />
           {`${startMonth} ${startDay} — ${endMonth} ${endDay}`}
         </>
       )
     } else {
       return (
         <>
-          <Icon
-            iconPath="/assets/font-awesome/"
-            name="clock"
-            size={styles.iconSize}
-            color={styles.iconColor}
-            className={styles.redIcon}
-          />
+          <Icon name="clock" size={styles.iconSize} color={styles.iconColor} className={styles.redIcon} />
           {`${startTime} — ${endTime}`}
         </>
       )
@@ -84,13 +72,7 @@ export const CardEventMeta = ({
     <ul className="space-y-2 text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
       <li className="flex">{multiDayDisplay()}</li>
       <li className="flex">
-        <Icon
-          iconPath="/assets/font-awesome/"
-          name="location-dot"
-          size={styles.iconSize}
-          color={styles.iconColor}
-          className={styles.redIcon}
-        />
+        <Icon name="location-dot" size={styles.iconSize} color={styles.iconColor} className={styles.redIcon} />
         {onCampus ? onCampusRoomNumber + ' ' + onCampusBuilding : eventAddress}
       </li>
     </ul>
