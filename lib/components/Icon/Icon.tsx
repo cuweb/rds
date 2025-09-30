@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react'
 
 export interface IconProps {
   name: string
-  iconPath?: string
   size?: number | string
   color?: string
   className?: string
 }
 
-export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', className, iconPath }) => {
+export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', className }) => {
   const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
   const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-  const setPath = iconPath ?? (isLocal ? './assets/font-awesome/' : 'https://cuweb.github.io/rds/assets/font-awesome/')
+  const setPath = isLocal ? './assets/font-awesome/' : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
 
   useEffect(() => {
     let isMounted = true
