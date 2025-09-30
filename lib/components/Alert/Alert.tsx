@@ -25,6 +25,7 @@ export const Alert = ({ title, content, type = 'success', size = 'sm' }: PropsWi
     <div className={`cu-alert cu-alert--${type} not-prose flex rounded-md p-4`}>
       <Icon
         name={AlertTypes[type]}
+        iconPath="/assets/font-awesome/"
         size={AlertSizes[size].alertIconSize}
         color={type === 'error' ? '#d32f2f' : type === 'warning' ? '#fbc02d' : type === 'info' ? '#1976d2' : '#388e3c'}
       />

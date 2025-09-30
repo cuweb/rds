@@ -65,21 +65,42 @@ const TableHeader = ({ columns, noWordBreak, sortData }: TableHeaderProps) => {
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by ascending order' : undefined}
               >
-                <Icon name="chevron-down" size={16} color="#808080" className="inline-block" aria-hidden="true" />
+                <Icon
+                  iconPath="/assets/font-awesome/"
+                  name="chevron-down"
+                  size={16}
+                  color="#808080"
+                  className="inline-block"
+                  aria-hidden="true"
+                />
               </button>
             ) : column.key === active && !ascending ? (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort ' + column.key + ' by descending order' : undefined}
               >
-                <Icon name="chevron-up" size={16} color="#808080" className="inline-block" aria-hidden="true" />
+                <Icon
+                  iconPath="/assets/font-awesome/"
+                  name="chevron-up"
+                  size={16}
+                  color="#808080"
+                  className="inline-block"
+                  aria-hidden="true"
+                />
               </button>
             ) : (
               <button
                 className="block w-4 h-full ml-2"
                 aria-label={column?.sort?.sortable ? 'Sort by ' + column.key : undefined}
               >
-                <Icon name="chevron-up-down" size={16} color="#808080" className="inline-block" aria-hidden="true" />
+                <Icon
+                  iconPath="/assets/font-awesome/"
+                  name="chevron-up-down"
+                  size={16}
+                  color="#808080"
+                  className="inline-block"
+                  aria-hidden="true"
+                />
               </button>
             )}
           </div>

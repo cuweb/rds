@@ -2,19 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 export interface IconProps {
   name: string
+  iconPath: string
   size?: number | string
   color?: string
   className?: string
-  basePath?: string // Path to SVG assets, defaults to CDN
 }
 
-export const Icon: React.FC<IconProps> = ({
-  name,
-  size = 24,
-  color = '#000000',
-  className,
-  basePath = 'https://cdn.carleton.ca/rds/assets/font-awesome/', // Default fallback
-}) => {
+export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', className, iconPath }) => {
   const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
   useEffect(() => {
@@ -22,7 +16,7 @@ export const Icon: React.FC<IconProps> = ({
 
     const fetchSvg = async () => {
       try {
-        const res = await fetch(`${basePath}${name}.svg`)
+        const res = await fetch(`${iconPath}${name}.svg`)
         if (!res.ok) throw new Error('SVG not found')
         let svg = await res.text()
         svg = svg.replace(/<svg([^>]*)/, `<svg$1 fill="${color}" width="${size}" height="${size}"`)
@@ -35,13 +29,13 @@ export const Icon: React.FC<IconProps> = ({
     return () => {
       isMounted = false
     }
-  }, [name, color, size, basePath])
+  }, [name, color, size, iconPath])
 
   if (!svgMarkup) {
     return <span className={className} style={{ width: size, height: size }} />
   }
 
-  console.log(basePath)
+  console.log(iconPath)
 
   return (
     <span

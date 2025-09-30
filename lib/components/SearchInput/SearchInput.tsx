@@ -22,6 +22,7 @@ export const SearchInputWrapper = ({ callback, placeholder = 'Search', children 
   return (
     <div className="cu-search cu-component-updated relative items-center not-prose">
       <Icon
+        iconPath="/assets/font-awesome/"
         name="magnifying-glass"
         size={20}
         color="#b3b3b3"

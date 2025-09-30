@@ -29,16 +29,20 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
 
   const toastTypes = {
     success: {
-      icon: <Icon name="circle-check" size={24} color="#4ade80" aria-hidden="true" />,
+      icon: <Icon iconPath="/assets/font-awesome/" name="circle-check" size={24} color="#4ade80" aria-hidden="true" />,
     },
     warning: {
-      icon: <Icon name="shield-exclamation" size={24} color="#facc15" aria-hidden="true" />,
+      icon: (
+        <Icon iconPath="/assets/font-awesome/" name="shield-exclamation" size={24} color="#facc15" aria-hidden="true" />
+      ),
     },
     error: {
-      icon: <Icon name="circle-exclamation" size={24} color="#e91c24" aria-hidden="true" />,
+      icon: (
+        <Icon iconPath="/assets/font-awesome/" name="circle-exclamation" size={24} color="#e91c24" aria-hidden="true" />
+      ),
     },
     info: {
-      icon: <Icon name="circle-info" size={24} color="#2563eb" aria-hidden="true" />,
+      icon: <Icon iconPath="/assets/font-awesome/" name="circle-info" size={24} color="#2563eb" aria-hidden="true" />,
     },
   }
 
@@ -67,7 +71,7 @@ const ToastBase = ({ children, type }: PropsWithChildren<ToastBaseProps>) => {
                 }}
               >
                 <span className="sr-only">Close</span>
-                <Icon name="xmark" size={20} className="h-5 w-5" aria-hidden="true" />
+                <Icon iconPath="/assets/font-awesome/" name="xmark" size={20} className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>
