@@ -98,7 +98,7 @@ export const Pagination = ({
             <li className={`${styles.pageListWrapper} !my-0`} onClick={onPrevious}>
               <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`}>
                 <span className="sr-only">Previous</span>
-                <Icon name="chevron-left" size={14} aria-hidden="true" />
+                <Icon iconPath="/assets/font-awesome/" name="chevron-left" size={14} aria-hidden="true" />
               </button>
             </li>
 
@@ -127,7 +127,7 @@ export const Pagination = ({
             <li className={`${styles.pageListWrapper} !my-0`}>
               <button className={`${styles.pageListNumbers} ${styles.pageListArrows}`} onClick={onNext}>
                 <span className="sr-only">Next</span>
-                <Icon name="chevron-right" size={14} aria-hidden="true" />
+                <Icon iconPath="/assets/font-awesome/" name="chevron-right" size={14} aria-hidden="true" />
               </button>
             </li>
           </ul>
