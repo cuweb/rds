@@ -24,7 +24,7 @@ export const Primary: Story = {
     imageZoom: 0,
     focalPointX: 50,
     focalPointY: 50,
-    imagePositionRight: false,
+    reverse: false,
   },
   render: (args) => {
     return (
@@ -48,7 +48,7 @@ export const ImageRight: Story = {
     imageZoom: 0,
     focalPointX: 50,
     focalPointY: 50,
-    imagePositionRight: true,
+    reverse: true,
   },
   render: (args) => {
     return (

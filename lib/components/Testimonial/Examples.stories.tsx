@@ -71,7 +71,7 @@ export const LayoutExamples: Story = {
           focalPointY={50}
           imageUrl="https://picsum.photos/id/342/600/400"
           imageZoom={0}
-          imagePositionRight={true}
+          reverse={true}
         >
           <Quote cite="John Smith" graphic="quote">
             <p>
@@ -119,7 +119,7 @@ export const LayoutExamples: Story = {
             focalPointY={50}
             imageUrl="https://picsum.photos/id/167/600/400"
             imageZoom={0}
-            imagePositionRight={true}
+            reverse={true}
           >
             <Quote cite="Alice Johnson" graphic="quote">
               <p>

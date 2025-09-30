@@ -6,7 +6,7 @@ export interface TestimonialProps {
   imageZoom?: number
   focalPointX?: number
   focalPointY?: number
-  imagePositionRight?: boolean
+  reverse?: boolean
 }
 
 export const Testimonial = ({
@@ -15,7 +15,7 @@ export const Testimonial = ({
   imageZoom = 0,
   focalPointX = 50,
   focalPointY = 50,
-  imagePositionRight = false,
+  reverse = false,
 }: TestimonialProps) => {
   const inlineImageStyles = {
     backgroundImage: `url(${imageUrl})`,
@@ -23,15 +23,15 @@ export const Testimonial = ({
     transform: `scale(1.${imageZoom})`,
   }
 
-  // Determine flex direction and order based on imagePositionRight
-  const containerClasses = imagePositionRight
-    ? 'mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center md:pl-12 md:pr-8 md:flex-row-reverse md:items-stretch'
-    : 'mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center md:pl-8 md:pr-12 md:flex-row md:items-stretch'
+  // Determine flex direction and order based on reverse
+  const reverseClasss = reverse ? 'md:pl-12 md:pr-8 md:flex-row-reverse' : 'md:pl-8 md:pr-12 md:flex-row'
 
   return (
     <div className="cu-testimonial md:py-8">
       <div className="bg-cu-black-50 rounded-xl">
-        <div className={containerClasses}>
+        <div
+          className={`mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center ${reverseClasss} md:items-stretch`}
+        >
           <div
             className="w-full md:-my-8 hidden md:block md:flex-[0_0_30%] bg-cu-black-25 rounded-lg bg-cover"
             style={inlineImageStyles}
