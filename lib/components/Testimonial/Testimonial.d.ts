@@ -5,5 +5,6 @@ export interface TestimonialProps {
     imageZoom?: number;
     focalPointX?: number;
     focalPointY?: number;
+    reverse?: boolean;
 }
-export declare const Testimonial: ({ children, imageUrl, imageZoom, focalPointX, focalPointY, }: TestimonialProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Testimonial: ({ children, imageUrl, imageZoom, focalPointX, focalPointY, reverse, }: TestimonialProps) => import("react/jsx-runtime").JSX.Element;
