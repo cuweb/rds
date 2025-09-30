@@ -24,8 +24,7 @@ export const Testimonial = ({
   }
 
   // Determine flex direction and order based on imagePositionRight
-  const isImageRight = imagePositionRight
-  const containerClasses = isImageRight
+  const containerClasses = imagePositionRight
     ? 'mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center md:pl-12 md:pr-8 md:flex-row-reverse md:items-stretch'
     : 'mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center md:pl-8 md:pr-12 md:flex-row md:items-stretch'
 
