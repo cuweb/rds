@@ -1,5 +1,5 @@
 import { FooterLogoLinks } from '../FooterLogoLinks/FooterLogoLinks'
-import { FooterStandardLinks as linkData } from '../../../data/FooterStandardData'
+import { FooterAthleticsLinks as athleticsData } from '../../../data/FooterStandardData'
 import { useLinkContext } from '../../LinkProvider/useLinkContext'
 
 const Social = [
@@ -81,10 +81,10 @@ const Social = [
 ]
 
 const styles = {
-  linkHeaders: `text-base font-bold text-white`,
+  linkHeaders: `text-base font-bold text-white mt-8`,
 }
 
-export const FooterStandard = () => {
+export const FooterAthletics = () => {
   const LinkComponent = useLinkContext()
 
   return (
@@ -106,9 +106,22 @@ export const FooterStandard = () => {
       <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <div id="footer-links" className="flex justify-between w-full">
           <div>
-            <h3 className={styles.linkHeaders}>Admissions</h3>
+            <h3 className={styles.linkHeaders}>Fitness</h3>
             <ul>
-              {linkData.Admissions.map((item, index) => (
+              {athleticsData.Fitness.map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={styles.linkHeaders}>Aquatics</h3>
+            <ul>
+              {athleticsData.Aquatics.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
                   <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
@@ -118,9 +131,19 @@ export const FooterStandard = () => {
             </ul>
           </div>
           <div>
-            <h3 className={styles.linkHeaders}>Academics</h3>
+            <h3 className={styles.linkHeaders}>Facilities</h3>
             <ul>
-              {linkData.Academics.map((item, index) => (
+              {athleticsData.Facilities.map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
+            <h3 className={styles.linkHeaders}>About Us</h3>
+            <ul>
+              {athleticsData['About Us'].map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
                   <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
@@ -129,10 +152,33 @@ export const FooterStandard = () => {
               ))}
             </ul>
           </div>
+          <div>
+            <h3 className={styles.linkHeaders}>Camps</h3>
+            <ul>
+              {athleticsData.Camps.map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
+            <h3 className={styles.linkHeaders}>Adult Leagues</h3>
+            <ul>
+              {athleticsData['Adult Leagues'].map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div>
             <h3 className={styles.linkHeaders}>Students</h3>
             <ul>
-              {linkData.Students.map((item, index) => (
+              {athleticsData.Students.map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
                   <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
@@ -140,11 +186,9 @@ export const FooterStandard = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <h3 className={styles.linkHeaders}>Campus</h3>
+            <h3 className={styles.linkHeaders}>Carleton University</h3>
             <ul>
-              {linkData.Campus.map((item, index) => (
+              {athleticsData['Carleton University'].map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
                   <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
@@ -152,25 +196,6 @@ export const FooterStandard = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <h3 className={styles.linkHeaders}>Ravens</h3>
-            <ul>
-              {linkData.Ravens.map((item, index) => (
-                <li key={index} className="mt-2.5 text-sm">
-                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
-                    {item.name}
-                  </LinkComponent>
-                </li>
-              ))}
-            </ul>
-            <LinkComponent href="https://goravens.carleton.ca" className="w-16 h-auto">
-              <img
-                className="w-16 h-auto mt-8"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logos/ravens-logo.svg"
-                alt="Carleton"
-              />
-            </LinkComponent>
           </div>
         </div>
       </div>

@@ -41,3 +41,77 @@ export const FooterStandardLinks = {
     { name: 'GoRavens Varsity', href: 'https://goravens.ca/' },
   ],
 }
+
+export const FooterAthleticsLinks = {
+  Camps: [
+    {
+      name: 'Summer Camps',
+      href: 'https://athleticsupgrade.carleton.ca/community/camps-and-childrens-programs/summer-camps/',
+    },
+    {
+      name: 'Holiday Camps',
+      href: 'https://athleticsupgrade.carleton.ca/community/camps-and-childrens-programs/holiday-camps/',
+    },
+    {
+      name: 'March Break Camps',
+      href: 'https://athleticsupgrade.carleton.ca/community/camps-and-childrens-programs/march-break-camps/',
+    },
+    { name: 'Lifesaving Camps', href: 'https://athleticsupgrade.carleton.ca/community/aquatics/summer-aquatic-camps/' },
+    {
+      name: 'Junior Ravens',
+      href: 'https://athleticsupgrade.carleton.ca/community/camps-and-childrens-programs/junior-ravens-programs/',
+    },
+  ],
+  Aquatics: [
+    { name: 'Pool Information', href: 'https://athleticsupgrade.carleton.ca/community/aquatics/' },
+    { name: 'Pool Schedule', href: 'https://athleticsupgrade.carleton.ca/community/aquatics/pool-schedule/' },
+    { name: "Children's Aquatics", href: 'https://athleticsupgrade.carleton.ca/community/aquatics/childrens-program/' },
+    {
+      name: 'Adult Programs',
+      href: 'https://athleticsupgrade.carleton.ca/community/aquatics/aquatics-adult-programs/',
+    },
+    {
+      name: 'Lifesaving & Leadership',
+      href: 'https://athleticsupgrade.carleton.ca/community/aquatics/lifesaving-certification-and-first-aid-programs/',
+    },
+    {
+      name: 'First Aid & CPR',
+      href: 'https://athleticsupgrade.carleton.ca/community/aquatics/lifesaving-certification-and-first-aid-programs/',
+    },
+  ],
+  Fitness: [
+    { name: 'Fitness Centre', href: 'Uhttps://athleticsupgrade.carleton.ca/community/fitness/fitness-centre/RL' },
+    { name: 'Group Fitness Programs', href: 'https://athleticsupgrade.carleton.ca/community/fitness/' },
+    { name: 'Drop-in Group Fitness', href: 'https://athleticsupgrade.carleton.ca/community/fitness/cu-fit/' },
+    { name: 'Instructional Programs', href: 'https://athleticsupgrade.carleton.ca/community/fitness/instructional/' },
+    { name: 'Pilates', href: 'https://athleticsupgrade.carleton.ca/community/fitness/pilates-memberships/' },
+    { name: 'Senior Ravens', href: 'https://athleticsupgrade.carleton.ca/community/fitness/senior-ravens/' },
+    { name: 'Personal Training', href: 'https://athleticsupgrade.carleton.ca/community/fitness/personal-training-pt/' },
+  ],
+  'Adult Leagues': [
+    { name: 'Browse All Leagues', href: 'https://athleticsupgrade.carleton.ca/community/leagues/' },
+    // { name: 'Standings, Schedules and Registration', href: 'https://athleticsupgrade.carleton.ca/community/leagues/fusionplay-how-to-register/' },
+  ],
+  Students: [
+    { name: 'Your Student Membership', href: 'https://athleticsupgrade.carleton.ca/students/student-member/' },
+    { name: 'Drop-in (Campus Rec)', href: 'https://athleticsupgrade.carleton.ca/students/campus-rec/' },
+    { name: 'Intramurals', href: 'https://athleticsupgrade.carleton.ca/students/leagues-intramurals/intramurals/' },
+  ],
+  Facilities: [
+    { name: 'Discover Our Facilities', href: 'https://athleticsupgrade.carleton.ca/students/facilities/' },
+    { name: 'Facility Rentals', href: 'https://rec.carleton.ca/Facility' },
+    { name: 'Policies & Procedures', href: 'https://athleticsupgrade.carleton.ca/students/facilities/' },
+  ],
+  'About Us': [
+    { name: 'Memberships', href: 'https://athleticsupgrade.carleton.ca/community/fitness/memberships-passes/' },
+    { name: 'Inclusive Programs', href: 'https://athleticsupgrade.carleton.ca/community/adaptive/' },
+    // { name: 'Hours of Operation', href: 'https://athleticsupgrade.carleton.ca/community/hours/' },
+    { name: 'Job Opportunities', href: 'https://athleticsupgrade.carleton.ca/community/employment-opportunities/' },
+    // { name: 'Contact Us', href: 'https://athleticsupgrade.carleton.ca/community/contact/' },
+  ],
+  'Carleton University': [
+    { name: 'Visit Carleton.ca', href: 'https://carleton.ca' },
+    { name: 'About Carleton', href: 'https://carleton.ca/about/' },
+    { name: 'Undergraduate Admissions', href: 'https://admissions.carleton.ca/' },
+  ],
+}
