@@ -164,9 +164,9 @@ export const FooterStandard = () => {
                 </li>
               ))}
             </ul>
-            <LinkComponent href="https://goravens.carleton.ca" className="w-12 h-auto">
+            <LinkComponent href="https://goravens.carleton.ca" className="w-16 h-auto">
               <img
-                className="w-12 h-auto mt-8"
+                className="w-16 h-auto mt-8"
                 src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logos/ravens-logo.svg"
                 alt="Carleton"
               />
