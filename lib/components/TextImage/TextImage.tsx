@@ -19,7 +19,7 @@ export const TextImageWrapper = ({ children, maxWidth = '5xl', flexRow = 'lg', f
 
   return (
     <div
-      className={`cu-textimage cu-component-updated flex flex-col lg:flex-row gap-6 mx-auto lg:gap-10 ${maxWidthClasses[maxWidth]} ${flexRowClasses[flexRow]} ${flipXLayout} ${flipYsmLayout}`}
+      className={`cu-textimage flex flex-col lg:flex-row gap-6 mx-auto md:gap-10 ${maxWidthClasses[maxWidth]} ${flexRowClasses[flexRow]} ${flipXLayout} ${flipYsmLayout}`}
     >
       {children}
     </div>

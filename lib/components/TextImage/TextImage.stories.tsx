@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextImage } from './TextImage'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
-import { Section } from '../../layouts/Section/Section'
+import { Main } from '../../layouts/Main/Main'
 
 const meta: Meta<typeof TextImage> = {
-  title: 'Deprecated/Text & Image',
+  title: 'Components/Text & Image',
   component: TextImage,
   tags: ['autodocs'],
   parameters: {
@@ -27,7 +27,7 @@ export const Primary: Story = {
   },
   render: (args) => {
     return (
-      <Section>
+      <Main>
         <TextImage {...args}>
           <TextImage.Content title="Website and Application Development" imageUrl="https://picsum.photos/400/266">
             <p>
@@ -41,7 +41,7 @@ export const Primary: Story = {
             </ButtonGroup>
           </TextImage.Content>
         </TextImage>
-      </Section>
+      </Main>
     )
   },
 }
@@ -52,7 +52,7 @@ export const HeaderOne: Story = {
     maxWidth: '7xl',
   },
   render: (args) => (
-    <Section>
+    <Main>
       <TextImage maxWidth="7xl" {...args}>
         <TextImage.Content
           title="Website and Application Development"
@@ -70,7 +70,7 @@ export const HeaderOne: Story = {
           </ButtonGroup>
         </TextImage.Content>
       </TextImage>
-    </Section>
+    </Main>
   ),
 }
 
@@ -81,7 +81,7 @@ export const ImageLeft: Story = {
     flipX: true,
   },
   render: (args) => (
-    <Section>
+    <Main>
       <TextImage {...args}>
         <TextImage.Content
           title="Website and Application Development"
@@ -99,7 +99,7 @@ export const ImageLeft: Story = {
           </ButtonGroup>
         </TextImage.Content>
       </TextImage>
-    </Section>
+    </Main>
   ),
 }
 
@@ -108,11 +108,11 @@ export const NoContent: Story = {
     ...Primary.args,
   },
   render: (args) => (
-    <Section>
+    <Main>
       <TextImage {...args}>
         <TextImage.Content title="Website and Application Development" />
       </TextImage>
-    </Section>
+    </Main>
   ),
 }
 
@@ -121,7 +121,7 @@ export const NoImage: Story = {
     ...Primary.args,
   },
   render: (args) => (
-    <Section>
+    <Main>
       <TextImage {...args}>
         <TextImage.Content title="Website and Application Development">
           <p>
@@ -135,6 +135,6 @@ export const NoImage: Story = {
           </ButtonGroup>
         </TextImage.Content>
       </TextImage>
-    </Section>
+    </Main>
   ),
 }

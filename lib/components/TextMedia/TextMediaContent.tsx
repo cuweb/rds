@@ -8,7 +8,6 @@ export interface TextMediaContentProps {
   children?: React.ReactNode
   title: string
   headerType?: 'h1' | 'h2'
-  metaData?: React.ReactNode
   width?: number
   align?: justifyContentKeys
   hasUnderline?: boolean
@@ -20,7 +19,6 @@ export const TextMediaContent = ({
   children,
   title,
   headerType = 'h2',
-  metaData,
   width = 60,
   align = 'start',
   hasUnderline = true,
@@ -39,7 +37,6 @@ export const TextMediaContent = ({
       <PageHeader
         as={headerType}
         header={title}
-        metaData={metaData}
         size={headerType === 'h2' ? 'md' : 'lg'}
         noUnderline={!hasUnderline}
         isLight={isLight}
