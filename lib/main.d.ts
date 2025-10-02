@@ -14,6 +14,7 @@ export { Dialog } from './components/Dialog/Dialog';
 export { Embed } from './components/Embed/Embed';
 export { FilterPanel } from './components/FilterPanel/FilterPanel';
 export { FooterBasic } from './components/Footer/FooterBasic/FooterBasic';
+export { FooterAthletics } from './components/Footer/FooterAthletics/FooterAthletics';
 export { FooterCookie } from './components/Footer/FooterCookie/FooterCookie';
 export { FooterLogoLinks } from './components/Footer/FooterLogoLinks/FooterLogoLinks';
 export { FooterStandard } from './components/Footer/FooterStandard/FooterStandard';
