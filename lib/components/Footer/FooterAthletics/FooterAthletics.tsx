@@ -129,16 +129,6 @@ export const FooterAthletics = () => {
                 </li>
               ))}
             </ul>
-            <h3 className={styles.linkHeaders}>Students</h3>
-            <ul>
-              {athleticsData.Students.map((item, index) => (
-                <li key={index} className="mt-2.5 text-sm">
-                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
-                    {item.name}
-                  </LinkComponent>
-                </li>
-              ))}
-            </ul>
           </div>
           <div>
             <h3 className={styles.linkHeaders}>Facilities</h3>
@@ -186,6 +176,16 @@ export const FooterAthletics = () => {
           </div>
 
           <div>
+            <h3 className={styles.linkHeaders}>Students</h3>
+            <ul>
+              {athleticsData.Students.map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
             <h3 className={styles.linkHeaders}>Around Carleton</h3>
             <ul>
               {athleticsData['Around Carleton'].map((item, index) => (
