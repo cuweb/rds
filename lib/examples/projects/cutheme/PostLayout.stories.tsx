@@ -5,7 +5,7 @@ import { FooterDept } from '../../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../../components/Nav/Nav'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { FooterCookie } from '../../../components/Footer/FooterCookie/FooterCookie'
-import { TextMedia } from '../../../components/TextMedia/TextMedia'
+import { TextImage } from '../../../components/TextImage/TextImage'
 import { BadgeGroup } from '../../../components/BadgeGroup/BadgeGroup'
 import { Badge } from '../../../components/Badge/Badge'
 import { Quote } from '../../../components/Quote/Quote'
@@ -35,10 +35,10 @@ export const PostLayout: Story = {
       </Nav>
 
       <Main>
-        <TextMedia>
-          <TextMedia.Content
+        <TextImage>
+          <TextImage.Content
             headerType="h1"
-            title="Basic Markup"
+            title="New Post Example"
             metaData={
               <>
                 <div className="flex flex-row gap-4 md:gap-8 w-full">
@@ -60,8 +60,6 @@ export const PostLayout: Story = {
                 </BadgeGroup>
               </>
             }
-            width={100}
-            isLight
           >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt lacus consectetur, molestie urna
@@ -69,8 +67,8 @@ export const PostLayout: Story = {
               vitae. Quisque tincidunt, enim a porta ultricies, nisl libero mattis augue, vitae auctor turpis libero sit
               amet augue. Vestibulum elementum enim sed ante mollis dictum.
             </p>
-          </TextMedia.Content>
-        </TextMedia>
+          </TextImage.Content>
+        </TextImage>
         <h2>Heading Two</h2>
         <p>
           Ut iaculis non orci maximus luctus. Maecenas tincidunt condimentum dui vitae tempor. Sed ultricies velit sed

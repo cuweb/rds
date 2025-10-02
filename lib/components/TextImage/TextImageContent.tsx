@@ -1,9 +1,11 @@
 import React from 'react'
+import { PageHeader } from '../PageHeader/PageHeader'
 
 export interface TextImageContentProps {
   children?: React.ReactNode
   title?: string
   headerType?: 'h1' | 'h2'
+  metaData?: React.ReactNode
   isCenter?: boolean
 }
 
@@ -25,6 +27,7 @@ export const TextImageContent = ({
   children,
   title,
   headerType = 'h2',
+  metaData,
   isCenter,
   imageUrl,
   contentWidth = 50,
@@ -62,10 +65,19 @@ export const TextImageContent = ({
   return (
     <>
       <div
-        className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 ${contentPadding} ${verticallyCenter}`}
+        className={`flex-[0_0_100%] md:max-w-4xl md:flex-1 cu-textimage-content md:pt-4 cu-prose-first-last ${contentPadding} ${verticallyCenter}`}
         style={inlineContentStyles}
       >
-        {title && headerType === 'h1' && (
+        <PageHeader
+          as={headerType}
+          header={title ? title : ''}
+          metaData={metaData}
+          size={headerType === 'h2' ? 'md' : 'lg'}
+        >
+          {children}
+        </PageHeader>
+
+        {/* {title && headerType === 'h1' && (
           <h1 className={`font-semibold text-3xl md:text-4xl lg:text-5xl lg:leading-[3.5rem] ${styles.underline}`}>
             {title}
           </h1>
@@ -76,7 +88,7 @@ export const TextImageContent = ({
           </h2>
         )}
 
-        {children}
+        {children} */}
       </div>
 
       {imageUrl && (
