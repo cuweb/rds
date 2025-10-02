@@ -109,7 +109,7 @@ export const FooterAthleticsLinks = {
     { name: 'Job Opportunities', href: 'https://athleticsupgrade.carleton.ca/community/employment-opportunities/' },
     // { name: 'Contact Us', href: 'https://athleticsupgrade.carleton.ca/community/contact/' },
   ],
-  'Around Carleton': [
+  'Carleton University': [
     { name: 'Visit Carleton.ca', href: 'https://carleton.ca' },
     { name: 'About Carleton', href: 'https://carleton.ca/about/' },
     { name: 'Undergraduate Admissions', href: 'https://admissions.carleton.ca/' },

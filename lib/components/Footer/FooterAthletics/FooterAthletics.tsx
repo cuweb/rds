@@ -186,9 +186,9 @@ export const FooterAthletics = () => {
                 </li>
               ))}
             </ul>
-            <h3 className={styles.linkHeaders}>Around Carleton</h3>
+            <h3 className={styles.linkHeaders}>Carleton University</h3>
             <ul>
-              {athleticsData['Around Carleton'].map((item, index) => (
+              {athleticsData['Carleton University'].map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
                   <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
