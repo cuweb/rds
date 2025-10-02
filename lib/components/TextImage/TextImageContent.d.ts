@@ -3,6 +3,7 @@ export interface TextImageContentProps {
     children?: React.ReactNode;
     title?: string;
     headerType?: 'h1' | 'h2';
+    metaData?: React.ReactNode;
     isCenter?: boolean;
 }
 export interface TextImageMediaProps {
@@ -14,6 +15,6 @@ export interface TextImageMediaProps {
     hasMobileImage?: boolean;
 }
 export declare const TextImageContent: {
-    ({ children, title, headerType, isCenter, imageUrl, contentWidth, imageZoom, focalPointX, focalPointY, hasMobileImage, }: TextImageContentProps & TextImageMediaProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, title, headerType, metaData, isCenter, imageUrl, contentWidth, imageZoom, focalPointX, focalPointY, hasMobileImage, }: TextImageContentProps & TextImageMediaProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
