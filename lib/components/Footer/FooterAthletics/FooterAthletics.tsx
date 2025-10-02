@@ -117,6 +117,7 @@ export const FooterAthletics = () => {
               ))}
             </ul>
           </div>
+
           <div>
             <h3 className={styles.linkHeaders}>Aquatics</h3>
             <ul>
@@ -128,21 +129,9 @@ export const FooterAthletics = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
             <h3 className={styles.linkHeaders}>Students</h3>
             <ul>
               {athleticsData.Students.map((item, index) => (
-                <li key={index} className="mt-2.5 text-sm">
-                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
-                    {item.name}
-                  </LinkComponent>
-                </li>
-              ))}
-            </ul>
-            <h3 className={styles.linkHeaders}>Adult Leagues</h3>
-            <ul>
-              {athleticsData['Adult Leagues'].map((item, index) => (
                 <li key={index} className="mt-2.5 text-sm">
                   <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
                     {item.name}
@@ -184,13 +173,29 @@ export const FooterAthletics = () => {
                 </li>
               ))}
             </ul>
-            <LinkComponent href="https://goravens.carleton.ca" className="w-12 h-auto">
-              <img
-                className="w-12 h-auto mt-8"
-                src="https://cu-production.s3.amazonaws.com/rds/assets/ravens-logos/ravens-logo.svg"
-                alt="Carleton"
-              />
-            </LinkComponent>
+            <h3 className={styles.linkHeaders}>Adult Leagues</h3>
+            <ul>
+              {athleticsData['Adult Leagues'].map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={styles.linkHeaders}>Around Carleton</h3>
+            <ul>
+              {athleticsData['Around Carleton'].map((item, index) => (
+                <li key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

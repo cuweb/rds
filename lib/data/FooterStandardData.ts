@@ -88,4 +88,15 @@ export const FooterAthleticsLinks = {
     { name: 'Job Opportunities', href: 'URL' },
     { name: 'Contact Us', href: 'URL' },
   ],
+  'Around Carleton': [
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+    { name: 'Add Item Here', href: 'URL' },
+  ],
 }
