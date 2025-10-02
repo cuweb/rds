@@ -66,11 +66,18 @@ export const LayoutExamples: Story = {
         <SinglePara />
         <SinglePara />
 
-        <Testimonial focalPointX={50} focalPointY={50} imageUrl="https://picsum.photos/id/342/600/400" imageZoom={0}>
-          <Quote cite="Jane Doe" graphic="quote">
+        <Testimonial
+          focalPointX={50}
+          focalPointY={50}
+          imageUrl="https://picsum.photos/id/342/600/400"
+          imageZoom={0}
+          reverse={true}
+        >
+          <Quote cite="John Smith" graphic="quote">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
-              mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor.
+              mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor. Image positioned on
+              the right side.
             </p>
           </Quote>
         </Testimonial>
@@ -103,6 +110,21 @@ export const LayoutExamples: Story = {
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
                 mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor.
+              </p>
+            </Quote>
+          </Testimonial>
+
+          <Testimonial
+            focalPointX={50}
+            focalPointY={50}
+            imageUrl="https://picsum.photos/id/167/600/400"
+            imageZoom={0}
+            reverse={true}
+          >
+            <Quote cite="Alice Johnson" graphic="quote">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
+                mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Right-aligned image in grey section.
               </p>
             </Quote>
           </Testimonial>
