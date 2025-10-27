@@ -1,5 +1,5 @@
-import { videos, splashVideos } from './video/video-names-list';
-type VideoNameKeys = (typeof videos)[number]['name'] | (typeof splashVideos)[number]['name'];
+import { videoBanner, videoSplash } from '../utils/json-lists.js';
+type VideoNameKeys = (typeof videoBanner)[number]['name'] | (typeof videoSplash)[number]['name'];
 export interface VideoBannerProps {
     videoName?: VideoNameKeys;
     videoType?: 'banner' | 'splash';

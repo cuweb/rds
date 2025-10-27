@@ -1,5 +1,5 @@
-import { videos } from './../../hooks/video/video-names-list';
-type VideoNameKeys = (typeof videos)[number]['name'];
+import { videoBanner } from '../../utils/json-lists.js';
+type VideoNameKeys = (typeof videoBanner)[number]['name'];
 export interface FullBannerVideoProps {
     videoName?: VideoNameKeys;
 }
