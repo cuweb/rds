@@ -46,7 +46,7 @@ export const Video: Story = {
   render: (args) => {
     return (
       <FullBanner {...args}>
-        <FullBanner.Video videoName="timelapse-quad" />
+        <FullBanner.Video videoName="campus-2025" />
         <FullBanner.Content title="The nostalgia is real." headerType="h1">
           <p>
             The launch of the iPod revolutionized how the world consumes music on the move! The launch of the iPod
