@@ -59,13 +59,13 @@ export const LayoutExamples: Story = {
             size="lg"
           />
           <StackedList cols="2">
-            {NewsData.slice(0, 4).map(({ id, link, title, image, alt, date }) => (
+            {NewsData.slice(0, 4).map(({ id, link, title, image, alt, date, readTime }) => (
               <Listing key={id}>
                 <Listing.Figure>
                   <img src={image} alt={alt} width="400" height="300" />
                 </Listing.Figure>
                 <Listing.Body>
-                  <Listing.Header title={title} date={date} />
+                  <Listing.Header title={title} date={date} readTime={readTime} />
                   <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                   <Listing.Footer>
                     <a href={link} className="cu-button cu-button--red cu-button--small">
