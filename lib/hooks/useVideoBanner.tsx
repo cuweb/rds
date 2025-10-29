@@ -1,3 +1,9 @@
+export interface VideoBannerItem {
+  title: string
+  name: string
+  description: string
+  [key: string]: unknown
+}
 import { useEffect } from 'react'
 import VideoControls from './video/VideoControls'
 import PlayPauseButton from './video/PlayPauseButton'
@@ -9,6 +15,7 @@ export interface VideoBannerProps {
   videoName?: VideoNameKeys
   videoType?: 'banner' | 'splash'
   showPlayPauseButton?: boolean
+  videoBannerList?: VideoBannerItem[]
 }
 
 export const VideoBanner = ({
