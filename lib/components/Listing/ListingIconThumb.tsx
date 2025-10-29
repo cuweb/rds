@@ -11,7 +11,7 @@ export const ListingIconThumb = ({ icon }: ListingIconThumbProps) => {
 
   return (
     <figure className="flex items-center justify-center w-12 h-12">
-      {modifiedIcon && <Icon name={modifiedIcon} size={48} color="#f48c90" className="cu-icon-thumb" />}
+      {modifiedIcon && <Icon name={modifiedIcon} size={48} color="#E91C24" className="cu-icon-thumb" />}
     </figure>
   )
 }

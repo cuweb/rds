@@ -1,12 +1,12 @@
-import { splashVideos } from './../../hooks/video/video-names-list'
+import { videoSplash } from '../../utils/json-lists.js'
 import { VideoBanner } from '../../hooks/useVideoBanner'
 
 export interface SplashVideoProps {
-  backgroundVideoName?: (typeof splashVideos)[number]['name']
+  backgroundVideoName?: (typeof videoSplash)[number]['name']
 }
 
 export const SplashVideo = ({ backgroundVideoName }: SplashVideoProps) => {
-  return <VideoBanner videoName={backgroundVideoName} showPlayPauseButton={false} />
+  return <VideoBanner videoName={backgroundVideoName} videoType="splash" showPlayPauseButton={false} />
 }
 
 SplashVideo.displayName = 'Splash.Video'
