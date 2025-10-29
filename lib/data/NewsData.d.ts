@@ -24,6 +24,7 @@ export declare const NewsData: {
     alt: string;
     excerpt: string;
     date: string;
+    readTime: string;
     tags: {
         category: {
             id: number;
