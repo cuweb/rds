@@ -1,5 +1,5 @@
-import { videoSplash } from '../../utils/json-lists.js'
 import { VideoBanner } from '../../hooks/useVideoBanner'
+import { videoSplash } from '../../utils/json-lists.js'
 
 export interface SplashVideoProps {
   backgroundVideoName?: (typeof videoSplash)[number]['name']
