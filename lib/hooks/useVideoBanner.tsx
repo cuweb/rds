@@ -19,7 +19,7 @@ export interface VideoBannerProps {
 }
 
 export const VideoBanner = ({
-  videoName = 'cu-flyby',
+  videoName = 'campus-2025',
   videoType = 'banner',
   showPlayPauseButton = true,
 }: VideoBannerProps) => {
@@ -44,8 +44,8 @@ export const VideoBanner = ({
         id="video-banner"
         tabIndex={-1}
       >
-        <source src={`https://cu-media.s3.amazonaws.com/videos/${videoName}.webm`} type="video/webm" />
-        <source src={`https://cu-media.s3.amazonaws.com/videos/${videoName}.mp4`} type="video/mp4" />
+        <source src={`https://cdn.carleton.ca/cu-media/videos/${videoType}/${videoName}.webm`} type="video/webm" />
+        <source src={`https://cdn.carleton.ca/cu-media/videos/${videoType}/${videoName}.mp4`} type="video/mp4" />
         <p>Your browser does not support the video tag.</p>
       </video>
 
