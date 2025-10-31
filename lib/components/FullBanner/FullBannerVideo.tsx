@@ -9,7 +9,7 @@ export interface FullBannerVideoProps {
 }
 
 export const FullBannerVideo: React.FC<FullBannerVideoProps> = (props) => {
-  return <VideoBanner {...props} videoType="banner" videoBannerList={props.videoBannerList} />
+  return <VideoBanner videoType="banner" videoBannerList={props.videoBannerList} />
 }
 
 FullBannerVideo.displayName = 'FullBanner.Video'
