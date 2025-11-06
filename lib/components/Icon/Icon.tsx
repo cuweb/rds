@@ -10,8 +10,9 @@ export interface IconProps {
 export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', className }) => {
   const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
-  const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-  const setPath = isLocal ? './assets/font-awesome/' : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+  const setPath = import.meta.env.PROD
+    ? 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+    : './assets/font-awesome/'
 
   useEffect(() => {
     let isMounted = true
