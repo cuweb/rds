@@ -94,7 +94,7 @@ export const HubSpot: Story = {
   render: () => (
     <Main>
       {/* <EmbedHubSpot formId="form_id" portalId="portalId" /> */}
-      <EmbedHubSpot formId="c732c9c8-2418-4f8e-a223-bfaa6ad30742" portalId="49211769" />
+      <EmbedHubSpot formId="b1c387fa-370c-4de8-a2a3-3f731340db45" portalId="342644269" />
     </Main>
   ),
 }
