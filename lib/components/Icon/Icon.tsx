@@ -22,7 +22,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', 
         const res = await fetch(`${setPath}${name}.svg`)
         if (!res.ok) throw new Error('SVG not found')
         let svg = await res.text()
-        svg = svg.replace(/<svg([^>]*)/, `<svg$1 fill="${color}" width="${size}" height="${size}"`)
+        svg = svg.replace(/<svg([^>]*)/, `<svg$1 fill="${color || 'currentColor'}" width="${size}" height="${size}"`)
         if (isMounted) setSvgMarkup(svg)
       } catch {
         if (isMounted) setSvgMarkup(null)
