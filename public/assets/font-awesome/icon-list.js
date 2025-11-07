@@ -161,6 +161,7 @@ export const iconNames = [
   { value: 'phone', label: 'Phone' },
   { value: 'pickaxe', label: 'Pickaxe' },
   { value: 'plane-engines', label: 'Plane engines' },
+  { value: 'plus', label: 'Plus' },
   { value: 'prescription-bottle', label: 'Prescription bottle' },
   { value: 'ribbon', label: 'Ribbon' },
   { value: 'robot', label: 'Robot' },
