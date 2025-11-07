@@ -10,8 +10,9 @@ export interface IconProps {
 export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', className }) => {
   const [svgMarkup, setSvgMarkup] = useState<string | null>(null)
 
-  const isLocal = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-  const setPath = isLocal ? './assets/font-awesome/' : 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+  const setPath = import.meta.env.PROD
+    ? 'https://cu-production.s3.amazonaws.com/rds/assets/font-awesome/'
+    : './assets/font-awesome/'
 
   useEffect(() => {
     let isMounted = true
@@ -21,7 +22,7 @@ export const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000000', 
         const res = await fetch(`${setPath}${name}.svg`)
         if (!res.ok) throw new Error('SVG not found')
         let svg = await res.text()
-        svg = svg.replace(/<svg([^>]*)/, `<svg$1 fill="${color}" width="${size}" height="${size}"`)
+        svg = svg.replace(/<svg([^>]*)/, `<svg$1 fill="${color || 'currentColor'}" width="${size}" height="${size}"`)
         if (isMounted) setSvgMarkup(svg)
       } catch {
         if (isMounted) setSvgMarkup(null)
