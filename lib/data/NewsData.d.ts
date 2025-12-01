@@ -15,7 +15,24 @@ export declare const NewsDataSingle: {
         }[];
     };
 };
-export declare const NewsData: {
+export declare const NewsData: ({
+    id: number;
+    title: string;
+    link: string;
+    image: string;
+    icon: string;
+    alt: string;
+    excerpt: string;
+    readTime: string;
+    tags: {
+        category: {
+            id: number;
+            name: string;
+            slug: string;
+        }[];
+    };
+    date?: undefined;
+} | {
     id: number;
     title: string;
     link: string;
@@ -32,4 +49,4 @@ export declare const NewsData: {
             slug: string;
         }[];
     };
-}[];
+})[];
