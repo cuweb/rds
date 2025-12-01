@@ -35,7 +35,9 @@ export const CardHeader = ({
             </time>
           )}
           {readTime && (
-            <p className="border-l border-cu-black-200 ml-2 pl-3 flex flex-row items-center italic text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
+            <p
+              className={`${date ? 'border-l border-cu-black-200 ml-2 pl-3' : ''} flex flex-row items-center italic text-sm text-cu-black-600 dark:text-white @sm:md:text-base`}
+            >
               {readTime} min read
             </p>
           )}

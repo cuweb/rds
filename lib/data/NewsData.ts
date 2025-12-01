@@ -29,7 +29,6 @@ export const NewsData = [
     alt: 'AI Research Lab',
     excerpt:
       'Carleton University has launched a new AI research lab to advance the field of artificial intelligence and machine learning. The lab will focus on cutting-edge research and collaboration with industry partners.',
-    date: '2023-09-15 09:00:00',
     readTime: '5',
     tags: {
       category: [
