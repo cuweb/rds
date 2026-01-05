@@ -7,7 +7,7 @@ export interface ILinkProvider {
   children: React.ReactNode
 }
 
-export const Link: FC<ILinkProvider> = ({ type, children }): JSX.Element => {
+export const Link: FC<ILinkProvider> = ({ type, children }): React.ReactElement => {
   return <LinkContext.Provider value={type}>{children}</LinkContext.Provider>
 }
 

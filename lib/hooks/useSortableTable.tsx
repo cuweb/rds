@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 interface DataProps {
-  [k: string]: string | number | JSX.Element
+  [k: string]: string | number | React.ReactElement
 }
 
 export const useSortableTable = (data: DataProps[]) => {
