@@ -63,7 +63,6 @@
     "yup": "1.6.1"
   },
   "peerDependencies": {
-    "@react-google-maps/api": "2.20.7",
     "@types/react-places-autocomplete": "7.2.14",
     "date-fns": "4.1.0",
     "formik": "2.4.6",
@@ -89,6 +88,7 @@
     "@storybook/blocks": "8.6.10",
     "@storybook/react": "8.6.14",
     "@storybook/react-vite": "8.6.14",
+    "@types/google.maps": "^3.58.1",
     "@types/react": "18.3.23",
     "@types/react-dom": "18.3.7",
     "@typescript-eslint/eslint-plugin": "8.35.1",

@@ -33,7 +33,7 @@ export const Default: Story = () => {
     coordinates: { lat: number; lng: number }
     address: string
   }
-  const [coordinates, setCoordinates] = useState<{ coordinates: { lat: number; lng: number }; address: string }>({
+  const [coordinates, setCoordinates] = useState<SingleMarkerInterface>({
     coordinates: {
       lat: 45.3850225,
       lng: -75.6946679,
@@ -46,9 +46,10 @@ export const Default: Story = () => {
     },
     [setCoordinates],
   )
+
   return (
     <Main>
-      <LocationPicker singleMarker singleMarkerCallback={markerCallback} />{' '}
+      <LocationPicker eventAddress={coordinates.address} markerCallback={markerCallback} />
       <Location
         lat={coordinates?.coordinates?.lat?.toString()}
         lng={coordinates?.coordinates?.lng?.toString()}
@@ -65,7 +66,7 @@ export const EventAddress: Story = () => {
     coordinates: { lat: number; lng: number }
     address: string
   }
-  const [coordinates, setCoordinates] = useState<{ coordinates: { lat: number; lng: number }; address: string }>({
+  const [coordinates, setCoordinates] = useState<SingleMarkerInterface>({
     coordinates: {
       lat: 40.712776,
       lng: -74.005974,
@@ -80,7 +81,7 @@ export const EventAddress: Story = () => {
   )
   return (
     <Main>
-      <LocationPicker singleMarker eventAddress="New York City, NY" singleMarkerCallback={markerCallback} />
+      <LocationPicker eventAddress="New York City, NY" markerCallback={markerCallback} />
       <Location
         lat={coordinates?.coordinates?.lat?.toString()}
         lng={coordinates?.coordinates?.lng?.toString()}
