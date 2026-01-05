@@ -41,15 +41,15 @@ export const Default: Story = () => {
     address: "Carleton University Raven's Nest",
   })
   const markerCallback = useCallback(
-    (coord: SingleMarkerInterface) => {
-      setCoordinates(coord)
+    (coordinates: SingleMarkerInterface) => {
+      setCoordinates(coordinates)
     },
     [setCoordinates],
   )
 
   return (
     <Main>
-      <LocationPicker eventAddress={coordinates.address} markerCallback={markerCallback} />
+      <LocationPicker address={coordinates.address} markerCallback={markerCallback} />
       <Location
         lat={coordinates?.coordinates?.lat?.toString()}
         lng={coordinates?.coordinates?.lng?.toString()}
@@ -74,14 +74,14 @@ export const EventAddress: Story = () => {
     address: 'New York City, NY',
   })
   const markerCallback = useCallback(
-    (coord: SingleMarkerInterface) => {
-      setCoordinates(coord)
+    (coordinates: SingleMarkerInterface) => {
+      setCoordinates(coordinates)
     },
     [setCoordinates],
   )
   return (
     <Main>
-      <LocationPicker eventAddress="New York City, NY" markerCallback={markerCallback} />
+      <LocationPicker address="New York City, NY" markerCallback={markerCallback} />
       <Location
         lat={coordinates?.coordinates?.lat?.toString()}
         lng={coordinates?.coordinates?.lng?.toString()}

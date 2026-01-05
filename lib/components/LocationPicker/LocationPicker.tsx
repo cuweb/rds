@@ -4,17 +4,17 @@ import { Icon } from '../Icon/Icon'
 
 const libraries: 'places'[] = ['places']
 
-interface SingleMarkerInterface {
-  coordinates: { lat: number; lng: number }
+export interface SingleMarkerInterface {
   address: string
+  coordinates: { lat: number; lng: number }
 }
 
 interface ILocationPickerProps {
-  eventAddress?: string
-  markerCallback?: (coord: SingleMarkerInterface) => void
+  address?: string
+  markerCallback?: (coordinates: SingleMarkerInterface) => void
 }
 
-export function LocationPicker({ eventAddress, markerCallback }: ILocationPickerProps) {
+export function LocationPicker({ address, markerCallback }: ILocationPickerProps) {
   // eslint-disable-next-line no-undef
   const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -25,10 +25,10 @@ export function LocationPicker({ eventAddress, markerCallback }: ILocationPicker
   })
 
   useEffect(() => {
-    if (eventAddress && inputRef.current) {
-      inputRef.current.value = eventAddress
+    if (address && inputRef.current) {
+      inputRef.current.value = address
     }
-  }, [eventAddress])
+  }, [address])
 
   // eslint-disable-next-line no-undef
   const onLoad = (autocomplete: google.maps.places.Autocomplete) => {
@@ -56,7 +56,7 @@ export function LocationPicker({ eventAddress, markerCallback }: ILocationPicker
       <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
         <input
           ref={inputRef}
-          defaultValue={eventAddress}
+          defaultValue={address}
           placeholder="Search for a location"
           style={{
             width: '100%',
