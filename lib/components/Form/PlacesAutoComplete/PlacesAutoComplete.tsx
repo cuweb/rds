@@ -40,13 +40,7 @@ export const PlacesAutoComplete = ({ name, showmap = true, ...rest }: PlacesAuto
         className="cu-placesautocomplete grid gap-5"
         aria-invalid={meta.touched && meta.error ? true : false}
       >
-        <LocationPicker
-          singleMarker
-          singleMarkerCallback={markerCallback}
-          eventAddress={coordinates?.address}
-          eventLatitude={coordinates?.coordinates?.lat}
-          eventLongitude={coordinates?.coordinates?.lng}
-        />
+        <LocationPicker markerCallback={markerCallback} address={coordinates?.address} />
         {showmap && (
           <Location
             lat={coordinates?.coordinates?.lat?.toString()}

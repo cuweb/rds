@@ -13,7 +13,7 @@ export interface ColumnDefinitionType {
 
 export interface TableProps {
   data: {
-    [k: string]: string | number | JSX.Element
+    [k: string]: string | number | React.ReactElement
   }[]
   colgroup?: number[]
   columns: ColumnDefinitionType[]

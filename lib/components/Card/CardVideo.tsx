@@ -23,7 +23,7 @@ export const CardVideo = ({ source }: CardVideoProps) => {
   } else {
     return (
       <div className="relative pt-[56.25%] bg-cu-black-800 mb-2 rounded-t-lg overflow-hidden">
-        <ReactPlayer url={source} className="absolute top-0 left-0" width="100%" height="100%" controls />
+        <ReactPlayer src={source} className="absolute top-0 left-0" width="100%" height="100%" controls />
       </div>
     )
   }
