@@ -2,12 +2,9 @@ name: Publish Package
 
 on:
   push:
-    branches: [develop]
-
-# on:
-#   push:
-#     tags:
-#       - '*'
+    tags:
+      - '*'
+  workflow_dispatch:
 
 permissions:
   id-token: write
