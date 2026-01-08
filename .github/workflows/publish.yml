@@ -2,8 +2,12 @@ name: Publish Package
 
 on:
   push:
-    tags:
-      - '*'
+    branches: [develop]
+
+# on:
+#   push:
+#     tags:
+#       - '*'
 
 permissions:
   id-token: write
@@ -17,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
+      - run: npm --version
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm publish
+      - run: npm publish --access public
