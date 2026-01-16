@@ -3,7 +3,7 @@ export interface ToastBaseProps {
     type: 'success' | 'error' | 'warning' | 'info';
 }
 export declare const Toast: {
-    ({ children, type }: PropsWithChildren<ToastBaseProps>): import("react/jsx-runtime").JSX.Element;
+    ({ children, type }: PropsWithChildren<ToastBaseProps>): import("react/jsx-runtime").JSX.Element | null;
     displayName: string;
 } & {
     Toaster: {
