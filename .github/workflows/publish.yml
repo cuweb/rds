@@ -1,28 +1,29 @@
-name: Publish to NPM
+name: Publish Package
 
 on:
   push:
-    branches:
-      - main
+    branches: [develop]
+
+# on:
+#   push:
+#     tags:
+#       - '*'
+#   workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '21.x'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install dependencies and build 🔧
-        run: npm ci && npm run build
-
-      - name: Publish package on NPM 📦
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.RDS_NPM_TOKEN }}
+          node-version: '24'
+      - run: npm install -g npm@latest
+      - run: npm --version
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm publish --access public
