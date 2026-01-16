@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as i}from"./index-C1O2rwC4.js";import"./preview-uiefKzSr.js";import"./DocsRenderer-CFRXHY34-Vd-_7PsX.js";import{M as r}from"./index-JYwujeqL.js";import"./index-Bvnp1rP5.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-D5Mxdyhs.js";import"./react-18-D0X1iOB-.js";import"./index-Ct5vSSfb.js";import"./index-CC3dvP0J.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:y}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
+import{j as n}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as i}from"./index-C1O2rwC4.js";import"./preview-D6mcIzvU.js";import"./DocsRenderer-CFRXHY34-Dv-3tywZ.js";import{M as r}from"./index-Dh_SXyqy.js";import"./index-Bvnp1rP5.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-ztZsSxk4.js";import"./react-18-D0X1iOB-.js";import"./index-Ct5vSSfb.js";import"./index-CC3dvP0J.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:y}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
 `,n.jsx(e.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,n.jsxs(e.p,{children:["The format is based on ",n.jsx(e.a,{href:"https://keepachangelog.com/en/1.0.0/",rel:"nofollow",children:"Keep a Changelog"}),`,
 and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.html",rel:"nofollow",children:"Semantic Versioning"}),"."]}),`
@@ -13,6 +13,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.li,{children:[n.jsx(e.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,n.jsx(e.h2,{id:"unreleased",children:"[Unreleased]"}),`
+`,n.jsx(e.h2,{id:"0261",children:"[0.26.1]"}),`
 `,n.jsx(e.h3,{id:"breaking",children:"Breaking"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Update to react 19, and all other packages"}),`
