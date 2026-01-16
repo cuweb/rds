@@ -22,6 +22,9 @@ jobs:
       - run: npm --version
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Configure npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          echo "//registry.npmjs.org/:always-auth=true" >> ~/.npmrc
+      - run: npm publish --access public --provenance
+  
