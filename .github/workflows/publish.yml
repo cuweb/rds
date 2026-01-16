@@ -18,12 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
       - run: npm --version
       - run: npm ci
       - run: npm run build --if-present
-      - name: Configure npm authentication
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          echo "//registry.npmjs.org/:always-auth=true" >> ~/.npmrc
-      - run: npm publish --access public --provenance
+      - run: npm publish --access public
