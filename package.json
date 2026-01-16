@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.25.19",
+  "version": "0.26.0",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -8,7 +8,7 @@
   "homepage": "https://github.com/cuweb/rds#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cuweb/rds.git"
+    "url": "https://github.com/cuweb/rds"
   },
   "bugs": {
     "url": "https://github.com/cuweb/rds/issues"
