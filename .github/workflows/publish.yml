@@ -27,4 +27,3 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           echo "//registry.npmjs.org/:always-auth=true" >> ~/.npmrc
       - run: npm publish --access public --provenance
-  
