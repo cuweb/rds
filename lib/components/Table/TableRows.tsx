@@ -3,7 +3,7 @@ import { styles } from './Table.Styles'
 
 type TableRowsProps = {
   data: {
-    [k: string]: string | number | JSX.Element
+    [k: string]: string | number | React.ReactElement
   }[]
   columns: ColumnDefinitionType[]
   striped: boolean

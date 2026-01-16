@@ -17,7 +17,7 @@ export interface LocationProps {
 export const Location = ({ markers, location, lat, lng, zoom = 15, center, isRounded = true }: LocationProps) => {
   const [showInfo, setShowInfo] = React.useState(false)
 
-  const mapRef = React.useRef()
+  const mapRef = React.useRef<google.maps.Map | null>(null)
 
   const [activeMarker, setActiveMarker] = useState(null)
 
