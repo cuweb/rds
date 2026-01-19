@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-Cf8x2fCZ.js";import{useMDXComponents as i}from"./index-rSs0gAPN.js";import"./preview-DiIAm6Tt.js";import"./DocsRenderer-CFRXHY34-DPYoFr0W.js";import{M as r}from"./index-D3vuAifX.js";import"./index-yBjzXJbu.js";import"./index-OlNebYNa.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-ct0oSo_Q.js";import"./react-18-C8tKfnam.js";import"./index-BLHw34Di.js";import"./index-B7EolvnA.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:C}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
+import{j as n}from"./jsx-runtime-Cf8x2fCZ.js";import{useMDXComponents as i}from"./index-rSs0gAPN.js";import"./preview-BBMZWVRw.js";import"./DocsRenderer-CFRXHY34-C2fkBPH6.js";import{M as r}from"./index-Ce5dhKZ-.js";import"./index-yBjzXJbu.js";import"./index-OlNebYNa.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-B-pjWTWf.js";import"./react-18-C8tKfnam.js";import"./index-BLHw34Di.js";import"./index-B7EolvnA.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:C}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
 `,n.jsx(e.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,n.jsxs(e.p,{children:["The format is based on ",n.jsx(e.a,{href:"https://keepachangelog.com/en/1.0.0/",rel:"nofollow",children:"Keep a Changelog"}),`,
 and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.html",rel:"nofollow",children:"Semantic Versioning"}),"."]}),`
@@ -13,6 +13,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.li,{children:[n.jsx(e.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,n.jsx(e.h2,{id:"unreleased",children:"[Unreleased]"}),`
+`,n.jsx(e.h2,{id:"0262",children:"[0.26.2]"}),`
 `,n.jsx(e.h3,{id:"change",children:"Change"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsxs(e.li,{children:["React version to ",n.jsx(e.code,{children:"18.3.1"})]}),`
