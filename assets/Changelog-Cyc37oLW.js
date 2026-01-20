@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-Cf8x2fCZ.js";import{useMDXComponents as i}from"./index-rSs0gAPN.js";import"./preview-BBMZWVRw.js";import"./DocsRenderer-CFRXHY34-C2fkBPH6.js";import{M as r}from"./index-Ce5dhKZ-.js";import"./index-yBjzXJbu.js";import"./index-OlNebYNa.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-B-pjWTWf.js";import"./react-18-C8tKfnam.js";import"./index-BLHw34Di.js";import"./index-B7EolvnA.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:C}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
+import{j as n}from"./jsx-runtime-Cf8x2fCZ.js";import{useMDXComponents as i}from"./index-rSs0gAPN.js";import"./preview-BI8DIQ3u.js";import"./DocsRenderer-CFRXHY34-B6ZILH2h.js";import{M as r}from"./index-C-F7XhE7.js";import"./index-yBjzXJbu.js";import"./index-OlNebYNa.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-CUH6DXj3.js";import"./react-18-C8tKfnam.js";import"./index-BLHw34Di.js";import"./index-B7EolvnA.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:C}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
 `,n.jsx(e.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,n.jsxs(e.p,{children:["The format is based on ",n.jsx(e.a,{href:"https://keepachangelog.com/en/1.0.0/",rel:"nofollow",children:"Keep a Changelog"}),`,
 and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.html",rel:"nofollow",children:"Semantic Versioning"}),"."]}),`
@@ -13,6 +13,10 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.li,{children:[n.jsx(e.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,n.jsx(e.h2,{id:"unreleased",children:"[Unreleased]"}),`
+`,n.jsx(e.h3,{id:"removed",children:"Removed"}),`
+`,n.jsxs(e.ul,{children:[`
+`,n.jsxs(e.li,{children:[n.jsx(e.code,{children:"cu-figure"})," class from ",n.jsx(e.code,{children:"CardFigure"})]}),`
+`]}),`
 `,n.jsx(e.h2,{id:"0262",children:"[0.26.2]"}),`
 `,n.jsx(e.h3,{id:"change",children:"Change"}),`
 `,n.jsxs(e.ul,{children:[`
@@ -27,7 +31,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsxs(e.li,{children:[n.jsx(e.code,{children:"LocationPicker"})," block by replacing react-places-autocomplete with @react-google-maps/api"]}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-1",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Aspect ratio from card image"}),`
 `]}),`
@@ -227,7 +231,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsxs(e.li,{children:["Dropdown to ",n.jsx(e.code,{children:"Nav.Buttons"})," components"]}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-1",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-2",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsxs(e.li,{children:[n.jsx(e.code,{children:"contentType"})," prop from ",n.jsx(e.code,{children:"Splash"})," component content"]}),`
 `]}),`
@@ -823,7 +827,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Testimonial no longer forces quote component to be used"}),`
 `]}),`
 `,n.jsx(e.h2,{id:"0163",children:"[0.16.3]"}),`
-`,n.jsx(e.h3,{id:"removed-2",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-3",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Removed Lexical Editor"}),`
 `,n.jsx(e.li,{children:"Removed AWS util function"}),`
@@ -916,7 +920,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Forbidden 403: isCenter toggle properly aligns left"}),`
 `,n.jsx(e.li,{children:"Not Found 404: isCenter toggle properly aligns left"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-3",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-4",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Main: remove prose class"}),`
 `,n.jsxs(e.li,{children:["Section: remove ",n.jsx(e.code,{children:"noProse"})," prop"]}),`
@@ -1102,7 +1106,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"TextImage top and bottom spacing"}),`
 `,n.jsx(e.li,{children:"Updated TextImage style imports"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-4",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-5",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Removed hasBorder prop from TextImage"}),`
 `]}),`
@@ -1117,7 +1121,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Max width on login component"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-5",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-6",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Search Form component has been removed in favour of the Search component"}),`
 `]}),`
@@ -1376,7 +1380,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"New loaders for listing components"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-6",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-7",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Priority plus node package"}),`
 `]}),`
@@ -1536,7 +1540,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Refactored stacked list to merge with panel"}),`
 `,n.jsx(e.li,{children:"Cookie notification styles"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-7",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-8",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Panel component"}),`
 `]}),`
@@ -1951,7 +1955,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Banner"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-8",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-9",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Deprecated cards and listings"}),`
 `]}),`
@@ -1966,7 +1970,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Global spacing"}),`
 `,n.jsx(e.li,{children:"Header styles"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-9",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-10",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Callback from search"}),`
 `]}),`
@@ -2083,7 +2087,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Invalid time error on add event"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-10",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-11",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Width of 100% from listing images, fixes next image issue"}),`
 `]}),`
@@ -2177,7 +2181,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Issues relating to avatar and top nav"}),`
 `,n.jsx(e.li,{children:"Warnings for any type on Location Picker"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-11",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-12",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Removed GTM from Meta and Body components"}),`
 `,n.jsx(e.li,{children:"Removed forwardRef from Meta component"}),`
@@ -2196,7 +2200,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Github action for storybook deployment"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-12",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-13",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Image upload option from WYSIWYG component"}),`
 `]}),`
@@ -2316,7 +2320,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Classes on people card content container"}),`
 `,n.jsx(e.li,{children:"Updated people list item markup for images and contact info"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-13",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-14",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Unnecessary wrapping div on video in card component"}),`
 `]}),`
@@ -2333,7 +2337,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsx(e.li,{children:"Story for Footer Basic component"}),`
 `,n.jsx(e.li,{children:"Story for Footer Standard component"}),`
 `]}),`
-`,n.jsx(e.h3,{id:"removed-14",children:"Removed"}),`
+`,n.jsx(e.h3,{id:"removed-15",children:"Removed"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Callback on Video Card component"}),`
 `]}),`
