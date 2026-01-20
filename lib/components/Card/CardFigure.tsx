@@ -8,7 +8,7 @@ export interface CardFigureProps {
 export const CardFigure = ({ children, isRound }: CardFigureProps) => {
   const roundedImage = isRound ? `cu-figure--round pt-8 pb-2 px-6` : ''
 
-  return <figure className={`cu-figure relative mb-2 overflow-hidden rounded-t-lg ${roundedImage}`}>{children}</figure>
+  return <figure className={`relative mb-2 overflow-hidden rounded-t-lg ${roundedImage}`}>{children}</figure>
 }
 
 CardFigure.displayName = 'Card.Figure'
