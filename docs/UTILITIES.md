@@ -74,11 +74,11 @@ Narrower width constraints:
 
 ```tsx
 export const smallWidthClasses = {
-  xs: 'max-w-xs',     // 320px
-  sm: 'max-w-sm',     // 384px
-  md: 'max-w-md',     // 448px
-  lg: 'max-w-lg',     // 512px
-  xl: 'max-w-xl',     // 576px
+  xs: 'max-w-xs', // 320px
+  sm: 'max-w-sm', // 384px
+  md: 'max-w-md', // 448px
+  lg: 'max-w-lg', // 512px
+  xl: 'max-w-xl', // 576px
   '2xl': 'max-w-2xl', // 672px
 }
 ```
@@ -112,10 +112,10 @@ Spacing between grid items:
 ```tsx
 export const gridGapClasses = {
   none: 'gap-0',
-  sm: 'gap-2',    // 8px
-  md: 'gap-4',    // 16px
-  lg: 'gap-6',    // 24px
-  xl: 'gap-8',    // 32px
+  sm: 'gap-2', // 8px
+  md: 'gap-4', // 16px
+  lg: 'gap-6', // 24px
+  xl: 'gap-8', // 32px
 }
 ```
 
@@ -418,10 +418,7 @@ export const imageUploadValidationSchema = (options = {}) => {
         const img = new Image()
         img.onload = () => {
           const valid =
-            img.width >= minWidth &&
-            img.height >= minHeight &&
-            img.width <= maxWidth &&
-            img.height <= maxHeight
+            img.width >= minWidth && img.height >= minHeight && img.width <= maxWidth && img.height <= maxHeight
           resolve(valid)
         }
         img.onerror = () => resolve(false)
@@ -452,16 +449,8 @@ Pagination logic hook:
 import { usePagination } from '@carletonuniversity/rds'
 
 function PaginatedList({ items, itemsPerPage = 10 }) {
-  const {
-    currentPage,
-    totalPages,
-    paginatedItems,
-    goToPage,
-    nextPage,
-    prevPage,
-    hasNextPage,
-    hasPrevPage,
-  } = usePagination(items, itemsPerPage)
+  const { currentPage, totalPages, paginatedItems, goToPage, nextPage, prevPage, hasNextPage, hasPrevPage } =
+    usePagination(items, itemsPerPage)
 
   return (
     <div>
@@ -505,23 +494,16 @@ Table sorting logic:
 import { useSortableTable } from '@carletonuniversity/rds'
 
 function SortableTable({ data, columns }) {
-  const { sortedData, sortConfig, requestSort, getSortDirection } =
-    useSortableTable(data)
+  const { sortedData, sortConfig, requestSort, getSortDirection } = useSortableTable(data)
 
   return (
     <table>
       <thead>
         <tr>
           {columns.map((column) => (
-            <th
-              key={column.key}
-              onClick={() => requestSort(column.key)}
-              className={getSortDirection(column.key)}
-            >
+            <th key={column.key} onClick={() => requestSort(column.key)} className={getSortDirection(column.key)}>
               {column.label}
-              {sortConfig.key === column.key && (
-                <span>{sortConfig.direction === 'asc' ? '▲' : '▼'}</span>
-              )}
+              {sortConfig.key === column.key && <span>{sortConfig.direction === 'asc' ? '▲' : '▼'}</span>}
             </th>
           ))}
         </tr>
@@ -556,37 +538,17 @@ Video banner management:
 import { useVideoBanner } from '@carletonuniversity/rds'
 
 function HeroBanner({ videoSrc, imageSrc }) {
-  const {
-    isVideoLoaded,
-    isVideoPlaying,
-    videoRef,
-    playVideo,
-    pauseVideo,
-    toggleVideo,
-  } = useVideoBanner()
+  const { isVideoLoaded, isVideoPlaying, videoRef, playVideo, pauseVideo, toggleVideo } = useVideoBanner()
 
   return (
     <div className="relative">
       {/* Fallback image */}
-      <img
-        src={imageSrc}
-        className={isVideoLoaded ? 'hidden' : 'block'}
-        alt=""
-      />
+      <img src={imageSrc} className={isVideoLoaded ? 'hidden' : 'block'} alt="" />
 
       {/* Video */}
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        className={isVideoLoaded ? 'block' : 'hidden'}
-        muted
-        loop
-        playsInline
-      />
+      <video ref={videoRef} src={videoSrc} className={isVideoLoaded ? 'block' : 'hidden'} muted loop playsInline />
 
-      <button onClick={toggleVideo}>
-        {isVideoPlaying ? 'Pause' : 'Play'}
-      </button>
+      <button onClick={toggleVideo}>{isVideoPlaying ? 'Pause' : 'Play'}</button>
     </div>
   )
 }
@@ -742,22 +704,14 @@ import Link from 'next/link'
 
 // Use Next.js Link component
 function App({ children }) {
-  return (
-    <LinkProvider value={Link}>
-      {children}
-    </LinkProvider>
-  )
+  return <LinkProvider value={Link}>{children}</LinkProvider>
 }
 
 // Use React Router Link
 import { Link as RouterLink } from 'react-router-dom'
 
 function App({ children }) {
-  return (
-    <LinkProvider value={RouterLink}>
-      {children}
-    </LinkProvider>
-  )
+  return <LinkProvider value={RouterLink}>{children}</LinkProvider>
 }
 ```
 
@@ -798,10 +752,7 @@ function CardGrid({ cards, columns = '3', gap = 'lg' }) {
               <img src={card.image} alt={card.title} />
             </Card.Figure>
             <Card.Body>
-              <Card.Header
-                title={card.title}
-                className={utils.headerSizeClasses.sm}
-              />
+              <Card.Header title={card.title} className={utils.headerSizeClasses.sm} />
               <Card.Excerpt text={card.excerpt} />
             </Card.Body>
           </Card>
@@ -830,11 +781,7 @@ const schema = Yup.object({
 
 function ApplicationForm() {
   return (
-    <Form
-      initialValues={{ name: '', document: null }}
-      validationSchema={schema}
-      onSubmit={handleSubmit}
-    >
+    <Form initialValues={{ name: '', document: null }} validationSchema={schema} onSubmit={handleSubmit}>
       <Form.Field name="name" label="Name" required>
         <Input name="name" />
       </Form.Field>
@@ -855,12 +802,7 @@ function ApplicationForm() {
 import { usePagination, Listing, Pagination } from '@carletonuniversity/rds'
 
 function NewsList({ news }) {
-  const {
-    currentPage,
-    totalPages,
-    paginatedItems,
-    goToPage,
-  } = usePagination(news, 10)
+  const { currentPage, totalPages, paginatedItems, goToPage } = usePagination(news, 10)
 
   return (
     <div>
@@ -871,11 +813,7 @@ function NewsList({ news }) {
         </Listing>
       ))}
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={goToPage}
-      />
+      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={goToPage} />
     </div>
   )
 }

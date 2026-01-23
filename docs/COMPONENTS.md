@@ -218,7 +218,7 @@ List item component with similar structure to Card.
 ```tsx
 import { Listing } from '@carletonuniversity/rds'
 
-<Listing>
+;<Listing>
   <Listing.Figure>
     <img src="/thumb.jpg" alt="" />
   </Listing.Figure>
@@ -253,10 +253,7 @@ Descriptive text blocks, often used for definition lists.
 ```tsx
 import { Description } from '@carletonuniversity/rds'
 
-<Description
-  title="Term"
-  content="Definition or explanation of the term."
-/>
+;<Description title="Term" content="Definition or explanation of the term." />
 ```
 
 ---
@@ -268,7 +265,7 @@ Expandable/collapsible content section.
 ```tsx
 import { Details } from '@carletonuniversity/rds'
 
-<Details summary="Click to expand">
+;<Details summary="Click to expand">
   <p>Hidden content revealed when expanded.</p>
 </Details>
 ```
@@ -335,7 +332,7 @@ Data table with sorting support.
 ```tsx
 import { Table } from '@carletonuniversity/rds'
 
-<Table>
+;<Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>Name</Table.HeaderCell>
@@ -362,11 +359,7 @@ Page navigation component.
 ```tsx
 import { Pagination } from '@carletonuniversity/rds'
 
-<Pagination
-  currentPage={1}
-  totalPages={10}
-  onPageChange={(page) => setCurrentPage(page)}
-/>
+;<Pagination currentPage={1} totalPages={10} onPageChange={(page) => setCurrentPage(page)} />
 ```
 
 ---
@@ -378,10 +371,7 @@ Date selection calendar.
 ```tsx
 import { Calendar } from '@carletonuniversity/rds'
 
-<Calendar
-  selectedDate={selectedDate}
-  onDateSelect={(date) => setSelectedDate(date)}
-/>
+;<Calendar selectedDate={selectedDate} onDateSelect={(date) => setSelectedDate(date)} />
 ```
 
 ---
@@ -395,7 +385,7 @@ Full-screen hero banner with video/image support.
 ```tsx
 import { Splash } from '@carletonuniversity/rds'
 
-<Splash>
+;<Splash>
   <Splash.Background>
     <Splash.Video src="/hero-video.mp4" />
     {/* or */}
@@ -449,11 +439,7 @@ Full-width image section.
 ```tsx
 import { WideImage } from '@carletonuniversity/rds'
 
-<WideImage
-  src="/wide-image.jpg"
-  alt="Description"
-  caption="Image caption"
-/>
+;<WideImage src="/wide-image.jpg" alt="Description" caption="Image caption" />
 ```
 
 ---
@@ -465,7 +451,7 @@ Page header with title and metadata.
 ```tsx
 import { PageHeader } from '@carletonuniversity/rds'
 
-<PageHeader
+;<PageHeader
   title="Page Title"
   subtitle="Page subtitle"
   breadcrumbs={[
@@ -486,10 +472,7 @@ Minimal footer with copyright.
 ```tsx
 import { FooterBasic } from '@carletonuniversity/rds'
 
-<FooterBasic
-  copyrightYear={2024}
-  organization="Carleton University"
-/>
+;<FooterBasic copyrightYear={2024} organization="Carleton University" />
 ```
 
 ### FooterStandard
@@ -499,10 +482,7 @@ Standard footer with navigation links.
 ```tsx
 import { FooterStandard } from '@carletonuniversity/rds'
 
-<FooterStandard
-  links={footerLinks}
-  socialLinks={socialLinks}
-/>
+;<FooterStandard links={footerLinks} socialLinks={socialLinks} />
 ```
 
 ### FooterAthletics
@@ -528,7 +508,7 @@ Complex navigation component with responsive support.
 ```tsx
 import { Nav } from '@carletonuniversity/rds'
 
-<Nav>
+;<Nav>
   <Nav.Top>
     <Nav.Logo src="/logo.svg" alt="Logo" />
     <Nav.Buttons>
@@ -596,11 +576,7 @@ Styled blockquotes.
 ```tsx
 import { Quote } from '@carletonuniversity/rds'
 
-<Quote
-  text="This is a quoted statement."
-  author="John Doe"
-  citation="Source Publication"
-/>
+;<Quote text="This is a quoted statement." author="John Doe" citation="Source Publication" />
 ```
 
 ---
@@ -612,12 +588,7 @@ Testimonial/review blocks.
 ```tsx
 import { Testimonial } from '@carletonuniversity/rds'
 
-<Testimonial
-  quote="Great experience working with RDS!"
-  author="Jane Smith"
-  role="Developer"
-  image="/jane.jpg"
-/>
+;<Testimonial quote="Great experience working with RDS!" author="Jane Smith" role="Developer" image="/jane.jpg" />
 ```
 
 ---
@@ -629,7 +600,7 @@ Event timeline visualization.
 ```tsx
 import { Timeline } from '@carletonuniversity/rds'
 
-<Timeline
+;<Timeline
   items={[
     { date: '2024-01', title: 'Project Started', description: '...' },
     { date: '2024-03', title: 'Beta Release', description: '...' },
@@ -647,7 +618,7 @@ Filter sidebar for search results.
 ```tsx
 import { FilterPanel } from '@carletonuniversity/rds'
 
-<FilterPanel
+;<FilterPanel
   filters={[
     {
       name: 'category',
@@ -673,7 +644,7 @@ Notification toasts.
 ```tsx
 import { Toast } from '@carletonuniversity/rds'
 
-<Toast
+;<Toast
   type="success"
   message="Action completed successfully!"
   isVisible={showToast}
@@ -690,7 +661,7 @@ Highlighted callout boxes.
 ```tsx
 import { CallOut } from '@carletonuniversity/rds'
 
-<CallOut type="info" title="Note">
+;<CallOut type="info" title="Note">
   Important information for the user.
 </CallOut>
 ```
@@ -719,11 +690,7 @@ Images with captions.
 ```tsx
 import { Figure } from '@carletonuniversity/rds'
 
-<Figure
-  src="/image.jpg"
-  alt="Image description"
-  caption="Figure 1: Image caption"
-/>
+;<Figure src="/image.jpg" alt="Image description" caption="Figure 1: Image caption" />
 ```
 
 ---
@@ -755,7 +722,7 @@ Grid layout for multiple images.
 ```tsx
 import { ImageGrid } from '@carletonuniversity/rds'
 
-<ImageGrid
+;<ImageGrid
   images={[
     { src: '/img1.jpg', alt: 'Image 1' },
     { src: '/img2.jpg', alt: 'Image 2' },
@@ -774,7 +741,7 @@ Image carousel/slider.
 ```tsx
 import { ImageSlider } from '@carletonuniversity/rds'
 
-<ImageSlider
+;<ImageSlider
   images={[
     { src: '/slide1.jpg', alt: 'Slide 1' },
     { src: '/slide2.jpg', alt: 'Slide 2' },
@@ -801,10 +768,13 @@ import {
 } from '@carletonuniversity/rds'
 
 // Use while data is loading
-{isLoading ? <CardNewsLoader /> : <Card>...</Card>}
+{
+  isLoading ? <CardNewsLoader /> : <Card>...</Card>
+}
 ```
 
 **Available Loaders:**
+
 - `CardEventLoader`, `CardIconLoader`, `CardNewsLoader`, `CardPageLoader`, `CardPeopleLoader`, `CardVideoLoader`
 - `ListingEventLoader`, `ListingIconLoader`, `ListingNewsLoader`, `ListingPageLoader`, `ListingPeopleLoader`, `ListingDescriptionLoader`
 - `CalendarLoader`, `DescriptionLoader`, `DescriptionLoaderAccordion`
@@ -823,10 +793,7 @@ import {
 ```tsx
 import { Forbidden403 } from '@carletonuniversity/rds'
 
-<Forbidden403
-  message="You don't have permission to access this page."
-  homeLink="/"
-/>
+;<Forbidden403 message="You don't have permission to access this page." homeLink="/" />
 ```
 
 ### NotFound404
@@ -836,11 +803,7 @@ import { Forbidden403 } from '@carletonuniversity/rds'
 ```tsx
 import { NotFound404 } from '@carletonuniversity/rds'
 
-<NotFound404
-  message="The page you're looking for doesn't exist."
-  homeLink="/"
-  searchLink="/search"
-/>
+;<NotFound404 message="The page you're looking for doesn't exist." homeLink="/" searchLink="/search" />
 ```
 
 ---
@@ -890,6 +853,7 @@ ComponentName/
 ### Testing Components
 
 Each component should have:
+
 1. Storybook stories covering all variants
 2. Cypress tests for interactive behavior
 3. Accessibility checks via Storybook a11y addon

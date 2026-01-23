@@ -27,17 +27,17 @@ RDS currently uses Tailwind CSS with a custom theme preset (`rds-tailwind-theme`
 
 ### Current Stack
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `tailwindcss` | 3.4.17 | Utility CSS framework |
-| `rds-tailwind-theme` | 0.9.2 | Carleton custom theme |
-| `@tailwindcss/forms` | - | Form element styling |
-| `@tailwindcss/typography` | - | Prose/article styling |
-| `@tailwindcss/aspect-ratio` | - | Aspect ratio utilities |
-| `@tailwindcss/container-queries` | - | Container query support |
-| `postcss` | - | CSS processing |
-| `autoprefixer` | - | Browser prefixes |
-| `postcss-nesting` | - | CSS nesting support |
+| Package                          | Version | Purpose                 |
+| -------------------------------- | ------- | ----------------------- |
+| `tailwindcss`                    | 3.4.17  | Utility CSS framework   |
+| `rds-tailwind-theme`             | 0.9.2   | Carleton custom theme   |
+| `@tailwindcss/forms`             | -       | Form element styling    |
+| `@tailwindcss/typography`        | -       | Prose/article styling   |
+| `@tailwindcss/aspect-ratio`      | -       | Aspect ratio utilities  |
+| `@tailwindcss/container-queries` | -       | Container query support |
+| `postcss`                        | -       | CSS processing          |
+| `autoprefixer`                   | -       | Browser prefixes        |
+| `postcss-nesting`                | -       | CSS nesting support     |
 
 ---
 
@@ -101,8 +101,8 @@ The `rds-tailwind-theme` package provides Carleton University's brand design tok
 
 ```css
 /* Primary */
---cu-red: #bf112b;          /* Carleton Red */
---cu-black: #262626;        /* Near black */
+--cu-red: #bf112b; /* Carleton Red */
+--cu-black: #262626; /* Near black */
 --cu-white: #ffffff;
 
 /* Grays */
@@ -133,15 +133,15 @@ The `rds-tailwind-theme` package provides Carleton University's brand design tok
 --font-mono: 'Fira Code', monospace;
 
 /* Font sizes (rem) */
---text-xs: 0.75rem;    /* 12px */
---text-sm: 0.875rem;   /* 14px */
---text-base: 1rem;     /* 16px */
---text-lg: 1.125rem;   /* 18px */
---text-xl: 1.25rem;    /* 20px */
---text-2xl: 1.5rem;    /* 24px */
---text-3xl: 1.875rem;  /* 30px */
---text-4xl: 2.25rem;   /* 36px */
---text-5xl: 3rem;      /* 48px */
+--text-xs: 0.75rem; /* 12px */
+--text-sm: 0.875rem; /* 14px */
+--text-base: 1rem; /* 16px */
+--text-lg: 1.125rem; /* 18px */
+--text-xl: 1.25rem; /* 20px */
+--text-2xl: 1.5rem; /* 24px */
+--text-3xl: 1.875rem; /* 30px */
+--text-4xl: 2.25rem; /* 36px */
+--text-5xl: 3rem; /* 48px */
 ```
 
 ### Spacing
@@ -151,18 +151,18 @@ Based on 4px base unit:
 ```css
 /* Spacing scale */
 --spacing-0: 0;
---spacing-1: 0.25rem;  /* 4px */
---spacing-2: 0.5rem;   /* 8px */
---spacing-3: 0.75rem;  /* 12px */
---spacing-4: 1rem;     /* 16px */
---spacing-5: 1.25rem;  /* 20px */
---spacing-6: 1.5rem;   /* 24px */
---spacing-8: 2rem;     /* 32px */
---spacing-10: 2.5rem;  /* 40px */
---spacing-12: 3rem;    /* 48px */
---spacing-16: 4rem;    /* 64px */
---spacing-20: 5rem;    /* 80px */
---spacing-24: 6rem;    /* 96px */
+--spacing-1: 0.25rem; /* 4px */
+--spacing-2: 0.5rem; /* 8px */
+--spacing-3: 0.75rem; /* 12px */
+--spacing-4: 1rem; /* 16px */
+--spacing-5: 1.25rem; /* 20px */
+--spacing-6: 1.5rem; /* 24px */
+--spacing-8: 2rem; /* 32px */
+--spacing-10: 2.5rem; /* 40px */
+--spacing-12: 3rem; /* 48px */
+--spacing-16: 4rem; /* 64px */
+--spacing-20: 5rem; /* 80px */
+--spacing-24: 6rem; /* 96px */
 ```
 
 ### Breakpoints
@@ -280,7 +280,7 @@ export function Button({ color, isSmall, children }) {
       'bg-cu-red text-white hover:bg-cu-red-dark': color === 'red',
       'bg-gray-200 text-gray-800 hover:bg-gray-300': color === 'grey',
       'px-3 py-1.5 text-xs': isSmall,
-    }
+    },
   )
 
   return <button className={classes}>{children}</button>
@@ -294,11 +294,7 @@ Custom CSS classes using Tailwind's @apply:
 ```tsx
 // Button.tsx
 export function Button({ color, isSmall, children }) {
-  const classes = clsx(
-    'cu-button',
-    `cu-button--${color}`,
-    { 'cu-button--small': isSmall }
-  )
+  const classes = clsx('cu-button', `cu-button--${color}`, { 'cu-button--small': isSmall })
 
   return <button className={classes}>{children}</button>
 }
@@ -334,11 +330,7 @@ export const buttonColorClasses = {
 import { buttonColorClasses } from '../../utils/propClasses'
 
 export function Button({ color = 'red', children }) {
-  return (
-    <button className={clsx('cu-button', buttonColorClasses[color])}>
-      {children}
-    </button>
-  )
+  return <button className={clsx('cu-button', buttonColorClasses[color])}>{children}</button>
 }
 ```
 
@@ -353,12 +345,12 @@ From `lib/utils/propClasses.tsx`:
 ```typescript
 // Max width constraints
 export const maxWidthClasses = {
-  narrow: 'max-w-2xl',    // 672px
-  small: 'max-w-3xl',     // 768px
-  base: 'max-w-4xl',      // 896px
-  large: 'max-w-5xl',     // 1024px
-  full: 'max-w-full',     // 100%
-  '7xl': 'max-w-7xl',     // 1280px
+  narrow: 'max-w-2xl', // 672px
+  small: 'max-w-3xl', // 768px
+  base: 'max-w-4xl', // 896px
+  large: 'max-w-5xl', // 1024px
+  full: 'max-w-full', // 100%
+  '7xl': 'max-w-7xl', // 1280px
 }
 
 // Grid columns
@@ -382,10 +374,10 @@ export const gridGapClasses = {
 
 // Aspect ratios
 export const aspectRatioClasses = {
-  square: 'aspect-square',      // 1:1
-  landscape: 'aspect-video',    // 16:9
-  portrait: 'aspect-[3/4]',     // 3:4
-  wide: 'aspect-[21/9]',        // 21:9
+  square: 'aspect-square', // 1:1
+  landscape: 'aspect-video', // 16:9
+  portrait: 'aspect-[3/4]', // 3:4
+  wide: 'aspect-[21/9]', // 21:9
 }
 
 // Text colors
@@ -418,9 +410,7 @@ import { utils } from '@carletonuniversity/rds'
 function MyComponent({ maxWidth, columns }) {
   return (
     <div className={utils.maxWidthClasses[maxWidth]}>
-      <div className={`grid ${utils.gridColumnClasses[columns]}`}>
-        {/* content */}
-      </div>
+      <div className={`grid ${utils.gridColumnClasses[columns]}`}>{/* content */}</div>
     </div>
   )
 }
@@ -449,11 +439,7 @@ document.documentElement.classList.toggle('dark')
 
 // Component with dark mode
 function Card({ children }) {
-  return (
-    <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
-      {children}
-    </div>
-  )
+  return <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">{children}</div>
 }
 ```
 
@@ -488,20 +474,22 @@ Components use mobile-first responsive design:
 ```tsx
 // Stacks on mobile, grid on larger screens
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-  {items.map(item => <Card key={item.id} {...item} />)}
+  {items.map((item) => (
+    <Card key={item.id} {...item} />
+  ))}
 </div>
 ```
 
 ### Breakpoint Usage
 
-| Prefix | Min Width | Use Case |
-|--------|-----------|----------|
-| (none) | 0px | Mobile (default) |
-| `sm:` | 640px | Large phones |
-| `md:` | 768px | Tablets |
-| `lg:` | 1024px | Laptops |
-| `xl:` | 1280px | Desktops |
-| `2xl:` | 1536px | Large screens |
+| Prefix | Min Width | Use Case         |
+| ------ | --------- | ---------------- |
+| (none) | 0px       | Mobile (default) |
+| `sm:`  | 640px     | Large phones     |
+| `md:`  | 768px     | Tablets          |
+| `lg:`  | 1024px    | Laptops          |
+| `xl:`  | 1280px    | Desktops         |
+| `2xl:` | 1536px    | Large screens    |
 
 ### Common Patterns
 
@@ -548,6 +536,7 @@ Components use mobile-first responsive design:
 **Impact:** Longer initial page loads, especially on slower connections.
 
 **Mitigation:**
+
 - PurgeCSS configured but may miss dynamic classes
 - Some classes built from variables can't be purged
 
@@ -556,14 +545,18 @@ Components use mobile-first responsive design:
 **Problem:** Tailwind classes can conflict with WordPress/Gutenberg styles.
 
 **Example:**
+
 ```css
 /* Tailwind reset */
-button { background: transparent; }
+button {
+  background: transparent;
+}
 
 /* WordPress expects default styling */
 ```
 
 **Mitigation:**
+
 - Use `important: true` in Tailwind config (not recommended)
 - Prefix all Tailwind classes with `tw-` (requires config change)
 - Use scoped CSS classes instead
@@ -579,6 +572,7 @@ return <div className={`bg-${color}-500`} />
 ```
 
 **Mitigation:**
+
 - Use complete class names in safelist
 - Map values to full class strings
 
@@ -587,6 +581,7 @@ return <div className={`bg-${color}-500`} />
 **Problem:** Overriding theme values requires deep Tailwind knowledge.
 
 **Mitigation:**
+
 - Document theme extension patterns
 - Consider CSS custom properties for easier overrides
 

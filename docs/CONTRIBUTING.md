@@ -39,15 +39,15 @@ npm run storybook
 
 ### Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run storybook` | Start Storybook dev server on port 6006 |
-| `npm run build` | Build the library |
-| `npm run build:storybook` | Build Storybook for deployment |
-| `npm run lint` | Run ESLint |
-| `npm run prettier` | Format code with Prettier |
-| `npm run test` | Run Cypress tests |
-| `npm run test:ci` | Run tests in CI mode |
+| Script                    | Description                             |
+| ------------------------- | --------------------------------------- |
+| `npm run storybook`       | Start Storybook dev server on port 6006 |
+| `npm run build`           | Build the library                       |
+| `npm run build:storybook` | Build Storybook for deployment          |
+| `npm run lint`            | Run ESLint                              |
+| `npm run prettier`        | Format code with Prettier               |
+| `npm run test`            | Run Cypress tests                       |
+| `npm run test:ci`         | Run tests in CI mode                    |
 
 ---
 
@@ -120,6 +120,7 @@ export interface ButtonProps {
 ### ESLint
 
 Configuration enforces:
+
 - React hooks rules
 - TypeScript best practices
 - Import ordering
@@ -157,14 +158,14 @@ npm run prettier -- --check
 
 ### File Naming
 
-| Type | Convention | Example |
-|------|------------|---------|
-| Components | PascalCase | `Button.tsx` |
-| Stories | PascalCase + .stories | `Button.stories.tsx` |
-| Styles | PascalCase + .css | `Button.css` or `styles.css` |
-| Hooks | camelCase with use prefix | `usePagination.ts` |
-| Utilities | camelCase | `propClasses.tsx` |
-| Types | PascalCase | `ButtonTypes.ts` |
+| Type       | Convention                | Example                      |
+| ---------- | ------------------------- | ---------------------------- |
+| Components | PascalCase                | `Button.tsx`                 |
+| Stories    | PascalCase + .stories     | `Button.stories.tsx`         |
+| Styles     | PascalCase + .css         | `Button.css` or `styles.css` |
+| Hooks      | camelCase with use prefix | `usePagination.ts`           |
+| Utilities  | camelCase                 | `propClasses.tsx`            |
+| Types      | PascalCase                | `ButtonTypes.ts`             |
 
 ---
 
@@ -213,7 +214,7 @@ export const ComponentName = forwardRef<HTMLDivElement, ComponentNameProps>(
         {children}
       </div>
     )
-  }
+  },
 )
 
 ComponentName.displayName = 'ComponentName'
@@ -222,21 +223,24 @@ ComponentName.displayName = 'ComponentName'
 ### Props Guidelines
 
 1. **Use descriptive names**
+
    ```typescript
    // Good
-   isDisabled, hasIcon, showLabel
+   ;(isDisabled, hasIcon, showLabel)
 
    // Bad
-   disabled, icon, label
+   ;(disabled, icon, label)
    ```
 
 2. **Provide sensible defaults**
+
    ```typescript
    color = 'red'
    size = 'md'
    ```
 
 3. **Use TypeScript unions for variants**
+
    ```typescript
    color?: 'red' | 'grey' | 'black'
    size?: 'sm' | 'md' | 'lg'
@@ -283,11 +287,7 @@ All components must:
 - Support reduced motion preferences
 
 ```tsx
-<button
-  aria-label={ariaLabel}
-  aria-disabled={isDisabled}
-  tabIndex={isDisabled ? -1 : 0}
->
+<button aria-label={ariaLabel} aria-disabled={isDisabled} tabIndex={isDisabled ? -1 : 0}>
   {children}
 </button>
 ```
@@ -302,19 +302,19 @@ Format: `<type>: <description>`
 
 ### Commit Types
 
-| Type | Description |
-|------|-------------|
-| `add` | New component or feature |
-| `change` | Modification to existing code |
-| `deprecate` | Deprecation notice |
-| `doc` | Documentation updates |
-| `fix` | Bug fixes |
-| `finish` | Feature completion |
-| `refactor` | Code refactoring |
-| `release` | Release preparation |
-| `revert` | Revert previous commit |
-| `test` | Test-related changes |
-| `upgrade` | Package upgrades |
+| Type        | Description                   |
+| ----------- | ----------------------------- |
+| `add`       | New component or feature      |
+| `change`    | Modification to existing code |
+| `deprecate` | Deprecation notice            |
+| `doc`       | Documentation updates         |
+| `fix`       | Bug fixes                     |
+| `finish`    | Feature completion            |
+| `refactor`  | Code refactoring              |
+| `release`   | Release preparation           |
+| `revert`    | Revert previous commit        |
+| `test`      | Test-related changes          |
+| `upgrade`   | Package upgrades              |
 
 ### Examples
 
@@ -369,9 +369,11 @@ Fixes #123"
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] New feature
 - [ ] Bug fix
 - [ ] Refactor
@@ -379,17 +381,21 @@ Brief description of changes
 - [ ] Other (describe)
 
 ## Related Issues
+
 Fixes #123
 
 ## Testing
+
 - [ ] Unit tests added/updated
 - [ ] Storybook stories added/updated
 - [ ] Manual testing completed
 
 ## Screenshots (if applicable)
+
 [Add screenshots]
 
 ## Checklist
+
 - [ ] Code follows project standards
 - [ ] Self-reviewed code
 - [ ] Comments added for complex logic
@@ -508,11 +514,11 @@ When making changes:
 
 ### Test Coverage
 
-| Component Type | Minimum Coverage |
-|----------------|------------------|
-| Critical (Button, Form) | 90% |
-| Standard | 70% |
-| Layout | 60% |
+| Component Type          | Minimum Coverage |
+| ----------------------- | ---------------- |
+| Critical (Button, Form) | 90%              |
+| Standard                | 70%              |
+| Layout                  | 60%              |
 
 ### Adding Tests
 
