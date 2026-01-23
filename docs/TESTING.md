@@ -27,12 +27,12 @@ RDS uses a multi-layered testing approach:
 
 ### Coverage Goals
 
-| Category | Coverage Target |
-|----------|-----------------|
-| Critical components | 90%+ |
-| Form components | 85%+ |
-| Layout components | 70%+ |
-| Utility functions | 95%+ |
+| Category            | Coverage Target |
+| ------------------- | --------------- |
+| Critical components | 90%+            |
+| Form components     | 85%+            |
+| Layout components   | 70%+            |
+| Utility functions   | 95%+            |
 
 ---
 
@@ -55,10 +55,10 @@ RDS uses a multi-layered testing approach:
 
 ### Configuration Files
 
-| File | Purpose |
-|------|---------|
-| `cypress.config.ts` | Cypress configuration |
-| `.storybook/main.ts` | Storybook configuration |
+| File                    | Purpose                    |
+| ----------------------- | -------------------------- |
+| `cypress.config.ts`     | Cypress configuration      |
+| `.storybook/main.ts`    | Storybook configuration    |
 | `.storybook/preview.ts` | Storybook preview settings |
 
 ---

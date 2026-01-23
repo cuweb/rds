@@ -64,12 +64,12 @@ npm install @carletonuniversity/rds
 
 ### Export Formats
 
-| Format | File | Use Case |
-|--------|------|----------|
-| ES Modules | `dist/rds.es.js` | Modern bundlers |
-| UMD | `dist/rds.umd.js` | Script tags, older bundlers |
-| CSS | `dist/style.css` | Styles |
-| Types | `dist/main.d.ts` | TypeScript support |
+| Format     | File              | Use Case                    |
+| ---------- | ----------------- | --------------------------- |
+| ES Modules | `dist/rds.es.js`  | Modern bundlers             |
+| UMD        | `dist/rds.umd.js` | Script tags, older bundlers |
+| CSS        | `dist/style.css`  | Styles                      |
+| Types      | `dist/main.d.ts`  | TypeScript support          |
 
 ### Block Plugin Structure
 
@@ -97,6 +97,7 @@ my-blocks-plugin/
 ### 1. Block Registration
 
 `block.json`:
+
 ```json
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
@@ -134,6 +135,7 @@ my-blocks-plugin/
 ### 2. Block Index
 
 `index.js`:
+
 ```jsx
 import { registerBlockType } from '@wordpress/blocks'
 import Edit from './edit'
@@ -149,6 +151,7 @@ registerBlockType(metadata.name, {
 ### 3. Edit Component
 
 `edit.js`:
+
 ```jsx
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor'
 import { PanelBody, SelectControl, TextControl } from '@wordpress/components'
@@ -173,11 +176,7 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
             onChange={(value) => setAttributes({ type: value })}
           />
-          <TextControl
-            label="Title"
-            value={title}
-            onChange={(value) => setAttributes({ title: value })}
-          />
+          <TextControl label="Title" value={title} onChange={(value) => setAttributes({ title: value })} />
         </PanelBody>
       </InspectorControls>
 
@@ -194,6 +193,7 @@ export default function Edit({ attributes, setAttributes }) {
 ### 4. Save Component
 
 For static blocks:
+
 ```jsx
 import { useBlockProps } from '@wordpress/block-editor'
 import { Alert } from '@carletonuniversity/rds'
@@ -213,6 +213,7 @@ export default function Save({ attributes }) {
 ```
 
 For dynamic blocks (PHP rendered):
+
 ```jsx
 export default function Save() {
   return null // Rendered by PHP
@@ -325,6 +326,7 @@ add_action('enqueue_block_editor_assets', 'enqueue_rds_styles');
 ```
 
 Or in JavaScript:
+
 ```jsx
 // Import styles in your block entry point
 import '@carletonuniversity/rds/dist/style.css'
@@ -425,24 +427,16 @@ function CardEdit({ attributes, setAttributes }) {
       <Card.Figure>
         <MediaUploadCheck>
           <MediaUpload
-            onSelect={(media) =>
-              setAttributes({ imageId: media.id, imageUrl: media.url })
-            }
+            onSelect={(media) => setAttributes({ imageId: media.id, imageUrl: media.url })}
             allowedTypes={['image']}
             value={imageId}
-            render={({ open }) => (
-              imageUrl ? (
-                <img src={imageUrl} onClick={open} alt="" />
-              ) : (
-                <WPButton onClick={open}>Select Image</WPButton>
-              )
-            )}
+            render={({ open }) =>
+              imageUrl ? <img src={imageUrl} onClick={open} alt="" /> : <WPButton onClick={open}>Select Image</WPButton>
+            }
           />
         </MediaUploadCheck>
       </Card.Figure>
-      <Card.Body>
-        {/* ... */}
-      </Card.Body>
+      <Card.Body>{/* ... */}</Card.Body>
     </Card>
   )
 }
@@ -462,19 +456,13 @@ function ButtonEdit({ attributes, setAttributes }) {
 
   return (
     <>
-      <Button
-        color="red"
-        onClick={() => setIsLinkOpen(true)}
-      >
+      <Button color="red" onClick={() => setIsLinkOpen(true)}>
         {text || 'Add Text'}
       </Button>
 
       {isLinkOpen && (
         <Popover onClose={() => setIsLinkOpen(false)}>
-          <LinkControl
-            value={{ url }}
-            onChange={({ url }) => setAttributes({ url })}
-          />
+          <LinkControl value={{ url }} onChange={({ url }) => setAttributes({ url })} />
         </Popover>
       )}
     </>
@@ -486,14 +474,7 @@ function ButtonEdit({ attributes, setAttributes }) {
 
 ```jsx
 import { InspectorControls } from '@wordpress/block-editor'
-import {
-  PanelBody,
-  PanelRow,
-  SelectControl,
-  ToggleControl,
-  RangeControl,
-  ColorPalette,
-} from '@wordpress/components'
+import { PanelBody, PanelRow, SelectControl, ToggleControl, RangeControl, ColorPalette } from '@wordpress/components'
 
 function BlockInspector({ attributes, setAttributes }) {
   return (
@@ -573,21 +554,13 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
             onChange={(type) => setAttributes({ type })}
           />
-          <TextControl
-            label="Title"
-            value={title}
-            onChange={(title) => setAttributes({ title })}
-          />
+          <TextControl label="Title" value={title} onChange={(title) => setAttributes({ title })} />
         </PanelBody>
       </InspectorControls>
 
       <div {...useBlockProps()}>
         <Alert type={type} title={title}>
-          <RichText
-            value={content}
-            onChange={(content) => setAttributes({ content })}
-            placeholder="Alert content..."
-          />
+          <RichText value={content} onChange={(content) => setAttributes({ content })} placeholder="Alert content..." />
         </Alert>
       </div>
     </>
@@ -607,11 +580,14 @@ import { Card, Column } from '@carletonuniversity/rds'
 export default function Edit({ attributes, setAttributes }) {
   const { columns, postType, count, showExcerpt, showImage } = attributes
 
-  const posts = useSelect((select) => {
-    return select('core').getEntityRecords('postType', postType, {
-      per_page: count,
-    })
-  }, [postType, count])
+  const posts = useSelect(
+    (select) => {
+      return select('core').getEntityRecords('postType', postType, {
+        per_page: count,
+      })
+    },
+    [postType, count],
+  )
 
   return (
     <>
@@ -650,17 +626,12 @@ export default function Edit({ attributes, setAttributes }) {
             <Card key={post.id}>
               {showImage && post.featured_media && (
                 <Card.Figure>
-                  <img
-                    src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url}
-                    alt={post.title.rendered}
-                  />
+                  <img src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url} alt={post.title.rendered} />
                 </Card.Figure>
               )}
               <Card.Body>
                 <Card.Header title={post.title.rendered} />
-                {showExcerpt && (
-                  <Card.Excerpt text={post.excerpt.rendered} />
-                )}
+                {showExcerpt && <Card.Excerpt text={post.excerpt.rendered} />}
               </Card.Body>
             </Card>
           ))}
@@ -684,7 +655,7 @@ export default function Edit({ attributes, setAttributes }) {
 import '@carletonuniversity/rds/dist/style.css'
 
 // Or in PHP
-wp_enqueue_style('rds-styles', '...');
+wp_enqueue_style('rds-styles', '...')
 ```
 
 #### 2. React Version Mismatch
@@ -785,11 +756,7 @@ registerBlockType('cu/card', {
 
 ```jsx
 // Use WordPress components for consistency
-import {
-  PanelBody,
-  SelectControl,
-  ToggleControl,
-} from '@wordpress/components'
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components'
 
 // Not RDS form components in editor
 ```
@@ -825,11 +792,13 @@ function Edit({ attributes }) {
 - **Dynamic**: Rendered by PHP on each page load
 
 Choose dynamic for:
+
 - Frequently changing content
 - Content pulled from database
 - Complex logic
 
 Choose static for:
+
 - Simple content blocks
 - Better performance
 - Works without PHP

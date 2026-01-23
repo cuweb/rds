@@ -82,7 +82,9 @@ export default defineConfig({
       fileName: (format) => `rds.${format}.js`,
     },
     rollupOptions: {
-      external: [/* all dependencies externalized */],
+      external: [
+        /* all dependencies externalized */
+      ],
       output: {
         globals: {
           react: 'React',
@@ -97,12 +99,12 @@ export default defineConfig({
 
 ### Build Outputs
 
-| Output | Format | Use Case |
-|--------|--------|----------|
-| `dist/rds.es.js` | ES Modules | Modern bundlers (Vite, webpack 5+) |
-| `dist/rds.umd.js` | UMD | Browser `<script>` tags, older bundlers |
-| `dist/main.d.ts` | TypeScript | Type definitions |
-| `dist/style.css` | CSS | Compiled styles |
+| Output            | Format     | Use Case                                |
+| ----------------- | ---------- | --------------------------------------- |
+| `dist/rds.es.js`  | ES Modules | Modern bundlers (Vite, webpack 5+)      |
+| `dist/rds.umd.js` | UMD        | Browser `<script>` tags, older bundlers |
+| `dist/main.d.ts`  | TypeScript | Type definitions                        |
+| `dist/style.css`  | CSS        | Compiled styles                         |
 
 ### Bundle Size Limits
 
@@ -133,6 +135,7 @@ npm run create-lists
 ### CSS Processing
 
 PostCSS pipeline with:
+
 1. **Tailwind CSS** - Utility-first styles
 2. **PostCSS Nesting** - CSS nesting support
 3. **Autoprefixer** - Browser prefixes
@@ -231,6 +234,7 @@ export const Card = Object.assign(CardWrapper, {
 ```
 
 **Usage:**
+
 ```tsx
 <Card>
   <Card.Figure src="/image.jpg" />
@@ -244,6 +248,7 @@ export const Card = Object.assign(CardWrapper, {
 ### TypeScript Patterns
 
 **Props Interface Pattern:**
+
 ```typescript
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   color?: 'red' | 'grey' | 'dark-grey' | 'black' | 'white'
@@ -254,6 +259,7 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 ```
 
 **Discriminated Union Pattern:**
+
 ```typescript
 // Button with title
 interface ButtonTitleProps extends BaseButtonProps {
@@ -305,26 +311,26 @@ import { Link } from 'next/link'
 
 ### Key Runtime Dependencies
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `formik` | 2.4.9 | Form state management |
-| `yup` | 1.7.1 | Schema validation |
-| `date-fns` | 4.1.0 | Date utilities |
-| `react-select` | 5.10.2 | Enhanced select dropdown |
-| `react-player` | 3.4.0 | Video player |
-| `dompurify` | 3.3.1 | HTML sanitization |
-| `@react-google-maps/api` | 2.20.8 | Google Maps |
+| Package                  | Version | Purpose                  |
+| ------------------------ | ------- | ------------------------ |
+| `formik`                 | 2.4.9   | Form state management    |
+| `yup`                    | 1.7.1   | Schema validation        |
+| `date-fns`               | 4.1.0   | Date utilities           |
+| `react-select`           | 5.10.2  | Enhanced select dropdown |
+| `react-player`           | 3.4.0   | Video player             |
+| `dompurify`              | 3.3.1   | HTML sanitization        |
+| `@react-google-maps/api` | 2.20.8  | Google Maps              |
 
 ### Styling Dependencies
 
-| Package | Purpose |
-|---------|---------|
-| `tailwindcss` | Utility CSS framework |
-| `rds-tailwind-theme` | Carleton custom theme preset |
-| `@tailwindcss/forms` | Form element styles |
-| `@tailwindcss/typography` | Prose styles |
-| `@tailwindcss/aspect-ratio` | Aspect ratio utilities |
-| `@tailwindcss/container-queries` | Container queries |
+| Package                          | Purpose                      |
+| -------------------------------- | ---------------------------- |
+| `tailwindcss`                    | Utility CSS framework        |
+| `rds-tailwind-theme`             | Carleton custom theme preset |
+| `@tailwindcss/forms`             | Form element styles          |
+| `@tailwindcss/typography`        | Prose styles                 |
+| `@tailwindcss/aspect-ratio`      | Aspect ratio utilities       |
+| `@tailwindcss/container-queries` | Container queries            |
 
 ## Configuration Files
 

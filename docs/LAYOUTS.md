@@ -54,7 +54,7 @@ Wrapper for article content, providing proper semantic HTML and typography style
 ```tsx
 import { Article } from '@carletonuniversity/rds'
 
-<Article>
+;<Article>
   <h1>Article Title</h1>
   <p>Article content with proper typography styling...</p>
 </Article>
@@ -67,6 +67,7 @@ import { Article } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - Blog posts
 - News articles
 - Documentation pages
@@ -81,15 +82,19 @@ Sidebar or complementary content area.
 ```tsx
 import { Aside } from '@carletonuniversity/rds'
 
-<div className="flex">
+;<div className="flex">
   <Main>
     <p>Main content</p>
   </Main>
   <Aside>
     <h3>Related Links</h3>
     <ul>
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
+      <li>
+        <a href="#">Link 1</a>
+      </li>
+      <li>
+        <a href="#">Link 2</a>
+      </li>
     </ul>
   </Aside>
 </div>
@@ -104,6 +109,7 @@ import { Aside } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - Navigation sidebars
 - Related content
 - Filter panels
@@ -118,7 +124,7 @@ Page body wrapper that provides base styling and layout constraints.
 ```tsx
 import { Body } from '@carletonuniversity/rds'
 
-<Body>
+;<Body>
   <Nav>...</Nav>
   <Main>...</Main>
   <Footer>...</Footer>
@@ -132,6 +138,7 @@ import { Body } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - Root layout wrapper
 - Provides base typography
 - Sets up CSS custom properties
@@ -188,6 +195,7 @@ import { Column } from '@carletonuniversity/rds'
 | `xl` | 2rem (32px) |
 
 **Use Cases:**
+
 - Card grids
 - Feature lists
 - Image galleries
@@ -202,7 +210,7 @@ Floating content box that can be positioned within text content.
 ```tsx
 import { FloatBox } from '@carletonuniversity/rds'
 
-<Article>
+;<Article>
   <p>Main article text...</p>
 
   <FloatBox position="right" width="sm">
@@ -223,6 +231,7 @@ import { FloatBox } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - Pull quotes
 - Sidebar images
 - Related content boxes
@@ -237,11 +246,7 @@ Full-screen image background with overlay content.
 ```tsx
 import { ImageCover } from '@carletonuniversity/rds'
 
-<ImageCover
-  src="/hero-image.jpg"
-  alt="Hero background"
-  overlay="dark"
->
+;<ImageCover src="/hero-image.jpg" alt="Hero background" overlay="dark">
   <h1>Hero Title</h1>
   <p>Hero description text</p>
   <Button>Call to Action</Button>
@@ -267,6 +272,7 @@ import { ImageCover } from '@carletonuniversity/rds'
 | `dark` | Black semi-transparent overlay |
 
 **Use Cases:**
+
 - Hero sections
 - Full-bleed images
 - Landing pages
@@ -281,7 +287,7 @@ Main content area wrapper with semantic `<main>` element.
 ```tsx
 import { Main } from '@carletonuniversity/rds'
 
-<Body>
+;<Body>
   <Nav>...</Nav>
   <Main>
     <Section>
@@ -300,6 +306,7 @@ import { Main } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - Primary content wrapper
 - Accessibility landmark
 - Skip-link target
@@ -357,6 +364,7 @@ import { Section } from '@carletonuniversity/rds'
 | `full` | 100% |
 
 **Use Cases:**
+
 - Page sections
 - Content containers
 - Feature areas
@@ -394,6 +402,7 @@ import { StackedList } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - News listings
 - Search results
 - Event lists
@@ -408,7 +417,7 @@ Wave decoration background layout for visual interest.
 ```tsx
 import { WideWave } from '@carletonuniversity/rds'
 
-<WideWave color="red" position="top">
+;<WideWave color="red" position="top">
   <Section>
     <h2>Featured Content</h2>
     <p>Content with wave decoration above</p>
@@ -425,6 +434,7 @@ import { WideWave } from '@carletonuniversity/rds'
 | `className` | `string` | - | Additional CSS classes |
 
 **Use Cases:**
+
 - Section dividers
 - Call-to-action areas
 - Visual breaks
@@ -444,9 +454,7 @@ function PageLayout({ children }) {
     <Body>
       <Nav>...</Nav>
       <Main>
-        <Section>
-          {children}
-        </Section>
+        <Section>{children}</Section>
       </Main>
       <FooterStandard>...</FooterStandard>
     </Body>
@@ -464,12 +472,8 @@ function TwoColumnLayout({ content, sidebar }) {
     <Main>
       <Section>
         <div className="flex gap-8">
-          <div className="flex-1">
-            {content}
-          </div>
-          <Aside width="narrow">
-            {sidebar}
-          </Aside>
+          <div className="flex-1">{content}</div>
+          <Aside width="narrow">{sidebar}</Aside>
         </div>
       </Section>
     </Main>
@@ -511,18 +515,12 @@ import { ImageCover, Section, Article } from '@carletonuniversity/rds'
 function HeroPage({ hero, content }) {
   return (
     <>
-      <ImageCover
-        src={hero.image}
-        alt={hero.alt}
-        height="half"
-      >
+      <ImageCover src={hero.image} alt={hero.alt} height="half">
         <h1>{hero.title}</h1>
       </ImageCover>
 
       <Section maxWidth="narrow">
-        <Article>
-          {content}
-        </Article>
+        <Article>{content}</Article>
       </Section>
     </>
   )
@@ -538,10 +536,7 @@ function AlternatingSections({ sections }) {
   return (
     <>
       {sections.map((section, index) => (
-        <Section
-          key={index}
-          bgColor={index % 2 === 0 ? 'white' : 'grey-50'}
-        >
+        <Section key={index} bgColor={index % 2 === 0 ? 'white' : 'grey-50'}>
           <TextImage
             title={section.title}
             content={section.content}
@@ -561,13 +556,13 @@ function AlternatingSections({ sections }) {
 
 All layout components are responsive by default:
 
-| Breakpoint | Width | Typical Use |
-|------------|-------|-------------|
-| `sm` | 640px | Mobile landscape |
-| `md` | 768px | Tablets |
-| `lg` | 1024px | Small laptops |
-| `xl` | 1280px | Desktops |
-| `2xl` | 1536px | Large screens |
+| Breakpoint | Width  | Typical Use      |
+| ---------- | ------ | ---------------- |
+| `sm`       | 640px  | Mobile landscape |
+| `md`       | 768px  | Tablets          |
+| `lg`       | 1024px | Small laptops    |
+| `xl`       | 1280px | Desktops         |
+| `2xl`      | 1536px | Large screens    |
 
 ### Mobile-First Approach
 

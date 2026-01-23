@@ -18,12 +18,12 @@ RDS provides a comprehensive form system built on Formik and Yup for state manag
 
 ### Dependencies
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `formik` | 2.4.9 | Form state management |
-| `yup` | 1.7.1 | Schema validation |
-| `react-select` | 5.10.2 | Enhanced select dropdowns |
-| `react-datepicker` | 9.1.0 | Date picker |
+| Package            | Version | Purpose                   |
+| ------------------ | ------- | ------------------------- |
+| `formik`           | 2.4.9   | Form state management     |
+| `yup`              | 1.7.1   | Schema validation         |
+| `react-select`     | 5.10.2  | Enhanced select dropdowns |
+| `react-datepicker` | 9.1.0   | Date picker               |
 
 ### Import
 
@@ -100,17 +100,17 @@ function ContactForm() {
 
 ### Form Subcomponents
 
-| Component | Description |
-|-----------|-------------|
-| `Form.Field` | Field wrapper with label and error |
-| `Form.FieldSet` | Group of related fields |
-| `Form.Button` | Styled form button |
-| `Form.FieldGroup` | Horizontal field group |
-| `Form.FieldControl` | Field control wrapper |
-| `Form.FieldArrayContainer` | Dynamic field arrays |
-| `Form.FieldWrapper` | Generic field wrapper |
-| `Form.Error` | Error message display |
-| `Form.UseError` | Hook for custom errors |
+| Component                  | Description                        |
+| -------------------------- | ---------------------------------- |
+| `Form.Field`               | Field wrapper with label and error |
+| `Form.FieldSet`            | Group of related fields            |
+| `Form.Button`              | Styled form button                 |
+| `Form.FieldGroup`          | Horizontal field group             |
+| `Form.FieldControl`        | Field control wrapper              |
+| `Form.FieldArrayContainer` | Dynamic field arrays               |
+| `Form.FieldWrapper`        | Generic field wrapper              |
+| `Form.Error`               | Error message display              |
+| `Form.UseError`            | Hook for custom errors             |
 
 ---
 
@@ -119,12 +119,7 @@ function ContactForm() {
 Wraps form inputs with label, helper text, and error display.
 
 ```tsx
-<Form.Field
-  name="email"
-  label="Email Address"
-  helperText="We'll never share your email"
-  required
->
+<Form.Field name="email" label="Email Address" helperText="We'll never share your email" required>
   <Input name="email" type="email" placeholder="Enter email" />
 </Form.Field>
 ```
@@ -184,7 +179,7 @@ Dynamic field arrays for repeatable fields.
 ```tsx
 import { FieldArray } from 'formik'
 
-<FieldArray name="addresses">
+;<FieldArray name="addresses">
   {({ push, remove }) => (
     <Form.FieldArrayContainer>
       {values.addresses.map((_, index) => (
@@ -252,11 +247,7 @@ Multi-line text input.
 ```tsx
 import { TextArea } from '@carletonuniversity/rds'
 
-<TextArea
-  name="description"
-  rows={5}
-  placeholder="Enter description..."
-/>
+;<TextArea name="description" rows={5} placeholder="Enter description..." />
 ```
 
 **Props:**
@@ -360,7 +351,7 @@ Radio button for single selection from options.
 ```tsx
 import { Radio } from '@carletonuniversity/rds'
 
-<Form.FieldSet legend="Preferred Contact Method">
+;<Form.FieldSet legend="Preferred Contact Method">
   <Radio name="contactMethod" value="email" label="Email" />
   <Radio name="contactMethod" value="phone" label="Phone" />
   <Radio name="contactMethod" value="mail" label="Mail" />
@@ -492,7 +483,7 @@ Google Places autocomplete for address input.
 ```tsx
 import { PlacesAutoComplete } from '@carletonuniversity/rds'
 
-<PlacesAutoComplete
+;<PlacesAutoComplete
   name="address"
   placeholder="Enter address"
   onPlaceSelected={(place) => {
@@ -538,11 +529,9 @@ Helper text display for additional field information.
 ```tsx
 import { HelperText } from '@carletonuniversity/rds'
 
-<Form.Field name="password" label="Password">
+;<Form.Field name="password" label="Password">
   <Input name="password" type="password" />
-  <HelperText>
-    Must be at least 8 characters with one uppercase letter
-  </HelperText>
+  <HelperText>Must be at least 8 characters with one uppercase letter</HelperText>
 </Form.Field>
 ```
 
@@ -559,24 +548,16 @@ import * as Yup from 'yup'
 
 const validationSchema = Yup.object({
   // Required string
-  name: Yup.string()
-    .required('Name is required')
-    .min(2, 'Name must be at least 2 characters'),
+  name: Yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
 
   // Email
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+  email: Yup.string().email('Invalid email address').required('Email is required'),
 
   // Phone (optional)
-  phone: Yup.string()
-    .matches(/^\d{10}$/, 'Phone must be 10 digits'),
+  phone: Yup.string().matches(/^\d{10}$/, 'Phone must be 10 digits'),
 
   // Number range
-  age: Yup.number()
-    .min(18, 'Must be at least 18')
-    .max(120, 'Must be under 120')
-    .required('Age is required'),
+  age: Yup.number().min(18, 'Must be at least 18').max(120, 'Must be under 120').required('Age is required'),
 
   // Conditional validation
   website: Yup.string()
@@ -587,16 +568,13 @@ const validationSchema = Yup.object({
     }),
 
   // Array validation
-  tags: Yup.array()
-    .of(Yup.string())
-    .min(1, 'Select at least one tag'),
+  tags: Yup.array().of(Yup.string()).min(1, 'Select at least one tag'),
 
   // Nested object
   address: Yup.object({
     street: Yup.string().required('Street is required'),
     city: Yup.string().required('City is required'),
-    postalCode: Yup.string()
-      .matches(/^[A-Z]\d[A-Z] \d[A-Z]\d$/, 'Invalid postal code'),
+    postalCode: Yup.string().matches(/^[A-Z]\d[A-Z] \d[A-Z]\d$/, 'Invalid postal code'),
   }),
 })
 ```
@@ -606,10 +584,7 @@ const validationSchema = Yup.object({
 RDS provides pre-built validation schemas in `/lib/helpers/`:
 
 ```tsx
-import {
-  fileUploadValidationSchema,
-  imageUploadValidationSchema,
-} from '@carletonuniversity/rds'
+import { fileUploadValidationSchema, imageUploadValidationSchema } from '@carletonuniversity/rds'
 
 // File upload validation
 const schema = Yup.object({
@@ -785,20 +760,13 @@ import { Form, Input, Select } from '@carletonuniversity/rds'
 
 function MyBlockEdit({ attributes, setAttributes }) {
   return (
-    <Form
-      initialValues={attributes}
-      onSubmit={(values) => setAttributes(values)}
-      enableReinitialize
-    >
+    <Form initialValues={attributes} onSubmit={(values) => setAttributes(values)} enableReinitialize>
       <Form.Field name="title" label="Title">
         <Input name="title" />
       </Form.Field>
 
       <Form.Field name="category" label="Category">
-        <Select
-          name="category"
-          options={categoryOptions}
-        />
+        <Select name="category" options={categoryOptions} />
       </Form.Field>
     </Form>
   )
@@ -807,10 +775,7 @@ function MyBlockEdit({ attributes, setAttributes }) {
 // Frontend component
 function MyBlockView({ attributes }) {
   return (
-    <Form
-      initialValues={{}}
-      onSubmit={handleSubmit}
-    >
+    <Form initialValues={{}} onSubmit={handleSubmit}>
       {/* Form fields */}
     </Form>
   )
@@ -831,26 +796,30 @@ function MyBlockView({ attributes }) {
 ### Common Issues
 
 **1. Field not updating**
+
 ```tsx
 // Ensure name prop matches initialValues key
 <Input name="email" /> // Must have initialValues.email
 ```
 
 **2. Validation not triggering**
+
 ```tsx
 // Check schema field names match form field names
 const schema = Yup.object({
-  email: Yup.string().email() // Must match <Input name="email" />
+  email: Yup.string().email(), // Must match <Input name="email" />
 })
 ```
 
 **3. Select not working with Formik**
+
 ```tsx
 // Use the RDS Select component, not native <select>
 import { Select } from '@carletonuniversity/rds'
 ```
 
 **4. Date values**
+
 ```tsx
 // DateTime returns Date objects
 // Convert for API if needed
@@ -874,11 +843,7 @@ function FormDebug() {
 
   if (process.env.NODE_ENV !== 'development') return null
 
-  return (
-    <pre>
-      {JSON.stringify({ values, errors, touched }, null, 2)}
-    </pre>
-  )
+  return <pre>{JSON.stringify({ values, errors, touched }, null, 2)}</pre>
 }
 ```
 

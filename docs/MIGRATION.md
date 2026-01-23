@@ -37,13 +37,13 @@ This document outlines the strategy for migrating RDS from Tailwind CSS to SCSS 
 
 ### Timeline Estimate
 
-| Phase | Duration | Components |
-|-------|----------|------------|
-| Foundation | 2-3 weeks | Setup, tokens |
-| Design Tokens | 1-2 weeks | Variables, mixins |
-| Component Migration | 8-12 weeks | 51 components |
-| Cleanup | 1-2 weeks | Remove Tailwind |
-| **Total** | **12-19 weeks** | |
+| Phase               | Duration        | Components        |
+| ------------------- | --------------- | ----------------- |
+| Foundation          | 2-3 weeks       | Setup, tokens     |
+| Design Tokens       | 1-2 weeks       | Variables, mixins |
+| Component Migration | 8-12 weeks      | 51 components     |
+| Cleanup             | 1-2 weeks       | Remove Tailwind   |
+| **Total**           | **12-19 weeks** |                   |
 
 ---
 
@@ -52,39 +52,49 @@ This document outlines the strategy for migrating RDS from Tailwind CSS to SCSS 
 ### Why Move Away from Tailwind?
 
 #### 1. Bundle Size
+
 ```
 Current:  ~150KB+ (includes many unused utilities)
 Target:   ~50-80KB (only used styles)
 ```
 
 #### 2. WordPress/Gutenberg Conflicts
+
 Tailwind's reset and utilities often conflict with WordPress core styles:
+
 - Button styling overrides
 - Form element conflicts
 - Typography clashes
 
 #### 3. Customization Difficulty
+
 Currently requires:
+
 - Understanding Tailwind config
 - Modifying `rds-tailwind-theme` package
 - Rebuilding entire library
 
 With SCSS:
+
 - Override CSS custom properties
 - No build step required
 - Standard CSS knowledge
 
 #### 4. Style Isolation
+
 Current issues:
+
 - Global styles can leak between components
 - Hard to scope styles in WordPress
 
 With CSS Modules:
+
 - Automatic class name scoping
 - No style leakage
 - Better encapsulation
 
 #### 5. Developer Experience
+
 - Standard SCSS is more widely known than Tailwind
 - Better IDE support and autocomplete
 - Easier debugging (readable class names)
@@ -105,6 +115,7 @@ With CSS Modules:
 ### Migration Order
 
 Prioritize by:
+
 1. **Complexity** - Simple components first
 2. **Dependencies** - Components used by others first
 3. **Gutenberg usage** - High-usage blocks prioritized
@@ -199,13 +210,13 @@ $color-info: #3b82f6;
 
 // Spacing
 $spacing-unit: 0.25rem; // 4px
-$spacing-1: $spacing-unit * 1;   // 4px
-$spacing-2: $spacing-unit * 2;   // 8px
-$spacing-3: $spacing-unit * 3;   // 12px
-$spacing-4: $spacing-unit * 4;   // 16px
-$spacing-5: $spacing-unit * 5;   // 20px
-$spacing-6: $spacing-unit * 6;   // 24px
-$spacing-8: $spacing-unit * 8;   // 32px
+$spacing-1: $spacing-unit * 1; // 4px
+$spacing-2: $spacing-unit * 2; // 8px
+$spacing-3: $spacing-unit * 3; // 12px
+$spacing-4: $spacing-unit * 4; // 16px
+$spacing-5: $spacing-unit * 5; // 20px
+$spacing-6: $spacing-unit * 6; // 24px
+$spacing-8: $spacing-unit * 8; // 32px
 $spacing-10: $spacing-unit * 10; // 40px
 $spacing-12: $spacing-unit * 12; // 48px
 $spacing-16: $spacing-unit * 16; // 64px
@@ -451,7 +462,7 @@ export function Button({ color = 'red', isSmall, children }) {
         'px-4 py-2 rounded-md font-medium text-sm',
         'transition-colors duration-200',
         colorClasses[color],
-        isSmall && 'px-3 py-1.5 text-xs'
+        isSmall && 'px-3 py-1.5 text-xs',
       )}
     >
       {children}
@@ -557,7 +568,7 @@ export function Button({
         styles.button,
         styles[`button--${colorKey}`],
         isSmall && styles['button--small'],
-        isFull && styles['button--full']
+        isFull && styles['button--full'],
       )}
       disabled={isDisabled}
       data-testid="rds-button"
@@ -584,6 +595,7 @@ npm uninstall rds-tailwind-theme postcss-nesting
 ### 4.2 Update Configuration
 
 Remove Tailwind from:
+
 - `vite.config.ts`
 - `postcss.config.js`
 - Delete `tailwind.config.ts`
@@ -621,9 +633,8 @@ export default defineConfig({
   css: {
     modules: {
       // Generate readable class names in dev
-      generateScopedName: process.env.NODE_ENV === 'production'
-        ? '[hash:base64:8]'
-        : '[name]__[local]___[hash:base64:5]',
+      generateScopedName:
+        process.env.NODE_ENV === 'production' ? '[hash:base64:8]' : '[name]__[local]___[hash:base64:5]',
       localsConvention: 'camelCase',
     },
   },
@@ -715,6 +726,7 @@ declare module '*.module.scss' {
 ### Per-Component Steps
 
 1. **Create SCSS module**
+
    ```
    ComponentName/
    ├── ComponentName.tsx
@@ -725,6 +737,7 @@ declare module '*.module.scss' {
 2. **Write styles using design tokens**
 
 3. **Update component imports**
+
    ```tsx
    import styles from './ComponentName.module.scss'
    ```
@@ -744,10 +757,12 @@ declare module '*.module.scss' {
 ### Visual Regression Testing
 
 Before migration:
+
 1. Capture screenshots of all component states
 2. Save as baseline
 
 After migration:
+
 1. Capture new screenshots
 2. Compare with baseline
 3. Fix any visual differences
@@ -802,20 +817,24 @@ git revert <commit-hash>
 ## Success Criteria
 
 ### Phase 1 Complete When:
+
 - [ ] SCSS infrastructure in place
 - [ ] Variables and mixins defined
 - [ ] Build process works
 
 ### Phase 2 Complete When:
+
 - [ ] All design tokens as CSS custom properties
 - [ ] Theme customization documented
 
 ### Phase 3 Complete When:
+
 - [ ] All 51 components migrated
 - [ ] All tests passing
 - [ ] Visual regression clean
 
 ### Phase 4 Complete When:
+
 - [ ] Tailwind removed
 - [ ] Bundle size reduced
 - [ ] Documentation updated
