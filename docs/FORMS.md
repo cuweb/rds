@@ -178,7 +178,6 @@ Dynamic field arrays for repeatable fields.
 
 ```tsx
 import { FieldArray } from 'formik'
-
 ;<FieldArray name="addresses">
   {({ push, remove }) => (
     <Form.FieldArrayContainer>
@@ -246,7 +245,6 @@ Multi-line text input.
 
 ```tsx
 import { TextArea } from '@carletonuniversity/rds'
-
 ;<TextArea name="description" rows={5} placeholder="Enter description..." />
 ```
 
@@ -350,7 +348,6 @@ Radio button for single selection from options.
 
 ```tsx
 import { Radio } from '@carletonuniversity/rds'
-
 ;<Form.FieldSet legend="Preferred Contact Method">
   <Radio name="contactMethod" value="email" label="Email" />
   <Radio name="contactMethod" value="phone" label="Phone" />
@@ -482,7 +479,6 @@ Google Places autocomplete for address input.
 
 ```tsx
 import { PlacesAutoComplete } from '@carletonuniversity/rds'
-
 ;<PlacesAutoComplete
   name="address"
   placeholder="Enter address"
@@ -528,7 +524,6 @@ Helper text display for additional field information.
 
 ```tsx
 import { HelperText } from '@carletonuniversity/rds'
-
 ;<Form.Field name="password" label="Password">
   <Input name="password" type="password" />
   <HelperText>Must be at least 8 characters with one uppercase letter</HelperText>
