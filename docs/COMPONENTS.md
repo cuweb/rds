@@ -217,7 +217,6 @@ List item component with similar structure to Card.
 
 ```tsx
 import { Listing } from '@carletonuniversity/rds'
-
 ;<Listing>
   <Listing.Figure>
     <img src="/thumb.jpg" alt="" />
@@ -252,7 +251,6 @@ Descriptive text blocks, often used for definition lists.
 
 ```tsx
 import { Description } from '@carletonuniversity/rds'
-
 ;<Description title="Term" content="Definition or explanation of the term." />
 ```
 
@@ -264,7 +262,6 @@ Expandable/collapsible content section.
 
 ```tsx
 import { Details } from '@carletonuniversity/rds'
-
 ;<Details summary="Click to expand">
   <p>Hidden content revealed when expanded.</p>
 </Details>
@@ -331,7 +328,6 @@ Data table with sorting support.
 
 ```tsx
 import { Table } from '@carletonuniversity/rds'
-
 ;<Table>
   <Table.Header>
     <Table.Row>
@@ -358,7 +354,6 @@ Page navigation component.
 
 ```tsx
 import { Pagination } from '@carletonuniversity/rds'
-
 ;<Pagination currentPage={1} totalPages={10} onPageChange={(page) => setCurrentPage(page)} />
 ```
 
@@ -370,7 +365,6 @@ Date selection calendar.
 
 ```tsx
 import { Calendar } from '@carletonuniversity/rds'
-
 ;<Calendar selectedDate={selectedDate} onDateSelect={(date) => setSelectedDate(date)} />
 ```
 
@@ -384,7 +378,6 @@ Full-screen hero banner with video/image support.
 
 ```tsx
 import { Splash } from '@carletonuniversity/rds'
-
 ;<Splash>
   <Splash.Background>
     <Splash.Video src="/hero-video.mp4" />
@@ -438,7 +431,6 @@ Full-width image section.
 
 ```tsx
 import { WideImage } from '@carletonuniversity/rds'
-
 ;<WideImage src="/wide-image.jpg" alt="Description" caption="Image caption" />
 ```
 
@@ -450,7 +442,6 @@ Page header with title and metadata.
 
 ```tsx
 import { PageHeader } from '@carletonuniversity/rds'
-
 ;<PageHeader
   title="Page Title"
   subtitle="Page subtitle"
@@ -471,7 +462,6 @@ Minimal footer with copyright.
 
 ```tsx
 import { FooterBasic } from '@carletonuniversity/rds'
-
 ;<FooterBasic copyrightYear={2024} organization="Carleton University" />
 ```
 
@@ -481,7 +471,6 @@ Standard footer with navigation links.
 
 ```tsx
 import { FooterStandard } from '@carletonuniversity/rds'
-
 ;<FooterStandard links={footerLinks} socialLinks={socialLinks} />
 ```
 
@@ -507,7 +496,6 @@ Complex navigation component with responsive support.
 
 ```tsx
 import { Nav } from '@carletonuniversity/rds'
-
 ;<Nav>
   <Nav.Top>
     <Nav.Logo src="/logo.svg" alt="Logo" />
@@ -575,7 +563,6 @@ Styled blockquotes.
 
 ```tsx
 import { Quote } from '@carletonuniversity/rds'
-
 ;<Quote text="This is a quoted statement." author="John Doe" citation="Source Publication" />
 ```
 
@@ -587,7 +574,6 @@ Testimonial/review blocks.
 
 ```tsx
 import { Testimonial } from '@carletonuniversity/rds'
-
 ;<Testimonial quote="Great experience working with RDS!" author="Jane Smith" role="Developer" image="/jane.jpg" />
 ```
 
@@ -599,7 +585,6 @@ Event timeline visualization.
 
 ```tsx
 import { Timeline } from '@carletonuniversity/rds'
-
 ;<Timeline
   items={[
     { date: '2024-01', title: 'Project Started', description: '...' },
@@ -617,7 +602,6 @@ Filter sidebar for search results.
 
 ```tsx
 import { FilterPanel } from '@carletonuniversity/rds'
-
 ;<FilterPanel
   filters={[
     {
@@ -643,7 +627,6 @@ Notification toasts.
 
 ```tsx
 import { Toast } from '@carletonuniversity/rds'
-
 ;<Toast
   type="success"
   message="Action completed successfully!"
@@ -660,7 +643,6 @@ Highlighted callout boxes.
 
 ```tsx
 import { CallOut } from '@carletonuniversity/rds'
-
 ;<CallOut type="info" title="Note">
   Important information for the user.
 </CallOut>
@@ -689,7 +671,6 @@ Images with captions.
 
 ```tsx
 import { Figure } from '@carletonuniversity/rds'
-
 ;<Figure src="/image.jpg" alt="Image description" caption="Figure 1: Image caption" />
 ```
 
@@ -721,7 +702,6 @@ Grid layout for multiple images.
 
 ```tsx
 import { ImageGrid } from '@carletonuniversity/rds'
-
 ;<ImageGrid
   images={[
     { src: '/img1.jpg', alt: 'Image 1' },
@@ -740,7 +720,6 @@ Image carousel/slider.
 
 ```tsx
 import { ImageSlider } from '@carletonuniversity/rds'
-
 ;<ImageSlider
   images={[
     { src: '/slide1.jpg', alt: 'Slide 1' },
@@ -792,7 +771,6 @@ import {
 
 ```tsx
 import { Forbidden403 } from '@carletonuniversity/rds'
-
 ;<Forbidden403 message="You don't have permission to access this page." homeLink="/" />
 ```
 
@@ -802,7 +780,6 @@ import { Forbidden403 } from '@carletonuniversity/rds'
 
 ```tsx
 import { NotFound404 } from '@carletonuniversity/rds'
-
 ;<NotFound404 message="The page you're looking for doesn't exist." homeLink="/" searchLink="/search" />
 ```
 

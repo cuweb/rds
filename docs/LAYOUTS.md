@@ -53,7 +53,6 @@ Wrapper for article content, providing proper semantic HTML and typography style
 
 ```tsx
 import { Article } from '@carletonuniversity/rds'
-
 ;<Article>
   <h1>Article Title</h1>
   <p>Article content with proper typography styling...</p>
@@ -81,7 +80,6 @@ Sidebar or complementary content area.
 
 ```tsx
 import { Aside } from '@carletonuniversity/rds'
-
 ;<div className="flex">
   <Main>
     <p>Main content</p>
@@ -123,7 +121,6 @@ Page body wrapper that provides base styling and layout constraints.
 
 ```tsx
 import { Body } from '@carletonuniversity/rds'
-
 ;<Body>
   <Nav>...</Nav>
   <Main>...</Main>
@@ -209,7 +206,6 @@ Floating content box that can be positioned within text content.
 
 ```tsx
 import { FloatBox } from '@carletonuniversity/rds'
-
 ;<Article>
   <p>Main article text...</p>
 
@@ -245,7 +241,6 @@ Full-screen image background with overlay content.
 
 ```tsx
 import { ImageCover } from '@carletonuniversity/rds'
-
 ;<ImageCover src="/hero-image.jpg" alt="Hero background" overlay="dark">
   <h1>Hero Title</h1>
   <p>Hero description text</p>
@@ -286,7 +281,6 @@ Main content area wrapper with semantic `<main>` element.
 
 ```tsx
 import { Main } from '@carletonuniversity/rds'
-
 ;<Body>
   <Nav>...</Nav>
   <Main>
@@ -416,7 +410,6 @@ Wave decoration background layout for visual interest.
 
 ```tsx
 import { WideWave } from '@carletonuniversity/rds'
-
 ;<WideWave color="red" position="top">
   <Section>
     <h2>Featured Content</h2>
