@@ -18,6 +18,6 @@ jobs:
         with:
           node-version: '24'
       - run: npm --version
-      - run: npm ci
+      - run: npm install
       - run: npm run build --if-present
       - run: npm publish --access public
