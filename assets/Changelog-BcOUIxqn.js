@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-Cf8x2fCZ.js";import{useMDXComponents as i}from"./index-rSs0gAPN.js";import"./preview-DCtBB4o_.js";import"./DocsRenderer-CFRXHY34-zVQiMrvf.js";import{M as r}from"./index-BtDZvNzN.js";import"./index-yBjzXJbu.js";import"./index-OlNebYNa.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-_JUEtf5-.js";import"./react-18-C8tKfnam.js";import"./index-BLHw34Di.js";import"./index-B7EolvnA.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:C}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
+import{j as n}from"./jsx-runtime-Cf8x2fCZ.js";import{useMDXComponents as i}from"./index-rSs0gAPN.js";import"./preview-BjC9QwfQ.js";import"./DocsRenderer-CFRXHY34-DvmrBxUc.js";import{M as r}from"./index-DBUSp8QZ.js";import"./index-yBjzXJbu.js";import"./index-OlNebYNa.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-DIPHRbr2.js";import"./react-18-C8tKfnam.js";import"./index-BLHw34Di.js";import"./index-B7EolvnA.js";import"./index-DgH-xKnr.js";import"./index-DrFu-skq.js";const{definePreview:C}=__STORYBOOK_MODULE_PREVIEW_API__;function l(d){const e={a:"a",code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
 `,n.jsx(e.p,{children:"All notable changes to this project will be documented in this file."}),`
 `,n.jsxs(e.p,{children:["The format is based on ",n.jsx(e.a,{href:"https://keepachangelog.com/en/1.0.0/",rel:"nofollow",children:"Keep a Changelog"}),`,
 and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.html",rel:"nofollow",children:"Semantic Versioning"}),"."]}),`
@@ -13,6 +13,7 @@ and this project adheres to `,n.jsx(e.a,{href:"https://semver.org/spec/v2.0.0.ht
 `,n.jsxs(e.li,{children:[n.jsx(e.em,{children:"Security"}),": in case of vulnerabilities."]}),`
 `]}),`
 `,n.jsx(e.h2,{id:"unreleased",children:"[Unreleased]"}),`
+`,n.jsx(e.h2,{id:"0264",children:"[0.26.4]"}),`
 `,n.jsx(e.h3,{id:"change",children:"Change"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"Font size and spacing for tables"}),`
