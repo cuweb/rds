@@ -33,10 +33,10 @@ export const Testimonial = ({
           className={`mx-auto flex max-w-7xl flex-col-reverse gap-5 md:gap-10 lg:gap-16 items-center ${reverseClasss} md:items-stretch`}
         >
           <div
-            className="w-full md:-my-8 hidden md:block md:flex-[0_0_30%] bg-cu-black-25 rounded-lg bg-cover"
+            className="w-full md:w-64 md:-my-8 hidden md:block lg:w-80 bg-cu-black-25 rounded-lg bg-cover flex-shrink-0"
             style={inlineImageStyles}
           />
-          <div className="w-full md:max-w-none md:flex-auto py-6 px-6 md:px-0 md:py-16 lg:py-20">{children}</div>
+          <div className="w-full min-w-0 md:max-w-none flex-auto py-6 px-6 md:px-0 md:py-16 lg:py-20">{children}</div>
         </div>
       </div>
     </div>
