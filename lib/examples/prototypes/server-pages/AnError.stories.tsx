@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../../layouts/Main/Main'
 import { Nav } from '../../../components/Nav/Nav'
 import { Section } from '../../../layouts/Section/Section'

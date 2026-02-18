@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, useMemo, useState, useRef, useEffect } from 'react'
-import { type Meta, type StoryObj } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react-vite'
 import { useFormik } from 'formik'
 import { FormikHelpers } from 'formik'
 import * as Yup from 'yup'

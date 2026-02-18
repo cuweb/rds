@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Modal } from './Modal'
 import { Button } from '../Button/Button'
 import { ArticleData as contentData } from '../../data/ArticleData'

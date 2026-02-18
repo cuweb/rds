@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ImageSlider } from './ImageSlider'
 import { sliderData } from '../../data/SliderData'
 import { Main } from '../../layouts/Main/Main'

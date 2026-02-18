@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ImageGrid, ImageGridProps } from './ImageGrid'
 import { imageData } from '../../data/ImageData'
 import { Main } from '../../layouts/Main/Main'

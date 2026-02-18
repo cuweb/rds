@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Forbidden403 } from './Forbidden403'
 import { Main } from '../../../layouts/Main/Main'
 

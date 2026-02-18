@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { WideImage } from './WideImage'
 import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'

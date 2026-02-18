@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useFormik, FormikHelpers, FieldArray } from 'formik'
 import * as Yup from 'yup'
 import { Section } from '../../layouts/Section/Section'

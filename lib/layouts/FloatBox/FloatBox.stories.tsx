@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../Main/Main'
 import { FloatBox } from './FloatBox'
 import { Details } from '../../components/Details/Details'

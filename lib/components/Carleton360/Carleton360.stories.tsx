@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Carleton360 } from './Carleton360'
 import { Main } from '../../layouts/Main/Main'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'

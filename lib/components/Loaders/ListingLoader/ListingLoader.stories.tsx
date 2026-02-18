@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { StackedList } from '../../../layouts/StackedList/StackedList'
 import { ListingEventLoader } from './ListingEventLoader'
 import { ListingNewsLoader } from './ListingNewsLoader'

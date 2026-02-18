@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FullBanner } from './FullBanner'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { Button } from '../Button/Button'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { TableData } from '../../data/TableData'
 import { ColumnDefinitionType, Table } from './Table'
 import { Main } from '../../layouts/Main/Main'

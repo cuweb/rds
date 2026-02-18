@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Splash } from './Splash'
 import { Card } from '../Card/Card'
 import { Column } from '../../layouts/Column/Column'

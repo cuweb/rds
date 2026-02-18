@@ -7,7 +7,7 @@ import typescriptParser from '@typescript-eslint/parser'
 import prettier from 'eslint-plugin-prettier'
 import storybook from 'eslint-plugin-storybook'
 import eslintConfigPrettier from 'eslint-config-prettier'
-import pluginCypress from 'eslint-plugin-cypress/flat'
+import pluginCypress from 'eslint-plugin-cypress'
 
 const config = [
   ...storybook.configs['flat/recommended'],

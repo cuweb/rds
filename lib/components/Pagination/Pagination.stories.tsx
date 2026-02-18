@@ -1,5 +1,5 @@
 import React from 'react'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Pagination } from './Pagination'
 import { Main } from '../../layouts/Main/Main'
 
