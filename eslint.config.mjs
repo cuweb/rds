@@ -10,11 +10,13 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 import pluginCypress from 'eslint-plugin-cypress'
 
 const config = [
+  {
+    ignores: ['dist/**', 'node_modules/**', 'public/**'],
+  },
   ...storybook.configs['flat/recommended'],
   pluginCypress.configs.recommended,
   eslintConfigPrettier,
   {
-    ignores: ['dist/**', 'node_modules/**', 'public/**'],
     files: ['lib/**/*.ts', 'lib/**/*.tsx', 'lib/**/*.cy.ts', 'lib/**/*.cy.tsx'],
     plugins: {
       react,
@@ -46,7 +48,7 @@ const config = [
       'no-undef': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
       'prettier/prettier': 'error',
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-refresh/only-export-components': 'off',
       'cypress/unsafe-to-chain-command': 'error',
     },
   },
