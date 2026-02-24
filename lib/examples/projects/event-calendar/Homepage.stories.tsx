@@ -33,12 +33,14 @@ type Story = StoryObj
 export const Homepage: Story = {
   render: () => (
     <>
-      <Nav.Top>
-        <Nav.Logo title="Raven Design System" link="/" />
-        <Nav.Aside>
-          <Nav.Buttons menu={NavButtonsData} />
-        </Nav.Aside>
-      </Nav.Top>
+      <Nav>
+        <Nav.Top>
+          <Nav.Logo title="Raven Design System" link="/" />
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
+      </Nav>
 
       <Main>
         <Section maxWidth="max">
