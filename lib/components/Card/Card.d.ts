@@ -1,4 +1,5 @@
 import { default as React } from '../../../node_modules/react';
+import { CardFundingMeta } from './CardFundingMeta';
 export interface CardProps {
     children: React.ReactNode;
     isGrey?: boolean;
@@ -42,7 +43,7 @@ export declare const Card: {
         displayName: string;
     };
     Header: {
-        ({ title, as, date, datePrefix, readTime, datePosition, }: import('./CardHeader').CardHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ title, link, extraText, as, date, datePrefix, readTime, datePosition, }: import('./CardHeader').CardHeaderProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Body: {
@@ -65,6 +66,7 @@ export declare const Card: {
         ({ startDateTime, endDateTime, onCampus, onCampusBuilding, onCampusRoomNumber, eventAddress, }: import('./CardEventMeta').CardEventMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
+    FundingMeta: typeof CardFundingMeta;
     PeopleMeta: {
         ({ jobTitle, children, phone }: import('./CardPeopleMeta').CardPeopleMetaProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;

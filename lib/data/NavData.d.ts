@@ -49,3 +49,7 @@ export declare const NavAsideLoggedInOptionsOnClick: ({
     title: string;
     href?: undefined;
 })[];
+export declare const NavFutureFunder: {
+    href: string;
+    title: string;
+}[];
