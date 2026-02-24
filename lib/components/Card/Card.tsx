@@ -4,6 +4,7 @@ import { CardContent } from './CardContent'
 import { CardDateThumb } from './CardDateThumb'
 import { CardExcerpt } from './CardExcerpt'
 import { CardEventMeta } from './CardEventMeta'
+import { CardFundingMeta } from './CardFundingMeta'
 import { CardFigure } from './CardFigure'
 import { CardFooter } from './CardFooter'
 import { CardHeader } from './CardHeader'
@@ -81,6 +82,7 @@ export const Card = Object.assign(CardWrapper, {
   Footer: CardFooter,
   Excerpt: CardExcerpt,
   EventMeta: CardEventMeta,
+  FundingMeta: CardFundingMeta,
   PeopleMeta: CardPeopleMeta,
   Stats: CardStats,
 })

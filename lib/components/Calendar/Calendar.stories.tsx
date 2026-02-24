@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCallback, useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Calendar } from './Calendar'
 import { CalendarData } from '../../data/CalendarData'
 import { Main } from '../../layouts/Main/Main'

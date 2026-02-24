@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Section } from '../../../layouts/Section/Section'
 import { Main } from '../../../layouts/Main/Main'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
@@ -33,12 +33,14 @@ type Story = StoryObj
 export const Homepage: Story = {
   render: () => (
     <>
-      <Nav.Top>
-        <Nav.Logo title="Raven Design System" link="/" />
-        <Nav.Aside>
-          <Nav.Buttons menu={NavButtonsData} />
-        </Nav.Aside>
-      </Nav.Top>
+      <Nav>
+        <Nav.Top>
+          <Nav.Logo title="Raven Design System" link="/" />
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
+      </Nav>
 
       <Main>
         <Section maxWidth="max">

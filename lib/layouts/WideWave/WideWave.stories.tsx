@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { WideWave } from './WideWave'
 import { Main } from '../../layouts/Main/Main'
 import { TextMedia } from '../../components/TextMedia/TextMedia'

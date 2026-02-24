@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Article, ArticleProps } from './Article'
 import { Main } from '../Main/Main'
 import { Section } from '../Section/Section'

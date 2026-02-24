@@ -1,5 +1,9 @@
+import { useLinkContext } from '../LinkProvider/useLinkContext'
+
 export interface CardHeaderProps {
   title: string
+  link?: string
+  extraText?: string
   as?: 'h2' | 'h3'
   date?: string | Date
   datePrefix?: string
@@ -9,12 +13,15 @@ export interface CardHeaderProps {
 
 export const CardHeader = ({
   title = 'No title available',
+  link,
+  extraText,
   as = 'h2',
   date,
   datePrefix,
   readTime,
   datePosition = 'top',
 }: CardHeaderProps) => {
+  const LinkComponent = useLinkContext()
   const HeaderComponent = as
   const formattedDate = date
     ? new Date(date).toLocaleString('en-US', {
@@ -44,8 +51,16 @@ export const CardHeader = ({
         </div>
       )}
 
+      {extraText && !date && (
+        <div className="flex flex-row gap-1 w-full mb-1">
+          <p className="flex flex-row items-center italic text-sm text-cu-black-600 dark:text-white @sm:md:text-base">
+            {extraText}
+          </p>
+        </div>
+      )}
+
       <HeaderComponent className="line-clamp-3 text-lg font-semibold text-cu-black  dark:text-white @sm:md:text-xl leading-6 @sm:md:leading-8">
-        {title}
+        {link ? <LinkComponent href={link}>{title}</LinkComponent> : title}
       </HeaderComponent>
 
       {date && datePosition === 'bottom' && (

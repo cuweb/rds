@@ -166,3 +166,26 @@ export const NavAsideLoggedInOptionsOnClick = [
     title: 'Log out',
   },
 ]
+
+export const NavFutureFunder = [
+  {
+    href: '#',
+    title: 'Explore',
+  },
+  {
+    href: '#',
+    title: 'Submit',
+  },
+  {
+    href: '#',
+    title: 'Learn',
+  },
+  {
+    href: '#',
+    title: 'News',
+  },
+  {
+    href: '#',
+    title: 'Contact',
+  },
+]

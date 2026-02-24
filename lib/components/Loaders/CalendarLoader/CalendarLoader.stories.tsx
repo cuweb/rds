@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { CalendarLoader } from './CalendarLoader'
 import { Section } from '../../../layouts/Section/Section'
 import React from 'react'

@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../../layouts/Main/Main'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../../components/Nav/Nav'
@@ -35,12 +35,14 @@ const SinglePara = () => {
 export const SingleEvent: Story = {
   render: () => (
     <>
-      <Nav.Top>
-        <Nav.Logo title="Raven Design System" link="/" />
-        <Nav.Aside>
-          <Nav.Buttons menu={NavButtonsData} />
-        </Nav.Aside>
-      </Nav.Top>
+      <Nav>
+        <Nav.Top>
+          <Nav.Logo title="Raven Design System" link="/" />
+          <Nav.Aside>
+            <Nav.Buttons menu={NavButtonsData} />
+          </Nav.Aside>
+        </Nav.Top>
+      </Nav>
 
       <Main>
         <PageHeader

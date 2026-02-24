@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FooterCookie } from './FooterCookie'
 
 const meta: Meta<typeof FooterCookie> = {

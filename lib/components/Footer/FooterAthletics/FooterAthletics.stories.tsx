@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FooterAthletics } from './FooterAthletics'
 
 const meta: Meta<typeof FooterAthletics> = {

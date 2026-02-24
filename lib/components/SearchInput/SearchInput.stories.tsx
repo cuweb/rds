@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { SearchInput } from './SearchInput'
 import { SearchDatabase } from '../../data/SearchData'
 import { Modal } from '../Modal/Modal'

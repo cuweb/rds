@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Location } from './Location'
 import { LoadScript } from '@react-google-maps/api'
 import React from 'react'

@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FilterPanel } from './FilterPanel'
 import { Main } from '../../layouts/Main/Main'
 import { FilterPanelData } from '../../data/FilterData'

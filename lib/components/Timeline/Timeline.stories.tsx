@@ -1,5 +1,5 @@
 import React from 'react'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../layouts/Main/Main'
 import { Timeline } from './Timeline'
 import { TimelineData } from '../../data/TimelineData'

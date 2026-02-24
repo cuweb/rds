@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../../layouts/Main/Main'
 import { FooterDept } from '../../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../../components/Nav/Nav'

@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Section } from '../Section/Section'
 import { Main } from '../Main/Main'
 import { FooterStandard } from '../../components/Footer/FooterStandard/FooterStandard'

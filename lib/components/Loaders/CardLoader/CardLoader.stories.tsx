@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Column } from '../../../layouts/Column/Column'
 import { CardEventLoader } from './CardEventLoader'
 import { CardIconLoader } from './CardIconLoader'
