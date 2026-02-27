@@ -1,5 +1,6 @@
 import { Icon } from '../Icon'
-import { useEffect, useState } from 'react'
+import { ProgressBar } from '../ProgressBar/ProgressBar'
+import { formatCurrency } from '../../helpers/formatCurrency'
 
 interface CardFundingMetaProps {
   raised: number
@@ -15,25 +16,7 @@ const styles = {
 }
 
 export function CardFundingMeta({ raised, goal, daysLeft, showPercentage = true }: CardFundingMetaProps) {
-  const [animatedWidth, setAnimatedWidth] = useState(0)
-  const percentage = (raised / goal) * 100
-
-  // Animate progress bar on mount
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimatedWidth(percentage)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [percentage])
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount)
-  }
+  const percentage = goal > 0 ? (raised / goal) * 100 : 0
 
   const getTimeText = () => {
     if (daysLeft === 0) return 'Last day'
@@ -53,11 +36,8 @@ export function CardFundingMeta({ raised, goal, daysLeft, showPercentage = true 
       </div>
 
       {/* Progress Bar */}
-      <div className="h-3 bg-slate-200 rounded-full overflow-hidden mt-2 mb-3.5">
-        <div
-          className="h-full bg-gradient-to-r from-cu-red-400 to-cu-red-600 rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${animatedWidth}%` }}
-        />
+      <div className="mt-2 mb-3.5">
+        <ProgressBar value={raised} max={goal} />
       </div>
 
       {/* Bottom Info */}
