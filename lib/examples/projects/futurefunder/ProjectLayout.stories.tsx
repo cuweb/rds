@@ -5,7 +5,6 @@ import { Section } from '../../../layouts/Section/Section'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../../components/Nav/Nav'
 import { FundingDetails } from '../../../components/FundingDetails/FundingDetails'
-import { Details } from '../../../components/Details/Details'
 import { NavButtonsData, NavFutureFunder } from '../../../data/NavData'
 
 const meta: Meta = {
@@ -51,7 +50,6 @@ export const ProjectLayout: Story = {
           <FundingDetails
             status="ACTIVE CAMPAIGN"
             title="Annual Musical Production 2026"
-            description="Help bring the magic of live theater to our campus community"
             raised={45250}
             goal={75000}
             imageUrl="https://fastly.picsum.photos/id/237/1200/800.jpg?hmac=Zig5Q0Oa_5oSGNOhgbpE-lgHzdREZIxTf94rVP1-uCg"
@@ -59,24 +57,7 @@ export const ProjectLayout: Story = {
           />
         </Section>
 
-        <Details>
-          <Details.Item isBold>Hybrid Event</Details.Item>
-          <Details.Item>Raven's Nest, 1125 Colonel By Drive</Details.Item>
-          <Details.Item>
-            <a href="/">Teams meeting link</a>
-          </Details.Item>
-          <Details.Item>
-            <strong>Cost:</strong> $20 per adult, $15 for youth/senior
-          </Details.Item>
-        </Details>
-
-        <Details>
-          <Details.Item isBold>Contact</Details.Item>
-          <Details.Item>
-            John Doe, <a href="/">Email John</a>, 613-520-2600 x1234
-          </Details.Item>
-        </Details>
-
+        <SinglePara />
         <SinglePara />
         <SinglePara />
       </Main>
