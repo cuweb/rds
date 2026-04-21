@@ -1,5 +1,5 @@
 export interface CardExcerptProps {
-  text?: string
+  text?: React.ReactNode | string
   hasMore?: boolean
   truncateOnMobile?: boolean
 }
@@ -9,7 +9,7 @@ export const CardExcerpt = ({ text, hasMore, truncateOnMobile }: CardExcerptProp
     <p
       className={`text-base text-cu-black-700 dark:text-white ${truncateOnMobile ? 'line-clamp-1 md:line-clamp-none' : ''}`}
     >
-      {text && text.length > 170 ? `${text.substring(0, 150)}...` : text}
+      {typeof text === 'string' && text.length > 170 ? `${text.substring(0, 150)}...` : text}
       {hasMore && <span className="font-semibold"> More</span>}
     </p>
   )
