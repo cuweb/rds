@@ -1,5 +1,5 @@
 export interface CardExcerptProps {
-    text?: string;
+    text?: React.ReactNode | string;
     hasMore?: boolean;
     truncateOnMobile?: boolean;
 }
