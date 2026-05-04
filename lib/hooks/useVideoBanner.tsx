@@ -39,6 +39,7 @@ export const VideoBanner = ({
         autoPlay
         muted
         loop
+        playsInline
         controls={false}
         aria-label={video?.description || 'Default video description'}
         id="video-banner"
