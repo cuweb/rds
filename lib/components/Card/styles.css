@@ -1,3 +1,67 @@
+.cu-card {
+  transition: box-shadow 250ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.cu-card[data-cu-reveal] {
+  --cu-card-stagger: 0ms;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 700ms cubic-bezier(0.215, 0.61, 0.355, 1) var(--cu-card-stagger),
+    transform 700ms cubic-bezier(0.215, 0.61, 0.355, 1) var(--cu-card-stagger),
+    box-shadow 250ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.cu-card[data-cu-reveal]:nth-child(2) {
+  --cu-card-stagger: 120ms;
+}
+.cu-card[data-cu-reveal]:nth-child(3) {
+  --cu-card-stagger: 240ms;
+}
+.cu-card[data-cu-reveal]:nth-child(4) {
+  --cu-card-stagger: 360ms;
+}
+.cu-card[data-cu-reveal]:nth-child(5) {
+  --cu-card-stagger: 480ms;
+}
+.cu-card[data-cu-reveal]:nth-child(6) {
+  --cu-card-stagger: 600ms;
+}
+.cu-card[data-cu-reveal]:nth-child(7) {
+  --cu-card-stagger: 720ms;
+}
+.cu-card[data-cu-reveal]:nth-child(8) {
+  --cu-card-stagger: 840ms;
+}
+.cu-card[data-cu-reveal]:nth-child(9) {
+  --cu-card-stagger: 960ms;
+}
+.cu-card[data-cu-reveal]:nth-child(10) {
+  --cu-card-stagger: 1080ms;
+}
+.cu-card[data-cu-reveal]:nth-child(11) {
+  --cu-card-stagger: 1200ms;
+}
+.cu-card[data-cu-reveal]:nth-child(12) {
+  --cu-card-stagger: 1320ms;
+}
+.cu-card[data-cu-reveal]:nth-child(n + 13) {
+  --cu-card-stagger: 1320ms;
+}
+
+.cu-card[data-cu-reveal][data-revealed='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cu-card[data-cu-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: box-shadow 250ms cubic-bezier(0.2, 0, 0, 1);
+  }
+}
+
 .cu-card > figure:last-child {
   @apply mb-6;
 }
