@@ -43,16 +43,16 @@ This plan proposes a cohesive motion-and-interactivity layer for RDS. It is an _
 
 ### Hard rules (apply universally)
 
-| # | Rule | Why |
-|---|------|-----|
-| H1 | Every `transition-*` / `animate-*` class is paired with a `motion-reduce:` override or wrapped in `motion-safe:` | WCAG 2.3.3 / user safety |
-| H2 | Any JS-driven animation reads `prefers-reduced-motion` via `useReducedMotion` and skips/instant-completes when true | WCAG 2.3.3 |
-| H3 | Animate `transform` / `opacity` only, never `top`/`left`/`width`/`height` | Performance, jank avoidance |
-| H4 | Durations 150–500 ms, except progress fills (≤ 1500 ms) and skeletons (≥ 1500 ms loop) | Perceptual sweet spot |
-| H5 | Focus is never gated on animation completion. Focus moves immediately; motion is decorative on top. | WCAG 2.4.7 |
-| H6 | Auto-playing motion ≥ 5 s requires a user-controllable pause | WCAG 2.2.2 |
-| H7 | No parallax, no scroll-jacking, no carousel auto-advance without explicit opt-in + pause | WCAG, AODA |
-| H8 | Storybook story per animated state (idle, hover, focus, active, open/closed, reduced-motion) | Verifiability |
+| #   | Rule                                                                                                                | Why                         |
+| --- | ------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| H1  | Every `transition-*` / `animate-*` class is paired with a `motion-reduce:` override or wrapped in `motion-safe:`    | WCAG 2.3.3 / user safety    |
+| H2  | Any JS-driven animation reads `prefers-reduced-motion` via `useReducedMotion` and skips/instant-completes when true | WCAG 2.3.3                  |
+| H3  | Animate `transform` / `opacity` only, never `top`/`left`/`width`/`height`                                           | Performance, jank avoidance |
+| H4  | Durations 150–500 ms, except progress fills (≤ 1500 ms) and skeletons (≥ 1500 ms loop)                              | Perceptual sweet spot       |
+| H5  | Focus is never gated on animation completion. Focus moves immediately; motion is decorative on top.                 | WCAG 2.4.7                  |
+| H6  | Auto-playing motion ≥ 5 s requires a user-controllable pause                                                        | WCAG 2.2.2                  |
+| H7  | No parallax, no scroll-jacking, no carousel auto-advance without explicit opt-in + pause                            | WCAG, AODA                  |
+| H8  | Storybook story per animated state (idle, hover, focus, active, open/closed, reduced-motion)                        | Verifiability               |
 
 ---
 
@@ -60,23 +60,23 @@ This plan proposes a cohesive motion-and-interactivity layer for RDS. It is an _
 
 ### 2.1 Motion already in the codebase
 
-| Component | Motion present | File:line | Notes |
-|---|---|---|---|
-| Card | hover scale (1.02) + shadow | `lib/components/Card/Card.tsx:45` | `duration-300 ease-in`. No `motion-reduce` |
-| Toast | slide-in + fade, JS removal after 200 ms | `lib/components/Toast/Toast.tsx:48,57` | Hard-coded timeout couples JS to CSS |
-| Nav | header hide-on-scroll | `lib/components/Nav/Nav.tsx:28`, `scrollingNav.ts:12-32` | Unthrottled scroll listener; no `motion-reduce` |
-| Nav | item color transitions, arrow rotation | `lib/components/Nav/Nav.Styles.ts:8-13`, `priority-plus.css:17,60` | No `motion-reduce` |
-| Description | accordion icon rotation (`rotate-0` ↔ `rotate-90`) | `lib/components/Description/DescriptionAccordion.tsx:27`, `script.ts` | Content shows/hides via `hidden` attribute — no height animation |
-| FilterPanel | dropdown arrow rotation + color | `lib/components/FilterPanel/FilterPanelTop.tsx:34`, `dropdown.ts:66,88,141` | No `motion-reduce` |
-| ProgressBar | width fill animation | `lib/components/ProgressBar/ProgressBar.tsx:31-32` | `transition-all duration-1000` — animates `width` (H3 violation) |
-| ImageSlider | carousel slide (inline `transform 0.5s`) | `lib/components/ImageSlider/script.ts:78-113` | JS-set transitions; 50 ms timeouts to sequence phases |
-| ImageSlider item | 5 s background-image transition | `lib/components/ImageSlider/ImageSliderItem.tsx:31` | `duration-[5000]`. Borderline H6 |
-| Loaders (21+) | `animate-pulse` skeletons | `lib/components/Loaders/**` | None opt into `motion-reduce` (Tailwind does NOT auto-disable) |
-| PageLoader | `animate-spin` + slowed-spin under reduced-motion | `lib/components/Loaders/PageLoader/PageLoader.tsx:5` | **Only** component currently honouring reduced-motion |
-| TopNavLoader | `animate-spin` | `lib/components/Loaders/TopNavLoader/TopNavLoader.tsx:6` | No `motion-reduce` |
-| Splash / FullBanner / WideBanner video | `autoPlay muted loop playsInline` | `lib/hooks/useVideoBanner.tsx:39-41` | Loops indefinitely. No pause control. **H6 risk.** |
-| Modal | none (snap `block`/`hidden`) | `lib/components/Modal/Modal.tsx:129` | Open/close is instant — felt jarring per typical UX |
-| Dialog | none (uses native `<dialog>` `showModal()`) | `lib/components/Dialog/Dialog.tsx:21` | Same — no entrance/exit |
+| Component                              | Motion present                                     | File:line                                                                   | Notes                                                            |
+| -------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Card                                   | hover scale (1.02) + shadow                        | `lib/components/Card/Card.tsx:45`                                           | `duration-300 ease-in`. No `motion-reduce`                       |
+| Toast                                  | slide-in + fade, JS removal after 200 ms           | `lib/components/Toast/Toast.tsx:48,57`                                      | Hard-coded timeout couples JS to CSS                             |
+| Nav                                    | header hide-on-scroll                              | `lib/components/Nav/Nav.tsx:28`, `scrollingNav.ts:12-32`                    | Unthrottled scroll listener; no `motion-reduce`                  |
+| Nav                                    | item color transitions, arrow rotation             | `lib/components/Nav/Nav.Styles.ts:8-13`, `priority-plus.css:17,60`          | No `motion-reduce`                                               |
+| Description                            | accordion icon rotation (`rotate-0` ↔ `rotate-90`) | `lib/components/Description/DescriptionAccordion.tsx:27`, `script.ts`       | Content shows/hides via `hidden` attribute — no height animation |
+| FilterPanel                            | dropdown arrow rotation + color                    | `lib/components/FilterPanel/FilterPanelTop.tsx:34`, `dropdown.ts:66,88,141` | No `motion-reduce`                                               |
+| ProgressBar                            | width fill animation                               | `lib/components/ProgressBar/ProgressBar.tsx:31-32`                          | `transition-all duration-1000` — animates `width` (H3 violation) |
+| ImageSlider                            | carousel slide (inline `transform 0.5s`)           | `lib/components/ImageSlider/script.ts:78-113`                               | JS-set transitions; 50 ms timeouts to sequence phases            |
+| ImageSlider item                       | 5 s background-image transition                    | `lib/components/ImageSlider/ImageSliderItem.tsx:31`                         | `duration-[5000]`. Borderline H6                                 |
+| Loaders (21+)                          | `animate-pulse` skeletons                          | `lib/components/Loaders/**`                                                 | None opt into `motion-reduce` (Tailwind does NOT auto-disable)   |
+| PageLoader                             | `animate-spin` + slowed-spin under reduced-motion  | `lib/components/Loaders/PageLoader/PageLoader.tsx:5`                        | **Only** component currently honouring reduced-motion            |
+| TopNavLoader                           | `animate-spin`                                     | `lib/components/Loaders/TopNavLoader/TopNavLoader.tsx:6`                    | No `motion-reduce`                                               |
+| Splash / FullBanner / WideBanner video | `autoPlay muted loop playsInline`                  | `lib/hooks/useVideoBanner.tsx:39-41`                                        | Loops indefinitely. No pause control. **H6 risk.**               |
+| Modal                                  | none (snap `block`/`hidden`)                       | `lib/components/Modal/Modal.tsx:129`                                        | Open/close is instant — felt jarring per typical UX              |
+| Dialog                                 | none (uses native `<dialog>` `showModal()`)        | `lib/components/Dialog/Dialog.tsx:21`                                       | Same — no entrance/exit                                          |
 
 ### 2.2 What's missing
 
@@ -89,16 +89,16 @@ This plan proposes a cohesive motion-and-interactivity layer for RDS. It is an _
 
 ### 2.3 Accessibility risks already in code
 
-| Severity | Risk | Where | Mitigation in this plan |
-|---|---|---|---|
-| **High** | Auto-playing looped video with no pause control | `useVideoBanner.tsx`, Splash, FullBanner, WideBanner | Add pause button + respect `prefers-reduced-motion` (Phase 1 + 2) |
-| **High** | All `animate-pulse` skeletons run during reduced-motion sessions | All Loaders | Wrap with `motion-safe:` (Phase 1) |
-| **Medium** | Unthrottled scroll listener drives nav hide/show | `scrollingNav.ts:12` | Throttle via `requestAnimationFrame`; add `motion-reduce:` guard (Phase 2) |
-| **Medium** | Card hover scale not disabled under reduced-motion | `Card.tsx:45` | Add `motion-safe:` (Phase 1) |
-| **Medium** | Toast 200 ms JS timeout is coupled to CSS class | `Toast.tsx:48-50` | Use `transitionend` event or derive from token (Phase 2) |
-| **Low** | ProgressBar animates `width` (not transform) | `ProgressBar.tsx:31-32` | Switch to `transform: scaleX()` with `transform-origin: left` (Phase 2) |
-| **Low** | ImageSlider inline-style transitions are brittle | `ImageSlider/script.ts:78-113` | Move to data-attribute + CSS class transitions (Phase 3) |
-| **Low** | Accordion shows/hides instantly via `hidden` attr | `DescriptionAccordion.tsx`, `script.ts` | Use `details`-style height animation OR a 200 ms opacity/translate (Phase 2) |
+| Severity   | Risk                                                             | Where                                                | Mitigation in this plan                                                      |
+| ---------- | ---------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **High**   | Auto-playing looped video with no pause control                  | `useVideoBanner.tsx`, Splash, FullBanner, WideBanner | Add pause button + respect `prefers-reduced-motion` (Phase 1 + 2)            |
+| **High**   | All `animate-pulse` skeletons run during reduced-motion sessions | All Loaders                                          | Wrap with `motion-safe:` (Phase 1)                                           |
+| **Medium** | Unthrottled scroll listener drives nav hide/show                 | `scrollingNav.ts:12`                                 | Throttle via `requestAnimationFrame`; add `motion-reduce:` guard (Phase 2)   |
+| **Medium** | Card hover scale not disabled under reduced-motion               | `Card.tsx:45`                                        | Add `motion-safe:` (Phase 1)                                                 |
+| **Medium** | Toast 200 ms JS timeout is coupled to CSS class                  | `Toast.tsx:48-50`                                    | Use `transitionend` event or derive from token (Phase 2)                     |
+| **Low**    | ProgressBar animates `width` (not transform)                     | `ProgressBar.tsx:31-32`                              | Switch to `transform: scaleX()` with `transform-origin: left` (Phase 2)      |
+| **Low**    | ImageSlider inline-style transitions are brittle                 | `ImageSlider/script.ts:78-113`                       | Move to data-attribute + CSS class transitions (Phase 3)                     |
+| **Low**    | Accordion shows/hides instantly via `hidden` attr                | `DescriptionAccordion.tsx`, `script.ts`              | Use `details`-style height animation OR a 200 ms opacity/translate (Phase 2) |
 
 ---
 
@@ -171,6 +171,7 @@ useScrollReveal<T extends Element = HTMLDivElement>(
 ```
 
 Implementation rules:
+
 - **Auto-disables under `prefers-reduced-motion`** — `isVisible` is `true` from first render.
 - Cleans up its observer on unmount.
 - Reuses a single observer per component instance.
@@ -188,22 +189,90 @@ Modal/Dialog currently rely on native `<dialog>` semantics plus an `Escape` hand
 A single `lib/styles/animations.css` (imported from `lib/style.css`) defining the keyframes used across components:
 
 ```css
-@keyframes cu-fade-in {        /* opacity 0 → 1 */ }
-@keyframes cu-fade-up {        /* translateY(8px) → 0, opacity 0 → 1 */ }
-@keyframes cu-scale-in {       /* scale(0.96) → 1, opacity 0 → 1 */ }
-@keyframes cu-slide-in-right { /* translateX(8px) → 0, opacity 0 → 1 */ }
-@keyframes cu-shimmer {        /* for skeleton replacements, GPU-friendly */ }
+@keyframes cu-fade-in {
+  /* opacity 0 → 1 */
+}
+@keyframes cu-fade-up {
+  /* translateY(8px) → 0, opacity 0 → 1 */
+}
+@keyframes cu-scale-in {
+  /* scale(0.96) → 1, opacity 0 → 1 */
+}
+@keyframes cu-slide-in-right {
+  /* translateX(8px) → 0, opacity 0 → 1 */
+}
+@keyframes cu-shimmer {
+  /* for skeleton replacements, GPU-friendly */
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .cu-anim-fade-in, .cu-anim-fade-up, .cu-anim-scale-in,
-  .cu-anim-slide-in-right { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .cu-anim-shimmer { animation-duration: 0s !important; }
+  .cu-anim-fade-in,
+  .cu-anim-fade-up,
+  .cu-anim-scale-in,
+  .cu-anim-slide-in-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .cu-anim-shimmer {
+    animation-duration: 0s !important;
+  }
 }
 ```
 
 **Effort:** SMALL (1 h).
 
-### 3.6 Storybook conventions
+### 3.6 Vanilla JS runtime — `cu-motion.js` (WordPress / non-React)
+
+A framework-free counterpart to `useScrollReveal`, shipped as a static asset in `dist/vanilla-js/cu-motion.js` for consumption by Gutenberg blocks, WordPress themes, and any non-React context that uses the RDS CSS.
+
+**Location:** `public/vanilla-js/cu-motion.js` (auto-copied to `dist/vanilla-js/cu-motion.js` by Vite's `copyPublicDir`).
+**Contract:**
+
+- Auto-discovers elements with `data-cu-reveal` on `DOMContentLoaded`.
+- Sets `data-revealed="true"` on each when it scrolls into view (`threshold: 0.15`, `rootMargin: '0px 0px -10% 0px'` — identical to the React hook).
+- Honours `prefers-reduced-motion: reduce` by revealing everything immediately, no observer attached.
+- Exposes `window.cuMotion.register(container)` for content inserted after page load (AJAX, load-more buttons).
+- Idempotent — safe to load multiple times; second load is a no-op.
+- ~60 lines, no dependencies, plain ES5-compatible JS (works in every browser RDS targets without transpilation).
+
+**Consumption (WordPress):**
+
+```php
+// functions.php
+wp_enqueue_style(
+  'rds-styles',
+  '...rds/dist/style.css'
+);
+wp_enqueue_script(
+  'cu-motion',
+  '...rds/dist/vanilla-js/cu-motion.js',
+  array(),
+  '1.0',
+  true
+);
+```
+
+```php
+// a dynamic block's render.php
+<div class="cu-card" data-cu-reveal>
+  <h3><?= esc_html($attributes['title']) ?></h3>
+  <p><?= wp_kses_post($attributes['excerpt']) ?></p>
+</div>
+```
+
+The same CSS that animates React Cards animates these PHP-rendered Cards. The vanilla JS replaces only the trigger mechanism.
+
+**Caveat (no-JS fallback):** the current CSS sets `opacity: 0` on `.cu-card` unconditionally. If `cu-motion.js` fails to load on a WordPress page, cards will be invisible. Two ways to fix:
+
+1. Gate the initial-hidden state on `[data-cu-reveal]` — cards without the attribute render visibly. Requires React `Card` / `Listing` to emit `data-cu-reveal` when `revealOnScroll` is `true`. **Recommended.**
+2. Add a `.cu-motion-ready` class to `<html>` from `cu-motion.js` and gate the hidden state on that. Progressive enhancement — no JS = no animation, but cards are visible.
+
+Either fix is small (~15 minutes); not yet applied. See [OQ12](#9-open-questions-for-the-team).
+
+**Effort:** SMALL (already implemented as of 2026-05-11).
+
+### 3.7 Storybook conventions
 
 - Every animated component gains a **`Motion States` story** showing: idle / hover / focus / active / open / closed.
 - Every animated component gains a **`Reduced Motion` story** that wraps the component in a `<div className="cu-force-reduced-motion">` toggle (a CSS class that applies the reduced-motion overrides regardless of OS setting, for visual review).
@@ -211,15 +280,15 @@ A single `lib/styles/animations.css` (imported from `lib/style.css`) defining th
 
 **Effort:** MEDIUM (half day for convention + docs; per-component story additions counted in per-component effort).
 
-### 3.7 Testing approach
+### 3.8 Testing approach
 
-| Concern | How we test |
-|---|---|
+| Concern                           | How we test                                                                                                                                                                         |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `prefers-reduced-motion` honoured | Cypress: stub `window.matchMedia('(prefers-reduced-motion: reduce)')` to return `matches: true`, assert no `animate-*` classes are active and `transitionDuration` computes to `0s` |
-| Focus order during open/close | Cypress: tab through after Modal opens; first focusable is body, last focus restored on close |
-| No layout shift from hover scale | Manual CLS check via Lighthouse on Card grids |
-| Axe a11y pass | `@storybook/addon-a11y` already in devDependencies — use the story-level a11y panel; add to CI |
-| Visual regression | _Out of scope for v1_ (no current solution); consider Chromatic for Phase 5 |
+| Focus order during open/close     | Cypress: tab through after Modal opens; first focusable is body, last focus restored on close                                                                                       |
+| No layout shift from hover scale  | Manual CLS check via Lighthouse on Card grids                                                                                                                                       |
+| Axe a11y pass                     | `@storybook/addon-a11y` already in devDependencies — use the story-level a11y panel; add to CI                                                                                      |
+| Visual regression                 | _Out of scope for v1_ (no current solution); consider Chromatic for Phase 5                                                                                                         |
 
 **Effort:** MEDIUM (cycle setup ~half day; per-test work counted per component).
 
@@ -237,141 +306,141 @@ Counts: **53** component directories under `lib/components/`, **10** layouts und
 
 ### 4.1 Navigation & Disclosure
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Nav (Top, Bottom, Logo, Buttons, Aside, Menu) | `lib/components/Nav/` | ✓ | ✓ | yes — scroll hide, hover, priority-plus |
-| Pagination | `lib/components/Pagination/` | ✓ | — | no |
-| FilterPanel | `lib/components/FilterPanel/` | ✓ | — | yes — dropdown rotation |
-| Modal | `lib/components/Modal/` | ✓ | — | no |
-| Dialog | `lib/components/Dialog/` | ✓ | ✓ | no |
-| Description (Accordion) | `lib/components/Description/` | ✓ | ✓ | yes — icon rotation |
-| Details | `lib/components/Details/` | ✓ | ✓ | no (uses native `<details>`?) |
-| LinkProvider | `lib/components/LinkProvider/` | — | — | no |
+| Component                                     | Files                          | Story? | CSS? | Motion now?                             |
+| --------------------------------------------- | ------------------------------ | ------ | ---- | --------------------------------------- |
+| Nav (Top, Bottom, Logo, Buttons, Aside, Menu) | `lib/components/Nav/`          | ✓      | ✓    | yes — scroll hide, hover, priority-plus |
+| Pagination                                    | `lib/components/Pagination/`   | ✓      | —    | no                                      |
+| FilterPanel                                   | `lib/components/FilterPanel/`  | ✓      | —    | yes — dropdown rotation                 |
+| Modal                                         | `lib/components/Modal/`        | ✓      | —    | no                                      |
+| Dialog                                        | `lib/components/Dialog/`       | ✓      | ✓    | no                                      |
+| Description (Accordion)                       | `lib/components/Description/`  | ✓      | ✓    | yes — icon rotation                     |
+| Details                                       | `lib/components/Details/`      | ✓      | ✓    | no (uses native `<details>`?)           |
+| LinkProvider                                  | `lib/components/LinkProvider/` | —      | —    | no                                      |
 
 ### 4.2 Forms
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Form (root + sub-fields) | `lib/components/Form/` | ✓ | ✓ | minor — focus transitions |
-| Form.AutoSuggest | `lib/components/Form/AutoSuggest/` | (in Form) | ✓ | minor |
-| Form.DateTime | `lib/components/Form/DateTime/` | (in Form) | ✓ | minor |
-| InputAddon | `lib/components/Form/InputAddon/` | (in Form) | — | no |
-| SearchInput | `lib/components/SearchInput/` | ✓ | — | no |
-| LocationPicker | `lib/components/LocationPicker/` | ✓ | — | no |
-| Login | `lib/components/Login/` | ✓ | ✓ | no |
+| Component                | Files                              | Story?    | CSS? | Motion now?               |
+| ------------------------ | ---------------------------------- | --------- | ---- | ------------------------- |
+| Form (root + sub-fields) | `lib/components/Form/`             | ✓         | ✓    | minor — focus transitions |
+| Form.AutoSuggest         | `lib/components/Form/AutoSuggest/` | (in Form) | ✓    | minor                     |
+| Form.DateTime            | `lib/components/Form/DateTime/`    | (in Form) | ✓    | minor                     |
+| InputAddon               | `lib/components/Form/InputAddon/`  | (in Form) | —    | no                        |
+| SearchInput              | `lib/components/SearchInput/`      | ✓         | —    | no                        |
+| LocationPicker           | `lib/components/LocationPicker/`   | ✓         | —    | no                        |
+| Login                    | `lib/components/Login/`            | ✓         | ✓    | no                        |
 
 ### 4.3 Cards & Listings
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Card (+ 15 sub-parts) | `lib/components/Card/` | ✓ | ✓ | yes — hover scale |
-| Listing | `lib/components/Listing/` | ✓ | ✓ | no |
-| Carleton360 | `lib/components/Carleton360/` | ✓ | ✓ | no |
+| Component             | Files                         | Story? | CSS? | Motion now?       |
+| --------------------- | ----------------------------- | ------ | ---- | ----------------- |
+| Card (+ 15 sub-parts) | `lib/components/Card/`        | ✓      | ✓    | yes — hover scale |
+| Listing               | `lib/components/Listing/`     | ✓      | ✓    | no                |
+| Carleton360           | `lib/components/Carleton360/` | ✓      | ✓    | no                |
 
 ### 4.4 Content Blocks
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| CallOut | `lib/components/CallOut/` | ✓ | ✓ | no |
-| Quote | `lib/components/Quote/` | ✓ | — | no |
-| Testimonial | `lib/components/Testimonial/` | ✓ | — | no |
-| TextImage | `lib/components/TextImage/` | ✓ | ✓ | no |
-| TextMedia | `lib/components/TextMedia/` | ✓ | — | no |
-| Figure | `lib/components/Figure/` | ✓ | ✓ | no |
-| FundingDetails | `lib/components/FundingDetails/` | ✓ | ✓ | no |
-| Meta | `lib/components/Meta/` | — | — | no |
-| Placeholder | `lib/components/Placeholder/` | ✓ | — | no |
+| Component      | Files                            | Story? | CSS? | Motion now? |
+| -------------- | -------------------------------- | ------ | ---- | ----------- |
+| CallOut        | `lib/components/CallOut/`        | ✓      | ✓    | no          |
+| Quote          | `lib/components/Quote/`          | ✓      | —    | no          |
+| Testimonial    | `lib/components/Testimonial/`    | ✓      | —    | no          |
+| TextImage      | `lib/components/TextImage/`      | ✓      | ✓    | no          |
+| TextMedia      | `lib/components/TextMedia/`      | ✓      | —    | no          |
+| Figure         | `lib/components/Figure/`         | ✓      | ✓    | no          |
+| FundingDetails | `lib/components/FundingDetails/` | ✓      | ✓    | no          |
+| Meta           | `lib/components/Meta/`           | —      | —    | no          |
+| Placeholder    | `lib/components/Placeholder/`    | ✓      | —    | no          |
 
 ### 4.5 Banners, Heroes & Splash
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Splash | `lib/components/Splash/` | ✓ | ✓ | yes — auto-play video bg |
-| FullBanner | `lib/components/FullBanner/` | ✓ | ✓ | yes — auto-play video bg (when video used) |
-| WideBanner | `lib/components/WideBanner/` | ✓ | ✓ | yes — auto-play video bg (when video used) |
-| WideImage | `lib/components/WideImage/` | ✓ | ✓ | no |
-| PageHeader | `lib/components/PageHeader/` | ✓ | ✓ | no |
+| Component  | Files                        | Story? | CSS? | Motion now?                                |
+| ---------- | ---------------------------- | ------ | ---- | ------------------------------------------ |
+| Splash     | `lib/components/Splash/`     | ✓      | ✓    | yes — auto-play video bg                   |
+| FullBanner | `lib/components/FullBanner/` | ✓      | ✓    | yes — auto-play video bg (when video used) |
+| WideBanner | `lib/components/WideBanner/` | ✓      | ✓    | yes — auto-play video bg (when video used) |
+| WideImage  | `lib/components/WideImage/`  | ✓      | ✓    | no                                         |
+| PageHeader | `lib/components/PageHeader/` | ✓      | ✓    | no                                         |
 
 ### 4.6 Media
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Embed (+ HubSpot) | `lib/components/Embed/` | ✓ | ✓ | no |
-| ImageGrid | `lib/components/ImageGrid/` | ✓ | ✓ | no |
-| ImageSlider | `lib/components/ImageSlider/` | ✓ | — | yes — slide carousel |
-| ImageCaptionOverlay | `lib/components/ImageCaptionOverlay/` | — | — | no |
-| Icon | `lib/components/Icon/` | ✓ | — | no |
-| Avatar | `lib/components/Avatar/` | ✓ | — | no |
-| SocialIcons | `lib/components/SocialIcons/` | ✓ | ✓ | minor — hover |
+| Component           | Files                                 | Story? | CSS? | Motion now?          |
+| ------------------- | ------------------------------------- | ------ | ---- | -------------------- |
+| Embed (+ HubSpot)   | `lib/components/Embed/`               | ✓      | ✓    | no                   |
+| ImageGrid           | `lib/components/ImageGrid/`           | ✓      | ✓    | no                   |
+| ImageSlider         | `lib/components/ImageSlider/`         | ✓      | —    | yes — slide carousel |
+| ImageCaptionOverlay | `lib/components/ImageCaptionOverlay/` | —      | —    | no                   |
+| Icon                | `lib/components/Icon/`                | ✓      | —    | no                   |
+| Avatar              | `lib/components/Avatar/`              | ✓      | —    | no                   |
+| SocialIcons         | `lib/components/SocialIcons/`         | ✓      | ✓    | minor — hover        |
 
 ### 4.7 Calendar & Data Display
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Calendar | `lib/components/Calendar/` | ✓ | — | no |
-| MultiDayCalendar | `lib/components/MultiDayCalendar/` | ✓ | — | no |
-| Table | `lib/components/Table/` | ✓ | — | no |
-| Timeline | `lib/components/Timeline/` | ✓ | ✓ | no |
-| Location | `lib/components/Location/` | ✓ | — | no |
+| Component        | Files                              | Story? | CSS? | Motion now? |
+| ---------------- | ---------------------------------- | ------ | ---- | ----------- |
+| Calendar         | `lib/components/Calendar/`         | ✓      | —    | no          |
+| MultiDayCalendar | `lib/components/MultiDayCalendar/` | ✓      | —    | no          |
+| Table            | `lib/components/Table/`            | ✓      | —    | no          |
+| Timeline         | `lib/components/Timeline/`         | ✓      | ✓    | no          |
+| Location         | `lib/components/Location/`         | ✓      | —    | no          |
 
 ### 4.8 Feedback & Status
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Alert | `lib/components/Alert/` | ✓ | ✓ | no |
-| Toast | `lib/components/Toast/` | ✓ | — | yes — slide-in/out |
-| Badge | `lib/components/Badge/` | ✓ | ✓ | no |
-| BadgeGroup | `lib/components/BadgeGroup/` | ✓ | — | no |
-| Button | `lib/components/Button/` | ✓ | ✓ | minor — hover/focus |
-| ButtonGroup | `lib/components/ButtonGroup/` | ✓ | — | no |
-| ProgressBar | `lib/components/ProgressBar/` | — (no story file detected) | — | yes — width animation |
-| Forbidden403 / NotFound404 | `lib/components/ErrorMessages/` | ✓ | — | no |
+| Component                  | Files                           | Story?                     | CSS? | Motion now?           |
+| -------------------------- | ------------------------------- | -------------------------- | ---- | --------------------- |
+| Alert                      | `lib/components/Alert/`         | ✓                          | ✓    | no                    |
+| Toast                      | `lib/components/Toast/`         | ✓                          | —    | yes — slide-in/out    |
+| Badge                      | `lib/components/Badge/`         | ✓                          | ✓    | no                    |
+| BadgeGroup                 | `lib/components/BadgeGroup/`    | ✓                          | —    | no                    |
+| Button                     | `lib/components/Button/`        | ✓                          | ✓    | minor — hover/focus   |
+| ButtonGroup                | `lib/components/ButtonGroup/`   | ✓                          | —    | no                    |
+| ProgressBar                | `lib/components/ProgressBar/`   | — (no story file detected) | —    | yes — width animation |
+| Forbidden403 / NotFound404 | `lib/components/ErrorMessages/` | ✓                          | —    | no                    |
 
 ### 4.9 Skeleton Loaders (21)
 
 All use `animate-pulse`; none currently wrap with `motion-safe:`.
 
-| Loader | File |
-|---|---|
-| BlockLoader | `lib/components/Loaders/BlockLoader/BlockLoader.tsx` |
-| ButtonLoader | `lib/components/Loaders/ButtonLoader/ButtonLoader.tsx` |
-| CalendarLoader | `lib/components/Loaders/CalendarLoader/CalendarLoader.tsx` |
-| CardEventLoader | `lib/components/Loaders/CardLoader/CardEventLoader.tsx` |
-| CardIconLoader | `lib/components/Loaders/CardLoader/CardIconLoader.tsx` |
-| CardNewsLoader | `lib/components/Loaders/CardLoader/CardNewsLoader.tsx` |
-| CardPageLoader | `lib/components/Loaders/CardLoader/CardPageLoader.tsx` |
-| CardPeopleLoader | `lib/components/Loaders/CardLoader/CardPeopleLoader.tsx` |
-| CardVideoLoader | `lib/components/Loaders/CardLoader/CardVideoLoader.tsx` |
-| DescriptionLoader | `lib/components/Loaders/DescriptionLoader/DescriptionLoader.tsx` |
-| DescriptionLoaderAccordion | `lib/components/Loaders/DescriptionLoader/DescriptionLoaderAccordion.tsx` |
-| EventLoader | `lib/components/Loaders/EventLoader/EventLoader.tsx` |
-| FormLoader (incl. RowLoader) | `lib/components/Loaders/FormLoader/` |
-| ListingDescriptionLoader | `lib/components/Loaders/ListingLoader/ListingDescriptionLoader.tsx` |
-| ListingEventLoader | `lib/components/Loaders/ListingLoader/ListingEventLoader.tsx` |
-| ListingIconLoader | `lib/components/Loaders/ListingLoader/ListingIconLoader.tsx` |
-| ListingNewsLoader | `lib/components/Loaders/ListingLoader/ListingNewsLoader.tsx` |
-| ListingPageLoader | `lib/components/Loaders/ListingLoader/ListingPageLoader.tsx` |
-| ListingPeopleLoader | `lib/components/Loaders/ListingLoader/ListingPeopleLoader.tsx` |
-| PageHeaderLoader (+ Event/People) | `lib/components/Loaders/PageHeaderLoader/` |
-| PageLoader | `lib/components/Loaders/PageLoader/PageLoader.tsx` — _only one with `motion-reduce`_ |
-| PaginationLoader | `lib/components/Loaders/PaginationLoader/PaginationLoader.tsx` |
-| TableLoader | `lib/components/Loaders/TableLoader/TableLoader.tsx` |
-| TopNavLoader | `lib/components/Loaders/TopNavLoader/TopNavLoader.tsx` |
+| Loader                            | File                                                                                 |
+| --------------------------------- | ------------------------------------------------------------------------------------ |
+| BlockLoader                       | `lib/components/Loaders/BlockLoader/BlockLoader.tsx`                                 |
+| ButtonLoader                      | `lib/components/Loaders/ButtonLoader/ButtonLoader.tsx`                               |
+| CalendarLoader                    | `lib/components/Loaders/CalendarLoader/CalendarLoader.tsx`                           |
+| CardEventLoader                   | `lib/components/Loaders/CardLoader/CardEventLoader.tsx`                              |
+| CardIconLoader                    | `lib/components/Loaders/CardLoader/CardIconLoader.tsx`                               |
+| CardNewsLoader                    | `lib/components/Loaders/CardLoader/CardNewsLoader.tsx`                               |
+| CardPageLoader                    | `lib/components/Loaders/CardLoader/CardPageLoader.tsx`                               |
+| CardPeopleLoader                  | `lib/components/Loaders/CardLoader/CardPeopleLoader.tsx`                             |
+| CardVideoLoader                   | `lib/components/Loaders/CardLoader/CardVideoLoader.tsx`                              |
+| DescriptionLoader                 | `lib/components/Loaders/DescriptionLoader/DescriptionLoader.tsx`                     |
+| DescriptionLoaderAccordion        | `lib/components/Loaders/DescriptionLoader/DescriptionLoaderAccordion.tsx`            |
+| EventLoader                       | `lib/components/Loaders/EventLoader/EventLoader.tsx`                                 |
+| FormLoader (incl. RowLoader)      | `lib/components/Loaders/FormLoader/`                                                 |
+| ListingDescriptionLoader          | `lib/components/Loaders/ListingLoader/ListingDescriptionLoader.tsx`                  |
+| ListingEventLoader                | `lib/components/Loaders/ListingLoader/ListingEventLoader.tsx`                        |
+| ListingIconLoader                 | `lib/components/Loaders/ListingLoader/ListingIconLoader.tsx`                         |
+| ListingNewsLoader                 | `lib/components/Loaders/ListingLoader/ListingNewsLoader.tsx`                         |
+| ListingPageLoader                 | `lib/components/Loaders/ListingLoader/ListingPageLoader.tsx`                         |
+| ListingPeopleLoader               | `lib/components/Loaders/ListingLoader/ListingPeopleLoader.tsx`                       |
+| PageHeaderLoader (+ Event/People) | `lib/components/Loaders/PageHeaderLoader/`                                           |
+| PageLoader                        | `lib/components/Loaders/PageLoader/PageLoader.tsx` — _only one with `motion-reduce`_ |
+| PaginationLoader                  | `lib/components/Loaders/PaginationLoader/PaginationLoader.tsx`                       |
+| TableLoader                       | `lib/components/Loaders/TableLoader/TableLoader.tsx`                                 |
+| TopNavLoader                      | `lib/components/Loaders/TopNavLoader/TopNavLoader.tsx`                               |
 
 ### 4.10 Layouts
 
-| Component | Files | Story? | CSS? | Motion now? |
-|---|---|---|---|---|
-| Article | `lib/layouts/Article/` | ✓ | — | no |
-| Aside | `lib/layouts/Aside/` | ✓ | — | no |
-| Body | `lib/layouts/Body/` | ✓ | — | no |
-| Column | `lib/layouts/Column/` | ✓ | ✓ | no |
-| FloatBox | `lib/layouts/FloatBox/` | ✓ | — | no |
-| ImageCover | `lib/layouts/ImageCover/` | ✓ | ✓ | no |
-| Main | `lib/layouts/Main/` | ✓ | — | no |
-| Section | `lib/layouts/Section/` | ✓ | — | no |
-| StackedList | `lib/layouts/StackedList/` | ✓ | ✓ | no |
-| WideWave | `lib/layouts/WideWave/` | ✓ | ✓ | no |
+| Component   | Files                      | Story? | CSS? | Motion now? |
+| ----------- | -------------------------- | ------ | ---- | ----------- |
+| Article     | `lib/layouts/Article/`     | ✓      | —    | no          |
+| Aside       | `lib/layouts/Aside/`       | ✓      | —    | no          |
+| Body        | `lib/layouts/Body/`        | ✓      | —    | no          |
+| Column      | `lib/layouts/Column/`      | ✓      | ✓    | no          |
+| FloatBox    | `lib/layouts/FloatBox/`    | ✓      | —    | no          |
+| ImageCover  | `lib/layouts/ImageCover/`  | ✓      | ✓    | no          |
+| Main        | `lib/layouts/Main/`        | ✓      | —    | no          |
+| Section     | `lib/layouts/Section/`     | ✓      | —    | no          |
+| StackedList | `lib/layouts/StackedList/` | ✓      | ✓    | no          |
+| WideWave    | `lib/layouts/WideWave/`    | ✓      | ✓    | no          |
 
 ---
 
@@ -705,16 +774,16 @@ All use `animate-pulse`; none currently wrap with `motion-safe:`.
 
 Only items that fit a university content site are included. Items the audit suggested but I'm **not** recommending: command palette (overkill for a content site), filterable card grid (already covered by FilterPanel + Listing), interactive timeline beyond what Timeline does, sticky TOC (better as a layout pattern, not a packaged component — but see Phase 5).
 
-| Candidate | Why it fits a university site | Effort | Priority |
-|---|---|---|---|
-| **AnimatedStat** | Faculties love "1,200+ students placed" callouts. CSS-counter animation triggered by `useScrollReveal`. Respects reduced-motion (snaps to final value). | S | HIGH |
-| **ReadingProgress** | Long-form articles (research stories, faculty profiles). Top-of-page horizontal bar showing scroll progress. CSS-only via `scroll-timeline` where supported; fallback uses throttled `scroll` listener. | S | MEDIUM |
-| **StickyTOC** | Long-form article pages benefit from sticky in-page navigation that highlights the current section. Uses `IntersectionObserver`. | M | MEDIUM |
-| **SkeletonGroup** | Convenience wrapper that orchestrates multiple loaders so a "page loading" composition is one component. Solves the "21 loaders, no story" gap from `docs/IMPROVEMENTS.md`. | S | MEDIUM |
-| **Tabs** | Many program pages need program-overview tabs. Existing alternative is awkward toggle UI. Animated indicator slides between tabs. | M | HIGH |
-| **Disclosure** | A reusable, accessible disclosure primitive that DescriptionAccordion and Details could both wrap. Centralises the open/close motion logic. | M | MEDIUM |
-| **CopyButton** | Faculty/contact pages copy email addresses. Inline button with checkmark transition on success. | S | LOW |
-| **BackToTop** | Long pages; floating button reveal on scroll past 600 px. Smooth scroll respects reduced-motion (instant jump). | S | LOW |
+| Candidate           | Why it fits a university site                                                                                                                                                                           | Effort | Priority |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| **AnimatedStat**    | Faculties love "1,200+ students placed" callouts. CSS-counter animation triggered by `useScrollReveal`. Respects reduced-motion (snaps to final value).                                                 | S      | HIGH     |
+| **ReadingProgress** | Long-form articles (research stories, faculty profiles). Top-of-page horizontal bar showing scroll progress. CSS-only via `scroll-timeline` where supported; fallback uses throttled `scroll` listener. | S      | MEDIUM   |
+| **StickyTOC**       | Long-form article pages benefit from sticky in-page navigation that highlights the current section. Uses `IntersectionObserver`.                                                                        | M      | MEDIUM   |
+| **SkeletonGroup**   | Convenience wrapper that orchestrates multiple loaders so a "page loading" composition is one component. Solves the "21 loaders, no story" gap from `docs/IMPROVEMENTS.md`.                             | S      | MEDIUM   |
+| **Tabs**            | Many program pages need program-overview tabs. Existing alternative is awkward toggle UI. Animated indicator slides between tabs.                                                                       | M      | HIGH     |
+| **Disclosure**      | A reusable, accessible disclosure primitive that DescriptionAccordion and Details could both wrap. Centralises the open/close motion logic.                                                             | M      | MEDIUM   |
+| **CopyButton**      | Faculty/contact pages copy email addresses. Inline button with checkmark transition on success.                                                                                                         | S      | LOW      |
+| **BackToTop**       | Long pages; floating button reveal on scroll past 600 px. Smooth scroll respects reduced-motion (instant jump).                                                                                         | S      | LOW      |
 
 **Not recommended (don't add):**
 
@@ -740,20 +809,20 @@ Per-component motion tests are not always practical; focus instead on **principl
 
 **System-level tests:**
 
-| Test | What it verifies |
-|---|---|
+| Test                  | What it verifies                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `reducedMotion.cy.ts` | Stubs `matchMedia` → asserts all `.animate-*` classes have `animation-duration: 0s` computed style on representative components |
-| `tokens.cy.ts` | Asserts components consume the motion tokens, not hard-coded values (computed style snapshot) |
+| `tokens.cy.ts`        | Asserts components consume the motion tokens, not hard-coded values (computed style snapshot)                                   |
 
 **Critical-path tests:**
 
-| Component | Test |
-|---|---|
-| Modal | Opens, focus moves to dialog immediately (does not wait for transition), Esc closes, focus restored |
-| Toast | Slides in, dismiss button removes element after transitionend, no zombie nodes |
-| ImageSlider | Arrow keys cycle slides, slide change announces via aria-live, no autoplay |
-| Splash (when video) | Pause button is keyboard-reachable, pauses the video, reduced-motion does not autoplay |
-| ProgressBar | aria-valuenow updates correctly; under reduced-motion, no transition applied |
+| Component           | Test                                                                                                |
+| ------------------- | --------------------------------------------------------------------------------------------------- |
+| Modal               | Opens, focus moves to dialog immediately (does not wait for transition), Esc closes, focus restored |
+| Toast               | Slides in, dismiss button removes element after transitionend, no zombie nodes                      |
+| ImageSlider         | Arrow keys cycle slides, slide change announces via aria-live, no autoplay                          |
+| Splash (when video) | Pause button is keyboard-reachable, pauses the video, reduced-motion does not autoplay              |
+| ProgressBar         | aria-valuenow updates correctly; under reduced-motion, no transition applied                        |
 
 ### 7.3 Manual a11y checklist
 
@@ -842,19 +911,20 @@ Goal: Land the infrastructure that everything else depends on. **No user-visible
 
 These need human decisions before work begins. Each has a recommendation in italics where I have a confident default.
 
-| # | Question | Why it matters | My default |
-|---|---|---|---|
-| OQ1 | Should motion tokens live in the `rds-tailwind-theme` package or be added locally to `rds`'s `tailwind.config.ts`? | Theme package is shared with other consumers; local extension keeps changes scoped but creates drift. | _Add to `rds-tailwind-theme` so other Carleton products inherit the vocabulary. Falls back to local extension if the theme package's release cycle is too slow._ |
-| OQ2 | Do we ever want auto-advancing carousels? `ImageSlider` is manual today. Should the design system disallow auto-advance entirely, or expose it as an explicit opt-in with mandatory pause control? | WCAG 2.2.2 hard-requires pause control if added. | _Forbid auto-advance in the design system; if a campus site needs one, they own the implementation outside RDS._ |
-| OQ3 | What's the policy on video backgrounds in `Splash` / `FullBanner` / `WideBanner`? Should we **default** them to paused (with a play button) and require an opt-in to autoplay? | Today they autoplay loop with no pause. This is a live a11y gap. | _Default to paused-with-poster. Autoplay becomes an explicit `autoplayOptIn` prop that requires a `pauseLabel` prop to be passed too._ |
-| OQ4 | Are floating labels (Material-style) part of Carleton's design language for forms, or should we keep static top labels? | Affects Form fields scope. | _Keep static top labels unless design team explicitly wants floating._ |
-| OQ5 | Should `useScrollReveal` be opt-in (component gets a `revealOnScroll` prop, defaults to off) or opt-out (default on)? | Opt-out means subtle motion appears across every site automatically — bigger visual change. Opt-in is safer but adoption is slower. | _Opt-in. Default off. Site authors can enable per-component. Reduces blast radius and respects sites that prefer no motion._ |
-| OQ6 | The Toaster currently uses `aria-live="assertive"` for ALL toast types (including info/success). Should we split into two regions (assertive for errors, polite for the rest)? | Assertive interrupts a screen reader; using it for routine info is rude. | _Split: errors → assertive; success / warning / info → polite. Toaster takes a type-aware approach._ |
-| OQ7 | What is our minimum supported browser baseline? `scroll-timeline` (used by ReadingProgress proposal) is supported in Chrome/Edge 115+ but not Safari < 18 or older Firefox. | Affects ReadingProgress implementation strategy. | _Use `scroll-timeline` with feature detection and a `scroll`-listener fallback. Document the degradation in MDX._ |
-| OQ8 | Is there budget/appetite for a visual regression tool (e.g., Chromatic) in Phase 5, or do we rely on Storybook a11y panel + Cypress + manual review? | Affects testing confidence for motion. | _Defer Chromatic; it's a recurring cost. Rely on a11y addon + Cypress + manual checklist for v1._ |
-| OQ9 | Should the Nav scroll-hide behavior be kept, or removed? It adds value on mobile but the unthrottled scroll listener is a measurable perf cost and the motion can be disorienting. | Affects Nav scope. | _Keep, but throttle via rAF and add `motion-reduce` to disable the slide (header stays put for reduced-motion users)._ |
-| OQ10 | The CSS bundle is already flagged as oversized in `docs/IMPROVEMENTS.md`. Adding `animations.css` with shared keyframes adds ~1 KB. Acceptable? | Bundle-size sensitivity. | _Acceptable. ~1 KB for ~5 reusable keyframes is a good trade vs. duplicating definitions per component._ |
-| OQ11 | Does Carleton have brand-level guidance on motion (timing curves, principles) we should align with? | Could change easing tokens. | _Check with brand team before finalising token values. The proposed easings (`cubic-bezier(0.2, 0, 0, 1)` family) are conservative defaults._ |
+| #               | Question                                                                                                                                                                                                                                                       | Why it matters                                                                                                                      | My default                                                                                                                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OQ1             | Should motion tokens live in the `rds-tailwind-theme` package or be added locally to `rds`'s `tailwind.config.ts`?                                                                                                                                             | Theme package is shared with other consumers; local extension keeps changes scoped but creates drift.                               | _Add to `rds-tailwind-theme` so other Carleton products inherit the vocabulary. Falls back to local extension if the theme package's release cycle is too slow._                                  |
+| OQ2             | Do we ever want auto-advancing carousels? `ImageSlider` is manual today. Should the design system disallow auto-advance entirely, or expose it as an explicit opt-in with mandatory pause control?                                                             | WCAG 2.2.2 hard-requires pause control if added.                                                                                    | _Forbid auto-advance in the design system; if a campus site needs one, they own the implementation outside RDS._                                                                                  |
+| OQ3             | What's the policy on video backgrounds in `Splash` / `FullBanner` / `WideBanner`? Should we **default** them to paused (with a play button) and require an opt-in to autoplay?                                                                                 | Today they autoplay loop with no pause. This is a live a11y gap.                                                                    | _Default to paused-with-poster. Autoplay becomes an explicit `autoplayOptIn` prop that requires a `pauseLabel` prop to be passed too._                                                            |
+| OQ4             | Are floating labels (Material-style) part of Carleton's design language for forms, or should we keep static top labels?                                                                                                                                        | Affects Form fields scope.                                                                                                          | _Keep static top labels unless design team explicitly wants floating._                                                                                                                            |
+| OQ5             | Should `useScrollReveal` be opt-in (component gets a `revealOnScroll` prop, defaults to off) or opt-out (default on)?                                                                                                                                          | Opt-out means subtle motion appears across every site automatically — bigger visual change. Opt-in is safer but adoption is slower. | _Opt-in. Default off. Site authors can enable per-component. Reduces blast radius and respects sites that prefer no motion._                                                                      |
+| OQ6             | The Toaster currently uses `aria-live="assertive"` for ALL toast types (including info/success). Should we split into two regions (assertive for errors, polite for the rest)?                                                                                 | Assertive interrupts a screen reader; using it for routine info is rude.                                                            | _Split: errors → assertive; success / warning / info → polite. Toaster takes a type-aware approach._                                                                                              |
+| OQ7             | What is our minimum supported browser baseline? `scroll-timeline` (used by ReadingProgress proposal) is supported in Chrome/Edge 115+ but not Safari < 18 or older Firefox.                                                                                    | Affects ReadingProgress implementation strategy.                                                                                    | _Use `scroll-timeline` with feature detection and a `scroll`-listener fallback. Document the degradation in MDX._                                                                                 |
+| OQ8             | Is there budget/appetite for a visual regression tool (e.g., Chromatic) in Phase 5, or do we rely on Storybook a11y panel + Cypress + manual review?                                                                                                           | Affects testing confidence for motion.                                                                                              | _Defer Chromatic; it's a recurring cost. Rely on a11y addon + Cypress + manual checklist for v1._                                                                                                 |
+| OQ9             | Should the Nav scroll-hide behavior be kept, or removed? It adds value on mobile but the unthrottled scroll listener is a measurable perf cost and the motion can be disorienting.                                                                             | Affects Nav scope.                                                                                                                  | _Keep, but throttle via rAF and add `motion-reduce` to disable the slide (header stays put for reduced-motion users)._                                                                            |
+| OQ10            | The CSS bundle is already flagged as oversized in `docs/IMPROVEMENTS.md`. Adding `animations.css` with shared keyframes adds ~1 KB. Acceptable?                                                                                                                | Bundle-size sensitivity.                                                                                                            | _Acceptable. ~1 KB for ~5 reusable keyframes is a good trade vs. duplicating definitions per component._                                                                                          |
+| OQ11            | Does Carleton have brand-level guidance on motion (timing curves, principles) we should align with?                                                                                                                                                            | Could change easing tokens.                                                                                                         | _Check with brand team before finalising token values. The proposed easings (`cubic-bezier(0.2, 0, 0, 1)` family) are conservative defaults._                                                     |
+| OQ12 ✓ resolved | The `.cu-card` / `.cu-listing` CSS sets `opacity: 0` unconditionally. If `cu-motion.js` (or the React hook) doesn't run, those elements are invisible. Should we gate the hidden state on `[data-cu-reveal]` so plain `<div class="cu-card">` renders visibly? | No-JS fallback robustness on WordPress pages.                                                                                       | **Resolved 2026-05-11**: gated on `[data-cu-reveal]`. React `Card` / `Listing` emit the attribute when `revealOnScroll` is `true`. WordPress consumers add `data-cu-reveal` explicitly to opt in. |
 
 ---
 
@@ -863,9 +933,9 @@ These need human decisions before work begins. Each has a recommendation in ital
 For estimation purposes. Phase 1 touches:
 
 - `tailwind.config.ts` (or `rds-tailwind-theme` package)
-- `lib/hooks/useReducedMotion.ts` *(new)*
-- `lib/hooks/useScrollReveal.ts` *(new)*
-- `lib/styles/animations.css` *(new)*
+- `lib/hooks/useReducedMotion.ts` _(new)_
+- `lib/hooks/useScrollReveal.ts` _(new)_
+- `lib/styles/animations.css` _(new)_
 - `lib/style.css` (import the new animations file)
 - `lib/components/Loaders/**/*.tsx` (21 files — `motion-safe:` prefix sweep)
 - `lib/components/Card/Card.tsx`
@@ -874,7 +944,7 @@ For estimation purposes. Phase 1 touches:
 - `lib/components/FilterPanel/FilterPanelTop.tsx`, `dropdown.ts`
 - `lib/components/Description/DescriptionAccordion.tsx`, `script.ts`
 - `lib/components/ProgressBar/ProgressBar.tsx`
-- `lib/docs/Motion.mdx` *(new)*
-- `cypress/e2e/reducedMotion.cy.ts` *(new)*
+- `lib/docs/Motion.mdx` _(new)_
+- `cypress/e2e/reducedMotion.cy.ts` _(new)_
 
 Estimated ~35 file touches for Phase 1; most are 1–3 line changes.

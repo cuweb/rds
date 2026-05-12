@@ -10,14 +10,23 @@ import { ListingInitials } from './ListingInitials'
 import { ListingEventMeta } from './ListingEventMeta'
 import { ListingPeopleMeta } from './ListingPeopleMeta'
 import { ListingFooter } from './ListingFooter'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export interface ListingProps {
   children: React.ReactNode
+  revealOnScroll?: boolean
 }
 
-export const ListingWrapper = ({ children }: ListingProps) => {
+export const ListingWrapper = ({ children, revealOnScroll = true }: ListingProps) => {
+  const { ref, isVisible } = useScrollReveal<HTMLLIElement>({ disabled: !revealOnScroll })
+
   return (
-    <li className={`cu-listing not-prose relative overflow-hidden @container bg-white p-6 md:p-8 !my-0`}>
+    <li
+      ref={ref}
+      data-cu-reveal={revealOnScroll ? '' : undefined}
+      data-revealed={isVisible ? 'true' : 'false'}
+      className={`cu-listing not-prose relative overflow-hidden @container bg-white p-6 md:p-8 !my-0`}
+    >
       <div className="flex flex-col @lg:md:flex-row gap-5 @lg:md:gap-7 h-full">{children}</div>
     </li>
   )

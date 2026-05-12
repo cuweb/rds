@@ -105,5 +105,9 @@ export { iconNames } from '../public/assets/font-awesome/icon-list.js'
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js'
 export { videoBanner, videoSplash } from './utils/json-lists.js'
 
+// Hooks
+export { useReducedMotion } from './hooks/useReducedMotion'
+export { useScrollReveal } from './hooks/useScrollReveal'
+
 // Utils
 export * as utils from './utils/propClasses'

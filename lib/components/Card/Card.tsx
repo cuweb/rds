@@ -14,6 +14,7 @@ import { CardInitials } from './CardInitials'
 import { CardPeopleMeta } from './CardPeopleMeta'
 import { CardStats } from './CardStats'
 import { CardVideo } from './CardVideo'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export interface CardProps {
   children: React.ReactNode
@@ -24,6 +25,7 @@ export interface CardProps {
   noHover?: boolean
   leftBorder?: boolean
   isDark?: boolean
+  revealOnScroll?: boolean
 }
 
 export const CardWrapper = ({
@@ -35,18 +37,22 @@ export const CardWrapper = ({
   noHover,
   leftBorder,
   isDark,
+  revealOnScroll = true,
 }: CardProps) => {
+  const { ref, isVisible } = useScrollReveal<HTMLDivElement>({ disabled: !revealOnScroll })
+
   const waveBg = hasWave ? 'pb-28 sm:pb-44 md:pb-20' : ''
   const bgStyles = isGrey ? `bg-cu-black-50 ${waveBg}` : 'bg-white shadow-lg shadow-cu-black-100 dark:shadow-none'
   const centerText = isCenter ? 'text-center' : ''
   const centerTextDesktop = isCenterDesktop ? 'md:text-center' : ''
-  const hoverStyles = noHover
-    ? ''
-    : 'group duration-300 ease-in hover:scale-[1.02] hover:shadow-cu-black-200 dark:hover:shadow-none'
+  const hoverStyles = noHover ? '' : 'group hover:shadow-cu-black-200 dark:hover:shadow-none'
   const addRedBorder = leftBorder ? 'border-l-8 border-l-cu-red' : ''
 
   return (
     <div
+      ref={ref}
+      data-cu-reveal={revealOnScroll ? '' : undefined}
+      data-revealed={isVisible ? 'true' : 'false'}
       className={`not-prose cu-card relative rounded-lg @container md:max-w-xl flex flex-col gap-3 ${bgStyles} ${centerText} ${centerTextDesktop} ${addRedBorder} ${hoverStyles} ${isDark ? 'dark' : ''} dark:text-white dark:bg-cu-black`}
     >
       {children}
