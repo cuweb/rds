@@ -93,4 +93,6 @@ export { WideWave } from './layouts/WideWave/WideWave';
 export { iconNames } from '../public/assets/font-awesome/icon-list.js';
 export { bgImageNames } from '../public/assets/bg-images/bg-image-list.js';
 export { videoBanner, videoSplash } from './utils/json-lists.js';
+export { useReducedMotion } from './hooks/useReducedMotion';
+export { useScrollReveal } from './hooks/useScrollReveal';
 export * as utils from './utils/propClasses';

@@ -1,13 +1,14 @@
 import { default as React } from '../../../node_modules/react';
 export interface ListingProps {
     children: React.ReactNode;
+    revealOnScroll?: boolean;
 }
 export declare const ListingWrapper: {
-    ({ children }: ListingProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, revealOnScroll }: ListingProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Listing: {
-    ({ children }: ListingProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, revealOnScroll }: ListingProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Figure: {
