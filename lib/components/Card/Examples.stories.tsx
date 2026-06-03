@@ -164,6 +164,43 @@ export const LayoutExamples: Story = {
           )}
         </Column>
 
+        <PageHeader header="Event Cards — No Image" size="md" />
+        <Column cols="3">
+          {EventData.slice(0, 3).map(
+            ({
+              id,
+              title,
+              link,
+              startDate,
+              endDate,
+              on_campus,
+              on_campus_building,
+              on_campus_room_number,
+              event_address,
+            }) => (
+              <Card key={id} noImage>
+                <Card.DateThumb startDate={startDate} endDate={endDate} />
+                <Card.Header title={title} />
+                <Card.Body>
+                  <Card.EventMeta
+                    startDateTime={startDate}
+                    endDateTime={endDate}
+                    onCampus={on_campus}
+                    onCampusBuilding={on_campus_building}
+                    onCampusRoomNumber={on_campus_room_number}
+                    eventAddress={event_address}
+                  />
+                </Card.Body>
+                <Card.Footer>
+                  <a href={link} className="cu-button cu-button--red cu-button--small">
+                    More info
+                  </a>
+                </Card.Footer>
+              </Card>
+            ),
+          )}
+        </Column>
+
         <SinglePara />
         <SinglePara />
 
