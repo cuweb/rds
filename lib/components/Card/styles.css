@@ -99,18 +99,10 @@
 }
 
 /* No image variant */
-.cu-card.cu-card--no-image {
-  @apply bg-cu-black-50 shadow-none;
-}
-
-.cu-card.cu-card--no-image:hover {
-  @apply shadow-none;
-}
-
 .cu-card.cu-card--no-image > h2,
 .cu-card.cu-card--no-image > h3 {
   margin-top: 1.25rem !important;
-  background-color: white !important;
+  background-color: theme('colors.cu-black.50') !important;
   box-shadow: none !important;
 }
 
