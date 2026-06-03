@@ -7,16 +7,17 @@ export interface CardProps {
     isCenter?: boolean;
     isCenterDesktop?: boolean;
     noHover?: boolean;
+    noImage?: boolean;
     leftBorder?: boolean;
     isDark?: boolean;
     revealOnScroll?: boolean;
 }
 export declare const CardWrapper: {
-    ({ children, isGrey, hasWave, isCenterDesktop, isCenter, noHover, leftBorder, isDark, revealOnScroll, }: CardProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isGrey, hasWave, isCenterDesktop, isCenter, noHover, noImage, leftBorder, isDark, revealOnScroll, }: CardProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export declare const Card: {
-    ({ children, isGrey, hasWave, isCenterDesktop, isCenter, noHover, leftBorder, isDark, revealOnScroll, }: CardProps): import("react/jsx-runtime").JSX.Element;
+    ({ children, isGrey, hasWave, isCenterDesktop, isCenter, noHover, noImage, leftBorder, isDark, revealOnScroll, }: CardProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 } & {
     Figure: {
