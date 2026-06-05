@@ -71,7 +71,7 @@ export const Homepage: Story = {
             </Column>
           </Section>
 
-          <CallOut justify="center" maxWidth="4xl" title="Open House">
+          <CallOut justify="center" maxWidth="4xl" title="Why give?">
             <p>
               Since its founding moments Carleton has had a mandate to serve the community, providing citizens with
               education, knowledge and opportunity. This mandate defines our promise to you as a supporter. We are Here
