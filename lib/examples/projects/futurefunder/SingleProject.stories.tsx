@@ -31,7 +31,7 @@ const SinglePara = () => {
   )
 }
 
-export const ProjectLayout: Story = {
+export const SingleProject: Story = {
   render: () => (
     <>
       <Nav>

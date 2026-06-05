@@ -13,12 +13,19 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
+        includeNames: true,
         order: [
           'Get Started',
           ['Introduction', 'Changelog'],
           'Projects',
-          ['cutheme'],
-          ['Event Calendar'],
+          [
+            'cutheme',
+            ['Homepage', 'Page Layout', 'Post Layout', 'Graduate Program'],
+            'Event Calendar',
+            ['Homepage', 'Single Event'],
+            'FutureFunder',
+            ['Homepage', 'Browse Projects', 'Single Project'],
+          ],
           'Prototypes',
           ['Layouts'],
           'Components',
