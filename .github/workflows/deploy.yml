@@ -22,10 +22,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21.x'
+          node-version: '22.x'
 
       - name: 📦 Install
-        run: npm install
+        run: rm -f package-lock.json && npm install
 
       - name: 🔧 Build
         run: npm run build:storybook
