@@ -31,7 +31,7 @@
   "scripts": {
     "lint": "eslint . --ignore-pattern '.storybook/**'",
     "storybook": "storybook dev -p 6006",
-    "build": "tsc && npm run create-lists && npm run lint && npm run prettier && vite build && npm run size",
+    "build": "tsc && npm run lint && npm run prettier && vite build && npm run size",
     "build:storybook": "storybook build",
     "create-lists": "node ./generateIconList.mjs && node ./generateBgImgList.mjs && node ./generateVideoJsonFiles.mjs",
     "prettier": "prettier --write .",

@@ -1,10 +1,10 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../../layouts/Main/Main'
-import { FooterDept } from '../../../components/Footer/FooterDept/FooterDept'
 import { Nav } from '../../../components/Nav/Nav'
 import { PageHeader } from '../../../components/PageHeader/PageHeader'
 import { FullBanner } from '../../../components/FullBanner/FullBanner'
+import { CallOut } from '../../../components/CallOut/CallOut'
 import { ButtonGroup } from '../../../components/ButtonGroup/ButtonGroup'
 import { Button } from '../../../components/Button/Button'
 import { Column } from '../../../layouts/Column/Column'
@@ -31,7 +31,7 @@ export const Homepage: Story = {
       <>
         <Nav>
           <Nav.Top>
-            <Nav.Logo title="FutureFunder" link="https://graduate.carleton.ca" />
+            <Nav.Logo title="FutureFunder" link="https://futurefunder.carleton.ca" />
             <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
           </Nav.Top>
           <Nav.Bottom>
@@ -43,7 +43,7 @@ export const Homepage: Story = {
         <Main>
           <FullBanner>
             <FullBanner.Image>
-              <img alt="Top down view of a desk" src="https://picsum.photos/id/565/1920/840" />
+              <img alt="Top down view of a desk" src="https://picsum.photos/id/566/1920/840" />
             </FullBanner.Image>
             <FullBanner.Content headerType="h1" title="Welcome to the FutureFunder">
               <p>Your platform to make lasting change through higher education!</p>
@@ -54,7 +54,7 @@ export const Homepage: Story = {
             </FullBanner.Content>
           </FullBanner>
 
-          <Section maxWidth="7xl" isGrey>
+          <Section maxWidth="7xl">
             <PageHeader as="h2" header="Featured Campaigns" size="md" />
             <Column cols="4">
               {NewsData.slice(0, 8).map(({ id, title, link, image, alt }) => (
@@ -71,58 +71,38 @@ export const Homepage: Story = {
             </Column>
           </Section>
 
-          <Section>
-            <PageHeader as="h2" header="Why Give?" size="md" isCenter />
-            <Column cols="2">
-              <Column.Content>
-                <p>
-                  Since its founding moments Carleton has had a mandate to serve the community, providing citizens with
-                  education, knowledge and opportunity. This mandate defines our promise to you as a supporter. We are
-                  Here for Good.
-                </p>
-              </Column.Content>
-              <Column.Content>
-                <p>
-                  Your gift to Carleton brings real change to your community. If you share our conviction that there are
-                  good things to be done, we could use your help. Collaborate with us and do good things for the world.
-                </p>
-              </Column.Content>
-            </Column>
+          <CallOut justify="center" maxWidth="4xl" title="Open House">
+            <p>
+              Since its founding moments Carleton has had a mandate to serve the community, providing citizens with
+              education, knowledge and opportunity. This mandate defines our promise to you as a supporter. We are Here
+              for Good.
+            </p>
+            <p>
+              Your gift to Carleton brings real change to your community. If you share our conviction that there are
+              good things to be done, we could use your help. Collaborate with us and do good things for the world.
+            </p>
             <ButtonGroup align="center" gap="5">
               <Button onClick={() => {}} title="Learn More" />
             </ButtonGroup>
-          </Section>
+          </CallOut>
 
-          <Section isGrey>
-            <PageHeader
-              as="h2"
-              header="Browse by Department"
-              size="md"
-              content="Add design for browsing by category."
-              isCenter
-            />
+          <Section maxWidth="7xl" isGrey>
+            <Column cols="4">
+              <Card leftBorder noHover>
+                <Card.Stats desc="Student Population" stat="30,500+" />
+              </Card>
+              <Card leftBorder noHover>
+                <Card.Stats desc="Clubs & Societies" stat="170+" />
+              </Card>
+              <Card leftBorder noHover>
+                <Card.Stats desc="Scholarships & Bursaries" stat="85.4 M+" />
+              </Card>
+              <Card leftBorder noHover>
+                <Card.Stats desc="Research Funding" stat="$116 M" />
+              </Card>
+            </Column>
           </Section>
         </Main>
-
-        <FooterDept
-          buildingName="Pigiarvik (ᐱᒋᐊᕐᕕᒃ)"
-          deptName="Information Technology Services"
-          email="noreply@carleton.ca"
-          footerButtons={[
-            {
-              id: 1,
-              title: 'Contact support',
-              url: '#',
-            },
-            {
-              id: 2,
-              title: 'Recent alerts',
-              url: '#',
-            },
-          ]}
-          officeNumber="400"
-          phone="613-520-2600"
-        />
 
         <FooterStandard />
         <FooterCookie />
