@@ -9,7 +9,7 @@ export const FooterFutureFunder = () => {
 
   return (
     <footer
-      className="cu-footerfuturefunder mt-auto mb-0 not-prose px-8 py-8 bg-cu-black-900 md:px-10 md:py-12"
+      className="cu-footerstandard mt-auto mb-0 not-prose px-8 py-8 bg-cu-black-900 md:px-10 md:py-12 bg-cu-waves-footer-red bg-[length:100.5%] bg-bottom bg-no-repeat"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
