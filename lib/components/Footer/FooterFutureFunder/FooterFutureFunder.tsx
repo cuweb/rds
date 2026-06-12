@@ -15,7 +15,6 @@ export const FooterFutureFunder = () => {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-
       <div className="flex-col pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <p className="text-sm md:text-base text-center font-medium text-white">
           Carleton University acknowledges the location of its campus on the traditional, unceded territories of the
@@ -40,19 +39,15 @@ export const FooterFutureFunder = () => {
           </div>
 
           {/* CATEGORIES / DEPARTMENTS */}
-          <div>
+          <div className="min-w-[280px]">
             <h3 className={styles.linkHeaders}>Categories / Departments</h3>
-            <div className="flex gap-6 mt-2.5">
-              {[0, 6, 11].map((start, colIndex) => (
-                <ul key={colIndex}>
-                  {futureFunderData.Categories.slice(start, [6, 11, 16][colIndex]).map((item, index) => (
-                    <li key={index} className="mt-1.5 text-sm">
-                      <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
-                        {item.name}
-                      </LinkComponent>
-                    </li>
-                  ))}
-                </ul>
+            <div className="grid grid-cols-2 gap-x-8 mt-2.5">
+              {futureFunderData.Categories.map((item, index) => (
+                <div key={index} className="mt-2.5 text-sm">
+                  <LinkComponent href={item.href} className="text-cu-black-300 hover:text-white">
+                    {item.name}
+                  </LinkComponent>
+                </div>
               ))}
             </div>
           </div>
