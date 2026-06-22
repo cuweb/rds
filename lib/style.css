@@ -25,6 +25,7 @@
 @import './components/Form/styles.css';
 @import './components/Form/AutoSuggest/styles.css';
 @import './components/Form/DateTime/styles.css';
+@import './components/FundingDetails/styles.css';
 @import './components/ImageGrid/styles.css';
 @import './components/Listing/styles.css';
 @import './components/Nav/priority-plus/priority-plus.css';
