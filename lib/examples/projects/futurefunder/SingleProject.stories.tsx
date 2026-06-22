@@ -49,11 +49,11 @@ export const SingleProject: Story = {
       <Main>
         <Section as="div" maxWidth="7xl">
           <FundingDetails
-            status="ACTIVE CAMPAIGN"
             title="Annual Musical Production 2026"
-            endDate="2026-09-01"
+            endDate="2027-09-01"
             raised={45250}
             goal={75000}
+            categories={['Community', 'Health', 'Student Experience']}
             imageUrl="https://fastly.picsum.photos/id/237/1200/800.jpg?hmac=Zig5Q0Oa_5oSGNOhgbpE-lgHzdREZIxTf94rVP1-uCg"
             imageAlt="Black labrador puppy looking up"
           />

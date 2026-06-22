@@ -1,19 +1,18 @@
 import { Badge } from '../Badge/Badge'
 import { BadgeGroup } from '../BadgeGroup/BadgeGroup'
-import { Button } from '../Button/Button'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { PageHeader } from '../PageHeader/PageHeader'
 import { ProgressBar } from '../ProgressBar/ProgressBar'
 import { formatCurrency } from '../../helpers/formatCurrency'
 
 interface FundingDetailsProps {
-  status: string
   title: string
   raised: number
   goal: number
+  endDate: string
   imageUrl: string
   imageAlt: string
-  endDate?: string
+  categories?: string[]
 }
 
 const getTimeRemainingLabel = (endDate: string): string => {
@@ -23,16 +22,27 @@ const getTimeRemainingLabel = (endDate: string): string => {
   return `${Math.max(daysLeft, 0)} days to go`
 }
 
-export const FundingDetails = ({ status, title, raised, goal, imageUrl, imageAlt, endDate }: FundingDetailsProps) => {
+export const FundingDetails = ({
+  title,
+  raised,
+  goal,
+  endDate,
+  imageUrl,
+  imageAlt,
+  categories,
+}: FundingDetailsProps) => {
   const percent = goal > 0 ? Math.min(Math.round((raised / goal) * 100), 100) : 0
-  const timeLabel = endDate ? getTimeRemainingLabel(endDate) : undefined
+  const timeLabel = getTimeRemainingLabel(endDate)
+  const isActive = new Date(endDate).getTime() >= Date.now()
+  const statusText = isActive ? 'Active Campaign' : 'Campaign Completed'
+  const statusColor = isActive ? 'green' : 'red'
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:rounded-sm ">
-        <div className="lg:py-10">
+      <div className="cu-fundingdetails flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:rounded-sm ">
+        <div className="lg:py-8">
           <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
-            <Badge color="green" text={status} />
+            <Badge color={statusColor} text={statusText} rounded="base" />
           </BadgeGroup>
 
           <PageHeader as="h1" header={title} size="lg" noUnderline />
@@ -46,18 +56,22 @@ export const FundingDetails = ({ status, title, raised, goal, imageUrl, imageAlt
             <ProgressBar value={raised} max={goal} />
           </div>
 
-          <p className="text-sm text-cu-black-600 pb-6 italic">
-            {percent}% funded{timeLabel ? ` with ${timeLabel}` : ''}
+          <p className="text-sm text-cu-black-600 italic">
+            {percent}% funded with {timeLabel}
           </p>
 
-          <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
-            <Badge color="grey" text="Environment" rounded="base" link="#" />
-            <Badge color="grey" text="Science &amp; Innovation" rounded="base" link="#" />
-            <Badge color="grey" text="Student Experience" rounded="base" link="#" />
-          </BadgeGroup>
+          {categories && categories.length > 0 && (
+            <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
+              {categories.map((cat) => (
+                <Badge key={cat} color="grey" text={cat} rounded="base" />
+              ))}
+            </BadgeGroup>
+          )}
 
           <ButtonGroup align="start" gap="5">
-            <Button onClick={() => {}} title="Fund this Project" />
+            <a href="#fund-this-campaign" className="cu-button not-prose cu-button--red">
+              Fund this Project
+            </a>
           </ButtonGroup>
         </div>
 
