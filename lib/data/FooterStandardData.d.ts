@@ -54,3 +54,21 @@ export declare const FooterAthleticsLinks: {
         href: string;
     }[];
 };
+export declare const FooterFutureFunderLinks: {
+    Explore: {
+        name: string;
+        href: string;
+    }[];
+    Categories: {
+        name: string;
+        href: string;
+    }[];
+    RegisterLogin: {
+        name: string;
+        href: string;
+    }[];
+    HereForGood: {
+        name: string;
+        href: string;
+    }[];
+};
