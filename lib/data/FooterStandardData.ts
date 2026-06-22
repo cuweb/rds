@@ -115,3 +115,51 @@ export const FooterAthleticsLinks = {
     { name: 'Undergraduate Admissions', href: 'https://admissions.carleton.ca/' },
   ],
 }
+
+export const FooterFutureFunderLinks = {
+  Explore: [
+    { name: 'Donate Now', href: 'https://futurefunder.carleton.ca/donate' },
+    { name: 'Explore Campaigns', href: 'https://futurefunder.carleton.ca/campaigns' },
+    { name: 'Submit a Campaign', href: 'https://futurefunder.carleton.ca/submit' },
+    { name: 'Learn About FutureFunder', href: 'https://futurefunder.carleton.ca/about' },
+    { name: 'Frequently Asked Questions', href: 'https://futurefunder.carleton.ca/faq' },
+    { name: 'Read Our Blog', href: 'https://futurefunder.carleton.ca/blog' },
+    { name: 'Contact Us', href: 'https://futurefunder.carleton.ca/contact' },
+  ],
+  Categories: [
+    { name: 'Arts', href: 'https://futurefunder.carleton.ca/campaigns?category=arts' },
+    { name: 'Athletics', href: 'https://futurefunder.carleton.ca/campaigns?category=athletics' },
+    { name: 'Business', href: 'https://futurefunder.carleton.ca/campaigns?category=business' },
+    { name: 'Community', href: 'https://futurefunder.carleton.ca/campaigns?category=community' },
+    { name: 'Environment', href: 'https://futurefunder.carleton.ca/campaigns?category=environment' },
+    { name: 'Global Impact', href: 'https://futurefunder.carleton.ca/campaigns?category=global-impact' },
+    { name: 'Health', href: 'https://futurefunder.carleton.ca/campaigns?category=health' },
+    { name: 'Science & Innovation', href: 'https://futurefunder.carleton.ca/campaigns?category=science-innovation' },
+    { name: 'Student Experience', href: 'https://futurefunder.carleton.ca/campaigns?category=student-experience' },
+    {
+      name: 'Arts & Social Sciences',
+      href: 'https://futurefunder.carleton.ca/campaigns?category=arts-social-sciences',
+    },
+    { name: 'Engineering & Design', href: 'https://futurefunder.carleton.ca/campaigns?category=engineering-design' },
+    { name: 'Library', href: 'https://futurefunder.carleton.ca/campaigns?category=library' },
+    {
+      name: 'Recreation & Athletics',
+      href: 'https://futurefunder.carleton.ca/campaigns?category=recreation-athletics',
+    },
+    { name: 'Science', href: 'https://futurefunder.carleton.ca/campaigns?category=science' },
+    { name: 'Sprott School of Business', href: 'https://futurefunder.carleton.ca/campaigns?category=sprott' },
+    { name: 'University Wide', href: 'https://futurefunder.carleton.ca/campaigns?category=university-wide' },
+  ],
+  RegisterLogin: [
+    { name: 'Login', href: 'https://futurefunder.carleton.ca/login' },
+    { name: 'Sign Up', href: 'https://futurefunder.carleton.ca/signup' },
+    { name: 'Password Reset', href: 'https://futurefunder.carleton.ca/password-reset' },
+    { name: 'Account Support', href: 'https://futurefunder.carleton.ca/support' },
+    { name: 'Newsletter Sign Up', href: 'https://futurefunder.carleton.ca/newsletter' },
+  ],
+  HereForGood: [
+    { name: 'University Advancement', href: 'https://carleton.ca/advancement/' },
+    { name: 'Our Mission', href: 'https://futurefunder.carleton.ca/mission' },
+    { name: 'Giving at Carleton', href: 'https://futurefunder.carleton.ca/giving' },
+  ],
+}
