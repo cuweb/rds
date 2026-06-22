@@ -13,15 +13,24 @@ interface FundingDetailsProps {
   goal: number
   imageUrl: string
   imageAlt: string
+  endDate?: string
 }
 
-export const FundingDetails = ({ status, title, raised, goal, imageUrl, imageAlt }: FundingDetailsProps) => {
+const getTimeRemainingLabel = (endDate: string): string => {
+  const daysLeft = Math.ceil((new Date(endDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+  if (daysLeft > 365) return 'more than a year to go'
+  if (daysLeft > 30) return `${Math.round(daysLeft / 30)} months to go`
+  return `${Math.max(daysLeft, 0)} days to go`
+}
+
+export const FundingDetails = ({ status, title, raised, goal, imageUrl, imageAlt, endDate }: FundingDetailsProps) => {
   const percent = goal > 0 ? Math.min(Math.round((raised / goal) * 100), 100) : 0
+  const timeLabel = endDate ? getTimeRemainingLabel(endDate) : undefined
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:border-b lg:border-cu-black-300/50 lg:rounded-sm lg:pb-8">
-        <div className="lg:w-1/2 lg:py-10">
+      <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:rounded-sm ">
+        <div className="lg:py-10">
           <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
             <Badge color="green" text={status} />
           </BadgeGroup>
@@ -37,7 +46,15 @@ export const FundingDetails = ({ status, title, raised, goal, imageUrl, imageAlt
             <ProgressBar value={raised} max={goal} />
           </div>
 
-          <p className="text-sm text-cu-black-600 mb-8">{percent}% funded</p>
+          <p className="text-sm text-cu-black-600 pb-6 italic">
+            {percent}% funded{timeLabel ? ` with ${timeLabel}` : ''}
+          </p>
+
+          <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
+            <Badge color="grey" text="Environment" rounded="base" link="#" />
+            <Badge color="grey" text="Science &amp; Innovation" rounded="base" link="#" />
+            <Badge color="grey" text="Student Experience" rounded="base" link="#" />
+          </BadgeGroup>
 
           <ButtonGroup align="start" gap="5">
             <Button onClick={() => {}} title="Fund this Project" />
@@ -45,13 +62,8 @@ export const FundingDetails = ({ status, title, raised, goal, imageUrl, imageAlt
         </div>
 
         {/* Image */}
-        <div className="lg:w-1/2">
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            className="w-full h-full object-cover rounded-xl !m-0"
-            // style={{ minHeight: '380px' }}
-          />
+        <div>
+          <img src={imageUrl} alt={imageAlt} className="w-full h-full object-cover rounded-xl !m-0" />
         </div>
       </div>
     </>

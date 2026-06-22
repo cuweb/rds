@@ -4,6 +4,7 @@ import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
 import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
 import { Nav } from '../../../components/Nav/Nav'
+import { PageHeader } from '../../../components/PageHeader/PageHeader'
 import { FundingDetails } from '../../../components/FundingDetails/FundingDetails'
 import { NavButtonsData, NavFutureFunder } from '../../../data/NavData'
 
@@ -46,10 +47,11 @@ export const SingleProject: Story = {
       </Nav>
 
       <Main>
-        <Section as="div" maxWidth="max">
+        <Section as="div" maxWidth="7xl">
           <FundingDetails
             status="ACTIVE CAMPAIGN"
             title="Annual Musical Production 2026"
+            endDate="2026-09-01"
             raised={45250}
             goal={75000}
             imageUrl="https://fastly.picsum.photos/id/237/1200/800.jpg?hmac=Zig5Q0Oa_5oSGNOhgbpE-lgHzdREZIxTf94rVP1-uCg"
@@ -58,8 +60,18 @@ export const SingleProject: Story = {
         </Section>
 
         <SinglePara />
+
+        <PageHeader as="h2" header="The Background" size="md" />
         <SinglePara />
+
+        <PageHeader as="h2" header="The Rollout" size="md" />
         <SinglePara />
+
+        <PageHeader as="h2" header="The Impact" size="md" />
+        <SinglePara />
+
+        <PageHeader as="h2" header="Fund this campaign" size="md" />
+        <p>The primary donation form would be placed here.</p>
       </Main>
 
       <FooterStandard />
