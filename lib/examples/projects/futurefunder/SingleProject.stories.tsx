@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../../layouts/Main/Main'
 import { Section } from '../../../layouts/Section/Section'
-import { FooterStandard } from '../../../components/Footer/FooterStandard/FooterStandard'
+import { FooterFutureFunder } from '../../../components/Footer/FooterFutureFunder/FooterFutureFunder'
 import { Nav } from '../../../components/Nav/Nav'
 import { PageHeader } from '../../../components/PageHeader/PageHeader'
 import { FundingDetails } from '../../../components/FundingDetails/FundingDetails'
@@ -75,7 +75,7 @@ export const SingleProject: Story = {
         <p>The primary donation form would be placed here.</p>
       </Main>
 
-      <FooterStandard />
+      <FooterFutureFunder />
     </>
   ),
 }

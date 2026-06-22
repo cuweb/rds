@@ -25,7 +25,7 @@ export const FooterFutureFunder = () => {
       <div className="flex-col hidden md:pb-8 md:mx-auto md:mb-8 md:border-b md:block md:max-w-7xl md:border-cu-black-700">
         <div id="footer-links" className="flex justify-between w-full gap-8">
           {/* EXPLORE */}
-          <div className="min-w-[140px]">
+          <div className="">
             <h3 className={styles.linkHeaders}>Explore</h3>
             <ul>
               {futureFunderData.Explore.map((item, index) => (
@@ -39,7 +39,7 @@ export const FooterFutureFunder = () => {
           </div>
 
           {/* CATEGORIES / DEPARTMENTS */}
-          <div className="min-w-[280px]">
+          <div className="">
             <h3 className={styles.linkHeaders}>Categories / Departments</h3>
             <div className="grid grid-cols-2 gap-x-8 mt-2.5">
               {futureFunderData.Categories.map((item, index) => (
@@ -53,7 +53,7 @@ export const FooterFutureFunder = () => {
           </div>
 
           {/* REGISTER / LOGIN */}
-          <div className="min-w-[140px]">
+          <div className="">
             <h3 className={styles.linkHeaders}>Register/Login</h3>
             <ul>
               {futureFunderData.RegisterLogin.map((item, index) => (
@@ -67,7 +67,7 @@ export const FooterFutureFunder = () => {
           </div>
 
           {/* HERE FOR GOOD */}
-          <div className="min-w-[160px]">
+          <div className="">
             <h3 className={styles.linkHeaders}>Here For Good</h3>
             <ul>
               {futureFunderData.HereForGood.map((item, index) => (
