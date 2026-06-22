@@ -59,6 +59,7 @@ export const SingleProject: Story = {
           />
         </Section>
 
+        <PageHeader as="h2" header="The Overview" size="md" />
         <SinglePara />
 
         <PageHeader as="h2" header="The Background" size="md" />
