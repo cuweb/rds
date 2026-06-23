@@ -24,7 +24,11 @@ export const Primary: Story = {
     endDate: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     imageUrl: 'https://picsum.photos/seed/funding/800/600',
     imageAlt: 'Funding campaign image',
-    categories: ['Environment', 'Science & Innovation', 'Student Experience'],
+    categories: [
+      { name: 'Environment', link: 'https://example.com/environment' },
+      { name: 'Science & Innovation', link: 'https://example.com/science' },
+      { name: 'Student Experience' },
+    ],
   },
   render: (args) => {
     return <FundingDetails {...args} />

@@ -5,6 +5,11 @@ import { PageHeader } from '../PageHeader/PageHeader'
 import { ProgressBar } from '../ProgressBar/ProgressBar'
 import { formatCurrency } from '../../helpers/formatCurrency'
 
+interface FundingCategory {
+  name: string
+  link?: string
+}
+
 interface FundingDetailsProps {
   title: string
   raised: number
@@ -12,7 +17,7 @@ interface FundingDetailsProps {
   endDate: string
   imageUrl: string
   imageAlt: string
-  categories?: string[]
+  categories?: FundingCategory[]
 }
 
 const getTimeRemainingLabel = (endDate: string): string => {
@@ -63,7 +68,7 @@ export const FundingDetails = ({
           {categories && categories.length > 0 && (
             <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
               {categories.map((cat) => (
-                <Badge key={cat} color="grey" text={cat} rounded="base" />
+                <Badge key={cat.name} color="grey" text={cat.name} link={cat.link} rounded="base" />
               ))}
             </BadgeGroup>
           )}
