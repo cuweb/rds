@@ -1,3 +1,7 @@
+interface FundingCategory {
+    name: string;
+    link?: string;
+}
 interface FundingDetailsProps {
     title: string;
     raised: number;
@@ -5,7 +9,7 @@ interface FundingDetailsProps {
     endDate: string;
     imageUrl: string;
     imageAlt: string;
-    categories?: string[];
+    categories?: FundingCategory[];
 }
 export declare const FundingDetails: {
     ({ title, raised, goal, endDate, imageUrl, imageAlt, categories, }: FundingDetailsProps): import("react/jsx-runtime").JSX.Element;
