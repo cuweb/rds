@@ -21,7 +21,7 @@ export const Primary: Story = {
     title: 'Fund the Future of Clean Energy Research',
     raised: 42500,
     goal: 100000,
-    endDate: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    endDate: '2026-08-27',
     imageUrl: 'https://picsum.photos/seed/funding/800/600',
     imageAlt: 'Funding campaign image',
     categories: [
