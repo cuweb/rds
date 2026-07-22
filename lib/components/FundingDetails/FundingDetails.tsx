@@ -5,6 +5,11 @@ import { PageHeader } from '../PageHeader/PageHeader'
 import { ProgressBar } from '../ProgressBar/ProgressBar'
 import { formatCurrency } from '../../helpers/formatCurrency'
 
+interface FundingCategory {
+  name: string
+  link?: string
+}
+
 interface FundingDetailsProps {
   title: string
   raised: number
@@ -12,11 +17,16 @@ interface FundingDetailsProps {
   endDate: string
   imageUrl: string
   imageAlt: string
-  categories?: string[]
+  categories?: FundingCategory[]
+}
+
+const parseDateLocal = (dateStr: string): Date => {
+  const [year, month, day] = dateStr.split('-').map(Number)
+  return new Date(year, month - 1, day)
 }
 
 const getTimeRemainingLabel = (endDate: string): string => {
-  const daysLeft = Math.ceil((new Date(endDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+  const daysLeft = Math.ceil((parseDateLocal(endDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
   if (daysLeft > 365) return 'more than a year to go'
   if (daysLeft > 30) return `${Math.round(daysLeft / 30)} months to go`
   return `${Math.max(daysLeft, 0)} days to go`
@@ -33,14 +43,14 @@ export const FundingDetails = ({
 }: FundingDetailsProps) => {
   const percent = goal > 0 ? Math.min(Math.round((raised / goal) * 100), 100) : 0
   const timeLabel = getTimeRemainingLabel(endDate)
-  const isActive = new Date(endDate).getTime() >= Date.now()
+  const isActive = parseDateLocal(endDate).getTime() >= Date.now()
   const statusText = isActive ? 'Active Campaign' : 'Campaign Completed'
   const statusColor = isActive ? 'green' : 'red'
 
   return (
     <>
       <div className="cu-fundingdetails flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:rounded-sm ">
-        <div className="lg:py-8">
+        <div className="lg:py-8 lg:w-1/2">
           <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
             <Badge color={statusColor} text={statusText} rounded="base" />
           </BadgeGroup>
@@ -63,7 +73,7 @@ export const FundingDetails = ({
           {categories && categories.length > 0 && (
             <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
               {categories.map((cat) => (
-                <Badge key={cat} color="grey" text={cat} rounded="base" />
+                <Badge key={cat.name} color="grey" text={cat.name} link={cat.link} rounded="base" />
               ))}
             </BadgeGroup>
           )}
@@ -76,7 +86,7 @@ export const FundingDetails = ({
         </div>
 
         {/* Image */}
-        <div>
+        <div className="lg:w-1/2">
           <img src={imageUrl} alt={imageAlt} className="w-full h-full object-cover rounded-xl !m-0" />
         </div>
       </div>
