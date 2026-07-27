@@ -20,7 +20,7 @@ export function LocationPicker({ address, markerCallback }: ILocationPickerProps
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   })
 
