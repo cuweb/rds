@@ -48,6 +48,7 @@ export const iconNames = [
   { value: 'circle-check', label: 'Circle check' },
   { value: 'circle-chevron-down', label: 'Circle chevron down' },
   { value: 'circle-chevron-up', label: 'Circle chevron up' },
+  { value: 'circle-dollar', label: 'Circle dollar' },
   { value: 'circle-down', label: 'Circle down' },
   { value: 'circle-exclamation', label: 'Circle exclamation' },
   { value: 'circle-info', label: 'Circle info' },
