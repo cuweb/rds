@@ -84,7 +84,7 @@ export const Homepage: Story = {
                     <img src={image} alt={alt} width={400} height={175} />
                   </Card.Figure>
                   <Card.DateThumb startDate={startDate} endDate={endDate} />
-                  <Card.Header title={title} />
+                  <Card.Header title={title} link={link} />
                   <Card.Body>
                     <Card.EventMeta
                       startDateTime={startDate}
@@ -95,11 +95,6 @@ export const Homepage: Story = {
                       eventAddress={event_address}
                     />
                   </Card.Body>
-                  <Card.Footer>
-                    <a href={link} className="cu-button cu-button--red cu-button--small">
-                      More info
-                    </a>
-                  </Card.Footer>
                 </Card>
               ),
             )}

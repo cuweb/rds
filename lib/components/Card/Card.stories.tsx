@@ -29,15 +29,10 @@ export const Primary: Story = {
   render: (args) => (
     <Main maxWidth="3xl">
       <Card {...args}>
-        <Card.Header title="How to Write for the Web" />
+        <Card.Header title="How to Write for the Web" link="https://carleton.ca/webservices" />
         <Card.Body>
           <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
         </Card.Body>
-        <Card.Footer>
-          <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
-            More info
-          </a>
-        </Card.Footer>
       </Card>
     </Main>
   ),
@@ -53,15 +48,10 @@ export const NewsCard: Story = {
             <Card.Figure>
               <img src={image} alt={alt} width="400" height="300" />
             </Card.Figure>
-            <Card.Header title={title} datePrefix="Published on" date={date} readTime="7" />
+            <Card.Header title={title} link={link} datePrefix="Published on" date={date} readTime="7" />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                Read more
-              </a>
-            </Card.Footer>
           </Card>
         ))}
       </Column>
@@ -93,7 +83,7 @@ export const EventCard: Story = {
                 <img src={image} alt={alt} width={400} height={175} />
               </Card.Figure>
               <Card.DateThumb startDate={startDate} endDate={endDate} />
-              <Card.Header title={title} />
+              <Card.Header title={title} link={link} />
               <Card.Body>
                 <Card.EventMeta
                   startDateTime={startDate}
@@ -104,11 +94,6 @@ export const EventCard: Story = {
                   eventAddress={event_address}
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  More info
-                </a>
-              </Card.Footer>
             </Card>
           ),
         )}
@@ -127,15 +112,10 @@ export const FeaturedCards: Story = {
             <Card.ImageThumb>
               <img src={image} alt={alt} width="200" height="133" />
             </Card.ImageThumb>
-            <Card.Header title={title} />
+            <Card.Header title={title} link={link} />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                Get informed
-              </a>
-            </Card.Footer>
           </Card>
         ))}
       </Column>
@@ -151,15 +131,10 @@ export const IconCard: Story = {
         {IconData.slice(0, 2).map(({ id, link, title, icon }) => (
           <Card key={id} {...args}>
             <Card.IconThumb icon={icon} />
-            <Card.Header title={title} />
+            <Card.Header title={title} link={link} />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                More info
-              </a>
-            </Card.Footer>
           </Card>
         ))}
       </Column>
@@ -174,15 +149,10 @@ export const PageCard: Story = {
       <Column cols="2">
         {NewsData.slice(0, 2).map(({ id, link, title, date }) => (
           <Card key={id} {...args}>
-            <Card.Header title={title} date={date} datePrefix="Modified on " datePosition="bottom" />
+            <Card.Header title={title} link={link} date={date} datePrefix="Modified on " datePosition="bottom" />
             <Card.Body>
               <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                Read more
-              </a>
-            </Card.Footer>
           </Card>
         ))}
       </Column>
@@ -200,17 +170,12 @@ export const PeopleCard: Story = {
             <Card.Figure isRound>
               <img src={image} alt={alt} width={280} height={280} />
             </Card.Figure>
-            <Card.Header title={`${firstName} ${lastName}`} />
+            <Card.Header title={`${firstName} ${lastName}`} link={link} />
             <Card.Body>
               <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
                 <a href={`mailto:${email}`}>{email}</a>
               </Card.PeopleMeta>
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                More info
-              </a>
-            </Card.Footer>
           </Card>
         ))}
       </Column>
@@ -228,7 +193,7 @@ export const HoursCard: Story = {
             <Card.Figure>
               <img src={image} alt={alt} width="400" height="300" />
             </Card.Figure>
-            <Card.Header title={title} />
+            <Card.Header title={title} link={link} />
             <Card.Body>
               <Card.Content>
                 <p className="flex items-center gap-2">
@@ -236,11 +201,6 @@ export const HoursCard: Story = {
                 </p>
               </Card.Content>
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                Read more
-              </a>
-            </Card.Footer>
           </Card>
         ))}
         {NewsData.slice(1, 2).map(({ id, link, title, image, alt }) => (
@@ -248,7 +208,7 @@ export const HoursCard: Story = {
             <Card.Figure>
               <img src={image} alt={alt} width="400" height="300" />
             </Card.Figure>
-            <Card.Header title={title} />
+            <Card.Header title={title} link={link} />
             <Card.Body>
               <Card.Content>
                 <p className="flex items-center gap-2">
@@ -256,11 +216,6 @@ export const HoursCard: Story = {
                 </p>
               </Card.Content>
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                Read more
-              </a>
-            </Card.Footer>
           </Card>
         ))}
         {NewsData.slice(1, 2).map(({ id, link, title, image, alt }) => (
@@ -268,7 +223,7 @@ export const HoursCard: Story = {
             <Card.Figure>
               <img src={image} alt={alt} width="400" height="300" />
             </Card.Figure>
-            <Card.Header title={title} />
+            <Card.Header title={title} link={link} />
             <Card.Body>
               <Card.Content>
                 <p className="flex items-center gap-2">
@@ -276,11 +231,6 @@ export const HoursCard: Story = {
                 </p>
               </Card.Content>
             </Card.Body>
-            <Card.Footer>
-              <a href={link} className="cu-button cu-button--red cu-button--small">
-                Read more
-              </a>
-            </Card.Footer>
           </Card>
         ))}
       </Column>

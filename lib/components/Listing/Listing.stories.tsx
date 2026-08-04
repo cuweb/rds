@@ -30,13 +30,8 @@ export const Default: Story = {
     <Main>
       <Listing {...args}>
         <Listing.Body>
-          <Listing.Header title="How to Write for the Web" />
+          <Listing.Header title="How to Write for the Web" link="https://carleton.ca/webservices" />
           <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-          <Listing.Footer>
-            <a href="https://carleton.ca/webservices" className="cu-button cu-button--red cu-button--small">
-              More info
-            </a>
-          </Listing.Footer>
         </Listing.Body>
       </Listing>
     </Main>
@@ -54,13 +49,8 @@ export const SingleNewsListing: Story = {
               <img src={image} alt={alt} width="400" height="300" />
             </Listing.Figure>
             <Listing.Body>
-              <Listing.Header title={title} date={date} />
+              <Listing.Header title={title} link={link} date={date} />
               <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Read more
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -80,13 +70,8 @@ export const MultipleNewsListings: Story = {
               <img src={image} alt={alt} width="400" height="300" />
             </Listing.Figure>
             <Listing.Body>
-              <Listing.Header title={title} date={date} />
+              <Listing.Header title={title} link={link} date={date} />
               <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Read more
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -115,7 +100,7 @@ export const SingleEventListing: Story = {
             <Listing key={id} {...args}>
               <Listing.DateThumb startDate={startDate} endDate={endDate} />
               <Listing.Body>
-                <Listing.Header title={title} />
+                <Listing.Header title={title} link={link} />
                 <Listing.EventMeta
                   startDateTime={startDate}
                   endDateTime={endDate}
@@ -124,11 +109,6 @@ export const SingleEventListing: Story = {
                   onCampusRoomNumber={on_campus_room_number}
                   eventAddress={event_address}
                 />
-                <Listing.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    Event details
-                  </a>
-                </Listing.Footer>
               </Listing.Body>
             </Listing>
           ),
@@ -158,7 +138,7 @@ export const MultipleEventListings: Story = {
             <Listing key={id} {...args}>
               <Listing.DateThumb startDate={startDate} endDate={endDate} />
               <Listing.Body>
-                <Listing.Header title={title} />
+                <Listing.Header title={title} link={link} />
                 <Listing.EventMeta
                   startDateTime={startDate}
                   endDateTime={endDate}
@@ -167,11 +147,6 @@ export const MultipleEventListings: Story = {
                   onCampusRoomNumber={on_campus_room_number}
                   eventAddress={event_address}
                 />
-                <Listing.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    Event details
-                  </a>
-                </Listing.Footer>
               </Listing.Body>
             </Listing>
           ),
@@ -190,13 +165,8 @@ export const SingleIconListing: Story = {
           <Listing key={id} {...args}>
             <Listing.IconThumb icon={icon} />
             <Listing.Body>
-              <Listing.Header title={title} />
+              <Listing.Header title={title} link={link} />
               <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Get informed
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -214,13 +184,8 @@ export const MultipleIconListing: Story = {
           <Listing key={id} {...args}>
             <Listing.IconThumb icon={icon} />
             <Listing.Body>
-              <Listing.Header title={title} />
+              <Listing.Header title={title} link={link} />
               <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Get informed
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -237,13 +202,8 @@ export const SinglePageListing: Story = {
         {NewsData.slice(0, 1).map(({ id, link, title, date }) => (
           <Listing key={id} {...args}>
             <Listing.Body>
-              <Listing.Header title={title} date={date} datePrefix="Modified on " datePosition="bottom" />
+              <Listing.Header title={title} link={link} date={date} datePrefix="Modified on " datePosition="bottom" />
               <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Read more
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -260,13 +220,8 @@ export const MultiplePageListing: Story = {
         {NewsData.slice(1, 5).map(({ id, link, title, date }) => (
           <Listing key={id} {...args}>
             <Listing.Body>
-              <Listing.Header title={title} date={date} datePrefix="Modified on " datePosition="bottom" />
+              <Listing.Header title={title} link={link} date={date} datePrefix="Modified on " datePosition="bottom" />
               <Listing.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Read more
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -286,15 +241,10 @@ export const SinglePeopleListing: Story = {
               <img src={image} alt={alt} width="280" height="280" />
             </Listing.Figure>
             <Listing.Body>
-              <Listing.Header title={`${firstName} ${lastName}`} />
+              <Listing.Header title={`${firstName} ${lastName}`} link={link} />
               <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
                 <a href={`mailto:${email}`}>{email}</a>
               </Listing.PeopleMeta>
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  View profile
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}
@@ -314,15 +264,10 @@ export const MultiplePeopleListing: Story = {
               <img src={image} alt={alt} width="280" height="280" />
             </Listing.Figure>
             <Listing.Body>
-              <Listing.Header title={`${firstName} ${lastName}`} />
+              <Listing.Header title={`${firstName} ${lastName}`} link={link} />
               <Listing.PeopleMeta jobTitle={jobTitle} phone={phone}>
                 <a href={`mailto:${email}`}>{email}</a>
               </Listing.PeopleMeta>
-              <Listing.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  View profile
-                </a>
-              </Listing.Footer>
             </Listing.Body>
           </Listing>
         ))}

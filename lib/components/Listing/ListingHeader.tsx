@@ -1,5 +1,8 @@
+import { useLinkContext } from '../LinkProvider/useLinkContext'
+
 export interface ListingHeaderProps {
   title: string
+  link?: string
   as?: 'h2' | 'h3'
   date?: string | Date
   datePrefix?: string
@@ -9,12 +12,14 @@ export interface ListingHeaderProps {
 
 export const ListingHeader = ({
   title = 'No title available',
+  link,
   as = 'h2',
   date,
   datePrefix,
   readTime,
   datePosition = 'top',
 }: ListingHeaderProps) => {
+  const LinkComponent = useLinkContext()
   const HeaderComponent = as
   const formattedDate = date
     ? new Date(date).toLocaleString('en-US', {
@@ -41,7 +46,7 @@ export const ListingHeader = ({
       )}
 
       <HeaderComponent className="line-clamp-3 text-lg font-semibold text-cu-black @sm:md:text-xl leading-6 @sm:md:leading-8">
-        {title}
+        {link ? <LinkComponent href={link}>{title}</LinkComponent> : title}
       </HeaderComponent>
 
       {date && datePosition === 'bottom' && (

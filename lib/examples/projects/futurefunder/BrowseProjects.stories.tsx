@@ -62,15 +62,10 @@ export const BrowseProjects: Story = {
                 <Card.Figure>
                   <img src={image} alt={alt} width="400" height="300" />
                 </Card.Figure>
-                <Card.Header title={title} date={date} />
+                <Card.Header title={title} link={link} date={date} />
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    Read more
-                  </a>
-                </Card.Footer>
               </Card>
             ))}
           </Column>
