@@ -20,7 +20,7 @@ export declare const Listing: {
         displayName: string;
     };
     Header: {
-        ({ title, as, date, datePrefix, readTime, datePosition, }: import('./ListingHeader').ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
+        ({ title, link, as, date, datePrefix, readTime, datePosition, }: import('./ListingHeader').ListingHeaderProps): import("react/jsx-runtime").JSX.Element;
         displayName: string;
     };
     Excerpt: {

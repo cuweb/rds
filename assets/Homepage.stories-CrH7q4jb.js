@@ -1,0 +1,191 @@
+import{j as e}from"./jsx-runtime-Ceqrl5vW.js";import{M as k}from"./Main-DbtIf-ri.js";import{S as a}from"./Section-D15gsLPN.js";import{C as c}from"./Column-CApwGGHQ.js";import{I as T}from"./ImageCover-By2dI6J2.js";import{W as j}from"./WideWave-Dfjc-XW2.js";import{F as U}from"./FooterStandard-BpQrpQ9b.js";import{F as g}from"./FullBanner-WlgPUZdl.js";import{T as q}from"./Testimonial-khpujHnF.js";import{Q as F}from"./Quote-C1WbZd0J.js";import{P as v}from"./PageHeader-tz7d4xYA.js";import{E as C}from"./Embed-WmVcBKQj.js";import{I as i}from"./ImageGrid-gNEje-UI.js";import{N as n}from"./Nav-Cms5K54z.js";import{B as f}from"./BadgeGroup-BS6oOFwh.js";import{B as b}from"./Badge-T_v3UK_S.js";import{B as p}from"./ButtonGroup-C2yo-PV8.js";import{B as W}from"./Button-BTjjPwdH.js";import{C as t}from"./Card-41xfzEU5.js";import{T as r}from"./TextMedia-ryhgNUJx.js";import{N as G,a as D}from"./NavData-BCA87AC2.js";import{N as B}from"./NewsData-CjZsRozh.js";import{E as H}from"./EventData-B4eRm20-.js";import"./iframe-C8-j20Jq.js";import"./preload-helper-Dp1pzeXC.js";import"./propClasses-CJUCiil5.js";import"./FooterLogoLinks-D1zUhVuI.js";import"./useLinkContext-DXhFVb_m.js";import"./FooterStandardData-CLyJH8hw.js";import"./useVideoBanner-DPOWBHQx.js";import"./parseISO-BGl-MJHo.js";import"./format-BDD0as5c.js";import"./isSameDay-C9OCNg_L.js";import"./Figure-DhUUkRnX.js";import"./ImageCaptionOverlay-BR5s7ZbK.js";import"./Avatar-BXTpJRH6.js";import"./Icon-D4fNep_P.js";import"./parse-CXxdJvFO.js";import"./getDate-DcT4OotK.js";import"./formatCurrency-BUDOERuc.js";import"./useScrollReveal-S5oyKPmD.js";const Ne={title:"Projects/cutheme",parameters:{layout:"fullscreen"}},h={render:()=>e.jsxs(e.Fragment,{children:[e.jsx(n,{children:e.jsxs(n.Top,{children:[e.jsx(n.Logo,{}),e.jsxs(n.Aside,{children:[e.jsx(n.Menu,{menu:G}),e.jsx(n.Buttons,{menu:D,isSearch:!0,onClickSearch:()=>{}})]})]})}),e.jsxs(k,{children:[e.jsxs(g,{children:[e.jsx(g.Image,{children:e.jsx("img",{alt:"Top down view of a desk",src:"https://picsum.photos/1920/840"})}),e.jsxs(g.Content,{headerType:"h1",title:"Carleton homepage mock-up",opacity:90,children:[e.jsx("p",{children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis."}),e.jsx(p,{children:e.jsx(W,{title:"Learn More"})})]})]}),e.jsxs(a,{maxWidth:"7xl",children:[e.jsxs(c,{cols:"4",children:[e.jsx(t,{leftBorder:!0,noHover:!0,children:e.jsx(t.Stats,{desc:"Student Population",stat:"30,500+"})}),e.jsx(t,{leftBorder:!0,noHover:!0,children:e.jsx(t.Stats,{desc:"Clubs & Societies",stat:"170+"})}),e.jsx(t,{leftBorder:!0,noHover:!0,children:e.jsx(t.Stats,{desc:"Scholarships & Bursaries",stat:"85.4 M+"})}),e.jsx(t,{leftBorder:!0,noHover:!0,children:e.jsx(t.Stats,{desc:"Research Funding",stat:"$116 M"})})]}),e.jsx(c,{cols:"4",children:B.slice(0,4).map(({id:s,link:o,title:l,image:d,alt:m,date:u})=>e.jsxs(t,{children:[e.jsxs(t.Figure,{children:[e.jsx(f,{gap:"2",isAbsolute:!0,top:10,left:10,children:e.jsx(b,{color:"black80",text:"Research",rounded:"lg"})}),e.jsx("img",{src:d,alt:m,width:"400",height:"300"})]}),e.jsx(t.Header,{title:l,link:o,date:u}),e.jsx(t.Body,{children:e.jsx(t.Excerpt,{text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris."})})]},s))})]}),e.jsx(j,{children:e.jsx(a,{maxWidth:"7xl",children:e.jsxs(r,{children:[e.jsxs(r.Content,{hasUnderline:!0,title:"Safeguarding Newborn Health",width:50,children:[e.jsx("p",{children:"Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non."}),e.jsx(p,{children:e.jsx("a",{className:"cu-button cu-button--white",href:"https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/",children:"Read more"})})]}),e.jsx(r.BgImage,{imageUrl:"https://picsum.photos/id/431/600/460"})]})})}),e.jsxs(T,{focalPointX:"50",focalPointY:"50",image:"tory",imageZoom:0,maxWidth:"7xl",opacity:85,children:[e.jsx(v,{header:"Attend Carleton",size:"md"}),e.jsx(c,{cols:"4",children:B.slice(0,4).map(({id:s,link:o,title:l,image:d,alt:m})=>e.jsxs(t,{children:[e.jsxs(t.Figure,{children:[e.jsx(f,{gap:"2",isAbsolute:!0,top:10,left:10,children:e.jsx(b,{color:"black80",text:"Research",rounded:"lg"})}),e.jsx("img",{src:d,alt:m,width:"400",height:"300"})]}),e.jsx(t.Header,{title:l,link:o}),e.jsx(t.Body,{children:e.jsx(t.Excerpt,{text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris."})})]},s))}),e.jsx(C,{isRounded:!0,children:e.jsx(C.YouTube,{title:"test",url:"https://www.youtube.com/watch?v=QsR50Qi0gfA"})})]}),e.jsx(a,{maxWidth:"7xl",children:e.jsxs(i,{cols:"4",children:[e.jsx(i.Image,{colSpan:"2",content:"Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!",imageUrl:"https://picsum.photos/id/531/600/400",link:"https://github.com/cuweb/rds",rowSpan:"2",title:"Overlay Image Title"}),e.jsx(i.Image,{imageUrl:"https://picsum.photos/id/381/600/400"}),e.jsx(i.Image,{imageUrl:"https://picsum.photos/id/691/600/400"}),e.jsx(i.Image,{imageUrl:"https://picsum.photos/id/163/600/400"}),e.jsx(i.Image,{imageUrl:"https://picsum.photos/id/482/600/400"})]})}),e.jsx(j,{wave:"black",children:e.jsx(a,{maxWidth:"7xl",children:e.jsxs(r,{reverse:!0,children:[e.jsxs(r.Content,{hasUnderline:!0,title:"Cheer on the Carleton Ravens",width:65,children:[e.jsx("p",{children:"Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores accusamus in. Praesent quis ligula quis nulla malesuada tempor. Praesentium architecto a distinctio aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non."}),e.jsx(p,{children:e.jsx("a",{className:"cu-button cu-button--white",href:"https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/",children:"Read more"})})]}),e.jsx(r.BgImage,{imageUrl:"https://picsum.photos/id/431/600/460"})]})})}),e.jsx(a,{maxWidth:"7xl",children:e.jsx(q,{focalPointX:50,focalPointY:50,imageUrl:"https://picsum.photos/id/342/600/400",imageZoom:0,children:e.jsx(F,{cite:"Jane Doe",graphic:"quote",children:e.jsx("p",{children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor."})})})}),e.jsxs(a,{maxWidth:"7xl",isGrey:!0,children:[e.jsx(v,{header:"Upcoming Events",size:"md"}),e.jsx(c,{cols:"4",children:H.slice(0,4).map(({id:s,title:o,link:l,image:d,alt:m,startDate:u,endDate:x,on_campus:N,on_campus_building:I,on_campus_room_number:y,event_address:M})=>e.jsxs(t,{children:[e.jsx(t.Figure,{children:e.jsx("img",{src:d,alt:m,width:400,height:175})}),e.jsx(t.DateThumb,{startDate:u,endDate:x}),e.jsx(t.Header,{title:o,link:l}),e.jsx(t.Body,{children:e.jsx(t.EventMeta,{startDateTime:u,endDateTime:x,onCampus:N,onCampusBuilding:I,onCampusRoomNumber:y,eventAddress:M})})]},s))}),e.jsx(p,{align:"center",children:e.jsx("a",{className:"cu-button cu-button--dark-grey",href:"https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/",children:"View More"})})]})]}),e.jsx(U,{})]})};var S,w,P;h.parameters={...h.parameters,docs:{...(S=h.parameters)==null?void 0:S.docs,source:{originalSource:`{
+  render: () => <>
+      <Nav>
+        <Nav.Top>
+          <Nav.Logo />
+          <Nav.Aside>
+            <Nav.Menu menu={NavDataSingle} />
+            <Nav.Buttons menu={NavButtonsData} isSearch onClickSearch={() => {}} />
+          </Nav.Aside>
+        </Nav.Top>
+      </Nav>
+
+      <Main>
+        <FullBanner>
+          <FullBanner.Image>
+            <img alt="Top down view of a desk" src="https://picsum.photos/1920/840" />
+          </FullBanner.Image>
+          <FullBanner.Content headerType="h1" title="Carleton homepage mock-up" opacity={90}>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis.</p>
+            <ButtonGroup>
+              <Button title="Learn More" />
+            </ButtonGroup>
+          </FullBanner.Content>
+        </FullBanner>
+
+        <Section maxWidth="7xl">
+          <Column cols="4">
+            <Card leftBorder noHover>
+              <Card.Stats desc="Student Population" stat="30,500+" />
+            </Card>
+            <Card leftBorder noHover>
+              <Card.Stats desc="Clubs & Societies" stat="170+" />
+            </Card>
+            <Card leftBorder noHover>
+              <Card.Stats desc="Scholarships & Bursaries" stat="85.4 M+" />
+            </Card>
+            <Card leftBorder noHover>
+              <Card.Stats desc="Research Funding" stat="$116 M" />
+            </Card>
+          </Column>
+
+          <Column cols="4">
+            {NewsData.slice(0, 4).map(({
+            id,
+            link,
+            title,
+            image,
+            alt,
+            date
+          }) => <Card key={id}>
+                <Card.Figure>
+                  <BadgeGroup gap="2" isAbsolute top={10} left={10}>
+                    <Badge color="black80" text="Research" rounded="lg" />
+                  </BadgeGroup>
+                  <img src={image} alt={alt} width="400" height="300" />
+                </Card.Figure>
+                <Card.Header title={title} link={link} date={date} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+              </Card>)}
+          </Column>
+        </Section>
+
+        <WideWave>
+          <Section maxWidth="7xl">
+            <TextMedia>
+              <TextMedia.Content hasUnderline title="Safeguarding Newborn Health" width={50}>
+                <p>
+                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                  accusamus in. Praesent quis ligula quis nulla malesuada tempor. Praesentium architecto a distinctio
+                  aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non.
+                </p>
+                <ButtonGroup>
+                  <a className="cu-button cu-button--white" href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/">
+                    Read more
+                  </a>
+                </ButtonGroup>
+              </TextMedia.Content>
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
+            </TextMedia>
+          </Section>
+        </WideWave>
+
+        <ImageCover focalPointX="50" focalPointY="50" image="tory" imageZoom={0} maxWidth="7xl" opacity={85}>
+          <PageHeader header="Attend Carleton" size="md" />
+          <Column cols="4">
+            {NewsData.slice(0, 4).map(({
+            id,
+            link,
+            title,
+            image,
+            alt
+          }) => <Card key={id}>
+                <Card.Figure>
+                  <BadgeGroup gap="2" isAbsolute top={10} left={10}>
+                    <Badge color="black80" text="Research" rounded="lg" />
+                  </BadgeGroup>
+                  <img src={image} alt={alt} width="400" height="300" />
+                </Card.Figure>
+                <Card.Header title={title} link={link} />
+                <Card.Body>
+                  <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
+                </Card.Body>
+              </Card>)}
+          </Column>
+          <Embed isRounded>
+            <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=QsR50Qi0gfA" />
+          </Embed>
+        </ImageCover>
+
+        <Section maxWidth="7xl">
+          <ImageGrid cols="4">
+            <ImageGrid.Image colSpan="2" content="Lorem ipsum odor amet, consectetuer adipiscing elit. Porta pulvinar consectetur faucibus fusce scelerisque nulla!" imageUrl="https://picsum.photos/id/531/600/400" link="https://github.com/cuweb/rds" rowSpan="2" title="Overlay Image Title" />
+            <ImageGrid.Image imageUrl="https://picsum.photos/id/381/600/400" />
+            <ImageGrid.Image imageUrl="https://picsum.photos/id/691/600/400" />
+            <ImageGrid.Image imageUrl="https://picsum.photos/id/163/600/400" />
+            <ImageGrid.Image imageUrl="https://picsum.photos/id/482/600/400" />
+          </ImageGrid>
+        </Section>
+
+        <WideWave wave="black">
+          <Section maxWidth="7xl">
+            <TextMedia reverse>
+              <TextMedia.Content hasUnderline title="Cheer on the Carleton Ravens" width={65}>
+                <p>
+                  Nobis voluptatem dolorum et eum doloremque cupiditate velit. Praesentium architecto a distinctio aut
+                  reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non. Molestiae quas dolores
+                  accusamus in. Praesent quis ligula quis nulla malesuada tempor. Praesentium architecto a distinctio
+                  aut reprehenderit ducimus. Perferendis excepturi delectus nihil voluptatem non.
+                </p>
+                <ButtonGroup>
+                  <a className="cu-button cu-button--white" href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/">
+                    Read more
+                  </a>
+                </ButtonGroup>
+              </TextMedia.Content>
+              <TextMedia.BgImage imageUrl="https://picsum.photos/id/431/600/460" />
+            </TextMedia>
+          </Section>
+        </WideWave>
+
+        <Section maxWidth="7xl">
+          <Testimonial focalPointX={50} focalPointY={50} imageUrl="https://picsum.photos/id/342/600/400" imageZoom={0}>
+            <Quote cite="Jane Doe" graphic="quote">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut porta magna. Fusce id viverra mi. Etiam
+                mollis feugiat nisl, sit amet tempor ante scelerisque vitae. Proin non bibendum dolor.
+              </p>
+            </Quote>
+          </Testimonial>
+        </Section>
+
+        <Section maxWidth="7xl" isGrey>
+          <PageHeader header="Upcoming Events" size="md" />
+          <Column cols="4">
+            {EventData.slice(0, 4).map(({
+            id,
+            title,
+            link,
+            image,
+            alt,
+            startDate,
+            endDate,
+            on_campus,
+            on_campus_building,
+            on_campus_room_number,
+            event_address
+          }) => <Card key={id}>
+                  <Card.Figure>
+                    <img src={image} alt={alt} width={400} height={175} />
+                  </Card.Figure>
+                  <Card.DateThumb startDate={startDate} endDate={endDate} />
+                  <Card.Header title={title} link={link} />
+                  <Card.Body>
+                    <Card.EventMeta startDateTime={startDate} endDateTime={endDate} onCampus={on_campus} onCampusBuilding={on_campus_building} onCampusRoomNumber={on_campus_room_number} eventAddress={event_address} />
+                  </Card.Body>
+                </Card>)}
+          </Column>
+          <ButtonGroup align="center">
+            <a className="cu-button cu-button--dark-grey" href="https://challenge.carleton.ca/parkinsons-alzheimers-early-detection/">
+              View More
+            </a>
+          </ButtonGroup>
+        </Section>
+      </Main>
+
+      <FooterStandard />
+    </>
+}`,...(P=(w=h.parameters)==null?void 0:w.docs)==null?void 0:P.source}}};const Ie=["Homepage"];export{h as Homepage,Ie as __namedExportsOrder,Ne as default};
