@@ -60,12 +60,7 @@ export const LayoutExamples: Story = {
                 <Card.Figure>
                   <img src={image} alt={alt} width="400" height="300" />
                 </Card.Figure>
-                <Card.Header title={title} date={date} />
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    Read more
-                  </a>
-                </Card.Footer>
+                <Card.Header title={title} link={link} date={date} />
               </Card>
             ))}
           </Column>
@@ -79,12 +74,7 @@ export const LayoutExamples: Story = {
         <Column cols="3">
           {NewsData.slice(0, 6).map(({ id, link, title, date }) => (
             <Card key={id}>
-              <Card.Header title={title} date={date} />
-              <Card.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Read more
-                </a>
-              </Card.Footer>
+              <Card.Header title={title} link={link} date={date} />
             </Card>
           ))}
         </Column>
@@ -98,12 +88,7 @@ export const LayoutExamples: Story = {
           <Column cols="4">
             {NewsData.slice(0, 8).map(({ id, link, title, date }) => (
               <Card key={id}>
-                <Card.Header title={title} date={date} />
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    Read more
-                  </a>
-                </Card.Footer>
+                <Card.Header title={title} link={link} date={date} />
               </Card>
             ))}
           </Column>

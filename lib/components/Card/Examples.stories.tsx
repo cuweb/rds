@@ -64,15 +64,10 @@ export const LayoutExamples: Story = {
                 <Card.Figure>
                   <img src={image} alt={alt} width="400" height="300" />
                 </Card.Figure>
-                <Card.Header title={title} date={date} readTime="7" />
+                <Card.Header title={title} link={link} date={date} readTime="7" />
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    Read more
-                  </a>
-                </Card.Footer>
               </Card>
             ))}
           </Column>
@@ -103,7 +98,7 @@ export const LayoutExamples: Story = {
                   <img src={image} alt={alt} width={400} height={175} />
                 </Card.Figure>
                 <Card.DateThumb startDate={startDate} endDate={endDate} />
-                <Card.Header title={title} />
+                <Card.Header title={title} link={link} />
                 <Card.Body>
                   <Card.EventMeta
                     startDateTime={startDate}
@@ -114,11 +109,6 @@ export const LayoutExamples: Story = {
                     eventAddress={event_address}
                   />
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    More info
-                  </a>
-                </Card.Footer>
               </Card>
             ),
           )}
@@ -143,7 +133,7 @@ export const LayoutExamples: Story = {
                   <img src={image} alt={alt} width={400} height={175} />
                 </Card.Figure>
                 <Card.DateThumb startDate={startDate} endDate={endDate} />
-                <Card.Header title={title} />
+                <Card.Header title={title} link={link} />
                 <Card.Body>
                   <Card.EventMeta
                     startDateTime={startDate}
@@ -154,11 +144,6 @@ export const LayoutExamples: Story = {
                     eventAddress={event_address}
                   />
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    More info
-                  </a>
-                </Card.Footer>
               </Card>
             ),
           )}
@@ -180,7 +165,7 @@ export const LayoutExamples: Story = {
             }) => (
               <Card key={id} noImage>
                 <Card.DateThumb startDate={startDate} endDate={endDate} />
-                <Card.Header title={title} />
+                <Card.Header title={title} link={link} />
                 <Card.Body>
                   <Card.EventMeta
                     startDateTime={startDate}
@@ -191,11 +176,6 @@ export const LayoutExamples: Story = {
                     eventAddress={event_address}
                   />
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    More info
-                  </a>
-                </Card.Footer>
               </Card>
             ),
           )}
@@ -210,15 +190,10 @@ export const LayoutExamples: Story = {
               <Card.ImageThumb>
                 <img src={image} alt={alt} width="200" height="133" />
               </Card.ImageThumb>
-              <Card.Header title={title} />
+              <Card.Header title={title} link={link} />
               <Card.Body>
                 <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
               </Card.Body>
-              <Card.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Get informed
-                </a>
-              </Card.Footer>
             </Card>
           ))}
         </Column>
@@ -228,15 +203,10 @@ export const LayoutExamples: Story = {
             {IconData.slice(0, 4).map(({ id, link, title, icon }) => (
               <Card key={id}>
                 <Card.IconThumb icon={icon} />
-                <Card.Header title={title} />
+                <Card.Header title={title} link={link} />
                 <Card.Body>
                   <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst." />
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    More info
-                  </a>
-                </Card.Footer>
               </Card>
             ))}
           </Column>
@@ -255,15 +225,10 @@ export const LayoutExamples: Story = {
         <Column cols="3">
           {NewsData.slice(0, 3).map(({ id, link, title, date }) => (
             <Card key={id}>
-              <Card.Header title={title} date={date} datePrefix="Modified on " datePosition="bottom" />
+              <Card.Header title={title} link={link} date={date} datePrefix="Modified on " datePosition="bottom" />
               <Card.Body>
                 <Card.Excerpt text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra laoreet lobortis. In hac habitasse platea dictumst. Nulla porta posuere est, aliquam mollis mi accumsan id. Morbi mauris ex, gravida eu sodales sed, tempor vel mauris." />
               </Card.Body>
-              <Card.Footer>
-                <a href={link} className="cu-button cu-button--red cu-button--small">
-                  Read more
-                </a>
-              </Card.Footer>
             </Card>
           ))}
         </Column>
@@ -275,17 +240,12 @@ export const LayoutExamples: Story = {
                 <Card.Figure isRound>
                   <img src={image} alt={alt} width={280} height={280} />
                 </Card.Figure>
-                <Card.Header title={`${firstName} ${lastName}`} />
+                <Card.Header title={`${firstName} ${lastName}`} link={link} />
                 <Card.Body>
                   <Card.PeopleMeta jobTitle={jobTitle} phone={phone}>
                     <a href={`mailto:${email}`}>{email}</a>
                   </Card.PeopleMeta>
                 </Card.Body>
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    More info
-                  </a>
-                </Card.Footer>
               </Card>
             ))}
           </Column>

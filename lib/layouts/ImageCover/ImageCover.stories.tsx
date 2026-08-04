@@ -78,24 +78,19 @@ export const WithChildren: Story = {
       <ImageCover {...args}>
         <Section as="div" maxWidth="7xl">
           <PageHeader as="h2" header="Attend Carleton" size="md" />
-          <Column cols="4" maxWidth="7xl">
+          <Column cols="4">
             {PromoData.slice(0, 4).map(({ id, link, title, image, alt }) => (
               <Card key={id} noHover>
                 <Card.Figure>
                   <img src={image} alt={alt} width="200" height="133" />
                 </Card.Figure>
-                <Card.Header title={title} />
-                <Card.Footer>
-                  <a href={link} className="cu-button cu-button--red cu-button--small">
-                    More info
-                  </a>
-                </Card.Footer>
+                <Card.Header title={title} link={link} />
               </Card>
             ))}
           </Column>
         </Section>
         <Section as="div" maxWidth="7xl">
-          <Embed maxWidth="7xl">
+          <Embed>
             <Embed.YouTube title="test" url="https://www.youtube.com/watch?v=ZISHr6sPNCE" />
           </Embed>
         </Section>

@@ -58,11 +58,6 @@ export const ImageWithCards: Story = {
                   truncateOnMobile
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Visit Go Ravens
-                </a>
-              </Card.Footer>
             </Card>
             <Card isCenterDesktop isDark>
               <Card.Header title="Community" />
@@ -72,11 +67,6 @@ export const ImageWithCards: Story = {
                   truncateOnMobile
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  View Programs
-                </a>
-              </Card.Footer>
             </Card>
             <Card isCenterDesktop isDark>
               <Card.Header title="Students" />
@@ -86,11 +76,6 @@ export const ImageWithCards: Story = {
                   truncateOnMobile
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Campus Facilities
-                </a>
-              </Card.Footer>
             </Card>
           </Column>
         </Splash.Content>
@@ -140,11 +125,6 @@ export const WithVideoAndCards: Story = {
                   truncateOnMobile
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Visit Go Ravens
-                </a>
-              </Card.Footer>
             </Card>
             <Card isCenterDesktop isDark>
               <Card.Header title="Community" />
@@ -154,11 +134,6 @@ export const WithVideoAndCards: Story = {
                   truncateOnMobile
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  View Programs
-                </a>
-              </Card.Footer>
             </Card>
             <Card isCenterDesktop isDark>
               <Card.Header title="Students" />
@@ -168,11 +143,6 @@ export const WithVideoAndCards: Story = {
                   truncateOnMobile
                 />
               </Card.Body>
-              <Card.Footer>
-                <a href="#" className="cu-button cu-button--red cu-button--small">
-                  Campus Facilities
-                </a>
-              </Card.Footer>
             </Card>
           </Column>
         </Splash.Content>
