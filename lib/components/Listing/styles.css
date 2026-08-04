@@ -63,6 +63,11 @@
   @apply inline-flex;
 }
 
+.cu-listing header h2 a,
+.cu-listing header h3 a {
+  @apply block hover:text-cu-red-700;
+}
+
 .cu-listing img:not(.cu-icon-thumb) {
   @apply object-cover w-full h-full rounded-md;
 }

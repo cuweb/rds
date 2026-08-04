@@ -6,7 +6,7 @@ export interface ListingExcerptProps {
 export const ListingExcerpt = ({ text, hasMore }: ListingExcerptProps) => {
   return (
     <p className="text-base text-cu-black-700">
-      {text && text.length > 200 ? `${text.substring(0, 200)}...` : text}
+      {text && text.length > 300 ? `${text.substring(0, 300)}...` : text}
       {hasMore && <span className="font-semibold"> More</span>}
     </p>
   )
