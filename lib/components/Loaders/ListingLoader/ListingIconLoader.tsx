@@ -4,7 +4,7 @@ export const ListingIconLoader = () => {
   return (
     <Listing>
       <Listing.Body>
-        <div className="animate-pulse">
+        <div className="cu-loader cu-loader--listingicon cu-component-updated animate-pulse">
           <div className="flex flex-wrap">
             <div className="grid flex-auto gap-3">
               <span className="block w-10 h-10 my-3 rounded-md bg-cu-black-100"></span>

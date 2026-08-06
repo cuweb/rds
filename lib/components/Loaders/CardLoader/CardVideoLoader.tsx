@@ -3,7 +3,7 @@ import { Card } from '../../Card/Card'
 export const CardVideoLoader = () => {
   return (
     <Card>
-      <div className="animate-pulse">
+      <div className="cu-loader cu-loader--cardvideo cu-component-updated animate-pulse">
         <span className="block w-full rounded-t-lg h-60 bg-cu-black-100"></span>
         <div className="p-6 space-y-3">
           <span className="block h-8 rounded-md max-w-80 bg-cu-black-100"></span>

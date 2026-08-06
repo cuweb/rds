@@ -4,7 +4,7 @@ export const ListingEventLoader = () => {
   return (
     <Listing>
       <Listing.Body>
-        <div className="animate-pulse">
+        <div className="cu-loader cu-loader--listingevent cu-component-updated animate-pulse">
           <div className="flex flex-wrap gap-5">
             <span className="h-36 w-36 @4xl:lg:h-32 @4xl:lg:w-32 rounded-md bg-cu-black-100"></span>
             <div className="grid flex-auto w-64 gap-3">

@@ -6,7 +6,7 @@ export interface DescriptionLoader {
 }
 
 export const DescriptionLoaderWrapper = ({ children }: DescriptionLoader) => {
-  return <dl className="cu-block-spacing">{children}</dl>
+  return <dl className="cu-loader cu-loader--description cu-component-updated cu-block-spacing">{children}</dl>
 }
 
 export const DescriptionLoader = Object.assign(DescriptionLoaderWrapper, {

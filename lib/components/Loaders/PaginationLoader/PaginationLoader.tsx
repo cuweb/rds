@@ -18,7 +18,7 @@ export const PaginationLoader = ({ hasBorder, pageCount = 5 }: PaginationLoaderP
   return (
     <>
       <div
-        className={`animate-pulse cu-pagination cu-component-updated not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} `}
+        className={`animate-pulse cu-loader cu-loader--pagination cu-pagination cu-component-updated not-prose mt-8 flex items-center justify-between first:mt-0 ${borderStyles} `}
       >
         <div className="flex justify-between flex-1 sm:hidden">
           <ButtonLoader number={2} isSmall={true} />

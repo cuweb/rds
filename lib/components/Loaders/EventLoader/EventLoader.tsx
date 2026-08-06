@@ -10,7 +10,7 @@ export interface EventLoaderProps {
 
 export const EventLoader = ({ pageCount = 5, showClearButton = false }: EventLoaderProps) => {
   return (
-    <>
+    <div className="cu-loader cu-loader--event cu-component-updated">
       <Column cols="2/3">
         <Column.Content>
           <StackedList cols="2">
@@ -28,6 +28,6 @@ export const EventLoader = ({ pageCount = 5, showClearButton = false }: EventLoa
           <CalendarLoader showClearButton={showClearButton} />
         </Aside>
       </Column>
-    </>
+    </div>
   )
 }
