@@ -7,8 +7,8 @@ interface FundingDetailsProps {
     raised: number;
     goal: number;
     endDate: string;
-    imageUrl: string;
-    imageAlt: string;
+    imageUrl?: string;
+    imageAlt?: string;
     categories?: FundingCategory[];
 }
 export declare const FundingDetails: {
