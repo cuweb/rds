@@ -88,15 +88,16 @@ function ContactForm() {
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `initialValues` | `object` | - | Initial form values |
-| `validationSchema` | `Yup.Schema` | - | Yup validation schema |
-| `onSubmit` | `(values) => void` | - | Submit handler |
-| `enableReinitialize` | `boolean` | `false` | Reset on initialValues change |
-| `validateOnChange` | `boolean` | `true` | Validate on field change |
-| `validateOnBlur` | `boolean` | `true` | Validate on field blur |
-| `children` | `ReactNode` | - | Form content |
+
+| Prop                 | Type               | Default | Description                   |
+| -------------------- | ------------------ | ------- | ----------------------------- |
+| `initialValues`      | `object`           | -       | Initial form values           |
+| `validationSchema`   | `Yup.Schema`       | -       | Yup validation schema         |
+| `onSubmit`           | `(values) => void` | -       | Submit handler                |
+| `enableReinitialize` | `boolean`          | `false` | Reset on initialValues change |
+| `validateOnChange`   | `boolean`          | `true`  | Validate on field change      |
+| `validateOnBlur`     | `boolean`          | `true`  | Validate on field blur        |
+| `children`           | `ReactNode`        | -       | Form content                  |
 
 ### Form Subcomponents
 
@@ -125,13 +126,14 @@ Wraps form inputs with label, helper text, and error display.
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name (matches Formik field) |
-| `label` | `string` | - | Field label |
-| `helperText` | `string` | - | Helper text below field |
-| `required` | `boolean` | `false` | Show required indicator |
-| `children` | `ReactNode` | - | Input component |
+
+| Prop         | Type        | Default | Description                       |
+| ------------ | ----------- | ------- | --------------------------------- |
+| `name`       | `string`    | -       | Field name (matches Formik field) |
+| `label`      | `string`    | -       | Field label                       |
+| `helperText` | `string`    | -       | Helper text below field           |
+| `required`   | `boolean`   | `false` | Show required indicator           |
+| `children`   | `ReactNode` | -       | Input component                   |
 
 ---
 
@@ -229,13 +231,14 @@ import { Input } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `type` | `'text' \| 'email' \| 'password' \| 'number' \| 'tel' \| 'url'` | `'text'` | Input type |
-| `placeholder` | `string` | - | Placeholder text |
-| `disabled` | `boolean` | `false` | Disable input |
-| `readOnly` | `boolean` | `false` | Read-only mode |
+
+| Prop          | Type                                                            | Default  | Description      |
+| ------------- | --------------------------------------------------------------- | -------- | ---------------- |
+| `name`        | `string`                                                        | -        | Field name       |
+| `type`        | `'text' \| 'email' \| 'password' \| 'number' \| 'tel' \| 'url'` | `'text'` | Input type       |
+| `placeholder` | `string`                                                        | -        | Placeholder text |
+| `disabled`    | `boolean`                                                       | `false`  | Disable input    |
+| `readOnly`    | `boolean`                                                       | `false`  | Read-only mode   |
 
 ---
 
@@ -249,12 +252,13 @@ import { TextArea } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `rows` | `number` | `4` | Number of rows |
-| `placeholder` | `string` | - | Placeholder text |
-| `maxLength` | `number` | - | Max character count |
+
+| Prop          | Type     | Default | Description         |
+| ------------- | -------- | ------- | ------------------- |
+| `name`        | `string` | -       | Field name          |
+| `rows`        | `number` | `4`     | Number of rows      |
+| `placeholder` | `string` | -       | Placeholder text    |
+| `maxLength`   | `number` | -       | Max character count |
 
 ---
 
@@ -302,15 +306,16 @@ const options = [
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `options` | `Array<{value, label}>` | - | Select options |
-| `isMulti` | `boolean` | `false` | Allow multiple selections |
-| `isSearchable` | `boolean` | `false` | Enable search |
-| `isClearable` | `boolean` | `false` | Show clear button |
-| `placeholder` | `string` | - | Placeholder text |
-| `isDisabled` | `boolean` | `false` | Disable select |
+
+| Prop           | Type                    | Default | Description               |
+| -------------- | ----------------------- | ------- | ------------------------- |
+| `name`         | `string`                | -       | Field name                |
+| `options`      | `Array<{value, label}>` | -       | Select options            |
+| `isMulti`      | `boolean`               | `false` | Allow multiple selections |
+| `isSearchable` | `boolean`               | `false` | Enable search             |
+| `isClearable`  | `boolean`               | `false` | Show clear button         |
+| `placeholder`  | `string`                | -       | Placeholder text          |
+| `isDisabled`   | `boolean`               | `false` | Disable select            |
 
 ---
 
@@ -333,12 +338,13 @@ import { Checkbox } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `value` | `string` | - | Value for checkbox groups |
-| `label` | `string` | - | Checkbox label |
-| `disabled` | `boolean` | `false` | Disable checkbox |
+
+| Prop       | Type      | Default | Description               |
+| ---------- | --------- | ------- | ------------------------- |
+| `name`     | `string`  | -       | Field name                |
+| `value`    | `string`  | -       | Value for checkbox groups |
+| `label`    | `string`  | -       | Checkbox label            |
+| `disabled` | `boolean` | `false` | Disable checkbox          |
 
 ---
 
@@ -356,11 +362,12 @@ import { Radio } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `value` | `string` | - | Radio value |
-| `label` | `string` | - | Radio label |
+
+| Prop       | Type      | Default | Description   |
+| ---------- | --------- | ------- | ------------- |
+| `name`     | `string`  | -       | Field name    |
+| `value`    | `string`  | -       | Radio value   |
+| `label`    | `string`  | -       | Radio label   |
 | `disabled` | `boolean` | `false` | Disable radio |
 
 ---
@@ -402,15 +409,16 @@ import { DateTime } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `dateFormat` | `string` | `'yyyy-MM-dd'` | Date format string |
-| `showTimeSelect` | `boolean` | `false` | Show time picker |
-| `showTimeSelectOnly` | `boolean` | `false` | Time only mode |
-| `minDate` | `Date` | - | Minimum selectable date |
-| `maxDate` | `Date` | - | Maximum selectable date |
-| `placeholderText` | `string` | - | Placeholder text |
+
+| Prop                 | Type      | Default        | Description             |
+| -------------------- | --------- | -------------- | ----------------------- |
+| `name`               | `string`  | -              | Field name              |
+| `dateFormat`         | `string`  | `'yyyy-MM-dd'` | Date format string      |
+| `showTimeSelect`     | `boolean` | `false`        | Show time picker        |
+| `showTimeSelectOnly` | `boolean` | `false`        | Time only mode          |
+| `minDate`            | `Date`    | -              | Minimum selectable date |
+| `maxDate`            | `Date`    | -              | Maximum selectable date |
+| `placeholderText`    | `string`  | -              | Placeholder text        |
 
 ---
 
@@ -437,12 +445,13 @@ import { FileUpload } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | Field name |
-| `accept` | `string` | - | Accepted file types |
-| `maxSize` | `number` | - | Max file size in bytes |
-| `multiple` | `boolean` | `false` | Allow multiple files |
+
+| Prop       | Type      | Default | Description            |
+| ---------- | --------- | ------- | ---------------------- |
+| `name`     | `string`  | -       | Field name             |
+| `accept`   | `string`  | -       | Accepted file types    |
+| `maxSize`  | `number`  | -       | Max file size in bytes |
+| `multiple` | `boolean` | `false` | Allow multiple files   |
 
 ---
 

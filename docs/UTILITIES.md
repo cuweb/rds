@@ -475,16 +475,17 @@ function PaginatedList({ items, itemsPerPage = 10 }) {
 ```
 
 **Return Values:**
-| Property | Type | Description |
-|----------|------|-------------|
-| `currentPage` | `number` | Current page number (1-indexed) |
-| `totalPages` | `number` | Total number of pages |
-| `paginatedItems` | `T[]` | Items for current page |
-| `goToPage` | `(page: number) => void` | Navigate to specific page |
-| `nextPage` | `() => void` | Go to next page |
-| `prevPage` | `() => void` | Go to previous page |
-| `hasNextPage` | `boolean` | Has more pages after current |
-| `hasPrevPage` | `boolean` | Has pages before current |
+
+| Property         | Type                     | Description                     |
+| ---------------- | ------------------------ | ------------------------------- |
+| `currentPage`    | `number`                 | Current page number (1-indexed) |
+| `totalPages`     | `number`                 | Total number of pages           |
+| `paginatedItems` | `T[]`                    | Items for current page          |
+| `goToPage`       | `(page: number) => void` | Navigate to specific page       |
+| `nextPage`       | `() => void`             | Go to next page                 |
+| `prevPage`       | `() => void`             | Go to previous page             |
+| `hasNextPage`    | `boolean`                | Has more pages after current    |
+| `hasPrevPage`    | `boolean`                | Has pages before current        |
 
 ### useSortableTable
 
@@ -523,12 +524,13 @@ function SortableTable({ data, columns }) {
 ```
 
 **Return Values:**
-| Property | Type | Description |
-|----------|------|-------------|
-| `sortedData` | `T[]` | Data sorted by current config |
-| `sortConfig` | `{ key: string, direction: 'asc' \| 'desc' }` | Current sort state |
-| `requestSort` | `(key: string) => void` | Toggle sort on column |
-| `getSortDirection` | `(key: string) => string` | Get CSS class for column |
+
+| Property           | Type                                          | Description                   |
+| ------------------ | --------------------------------------------- | ----------------------------- |
+| `sortedData`       | `T[]`                                         | Data sorted by current config |
+| `sortConfig`       | `{ key: string, direction: 'asc' \| 'desc' }` | Current sort state            |
+| `requestSort`      | `(key: string) => void`                       | Toggle sort on column         |
+| `getSortDirection` | `(key: string) => string`                     | Get CSS class for column      |
 
 ### useVideoBanner
 
@@ -555,14 +557,15 @@ function HeroBanner({ videoSrc, imageSrc }) {
 ```
 
 **Return Values:**
-| Property | Type | Description |
-|----------|------|-------------|
-| `isVideoLoaded` | `boolean` | Video has loaded |
-| `isVideoPlaying` | `boolean` | Video is currently playing |
-| `videoRef` | `RefObject<HTMLVideoElement>` | Ref to attach to video |
-| `playVideo` | `() => void` | Start playing |
-| `pauseVideo` | `() => void` | Pause playback |
-| `toggleVideo` | `() => void` | Toggle play/pause |
+
+| Property         | Type                          | Description                |
+| ---------------- | ----------------------------- | -------------------------- |
+| `isVideoLoaded`  | `boolean`                     | Video has loaded           |
+| `isVideoPlaying` | `boolean`                     | Video is currently playing |
+| `videoRef`       | `RefObject<HTMLVideoElement>` | Ref to attach to video     |
+| `playVideo`      | `() => void`                  | Start playing              |
+| `pauseVideo`     | `() => void`                  | Pause playback             |
+| `toggleVideo`    | `() => void`                  | Toggle play/pause          |
 
 ---
 

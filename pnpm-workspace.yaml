@@ -1,0 +1,21 @@
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  core-js-pure: true
+  cypress: true
+  esbuild: true
+  unrs-resolver: true
+
+# pnpm v11 defaults `minimumReleaseAge` to 1440 minutes (24h), rejecting any
+# lockfile entry published more recently than that. This project has not opted
+# into that supply-chain policy, so it's disabled here to keep CI installs
+# (pnpm install --frozen-lockfile) from failing on freshly published packages.
+minimumReleaseAge: 0
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - core-js-pure
+  - cypress
+  - esbuild
+  - unrs-resolver
