@@ -1,0 +1,11 @@
+.cu-campaign-banner p + .cu-badgegroup {
+  @apply pt-5;
+}
+
+.cu-campaign-banner .cu-pageheader {
+  @apply mt-6 lg:mt-8;
+}
+
+.cu-campaign-banner .cu-badgegroup:not(:first-child) {
+  @apply mt-4 lg:mt-6;
+}

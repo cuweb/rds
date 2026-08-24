@@ -60,10 +60,11 @@ import { Article } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `ReactNode` | - | Article content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type        | Default | Description            |
+| ----------- | ----------- | ------- | ---------------------- |
+| `children`  | `ReactNode` | -       | Article content        |
+| `className` | `string`    | -       | Additional CSS classes |
 
 **Use Cases:**
 
@@ -99,12 +100,13 @@ import { Aside } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `ReactNode` | - | Sidebar content |
-| `position` | `'left' \| 'right'` | `'right'` | Sidebar position |
-| `width` | `'narrow' \| 'wide'` | `'narrow'` | Sidebar width |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type                 | Default    | Description            |
+| ----------- | -------------------- | ---------- | ---------------------- |
+| `children`  | `ReactNode`          | -          | Sidebar content        |
+| `position`  | `'left' \| 'right'`  | `'right'`  | Sidebar position       |
+| `width`     | `'narrow' \| 'wide'` | `'narrow'` | Sidebar width          |
+| `className` | `string`             | -          | Additional CSS classes |
 
 **Use Cases:**
 
@@ -129,10 +131,11 @@ import { Body } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `ReactNode` | - | Page content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type        | Default | Description            |
+| ----------- | ----------- | ------- | ---------------------- |
+| `children`  | `ReactNode` | -       | Page content           |
+| `className` | `string`    | -       | Additional CSS classes |
 
 **Use Cases:**
 
@@ -171,25 +174,27 @@ import { Column } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `cols` | `'1' \| '2' \| '3' \| '4' \| '6' \| '12'` | `'1'` | Number of columns |
-| `sm` | `string` | - | Columns at sm breakpoint |
-| `md` | `string` | - | Columns at md breakpoint |
-| `lg` | `string` | - | Columns at lg breakpoint |
-| `xl` | `string` | - | Columns at xl breakpoint |
-| `gap` | `'none' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `'md'` | Grid gap size |
-| `children` | `ReactNode` | - | Column content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type                                      | Default | Description              |
+| ----------- | ----------------------------------------- | ------- | ------------------------ |
+| `cols`      | `'1' \| '2' \| '3' \| '4' \| '6' \| '12'` | `'1'`   | Number of columns        |
+| `sm`        | `string`                                  | -       | Columns at sm breakpoint |
+| `md`        | `string`                                  | -       | Columns at md breakpoint |
+| `lg`        | `string`                                  | -       | Columns at lg breakpoint |
+| `xl`        | `string`                                  | -       | Columns at xl breakpoint |
+| `gap`       | `'none' \| 'sm' \| 'md' \| 'lg' \| 'xl'`  | `'md'`  | Grid gap size            |
+| `children`  | `ReactNode`                               | -       | Column content           |
+| `className` | `string`                                  | -       | Additional CSS classes   |
 
 **Grid Gap Sizes:**
-| Value | Size |
-|-------|------|
-| `none` | 0 |
-| `sm` | 0.5rem (8px) |
-| `md` | 1rem (16px) |
-| `lg` | 1.5rem (24px) |
-| `xl` | 2rem (32px) |
+
+| Value  | Size          |
+| ------ | ------------- |
+| `none` | 0             |
+| `sm`   | 0.5rem (8px)  |
+| `md`   | 1rem (16px)   |
+| `lg`   | 1.5rem (24px) |
+| `xl`   | 2rem (32px)   |
 
 **Use Cases:**
 
@@ -219,12 +224,13 @@ import { FloatBox } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `position` | `'left' \| 'right'` | `'right'` | Float direction |
-| `width` | `'sm' \| 'md' \| 'lg'` | `'md'` | Box width |
-| `children` | `ReactNode` | - | Box content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type                   | Default   | Description            |
+| ----------- | ---------------------- | --------- | ---------------------- |
+| `position`  | `'left' \| 'right'`    | `'right'` | Float direction        |
+| `width`     | `'sm' \| 'md' \| 'lg'` | `'md'`    | Box width              |
+| `children`  | `ReactNode`            | -         | Box content            |
+| `className` | `string`               | -         | Additional CSS classes |
 
 **Use Cases:**
 
@@ -249,22 +255,24 @@ import { ImageCover } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `src` | `string` | - | Background image URL |
-| `alt` | `string` | - | Image alt text |
-| `overlay` | `'none' \| 'light' \| 'dark'` | `'dark'` | Overlay style |
-| `height` | `'full' \| 'half' \| 'auto'` | `'full'` | Section height |
-| `position` | `'center' \| 'top' \| 'bottom'` | `'center'` | Content position |
-| `children` | `ReactNode` | - | Overlay content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type                            | Default    | Description            |
+| ----------- | ------------------------------- | ---------- | ---------------------- |
+| `src`       | `string`                        | -          | Background image URL   |
+| `alt`       | `string`                        | -          | Image alt text         |
+| `overlay`   | `'none' \| 'light' \| 'dark'`   | `'dark'`   | Overlay style          |
+| `height`    | `'full' \| 'half' \| 'auto'`    | `'full'`   | Section height         |
+| `position`  | `'center' \| 'top' \| 'bottom'` | `'center'` | Content position       |
+| `children`  | `ReactNode`                     | -          | Overlay content        |
+| `className` | `string`                        | -          | Additional CSS classes |
 
 **Overlay Options:**
-| Value | Effect |
-|-------|--------|
-| `none` | No overlay |
+
+| Value   | Effect                         |
+| ------- | ------------------------------ |
+| `none`  | No overlay                     |
 | `light` | White semi-transparent overlay |
-| `dark` | Black semi-transparent overlay |
+| `dark`  | Black semi-transparent overlay |
 
 **Use Cases:**
 
@@ -294,10 +302,11 @@ import { Main } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `ReactNode` | - | Main content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type        | Default | Description            |
+| ----------- | ----------- | ------- | ---------------------- |
+| `children`  | `ReactNode` | -       | Main content           |
+| `className` | `string`    | -       | Additional CSS classes |
 
 **Use Cases:**
 
@@ -339,23 +348,25 @@ import { Section } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `maxWidth` | `'narrow' \| 'small' \| 'base' \| 'large' \| 'full' \| '7xl'` | `'7xl'` | Max width constraint |
-| `bgColor` | `string` | - | Background color class |
-| `padding` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'` | Vertical padding |
-| `children` | `ReactNode` | - | Section content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type                                                          | Default | Description            |
+| ----------- | ------------------------------------------------------------- | ------- | ---------------------- |
+| `maxWidth`  | `'narrow' \| 'small' \| 'base' \| 'large' \| 'full' \| '7xl'` | `'7xl'` | Max width constraint   |
+| `bgColor`   | `string`                                                      | -       | Background color class |
+| `padding`   | `'none' \| 'sm' \| 'md' \| 'lg'`                              | `'md'`  | Vertical padding       |
+| `children`  | `ReactNode`                                                   | -       | Section content        |
+| `className` | `string`                                                      | -       | Additional CSS classes |
 
 **Max Width Values:**
-| Value | Width |
-|-------|-------|
-| `narrow` | 640px |
-| `small` | 768px |
-| `base` | 1024px |
-| `large` | 1280px |
-| `7xl` | 1536px |
-| `full` | 100% |
+
+| Value    | Width  |
+| -------- | ------ |
+| `narrow` | 640px  |
+| `small`  | 768px  |
+| `base`   | 1024px |
+| `large`  | 1280px |
+| `7xl`    | 1536px |
+| `full`   | 100%   |
 
 **Use Cases:**
 
@@ -388,12 +399,13 @@ import { StackedList } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `hasDividers` | `boolean` | `false` | Show dividers between items |
-| `spacing` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'` | Item spacing |
-| `children` | `ReactNode` | - | List items |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop          | Type                             | Default | Description                 |
+| ------------- | -------------------------------- | ------- | --------------------------- |
+| `hasDividers` | `boolean`                        | `false` | Show dividers between items |
+| `spacing`     | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'`  | Item spacing                |
+| `children`    | `ReactNode`                      | -       | List items                  |
+| `className`   | `string`                         | -       | Additional CSS classes      |
 
 **Use Cases:**
 
@@ -419,12 +431,13 @@ import { WideWave } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `color` | `'red' \| 'grey' \| 'white'` | `'red'` | Wave color |
-| `position` | `'top' \| 'bottom' \| 'both'` | `'top'` | Wave position |
-| `children` | `ReactNode` | - | Section content |
-| `className` | `string` | - | Additional CSS classes |
+
+| Prop        | Type                          | Default | Description            |
+| ----------- | ----------------------------- | ------- | ---------------------- |
+| `color`     | `'red' \| 'grey' \| 'white'`  | `'red'` | Wave color             |
+| `position`  | `'top' \| 'bottom' \| 'both'` | `'top'` | Wave position          |
+| `children`  | `ReactNode`                   | -       | Section content        |
+| `className` | `string`                      | -       | Additional CSS classes |
 
 **Use Cases:**
 

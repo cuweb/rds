@@ -14,6 +14,7 @@
 @import './components/Badge/styles.css';
 @import './components/Button/styles.css';
 @import './components/CallOut/styles.css';
+@import './components/CampaignBanner/styles.css';
 @import './components/Card/styles.css';
 @import './components/Carleton360/styles.css';
 @import './components/Details/styles.css';
@@ -25,7 +26,6 @@
 @import './components/Form/styles.css';
 @import './components/Form/AutoSuggest/styles.css';
 @import './components/Form/DateTime/styles.css';
-@import './components/FundingDetails/styles.css';
 @import './components/ImageGrid/styles.css';
 @import './components/Listing/styles.css';
 @import './components/Nav/priority-plus/priority-plus.css';

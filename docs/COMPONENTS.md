@@ -43,11 +43,12 @@ import { Alert } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `type` | `'success' \| 'warning' \| 'error' \| 'info'` | `'info'` | Alert style variant |
-| `title` | `string` | - | Alert heading |
-| `children` | `ReactNode` | - | Alert content |
+
+| Prop       | Type                                          | Default  | Description         |
+| ---------- | --------------------------------------------- | -------- | ------------------- |
+| `type`     | `'success' \| 'warning' \| 'error' \| 'info'` | `'info'` | Alert style variant |
+| `title`    | `string`                                      | -        | Alert heading       |
+| `children` | `ReactNode`                                   | -        | Alert content       |
 
 ---
 
@@ -72,12 +73,13 @@ import { Avatar } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `src` | `string` | - | Image URL |
-| `alt` | `string` | - | Alt text |
-| `initials` | `string` | - | Fallback initials |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Avatar size |
+
+| Prop       | Type                   | Default | Description       |
+| ---------- | ---------------------- | ------- | ----------------- |
+| `src`      | `string`               | -       | Image URL         |
+| `alt`      | `string`               | -       | Alt text          |
+| `initials` | `string`               | -       | Fallback initials |
+| `size`     | `'sm' \| 'md' \| 'lg'` | `'md'`  | Avatar size       |
 
 ---
 
@@ -99,10 +101,11 @@ import { Badge, BadgeGroup } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `color` | `'red' \| 'grey' \| 'green' \| 'blue'` | `'grey'` | Badge color |
-| `children` | `ReactNode` | - | Badge content |
+
+| Prop       | Type                                   | Default  | Description   |
+| ---------- | -------------------------------------- | -------- | ------------- |
+| `color`    | `'red' \| 'grey' \| 'green' \| 'blue'` | `'grey'` | Badge color   |
+| `children` | `ReactNode`                            | -        | Badge content |
 
 ---
 
@@ -134,13 +137,14 @@ import { Button, ButtonGroup } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `color` | `'red' \| 'grey' \| 'dark-grey' \| 'black' \| 'white'` | `'red'` | Button color |
-| `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | Button type |
-| `isSmall` | `boolean` | `false` | Small size variant |
-| `isFull` | `boolean` | `false` | Full width |
-| `isDisabled` | `boolean` | `false` | Disabled state |
+
+| Prop         | Type                                                   | Default    | Description        |
+| ------------ | ------------------------------------------------------ | ---------- | ------------------ |
+| `color`      | `'red' \| 'grey' \| 'dark-grey' \| 'black' \| 'white'` | `'red'`    | Button color       |
+| `type`       | `'button' \| 'submit' \| 'reset'`                      | `'button'` | Button type        |
+| `isSmall`    | `boolean`                                              | `false`    | Small size variant |
+| `isFull`     | `boolean`                                              | `false`    | Full width         |
+| `isDisabled` | `boolean`                                              | `false`    | Disabled state     |
 
 ---
 
@@ -192,22 +196,23 @@ import { Card } from '@carletonuniversity/rds'
 ```
 
 **Subcomponents:**
-| Component | Description |
-|-----------|-------------|
-| `Card.Figure` | Image container |
-| `Card.ImageThumb` | Small image thumbnail |
-| `Card.DateThumb` | Date display thumbnail |
-| `Card.IconThumb` | Icon thumbnail |
-| `Card.Initials` | Initials avatar |
-| `Card.Video` | Video embed |
-| `Card.Header` | Title and subtitle |
-| `Card.Body` | Content wrapper |
-| `Card.Content` | Main content area |
-| `Card.Footer` | Footer actions |
-| `Card.Excerpt` | Brief text excerpt |
-| `Card.EventMeta` | Event metadata |
-| `Card.PeopleMeta` | Person metadata |
-| `Card.Stats` | Statistics display |
+
+| Component         | Description            |
+| ----------------- | ---------------------- |
+| `Card.Figure`     | Image container        |
+| `Card.ImageThumb` | Small image thumbnail  |
+| `Card.DateThumb`  | Date display thumbnail |
+| `Card.IconThumb`  | Icon thumbnail         |
+| `Card.Initials`   | Initials avatar        |
+| `Card.Video`      | Video embed            |
+| `Card.Header`     | Title and subtitle     |
+| `Card.Body`       | Content wrapper        |
+| `Card.Content`    | Main content area      |
+| `Card.Footer`     | Footer actions         |
+| `Card.Excerpt`    | Brief text excerpt     |
+| `Card.EventMeta`  | Event metadata         |
+| `Card.PeopleMeta` | Person metadata        |
+| `Card.Stats`      | Statistics display     |
 
 ---
 
@@ -229,18 +234,19 @@ import { Listing } from '@carletonuniversity/rds'
 ```
 
 **Subcomponents:**
-| Component | Description |
-|-----------|-------------|
-| `Listing.Figure` | Image container |
-| `Listing.DateThumb` | Date thumbnail |
-| `Listing.IconThumb` | Icon thumbnail |
-| `Listing.Initials` | Initials avatar |
-| `Listing.Header` | Title area |
-| `Listing.Body` | Content wrapper |
-| `Listing.Content` | Main content |
-| `Listing.Footer` | Footer area |
-| `Listing.Excerpt` | Text excerpt |
-| `Listing.EventMeta` | Event metadata |
+
+| Component            | Description     |
+| -------------------- | --------------- |
+| `Listing.Figure`     | Image container |
+| `Listing.DateThumb`  | Date thumbnail  |
+| `Listing.IconThumb`  | Icon thumbnail  |
+| `Listing.Initials`   | Initials avatar |
+| `Listing.Header`     | Title area      |
+| `Listing.Body`       | Content wrapper |
+| `Listing.Content`    | Main content    |
+| `Listing.Footer`     | Footer area     |
+| `Listing.Excerpt`    | Text excerpt    |
+| `Listing.EventMeta`  | Event metadata  |
 | `Listing.PeopleMeta` | Person metadata |
 
 ---
@@ -315,10 +321,11 @@ import { Icon } from '@carletonuniversity/rds'
 ```
 
 **Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `icon` | `string` | - | Font Awesome class |
-| `size` | `number \| string` | - | Icon size (4-24) |
+
+| Prop   | Type               | Default | Description        |
+| ------ | ------------------ | ------- | ------------------ |
+| `icon` | `string`           | -       | Font Awesome class |
+| `size` | `number \| string` | -       | Icon size (4-24)   |
 
 ---
 
@@ -393,12 +400,13 @@ import { Splash } from '@carletonuniversity/rds'
 ```
 
 **Subcomponents:**
-| Component | Description |
-|-----------|-------------|
+
+| Component           | Description          |
+| ------------------- | -------------------- |
 | `Splash.Background` | Background container |
-| `Splash.Video` | Background video |
-| `Splash.Image` | Background image |
-| `Splash.Content` | Overlay content |
+| `Splash.Video`      | Background video     |
+| `Splash.Image`      | Background image     |
+| `Splash.Content`    | Overlay content      |
 
 ---
 
@@ -518,17 +526,18 @@ import { Nav } from '@carletonuniversity/rds'
 ```
 
 **Subcomponents:**
-| Component | Description |
-|-----------|-------------|
-| `Nav.Top` | Top navigation bar |
-| `Nav.Bottom` | Main navigation bar |
-| `Nav.Aside` | Sidebar navigation |
-| `Nav.Menu` | Menu container |
-| `Nav.SubMenu` | Dropdown submenu |
-| `Nav.MenuItem` | Menu item |
-| `Nav.MenuItemWrapper` | Menu item wrapper |
-| `Nav.Logo` | Logo component |
-| `Nav.Buttons` | Button group |
+
+| Component             | Description         |
+| --------------------- | ------------------- |
+| `Nav.Top`             | Top navigation bar  |
+| `Nav.Bottom`          | Main navigation bar |
+| `Nav.Aside`           | Sidebar navigation  |
+| `Nav.Menu`            | Menu container      |
+| `Nav.SubMenu`         | Dropdown submenu    |
+| `Nav.MenuItem`        | Menu item           |
+| `Nav.MenuItemWrapper` | Menu item wrapper   |
+| `Nav.Logo`            | Logo component      |
+| `Nav.Buttons`         | Button group        |
 
 ---
 
