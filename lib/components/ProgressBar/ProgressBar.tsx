@@ -21,7 +21,7 @@ export const ProgressBar = ({ value, max = 100 }: ProgressBarProps) => {
 
   return (
     <div
-      className="h-3 bg-slate-200 rounded-full overflow-hidden"
+      className="h-4 p-0.5 bg-white border border-cu-black-50 rounded-full overflow-hidden"
       role="progressbar"
       aria-valuenow={percentage}
       aria-valuemin={0}

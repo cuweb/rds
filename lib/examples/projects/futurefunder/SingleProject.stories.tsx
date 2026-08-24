@@ -1,11 +1,11 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Main } from '../../../layouts/Main/Main'
-import { Section } from '../../../layouts/Section/Section'
 import { FooterFutureFunder } from '../../../components/Footer/FooterFutureFunder/FooterFutureFunder'
 import { Nav } from '../../../components/Nav/Nav'
 import { PageHeader } from '../../../components/PageHeader/PageHeader'
-import { FundingDetails } from '../../../components/FundingDetails/FundingDetails'
+import { Figure } from '../../../components/Figure/Figure'
+import { CampaignBanner } from '../../../components/CampaignBanner/CampaignBanner'
 import { NavButtonsData, NavFutureFunder } from '../../../data/NavData'
 
 const meta: Meta = {
@@ -26,7 +26,8 @@ const SinglePara = () => {
         vitae, sagittis justo. Vivamus imperdiet turpis nec elit ultricies. Suspendisse condimentum magna vel orci
         vulputate, eget vulputate neque porttitor. Suspendisse euismod, urna et gravida volutpat, tortor risus vehicula
         nisl, in vulputate lectus dolor viverra est. Etiam quis interdum nisi, et malesuada lectus. Aliquam luctus,
-        velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna.
+        velit eget suscipit tincidunt, sem ex tempus turpis, quis pulvinar metus sapien in urna. Vivamus imperdiet
+        turpis nec elit ultricies. Suspendisse condimentum magna vel orci vulputate, eget vulputate neque porttitor.
       </p>
     </>
   )
@@ -47,20 +48,39 @@ export const SingleProject: Story = {
       </Nav>
 
       <Main>
-        <Section as="div" maxWidth="7xl">
-          <FundingDetails
-            title="Annual Musical Production 2026"
-            endDate="2027-09-01"
-            raised={45250}
-            goal={75000}
-            categories={['Community', 'Health', 'Student Experience']}
-            imageUrl="https://fastly.picsum.photos/id/237/1200/800.jpg?hmac=Zig5Q0Oa_5oSGNOhgbpE-lgHzdREZIxTf94rVP1-uCg"
-            imageAlt="Black labrador puppy looking up"
-          />
-        </Section>
+        <CampaignBanner
+          title="Fund the Future of Clean Energy Research"
+          endDate="2027-09-01"
+          raised={45250}
+          goal={75000}
+          categories={[{ name: 'Community' }, { name: 'Health' }, { name: 'Student Experience' }]}
+        />
+
+        {/* <Figure
+            align="none"
+            caption=""
+            noMobile={false}
+            rounded="lg"
+            size="full"
+        >
+            <img
+            alt="Sample for figure stories file"
+            height="266"
+            src="https://picsum.photos/id/15/1600/600"
+            width="400"
+            />
+        </Figure> */}
 
         <PageHeader as="h2" header="The Overview" size="md" />
         <SinglePara />
+        <Figure align="right" noMobile={false} rounded="lg" size="md">
+          <img
+            alt="Sample for figure stories file"
+            height="266"
+            src="https://picsum.photos/id/15/1600/900"
+            width="400"
+          />
+        </Figure>
 
         <PageHeader as="h2" header="The Background" size="md" />
         <SinglePara />
