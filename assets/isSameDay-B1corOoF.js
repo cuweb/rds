@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-C0FnF6B9.js";import{D as t,E as n,O as r,T as i}from"./format-kz_hiaLf.js";function a(e,t,i){let[a,o]=r(i?.in,e,t);return+n(a)==+n(o)}function o(){return(o=e((()=>{t(),i()})))()}export{a as n,o as t};
