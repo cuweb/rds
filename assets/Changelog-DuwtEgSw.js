@@ -14,6 +14,7 @@ and this project adheres to `,(0,c.jsx)(n.a,{href:`https://semver.org/spec/v2.0.
 `]}),`
 `,(0,c.jsx)(n.h2,{id:`unreleased`,children:`[Unreleased]`}),`
 `,(0,c.jsx)(n.h3,{id:`added`,children:`Added`}),`
+`,(0,c.jsx)(n.h2,{id:`0291`,children:`[0.29.1]`}),`
 `,(0,c.jsxs)(n.ul,{children:[`
 `,(0,c.jsx)(n.li,{children:`New campaign banner component that replaces funding details`}),`
 `]}),`
