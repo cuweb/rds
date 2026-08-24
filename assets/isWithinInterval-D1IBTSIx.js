@@ -1,0 +1,1 @@
+import{t as e}from"./format-BDD0as5c.js";function h(m,a){return+e(m)==+e(a)}function l(m,a,r){const u=+e(m,r==null?void 0:r.in),[c,t]=[+e(a.start,r==null?void 0:r.in),+e(a.end,r==null?void 0:r.in)].sort((f,d)=>f-d);return u>=c&&u<=t}export{h as a,l as i};
