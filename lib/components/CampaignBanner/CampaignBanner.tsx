@@ -66,7 +66,7 @@ export const CampaignBanner = ({ title, raised, goal, endDate, categories }: Cam
           {percent}% funded with {timeLabel}
         </p>
         <ButtonGroup align="start" gap="5">
-          <a href="#fund-this-campaign" className="cu-button not-prose cu-button--red">
+          <a href="#fund-this-campaign" className="cu-button cu-button--full not-prose cu-button--red">
             Fund this Project
           </a>
         </ButtonGroup>
