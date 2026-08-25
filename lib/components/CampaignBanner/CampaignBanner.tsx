@@ -54,22 +54,24 @@ export const CampaignBanner = ({ title, raised, goal, endDate, categories }: Cam
           </BadgeGroup>
         )}
       </div>
-      <div className="lg:w-2/5 bg-cu-black-50 rounded-lg p-6 lg:px-10 lg:py-10">
-        <div className="mb-2">
-          <span className="text-4xl font-bold">{formatCurrency(raised)}</span>
-          <span className="text-base text-cu-black-400 ml-2">of {formatCurrency(goal)}</span>
+      <div className="lg:w-2/5 bg-cu-black-50 rounded-lg p-6 lg:px-10 lg:py-10 flex flex-col justify-center">
+        <div>
+          <div className="mb-2">
+            <span className="text-4xl font-bold">{formatCurrency(raised)}</span>
+            <span className="text-base text-cu-black-400 ml-2">of {formatCurrency(goal)}</span>
+          </div>
+          <div className="mb-1.5">
+            <ProgressBar value={raised} max={goal} />
+          </div>
+          <p className="text-sm text-cu-black-600 italic">
+            {percent}% funded with {timeLabel}
+          </p>
+          <ButtonGroup align="start" gap="5">
+            <a href="#fund-this-campaign" className="cu-button cu-button--full not-prose cu-button--red">
+              Fund this Project
+            </a>
+          </ButtonGroup>
         </div>
-        <div className="mb-1.5">
-          <ProgressBar value={raised} max={goal} />
-        </div>
-        <p className="text-sm text-cu-black-600 italic">
-          {percent}% funded with {timeLabel}
-        </p>
-        <ButtonGroup align="start" gap="5">
-          <a href="#fund-this-campaign" className="cu-button cu-button--full not-prose cu-button--red">
-            Fund this Project
-          </a>
-        </ButtonGroup>
       </div>
     </div>
   )
