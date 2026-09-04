@@ -14,7 +14,7 @@ const meta: Meta<typeof Location> = {
   },
   decorators: [
     (Story) => (
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY}>
+      <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY} region="CA">
         <Story />
       </LoadScript>
     ),

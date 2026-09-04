@@ -17,7 +17,7 @@ const meta: Meta<typeof LocationPicker> = {
   },
   decorators: [
     (Story) => (
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY} libraries={['places']}>
+      <LoadScript googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY} libraries={['places']} region="CA">
         <Story />
       </LoadScript>
     ),
