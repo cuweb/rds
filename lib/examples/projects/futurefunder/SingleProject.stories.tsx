@@ -48,13 +48,17 @@ export const SingleProject: Story = {
       </Nav>
 
       <Main>
-        <CampaignBanner
-          title="Fund the Future of Clean Energy Research and the ego of Tony Stark, aka Iron Man"
-          endDate="2027-09-01"
-          raised={45250}
-          goal={75000}
-          categories={[{ name: 'Community' }, { name: 'Health' }, { name: 'Student Experience' }]}
-        />
+        <CampaignBanner>
+          <CampaignBanner.Content
+            title="Fund the Future of Clean Energy Research and the ego of Tony Stark, aka Iron Man"
+            categories={[
+              { name: 'Community', link: '#' },
+              { name: 'Health', link: '#' },
+              { name: 'Student Experience', link: '#' },
+            ]}
+          />
+          <CampaignBanner.Stats raised={45250} goal={75000} endDate="2027-09-01" />
+        </CampaignBanner>
 
         {/* <Figure
             align="none"
