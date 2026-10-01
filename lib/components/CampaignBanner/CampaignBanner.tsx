@@ -4,13 +4,11 @@ import { PageHeader } from '../PageHeader/PageHeader'
 import { ProgressBar } from '../ProgressBar/ProgressBar'
 import { formatCurrency } from '../../helpers/formatCurrency'
 import { Button } from '../Button/Button'
-import { useLinkContext } from '../LinkProvider/useLinkContext'
 import React from 'react'
 
 export interface CampaignCategory {
   name: string
   link: string
-  primary?: boolean
 }
 
 interface CampaignBannerProps {
@@ -35,46 +33,25 @@ const getTimeRemainingLabel = (endDate: string): string => {
 }
 
 export const CampaignBanner = ({ title, content, raised, goal, endDate, categories }: CampaignBannerProps) => {
-  const LinkComponent = useLinkContext()
-
   const percent = goal > 0 ? Math.min(Math.round((raised / goal) * 100), 100) : 0
   const timeLabel = getTimeRemainingLabel(endDate)
-
-  // Sort categories so that primary ones come first
-  if (categories) {
-    categories.sort((a, b) => (b.primary ? 1 : 0) - (a.primary ? 1 : 0))
-  }
 
   return (
     <div className="cu-campaign-banner max-w-5xl mx-auto flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:rounded-sm mb-8 lg:mb-12">
       <div className="lg:py-4 lg:w-3/5">
+        <PageHeader as="h1" header={title} size="lg" preHeader="Arts & Social Sciences">
+          {content}
+        </PageHeader>
+
         {categories && categories.length > 0 && (
           <div className="flex flex-wrap gap-3">
-            {categories.map((cat, index) => (
+            {categories.map((cat) => (
               <React.Fragment key={cat.name}>
-                {cat.primary ? (
-                  <>
-                    <Badge color="red-solid" text={cat.name} link={cat.link} rounded="base" />
-                    {index >= categories.filter((cat) => cat.primary).length - 1 && (
-                      <span className="text-cu-black-200">|</span>
-                    )}
-                  </>
-                ) : (
-                  <LinkComponent
-                    href={cat.link}
-                    className="cursor-pointer flex items-center text-cu-black-600 hover:text-cu-red"
-                  >
-                    <span className="text-xs font-semibold block">{cat.name}</span>
-                  </LinkComponent>
-                )}
+                <Badge color="grey" text={cat.name} link={cat.link} rounded="base" />
               </React.Fragment>
             ))}
           </div>
         )}
-
-        <PageHeader as="h1" header={title} size="lg">
-          {content}
-        </PageHeader>
 
         <ButtonGroup align="start" gap="5">
           <Button

@@ -31,9 +31,12 @@ export const Primary: Story = {
     goal: 5000,
     endDate: '2026-08-27',
     categories: [
-      { name: 'Arts', link: 'https://example.com/environment', primary: true },
+      { name: 'Arts', link: 'https://example.com/environment' },
       { name: 'Arts & Social Sciences', link: 'https://example.com/science' },
       { name: 'Student Experience', link: 'https://example.com/student-experience' },
+      { name: 'Scholarships', link: 'https://example.com/student-experience' },
+      { name: 'Giving Day', link: 'https://example.com/student-experience' },
+      { name: 'Healthcare', link: 'https://example.com/student-experience' },
     ],
   },
   render: (args) => {
