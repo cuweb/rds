@@ -1,17 +1,21 @@
 import { Badge } from '../Badge/Badge'
-import { BadgeGroup } from '../BadgeGroup/BadgeGroup'
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup'
 import { PageHeader } from '../PageHeader/PageHeader'
 import { ProgressBar } from '../ProgressBar/ProgressBar'
 import { formatCurrency } from '../../helpers/formatCurrency'
+import { Button } from '../Button/Button'
+import { useLinkContext } from '../LinkProvider/useLinkContext'
+import React from 'react'
 
 export interface CampaignCategory {
   name: string
-  link?: string
+  link: string
+  primary?: boolean
 }
 
 interface CampaignBannerProps {
   title: string
+  content?: React.ReactNode
   raised: number
   goal: number
   endDate: string
@@ -30,29 +34,58 @@ const getTimeRemainingLabel = (endDate: string): string => {
   return `${Math.max(daysLeft, 0)} days to go`
 }
 
-export const CampaignBanner = ({ title, raised, goal, endDate, categories }: CampaignBannerProps) => {
+export const CampaignBanner = ({ title, content, raised, goal, endDate, categories }: CampaignBannerProps) => {
+  const LinkComponent = useLinkContext()
+
   const percent = goal > 0 ? Math.min(Math.round((raised / goal) * 100), 100) : 0
   const timeLabel = getTimeRemainingLabel(endDate)
-  const isActive = parseDateLocal(endDate).getTime() >= Date.now()
-  const statusText = isActive ? 'Active Campaign' : 'Campaign Completed'
-  const statusColor = isActive ? 'green' : 'red'
+
+  // Sort categories so that primary ones come first
+  if (categories) {
+    categories.sort((a, b) => (b.primary ? 1 : 0) - (a.primary ? 1 : 0))
+  }
 
   return (
     <div className="cu-campaign-banner max-w-5xl mx-auto flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16 lg:rounded-sm mb-8 lg:mb-12">
       <div className="lg:py-4 lg:w-3/5">
-        <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
-          <Badge color={statusColor} text={statusText} rounded="base" />
-        </BadgeGroup>
-
-        <PageHeader as="h1" header={title} size="lg" noUnderline />
-
         {categories && categories.length > 0 && (
-          <BadgeGroup bottom={0} gap="2" left={0} right={0} top={0}>
-            {categories.map((cat) => (
-              <Badge key={cat.name} color="grey" text={cat.name} link={cat.link} rounded="base" />
+          <div className="flex flex-wrap gap-3">
+            {categories.map((cat, index) => (
+              <React.Fragment key={cat.name}>
+                {cat.primary ? (
+                  <>
+                    <Badge color="red-solid" text={cat.name} link={cat.link} rounded="base" />
+                    {index >= categories.filter((cat) => cat.primary).length - 1 && (
+                      <span className="text-cu-black-200">|</span>
+                    )}
+                  </>
+                ) : (
+                  <LinkComponent
+                    href={cat.link}
+                    className="cursor-pointer flex items-center text-cu-black-600 hover:text-cu-red"
+                  >
+                    <span className="text-xs font-semibold block">{cat.name}</span>
+                  </LinkComponent>
+                )}
+              </React.Fragment>
             ))}
-          </BadgeGroup>
+          </div>
         )}
+
+        <PageHeader as="h1" header={title} size="lg">
+          {content}
+        </PageHeader>
+
+        <ButtonGroup align="start" gap="5">
+          <Button
+            color="red"
+            type="button"
+            title="Fund this Project"
+            onClick={() => {
+              window.location.hash = 'fund-this-campaign'
+            }}
+          />
+        </ButtonGroup>
       </div>
       <div className="lg:w-2/5 bg-cu-black-50 rounded-lg p-6 lg:px-10 lg:py-10 flex flex-col justify-center">
         <div>
@@ -66,11 +99,6 @@ export const CampaignBanner = ({ title, raised, goal, endDate, categories }: Cam
           <p className="text-sm text-cu-black-600 italic">
             {percent}% funded with {timeLabel}
           </p>
-          <ButtonGroup align="start" gap="5">
-            <a href="#fund-this-campaign" className="cu-button cu-button--full not-prose cu-button--red">
-              Fund this Project
-            </a>
-          </ButtonGroup>
         </div>
       </div>
     </div>

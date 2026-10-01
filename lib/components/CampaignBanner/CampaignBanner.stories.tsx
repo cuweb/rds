@@ -18,14 +18,22 @@ type Story = StoryObj<typeof CampaignBanner>
 
 export const Primary: Story = {
   args: {
-    title: 'Fund the Future of Clean Energy Research',
-    raised: 42500,
-    goal: 100000,
+    title: 'The Music Award for Indigenous, Black and Racialized Students',
+    content: (
+      <>
+        <p>
+          The Music Award for Indigenous, Black and Racialized Students is awarded annually to a student who is entering
+          or continuing in the undergraduate Music program.
+        </p>
+      </>
+    ),
+    raised: 1349,
+    goal: 5000,
     endDate: '2026-08-27',
     categories: [
-      { name: 'Environment', link: 'https://example.com/environment' },
-      { name: 'Science & Innovation', link: 'https://example.com/science' },
-      { name: 'Student Experience' },
+      { name: 'Arts', link: 'https://example.com/environment', primary: true },
+      { name: 'Arts & Social Sciences', link: 'https://example.com/science' },
+      { name: 'Student Experience', link: 'https://example.com/student-experience' },
     ],
   },
   render: (args) => {
