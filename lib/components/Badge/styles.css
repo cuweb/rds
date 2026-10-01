@@ -14,6 +14,10 @@
   @apply bg-red-50 text-red-800;
 }
 
+.cu-badge--red-solid {
+  @apply bg-cu-red text-white;
+}
+
 .cu-badge--yellow {
   @apply bg-yellow-50 text-yellow-800;
 }

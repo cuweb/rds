@@ -7,7 +7,7 @@ export interface BadgeProps {
   text: string
   link?: string
   rounded?: borderRadiusKeys
-  color?: 'grey' | 'white' | 'black80' | 'white80' | 'green' | 'red' | 'yellow' | 'blue' | 'purple'
+  color?: 'grey' | 'white' | 'black80' | 'white80' | 'green' | 'red' | 'red-solid' | 'yellow' | 'blue' | 'purple'
   noWordBreak?: boolean
 }
 
