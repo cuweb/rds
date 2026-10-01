@@ -30,6 +30,10 @@ export const Primary: Story = {
     raised: 1349,
     goal: 5000,
     endDate: '2026-08-27',
+    tags: [
+      { name: 'Music', link: 'https://example.com/music' },
+      { name: 'Arts', link: 'https://example.com/arts' },
+    ],
     categories: [
       { name: 'Arts', link: 'https://example.com/environment' },
       { name: 'Arts & Social Sciences', link: 'https://example.com/science' },
