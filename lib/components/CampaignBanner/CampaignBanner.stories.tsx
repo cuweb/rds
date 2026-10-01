@@ -27,12 +27,12 @@ export const Primary: Story = {
             { name: 'Arts', link: 'https://example.com/arts' },
           ]}
           categories={[
-            { name: 'Arts', link: 'https://example.com/environment' },
-            { name: 'Arts & Social Sciences', link: 'https://example.com/science' },
+            { name: 'Arts', link: 'https://example.com/arts' },
+            { name: 'Arts & Social Sciences', link: 'https://example.com/arts-social-sciences' },
             { name: 'Student Experience', link: 'https://example.com/student-experience' },
-            { name: 'Scholarships', link: 'https://example.com/student-experience' },
-            { name: 'Giving Day', link: 'https://example.com/student-experience' },
-            { name: 'Healthcare', link: 'https://example.com/student-experience' },
+            { name: 'Scholarships', link: 'https://example.com/scholarships' },
+            { name: 'Giving Day', link: 'https://example.com/giving-day' },
+            { name: 'Healthcare', link: 'https://example.com/healthcare' },
           ]}
         >
           <p>
@@ -41,7 +41,7 @@ export const Primary: Story = {
           </p>
         </CampaignBanner.Content>
         <CampaignBanner.Image>
-          <img src="https://placehold.co/600x400" alt="" className="object-cover w-full h-full" />
+          <img src="https://placehold.co/600x400" alt="placeholder" />
         </CampaignBanner.Image>
         <CampaignBanner.Stats raised={1349} goal={5000} endDate="2026-08-27" />
       </CampaignBanner>

@@ -3,7 +3,7 @@ export interface CampaignBannerImageProps {
 }
 
 export const CampaignBannerImage = ({ children }: CampaignBannerImageProps) => {
-  return <div className="cu-campaign-banner__image hidden lg:block lg:w-1/2">{children}</div>
+  return <div className="cu-campaign-banner__image hidden lg:block">{children}</div>
 }
 
 CampaignBannerImage.displayName = 'CampaignBanner.Image'

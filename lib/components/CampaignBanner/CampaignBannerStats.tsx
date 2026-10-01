@@ -47,7 +47,7 @@ export const CampaignBannerStats = ({ raised, goal, endDate }: CampaignBannerSta
   ]
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="col-span-full w-full max-w-5xl mx-auto">
       <Column cols="4">
         {StatData.slice(0, 4).map(({ id, stat, desc }) => (
           <Card key={id} leftBorder noHover>

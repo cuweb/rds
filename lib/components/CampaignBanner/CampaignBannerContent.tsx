@@ -38,35 +38,33 @@ export const CampaignBannerContent = ({ title, tags, categories, children }: Cam
       : ''
 
   return (
-    <div className="lg:py-4 lg:w-1/2">
-      <div className="lg:max-w-[calc(theme(maxWidth.5xl)/2)] lg:ml-auto lg:mr-0">
-        {/* Page Header */}
-        <PageHeader as="h1" header={title} size="lg" preHeader={tagNames}>
-          {children}
-        </PageHeader>
+    <div className="lg:max-w-[calc(theme(maxWidth.5xl)/2)] lg:ml-auto lg:-mr-8">
+      {/* Page Header */}
+      <PageHeader as="h1" header={title} size="lg" preHeader={tagNames}>
+        {children}
+      </PageHeader>
 
-        {/* Categories */}
-        {categories && categories.length > 0 && (
-          <div className="flex flex-wrap gap-3">
-            {categories.map((cat) => (
-              <React.Fragment key={cat.name}>
-                <Badge color="grey" text={cat.name} link={cat.link} rounded="base" />
-              </React.Fragment>
-            ))}
-          </div>
-        )}
+      {/* Categories */}
+      {categories && categories.length > 0 && (
+        <div className="flex flex-wrap gap-3">
+          {categories.map((cat) => (
+            <React.Fragment key={cat.name}>
+              <Badge color="grey" text={cat.name} link={cat.link} rounded="base" />
+            </React.Fragment>
+          ))}
+        </div>
+      )}
 
-        <ButtonGroup align="start" gap="5">
-          <Button
-            color="red"
-            type="button"
-            title="Fund this Project"
-            onClick={() => {
-              window.location.hash = 'fund-this-campaign'
-            }}
-          />
-        </ButtonGroup>
-      </div>
+      <ButtonGroup align="start" gap="5">
+        <Button
+          color="red"
+          type="button"
+          title="Fund this Project"
+          onClick={() => {
+            window.location.hash = 'fund-this-campaign'
+          }}
+        />
+      </ButtonGroup>
     </div>
   )
 }
