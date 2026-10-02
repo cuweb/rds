@@ -1,7 +1,6 @@
 import { formatCurrency } from '../../helpers/formatCurrency'
 import { Column } from '../../layouts/Column/Column'
 import { Card } from '../Card/Card'
-import { Icon } from '../Icon'
 
 export interface CampaignBannerStatsProps {
   raised: number
@@ -54,7 +53,6 @@ export const CampaignBannerStats = ({ raised, goal, endDate }: CampaignBannerSta
           {StatData.slice(0, 4).map(({ id, stat, desc, direction }) => (
             <Card key={id} leftBorder noHover>
               <div className="flex items-start gap-4 px-6 !py-4 ">
-                <Icon name={id} size={35} />
                 <div
                   className={`cu-card-stats overflow-hidden flex ${direction === 'bottom' ? `flex-col-reverse` : `flex-col`}`}
                 >
