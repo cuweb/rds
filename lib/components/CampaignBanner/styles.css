@@ -5,6 +5,7 @@
 
 .cu-campaign-banner__image {
   position: relative;
+  background-color: #191919;
 }
 
 .cu-campaign-banner__image:after {

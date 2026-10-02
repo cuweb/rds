@@ -44,7 +44,7 @@ export const Primary: Story = {
           <CampaignBanner.Image>
             <img src="https://picsum.photos/id/15/1600/900" alt="placeholder" />
           </CampaignBanner.Image>
-          <CampaignBanner.Stats raised={1349} goal={5000} endDate="2026-08-27" />
+          <CampaignBanner.Stats raised={1349} goal={5000} endDate="2026-10-27" />
         </CampaignBanner>
       </>
     )
