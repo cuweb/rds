@@ -1,6 +1,7 @@
 import { formatCurrency } from '../../helpers/formatCurrency'
 import { Column } from '../../layouts/Column/Column'
 import { Card } from '../Card/Card'
+import { Icon } from '../Icon'
 
 interface CampaignBannerStatsProps {
   raised: number
@@ -17,7 +18,7 @@ const getTimeRemainingLabel = (endDate: string): string => {
   const daysLeft = Math.ceil((parseDateLocal(endDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
   if (daysLeft > 365) return 'more than a year to go'
   if (daysLeft > 30) return `${Math.round(daysLeft / 30)} months to go`
-  return `${Math.max(daysLeft, 0)} days to go`
+  return `${Math.max(daysLeft, 0)} days left`
 }
 
 export const CampaignBannerStats = ({ raised, goal, endDate }: CampaignBannerStatsProps) => {
@@ -25,24 +26,24 @@ export const CampaignBannerStats = ({ raised, goal, endDate }: CampaignBannerSta
 
   const StatData = [
     {
-      id: 'raised',
+      id: 'database-regular',
       stat: formatCurrency(raised),
       desc: 'Amount Raised',
     },
     {
-      id: 'goal',
+      id: 'bullseye-arrow',
       stat: formatCurrency(goal),
       desc: 'Goal',
     },
     {
-      id: 'goalReached',
+      id: 'file-chart-pie',
       stat: `${percent}%`,
       desc: 'of Goal Reached',
+      direction: 'bottom',
     },
     {
-      id: 'timeRemaining',
-      stat: getTimeRemainingLabel(endDate),
-      desc: 'Days Left',
+      id: 'calendar-days',
+      stat: `${getTimeRemainingLabel(endDate)}`,
     },
   ]
 
@@ -50,9 +51,19 @@ export const CampaignBannerStats = ({ raised, goal, endDate }: CampaignBannerSta
     <div className="bg-white px-4 md:px-6 lg:px-0">
       <div className="w-full max-w-5xl mx-auto mt-6 md:mt-10">
         <Column cols="4">
-          {StatData.slice(0, 4).map(({ id, stat, desc }) => (
+          {StatData.slice(0, 4).map(({ id, stat, desc, direction }) => (
             <Card key={id} leftBorder noHover>
-              <Card.Stats stat={stat} desc={desc} />
+              <div className="flex items-start gap-4 px-6 !py-4 ">
+                <Icon name={id} size={35} />
+                <div
+                  className={`cu-card-stats overflow-hidden flex ${direction === 'bottom' ? `flex-col-reverse` : `flex-col`}`}
+                >
+                  <p className="text-base text-cu-black-600 dark:text-white @sm:md:text-lg">{desc}</p>
+                  <p className="text-2xl font-semibold text-cu-black-800 dark:text-white group-hover:text-cu-red md:text-3xl @xs:lg:text-3xl">
+                    {stat}
+                  </p>
+                </div>
+              </div>
             </Card>
           ))}
         </Column>
