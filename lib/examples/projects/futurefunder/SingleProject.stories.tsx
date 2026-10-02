@@ -7,6 +7,7 @@ import { PageHeader } from '../../../components/PageHeader/PageHeader'
 import { Figure } from '../../../components/Figure/Figure'
 import { CampaignBanner } from '../../../components/CampaignBanner/CampaignBanner'
 import { NavButtonsData, NavFutureFunder } from '../../../data/NavData'
+import { Section } from '../../../layouts/Section/Section'
 
 const meta: Meta = {
   title: 'Projects/FutureFunder',
@@ -48,51 +49,56 @@ export const SingleProject: Story = {
       </Nav>
 
       <Main>
-        <CampaignBanner
-          title="Fund the Future of Clean Energy Research and the ego of Tony Stark, aka Iron Man"
-          endDate="2027-09-01"
-          raised={45250}
-          goal={75000}
-          categories={[{ name: 'Community' }, { name: 'Health' }, { name: 'Student Experience' }]}
-        />
-
-        {/* <Figure
-            align="none"
-            caption=""
-            noMobile={false}
-            rounded="lg"
-            size="full"
-        >
+        <CampaignBanner>
+          <CampaignBanner.Content
+            title="The Music Award"
+            tags={[
+              { name: 'Music', link: 'https://example.com/music' },
+              { name: 'Arts', link: 'https://example.com/arts' },
+            ]}
+            categories={[
+              { name: 'Arts', link: 'https://example.com/arts' },
+              { name: 'Arts & Social Sciences', link: 'https://example.com/arts-social-sciences' },
+              { name: 'Student Experience', link: 'https://example.com/student-experience' },
+              { name: 'Scholarships', link: 'https://example.com/scholarships' },
+              { name: 'Giving Day', link: 'https://example.com/giving-day' },
+              { name: 'Healthcare', link: 'https://example.com/healthcare' },
+            ]}
+          >
+            <p>
+              The Music Award for Indigenous, Black and Racialized Students is awarded annually to a student who is
+              entering or continuing in the undergraduate Music program.
+            </p>
+          </CampaignBanner.Content>
+          <CampaignBanner.Image>
+            <img src="https://picsum.photos/id/15/1600/900" alt="placeholder" />
+          </CampaignBanner.Image>
+          <CampaignBanner.Stats raised={1349} goal={5000} endDate="2026-08-27" />
+        </CampaignBanner>
+        <Section maxWidth="5xl">
+          <PageHeader as="h2" header="The Overview" size="md" />
+          <SinglePara />
+          <Figure align="right" noMobile={false} rounded="lg" size="md">
             <img
-            alt="Sample for figure stories file"
-            height="266"
-            src="https://picsum.photos/id/15/1600/600"
-            width="400"
+              alt="Sample for figure stories file"
+              height="266"
+              src="https://picsum.photos/id/15/1600/900"
+              width="400"
             />
-        </Figure> */}
+          </Figure>
 
-        <PageHeader as="h2" header="The Overview" size="md" />
-        <SinglePara />
-        <Figure align="right" noMobile={false} rounded="lg" size="md">
-          <img
-            alt="Sample for figure stories file"
-            height="266"
-            src="https://picsum.photos/id/15/1600/900"
-            width="400"
-          />
-        </Figure>
+          <PageHeader as="h2" header="The Background" size="md" />
+          <SinglePara />
 
-        <PageHeader as="h2" header="The Background" size="md" />
-        <SinglePara />
+          <PageHeader as="h2" header="The Rollout" size="md" />
+          <SinglePara />
 
-        <PageHeader as="h2" header="The Rollout" size="md" />
-        <SinglePara />
+          <PageHeader as="h2" header="The Impact" size="md" />
+          <SinglePara />
 
-        <PageHeader as="h2" header="The Impact" size="md" />
-        <SinglePara />
-
-        <PageHeader as="h2" header="Fund this campaign" size="md" />
-        <p>The primary donation form would be placed here.</p>
+          <PageHeader as="h2" header="Fund this campaign" size="md" />
+          <p>The primary donation form would be placed here.</p>
+        </Section>
       </Main>
 
       <FooterFutureFunder />

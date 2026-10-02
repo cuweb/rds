@@ -15,7 +15,7 @@ const SIZE_CONFIG = {
 export interface PageHeaderProps {
   children?: React.ReactNode
   as?: 'h1' | 'h2' | 'h3'
-  preHeader?: string
+  preHeader?: string | React.ReactNode
   header: string
   content?: string
   metaData?: React.ReactNode
