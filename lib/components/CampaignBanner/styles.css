@@ -1,5 +1,27 @@
+.cu-section > .cu-campaign-banner {
+  margin-top: -40px;
+  @apply -mt-6 lg:-mt-10;
+}
+
+.cu-campaign-banner__image {
+  position: relative;
+}
+
+.cu-campaign-banner__image:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 1024px / 2);
+  height: 100%;
+  background-image: linear-gradient(270deg, #191919, transparent);
+}
+
 .cu-campaign-banner__image img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  margin: 0;
+  border-radius: 0;
 }

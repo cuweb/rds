@@ -38,7 +38,7 @@ export const CampaignBannerContent = ({ title, tags, categories, children }: Cam
       : ''
 
   return (
-    <div className="lg:max-w-[calc(theme(maxWidth.5xl)/2)] lg:ml-auto lg:-mr-8">
+    <div className="lg:max-w-[calc(theme(maxWidth.5xl)/2)] lg:ml-auto lg:-mr-8 my-6 lg:my-14">
       {/* Page Header */}
       <PageHeader as="h1" header={title} size="lg" preHeader={tagNames}>
         {children}
