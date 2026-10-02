@@ -15,7 +15,7 @@ export interface CampaignTag {
   link: string
 }
 
-interface CampaignBannerContentProps {
+export interface CampaignBannerContentProps {
   children?: React.ReactNode
   title: string
   tags?: CampaignTag[]

@@ -3,7 +3,7 @@ import { Column } from '../../layouts/Column/Column'
 import { Card } from '../Card/Card'
 import { Icon } from '../Icon'
 
-interface CampaignBannerStatsProps {
+export interface CampaignBannerStatsProps {
   raised: number
   goal: number
   endDate: string
