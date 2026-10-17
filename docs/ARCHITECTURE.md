@@ -82,9 +82,7 @@ export default defineConfig({
       fileName: (format) => `rds.${format}.js`,
     },
     rollupOptions: {
-      external: [
-        /* all dependencies externalized */
-      ],
+      external: [/* all dependencies externalized */],
       output: {
         globals: {
           react: 'React',

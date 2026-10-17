@@ -1,6 +1,6 @@
 name: Maintenance / Technical Task
 description: Suggest maintenance, compatibility, tooling, refactoring, or technical-debt work.
-labels: ["maintenance"]
+labels: ['maintenance']
 body:
   - type: textarea
     id: task_description

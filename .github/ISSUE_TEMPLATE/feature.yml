@@ -1,6 +1,6 @@
 name: Feature / Enhancement
 description: Suggest an improvement or capability.
-labels: ["enhancement"]
+labels: ['enhancement']
 body:
   - type: textarea
     id: feature_description

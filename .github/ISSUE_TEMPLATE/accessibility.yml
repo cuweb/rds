@@ -1,6 +1,6 @@
 name: Accessibility Issue
 description: Report an accessibility barrier or concern.
-labels: ["accessibility"]
+labels: ['accessibility']
 body:
   - type: textarea
     id: accessibility_description
