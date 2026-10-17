@@ -1,0 +1,30 @@
+name: Bug Report
+description: Report something that is not working as expected.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: What went wrong?
+      description: A brief description is enough. Include whatever details you know; unknown details are okay.
+      placeholder: |
+        What happened, and what did you expect instead?
+        If useful, include steps to reproduce and the component, browser, or framework context.
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context or evidence (optional)
+      description: Add a component name, screenshot, reproduction, browser details, or console output.
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: These checks are prefilled for convenience. Adjust them to fit the issue.
+      value: |
+        - [ ] The reported issue no longer occurs in the affected context.
+        - [ ] The expected behaviour is restored.
+        - [ ] Relevant regression checks pass, with no unintended regressions.
+    validations:
+      required: true

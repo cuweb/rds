@@ -1,0 +1,30 @@
+name: Feature / Enhancement
+description: Suggest an improvement or capability.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: What would you like to improve?
+      description: Describe the need or desired outcome. A technical solution is not required.
+      placeholder: |
+        What should be possible, and who would benefit?
+        If useful, describe an example or how you would know the improvement is successful.
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context or examples (optional)
+      description: Add relevant components, framework or browser context, references, constraints, or examples if you have them.
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: These checks are prefilled for convenience. Adjust them to fit the issue.
+      value: |
+        - [ ] The described user need or desired outcome is met.
+        - [ ] The change works in the relevant component and supported framework context.
+        - [ ] Relevant tests or checks pass, and related guidance is updated if needed.
+    validations:
+      required: true
