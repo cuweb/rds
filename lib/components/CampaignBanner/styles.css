@@ -1,6 +1,6 @@
 .cu-section > .cu-campaign-banner {
   margin-top: -40px;
-  @apply -mt-6 lg:-mt-10;
+  /* @apply -mt-6 lg:-mt-10; */
 }
 
 .cu-campaign-banner__image {
@@ -13,10 +13,16 @@
   display: block;
   position: absolute;
   top: 0;
-  right: 0;
-  width: calc(100% - 1024px / 2);
+  /* right: 0; */
+  /* width: calc(100% - 1024px / 2); */
   height: 100%;
-  background-image: linear-gradient(270deg, #191919, transparent);
+  /* background-image: linear-gradient(270deg, #191919, transparent); */
+}
+
+.cu-campaign-banner__image:after {
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(270deg, transparent, #F9F9F9);
 }
 
 .cu-campaign-banner__image img {
