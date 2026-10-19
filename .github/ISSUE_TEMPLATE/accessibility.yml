@@ -1,0 +1,30 @@
+name: Accessibility Issue
+description: Report an accessibility barrier or concern.
+labels: ['accessibility']
+body:
+  - type: textarea
+    id: accessibility_description
+    attributes:
+      label: What accessibility barrier did you encounter?
+      description: Describe the barrier in your own words. You do not need to know a WCAG criterion.
+      placeholder: |
+        Where did it happen, and what were you trying to do?
+        If useful, describe the expected accessible behaviour and how to encounter the barrier.
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context or evidence (optional)
+      description: Add the component, browser, device, assistive technology, a WCAG criterion, or evidence if available.
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: These checks are prefilled for convenience. Adjust them to fit the issue.
+      value: |
+        - [ ] The reported barrier is resolved in the affected component or workflow.
+        - [ ] The experience is verified with relevant keyboard and assistive technology use.
+        - [ ] Any identified accessibility requirement is met.
+    validations:
+      required: true

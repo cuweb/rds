@@ -1,0 +1,30 @@
+name: Maintenance / Technical Task
+description: Suggest maintenance, compatibility, tooling, refactoring, or technical-debt work.
+labels: ['maintenance']
+body:
+  - type: textarea
+    id: task_description
+    attributes:
+      label: What needs to be done?
+      description: Briefly describe the task and why it is useful. You do not need to know the implementation.
+      placeholder: |
+        What is the objective?
+        If useful, mention affected components, relevant versions, constraints, and how the work could be checked.
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context or verification (optional)
+      description: Add related dependencies, risks, test expectations, or completion criteria if known.
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: These checks are prefilled for convenience. Adjust them to fit the issue.
+      value: |
+        - [ ] The stated maintenance objective is complete.
+        - [ ] Relevant tests, tooling, and compatibility checks pass.
+        - [ ] Any material risks or regressions are addressed.
+    validations:
+      required: true
