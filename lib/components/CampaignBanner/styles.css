@@ -22,7 +22,7 @@
 .cu-campaign-banner__image:after {
   left: 0;
   width: 100%;
-  background-image: linear-gradient(270deg, transparent, #F9F9F9);
+  background-image: linear-gradient(270deg, transparent, #f9f9f9);
 }
 
 .cu-campaign-banner__image img {
