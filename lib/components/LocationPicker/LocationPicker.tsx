@@ -1,4 +1,4 @@
-import { Autocomplete, useJsApiLoader } from '@react-google-maps/api'
+import { useJsApiLoader } from '@react-google-maps/api'
 import { useRef, useEffect } from 'react'
 import { Icon } from '../Icon/Icon'
 
@@ -15,9 +15,8 @@ interface ILocationPickerProps {
 }
 
 export function LocationPicker({ address, markerCallback }: ILocationPickerProps) {
-  // eslint-disable-next-line no-undef
-  const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
+  const markerCallbackRef = useRef(markerCallback)
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY,
@@ -25,47 +24,45 @@ export function LocationPicker({ address, markerCallback }: ILocationPickerProps
   })
 
   useEffect(() => {
+    markerCallbackRef.current = markerCallback
+  }, [markerCallback])
+
+  useEffect(() => {
     if (address && inputRef.current) {
       inputRef.current.value = address
     }
   }, [address])
 
-  // eslint-disable-next-line no-undef
-  const onLoad = (autocomplete: google.maps.places.Autocomplete) => {
-    autocompleteRef.current = autocomplete
-  }
+  useEffect(() => {
+    const input = inputRef.current
+    const maps = input?.ownerDocument.defaultView?.google?.maps
+    if (!isLoaded || !input || !maps?.places) return
 
-  const onPlaceChanged = () => {
-    const place = autocompleteRef.current?.getPlace()
-    if (place?.geometry?.location) {
-      const newAddress = place.formatted_address || ''
-      const newLat = place.geometry.location.lat()
-      const newLng = place.geometry.location.lng()
+    const autocomplete = new maps.places.Autocomplete(input)
+    const listener = autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace()
+      if (place.geometry?.location) {
+        markerCallbackRef.current?.({
+          coordinates: {
+            lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng(),
+          },
+          address: place.formatted_address || '',
+        })
+      }
+    })
 
-      markerCallback?.({
-        coordinates: { lat: newLat, lng: newLng },
-        address: newAddress,
-      })
-    }
-  }
-
-  if (!isLoaded) return null
+    return () => listener.remove()
+  }, [isLoaded])
 
   return (
     <div className="relative">
-      <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
-        <input
-          ref={inputRef}
-          defaultValue={address}
-          placeholder="Search for a location"
-          style={{
-            width: '100%',
-            padding: '8px 8px 8px 40px',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-          }}
-        />
-      </Autocomplete>
+      <input
+        ref={inputRef}
+        defaultValue={address}
+        placeholder="Search for a location"
+        className="w-full rounded border border-gray-300 py-2 pl-10 pr-2"
+      />
       <Icon
         name="magnifying-glass"
         size={16}
