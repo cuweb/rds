@@ -25,6 +25,22 @@ import { utils } from '@carletonuniversity/rds'
 const widthClass = utils.maxWidthClasses['7xl']
 ```
 
+### Description accordion behavior
+
+The Description React component supports its own accordion interaction. For static or
+server-rendered Description markup, import the vanilla runtime from the RDS package and
+initialize it once from the theme's JavaScript entry point:
+
+```js
+import { initDescriptionAccordions } from '@carletonuniversity/rds/dist/vanilla-js/cu-description.js'
+
+initDescriptionAccordions()
+```
+
+The runtime uses delegated click and keyboard events, so it also works with accordion
+markup added after initialization. It returns a cleanup function for applications that
+need to remove the listeners.
+
 ### File Locations
 
 ```

@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { styles } from './Description.Styles'
 import { Icon } from '../Icon/Icon'
-import { toggleAccordion } from './script'
 
 export interface DescriptionAccordionProps {
   term: string
@@ -8,6 +8,7 @@ export interface DescriptionAccordionProps {
 }
 
 export const DescriptionAccordion = ({ term, children }: DescriptionAccordionProps) => {
+  const [isExpanded, setIsExpanded] = useState(false)
   const termLabel = term && typeof term === 'string' ? 'accordion-' + term.toLowerCase().replace(/ +/g, '-') : ''
 
   return (
@@ -15,22 +16,30 @@ export const DescriptionAccordion = ({ term, children }: DescriptionAccordionPro
       <dt className={`${styles.term}`}>
         <div
           className="flex items-center w-full accordion__button"
-          aria-expanded="false"
+          aria-expanded={isExpanded}
           aria-controls={termLabel}
           role="button"
-          onClick={toggleAccordion}
+          tabIndex={0}
+          onClick={() => setIsExpanded((expanded) => !expanded)}
+          onKeyDown={(event) => {
+            if (event.target !== event.currentTarget) return
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault()
+              setIsExpanded((expanded) => !expanded)
+            }
+          }}
         >
           {term}
           <Icon
             name="chevron-right"
             size={20}
-            className="ml-auto transition-transform rotate-0 accordion__icon"
+            className={`ml-auto transition-transform ${isExpanded ? 'rotate-90' : 'rotate-0'} accordion__icon`}
             color="#808080"
           />
         </div>
       </dt>
 
-      <dd className={`accordion__content ${styles.desc}`} hidden={true} id={termLabel}>
+      <dd className={`accordion__content ${styles.desc}`} hidden={!isExpanded} id={termLabel}>
         {children}
       </dd>
     </div>
