@@ -23,6 +23,7 @@
       "require": "./dist/rds.umd.js"
     },
     "./dist/style.css": "./dist/style.css",
+    "./dist/vanilla-js/cu-description.js": "./dist/vanilla-js/cu-description.js",
     "./dist/vanilla-js/cu-motion.js": "./dist/vanilla-js/cu-motion.js"
   },
   "files": [
