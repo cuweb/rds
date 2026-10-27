@@ -1,6 +1,6 @@
 {
   "name": "@carletonuniversity/rds",
-  "version": "0.30.0",
+  "version": "0.30.1",
   "private": false,
   "description": "Raven Design System is Carleton University's design system",
   "author": "Web Services",
@@ -23,6 +23,7 @@
       "require": "./dist/rds.umd.js"
     },
     "./dist/style.css": "./dist/style.css",
+    "./dist/vanilla-js/cu-description.js": "./dist/vanilla-js/cu-description.js",
     "./dist/vanilla-js/cu-motion.js": "./dist/vanilla-js/cu-motion.js"
   },
   "files": [
