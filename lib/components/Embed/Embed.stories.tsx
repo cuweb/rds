@@ -94,7 +94,13 @@ export const HubSpot: Story = {
   render: () => (
     <Main>
       {/* <EmbedHubSpot formId="form_id" portalId="portalId" /> */}
-      <EmbedHubSpot formId="b1c387fa-370c-4de8-a2a3-3f731340db45" portalId="342644269" />
+      <EmbedHubSpot
+        formId="b1c387fa-370c-4de8-a2a3-3f731340db4511"
+        portalId="342644269"
+        onError={() => {
+          console.log('HubSpot form error')
+        }}
+      />
     </Main>
   ),
 }
